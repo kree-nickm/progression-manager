@@ -9,6 +9,7 @@ export default class CharacterList extends UIList
 {
   static unique = true;
   static name = "characters";
+  static dontSerialize = UIList.dontSerialize.concat(["elements"]);
   
   elements = {};
   
@@ -465,15 +466,8 @@ export default class CharacterList extends UIList
     // This does depend on the reason for the clear(). If we are importing an updated GOOD file with only one Traveler, then yes, we would want to keep the others intact.
     // However, if we are swapping over to another account with a different Traveler, it'd be better to remove them with everything else.
     // But how do we know which is the intent?
-    for(let item of this.list)
-    {
-      if(!(item instanceof Traveler))
-      {
-        item.elements.tr.remove();
-        item.elements.tr = null;
-      }
-    }
     this.update("list", this.list.filter(item => item instanceof Traveler), "replace");
+    this.forceNextRender = true;
   }
   
   async render(force=false)

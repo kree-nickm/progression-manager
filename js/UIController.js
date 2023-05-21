@@ -1,4 +1,6 @@
 export default class UIController {
+  static dontSerialize = ["dependents"];
+  
   dependents = {};
   
   parseField(field, create=true)
@@ -137,5 +139,14 @@ export default class UIController {
       this.dependents[field.string] = this.dependents[field.string].filter(element => element != dep);
     }
     return this;
+  }
+  
+  toJSON()
+  {
+    let result = {};
+    for(let key of Object.keys(this))
+      if(["object","string","boolean","number","bigint"].indexOf(typeof(this[key])) > -1 && this.constructor.dontSerialize.indexOf(key) == -1)
+        result[key] = this[key];
+    return JSON.stringify(result);
   }
 }

@@ -17,6 +17,8 @@ import FurnitureSet from "./FurnitureSet.js";
 
 export default class GenshinManager extends UIController
 {
+  static dontSerialize = UIController.dontSerialize.concat(["lastDay","elements","stickyElements"]);
+  
   currentView;
   lastDay = DateTime.now().setZone("UTC-9").weekdayLong;
   lists = {};
@@ -217,8 +219,8 @@ export default class GenshinManager extends UIController
   {
     return {
       format: "GOOD",
-      source: "Kryand's GOOD Viewer",
-      version: 1,
+      source: "Genshin Manager",
+      version: 2,
       materials: this.lists.materials.toGOOD(),
       characters: this.lists.characters.toGOOD(),
       weapons: this.lists.weapons.toGOOD(),

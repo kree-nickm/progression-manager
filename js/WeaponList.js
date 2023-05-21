@@ -7,6 +7,7 @@ import Weapon from "./Weapon.js";
 export default class WeaponList extends UIList
 {
   static name = "weapons";
+  static dontSerialize = UIList.dontSerialize.concat(["elements"]);
   
   elements = {};
   

@@ -137,7 +137,7 @@ export default class Character extends GenshinItem
     }
     else
     {
-      console.log(`Character had no previous item and item had no previous character.`);
+      //console.log(`Character had no previous item and item had no previous character.`);
     }
     
     // Notify character item display that it needs to update.

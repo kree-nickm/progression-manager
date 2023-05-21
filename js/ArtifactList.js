@@ -7,6 +7,7 @@ import Artifact from "./Artifact.js";
 export default class ArtifactList extends UIList
 {
   static name = "artifacts";
+  static dontSerialize = UIList.dontSerialize.concat(["elements"]);
   static abundantSets = ["WanderersTroupe","GladiatorsFinale","Berserker","Gambler","TinyMiracle","Scholar","BraveHeart","DefendersWill"];
   static valuableSets = ["NoblesseOblige","EmblemOfSeveredFate","GildedDreams","ViridescentVenerer"];
   

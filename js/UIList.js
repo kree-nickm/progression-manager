@@ -5,10 +5,11 @@ import GenshinItem from "./GenshinItem.js";
 
 export default class UIList extends UIController {
   static unique = false;
+  static name = "";
+  static dontSerialize = UIController.dontSerialize.concat(["viewer","display","subsets","subsetDefinitions","forceNextRender"]);
   
   viewer;
   display;
-  name = "";
   list = [];
   subsets = {};
   subsetDefinitions = {};
@@ -140,14 +141,6 @@ export default class UIList extends UIController {
   {
     this.update("list", [], "replace");
     this.subsets = {};
-  }
-  
-  toJSON()
-  {
-    let result = {};
-    for(let key of Object.keys(this))
-      if(["object","string","boolean","number","bigint"].indexOf(typeof(this[key])) > -1 && ["viewer","display","dependents"].indexOf(key) == -1)
-        result[key] = this[key];
-    return JSON.stringify(result);
+    this.forceNextRender = true;
   }
 }
