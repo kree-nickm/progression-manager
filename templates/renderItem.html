@@ -1,0 +1,5 @@
+<{{wrapper}} class="list-item" name="{{unique item}}" data-template="renderItem">
+  {{#each fields}}
+      {{> renderItemField item=../item field=. wrapper=../fieldWrapper}}
+  {{/each}}
+</{{wrapper}}>

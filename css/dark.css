@@ -1,0 +1,23 @@
+:root {
+  --group-background: #444;
+  
+  --quality-1-background: #eeeeee;
+  --quality-1-border: #aaaaaa;
+  --quality-2-background: #d0ffd0;
+  --quality-2-border: #40B040;
+  --quality-3-background: #c0d1ff;
+  --quality-3-border: #6060ff;
+  --quality-4-background: #dcb6ff;
+  --quality-4-border: #7040ff;
+  --quality-5-background: #fff3d0;
+  --quality-5-border: #db972a;
+  
+  --pending-background: #ffed8b;
+  --sufficient-background: #aeffae;
+  --insufficient-background: #ffaaaa;
+  
+  --today-background: #e9ffbf;
+  
+  --colgroup-alt-background: #dddddd;
+  --column-alt-background: #eaeaea;
+}

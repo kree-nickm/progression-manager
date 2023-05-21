@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Genshin Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/dark.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-dark bg-dark sticky-top navbar-expand-lg">
+      <div class="container-fluid">
+        <!--<a class="navbar-brand" href="#">Navbar</a>-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#characters">Characters</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#weapons">Weapons</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#artifacts">Artifacts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#materials">Materials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#furnitureSets">Furniture Sets</a>
+            </li>
+            <!--
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+            -->
+            <li class="nav-item ms-3">
+              <button class="btn btn-info" data-bs-target="#helpModal" data-bs-toggle="modal" title="View a guide to using the site and reading the information."><i class="fa-solid fa-circle-info"></i></button>
+            </li>
+            <li class="nav-item ms-3">
+              <button class="btn btn-primary" data-bs-target="#loadGOODModal" data-bs-toggle="modal" title="Opens a window to load either a JSON file, or paste in GOOD-formatted data."><i class="fa-solid fa-file-import"></i></button>
+            </li>
+            <li class="nav-item ms-3">
+              <button id="saveGOODFile" class="btn btn-success" title="Download your data as a JSON file in GOOD format."><i class="fa-solid fa-download"></i></button>
+            </li>
+          </ul>
+          <!--<form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>-->
+        </div>
+      </div>
+    </nav>
+    
+    <div id="content">
+    </div>
+    
+    <div id="popupContent" class="modal" tabindex="-1">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title"></h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="loadGOODModal" class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div id="loadGOODForm" class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Load GOOD File</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <label>Load From File:</label>
+            <input id="loadGOODFile" name="GOODFile" type="file"/>
+            <hr/>
+            <label>Or Paste JSON Data:</label>
+            <textarea id="loadGOODJSON" name="GOODJSON" style="width:100%;"></textarea>
+            <button id="loadGOODBtn" type="button" class="btn btn-primary my-1">Load</button>
+            <div id="loadGOODError" class="alert alert-danger d-none">Error</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="helpModal" class="modal" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">How to Use and Read</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <h3>General</h3>
+            <p><b>You can sort the table using some of the columns.</b> If so, clicking the column name will sort the table by that column.</p>
+            <p><b>Some columns are grouped together.</b> Clicking the header of that group of columns will collapse them all to make the table smaller.</p>
+            <p><b>Most variable fields can be edited.</b> Click on the field to change the value of it. Press ENTER, TAB, or click anywhere else to finish editing.</p>
+            <p><b>Data can be imported from GOOD format.</b> GOOD format comes from programs like <a href="https://github.com/Andrewthe13th/Inventory_Kamera" target="_blank">Inventory Kamera</a>, which automatically navigate your inventory and scan your screen to read your items. Otherwise, you'd need to fill it out manually as described above.</p>
+            <p><b>All data is saved to your browser automatically.</b> This is done using web storage, not cookies, which most modern browsers support. If yours doesn't, get a new one.</p>
+            <h3>Character Page</h3>
+            <h4>Marking Favorites</h4>
+            <p>Clicking on the first column allows you to mark a character as a favorite. This will make it easier to see their material requirements on the Materials page, as well as let you sort them above non-favorites.</p>
+            <h4>Phase Column</h4>
+            <p><b class="sufficient">Green</b> fields indicate that you have all the materials to ascend the character, though some may need to be crafted.</p>
+            <h4>Level Column</h4>
+            <p><b class="sufficient">Green</b> fields indicate that your character is ready to be ascended, and you have all the materials to do so, though some may need to be crafted.</p>
+            <p><b class="pending">Yellow</b> fields indicate that your character is not at the maximum level for their phase.</p>
+            <h4>Talent Columns</h4>
+            <p><b>Uncolored</b> fields indicate that the talent is fully leveled up for your character's phase.</p>
+            <p><b class="sufficient">Green</b> fields indicate that you can level up the talent right now, though some materials may need to be crafted.</p>
+            <p><b class="pending">Yellow</b> fields indicate that you are missing materials needed to level up, but you can farm for them today.</p>
+            <p><b class="insufficient">Red</b> fields indicate that you are missing materials needed to level up, specifically Mastery materials, and you can't farm more of them today.</p>
+            <h4>Material Columns</h4>
+            <p><b>Editing material fields</b> will change the amount of that material in your inventory.</p>
+            <p><b class="pending">Yellow</b> quantities indicate that you don't have enough of that specific material, but you can craft more to obtain the necessary amount.</p>
+            <p><b class="insufficient">Red</b> quantities indicate that you don't have enough of that specific material, and you will need to farm to obtain more of it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/269607f5b1.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="js/main.js" type="module"></script>
+  </body>
+</html>

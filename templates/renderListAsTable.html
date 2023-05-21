@@ -1,0 +1,27 @@
+<div class="table-responsive scroller list" name="{{name}}" data-template="renderListAsTable">
+    <table class="table table-sm table-striped">
+        <thead class="bg-light sticky-js">
+            <tr class="group-row">
+              {{#each groups}}
+              {{#if label}}
+                <th class="group-header" colspan="{{size}}" name="{{label}}" title="{{title}}">
+                    <div>+ {{label}} +</div>
+                </th>
+              {{else}}
+                <th class="" colspan="{{size}}"></th>
+              {{/if}}
+              {{/each}}
+            </tr>
+            <tr>
+              {{#each fields}}
+                <th class="{{fieldClasses .}} {{#if sort}}sortable{{/if}}" name="{{id}}" title="{{labelTitle}}" {{#if group}} data-group-name="{{group.label}}"{{/if}}><span>{{label}}</span></th>
+              {{/each}}
+            </tr>
+        </thead>
+        <tbody class="list-target">
+          {{#each items}}
+              {{> renderItem item=. fields=../fields wrapper="tr" fieldWrapper="td"}}
+          {{/each}}
+        </tbody>
+    </table>
+</div>

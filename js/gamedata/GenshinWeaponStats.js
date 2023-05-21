@@ -1,0 +1,170 @@
+export default {
+  '5': {
+    '49': {
+      atk: [49.1377,144.9071,176.0071,285.9281,317.0281,374.4209,405.6209,464.3896,495.4896,555.3885,586.4885,647.5175,678.6175,740.5802],
+      hp_: 3.6,
+      atk_: 3.6,
+      def_: 4.5,
+      physical_dmg_: 4.5,
+      enerRech_: 4,
+      critRate_: 2.4,
+      critDMG_: 4.8,
+      eleMas: 14.4,
+    },
+    '48': {
+      atk: [47.5370,133.2937,164.3937,260.5611,291.6611,341.4323,372.6323,423.4018,454.5018,506.2221,537.3221,589.8505,620.9505,674.3345],
+      hp_: 7.2,
+      atk_: 7.2,
+      def_: 9,
+      physical_dmg_: 9,
+      enerRech_: 8,
+      critRate_: 4.8,
+      critDMG_: 9.6,
+      eleMas: 28.8,
+    },
+    '46': {
+      atk: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+      hp_: 0,
+      atk_: 0,
+      def_: 0,
+      physical_dmg_: 0,
+      enerRech_: 0,
+      critRate_: 0,
+      critDMG_: 0,
+      eleMas: 0,
+    },
+    '44': {
+      atk: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+      hp_: 0,
+      atk_: 0,
+      def_: 0,
+      physical_dmg_: 0,
+      enerRech_: 0,
+      critRate_: 0,
+      critDMG_: 0,
+      eleMas: 0,
+    },
+  },
+  '4': {
+    '45': {
+      atk: [45,128,154,247,273,321,347,395,421,470,496,545,571,620],
+      hp_: 0,
+      atk_: 0,
+      def_: 0,
+      physical_dmg_: 0,
+      enerRech_: 3.333,// none
+      critRate_: 0,
+      critDMG_: 0,
+      eleMas: 0,
+    },
+    '44': {
+      atk: [43.7349,118.5653,144.4653,225.9872,251.9872,293.3604,319.2604,360.8960,386.7960,428.6941,454.6941,496.7233,522.6233,564.7837],
+      hp_: 7.5,
+      atk_: 7.5,
+      def_: 9.383,
+      physical_dmg_: 9.383,
+      enerRech_: 6.666,// 8.333,
+      critRate_: 5,
+      critDMG_: 10,
+      eleMas: 30,
+    },
+    '42': {
+      atk: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+      hp_: 0,
+      atk_: 0,
+      def_: 0,
+      physical_dmg_: 0,
+      enerRech_: 10,
+      critRate_: 0,
+      critDMG_: 0,
+      eleMas: 0,
+    },
+    '41': {
+      atk: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+      hp_: 0,
+      atk_: 0,
+      def_: 0,
+      physical_dmg_: 0,
+      enerRech_: 13.333,
+      critRate_: 0,
+      critDMG_: 0,
+      eleMas: 0,
+    },
+    '39': {// Only 4-star, 39-base-attack weapon is PSN exclusive
+      atk: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+      hp_: 0,// none
+      atk_: 7.66,
+      def_: 0,// none
+      physical_dmg_: 0,// none
+      enerRech_: 0,// none
+      critRate_: 0,// none
+      critDMG_: 0,// none
+      eleMas: 0,// none
+    },
+  },
+  '3': {
+    '40': {
+      atk: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+      hp_: 0,
+      atk_: 0,
+      def_: 0,
+      physical_dmg_: 0,
+      enerRech_: 0,
+      critRate_: 0,
+      critDMG_: 0,
+      eleMas: 0,
+    },
+    '39': {
+      atk: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+      hp_: 0,
+      atk_: 0,
+      def_: 0,
+      physical_dmg_: 0,
+      enerRech_: 0,
+      critRate_: 0,
+      critDMG_: 0,
+      eleMas: 0,
+    },
+    '38': {
+      atk: [0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+      hp_: 0,
+      atk_: 0,
+      def_: 0,
+      physical_dmg_: 0,
+      enerRech_: 0,
+      critRate_: 0,
+      critDMG_: 0,
+      eleMas: 0,
+    },
+  },
+  '2': {
+    '33': {
+      atk: [0,0,0,0,0,0,0,0,0,0],
+      hp_: 0,
+      atk_: 0,
+      def_: 0,
+      physical_dmg_: 0,
+      enerRech_: 0,
+      critRate_: 0,
+      critDMG_: 0,
+      eleMas: 0,
+    },
+  },
+  '1': {
+    '23': {
+      atk: [23.2450,56.2529,67.9529,101.5652,113.1652,129.6226,141.3226,157.5941,169.2941,185.4262],
+      hp_: 0,
+      atk_: 0,
+      def_: 0,
+      physical_dmg_: 0,
+      enerRech_: 0,
+      critRate_: 0,
+      critDMG_: 0,
+      eleMas: 0,
+    },
+  },
+};
+/*
+
+
+*/

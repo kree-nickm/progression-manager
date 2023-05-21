@@ -1,0 +1,39 @@
+<div class="list-item" name="{{unique item}}" data-template="renderWeaponAsPopup" data-list="weapons">
+    <div class="row">
+        <h5 class="col-2">Level</h5>
+        <h5 class="col-2">Refinement</h5>
+        <h5 class="col-2">ATK</h5>
+        <h5 class="col-2">{{> renderItemField item=item field=fields.stat wrapper="div"}}</h5>
+    </div>
+    <div class="row">
+        <div class="col-2">{{> renderItemField item=item field=fields.level wrapper="div"}}</div>
+        <div class="col-2">{{> renderItemField item=item field=fields.refinement wrapper="div"}}</div>
+        <div class="col-2">{{> renderItemField item=item field=fields.atk wrapper="div"}}</div>
+        <div class="col-2">{{> renderItemField item=item field=fields.statVal wrapper="div"}}</div>
+    </div>
+    
+    <hr/>
+    <h3>Ascension Materials</h3>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Phase</th>
+                    <th>Forgery Mat</th>
+                    <th>Strong Mat</th>
+                    <th>Weak Mat</th>
+                </tr>
+            </thead>
+            <tbody>
+              {{#times 6}}
+                <tr>
+                  {{> renderItemField item=item field=(lookup fields (concat "ascension" @index)) wrapper="td"}}
+                  {{> renderItemField item=item field=(lookup fields (concat "forgeryMat" @index)) wrapper="td"}}
+                  {{> renderItemField item=item field=(lookup fields (concat "strongMat" @index)) wrapper="td"}}
+                  {{> renderItemField item=item field=(lookup fields (concat "weakMat" @index)) wrapper="td"}}
+                </tr>
+              {{/times}}
+            </tbody>
+        </table>
+    </div>
+</div>

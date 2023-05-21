@@ -1,0 +1,19 @@
+<div class="row artifact-stat-slider" name="{{build}}_{{type}}_{{statId}}" data-template="renderArtifactStatSlider">
+    <div class="col-1">{{artifactStat statId item}}</div>
+  {{#ifeq type "artifactSubstats"}}
+    <div class="col-1 text-end" name="value">{{#if value}}{{value}}{{else}}0{{/if}}</div>
+    <div class="col-10"><input type="range" class="form-range" name="{{statId}}" value="{{#if value}}{{value}}{{else}}0{{/if}}" min="0" max="2" step="0.1"/></div>
+  {{/ifeq}}
+  {{#ifeq type "sandsStat"}}
+    <div class="col-1 text-end" name="value">{{#if value}}{{value}}{{else}}0{{/if}}</div>
+    <div class="col-10"><input type="range" class="form-range" name="{{statId}}" value="{{#if value}}{{value}}{{else}}0{{/if}}" min="0" max="2" step="0.1"/></div>
+  {{/ifeq}}
+  {{#ifeq type "gobletStat"}}
+    <div class="col-1 text-end" name="value">{{#if value}}{{value}}{{else}}0{{/if}}</div>
+    <div class="col-10"><input type="range" class="form-range" name="{{statId}}" value="{{#if value}}{{value}}{{else}}0{{/if}}" min="0" max="2" step="0.1"/></div>
+  {{/ifeq}}
+  {{#ifeq type "circletStat"}}
+    <div class="col-1 text-end" name="value">{{#if value}}{{value}}{{else}}0{{/if}}</div>
+    <div class="col-10"><input type="range" class="form-range" name="{{statId}}" value="{{#if value}}{{value}}{{else}}0{{/if}}" min="0" max="2" step="0.1"/></div>
+  {{/ifeq}}
+</div>

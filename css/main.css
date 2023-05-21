@@ -1,0 +1,236 @@
+/* Display Tables */
+
+td {
+  white-space: nowrap;
+}
+
+.icon {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.icon img {
+  height: 2.2em;
+}
+
+.group-collapsed *
+{
+  display: none !important;
+}
+
+.group-row, .group-row th {
+  border: 0px;
+  padding: 0px;
+}
+
+.group-header {
+  cursor: pointer;
+  text-align: center;
+}
+
+.group-header div {
+  background-color: rgba(120,120,120,0.5);
+  margin: 1px;
+  padding: 1px 3px;
+}
+
+.sortable {
+  cursor: pointer;
+}
+
+.sortable.sorted::after {
+  content: "\1f823";
+  position: absolute;
+}
+
+.sortable.sorted-r::after {
+  content: "\1f821";
+  position: absolute;
+}
+
+/* Utilities */
+
+.sticky-js {
+  position: relative;
+}
+
+.size-to-content {
+  flex-grow: 0 !important;
+  flex-basis: content !important;
+  align-self: center;
+}
+
+.edit-box {
+  height: 100%;
+  max-width: 8ex;
+  min-width: 4ex;
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+  outline: none;
+}
+
+.list-button {
+  border-radius: 1ex;
+  margin-left: 1ex;
+  font-size: 0.8em;
+}
+
+span.quantity, .quantity > span {
+  border-radius: 1ex;
+  display: inline-block;
+  margin-right: 1ex;
+  padding: 2px 4px;
+}
+
+span.material, .material > span {
+  border-radius: 1ex;
+  border-width: 1px;
+  border-style: solid;
+  display: inline-block;
+  padding: 1px 3px;
+}
+
+span.q1, .q1 > span {
+  background-color: rgba(127, 127, 127, 0.4);
+  border-color: rgba(127, 127, 127, 0.9);
+}
+
+span.q2, .q2 > span {
+  background-color: rgba(80, 255, 40, 0.4);
+  border-color: rgba(80, 255, 40, 0.9);
+}
+
+span.q3, .q3 > span {
+  background-color: rgba(50, 60, 255, 0.4);
+  border-color: rgba(50, 60, 255, 0.9);
+}
+
+span.q4, .q4 > span {
+  background-color: rgba(200, 20, 200, 0.4);
+  border-color: rgba(200, 20, 200, 0.9);
+}
+
+span.q5, .q5 > span {
+  background-color: rgba(205, 183, 20, 0.4);
+  border-color: rgba(205, 183, 20, 0.9);
+}
+
+.today > span {
+  border-radius: 1ex;
+  display: inline-block;
+  padding: 2px 4px;
+  background-color: rgba(120,180,60,0.3);
+}
+
+.pending {
+  background-color: rgba(255,255,0,0.3) !important;
+}
+
+.sufficient {
+  background-color: rgba(0,255,0,0.3) !important;
+}
+
+.insufficient {
+  background-color: rgba(255,0,0,0.3) !important;
+}
+
+.viewer-pane:not(.current-view) {
+  display: none !important;
+}
+
+.shrink {
+	visibility: hidden;
+	width: 0px;
+}
+
+.editable {
+  cursor: pointer;
+}
+
+.popup {
+  cursor: help;
+}
+
+.list-item-field.editable:not(.editing) input,
+.list-item-field.editable:not(.editing) select {
+  display: none;
+}
+
+.list-item-field.editable.editing span,
+.list-item-field.editable.editing img,
+.list-item-field.editable.editing button {
+  display: none;
+}
+
+.viewer-pane .ascension-materials {
+  background-color: var(--colgroup-alt-background) !important;
+}
+
+.skill-mastery, .skill-enemy {
+  background-color: var(--column-alt-background) !important;
+}
+
+.stat-critRate_, .stat-atk_, .stat-eleMas, .stat-def_, .stat-hp,
+.stat-rating-critRate_, .stat-rating-atk_, .stat-rating-eleMas, .stat-rating-def_, .stat-rating-hp, .stat-character-rating {
+  background-color: var(--column-alt-background) !important;
+}
+
+.not-owned {
+  opacity: 0.5;
+}
+
+/* Character Details Popup */
+
+.modal-title .icon img {
+  height: 1.2em;
+}
+
+.artifact-stat-slider .form-range::-moz-range-track {
+  background-color: #ddd;
+}
+
+.character-artifacts .list-item
+{
+  border: 1px dotted #888;
+  border-radius: 1ex;
+  margin-bottom: 1ex;
+  padding: 4px;
+}
+
+.character-artifacts .substat
+{
+  font-size: 0.8em;
+}
+
+.character-artifacts .equip
+{
+  border-top: 1px solid #888;
+}
+
+.character-artifacts .favorite
+{
+  background: #fed;
+}
+
+.character-artifacts .equipped
+{
+  border: 2px solid #000;
+  padding: 3px;
+}
+
+.character-artifacts .list-item {
+  position: relative;
+}
+
+.character-artifacts .equipped .equip-artifact {
+  display: none;
+}
+
+.character-artifacts .equip-artifact {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 0.8em;
+  padding: 2px 6px;
+}
