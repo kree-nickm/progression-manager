@@ -27,7 +27,7 @@ export default {
       hp_: 10.8,
       atk_: 10.8,
       def_: 13.5,
-      physical_dmg_: 13.5,
+      physical_dmg_: 13.5,// none
       enerRech_: 12,
       critRate_: 7.2,
       critDMG_: 14.4,
@@ -38,7 +38,7 @@ export default {
       hp_: 14.4,
       atk_: 14.4,
       def_: 18,
-      physical_dmg_: 18,
+      physical_dmg_: 18,// none
       enerRech_: 16,// none
       critRate_: 9.6,
       critDMG_: 19.2,
@@ -51,7 +51,7 @@ export default {
       hp_: 3,
       atk_: 3,
       def_: 3.753,
-      physical_dmg_: 3.753,
+      physical_dmg_: 3.753,// none
       enerRech_: 3.333,// none
       critRate_: 2,
       critDMG_: 4,
@@ -62,7 +62,7 @@ export default {
       hp_: 7.5,
       atk_: 7.5,
       def_: 9.383,
-      physical_dmg_: 9.383,
+      physical_dmg_: 7.5,// 9.383 in reference data, but not in-game
       enerRech_: 6.666,// 8.333 in reference data, but not in-game
       critRate_: 5,
       critDMG_: 10,
@@ -108,7 +108,7 @@ export default {
       hp_: 5.107,
       atk_: 5.107,
       def_: 6.373,
-      physical_dmg_: 6.373,
+      physical_dmg_: 6.373,// none
       enerRech_: 5.667,// none
       critRate_: 3.4,
       critDMG_: 6.8,
@@ -130,7 +130,7 @@ export default {
       hp_: 10.213,
       atk_: 10.213,
       def_: 12.747,
-      physical_dmg_: 12.747,
+      physical_dmg_: 12.747,// none
       enerRech_: 11.333,
       critRate_: 6.8,
       critDMG_: 13.6,
