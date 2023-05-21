@@ -212,7 +212,7 @@ export default class Weapon extends GenshinItem
   {
     let statLower = GenshinWeaponStats[this.quality][this.baseATK].atk[this.ascension*2];
     let statUpper = GenshinWeaponStats[this.quality][this.baseATK].atk[this.ascension*2+1];
-    let lvlMin = GenshinPhaseData[this.ascension-1]?.levelCap ?? 0;
+    let lvlMin = GenshinPhaseData[this.ascension-1]?.levelCap ?? 1;
     let lvlMax = GenshinPhaseData[this.ascension].levelCap;
     let scale = (this.level - lvlMin) / (lvlMax - lvlMin);
     return statLower + (statUpper-statLower) * scale;

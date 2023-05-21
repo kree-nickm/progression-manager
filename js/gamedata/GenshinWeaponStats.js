@@ -62,11 +62,11 @@ export default {
       hp_: 7.5,
       atk_: 7.5,
       def_: 9.383,
-      physical_dmg_: 7.5,// 9.383 in reference data, but not in-game
+      physical_dmg_: 7.52,// 9.383 in reference data, but not in-game. Also, in-game is rounded, so this value is a guess.
       enerRech_: 6.666,// 8.333 in reference data, but not in-game
       critRate_: 5,
       critDMG_: 10,
-      eleMas: 30,
+      eleMas: 24,// 30 in reference data, but not in-game
     },
     '42': {
       atk: [42.4010,108.9282,134.8282,204.8322,230.8322,265.8555,291.7555,326.7787,352.6787,387.6595,413.6595,448.6827,474.5827,509.6060],
@@ -75,7 +75,7 @@ export default {
       def_: 11.26,
       physical_dmg_: 11.26,
       enerRech_: 10,
-      critRate_: 6,
+      critRate_: 6.0004,// Decimal is an attempt to correct a discrepancy in-game.
       critDMG_: 12,
       eleMas: 36,
     },
