@@ -10,28 +10,6 @@ export default class Weapon extends GenshinItem
   static templateName = "renderWeaponAsPopup";
   static templateTitleName = "renderWeaponAsPopupTitle";
   
-  static shorthandStat = {
-    'Elemental Mastery': "EM",
-    'Energy Recharge': "ER%",
-    'DEF': "DEF%",
-    'HP': "HP%",
-    'ATK': "ATK%",
-    'CRIT DMG': "C.DMG",
-    'CRIT Rate': "C.Rate",
-    'Physical DMG Bonus': "Phys",
-  };
-  
-  static codeStat = {
-    'Elemental Mastery': "eleMas",
-    'Energy Recharge': "enerRech_",
-    'DEF': "def_",
-    'HP': "hp_",
-    'ATK': "atk_",
-    'CRIT DMG': "critDMG_",
-    'CRIT Rate': "critRate_",
-    'Physical DMG Bonus': "physical_dmg_",
-  };
-  
   #refinement = 1;
   #ascension = 0;
   #level = 1;
@@ -220,9 +198,9 @@ export default class Weapon extends GenshinItem
   
   getStat()
   {
-    let stat = GenshinWeaponStats[this.quality][this.baseATK][Weapon.codeStat[this.stat]] ?? this.baseStat;
+    let stat = GenshinWeaponStats[this.quality][this.baseATK][this.stat] ?? this.baseStat;
     //let stat = this.baseStat;
-    let factor = 1 + 0.040384 * (this.level-1);
+    let factor = 1 + 0.04038405 * (this.level-1);
     return stat * factor;
   }
 }

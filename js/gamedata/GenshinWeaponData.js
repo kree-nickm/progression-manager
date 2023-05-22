@@ -7,7 +7,7 @@ export default {
         "matStrongEnemy": "Primal Constructs",
         "matWeakEnemy": "Fungi",
         "baseATK": 44,
-        "stat": "Elemental Mastery",
+        "stat": "eleMas",
         "baseStat": 58
     },
     "AmosBow": {
@@ -18,7 +18,7 @@ export default {
         "matStrongEnemy": "Ruin Guards",
         "matWeakEnemy": "Slimes",
         "baseATK": 46,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 10.8
     },
     "AquaSimulacra": {
@@ -29,7 +29,7 @@ export default {
         "matStrongEnemy": "Black Serpents",
         "matWeakEnemy": "Specters",
         "baseATK": 44,
-        "stat": "CRIT DMG",
+        "stat": "critDMG_",
         "baseStat": 19.2
     },
     "AquilaFavonia": {
@@ -40,7 +40,7 @@ export default {
         "matStrongEnemy": "Big Hilichurls",
         "matWeakEnemy": "Hilichurl Archers",
         "baseATK": 48,
-        "stat": "Physical DMG Bonus",
+        "stat": "physical_dmg_",
         "baseStat": 9
     },
     "BeaconOfTheReedSea": {
@@ -51,7 +51,7 @@ export default {
         "matStrongEnemy": "Consecrated Beasts",
         "matWeakEnemy": "Eremites",
         "baseATK": 46,
-        "stat": "CRIT Rate",
+        "stat": "critRate_",
         "baseStat": 7.2
     },
     "CalamityQueller": {
@@ -62,7 +62,7 @@ export default {
         "matStrongEnemy": "Fatui Cicin Mages",
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 49,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 3.6
     },
     "ElegyForTheEnd": {
@@ -73,7 +73,7 @@ export default {
         "matStrongEnemy": "Big Hilichurls",
         "matWeakEnemy": "Fatui",
         "baseATK": 46,
-        "stat": "Energy Recharge",
+        "stat": "enerRech_",
         "baseStat": 12
     },
     "EngulfingLightning": {
@@ -84,7 +84,7 @@ export default {
         "matStrongEnemy": "Ruin Sentinels",
         "matWeakEnemy": "Nobushi",
         "baseATK": 46,
-        "stat": "Energy Recharge",
+        "stat": "enerRech_",
         "baseStat": 12
     },
     "EverlastingMoonglow": {
@@ -95,7 +95,7 @@ export default {
         "matStrongEnemy": "Mirror Maidens",
         "matWeakEnemy": "Specters",
         "baseATK": 46,
-        "stat": "HP",
+        "stat": "hp_",
         "baseStat": 10.8
     },
     "FreedomSworn": {
@@ -106,7 +106,7 @@ export default {
         "matStrongEnemy": "Ruin Guards",
         "matWeakEnemy": "Samachurls",
         "baseATK": 46,
-        "stat": "Elemental Mastery",
+        "stat": "eleMas",
         "baseStat": 43
     },
     "HaranGeppakuFutsu": {
@@ -117,7 +117,7 @@ export default {
         "matStrongEnemy": "Black Serpents",
         "matWeakEnemy": "Nobushi",
         "baseATK": 46,
-        "stat": "CRIT Rate",
+        "stat": "critRate_",
         "baseStat": 7.2
     },
     "HuntersPath": {
@@ -128,7 +128,7 @@ export default {
         "matStrongEnemy": "Activated Fungi",
         "matWeakEnemy": "Eremites",
         "baseATK": 44,
-        "stat": "CRIT Rate",
+        "stat": "critRate_",
         "baseStat": 9.6
     },
     "KagurasVerity": {
@@ -139,7 +139,7 @@ export default {
         "matStrongEnemy": "Riftwolves",
         "matWeakEnemy": "Specters",
         "baseATK": 46,
-        "stat": "CRIT DMG",
+        "stat": "critDMG_",
         "baseStat": 14.4
     },
     "KeyOfKhajNisut": {
@@ -150,7 +150,7 @@ export default {
         "matStrongEnemy": "Primal Constructs",
         "matWeakEnemy": "Eremites",
         "baseATK": 44,
-        "stat": "HP",
+        "stat": "hp_",
         "baseStat": 14.4
     },
     "LightOfFoliarIncision": {
@@ -161,7 +161,7 @@ export default {
         "matStrongEnemy": "Consecrated Beasts",
         "matWeakEnemy": "Eremites",
         "baseATK": 44,
-        "stat": "CRIT DMG",
+        "stat": "critDMG_",
         "baseStat": 19.2
     },
     "LostPrayerToTheSacredWinds": {
@@ -172,7 +172,7 @@ export default {
         "matStrongEnemy": "Ruin Guards",
         "matWeakEnemy": "Slimes",
         "baseATK": 46,
-        "stat": "CRIT Rate",
+        "stat": "critRate_",
         "baseStat": 7.2
     },
     "MemoryOfDust": {
@@ -183,7 +183,7 @@ export default {
         "matStrongEnemy": "Geovishaps",
         "matWeakEnemy": "Hilichurls",
         "baseATK": 46,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 10.8
     },
     "MistsplitterReforged": {
@@ -194,7 +194,7 @@ export default {
         "matStrongEnemy": "Ruin Sentinels",
         "matWeakEnemy": "Nobushi",
         "baseATK": 48,
-        "stat": "CRIT DMG",
+        "stat": "critDMG_",
         "baseStat": 9.6
     },
     "PolarStar": {
@@ -205,7 +205,7 @@ export default {
         "matStrongEnemy": "Riftwolves",
         "matWeakEnemy": "Specters",
         "baseATK": 46,
-        "stat": "CRIT Rate",
+        "stat": "critRate_",
         "baseStat": 7.2
     },
     "PrimordialJadeCutter": {
@@ -216,7 +216,7 @@ export default {
         "matStrongEnemy": "Fatui Cicin Mages",
         "matWeakEnemy": "Treasure Hoarders",
         "baseATK": 44,
-        "stat": "CRIT Rate",
+        "stat": "critRate_",
         "baseStat": 9.6
     },
     "PrimordialJadeWingedSpear": {
@@ -227,7 +227,7 @@ export default {
         "matStrongEnemy": "Fatui Agents",
         "matWeakEnemy": "Fatui",
         "baseATK": 48,
-        "stat": "CRIT Rate",
+        "stat": "critRate_",
         "baseStat": 4.8
     },
     "RedhornStonethresher": {
@@ -238,7 +238,7 @@ export default {
         "matStrongEnemy": "Riftwolves",
         "matWeakEnemy": "Nobushi",
         "baseATK": 44,
-        "stat": "CRIT DMG",
+        "stat": "critDMG_",
         "baseStat": 19.2
     },
     "SkywardAtlas": {
@@ -249,7 +249,7 @@ export default {
         "matStrongEnemy": "Abyss Mages",
         "matWeakEnemy": "Hilichurl Archers",
         "baseATK": 48,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 7.2
     },
     "SkywardBlade": {
@@ -260,7 +260,7 @@ export default {
         "matStrongEnemy": "Abyss Mages",
         "matWeakEnemy": "Slimes",
         "baseATK": 46,
-        "stat": "Energy Recharge",
+        "stat": "enerRech_",
         "baseStat": 12
     },
     "SkywardHarp": {
@@ -271,7 +271,7 @@ export default {
         "matStrongEnemy": "Abyss Mages",
         "matWeakEnemy": "Hilichurl Archers",
         "baseATK": 48,
-        "stat": "CRIT Rate",
+        "stat": "critRate_",
         "baseStat": 4.8
     },
     "SkywardPride": {
@@ -282,7 +282,7 @@ export default {
         "matStrongEnemy": "Abyss Mages",
         "matWeakEnemy": "Slimes",
         "baseATK": 48,
-        "stat": "Energy Recharge",
+        "stat": "enerRech_",
         "baseStat": 8
     },
     "SkywardSpine": {
@@ -293,7 +293,7 @@ export default {
         "matStrongEnemy": "Ruin Guards",
         "matWeakEnemy": "Samachurls",
         "baseATK": 48,
-        "stat": "Energy Recharge",
+        "stat": "enerRech_",
         "baseStat": 8
     },
     "SongOfBrokenPines": {
@@ -304,7 +304,7 @@ export default {
         "matStrongEnemy": "Big Hilichurls",
         "matWeakEnemy": "Hilichurls",
         "baseATK": 49,
-        "stat": "Physical DMG Bonus",
+        "stat": "physical_dmg_",
         "baseStat": 4.5
     },
     "StaffOfHoma": {
@@ -315,7 +315,7 @@ export default {
         "matStrongEnemy": "Abyss Mages",
         "matWeakEnemy": "Slimes",
         "baseATK": 46,
-        "stat": "CRIT DMG",
+        "stat": "critDMG_",
         "baseStat": 14.4
     },
     "StaffOfTheScarletSands": {
@@ -326,7 +326,7 @@ export default {
         "matStrongEnemy": "Ruin Drakes",
         "matWeakEnemy": "Fungi",
         "baseATK": 44,
-        "stat": "CRIT Rate",
+        "stat": "critRate_",
         "baseStat": 9.6
     },
     "SummitShaper": {
@@ -337,7 +337,7 @@ export default {
         "matStrongEnemy": "Fatui Agents",
         "matWeakEnemy": "Hilichurls",
         "baseATK": 46,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 10.8
     },
     "TheUnforged": {
@@ -348,7 +348,7 @@ export default {
         "matStrongEnemy": "Fatui Cicin Mages",
         "matWeakEnemy": "Treasure Hoarders",
         "baseATK": 46,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 10.8
     },
     "ThunderingPulse": {
@@ -359,7 +359,7 @@ export default {
         "matStrongEnemy": "Mirror Maidens",
         "matWeakEnemy": "Hilichurl Archers",
         "baseATK": 46,
-        "stat": "CRIT DMG",
+        "stat": "critDMG_",
         "baseStat": 14.4
     },
     "TulaytullahsRemembrance": {
@@ -370,7 +370,7 @@ export default {
         "matStrongEnemy": "Activated Fungi",
         "matWeakEnemy": "Fungi",
         "baseATK": 48,
-        "stat": "CRIT DMG",
+        "stat": "critDMG_",
         "baseStat": 9.6
     },
     "VortexVanquisher": {
@@ -381,7 +381,7 @@ export default {
         "matStrongEnemy": "Geovishaps",
         "matWeakEnemy": "Treasure Hoarders",
         "baseATK": 46,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 10.8
     },
     "WolfsGravestone": {
@@ -392,7 +392,7 @@ export default {
         "matStrongEnemy": "Ruin Guards",
         "matWeakEnemy": "Samachurls",
         "baseATK": 46,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 10.8
     },
     "TheCatch": {
@@ -403,7 +403,7 @@ export default {
         "matStrongEnemy": "Ruin Sentinels",
         "matWeakEnemy": "Specters",
         "baseATK": 42,
-        "stat": "Energy Recharge",
+        "stat": "enerRech_",
         "baseStat": 10
     },
     "Akuoumaru": {
@@ -414,7 +414,7 @@ export default {
         "matStrongEnemy": "Riftwolves",
         "matWeakEnemy": "Nobushi",
         "baseATK": 42,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 9
     },
     "AlleyHunter": {
@@ -425,7 +425,7 @@ export default {
         "matStrongEnemy": "Ruin Guards",
         "matWeakEnemy": "Slimes",
         "baseATK": 44,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 6
     },
     "AmenomaKageuchi": {
@@ -436,7 +436,7 @@ export default {
         "matStrongEnemy": "Ruin Sentinels",
         "matWeakEnemy": "Nobushi",
         "baseATK": 41,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 12
     },
     "BlackcliffAgate": {
@@ -447,7 +447,7 @@ export default {
         "matStrongEnemy": "Fatui Agents",
         "matWeakEnemy": "Samachurls",
         "baseATK": 42,
-        "stat": "CRIT DMG",
+        "stat": "critDMG_",
         "baseStat": 12
     },
     "BlackcliffLongsword": {
@@ -458,7 +458,7 @@ export default {
         "matStrongEnemy": "Fatui Agents",
         "matWeakEnemy": "Hilichurl Archers",
         "baseATK": 44,
-        "stat": "CRIT DMG",
+        "stat": "critDMG_",
         "baseStat": 8
     },
     "BlackcliffPole": {
@@ -469,7 +469,7 @@ export default {
         "matStrongEnemy": "Fatui Cicin Mages",
         "matWeakEnemy": "Fatui",
         "baseATK": 42,
-        "stat": "CRIT DMG",
+        "stat": "critDMG_",
         "baseStat": 12
     },
     "BlackcliffSlasher": {
@@ -480,7 +480,7 @@ export default {
         "matStrongEnemy": "Fatui Cicin Mages",
         "matWeakEnemy": "Fatui",
         "baseATK": 42,
-        "stat": "CRIT DMG",
+        "stat": "critDMG_",
         "baseStat": 12
     },
     "BlackcliffWarbow": {
@@ -491,7 +491,7 @@ export default {
         "matStrongEnemy": "Fatui Agents",
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 44,
-        "stat": "CRIT DMG",
+        "stat": "critDMG_",
         "baseStat": 8
     },
     "CinnabarSpindle": {
@@ -502,7 +502,7 @@ export default {
         "matStrongEnemy": "Ruin Guards",
         "matWeakEnemy": "Hilichurls",
         "baseATK": 41,
-        "stat": "DEF",
+        "stat": "def_",
         "baseStat": 15
     },
     "CompoundBow": {
@@ -513,7 +513,7 @@ export default {
         "matStrongEnemy": "Geovishaps",
         "matWeakEnemy": "Fatui",
         "baseATK": 41,
-        "stat": "Physical DMG Bonus",
+        "stat": "physical_dmg_",
         "baseStat": 15
     },
     "CrescentPike": {
@@ -524,7 +524,7 @@ export default {
         "matStrongEnemy": "Fatui Agents",
         "matWeakEnemy": "Treasure Hoarders",
         "baseATK": 44,
-        "stat": "Physical DMG Bonus",
+        "stat": "physical_dmg_",
         "baseStat": 7.5
     },
     "Deathmatch": {
@@ -535,7 +535,7 @@ export default {
         "matStrongEnemy": "Abyss Mages",
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 41,
-        "stat": "CRIT Rate",
+        "stat": "critRate_",
         "baseStat": 8
     },
     "DodocoTales": {
@@ -546,7 +546,7 @@ export default {
         "matStrongEnemy": "Abyss Mages",
         "matWeakEnemy": "Hilichurls",
         "baseATK": 41,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 12
     },
     "DragonsBane": {
@@ -557,7 +557,7 @@ export default {
         "matStrongEnemy": "Fatui Cicin Mages",
         "matWeakEnemy": "Samachurls",
         "baseATK": 41,
-        "stat": "Elemental Mastery",
+        "stat": "eleMas",
         "baseStat": 48
     },
     "DragonspineSpear": {
@@ -568,7 +568,7 @@ export default {
         "matStrongEnemy": "Fatui Cicin Mages",
         "matWeakEnemy": "Fatui",
         "baseATK": 41,
-        "stat": "Physical DMG Bonus",
+        "stat": "physical_dmg_",
         "baseStat": 15
     },
     "EndOfTheLine": {
@@ -579,7 +579,7 @@ export default {
         "matStrongEnemy": "Activated Fungi",
         "matWeakEnemy": "Fungi",
         "baseATK": 42,
-        "stat": "Energy Recharge",
+        "stat": "enerRech_",
         "baseStat": 10
     },
     "EyeOfPerception": {
@@ -590,7 +590,7 @@ export default {
         "matStrongEnemy": "Fatui Cicin Mages",
         "matWeakEnemy": "Hilichurls",
         "baseATK": 41,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 12
     },
     "FadingTwilight": {
@@ -601,7 +601,7 @@ export default {
         "matStrongEnemy": "Fatui Agents",
         "matWeakEnemy": "Samachurls",
         "baseATK": 44,
-        "stat": "Energy Recharge",
+        "stat": "enerRech_",
         "baseStat": 6.7
     },
     "FavoniusCodex": {
@@ -612,7 +612,7 @@ export default {
         "matStrongEnemy": "Big Hilichurls",
         "matWeakEnemy": "Samachurls",
         "baseATK": 42,
-        "stat": "Energy Recharge",
+        "stat": "enerRech_",
         "baseStat": 10
     },
     "FavoniusGreatsword": {
@@ -623,7 +623,7 @@ export default {
         "matStrongEnemy": "Ruin Guards",
         "matWeakEnemy": "Fatui",
         "baseATK": 41,
-        "stat": "Energy Recharge",
+        "stat": "enerRech_",
         "baseStat": 13.3
     },
     "FavoniusLance": {
@@ -634,7 +634,7 @@ export default {
         "matStrongEnemy": "Ruin Guards",
         "matWeakEnemy": "Slimes",
         "baseATK": 44,
-        "stat": "Energy Recharge",
+        "stat": "enerRech_",
         "baseStat": 6.7
     },
     "FavoniusSword": {
@@ -645,7 +645,7 @@ export default {
         "matStrongEnemy": "Big Hilichurls",
         "matWeakEnemy": "Hilichurl Archers",
         "baseATK": 41,
-        "stat": "Energy Recharge",
+        "stat": "enerRech_",
         "baseStat": 13.3
     },
     "FavoniusWarbow": {
@@ -656,7 +656,7 @@ export default {
         "matStrongEnemy": "Ruin Guards",
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 41,
-        "stat": "Energy Recharge",
+        "stat": "enerRech_",
         "baseStat": 13.3
     },
     "FesteringDesire": {
@@ -667,7 +667,7 @@ export default {
         "matStrongEnemy": "Big Hilichurls",
         "matWeakEnemy": "Fatui",
         "baseATK": 42,
-        "stat": "Energy Recharge",
+        "stat": "enerRech_",
         "baseStat": 10
     },
     "ForestRegalia": {
@@ -678,7 +678,7 @@ export default {
         "matStrongEnemy": "Ruin Drakes",
         "matWeakEnemy": "Eremites",
         "baseATK": 44,
-        "stat": "Energy Recharge",
+        "stat": "enerRech_",
         "baseStat": 6.7
     },
     "Frostbearer": {
@@ -689,7 +689,7 @@ export default {
         "matStrongEnemy": "Ruin Guards",
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 42,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 9
     },
     "FruitOfFulfillment": {
@@ -700,7 +700,7 @@ export default {
         "matStrongEnemy": "Black Serpents",
         "matWeakEnemy": "Fungi",
         "baseATK": 42,
-        "stat": "Energy Recharge",
+        "stat": "enerRech_",
         "baseStat": 10
     },
     "HakushinRing": {
@@ -711,7 +711,7 @@ export default {
         "matStrongEnemy": "Mirror Maidens",
         "matWeakEnemy": "Samachurls",
         "baseATK": 44,
-        "stat": "Energy Recharge",
+        "stat": "enerRech_",
         "baseStat": 6.7
     },
     "Hamayumi": {
@@ -722,7 +722,7 @@ export default {
         "matStrongEnemy": "Mirror Maidens",
         "matWeakEnemy": "Hilichurl Archers",
         "baseATK": 41,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 12
     },
     "IronSting": {
@@ -733,7 +733,7 @@ export default {
         "matStrongEnemy": "Geovishaps",
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 42,
-        "stat": "Elemental Mastery",
+        "stat": "eleMas",
         "baseStat": 36
     },
     "KagotsurubeIsshin": {
@@ -744,7 +744,7 @@ export default {
         "matStrongEnemy": "Black Serpents",
         "matWeakEnemy": "Specters",
         "baseATK": 42,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 9
     },
     "KatsuragikiriNagamasa": {
@@ -755,7 +755,7 @@ export default {
         "matStrongEnemy": "Ruin Sentinels",
         "matWeakEnemy": "Nobushi",
         "baseATK": 42,
-        "stat": "Energy Recharge",
+        "stat": "enerRech_",
         "baseStat": 10
     },
     "KingsSquire": {
@@ -766,7 +766,7 @@ export default {
         "matStrongEnemy": "Activated Fungi",
         "matWeakEnemy": "Hilichurl Archers",
         "baseATK": 41,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 12
     },
     "KitainCrossSpear": {
@@ -777,7 +777,7 @@ export default {
         "matStrongEnemy": "Ruin Sentinels",
         "matWeakEnemy": "Treasure Hoarders",
         "baseATK": 44,
-        "stat": "Elemental Mastery",
+        "stat": "eleMas",
         "baseStat": 24
     },
     "LionsRoar": {
@@ -788,7 +788,7 @@ export default {
         "matStrongEnemy": "Fatui Agents",
         "matWeakEnemy": "Treasure Hoarders",
         "baseATK": 42,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 9
     },
     "LithicBlade": {
@@ -799,7 +799,7 @@ export default {
         "matStrongEnemy": "Fatui Agents",
         "matWeakEnemy": "Hilichurl Archers",
         "baseATK": 42,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 9
     },
     "LithicSpear": {
@@ -810,7 +810,7 @@ export default {
         "matStrongEnemy": "Geovishaps",
         "matWeakEnemy": "Hilichurl Archers",
         "baseATK": 44,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 6
     },
     "LuxuriousSeaLord": {
@@ -821,7 +821,7 @@ export default {
         "matStrongEnemy": "Geovishaps",
         "matWeakEnemy": "Slimes",
         "baseATK": 41,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 12
     },
     "MailedFlower": {
@@ -832,7 +832,7 @@ export default {
         "matStrongEnemy": "Consecrated Beasts",
         "matWeakEnemy": "Specters",
         "baseATK": 44,
-        "stat": "Elemental Mastery",
+        "stat": "eleMas",
         "baseStat": 24
     },
     "MakhairaAquamarine": {
@@ -843,7 +843,7 @@ export default {
         "matStrongEnemy": "Ruin Drakes",
         "matWeakEnemy": "Treasure Hoarders",
         "baseATK": 42,
-        "stat": "Elemental Mastery",
+        "stat": "eleMas",
         "baseStat": 36
     },
     "MappaMare": {
@@ -854,7 +854,7 @@ export default {
         "matStrongEnemy": "Geovishaps",
         "matWeakEnemy": "Slimes",
         "baseATK": 44,
-        "stat": "Elemental Mastery",
+        "stat": "eleMas",
         "baseStat": 24
     },
     "MissiveWindspear": {
@@ -865,7 +865,7 @@ export default {
         "matStrongEnemy": "Black Serpents",
         "matWeakEnemy": "Slimes",
         "baseATK": 42,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 9
     },
     "MitternachtsWaltz": {
@@ -876,7 +876,7 @@ export default {
         "matStrongEnemy": "Big Hilichurls",
         "matWeakEnemy": "Treasure Hoarders",
         "baseATK": 42,
-        "stat": "Physical DMG Bonus",
+        "stat": "physical_dmg_",
         "baseStat": 11.3
     },
     "Moonpiercer": {
@@ -887,7 +887,7 @@ export default {
         "matStrongEnemy": "Ruin Drakes",
         "matWeakEnemy": "Fatui",
         "baseATK": 44,
-        "stat": "Elemental Mastery",
+        "stat": "eleMas",
         "baseStat": 24
     },
     "MouunsMoon": {
@@ -898,7 +898,7 @@ export default {
         "matStrongEnemy": "Mirror Maidens",
         "matWeakEnemy": "Specters",
         "baseATK": 44,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 6
     },
     "OathswornEye": {
@@ -909,7 +909,7 @@ export default {
         "matStrongEnemy": "Riftwolves",
         "matWeakEnemy": "Specters",
         "baseATK": 44,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 6
     },
     "Predator": {
@@ -920,7 +920,7 @@ export default {
         "matStrongEnemy": "Mirror Maidens",
         "matWeakEnemy": "Hilichurl Archers",
         "baseATK": 42,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 9
     },
     "PrototypeAmber": {
@@ -931,7 +931,7 @@ export default {
         "matStrongEnemy": "Fatui Cicin Mages",
         "matWeakEnemy": "Hilichurl Archers",
         "baseATK": 42,
-        "stat": "HP",
+        "stat": "hp_",
         "baseStat": 9
     },
     "PrototypeArchaic": {
@@ -942,7 +942,7 @@ export default {
         "matStrongEnemy": "Geovishaps",
         "matWeakEnemy": "Hilichurls",
         "baseATK": 44,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 6
     },
     "PrototypeCrescent": {
@@ -953,7 +953,7 @@ export default {
         "matStrongEnemy": "Fatui Cicin Mages",
         "matWeakEnemy": "Treasure Hoarders",
         "baseATK": 42,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 9
     },
     "PrototypeRancour": {
@@ -964,7 +964,7 @@ export default {
         "matStrongEnemy": "Fatui Cicin Mages",
         "matWeakEnemy": "Fatui",
         "baseATK": 44,
-        "stat": "Physical DMG Bonus",
+        "stat": "physical_dmg_",
         "baseStat": 7.5
     },
     "PrototypeStarglitter": {
@@ -975,7 +975,7 @@ export default {
         "matStrongEnemy": "Geovishaps",
         "matWeakEnemy": "Hilichurls",
         "baseATK": 42,
-        "stat": "Energy Recharge",
+        "stat": "enerRech_",
         "baseStat": 10
     },
     "Rainslasher": {
@@ -986,7 +986,7 @@ export default {
         "matStrongEnemy": "Fatui Cicin Mages",
         "matWeakEnemy": "Samachurls",
         "baseATK": 42,
-        "stat": "Elemental Mastery",
+        "stat": "eleMas",
         "baseStat": 36
     },
     "RoyalBow": {
@@ -997,7 +997,7 @@ export default {
         "matStrongEnemy": "Ruin Guards",
         "matWeakEnemy": "Samachurls",
         "baseATK": 42,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 9
     },
     "RoyalGreatsword": {
@@ -1008,7 +1008,7 @@ export default {
         "matStrongEnemy": "Ruin Guards",
         "matWeakEnemy": "Slimes",
         "baseATK": 44,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 6
     },
     "RoyalGrimoire": {
@@ -1019,7 +1019,7 @@ export default {
         "matStrongEnemy": "Big Hilichurls",
         "matWeakEnemy": "Fatui",
         "baseATK": 44,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 6
     },
     "RoyalLongsword": {
@@ -1030,7 +1030,7 @@ export default {
         "matStrongEnemy": "Big Hilichurls",
         "matWeakEnemy": "Hilichurl Archers",
         "baseATK": 42,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 9
     },
     "RoyalSpear": {
@@ -1041,7 +1041,7 @@ export default {
         "matStrongEnemy": "Fatui Cicin Mages",
         "matWeakEnemy": "Fatui",
         "baseATK": 44,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 6
     },
     "Rust": {
@@ -1052,7 +1052,7 @@ export default {
         "matStrongEnemy": "Fatui Agents",
         "matWeakEnemy": "Hilichurls",
         "baseATK": 42,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 9
     },
     "SacrificialBow": {
@@ -1063,7 +1063,7 @@ export default {
         "matStrongEnemy": "Abyss Mages",
         "matWeakEnemy": "Slimes",
         "baseATK": 44,
-        "stat": "Energy Recharge",
+        "stat": "enerRech_",
         "baseStat": 6.7
     },
     "SacrificialFragments": {
@@ -1074,7 +1074,7 @@ export default {
         "matStrongEnemy": "Ruin Guards",
         "matWeakEnemy": "Treasure Hoarders",
         "baseATK": 41,
-        "stat": "Elemental Mastery",
+        "stat": "eleMas",
         "baseStat": 48
     },
     "SacrificialGreatsword": {
@@ -1085,7 +1085,7 @@ export default {
         "matStrongEnemy": "Abyss Mages",
         "matWeakEnemy": "Hilichurl Archers",
         "baseATK": 44,
-        "stat": "Energy Recharge",
+        "stat": "enerRech_",
         "baseStat": 6.7
     },
     "SacrificialSword": {
@@ -1096,7 +1096,7 @@ export default {
         "matStrongEnemy": "Ruin Guards",
         "matWeakEnemy": "Samachurls",
         "baseATK": 41,
-        "stat": "Energy Recharge",
+        "stat": "enerRech_",
         "baseStat": 13.3
     },
     "SapwoodBlade": {
@@ -1107,7 +1107,7 @@ export default {
         "matStrongEnemy": "Ruin Drakes",
         "matWeakEnemy": "Eremites",
         "baseATK": 44,
-        "stat": "Energy Recharge",
+        "stat": "enerRech_",
         "baseStat": 6.7
     },
     "SerpentSpine": {
@@ -1118,7 +1118,7 @@ export default {
         "matStrongEnemy": "Geovishaps",
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 42,
-        "stat": "CRIT Rate",
+        "stat": "critRate_",
         "baseStat": 6
     },
     "SnowTombedStarsilver": {
@@ -1129,7 +1129,7 @@ export default {
         "matStrongEnemy": "Big Hilichurls",
         "matWeakEnemy": "Slimes",
         "baseATK": 44,
-        "stat": "Physical DMG Bonus",
+        "stat": "physical_dmg_",
         "baseStat": 7.5
     },
     "SolarPearl": {
@@ -1140,7 +1140,7 @@ export default {
         "matStrongEnemy": "Fatui Agents",
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 42,
-        "stat": "CRIT Rate",
+        "stat": "critRate_",
         "baseStat": 6
     },
     "SwordOfDescension": {
@@ -1151,7 +1151,7 @@ export default {
         "matStrongEnemy": "Abyss Mages",
         "matWeakEnemy": "Treasure Hoarders",
         "baseATK": 39,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 7.7
     },
     "TheAlleyFlash": {
@@ -1162,7 +1162,7 @@ export default {
         "matStrongEnemy": "Big Hilichurls",
         "matWeakEnemy": "Samachurls",
         "baseATK": 45,
-        "stat": "Elemental Mastery",
+        "stat": "eleMas",
         "baseStat": 12
     },
     "TheBell": {
@@ -1173,7 +1173,7 @@ export default {
         "matStrongEnemy": "Big Hilichurls",
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 42,
-        "stat": "HP",
+        "stat": "hp_",
         "baseStat": 9
     },
     "TheBlackSword": {
@@ -1184,7 +1184,7 @@ export default {
         "matStrongEnemy": "Abyss Mages",
         "matWeakEnemy": "Slimes",
         "baseATK": 42,
-        "stat": "CRIT Rate",
+        "stat": "critRate_",
         "baseStat": 6
     },
     "TheFlute": {
@@ -1195,7 +1195,7 @@ export default {
         "matStrongEnemy": "Abyss Mages",
         "matWeakEnemy": "Slimes",
         "baseATK": 42,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 9
     },
     "TheStringless": {
@@ -1206,7 +1206,7 @@ export default {
         "matStrongEnemy": "Big Hilichurls",
         "matWeakEnemy": "Hilichurl Archers",
         "baseATK": 42,
-        "stat": "Elemental Mastery",
+        "stat": "eleMas",
         "baseStat": 36
     },
     "TheViridescentHunt": {
@@ -1217,7 +1217,7 @@ export default {
         "matStrongEnemy": "Big Hilichurls",
         "matWeakEnemy": "Hilichurl Archers",
         "baseATK": 42,
-        "stat": "CRIT Rate",
+        "stat": "critRate_",
         "baseStat": 6
     },
     "TheWidsith": {
@@ -1228,7 +1228,7 @@ export default {
         "matStrongEnemy": "Abyss Mages",
         "matWeakEnemy": "Hilichurls",
         "baseATK": 42,
-        "stat": "CRIT DMG",
+        "stat": "critDMG_",
         "baseStat": 12
     },
     "ToukabouShigure": {
@@ -1239,7 +1239,7 @@ export default {
         "matStrongEnemy": "Primal Constructs",
         "matWeakEnemy": "Nobushi",
         "baseATK": 42,
-        "stat": "Elemental Mastery",
+        "stat": "eleMas",
         "baseStat": 36
     },
     "WanderingEvenstar": {
@@ -1250,7 +1250,7 @@ export default {
         "matStrongEnemy": "Activated Fungi",
         "matWeakEnemy": "Fungi",
         "baseATK": 42,
-        "stat": "Elemental Mastery",
+        "stat": "eleMas",
         "baseStat": 36
     },
     "WavebreakersFin": {
@@ -1261,7 +1261,7 @@ export default {
         "matStrongEnemy": "Riftwolves",
         "matWeakEnemy": "Nobushi",
         "baseATK": 45,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 3
     },
     "Whiteblind": {
@@ -1272,7 +1272,7 @@ export default {
         "matStrongEnemy": "Fatui Agents",
         "matWeakEnemy": "Treasure Hoarders",
         "baseATK": 42,
-        "stat": "DEF",
+        "stat": "def_",
         "baseStat": 11.3
     },
     "WindblumeOde": {
@@ -1283,7 +1283,7 @@ export default {
         "matStrongEnemy": "Abyss Mages",
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 42,
-        "stat": "Elemental Mastery",
+        "stat": "eleMas",
         "baseStat": 36
     },
     "WineAndSong": {
@@ -1294,7 +1294,7 @@ export default {
         "matStrongEnemy": "Abyss Mages",
         "matWeakEnemy": "Treasure Hoarders",
         "baseATK": 44,
-        "stat": "Energy Recharge",
+        "stat": "enerRech_",
         "baseStat": 6.7
     },
     "XiphosMoonlight": {
@@ -1305,7 +1305,7 @@ export default {
         "matStrongEnemy": "Primal Constructs",
         "matWeakEnemy": "Eremites",
         "baseATK": 42,
-        "stat": "Elemental Mastery",
+        "stat": "eleMas",
         "baseStat": 36
     },
     "BlackTassel": {
@@ -1316,7 +1316,7 @@ export default {
         "matStrongEnemy": "Geovishaps",
         "matWeakEnemy": "Hilichurl Archers",
         "baseATK": 38,
-        "stat": "HP",
+        "stat": "hp_",
         "baseStat": 10.2
     },
     "BloodtaintedGreatsword": {
@@ -1327,7 +1327,7 @@ export default {
         "matStrongEnemy": "Abyss Mages",
         "matWeakEnemy": "Hilichurl Archers",
         "baseATK": 38,
-        "stat": "Elemental Mastery",
+        "stat": "eleMas",
         "baseStat": 41
     },
     "CoolSteel": {
@@ -1338,7 +1338,7 @@ export default {
         "matStrongEnemy": "Big Hilichurls",
         "matWeakEnemy": "Hilichurl Archers",
         "baseATK": 39,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 7.7
     },
     "DarkIronSword": {
@@ -1349,7 +1349,7 @@ export default {
         "matStrongEnemy": "Fatui Agents",
         "matWeakEnemy": "Hilichurls",
         "baseATK": 39,
-        "stat": "Elemental Mastery",
+        "stat": "eleMas",
         "baseStat": 31
     },
     "DebateClub": {
@@ -1360,7 +1360,7 @@ export default {
         "matStrongEnemy": "Fatui Cicin Mages",
         "matWeakEnemy": "Hilichurls",
         "baseATK": 39,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 7.7
     },
     "EmeraldOrb": {
@@ -1371,7 +1371,7 @@ export default {
         "matStrongEnemy": "Fatui Agents",
         "matWeakEnemy": "Treasure Hoarders",
         "baseATK": 40,
-        "stat": "Elemental Mastery",
+        "stat": "eleMas",
         "baseStat": 20
     },
     "FerrousShadow": {
@@ -1382,7 +1382,7 @@ export default {
         "matStrongEnemy": "Big Hilichurls",
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 39,
-        "stat": "HP",
+        "stat": "hp_",
         "baseStat": 7.7
     },
     "FilletBlade": {
@@ -1393,7 +1393,7 @@ export default {
         "matStrongEnemy": "Fatui Cicin Mages",
         "matWeakEnemy": "Treasure Hoarders",
         "baseATK": 39,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 7.7
     },
     "Halberd": {
@@ -1404,7 +1404,7 @@ export default {
         "matStrongEnemy": "Fatui Cicin Mages",
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 40,
-        "stat": "ATK",
+        "stat": "atk_",
         "baseStat": 5.1
     },
     "HarbingerOfDawn": {
@@ -1415,7 +1415,7 @@ export default {
         "matStrongEnemy": "Abyss Mages",
         "matWeakEnemy": "Slimes",
         "baseATK": 39,
-        "stat": "CRIT DMG",
+        "stat": "critDMG_",
         "baseStat": 10.2
     },
     "MagicGuide": {
@@ -1426,7 +1426,7 @@ export default {
         "matStrongEnemy": "Big Hilichurls",
         "matWeakEnemy": "Slimes",
         "baseATK": 38,
-        "stat": "Elemental Mastery",
+        "stat": "eleMas",
         "baseStat": 41
     },
     "Messenger": {
@@ -1437,7 +1437,7 @@ export default {
         "matStrongEnemy": "Fatui Cicin Mages",
         "matWeakEnemy": "Treasure Hoarders",
         "baseATK": 40,
-        "stat": "CRIT DMG",
+        "stat": "critDMG_",
         "baseStat": 6.8
     },
     "OtherworldlyStory": {
@@ -1448,7 +1448,7 @@ export default {
         "matStrongEnemy": "Ruin Guards",
         "matWeakEnemy": "Hilichurls",
         "baseATK": 39,
-        "stat": "Energy Recharge",
+        "stat": "enerRech_",
         "baseStat": 8.5
     },
     "RavenBow": {
@@ -1459,7 +1459,7 @@ export default {
         "matStrongEnemy": "Big Hilichurls",
         "matWeakEnemy": "Hilichurl Archers",
         "baseATK": 40,
-        "stat": "Elemental Mastery",
+        "stat": "eleMas",
         "baseStat": 20
     },
     "RecurveBow": {
@@ -1470,7 +1470,7 @@ export default {
         "matStrongEnemy": "Ruin Guards",
         "matWeakEnemy": "Samachurls",
         "baseATK": 38,
-        "stat": "HP",
+        "stat": "hp_",
         "baseStat": 10.2
     },
     "SharpshootersOath": {
@@ -1481,7 +1481,7 @@ export default {
         "matStrongEnemy": "Abyss Mages",
         "matWeakEnemy": "Slimes",
         "baseATK": 39,
-        "stat": "CRIT DMG",
+        "stat": "critDMG_",
         "baseStat": 10.2
     },
     "SkyriderGreatsword": {
@@ -1492,7 +1492,7 @@ export default {
         "matStrongEnemy": "Geovishaps",
         "matWeakEnemy": "Treasure Hoarders",
         "baseATK": 39,
-        "stat": "Physical DMG Bonus",
+        "stat": "physical_dmg_",
         "baseStat": 9.6
     },
     "SkyriderSword": {
@@ -1503,7 +1503,7 @@ export default {
         "matStrongEnemy": "Geovishaps",
         "matWeakEnemy": "Fatui",
         "baseATK": 38,
-        "stat": "Energy Recharge",
+        "stat": "enerRech_",
         "baseStat": 11.3
     },
     "Slingshot": {
@@ -1514,7 +1514,7 @@ export default {
         "matStrongEnemy": "Fatui Agents",
         "matWeakEnemy": "Hilichurls",
         "baseATK": 38,
-        "stat": "CRIT Rate",
+        "stat": "critRate_",
         "baseStat": 6.8
     },
     "ThrillingTalesOfDragonSlayers": {
@@ -1525,7 +1525,7 @@ export default {
         "matStrongEnemy": "Abyss Mages",
         "matWeakEnemy": "Samachurls",
         "baseATK": 39,
-        "stat": "HP",
+        "stat": "hp_",
         "baseStat": 7.7
     },
     "TravelersHandySword": {
@@ -1536,7 +1536,7 @@ export default {
         "matStrongEnemy": "Ruin Guards",
         "matWeakEnemy": "Samachurls",
         "baseATK": 40,
-        "stat": "DEF",
+        "stat": "def_",
         "baseStat": 6.4
     },
     "TwinNephrite": {
@@ -1547,7 +1547,7 @@ export default {
         "matStrongEnemy": "Fatui Cicin Mages",
         "matWeakEnemy": "Fatui",
         "baseATK": 40,
-        "stat": "CRIT Rate",
+        "stat": "critRate_",
         "baseStat": 3.4
     },
     "WhiteIronGreatsword": {
@@ -1558,7 +1558,7 @@ export default {
         "matStrongEnemy": "Ruin Guards",
         "matWeakEnemy": "Slimes",
         "baseATK": 39,
-        "stat": "DEF",
+        "stat": "def_",
         "baseStat": 9.6
     },
     "WhiteTassel": {
@@ -1569,7 +1569,7 @@ export default {
         "matStrongEnemy": "Fatui Agents",
         "matWeakEnemy": "Fatui",
         "baseATK": 39,
-        "stat": "CRIT Rate",
+        "stat": "critRate_",
         "baseStat": 5.1
     },
     "IronPoint": {

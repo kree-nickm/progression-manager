@@ -2,6 +2,7 @@ import GenshinWeaponData from "./gamedata/GenshinWeaponData.js";
 
 import { Renderer } from "./Renderer.js";
 import UIList from "./UIList.js";
+import Artifact from "./Artifact.js";
 import Weapon from "./Weapon.js";
 
 export default class WeaponList extends UIList
@@ -60,7 +61,7 @@ export default class WeaponList extends UIList
       label: "Stat",
       sort: {generic: {type:"string", property:"stat"}},
       dynamic: false,
-      value: item => Weapon.shorthandStat[item.stat],
+      value: item => Artifact.shorthandStat[item.stat],
     });
     
     let refinement = this.display.addField("refinement", {
@@ -249,7 +250,8 @@ export default class WeaponList extends UIList
       label: "ATK",
       tags: ["detailsOnly"],
       dynamic: true,
-      value: item => item.getStat().toFixed(item.stat=="Elemental Mastery"?0:1),
+      title: item => item.getStat(),
+      value: item => item.getStat().toFixed(item.stat=="eleMas"?0:1),
       dependencies: item => [
         {item, field:"level"},
       ],

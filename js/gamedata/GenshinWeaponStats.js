@@ -75,7 +75,7 @@ export default {
       def_: 11.26,
       physical_dmg_: 11.26,
       enerRech_: 10,
-      critRate_: 6.0004,// Decimal is an attempt to correct a discrepancy in-game.
+      critRate_: 6.00049,// Decimal is an attempt to correct a discrepancy in-game.
       critDMG_: 12,
       eleMas: 36,
     },

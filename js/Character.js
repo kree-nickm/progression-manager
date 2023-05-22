@@ -13,6 +13,49 @@ export default class Character extends GenshinItem
 {
   static templateName = "renderCharacterAsPopup";
   static templateTitleName = "renderCharacterAsPopupTitle";
+  static statBase = {
+    critRate_: 5,
+    critDMG_: 50,
+    enerRech_: 100,
+  };
+  static ascendStatProgression = {
+    '4': {
+      anemo_dmg_: [0,0,6,12,12,18,24],
+      cryo_dmg_: [0,0,6,12,12,18,24],
+      dendro_dmg_: [0,0,6,12,12,18,24],
+      electro_dmg_: [0,0,6,12,12,18,24],
+      geo_dmg_: [0,0,6,12,12,18,24],
+      hydro_dmg_: [0,0,6,12,12,18,24],
+      pyro_dmg_: [0,0,6,12,12,18,24],
+      atk_: [0,0,6,12,12,18,24],
+      hp_: [0,0,6,12,12,18,24],
+      critDMG_: null,
+      critRate_: null,
+      def_: [0,0,7.5,15,15,22.5,30],
+      physical_dmg_: [0,0,7.5,15,15,22.5,30],
+      eleMas: [0,0,24,48,48,72,96],
+      enerRech_: [0,0,6.7,13.4,13.4,20.1,26.8],
+      heal_: null,
+    },
+    '5': {
+      anemo_dmg_: [0,0,7.2,14.4,14.4,21.6,28.8],
+      cryo_dmg_: [0,0,7.2,14.4,14.4,21.6,28.8],
+      dendro_dmg_: [0,0,7.2,14.4,14.4,21.6,28.8],
+      electro_dmg_: [0,0,7.2,14.4,14.4,21.6,28.8],
+      geo_dmg_: [0,0,7.2,14.4,14.4,21.6,28.8],
+      hydro_dmg_: [0,0,7.2,14.4,14.4,21.6,28.8],
+      pyro_dmg_: [0,0,7.2,14.4,14.4,21.6,28.8],
+      atk_: [0,0,7.2,14.4,14.4,21.6,28.8],
+      hp_: [0,0,7.2,14.4,14.4,21.6,28.8],
+      critDMG_: [0,0,9.6,19.2,19.2,28.8,38.4],
+      critRate_: [0,0,4.8,9.6,9.6,14.4,19.2],
+      def_: null,
+      physical_dmg_: null,
+      eleMas: [0,0,28.8,57.6,57.6,86.4,115.2],
+      enerRech_: [0,0,8,16,16,24,32],
+      heal_: [0,0,5.5,11,11,16.5,22],
+    },
+  };
   
   static sortArtifacts(a,b)
   {
@@ -168,6 +211,8 @@ export default class Character extends GenshinItem
   get name(){ return this.loaded ? GenshinCharacterData[this.key].name : this.key; }
   get weaponType(){ return this.loaded ? GenshinCharacterData[this.key].weapon : ""; }
   get element(){ return this.loaded ? GenshinCharacterData[this.key].element : ""; }
+  get rarity(){ return this.loaded ? GenshinCharacterData[this.key].rarity : 0; }
+  get ascendStat(){ return this.loaded ? GenshinCharacterData[this.key].ascendStat : ""; }
   get bossMatType(){ return this.loaded ? GenshinCharacterData[this.key].matBoss : ""; }
   get flowerMatType(){ return this.loaded ? GenshinCharacterData[this.key].matFlower : ""; }
   get enemyMatType(){ return this.loaded ? GenshinCharacterData[this.key].matEnemy : ""; }
@@ -189,73 +234,6 @@ export default class Character extends GenshinItem
       console.warn(`${this.name} has no build '${build}'.`);
       return {};
     }
-  }
-  
-  getMaxArtifactScore(slot, buildId, level=20)
-  {
-    if(!slot)
-      return null;
-    if(!this.maxScores[slot+(buildId??'')+'#'+level])
-    {
-      let levelFactor = level / 20 * 6.8 + 1.2;
-      let builds = buildId ? [this.getBuild(buildId)] : this.getBuilds();
-      let gigaMax = 0;
-      for(let b in builds)
-      {
-        let bestSubstats = [];
-        let build = builds[b];
-        for(let s in build.artifactSubstats)
-        {
-          let value = Math.max(build.artifactSubstats[s]??0, Artifact.substatMins[s]);
-          let sort = false;
-          // If bestSubstats isn't full, just add a new element.
-          if(bestSubstats.length < 5)
-          {
-            bestSubstats.push({key:s, value:value});
-            if(bestSubstats.length == 5)
-              sort = true;
-          }
-          // If bestSubstats is full, overwrite the lowest value element if this one is higher.
-          else
-          {
-            for(let stat in bestSubstats)
-            {
-              if(bestSubstats[stat].value < value)
-              {
-                bestSubstats[stat] = {key:s, value:value};
-                sort = true;
-                break;
-              }
-            }
-          }
-          // If a change was made and bestSubstats is full, make sure it's sorted for the next one.
-          if(sort)
-            bestSubstats.sort((a,b) => a.value-b.value);
-        }
-        bestSubstats.sort((a,b) => b.value-a.value);
-        
-        let buildSlot;
-        if(slot == "flower")
-          buildSlot = {hp:0};
-        else if(slot == "plume")
-          buildSlot = {atk:0};
-        else
-          buildSlot = build[slot+'Stat'] ?? {'':0};
-        let max = 0;
-        for(let s in buildSlot)
-        {
-          let top4 = bestSubstats.filter(item => item.key != s).slice(0,4);
-          let value = buildSlot[s] * levelFactor + top4.reduce((carry,item) => carry+item.value, (top4[0]?.value??0)*5);
-          if(value > max)
-            max = value;
-        }
-        this.maxScores[slot+b+'#'+level] = max;
-        if(max > gigaMax)
-          gigaMax = max;
-      }
-      this.maxScores[slot+(buildId??'')+'#'+level] = gigaMax;
-    }
-    return this.maxScores[slot+(buildId??'')+'#'+level];
   }
   
   getMat(type, ascension=this.ascension)
@@ -384,6 +362,23 @@ export default class Character extends GenshinItem
         this.materials.crown.count >= this.getTalent(talent).matCrownCount;
   }
   
+  getStat(stat)
+  {
+    let result = Character.statBase[stat] ?? 0;
+    if(this.ascendStat == stat)
+      result += Character.ascendStatProgression[this.rarity][this.ascendStat][this.ascension];
+    if(this.weapon?.stat == stat)
+      result += this.weapon.getStat();
+    for(let slot of ['flower','plume','sands','goblet','circlet'])
+      if(this[slot+'Artifact'])
+      {
+        if(this[slot+'Artifact'].mainStatKey == stat)
+          result += this[slot+'Artifact'].mainStatValue;
+        result += this[slot+'Artifact']?.getSubstatSum(stat) ?? 0;
+      }
+    return result;
+  }
+  
   getRelatedItems()
   {
     let related = {
@@ -400,100 +395,76 @@ export default class Character extends GenshinItem
     return related;
   }
   
+  getMaxArtifactScore(slot, buildId, level=20)
+  {
+    if(!slot)
+      return null;
+    if(!this.maxScores[slot+(buildId??'')+'#'+level])
+    {
+      let levelFactor = level / 20 * 6.8 + 1.2;
+      let builds = buildId ? [this.getBuild(buildId)] : this.getBuilds();
+      let gigaMax = 0;
+      for(let b in builds)
+      {
+        let bestSubstats = [];
+        let build = builds[b];
+        for(let s in build.artifactSubstats)
+        {
+          let value = Math.max(build.artifactSubstats[s]??0, Artifact.substatMins[s]);
+          let sort = false;
+          // If bestSubstats isn't full, just add a new element.
+          if(bestSubstats.length < 5)
+          {
+            bestSubstats.push({key:s, value:value});
+            if(bestSubstats.length == 5)
+              sort = true;
+          }
+          // If bestSubstats is full, overwrite the lowest value element if this one is higher.
+          else
+          {
+            for(let stat in bestSubstats)
+            {
+              if(bestSubstats[stat].value < value)
+              {
+                bestSubstats[stat] = {key:s, value:value};
+                sort = true;
+                break;
+              }
+            }
+          }
+          // If a change was made and bestSubstats is full, make sure it's sorted for the next one.
+          if(sort)
+            bestSubstats.sort((a,b) => a.value-b.value);
+        }
+        bestSubstats.sort((a,b) => b.value-a.value);
+        
+        let buildSlot;
+        if(slot == "flower")
+          buildSlot = {hp:0};
+        else if(slot == "plume")
+          buildSlot = {atk:0};
+        else
+          buildSlot = build[slot+'Stat'] ?? {'':0};
+        let max = 0;
+        for(let s in buildSlot)
+        {
+          let top4 = bestSubstats.filter(item => item.key != s).slice(0,4);
+          let value = buildSlot[s] * levelFactor + top4.reduce((carry,item) => carry+item.value, (top4[0]?.value??0)*5);
+          if(value > max)
+            max = value;
+        }
+        this.maxScores[slot+b+'#'+level] = max;
+        if(max > gigaMax)
+          gigaMax = max;
+      }
+      this.maxScores[slot+(buildId??'')+'#'+level] = gigaMax;
+    }
+    return this.maxScores[slot+(buildId??'')+'#'+level];
+  }
+  
   getArtifactSetPrio(setKey, build)
   {
     return this.getBuild(build).artifactSets?.[setKey] ? 1 : 0;
-  }
-  
-  getRenderData()
-  {
-    let result = {};
-    if(this.weapon)
-    {
-      let weaponData = this.weapon.getRenderData();
-      result.weaponName = {
-        group: "Equipped Weapon",
-        label: "Equipped",
-        value: this.weapon.name,
-        classes: {
-          "material": true,
-          "q1": this.weapon.quality == 1,
-          "q2": this.weapon.quality == 2,
-          "q3": this.weapon.quality == 3,
-          "q4": this.weapon.quality == 4,
-          "q5": this.weapon.quality == 5,
-        },
-        dependencies: [
-          {item:this.weapon, field:"location"},
-          {type:"weapon"},
-        ],
-      };
-      result.weaponRef = weaponData.refinement;
-      result.weaponRef.group = "Equipped Weapon";
-      result.weaponRef.dependencies.push({item:this.weapon, field:"location"}, {type:"weapon"});
-      result.weaponPhase = weaponData.ascension;
-      result.weaponPhase.group = "Equipped Weapon";
-      result.weaponPhase.dependencies.push({item:this.weapon, field:"location"}, {type:"weapon"});
-      result.weaponLevel = weaponData.level;
-      result.weaponLevel.group = "Equipped Weapon";
-      result.weaponLevel.dependencies.push({item:this.weapon, field:"location"}, {type:"weapon"});
-      result.weaponForgeryMat = weaponData.forgeryMat;
-      result.weaponForgeryMat.group = "Equipped Weapon";
-      result.weaponForgeryMat.dependencies.push({item:this.weapon, field:"location"}, {type:"weapon"});
-      result.weaponStrongMat = weaponData.strongMat;
-      result.weaponStrongMat.group = "Equipped Weapon";
-      result.weaponStrongMat.dependencies.push({item:this.weapon, field:"location"}, {type:"weapon"});
-      result.weaponWeakMat = weaponData.weakMat;
-      result.weaponWeakMat.group = "Equipped Weapon";
-      result.weaponWeakMat.dependencies.push({item:this.weapon, field:"location"}, {type:"weapon"});
-    }
-    else
-    {
-      result.weaponName = {
-        group: "Equipped Weapon",
-        label: "Equipped",
-        value: "",
-        dependencies: [{type:"weapon"}],
-      };
-      result.weaponRef = {
-        group: "Equipped Weapon",
-        label: "Ref",
-        value: "",
-        dependencies: [{type:"weapon"}],
-      };
-      result.weaponPhase = {
-        group: "Equipped Weapon",
-        label: "Phase",
-        value: "",
-        dependencies: [{type:"weapon"}],
-      };
-      result.weaponLevel = {
-        group: "Equipped Weapon",
-        label: "Level",
-        value: "",
-        dependencies: [{type:"weapon"}],
-      };
-      result.weaponForgeryMat = {
-        group: "Equipped Weapon",
-        label: "Forgery Rewards",
-        value: "",
-        dependencies: [{type:"weapon"}],
-      };
-      result.weaponStrongMat = {
-        group: "Equipped Weapon",
-        label: "Strong Drops",
-        value: "",
-        dependencies: [{type:"weapon"}],
-      };
-      result.weaponWeakMat = {
-        group: "Equipped Weapon",
-        label: "Weak Drops",
-        value: "",
-        dependencies: [{type:"weapon"}],
-      };
-    }
-    
-    return result;
   }
   
   addPopupEventHandlers(popupBody)

@@ -4,6 +4,7 @@ import { Renderer } from "./Renderer.js";
 import UIList from "./UIList.js";
 import Character from "./Character.js";
 import Traveler from "./Traveler.js";
+import Artifact from "./Artifact.js";
 
 export default class CharacterList extends UIList
 {
@@ -308,6 +309,47 @@ export default class CharacterList extends UIList
           ],
         });
       }
+    }
+    
+    let ascendStat = this.display.addField("ascendStat", {
+      label: "Stat",
+      sort: {generic: {type:"string",property:"ascendStat"}},
+      tags: ["detailsOnly"],
+      dynamic: false,
+      value: item => Artifact.shorthandStat[item.ascendStat],
+    });
+    
+    for(let stat of ['critRate_','critDMG_','eleMas','enerRech_','heal_'])
+    {
+      let statCurrent = this.display.addField(stat+"Current", {
+        label: Artifact.shorthandStat[stat],
+        tags: ["detailsOnly"],
+        dynamic: true,
+        title: item => item.getStat(stat),
+        value: item => item.getStat(stat).toFixed(stat=="eleMas"?0:1),
+        dependencies: item => [
+          {item:item, field:"ascension"},
+          {item:item, field:"level"},
+          {item:item.weapon, field:"location"},
+          {item:item.weapon, field:"ascension"},
+          {item:item.weapon, field:"level"},
+          {item:item.flowerArtifact, field:"location"},
+          {item:item.flowerArtifact, field:"level"},
+          {item:item.flowerArtifact, field:"substats"},
+          {item:item.plumeArtifact, field:"location"},
+          {item:item.plumeArtifact, field:"level"},
+          {item:item.plumeArtifact, field:"substats"},
+          {item:item.sandsArtifact, field:"location"},
+          {item:item.sandsArtifact, field:"level"},
+          {item:item.sandsArtifact, field:"substats"},
+          {item:item.gobletArtifact, field:"location"},
+          {item:item.gobletArtifact, field:"level"},
+          {item:item.gobletArtifact, field:"substats"},
+          {item:item.circletArtifact, field:"location"},
+          {item:item.circletArtifact, field:"level"},
+          {item:item.circletArtifact, field:"substats"},
+        ],
+      });
     }
     /*
     let wepGroup = {label:"Equipped Weapon"};
