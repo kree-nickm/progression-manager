@@ -489,6 +489,7 @@ export default class Character extends GenshinItem
             items: this.list.viewer.lists.artifacts.items('flower').sort(Character.sortArtifacts.bind(this)),
             fields: this.list.viewer.lists.artifacts.display.fields,
             parent: this,
+            force: true,
           });
         }
         if(categories[1] == "artifactSubstats")
@@ -498,6 +499,7 @@ export default class Character extends GenshinItem
             items: this.list.viewer.lists.artifacts.items('plume').sort(Character.sortArtifacts.bind(this)),
             fields: this.list.viewer.lists.artifacts.display.fields,
             parent: this,
+            force: true,
           });
         }
         if(categories[1] == "artifactSubstats" || categories[1] == "sandsStat")
@@ -507,6 +509,7 @@ export default class Character extends GenshinItem
             items: this.list.viewer.lists.artifacts.items('sands').sort(Character.sortArtifacts.bind(this)),
             fields: this.list.viewer.lists.artifacts.display.fields,
             parent: this,
+            force: true,
           });
         }
         if(categories[1] == "artifactSubstats" || categories[1] == "gobletStat")
@@ -516,6 +519,7 @@ export default class Character extends GenshinItem
             items: this.list.viewer.lists.artifacts.items('goblet').sort(Character.sortArtifacts.bind(this)),
             fields: this.list.viewer.lists.artifacts.display.fields,
             parent: this,
+            force: true,
           });
         }
         if(categories[1] == "artifactSubstats" || categories[1] == "circletStat")
@@ -525,6 +529,7 @@ export default class Character extends GenshinItem
             items: this.list.viewer.lists.artifacts.items('circlet').sort(Character.sortArtifacts.bind(this)),
             fields: this.list.viewer.lists.artifacts.display.fields,
             parent: this,
+            force: true,
           });
         }
         this.list.viewer.store();
@@ -558,6 +563,7 @@ export default class Character extends GenshinItem
           items: item.list.items(item.slotKey).sort(Character.sortArtifacts.bind(this)),
           fields: item.list.display.fields,
           parent: this,
+          force: true,
         });
         this.list.viewer.store();
       };
