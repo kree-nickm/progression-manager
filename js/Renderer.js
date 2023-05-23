@@ -224,7 +224,7 @@ class Renderer
     }
     else
     {
-      let element = container.appendChild(document.createElement("div"));
+      let element = container.appendChild(document.createElement("template"));
       await Renderer.renderListElement(element, listKey, template, items, parent, filter, include, exclude, fields, true)
     }
     
@@ -261,7 +261,7 @@ class Renderer
       if(!groupElem.onclick)
         groupElem.onclick = event => {
           let groupName = groupElem.attributes.getNamedItem('name')?.value ?? "???";
-          groupElem.collapsed = !groupElem.collapsed; // TODO: just use classes added to element
+          groupElem.collapsed = !groupElem.collapsed;
           let groupMembers = element.querySelectorAll(`[data-group-name="${groupName}"]`);
           if(groupElem.collapsed)
           {
@@ -339,7 +339,7 @@ class Renderer
   
   static async renderNewItem(item, {include=[], exclude=[]}={})
   {
-    // TODO: Table element stuff shouldn't be hard-coded but whatever.
+    // TODO: Currently only supports adding rows to tables.
     let templates = await Renderer.getTemplates("renderItem");
     let element = document.querySelector(`.list[name='${item.list.constructor.name}']`); // TODO: Could match multiple.
     {
@@ -402,6 +402,9 @@ class Renderer
   
   static async renderItemField(element)
   {
+    if(element.needsUpdate === false)
+      return;
+    
     // Get the field name first for reference.
     let fieldName = element.attributes.getNamedItem('name')?.value;
     

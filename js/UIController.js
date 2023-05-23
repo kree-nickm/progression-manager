@@ -135,9 +135,7 @@ export default class UIController {
   {
     field = this.parseField(field);
     if(this.dependents[field.string])
-    {
       this.dependents[field.string] = this.dependents[field.string].filter(element => element != dep);
-    }
     return this;
   }
   
