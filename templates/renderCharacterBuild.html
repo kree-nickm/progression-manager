@@ -1,0 +1,66 @@
+<div class="character-build" name="{{relatedItems.buildName}}" data-template="renderCharacterBuild">
+    <h3>Artifact Sets</h3>
+    <select id="bestArtifactSets" class="form-control selectpicker" multiple="multiple">
+      {{#each relatedItems.artifactSets as |set setKey|}}
+        <option value="{{setKey}}" {{#iffave ../item setKey}}selected{{/iffave}}>{{set.name}}</option>
+      {{/each}}
+    </select>
+    
+    <hr/>
+    <h3>Artifact Stat Priorities</h3>
+    <div class="row">
+        <div class="col-6">
+            <h4>Substats</h4>
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="artifactSubstats" item=item statId="hp" value=relatedItems.buildData.artifactSubstats.hp}}
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="artifactSubstats" item=item statId="atk" value=relatedItems.buildData.artifactSubstats.atk}}
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="artifactSubstats" item=item statId="def" value=relatedItems.buildData.artifactSubstats.def}}
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="artifactSubstats" item=item statId="hp_" value=relatedItems.buildData.artifactSubstats.hp_}}
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="artifactSubstats" item=item statId="atk_" value=relatedItems.buildData.artifactSubstats.atk_}}
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="artifactSubstats" item=item statId="def_" value=relatedItems.buildData.artifactSubstats.def_}}
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="artifactSubstats" item=item statId="eleMas" value=relatedItems.buildData.artifactSubstats.eleMas}}
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="artifactSubstats" item=item statId="enerRech_" value=relatedItems.buildData.artifactSubstats.enerRech_}}
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="artifactSubstats" item=item statId="critRate_" value=relatedItems.buildData.artifactSubstats.critRate_}}
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="artifactSubstats" item=item statId="critDMG_" value=relatedItems.buildData.artifactSubstats.critDMG_}}
+            <h4>Sands Stats</h4>
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="sandsStat" item=item statId="hp_" value=relatedItems.buildData.sandsStat.hp_}}
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="sandsStat" item=item statId="atk_" value=relatedItems.buildData.sandsStat.atk_}}
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="sandsStat" item=item statId="def_" value=relatedItems.buildData.sandsStat.def_}}
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="sandsStat" item=item statId="eleMas" value=relatedItems.buildData.sandsStat.eleMas}}
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="sandsStat" item=item statId="enerRech_" value=relatedItems.buildData.sandsStat.enerRech_}}
+        </div>
+        <div class="col-6">
+            <h4>Goblet Stats</h4>
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="gobletStat" item=item statId="hp_" value=relatedItems.buildData.gobletStat.hp_}}
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="gobletStat" item=item statId="atk_" value=relatedItems.buildData.gobletStat.atk_}}
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="gobletStat" item=item statId="def_" value=relatedItems.buildData.gobletStat.def_}}
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="gobletStat" item=item statId="eleMas" value=relatedItems.buildData.gobletStat.eleMas}}
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="gobletStat" item=item statId=(concat (lower item.element) "_dmg_") value=(lookup relatedItems.buildData.gobletStat (concat (lower item.element) "_dmg_"))}}
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="gobletStat" item=item statId="physical_dmg_" value=relatedItems.buildData.gobletStat.physical_dmg_}}
+            <h4>Circlet Stats</h4>
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="circletStat" item=item statId="hp_" value=relatedItems.buildData.circletStat.hp_}}
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="circletStat" item=item statId="atk_" value=relatedItems.buildData.circletStat.atk_}}
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="circletStat" item=item statId="def_" value=relatedItems.buildData.circletStat.def_}}
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="circletStat" item=item statId="eleMas" value=relatedItems.buildData.circletStat.eleMas}}
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="circletStat" item=item statId="critRate_" value=relatedItems.buildData.circletStat.critRate_}}
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="circletStat" item=item statId="critDMG_" value=relatedItems.buildData.circletStat.critDMG_}}
+          {{> renderArtifactStatSlider build=relatedItems.buildName type="circletStat" item=item statId="heal_" value=relatedItems.buildData.circletStat.heal_}}
+        </div>
+    </div>
+    
+    <hr/>
+    <h3>Best Artifacts That You Have</h3>
+    <div class="row">
+        <h4 class="col">Flower</h4>
+        <h4 class="col">Plume</h4>
+        <h4 class="col">Sands</h4>
+        <h4 class="col">Goblet</h4>
+        <h4 class="col">Circlet</h4>
+    </div>
+    <div class="row">
+      {{> renderListAsColumn name="artifacts/flower" parent=item items=relatedItems.bestArtifacts.flower fields=relatedItems.artifactFields}}
+      {{> renderListAsColumn name="artifacts/plume" parent=item items=relatedItems.bestArtifacts.plume fields=relatedItems.artifactFields}}
+      {{> renderListAsColumn name="artifacts/sands" parent=item items=relatedItems.bestArtifacts.sands fields=relatedItems.artifactFields}}
+      {{> renderListAsColumn name="artifacts/goblet" parent=item items=relatedItems.bestArtifacts.goblet fields=relatedItems.artifactFields}}
+      {{> renderListAsColumn name="artifacts/circlet" parent=item items=relatedItems.bestArtifacts.circlet fields=relatedItems.artifactFields}}
+    </div>
+</div>

@@ -49,6 +49,7 @@ export default class Artifact extends GenshinItem
   };
   character;
   loaded = false;
+  valuable = 1;
   
   afterLoad()
   {

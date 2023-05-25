@@ -148,7 +148,7 @@ class Renderer
   static #templates = {};
   static partialsUsed = {
     'renderListAsTable': ["renderItem"],
-    'renderCharacterAsPopup': ["renderArtifactStatSlider","renderListAsColumn","renderArtifactAsCard"],
+    'renderCharacterAsPopup': ["renderCharacterBuild","renderArtifactStatSlider","renderListAsColumn","renderArtifactAsCard"],
   };
   
   static async getTemplates(...templates)
@@ -388,6 +388,7 @@ class Renderer
       wrapper: "div",
       fieldWrapper: "div",
     }, {allowProtoMethodsByDefault:true, allowProtoPropertiesByDefault:true});
+    $('.selectpicker').selectpicker();
     
     Renderer.updatePopup();
     item.addPopupEventHandlers(popupBody);

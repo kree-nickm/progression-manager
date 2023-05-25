@@ -163,7 +163,7 @@ export default class GenshinManager extends UIController
     try
     {
       data = JSON.parse(text);
-      console.log(data);
+      console.log(`Loaded JSON data:`, data);
     }
     catch
     {
@@ -191,6 +191,8 @@ export default class GenshinManager extends UIController
   
   fromGOOD(goodData)
   {
+    if(!goodData)
+      return false;
     let hasData = false;
     if(goodData.materials)
     {

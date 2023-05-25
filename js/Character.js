@@ -2,6 +2,7 @@ import GenshinLootData from "./gamedata/GenshinLootData.js";
 import GenshinPhaseData from "./gamedata/GenshinPhaseData.js";
 import GenshinTalentData from "./gamedata/GenshinTalentData.js";
 import GenshinCharacterData from "./gamedata/GenshinCharacterData.js";
+import GenshinArtifactData from "./gamedata/GenshinArtifactData.js";
 import GenshinBuilds from "./gamedata/GenshinBuilds.js";
 
 import { Renderer } from "./Renderer.js";
@@ -379,7 +380,7 @@ export default class Character extends GenshinItem
     return result;
   }
   
-  getRelatedItems()
+  getRelatedItems(buildId="default")
   {
     let related = {
       bestArtifacts: {
@@ -390,7 +391,9 @@ export default class Character extends GenshinItem
         circlet: this.list.viewer.lists.artifacts.items("circlet").sort(Character.sortArtifacts.bind(this)),
       },
       artifactFields: this.list.viewer.lists.artifacts.display.fields,
-      buildData: this.getBuilds(),
+      artifactSets: GenshinArtifactData,
+      buildData: this.getBuild(buildId),
+      buildName: buildId,
     };
     return related;
   }
@@ -469,6 +472,32 @@ export default class Character extends GenshinItem
   
   addPopupEventHandlers(popupBody)
   {
+    let artifactSets = popupBody.querySelector("#bestArtifactSets");
+    if(artifactSets && !artifactSets.onchange)
+      artifactSets.onchange = event => {
+        let build = this.getBuild();
+        let sets = [];
+        Array.from(artifactSets.selectedOptions).forEach(optionElement => {
+          sets.push(optionElement.value);
+          if(!build.artifactSets[optionElement.value])
+            build.artifactSets[optionElement.value] = {};
+        });
+        let previousSets = Object.keys(build.artifactSets);
+        previousSets.forEach(setKey => {
+          if(sets.indexOf(setKey) == -1)
+            delete build.artifactSets[setKey];
+        });
+        for(let slot of ["flower","plume","sands","goblet","circlet"])
+          Renderer.renderList2(`artifacts/${slot}`, {
+            items: this.list.viewer.lists.artifacts.items(slot).sort(Character.sortArtifacts.bind(this)),
+            fields: this.list.viewer.lists.artifacts.display.fields,
+            parent: this,
+            force: true,
+          });
+        this.update("buildData", {}, "notify");
+        this.list.viewer.store();
+      };
+    
     let statSliders = popupBody.querySelectorAll(".artifact-stat-slider");
     for(let sliderDiv of statSliders)
     {
@@ -532,6 +561,7 @@ export default class Character extends GenshinItem
             force: true,
           });
         }
+        this.update("buildData", {}, "notify");
         this.list.viewer.store();
       };
     }
@@ -558,13 +588,13 @@ export default class Character extends GenshinItem
         return false;
       }
       btn.onclick = event => {
-        item.update("location", this.key)
         Renderer.renderList2(`artifacts/${item.slotKey}`, {
           items: item.list.items(item.slotKey).sort(Character.sortArtifacts.bind(this)),
           fields: item.list.display.fields,
           parent: this,
           force: true,
         });
+        item.update("location", this.key);
         this.list.viewer.store();
       };
     }

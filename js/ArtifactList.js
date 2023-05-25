@@ -33,6 +33,19 @@ export default class ArtifactList extends UIList
   };
   elements = {};
   
+  evaluate()
+  {
+    console.log(`Evaluating all artifacts...`);
+    this.list.forEach(artifact => artifact.update("valuable", false));
+    window.viewer.lists.characters.list.forEach(character => {
+      let related = character.getRelatedItems();
+      for(let slot of ["flower","plume","sands","goblet","circlet"])
+        for(let i=0; i<5; i++)
+          related.bestArtifacts[slot][i]?.update("valuable", true);
+    });
+    console.log(`...Done.`);
+  }
+  
   setupDisplay()
   {
     let idField = this.display.addField("id", {
@@ -78,7 +91,7 @@ export default class ArtifactList extends UIList
       dynamic: true,
       title: item => "Is Locked?",
       classes: item => ({
-        "insufficient": item.getMaxCharacterScore().score < ArtifactList.minimumScore(item),
+        "insufficient": !item.valuable,
       }),
       edit: item => ({
         target: {item:item, field:"lock"},
@@ -87,6 +100,9 @@ export default class ArtifactList extends UIList
         trueClasses: ["fa-solid","fa-lock"],
         falseClasses: [],
       }),
+      dependencies: item => [
+        {item:item, field:"valuable"},
+      ],
     });
     
     let mainStatField = this.display.addField("mainStat", {
@@ -263,7 +279,7 @@ export default class ArtifactList extends UIList
         if(this.elements.selectSetAdd.value && this.elements.selectSlotAdd.value && this.elements.selectStatAdd.value && this.elements.selectRarityAdd.value)
         {
           let item = this.addGOOD({
-            id: this.list.length,
+            id: this.list.reduce((c,i) => Math.max(c,i.id), 0)+1,
             setKey: this.elements.selectSetAdd.value,
             slotKey: this.elements.selectSlotAdd.value,
             mainStatKey: this.elements.selectStatAdd.value,

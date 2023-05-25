@@ -295,7 +295,7 @@ export default class WeaponList extends UIList
         if(this.elements.selectAdd.value)
         {
           let item = this.addGOOD({
-            id: this.list.length,
+            id: this.list.reduce((c,i) => Math.max(c,i.id), 0)+1,
             key: this.elements.selectAdd.value,
             level: 1,
             refinement: 1,
