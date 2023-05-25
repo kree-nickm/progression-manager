@@ -131,6 +131,17 @@ export default {
         "stat": "critRate_",
         "baseStat": 9.6
     },
+    "JadefallsSplendor": {
+        "name": "Jadefall's Splendor",
+        "quality": 5,
+        "type": "Catalyst",
+        "matForgery": "Pillar",
+        "matStrongEnemy": "Hilichurl Rogues",
+        "matWeakEnemy": "Fungi",
+        "baseATK": 46,
+        "stat": "hp_",
+        "baseStat": 10.8
+    },
     "KagurasVerity": {
         "name": "Kagura's Verity",
         "quality": 5,
@@ -724,6 +735,17 @@ export default {
         "baseATK": 41,
         "stat": "atk_",
         "baseStat": 12
+    },
+    "IbisPiercer": {
+        "name": "Ibis Piercer",
+        "quality": 4,
+        "type": "Bow",
+        "matForgery": "Talisman",
+        "matStrongEnemy": "Hilichurl Rogues",
+        "matWeakEnemy": "Eremites",
+        "baseATK": 44,
+        "stat": "atk_",
+        "baseStat": 6
     },
     "IronSting": {
         "name": "Iron Sting",

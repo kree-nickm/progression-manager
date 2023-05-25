@@ -359,6 +359,18 @@ export default {
     matMastery: "Prosperity",
     matTrounce: "Ring Of Boreas",
   },
+  'Kirara': {
+    name: "Kirara",
+    weapon: "Sword",
+    element: "Dendro",
+    rarity: 4,
+    ascendStat: "hp_",
+    matBoss: "Baptist",
+    matFlower: "Amakumo Fruit",
+    matEnemy: "Specters",
+    matMastery: "Transience",
+    matTrounce: "Everamber",
+  },
   'Klee': {
     name: "Klee",
     weapon: "Catalyst",
