@@ -196,23 +196,58 @@ export default class GenshinManager extends UIController
     let hasData = false;
     if(goodData.materials)
     {
-      hasData |= this.lists.materials.fromGOOD(goodData.materials);
+      try
+      {
+        hasData |= this.lists.materials.fromGOOD(goodData.materials);
+      }
+      catch(x)
+      {
+        console.error("Error when loading materials from GOOD data.", x);
+      }
     }
     if(goodData.characters)
     {
-      hasData |= this.lists.characters.fromGOOD(goodData.characters);
+      try
+      {
+        hasData |= this.lists.characters.fromGOOD(goodData.characters);
+      }
+      catch(x)
+      {
+        console.error("Error when loading characters from GOOD data.", x);
+      }
     }
     if(goodData.weapons)
     {
-      hasData |= this.lists.weapons.fromGOOD(goodData.weapons);
+      try
+      {
+        hasData |= this.lists.weapons.fromGOOD(goodData.weapons);
+      }
+      catch(x)
+      {
+        console.error("Error when loading weapons from GOOD data.", x);
+      }
     }
     if(goodData.artifacts)
     {
-      hasData |= this.lists.artifacts.fromGOOD(goodData.artifacts);
+      try
+      {
+        hasData |= this.lists.artifacts.fromGOOD(goodData.artifacts);
+      }
+      catch(x)
+      {
+        console.error("Error when loading artifacts from GOOD data.", x);
+      }
     }
     if(goodData.furnitureSets)
     {
-      hasData |= this.lists.furnitureSets.fromGOOD(goodData.furnitureSets);
+      try
+      {
+        hasData |= this.lists.furnitureSets.fromGOOD(goodData.furnitureSets);
+      }
+      catch(x)
+      {
+        console.error("Error when loading furnitureSets from GOOD data.", x);
+      }
     }
     return hasData;
   }
@@ -265,6 +300,7 @@ export default class GenshinManager extends UIController
     window.localStorage.setItem("goodViewerLists", JSON.stringify(this.toGOOD()));
     window.localStorage.setItem("goodViewerSettings", this.settingsToJSON());
     window.localStorage.setItem("genshinBuilds", JSON.stringify(this.buildData));
+    console.log(`Local data saved.`);
   }
   
   retrieve()

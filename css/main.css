@@ -163,6 +163,8 @@ span.q5, .q5 > span {
   display: none;
 }
 
+/* Specific List CSS */
+
 .viewer-pane .ascension-materials {
   background-color: var(--colgroup-alt-background) !important;
 }
@@ -174,6 +176,14 @@ span.q5, .q5 > span {
 .stat-critRate_, .stat-atk_, .stat-eleMas, .stat-def_, .stat-hp,
 .stat-rating-critRate_, .stat-rating-atk_, .stat-rating-eleMas, .stat-rating-def_, .stat-rating-hp, .stat-character-rating {
   background-color: var(--column-alt-background) !important;
+}
+
+.stat-def, .stat-rating-def {
+  border-right: 1px solid black;
+}
+
+.stat-critRate_, .stat-rating-critRate_, .artifact-wanters {
+  border-left: 1px solid black;
 }
 
 .not-owned {

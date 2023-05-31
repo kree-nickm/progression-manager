@@ -77,7 +77,7 @@ handlebars.registerHelper("artifactRating", (artifact, statKey, character, conte
   else if(statKey instanceof Character)
     return artifact.getCharacterScore(statKey).toFixed(2);
   else
-    return artifact.getSubstatRating(statKey).toFixed(2);
+    return artifact.getSubstatRating(statKey).sum.toFixed(2);
 });
 handlebars.registerHelper('times', function(n, options) {
   let data = handlebars.createFrame(options.data);

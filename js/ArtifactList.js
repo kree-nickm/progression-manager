@@ -36,12 +36,37 @@ export default class ArtifactList extends UIList
   evaluate()
   {
     console.log(`Evaluating all artifacts...`);
-    this.list.forEach(artifact => artifact.update("valuable", false));
-    window.viewer.lists.characters.list.forEach(character => {
-      let related = character.getRelatedItems();
-      for(let slot of ["flower","plume","sands","goblet","circlet"])
-        for(let i=0; i<5; i++)
-          related.bestArtifacts[slot][i]?.update("valuable", true);
+    this.list.forEach(artifact => artifact.update("wanters", [], "replace"));
+    this.list.forEach(artifact => artifact.update("valuable", 0));
+    // Cycle through every character so we can access their artifact priority lists.
+    this.viewer.lists.characters.list.forEach(character => {
+      for(let buildId in character.getBuilds())
+      {
+        //let buildId = "default"; // TODO: Cycle through all builds once we have multiple.
+        let related = character.getRelatedItems(buildId);
+        // Handle each slot separately.
+        for(let slot of ["flower","plume","sands","goblet","circlet"])
+        {
+          // Mark the 5 best artifacts we have.
+          for(let i=0; i<5; i++)
+            if(related.bestArtifacts[slot][i])
+            {
+              related.bestArtifacts[slot][i].update("valuable", related.bestArtifacts[slot][i].valuable + 1);
+              related.bestArtifacts[slot][i].update("wanters", `#${i+1} for ${character.name}`, "push");
+            }
+          for(let setKey in related.buildData.artifactSets)
+          {
+            // Mark the 2 best artifacts we have for each desired set.
+            let bestOfSet = related.bestArtifacts[slot].filter(artifact => artifact.setKey == setKey);
+            for(let i=0; i<2; i++)
+              if(bestOfSet[i])
+              {
+                bestOfSet[i].update("valuable", bestOfSet[i].valuable + 1);
+                bestOfSet[i].update("wanters", `#${i+1} ${setKey} piece for ${character.name}`, "push");
+              }
+          }
+        }
+      }
     });
     console.log(`...Done.`);
   }
@@ -139,10 +164,14 @@ export default class ArtifactList extends UIList
       let substatRatingField = this.display.addField(statId+"Rating", {
         group: substatRatingGroup,
         label: Artifact.shorthandStat[statId] ?? statId,
-        sort: {func: (o,a,b) => o * (b.getSubstatRating(statId) - a.getSubstatRating(statId))},
+        sort: {func: (o,a,b) => o * (b.getSubstatRating(statId).sum - a.getSubstatRating(statId).sum)},
         columnClasses: ['stat-rating-'+statId],
         dynamic: true,
-        value: item => item.getSubstatRating(statId).toFixed(2),
+        title: item => {
+          let rating = item.getSubstatRating(statId);
+          return `${rating.base.toFixed(2)} (base) + ${rating.chance.toFixed(2)} (chance)`;
+        },
+        value: item => item.getSubstatRating(statId).sum.toFixed(2),
         dependencies: item => [
           {item:item, field:"level"},
           {item:item, field:"substats"},
@@ -150,7 +179,7 @@ export default class ArtifactList extends UIList
       });
     }
     
-    let characterScoreField = this.display.addField("characterScore", {
+    /*let characterScoreField = this.display.addField("characterScore", {
       group: substatRatingGroup,
       label: "MAX",
       labelTitle: "Maximum total weighted piece score across all of your characters.",
@@ -165,6 +194,21 @@ export default class ArtifactList extends UIList
       dependencies: item => [
         {item:item, field:"level"},
         {item:item, field:"substats"},
+      ],
+    });*/
+    
+    let characterCountField = this.display.addField("characterCount", {
+      group: substatRatingGroup,
+      label: "#",
+      labelTitle: "The number of characters that might desire this artifact.",
+      sort: {generic: {type:"number",property:"valuable"}},
+      columnClasses: ['artifact-wanters'],
+      dynamic: true,
+      title: item => item.wanters.join("\r\n"),
+      value: item => item.valuable,
+      dependencies: item => [
+        {item:item, field:"valuable"},
+        {item:item, field:"wanters"},
       ],
     });
     
@@ -189,7 +233,7 @@ export default class ArtifactList extends UIList
       label: "D",
       dynamic: true,
       dependencies: item => [
-        {item, field:"lock"},
+        {item:item, field:"lock"},
       ],
       title: item => (item.lock || item.location) ? "Unlock/unequip the artifact before deleting it." : "Delete this artifact from the list.",
       button: item => (item.lock || item.location) ? {icon: "fa-solid fa-trash-can"} : {
@@ -207,6 +251,14 @@ export default class ArtifactList extends UIList
   getUnique(item)
   {
     return `${item.setKey}${item.rarity}${item.slotKey}.${item.mainStatKey}.${item.id}`;
+  }
+  
+  
+  fromGOOD(goodData)
+  {
+    let result = super.fromGOOD(goodData);
+    this.evaluate();
+    return result;
   }
   
   createItem(goodData)
@@ -296,6 +348,17 @@ export default class ArtifactList extends UIList
           this.viewer.store();
           Renderer.renderNewItem(item);
         }
+      });
+    }
+    
+    if(!this.elements.btnEval)
+    {
+      this.elements.btnEval = this.viewer.elements[this.constructor.name].appendChild(document.createElement("button"));
+      this.elements.btnEval.classList.add("btn", "btn-primary");
+      this.elements.btnEval.innerHTML = "Evaluate Artifacts";
+      this.elements.btnEval.addEventListener("click", event => {
+        this.evaluate();
+        this.render();
       });
     }
   }

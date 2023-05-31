@@ -58,10 +58,10 @@ export default class Character extends GenshinItem
     },
   };
   
-  static sortArtifacts(a,b)
+  static sortArtifacts(buildId,a,b)
   {
-    let A = parseFloat(a.getCharacterScore(this));
-    let B = parseFloat(b.getCharacterScore(this));
+    let A = parseFloat(a.getCharacterScore(this,20,buildId));
+    let B = parseFloat(b.getCharacterScore(this,20,buildId));
     if(isNaN(A) && !isNaN(B))
       return 1;
     else if(!isNaN(A) && isNaN(B))
@@ -223,7 +223,28 @@ export default class Character extends GenshinItem
   
   getBuilds()
   {
-    return this.loaded ? (this.list.viewer.buildData[this.key] ?? {'default':{}}) : {};
+    if(this.loaded)
+    {
+      let builds = this.list.viewer.buildData[this.key] ?? {};
+      if(!builds.default)
+        builds.default = {};
+      for(let b in builds)
+      {
+        if(!builds[b].artifactSets)
+          builds[b].artifactSets = {};
+        if(!builds[b].artifactSubstats)
+          builds[b].artifactSubstats = {};
+        if(!builds[b].sandsStat)
+          builds[b].sandsStat = {};
+        if(!builds[b].gobletStat)
+          builds[b].gobletStat = {};
+        if(!builds[b].circletStat)
+          builds[b].circletStat = {};
+      }
+      return builds;
+    }
+    else
+      return {};
   }
   
   getBuild(build="default")
@@ -384,11 +405,11 @@ export default class Character extends GenshinItem
   {
     let related = {
       bestArtifacts: {
-        flower: this.list.viewer.lists.artifacts.items("flower").sort(Character.sortArtifacts.bind(this)),
-        plume: this.list.viewer.lists.artifacts.items("plume").sort(Character.sortArtifacts.bind(this)),
-        sands: this.list.viewer.lists.artifacts.items("sands").sort(Character.sortArtifacts.bind(this)),
-        goblet: this.list.viewer.lists.artifacts.items("goblet").sort(Character.sortArtifacts.bind(this)),
-        circlet: this.list.viewer.lists.artifacts.items("circlet").sort(Character.sortArtifacts.bind(this)),
+        flower: this.list.viewer.lists.artifacts.items("flower").sort(Character.sortArtifacts.bind(this,buildId)),
+        plume: this.list.viewer.lists.artifacts.items("plume").sort(Character.sortArtifacts.bind(this,buildId)),
+        sands: this.list.viewer.lists.artifacts.items("sands").sort(Character.sortArtifacts.bind(this,buildId)),
+        goblet: this.list.viewer.lists.artifacts.items("goblet").sort(Character.sortArtifacts.bind(this,buildId)),
+        circlet: this.list.viewer.lists.artifacts.items("circlet").sort(Character.sortArtifacts.bind(this,buildId)),
       },
       artifactFields: this.list.viewer.lists.artifacts.display.fields,
       artifactSets: GenshinArtifactData,
@@ -472,10 +493,12 @@ export default class Character extends GenshinItem
   
   addPopupEventHandlers(popupBody)
   {
+    let buildId = "default";
+    
     let artifactSets = popupBody.querySelector("#bestArtifactSets");
     if(artifactSets && !artifactSets.onchange)
       artifactSets.onchange = event => {
-        let build = this.getBuild();
+        let build = this.getBuild(buildId);
         let sets = [];
         Array.from(artifactSets.selectedOptions).forEach(optionElement => {
           sets.push(optionElement.value);
@@ -489,7 +512,7 @@ export default class Character extends GenshinItem
         });
         for(let slot of ["flower","plume","sands","goblet","circlet"])
           Renderer.renderList2(`artifacts/${slot}`, {
-            items: this.list.viewer.lists.artifacts.items(slot).sort(Character.sortArtifacts.bind(this)),
+            items: this.list.viewer.lists.artifacts.items(slot).sort(Character.sortArtifacts.bind(this,buildId)),
             fields: this.list.viewer.lists.artifacts.display.fields,
             parent: this,
             force: true,
@@ -515,7 +538,7 @@ export default class Character extends GenshinItem
         {
           this.list.viewer.lists.artifacts.items('flower').forEach(item => item.storedStats.characters[this.key] = null);
           Renderer.renderList2(`artifacts/flower`, {
-            items: this.list.viewer.lists.artifacts.items('flower').sort(Character.sortArtifacts.bind(this)),
+            items: this.list.viewer.lists.artifacts.items('flower').sort(Character.sortArtifacts.bind(this,buildId)),
             fields: this.list.viewer.lists.artifacts.display.fields,
             parent: this,
             force: true,
@@ -525,7 +548,7 @@ export default class Character extends GenshinItem
         {
           this.list.viewer.lists.artifacts.items('plume').forEach(item => item.storedStats.characters[this.key] = null);
           Renderer.renderList2(`artifacts/plume`, {
-            items: this.list.viewer.lists.artifacts.items('plume').sort(Character.sortArtifacts.bind(this)),
+            items: this.list.viewer.lists.artifacts.items('plume').sort(Character.sortArtifacts.bind(this,buildId)),
             fields: this.list.viewer.lists.artifacts.display.fields,
             parent: this,
             force: true,
@@ -535,7 +558,7 @@ export default class Character extends GenshinItem
         {
           this.list.viewer.lists.artifacts.items('sands').forEach(item => item.storedStats.characters[this.key] = null);
           Renderer.renderList2(`artifacts/sands`, {
-            items: this.list.viewer.lists.artifacts.items('sands').sort(Character.sortArtifacts.bind(this)),
+            items: this.list.viewer.lists.artifacts.items('sands').sort(Character.sortArtifacts.bind(this,buildId)),
             fields: this.list.viewer.lists.artifacts.display.fields,
             parent: this,
             force: true,
@@ -545,7 +568,7 @@ export default class Character extends GenshinItem
         {
           this.list.viewer.lists.artifacts.items('goblet').forEach(item => item.storedStats.characters[this.key] = null);
           Renderer.renderList2(`artifacts/goblet`, {
-            items: this.list.viewer.lists.artifacts.items('goblet').sort(Character.sortArtifacts.bind(this)),
+            items: this.list.viewer.lists.artifacts.items('goblet').sort(Character.sortArtifacts.bind(this,buildId)),
             fields: this.list.viewer.lists.artifacts.display.fields,
             parent: this,
             force: true,
@@ -555,7 +578,7 @@ export default class Character extends GenshinItem
         {
           this.list.viewer.lists.artifacts.items('circlet').forEach(item => item.storedStats.characters[this.key] = null);
           Renderer.renderList2(`artifacts/circlet`, {
-            items: this.list.viewer.lists.artifacts.items('circlet').sort(Character.sortArtifacts.bind(this)),
+            items: this.list.viewer.lists.artifacts.items('circlet').sort(Character.sortArtifacts.bind(this,buildId)),
             fields: this.list.viewer.lists.artifacts.display.fields,
             parent: this,
             force: true,
@@ -589,7 +612,7 @@ export default class Character extends GenshinItem
       }
       btn.onclick = event => {
         Renderer.renderList2(`artifacts/${item.slotKey}`, {
-          items: item.list.items(item.slotKey).sort(Character.sortArtifacts.bind(this)),
+          items: item.list.items(item.slotKey).sort(Character.sortArtifacts.bind(this,buildId)),
           fields: item.list.display.fields,
           parent: this,
           force: true,

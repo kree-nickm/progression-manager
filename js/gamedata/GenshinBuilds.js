@@ -23,14 +23,14 @@ export default {
         "hp_": 0,
         "atk_": 1,
         "def_": 0,
-        "enerRech_": 2,
+        "enerRech_": 1.5,
         "eleMas": 0,
-        "critRate_": 1.5,
-        "critDMG_": 1.5
+        "critRate_": 2,
+        "critDMG_": 2
       },
       "sandsStat": {
         "enerRech_": 2,
-        "atk_": 0.5
+        "atk_": 2
       },
       "gobletStat": {
         "pyro_dmg_": 2,
@@ -54,8 +54,7 @@ export default {
       "artifactSets": {
         "MaidenBeloved": {},
         "TenacityOfTheMillelith": {},
-        "OceanHuedClam": {},
-        "Instructor": {}
+        "OceanHuedClam": {}
       },
       "artifactSubstats": {
         "hp": 1,
@@ -64,7 +63,7 @@ export default {
         "hp_": 2,
         "atk_": 0,
         "def_": 0,
-        "enerRech_": 1,
+        "enerRech_": 0.5,
         "eleMas": 0,
         "critRate_": 0.1,
         "critDMG_": 0.1
@@ -88,7 +87,13 @@ export default {
         "EmblemOfSeveredFate": {},
         "NoblesseOblige": {},
         "ThunderingFury": {},
-        "Thundersoother": {}
+        "Thundersoother": {},
+        "TheExile": {},
+        "GladiatorsFinale": {},
+        "ShimenawasReminiscence": {},
+        "VermillionHereafter": {},
+        "EchoesOfAnOffering": {},
+        "Scholar": {}
       },
       "artifactSubstats": {
         "hp": 0,
@@ -97,14 +102,14 @@ export default {
         "hp_": 0,
         "atk_": 1.5,
         "def_": 0,
-        "enerRech_": 1,
-        "eleMas": 0,
+        "enerRech_": 1.5,
+        "eleMas": 0.5,
         "critRate_": 2,
         "critDMG_": 2
       },
       "sandsStat": {
         "enerRech_": 2,
-        "atk_": 1.5
+        "atk_": 2
       },
       "gobletStat": {
         "electro_dmg_": 2,
@@ -122,32 +127,42 @@ export default {
       "artifactSets": {
         "NoblesseOblige": {},
         "EmblemOfSeveredFate": {},
-        "CrimsonWitchOfFlames": {}
+        "CrimsonWitchOfFlames": {},
+        "Instructor": {},
+        "ThunderingFury": {},
+        "GildedDreams": {},
+        "FlowerOfParadiseLost": {},
+        "TheExile": {}
       },
       "artifactSubstats": {
         "hp": 0,
         "atk": 0.1,
         "def": 0,
-        "hp_": 0,
+        "hp_": 0.5,
         "atk_": 1.5,
         "def_": 0,
-        "enerRech_": 1,
-        "eleMas": 0,
+        "enerRech_": 2,
+        "eleMas": 1,
         "critRate_": 2,
         "critDMG_": 2
       },
       "sandsStat": {
         "enerRech_": 2,
-        "atk_": 1
+        "atk_": 1.5,
+        "hp_": 0.5,
+        "eleMas": 0.5
       },
       "gobletStat": {
         "pyro_dmg_": 2,
-        "atk_": 1
+        "atk_": 1,
+        "hp_": 0.5
       },
       "circletStat": {
         "critRate_": 2,
         "critDMG_": 2,
-        "atk_": 1
+        "atk_": 1,
+        "hp_": 0.5,
+        "heal_": 0.1
       }
     }
   },
@@ -260,7 +275,8 @@ export default {
     "default": {
       "artifactSets": {
         "TenacityOfTheMillelith": {},
-        "EmblemOfSeveredFate": {}
+        "EmblemOfSeveredFate": {},
+        "VourukashasGlow": {}
       },
       "artifactSubstats": {
         "hp": 0.5,
@@ -321,7 +337,7 @@ export default {
         "def_": 0,
         "enerRech_": 1.5,
         "eleMas": 0,
-        "critRate_": 0.1,
+        "critRate_": 0.4,
         "critDMG_": 0.1
       },
       "sandsStat": {
@@ -431,31 +447,41 @@ export default {
   },
   "Fischl": {
     "default": {
-      "artifactSets": {},
+      "artifactSets": {
+        "GladiatorsFinale": {},
+        "ShimenawasReminiscence": {},
+        "VermillionHereafter": {},
+        "EchoesOfAnOffering": {},
+        "Thundersoother": {},
+        "ThunderingFury": {},
+        "GildedDreams": {}
+      },
       "artifactSubstats": {
         "hp": 0,
         "atk": 0.1,
         "def": 0,
         "hp_": 0,
-        "atk_": 1.5,
+        "atk_": 1.7,
         "def_": 0,
         "enerRech_": 0,
-        "eleMas": 1,
+        "eleMas": 0.5,
         "critRate_": 2,
         "critDMG_": 2
       },
       "sandsStat": {
-        "eleMas": 2,
-        "atk_": 2
+        "eleMas": 1.5,
+        "atk_": 2,
+        "enerRech_": 0,
+        "hp_": 0
       },
       "gobletStat": {
         "electro_dmg_": 2,
-        "atk_": 1
+        "atk_": 1.5
       },
       "circletStat": {
         "critDMG_": 2,
         "critRate_": 2,
-        "atk_": 1
+        "atk_": 1.5
       }
     }
   },
@@ -586,9 +612,9 @@ export default {
         "hp_": 0,
         "atk_": 1.5,
         "def_": 0,
-        "enerRech_": 1,
+        "enerRech_": 1.5,
         "eleMas": 0,
-        "critRate_": 0.5,
+        "critRate_": 1,
         "critDMG_": 2
       },
       "sandsStat": {
@@ -602,7 +628,7 @@ export default {
       "circletStat": {
         "critDMG_": 2,
         "atk_": 1,
-        "critRate_": 0.5
+        "critRate_": 1
       }
     }
   },
@@ -691,7 +717,8 @@ export default {
         "FlowerOfParadiseLost": {},
         "GildedDreams": {},
         "ThunderingFury": {},
-        "Instructor": {}
+        "Instructor": {},
+        "WanderersTroupe": {}
       },
       "artifactSubstats": {
         "hp": 0.5,
@@ -864,26 +891,6 @@ export default {
         "DeepwoodMemories": {
           "2": 1.5,
           "4": 5
-        },
-        "GildedDreams": {
-          "2": 2,
-          "4": 4
-        },
-        "FlowerOfParadiseLost": {
-          "2": 2
-        },
-        "Instructor": {
-          "2": 2
-        },
-        "WanderersTroupe": {
-          "2": 2
-        },
-        "EmblemOfSeveredFate": {
-          "2": 1.5
-        },
-        "TheExile": {
-          "2": 1.5,
-          "4": 3
         }
       },
       "artifactSubstats": {
@@ -900,13 +907,19 @@ export default {
       },
       "sandsStat": {
         "eleMas": 2,
-        "enerRech_": 0.5
+        "enerRech_": 0.5,
+        "atk_": 0
       },
       "gobletStat": {
-        "eleMas": 2
+        "eleMas": 2,
+        "dendro_dmg_": 0,
+        "atk_": 0
       },
       "circletStat": {
-        "eleMas": 2
+        "eleMas": 2,
+        "critRate_": 0,
+        "critDMG_": 0,
+        "atk_": 0
       }
     }
   },
@@ -1071,7 +1084,9 @@ export default {
         "GladiatorsFinale": {},
         "ShimenawasReminiscence": {},
         "EmblemOfSeveredFate": {},
-        "TheExile": {}
+        "TheExile": {},
+        "VermillionHereafter": {},
+        "EchoesOfAnOffering": {}
       },
       "artifactSubstats": {
         "hp": 0,
@@ -1109,17 +1124,17 @@ export default {
         "hp": 0,
         "atk": 0,
         "def": 0,
-        "hp_": 0,
+        "hp_": 0.2,
         "atk_": 0,
         "def_": 0,
-        "enerRech_": 1,
+        "enerRech_": 0.7,
         "eleMas": 2,
         "critRate_": 0,
         "critDMG_": 0
       },
       "sandsStat": {
         "eleMas": 2,
-        "enerRech_": 1
+        "enerRech_": 0.7
       },
       "gobletStat": {
         "eleMas": 2
@@ -1171,32 +1186,31 @@ export default {
   },
   "TravelerGeo": {
     "default": {
-      artifactSets: {
+      "artifactSets": {},
+      "artifactSubstats": {
+        "hp": 0,
+        "atk": 0.1,
+        "def": 0,
+        "hp_": 0,
+        "atk_": 1.5,
+        "def_": 0,
+        "enerRech_": 1,
+        "eleMas": 0,
+        "critRate_": 2,
+        "critDMG_": 2
       },
-      artifactSubstats: {
-        'hp': 0,
-        'atk': 0.1,
-        'def': 0,
-        'hp_': 0,
-        'atk_': 1.5,
-        'def_': 0,
-        'enerRech_': 1,
-        'eleMas': 0,
-        'critRate_': 2,
-        'critDMG_': 2,
+      "sandsStat": {
+        "atk_": 2,
+        "enerRech_": 1
       },
-      sandsStat: {
-        'atk_': 2,
-        'enerRech_': 1,
+      "gobletStat": {
+        "geo_dmg_": 2,
+        "atk_": 1
       },
-      gobletStat: {
-        'geo_dmg_': 2,
-        'atk_': 1,
-      },
-      circletStat: {
-        'critRate_': 2,
-        'critDMG_': 2,
-        'atk_': 1,
+      "circletStat": {
+        "critRate_": 2,
+        "critDMG_": 2,
+        "atk_": 1
       }
     }
   },
@@ -1288,16 +1302,16 @@ export default {
         "atk": 0.1,
         "def": 0,
         "hp_": 0,
-        "atk_": 1,
+        "atk_": 1.1,
         "def_": 0,
         "enerRech_": 2,
-        "eleMas": 0,
-        "critRate_": 1.5,
-        "critDMG_": 1.5
+        "eleMas": 0.1,
+        "critRate_": 1.7,
+        "critDMG_": 1.7
       },
       "sandsStat": {
         "enerRech_": 2,
-        "atk_": 0.5
+        "atk_": 1
       },
       "gobletStat": {
         "hydro_dmg_": 2,

@@ -5,6 +5,7 @@ import GenshinItem from "./GenshinItem.js";
 
 export default class Artifact extends GenshinItem
 {
+  static dontSerialize = GenshinItem.dontSerialize.concat(["wanters"]);
   static shorthandStat = {
     'eleMas': "EM",
     'enerRech_': "ER%",
@@ -50,6 +51,7 @@ export default class Artifact extends GenshinItem
   character;
   loaded = false;
   valuable = 1;
+  wanters = [];
   
   afterLoad()
   {
@@ -162,7 +164,7 @@ export default class Artifact extends GenshinItem
     {
       // Can't roll it if it's a main stat.
       if(this.mainStatKey == statId)
-        this.storedStats.ratings[statId] = 0;
+        this.storedStats.ratings[statId] = {base:0, chance:0, sum:0};
       else
       {
         let sum = this.getSubstatSum(statId);
@@ -174,7 +176,7 @@ export default class Artifact extends GenshinItem
         
         // If we have the stat, we only need to factor in the boosts.
         if(baseRating > 0)
-          this.storedStats.ratings[statId] = baseRating + chanceRating;
+          this.storedStats.ratings[statId] = {base:baseRating, chance:chanceRating, sum:baseRating+chanceRating};
         else
         {
           // Instead, now we need to calculate the odds of gaining the stat first...
@@ -183,27 +185,27 @@ export default class Artifact extends GenshinItem
             if(s != this.mainStatKey)
               total += GenshinArtifactStats.odds[s];
           let chance = 1 - Math.pow(1 - GenshinArtifactStats.odds[statId] / total, Math.min(tiersRemaining, statsOpen));
-          this.storedStats.ratings[statId] = chance * chanceRating;
+          this.storedStats.ratings[statId] = {base:0, chance:chance*chanceRating, sum:chance*chanceRating};
         }
       }
     }
     return this.storedStats.ratings[statId];
   }
   
-  getCharacterScoreParts(character=this.list.viewer.lists.characters.list[0])
+  getCharacterScoreParts(character=this.list.viewer.lists.characters.list[0], buildId="default")
   {
     if(!this.storedStats.characters[character.key])
     {
-      let mainImportanceFactor = character?.getBuild()[this.slotKey+'Stat']?.[this.mainStatKey] ?? 0;
+      let mainImportanceFactor = character?.getBuild(buildId)[this.slotKey+'Stat']?.[this.mainStatKey] ?? 0;
       let mainRarityFactor = (this.rarity==1 ? 0.5 : (this.rarity==2 ? 0.6 : (this.rarity==3 ? 0.75 : (this.rarity==4 ? 0.9 : 1))));
       let mainScore = mainImportanceFactor * mainRarityFactor * 8;
       let subScore = 0;
       let subScores = {};
-      if(character?.getBuild().artifactSubstats)
+      if(character?.getBuild(buildId).artifactSubstats)
       {
         for(let substat of Artifact.substats)
         {
-          subScores[substat] = Math.max(character.getBuild().artifactSubstats[substat]??0, Artifact.substatMins[substat]) * this.getSubstatRating(substat);
+          subScores[substat] = Math.max(character.getBuild(buildId).artifactSubstats[substat]??0, Artifact.substatMins[substat]) * this.getSubstatRating(substat).sum;
           subScore += subScores[substat];
         }
       }
@@ -212,12 +214,12 @@ export default class Artifact extends GenshinItem
     return this.storedStats.characters[character.key];
   }
   
-  getCharacterScore(character=this.list.viewer.lists.characters.list[0], level=20)
+  getCharacterScore(character=this.list.viewer.lists.characters.list[0], level=20, buildId="default")
   {
-    let score = this.getCharacterScoreParts(character);
+    let score = this.getCharacterScoreParts(character, buildId);
     level = Math.max(0, Math.min(level, this.rarity<=2 ? 4 : (this.rarity==3 ? 12 : (this.rarity==4 ? 16 : 20))));
     let levelFactor = level / 20 * 6.8 + 1.2;
-    let max = character.getMaxArtifactScore(this.slotKey, null, level);
+    let max = character.getMaxArtifactScore(this.slotKey, buildId, level);
     if(!max)
       return 0;
     return ((score.mainScore * levelFactor / 8) + score.subScore) / max;
