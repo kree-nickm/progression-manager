@@ -1769,7 +1769,8 @@ export default {
         "characters": [
             "Yoimiya",
             "Thoma",
-            "KukiShinobu"
+            "KukiShinobu",
+            "Kirara"
         ]
     },
     "AmidstProsperingMarkets": {
@@ -2078,7 +2079,8 @@ export default {
         ],
         "characters": [
             "Kaveh",
-            "Nahida"
+            "Nahida",
+            "Kirara"
         ]
     },
     "ChorusOfDesertAndWood": {
