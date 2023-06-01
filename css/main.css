@@ -163,7 +163,7 @@ span.q5, .q5 > span {
   display: none;
 }
 
-*:not(.editing) > .edit-element {
+*:not(.editing) > .edit-element:not(i) {
   display: none;
 }
 
