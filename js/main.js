@@ -30,6 +30,8 @@ for(let i=0; i<navLinks.length; i++)
       window.viewer.view("artifacts");
     else if(event.target.hash == "#furnitureSets")
       window.viewer.view("furnitureSets");
+    else if(event.target.hash == "#furniture")
+      window.viewer.view("furniture");
     else
       window.viewer.view("characters");
   });

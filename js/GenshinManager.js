@@ -2,6 +2,7 @@ import { DateTime } from 'https://cdn.jsdelivr.net/npm/luxon@3.3.0/+esm';
 
 import GenshinLootData from "./gamedata/GenshinLootData.js";
 import GenshinCharacterData from "./gamedata/GenshinCharacterData.js";
+import GenshinFurnitureData from "./gamedata/GenshinFurnitureData.js";
 import GiftSets from "./gamedata/GiftSets.js";
 import GenshinBuilds from "./gamedata/GenshinBuilds.js";
 
@@ -10,6 +11,7 @@ import MaterialList from "./MaterialList.js";
 import CharacterList from "./CharacterList.js";
 import WeaponList from "./WeaponList.js";
 import ArtifactList from "./ArtifactList.js";
+import FurnitureList from "./FurnitureList.js";
 import FurnitureSetList from "./FurnitureSetList.js";
 import Material from "./Material.js";
 import Artifact from "./Artifact.js";
@@ -88,12 +90,19 @@ export default class GenshinManager extends UIController
     this.elements[ArtifactList.name].classList.add("viewer-pane");
     this.paneMemory[ArtifactList.name] = {};
     
+    this.lists[FurnitureList.name] = new FurnitureList(this);
+    this.elements[FurnitureList.name] = document.getElementById(FurnitureList.name) ?? this.elements.content.appendChild(document.createElement("div"));
+    this.elements[FurnitureList.name].classList.add("viewer-pane");
+    this.paneMemory[FurnitureList.name] = {};
+    for(let k in GenshinFurnitureData)
+    {
+      this.lists.furniture.addGOOD({key:k, count:0});
+    }
+    
     this.lists[FurnitureSetList.name] = new FurnitureSetList(this);
     this.elements[FurnitureSetList.name] = document.getElementById(FurnitureSetList.name) ?? this.elements.content.appendChild(document.createElement("div"));
     this.elements[FurnitureSetList.name].classList.add("viewer-pane");
     this.paneMemory[FurnitureSetList.name] = {};
-    
-    // Gift Sets
     for(let s in GiftSets)
     {
       this.lists.furnitureSets.addGOOD({key:s, learned:false, settled:[]});
@@ -238,6 +247,17 @@ export default class GenshinManager extends UIController
         console.error("Error when loading artifacts from GOOD data.", x);
       }
     }
+    if(goodData.furniture)
+    {
+      try
+      {
+        hasData |= this.lists.furniture.fromGOOD(goodData.furniture);
+      }
+      catch(x)
+      {
+        console.error("Error when loading furniture from GOOD data.", x);
+      }
+    }
     if(goodData.furnitureSets)
     {
       try
@@ -262,6 +282,7 @@ export default class GenshinManager extends UIController
       characters: this.lists.characters.toGOOD(),
       weapons: this.lists.weapons.toGOOD(),
       artifacts: this.lists.artifacts.toGOOD(),
+      furniture: this.lists.furniture.toGOOD(),
       furnitureSets: this.lists.furnitureSets.toGOOD(),
     };
   }

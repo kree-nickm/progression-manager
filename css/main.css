@@ -163,6 +163,14 @@ span.q5, .q5 > span {
   display: none;
 }
 
+*:not(.editing) > .edit-element {
+  display: none;
+}
+
+.editing > *:not(.edit-element) {
+  display: none;
+}
+
 /* Specific List CSS */
 
 .viewer-pane .ascension-materials {

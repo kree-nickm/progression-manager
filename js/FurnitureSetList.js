@@ -31,8 +31,26 @@ export default class FurnitureSetList extends UIList
     
     let recipeField = this.display.addField("recipe", {
       label: "Furniture",
-      dynamic: false,
-      value: item => item.recipe.map(furn => ({tag:"div", value:furn.key +" x"+ furn.count})),
+      dynamic: true,
+      value: item => item.furniture.map((furniture,i) => {
+        return {
+          tag: "div",
+          value: [
+            {
+              value: `${furniture.count} / ${item.recipe[i].count}`,
+              classes: {
+                "quantity": true,
+                "insufficient": furniture.count < item.recipe[i].count,
+              },
+            },
+            {
+              value: furniture.name,
+            },
+          ], 
+          edit: {target: {item:furniture, field:"count"}},
+        };
+      }),
+      dependencies: item => item.furniture.map(furniture => ({item:furniture, field:"count"})),
     });
     
     let charactersField = this.display.addField("characters", {

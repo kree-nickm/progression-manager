@@ -551,7 +551,7 @@ class Renderer
       {
         if(value[iContent].edit)
         {
-          let subElement = element.querySelector(".sub-"+ iContent);
+          let subElement = element.querySelector(":scope > .sub-"+ iContent);
           Renderer.addFieldEventListeners(subElement, value[iContent], list, item, field);
         }
       }

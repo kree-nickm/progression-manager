@@ -6,15 +6,16 @@ export default class FurnitureSet extends GenshinItem
 {
   afterLoad()
   {
-    this.furniture = {};
     if(GiftSets[this.key])
     {
       this.loaded = true;
+      this.furniture = this.recipe.map(furn => this.list.viewer.lists.furniture.get(furn.key));
     }
     else
     {
       console.warn(`Unknown furniture set "${this.key}".`);
       this.loaded = false;
+      this.furniture = [];
     }
     return this.loaded;
   }
