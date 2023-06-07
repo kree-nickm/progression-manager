@@ -12,6 +12,7 @@ export default {
         "goblet": "Adventurer's Golden Goblet",
         "circlet": "Adventurer's Bandana",
         "bonus2": "Max HP increased by 1,000.",
+        "bonus2code": ["stat",["hp",1000]],
         "bonus4": "Opening a chest regenerates 30% Max HP over 5s."
     },
     "LuckyDog": {
@@ -22,6 +23,7 @@ export default {
         "goblet": "Lucky Dog's Goblet",
         "circlet": "Lucky Dog's Silver Circlet",
         "bonus2": "DEF increased by 100.",
+        "bonus2code": ["stat",["def",100]],
         "bonus4": "Picking up Mora restores 300 HP."
     },
     "TravelingDoctor": {
@@ -32,6 +34,7 @@ export default {
         "goblet": "Traveling Doctor's Medicine Pot",
         "circlet": "Traveling Doctor's Handkerchief",
         "bonus2": "Increases incoming healing by 20%.",
+        "bonus2code": ["stat",["inHeal_",20]],
         "bonus4": "Using Elemental Burst restores 20% HP."
     },
     "ResolutionOfSojourner": {
@@ -42,7 +45,9 @@ export default {
         "goblet": "Goblet of the Sojourner",
         "circlet": "Crown of Parting",
         "bonus2": "ATK +18%",
-        "bonus4": "Increases Charged Attack CRIT Rate by 30%."
+        "bonus2code": ["stat",["atk_",18]],
+        "bonus4": "Increases Charged Attack CRIT Rate by 30%.",
+        "bonus4code": ["sstat",["Charged Attack","critRate_",30]]
     },
     "TinyMiracle": {
         "name": "Tiny Miracle",
@@ -52,7 +57,9 @@ export default {
         "goblet": "Tiny Miracle's Goblet",
         "circlet": "Tiny Miracle's Earrings",
         "bonus2": "All Elemental RES increased by 20%.",
-        "bonus4": "Incoming Elemental DMG increases corresponding Elemental RES by 30% for 10s. Can only occur once every 10s."
+        "bonus2code": ["stat",["elemental_res_",20]],
+        "bonus4": "Incoming Elemental DMG increases corresponding Elemental RES by 30% for 10s. Can only occur once every 10s.",
+        "bonus4code": ["proc",["stat","elemental_res_",30]]
     },
     "Berserker": {
         "name": "Berserker",
@@ -62,7 +69,9 @@ export default {
         "goblet": "Berserker's Bone Goblet",
         "circlet": "Berserker's Battle Mask",
         "bonus2": "CRIT Rate +12%",
-        "bonus4": "When HP is below 70%, CRIT Rate increases by an additional 24%."
+        "bonus2code": ["stat",["critRate_",12]],
+        "bonus4": "When HP is below 70%, CRIT Rate increases by an additional 24%.",
+        "bonus4code": ["proc",["stat","critRate_",24]]
     },
     "Instructor": {
         "name": "Instructor",
@@ -72,7 +81,9 @@ export default {
         "goblet": "Instructor's Tea Cup",
         "circlet": "Instructor's Cap",
         "bonus2": "Increases Elemental Mastery by 80.",
-        "bonus4": "Upon triggering an Elemental Reaction, increases all party members' Elemental Mastery by 120 for 8s."
+        "bonus2code": ["stat",["eleMas",80]],
+        "bonus4": "Upon triggering an Elemental Reaction, increases all party members' Elemental Mastery by 120 for 8s.",
+        "bonus4code": ["proc",["pstat",["eleMas",120]]]
     },
     "TheExile": {
         "name": "The Exile",
@@ -82,6 +93,7 @@ export default {
         "goblet": "Exile's Goblet",
         "circlet": "Exile's Circlet",
         "bonus2": "Energy Recharge +20%",
+        "bonus2code": ["stat",["enerRech_",20]],
         "bonus4": "Using an Elemental Burst regenerates 2 Energy for all party members (excluding the wearer) every 2s for 6s. This effect cannot stack."
     },
     "DefendersWill": {
@@ -92,6 +104,7 @@ export default {
         "goblet": "Guardian's Vessel",
         "circlet": "Guardian's Band",
         "bonus2": "DEF +30%",
+        "bonus2code": ["stat",["def_",30]],
         "bonus4": "For each different element present in your own party, the wearer's Elemental RES to that corresponding element is increased by 30%."
     },
     "BraveHeart": {
@@ -102,7 +115,9 @@ export default {
         "goblet": "Outset of the Brave",
         "circlet": "Crown of the Brave",
         "bonus2": "ATK +18%.",
-        "bonus4": "Increases DMG by 30% against opponents with more than 50% HP."
+        "bonus2code": ["stat",["atk_",18]],
+        "bonus4": "Increases DMG by 30% against opponents with more than 50% HP.",
+        "bonus4code": ["proc",["stat","dmg_",30]]
     },
     "MartialArtist": {
         "name": "Martial Artist",
@@ -112,7 +127,9 @@ export default {
         "goblet": "Martial Artist's Wine Cup",
         "circlet": "Martial Artist's Bandana",
         "bonus2": "Increases Normal Attack and Charged Attack DMG by 15%.",
-        "bonus4": "After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 25% for 8s."
+        "bonus2code": ["stat",[["normal_dmg_","charged_dmg_"],15]],
+        "bonus4": "After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 25% for 8s.",
+        "bonus4code": ["proc",["stat",[["normal_dmg_","charged_dmg_"],25]]]
     },
     "Gambler": {
         "name": "Gambler",
@@ -122,6 +139,7 @@ export default {
         "goblet": "Gambler's Dice Cup",
         "circlet": "Gambler's Earrings",
         "bonus2": "Increases Elemental Skill DMG by 20%.",
+        "bonus2code": ["stat",["skill_dmg_",20]],
         "bonus4": "Defeating an opponent has 100% chance to remove Elemental Skill CD. Can only occur once every 15s."
     },
     "Scholar": {
@@ -132,6 +150,7 @@ export default {
         "goblet": "Scholar's Ink Cup",
         "circlet": "Scholar's Lens",
         "bonus2": "Energy Recharge +20%",
+        "bonus2code": ["stat",["enerRech_",20]],
         "bonus4": "Gaining Elemental Particles or Orbs gives 3 Energy to all party members who have a bow or a catalyst equipped. Can only occur once every 3s."
     },
     "PrayersForWisdom": {
@@ -162,7 +181,9 @@ export default {
         "goblet": "Gladiator's Intoxication",
         "circlet": "Gladiator's Triumphus",
         "bonus2": "ATK +18%.",
-        "bonus4": "If the wielder of this artifact set uses a Sword, Claymore or Polearm, increases their Normal Attack DMG by 35%."
+        "bonus2code": ["stat",["atk_",18]],
+        "bonus4": "If the wielder of this artifact set uses a Sword, Claymore or Polearm, increases their Normal Attack DMG by 35%.",
+        "bonus4code": ["proc",["stat",["normal_dmg_",35]]]
     },
     "WanderersTroupe": {
         "name": "Wanderer's Troupe",
@@ -172,7 +193,9 @@ export default {
         "goblet": "Wanderer's String-Kettle",
         "circlet": "Conductor's Top Hat",
         "bonus2": "Increases Elemental Mastery by 80.",
-        "bonus4": "Increases Charged Attack DMG by 35% if the character uses a Catalyst or Bow."
+        "bonus2code": ["stat",["eleMas",80]],
+        "bonus4": "Increases Charged Attack DMG by 35% if the character uses a Catalyst or Bow.",
+        "bonus4code": ["proc",["stat",["charged_dmg_",35]]]
     },
     "NoblesseOblige": {
         "name": "Noblesse Oblige",
@@ -182,7 +205,9 @@ export default {
         "goblet": "Royal Silver Urn",
         "circlet": "Royal Masque",
         "bonus2": "Elemental Burst DMG +20%",
-        "bonus4": "Using an Elemental Burst increases all party members' ATK by 20% for 12s. This effect cannot stack."
+        "bonus2code": ["stat",["burst_dmg_",20]],
+        "bonus4": "Using an Elemental Burst increases all party members' ATK by 20% for 12s. This effect cannot stack.",
+        "bonus4code": ["proc",["stat",["atk_",20]]]
     },
     "BloodstainedChivalry": {
         "name": "Bloodstained Chivalry",
@@ -192,7 +217,9 @@ export default {
         "goblet": "Bloodstained Chevalier's Goblet",
         "circlet": "Bloodstained Iron Mask",
         "bonus2": "Physical DMG Bonus +25%",
-        "bonus4": "After defeating an opponent, increases Charged Attack DMG by 50%, and reduces its Stamina cost to 0 for 10s. Also triggers with wild animals such as boars, squirrels and frogs."
+        "bonus2code": ["stat",["physical_dmg_",25]],
+        "bonus4": "After defeating an opponent, increases Charged Attack DMG by 50%, and reduces its Stamina cost to 0 for 10s. Also triggers with wild animals such as boars, squirrels and frogs.",
+        "bonus4code": ["proc",["stat",["charged_dmg_",50]]]
     },
     "MaidenBeloved": {
         "name": "Maiden Beloved",
@@ -202,7 +229,9 @@ export default {
         "goblet": "Maiden's Fleeting Leisure",
         "circlet": "Maiden's Fading Beauty",
         "bonus2": "Character Healing Effectiveness +15%",
-        "bonus4": "Using an Elemental Skill or Burst increases healing received by all party members by 20% for 10s."
+        "bonus2code": ["stat",["heal_",15]],
+        "bonus4": "Using an Elemental Skill or Burst increases healing received by all party members by 20% for 10s.",
+        "bonus4code": ["proc",["pstat",["inHeal_",20]]]
     },
     "ViridescentVenerer": {
         "name": "Viridescent Venerer",
@@ -212,7 +241,9 @@ export default {
         "goblet": "Viridescent Venerer's Vessel",
         "circlet": "Viridescent Venerer's Diadem",
         "bonus2": "Anemo DMG Bonus +15%",
-        "bonus4": "Increases Swirl DMG by 60%. Decreases opponent's Elemental RES to the element infused in the Swirl by 40% for 10s."
+        "bonus2code": ["stat",["anemo_dmg_",15]],
+        "bonus4": "Increases Swirl DMG by 60%. Decreases opponent's Elemental RES to the element infused in the Swirl by 40% for 10s.",
+        "bonus4code": [["stat",["swirl_dmg_",60]], ["proc",["estat",[["cryo_res_","hydro_res_","electro_res_","pyro_res_"],-40]]]]
     },
     "ArchaicPetra": {
         "name": "Archaic Petra",
@@ -222,6 +253,7 @@ export default {
         "goblet": "Goblet of Chiseled Crag",
         "circlet": "Mask of Solitude Basalt",
         "bonus2": "Geo DMG Bonus +15%",
+        "bonus2code": ["stat",["geo_dmg_",15]],
         "bonus4": "Upon obtaining an Elemental Shard created through a Crystallize Reaction, all party members gain 35% DMG Bonus for that particular element for 10s. Only one form of Elemental DMG Bonus can be gained in this manner at any one time."
     },
     "RetracingBolide": {
@@ -242,6 +274,7 @@ export default {
         "goblet": "Thundersoother's Goblet",
         "circlet": "Thundersoother's Diadem",
         "bonus2": "Electro RES increased by 40%.",
+        "bonus2code": ["stat",["electro_res_",40]],
         "bonus4": "Increases DMG against opponents affected by Electro by 35%."
     },
     "ThunderingFury": {
@@ -252,6 +285,7 @@ export default {
         "goblet": "Omen of Thunderstorm",
         "circlet": "Thunder Summoner's Crown",
         "bonus2": "Electro DMG Bonus +15%",
+        "bonus2code": ["stat",["electro_dmg_",15]],
         "bonus4": "Increases DMG caused by Overloaded, Electro-Charged, Superconduct, and Hyperbloom by 40%, and the DMG Bonus conferred by Aggravate is increased by 20%. When Quicken or the aforementioned Elemental Reactions are triggered, Elemental Skill CD is decreased by 1s. Can only occur once every 0.8s."
     },
     "Lavawalker": {
@@ -262,6 +296,7 @@ export default {
         "goblet": "Lavawalker's Epiphany",
         "circlet": "Lavawalker's Wisdom",
         "bonus2": "Pyro RES increased by 40%.",
+        "bonus2code": ["stat",["pyro_res_",40]],
         "bonus4": "Increases DMG against opponents affected by Pyro by 35%."
     },
     "CrimsonWitchOfFlames": {
@@ -272,6 +307,7 @@ export default {
         "goblet": "Witch's Heart Flames",
         "circlet": "Witch's Scorching Hat",
         "bonus2": "Pyro DMG Bonus +15%",
+        "bonus2code": ["stat",["pyro_dmg_",15]],
         "bonus4": "Increases Overloaded and Burning, and Burgeon DMG by 40%. Increases Vaporize and Melt DMG by 15%. Using Elemental Skill increases the 2-Piece Set Bonus by 50% of its starting value for 10s. Max 3 stacks."
     },
     "BlizzardStrayer": {
@@ -282,6 +318,7 @@ export default {
         "goblet": "Frost-Weaved Dignity",
         "circlet": "Broken Rime's Echo",
         "bonus2": "Cryo DMG Bonus +15%",
+        "bonus2code": ["stat",["cryo_dmg_",15]],
         "bonus4": "When a character attacks an opponent affected by Cryo, their CRIT Rate is increased by 20%. If the opponent is Frozen, CRIT Rate is increased by an additional 20%."
     },
     "HeartOfDepth": {
@@ -292,6 +329,7 @@ export default {
         "goblet": "Goblet of Thundering Deep",
         "circlet": "Wine-Stained Tricorne",
         "bonus2": "Hydro DMG Bonus +15%",
+        "bonus2code": ["stat",["hydro_dmg_",15]],
         "bonus4": "After using an Elemental Skill, increases Normal Attack and Charged Attack DMG by 30% for 15s."
     },
     "TenacityOfTheMillelith": {
@@ -302,6 +340,7 @@ export default {
         "goblet": "Noble's Pledging Vessel",
         "circlet": "General's Ancient Helm",
         "bonus2": "HP +20%",
+        "bonus2code": ["stat",["hp_",20]],
         "bonus4": "When an Elemental Skill hits an opponent, the ATK of all nearby party members is increased by 20% and their Shield Strength is increased by 30% for 3s. This effect can be triggered once every 0.5s. This effect can still be triggered even when the character who is using this artifact set is not on the field."
     },
     "PaleFlame": {
@@ -312,6 +351,7 @@ export default {
         "goblet": "Surpassing Cup",
         "circlet": "Mocking Mask",
         "bonus2": "Physical DMG Bonus +25%",
+        "bonus2code": ["stat",["physical_dmg_",25]],
         "bonus4": "When an Elemental Skill hits an opponent, ATK is increased by 9% for 7s. This effect stacks up to 2 times and can be triggered once every 0.3s. Once 2 stacks are reached, the 2-set effect is increased by 100%."
     },
     "ShimenawasReminiscence": {
@@ -322,6 +362,7 @@ export default {
         "goblet": "Hopeful Heart",
         "circlet": "Capricious Visage",
         "bonus2": "ATK +18%",
+        "bonus2code": ["stat",["atk_",18]],
         "bonus4": "When casting an Elemental Skill, if the character has 15 or more Energy, they lose 15 Energy and Normal\/Charged\/Plunging Attack DMG is increased by 50% for 10s. This effect will not trigger again during that duration."
     },
     "EmblemOfSeveredFate": {
@@ -332,7 +373,9 @@ export default {
         "goblet": "Scarlet Vessel",
         "circlet": "Ornate Kabuto",
         "bonus2": "Energy Recharge +20%",
-        "bonus4": "Increases Elemental Burst DMG by 25% of Energy Recharge. A maximum of 75% bonus DMG can be obtained in this way."
+        "bonus2code": ["stat",["enerRech_",20]],
+        "bonus4": "Increases Elemental Burst DMG by 25% of Energy Recharge. A maximum of 75% bonus DMG can be obtained in this way.",
+        "bonus4code": ["stat",["burst_dmg_",["%ofOther","enerRech_",0.25,75]]]
     },
     "HuskOfOpulentDreams": {
         "name": "Husk Of Opulent Dreams",
@@ -342,6 +385,7 @@ export default {
         "goblet": "Calabash of Awakening",
         "circlet": "Skeletal Hat",
         "bonus2": "DEF +30%",
+        "bonus2code": ["stat",["def_",30]],
         "bonus4": "A character equipped with this Artifact set will obtain the Curiosity effect in the following conditions:When on the field, the character gains 1 stack after hitting an opponent with a Geo attack, triggering a maximum of once every 0.3s.When off the field, the character gains 1 stack every 3s.Curiosity can stack up to 4 times, each providing 6% DEF and a 6% Geo DMG Bonus.When 6 seconds pass without gaining a Curiosity stack, 1 stack is lost."
     },
     "OceanHuedClam": {
@@ -352,6 +396,7 @@ export default {
         "goblet": "Pearl Cage",
         "circlet": "Crown of Watatsumi",
         "bonus2": "Healing Bonus +15%.",
+        "bonus2code": ["stat",["heal_",15]],
         "bonus4": "When the character equipping this artifact set heals a character in the party, a Sea-Dyed Foam will appear for 3 seconds, accumulating the amount of HP recovered from healing (including overflow healing).At the end of the duration, the Sea-Dyed Foam will explode, dealing DMG to nearby opponents based on 90% of the accumulated healing.(This DMG is calculated similarly to Reactions such as Electro-Charged, and Superconduct, but it is not affected by Elemental Mastery, Character Levels, or Reaction DMG Bonuses).Only one Sea-Dyed Foam can be produced every 3.5 seconds.Each Sea-Dyed Foam can accumulate up to 30,000 HP (including overflow healing).There can be no more than one Sea-Dyed Foam active at any given time.This effect can still be triggered even when the character who is using this artifact set is not on the field."
     },
     "VermillionHereafter": {
@@ -362,6 +407,7 @@ export default {
         "goblet": "Moment of the Pact",
         "circlet": "Thundering Poise",
         "bonus2": "ATK +18%.",
+        "bonus2code": ["stat",["atk_",18]],
         "bonus4": "After using an Elemental Burst. this character will gain the Nascent Light effect, increasing their ATK by 8% for 16s. When the character's HP decreases, their ATK will further increase by 10%. This increase can occur this way maximum of 4 times. This effect can be triggered once every 0.8s. Nascent Light will be dispelled when the character leaves the field. If an Elemental Burst is used again during the duration of Nascent Light, the original Nascent Light will be dispelled."
     },
     "EchoesOfAnOffering": {
@@ -372,6 +418,7 @@ export default {
         "goblet": "Chalice of the Font",
         "circlet": "Flowing Rings",
         "bonus2": "ATK +18%.",
+        "bonus2code": ["stat",["atk_",18]],
         "bonus4": "When Normal Attacks hit opponents, there is a 36% chance that it will trigger Valley Rite, which will increase Normal Attack DMG by 70% of ATK.This effect will be dispelled 0.05s after a Normal Attack deals DMG.If a Normal Attack fails to trigger Valley Rite, the odds of it triggering the next time will increase by 20%.This trigger can occur once every 0.2s."
     },
     "DeepwoodMemories": {
@@ -382,6 +429,7 @@ export default {
         "goblet": "Lamp of the Lost",
         "circlet": "Laurel Coronet",
         "bonus2": "Dendro DMG Bonus +15%",
+        "bonus2code": ["stat",["dendro_dmg_",15]],
         "bonus4": "After Elemental Skills or Bursts hit opponents, the targets' Dendro RES will be decreased by 30% for 8s. This effect can be triggered even if the equipping character is not on the field."
     },
     "GildedDreams": {
@@ -392,6 +440,7 @@ export default {
         "goblet": "Honeyed Final Feast",
         "circlet": "Shadow of the Sand King",
         "bonus2": "Elemental Mastery +80",
+        "bonus2code": ["stat",["eleMas",80]],
         "bonus4": "Within 8s of triggering an Elemental Reaction, the character equipping this will obtain buffs based on the Elemental Type of the other party members, ATK is increased by 14% for each party member whose Elemental Type is the same as the equipping character, and Elemental Mastery is increased by 50 for every party member with a different Elemental Type. Each of the aforementioned buffs will count up to 3 characters. This effect can be triggered once every 8s. The character who equips this can still trigger its effects when not on the field."
     },
     "DesertPavilionChronicle": {
@@ -402,6 +451,7 @@ export default {
         "goblet": "Defender of the Enchanting Dream",
         "circlet": "Legacy of the Desert High-Born",
         "bonus2": "Anemo DMG Bonus +15%.",
+        "bonus2code": ["stat",["anemo_dmg_",15]],
         "bonus4": "When Charged Attacks hit opponents, the equipping character's Normal Attack SPD will increase by 10% while Normal, Charged, and Plunging Attack DMG will increase by 40% for 15s."
     },
     "FlowerOfParadiseLost": {
@@ -412,6 +462,7 @@ export default {
         "goblet": "Secret-Keeper's Magic Bottle",
         "circlet": "Amethyst Crown",
         "bonus2": "Increases Elemental Mastery by 80.",
+        "bonus2code": ["stat",["eleMas",80]],
         "bonus4": "The equipping character's Bloom, Hyperbloom, and Burgeon reaction DMG are increased by 40%. Additionally, after the equipping character triggers Bloom, Hyperbloom, or Burgeon, they will gain another 25% bonus to the effect mentioned prior. Each stack of this lasts 10s. Max 4 stacks simultaneously. This effect can only be triggered once per second. The character who equips this can still trigger its effects when not on the field."
     },
     "NymphsDream": {
@@ -422,6 +473,7 @@ export default {
         "goblet": "Heroes' Tea Party",
         "circlet": "Fell Dragon's Monocle",
         "bonus2": "Hydro DMG Bonus +15%",
+        "bonus2code": ["stat",["hydro_dmg_",15]],
         "bonus4": "After Normal, Charged, and Plunging Attacks, Elemental Skills, and Elemental Bursts hit opponents. 1 stack of Mirrored Nymph will triggered, lasting 8s. When under the effect of 1, 2, or 3 or more Mirrored Nymph stacks, ATK will be increased by 7%/16%/25%, and Hydro DMG will be increased by 4%/9%/15% Mirrored Nymph created by Normal, Charged, and Plunging Attacks, Elemental Skills, and Elemental Bursts exist independently."
     },
     "VourukashasGlow": {
@@ -432,6 +484,7 @@ export default {
         "goblet": "Feast of Boundless Joy",
         "circlet": "Heart of Khvarena's Brilliance",
         "bonus2": "HP +20%",
+        "bonus2code": ["stat",["hp_",20]],
         "bonus4": "Elemental Skill and Elemental Burst DMG will be increased by 10%. After the equipping character takes DMG, the aforementioned DMG Bonus is increased by 80% for 5s. This effect increase can have 5 stacks. The duration of each stack is counted independently. These effects can be triggered even when the equipping character is not on the field."
     }
 };

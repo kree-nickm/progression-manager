@@ -96,7 +96,7 @@ export default class GenshinManager extends UIController
     this.paneMemory[FurnitureList.name] = {};
     for(let k in GenshinFurnitureData)
     {
-      this.lists.furniture.addGOOD({key:k, count:0});
+      this.lists.furniture.addGOOD({key:k, learned:false, count:0});
     }
     
     this.lists[FurnitureSetList.name] = new FurnitureSetList(this);
@@ -165,7 +165,7 @@ export default class GenshinManager extends UIController
     //console.log(this.paneMemory[this.currentView].scrollX, this.paneMemory[this.currentView].scrollY);
   }
   
-  load(text, ignoreErrors=false)
+  load(text, account, server)
   {
     // Check for valid JSON.
     let data = {};

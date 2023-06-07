@@ -48,6 +48,11 @@ td {
   position: absolute;
 }
 
+i.edit-element {
+  margin-left: 1ex;
+  margin-right: 1ex;
+}
+
 /* Utilities */
 
 .sticky-js {
@@ -76,14 +81,14 @@ td {
   font-size: 0.8em;
 }
 
-span.quantity, .quantity > span {
+span.quantity, .quantity > span:not(.value) {
   border-radius: 1ex;
   display: inline-block;
   margin-right: 1ex;
   padding: 2px 4px;
 }
 
-span.material, .material > span {
+span.material, .material > span:not(.value) {
   border-radius: 1ex;
   border-width: 1px;
   border-style: solid;
@@ -91,27 +96,27 @@ span.material, .material > span {
   padding: 1px 3px;
 }
 
-span.q1, .q1 > span {
+span.q1, .q1 > span:not(.value) {
   background-color: rgba(127, 127, 127, 0.4);
   border-color: rgba(127, 127, 127, 0.9);
 }
 
-span.q2, .q2 > span {
+span.q2, .q2 > span:not(.value) {
   background-color: rgba(80, 255, 40, 0.4);
   border-color: rgba(80, 255, 40, 0.9);
 }
 
-span.q3, .q3 > span {
+span.q3, .q3 > span:not(.value) {
   background-color: rgba(50, 60, 255, 0.4);
   border-color: rgba(50, 60, 255, 0.9);
 }
 
-span.q4, .q4 > span {
+span.q4, .q4 > span:not(.value) {
   background-color: rgba(200, 20, 200, 0.4);
   border-color: rgba(200, 20, 200, 0.9);
 }
 
-span.q5, .q5 > span {
+span.q5, .q5 > span:not(.value) {
   background-color: rgba(205, 183, 20, 0.4);
   border-color: rgba(205, 183, 20, 0.9);
 }
@@ -171,6 +176,10 @@ span.q5, .q5 > span {
   display: none;
 }
 
+option:disabled {
+  display: none;
+}
+
 /* Specific List CSS */
 
 .viewer-pane .ascension-materials {
@@ -181,16 +190,16 @@ span.q5, .q5 > span {
   background-color: var(--column-alt-background) !important;
 }
 
-.stat-critRate_, .stat-atk_, .stat-eleMas, .stat-def_, .stat-hp,
-.stat-rating-critRate_, .stat-rating-atk_, .stat-rating-eleMas, .stat-rating-def_, .stat-rating-hp, .stat-character-rating {
+table .stat-critRate_, table .stat-atk_, table .stat-eleMas, table .stat-def_, table .stat-hp,
+table .stat-rating-critRate_, table .stat-rating-atk_, table .stat-rating-eleMas, table .stat-rating-def_, table .stat-rating-hp, table .stat-character-rating {
   background-color: var(--column-alt-background) !important;
 }
 
-.stat-def, .stat-rating-def {
+table .stat-def, table .stat-rating-def {
   border-right: 1px solid black;
 }
 
-.stat-critRate_, .stat-rating-critRate_, .artifact-wanters {
+table .stat-critRate_, table .stat-rating-critRate_, table .artifact-wanters {
   border-left: 1px solid black;
 }
 

@@ -18,11 +18,11 @@ export default class GenshinItem extends UIController {
   {
     if(typeof(goodData) == "object")
     {
-      this.goodProperties = [];
       for(let key in goodData)
       {
         this.#fromGOODHelper(goodData, key, [key]);
-        this.goodProperties.push(key);
+        if(this.goodProperties.indexOf(key) == -1)
+          this.goodProperties.push(key);
       }
       return this.afterLoad();
     }

@@ -193,7 +193,22 @@ class Renderer
     else if(content !== undefined && content !== null)
     {
       let tag = content.tag ?? "span";
-      let text = typeof(content) == "object" ? (typeof(content.value) == "object" ? Renderer.contentToHTML(content.value) : handlebars.escapeExpression(content.value ?? "")) : handlebars.escapeExpression(content ?? "");
+      let text = "";
+      if(typeof(content) == "object")
+      {
+        if(typeof(content.value) == "object")
+        {
+          text = Renderer.contentToHTML(content.value);
+        }
+        else if(content.value)
+        {
+          text = "<span class='value'>"+ handlebars.escapeExpression(content.value) +"</span>";
+        }
+      }
+      else if(content)
+      {
+        text = "<span class='value'>"+ handlebars.escapeExpression(content) +"</span>";
+      }
       let attrs = [];
       
       let classes = [];
@@ -207,6 +222,9 @@ class Renderer
       
       if(content.src)
         attrs.push(`src="${content.src}"`);
+      
+      if(content.title)
+        attrs.push(`title="${content.title}"`);
       
       return `<${tag} ${attrs.join(' ')}` + (text ? `>${text}</${tag}>` : `/>`);
     }
@@ -508,19 +526,6 @@ class Renderer
     }
     element.needsUpdate = false;
     
-    // If this cell's data is dependent on other fields, set up a trigger to update this cell when those fields are changed.
-    if(!element.dependencies)
-    {
-      if(edit?.target)
-        dependencies.push(edit.target);
-      for(let dep of dependencies)
-      {
-        if(dep?.item || dep?.field)
-          dep.item.addDependent(dep.field, element);
-      }
-      element.dependencies = dependencies;
-    }
-    
     // Check for button event handlers. TODO: Replace this with an "onclick" check.
     for(let b in button)
     {
@@ -536,6 +541,8 @@ class Renderer
     // Setup the functionality for an editable field if this is a newly-created cell.
     if(edit)
     {
+      if(edit.target)
+        dependencies.push(edit.target);
       Renderer.addFieldEventListeners(element, {value, edit}, list, item, field);
     }
     else if(field.popup)
@@ -544,16 +551,35 @@ class Renderer
         element.onclick = event => Renderer.renderItemDetails(item);
     }
     
-    // TODO: Make this more robust.
-    if(Array.isArray(value))
-    {
-      for(let iContent in value)
+    let handleSubEdit = (valueArr=[],parents=[]) => {
+      for(let iContent in valueArr)
       {
-        if(value[iContent].edit)
+        let newParents = [...parents, ".sub-"+ iContent];
+        if(valueArr[iContent].edit)
         {
-          let subElement = element.querySelector(":scope > .sub-"+ iContent);
-          Renderer.addFieldEventListeners(subElement, value[iContent], list, item, field);
+          let subElement = element.querySelector(":scope > "+ newParents.join(" > "));
+          if(valueArr[iContent].edit.target)
+            dependencies.push(valueArr[iContent].edit.target);
+          Renderer.addFieldEventListeners(subElement, valueArr[iContent], list, item, field);
         }
+        if(Array.isArray(valueArr[iContent].value))
+        {
+          handleSubEdit(valueArr[iContent].value, newParents);
+        }
+      }
+    };
+    
+    if(Array.isArray(value))
+      handleSubEdit(value);
+    
+    // If this cell's data is dependent on other fields, set up a trigger to update this cell when those fields are changed.
+    if(!element.dependencies)
+    {
+      element.dependencies = dependencies;
+      for(let dep of element.dependencies)
+      {
+        if(dep?.item || dep?.field)
+          dep.item.addDependent(dep.field, element);
       }
     }
   }
@@ -570,7 +596,10 @@ class Renderer
       if(content.edit.type == "checkbox")
       {
         // Add icon to indicate status.
-        editElement = fieldElement.appendChild(document.createElement("i"));
+        if(content.edit.prepend)
+          editElement = fieldElement.insertBefore(document.createElement("i"), fieldElement.childNodes[0] ?? null);
+        else
+          editElement = fieldElement.appendChild(document.createElement("i"));
         fieldElement.editChecked = !!(content.edit.checked ?? content.edit.value ?? false);
       }
       else if(content.edit.type == "select")
@@ -615,12 +644,14 @@ class Renderer
           };
         else if(fieldElement.editFunc)
           fieldElement.onclick = fieldElement.editFunc;
+        fieldElement.classList.add("editable");
       }
     }
     else
     {
       // Event to begin editing when the plain field is clicked.
       if(!fieldElement.onclick)
+      {
         fieldElement.onclick = event => {
           if(fieldElement.classList.contains("editing") || event.target.nodeName == "OPTION")
             return;
@@ -642,6 +673,8 @@ class Renderer
           }
           editElement.focus();
         };
+        fieldElement.classList.add("editable");
+      }
       
       // Event to save the edit.
       if(!editElement.onchange || !editElement.onblur || !editElement.onkeydown)
@@ -681,10 +714,10 @@ class Renderer
     {
       if(!fieldElement.editChecked)
       {
-        if(content.edit.falseClasses)
-          editElement.classList.add(...content.edit.falseClasses);
         if(content.edit.trueClasses)
           editElement.classList.remove(...content.edit.trueClasses);
+        if(content.edit.falseClasses)
+          editElement.classList.add(...content.edit.falseClasses);
       }
       else
       {

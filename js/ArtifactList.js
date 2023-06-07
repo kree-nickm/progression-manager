@@ -275,17 +275,31 @@ export default class ArtifactList extends UIList
     await Renderer.renderList2(this.constructor.name, {
       template: "renderListAsTable",
       force: force || this.forceNextRender,
-      container: window.viewer.elements[this.constructor.name],
+      container: this.viewer.elements[this.constructor.name],
     });
     this.forceNextRender = false;
     
-    if(!this.elements.divAdd)
+    if(!this.elements.footer)
     {
-      this.elements.divAdd = window.viewer.elements[this.constructor.name].appendChild(document.createElement("div"));
-      this.elements.divAdd.classList.add("input-group", "mt-2");
+      this.elements.footer = this.viewer.elements[this.constructor.name].appendChild(document.createElement("nav"));
+      this.elements.footer.classList.add("navbar", "bg-light", "sticky-bottom");
       
-      this.elements.selectSetAdd = this.elements.divAdd.appendChild(document.createElement("select"));
+      let container = this.elements.footer.appendChild(document.createElement("div"));
+      container.classList.add("container-fluid", "navbar-expand");
+      
+      let ul = container.appendChild(document.createElement("ul"));
+      ul.classList.add("navbar-nav");
+      
+      // Add Artifact
+      let li1 = ul.appendChild(document.createElement("li"));
+      li1.classList.add("nav-item", "me-2");
+      
+      let inputGroup = li1.appendChild(document.createElement("div"));
+      inputGroup.classList.add("input-group");
+      
+      this.elements.selectSetAdd = inputGroup.appendChild(document.createElement("select"));
       this.elements.selectSetAdd.classList.add("form-select", "size-to-content");
+      this.elements.selectSetAdd.title = "Artifact Set";
       this.elements.selectSetAdd.appendChild(document.createElement("option"))
       for(let itm in GenshinArtifactData)
       {
@@ -294,8 +308,9 @@ export default class ArtifactList extends UIList
         option.innerHTML = GenshinArtifactData[itm].name;
       }
       
-      this.elements.selectRarityAdd = this.elements.divAdd.appendChild(document.createElement("select"));
+      this.elements.selectRarityAdd = inputGroup.appendChild(document.createElement("select"));
       this.elements.selectRarityAdd.classList.add("form-select", "size-to-content");
+      this.elements.selectRarityAdd.title = "Artifact Rarity";
       this.elements.selectRarityAdd.appendChild(document.createElement("option"))
       for(let itm of [5,4,3,2,1])
       {
@@ -304,8 +319,9 @@ export default class ArtifactList extends UIList
         option.innerHTML = itm;
       }
       
-      this.elements.selectSlotAdd = this.elements.divAdd.appendChild(document.createElement("select"));
+      this.elements.selectSlotAdd = inputGroup.appendChild(document.createElement("select"));
       this.elements.selectSlotAdd.classList.add("form-select", "size-to-content");
+      this.elements.selectSlotAdd.title = "Artifact Slot";
       this.elements.selectSlotAdd.appendChild(document.createElement("option"))
       for(let itm of ['flower','plume','sands','goblet','circlet'])
       {
@@ -313,9 +329,37 @@ export default class ArtifactList extends UIList
         option.value = itm;
         option.innerHTML = itm;
       }
+      this.elements.selectSlotAdd.onchange = event => {
+        switch(this.elements.selectSlotAdd.value)
+        {
+          case "flower":
+            Array.from(this.elements.selectStatAdd.options).forEach(statOpt => statOpt.disabled = (statOpt.value != "hp"));
+            this.elements.selectStatAdd.value = "hp";
+            break;
+          case "plume":
+            Array.from(this.elements.selectStatAdd.options).forEach(statOpt => statOpt.disabled = (statOpt.value != "atk"));
+            this.elements.selectStatAdd.value = "atk";
+            break;
+          case "sands":
+            Array.from(this.elements.selectStatAdd.options).forEach(statOpt => statOpt.disabled = (["hp_","atk_","def_","eleMas","enerRech_"].indexOf(statOpt.value) == -1));
+            this.elements.selectStatAdd.value = "";
+            break;
+          case "goblet":
+            Array.from(this.elements.selectStatAdd.options).forEach(statOpt => statOpt.disabled = (["hp_","atk_","def_","eleMas"].indexOf(statOpt.value) == -1 && statOpt.value.substr(-5) != "_dmg_"));
+            this.elements.selectStatAdd.value = "";
+            break;
+          case "circlet":
+            Array.from(this.elements.selectStatAdd.options).forEach(statOpt => statOpt.disabled = (["hp_","atk_","def_","eleMas","critRate_","critDMG_","heal_"].indexOf(statOpt.value) == -1));
+            this.elements.selectStatAdd.value = "";
+            break;
+          default:
+            Array.from(this.elements.selectStatAdd.options).forEach(statOpt => statOpt.disabled = false);
+        }
+      };
       
-      this.elements.selectStatAdd = this.elements.divAdd.appendChild(document.createElement("select"));
+      this.elements.selectStatAdd = inputGroup.appendChild(document.createElement("select"));
       this.elements.selectStatAdd.classList.add("form-select", "size-to-content");
+      this.elements.selectStatAdd.title = "Artifact Main Stat";
       this.elements.selectStatAdd.appendChild(document.createElement("option"))
       for(let itm in Artifact.shorthandStat)
       {
@@ -324,7 +368,7 @@ export default class ArtifactList extends UIList
         option.innerHTML = Artifact.shorthandStat[itm];
       }
       
-      this.elements.btnAdd = this.elements.divAdd.appendChild(document.createElement("button"));
+      this.elements.btnAdd = inputGroup.appendChild(document.createElement("button"));
       this.elements.btnAdd.innerHTML = "Add Artifact";
       this.elements.btnAdd.classList.add("btn", "btn-primary");
       this.elements.btnAdd.addEventListener("click", event => {
@@ -349,17 +393,21 @@ export default class ArtifactList extends UIList
           Renderer.renderNewItem(item);
         }
       });
-    }
-    
-    if(!this.elements.btnEval)
-    {
-      this.elements.btnEval = this.viewer.elements[this.constructor.name].appendChild(document.createElement("button"));
-      this.elements.btnEval.classList.add("btn", "btn-primary");
-      this.elements.btnEval.innerHTML = "Evaluate Artifacts";
-      this.elements.btnEval.addEventListener("click", event => {
+      
+      // Evaluate Artifacts
+      let li2 = ul.appendChild(document.createElement("li"));
+      li2.classList.add("nav-item", "me-2");
+      
+      let evalBtn = li2.appendChild(document.createElement("button"));
+      evalBtn.classList.add("btn", "btn-primary");
+      evalBtn.title = "Recalculate the characters that might desire each artifact.";
+      evalBtn.addEventListener("click", event => {
         this.evaluate();
         this.render();
       });
+      
+      let evalIcon = evalBtn.appendChild(document.createElement("i"));
+      evalIcon.classList.add("fa-solid", "fa-arrows-rotate");
     }
   }
 }

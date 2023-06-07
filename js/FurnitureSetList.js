@@ -38,16 +38,26 @@ export default class FurnitureSetList extends UIList
           value: [
             {
               value: `${furniture.count} / ${item.recipe[i].count}`,
+              title: `Change the amount of ${furniture.name} you own.`,
               classes: {
                 "quantity": true,
                 "insufficient": furniture.count < item.recipe[i].count,
               },
+              edit: {target: {item:furniture, field:"count"}},
             },
             {
               value: furniture.name,
+              title: `Toggle whether you've learned the schematic for ${furniture.name} yet.`,
+              edit: {
+                target: {item:furniture, field:"learned"},
+                type: "checkbox",
+                value: furniture.learned,
+                trueClasses: ["fa-regular","fa-circle-dot"],
+                falseClasses: ["fa-regular","fa-circle"],
+                prepend: true,
+              },
             },
           ], 
-          edit: {target: {item:furniture, field:"count"}},
         };
       }),
       dependencies: item => item.furniture.map(furniture => ({item:furniture, field:"count"})),
@@ -62,6 +72,7 @@ export default class FurnitureSetList extends UIList
           return {
             tag: "div",
             value: character.name,
+            title: item.learned ? `Toggle whether ${character.name} has given you your primogem rewards for settling into ${item.name} yet.` : null,
             classes: {'not-owned':false},
             edit: item.learned ? {
               target: {item:item, field:"settled"},
@@ -69,7 +80,7 @@ export default class FurnitureSetList extends UIList
               value: c,
               checked: item.settled.indexOf(c) > -1,
               trueClasses: ["fa-solid","fa-house-circle-check"],
-              falseClasses: ["fa-regular","fa-circle-xmark"],
+              falseClasses: ["fa-regular","fa-envelope"],
             } : null,
           };
         else

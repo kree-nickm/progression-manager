@@ -15,6 +15,19 @@ export default class FurnitureList extends UIList
       value: item => item.name,
     });
     
+    let learnedField = this.display.addField("learned", {
+      label: "Learned",
+      sort: {generic: {type:"boolean",property:"learned"}},
+      dynamic: true,
+      edit: item => ({
+        target: {item:item, field:"learned"},
+        type: "checkbox",
+        value: item.learned,
+        trueClasses: ["fa-solid","fa-scroll"],
+        falseClasses: [],
+      }),
+    });
+    
     let countField = this.display.addField("count", {
       label: "Count",
       dynamic: true,
@@ -38,6 +51,7 @@ export default class FurnitureList extends UIList
   {
     for(let item of this.list)
     {
+      item.update("learned", false);
       item.update("count", 0);
     }
   }

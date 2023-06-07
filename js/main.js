@@ -4,7 +4,7 @@ import GenshinManager from "./GenshinManager.js";
 if(typeof(Storage) !== "undefined")
   console.log("Web Storage enabled.");
 else
-  console.error("Your browser does not support Web Storage, and therefore we cannot save your data between sessions (it's too big for standard cookies).");
+  console.error("Your browser does not support Web Storage, and therefore we cannot save your data between sessions (data is too large for standard cookies).");
 
 window.viewer = new GenshinManager();
 setInterval(window.viewer.today.bind(window.viewer), 60000);
@@ -49,14 +49,22 @@ document.addEventListener("scroll", window.viewer.onScroll.bind(window.viewer));
 document.addEventListener("scrollend", event => window.viewer.saveScrollY(window.scrollY));
 
 // Set up JSON loader.
-document.getElementById("loadGOODBtn").addEventListener("click", event => window.viewer.load(document.getElementById("loadGOODJSON").value));
+document.getElementById("loadGOODBtn").addEventListener("click", event => {
+  let textArea = document.getElementById("loadGOODJSON");
+  window.viewer.load(textArea.value, document.getElementById("loadGOODAccount").value, document.getElementById("loadGOODServer").value);
+  textArea.value = "";
+});
 
 document.getElementById("loadGOODFile").addEventListener("change", changeEvent => {
   let reader = new FileReader();
-  reader.addEventListener("load", loadEvent => window.viewer.load(loadEvent.target.result));
+  reader.addEventListener("load", loadEvent => {
+    window.viewer.load(loadEvent.target.result, document.getElementById("loadGOODAccount").value, document.getElementById("loadGOODServer").value);
+    changeEvent.target.value = "";
+  });
   reader.readAsText(changeEvent.target.files[0]);
 });
 
+// Set up JSON saver.
 const saveTemplateAsFile = (filename, dataObjToWrite) => {
   const blob = new Blob([JSON.stringify(dataObjToWrite)], { type: "text/json" });
   const link = document.createElement("a");
@@ -78,15 +86,8 @@ const saveTemplateAsFile = (filename, dataObjToWrite) => {
 document.getElementById("saveGOODFile").addEventListener("click", event => {
   saveTemplateAsFile("GenshinData.GOOD.json", window.viewer.toGOOD());
 });
-
 /*
-import GenshinCharacterData from "./gamedata/GenshinCharacterData.js";
-let bagel = {};
-for(let key in GenshinCharacterData)
-{
-  bagel[key] = {
-    'default': GenshinCharacterData[key].buildData ?? {},
-  };
-}
-console.log(bagel);
+document.getElementById("saveDataFile").addEventListener("click", event => {
+  saveTemplateAsFile("GenshinData.json", JSON.stringify(window.viewer));
+});
 */

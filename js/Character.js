@@ -392,13 +392,81 @@ export default class Character extends GenshinItem
     if(this.weapon?.stat == stat)
       result += this.weapon.getStat();
     for(let slot of ['flower','plume','sands','goblet','circlet'])
-      if(this[slot+'Artifact'])
+    {
+      let prop = slot + 'Artifact';
+      if(this[prop])
       {
-        if(this[slot+'Artifact'].mainStatKey == stat)
-          result += this[slot+'Artifact'].mainStatValue;
-        result += this[slot+'Artifact']?.getSubstatSum(stat) ?? 0;
+        if(this[prop].mainStatKey == stat)
+          result += this[prop].mainStatValue;
+        result += this[prop]?.getSubstatSum(stat) ?? 0;
       }
+    }
+    result += this.getSetBonus().stats[stat] ?? 0;
     return result;
+  }
+  
+  getSetBonus()
+  {
+    let sets = {};
+    for(let slot of ['flower','plume','sands','goblet','circlet'])
+    {
+      let prop = slot + 'Artifact';
+      if(this[prop])
+      {
+        if(!sets[this[prop].setKey])
+          sets[this[prop].setKey] = {count:0};
+        sets[this[prop].setKey].count++;
+      }
+    }
+    
+    // Collect the current bonuses and their code.
+    let bonuses = [];
+    let codes = [];
+    for(let set in sets)
+    {
+      for(let i=1; i<=sets[set].count; i++)
+      {
+        let b = 'bonus'+i;
+        let c = 'bonus'+i+'code';
+        if(GenshinArtifactData[set][b])
+          bonuses.push([set, i, GenshinArtifactData[set][b]]);
+        if(GenshinArtifactData[set][c])
+        {
+          if(Array.isArray(GenshinArtifactData[set][c][0]))
+            codes = codes.concat(GenshinArtifactData[set][c]);
+          else
+            codes.push(GenshinArtifactData[set][c]);
+        }
+      }
+    }
+    
+    // Handle the codes.
+    let substats = [];
+    let stats = {};
+    for(let code of codes)
+    {
+      if(code[0] == "proc")
+      {
+      }
+      else if(code[0] == "stat")
+      {
+        // code[1][0] is the stat to change, or array of stats
+        // code[1][1] is the amount, or an array defining a calculation
+        let which = Array.isArray(code[1][0]) ? code[1][0] : [code[1][0]];
+        for(let s of which)
+        {
+          if(Array.isArray(code[1][1]))
+            console.log("func to handle:", code[1][1]);
+          else
+            stats[s] = (stats[s] ?? 0) + code[1][1];
+        }
+      }
+      else
+      {
+        console.log("Unhandled set bonus code:", code);
+      }
+    }
+    return {sets, bonuses, codes, stats, substats}
   }
   
   getRelatedItems(buildId="default")
@@ -493,6 +561,7 @@ export default class Character extends GenshinItem
   
   addPopupEventHandlers(popupBody)
   {
+    console.log(this.getSetBonus());
     let buildId = "default";
     
     let artifactSets = popupBody.querySelector("#bestArtifactSets");
