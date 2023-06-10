@@ -7,6 +7,7 @@ import GenshinItem from "./GenshinItem.js";
 
 export default class Weapon extends GenshinItem
 {
+  static dontSerialize = GenshinItem.dontSerialize.concat(["materials"]);
   static templateName = "renderWeaponAsPopup";
   static templateTitleName = "renderWeaponAsPopupTitle";
   
@@ -15,6 +16,7 @@ export default class Weapon extends GenshinItem
   #level = 1;
   loaded = false;
   favorite = false;
+  materials;
   
   equals(object)
   {

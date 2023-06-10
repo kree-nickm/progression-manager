@@ -4,6 +4,8 @@ import Weapon from "./Weapon.js";
 
 export default class Material extends GenshinItem
 {
+  static dontSerialize = GenshinItem.dontSerialize.concat(["usedBy","prevTier","nextTier"]);
+  
   static gemQualities = {
     '5': " Gemstone",
     '4': " Chunk",
@@ -58,11 +60,17 @@ export default class Material extends GenshinItem
   
   fromGOOD(goodData)
   {
-    let data = {
-      key: Material.toKey(goodData.goodKey),
-      count: goodData.goodValue,
-    };
-    data.name = (goodData.goodKey == data.key) ? Material.fromKey(goodData.goodKey) : goodData.goodKey;
+    let data;
+    if('goodKey' in goodData && 'goodValue' in goodData)
+    {
+      data = {
+        key: Material.toKey(goodData.goodKey),
+        count: goodData.goodValue,
+      };
+      data.name = (goodData.goodKey == data.key) ? Material.fromKey(goodData.goodKey) : goodData.goodKey;
+    }
+    else
+      data = goodData;
     return super.fromGOOD(data);
   }
   

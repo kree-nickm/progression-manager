@@ -4,6 +4,10 @@ import GenshinItem from "./GenshinItem.js";
 
 export default class FurnitureSet extends GenshinItem
 {
+  static dontSerialize = GenshinItem.dontSerialize.concat(["furniture","loaded"]);
+  
+  furniture;
+  
   afterLoad()
   {
     if(GiftSets[this.key])

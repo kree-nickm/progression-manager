@@ -1,8 +1,15 @@
 import UIController from "./UIController.js";
 
 export default class GenshinItem extends UIController {
+  static dontSerialize = UIController.dontSerialize.concat(["list"]);
+  
   list;
   goodProperties = [];
+  
+  get viewer()
+  {
+    return this.list.viewer;
+  }
   
   getUnique()
   {
@@ -76,13 +83,9 @@ export default class GenshinItem extends UIController {
   
   toJSON()
   {
-    let result = {};
-    for(let key of Object.keys(this))
-      if(["object","string","boolean","number","bigint"].indexOf(typeof(this[key])) > -1 && ["list","dependents"].indexOf(key) == -1)
-        result[key] = this[key];
+    let result = super.toJSON();
     for(let prop of this.goodProperties)
-      if(!result[prop])
-        result[prop] = this[prop];
-    return JSON.stringify(result);
+      result[prop] = this[prop];
+    return result;
   }
 }

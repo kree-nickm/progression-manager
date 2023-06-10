@@ -129,7 +129,7 @@ export default {
       '4': "Marked Shell",
     },
     "Hilichurl Rogues": {
-      '2': "A Flower Yet to Bloom",
+      '2': "A Flower Yet To Bloom",
       '3': "Treasured Flower",
       '4': "Wanderer's Blooming Flower",
     },

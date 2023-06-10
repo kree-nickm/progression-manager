@@ -4,9 +4,9 @@ import ListDisplayManager from "./ListDisplayManager.js";
 import GenshinItem from "./GenshinItem.js";
 
 export default class UIList extends UIController {
+  static dontSerialize = UIController.dontSerialize.concat(["viewer","display","subsets","subsetDefinitions","forceNextRender"]);
   static unique = false;
   static name = "";
-  static dontSerialize = UIController.dontSerialize.concat(["viewer","display","subsets","subsetDefinitions","forceNextRender"]);
   
   viewer;
   display;

@@ -145,6 +145,6 @@ export default class UIController {
     for(let key of Object.keys(this))
       if(["object","string","boolean","number","bigint"].indexOf(typeof(this[key])) > -1 && this.constructor.dontSerialize.indexOf(key) == -1)
         result[key] = this[key];
-    return JSON.stringify(result);
+    return result;
   }
 }

@@ -19,7 +19,7 @@ import FurnitureSet from "./FurnitureSet.js";
 
 export default class GenshinManager extends UIController
 {
-  static dontSerialize = UIController.dontSerialize.concat(["lastDay","elements","stickyElements"]);
+  static dontSerialize = UIController.dontSerialize.concat(["lastDay","elements","stickyElements","lists"]);
   
   currentView;
   lastDay = DateTime.now().setZone("UTC-9").weekdayLong;
@@ -27,7 +27,25 @@ export default class GenshinManager extends UIController
   elements = {};
   paneMemory = {};
   stickyElements = [];
+  accountData;
+  account;
+  server;
   buildData = GenshinBuilds;
+  
+  /*get lists()
+  {
+    this.account = this.account ?? Object.keys(this.accountData ?? {})[0] ?? "";
+    this.server = this.server ?? Object.keys(this.accountData?.[this.account] ?? {})[0] ?? "";
+    //console.debug(`${this.constructor.name}.lists using account '${this.account}' and server '${this.server}'.`);
+    if(!this.accountData)
+      this.accountData = {};
+    if(!this.accountData[this.account])
+      this.accountData[this.account] = {};
+    if(!this.accountData[this.account][this.server])
+      this.accountData[this.account][this.server] = {};
+    //console.debug(`${this.constructor.name}.lists using accountData:`, this.accountData, `Returning:`, this.accountData[this.account][this.server]);
+    return this.accountData[this.account][this.server];
+  }*/
   
   constructor()
   {
@@ -39,10 +57,15 @@ export default class GenshinManager extends UIController
       loadError: document.getElementById("loadGOODError"),
     };
     
+    this.retrieve();
+  }
+  
+  createLists()
+  {
     this.lists[MaterialList.name] = new MaterialList(this);
     this.elements[MaterialList.name] = document.getElementById(MaterialList.name) ?? this.elements.content.appendChild(document.createElement("div"));
     this.elements[MaterialList.name].classList.add("viewer-pane");
-    this.paneMemory[MaterialList.name] = {};
+    this.paneMemory[MaterialList.name] = this.paneMemory[MaterialList.name] ?? {};
     
     // Enemy mats
     for(let e in GenshinLootData.enemy)
@@ -78,22 +101,22 @@ export default class GenshinManager extends UIController
     this.lists[CharacterList.name] = new CharacterList(this);
     this.elements[CharacterList.name] = document.getElementById(CharacterList.name) ?? this.elements.content.appendChild(document.createElement("div"));
     this.elements[CharacterList.name].classList.add("viewer-pane");
-    this.paneMemory[CharacterList.name] = {};
+    this.paneMemory[CharacterList.name] = this.paneMemory[CharacterList.name] ?? {};
     
     this.lists[WeaponList.name] = new WeaponList(this);
     this.elements[WeaponList.name] = document.getElementById(WeaponList.name) ?? this.elements.content.appendChild(document.createElement("div"));
     this.elements[WeaponList.name].classList.add("viewer-pane");
-    this.paneMemory[WeaponList.name] = {};
+    this.paneMemory[WeaponList.name] = this.paneMemory[WeaponList.name] ?? {};
     
     this.lists[ArtifactList.name] = new ArtifactList(this);
     this.elements[ArtifactList.name] = document.getElementById(ArtifactList.name) ?? this.elements.content.appendChild(document.createElement("div"));
     this.elements[ArtifactList.name].classList.add("viewer-pane");
-    this.paneMemory[ArtifactList.name] = {};
+    this.paneMemory[ArtifactList.name] = this.paneMemory[ArtifactList.name] ?? {};
     
     this.lists[FurnitureList.name] = new FurnitureList(this);
     this.elements[FurnitureList.name] = document.getElementById(FurnitureList.name) ?? this.elements.content.appendChild(document.createElement("div"));
     this.elements[FurnitureList.name].classList.add("viewer-pane");
-    this.paneMemory[FurnitureList.name] = {};
+    this.paneMemory[FurnitureList.name] = this.paneMemory[FurnitureList.name] ?? {};
     for(let k in GenshinFurnitureData)
     {
       this.lists.furniture.addGOOD({key:k, learned:false, count:0});
@@ -102,13 +125,11 @@ export default class GenshinManager extends UIController
     this.lists[FurnitureSetList.name] = new FurnitureSetList(this);
     this.elements[FurnitureSetList.name] = document.getElementById(FurnitureSetList.name) ?? this.elements.content.appendChild(document.createElement("div"));
     this.elements[FurnitureSetList.name].classList.add("viewer-pane");
-    this.paneMemory[FurnitureSetList.name] = {};
+    this.paneMemory[FurnitureSetList.name] = this.paneMemory[FurnitureSetList.name] ?? {};
     for(let s in GiftSets)
     {
       this.lists.furnitureSets.addGOOD({key:s, learned:false, settled:[]});
     }
-    
-    this.retrieve();
   }
   
   today()
@@ -291,6 +312,8 @@ export default class GenshinManager extends UIController
   {
     return JSON.stringify({
       paneMemory: this.paneMemory,
+      account: this.account,
+      server: this.server,
     });
   }
   
@@ -303,6 +326,8 @@ export default class GenshinManager extends UIController
       {
         for(let pane in settings.paneMemory)
           this.paneMemory[pane] = settings.paneMemory[pane];
+        this.account = settings.account;
+        this.server = settings.server;
         console.log("Loaded settings from local storage.");
       }
       else
@@ -318,29 +343,69 @@ export default class GenshinManager extends UIController
   
   store()
   {
-    window.localStorage.setItem("goodViewerLists", JSON.stringify(this.toGOOD()));
+    this.account = this.account ?? Object.keys(this.accountData ?? {})[0] ?? "";
+    this.server = this.server ?? Object.keys(this.accountData?.[this.account] ?? {})[0] ?? "";
+    if(!this.accountData)
+      this.accountData = {};
+    if(!this.accountData[this.account])
+      this.accountData[this.account] = {};
+    this.accountData[this.account][this.server] = this.toGOOD();
     window.localStorage.setItem("goodViewerSettings", this.settingsToJSON());
+    window.localStorage.setItem("genshinAccount", JSON.stringify(this.accountData));
+    //if(!this.accountData)
+    //  window.localStorage.setItem("goodViewerLists", JSON.stringify(this.toGOOD()));
     window.localStorage.setItem("genshinBuilds", JSON.stringify(this.buildData));
     console.log(`Local data saved.`);
   }
   
   retrieve()
   {
+    // Load site-specific preferences.
+    this.settingsFromJSON(window.localStorage.getItem("goodViewerSettings") ?? "{}");
+    
+    // Initialize data lists before loading stored data into them.
+    this.createLists();
+    
+    // Load the user data from the new way it's stored.
+    let accountData;
     try
     {
-      if(this.fromGOOD(JSON.parse(window.localStorage.getItem("goodViewerLists"))))
-        console.log("Loaded data from local storage.");
+      accountData = JSON.parse(window.localStorage.getItem("genshinAccount") ?? "null");
+      if(accountData)
+      {
+        console.log("Loaded account data from local storage.");
+        if(accountData?.[this.account]?.[this.server])
+          if(this.fromGOOD(accountData[this.account][this.server]))
+            console.log(`Loaded data from local storage for ${this.account} on ${this.server}.`);
+      }
+      else
+      {
+        console.log("No account data to load.");
+      }
     }
     catch(x)
     {
-      console.error("Could not load stored local data.", x);
+      console.error("Could not load stored local account data.", x);
     }
     
-    this.settingsFromJSON(window.localStorage.getItem("goodViewerSettings"));
+    // Load the user data from the old way it's stored.
+    if(!accountData)
+    {
+      try
+      {
+        if(this.fromGOOD(JSON.parse(window.localStorage.getItem("goodViewerLists") ?? "null")))
+          console.log("Loaded old data from local storage.");
+      }
+      catch(x)
+      {
+        console.error("Could not load old stored local data.", x);
+      }
+    }
     
+    // Load character build preferences.
     try
     {
-      let builds = JSON.parse(window.localStorage.getItem("genshinBuilds")) ?? {};
+      let builds = JSON.parse(window.localStorage.getItem("genshinBuilds") ?? "{}") ?? {};
       for(let c in builds)
       {
         if(!this.buildData[c])

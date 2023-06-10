@@ -5,7 +5,7 @@ import GenshinItem from "./GenshinItem.js";
 
 export default class Artifact extends GenshinItem
 {
-  static dontSerialize = GenshinItem.dontSerialize.concat(["wanters"]);
+  static dontSerialize = GenshinItem.dontSerialize.concat(["character","wanters"]);
   static shorthandStat = {
     'eleMas': "EM",
     'enerRech_': "ER%",

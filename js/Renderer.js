@@ -205,7 +205,7 @@ class Renderer
           text = "<span class='value'>"+ handlebars.escapeExpression(content.value) +"</span>";
         }
       }
-      else if(content)
+      else if(typeof(content) == "number" || content)
       {
         text = "<span class='value'>"+ handlebars.escapeExpression(content) +"</span>";
       }

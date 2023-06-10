@@ -12,6 +12,7 @@ import Material from "./Material.js";
 
 export default class Character extends GenshinItem
 {
+  static dontSerialize = GenshinItem.dontSerialize.concat(["materials","weapon","flowerArtifact","plumeArtifact","sandsArtifact","gobletArtifact","circletArtifact","materials"]);
   static templateName = "renderCharacterAsPopup";
   static templateTitleName = "renderCharacterAsPopupTitle";
   static statBase = {
@@ -79,6 +80,13 @@ export default class Character extends GenshinItem
   loaded = false;
   favorite = false;
   maxScores = {};
+  materials;
+  weapon;
+  flowerArtifact;
+  plumeArtifact;
+  sandsArtifact;
+  gobletArtifact;
+  circletArtifact;
   
   afterLoad()
   {

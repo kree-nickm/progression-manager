@@ -3,6 +3,8 @@ import Material from "./Material.js";
 
 export default class Traveler extends Character
 {
+  static dontSerialize = Character.dontSerialize.concat(["base","variants"]);
+  
   //#constellation = 0;
   #ascension = 0;
   #level = 1;
