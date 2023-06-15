@@ -1,8 +1,8 @@
 import { Renderer } from "./Renderer.js";
-import UIList from "./UIList.js";
+import GenshinList from "./GenshinList.js";
 import Material from "./Material.js";
 
-export default class MaterialList extends UIList
+export default class MaterialList extends GenshinList
 {
   static unique = true;
   static name = "materials";

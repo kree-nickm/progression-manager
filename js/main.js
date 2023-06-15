@@ -7,6 +7,7 @@ else
   console.error("Your browser does not support Web Storage, and therefore we cannot save your data between sessions (data is too large for standard cookies).");
 
 window.viewer = new GenshinManager();
+window.viewer.retrieve();
 setInterval(window.viewer.today.bind(window.viewer), 60000);
 
 // Set up nav.

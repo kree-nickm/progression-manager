@@ -1,12 +1,14 @@
 import handlebars from 'https://cdn.jsdelivr.net/npm/handlebars@4.7.7/+esm';
 
+import UIItem from "./UIItem.js";
 import Artifact from "./Artifact.js";
 import Character from "./Character.js";
 
 handlebars.registerHelper("itemChildren", (item, field, context) => {
-  let result = Renderer.contentToHTML(field.get('value',item));
+  let params = context.hash.params ? (Array.isArray(context.hash.params) ? context.hash.params : [context.hash.params]) : [];
+  let result = Renderer.contentToHTML(field.get('value', item, ...params));
   
-  let button = field.get('button',item);
+  let button = field.get('button',item,...params);
   if(!Array.isArray(button))
     button = [button];
   for(let btn of button)
@@ -33,6 +35,7 @@ handlebars.registerHelper("itemChildren", (item, field, context) => {
 });
 
 handlebars.registerHelper("itemClasses", (item, field, context) => {
+  let params = context.hash.params ? (Array.isArray(context.hash.params) ? context.hash.params : [context.hash.params]) : [];
   let result = [];
   if(!item)
   {
@@ -44,16 +47,25 @@ handlebars.registerHelper("itemClasses", (item, field, context) => {
     console.error(`field passed to itemClasses helper is invalid`, item, field, context);
     return "";
   }
-  let classes = field.get('classes',item);
+  let classes = field.get('classes', item, ...params);
   for(let cls in classes)
     if(classes[cls])
       result.push(cls);
   return result.join(" ");
 });
 
-handlebars.registerHelper("fieldClasses", (field, property, context) => field.columnClasses.join(" "));
-handlebars.registerHelper("itemField", (item, field, property, context) => field[property](item));
+handlebars.registerHelper("fieldClasses", (field, context) => field.columnClasses.join(" "));
+handlebars.registerHelper("itemField", (item, field, property, context) => {
+  let params = context.hash.params ? (Array.isArray(context.hash.params) ? context.hash.params : [context.hash.params]) : [];
+  return field.get(property, item, ...params);
+});
 handlebars.registerHelper("unique", (item, context) => item.getUnique());
+handlebars.registerHelper('toParam', function(item, context) {
+  if(typeof(item) == "object" && item instanceof UIItem)
+    return item.list.constructor.name +"##"+ item.getUnique();
+  else
+    return String.valueOf(item);
+});
 handlebars.registerHelper("lower", (str, context) => str.toLowerCase());
 handlebars.registerHelper("concat", function() {
   let result = "";
@@ -80,6 +92,7 @@ handlebars.registerHelper("artifactRating", (artifact, statKey, character, conte
     return artifact.getSubstatRating(statKey).sum.toFixed(2);
 });
 handlebars.registerHelper('times', function(n, options) {
+  n = parseInt(n);
   let data = handlebars.createFrame(options.data);
   let accum = "";
   let start = options.hash?.start ?? 0;
@@ -104,6 +117,10 @@ handlebars.registerHelper('iffave', function(character, setKey, options) {
     return options.fn(this);
   else
     return options.inverse(this);
+});
+handlebars.registerHelper('array', function(...params) {
+  let context = params.pop();
+  return params;
 });
 
 class Renderer
@@ -484,13 +501,27 @@ class Renderer
       return false;
     }
     
+    // Parse out the parameters for the item field.
+    let params = [];
+    let p;
+    let i = 0;
+    while((p = element.dataset['param'+i]) !== undefined)
+    {
+      let param = p.split("##");
+      if(param.length == 2)
+        params.push(window.viewer.lists[param[0]].get(param[1]));
+      else
+        params.push(p);
+      i++;
+    }
+    
     // Fetch some fields we need.
-    let value = field.get("value", item);
-    let dependencies = field.get("dependencies", item) ?? [];
-    let button = field.get("button", item);
+    let value = field.get("value", item,...params);
+    let dependencies = field.get("dependencies", item,...params) ?? [];
+    let button = field.get("button", item,...params);
     if(!Array.isArray(button))
       button = [button];
-    let edit = field.get("edit", item);
+    let edit = field.get("edit", item,...params);
     
     // Render the Handlebars template if the field has changed.
     if(element.needsUpdate)
@@ -539,28 +570,42 @@ class Renderer
     }
     
     // Setup the functionality for an editable field if this is a newly-created cell.
+    let popup = field.get("popup", item,...params);
     if(edit)
     {
       if(edit.target)
         dependencies.push(edit.target);
       Renderer.addFieldEventListeners(element, {value, edit}, list, item, field);
     }
-    else if(field.popup)
+    else if(popup)
     {
       if(!element.onclick)
-        element.onclick = event => Renderer.renderItemDetails(item);
+      {
+        element.onclick = event => Renderer.renderItemDetails(popup);
+        element.classList.add("popup");
+      }
     }
     
     let handleSubEdit = (valueArr=[],parents=[]) => {
       for(let iContent in valueArr)
       {
+        if(!valueArr[iContent])
+          continue;
         let newParents = [...parents, ".sub-"+ iContent];
+        let subElement = element.querySelector(":scope > "+ newParents.join(" > "));
         if(valueArr[iContent].edit)
         {
-          let subElement = element.querySelector(":scope > "+ newParents.join(" > "));
           if(valueArr[iContent].edit.target)
             dependencies.push(valueArr[iContent].edit.target);
           Renderer.addFieldEventListeners(subElement, valueArr[iContent], list, item, field);
+        }
+        else if(valueArr[iContent].popup instanceof Character)
+        {
+          if(!subElement.onclick)
+          {
+            subElement.onclick = event => Renderer.renderItemDetails(valueArr[iContent].popup);
+            subElement.classList.add("popup");
+          }
         }
         if(Array.isArray(valueArr[iContent].value))
         {
@@ -578,7 +623,7 @@ class Renderer
       element.dependencies = dependencies;
       for(let dep of element.dependencies)
       {
-        if(dep?.item || dep?.field)
+        if(dep?.item && dep?.field)
           dep.item.addDependent(dep.field, element);
       }
     }

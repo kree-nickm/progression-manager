@@ -1,8 +1,8 @@
 import { Renderer } from "./Renderer.js";
-import UIList from "./UIList.js";
+import GenshinList from "./GenshinList.js";
 import FurnitureSet from "./FurnitureSet.js";
 
-export default class FurnitureSetList extends UIList
+export default class FurnitureSetList extends GenshinList
 {
   static unique = true;
   static name = "furnitureSets";

@@ -169,6 +169,12 @@ export default class Character extends GenshinItem
     let previousItem = this[property];
     this[property] = null;
     
+    // Do a quick bug check on the import, if applicable.
+    if(previousItem?.list.importing)
+    {
+      console.warn(`Multiple ${property}s were located on ${this.name} during the import (${previousItem.name} and ${item.name}). GOOD data may have been exported incorrectly; consider reporting a bug to the developer of the export tool.`);
+    }
+    
     // If we had an item equipped, and the new item was equipped to another character, give that character our old item.
     if(previousItem && previousCharacter)
     {

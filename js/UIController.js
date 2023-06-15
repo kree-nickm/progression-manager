@@ -1,7 +1,15 @@
 export default class UIController {
-  static dontSerialize = ["dependents"];
+  static controllers = new Map();
+  static dontSerialize = ["uuid","dependents"];
   
+  uuid;
   dependents = {};
+  
+  constructor()
+  {
+    this.uuid = crypto.randomUUID();
+    UIController.controllers.set(this.uuid, this);
+  }
   
   parseField(field, create=true)
   {
@@ -147,4 +155,6 @@ export default class UIController {
         result[key] = this[key];
     return result;
   }
+  
+  
 }

@@ -1,7 +1,6 @@
-import { Renderer } from "./Renderer.js";
 import UIController from "./UIController.js";
+import UIItem from "./UIItem.js";
 import ListDisplayManager from "./ListDisplayManager.js";
-import GenshinItem from "./GenshinItem.js";
 
 export default class UIList extends UIController {
   static dontSerialize = UIController.dontSerialize.concat(["viewer","display","subsets","subsetDefinitions","forceNextRender"]);
@@ -27,7 +26,7 @@ export default class UIList extends UIController {
   
   getUnique(item)
   {
-    return item.key ?? item.id;
+    return item.uuid;
   }
   
   get(unique)
@@ -76,69 +75,17 @@ export default class UIList extends UIController {
       return this.list;
   }
   
-  fromGOOD(goodData)
+  createItem()
   {
-    this.clear();
-    if(Array.isArray(goodData))
-    {
-      for(let goodItem of goodData)
-        this.addGOOD(goodItem);
-    }
-    else if(typeof(goodData) == "object")
-    {
-      for(let key in goodData)
-        this.addGOOD({goodKey:key, goodValue:goodData[key]});
-    }
-    else
-    {
-      console.error("UIList.fromGOOD(goodData) only works if goodData is an array or object.", goodData);
-    }
-    this.forceNextRender = true;
-    return this.list.length;
-  }
-  
-  addGOOD(goodData)
-  {
-    if(typeof(goodData) != "object")
-    {
-      console.error("Argument passed to UIList.add() must be an object.", goodItem);
-      return null;
-    }
-    
-    if(this.constructor.unique)
-    {
-      let existing = this.get(this.getUnique(goodData));
-      if(existing)
-      {
-        existing.fromGOOD(goodData);
-        this.subsets = {};
-        return existing;
-      }
-    }
-    
-    this.subsets = {};
-    return this.createItem(goodData);
-  }
-  
-  createItem(goodData)
-  {
-    let item = new GenshinItem();
+    let item = new UIItem();
     item.list = this;
-    item.fromGOOD(goodData);
     this.update("list", item, "push");
     return item;
   }
   
-  toGOOD()
-  {
-    let result = [];
-    for(let item of this.list)
-      result.push(item.toGOOD());
-    return result;
-  }
-  
   clear()
   {
+    this.list.forEach(item => UIController.controllers.delete(item.uuid));
     this.update("list", [], "replace");
     this.subsets = {};
     this.forceNextRender = true;

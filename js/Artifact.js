@@ -17,15 +17,15 @@ export default class Artifact extends GenshinItem
     'atk_': "ATK%",
     'critDMG_': "C.DMG",
     'critRate_': "C.Rate",
-    'anemo_dmg_': "Anemo",
-    'hydro_dmg_': "Hydro",
-    'cryo_dmg_': "Cryo",
-    'pyro_dmg_': "Pyro",
-    'electro_dmg_': "Electro",
-    'dendro_dmg_': "Dendro",
-    'geo_dmg_': "Geo",
-    'physical_dmg_': "Phys",
-    'heal_': "Heal",
+    'anemo_dmg_': "Anemo%",
+    'hydro_dmg_': "Hydro%",
+    'cryo_dmg_': "Cryo%",
+    'pyro_dmg_': "Pyro%",
+    'electro_dmg_': "Electro%",
+    'dendro_dmg_': "Dendro%",
+    'geo_dmg_': "Geo%",
+    'physical_dmg_': "Phys%",
+    'heal_': "Heal%",
   };
   static substats = ['critRate_','critDMG_','atk_','enerRech_','eleMas','hp_','def_','atk','hp','def'];
   static substatMins = {
@@ -79,7 +79,7 @@ export default class Artifact extends GenshinItem
           newCharacter.equipItem(this);
         else
         {
-          console.error(`Cannot equip ${this.name} to non-existent character "${this.location}".`);
+          console.warn(`Cannot equip ${this.name} (${this.setName} ${this.slotKey}) to non-existent character "${this.location}".` + (this.list.importing ? ` GOOD data may have been exported incorrectly; consider reporting a bug to the developer of the export tool.` : ""));
           field.object[field.property] = "";
           this.character = null;
         }

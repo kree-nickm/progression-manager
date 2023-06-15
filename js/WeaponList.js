@@ -1,14 +1,14 @@
 import GenshinWeaponData from "./gamedata/GenshinWeaponData.js";
 
 import { Renderer } from "./Renderer.js";
-import UIList from "./UIList.js";
+import GenshinList from "./GenshinList.js";
 import Artifact from "./Artifact.js";
 import Weapon from "./Weapon.js";
 
-export default class WeaponList extends UIList
+export default class WeaponList extends GenshinList
 {
   static name = "weapons";
-  static dontSerialize = UIList.dontSerialize.concat(["elements"]);
+  static dontSerialize = GenshinList.dontSerialize.concat(["elements"]);
   
   elements = {};
   
@@ -270,6 +270,12 @@ export default class WeaponList extends UIList
     item.fromGOOD(goodData);
     this.update("list", item, "push");
     return item;
+  }
+  
+  clear()
+  {
+    super.clear();
+    this.viewer.lists.characters.list.forEach(character => character.weapon = null);
   }
   
   async render(force=false)

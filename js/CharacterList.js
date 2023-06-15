@@ -1,16 +1,16 @@
 import GenshinCharacterData from "./gamedata/GenshinCharacterData.js";
 
 import { Renderer } from "./Renderer.js";
-import UIList from "./UIList.js";
+import GenshinList from "./GenshinList.js";
 import Character from "./Character.js";
 import Traveler from "./Traveler.js";
 import Artifact from "./Artifact.js";
 
-export default class CharacterList extends UIList
+export default class CharacterList extends GenshinList
 {
   static unique = true;
   static name = "characters";
-  static dontSerialize = UIList.dontSerialize.concat(["elements"]);
+  static dontSerialize = GenshinList.dontSerialize.concat(["elements"]);
   
   elements = {};
   
@@ -237,7 +237,7 @@ export default class CharacterList extends UIList
       }
     }
     
-    let talGroup = {label:"Talent Materials"};
+    let talGroup = {label:"Talent Materials", startCollapsed:true};
     for(let i of ["auto","skill","burst",1,2,3,4,5,6,7,8,9])
     {
       for(let m of [{l:"Mastery",d:"Domain"},{l:"Enemy",d:"Enemy"},{l:"Trounce",d:"Trounce"},{l:"Crown",d:"Crown"}])
@@ -351,93 +351,60 @@ export default class CharacterList extends UIList
         ],
       });
     }
+    
+    let gearGroup = {label:"Gear", startCollapsed:true};
     /*
-    let wepGroup = {label:"Equipped Weapon"};
-    if(this.weapon)
-    {
-      let weaponData = this.weapon.getRenderData();
-      let weaponName = {
-        group: wepGroup,
-        label: "Equipped",
-        value: this.weapon.name,
-        classes: {
-          "material": true,
-          "q1": this.weapon.quality == 1,
-          "q2": this.weapon.quality == 2,
-          "q3": this.weapon.quality == 3,
-          "q4": this.weapon.quality == 4,
-          "q5": this.weapon.quality == 5,
-        },
-        dependencies: [
-          {item:this.weapon, field:"location"},
-          {type:"weapon"},
-        ],
-      };
-      let weaponRef = weaponData.refinement;
-      weaponRef.group = wepGroup;
-      weaponRef.dependencies.push({item:this.weapon, field:"location"}, {type:"weapon"});
-      let weaponPhase = weaponData.ascension;
-      weaponPhase.group = wepGroup;
-      weaponPhase.dependencies.push({item:this.weapon, field:"location"}, {type:"weapon"});
-      let weaponLevel = weaponData.level;
-      weaponLevel.group = wepGroup;
-      weaponLevel.dependencies.push({item:this.weapon, field:"location"}, {type:"weapon"});
-      let weaponForgeryMat = weaponData.forgeryMat;
-      weaponForgeryMat.group = wepGroup;
-      weaponForgeryMat.dependencies.push({item:this.weapon, field:"location"}, {type:"weapon"});
-      let weaponStrongMat = weaponData.strongMat;
-      weaponStrongMat.group = wepGroup;
-      weaponStrongMat.dependencies.push({item:this.weapon, field:"location"}, {type:"weapon"});
-      let weaponWeakMat = weaponData.weakMat;
-      weaponWeakMat.group = wepGroup;
-      weaponWeakMat.dependencies.push({item:this.weapon, field:"location"}, {type:"weapon"});
-    }
-    else
-    {
-      let weaponName = {
-        group: wepGroup,
-        label: "Equipped",
-        value: "",
-        dependencies: [{type:"weapon"}],
-      };
-      let weaponRef = {
-        group: wepGroup,
-        label: "Ref",
-        value: "",
-        dependencies: [{type:"weapon"}],
-      };
-      let weaponPhase = {
-        group: wepGroup,
-        label: "Phase",
-        value: "",
-        dependencies: [{type:"weapon"}],
-      };
-      let weaponLevel = {
-        group: wepGroup,
-        label: "Level",
-        value: "",
-        dependencies: [{type:"weapon"}],
-      };
-      let weaponForgeryMat = {
-        group: wepGroup,
-        label: "Forgery Rewards",
-        value: "",
-        dependencies: [{type:"weapon"}],
-      };
-      let weaponStrongMat = {
-        group: wepGroup,
-        label: "Strong Drops",
-        value: "",
-        dependencies: [{type:"weapon"}],
-      };
-      let weaponWeakMat = {
-        group: wepGroup,
-        label: "Weak Drops",
-        value: "",
-        dependencies: [{type:"weapon"}],
-      };
-    }
+    // Note: This is a potential future implementation, for future reference.
+    let weaponName = this.display.transferField(this.viewer.lists.weapons.display.getField("name"), "weaponName", {
+      item: item => item.weapon,
+      group: gearGroup,
+      label: "Weapon",
+      dynamic: true,
+      dependencies: item => [
+        item.weapon ? {item:item.weapon, field:"location"} : undefined,
+        {type:"weapon"},
+      ],
+    });
     */
+    let weaponName = this.display.addField("weaponName", {
+      group: gearGroup,
+      label: "Weapon",
+      dynamic: true,
+      popup: item => item.weapon,
+      value: item => item.weapon ? [
+        {
+          value: item.weapon.display.getField("name").get("value", item.weapon),
+          classes: item.weapon.display.getField("name").get("classes", item.weapon),
+        },
+        {
+          value: `R${item.weapon.refinement}, Lv.${item.weapon.level}`,
+        },
+      ] : "",
+      dependencies: item => [
+        item.weapon ? {item:item.weapon, field:"location"} : undefined,
+        {type:"weapon"},
+      ],
+    });
+    
+    let flower = this.display.addField("flower", {
+      group: gearGroup,
+      label: "Flower",
+      dynamic: true,
+      //popup: item => item.flowerArtifact,
+      value: item => item.flowerArtifact ? [
+        {
+          value: item.flowerArtifact.display.getField("set").get("value", item.flowerArtifact),
+          classes: item.flowerArtifact.display.getField("set").get("classes", item.flowerArtifact),
+        },
+        {
+          value: `+${item.flowerArtifact.level}`,
+        },
+      ] : "",
+      dependencies: item => [
+        item.flowerArtifact ? {item:item.flowerArtifact, field:"location"} : undefined,
+        {type:"flower"},
+      ],
+    });
 
     /*
     if traveler

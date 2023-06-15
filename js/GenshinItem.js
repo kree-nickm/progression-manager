@@ -1,25 +1,7 @@
-import UIController from "./UIController.js";
+import UIItem from "./UIItem.js";
 
-export default class GenshinItem extends UIController {
-  static dontSerialize = UIController.dontSerialize.concat(["list"]);
-  
-  list;
+export default class GenshinItem extends UIItem {
   goodProperties = [];
-  
-  get viewer()
-  {
-    return this.list.viewer;
-  }
-  
-  getUnique()
-  {
-    return this.list.getUnique(this);
-  }
-  
-  equals(object)
-  {
-    return this.constructor?.name == object.constructor?.name && this.getUnique() == object.getUnique();
-  }
   
   fromGOOD(goodData)
   {
@@ -57,20 +39,6 @@ export default class GenshinItem extends UIController {
     {
       this.update(keys, goodData[key]);
     }
-  }
-  
-  afterLoad()
-  {
-    return true;
-  }
-  
-  getRelatedItems()
-  {
-    return {};
-  }
-  
-  addPopupEventHandlers(popupBody)
-  {
   }
   
   toGOOD()

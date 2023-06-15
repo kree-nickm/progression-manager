@@ -1,42 +1,20 @@
 <div class="list-item {{#ifeq character.key item.location}}equipped{{/ifeq}} {{#iffave character item.setKey}}favorite{{/iffave}}" name="{{unique item}}" data-template="renderArtifactAsCard">
   {{> renderItemField item=item field=fields.set wrapper="div"}}
-    <div class="row main-stats">
-      <div class="col level">+{{> renderItemField item=item field=fields.level wrapper="span"}}</div>
-      <div class="col stat-key">{{artifactStat item.mainStatKey}}</div>
-      <div class="col stat-value">{{artifactRating item character}}</div>
+    <div class="row gx-1 main-stats">
+      <div class="col-3 level">{{> renderItemField item=item field=fields.level wrapper="span"}}</div>
+      <div class="col-6 stat-key">{{> renderItemField item=item field=fields.mainStat wrapper="span"}}</div>
+      <div class="col-3 stat-value">{{> renderItemField item=item field=fields.characterScore wrapper="span" params=(array character)}}</div>
     </div>
-  {{#if item.substats.[0].value}}
-    <div class="substat row">
-        <div class="col-3">{{artifactStat item.substats.[0].key}}</div>
-        <div class="col-3">{{> renderItemField item=item field=(lookup fields (concat item.substats.[0].key "Sum")) wrapper="span"}}</div>
-        <div class="col-3">{{> renderItemField item=item field=(lookup fields (concat item.substats.[0].key "Rating")) wrapper="span"}}</div>
-        <div class="col-3">{{artifactRating item item.substats.[0].key character}}</div>
-    </div>
-  {{/if}}
-  {{#if item.substats.[1].value}}
-    <div class="substat row">
-        <div class="col-3">{{artifactStat item.substats.[1].key}}</div>
-        <div class="col-3">{{> renderItemField item=item field=(lookup fields (concat item.substats.[1].key "Sum")) wrapper="span"}}</div>
-        <div class="col-3">{{> renderItemField item=item field=(lookup fields (concat item.substats.[1].key "Rating")) wrapper="span"}}</div>
-        <div class="col-3">{{artifactRating item item.substats.[1].key character}}</div>
+  {{#times 4}}
+  {{#if (lookup (lookup item.substats @index) "value")}}
+    <div class="substat row gx-1">
+        <div class="col-4">{{artifactStat (lookup (lookup item.substats @index) "key")}}</div>
+        <div class="col-2">{{> renderItemField item=item field=(lookup fields (concat (lookup (lookup item.substats @index) "key") "Sum")) wrapper="span"}}</div>
+        <div class="col-3">{{> renderItemField item=item field=(lookup fields (concat (lookup (lookup item.substats @index) "key") "Rating")) wrapper="span"}}</div>
+        <div class="col-3">{{> renderItemField item=item field=fields.characterSubstatRating wrapper="span" params=(array character (lookup (lookup item.substats @index) "key"))}}</div>
     </div>
   {{/if}}
-  {{#if item.substats.[2].value}}
-    <div class="substat row">
-        <div class="col-3">{{artifactStat item.substats.[2].key}}</div>
-        <div class="col-3">{{> renderItemField item=item field=(lookup fields (concat item.substats.[2].key "Sum")) wrapper="span"}}</div>
-        <div class="col-3">{{> renderItemField item=item field=(lookup fields (concat item.substats.[2].key "Rating")) wrapper="span"}}</div>
-        <div class="col-3">{{artifactRating item item.substats.[2].key character}}</div>
-    </div>
-  {{/if}}
-  {{#if item.substats.[3].value}}
-    <div class="substat row">
-        <div class="col-3">{{artifactStat item.substats.[3].key}}</div>
-        <div class="col-3">{{> renderItemField item=item field=(lookup fields (concat item.substats.[3].key "Sum")) wrapper="span"}}</div>
-        <div class="col-3">{{> renderItemField item=item field=(lookup fields (concat item.substats.[3].key "Rating")) wrapper="span"}}</div>
-        <div class="col-3">{{artifactRating item item.substats.[3].key character}}</div>
-    </div>
-  {{/if}}
+  {{/times}}
   {{#if item.location}}
     <div class="equip"><b>User:</b> {{item.location}}</div>
   {{/if}}

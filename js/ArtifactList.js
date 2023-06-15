@@ -1,13 +1,13 @@
 import GenshinArtifactData from "./gamedata/GenshinArtifactData.js";
 
 import { Renderer } from "./Renderer.js";
-import UIList from "./UIList.js";
+import GenshinList from "./GenshinList.js";
 import Artifact from "./Artifact.js";
 
-export default class ArtifactList extends UIList
+export default class ArtifactList extends GenshinList
 {
   static name = "artifacts";
-  static dontSerialize = UIList.dontSerialize.concat(["elements"]);
+  static dontSerialize = GenshinList.dontSerialize.concat(["elements"]);
   static abundantSets = ["WanderersTroupe","GladiatorsFinale","Berserker","Gambler","TinyMiracle","Scholar","BraveHeart","DefendersWill"];
   static valuableSets = ["NoblesseOblige","EmblemOfSeveredFate","GildedDreams","ViridescentVenerer"];
   
@@ -40,30 +40,58 @@ export default class ArtifactList extends UIList
     this.list.forEach(artifact => artifact.update("valuable", 0));
     // Cycle through every character so we can access their artifact priority lists.
     this.viewer.lists.characters.list.forEach(character => {
+      // Cycle through all their builds.
       for(let buildId in character.getBuilds())
       {
-        //let buildId = "default"; // TODO: Cycle through all builds once we have multiple.
         let related = character.getRelatedItems(buildId);
         // Handle each slot separately.
         for(let slot of ["flower","plume","sands","goblet","circlet"])
         {
-          // Mark the 5 best artifacts we have.
-          for(let i=0; i<5; i++)
+          // Mark the best artifacts we have.
+          let numToKeep = 2;
+          for(let i=0; i<numToKeep; i++)
+          {
             if(related.bestArtifacts[slot][i])
             {
               related.bestArtifacts[slot][i].update("valuable", related.bestArtifacts[slot][i].valuable + 1);
               related.bestArtifacts[slot][i].update("wanters", `#${i+1} for ${character.name}`, "push");
+              // Don't bother with anything worse than what they are already using (but still mark at least 2?).
+              if(related.bestArtifacts[slot][i].character == character)
+              {
+                //numToKeep = Math.max(i, 2);
+                numToKeep = i;
+              }
+              // If this artifact is taken, check for 1 more in total.
+              else if(related.bestArtifacts[slot][i].character)
+              {
+                numToKeep++;
+              }
             }
+          }
           for(let setKey in related.buildData.artifactSets)
           {
-            // Mark the 2 best artifacts we have for each desired set.
+            // Mark the best artifacts we have for each desired set.
+            numToKeep = 2;
             let bestOfSet = related.bestArtifacts[slot].filter(artifact => artifact.setKey == setKey);
-            for(let i=0; i<2; i++)
+            for(let i=0; i<numToKeep; i++)
+            {
               if(bestOfSet[i])
               {
                 bestOfSet[i].update("valuable", bestOfSet[i].valuable + 1);
                 bestOfSet[i].update("wanters", `#${i+1} ${setKey} piece for ${character.name}`, "push");
+                // Don't bother with anything worse than what they are already using (but still mark at least 2?).
+                if(bestOfSet[i].character == character)
+                {
+                  //numToKeep = Math.max(i, 2);
+                  numToKeep = i;
+                }
+                // If this artifact is taken, check for 1 more in total.
+                else if(bestOfSet[i].character)
+                {
+                  numToKeep++;
+                }
               }
+            }
           }
         }
       }
@@ -106,7 +134,7 @@ export default class ArtifactList extends UIList
       label: "Lvl",
       sort: {generic: {type:"number",property:"level"}},
       dynamic: true,
-      value: item => item.level,
+      value: item => "+"+item.level,
       edit: item => ({target: {item:item , field:"level"}}),
     });
     
@@ -179,24 +207,6 @@ export default class ArtifactList extends UIList
       });
     }
     
-    /*let characterScoreField = this.display.addField("characterScore", {
-      group: substatRatingGroup,
-      label: "MAX",
-      labelTitle: "Maximum total weighted piece score across all of your characters.",
-      sort: {func: (o,a,b) => o * (b.getMaxCharacterScore().score - a.getMaxCharacterScore().score)},
-      //columnClasses: ['stat-character-rating'],
-      dynamic: true,
-      title: item => "Best for "+ item.getMaxCharacterScore().character,
-      value: item => Math.round(item.getMaxCharacterScore().score * 100) + "%",
-      classes: item => ({
-        "insufficient": item.getMaxCharacterScore().score < ArtifactList.minimumScore(item),
-      }),
-      dependencies: item => [
-        {item:item, field:"level"},
-        {item:item, field:"substats"},
-      ],
-    });*/
-    
     let characterCountField = this.display.addField("characterCount", {
       group: substatRatingGroup,
       label: "#",
@@ -216,14 +226,23 @@ export default class ArtifactList extends UIList
       label: "Equipped By",
       sort: {generic: {type:"string",property:"location"}},
       dynamic: true,
-      value: item => item.character?.name ?? "",
-      edit: item => ({
-        target: {item:item, field:"location"},
-        type: "select",
-        list: item.list.viewer.lists.characters.list.filter(cha => cha.constructor.name == "Character" || !cha.base),
-        valueProperty: "key",
-        displayProperty: "name",
-      }),
+      value: item => [
+        {
+          value: item.character?.name ?? "",
+          edit: {
+            target: {item:item, field:"location"},
+            type: "select",
+            list: item.list.viewer.lists.characters.list.filter(cha => cha.constructor.name == "Character" || !cha.base),
+            valueProperty: "key",
+            displayProperty: "name",
+          },
+        },
+        item.character ? {
+          tag: "i",
+          classes: {'fa-solid':true, 'fa-eye':true, 'float-end':true},
+          popup: item.character,
+        } : undefined,
+      ],
       dependencies: item => [
         {item:item.list.viewer.lists.characters, field:"list"},
       ],
@@ -246,19 +265,38 @@ export default class ArtifactList extends UIList
         },
       },
     });
+    
+    let characterScoreField = this.display.addField("characterScore", {
+      label: "Score",
+      tags: ["detailsOnly"],
+      dynamic: true,
+      value: (artifact,character) => Math.round(artifact.getCharacterScore(character) * 100).toFixed(0) + "%",
+      title: (artifact,character) => `How close this artifact is to ${character.name}'s best possible artifact for this build.`,
+      dependencies: artifact => [
+        {item:artifact, field:"level"},
+        {item:artifact, field:"substats"},
+      ],
+    });
+    
+    let characterSubstatRatingField = this.display.addField("characterSubstatRating", {
+      label: "Substat Rating",
+      tags: ["detailsOnly"],
+      dynamic: true,
+      value: (artifact,character,substat) => {
+        let scores = artifact.getCharacterScoreParts(character);
+        return scores.subScores[substat]?.toFixed(2) ?? "0.00";
+      },
+      title: (artifact,character,substat) => `How much rating ${Artifact.shorthandStat[substat]} is contributing to this artifact's score for ${character.name}.`,
+      dependencies: artifact => [
+        {item:artifact, field:"level"},
+        {item:artifact, field:"substats"},
+      ],
+    });
   }
   
   getUnique(item)
   {
     return `${item.setKey}${item.rarity}${item.slotKey}.${item.mainStatKey}.${item.id}`;
-  }
-  
-  
-  fromGOOD(goodData)
-  {
-    let result = super.fromGOOD(goodData);
-    this.evaluate();
-    return result;
   }
   
   createItem(goodData)
@@ -270,11 +308,24 @@ export default class ArtifactList extends UIList
     return item;
   }
   
+  clear()
+  {
+    super.clear();
+    this.viewer.lists.characters.list.forEach(character => {
+      character.flowerArtifact = null;
+      character.plumeArtifact = null;
+      character.sandsArtifact = null;
+      character.gobletArtifact = null;
+      character.circletArtifact = null;
+    });
+  }
+  
   async render(force=false)
   {
     await Renderer.renderList2(this.constructor.name, {
       template: "renderListAsTable",
       force: force || this.forceNextRender,
+      exclude: field => field.tags.indexOf("detailsOnly") > -1,
       container: this.viewer.elements[this.constructor.name],
     });
     this.forceNextRender = false;

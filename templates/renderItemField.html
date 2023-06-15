@@ -1,8 +1,12 @@
 <{{wrapper}}
-  class="list-item-field {{itemClasses item field}} {{fieldClasses field}} {{#if field.popup}}popup{{/if}}"
+  class="list-item-field {{itemClasses item field params=params}} {{fieldClasses field}} {{class}}"
   name="{{field.id}}"
-  title="{{itemField item field 'title'}}"
+  title="{{itemField item field 'title' params=params}}"
   {{#if field.group}}data-group-name="{{field.group.label}}"{{/if}}
-  data-template="renderItemField">
-  {{itemChildren item field}}
+  data-template="renderItemField"
+  {{#each params}}
+  data-param{{@index}}="{{toParam .}}"
+  {{/each}}
+>
+  {{itemChildren item field params=params}}
 </{{wrapper}}>
