@@ -1,3 +1,5 @@
+import GenshinFurnitureData from "./gamedata/GenshinFurnitureData.js";
+
 import { Renderer } from "./Renderer.js";
 import GenshinList from "./GenshinList.js";
 import Furniture from "./Furniture.js";
@@ -5,7 +7,15 @@ import Furniture from "./Furniture.js";
 export default class FurnitureList extends GenshinList
 {
   static unique = true;
-  static name = "furniture";
+  static itemClass = Furniture;
+  
+  initialize()
+  {
+    for(let k in GenshinFurnitureData)
+    {
+      this.addGOOD({key:k, learned:false, count:0});
+    }
+  }
   
   setupDisplay()
   {

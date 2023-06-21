@@ -2,11 +2,12 @@ import UIController from "./UIController.js";
 
 export default class DataManager extends UIController
 {
-  static dontSerialize = UIController.dontSerialize.concat(["lists","elements","stickyElements","errors"]);
+  static dontSerialize = UIController.dontSerialize.concat(["listClasses","elements","stickyElements","errors"]);
   
   currentView;
   settings = {};
-  lists = {};
+  listClasses = {};
+  data = {};
   elements = {};
   stickyElements = [];
   errors;
@@ -19,11 +20,7 @@ export default class DataManager extends UIController
     this.settings.paneMemory = {};
   }
   
-  createLists()
-  {
-  }
-  
-  async view(pane="characters")
+  async view(pane="CharacterList")
   {
     await this.lists[pane].render();
     this.stickyElements = document.querySelectorAll(".sticky-js");
@@ -121,7 +118,7 @@ export default class DataManager extends UIController
   {
     if(this.errors)
     {
-      console.warn(`Prevented saving of local data due to errors being detected during load, in order to prevent saved data corruption. You must reload the page to clear this. If the problem persist, you may have to report a bug to the developer.`);
+      console.warn(`Prevented saving of local data in order to prevent corruption, due to errors being detected during load. You must reload the page to clear this. If the problem persists, you may have to report a bug to the developer.`);
       return false;
     }
     window.localStorage.setItem("DataManagerSettings", JSON.stringify(this.settings));
@@ -131,10 +128,7 @@ export default class DataManager extends UIController
   retrieve()
   {
     // Load site-specific preferences.
-    this.settingsFromJSON(window.localStorage.getItem("DataManagerSettings") ?? "{}");
-    
-    // Initialize data lists before loading stored data into them.
-    this.createLists();
+    this.settingsFromJSON(window.localStorage.getItem("DataManagerSettings"));
     
     if(this.currentView)
       this.view(this.currentView);

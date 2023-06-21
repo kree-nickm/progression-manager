@@ -1,3 +1,6 @@
+import GenshinLootData from "./gamedata/GenshinLootData.js";
+import GenshinCharacterData from "./gamedata/GenshinCharacterData.js";
+
 import { Renderer } from "./Renderer.js";
 import GenshinList from "./GenshinList.js";
 import Material from "./Material.js";
@@ -5,7 +8,7 @@ import Material from "./Material.js";
 export default class MaterialList extends GenshinList
 {
   static unique = true;
-  static name = "materials";
+  static itemClass = Material;
   
   setupDisplay()
   {
@@ -56,6 +59,40 @@ export default class MaterialList extends GenshinList
         return dependencies;
       },
     });
+  }
+  
+  initialize()
+  {
+    // Enemy mats
+    for(let e in GenshinLootData.enemy)
+      Material.setupTiers([4,3,2,1].map(q => GenshinLootData.enemy[e][q] ? this.addGOOD({goodKey:GenshinLootData.enemy[e][q], goodValue:0}).update("source", GenshinLootData.enemy[e].source ?? e).update("quality", q).update("shorthand", e) : null));
+    
+    // Trounce mats
+    for(let domain of GenshinLootData.trounce)
+      for(let itemName of domain.loot)
+        this.addGOOD({goodKey:itemName, goodValue:0}).update("source", domain.boss).update("quality", 5);
+      
+    // Boss mats
+    for(let b in GenshinLootData.boss)
+      this.addGOOD({goodKey:GenshinLootData.boss[b]['4'], goodValue:0}).update("source", GenshinLootData.boss[b].name).update("quality", 4).update("shorthand", b);
+    
+    // Gemstone mats
+    Material.setupTiers([5,4,3,2].map(q => this.addGOOD({goodKey:"Brilliant Diamond" + Material.gemQualities[q], goodValue:0}).update("quality", q).update("shorthand", "Diamond" + Material.gemQualities[q])));
+    for(let elem in GenshinLootData.gemstone)
+      Material.setupTiers([5,4,3,2].map(q => this.addGOOD({goodKey:GenshinLootData.gemstone[elem].prefix + Material.gemQualities[q], goodValue:0}).update("quality", q).update("shorthand", elem + Material.gemQualities[q])));
+    
+    // Mastery mats
+    for(let suffix in GenshinLootData.mastery)
+      Material.setupTiers([4,3,2].map(q => this.addGOOD({goodKey:Material.masteryQualities[q] + suffix, goodValue:0}).update("source", GenshinLootData.mastery[suffix].source).update("days", GenshinLootData.mastery[suffix].days, "replace").update("quality", q).update("shorthand", suffix)));
+    this.addGOOD({goodKey:"Crown Of Insight", goodValue:0}).update("quality", 5);
+    
+    // Forgery mats
+    for(let suffix in GenshinLootData.forgery)
+      Material.setupTiers([5,4,3,2].map(q => this.addGOOD({goodKey:GenshinLootData.forgery[suffix][q], goodValue:0}).update("source", GenshinLootData.forgery[suffix].source).update("days", GenshinLootData.forgery[suffix].days, "replace").update("quality", q).update("shorthand", suffix)));
+    
+    // Flora mats
+    for(let c in GenshinCharacterData)
+      this.addGOOD({goodKey:GenshinCharacterData[c].matFlower, goodValue:0}).update("quality", 1);
   }
   
   getUnique(item)

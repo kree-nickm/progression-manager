@@ -7,8 +7,8 @@ import Weapon from "./Weapon.js";
 
 export default class WeaponList extends GenshinList
 {
-  static name = "weapons";
   static dontSerialize = GenshinList.dontSerialize.concat(["elements"]);
+  static itemClass = Weapon;
   
   elements = {};
   
@@ -208,7 +208,7 @@ export default class WeaponList extends GenshinList
       edit: item => ({
         target: {item, field:"location"},
         type: "select",
-        list: item.list.viewer.lists.characters.list.filter(cha => (cha.constructor.name == "Character" || !cha.base) && item.type == cha.weaponType),
+        list: item.list.viewer.lists.CharacterList.list.filter(cha => (cha.constructor.name == "Character" || !cha.base) && item.type == cha.weaponType),
         valueProperty: "key",
         displayProperty: "name",
       }),
@@ -229,6 +229,7 @@ export default class WeaponList extends GenshinList
         action: event => {
           event.stopPropagation();
           item.list.update("list", item, "remove");
+          item.unlink();
           Renderer.removeItem(item);
           item.list.viewer.store();
         },
@@ -257,11 +258,6 @@ export default class WeaponList extends GenshinList
       ],
     });
   }
-
-  getUnique(item)
-  {
-    return `${item.key}${item.id}`;
-  }
   
   createItem(goodData)
   {
@@ -275,7 +271,7 @@ export default class WeaponList extends GenshinList
   clear()
   {
     super.clear();
-    this.viewer.lists.characters.list.forEach(character => character.weapon = null);
+    this.viewer.lists.CharacterList.list.forEach(character => character.weapon = null);
   }
   
   async render(force=false)

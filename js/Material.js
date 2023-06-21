@@ -41,7 +41,7 @@ export default class Material extends GenshinItem
   
   static toKey(string)
   {
-    return string.replaceAll(/\b(to|the|from|a|of)\b/g, (match, p1, offset, string) => string.at(0).toLowerCase()+string.substring(1)).replaceAll(/[-' ]/g, "");
+    return string.replaceAll(/\b(to|the|from|a|of)\b/g, (match, p1, offset, str) => str.at(0).toLowerCase()+str.substring(1)).replaceAll(/[-' ]/g, "");
   }
   
   static fromKey(string)
@@ -49,8 +49,9 @@ export default class Material extends GenshinItem
     return string.replaceAll(/([A-Z])/g, " $1").trim();
   }
   
-  #count = 0;
-  #shorthand;
+  key = "";
+  _count = 0;
+  _shorthand;
   source = "";
   quality = 1;
   days = [];
@@ -80,18 +81,18 @@ export default class Material extends GenshinItem
     return this.count;
   }
   
-  get count(){ return this.#count; }
+  get count(){ return this._count; }
   set count(val){
     if(val < 0)
-      val = this.#count + val;
-    this.#count = Math.max(val, 0);
+      val = this._count + val;
+    this._count = Math.max(val, 0);
   }
-  get shorthand(){ return this.#shorthand ?? this.name; }
-  set shorthand(val){ this.#shorthand = val; }
+  get shorthand(){ return this._shorthand ?? this.name; }
+  set shorthand(val){ this._shorthand = val; }
   
   getFullSource()
   {
-    return `${this.name}` + (this.source?`, dropped by ${this.source}`:"") + (this.days?`, on ${this.days.join("/")}`:"");
+    return `${this.name}` + (this.source?`, dropped by ${this.source}`:"") + (this.days.length?`, on ${this.days.join("/")}`:"");
   }
   
   addUser(item)
@@ -141,7 +142,7 @@ export default class Material extends GenshinItem
         if(this == item.getTalentMat('mastery','burst') && item.getTalent('burst').matDomainCount)
           amount.push(item.getTalent('burst').matDomainCount);
         
-        if(this == item.materials.trounce)
+        if(this == item.MaterialList.trounce)
           amount.push(item.getTalent('auto').matTrounceCount + item.getTalent('skill').matTrounceCount + item.getTalent('burst').matTrounceCount);
       }
       if(item instanceof Weapon)

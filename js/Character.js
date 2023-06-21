@@ -12,7 +12,7 @@ import Material from "./Material.js";
 
 export default class Character extends GenshinItem
 {
-  static dontSerialize = GenshinItem.dontSerialize.concat(["materials","weapon","flowerArtifact","plumeArtifact","sandsArtifact","gobletArtifact","circletArtifact","materials"]);
+  static dontSerialize = GenshinItem.dontSerialize.concat(["MaterialList","_weapon","_flower","_plume","_sands","_goblet","_circlet","loaded"]);
   static templateName = "renderCharacterAsPopup";
   static templateTitleName = "renderCharacterAsPopupTitle";
   static statBase = {
@@ -73,66 +73,71 @@ export default class Character extends GenshinItem
       return (B-A);
   }
   
-  #constellation = 0;
-  #ascension = 0;
-  #level = 1;
-  #weapon;
+  key = "";
+  _constellation = 0;
+  _ascension = 0;
+  _level = 1;
+  talent = {
+    auto: 1,
+    skill: 1,
+    burst: 1,
+  };
   loaded = false;
   favorite = false;
+  _weapon = null;
+  _flower = null;
+  _plume = null;
+  _sands = null;
+  _goblet = null;
+  _circlet = null;
   maxScores = {};
-  materials;
-  weapon;
-  flowerArtifact;
-  plumeArtifact;
-  sandsArtifact;
-  gobletArtifact;
-  circletArtifact;
+  MaterialList;
   
   afterLoad()
   {
-    this.materials = {crown: this.list.viewer.lists.materials.get("Crown Of Insight")};
+    this.MaterialList = {crown: this.list.viewer.lists.MaterialList.get("Crown Of Insight")};
     if(GenshinCharacterData[this.key])
     {
       this.loaded = true;
       
       // Retrieve the materials used by this character.
-      this.materials.gem = {
-        '2': this.list.viewer.lists.materials.get(GenshinLootData.gemstone[this.element].prefix + Material.gemQualities[2]),
-        '3': this.list.viewer.lists.materials.get(GenshinLootData.gemstone[this.element].prefix + Material.gemQualities[3]),
-        '4': this.list.viewer.lists.materials.get(GenshinLootData.gemstone[this.element].prefix + Material.gemQualities[4]),
-        '5': this.list.viewer.lists.materials.get(GenshinLootData.gemstone[this.element].prefix + Material.gemQualities[5]),
+      this.MaterialList.gem = {
+        '2': this.list.viewer.lists.MaterialList.get(GenshinLootData.gemstone[this.element].prefix + Material.gemQualities[2]),
+        '3': this.list.viewer.lists.MaterialList.get(GenshinLootData.gemstone[this.element].prefix + Material.gemQualities[3]),
+        '4': this.list.viewer.lists.MaterialList.get(GenshinLootData.gemstone[this.element].prefix + Material.gemQualities[4]),
+        '5': this.list.viewer.lists.MaterialList.get(GenshinLootData.gemstone[this.element].prefix + Material.gemQualities[5]),
       };
-      this.materials.boss = this.list.viewer.lists.materials.get(GenshinLootData.boss[this.bossMatType][4]);
-      this.materials.flower = this.list.viewer.lists.materials.get(this.flowerMatType);
-      this.materials.enemy = {
-        '1': this.list.viewer.lists.materials.get(GenshinLootData.enemy[this.enemyMatType][1]),
-        '2': this.list.viewer.lists.materials.get(GenshinLootData.enemy[this.enemyMatType][2]),
-        '3': this.list.viewer.lists.materials.get(GenshinLootData.enemy[this.enemyMatType][3]),
+      this.MaterialList.boss = this.list.viewer.lists.MaterialList.get(GenshinLootData.boss[this.bossMatType][4]);
+      this.MaterialList.flower = this.list.viewer.lists.MaterialList.get(this.flowerMatType);
+      this.MaterialList.enemy = {
+        '1': this.list.viewer.lists.MaterialList.get(GenshinLootData.enemy[this.enemyMatType][1]),
+        '2': this.list.viewer.lists.MaterialList.get(GenshinLootData.enemy[this.enemyMatType][2]),
+        '3': this.list.viewer.lists.MaterialList.get(GenshinLootData.enemy[this.enemyMatType][3]),
       };
-      this.materials.mastery = {
-        '2': this.list.viewer.lists.materials.get(Material.masteryQualities[2] + this.getTalentMatType('mastery')),
-        '3': this.list.viewer.lists.materials.get(Material.masteryQualities[3] + this.getTalentMatType('mastery')),
-        '4': this.list.viewer.lists.materials.get(Material.masteryQualities[4] + this.getTalentMatType('mastery')),
+      this.MaterialList.mastery = {
+        '2': this.list.viewer.lists.MaterialList.get(Material.masteryQualities[2] + this.getTalentMatType('mastery')),
+        '3': this.list.viewer.lists.MaterialList.get(Material.masteryQualities[3] + this.getTalentMatType('mastery')),
+        '4': this.list.viewer.lists.MaterialList.get(Material.masteryQualities[4] + this.getTalentMatType('mastery')),
       };
-      this.materials.trounce = this.list.viewer.lists.materials.get(this.getTalentMatType('trounce'));
+      this.MaterialList.trounce = this.list.viewer.lists.MaterialList.get(this.getTalentMatType('trounce'));
       
       // Inform those materials that this character uses them.
-      for(let i in this.materials.gem)
-        this.materials.gem[i].addUser(this);
+      for(let i in this.MaterialList.gem)
+        this.MaterialList.gem[i].addUser(this);
       
-      for(let i in this.materials.enemy)
-        this.materials.enemy[i].addUser(this);
+      for(let i in this.MaterialList.enemy)
+        this.MaterialList.enemy[i].addUser(this);
       
-      if(this.materials.boss)
-        this.materials.boss.addUser(this);
+      if(this.MaterialList.boss)
+        this.MaterialList.boss.addUser(this);
       
-      this.materials.flower.addUser(this);
+      this.MaterialList.flower.addUser(this);
         
-      for(let i in this.materials.mastery)
-        this.materials.mastery[i].addUser(this);
+      for(let i in this.MaterialList.mastery)
+        this.MaterialList.mastery[i].addUser(this);
       
-      this.materials.trounce.addUser(this);
-      this.materials.crown.addUser(this);
+      this.MaterialList.trounce.addUser(this);
+      this.MaterialList.crown.addUser(this);
     }
     else
     {
@@ -213,14 +218,24 @@ export default class Character extends GenshinItem
   }
   
   // Getters/setters that enforce a value range.
-  get weapon(){ return this.#weapon; }
-  set weapon(val){ this.#weapon = val; }
-  get constellation(){ return this.#constellation; }
-  set constellation(val){ this.#constellation = Math.min(Math.max(val, 0), 6); }
-  get ascension(){ return this.#ascension; }
-  set ascension(val){ this.#ascension = Math.min(Math.max(val, 0), 6); }
-  get level(){ return this.#level; }
-  set level(val){ this.#level = Math.min(Math.max(val, 1), 90); }
+  get weapon(){ return this._weapon; }
+  set weapon(val){ this._weapon = val; }
+  get flowerArtifact(){ return this._flower; }
+  set flowerArtifact(val){ this._flower = val; }
+  get plumeArtifact(){ return this._plume; }
+  set plumeArtifact(val){ this._plume = val; }
+  get sandsArtifact(){ return this._sands; }
+  set sandsArtifact(val){ this._sands = val; }
+  get gobletArtifact(){ return this._goblet; }
+  set gobletArtifact(val){ this._goblet = val; }
+  get circletArtifact(){ return this._circlet; }
+  set circletArtifact(val){ this._circlet = val; }
+  get constellation(){ return this._constellation; }
+  set constellation(val){ this._constellation = Math.min(Math.max(val, 0), 6); }
+  get ascension(){ return this._ascension; }
+  set ascension(val){ this._ascension = Math.min(Math.max(val, 0), 6); }
+  get level(){ return this._level; }
+  set level(val){ this._level = Math.min(Math.max(val, 1), 90); }
   
   // Getters/setters for genshin item data that is not stored on each instance of this class.
   get name(){ return this.loaded ? GenshinCharacterData[this.key].name : this.key; }
@@ -275,13 +290,13 @@ export default class Character extends GenshinItem
   getMat(type, ascension=this.ascension)
   {
     if(type == "gem")
-      return this.materials.gem[this.getPhase(ascension).ascendMatGemQuality];
+      return this.MaterialList.gem[this.getPhase(ascension).ascendMatGemQuality];
     else if(type == "boss")
-      return this.materials.boss;
+      return this.MaterialList.boss;
     else if(type == "flower")
-      return this.materials.flower;
+      return this.MaterialList.flower;
     else if(type == "enemy")
-      return this.materials.enemy[this.getPhase(ascension).ascendMatEnemyQuality];
+      return this.MaterialList.enemy[this.getPhase(ascension).ascendMatEnemyQuality];
     else
       return null;
   }
@@ -304,13 +319,13 @@ export default class Character extends GenshinItem
   getTalentMat(type, talent)
   {
     if(type == "mastery")
-      return this.materials.mastery[this.getTalent(talent).matDomainQuality];
+      return this.MaterialList.mastery[this.getTalent(talent).matDomainQuality];
     else if(type == "enemy")
-      return this.materials.enemy[this.getTalent(talent).matEnemyQuality];
+      return this.MaterialList.enemy[this.getTalent(talent).matEnemyQuality];
     else if(type == "trounce")
-      return this.materials.trounce;
+      return this.MaterialList.trounce;
     else if(type == "crown")
-      return this.materials.crown;
+      return this.MaterialList.crown;
     else
       return null;
   }
@@ -375,8 +390,8 @@ export default class Character extends GenshinItem
     event.stopPropagation();
     this.getTalentMat('mastery',talent).update("count", this.getTalentMat('mastery',talent).count - this.getTalent(talent).matDomainCount);
     this.getTalentMat('enemy',talent).update("count", this.getTalentMat('enemy',talent).count - this.getTalent(talent).matEnemyCount);
-    this.materials.trounce.update("count", this.materials.trounce.count - this.getTalent(talent).matTrounceCount);
-    this.materials.crown.update("count", this.materials.crown.count - this.getTalent(talent).matCrownCount);
+    this.MaterialList.trounce.update("count", this.MaterialList.trounce.count - this.getTalent(talent).matTrounceCount);
+    this.MaterialList.crown.update("count", this.MaterialList.crown.count - this.getTalent(talent).matCrownCount);
     this.update(["talent", talent], this.talent[talent]+1);
     this.list.viewer.store();
     this.list.render();
@@ -389,13 +404,13 @@ export default class Character extends GenshinItem
     else if(withCrafting)
       return this.getTalentMat('mastery',talent).getCraftCount() >= this.getTalent(talent).matDomainCount &&
         this.getTalentMat('enemy',talent).getCraftCount() >= this.getTalent(talent).matEnemyCount &&
-        this.materials.trounce.getCraftCount() >= this.getTalent(talent).matTrounceCount &&
-        this.materials.crown.getCraftCount() >= this.getTalent(talent).matCrownCount;
+        this.MaterialList.trounce.getCraftCount() >= this.getTalent(talent).matTrounceCount &&
+        this.MaterialList.crown.getCraftCount() >= this.getTalent(talent).matCrownCount;
     else
       return this.getTalentMat('mastery',talent).count >= this.getTalent(talent).matDomainCount &&
         this.getTalentMat('enemy',talent).count >= this.getTalent(talent).matEnemyCount &&
-        this.materials.trounce.count >= this.getTalent(talent).matTrounceCount &&
-        this.materials.crown.count >= this.getTalent(talent).matCrownCount;
+        this.MaterialList.trounce.count >= this.getTalent(talent).matTrounceCount &&
+        this.MaterialList.crown.count >= this.getTalent(talent).matCrownCount;
   }
   
   getStat(stat)
@@ -487,13 +502,13 @@ export default class Character extends GenshinItem
   {
     let related = {
       bestArtifacts: {
-        flower: this.list.viewer.lists.artifacts.items("flower").sort(Character.sortArtifacts.bind(this,buildId)),
-        plume: this.list.viewer.lists.artifacts.items("plume").sort(Character.sortArtifacts.bind(this,buildId)),
-        sands: this.list.viewer.lists.artifacts.items("sands").sort(Character.sortArtifacts.bind(this,buildId)),
-        goblet: this.list.viewer.lists.artifacts.items("goblet").sort(Character.sortArtifacts.bind(this,buildId)),
-        circlet: this.list.viewer.lists.artifacts.items("circlet").sort(Character.sortArtifacts.bind(this,buildId)),
+        flower: this.list.viewer.lists.ArtifactList.items("flower").sort(Character.sortArtifacts.bind(this,buildId)),
+        plume: this.list.viewer.lists.ArtifactList.items("plume").sort(Character.sortArtifacts.bind(this,buildId)),
+        sands: this.list.viewer.lists.ArtifactList.items("sands").sort(Character.sortArtifacts.bind(this,buildId)),
+        goblet: this.list.viewer.lists.ArtifactList.items("goblet").sort(Character.sortArtifacts.bind(this,buildId)),
+        circlet: this.list.viewer.lists.ArtifactList.items("circlet").sort(Character.sortArtifacts.bind(this,buildId)),
       },
-      artifactFields: this.list.viewer.lists.artifacts.display.fields,
+      artifactFields: this.list.viewer.lists.ArtifactList.display.fields,
       artifactSets: GenshinArtifactData,
       buildData: this.getBuild(buildId),
       buildName: buildId,
@@ -594,9 +609,9 @@ export default class Character extends GenshinItem
             delete build.artifactSets[setKey];
         });
         for(let slot of ["flower","plume","sands","goblet","circlet"])
-          Renderer.renderList2(`artifacts/${slot}`, {
-            items: this.list.viewer.lists.artifacts.items(slot).sort(Character.sortArtifacts.bind(this,buildId)),
-            fields: this.list.viewer.lists.artifacts.display.fields,
+          Renderer.renderList2(`ArtifactList/${slot}`, {
+            items: this.list.viewer.lists.ArtifactList.items(slot).sort(Character.sortArtifacts.bind(this,buildId)),
+            fields: this.list.viewer.lists.ArtifactList.display.fields,
             parent: this,
             force: true,
           });
@@ -619,50 +634,50 @@ export default class Character extends GenshinItem
         
         if(categories[1] == "artifactSubstats")
         {
-          this.list.viewer.lists.artifacts.items('flower').forEach(item => item.storedStats.characters[this.key] = null);
-          Renderer.renderList2(`artifacts/flower`, {
-            items: this.list.viewer.lists.artifacts.items('flower').sort(Character.sortArtifacts.bind(this,buildId)),
-            fields: this.list.viewer.lists.artifacts.display.fields,
+          this.list.viewer.lists.ArtifactList.items('flower').forEach(item => item.storedStats.characters[this.key] = null);
+          Renderer.renderList2(`ArtifactList/flower`, {
+            items: this.list.viewer.lists.ArtifactList.items('flower').sort(Character.sortArtifacts.bind(this,buildId)),
+            fields: this.list.viewer.lists.ArtifactList.display.fields,
             parent: this,
             force: true,
           });
         }
         if(categories[1] == "artifactSubstats")
         {
-          this.list.viewer.lists.artifacts.items('plume').forEach(item => item.storedStats.characters[this.key] = null);
-          Renderer.renderList2(`artifacts/plume`, {
-            items: this.list.viewer.lists.artifacts.items('plume').sort(Character.sortArtifacts.bind(this,buildId)),
-            fields: this.list.viewer.lists.artifacts.display.fields,
+          this.list.viewer.lists.ArtifactList.items('plume').forEach(item => item.storedStats.characters[this.key] = null);
+          Renderer.renderList2(`ArtifactList/plume`, {
+            items: this.list.viewer.lists.ArtifactList.items('plume').sort(Character.sortArtifacts.bind(this,buildId)),
+            fields: this.list.viewer.lists.ArtifactList.display.fields,
             parent: this,
             force: true,
           });
         }
         if(categories[1] == "artifactSubstats" || categories[1] == "sandsStat")
         {
-          this.list.viewer.lists.artifacts.items('sands').forEach(item => item.storedStats.characters[this.key] = null);
-          Renderer.renderList2(`artifacts/sands`, {
-            items: this.list.viewer.lists.artifacts.items('sands').sort(Character.sortArtifacts.bind(this,buildId)),
-            fields: this.list.viewer.lists.artifacts.display.fields,
+          this.list.viewer.lists.ArtifactList.items('sands').forEach(item => item.storedStats.characters[this.key] = null);
+          Renderer.renderList2(`ArtifactList/sands`, {
+            items: this.list.viewer.lists.ArtifactList.items('sands').sort(Character.sortArtifacts.bind(this,buildId)),
+            fields: this.list.viewer.lists.ArtifactList.display.fields,
             parent: this,
             force: true,
           });
         }
         if(categories[1] == "artifactSubstats" || categories[1] == "gobletStat")
         {
-          this.list.viewer.lists.artifacts.items('goblet').forEach(item => item.storedStats.characters[this.key] = null);
-          Renderer.renderList2(`artifacts/goblet`, {
-            items: this.list.viewer.lists.artifacts.items('goblet').sort(Character.sortArtifacts.bind(this,buildId)),
-            fields: this.list.viewer.lists.artifacts.display.fields,
+          this.list.viewer.lists.ArtifactList.items('goblet').forEach(item => item.storedStats.characters[this.key] = null);
+          Renderer.renderList2(`ArtifactList/goblet`, {
+            items: this.list.viewer.lists.ArtifactList.items('goblet').sort(Character.sortArtifacts.bind(this,buildId)),
+            fields: this.list.viewer.lists.ArtifactList.display.fields,
             parent: this,
             force: true,
           });
         }
         if(categories[1] == "artifactSubstats" || categories[1] == "circletStat")
         {
-          this.list.viewer.lists.artifacts.items('circlet').forEach(item => item.storedStats.characters[this.key] = null);
-          Renderer.renderList2(`artifacts/circlet`, {
-            items: this.list.viewer.lists.artifacts.items('circlet').sort(Character.sortArtifacts.bind(this,buildId)),
-            fields: this.list.viewer.lists.artifacts.display.fields,
+          this.list.viewer.lists.ArtifactList.items('circlet').forEach(item => item.storedStats.characters[this.key] = null);
+          Renderer.renderList2(`ArtifactList/circlet`, {
+            items: this.list.viewer.lists.ArtifactList.items('circlet').sort(Character.sortArtifacts.bind(this,buildId)),
+            fields: this.list.viewer.lists.ArtifactList.display.fields,
             parent: this,
             force: true,
           });
@@ -687,14 +702,14 @@ export default class Character extends GenshinItem
       let itemName = itemElement.attributes.getNamedItem('name')?.value;
       
       // Verify that item and field are found.
-      let item = this.list.viewer.lists.artifacts.get(itemName);
+      let item = this.list.viewer.lists.ArtifactList.get(itemName);
       if(!item)
       {
         console.error(`Unable to determine '${itemName}' item of this button element to equip.`);
         return false;
       }
       btn.onclick = event => {
-        Renderer.renderList2(`artifacts/${item.slotKey}`, {
+        Renderer.renderList2(`ArtifactList/${item.slotKey}`, {
           items: item.list.items(item.slotKey).sort(Character.sortArtifacts.bind(this,buildId)),
           fields: item.list.display.fields,
           parent: this,

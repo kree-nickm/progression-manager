@@ -7,69 +7,64 @@ import GenshinItem from "./GenshinItem.js";
 
 export default class Weapon extends GenshinItem
 {
-  static dontSerialize = GenshinItem.dontSerialize.concat(["materials"]);
+  static dontSerialize = GenshinItem.dontSerialize.concat(["MaterialList","loaded"]);
   static templateName = "renderWeaponAsPopup";
   static templateTitleName = "renderWeaponAsPopupTitle";
   
-  #refinement = 1;
-  #ascension = 0;
-  #level = 1;
+  key = "";
+  _refinement = 1;
+  _ascension = 0;
+  _level = 1;
+  location = "";
+  lock = false;
   loaded = false;
   favorite = false;
-  materials;
-  
-  equals(object)
-  {
-    return super.equals(object) && 
-      this.refinement == object.refinement && 
-      this.ascension == object.ascension && 
-      this.level == object.level;
-  }
+  MaterialList;
   
   afterLoad()
   {
-    this.materials = {};
+    this.MaterialList = {};
     if(GenshinWeaponData[this.key])
     {
       this.loaded = true;
       
       // Retrieve the materials used by this character.
-      this.materials.forgery = {
-        '2': this.list.viewer.lists.materials.get(GenshinLootData.forgery[this.forgeryMatType][2]),
-        '3': this.list.viewer.lists.materials.get(GenshinLootData.forgery[this.forgeryMatType][3]),
-        '4': this.list.viewer.lists.materials.get(GenshinLootData.forgery[this.forgeryMatType][4]),
-        '5': this.list.viewer.lists.materials.get(GenshinLootData.forgery[this.forgeryMatType][5]),
+      this.MaterialList.forgery = {
+        '2': this.list.viewer.lists.MaterialList.get(GenshinLootData.forgery[this.forgeryMatType][2]),
+        '3': this.list.viewer.lists.MaterialList.get(GenshinLootData.forgery[this.forgeryMatType][3]),
+        '4': this.list.viewer.lists.MaterialList.get(GenshinLootData.forgery[this.forgeryMatType][4]),
+        '5': this.list.viewer.lists.MaterialList.get(GenshinLootData.forgery[this.forgeryMatType][5]),
       };
-      this.materials.strong = {
-        '2': this.list.viewer.lists.materials.get(GenshinLootData.enemy[this.strongMatType][2]),
-        '3': this.list.viewer.lists.materials.get(GenshinLootData.enemy[this.strongMatType][3]),
-        '4': this.list.viewer.lists.materials.get(GenshinLootData.enemy[this.strongMatType][4]),
+      this.MaterialList.strong = {
+        '2': this.list.viewer.lists.MaterialList.get(GenshinLootData.enemy[this.strongMatType][2]),
+        '3': this.list.viewer.lists.MaterialList.get(GenshinLootData.enemy[this.strongMatType][3]),
+        '4': this.list.viewer.lists.MaterialList.get(GenshinLootData.enemy[this.strongMatType][4]),
       };
-      this.materials.weak = {
-        '1': this.list.viewer.lists.materials.get(GenshinLootData.enemy[this.weakMatType][1]),
-        '2': this.list.viewer.lists.materials.get(GenshinLootData.enemy[this.weakMatType][2]),
-        '3': this.list.viewer.lists.materials.get(GenshinLootData.enemy[this.weakMatType][3]),
+      this.MaterialList.weak = {
+        '1': this.list.viewer.lists.MaterialList.get(GenshinLootData.enemy[this.weakMatType][1]),
+        '2': this.list.viewer.lists.MaterialList.get(GenshinLootData.enemy[this.weakMatType][2]),
+        '3': this.list.viewer.lists.MaterialList.get(GenshinLootData.enemy[this.weakMatType][3]),
       };
       
       // Inform those materials that this character uses them.
-      for(let i in this.materials.forgery)
+      for(let i in this.MaterialList.forgery)
       {
-        if(this.materials.forgery[i])
-          this.materials.forgery[i].addUser(this);
+        if(this.MaterialList.forgery[i])
+          this.MaterialList.forgery[i].addUser(this);
         else
           console.error(`${this.name} has an invalid forgery material at quality ${i}.`);
       }
-      for(let i in this.materials.strong)
+      for(let i in this.MaterialList.strong)
       {
-        if(this.materials.strong[i])
-          this.materials.strong[i].addUser(this);
+        if(this.MaterialList.strong[i])
+          this.MaterialList.strong[i].addUser(this);
         else
           console.error(`${this.name} has an invalid strong enemy material at quality ${i}.`);
       }
-      for(let i in this.materials.weak)
+      for(let i in this.MaterialList.weak)
       {
-        if(this.materials.weak[i])
-          this.materials.weak[i].addUser(this);
+        if(this.MaterialList.weak[i])
+          this.MaterialList.weak[i].addUser(this);
         else
           console.error(`${this.name} has an invalid weak enemy material at quality ${i}.`);
       }
@@ -95,12 +90,12 @@ export default class Weapon extends GenshinItem
     {
       if(value)
       {
-        let newCharacter = this.list.viewer.lists.characters.get(value);
+        let newCharacter = this.list.viewer.lists.CharacterList.get(value);
         if(newCharacter)
           newCharacter.equipItem(this);
         else
         {
-          console.error(`Cannot equip ${this.name} to non-existent character "${this.location}".`);
+          console.warn(`Cannot equip ${this.name} to non-existent character "${this.location}".`);
           field.object[field.property] = "";
           this.character = null;
         }
@@ -111,12 +106,12 @@ export default class Weapon extends GenshinItem
   }
   
   // Getters/setters that enforce a value range.
-  get refinement(){ return this.#refinement; }
-  set refinement(val){ this.#refinement = Math.min(Math.max(val, 1), 5); }
-  get ascension(){ return this.#ascension; }
-  set ascension(val){ this.#ascension = Math.min(Math.max(val, 0), 6); }
-  get level(){ return this.#level; }
-  set level(val){ this.#level = Math.min(Math.max(val, 1), 90); }
+  get refinement(){ return this._refinement; }
+  set refinement(val){ this._refinement = Math.min(Math.max(val, 1), 5); }
+  get ascension(){ return this._ascension; }
+  set ascension(val){ this._ascension = Math.min(Math.max(val, 0), 6); }
+  get level(){ return this._level; }
+  set level(val){ this._level = Math.min(Math.max(val, 1), 90); }
   
   // Getters/setters for genshin item data that is not stored on each instance of this class.
   get name(){ return this.loaded ? GenshinWeaponData[this.key].name : this.key; }
@@ -135,11 +130,11 @@ export default class Weapon extends GenshinItem
   getMat(type, ascension=this.ascension)
   {
     if(type == "forgery")
-      return this.materials.forgery[this.getPhase(ascension).ascendMatForgeQuality];
+      return this.MaterialList.forgery[this.getPhase(ascension).ascendMatForgeQuality];
     else if(type == "strong")
-      return this.materials.strong[this.getPhase(ascension).ascendMatStrongQuality];
+      return this.MaterialList.strong[this.getPhase(ascension).ascendMatStrongQuality];
     else if(type == "weak")
-      return this.materials.weak[this.getPhase(ascension).ascendMatWeakQuality];
+      return this.MaterialList.weak[this.getPhase(ascension).ascendMatWeakQuality];
     else
       return null;
   }

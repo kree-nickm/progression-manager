@@ -24,17 +24,17 @@ for(let i=0; i<navLinks.length; i++)
         navLinks[k].classList.remove("active");
     }
     if(event.target.hash == "#materials")
-      window.viewer.view("materials");
+      window.viewer.view("MaterialList");
     else if(event.target.hash == "#weapons")
-      window.viewer.view("weapons");
+      window.viewer.view("WeaponList");
     else if(event.target.hash == "#artifacts")
-      window.viewer.view("artifacts");
+      window.viewer.view("ArtifactList");
     else if(event.target.hash == "#furnitureSets")
-      window.viewer.view("furnitureSets");
+      window.viewer.view("FurnitureSetList");
     else if(event.target.hash == "#furniture")
-      window.viewer.view("furniture");
+      window.viewer.view("FurnitureList");
     else
-      window.viewer.view("characters");
+      window.viewer.view("CharacterList");
   });
   if(navLinks[i].hash == location.hash)
   {

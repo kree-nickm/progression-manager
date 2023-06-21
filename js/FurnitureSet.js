@@ -6,14 +6,18 @@ export default class FurnitureSet extends GenshinItem
 {
   static dontSerialize = GenshinItem.dontSerialize.concat(["furniture","loaded"]);
   
+  key = "";
   furniture;
+  loaded = false;
+  learned = false;
+  settled = [];
   
   afterLoad()
   {
     if(GiftSets[this.key])
     {
       this.loaded = true;
-      this.furniture = this.recipe.map(furn => this.list.viewer.lists.furniture.get(furn.key));
+      this.furniture = this.recipe.map(furn => this.list.viewer.lists.FurnitureList.get(furn.key));
     }
     else
     {

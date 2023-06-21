@@ -8,7 +8,7 @@ export default class GenshinList extends UIList {
   
   getUnique(item)
   {
-    return item.key ?? item.id;
+    return (this.constructor.unique ? (item.key ?? item.id) : item.uuid) ?? this.getHash(item);
   }
   
   fromGOOD(goodData)

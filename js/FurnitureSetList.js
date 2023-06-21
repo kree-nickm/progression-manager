@@ -1,3 +1,5 @@
+import GiftSets from "./gamedata/GiftSets.js";
+
 import { Renderer } from "./Renderer.js";
 import GenshinList from "./GenshinList.js";
 import FurnitureSet from "./FurnitureSet.js";
@@ -5,7 +7,15 @@ import FurnitureSet from "./FurnitureSet.js";
 export default class FurnitureSetList extends GenshinList
 {
   static unique = true;
-  static name = "furnitureSets";
+  static itemClass = FurnitureSet;
+  
+  initialize()
+  {
+    for(let s in GiftSets)
+    {
+      this.addGOOD({key:s, learned:false, settled:[]});
+    }
+  }
   
   setupDisplay()
   {
@@ -67,7 +77,7 @@ export default class FurnitureSetList extends GenshinList
       label: "Characters",
       dynamic: true,
       value: item => item.characters.map(c => {
-        let character = this.viewer.lists.characters.get(c);
+        let character = this.viewer.lists.CharacterList.get(c);
         if(character)
           return {
             tag: "div",

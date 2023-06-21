@@ -3,15 +3,11 @@ import Material from "./Material.js";
 
 export default class Traveler extends Character
 {
-  static dontSerialize = Character.dontSerialize.concat(["base","variants"]);
+  static dontSerialize = Character.dontSerialize.concat(["_element","_talentEnemyMatType","_talentMasteryMatTypes","base","variants"]);
   
-  //#constellation = 0;
-  #ascension = 0;
-  #level = 1;
-  #element = "";
-  #talentEnemyMatType = "";
-  #talentMasteryMatTypes = ["","",""];
-  #weapon;
+  _element = "";
+  _talentEnemyMatType = "";
+  _talentMasteryMatTypes = ["","",""];
   base;
   variants = [];
   
@@ -20,149 +16,149 @@ export default class Traveler extends Character
     this.loaded = true;
     
     // Retrieve the materials used by this character.
-    this.materials = {};
+    this.MaterialList = {};
     
     if(this.key.endsWith("Anemo"))
     {
-      this.#element = "Anemo";
-      this.#talentEnemyMatType = "Samachurls";
-      this.#talentMasteryMatTypes = ["Freedom","Resistance","Ballad"];
-      this.materials.talentEnemy = {
-        '1': this.list.viewer.lists.materials.get("Divining Scroll"),
-        '2': this.list.viewer.lists.materials.get("Sealed Scroll"),
-        '3': this.list.viewer.lists.materials.get("Forbidden Curse Scroll"),
+      this._element = "Anemo";
+      this._talentEnemyMatType = "Samachurls";
+      this._talentMasteryMatTypes = ["Freedom","Resistance","Ballad"];
+      this.MaterialList.talentEnemy = {
+        '1': this.list.viewer.lists.MaterialList.get("Divining Scroll"),
+        '2': this.list.viewer.lists.MaterialList.get("Sealed Scroll"),
+        '3': this.list.viewer.lists.MaterialList.get("Forbidden Curse Scroll"),
       };
-      this.materials.mastery = [
+      this.MaterialList.mastery = [
         {
-          '2': this.list.viewer.lists.materials.get("Teachings Of Freedom"),
-          '3': this.list.viewer.lists.materials.get("Guide To Freedom"),
-          '4': this.list.viewer.lists.materials.get("Philosophies Of Freedom"),
+          '2': this.list.viewer.lists.MaterialList.get("Teachings Of Freedom"),
+          '3': this.list.viewer.lists.MaterialList.get("Guide To Freedom"),
+          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Freedom"),
         },
         {
-          '3': this.list.viewer.lists.materials.get("Guide To Resistance"),
-          '4': this.list.viewer.lists.materials.get("Philosophies Of Resistance"),
+          '3': this.list.viewer.lists.MaterialList.get("Guide To Resistance"),
+          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Resistance"),
         },
         {
-          '3': this.list.viewer.lists.materials.get("Guide To Ballad"),
-          '4': this.list.viewer.lists.materials.get("Philosophies Of Ballad"),
+          '3': this.list.viewer.lists.MaterialList.get("Guide To Ballad"),
+          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Ballad"),
         },
       ];
-      this.materials.trounce = this.list.viewer.lists.materials.get("Dvalin's Sigh");
+      this.MaterialList.trounce = this.list.viewer.lists.MaterialList.get("Dvalin's Sigh");
     }
     else if(this.key.endsWith("Geo"))
     {
-      this.#element = "Geo";
-      this.#talentEnemyMatType = "Hilichurl Archers";
-      this.#talentMasteryMatTypes = ["Prosperity","Diligence","Gold"];
-      this.materials.talentEnemy = {
-        '1': this.list.viewer.lists.materials.get("Firm Arrowhead"),
-        '2': this.list.viewer.lists.materials.get("Sharp Arrowhead"),
-        '3': this.list.viewer.lists.materials.get("Weathered Arrowhead"),
+      this._element = "Geo";
+      this._talentEnemyMatType = "Hilichurl Archers";
+      this._talentMasteryMatTypes = ["Prosperity","Diligence","Gold"];
+      this.MaterialList.talentEnemy = {
+        '1': this.list.viewer.lists.MaterialList.get("Firm Arrowhead"),
+        '2': this.list.viewer.lists.MaterialList.get("Sharp Arrowhead"),
+        '3': this.list.viewer.lists.MaterialList.get("Weathered Arrowhead"),
       };
-      this.materials.mastery = [
+      this.MaterialList.mastery = [
         {
-          '2': this.list.viewer.lists.materials.get("Teachings Of Prosperity"),
-          '3': this.list.viewer.lists.materials.get("Guide To Prosperity"),
-          '4': this.list.viewer.lists.materials.get("Philosophies Of Prosperity"),
+          '2': this.list.viewer.lists.MaterialList.get("Teachings Of Prosperity"),
+          '3': this.list.viewer.lists.MaterialList.get("Guide To Prosperity"),
+          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Prosperity"),
         },
         {
-          '3': this.list.viewer.lists.materials.get("Guide To Diligence"),
-          '4': this.list.viewer.lists.materials.get("Philosophies Of Diligence"),
+          '3': this.list.viewer.lists.MaterialList.get("Guide To Diligence"),
+          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Diligence"),
         },
         {
-          '3': this.list.viewer.lists.materials.get("Guide To Gold"),
-          '4': this.list.viewer.lists.materials.get("Philosophies Of Gold"),
+          '3': this.list.viewer.lists.MaterialList.get("Guide To Gold"),
+          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Gold"),
         },
       ];
-      this.materials.trounce = this.list.viewer.lists.materials.get("Tail Of Boreas");
+      this.MaterialList.trounce = this.list.viewer.lists.MaterialList.get("Tail Of Boreas");
     }
     else if(this.key.endsWith("Electro"))
     {
-      this.#element = "Electro";
-      this.#talentEnemyMatType = "Nobushi";
-      this.#talentMasteryMatTypes = ["Transience","Elegance","Light"];
-      this.materials.talentEnemy = {
-        '1': this.list.viewer.lists.materials.get("Old Handguard"),
-        '2': this.list.viewer.lists.materials.get("Kageuchi Handguard"),
-        '3': this.list.viewer.lists.materials.get("Famed Handguard"),
+      this._element = "Electro";
+      this._talentEnemyMatType = "Nobushi";
+      this._talentMasteryMatTypes = ["Transience","Elegance","Light"];
+      this.MaterialList.talentEnemy = {
+        '1': this.list.viewer.lists.MaterialList.get("Old Handguard"),
+        '2': this.list.viewer.lists.MaterialList.get("Kageuchi Handguard"),
+        '3': this.list.viewer.lists.MaterialList.get("Famed Handguard"),
       };
-      this.materials.mastery = [
+      this.MaterialList.mastery = [
         {
-          '2': this.list.viewer.lists.materials.get("Teachings Of Transience"),
-          '3': this.list.viewer.lists.materials.get("Guide To Transience"),
-          '4': this.list.viewer.lists.materials.get("Philosophies Of Transience"),
+          '2': this.list.viewer.lists.MaterialList.get("Teachings Of Transience"),
+          '3': this.list.viewer.lists.MaterialList.get("Guide To Transience"),
+          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Transience"),
         },
         {
-          '3': this.list.viewer.lists.materials.get("Guide To Elegance"),
-          '4': this.list.viewer.lists.materials.get("Philosophies Of Elegance"),
+          '3': this.list.viewer.lists.MaterialList.get("Guide To Elegance"),
+          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Elegance"),
         },
         {
-          '3': this.list.viewer.lists.materials.get("Guide To Light"),
-          '4': this.list.viewer.lists.materials.get("Philosophies Of Light"),
+          '3': this.list.viewer.lists.MaterialList.get("Guide To Light"),
+          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Light"),
         },
       ];
-      this.materials.trounce = this.list.viewer.lists.materials.get("Dragon Lord's Crown");
+      this.MaterialList.trounce = this.list.viewer.lists.MaterialList.get("Dragon Lord's Crown");
     }
     else if(this.key.endsWith("Dendro"))
     {
-      this.#element = "Dendro";
-      this.#talentEnemyMatType = "Fungi";
-      this.#talentMasteryMatTypes = ["Admonition","Ingenuity","Praxis"];
-      this.materials.talentEnemy = {
-        '1': this.list.viewer.lists.materials.get("Fungal Spores"),
-        '2': this.list.viewer.lists.materials.get("Luminescent Pollen"),
-        '3': this.list.viewer.lists.materials.get("Crystalline Cyst Dust"),
+      this._element = "Dendro";
+      this._talentEnemyMatType = "Fungi";
+      this._talentMasteryMatTypes = ["Admonition","Ingenuity","Praxis"];
+      this.MaterialList.talentEnemy = {
+        '1': this.list.viewer.lists.MaterialList.get("Fungal Spores"),
+        '2': this.list.viewer.lists.MaterialList.get("Luminescent Pollen"),
+        '3': this.list.viewer.lists.MaterialList.get("Crystalline Cyst Dust"),
       };
-      this.materials.mastery = [
+      this.MaterialList.mastery = [
         {
-          '2': this.list.viewer.lists.materials.get("Teachings Of Admonition"),
-          '3': this.list.viewer.lists.materials.get("Guide To Admonition"),
-          '4': this.list.viewer.lists.materials.get("Philosophies Of Admonition"),
+          '2': this.list.viewer.lists.MaterialList.get("Teachings Of Admonition"),
+          '3': this.list.viewer.lists.MaterialList.get("Guide To Admonition"),
+          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Admonition"),
         },
         {
-          '3': this.list.viewer.lists.materials.get("Guide To Ingenuity"),
-          '4': this.list.viewer.lists.materials.get("Philosophies Of Ingenuity"),
+          '3': this.list.viewer.lists.MaterialList.get("Guide To Ingenuity"),
+          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Ingenuity"),
         },
         {
-          '3': this.list.viewer.lists.materials.get("Guide To Praxis"),
-          '4': this.list.viewer.lists.materials.get("Philosophies Of Praxis"),
+          '3': this.list.viewer.lists.MaterialList.get("Guide To Praxis"),
+          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Praxis"),
         },
       ];
-      this.materials.trounce = this.list.viewer.lists.materials.get("Mudra Of The Malefic General");
+      this.MaterialList.trounce = this.list.viewer.lists.MaterialList.get("Mudra Of The Malefic General");
     }
     else
     {
-      this.materials.gem = {
-        '2': this.list.viewer.lists.materials.get("Brilliant Diamond" + Material.gemQualities[2]),
-        '3': this.list.viewer.lists.materials.get("Brilliant Diamond" + Material.gemQualities[3]),
-        '4': this.list.viewer.lists.materials.get("Brilliant Diamond" + Material.gemQualities[4]),
-        '5': this.list.viewer.lists.materials.get("Brilliant Diamond" + Material.gemQualities[5]),
+      this.MaterialList.gem = {
+        '2': this.list.viewer.lists.MaterialList.get("Brilliant Diamond" + Material.gemQualities[2]),
+        '3': this.list.viewer.lists.MaterialList.get("Brilliant Diamond" + Material.gemQualities[3]),
+        '4': this.list.viewer.lists.MaterialList.get("Brilliant Diamond" + Material.gemQualities[4]),
+        '5': this.list.viewer.lists.MaterialList.get("Brilliant Diamond" + Material.gemQualities[5]),
       };
-      this.materials.flower = this.list.viewer.lists.materials.get("Windwheel Aster");
-      this.materials.enemy = {
-        '1': this.list.viewer.lists.materials.get("Damaged Mask"),
-        '2': this.list.viewer.lists.materials.get("Stained Mask"),
-        '3': this.list.viewer.lists.materials.get("Ominous Mask"),
+      this.MaterialList.flower = this.list.viewer.lists.MaterialList.get("Windwheel Aster");
+      this.MaterialList.enemy = {
+        '1': this.list.viewer.lists.MaterialList.get("Damaged Mask"),
+        '2': this.list.viewer.lists.MaterialList.get("Stained Mask"),
+        '3': this.list.viewer.lists.MaterialList.get("Ominous Mask"),
       };
       
       // Inform those materials that this character uses them.
-      for(let i in this.materials.gem)
-        this.materials.gem[i].addUser(this);
+      for(let i in this.MaterialList.gem)
+        this.MaterialList.gem[i].addUser(this);
       
-      for(let i in this.materials.enemy)
-        this.materials.enemy[i].addUser(this);
+      for(let i in this.MaterialList.enemy)
+        this.MaterialList.enemy[i].addUser(this);
       
-      this.materials.flower.addUser(this);
+      this.MaterialList.flower.addUser(this);
     }
     
     if(this.element)
     {
-      this.materials.crown = this.list.viewer.lists.materials.get("Crown Of Insight");
+      this.MaterialList.crown = this.list.viewer.lists.MaterialList.get("Crown Of Insight");
       
-      for(let i in this.materials.talentEnemy)
-        this.materials.talentEnemy[i].addUser(this);
+      for(let i in this.MaterialList.talentEnemy)
+        this.MaterialList.talentEnemy[i].addUser(this);
         
-      for(let m of this.materials.mastery)
+      for(let m of this.MaterialList.mastery)
         for(let i in m)
         {
           if(m[i])
@@ -171,8 +167,8 @@ export default class Traveler extends Character
             console.error(`${this.name} has a null key '${i}'`, m);
         }
       
-      this.materials.trounce.addUser(this);
-      this.materials.crown.addUser(this);
+      this.MaterialList.trounce.addUser(this);
+      this.MaterialList.crown.addUser(this);
     }
     
     return this.loaded;
@@ -183,61 +179,117 @@ export default class Traveler extends Character
     if(this.base)
       return this.base.weapon;
     else
-      return this.#weapon;
+      return this._weapon;
   }
   set weapon(val)
   {
     if(this.base)
       this.base.weapon = val;
     else
-      this.#weapon = val;
+      this._weapon = val;
   }
-  /*get constellation()
+  get flowerArtifact()
   {
     if(this.base)
-      return this.base.constellation;
+      return this.base.flower;
     else
-      return this.#constellation;
+      return this._flower;
   }
-  set constellation(val)
+  set flowerArtifact(val)
   {
     if(this.base)
-      this.base.constellation = val;
+      this.base.flower = val;
     else
-      this.#constellation = Math.min(Math.max(val, 0), 6);
-  }*/
+      this._flower = val;
+  }
+  get plumeArtifact()
+  {
+    if(this.base)
+      return this.base.plume;
+    else
+      return this._plume;
+  }
+  set plumeArtifact(val)
+  {
+    if(this.base)
+      this.base.plume = val;
+    else
+      this._plume = val;
+  }
+  get sandsArtifact()
+  {
+    if(this.base)
+      return this.base.sands;
+    else
+      return this._sands;
+  }
+  set sandsArtifact(val)
+  {
+    if(this.base)
+      this.base.sands = val;
+    else
+      this._sands = val;
+  }
+  get gobletArtifact()
+  {
+    if(this.base)
+      return this.base.goblet;
+    else
+      return this._goblet;
+  }
+  set gobletArtifact(val)
+  {
+    if(this.base)
+      this.base.goblet = val;
+    else
+      this._goblet = val;
+  }
+  get circletArtifact()
+  {
+    if(this.base)
+      return this.base.circlet;
+    else
+      return this._circlet;
+  }
+  set circletArtifact(val)
+  {
+    if(this.base)
+      this.base.circlet = val;
+    else
+      this._circlet = val;
+  }
   get ascension()
   {
     if(this.base)
       return this.base.ascension;
     else
-      return this.#ascension;
+      return this._ascension;
   }
   set ascension(val)
   {
     if(this.base)
       this.base.ascension = val;
     else
-      this.#ascension = Math.min(Math.max(val, 0), 6);
+      this._ascension = Math.min(Math.max(val, 0), 6);
   }
   get level()
   {
     if(this.base)
       return this.base.level;
     else
-      return this.#level;
+      return this._level;
   }
   set level(val)
   {
     if(this.base)
       this.base.level = val;
     else
-      this.#level = Math.min(Math.max(val, 1), 90);
+      this._level = Math.min(Math.max(val, 1), 90);
   }
   
   get name(){ return this.element ? "Traveler: "+ this.element : "Traveler"; }
   get weaponType(){ return "Sword"; }
-  get element(){ return this.#element; }
+  get element(){ return this._element; }
   get bossMatType(){ return ""; }
   get flowerMatType(){ return "Windwheel Aster"; }
   get enemyMatType(){ return "Hilichurls"; }
@@ -245,13 +297,13 @@ export default class Traveler extends Character
   getMat(type, ascension=this.ascension)
   {
     if(type == "gem")
-      return this.base ? this.base.materials.gem[this.getPhase(ascension).ascendMatGemQuality] : this.materials.gem[this.getPhase(ascension).ascendMatGemQuality];
+      return this.base ? this.base.MaterialList.gem[this.getPhase(ascension).ascendMatGemQuality] : this.MaterialList.gem[this.getPhase(ascension).ascendMatGemQuality];
     else if(type == "boss")
       return null;
     else if(type == "flower")
-      return this.base ? this.base.materials.flower : this.materials.flower;
+      return this.base ? this.base.MaterialList.flower : this.MaterialList.flower;
     else if(type == "enemy")
-      return this.base ? this.base.materials.enemy[this.getPhase(ascension).ascendMatEnemyQuality] : this.materials.enemy[this.getPhase(ascension).ascendMatEnemyQuality];
+      return this.base ? this.base.MaterialList.enemy[this.getPhase(ascension).ascendMatEnemyQuality] : this.MaterialList.enemy[this.getPhase(ascension).ascendMatEnemyQuality];
     else
       return null;
   }
@@ -259,13 +311,13 @@ export default class Traveler extends Character
   getTalentMat(type, talent)
   {
     if(type == "mastery")
-      return this.materials.mastery?.[((isNaN(talent)?this.talent[talent]:talent)-1)%3][this.getTalent(talent).matDomainQuality] ?? null;
+      return this.MaterialList.mastery?.[((isNaN(talent)?this.talent[talent]:talent)-1)%3][this.getTalent(talent).matDomainQuality] ?? null;
     else if(type == "enemy")
-      return this.materials.talentEnemy?.[this.getTalent(talent).matEnemyQuality] ?? null;
+      return this.MaterialList.talentEnemy?.[this.getTalent(talent).matEnemyQuality] ?? null;
     else if(type == "trounce")
-      return this.materials.trounce;
+      return this.MaterialList.trounce;
     else if(type == "crown")
-      return this.materials.crown;
+      return this.MaterialList.crown;
     else
       return null;
   }
@@ -275,14 +327,14 @@ export default class Traveler extends Character
     if(type == "mastery")
     {
       if(isNaN(talent))
-        return this.base ? this.#talentMasteryMatTypes[(this.talent[talent]-1)%3] : "";
+        return this.base ? this._talentMasteryMatTypes[(this.talent[talent]-1)%3] : "";
       else
-        return this.base ? this.#talentMasteryMatTypes[(talent-1)%3] : "";
+        return this.base ? this._talentMasteryMatTypes[(talent-1)%3] : "";
     }
     else if(type == "enemy")
-      return this.base ? this.#talentEnemyMatType : "";
+      return this.base ? this._talentEnemyMatType : "";
     else if(type == "trounce")
-      return this.base ? this.materials.trounce.name : "";
+      return this.base ? this.MaterialList.trounce.name : "";
     else if(type == "crown")
       return "Crown";
     else

@@ -5,7 +5,7 @@ import GenshinItem from "./GenshinItem.js";
 
 export default class Artifact extends GenshinItem
 {
-  static dontSerialize = GenshinItem.dontSerialize.concat(["character","wanters"]);
+  static dontSerialize = GenshinItem.dontSerialize.concat(["character","wanters","loaded"]);
   static shorthandStat = {
     'eleMas': "EM",
     'enerRech_': "ER%",
@@ -41,15 +41,21 @@ export default class Artifact extends GenshinItem
     'def': 0.01,
   };
   
-  #level = 0;
-  #rarity = 0;
+  slotKey = "";
+  setKey = "";
+  mainStatKey = "";
+  location = "";
+  lock = false;
+  substats = {};
+  _level = 0;
+  _rarity = 0;
   storedStats = {
     sums: {},
     ratings: {},
     characters: {},
   };
-  character;
   loaded = false;
+  character = null;
   valuable = 1;
   wanters = [];
   
@@ -74,7 +80,7 @@ export default class Artifact extends GenshinItem
     {
       if(value)
       {
-        let newCharacter = this.list.viewer.lists.characters.get(value);
+        let newCharacter = this.list.viewer.lists.CharacterList.get(value);
         if(newCharacter)
           newCharacter.equipItem(this);
         else
@@ -95,14 +101,14 @@ export default class Artifact extends GenshinItem
     }
   }
   
-  get level(){ return this.#level; }
+  get level(){ return this._level; }
   set level(val){
     if(val < 0)
-      val = this.#level + val;
-    this.#level = Math.min(Math.max(val, 0), 20);
+      val = this._level + val;
+    this._level = Math.min(Math.max(val, 0), 20);
   }
-  get rarity(){ return this.#rarity; }
-  set rarity(val){ this.#rarity = Math.min(Math.max(val, 1), 5); }
+  get rarity(){ return this._rarity; }
+  set rarity(val){ this._rarity = Math.min(Math.max(val, 1), 5); }
   
   get name(){ return this.loaded ? GenshinArtifactData[this.setKey][this.slotKey] : `${this.setName} ${this.slotKey}`; }
   get setName(){ return this.loaded ? GenshinArtifactData[this.setKey].name : this.setKey; }
@@ -192,7 +198,7 @@ export default class Artifact extends GenshinItem
     return this.storedStats.ratings[statId];
   }
   
-  getCharacterScoreParts(character=this.list.viewer.lists.characters.list[0], buildId="default")
+  getCharacterScoreParts(character=this.list.viewer.lists.CharacterList.list[0], buildId="default")
   {
     if(!this.storedStats.characters[character.key])
     {
@@ -214,7 +220,7 @@ export default class Artifact extends GenshinItem
     return this.storedStats.characters[character.key];
   }
   
-  getCharacterScore(character=this.list.viewer.lists.characters.list[0], level=20, buildId="default")
+  getCharacterScore(character=this.list.viewer.lists.CharacterList.list[0], level=20, buildId="default")
   {
     let score = this.getCharacterScoreParts(character, buildId);
     level = Math.max(0, Math.min(level, this.rarity<=2 ? 4 : (this.rarity==3 ? 12 : (this.rarity==4 ? 16 : 20))));
@@ -229,7 +235,7 @@ export default class Artifact extends GenshinItem
   {
     if(!this.storedStats.characters["*"])
     {
-      let scores = this.list.viewer.lists.characters.list.map(character => [character,this.getCharacterScore(character)]);
+      let scores = this.list.viewer.lists.CharacterList.list.map(character => [character,this.getCharacterScore(character)]);
       let maxChar = "";
       let maxScore = 0;
       for(let tup of scores)

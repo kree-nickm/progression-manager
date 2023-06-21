@@ -1,28 +1,39 @@
 import GenshinArtifactData from "./gamedata/GenshinArtifactData.js";
 
-import { Renderer } from "./Renderer.js";
+import { handlebars, Renderer } from "./Renderer.js";
 import GenshinList from "./GenshinList.js";
 import Artifact from "./Artifact.js";
 
+handlebars.registerHelper('iffave', function(character, setKey, options) {
+  if(character.getArtifactSetPrio(setKey))
+    return options.fn(this);
+  else
+    return options.inverse(this);
+});
+
+handlebars.registerHelper("artifactStat", (key, character, context) => {
+  if(key == "elemental_dmg_" && character instanceof Character)
+    return Artifact.shorthandStat[character.element.toLowerCase()+'_dmg_'];
+  else
+    return Artifact.shorthandStat[key];
+});
+
+handlebars.registerHelper("artifactRating", (artifact, statKey, character, context) => {
+  if(context)
+  {
+    let scores = artifact.getCharacterScoreParts(character);
+    return scores.subScores[statKey]?.toFixed(2) ?? "0.00";
+  }
+  else if(statKey instanceof Character)
+    return artifact.getCharacterScore(statKey).toFixed(2);
+  else
+    return artifact.getSubstatRating(statKey).sum.toFixed(2);
+});
+
 export default class ArtifactList extends GenshinList
 {
-  static name = "artifacts";
   static dontSerialize = GenshinList.dontSerialize.concat(["elements"]);
-  static abundantSets = ["WanderersTroupe","GladiatorsFinale","Berserker","Gambler","TinyMiracle","Scholar","BraveHeart","DefendersWill"];
-  static valuableSets = ["NoblesseOblige","EmblemOfSeveredFate","GildedDreams","ViridescentVenerer"];
-  
-  static minimumScore(artifact)
-  {
-    let base = 0.6;
-    if(ArtifactList.abundantSets.indexOf(artifact.setKey) > -1)
-      base += 0.1;
-    if(ArtifactList.valuableSets.indexOf(artifact.setKey) > -1)
-      base -= 0.1;
-    if(artifact.slotKey == "flower" || artifact.slotKey == "plume")
-      base -= 0.1;
-    base -= 0.02 * Math.ceil((artifact.levelCap - artifact.level) / 4);
-    return base;
-  }
+  static itemClass = Artifact;
   
   subsetDefinitions = {
     'flower': item => item.slotKey == "flower",
@@ -33,13 +44,13 @@ export default class ArtifactList extends GenshinList
   };
   elements = {};
   
-  evaluate()
+  async evaluate()
   {
-    console.log(`Evaluating all artifacts...`);
+    //console.log(`Evaluating all artifacts...`);
     this.list.forEach(artifact => artifact.update("wanters", [], "replace"));
     this.list.forEach(artifact => artifact.update("valuable", 0));
     // Cycle through every character so we can access their artifact priority lists.
-    this.viewer.lists.characters.list.forEach(character => {
+    this.viewer.lists.CharacterList.list.forEach(character => {
       // Cycle through all their builds.
       for(let buildId in character.getBuilds())
       {
@@ -96,7 +107,8 @@ export default class ArtifactList extends GenshinList
         }
       }
     });
-    console.log(`...Done.`);
+    //console.log(`...Done.`);
+    await this.render();
   }
   
   setupDisplay()
@@ -207,6 +219,18 @@ export default class ArtifactList extends GenshinList
       });
     }
     
+    /*let cvField = this.display.addField("cv", {
+      group: substatRatingGroup,
+      label: "CV",
+      labelTitle: "Crit Value: a rating for artifacts devised by the Genshin community; equal to CritRate*2 + CritDMG",
+      sort: {func: (o,a,b) => o * ((b.getSubstatSum('critRate_')*2+b.getSubstatSum('critDMG_')) - (a.getSubstatSum('critRate_')*2+a.getSubstatSum('critDMG_')))},
+      dynamic: true,
+      value: artifact => (artifact.getSubstatSum('critRate_')*2 + artifact.getSubstatSum('critDMG_')).toFixed(0),
+      dependencies: artifact => [
+        {item:artifact, field:"substats"},
+      ],
+    });*/
+    
     let characterCountField = this.display.addField("characterCount", {
       group: substatRatingGroup,
       label: "#",
@@ -232,7 +256,7 @@ export default class ArtifactList extends GenshinList
           edit: {
             target: {item:item, field:"location"},
             type: "select",
-            list: item.list.viewer.lists.characters.list.filter(cha => cha.constructor.name == "Character" || !cha.base),
+            list: item.list.viewer.lists.CharacterList.list.filter(cha => cha.constructor.name == "Character" || !cha.base),
             valueProperty: "key",
             displayProperty: "name",
           },
@@ -260,6 +284,7 @@ export default class ArtifactList extends GenshinList
         action: event => {
           event.stopPropagation();
           item.list.update("list", item, "remove");
+          item.unlink();
           Renderer.removeItem(item);
           item.list.viewer.store();
         },
@@ -294,11 +319,6 @@ export default class ArtifactList extends GenshinList
     });
   }
   
-  getUnique(item)
-  {
-    return `${item.setKey}${item.rarity}${item.slotKey}.${item.mainStatKey}.${item.id}`;
-  }
-  
   createItem(goodData)
   {
     let item = new Artifact();
@@ -311,7 +331,7 @@ export default class ArtifactList extends GenshinList
   clear()
   {
     super.clear();
-    this.viewer.lists.characters.list.forEach(character => {
+    this.viewer.lists.CharacterList.list.forEach(character => {
       character.flowerArtifact = null;
       character.plumeArtifact = null;
       character.sandsArtifact = null;
@@ -452,13 +472,17 @@ export default class ArtifactList extends GenshinList
       let evalBtn = li2.appendChild(document.createElement("button"));
       evalBtn.classList.add("btn", "btn-primary");
       evalBtn.title = "Recalculate the characters that might desire each artifact.";
-      evalBtn.addEventListener("click", event => {
-        this.evaluate();
-        this.render();
-      });
-      
       let evalIcon = evalBtn.appendChild(document.createElement("i"));
       evalIcon.classList.add("fa-solid", "fa-arrows-rotate");
+      
+      evalBtn.addEventListener("click", event => {
+        evalIcon.classList.add("fa-spin");
+        // Have to explicitly wait or else the interface will never register that fa-spin was added.
+        setTimeout(() => {
+          this.evaluate().then(result => evalIcon.classList.remove("fa-spin"));
+        }, 1);
+      });
+      
     }
   }
 }

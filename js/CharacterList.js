@@ -9,10 +9,21 @@ import Artifact from "./Artifact.js";
 export default class CharacterList extends GenshinList
 {
   static unique = true;
-  static name = "characters";
   static dontSerialize = GenshinList.dontSerialize.concat(["elements"]);
+  static itemClass = [Character,Traveler];
+  
+  static fromJSON(data, options)
+  {
+    let list = super.fromJSON(data, options);
+    list.addTraveler();
+    return list;
+  }
   
   elements = {};
+  
+  initialize()
+  {
+  }
   
   setupDisplay()
   {
@@ -119,7 +130,7 @@ export default class CharacterList extends GenshinList
         label: "T"+ i.at(0).toUpperCase(),
         dynamic: true,
         value: item => item.talent[i],
-        title: item => (item.getTalent(i).matTrounceCount ? `Also requires ${item.getTalent(i).matTrounceCount} ${item.materials.trounce.name}, dropped by ${item.materials.trounce.source} (you have ${item.materials.trounce.getCraftCount()})` : ""),
+        title: item => (item.getTalent(i).matTrounceCount ? `Also requires ${item.getTalent(i).matTrounceCount} ${item.MaterialList.trounce.name}, dropped by ${item.MaterialList.trounce.source} (you have ${item.MaterialList.trounce.getCraftCount()})` : ""),
         edit: item => ({target: {item, field:["talent", i]}}),
         sort: {generic: {type:"number",property:["talent",i]}},
         dependencies: item => [
@@ -355,7 +366,7 @@ export default class CharacterList extends GenshinList
     let gearGroup = {label:"Gear", startCollapsed:true};
     /*
     // Note: This is a potential future implementation, for future reference.
-    let weaponName = this.display.transferField(this.viewer.lists.weapons.display.getField("name"), "weaponName", {
+    let weaponName = this.display.transferField(this.viewer.lists.WeaponList.display.getField("name"), "weaponName", {
       item: item => item.weapon,
       group: gearGroup,
       label: "Weapon",
@@ -386,25 +397,32 @@ export default class CharacterList extends GenshinList
       ],
     });
     
-    let flower = this.display.addField("flower", {
-      group: gearGroup,
-      label: "Flower",
-      dynamic: true,
-      //popup: item => item.flowerArtifact,
-      value: item => item.flowerArtifact ? [
-        {
-          value: item.flowerArtifact.display.getField("set").get("value", item.flowerArtifact),
-          classes: item.flowerArtifact.display.getField("set").get("classes", item.flowerArtifact),
+    for(let slotKey of ["flower","plume","sands","goblet","circlet"])
+    {
+      let artifactField = this.display.addField(slotKey, {
+        group: gearGroup,
+        label: slotKey,
+        dynamic: true,
+        //popup: item => item[slotKey+'Artifact'],
+        value: item => {
+          let artifact = item[slotKey+'Artifact'];
+          return artifact ? [
+            {
+              value: artifact.display.getField("set").get("value", artifact),
+              classes: artifact.display.getField("set").get("classes", artifact),
+            },
+            {
+              //value: `+${artifact.level}, ${Math.round(artifact.getCharacterScore(item)*100).toFixed(0)}%`,
+              value: `+${artifact.level}`,
+            },
+          ] : "";
         },
-        {
-          value: `+${item.flowerArtifact.level}`,
-        },
-      ] : "",
-      dependencies: item => [
-        item.flowerArtifact ? {item:item.flowerArtifact, field:"location"} : undefined,
-        {type:"flower"},
-      ],
-    });
+        dependencies: item => [
+          item[slotKey+'Artifact'] ? {item:item[slotKey+'Artifact'], field:"location"} : undefined,
+          {type:slotKey},
+        ],
+      });
+    }
 
     /*
     if traveler
@@ -437,23 +455,56 @@ export default class CharacterList extends GenshinList
     */
   }
   
-  fromGOOD(goodData)
+  addTraveler()
   {
-    super.fromGOOD(goodData);
-    let base = this.get("Traveler") ?? this.addGOOD({"level":1,"constellation":0,"ascension":0,"talent":{"auto":1,"skill":1,"burst":1},"key":"Traveler"});
-    let anemo = this.get("TravelerAnemo") ?? this.addGOOD({"level":1,"constellation":0,"ascension":0,"talent":{"auto":1,"skill":1,"burst":1},"key":"TravelerAnemo"});
-    let geo = this.get("TravelerGeo") ?? this.addGOOD({"level":1,"constellation":0,"ascension":0,"talent":{"auto":1,"skill":1,"burst":1},"key":"TravelerGeo"});
-    let electro = this.get("TravelerElectro") ?? this.addGOOD({"level":1,"constellation":0,"ascension":0,"talent":{"auto":1,"skill":1,"burst":1},"key":"TravelerElectro"});
-    let dendro = this.get("TravelerDendro") ?? this.addGOOD({"level":1,"constellation":0,"ascension":0,"talent":{"auto":1,"skill":1,"burst":1},"key":"TravelerDendro"});
+    let base = this.get("Traveler");
+    let anemo = this.get("TravelerAnemo");
+    let geo = this.get("TravelerGeo");
+    let electro = this.get("TravelerElectro");
+    let dendro = this.get("TravelerDendro");
+    
+    if(!base)
+    {
+      base = Traveler.fromJSON({__class__:"Traveler",key:"Traveler"}, {addProperties:{list:this}});
+      this.update("list", base, "push");
+    }
+    if(!anemo)
+    {
+      anemo = Traveler.fromJSON({__class__:"Traveler",key:"TravelerAnemo"}, {addProperties:{list:this}});
+      this.update("list", anemo, "push");
+    }
+    if(!geo)
+    {
+      geo = Traveler.fromJSON({__class__:"Traveler",key:"TravelerGeo"}, {addProperties:{list:this}});
+      this.update("list", geo, "push");
+    }
+    if(!electro)
+    {
+      electro = Traveler.fromJSON({__class__:"Traveler",key:"TravelerElectro"}, {addProperties:{list:this}});
+      this.update("list", electro, "push");
+    }
+    if(!dendro)
+    {
+      dendro = Traveler.fromJSON({__class__:"Traveler",key:"TravelerDendro"}, {addProperties:{list:this}});
+      this.update("list", dendro, "push");
+    }
+    
     anemo.base = base;
     geo.base = base;
     electro.base = base;
     dendro.base = base;
+    
     base.variants.push(anemo);
     base.variants.push(geo);
     base.variants.push(electro);
     base.variants.push(dendro);
-    return this.list.length;
+  }
+  
+  fromGOOD(goodData)
+  {
+    let result = super.fromGOOD(goodData);
+    this.addTraveler();
+    return result;
   }
   
   createItem(goodData)

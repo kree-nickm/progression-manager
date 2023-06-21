@@ -49,11 +49,11 @@ export default class GenshinItem extends UIItem {
     return result;
   }
   
-  toJSON()
+  /*toJSON()
   {
     let result = super.toJSON();
     for(let prop of this.goodProperties)
       result[prop] = this[prop];
     return result;
-  }
+  }*/
 }
