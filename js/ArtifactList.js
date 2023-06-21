@@ -256,7 +256,7 @@ export default class ArtifactList extends GenshinList
           edit: {
             target: {item:item, field:"location"},
             type: "select",
-            list: item.list.viewer.lists.CharacterList.list.filter(cha => cha.constructor.name == "Character" || !cha.base),
+            list: item.list.viewer.lists.CharacterList.items("equippable"),
             valueProperty: "key",
             displayProperty: "name",
           },
@@ -283,9 +283,7 @@ export default class ArtifactList extends GenshinList
         icon: "fa-solid fa-trash-can",
         action: event => {
           event.stopPropagation();
-          item.list.update("list", item, "remove");
           item.unlink();
-          Renderer.removeItem(item);
           item.list.viewer.store();
         },
       },
@@ -317,15 +315,6 @@ export default class ArtifactList extends GenshinList
         {item:artifact, field:"substats"},
       ],
     });
-  }
-  
-  createItem(goodData)
-  {
-    let item = new Artifact();
-    item.list = this;
-    item.fromGOOD(goodData);
-    this.update("list", item, "push");
-    return item;
   }
   
   clear()

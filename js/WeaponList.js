@@ -208,7 +208,7 @@ export default class WeaponList extends GenshinList
       edit: item => ({
         target: {item, field:"location"},
         type: "select",
-        list: item.list.viewer.lists.CharacterList.list.filter(cha => (cha.constructor.name == "Character" || !cha.base) && item.type == cha.weaponType),
+        list: item.list.viewer.lists.CharacterList.items("equippable").filter(cha => item.type == cha.weaponType),
         valueProperty: "key",
         displayProperty: "name",
       }),
@@ -228,9 +228,7 @@ export default class WeaponList extends GenshinList
         icon: "fa-solid fa-trash-can",
         action: event => {
           event.stopPropagation();
-          item.list.update("list", item, "remove");
           item.unlink();
-          Renderer.removeItem(item);
           item.list.viewer.store();
         },
       },
@@ -257,15 +255,6 @@ export default class WeaponList extends GenshinList
         {item, field:"level"},
       ],
     });
-  }
-  
-  createItem(goodData)
-  {
-    let item = new Weapon();
-    item.list = this;
-    item.fromGOOD(goodData);
-    this.update("list", item, "push");
-    return item;
   }
   
   clear()

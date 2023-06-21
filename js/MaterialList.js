@@ -116,15 +116,6 @@ export default class MaterialList extends GenshinList
     return result;
   }
   
-  createItem(goodData)
-  {
-    let item = new Material();
-    item.list = this;
-    item.fromGOOD(goodData);
-    this.update("list", item, "push");
-    return item;
-  }
-  
   clear()
   {
     for(let item of this.list)

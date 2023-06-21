@@ -59,7 +59,7 @@ export default class GenshinList extends UIList {
   
   createItem(goodData)
   {
-    let item = new GenshinItem();
+    let item = new this.constructor.itemClass();
     item.list = this;
     item.fromGOOD(goodData);
     this.update("list", item, "push");

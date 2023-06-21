@@ -41,6 +41,7 @@ export default class Artifact extends GenshinItem
     'def': 0.01,
   };
   
+  id;
   slotKey = "";
   setKey = "";
   mainStatKey = "";
@@ -91,7 +92,14 @@ export default class Artifact extends GenshinItem
         }
       }
       else
+      {
+        if(this.character)
+        {
+          this.character[this.slotKey+'Artifact'] = null;
+          this.character.notifyType(this.slotKey+'Artifact');
+        }
         this.character = null;
+      }
     }
     else
     {
@@ -253,5 +261,11 @@ export default class Artifact extends GenshinItem
       this.storedStats.characters["*"] = {character:maxChar, score:maxScore};
     }
     return this.storedStats.characters["*"];
+  }
+  
+  unlink(options)
+  {
+    this.update("location", "");
+    super.unlink();
   }
 }

@@ -245,6 +245,8 @@ class Renderer
   {
     let listKeys = listKey.split("/");
     let list = window.viewer.lists[listKeys[0]];
+    if(!items)
+      items = filter ? list.items(filter) : (listKeys[1] ? (list.items(listKeys[1]) ?? list.items()) : list.items());
     if(force)
     {
       let parentElement = element.parentNode;
@@ -256,7 +258,7 @@ class Renderer
         parent: parent,
         groups: list.display.getGroups({include, exclude}),
         fields: fields ?? list.display.getFields({include, exclude}),
-        items: items ?? (typeof(filter) == "function" ? list.items(filter) : (listKeys[1] ? (list.items(listKeys[1]) ?? list.items()) : list.items())),
+        items: items,
       });
       // Note: Won't work if the parent has multiple lists of the same elements, but that probably shouldn't happen.
       element = parentElement.querySelector(`.list[name='${listKey}']`);
@@ -325,11 +327,12 @@ class Renderer
               listElement = element;
             for(let item of list.list)
             {
+              // TODO: Only sort items that were displayed on the list in the first place, otherwise get rid of the console.warn, which might be irrelevant anyway.
               let itemElement = listElement.children.namedItem(item.getUnique());
               if(itemElement)
                 listElement.appendChild(itemElement);
               else
-                console.error(`Unable to find item element for item '${item.getUnique()}' while sorting by '${fieldName}'.`);
+                console.warn(`Unable to find item element for item '${item.getUnique()}' while sorting by '${fieldName}'.`);
             }
             
             list.viewer.store();
@@ -599,6 +602,8 @@ class Renderer
       {
         if(dep?.item && dep?.field)
           dep.item.addDependent(dep.field, element);
+        else if(dep?.type)
+          element.classList.add("type-dependent");
       }
     }
   }

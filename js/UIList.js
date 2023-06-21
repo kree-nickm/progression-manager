@@ -82,6 +82,14 @@ export default class UIList extends UIController {
   
   setupDisplay(){}
   
+  afterUpdate(field, value)
+  {
+    if(field.string == "list")
+    {
+      this.subsets = {};
+    }
+  }
+  
   getUnique(item)
   {
     return (this.constructor.unique ? this.getHash(item) : item.uuid) ?? this.getHash(item);

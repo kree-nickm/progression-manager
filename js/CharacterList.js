@@ -19,6 +19,12 @@ export default class CharacterList extends GenshinList
     return list;
   }
   
+  subsetDefinitions = {
+    'traveler': item => item instanceof Traveler,
+    'nottraveler': item => !(item instanceof Traveler),
+    'equippable': item => !(item instanceof Traveler) || !item.base,
+    'listable': item => !(item instanceof Traveler) || item.base,
+  };
   elements = {};
   
   initialize()
@@ -373,6 +379,8 @@ export default class CharacterList extends GenshinList
       dynamic: true,
       dependencies: item => [
         item.weapon ? {item:item.weapon, field:"location"} : undefined,
+        item.weapon ? {item:item.weapon, field:"refinement"} : undefined,
+        item.weapon ? {item:item.weapon, field:"level"} : undefined,
         {type:"weapon"},
       ],
     });
@@ -393,6 +401,8 @@ export default class CharacterList extends GenshinList
       ] : "",
       dependencies: item => [
         item.weapon ? {item:item.weapon, field:"location"} : undefined,
+        item.weapon ? {item:item.weapon, field:"refinement"} : undefined,
+        item.weapon ? {item:item.weapon, field:"level"} : undefined,
         {type:"weapon"},
       ],
     });
@@ -419,7 +429,8 @@ export default class CharacterList extends GenshinList
         },
         dependencies: item => [
           item[slotKey+'Artifact'] ? {item:item[slotKey+'Artifact'], field:"location"} : undefined,
-          {type:slotKey},
+          item[slotKey+'Artifact'] ? {item:item[slotKey+'Artifact'], field:"level"} : undefined,
+          {type:slotKey+'Artifact'},
         ],
       });
     }
@@ -522,11 +533,9 @@ export default class CharacterList extends GenshinList
   
   clear()
   {
-    // Overwriting the method to keep Traveler from being deleted, because most GOOD exports only have one version of Traveler, whereas we want all of them.
-    // This does depend on the reason for the clear(). If we are importing an updated GOOD file with only one Traveler, then yes, we would want to keep the others intact.
-    // However, if we are swapping over to another account with a different Traveler, it'd be better to remove them with everything else.
-    // But how do we know which is the intent?
-    this.update("list", this.list.filter(item => item instanceof Traveler), "replace");
+    this.items("nottraveler").forEach(item => item.unlink());
+    this.update("list", this.items("traveler"), "replace");
+    this.subsets = {};
     this.forceNextRender = true;
   }
   
@@ -535,15 +544,15 @@ export default class CharacterList extends GenshinList
     await Renderer.renderList2(this.constructor.name, {
       template: "renderListAsTable",
       force: force || this.forceNextRender,
-      filter: item => !!item.element,
+      filter: "listable",
       exclude: field => field.tags.indexOf("detailsOnly") > -1,
-      container: window.viewer.elements[this.constructor.name],
+      container: this.viewer.elements[this.constructor.name],
     });
     this.forceNextRender = false;
     
     if(!this.elements.divAdd)
     {
-      this.elements.divAdd = window.viewer.elements[this.constructor.name].appendChild(document.createElement("div"));
+      this.elements.divAdd = this.viewer.elements[this.constructor.name].appendChild(document.createElement("div"));
       this.elements.divAdd.classList.add("input-group", "mt-2");
       this.elements.selectAdd = this.elements.divAdd.appendChild(document.createElement("select"));
       this.elements.selectAdd.classList.add("form-select", "size-to-content");

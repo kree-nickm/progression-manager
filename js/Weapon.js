@@ -11,6 +11,7 @@ export default class Weapon extends GenshinItem
   static templateName = "renderWeaponAsPopup";
   static templateTitleName = "renderWeaponAsPopupTitle";
   
+  id;
   key = "";
   _refinement = 1;
   _ascension = 0;
@@ -101,7 +102,14 @@ export default class Weapon extends GenshinItem
         }
       }
       else
+      {
+        if(this.character)
+        {
+          this.character.weapon = null;
+          this.character.notifyType("weapon");
+        }
         this.character = null;
+      }
     }
   }
   
@@ -199,5 +207,11 @@ export default class Weapon extends GenshinItem
     //let stat = this.baseStat;
     let factor = 1 + 0.04038405 * (this.level-1);
     return stat * factor;
+  }
+  
+  unlink(options)
+  {
+    this.update("location", "");
+    super.unlink();
   }
 }

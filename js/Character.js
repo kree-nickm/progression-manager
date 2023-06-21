@@ -203,13 +203,15 @@ export default class Character extends GenshinItem
       //console.log(`Character had no previous item and item had no previous character.`);
     }
     
-    // Notify character item display that it needs to update.
-    let charsToUpdate = (this.constructor.name == "Traveler") ? this.variants : [this];
+    // TODO: Notify character item display on both this and previous that they need to update.
+    /*let charsToUpdate = (this.constructor.name == "Traveler") ? this.variants : [this];
     for(let cha of charsToUpdate)
       for(let cell of cha.elements?.tr?.children ?? [])
         for(let dep of cell.dependencies ?? [])
           if(dep?.type == item.constructor.name.toLowerCase())
-            cell.needsUpdate = true;
+            cell.needsUpdate = true;*/
+    this.notifyType(property);
+    previousCharacter?.notifyType(property);
     
     // Finally, set the references on this character and the item to each other.
     this[property] = item;

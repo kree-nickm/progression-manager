@@ -188,7 +188,7 @@ export default class UIController {
     return this;
   }
   
-  unlink()
+  unlink(options)
   {
     UIController.controllers.delete(this.uuid);
   }

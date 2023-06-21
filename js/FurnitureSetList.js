@@ -104,15 +104,6 @@ export default class FurnitureSetList extends GenshinList
     });
   }
   
-  createItem(goodData)
-  {
-    let item = new FurnitureSet();
-    item.list = this;
-    item.fromGOOD(goodData);
-    this.update("list", item, "push");
-    return item;
-  }
-  
   clear()
   {
     for(let item of this.list)

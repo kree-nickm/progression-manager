@@ -1,4 +1,4 @@
-import { handlebars } from "./Renderer.js";
+import { handlebars, Renderer } from "./Renderer.js";
 import UIController from "./UIController.js";
 
 handlebars.registerHelper("unique", (item, context) => item.getUnique());
@@ -44,6 +44,21 @@ export default class UIItem extends UIController {
     return true;
   }
   
+  notifyType(type="")
+  {
+    let elements = Array.from(document.querySelectorAll(`.list-item[name='${this.getUnique()}'] .type-dependent`));
+    console.log(`Updating all field elements of type ${type} and item ${this.getUnique()}:`, elements);
+    elements.forEach(element => {
+      for(let dep of element.dependencies ?? [])
+      {
+        if(dep?.type === type)
+        {
+          element.needsUpdate = true;
+        }
+      }
+    });
+  }
+  
   getRelatedItems()
   {
     return {};
@@ -51,5 +66,14 @@ export default class UIItem extends UIController {
   
   addPopupEventHandlers(popupBody)
   {
+  }
+  
+  unlink({skipList, skipHTML}={})
+  {
+    super.unlink();
+    if(!skipList)
+      this.list?.update("list", this, "remove");
+    if(!skipHTML)
+      Renderer.removeItem(this);
   }
 }
