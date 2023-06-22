@@ -191,70 +191,70 @@ export default class Traveler extends Character
   get flowerArtifact()
   {
     if(this.base)
-      return this.base.flower;
+      return this.base.flowerArtifact;
     else
       return this._flower;
   }
   set flowerArtifact(val)
   {
     if(this.base)
-      this.base.flower = val;
+      this.base.flowerArtifact = val;
     else
       this._flower = val;
   }
   get plumeArtifact()
   {
     if(this.base)
-      return this.base.plume;
+      return this.base.plumeArtifact;
     else
       return this._plume;
   }
   set plumeArtifact(val)
   {
     if(this.base)
-      this.base.plume = val;
+      this.base.plumeArtifact = val;
     else
       this._plume = val;
   }
   get sandsArtifact()
   {
     if(this.base)
-      return this.base.sands;
+      return this.base.sandsArtifact;
     else
       return this._sands;
   }
   set sandsArtifact(val)
   {
     if(this.base)
-      this.base.sands = val;
+      this.base.sandsArtifact = val;
     else
       this._sands = val;
   }
   get gobletArtifact()
   {
     if(this.base)
-      return this.base.goblet;
+      return this.base.gobletArtifact;
     else
       return this._goblet;
   }
   set gobletArtifact(val)
   {
     if(this.base)
-      this.base.goblet = val;
+      this.base.gobletArtifact = val;
     else
       this._goblet = val;
   }
   get circletArtifact()
   {
     if(this.base)
-      return this.base.circlet;
+      return this.base.circletArtifact;
     else
       return this._circlet;
   }
   set circletArtifact(val)
   {
     if(this.base)
-      this.base.circlet = val;
+      this.base.circletArtifact = val;
     else
       this._circlet = val;
   }

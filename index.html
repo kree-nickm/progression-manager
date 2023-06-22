@@ -37,10 +37,10 @@
               <a class="nav-link" href="#furniture">Furniture</a>
             </li>
             <li class="nav-item ms-3">
-              <button class="btn btn-primary" data-bs-target="#loadGOODModal" data-bs-toggle="modal" title="Opens a window to load either a JSON file, or paste in GOOD-formatted data."><i class="fa-solid fa-file-import"></i></button>
+              <button class="btn btn-primary" data-bs-target="#loadGOODModal" data-bs-toggle="modal" title="Import your data from a file."><i class="fa-solid fa-file-import"></i></button>
             </li>
             <li class="nav-item ms-3">
-              <button id="saveGOODFile" class="btn btn-success" title="Download your data as a JSON file in GOOD format."><i class="fa-solid fa-download"></i></button>
+              <button class="btn btn-success" data-bs-target="#saveModal" data-bs-toggle="modal" title="Download your data."><i class="fa-solid fa-download"></i></button>
             </li>
           </ul>
         </div>
@@ -100,6 +100,19 @@
             <textarea id="loadGOODJSON" name="GOODJSON" style="width:100%;"></textarea>
             <button id="loadGOODBtn" type="button" class="btn btn-primary my-1">Load</button>
             <div id="loadGOODError" class="alert alert-danger d-none">Error</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="saveModal" class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-6"><button id="saveGOODBtn" class="btn btn-success" title="Use this to transfer your data to other Genshin Impact apps that use GOOD format.">Download current account in GOOD format.</button></div>
+              <div class="col-6"><button id="saveAllBtn" class="btn btn-success" title="Use this to save all of your data for use on this app.">Download all data for all accounts.</button></div>
+            </div>
           </div>
         </div>
       </div>

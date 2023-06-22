@@ -84,11 +84,10 @@ const saveTemplateAsFile = (filename, dataObjToWrite) => {
   link.remove()
 };
 
-document.getElementById("saveGOODFile").addEventListener("click", event => {
+document.getElementById("saveGOODBtn").addEventListener("click", event => {
   saveTemplateAsFile("GenshinData.GOOD.json", window.viewer.toGOOD());
 });
-/*
-document.getElementById("saveDataFile").addEventListener("click", event => {
-  saveTemplateAsFile("GenshinData.json", JSON.stringify(window.viewer));
+
+document.getElementById("saveAllBtn").addEventListener("click", event => {
+  saveTemplateAsFile("GenshinData.json", window.viewer);
 });
-*/

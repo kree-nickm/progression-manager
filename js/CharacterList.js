@@ -27,10 +27,6 @@ export default class CharacterList extends GenshinList
   };
   elements = {};
   
-  initialize()
-  {
-  }
-  
   setupDisplay()
   {
     let favorite = this.display.addField("favorite", {

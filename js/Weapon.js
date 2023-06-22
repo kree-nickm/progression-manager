@@ -7,7 +7,8 @@ import GenshinItem from "./GenshinItem.js";
 
 export default class Weapon extends GenshinItem
 {
-  static dontSerialize = GenshinItem.dontSerialize.concat(["MaterialList","loaded"]);
+  static dontSerialize = GenshinItem.dontSerialize.concat(["MaterialList","loaded","character"]);
+  static goodProperties = ["key","level","ascension","refinement","location","lock"];
   static templateName = "renderWeaponAsPopup";
   static templateTitleName = "renderWeaponAsPopupTitle";
   
@@ -20,6 +21,7 @@ export default class Weapon extends GenshinItem
   lock = false;
   loaded = false;
   favorite = false;
+  character = null;
   MaterialList;
   
   afterLoad()
@@ -76,13 +78,6 @@ export default class Weapon extends GenshinItem
       this.loaded = false;
     }
     return this.loaded;
-  }
-  
-  toGOOD()
-  {
-    let result = super.toGOOD();
-    result.favorite = this.favorite;
-    return result;
   }
   
   afterUpdate(field, value)

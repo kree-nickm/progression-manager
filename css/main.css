@@ -180,6 +180,22 @@ option:disabled {
   display: none;
 }
 
+.show-notice {
+  position: relative;
+}
+
+.notice {
+  color: #d66;
+  display: none !important;
+  position: absolute;
+  top: -2px;
+  right: -2px;
+}
+
+.show-notice .notice {
+  display: block !important;
+}
+
 /* Specific List CSS */
 
 .viewer-pane .ascension-materials {

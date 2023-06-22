@@ -4,7 +4,7 @@ import Weapon from "./Weapon.js";
 
 export default class Material extends GenshinItem
 {
-  static dontSerialize = GenshinItem.dontSerialize.concat(["usedBy","prevTier","nextTier"]);
+  static dontSerialize = GenshinItem.dontSerialize.concat(["_shorthand","source","quality","days","usedBy","prevTier","nextTier"]);
   
   static gemQualities = {
     '5': " Gemstone",

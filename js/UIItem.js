@@ -47,7 +47,6 @@ export default class UIItem extends UIController {
   notifyType(type="")
   {
     let elements = Array.from(document.querySelectorAll(`.list-item[name='${this.getUnique()}'] .type-dependent`));
-    console.log(`Updating all field elements of type ${type} and item ${this.getUnique()}:`, elements);
     elements.forEach(element => {
       for(let dep of element.dependencies ?? [])
       {

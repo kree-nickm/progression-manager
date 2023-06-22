@@ -12,7 +12,8 @@ import Material from "./Material.js";
 
 export default class Character extends GenshinItem
 {
-  static dontSerialize = GenshinItem.dontSerialize.concat(["MaterialList","_weapon","_flower","_plume","_sands","_goblet","_circlet","loaded"]);
+  static dontSerialize = GenshinItem.dontSerialize.concat(["MaterialList","_weapon","_flower","_plume","_sands","_goblet","_circlet","loaded","maxScores"]);
+  static goodProperties = ["key","level","constellation","ascension","talent"];
   static templateName = "renderCharacterAsPopup";
   static templateTitleName = "renderCharacterAsPopupTitle";
   static statBase = {
@@ -147,13 +148,6 @@ export default class Character extends GenshinItem
     return this.loaded;
   }
   
-  toGOOD()
-  {
-    let result = super.toGOOD();
-    result.favorite = this.favorite;
-    return result;
-  }
-  
   equipItem(item)
   {
     // Determine the name of the property on this character that stores items of this type.
@@ -170,15 +164,88 @@ export default class Character extends GenshinItem
     
     // Make note of existing equips and then unequip them.
     let previousCharacter = item.character;
-    item.character = null;
     let previousItem = this[property];
-    this[property] = null;
     
     // Do a quick bug check on the import, if applicable.
     if(previousItem?.list.importing)
     {
-      console.warn(`Multiple ${property}s were located on ${this.name} during the import (${previousItem.name} and ${item.name}). GOOD data may have been exported incorrectly; consider reporting a bug to the developer of the export tool.`);
+      let skip = true;
+      let log = [];
+      if(item.constructor.name == "Weapon")
+        log.push(`Multiple weapons were located on ${this.name} during the import (${previousItem.key},R${previousItem.refinement}L${previousItem.level} and ${item.key},R${item.refinement}L${item.level}).`);
+      if(item.constructor.name == "Artifact")
+        log.push(`Multiple ${item.slotKey}s were located on ${this.name} during the import (${previousItem.rarity}*${previousItem.setKey}+${previousItem.level}#${previousItem.id} and ${item.rarity}*${item.setKey}+${item.level}#${item.id}).`);
+      log.push(`GOOD data may have been exported incorrectly; consider reporting a bug to the developer of the export tool.`);
+      let logFunc = console.warn;
+      //if(source == "Inventory_Kamera") // TODO: Implement this.
+      {
+        if(item.constructor.name == "Artifact")
+        {
+          log.pop();
+          log.push(`Inventory Kamera is known to misread the "Source" label of any artifact where said label is visible, and think it's an "Equipped By" label.`);
+          let detectProblem = artifact => {
+            if(artifact.rarity == 5)
+            {
+              if(artifact.setKey == "HeartOfDepth")
+              {
+                if(artifact.substats.length == 3 && (artifact.slotKey == "flower" || artifact.slotKey == "plume" || artifact.slotKey == "sands") || (artifact.slotKey == "circlet"))
+                  return `Assuming ${artifact.rarity}*${artifact.setKey}+${artifact.level}#${artifact.id} is the source of this problem and ignoring it.`;
+              }
+              else if(artifact.setKey == "EmblemOfSeveredFate")
+              {
+                if(artifact.substats.length == 3 && (artifact.slotKey == "plume" || artifact.slotKey == "goblet") || (artifact.slotKey == "circlet"))
+                  return `Assuming ${artifact.rarity}*${artifact.setKey}+${artifact.level}#${artifact.id} is the source of this problem and ignoring it.`;
+              }
+              else if(artifact.setKey == "NoblesseOblige")
+              {
+                if(artifact.substats.length == 3 && (artifact.slotKey == "flower" || artifact.slotKey == "plume" || artifact.slotKey == "goblet" || artifact.slotKey == "circlet"))
+                  return `Assuming ${artifact.rarity}*${artifact.setKey}+${artifact.level}#${artifact.id} is the source of this problem and ignoring it.`;
+              }
+              else if(artifact.setKey == "MaidenBeloved")
+              {
+                if((artifact.slotKey == "flower" || artifact.slotKey == "plume" || artifact.slotKey == "goblet"))
+                  return `Assuming ${artifact.rarity}*${artifact.setKey}+${artifact.level}#${artifact.id} is the source of this problem and ignoring it.`;
+              }
+              else if(artifact.setKey == "BloodstainedChivalry")
+              {
+                if(artifact.substats.length == 3 && (artifact.slotKey == "flower" || artifact.slotKey == "plume"))
+                  return `Assuming ${artifact.rarity}*${artifact.setKey}+${artifact.level}#${artifact.id} is the source of this problem and ignoring it.`;
+              }
+            }
+            return false;
+          };
+          let msg1 = detectProblem(item);
+          let msg2 = detectProblem(previousItem);
+          if(msg1 && msg2)
+          {
+            log.push(`Both artifacts are potentially incorrect.`);
+          }
+          else if(msg1)
+          {
+            logFunc = console.log;
+            log.unshift(`[SOLVED]`);
+            log.push(msg1);
+            return this;
+          }
+          else if(msg2)
+          {
+            logFunc = console.log;
+            log.unshift(`[SOLVED]`);
+            log.push(msg2);
+            skip = false;
+          }
+        }
+      }
+      if(skip)
+        log.push(`Ignoring the most recent one, because better items generally comes first in the import, and we'll assume you have the best one equipped.`);
+      logFunc(...log);
+      if(skip)
+        return this;
     }
+    
+    // Unequip the previous equips that we noted above.
+    item.character = null;
+    this[property] = null;
     
     // If we had an item equipped, and the new item was equipped to another character, give that character our old item.
     if(previousItem && previousCharacter)
@@ -203,13 +270,7 @@ export default class Character extends GenshinItem
       //console.log(`Character had no previous item and item had no previous character.`);
     }
     
-    // TODO: Notify character item display on both this and previous that they need to update.
-    /*let charsToUpdate = (this.constructor.name == "Traveler") ? this.variants : [this];
-    for(let cha of charsToUpdate)
-      for(let cell of cha.elements?.tr?.children ?? [])
-        for(let dep of cell.dependencies ?? [])
-          if(dep?.type == item.constructor.name.toLowerCase())
-            cell.needsUpdate = true;*/
+    // Notify character item display on both this and previous that they need to update.
     this.notifyType(property);
     previousCharacter?.notifyType(property);
     
@@ -619,6 +680,7 @@ export default class Character extends GenshinItem
           });
         this.update("buildData", {}, "notify");
         this.list.viewer.store();
+        document.querySelector("#artifactEvaluateBtn")?.classList.add("show-notice");
       };
     
     let statSliders = popupBody.querySelectorAll(".artifact-stat-slider");
@@ -686,6 +748,7 @@ export default class Character extends GenshinItem
         }
         this.update("buildData", {}, "notify");
         this.list.viewer.store();
+        document.querySelector("#artifactEvaluateBtn")?.classList.add("show-notice");
       };
     }
     
@@ -717,7 +780,7 @@ export default class Character extends GenshinItem
           parent: this,
           force: true,
         });
-        item.update("location", this.key);
+        item.update("location", this.base?.key ?? this.key);
         this.list.viewer.store();
       };
     }

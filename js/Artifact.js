@@ -5,7 +5,8 @@ import GenshinItem from "./GenshinItem.js";
 
 export default class Artifact extends GenshinItem
 {
-  static dontSerialize = GenshinItem.dontSerialize.concat(["character","wanters","loaded"]);
+  static dontSerialize = GenshinItem.dontSerialize.concat(["character","wanters","loaded","storedStats","valuable"]);
+  static goodProperties = ["setKey","slotKey","level","rarity","mainStatKey","location","lock","substats"];
   static shorthandStat = {
     'eleMas': "EM",
     'enerRech_': "ER%",
@@ -107,6 +108,8 @@ export default class Artifact extends GenshinItem
       this.storedStats.ratings = {};
       this.storedStats.characters = {};
     }
+    if(field.string != "lock")
+      document.querySelector("#artifactEvaluateBtn")?.classList.add("show-notice");
   }
   
   get level(){ return this._level; }

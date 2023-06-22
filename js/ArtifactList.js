@@ -108,7 +108,14 @@ export default class ArtifactList extends GenshinList
       }
     });
     //console.log(`...Done.`);
+    document.querySelector("#artifactEvaluateBtn")?.classList.remove("show-notice");
     await this.render();
+  }
+  
+  afterUpdate(field, value, previous)
+  {
+    if(field.string == "list")
+      document.querySelector("#artifactEvaluateBtn")?.classList.add("show-notice");
   }
   
   setupDisplay()
@@ -459,10 +466,13 @@ export default class ArtifactList extends GenshinList
       li2.classList.add("nav-item", "me-2");
       
       let evalBtn = li2.appendChild(document.createElement("button"));
-      evalBtn.classList.add("btn", "btn-primary");
+      evalBtn.id = "artifactEvaluateBtn";
+      evalBtn.classList.add("btn", "btn-primary", "show-notice");
       evalBtn.title = "Recalculate the characters that might desire each artifact.";
       let evalIcon = evalBtn.appendChild(document.createElement("i"));
       evalIcon.classList.add("fa-solid", "fa-arrows-rotate");
+      let evalNotice = evalBtn.appendChild(document.createElement("i"));
+      evalNotice.classList.add("fa-solid", "fa-circle-exclamation", "notice");
       
       evalBtn.addEventListener("click", event => {
         evalIcon.classList.add("fa-spin");
