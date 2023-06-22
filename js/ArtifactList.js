@@ -457,7 +457,7 @@ export default class ArtifactList extends GenshinList
           this.elements.selectStatAdd.value = "";
           this.elements.selectRarityAdd.value = "";
           this.viewer.store();
-          Renderer.renderNewItem(item);
+          Renderer.renderNewItem(item, {exclude: field => field.tags.indexOf("detailsOnly") > -1});
         }
       });
       
