@@ -250,6 +250,7 @@ class Renderer
     if(force)
     {
       let parentElement = element.parentNode;
+      let index = Array.from(parentElement.children).indexOf(element);
       if(!template)
         template = element.dataset.template ?? "renderListAsTable";
       let templates = await Renderer.getTemplates(template, ...(Renderer.partialsUsed[template] ?? []), "renderItemField");
@@ -260,8 +261,7 @@ class Renderer
         fields: fields ?? list.display.getFields({include, exclude}),
         items: items,
       });
-      // Note: Won't work if the parent has multiple lists of the same elements, but that probably shouldn't happen.
-      element = parentElement.querySelector(`.list[name='${listKey}']`);
+      element = parentElement.children.item(index);
     }
     if(parent)
       parent.addPopupEventHandlers(element);
@@ -343,27 +343,54 @@ class Renderer
     });
   }
   
+  static async rerender(element, data={}, eventItem)
+  {
+    let parentElement = element.parentNode;
+    if(!parentElement) return console.error(`Element has no parent:`, element);
+    
+    let index = Array.from(parentElement.children).indexOf(element);
+    if(index == -1) return console.error(`Element can't be found within its parent:`, element, parentElement);
+    
+    let template = element.dataset.template;
+    if(!template) return console.error(`Element has no template specified in a data attribute:`, element);
+    
+    let templates = await Renderer.getTemplates(template, ...(Renderer.partialsUsed[template] ?? []), "renderItemField");
+    element.outerHTML = templates[template](data);
+    element = parentElement.children.item(index);
+    
+    // Add context-specific event handlers.
+    if(typeof(eventItem?.addPopupEventHandlers) == "function")
+      eventItem?.addPopupEventHandlers(element);
+    
+    // Iterate through all item fields.
+    element.querySelectorAll(".list-item-field").forEach(Renderer.renderItemField);
+    
+    // Final UI preperation.
+    $(element).find(".selectpicker").selectpicker('render');
+  }
+  
   static async removeItem(item)
   {
     Array.from(document.querySelectorAll(`.list-item[name="${item.getUnique()}"]`)).forEach(element => element.remove())
   }
   
-  static async renderNewItem(item, {include=[], exclude=[]}={})
+  static async renderNewItem(item, {data={}, template, include=[], exclude=[]}={})
   {
-    // TODO: Currently only supports adding rows to tables.
-    let templates = await Renderer.getTemplates("renderItem");
+    template = template ?? "renderItem";
+    let templates = await Renderer.getTemplates(template);
     let element = document.querySelector(`.list[name='${item.list.constructor.name}']`); // TODO: Could match multiple.
     {
       let listElement = element.querySelector(".list-target");
       if(!listElement)
         listElement = element;
       let newElement = listElement.appendChild(document.createElement("template"));
-      newElement.outerHTML = templates["renderItem"]({
-        item,
-        fields: item.list.display.getFields({include, exclude}),
-        wrapper: "tr",
-        fieldWrapper: "td",
-      });
+      
+      data.item = item;
+      data.fields = data.fields ?? item.list.display.getFields({include, exclude});
+      data.wrapper = data.wrapper ?? "tr";
+      data.fieldWrapper = data.fieldWrapper ?? "td";
+      newElement.outerHTML = templates[template](data);
+      
       // Changing outerHTML breaks DOM references, so we need to reacquire the reference to this element.
       newElement = listElement.querySelector(`.list-item[name="${item.getUnique()}"]`);
       

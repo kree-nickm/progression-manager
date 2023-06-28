@@ -4,8 +4,13 @@ import { handlebars, Renderer } from "./Renderer.js";
 import GenshinList from "./GenshinList.js";
 import Artifact from "./Artifact.js";
 
-handlebars.registerHelper('iffave', function(character, setKey, options) {
-  if(character.getArtifactSetPrio(setKey))
+handlebars.registerHelper('iffave', function(character, setKey, build, options) {
+  if(!options)
+  {
+    options = build;
+    build = undefined;
+  }
+  if(character.getArtifactSetPrio(setKey, build))
     return options.fn(this);
   else
     return options.inverse(this);
@@ -65,7 +70,7 @@ export default class ArtifactList extends GenshinList
             if(related.bestArtifacts[slot][i])
             {
               related.bestArtifacts[slot][i].update("valuable", related.bestArtifacts[slot][i].valuable + 1);
-              related.bestArtifacts[slot][i].update("wanters", `#${i+1} for ${character.name}`, "push");
+              related.bestArtifacts[slot][i].update("wanters", `#${i+1} for ${character.name} (${buildId})`, "push");
               // Don't bother with anything worse than what they are already using (but still mark at least 2?).
               if(related.bestArtifacts[slot][i].character == character)
               {
@@ -89,7 +94,7 @@ export default class ArtifactList extends GenshinList
               if(bestOfSet[i])
               {
                 bestOfSet[i].update("valuable", bestOfSet[i].valuable + 1);
-                bestOfSet[i].update("wanters", `#${i+1} ${setKey} piece for ${character.name}`, "push");
+                bestOfSet[i].update("wanters", `#${i+1} ${setKey} piece for ${character.name} (${buildId})`, "push");
                 // Don't bother with anything worse than what they are already using (but still mark at least 2?).
                 if(bestOfSet[i].character == character)
                 {

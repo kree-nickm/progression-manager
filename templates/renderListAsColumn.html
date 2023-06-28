@@ -1,5 +1,5 @@
 <div class="col character-artifacts list" name="{{name}}" data-template="renderListAsColumn">
   {{#each items}}
-      {{> renderArtifactAsCard character=../parent item=. fields=../fields}}
+      {{> renderArtifactAsCard buildId=../params.[0] character=../parent item=. fields=../fields}}
   {{/each}}
 </div>

@@ -1,4 +1,4 @@
-<div class="list-item {{#ifeq character.key item.location}}equipped{{/ifeq}} {{#iffave character item.setKey}}favorite{{/iffave}}" name="{{unique item}}" data-template="renderArtifactAsCard">
+<div class="list-item {{#ifeq character.key item.location}}equipped{{/ifeq}} {{#iffave character item.setKey buildId}}favorite{{/iffave}}" name="{{unique item}}" data-template="renderArtifactAsCard">
   {{> renderItemField item=item field=fields.set wrapper="div"}}
     <div class="row gx-1 main-stats">
       <div class="col-3 level">{{> renderItemField item=item field=fields.level wrapper="span"}}</div>

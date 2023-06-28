@@ -10,6 +10,13 @@ export default class WeaponList extends GenshinList
   static dontSerialize = GenshinList.dontSerialize.concat(["elements"]);
   static itemClass = Weapon;
   
+  subsetDefinitions = {
+    'Sword': item => item.type == "Sword",
+    'Claymore': item => item.type == "Claymore",
+    'Polearm': item => item.type == "Polearm",
+    'Bow': item => item.type == "Bow",
+    'Catalyst': item => item.type == "Catalyst",
+  };
   elements = {};
   
   setupDisplay()

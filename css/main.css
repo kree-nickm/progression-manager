@@ -229,6 +229,12 @@ table .stat-critRate_, table .stat-rating-critRate_, table .artifact-wanters {
   height: 1.2em;
 }
 
+.character-build {
+  border: 1px solid gray;
+  border-radius: 1em;
+  padding: 1ex;
+}
+
 .artifact-stat-slider .form-range::-moz-range-track {
   background-color: #ddd;
 }
