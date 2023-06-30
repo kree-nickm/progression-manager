@@ -37,10 +37,13 @@
               <a class="nav-link" href="#furniture">Furniture</a>
             </li>
             <li class="nav-item ms-3">
-              <button class="btn btn-primary" data-bs-target="#loadGOODModal" data-bs-toggle="modal" title="Import your data from a file."><i class="fa-solid fa-file-import"></i></button>
+              <button class="btn btn-primary" data-bs-target="#loadModal" data-bs-toggle="modal" title="Import your data from a file."><i class="fa-solid fa-file-import"></i></button>
             </li>
             <li class="nav-item ms-3">
               <button class="btn btn-success" data-bs-target="#saveModal" data-bs-toggle="modal" title="Download your data."><i class="fa-solid fa-download"></i></button>
+            </li>
+            <li class="nav-item ms-3">
+              <button class="btn btn-secondary" data-bs-target="#editModal" data-bs-toggle="modal" title="Change accounts."><i class="fa-solid fa-user-pen"></i></button>
             </li>
           </ul>
         </div>
@@ -63,27 +66,88 @@
       </div>
     </div>
 
-    <div id="loadGOODModal" class="modal" tabindex="-1">
+    <div id="loadModal" class="modal" tabindex="-1">
       <div class="modal-dialog">
-        <div id="loadGOODForm" class="modal-content">
+        <div id="loadForm" class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Load GOOD File</h5>
+            <h5 class="modal-title">Load From File</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
           <div class="modal-body">
-            <b>Multiple accounts is a work-in-progress.</b>
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button id="loadGOODTab" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#loadGOODPane">GOOD Format</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button id="loadAllTab" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#loadAllPane">Genshin Manager Format</button>
+              </li>
+            </ul>
+            <div class="tab-content my-3">
+              <div class="tab-pane" id="loadGOODPane" role="tabpanel">
+                <div class="row">
+                  <label class="col-6 form-label">Account</label>
+                  <label class="col-6 form-label">Server</label>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <select class="form-select" id="loadAccount">
+                    </select>
+                    <input class="form-control" id="loadAccountNew" placeholder="Account name..." title="Can be anything you want that helps you identify this account."/>
+                  </div>
+                  <div class="col-6">
+                    <select class="form-select" id="loadServer">
+                      <option value="na">America</option>
+                      <option value="eu">Europe</option>
+                      <option value="as">Asia</option>
+                      <option value="tw">TW, HK, MO</option>
+                    </select>
+                  </div>
+                </div>
+                <hr/>
+                <div class="input-group">
+                  <label class="input-group-text" for="loadGOODFile">Load From File:</label>
+                  <input id="loadGOODFile" class="form-control" name="GOODFile" type="file"/>
+                </div>
+                <i class="form-text">Note: This will replace the data in the specified account/server with the data from the file. However, only lists that are present in the file will be replaced. For example, if the loaded file only contains artifacts and materials, then only artifacts and materials will be replaced; your characters, weapons, etc. will be unaffected.</i>
+                <!--<hr/>
+                <label>Or Paste JSON Data:</label>
+                <textarea id="loadGOODJSON" name="GOODJSON" style="width:100%;"></textarea>
+                <button id="loadGOODBtn" type="button" class="btn btn-primary">Load</button>-->
+              </div>
+              <div class="tab-pane" id="loadAllPane" role="tabpanel">
+                <div class="input-group">
+                  <label class="input-group-text" for="loadAllFile">Load From File:</label>
+                  <input id="loadAllFile" class="form-control" name="AllFile" type="file"/>
+                </div>
+                <i class="form-text">Note: This will replace <b>all</b> of your data with the data in the file. Make sure you save your current data to a file first if you want to keep it.</i>
+              </div>
+            </div>
+            <div id="loadError" class="alert alert-danger d-none">Error</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="editModal" class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Account(s)</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
             <div class="row">
-              <label class="col-6 form-label">Account*</label>
+              <label class="col-6 form-label">Account</label>
               <label class="col-6 form-label">Server</label>
             </div>
             <div class="row">
               <div class="col-6">
-                <select class="form-select" id="loadGOODAccount">
+                <select class="form-select" id="editAccount">
                 </select>
-                <input class="form-control" id="loadGOODAccountNew"/>
+                <input class="form-control" id="editAccountNew" placeholder="Account name..." title="Can be anything you want that helps you identify this account."/>
               </div>
               <div class="col-6">
-                <select class="form-select" id="loadGOODServer">
+                <select class="form-select" id="editServer">
                   <option value="na">America</option>
                   <option value="eu">Europe</option>
                   <option value="as">Asia</option>
@@ -91,15 +155,12 @@
                 </select>
               </div>
             </div>
-            <i class="form-text">*Optional, but required for storing multiple accounts. Recommend entering your UID, but can be anything you want.</i>
-            <hr/>
-            <label>Load From File:</label>
-            <input id="loadGOODFile" name="GOODFile" type="file"/>
-            <hr/>
-            <label>Or Paste JSON Data:</label>
-            <textarea id="loadGOODJSON" name="GOODJSON" style="width:100%;"></textarea>
-            <button id="loadGOODBtn" type="button" class="btn btn-primary my-1">Load</button>
-            <div id="loadGOODError" class="alert alert-danger d-none">Error</div>
+            <i class="form-text">Select an existing account from the list and click <tt>Done</tt> to switch accounts.</i>
+            <i class="form-text">Select <tt>New...</tt>, enter a unique name, and click <tt>Done</tt> to create a new empty account and then switch to it.</i>
+            <div id="editError" class="alert alert-danger d-none">Error</div>
+          </div>
+          <div class="modal-footer">
+            <button id="editDoneBtn" type="button" class="btn btn-success">Done</button>
           </div>
         </div>
       </div>

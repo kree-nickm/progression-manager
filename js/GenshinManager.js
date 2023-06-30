@@ -20,8 +20,8 @@ export default class GenshinManager extends DataManager
   constructor()
   {
     super();
-    this.elements['loadModal'] = document.getElementById("loadGOODModal");
-    this.elements['loadError'] = document.getElementById("loadGOODError");
+    this.elements['loadModal'] = document.getElementById("loadModal");
+    this.elements['loadError'] = document.getElementById("loadError");
     this.settings.account = "";
     this.settings.server = "";
     this.listClasses.MaterialList = MaterialList;
@@ -37,32 +37,26 @@ export default class GenshinManager extends DataManager
     this.listClasses.furniture = FurnitureList;
     this.listClasses.furnitureSets = FurnitureSetList;
     
-    //this.lists[MaterialList.name] = new MaterialList(this);
     this.elements[MaterialList.name] = document.getElementById(MaterialList.name) ?? this.elements.content.appendChild(document.createElement("div"));
     this.elements[MaterialList.name].classList.add("viewer-pane");
     this.settings.paneMemory[MaterialList.name] = this.settings.paneMemory[MaterialList.name] ?? {};
     
-    //this.lists[CharacterList.name] = new CharacterList(this);
     this.elements[CharacterList.name] = document.getElementById(CharacterList.name) ?? this.elements.content.appendChild(document.createElement("div"));
     this.elements[CharacterList.name].classList.add("viewer-pane");
     this.settings.paneMemory[CharacterList.name] = this.settings.paneMemory[CharacterList.name] ?? {};
     
-    //this.lists[WeaponList.name] = new WeaponList(this);
     this.elements[WeaponList.name] = document.getElementById(WeaponList.name) ?? this.elements.content.appendChild(document.createElement("div"));
     this.elements[WeaponList.name].classList.add("viewer-pane");
     this.settings.paneMemory[WeaponList.name] = this.settings.paneMemory[WeaponList.name] ?? {};
     
-    //this.lists[ArtifactList.name] = new ArtifactList(this);
     this.elements[ArtifactList.name] = document.getElementById(ArtifactList.name) ?? this.elements.content.appendChild(document.createElement("div"));
     this.elements[ArtifactList.name].classList.add("viewer-pane");
     this.settings.paneMemory[ArtifactList.name] = this.settings.paneMemory[ArtifactList.name] ?? {};
     
-    //this.lists[FurnitureList.name] = new FurnitureList(this);
     this.elements[FurnitureList.name] = document.getElementById(FurnitureList.name) ?? this.elements.content.appendChild(document.createElement("div"));
     this.elements[FurnitureList.name].classList.add("viewer-pane");
     this.settings.paneMemory[FurnitureList.name] = this.settings.paneMemory[FurnitureList.name] ?? {};
     
-    //this.lists[FurnitureSetList.name] = new FurnitureSetList(this);
     this.elements[FurnitureSetList.name] = document.getElementById(FurnitureSetList.name) ?? this.elements.content.appendChild(document.createElement("div"));
     this.elements[FurnitureSetList.name].classList.add("viewer-pane");
     this.settings.paneMemory[FurnitureSetList.name] = this.settings.paneMemory[FurnitureSetList.name] ?? {};
@@ -85,18 +79,133 @@ export default class GenshinManager extends DataManager
     return today;
   }
   
+  activateAccount(account, server)
+  {
+    let changed = false;
+    if(this.settings.account != account || this.settings.server != server)
+      changed = true;
+    this.settings.account = account;
+    this.settings.server = server;
+    if(!this.data)
+      this.data = {};
+    if(!this.data[this.settings.account])
+      this.data[this.settings.account] = {};
+    if(!this.data[this.settings.account][this.settings.server])
+    {
+      this.data[this.settings.account][this.settings.server] = {};
+      this.lists[MaterialList.name] = new MaterialList(this);
+      this.lists[CharacterList.name] = new CharacterList(this);
+      this.lists[WeaponList.name] = new WeaponList(this);
+      this.lists[ArtifactList.name] = new ArtifactList(this);
+      this.lists[FurnitureList.name] = new FurnitureList(this);
+      this.lists[FurnitureSetList.name] = new FurnitureSetList(this);
+    }
+    else if(changed)
+    {
+      this.lists[MaterialList.name].forceNextRender = true;
+      this.lists[CharacterList.name].forceNextRender = true;
+      this.lists[WeaponList.name].forceNextRender = true;
+      this.lists[ArtifactList.name].forceNextRender = true;
+      this.lists[FurnitureList.name].forceNextRender = true;
+      this.lists[FurnitureSetList.name].forceNextRender = true;
+    }
+    return true;
+  }
+  
+  switchAccount(account, server)
+  {
+    this.activateAccount(account, server);
+    this.view(this.currentView);
+    return true;
+  }
+  
   postLoad(data, options)
   {
-    let hasData = this.fromGOOD(data);
-    
-    // Check if data was in GOOD format.
-    if(!hasData)
+    if("account" in options && "server" in options)
     {
-      this.elements.loadError.classList.remove("d-none");
-      this.elements.loadError.innerHTML = "Your input did not contain any valid GOOD data.";
-      return false;
+      this.activateAccount(options.account, options.server);
+      if(!this.fromGOOD(data))
+      {
+        this.elements.loadError.classList.remove("d-none");
+        this.elements.loadError.innerHTML = "Your input did not contain valid GOOD data.";
+        return false;
+      }
+    }
+    else
+    {
+      if(!this.fromJSON(data))
+      {
+        this.elements.loadError.classList.remove("d-none");
+        this.elements.loadError.innerHTML = "Your input did not contain valid Genshin Manager data.";
+        return false;
+      }
     }
     return super.postLoad(data, options);
+  }
+  
+  fromJSON(data, {merge=false}={})
+  {
+    let hasData = false;
+    if(data.__class__ != "GenshinManager")
+    {
+      return hasData;
+    }
+    
+    // Load character build preferences.
+    if(data.buildData)
+    {
+      hasData = true;
+      if(!merge)
+        this.buildData = {};
+      for(let c in data.buildData)
+      {
+        if(!this.buildData[c])
+          this.buildData[c] = {};
+        for(let b in data.buildData[c])
+        {
+          this.buildData[c][b] = data.buildData[c][b];
+        }
+      }
+      console.log("Loaded build data from file.", this.buildData);
+    }
+    
+    // Load the user data.
+    if(data.data)
+    {
+      hasData = true;
+      if(!merge)
+        this.data = {};
+      for(let acc in data.data)
+      {
+        if(!this.data[acc])
+          this.data[acc] = {};
+        this.settings.account = acc;
+        for(let srv in data.data[acc])
+        {
+          if(!this.data[acc][srv])
+            this.data[acc][srv] = {};
+          this.settings.server = srv;
+          for(let list in data.data[acc][srv])
+          {
+            this.data[acc][srv][this.listClasses[data.data[acc][srv][list].__class__].name] = this.listClasses[data.data[acc][srv][list].__class__].fromJSON(data.data[acc][srv][list], {viewer:this});
+          }
+        }
+      }
+      console.log("Loaded account data from file.", this.data);
+    }
+    
+    // Load site-specific preferences.
+    if(data.settings)
+    {
+      hasData = true;
+      this.settings = data.settings;
+      console.log("Loaded settings from file.", this.settings);
+    }
+    
+    this.settings.account = this.settings.account ?? Object.keys(this.data ?? {})[0] ?? "";
+    this.settings.server = this.settings.server ?? Object.keys(this.data?.[this.settings.account] ?? {})[0] ?? "";
+    
+    return hasData;
   }
   
   fromGOOD(goodData)
@@ -219,9 +328,6 @@ export default class GenshinManager extends DataManager
   
   retrieve()
   {
-    // Load site-specific preferences.
-    this.settingsFromJSON(window.localStorage.getItem("goodViewerSettings"));
-    
     // Load character build preferences.
     try
     {
@@ -257,6 +363,8 @@ export default class GenshinManager extends DataManager
           {
             if(!this.data[acc][srv])
               this.data[acc][srv] = {};
+            this.settings.account = acc;
+            this.settings.server = srv;
             for(let list in data[acc][srv])
             {
               this.data[acc][srv][this.listClasses[data[acc][srv][list].__class__].name] = this.listClasses[data[acc][srv][list].__class__].fromJSON(data[acc][srv][list], {viewer:this});
@@ -264,9 +372,6 @@ export default class GenshinManager extends DataManager
           }
         }
         console.log("Loaded account data from local storage.", data);
-        /*if(data?.[this.settings.account]?.[this.settings.server])
-          if(this.fromGOOD(data[this.settings.account][this.settings.server]))
-            console.log(`Loaded data from local storage for '${this.settings.account}' on '${this.settings.server}'.`);*/
       }
       else
       {
@@ -293,6 +398,11 @@ export default class GenshinManager extends DataManager
         this.errors = true;
       }
     }
+    
+    // Load site-specific preferences.
+    this.settingsFromJSON(window.localStorage.getItem("goodViewerSettings"));
+    this.settings.account = this.settings.account ?? Object.keys(this.data ?? {})[0] ?? "";
+    this.settings.server = this.settings.server ?? Object.keys(this.data?.[this.settings.account] ?? {})[0] ?? "";
     
     if(this.currentView)
       this.view(this.currentView);

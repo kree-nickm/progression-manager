@@ -115,6 +115,7 @@ export default class UIList extends UIController {
     for(let item of this.list)
       if(unique == this.getUnique(item))
         return item;
+    console.debug(`[object ${this.constructor.name}].get("${unique}") -> null`);
     return null;
   }
   

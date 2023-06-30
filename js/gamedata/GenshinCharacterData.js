@@ -512,7 +512,7 @@ export default {
     matBoss: "Cryo Plant",
     matFlower: "Violetgrass",
     matEnemy: "Samachurls",
-    matMastery: "Properity",
+    matMastery: "Prosperity",
     matTrounce: "Tail Of Boreas",
   },
   'RaidenShogun': {

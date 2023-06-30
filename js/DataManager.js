@@ -4,6 +4,7 @@ export default class DataManager extends UIController
 {
   static dontSerialize = UIController.dontSerialize.concat(["listClasses","elements","stickyElements","errors"]);
   
+  dataVersion = 1;
   currentView;
   settings = {};
   listClasses = {};
@@ -84,7 +85,6 @@ export default class DataManager extends UIController
   postLoad(data, options)
   {
     this.store();
-    
     bootstrap.Modal.getOrCreateInstance(this.elements.loadModal).hide();
     this.elements.loadError.classList.add("d-none");
     if(this.currentView)
