@@ -30,12 +30,6 @@ export default class GenshinManager extends DataManager
     this.listClasses.ArtifactList = ArtifactList;
     this.listClasses.FurnitureList = FurnitureList;
     this.listClasses.FurnitureSetList = FurnitureSetList;
-    this.listClasses.materials = MaterialList;
-    this.listClasses.characters = CharacterList;
-    this.listClasses.weapons = WeaponList;
-    this.listClasses.artifacts = ArtifactList;
-    this.listClasses.furniture = FurnitureList;
-    this.listClasses.furnitureSets = FurnitureSetList;
     
     this.elements[MaterialList.name] = document.getElementById(MaterialList.name) ?? this.elements.content.appendChild(document.createElement("div"));
     this.elements[MaterialList.name].classList.add("viewer-pane");
@@ -65,6 +59,22 @@ export default class GenshinManager extends DataManager
   get lists()
   {
     return this.data?.[this.settings.account]?.[this.settings.server] ?? {};
+  }
+  
+  paneFromHash()
+  {
+    if(location.hash == "#materials")
+      return "MaterialList";
+    else if(location.hash == "#weapons")
+      return "WeaponList";
+    else if(location.hash == "#artifacts")
+      return "ArtifactList";
+    else if(location.hash == "#furnitureSets")
+      return "FurnitureSetList";
+    else if(location.hash == "#furniture")
+      return "FurnitureList";
+    else
+      return "CharacterList";
   }
   
   today()
@@ -115,7 +125,9 @@ export default class GenshinManager extends DataManager
   switchAccount(account, server)
   {
     this.activateAccount(account, server);
+    this.lists[CharacterList.name].addTraveler();
     this.view(this.currentView);
+    console.log(`Switching to account '${this.settings.account}' on server '${this.settings.server}'.`);
     return true;
   }
   

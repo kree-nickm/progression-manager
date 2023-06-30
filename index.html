@@ -92,7 +92,7 @@
                   <div class="col-6">
                     <select class="form-select" id="loadAccount">
                     </select>
-                    <input class="form-control" id="loadAccountNew" placeholder="Account name..." title="Can be anything you want that helps you identify this account."/>
+                    <input class="form-control" id="loadAccountNew" placeholder="New account name..." title="Can be anything you want that helps you identify this account."/>
                   </div>
                   <div class="col-6">
                     <select class="form-select" id="loadServer">
@@ -144,7 +144,7 @@
               <div class="col-6">
                 <select class="form-select" id="editAccount">
                 </select>
-                <input class="form-control" id="editAccountNew" placeholder="Account name..." title="Can be anything you want that helps you identify this account."/>
+                <input class="form-control" id="editAccountNew" placeholder="New account name..." title="Can be anything you want that helps you identify this account."/>
               </div>
               <div class="col-6">
                 <select class="form-select" id="editServer">
@@ -155,8 +155,7 @@
                 </select>
               </div>
             </div>
-            <i class="form-text">Select an existing account from the list and click <tt>Done</tt> to switch accounts.</i>
-            <i class="form-text">Select <tt>New...</tt>, enter a unique name, and click <tt>Done</tt> to create a new empty account and then switch to it.</i>
+            <i class="form-text">Select an account to switch to, or create a new one.</i>
             <div id="editError" class="alert alert-danger d-none">Error</div>
           </div>
           <div class="modal-footer">
@@ -173,6 +172,19 @@
             <div class="row">
               <div class="col-6"><button id="saveGOODBtn" class="btn btn-success" title="Use this to transfer your data to other Genshin Impact apps that use GOOD format.">Download current account in GOOD format.</button></div>
               <div class="col-6"><button id="saveAllBtn" class="btn btn-success" title="Use this to save all of your data for use on this app.">Download all data for all accounts.</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="newModal" class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-6"><button id="newLoadBtn" class="btn btn-success" title="Click this if you have a JSON file with either GOOD data or Genshin Manager data.">Import Genshin Impact data from file.</button></div>
+              <div class="col-6"><button id="newFreshBtn" class="btn btn-success" title="Click this if you have no data to import and just want to see the application.">Begin without importing.</button></div>
             </div>
           </div>
         </div>

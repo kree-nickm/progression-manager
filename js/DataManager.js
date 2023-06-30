@@ -21,8 +21,31 @@ export default class DataManager extends UIController
     this.settings.paneMemory = {};
   }
   
-  async view(pane="CharacterList")
+  get lists()
   {
+    return data;
+  }
+  
+  paneFromHash()
+  {
+    return null;
+  }
+  
+  async view(pane)
+  {
+    if(!pane)
+    {
+      if(Object.keys(this.listClasses).length)
+      {
+        pane = this.paneFromHash();
+        console.log(`No pane given in ${this.constructor.name}.view(1), using "${pane}".`);
+      }
+      else
+        throw new Error(`${this.constructor.name} has no list classes defined.`);
+    }
+    if(!this.lists[pane])
+      throw new Error(`${this.constructor.name} has no list "${pane}".`);
+    
     await this.lists[pane].render();
     this.stickyElements = document.querySelectorAll(".sticky-js");
     window.scrollTo({left:0, top:this.settings.paneMemory[pane].scrollY ?? 0, behavior:"instant"});
@@ -87,8 +110,7 @@ export default class DataManager extends UIController
     this.store();
     bootstrap.Modal.getOrCreateInstance(this.elements.loadModal).hide();
     this.elements.loadError.classList.add("d-none");
-    if(this.currentView)
-      this.view(this.currentView);
+    this.view(this.currentView);
     return true;
   }
   
@@ -104,7 +126,7 @@ export default class DataManager extends UIController
       }
       else
       {
-        console.warn("No settings to load.");
+        console.log("No settings to load.");
       }
     }
     catch(x)

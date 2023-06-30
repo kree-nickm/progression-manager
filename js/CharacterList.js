@@ -501,10 +501,7 @@ export default class CharacterList extends GenshinList
     electro.base = base;
     dendro.base = base;
     
-    base.variants.push(anemo);
-    base.variants.push(geo);
-    base.variants.push(electro);
-    base.variants.push(dendro);
+    base.variants = [anemo,geo,electro,dendro];
   }
   
   fromGOOD(goodData)

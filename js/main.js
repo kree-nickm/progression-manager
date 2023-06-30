@@ -6,47 +6,12 @@ if(typeof(Storage) !== "undefined")
 else
   console.error("Your browser does not support Web Storage, and therefore we cannot save your data between sessions (data is too large for standard cookies).");
 
-window.viewer = new GenshinManager();
-window.viewer.retrieve();
-setInterval(window.viewer.today.bind(window.viewer), 60000);
-
-// Set up nav.
-let navClicked = false;
-let navLinks = document.getElementsByClassName("nav-link");
-for(let i=0; i<navLinks.length; i++)
-{
-  navLinks[i].addEventListener("click", event => {
-    for(let k=0; k<navLinks.length; k++)
-    {
-      if(event.target == navLinks[k])
-        navLinks[k].classList.add("active");
-      else
-        navLinks[k].classList.remove("active");
-    }
-    if(event.target.hash == "#materials")
-      window.viewer.view("MaterialList");
-    else if(event.target.hash == "#weapons")
-      window.viewer.view("WeaponList");
-    else if(event.target.hash == "#artifacts")
-      window.viewer.view("ArtifactList");
-    else if(event.target.hash == "#furnitureSets")
-      window.viewer.view("FurnitureSetList");
-    else if(event.target.hash == "#furniture")
-      window.viewer.view("FurnitureList");
-    else
-      window.viewer.view("CharacterList");
-  });
-  if(navLinks[i].hash == location.hash)
-  {
-    navLinks[i].click();
-    navClicked = true;
-  }
-}
-if(!navClicked)
-  navLinks[0].click();
+/************************
+* Setup Event Listeners *
+************************/
 
 // Track viewport scroll for tab changes.
-document.addEventListener("scroll", window.viewer.onScroll.bind(window.viewer));
+document.addEventListener("scroll", event => window.viewer.onScroll(event));
 document.addEventListener("scrollend", event => window.viewer.saveScrollY(window.scrollY));
 
 // Set up JSON loader.
@@ -55,14 +20,17 @@ document.getElementById("loadModal").addEventListener("show.bs.modal", showEvent
   
   let selectElem = document.getElementById("loadAccount");
   selectElem.replaceChildren();
-  selectElem.add((()=>{let e=document.createElement("option");e.value="";e.text="New...";return e;})());
+  selectElem.add((()=>{let e=document.createElement("option");e.value="";e.text="Create New...";return e;})());
   for(let what in window.viewer.data)
     selectElem.add((()=>{let e=document.createElement("option");e.value=what;e.text=what;return e;})());
   selectElem.selectedIndex = Array.from(selectElem.options).findIndex(elem => elem.value == window.viewer.settings.account);
   selectElem.dispatchEvent(new Event("change"));
   
   let selectElem2 = document.getElementById("loadServer");
-  selectElem2.selectedIndex = Array.from(selectElem2.options).findIndex(elem => elem.value == window.viewer.settings.server);
+  if(window.viewer.settings.server)
+    selectElem2.selectedIndex = Array.from(selectElem2.options).findIndex(elem => elem.value == window.viewer.settings.server);
+  else
+    selectElem2.selectedIndex = 0;
   selectElem2.dispatchEvent(new Event("change"));
 });
 
@@ -122,7 +90,10 @@ document.getElementById("editModal").addEventListener("show.bs.modal", showEvent
   selectElem.dispatchEvent(new Event("change"));
   
   let selectElem2 = document.getElementById("editServer");
-  selectElem2.selectedIndex = Array.from(selectElem2.options).findIndex(elem => elem.value == window.viewer.settings.server);
+  if(window.viewer.settings.server)
+    selectElem2.selectedIndex = Array.from(selectElem2.options).findIndex(elem => elem.value == window.viewer.settings.server);
+  else
+    selectElem2.selectedIndex = 0;
   selectElem2.dispatchEvent(new Event("change"));
 });
 
@@ -178,3 +149,65 @@ document.getElementById("saveGOODBtn").addEventListener("click", event => {
 document.getElementById("saveAllBtn").addEventListener("click", event => {
   saveTemplateAsFile("GenshinData.json", window.viewer);
 });
+
+// Setup "new user" popup.
+document.getElementById("newLoadBtn").addEventListener("click", event => {
+  bootstrap.Modal.getOrCreateInstance(document.getElementById("newModal")).hide();
+  bootstrap.Modal.getOrCreateInstance(document.getElementById("loadModal")).show();
+});
+
+document.getElementById("newFreshBtn").addEventListener("click", event => {
+  bootstrap.Modal.getOrCreateInstance(document.getElementById("newModal")).hide();
+  bootstrap.Modal.getOrCreateInstance(document.getElementById("editModal")).show();
+});
+
+/************************
+* Begin the Application *
+************************/
+
+window.viewer = new GenshinManager();
+window.viewer.retrieve();
+setInterval(window.viewer.today.bind(window.viewer), 60000);
+
+// Set up nav.
+let navClicked = false;
+let navLinks = document.querySelectorAll(".nav-link[href]");
+for(let i=0; i<navLinks.length; i++)
+{
+  navLinks[i].addEventListener("click", event => {
+    for(let k=0; k<navLinks.length; k++)
+    {
+      if(event.target == navLinks[k])
+        navLinks[k].classList.add("active");
+      else
+        navLinks[k].classList.remove("active");
+    }
+    // Do a check to see if this is the user's first visit.
+    if(window.viewer.settings.account && window.viewer.settings.server)
+    {
+      if(event.target.hash == "#materials")
+        window.viewer.view("MaterialList");
+      else if(event.target.hash == "#weapons")
+        window.viewer.view("WeaponList");
+      else if(event.target.hash == "#artifacts")
+        window.viewer.view("ArtifactList");
+      else if(event.target.hash == "#furnitureSets")
+        window.viewer.view("FurnitureSetList");
+      else if(event.target.hash == "#furniture")
+        window.viewer.view("FurnitureList");
+      else
+        window.viewer.view("CharacterList");
+    }
+    else
+    {
+      bootstrap.Modal.getOrCreateInstance(document.getElementById("newModal")).show();
+    }
+  });
+  if(navLinks[i].hash == location.hash)
+  {
+    navLinks[i].click();
+    navClicked = true;
+  }
+}
+if(!navClicked)
+  navLinks[0].click();
