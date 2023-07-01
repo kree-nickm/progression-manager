@@ -7,17 +7,14 @@ import Weapon from "./Weapon.js";
 
 export default class WeaponList extends GenshinList
 {
-  static dontSerialize = GenshinList.dontSerialize.concat(["elements"]);
   static itemClass = Weapon;
-  
-  subsetDefinitions = {
+  static subsetDefinitions = {
     'Sword': item => item.type == "Sword",
     'Claymore': item => item.type == "Claymore",
     'Polearm': item => item.type == "Polearm",
     'Bow': item => item.type == "Bow",
     'Catalyst': item => item.type == "Catalyst",
   };
-  elements = {};
   
   setupDisplay()
   {
@@ -276,41 +273,48 @@ export default class WeaponList extends GenshinList
       template: "renderListAsTable",
       force: force || this.forceNextRender,
       exclude: field => field.tags.indexOf("detailsOnly") > -1,
-      container: window.viewer.elements[this.constructor.name],
+      container: this.viewer.elements[this.constructor.name],
     });
     this.forceNextRender = false;
     
-    if(!this.elements.divAdd)
+    let footer = document.getElementById("footer");
+    footer.classList.remove("d-none");
+    if(footer.dataset.list != this.uuid)
     {
-      this.elements.divAdd = window.viewer.elements[this.constructor.name].appendChild(document.createElement("div"));
-      this.elements.divAdd.classList.add("input-group", "mt-2");
-      this.elements.selectAdd = this.elements.divAdd.appendChild(document.createElement("select"));
-      this.elements.selectAdd.classList.add("form-select", "size-to-content");
-      this.elements.btnAdd = this.elements.divAdd.appendChild(document.createElement("button"));
-      this.elements.btnAdd.innerHTML = "Add Weapon";
-      this.elements.btnAdd.classList.add("btn", "btn-primary");
-      this.elements.btnAdd.addEventListener("click", event => {
-        if(this.elements.selectAdd.value)
+      footer.replaceChildren();
+      footer.dataset.list = this.uuid;
+      
+      let divAdd = footer.appendChild(document.createElement("div"));
+      divAdd.classList.add("input-group", "mt-2");
+      let selectAdd = divAdd.appendChild(document.createElement("select"));
+      selectAdd.id = "addWeaponSelect";
+      selectAdd.classList.add("form-select", "size-to-content");
+      let btnAdd = divAdd.appendChild(document.createElement("button"));
+      btnAdd.innerHTML = "Add Weapon";
+      btnAdd.classList.add("btn", "btn-primary");
+      btnAdd.addEventListener("click", event => {
+        let selectAdd = document.getElementById("addWeaponSelect");
+        if(selectAdd.value)
         {
           let item = this.addGOOD({
             id: this.list.reduce((c,i) => Math.max(c,i.id), 0)+1,
-            key: this.elements.selectAdd.value,
+            key: selectAdd.value,
             level: 1,
             refinement: 1,
             ascension: 0,
             location: "",
             lock: false,
           });
-          this.elements.selectAdd.value = "";
+          selectAdd.value = "";
           this.viewer.store();
           Renderer.renderNewItem(item, {exclude: field => field.tags.indexOf("detailsOnly") > -1});
         }
       });
       
-      this.elements.selectAdd.appendChild(document.createElement("option"))
+      selectAdd.appendChild(document.createElement("option"))
       for(let itm in GenshinWeaponData)
       {
-        let option = this.elements.selectAdd.appendChild(document.createElement("option"));
+        let option = selectAdd.appendChild(document.createElement("option"));
         option.value = itm;
         option.innerHTML = GenshinWeaponData[itm].name;
       }

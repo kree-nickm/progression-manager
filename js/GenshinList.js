@@ -4,6 +4,14 @@ import GenshinItem from "./GenshinItem.js";
 export default class GenshinList extends UIList {
   static dontSerialize = UIList.dontSerialize.concat(["importing"]);
   
+  static fromJSON(data, {viewer, addProperties={}}={})
+  {
+    addProperties.importing = true;
+    let result = super.fromJSON(data, {viewer, addProperties});
+    result.importing = false;
+    return result;
+  }
+  
   importing = false;
   
   getUnique(item)

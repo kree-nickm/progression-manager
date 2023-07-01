@@ -62,8 +62,11 @@ export default class FurnitureList extends GenshinList
     await Renderer.renderList2(this.constructor.name, {
       template: "renderListAsTable",
       force: force || this.forceNextRender,
-      container: window.viewer.elements[this.constructor.name],
+      container: this.viewer.elements[this.constructor.name],
     });
     this.forceNextRender = false;
+    
+    let footer = document.getElementById("footer");
+    footer.classList.add("d-none");
   }
 }

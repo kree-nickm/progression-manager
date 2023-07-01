@@ -9,8 +9,13 @@ import Artifact from "./Artifact.js";
 export default class CharacterList extends GenshinList
 {
   static unique = true;
-  static dontSerialize = GenshinList.dontSerialize.concat(["elements"]);
   static itemClass = [Character,Traveler];
+  static subsetDefinitions = {
+    'traveler': item => item instanceof Traveler,
+    'nottraveler': item => !(item instanceof Traveler),
+    'equippable': item => !(item instanceof Traveler) || !item.base,
+    'listable': item => !(item instanceof Traveler) || item.base,
+  };
   
   static fromJSON(data, options)
   {
@@ -19,21 +24,14 @@ export default class CharacterList extends GenshinList
     return list;
   }
   
-  subsetDefinitions = {
-    'traveler': item => item instanceof Traveler,
-    'nottraveler': item => !(item instanceof Traveler),
-    'equippable': item => !(item instanceof Traveler) || !item.base,
-    'listable': item => !(item instanceof Traveler) || item.base,
-  };
-  elements = {};
-  
   setupDisplay()
   {
     let favorite = this.display.addField("favorite", {
       label: "F",
+      labelTitle: "Mark certain characters as favorites, then click to sort them higher than others.",
       sort: {generic: {type:"boolean",property:"favorite"}},
       dynamic: true,
-      title: item => "Mark as Favorite",
+      title: item => `${item.favorite?"Unmark":"Mark"} Favorite`,
       edit: item => ({
         target: {item, field:"favorite"},
         type: "checkbox",
@@ -45,16 +43,20 @@ export default class CharacterList extends GenshinList
     
     let name = this.display.addField("name", {
       label: "Name",
+      labelTitle: "Sort by name.",
       popup: true,
       sort: {generic: {type:"string",property:"name"}},
       dynamic: false,
       value: item => item.name,
+      title: item => `Click to open a popup to examine ${item.name} in-depth.`,
     });
     
     let weaponType = this.display.addField("weaponType", {
       label: "Wpn",
+      labelTitle: "Sort by weapon type.",
       sort: {generic: {type:"string",property:"weaponType"}},
       dynamic: false,
+      title: item => item.weaponType,
       value: item => ({
         tag: "img",
         src: `img/Weapon_${item.weaponType}.png`,
@@ -66,8 +68,10 @@ export default class CharacterList extends GenshinList
     
     let element = this.display.addField("element", {
       label: "Elm",
+      labelTitle: "Sort by element.",
       sort: {generic: {type:"string",property:"element"}},
       dynamic: false,
+      title: item => item.element,
       value: item => ({
         tag: "img",
         src: `img/Element_${item.element}.png`,
@@ -79,11 +83,14 @@ export default class CharacterList extends GenshinList
     
     let ascension = this.display.addField("ascension", {
       label: "Phs",
+      labelTitle: "Sort by phase/ascension.",
       sort: {generic: {type:"number",property:"ascension"}},
       dynamic: true,
+      title: item => "Click to change.",
       value: item => item.ascension,
-      edit: item => ({target: {item, field:"ascension"}}),
+      edit: item => ({target: {item:item.base??item, field:"ascension"}}),
       dependencies: item => [
+        {item:item.base??item, field:"ascension"},
         {item:item.getMat('gem'), field:"count"},
         item.getMat('boss') ? {item:item.getMat('boss'), field:"count"} : null,
         {item:item.getMat('flower'), field:"count"},
@@ -102,27 +109,32 @@ export default class CharacterList extends GenshinList
     
     let level = this.display.addField("level", {
       label: "Lvl",
+      labelTitle: "Sort by character level.",
       sort: {generic: {type:"number",property:"level"}},
       dynamic: true,
+      title: item => "Click to change.",
       value: item => item.level,
-      edit: item => ({target: {item, field:"level"}}),
+      edit: item => ({target: {item:item.base??item, field:"level"}}),
       classes: item => ({
         "pending": item.level < item.levelCap,
       }),
       dependencies: item => [
+          {item:item.base??item, field:"level"},
           {item:item.getMat('gem'), field:"count"},
           item.getMat('boss') ? {item:item.getMat('boss'), field:"count"} : null,
           {item:item.getMat('flower'), field:"count"},
           {item:item.getMat('enemy'), field:"count"},
-          {item, field:"ascension"},
+          {item:item.base??item, field:"ascension"},
         ].concat(item.getMat('gem').getCraftDependencies()).concat(item.getMat('enemy').getCraftDependencies()),
     });
     
     let constellation = this.display.addField("constellation", {
       label: "Con",
+      labelTitle: "Sort by number of constellations.",
       sort: {generic: {type:"number",property:"constellation"}},
       dynamic: true,
       value: item => item.constellation,
+      title: item => "Click to change.",
       edit: item => ({target: {item, field:"constellation"}}),
     });
     
@@ -130,6 +142,7 @@ export default class CharacterList extends GenshinList
     {
       let talent = this.display.addField(i+"Talent", {
         label: "T"+ i.at(0).toUpperCase(),
+        labelTitle: `Sort by "${i}" talent level.`,
         dynamic: true,
         value: item => item.talent[i],
         title: item => (item.getTalent(i).matTrounceCount ? `Also requires ${item.getTalent(i).matTrounceCount} ${item.MaterialList.trounce.name}, dropped by ${item.MaterialList.trounce.source} (you have ${item.MaterialList.trounce.getCraftCount()})` : ""),
@@ -138,7 +151,7 @@ export default class CharacterList extends GenshinList
         dependencies: item => [
             {item:item.getTalentMat('mastery',i), field:"count"},
             {item:item.getTalentMat('enemy',i), field:"count"},
-            {item, field:"ascension"},
+            {item:item.base??item, field:"ascension"},
             item.getTalentMat('mastery',i).days ? {item:this.viewer, field:"today"} : {},
           ].concat(item.getTalentMat('mastery',i).getCraftDependencies()).concat(item.getTalentMat('enemy',i).getCraftDependencies()),
         button: item => {
@@ -210,7 +223,7 @@ export default class CharacterList extends GenshinList
           title: item => item.getMat(mat.t,phase)?.getFullSource() ?? "",
           edit: item => item.getMat(mat.t,phase) && item.getMatCost(mat.t,phase) ? {target: {item:item.getMat(mat.t,phase), field:"count"}} : null,
           dependencies: item => [
-            {item, field:"ascension"},
+            {item:item.base??item, field:"ascension"},
           ].concat(item.getMat(mat.t,phase)?.getCraftDependencies() ?? []),
         });
       }
@@ -226,7 +239,7 @@ export default class CharacterList extends GenshinList
             item.getMat('boss',phase) ? {item:item.getMat('boss',phase), field:"count"} : null,
             {item:item.getMat('flower',phase), field:"count"},
             {item:item.getMat('enemy',phase), field:"count"},
-            {item, field:"ascension"},
+            {item:item.base??item, field:"ascension"},
           ],
           button: item => {
             if(phase == item.ascension)
@@ -298,7 +311,7 @@ export default class CharacterList extends GenshinList
             {item:item.getTalentMat('enemy','skill'), field:"count"},
             {item:item.getTalentMat('mastery','burst'), field:"count"},
             {item:item.getTalentMat('enemy','burst'), field:"count"},
-            {item, field:"ascension"},
+            {item:item.base??item, field:"ascension"},
           ],
           button: item => [
             (item.talent.auto != i) ? null : {
@@ -341,8 +354,8 @@ export default class CharacterList extends GenshinList
         title: item => item.getStat(stat),
         value: item => item.getStat(stat).toFixed(stat=="eleMas"?0:1),
         dependencies: item => [
-          {item:item, field:"ascension"},
-          {item:item, field:"level"},
+          {item:item.base??item, field:"ascension"},
+          {item:item.base??item, field:"level"},
           item.weapon ? {item:item.weapon, field:"location"} : null,
           item.weapon ? {item:item.weapon, field:"ascension"} : null,
           item.weapon ? {item:item.weapon, field:"level"} : null,
@@ -395,6 +408,7 @@ export default class CharacterList extends GenshinList
           value: `R${item.weapon.refinement}, Lv.${item.weapon.level}`,
         },
       ] : "",
+      title: item => item.weapon ? `Click to open a popup to examine ${item.weapon.name} in-depth.` : "",
       dependencies: item => [
         item.weapon ? {item:item.weapon, field:"location"} : undefined,
         item.weapon ? {item:item.weapon, field:"refinement"} : undefined,
@@ -430,36 +444,6 @@ export default class CharacterList extends GenshinList
         ],
       });
     }
-
-    /*
-    if traveler
-    {
-      if(this.base)
-      {
-        let renderData = super.getRenderData();
-        for(let field in renderData)
-        {
-          if(renderData[field].edit?.target?.item == this && (renderData[field].edit?.target?.field == "ascension" || renderData[field].edit?.target?.field == "level"))
-          {
-            renderData[field].edit.target.item = this.base;
-          }
-          if(renderData[field].dependencies?.length)
-          {
-            let moreDeps = [];
-            for(let dep of renderData[field].dependencies)
-            {
-              if(dep?.item == this && (dep?.field == "ascension" || dep?.field == "level"))
-                moreDeps.push({item:this.base, field:dep.field});
-            }
-            renderData[field].dependencies = renderData[field].dependencies.concat(moreDeps);
-          }
-        }
-        return renderData;
-      }
-      else
-        return null;
-    }
-    */
   }
   
   addTraveler()
@@ -543,20 +527,28 @@ export default class CharacterList extends GenshinList
     });
     this.forceNextRender = false;
     
-    if(!this.elements.divAdd)
+    let selectAdd;
+    let footer = document.getElementById("footer");
+    footer.classList.remove("d-none");
+    if(footer.dataset.list != this.uuid)
     {
-      this.elements.divAdd = this.viewer.elements[this.constructor.name].appendChild(document.createElement("div"));
-      this.elements.divAdd.classList.add("input-group", "mt-2");
-      this.elements.selectAdd = this.elements.divAdd.appendChild(document.createElement("select"));
-      this.elements.selectAdd.classList.add("form-select", "size-to-content");
-      this.elements.btnAdd = this.elements.divAdd.appendChild(document.createElement("button"));
-      this.elements.btnAdd.innerHTML = "Add Character";
-      this.elements.btnAdd.classList.add("btn", "btn-primary");
-      this.elements.btnAdd.addEventListener("click", async event => {
-        if(this.elements.selectAdd.value)
+      footer.replaceChildren();
+      footer.dataset.list = this.uuid;
+      
+      let divAdd = footer.appendChild(document.createElement("div"));
+      divAdd.classList.add("input-group", "mt-2");
+      selectAdd = divAdd.appendChild(document.createElement("select"));
+      selectAdd.id = "addCharacterSelect";
+      selectAdd.classList.add("form-select", "size-to-content");
+      let btnAdd = divAdd.appendChild(document.createElement("button"));
+      btnAdd.innerHTML = "Add Character";
+      btnAdd.classList.add("btn", "btn-primary");
+      btnAdd.addEventListener("click", async event => {
+        let selectAdd = document.getElementById("addCharacterSelect");
+        if(selectAdd.value)
         {
           let item = this.addGOOD({
-            key: this.elements.selectAdd.value,
+            key: selectAdd.value,
             level: 1,
             constellation: 0,
             ascension: 0,
@@ -566,21 +558,22 @@ export default class CharacterList extends GenshinList
               burst: 1,
             },
           });
-          this.elements.selectAdd.needsUpdate = true;
+          selectAdd.needsUpdate = true;
           this.viewer.store();
           Renderer.renderNewItem(item, {exclude: field => field.tags.indexOf("detailsOnly") > -1});
         }
       });
     }
-    if(!this.elements.selectAdd.children.length || this.elements.selectAdd.needsUpdate)
+    selectAdd = document.getElementById("addCharacterSelect");
+    if(!selectAdd.children.length || selectAdd.needsUpdate)
     {
-      this.elements.selectAdd.innerHTML = "";
-      this.elements.selectAdd.appendChild(document.createElement("option"))
+      selectAdd.replaceChildren();
+      selectAdd.appendChild(document.createElement("option"))
       for(let chara in GenshinCharacterData)
       {
         if(!this.get(chara))
         {
-          let option = this.elements.selectAdd.appendChild(document.createElement("option"));
+          let option = selectAdd.appendChild(document.createElement("option"));
           option.value = chara;
           option.innerHTML = GenshinCharacterData[chara].name;
         }

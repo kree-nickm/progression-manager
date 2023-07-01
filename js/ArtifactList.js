@@ -39,14 +39,14 @@ export default class ArtifactList extends GenshinList
 {
   static dontSerialize = GenshinList.dontSerialize.concat(["elements"]);
   static itemClass = Artifact;
-  
-  subsetDefinitions = {
+  static subsetDefinitions = {
     'flower': item => item.slotKey == "flower",
     'plume': item => item.slotKey == "plume",
     'sands': item => item.slotKey == "sands",
     'goblet': item => item.slotKey == "goblet",
     'circlet': item => item.slotKey == "circlet",
   };
+  
   elements = {};
   
   async evaluate()
@@ -351,12 +351,14 @@ export default class ArtifactList extends GenshinList
     });
     this.forceNextRender = false;
     
-    if(!this.elements.footer)
+    let footer = document.getElementById("footer");
+    footer.classList.remove("d-none");
+    if(footer.dataset.list != this.uuid)
     {
-      this.elements.footer = this.viewer.elements[this.constructor.name].appendChild(document.createElement("nav"));
-      this.elements.footer.classList.add("navbar", "bg-light", "sticky-bottom");
+      footer.replaceChildren();
+      footer.dataset.list = this.uuid;
       
-      let container = this.elements.footer.appendChild(document.createElement("div"));
+      let container = footer.appendChild(document.createElement("div"));
       container.classList.add("container-fluid", "navbar-expand");
       
       let ul = container.appendChild(document.createElement("ul"));

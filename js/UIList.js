@@ -3,13 +3,16 @@ import UIItem from "./UIItem.js";
 import ListDisplayManager from "./ListDisplayManager.js";
 
 export default class UIList extends UIController {
-  static dontSerialize = UIController.dontSerialize.concat(["viewer","display","subsets","subsetDefinitions","forceNextRender"]);
+  static dontSerialize = UIController.dontSerialize.concat(["viewer","display","subsets","forceNextRender"]);
   static unique = false;
   static itemClass = UIItem;
+  static subsetDefinitions = {};
   
-  static fromJSON(data, {viewer}={})
+  static fromJSON(data, {viewer, addProperties={}}={})
   {
     let list = new this(viewer);
+    for(let prop in addProperties)
+      list[prop] = addProperties[prop];
     //if(this.name == "CharacterList") console.log(`Constructed CharacterList:`, list, list.list.length);
     for(let prop in list)
     {
@@ -65,7 +68,6 @@ export default class UIList extends UIController {
   viewer;
   display;
   subsets = {};
-  subsetDefinitions = {};
   forceNextRender = true;
   list = [];
   
@@ -140,8 +142,8 @@ export default class UIList extends UIController {
       {
         if(func)
           this.subsets[subset] = this.list.filter(func);
-        else if(this.subsetDefinitions[subset])
-          this.subsets[subset] = this.list.filter(this.subsetDefinitions[subset]);
+        else if(this.constructor.subsetDefinitions[subset])
+          this.subsets[subset] = this.list.filter(this.constructor.subsetDefinitions[subset]);
         else
         {
           console.warn(`Unknown subset '${subset}' given for ${this.constructor.name}.items() with no function.`);
