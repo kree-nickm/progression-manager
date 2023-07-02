@@ -223,7 +223,18 @@ export default class GenshinManager extends DataManager
   fromGOOD(goodData)
   {
     if(!goodData)
+    {
+      console.error(`No data provided to [object ${this.constructor.name}].fromGOOD(1)`);
+      this.errors = true;
       return false;
+    }
+    if(goodData.format != "GOOD")
+    {
+      console.error(`Data provided to [object ${this.constructor.name}].fromGOOD(1) does not appear to be in GOOD format:`, goodData);
+      this.errors = true;
+      return false;
+    }
+    
     let hasData = false;
     if(goodData.materials)
     {
@@ -266,6 +277,7 @@ export default class GenshinManager extends DataManager
       try
       {
         hasData |= this.lists.ArtifactList.fromGOOD(goodData.artifacts);
+        this.lists.ArtifactList.evaluate();
       }
       catch(x)
       {
@@ -298,7 +310,6 @@ export default class GenshinManager extends DataManager
       }
     }
     
-    this.lists.ArtifactList.evaluate();
     return hasData;
   }
   
@@ -332,8 +343,6 @@ export default class GenshinManager extends DataManager
     this.data[this.settings.account][this.settings.server] = this.lists;
     window.localStorage.setItem("goodViewerSettings", JSON.stringify(this.settings));
     window.localStorage.setItem("genshinAccount", JSON.stringify(this.data));
-    //if(!this.data)
-    //  window.localStorage.setItem("goodViewerLists", JSON.stringify(this.toGOOD()));
     window.localStorage.setItem("genshinBuilds", JSON.stringify(this.buildData));
     console.log(`Local data saved.`);
   }
@@ -396,21 +405,6 @@ export default class GenshinManager extends DataManager
       this.errors = true;
     }
     
-    // Load the user data from the old way it's stored.
-    if(!data)
-    {
-      try
-      {
-        if(this.fromGOOD(JSON.parse(window.localStorage.getItem("goodViewerLists") ?? "null")))
-          console.log("Loaded old data from local storage.", this.lists);
-      }
-      catch(x)
-      {
-        console.error("Could not load old stored local data.", x);
-        this.errors = true;
-      }
-    }
-    
     // Load site-specific preferences.
     this.settingsFromJSON(window.localStorage.getItem("goodViewerSettings"));
     this.settings.account = this.settings.account ?? Object.keys(this.data ?? {})[0] ?? "";
@@ -418,5 +412,26 @@ export default class GenshinManager extends DataManager
     
     if(this.currentView)
       this.view(this.currentView);
+  }
+  
+  async saveToPastebin()
+  {
+    let response = await fetch("https://themellin.com/genshin/saveToPastebin.php", {
+      method: "POST",
+      headers: {
+        'Content-Type': "application/json",
+      },
+      body: JSON.stringify(this.toGOOD()),
+    });
+    let json = await response.json();
+    if(json.success)
+    {
+      return json.code;
+    }
+    else
+    {
+      console.warn("Error when trying to save to Pastebin:", json);
+      return false;
+    }
   }
 }

@@ -112,7 +112,14 @@
                   <label class="input-group-text" for="loadGOODFile">Load From File:</label>
                   <input id="loadGOODFile" class="form-control" name="GOODFile" type="file" accept="*.json,application/json"/>
                 </div>
-                <i class="form-text">Note: This will replace the data in the specified account/server with the data from the file. However, only lists that are present in the file will be replaced. For example, if the loaded file only contains artifacts and materials, then only artifacts and materials will be replaced; your characters, weapons, etc. will be unaffected.</i>
+                <div class="text-center"><i class="form-text">- or -</i></div>
+                <div class="input-group">
+                  <label class="input-group-text" for="loadPastebin">Pastebin Code:</label>
+                  <input id="loadPastebinCode" class="form-control" name="Pastebin" type="text" placeholder="8-letter code"/>
+                  <button id="loadPastebinBtn" class="btn btn-success">Load Data</button>
+                </div>
+                <hr/>
+                <i class="form-text">Note: This will replace the data in the specified account/server with the imported data. However, only lists that are present in the imported data will be replaced. For example, if the imported data only contains artifacts and materials, then only artifacts and materials will be replaced; your characters, weapons, etc. will be unaffected.</i>
                 <!--<hr/>
                 <label>Or Paste JSON Data:</label>
                 <textarea id="loadGOODJSON" name="GOODJSON" style="width:100%;"></textarea>
@@ -172,11 +179,15 @@
     <div id="saveModal" class="modal" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-body">
-            <div class="row">
-              <div class="col-6"><button id="saveGOODBtn" class="btn btn-success" title="Use this to transfer your data to other Genshin Impact apps that use GOOD format.">Download current account in GOOD format.</button></div>
-              <div class="col-6"><button id="saveAllBtn" class="btn btn-success" title="Use this to save all of your data for use on this app.">Download all data for all accounts.</button></div>
-            </div>
+          <div class="modal-header">
+            <h5 class="modal-title">Save Account Data</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body d-grid gap-2">
+            <button id="saveGOODBtn" class="btn btn-success" title="Use this to transfer your data to other Genshin Impact apps that use GOOD format.">Download current account in GOOD format.</button>
+            <button id="saveAllBtn" class="btn btn-success" title="Use this to save all of your data for use on this app.">Download all data for all accounts.</button>
+            <button id="savePastebinBtn" class="btn btn-success" title="Use this to upload your data to Pastebin in GOOD format so others can access it.">Upload current account to Pastebin.</button>
+            <div id="saveMessage" class="alert alert-primary d-none"></div>
           </div>
         </div>
       </div>
@@ -187,8 +198,8 @@
         <div class="modal-content">
           <div class="modal-body">
             <div class="row">
-              <div class="col-6"><button id="newLoadBtn" class="btn btn-success" title="Click this if you have a JSON file with either GOOD data or Genshin Manager data.">Import Genshin Impact data from file.</button></div>
-              <div class="col-6"><button id="newFreshBtn" class="btn btn-success" title="Click this if you have no data to import and just want to see the application.">Begin without importing.</button></div>
+              <div class="col-6"><button id="newLoadBtn" class="btn btn-success" title="Click this if you have a JSON file or Pastebin code with either GOOD data or Genshin Manager data.">Import Genshin Impact data.</button></div>
+              <div class="col-6"><button id="newFreshBtn" class="btn btn-success" title="Click this if you have no data to import and just want to use the application from scratch.">Begin without importing.</button></div>
             </div>
           </div>
         </div>

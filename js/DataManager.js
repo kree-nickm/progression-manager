@@ -86,21 +86,23 @@ export default class DataManager extends UIController
     //console.log(this.settings.paneMemory[this.currentView].scrollX, this.settings.paneMemory[this.currentView].scrollY);
   }
   
-  load(text, options={})
+  load(data, options={})
   {
     // Check for valid JSON.
-    let data = {};
-    try
+    if(typeof(data) != "object")
     {
-      data = JSON.parse(text);
-      console.log(`Loaded JSON data:`, data);
-    }
-    catch
-    {
-      this.elements.loadError.classList.remove("d-none");
-      this.elements.loadError.innerHTML = "Your input did not contain valid JSON.";
-      this.errors = true;
-      return false;
+      try
+      {
+        data = JSON.parse(data);
+        console.log(`Loaded JSON data:`, data);
+      }
+      catch
+      {
+        this.elements.loadError.classList.remove("d-none");
+        this.elements.loadError.innerHTML = "Your input did not contain valid JSON.";
+        this.errors = true;
+        return false;
+      }
     }
     return this.postLoad(data, options);
   }

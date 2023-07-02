@@ -70,6 +70,44 @@ document.getElementById("loadAllFile").addEventListener("change", changeEvent =>
   reader.readAsText(changeEvent.target.files[0]);
 });
 
+document.getElementById("loadPastebinBtn").addEventListener("click", async clickEvent => {
+  let input = document.getElementById("loadPastebinCode");
+  if(input.value)
+  {
+    let response = await fetch("https://corsproxy.io/?https://pastebin.com/raw/"+input.value, {
+      method: "GET",
+    });
+    let json = await response.json();
+    if(json.format == "GOOD")
+    {
+      let selectedAccount = document.getElementById("loadAccount").value;
+      if(!selectedAccount)
+        selectedAccount = document.getElementById("loadAccountNew").value;
+      if(selectedAccount)
+      {
+        window.viewer.load(json, {account: selectedAccount, server: document.getElementById("loadServer").value});
+        input.value = "";
+      }
+      else
+      {
+        document.getElementById("loadError").innerHTML = "Account field cannot be blank.";
+        document.getElementById("loadError").classList.remove("d-none");
+      }
+    }
+    else
+    {
+      document.getElementById("loadError").innerHTML = "Code does not match a Pastebin post with valid GOOD data.";
+      document.getElementById("loadError").classList.remove("d-none");
+      console.error(`Code does not match a Pastebin post with valid GOOD data.`, json);
+    }
+  }
+  else
+  {
+    document.getElementById("loadError").innerHTML = "Pastebin code cannot be blank.";
+    document.getElementById("loadError").classList.remove("d-none");
+  }
+});
+
 /*document.getElementById("loadGOODBtn").addEventListener("click", event => {
   let selectedAccount = document.getElementById("loadAccount").value;
   if(!selectedAccount)
@@ -148,6 +186,23 @@ document.getElementById("saveGOODBtn").addEventListener("click", event => {
 
 document.getElementById("saveAllBtn").addEventListener("click", event => {
   saveTemplateAsFile("GenshinData.json", window.viewer);
+});
+
+document.getElementById("savePastebinBtn").addEventListener("click", async event => {
+  event.target.disabled = true;
+  setTimeout(() => event.target.disabled = false, 60000);
+  let msg = document.getElementById("saveMessage");
+  msg.classList.remove("d-none");
+  msg.innerHTML = `<i class="fa-solid fa-arrows-rotate fa-spin"></i> Uploading...`;
+  let response = await window.viewer.saveToPastebin();
+  if(response)
+  {
+    msg.innerHTML = `Saved to <a href="https://pastebin.com/${response}" target="_blank">Pastebin</a> successfully.<br/><b>Code: <tt>${response}</tt></b><br/>Data will be available for 10 minutes.`;
+  }
+  else
+  {
+    msg.innerHTML = `An error occured trying to upload data to Pastebin. Check the JavaScript console (F12) for more information.`;
+  }
 });
 
 // Setup "new user" popup.
