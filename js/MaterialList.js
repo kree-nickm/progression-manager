@@ -59,6 +59,30 @@ export default class MaterialList extends GenshinList
         return dependencies;
       },
     });
+    
+    let imageField = this.display.addField("image", {
+      label: "Image",
+      tags: ["detailsOnly"],
+      dynamic: false,
+      value: item => {
+        let filename = item.name;
+        if(!filename)
+        {
+          console.warn(`Material has invalid name:`, item);
+          return "";
+        }
+        if(item.shorthand in GenshinLootData.forgery)
+          return "";
+        else if(item.shorthand in GenshinLootData.mastery)
+          filename = item.name.split(" ").pop();
+        else
+          filename = filename.replace(" ", "_");
+        return {
+          tag: "img",
+          src: `https://rerollcdn.com/GENSHIN/Farming/NEW/${filename}.png`,
+        };
+      },
+    });
   }
   
   initialize()
@@ -129,6 +153,7 @@ export default class MaterialList extends GenshinList
     await Renderer.renderList2(this.constructor.name, {
       template: "renderListAsTable",
       force: force || this.forceNextRender,
+      exclude: field => field.tags.indexOf("detailsOnly") > -1,
       container: this.viewer.elements[this.constructor.name],
     });
     this.forceNextRender = false;

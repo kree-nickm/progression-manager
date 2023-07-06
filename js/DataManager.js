@@ -2,7 +2,7 @@ import UIController from "./UIController.js";
 
 export default class DataManager extends UIController
 {
-  static dontSerialize = UIController.dontSerialize.concat(["listClasses","elements","stickyElements","errors"]);
+  static dontSerialize = UIController.dontSerialize.concat(["listClasses","elements","stickyElements","errors","storeTimeout"]);
   
   dataVersion = 1;
   currentView;
@@ -12,12 +12,13 @@ export default class DataManager extends UIController
   elements = {};
   stickyElements = [];
   errors;
+  storeTimeout;
   
   constructor()
   {
     super();
     this.elements['content'] = document.getElementById("content");
-    this.elements['popup'] = document.getElementById("popupContent");
+    this.elements['popup'] = document.getElementById("popup");
     this.settings.paneMemory = {};
   }
   
@@ -63,7 +64,7 @@ export default class DataManager extends UIController
   {
     for(let list in this.lists)
       await this.lists[list].render();
-    this.store();
+    this.queueStore();
   }
   
   onScroll(event)
@@ -109,7 +110,7 @@ export default class DataManager extends UIController
   
   postLoad(data, options)
   {
-    this.store();
+    this.queueStore();
     bootstrap.Modal.getOrCreateInstance(this.elements.loadModal).hide();
     this.elements.loadError.classList.add("d-none");
     this.view(this.currentView);
@@ -136,6 +137,15 @@ export default class DataManager extends UIController
       console.error("Could not load stored settings.", x);
       this.errors = true;
     }
+  }
+  
+  queueStore()
+  {
+    if(this.storeTimeout)
+      clearTimeout(this.storeTimeout);
+    this.storeTimeout = setTimeout(() => {
+      this.store();
+    }, 200);
   }
   
   store()

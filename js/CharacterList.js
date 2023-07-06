@@ -202,7 +202,18 @@ export default class CharacterList extends GenshinList
         let ascMaterial = this.display.addField(mat.t+"AscMat"+(phase??""), {
           group: ascGroup,
           label: mat.l,
-          sort: isNaN(phase) ? {generic: {type:"string",property:[mat.t+'Mat',"shorthand"]}} : undefined,
+          sort: isNaN(phase) ? {func: (o,a,b) => {
+            let A = a.getMat(mat.t,phase)?.shorthand??"";
+            let B = b.getMat(mat.t,phase)?.shorthand??"";
+            if(!A && B)
+              return 1;
+            else if(A && !B)
+              return -1;
+            else if(!A && !B)
+              return 0;
+            else
+              return o*A.localeCompare(B);
+          }} : undefined,
           columnClasses: ["ascension-materials"],
           tags: isNaN(phase) ? undefined : ["detailsOnly"],
           dynamic: true,
@@ -271,7 +282,18 @@ export default class CharacterList extends GenshinList
         let talentMat = this.display.addField(isNaN(i) ? i+m.l+"Mat" : "talent"+m.l+"Mat"+i, {
           group: talGroup,
           label: m.l + (isNaN(i) ? ` (${i})` : ""),
-          sort: isNaN(i) ? {generic: {type:"string",property:[i+m.l+'Mat',"name"]}} : undefined,
+          sort: isNaN(i) ? {func: (o,a,b) => {
+            let A = a.getTalentMatType(m.l.toLowerCase(),i)??"";
+            let B = b.getTalentMatType(m.l.toLowerCase(),i)??"";
+            if(!A && B)
+              return 1;
+            else if(A && !B)
+              return -1;
+            else if(!A && !B)
+              return 0;
+            else
+              return o*A.localeCompare(B);
+          }} : undefined,
           columnClasses: [(isNaN(i)?i:"talent")+'-'+m.l.toLowerCase()],
           tags: isNaN(i) & m.l != "Trounce" && m.l != "Crown" ? undefined : ["detailsOnly"],
           dynamic: true,
@@ -444,6 +466,34 @@ export default class CharacterList extends GenshinList
         ],
       });
     }
+    
+    let imageField = this.display.addField("image", {
+      label: "Image",
+      tags: ["detailsOnly"],
+      dynamic: false,
+      value: item => {
+        let src;
+        if(item.base || item.variants)
+          src = `https://rerollcdn.com/GENSHIN/Characters/1/Traveler%20(Anemo).png`;
+        else if(item.key == "RaidenShogun")
+          src = `https://rerollcdn.com/GENSHIN/Characters/1/Raiden.png`;
+        else if(item.key == "Tartaglia")
+          src = `https://rerollcdn.com/GENSHIN/Characters/1/Childe.png`;
+        else if(item.key == "KukiShinobu")
+          src = `https://rerollcdn.com/GENSHIN/Characters/1/Kuki%20Shinobu.png`;
+        else
+        {
+          let filename = item.name;
+          if(filename.length > 8)
+            filename = filename.substring(filename.indexOf(" ")+1);
+          src = `https://rerollcdn.com/GENSHIN/Characters/1/${filename}.png`;
+        }
+        return {
+          tag: "img",
+          src: src,
+        };
+      },
+    });
   }
   
   addTraveler()
@@ -559,7 +609,6 @@ export default class CharacterList extends GenshinList
             },
           });
           selectAdd.needsUpdate = true;
-          this.viewer.store();
           Renderer.renderNewItem(item, {exclude: field => field.tags.indexOf("detailsOnly") > -1});
         }
       });

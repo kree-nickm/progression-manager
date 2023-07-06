@@ -9,7 +9,7 @@ export default {
     matFlower: "Cecilia",
     matEnemy: "Samachurls",
     matMastery: "Ballad",
-    matTrounce: "Tusk Of Monoceros Caeli",
+    matTrounce: "Tusk of Monoceros Caeli",
   },
   'Alhaitham': {
     name: "Alhaitham",
@@ -21,7 +21,7 @@ export default {
     matFlower: "Sand Grease Pupa",
     matEnemy: "Eremites",
     matMastery: "Ingenuity",
-    matTrounce: "Mirror Of Mushin",
+    matTrounce: "Mirror of Mushin",
   },
   'Aloy': {
     name: "Aloy",
@@ -81,7 +81,7 @@ export default {
     matFlower: "Philanemo Mushroom",
     matEnemy: "Samachurls",
     matMastery: "Freedom",
-    matTrounce: "Ring Of Boreas",
+    matTrounce: "Ring of Boreas",
   },
   'Beidou': {
     name: "Beidou",
@@ -117,7 +117,7 @@ export default {
     matFlower: "Henna Berry",
     matEnemy: "Eremites",
     matMastery: "Admonition",
-    matTrounce: "Tears Of The Calamitous God",
+    matTrounce: "Tears of the Calamitous God",
   },
   'Chongyun': {
     name: "Chongyun",
@@ -141,7 +141,7 @@ export default {
     matFlower: "Rukkhashava Mushrooms",
     matEnemy: "Hilichurl Archers",
     matMastery: "Praxis",
-    matTrounce: "Tears Of The Calamitous God",
+    matTrounce: "Tears of the Calamitous God",
   },
   'Cyno': {
     name: "Cyno",
@@ -153,7 +153,7 @@ export default {
     matFlower: "Scarab",
     matEnemy: "Samachurls",
     matMastery: "Admonition",
-    matTrounce: "Mudra Of The Malefic General",
+    matTrounce: "Mudra of the Malefic General",
   },
   'Dehya': {
     name: "Dehya",
@@ -189,7 +189,7 @@ export default {
     matFlower: "Calla Lily",
     matEnemy: "Hilichurl Archers",
     matMastery: "Freedom",
-    matTrounce: "Shard Of A Foul Legacy",
+    matTrounce: "Shard of a Foul Legacy",
   },
   'Dori': {
     name: "Dori",
@@ -237,7 +237,7 @@ export default {
     matFlower: "Small Lamp Grass",
     matEnemy: "Hilichurl Archers",
     matMastery: "Ballad",
-    matTrounce: "Spirit Locket Of Boreas",
+    matTrounce: "Spirit Locket of Boreas",
   },
   'Ganyu': {
     name: "Ganyu",
@@ -249,7 +249,7 @@ export default {
     matFlower: "Qingxin",
     matEnemy: "Whopperflowers",
     matMastery: "Diligence",
-    matTrounce: "Shadow Of The Warrior",
+    matTrounce: "Shadow of the Warrior",
   },
   'Gorou': {
     name: "Gorou",
@@ -273,7 +273,7 @@ export default {
     matFlower: "Silk Flower",
     matEnemy: "Whopperflowers",
     matMastery: "Diligence",
-    matTrounce: "Shard Of A Foul Legacy",
+    matTrounce: "Shard of a Foul Legacy",
   },
   'Jean': {
     name: "Jean",
@@ -309,7 +309,7 @@ export default {
     matFlower: "Calla Lily",
     matEnemy: "Treasure Hoarders",
     matMastery: "Ballad",
-    matTrounce: "Spirit Locket Of Boreas",
+    matTrounce: "Spirit Locket of Boreas",
   },
   'KamisatoAyaka': {
     name: "Kamisato Ayaka",
@@ -333,7 +333,7 @@ export default {
     matFlower: "Sakura Bloom",
     matEnemy: "Nobushi",
     matMastery: "Elegance",
-    matTrounce: "Mudra Of The Malefic General",
+    matTrounce: "Mudra of the Malefic General",
   },
   'Kaveh': {
     name: "Kaveh",
@@ -357,7 +357,7 @@ export default {
     matFlower: "Cor Lapis",
     matEnemy: "Whopperflowers",
     matMastery: "Prosperity",
-    matTrounce: "Ring Of Boreas",
+    matTrounce: "Ring of Boreas",
   },
   'Kirara': {
     name: "Kirara",
@@ -381,7 +381,7 @@ export default {
     matFlower: "Philanemo Mushroom",
     matEnemy: "Samachurls",
     matMastery: "Freedom",
-    matTrounce: "Ring Of Boreas",
+    matTrounce: "Ring of Boreas",
   },
   'KujouSara': {
     name: "Kujou Sara",
@@ -405,7 +405,7 @@ export default {
     matFlower: "Naku Weed",
     matEnemy: "Specters",
     matMastery: "Elegance",
-    matTrounce: "Tears Of The Calamitous God",
+    matTrounce: "Tears of the Calamitous God",
   },
   'Layla': {
     name: "Layla",
@@ -417,7 +417,7 @@ export default {
     matFlower: "Nilotpala Lotus",
     matEnemy: "Samachurls",
     matMastery: "Ingenuity",
-    matTrounce: "Mirror Of Mushin",
+    matTrounce: "Mirror of Mushin",
   },
   'Lisa': {
     name: "Lisa",
@@ -441,7 +441,7 @@ export default {
     matFlower: "Wolfhook",
     matEnemy: "Fatui",
     matMastery: "Ballad",
-    matTrounce: "Mirror Of Mushin",
+    matTrounce: "Mirror of Mushin",
   },
   'Mona': {
     name: "Mona",
@@ -453,7 +453,7 @@ export default {
     matFlower: "Philanemo Mushroom",
     matEnemy: "Whopperflowers",
     matMastery: "Resistance",
-    matTrounce: "Ring Of Boreas",
+    matTrounce: "Ring of Boreas",
   },
   'Nahida': {
     name: "Nahida",
@@ -477,7 +477,7 @@ export default {
     matFlower: "Padisarah",
     matEnemy: "Fungi",
     matMastery: "Praxis",
-    matTrounce: "Tears Of The Calamitous God",
+    matTrounce: "Tears of the Calamitous God",
   },
   'Ningguang': {
     name: "Ningguang",
@@ -489,7 +489,7 @@ export default {
     matFlower: "Glaze Lily",
     matEnemy: "Fatui",
     matMastery: "Prosperity",
-    matTrounce: "Spirit Locket Of Boreas",
+    matTrounce: "Spirit Locket of Boreas",
   },
   'Noelle': {
     name: "Noelle",
@@ -513,7 +513,7 @@ export default {
     matFlower: "Violetgrass",
     matEnemy: "Samachurls",
     matMastery: "Prosperity",
-    matTrounce: "Tail Of Boreas",
+    matTrounce: "Tail of Boreas",
   },
   'RaidenShogun': {
     name: "Raiden Shogun",
@@ -549,7 +549,7 @@ export default {
     matFlower: "Valberry",
     matEnemy: "Fatui",
     matMastery: "Ballad",
-    matTrounce: "Shadow Of The Warrior",
+    matTrounce: "Shadow of the Warrior",
   },
   'SangonomiyaKokomi': {
     name: "Sangonomiya Kokomi",
@@ -597,7 +597,7 @@ export default {
     matFlower: "Onikabuto",
     matEnemy: "Treasure Hoarders",
     matMastery: "Transience",
-    matTrounce: "The Meaning Of Aeons",
+    matTrounce: "The Meaning of Aeons",
   },
   'Sucrose': {
     name: "Sucrose",
@@ -609,7 +609,7 @@ export default {
     matFlower: "Windwheel Aster",
     matEnemy: "Whopperflowers",
     matMastery: "Freedom",
-    matTrounce: "Spirit Locket Of Boreas",
+    matTrounce: "Spirit Locket of Boreas",
   },
   'Tartaglia': {
     name: "Tartaglia",
@@ -621,7 +621,7 @@ export default {
     matFlower: "Starconch",
     matEnemy: "Fatui",
     matMastery: "Freedom",
-    matTrounce: "Shard Of A Foul Legacy",
+    matTrounce: "Shard of a Foul Legacy",
   },
   'Thoma': {
     name: "Thoma",
@@ -645,7 +645,7 @@ export default {
     matFlower: "Nilotpala Lotus",
     matEnemy: "Fungi",
     matMastery: "Admonition",
-    matTrounce: "The Meaning Of Aeons",
+    matTrounce: "The Meaning of Aeons",
   },
   'TravelerAnemo': {
     name: "Traveler: Anemo",
@@ -669,7 +669,7 @@ export default {
     matEnemy: "Hilichurls",
     matTalentEnemy: "Hilichurl Archers",
     matMastery: "Diligence",
-    matTrounce: "Tail Of Boreas",
+    matTrounce: "Tail of Boreas",
   },
   'TravelerElectro': {
     name: "Traveler: Electro",
@@ -693,7 +693,7 @@ export default {
     matEnemy: "Hilichurls",
     matTalentEnemy: "Fungi",
     matMastery: "Praxis",
-    matTrounce: "Mudra Of The Malefic General",
+    matTrounce: "Mudra of the Malefic General",
   },
   'Venti': {
     name: "Venti",
@@ -705,7 +705,7 @@ export default {
     matFlower: "Cecilia",
     matEnemy: "Slimes",
     matMastery: "Ballad",
-    matTrounce: "Tail Of Boreas",
+    matTrounce: "Tail of Boreas",
   },
   'Wanderer': {
     name: "Wanderer",
@@ -741,7 +741,7 @@ export default {
     matFlower: "Qingxin",
     matEnemy: "Slimes",
     matMastery: "Prosperity",
-    matTrounce: "Shadow Of The Warrior",
+    matTrounce: "Shadow of the Warrior",
   },
   'Xingqiu': {
     name: "Xingqiu",
@@ -753,7 +753,7 @@ export default {
     matFlower: "Silk Flower",
     matEnemy: "Hilichurls",
     matMastery: "Gold",
-    matTrounce: "Tail Of Boreas",
+    matTrounce: "Tail of Boreas",
   },
   'Xinyan': {
     name: "Xinyan",
@@ -765,7 +765,7 @@ export default {
     matFlower: "Violetgrass",
     matEnemy: "Treasure Hoarders",
     matMastery: "Gold",
-    matTrounce: "Tusk Of Monoceros Caeli",
+    matTrounce: "Tusk of Monoceros Caeli",
   },
   'YaeMiko': {
     name: "Yae Miko",
@@ -777,7 +777,7 @@ export default {
     matFlower: "Sea Ganoderma",
     matEnemy: "Nobushi",
     matMastery: "Light",
-    matTrounce: "The Meaning Of Aeons",
+    matTrounce: "The Meaning of Aeons",
   },
   'Yanfei': {
     name: "Yanfei",
@@ -849,6 +849,6 @@ export default {
     matFlower: "Cor Lapis",
     matEnemy: "Slimes",
     matMastery: "Gold",
-    matTrounce: "Tusk Of Monoceros Caeli",
+    matTrounce: "Tusk of Monoceros Caeli",
   },
 };

@@ -173,6 +173,84 @@ export default {
         "circlet": "Tiara of Frost",
         "bonus1": "Affected by Cryo for 40% less time."
     },
+    "ArchaicPetra": {
+        "name": "Archaic Petra",
+        "flower": "Flower of Creviced Cliff",
+        "plume": "Feather of Jagged Peaks",
+        "sands": "Sundial of Enduring Jade",
+        "goblet": "Goblet of Chiseled Crag",
+        "circlet": "Mask of Solitude Basalt",
+        "bonus2": "Geo DMG Bonus +15%",
+        "bonus2code": ["stat",["geo_dmg_",15]],
+        "bonus4": "Upon obtaining an Elemental Shard created through a Crystallize Reaction, all party members gain 35% DMG Bonus for that particular element for 10s. Only one form of Elemental DMG Bonus can be gained in this manner at any one time."
+    },
+    "RetracingBolide": {
+        "name": "Retracing Bolide",
+        "flower": "Summer Night's Bloom",
+        "plume": "Summer Night's Finale",
+        "sands": "Summer Night's Moment",
+        "goblet": "Summer Night's Waterballoon",
+        "circlet": "Summer Night's Mask",
+        "bonus2": "Increases Shield Strength by 35%.",
+        "bonus4": "While protected by a shield, gain an additional 40% Normal and Charged Attack DMG."
+    },
+    "Lavawalker": {
+        "name": "Lavawalker",
+        "flower": "Lavawalker's Resolution",
+        "plume": "Lavawalker's Salvation",
+        "sands": "Lavawalker's Torment",
+        "goblet": "Lavawalker's Epiphany",
+        "circlet": "Lavawalker's Wisdom",
+        "bonus2": "Pyro RES increased by 40%.",
+        "bonus2code": ["stat",["pyro_res_",40]],
+        "bonus4": "Increases DMG against opponents affected by Pyro by 35%."
+    },
+    "CrimsonWitchOfFlames": {
+        "name": "Crimson Witch Of Flames",
+        "flower": "Witch's Flower of Blaze",
+        "plume": "Witch's Ever-Burning Plume",
+        "sands": "Witch's End Time",
+        "goblet": "Witch's Heart Flames",
+        "circlet": "Witch's Scorching Hat",
+        "bonus2": "Pyro DMG Bonus +15%",
+        "bonus2code": ["stat",["pyro_dmg_",15]],
+        "bonus4": "Increases Overloaded and Burning, and Burgeon DMG by 40%. Increases Vaporize and Melt DMG by 15%. Using Elemental Skill increases the 2-Piece Set Bonus by 50% of its starting value for 10s. Max 3 stacks."
+    },
+    
+    "BlizzardStrayer": {
+        "name": "Blizzard Strayer",
+        "flower": "Snowswept Memory",
+        "plume": "Icebreaker's Resolve",
+        "sands": "Frozen Homeland's Demise",
+        "goblet": "Frost-Weaved Dignity",
+        "circlet": "Broken Rime's Echo",
+        "bonus2": "Cryo DMG Bonus +15%",
+        "bonus2code": ["stat",["cryo_dmg_",15]],
+        "bonus4": "When a character attacks an opponent affected by Cryo, their CRIT Rate is increased by 20%. If the opponent is Frozen, CRIT Rate is increased by an additional 20%."
+    },
+    "Thundersoother": {
+        "name": "Thundersoother",
+        "flower": "Thundersoother's Heart",
+        "plume": "Thundersoother's Plume",
+        "sands": "Hour of Soothing Thunder",
+        "goblet": "Thundersoother's Goblet",
+        "circlet": "Thundersoother's Diadem",
+        "bonus2": "Electro RES increased by 40%.",
+        "bonus2code": ["stat",["electro_res_",40]],
+        "bonus4": "Increases DMG against opponents affected by Electro by 35%."
+    },
+    "MaidenBeloved": {
+        "name": "Maiden Beloved",
+        "flower": "Maiden's Distant Love",
+        "plume": "Maiden's Heart-Stricken Infatuation",
+        "sands": "Maiden's Passing Youth",
+        "goblet": "Maiden's Fleeting Leisure",
+        "circlet": "Maiden's Fading Beauty",
+        "bonus2": "Character Healing Effectiveness +15%",
+        "bonus2code": ["stat",["heal_",15]],
+        "bonus4": "Using an Elemental Skill or Burst increases healing received by all party members by 20% for 10s.",
+        "bonus4code": ["proc",["pstat",["inHeal_",20]]]
+    },
     "GladiatorsFinale": {
         "name": "Gladiator's Finale",
         "flower": "Gladiator's Nostalgia",
@@ -185,6 +263,18 @@ export default {
         "bonus4": "If the wielder of this artifact set uses a Sword, Claymore or Polearm, increases their Normal Attack DMG by 35%.",
         "bonus4code": ["proc",["stat",["normal_dmg_",35]]]
     },
+    "ViridescentVenerer": {
+        "name": "Viridescent Venerer",
+        "flower": "In Remembrance of Viridescent Fields",
+        "plume": "Viridescent Arrow Feather",
+        "sands": "Viridescent Venerer's Determination",
+        "goblet": "Viridescent Venerer's Vessel",
+        "circlet": "Viridescent Venerer's Diadem",
+        "bonus2": "Anemo DMG Bonus +15%",
+        "bonus2code": ["stat",["anemo_dmg_",15]],
+        "bonus4": "Increases Swirl DMG by 60%. Decreases opponent's Elemental RES to the element infused in the Swirl by 40% for 10s.",
+        "bonus4code": [["stat",["swirl_dmg_",60]], ["proc",["estat",[["cryo_res_","hydro_res_","electro_res_","pyro_res_"],-40]]]]
+    },
     "WanderersTroupe": {
         "name": "Wanderer's Troupe",
         "flower": "Troupe's Dawnlight",
@@ -196,6 +286,17 @@ export default {
         "bonus2code": ["stat",["eleMas",80]],
         "bonus4": "Increases Charged Attack DMG by 35% if the character uses a Catalyst or Bow.",
         "bonus4code": ["proc",["stat",["charged_dmg_",35]]]
+    },
+    "ThunderingFury": {
+        "name": "Thundering Fury",
+        "flower": "Thunderbird's Mercy",
+        "plume": "Survivor of Catastrophe",
+        "sands": "Hourglass of Thunder",
+        "goblet": "Omen of Thunderstorm",
+        "circlet": "Thunder Summoner's Crown",
+        "bonus2": "Electro DMG Bonus +15%",
+        "bonus2code": ["stat",["electro_dmg_",15]],
+        "bonus4": "Increases DMG caused by Overloaded, Electro-Charged, Superconduct, and Hyperbloom by 40%, and the DMG Bonus conferred by Aggravate is increased by 20%. When Quicken or the aforementioned Elemental Reactions are triggered, Elemental Skill CD is decreased by 1s. Can only occur once every 0.8s."
     },
     "NoblesseOblige": {
         "name": "Noblesse Oblige",
@@ -220,106 +321,6 @@ export default {
         "bonus2code": ["stat",["physical_dmg_",25]],
         "bonus4": "After defeating an opponent, increases Charged Attack DMG by 50%, and reduces its Stamina cost to 0 for 10s. Also triggers with wild animals such as boars, squirrels and frogs.",
         "bonus4code": ["proc",["stat",["charged_dmg_",50]]]
-    },
-    "MaidenBeloved": {
-        "name": "Maiden Beloved",
-        "flower": "Maiden's Distant Love",
-        "plume": "Maiden's Heart-Stricken Infatuation",
-        "sands": "Maiden's Passing Youth",
-        "goblet": "Maiden's Fleeting Leisure",
-        "circlet": "Maiden's Fading Beauty",
-        "bonus2": "Character Healing Effectiveness +15%",
-        "bonus2code": ["stat",["heal_",15]],
-        "bonus4": "Using an Elemental Skill or Burst increases healing received by all party members by 20% for 10s.",
-        "bonus4code": ["proc",["pstat",["inHeal_",20]]]
-    },
-    "ViridescentVenerer": {
-        "name": "Viridescent Venerer",
-        "flower": "In Remembrance of Viridescent Fields",
-        "plume": "Viridescent Arrow Feather",
-        "sands": "Viridescent Venerer's Determination",
-        "goblet": "Viridescent Venerer's Vessel",
-        "circlet": "Viridescent Venerer's Diadem",
-        "bonus2": "Anemo DMG Bonus +15%",
-        "bonus2code": ["stat",["anemo_dmg_",15]],
-        "bonus4": "Increases Swirl DMG by 60%. Decreases opponent's Elemental RES to the element infused in the Swirl by 40% for 10s.",
-        "bonus4code": [["stat",["swirl_dmg_",60]], ["proc",["estat",[["cryo_res_","hydro_res_","electro_res_","pyro_res_"],-40]]]]
-    },
-    "ArchaicPetra": {
-        "name": "Archaic Petra",
-        "flower": "Flower of Creviced Cliff",
-        "plume": "Feather of Jagged Peaks",
-        "sands": "Sundial of Enduring Jade",
-        "goblet": "Goblet of Chiseled Crag",
-        "circlet": "Mask of Solitude Basalt",
-        "bonus2": "Geo DMG Bonus +15%",
-        "bonus2code": ["stat",["geo_dmg_",15]],
-        "bonus4": "Upon obtaining an Elemental Shard created through a Crystallize Reaction, all party members gain 35% DMG Bonus for that particular element for 10s. Only one form of Elemental DMG Bonus can be gained in this manner at any one time."
-    },
-    "RetracingBolide": {
-        "name": "Retracing Bolide",
-        "flower": "Summer Night's Bloom",
-        "plume": "Summer Night's Finale",
-        "sands": "Summer Night's Moment",
-        "goblet": "Summer Night's Waterballoon",
-        "circlet": "Summer Night's Mask",
-        "bonus2": "Increases Shield Strength by 35%.",
-        "bonus4": "While protected by a shield, gain an additional 40% Normal and Charged Attack DMG."
-    },
-    "Thundersoother": {
-        "name": "Thundersoother",
-        "flower": "Thundersoother's Heart",
-        "plume": "Thundersoother's Plume",
-        "sands": "Hour of Soothing Thunder",
-        "goblet": "Thundersoother's Goblet",
-        "circlet": "Thundersoother's Diadem",
-        "bonus2": "Electro RES increased by 40%.",
-        "bonus2code": ["stat",["electro_res_",40]],
-        "bonus4": "Increases DMG against opponents affected by Electro by 35%."
-    },
-    "ThunderingFury": {
-        "name": "Thundering Fury",
-        "flower": "Thunderbird's Mercy",
-        "plume": "Survivor of Catastrophe",
-        "sands": "Hourglass of Thunder",
-        "goblet": "Omen of Thunderstorm",
-        "circlet": "Thunder Summoner's Crown",
-        "bonus2": "Electro DMG Bonus +15%",
-        "bonus2code": ["stat",["electro_dmg_",15]],
-        "bonus4": "Increases DMG caused by Overloaded, Electro-Charged, Superconduct, and Hyperbloom by 40%, and the DMG Bonus conferred by Aggravate is increased by 20%. When Quicken or the aforementioned Elemental Reactions are triggered, Elemental Skill CD is decreased by 1s. Can only occur once every 0.8s."
-    },
-    "Lavawalker": {
-        "name": "Lavawalker",
-        "flower": "Lavawalker's Resolution",
-        "plume": "Lavawalker's Salvation",
-        "sands": "Lavawalker's Torment",
-        "goblet": "Lavawalker's Epiphany",
-        "circlet": "Lavawalker's Wisdom",
-        "bonus2": "Pyro RES increased by 40%.",
-        "bonus2code": ["stat",["pyro_res_",40]],
-        "bonus4": "Increases DMG against opponents affected by Pyro by 35%."
-    },
-    "CrimsonWitchOfFlames": {
-        "name": "Crimson Witch Of Flames",
-        "flower": "Witch's Flower of Blaze",
-        "plume": "Witch's Ever-Burning Plume",
-        "sands": "Witch's End Time",
-        "goblet": "Witch's Heart Flames",
-        "circlet": "Witch's Scorching Hat",
-        "bonus2": "Pyro DMG Bonus +15%",
-        "bonus2code": ["stat",["pyro_dmg_",15]],
-        "bonus4": "Increases Overloaded and Burning, and Burgeon DMG by 40%. Increases Vaporize and Melt DMG by 15%. Using Elemental Skill increases the 2-Piece Set Bonus by 50% of its starting value for 10s. Max 3 stacks."
-    },
-    "BlizzardStrayer": {
-        "name": "Blizzard Strayer",
-        "flower": "Snowswept Memory",
-        "plume": "Icebreaker's Resolve",
-        "sands": "Frozen Homeland's Demise",
-        "goblet": "Frost-Weaved Dignity",
-        "circlet": "Broken Rime's Echo",
-        "bonus2": "Cryo DMG Bonus +15%",
-        "bonus2code": ["stat",["cryo_dmg_",15]],
-        "bonus4": "When a character attacks an opponent affected by Cryo, their CRIT Rate is increased by 20%. If the opponent is Frozen, CRIT Rate is increased by an additional 20%."
     },
     "HeartOfDepth": {
         "name": "Heart Of Depth",

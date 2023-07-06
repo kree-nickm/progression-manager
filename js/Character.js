@@ -15,7 +15,6 @@ export default class Character extends GenshinItem
   static dontSerialize = GenshinItem.dontSerialize.concat(["MaterialList","_weapon","_flower","_plume","_sands","_goblet","_circlet","loaded","maxScores"]);
   static goodProperties = ["key","level","constellation","ascension","talent"];
   static templateName = "renderCharacterAsPopup";
-  static templateTitleName = "renderCharacterAsPopupTitle";
   static statBase = {
     critRate_: 5,
     critDMG_: 50,
@@ -60,10 +59,10 @@ export default class Character extends GenshinItem
     },
   };
   
-  static sortArtifacts(buildId,a,b)
+  static sortArtifacts(buildId,useTargets,a,b)
   {
-    let A = parseFloat(a.getCharacterScore(this,20,buildId));
-    let B = parseFloat(b.getCharacterScore(this,20,buildId));
+    let A = parseFloat(a.getCharacterScore(this,20,buildId,useTargets));
+    let B = parseFloat(b.getCharacterScore(this,20,buildId,useTargets));
     if(isNaN(A) && !isNaN(B))
       return 1;
     else if(!isNaN(A) && isNaN(B))
@@ -386,8 +385,8 @@ export default class Character extends GenshinItem
     if(this.level < this.levelCap)
       this.update("level", this.levelCap);
     this.update("ascension", this.ascension+1);
-    this.list.viewer.store();
-    this.list.render();
+    //this.list.viewer.store();
+    //this.list.render();
   }
   
   canUpPhase(withCrafting=false)
@@ -419,8 +418,8 @@ export default class Character extends GenshinItem
     this.MaterialList.trounce.update("count", this.MaterialList.trounce.count - this.getTalent(talent).matTrounceCount);
     this.MaterialList.crown.update("count", this.MaterialList.crown.count - this.getTalent(talent).matCrownCount);
     this.update(["talent", talent], this.talent[talent]+1);
-    this.list.viewer.store();
-    this.list.render();
+    //this.list.viewer.store();
+    //this.list.render();
   }
   
   canUpTalent(talent, withCrafting=false)
@@ -543,6 +542,14 @@ export default class Character extends GenshinItem
           builds[b].gobletStat = {};
         if(!builds[b].circletStat)
           builds[b].circletStat = {};
+        if(!("minER" in builds[b]))
+          builds[b].minER = 100;
+        if(!("maxER" in builds[b]))
+          builds[b].maxER = 300;
+        if(!("ratioCritRate" in builds[b]))
+          builds[b].ratioCritRate = 1;
+        if(!("ratioCritDMG" in builds[b]))
+          builds[b].ratioCritDMG = 2;
       }
       return builds;
     }
@@ -561,22 +568,24 @@ export default class Character extends GenshinItem
     }
   }
   
-  getRelatedItems(buildId="default")
+  getRelatedItems(buildId="default", {skipSort=false}={})
   {
+    let useTargets = document.getElementById('useTargets')?.checked;
     let related = {
       weapons: this.list.viewer.lists.WeaponList.items(this.weaponType),
       bestArtifacts: {
-        flower: this.list.viewer.lists.ArtifactList.items("flower").sort(Character.sortArtifacts.bind(this,buildId)),
-        plume: this.list.viewer.lists.ArtifactList.items("plume").sort(Character.sortArtifacts.bind(this,buildId)),
-        sands: this.list.viewer.lists.ArtifactList.items("sands").sort(Character.sortArtifacts.bind(this,buildId)),
-        goblet: this.list.viewer.lists.ArtifactList.items("goblet").sort(Character.sortArtifacts.bind(this,buildId)),
-        circlet: this.list.viewer.lists.ArtifactList.items("circlet").sort(Character.sortArtifacts.bind(this,buildId)),
+        flower: skipSort ? this.list.viewer.lists.ArtifactList.items("flower") : this.list.viewer.lists.ArtifactList.items("flower").sort(Character.sortArtifacts.bind(this,buildId,useTargets)),
+        plume: skipSort ? this.list.viewer.lists.ArtifactList.items("plume") : this.list.viewer.lists.ArtifactList.items("plume").sort(Character.sortArtifacts.bind(this,buildId,useTargets)),
+        sands: skipSort ? this.list.viewer.lists.ArtifactList.items("sands") : this.list.viewer.lists.ArtifactList.items("sands").sort(Character.sortArtifacts.bind(this,buildId,useTargets)),
+        goblet: skipSort ? this.list.viewer.lists.ArtifactList.items("goblet") : this.list.viewer.lists.ArtifactList.items("goblet").sort(Character.sortArtifacts.bind(this,buildId,useTargets)),
+        circlet: skipSort ? this.list.viewer.lists.ArtifactList.items("circlet") : this.list.viewer.lists.ArtifactList.items("circlet").sort(Character.sortArtifacts.bind(this,buildId,useTargets)),
       },
       artifactFields: this.list.viewer.lists.ArtifactList.display.fields,
       artifactSets: GenshinArtifactData,
       buildData: this.getBuild(buildId),
       buildName: buildId,
       builds: Object.keys(this.getBuilds()),
+      artifactList: this.list.viewer.lists.ArtifactList,
     };
     return related;
   }
@@ -653,185 +662,229 @@ export default class Character extends GenshinItem
     return this.getBuild(build).artifactSets?.[setKey] ? 1 : 0;
   }
   
-  addPopupEventHandlers(element)
+  onRender(element)
   {
+    super.onRender(element);
     let buildSections = element.classList.contains("character-build") ? [element] : element.querySelectorAll(".character-build");
-    for(let buildSection of buildSections)
+    if(buildSections.length)
     {
-      let buildId = buildSection.attributes.getNamedItem('name')?.value;
-      if(!buildId)
+      for(let buildSection of buildSections)
       {
-        console.log(`Build section does not have a name attribute specifying what build it's for:`, buildSection);
-        continue;
+        this._addBuildEventHandlers(buildSection);
       }
-      
-      let addBuild = buildSection.querySelector("#addBuildBtn");
-      if(addBuild && !addBuild.onclick)
-        addBuild.onclick = event => {
-          let build = buildSection.querySelector("#addBuildFld")?.value;
-          if(build && this.loaded)
+    }
+    else
+    {
+      let characterArtifacts = element.classList.contains("character-artifacts") ? element : element.querySelector(".character-artifacts");
+      if(characterArtifacts)
+        this._addArtifactListsEventHandlers(characterArtifacts)
+    }
+  }
+  
+  _addBuildEventHandlers(buildSection)
+  {
+    let buildId = buildSection.attributes.getNamedItem('name')?.value;
+    if(!buildId)
+    {
+      console.log(`Build section does not have a name attribute specifying what build it's for:`, buildSection);
+      return false;
+    }
+    
+    /** Add Build Button **/
+    let addBuild = buildSection.querySelector("#addBuildBtn");
+    if(addBuild && !addBuild.onclick)
+      addBuild.onclick = event => {
+        let build = buildSection.querySelector("#addBuildFld")?.value;
+        if(build && this.loaded)
+        {
+          if(!this.list.viewer.buildData[this.key][build])
           {
-            if(!this.list.viewer.buildData[this.key][build])
-            {
-              this.list.viewer.buildData[this.key][build] = {};
-              Renderer.rerender(buildSection, {item:this, relatedItems:this.getRelatedItems(build)}, this);
-              this.list.viewer.store();
-            }
-            else
-              console.warn(`Cannot add two builds with the same name '${build}'.`);
+            this.list.viewer.buildData[this.key][build] = {};
+            this.update("buildData", {}, "notify");
+            Renderer.rerender(buildSection, {relatedItems:this.getRelatedItems(build)});
           }
           else
-            console.warn(`Unable to add build.`);
+            console.warn(`Cannot add two builds with the same name '${build}'.`);
+        }
+        else
+          console.warn(`Unable to add build.`);
+      };
+    
+    /** Select Build Button **/
+    let buildSelect = buildSection.querySelectorAll(".select-build");
+    for(let buildTab of buildSelect)
+    {
+      if(!buildTab.onclick)
+        buildTab.onclick = event => {
+          Renderer.rerender(buildSection, {relatedItems:this.getRelatedItems(buildTab.innerHTML)});
         };
-      
-      let buildSelect = buildSection.querySelectorAll(".select-build");
-      for(let buildTab of buildSelect)
-      {
-        if(buildTab && !buildTab.onclick)
-          buildTab.onclick = event => {
-            Renderer.rerender(buildSection, {item:this, relatedItems:this.getRelatedItems(buildTab.innerHTML)}, this);
-          };
-      }
-      
-      let deleteBuild = buildSection.querySelector("#deleteBuildBtn");
-      if(deleteBuild && !deleteBuild.onclick)
-        deleteBuild.onclick = event => {
-          if(this.list.viewer.buildData[this.key][buildId])
-          {
-            delete this.list.viewer.buildData[this.key][buildId];
-            Renderer.rerender(buildSection, {item:this, relatedItems:this.getRelatedItems()}, this);
-            this.list.viewer.store();
-          }
-          else
-            console.warn(`Cannot delete nonexistent build '${buildId}'.`);
-        };
-        
-      let artifactSets = buildSection.querySelector("#bestArtifactSets");
-      if(artifactSets && !artifactSets.onchange)
-        artifactSets.onchange = event => {
-          let build = this.getBuild(buildId);
-          let sets = [];
-          Array.from(artifactSets.selectedOptions).forEach(optionElement => {
-            sets.push(optionElement.value);
-            if(!build.artifactSets[optionElement.value])
-              build.artifactSets[optionElement.value] = {};
-          });
-          let previousSets = Object.keys(build.artifactSets);
-          previousSets.forEach(setKey => {
-            if(sets.indexOf(setKey) == -1)
-              delete build.artifactSets[setKey];
-          });
-          for(let slot of ["flower","plume","sands","goblet","circlet"])
-            Renderer.renderList2(`ArtifactList/${slot}`, {
-              items: this.list.viewer.lists.ArtifactList.items(slot).sort(Character.sortArtifacts.bind(this,buildId)),
-              fields: this.list.viewer.lists.ArtifactList.display.fields,
-              parent: this,
-              force: true,
-            });
+    }
+    
+    /** Delete Build Button **/
+    let deleteBuild = buildSection.querySelector("#deleteBuildBtn");
+    if(deleteBuild && !deleteBuild.onclick)
+      deleteBuild.onclick = event => {
+        if(this.list.viewer.buildData[this.key][buildId])
+        {
+          delete this.list.viewer.buildData[this.key][buildId];
           this.update("buildData", {}, "notify");
-          this.list.viewer.store();
-          document.querySelector("#artifactEvaluateBtn")?.classList.add("show-notice");
-        };
+          Renderer.rerender(buildSection, {relatedItems:this.getRelatedItems()});
+        }
+        else
+          console.warn(`Cannot delete nonexistent build '${buildId}'.`);
+      };
       
-      let statSliders = buildSection.querySelectorAll(".artifact-stat-slider");
-      for(let sliderDiv of statSliders)
+    /** Artifact Set Preferences **/
+    let artifactSets = buildSection.querySelector("#bestArtifactSets");
+    if(artifactSets && !artifactSets.onchange)
+      artifactSets.onchange = event => {
+        let build = this.getBuild(buildId);
+        let sets = [];
+        Array.from(artifactSets.selectedOptions).forEach(optionElement => {
+          sets.push(optionElement.value);
+          if(!build.artifactSets[optionElement.value])
+            build.artifactSets[optionElement.value] = {};
+        });
+        let previousSets = Object.keys(build.artifactSets);
+        previousSets.forEach(setKey => {
+          if(sets.indexOf(setKey) == -1)
+            delete build.artifactSets[setKey];
+        });
+        this.update("buildData", {}, "notify");
+        Renderer.rerender(buildSection.querySelector(".character-artifacts"), {relatedItems: this.getRelatedItems(buildId, {skipSort:true})});
+        document.querySelector("#artifactEvaluateBtn")?.classList.add("show-notice");
+      };
+    
+    /** Stat Priority Sliders **/
+    let statSliders = buildSection.querySelectorAll(".artifact-stat-slider");
+    for(let sliderDiv of statSliders)
+    {
+      let slider = sliderDiv.querySelector("input");
+      if(!slider.onchange)
       {
-        let name = sliderDiv.attributes.getNamedItem('name')?.value;
-        let categories = name.split("_");
+        let property = sliderDiv.attributes.getNamedItem('name')?.value;
         let label = sliderDiv.querySelector("*[name='value']");
-        let slider = sliderDiv.querySelector("input");
-        let stat = slider.attributes.getNamedItem('name')?.value;
+        slider.oninput = event => {
+          label.innerHTML = slider.value;
+        };
         slider.onchange = event => {
-          this.getBuild(categories[0])[categories[1]][stat] = parseFloat(slider.value);
+          let stat = slider.attributes.getNamedItem('name')?.value;
+          this.getBuild(buildId)[property][stat] = parseFloat(slider.value);
+          this.update("buildData", {}, "notify");
           label.innerHTML = slider.value;
           this.maxScores = {};
-          
-          if(categories[1] == "artifactSubstats")
-          {
-            this.list.viewer.lists.ArtifactList.items('flower').forEach(item => item.storedStats.characters[this.key] = null);
-            Renderer.renderList2(`ArtifactList/flower`, {
-              items: this.list.viewer.lists.ArtifactList.items('flower').sort(Character.sortArtifacts.bind(this,buildId)),
-              fields: this.list.viewer.lists.ArtifactList.display.fields,
-              parent: this,
-              force: true,
-            });
-          }
-          if(categories[1] == "artifactSubstats")
-          {
-            this.list.viewer.lists.ArtifactList.items('plume').forEach(item => item.storedStats.characters[this.key] = null);
-            Renderer.renderList2(`ArtifactList/plume`, {
-              items: this.list.viewer.lists.ArtifactList.items('plume').sort(Character.sortArtifacts.bind(this,buildId)),
-              fields: this.list.viewer.lists.ArtifactList.display.fields,
-              parent: this,
-              force: true,
-            });
-          }
-          if(categories[1] == "artifactSubstats" || categories[1] == "sandsStat")
-          {
-            this.list.viewer.lists.ArtifactList.items('sands').forEach(item => item.storedStats.characters[this.key] = null);
-            Renderer.renderList2(`ArtifactList/sands`, {
-              items: this.list.viewer.lists.ArtifactList.items('sands').sort(Character.sortArtifacts.bind(this,buildId)),
-              fields: this.list.viewer.lists.ArtifactList.display.fields,
-              parent: this,
-              force: true,
-            });
-          }
-          if(categories[1] == "artifactSubstats" || categories[1] == "gobletStat")
-          {
-            this.list.viewer.lists.ArtifactList.items('goblet').forEach(item => item.storedStats.characters[this.key] = null);
-            Renderer.renderList2(`ArtifactList/goblet`, {
-              items: this.list.viewer.lists.ArtifactList.items('goblet').sort(Character.sortArtifacts.bind(this,buildId)),
-              fields: this.list.viewer.lists.ArtifactList.display.fields,
-              parent: this,
-              force: true,
-            });
-          }
-          if(categories[1] == "artifactSubstats" || categories[1] == "circletStat")
-          {
-            this.list.viewer.lists.ArtifactList.items('circlet').forEach(item => item.storedStats.characters[this.key] = null);
-            Renderer.renderList2(`ArtifactList/circlet`, {
-              items: this.list.viewer.lists.ArtifactList.items('circlet').sort(Character.sortArtifacts.bind(this,buildId)),
-              fields: this.list.viewer.lists.ArtifactList.display.fields,
-              parent: this,
-              force: true,
-            });
-          }
-          this.update("buildData", {}, "notify");
-          this.list.viewer.store();
+          this.viewer.lists.ArtifactList.items().forEach(artifact => {
+            if(property == "artifactSubstats" || artifact.slotKey === property.slice(-4))
+              artifact.storedStats.characters[this.key][buildId] = {};
+          });
+          Renderer.rerender(buildSection.querySelector(".character-artifacts"), {relatedItems:this.getRelatedItems(buildId)});
           document.querySelector("#artifactEvaluateBtn")?.classList.add("show-notice");
         };
       }
-      
-      let equipButtons = buildSection.querySelectorAll(".equip-artifact");
-      for(let btn of equipButtons)
+    }
+    
+    /** Stat Target Fields **/
+    let targetInputs = buildSection.querySelectorAll("input.stat-target");
+    for(let targetInput of targetInputs)
+    {
+      if(!targetInput.onchange)
+      {
+        let property;
+        if(targetInput.id == "characterMinER") property = "minER";
+        else if(targetInput.id == "characterMaxER") property = "maxER";
+        else if(targetInput.id == "characterRatioCritRate") property = "ratioCritRate";
+        else if(targetInput.id == "characterRatioCritDMG") property = "ratioCritDMG";
+        else continue;
+        targetInput.onchange = event => {
+          let lastERWithinLimit = this.getBuild(buildId).minER <= this.getStat("enerRech_") && this.getStat("enerRech_") < this.getBuild(buildId).maxER;
+          this.getBuild(buildId)[property] = parseFloat(targetInput.value);
+          this.update("buildData", {}, "notify");
+          let currentERWithinLimit = this.getBuild(buildId).minER <= this.getStat("enerRech_") && this.getStat("enerRech_") < this.getBuild(buildId).maxER;
+          if(property == "ratioCritRate" || property == "ratioCritDMG" || lastERWithinLimit != currentERWithinLimit)
+          {
+            this.maxScores = {};
+            this.viewer.lists.ArtifactList.items().forEach(artifact => {
+              artifact.storedStats.characters[this.key][buildId].targets = null;
+            });
+            Renderer.rerender(buildSection.querySelector(".character-artifacts"), {relatedItems:this.getRelatedItems(buildId)});
+            document.querySelector("#artifactEvaluateBtn")?.classList.add("show-notice");
+          }
+        };
+      }
+    }
+    
+    /** Stat Target Toggle **/
+    let useTargetsChk = buildSection.querySelector("#useTargets");
+    if(!useTargetsChk.onchange)
+    {
+      useTargetsChk.onchange = event => {
+        Renderer.rerender(buildSection.querySelector(".character-artifacts"), {relatedItems:this.getRelatedItems(buildId)});
+      };
+    }
+    
+    this._addArtifactListsEventHandlers(buildSection.querySelector(".character-artifacts"));
+  }
+  
+  _addArtifactListsEventHandlers(characterArtifacts)
+  {
+    // Determine the build section element.
+    let buildSection = characterArtifacts.parentElement;
+    while(buildSection && !buildSection.classList.contains("character-build"))
+      buildSection = buildSection.parentElement;
+    if(!buildSection)
+    {
+      console.error(`Equip button element has no ancestor with the 'list-item' class.`);
+      return false;
+    }
+    
+    let buildId = buildSection.attributes.getNamedItem('name')?.value;
+    if(!buildId)
+    {
+      console.log(`Build section does not have a name attribute specifying what build it's for:`, buildSection);
+      return false;
+    }
+    
+    // Determine the root template element.
+    let rootElement = buildSection.parentElement;
+    while(rootElement && rootElement.dataset.template != this.constructor.templateName)
+      rootElement = rootElement.parentElement;
+    if(!rootElement)
+    {
+      console.error(`Artifact list container element has no ancestor with the template data attribute '${this.constructor.templateName}'.`, characterArtifacts);
+      return false;
+    }
+    
+    /** Equip Artifact Button **/
+    let equipButtons = characterArtifacts.querySelectorAll(".equip-artifact");
+    for(let btn of equipButtons)
+    {
+      // Add the equip event.
+      if(!btn.onclick)
       {
         // Determine the item for the button.
-        let itemElement = btn.parentElement;
-        while(itemElement && !itemElement.classList.contains("list-item"))
-          itemElement = itemElement.parentElement;
-        if(!itemElement)
+        let artifactElement = btn.parentElement;
+        while(artifactElement && !artifactElement.classList.contains("list-item"))
+          artifactElement = artifactElement.parentElement;
+        if(!artifactElement)
         {
           console.error(`Equip button element has no ancestor with the 'list-item' class.`);
           return false;
         }
-        let itemName = itemElement.attributes.getNamedItem('name')?.value;
         
         // Verify that item and field are found.
-        let item = this.list.viewer.lists.ArtifactList.get(itemName);
-        if(!item)
+        let artifact = Renderer.controllers.get(artifactElement.dataset.uuid);
+        if(!artifact)
         {
-          console.error(`Unable to determine '${itemName}' item of this button element to equip.`);
+          console.error(`Unable to determine item of this button element to equip.`, artifactElement);
           return false;
         }
+        
         btn.onclick = event => {
-          Renderer.renderList2(`ArtifactList/${item.slotKey}`, {
-            items: item.list.items(item.slotKey).sort(Character.sortArtifacts.bind(this,buildId)),
-            fields: item.list.display.fields,
-            parent: this,
-            force: true,
-          });
-          item.update("location", this.base?.key ?? this.key);
-          this.list.viewer.store();
+          artifact.update("location", this.base?.key ?? this.key);
+          let relatedItems = this.getRelatedItems(buildId);
+          // This could be handled by implementing "needsUpdate" on all templated elements, and using an "update()" on an associated item.
+          Renderer.rerender(rootElement.querySelector(".character-stats"), {relatedItems});
+          Renderer.rerender(characterArtifacts, {relatedItems});
         };
       }
     }

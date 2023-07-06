@@ -49,12 +49,8 @@ export default class UIItem extends UIController {
     let elements = Array.from(document.querySelectorAll(`.list-item[name='${this.getUnique()}'] .type-dependent`));
     elements.forEach(element => {
       for(let dep of element.dependencies ?? [])
-      {
         if(dep?.type === type)
-        {
-          element.needsUpdate = true;
-        }
-      }
+          Renderer.queueUpdate(element);
     });
   }
   
@@ -63,16 +59,12 @@ export default class UIItem extends UIController {
     return {};
   }
   
-  addPopupEventHandlers(popupBody)
-  {
-  }
-  
   unlink({skipList, skipHTML}={})
   {
     super.unlink();
-    if(!skipList)
-      this.list?.update("list", this, "remove");
     if(!skipHTML)
       Renderer.removeItem(this);
+    if(!skipList)
+      this.list?.update("list", this, "remove");
   }
 }

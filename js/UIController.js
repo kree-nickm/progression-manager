@@ -1,9 +1,11 @@
 import { handlebars, Renderer } from "./Renderer.js";
 
-handlebars.registerHelper("get", (item, property, context) => item.get(property));
+handlebars.registerHelper("getProperty", (item, property, context) => item.getProperty(property));
+handlebars.registerHelper("uuid", (item, context) => {
+  try{return item.uuid;}catch(x){console.error(context, x);return "*INVALID UUID*";}
+});
 
 export default class UIController {
-  static controllers = new Map();
   static dontSerialize = ["uuid","dependents"];
   
   static fromJSON(data, {addProperties={}}={})
@@ -18,51 +20,51 @@ export default class UIController {
   }
   
   uuid;
-  dependents = {};
+  dependents = {}; // Note: In the future, properties of this object could be changed to Sets instead of Arrays.
   
   constructor()
   {
     this.uuid = crypto.randomUUID();
-    UIController.controllers.set(this.uuid, this);
+    Renderer.controllers.set(this.uuid, this);
   }
   
-  parseField(field, create=true)
+  parseProperty(prop, {create=true}={})
   {
-    if(!Array.isArray(field))
-      field = field.split(".");
+    if(!Array.isArray(prop))
+      prop = prop.split(".");
     let obj = this;
-    for(let i=0; i<field.length-1; i++)
+    for(let i=0; i<prop.length-1; i++)
     {
-      if(obj[field[i]] == undefined)
+      if(obj[prop[i]] == undefined)
       {
         if(create)
-          obj[field[i]] = {};
+          obj[prop[i]] = {};
         else
         {
           obj = undefined;
           break;
         }
       }
-      else if(typeof(obj[field[i]]) != "object")
+      else if(typeof(obj[prop[i]]) != "object")
       {
-        console.error(`[${this.constructor.name} object].${field.join('.')} encountered a non-object at '${field[i]}'.`);
-        return {string:field.join("."), path:field};
+        console.error(`[${this.constructor.name} object].${prop.join('.')} encountered a non-object at '${prop[i]}'.`);
+        return {string:prop.join("."), path:prop};
       }
-      obj = obj[field[i]];
+      obj = obj[prop[i]];
       if(!obj)
         break;
     }
-    return {string:field.join("."), path:field, object:obj, property:field[field.length-1], value:obj?.[field[field.length-1]]};
+    return {string:prop.join("."), path:prop, object:obj, property:prop[prop.length-1], value:obj?.[prop[prop.length-1]]};
   }
   
-  get(field)
+  getProperty(prop, {create=true}={})
   {
-    return this.parseField(field, false).value;
+    return this.parseProperty(prop, false).value;
   }
   
   update(field, value, action="")
   {
-    field = this.parseField(field);
+    field = this.parseProperty(field, {create: value!==undefined});
     value = this.beforeUpdate(field, value);
     let needsUpdate = false;
     if(typeof(field.value) == "object" || typeof(field.value) == "function")
@@ -73,6 +75,7 @@ export default class UIController {
       {
         if(Array.isArray(field.value))
         {
+          // Note: I'm not sure if "notify" always needs to trigger a viewer.store
           if(action == "notify")
             needsUpdate = true;
           else if(action == "replace")
@@ -132,12 +135,10 @@ export default class UIController {
     
     if(needsUpdate)
     {
+      window.viewer.queueStore();
       for(let dep of this.dependents[field.string] ?? [])
         if(dep)
-        {
-          Renderer.needsUpdate.add(dep);
-          dep.needsUpdate = true;
-        }
+          Renderer.queueUpdate(dep);
     }
     this.afterUpdate(field, value);
     return this;
@@ -159,38 +160,39 @@ export default class UIController {
     for(let field in this.dependents)
       for(let dep of this.dependents[field] ?? [])
         if(dep)
-        {
-          Renderer.needsUpdate.add(dep);
-          dep.needsUpdate = true;
-        }
+          Renderer.queueUpdate(dep);
   }
   
   cleanupDependents()
   {
     for(let field in this.dependents)
-      this.dependents[field] = this.dependents[field].filter(element => element && element.parentElement);
+      this.dependents[field] = this.dependents[field].filter(element => element && element.isConnected);
   }
   
-  addDependent(field, dep)
+  addDependent(prop, dep)
   {
-    field = this.parseField(field);
-    if(!this.dependents[field.string])
-      this.dependents[field.string] = [];
-    this.dependents[field.string].push(dep);
+    prop = this.parseProperty(prop);
+    if(!this.dependents[prop.string])
+      this.dependents[prop.string] = [];
+    this.dependents[prop.string].push(dep);
     return this;
   }
   
-  removeDependent(field, dep)
+  removeDependent(prop, dep)
   {
-    field = this.parseField(field);
-    if(this.dependents[field.string])
-      this.dependents[field.string] = this.dependents[field.string].filter(element => element != dep);
+    prop = this.parseProperty(prop);
+    if(this.dependents[prop.string])
+      this.dependents[prop.string] = this.dependents[prop.string].filter(element => element != dep);
     return this;
+  }
+  
+  onRender(element)
+  {
   }
   
   unlink(options)
   {
-    UIController.controllers.delete(this.uuid);
+    Renderer.controllers.delete(this.uuid);
   }
   
   toJSON()

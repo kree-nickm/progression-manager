@@ -1,4 +1,4 @@
-<div class="list-item {{#ifeq character.key item.location}}equipped{{/ifeq}} {{#iffave character item.setKey buildId}}favorite{{/iffave}}" name="{{unique item}}" data-template="renderArtifactAsCard">
+<div class="list-item {{#ifeq character.key item.location}}equipped{{/ifeq}} {{#iffave character item.setKey buildId}}favorite{{/iffave}}" name="{{unique item}}" data-template="renderArtifactAsCard" data-uuid="{{uuid item}}">
   {{> renderItemField item=item field=fields.set wrapper="div"}}
     <div class="row gx-1 main-stats">
       <div class="col-3 level">{{> renderItemField item=item field=fields.level wrapper="span"}}</div>
@@ -6,14 +6,16 @@
       <div class="col-3 stat-value">{{> renderItemField item=item field=fields.characterScore wrapper="span" params=(array character)}}</div>
     </div>
   {{#times 4}}
-  {{#if (lookup (lookup item.substats @index) "value")}}
+      {{#if (lookup item.substats @index "value" ignoreUndefined=true)}}
     <div class="substat row gx-1">
-        <div class="col-4">{{artifactStat (lookup (lookup item.substats @index) "key")}}</div>
-        <div class="col-2">{{> renderItemField item=item field=(lookup fields (concat (lookup (lookup item.substats @index) "key") "Sum")) wrapper="span"}}</div>
-        <div class="col-3">{{> renderItemField item=item field=(lookup fields (concat (lookup (lookup item.substats @index) "key") "Rating")) wrapper="span"}}</div>
-        <div class="col-3">{{> renderItemField item=item field=fields.characterSubstatRating wrapper="span" params=(array character (lookup (lookup item.substats @index) "key"))}}</div>
+        <div class="col-4">{{artifactStat (lookup item.substats @index "key")}}</div>
+        <div class="col-2">{{> renderItemField item=item field=(lookup fields (concat (lookup item.substats @index "key") "Sum")) wrapper="span"}}</div>
+        <div class="col-3">{{> renderItemField item=item field=(lookup fields (concat (lookup item.substats @index "key") "Rating")) wrapper="span"}}</div>
+        <div class="col-3">{{> renderItemField item=item field=fields.characterSubstatRating wrapper="span" params=(array character (lookup item.substats @index "key"))}}</div>
     </div>
-  {{/if}}
+      {{else}}
+    <div class="substat">-</div>
+      {{/if}}
   {{/times}}
   {{#if item.location}}
     <div class="equip"><b>User:</b> {{item.location}}</div>

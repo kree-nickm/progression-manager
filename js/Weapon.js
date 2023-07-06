@@ -10,7 +10,6 @@ export default class Weapon extends GenshinItem
   static dontSerialize = GenshinItem.dontSerialize.concat(["MaterialList","loaded","character"]);
   static goodProperties = ["key","level","ascension","refinement","location","lock"];
   static templateName = "renderWeaponAsPopup";
-  static templateTitleName = "renderWeaponAsPopupTitle";
   
   id;
   key = "";
@@ -168,8 +167,8 @@ export default class Weapon extends GenshinItem
     if(this.level < this.levelCap)
       this.update("level", this.levelCap);
     this.update("ascension", this.ascension+1);
-    this.list.viewer.store();
-    this.list.render();
+    //this.list.viewer.store();
+    //this.list.render();
   }
   
   canUpPhase(withCrafting=false)

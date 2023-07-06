@@ -197,7 +197,7 @@ document.getElementById("savePastebinBtn").addEventListener("click", async event
   let response = await window.viewer.saveToPastebin();
   if(response)
   {
-    msg.innerHTML = `Saved to <a href="https://pastebin.com/${response}" target="_blank">Pastebin</a> successfully.<br/><b>Code: <tt>${response}</tt></b><br/>Data will be available for 10 minutes.`;
+    msg.innerHTML = `Saved to <a href="https://pastebin.com/${response}" target="_blank">Pastebin</a> successfully.<br/><b>Code: <tt>${response}</tt></b><br/>Data will be available for 24 hours.`;
   }
   else
   {

@@ -1,12 +1,17 @@
 import handlebars from 'https://cdn.jsdelivr.net/npm/handlebars@4.7.7/+esm';
 
-handlebars.registerHelper("itemField", (item, field, property, context) => {
-  let params = context.hash.params ? (Array.isArray(context.hash.params) ? context.hash.params : [context.hash.params]) : [];
+handlebars.registerHelper('logparams', function(...params) {
+  console.log(this, ...params);
+  return "";
+});
+
+handlebars.registerHelper("itemField", (item, field, property, options) => {
+  let params = options.hash.params ? (Array.isArray(options.hash.params) ? options.hash.params : [options.hash.params]) : [];
   return field.get(property, item, ...params);
 });
 
-handlebars.registerHelper("itemChildren", (item, field, context) => {
-  let params = context.hash.params ? (Array.isArray(context.hash.params) ? context.hash.params : [context.hash.params]) : [];
+handlebars.registerHelper("itemChildren", (item, field, options) => {
+  let params = options.hash.params ? (Array.isArray(options.hash.params) ? options.hash.params : [options.hash.params]) : [];
   let result = Renderer.contentToHTML(field.get('value', item, ...params));
   
   let button = field.get('button',item,...params);
@@ -35,17 +40,17 @@ handlebars.registerHelper("itemChildren", (item, field, context) => {
   return new handlebars.SafeString(result);
 });
 
-handlebars.registerHelper("itemClasses", (item, field, context) => {
-  let params = context.hash.params ? (Array.isArray(context.hash.params) ? context.hash.params : [context.hash.params]) : [];
+handlebars.registerHelper("itemClasses", (item, field, options) => {
+  let params = options.hash.params ? (Array.isArray(options.hash.params) ? options.hash.params : [options.hash.params]) : [];
   let result = [];
   if(!item)
   {
-    console.error(`item passed to itemClasses helper is invalid`, item, field, context);
+    console.error(`item passed to itemClasses helper is invalid`, item, field, options);
     return "";
   }
   if(!field)
   {
-    console.error(`field passed to itemClasses helper is invalid`, item, field, context);
+    console.error(`field passed to itemClasses helper is invalid`, item, field, options);
     return "";
   }
   let classes = field.get('classes', item, ...params);
@@ -55,15 +60,9 @@ handlebars.registerHelper("itemClasses", (item, field, context) => {
   return result.join(" ");
 });
 
-handlebars.registerHelper("fieldClasses", (field, context) => field.columnClasses.join(" "));
-
-handlebars.registerHelper("lower", (str, context) => str.toLowerCase());
-
-handlebars.registerHelper("concat", function() {
-  let result = "";
-  for(let i=0; i<arguments.length-1; i++)
-    result += String(arguments[i]);
-  return result;
+handlebars.registerHelper("concat", (...params) => {
+  let context = params.pop();
+  return params.join(context.hash?.separator ?? "");
 });
 
 handlebars.registerHelper('times', function(n, options) {
@@ -82,24 +81,34 @@ handlebars.registerHelper('times', function(n, options) {
   return accum;
 });
 
-handlebars.registerHelper('ifeq', function(first, second, options) {
-  if(first == second)
-    return options.fn(this);
-  else
-    return options.inverse(this);
-});
-
-handlebars.registerHelper('array', function(...params) {
-  let context = params.pop();
-  return params;
+handlebars.registerHelper('ifeq', function(first, second, options) {return (first === second) ? options.fn(this) : options.inverse(this)});
+handlebars.registerHelper('array', (...params) => params.slice(0, -1));
+handlebars.registerHelper("fieldClasses", (field, options) => field.columnClasses.join(" "));
+handlebars.registerHelper("lower", (str, options) => str.toLowerCase());
+handlebars.registerHelper('fco', (value, fallback, options) => value ? value : fallback);
+handlebars.registerHelper('nco', (value, fallback, options) => value ?? fallback);
+handlebars.registerHelper('lookup', function(...params) {
+  let options = params.pop();
+  let base = params.shift();
+  let obj = base;
+  for(let prop of params)
+  {
+    if(obj === undefined)
+    {
+      if(!options.hash.ignoreUndefined) console.warn(`Helper 'lookup' attempted to get property '${prop}' on non-existent object: [base].${params.join('.')}; base:`, base);
+      return obj;
+    }
+    obj = obj[prop];
+  }
+  return obj;
 });
 
 class Renderer
 {
   static genericSorters = {
     'string': (prop,o,a,b) => {
-      let A = String(a.get(prop));
-      let B = String(b.get(prop));
+      let A = String(a.getProperty(prop));
+      let B = String(b.getProperty(prop));
       if(!A && B)
         return 1;
       else if(A && !B)
@@ -110,8 +119,8 @@ class Renderer
         return o*A.localeCompare(B);
     },
     'number': (prop,o,a,b) => {
-      let A = parseFloat(a.get(prop));
-      let B = parseFloat(b.get(prop));
+      let A = parseFloat(a.getProperty(prop));
+      let B = parseFloat(b.getProperty(prop));
       if(isNaN(A) && !isNaN(B))
         return 1;
       else if(!isNaN(A) && isNaN(B))
@@ -122,8 +131,8 @@ class Renderer
         return o*(B-A);
     },
     'boolean': (prop,o,a,b) => {
-      let A = a.get(prop);
-      let B = b.get(prop);
+      let A = a.getProperty(prop);
+      let B = b.getProperty(prop);
       if(!A && B)
         return 1*o;
       else if(A && !B)
@@ -135,21 +144,63 @@ class Renderer
   
   static partialsUsed = {
     'renderListAsTable': ["renderItem"],
-    'renderCharacterAsPopup': ["renderCharacterBuild","renderArtifactStatSlider","renderListAsColumn","renderArtifactAsCard"],
+    'renderCharacterAsPopup': ["renderCharacterBuild","renderCharacterStats"],
+    'renderCharacterBuild': ["renderArtifactStatSlider","renderCharacterArtifactLists"],
+    'renderCharacterArtifactLists': ["renderListAsColumn"],
+    'renderListAsColumn': ["renderArtifactAsCard"],
   };
   
-  static needsUpdate = new Set();
-  static #templates = {};
+  static controllers = new Map();
+  static _needsUpdate = new Set();
+  static _queuedUpdates = [];
+  static _updateTimeout;
+  static _templates = {};
+  
+  static queueUpdate(element)
+  {
+    if(element)
+    {
+      Renderer._needsUpdate.add(element);
+      element.needsUpdate = true;
+    }
+    if(Renderer._updateTimeout)
+      clearTimeout(Renderer._updateTimeout);
+    Renderer._updateTimeout = setTimeout(() => {
+      Renderer._needsUpdate.forEach(element => {
+        if(element.isConnected)
+        {
+          if(element.classList.contains("list-item-field"))
+          {
+            console.debug(`Updating list item field element:`, element);
+            Renderer.renderItemField(element);
+          }
+          else
+          {
+            console.debug(`Updating misc element:`, element);
+            Renderer.rerender(element);
+          }
+        }
+        else
+        {
+          console.debug(`Cannot update disconnected element:`, element);
+        }
+      });
+      Renderer._needsUpdate.clear();
+    }, 100);
+  }
   
   static async getTemplates(...templates)
   {
+    for(let i=0; i<templates.length; i++)
+      if(Renderer.partialsUsed[templates[i]])
+        templates = templates.concat(Renderer.partialsUsed[templates[i]]);
     for(let templateFile of templates)
     {
-      if(templateFile && !Renderer.#templates[templateFile])
+      if(templateFile && !Renderer._templates[templateFile])
       {
         try
         {
-          Renderer.#templates[templateFile] = await fetch(`templates/${templateFile}.html`)
+          Renderer._templates[templateFile] = await fetch(`templates/${templateFile}.html`, {cache:"no-cache"})
           .catch(err => console.error(`Template file not found 'templates/${templateFile}.html'.`, err))
           .then(response => response.text())
           .then(src => {
@@ -168,7 +219,7 @@ class Renderer
         console.trace();
       }
     }
-    return Renderer.#templates;
+    return Renderer._templates;
   }
   
   static contentToHTML(content, path=[])
@@ -253,8 +304,9 @@ class Renderer
       let index = Array.from(parentElement.children).indexOf(element);
       if(!template)
         template = element.dataset.template ?? "renderListAsTable";
-      let templates = await Renderer.getTemplates(template, ...(Renderer.partialsUsed[template] ?? []), "renderItemField");
+      let templates = await Renderer.getTemplates(template, "renderItemField");
       element.outerHTML = templates[template]({
+        item: list,
         name: listKey,
         parent: parent,
         groups: list.display.getGroups({include, exclude}),
@@ -264,7 +316,7 @@ class Renderer
       element = parentElement.children.item(index);
     }
     if(parent)
-      parent.addPopupEventHandlers(element);
+      parent.onRender(element);
       
     // Add event handlers for collapsing groups.
     element.querySelectorAll(".group-header").forEach(groupElem => {
@@ -320,6 +372,7 @@ class Renderer
               console.warn(`No sort algorithm given for field '${fieldName}'.`);
               return;
             }
+            list.update("list", {}, "notify");
             
             // Reorder the HTML elements.
             let listElement = element.querySelector(".list-target");
@@ -335,7 +388,7 @@ class Renderer
                 console.warn(`Unable to find item element for item '${item.getUnique()}' while sorting by '${fieldName}'.`);
             }
             
-            list.viewer.store();
+            //list.viewer.store();
           }
           else
             console.error(`Unable to find field '${fieldName}'.`);
@@ -343,7 +396,7 @@ class Renderer
     });
   }
   
-  static async rerender(element, data={}, eventItem)
+  static async rerender(element, data={}, {template,showPopup}={})
   {
     let parentElement = element.parentNode;
     if(!parentElement) return console.error(`Element has no parent:`, element);
@@ -351,33 +404,61 @@ class Renderer
     let index = Array.from(parentElement.children).indexOf(element);
     if(index == -1) return console.error(`Element can't be found within its parent:`, element, parentElement);
     
-    let template = element.dataset.template;
+    if(!template)
+      template = element.dataset.template;
     if(!template) return console.error(`Element has no template specified in a data attribute:`, element);
     
-    let templates = await Renderer.getTemplates(template, ...(Renderer.partialsUsed[template] ?? []), "renderItemField");
+    if(!data.item)
+      data.item = Renderer.controllers.get(element.dataset.uuid);
+      
+    if(!data.item) return console.error(`Element has no associated item:`, element);
+    
+    if(!data.fields && data.item.display)
+      data.fields = data.item.display.fields;
+    
+    if(!data.relatedItems && typeof(data.item.getRelatedItems) === "function")
+      data.relatedItems = data.item.getRelatedItems();
+    
+    let templates = await Renderer.getTemplates(template, "renderItemField");
     element.outerHTML = templates[template](data);
     element = parentElement.children.item(index);
     
     // Add context-specific event handlers.
-    if(typeof(eventItem?.addPopupEventHandlers) == "function")
-      eventItem?.addPopupEventHandlers(element);
+    data.item.onRender(element);
     
     // Iterate through all item fields.
     element.querySelectorAll(".list-item-field").forEach(Renderer.renderItemField);
     
     // Final UI preperation.
     $(element).find(".selectpicker").selectpicker('render');
+    
+    if(showPopup)
+      bootstrap.Modal.getOrCreateInstance(data.item.viewer.elements.popup).show()
   }
   
-  static async removeItem(item)
+  static removeItem(item)
   {
-    Array.from(document.querySelectorAll(`.list-item[name="${item.getUnique()}"]`)).forEach(element => element.remove())
+    Array.from(document.querySelectorAll(`.list-item[data-uuid="${item.uuid}"]`)).forEach(element => {
+      let fieldElements = element.querySelectorAll(".list-item-field");
+      for(let fieldElement of fieldElements)
+      {
+        if(fieldElement.dependencies)
+        {
+          for(let dep of fieldElement.dependencies)
+          {
+            if(dep?.item && dep?.field)
+              dep.item.removeDependent(dep.field, fieldElement);
+          }
+        }
+      }
+      element.remove();
+    });
   }
   
   static async renderNewItem(item, {data={}, template, include=[], exclude=[]}={})
   {
     template = template ?? "renderItem";
-    let templates = await Renderer.getTemplates(template);
+    let templates = await Renderer.getTemplates(template, "renderItemField");
     let element = document.querySelector(`.list[name='${item.list.constructor.name}']`); // TODO: Could match multiple.
     {
       let listElement = element.querySelector(".list-target");
@@ -397,46 +478,6 @@ class Renderer
       let fieldElements = newElement.querySelectorAll(".list-item-field");
       fieldElements.forEach(Renderer.renderItemField);
     }
-  }
-  
-  static async renderItemDetails(item)
-  {
-    Renderer.popup = bootstrap.Modal.getOrCreateInstance(window.viewer.elements.popup);
-    Renderer.popup.item = item;
-    
-    let popupTitle = window.viewer.elements.popup.querySelector(".modal-title");
-    if(item.constructor.templateTitleName)
-    {
-      let templatesTitle = await Renderer.getTemplates(item.constructor.templateTitleName, ...(Renderer.partialsUsed[item.constructor.templateTitleName] ?? []), "renderItemField");
-      popupTitle.innerHTML = templatesTitle[item.constructor.templateTitleName]({
-        fields: item.list.display.fields,
-        item,
-      });
-    }
-    else
-      popupTitle.innerHTML = item.name;
-    
-    let popupBody = window.viewer.elements.popup.querySelector(".modal-body");
-    let templateName = item.constructor.templateName ?? "renderItem";
-    let templates = await Renderer.getTemplates(templateName, ...(Renderer.partialsUsed[templateName] ?? []), "renderItemField");
-    popupBody.innerHTML = templates[templateName]({
-      fields: item.list.display.fields,
-      item,
-      relatedItems: item.getRelatedItems(),
-      wrapper: "div",
-      fieldWrapper: "div",
-    }, {allowProtoMethodsByDefault:true, allowProtoPropertiesByDefault:true});
-    $('.selectpicker').selectpicker();
-    
-    Renderer.updatePopup();
-    item.addPopupEventHandlers(popupBody);
-    Renderer.popup.show();
-  }
-  
-  static async updatePopup()
-  {
-    let itemElements = Renderer.popup._dialog.querySelectorAll(".list-item-field");
-    itemElements.forEach(Renderer.renderItemField);
   }
   
   static async renderItemField(element)
@@ -585,7 +626,9 @@ class Renderer
     {
       if(!element.onclick)
       {
-        element.onclick = event => Renderer.renderItemDetails(popup);
+        element.onclick = event => {
+          Renderer.rerender(popup.viewer.elements.popup.querySelector(".modal-content"), {item:popup}, {template: popup.constructor.templateName, showPopup: true});
+        };
         element.classList.add("popup");
       }
     }
@@ -607,7 +650,9 @@ class Renderer
         {
           if(!subElement.onclick)
           {
-            subElement.onclick = event => Renderer.renderItemDetails(valueArr[iContent].popup);
+            subElement.onclick = event => {
+              Renderer.rerender(valueArr[iContent].popup.viewer.elements.popup.querySelector(".modal-content"), {item: valueArr[iContent].popup}, {template: valueArr[iContent].popup.constructor.templateName, showPopup: true});
+            };
             subElement.classList.add("popup");
           }
         }
@@ -682,7 +727,7 @@ class Renderer
       {
         if(fieldElement.editTarget)
           fieldElement.onclick = event => {
-            let fieldData = fieldElement.editTarget.item.parseField(fieldElement.editTarget.field);
+            let fieldData = fieldElement.editTarget.item.parseProperty(fieldElement.editTarget.field);
             if(Array.isArray(fieldData.value))
             {
               fieldElement.editTarget.item.update(fieldElement.editTarget.field, fieldElement.editValue, fieldElement.editChecked ? "remove" : "push");
@@ -690,8 +735,8 @@ class Renderer
             else
               fieldElement.editTarget.item.update(fieldElement.editTarget.field, !fieldElement.editChecked);
             //fieldElement.editTarget.item.list.viewer.updated();
-            list.viewer.store();
-            list.render();
+            //list.viewer.store();
+            //list.render();
           };
         else if(fieldElement.editFunc)
           fieldElement.onclick = fieldElement.editFunc;
@@ -720,7 +765,7 @@ class Renderer
           else
           {
             editElement.value = "";
-            editElement.placeholder = (fieldElement.editTarget?.item?.get(fieldElement.editTarget?.field) ?? 0);
+            editElement.placeholder = (fieldElement.editTarget?.item?.getProperty(fieldElement.editTarget?.field) ?? 0);
           }
           editElement.focus();
         };
@@ -749,8 +794,8 @@ class Renderer
               else
                 throw new Error(`Neither fieldElement.editTarget nor fieldElement.editFunc were specifed.`);
               //fieldElement.editTarget?.item.list.viewer.updated();
-              list.viewer.store();
-              list.render();
+              //list.viewer.store();
+              //list.render();
             }
           }
         };

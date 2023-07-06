@@ -259,6 +259,18 @@ export default class WeaponList extends GenshinList
         {item, field:"level"},
       ],
     });
+    
+    let imageField = this.display.addField("image", {
+      label: "Image",
+      tags: ["detailsOnly"],
+      dynamic: false,
+      value: item => {
+        return {
+          tag: "img",
+          src: `https://rerollcdn.com/GENSHIN/Weapons/${item.name.replaceAll(' ','_').replaceAll('"','')}.png`,
+        };
+      },
+    });
   }
   
   clear()
@@ -306,7 +318,7 @@ export default class WeaponList extends GenshinList
             lock: false,
           });
           selectAdd.value = "";
-          this.viewer.store();
+          //this.viewer.store();
           Renderer.renderNewItem(item, {exclude: field => field.tags.indexOf("detailsOnly") > -1});
         }
       });

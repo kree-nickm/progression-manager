@@ -209,10 +209,14 @@ export default class Artifact extends GenshinItem
     return this.storedStats.ratings[statId];
   }
   
-  getCharacterScoreParts(character=this.list.viewer.lists.CharacterList.list[0], buildId="default")
+  getCharacterScoreParts(character=this.list.viewer.lists.CharacterList.list[0], buildId="default", useTargets=false)
   {
-    if(!this.storedStats.characters[character.key])
+    if(!this.storedStats.characters[character.key]?.[buildId]?.[useTargets?'targets':'base'])
     {
+      if(!this.storedStats.characters[character.key])
+        this.storedStats.characters[character.key] = {};
+      if(!this.storedStats.characters[character.key][buildId])
+        this.storedStats.characters[character.key][buildId] = {};
       let mainImportanceFactor = character?.getBuild(buildId)[this.slotKey+'Stat']?.[this.mainStatKey] ?? 0;
       let mainRarityFactor = (this.rarity==1 ? 0.5 : (this.rarity==2 ? 0.6 : (this.rarity==3 ? 0.75 : (this.rarity==4 ? 0.9 : 1))));
       let mainScore = mainImportanceFactor * mainRarityFactor * 8;
@@ -222,48 +226,45 @@ export default class Artifact extends GenshinItem
       {
         for(let substat of Artifact.substats)
         {
-          subScores[substat] = Math.max(character.getBuild(buildId).artifactSubstats[substat]??0, Artifact.substatMins[substat]) * this.getSubstatRating(substat).sum;
+          let prio = character.getBuild(buildId).artifactSubstats[substat] ?? 0;
+          if(useTargets)
+          {
+            if(substat == "enerRech_")
+            {
+              let er = character.getStat("enerRech_");
+              if(er >= character.getBuild(buildId).maxER)
+                prio = 0;
+              else if(er < character.getBuild(buildId).minER)
+                prio = 3;
+            }
+            else if((substat == "critRate_" || substat == "critDMG_") && character.getBuild(buildId).ratioCritRate > 0 && character.getBuild(buildId).ratioCritDMG > 0)
+            {
+              let currentRatio = character.getStat("critRate_") / character.getStat("critDMG_");
+              let targetRatio = character.getBuild(buildId).ratioCritRate / character.getBuild(buildId).ratioCritDMG;
+              if(substat == "critRate_" && currentRatio > targetRatio)
+                prio -= targetRatio / currentRatio;
+              else if(substat == "critDMG_" && currentRatio < targetRatio)
+                prio -= currentRatio / targetRatio;
+            }
+          }
+          subScores[substat] = Math.max(prio, Artifact.substatMins[substat]) * this.getSubstatRating(substat).sum;
           subScore += subScores[substat];
         }
       }
-      this.storedStats.characters[character.key] = {mainScore, subScore, subScores};
+      this.storedStats.characters[character.key][buildId][useTargets?'targets':'base'] = {mainScore, subScore, subScores};
     }
-    return this.storedStats.characters[character.key];
+    return this.storedStats.characters[character.key][buildId][useTargets?'targets':'base'];
   }
   
-  getCharacterScore(character=this.list.viewer.lists.CharacterList.list[0], level=20, buildId="default")
+  getCharacterScore(character=this.list.viewer.lists.CharacterList.list[0], level=20, buildId="default", useTargets=false)
   {
-    let score = this.getCharacterScoreParts(character, buildId);
+    let score = this.getCharacterScoreParts(character, buildId, useTargets);
     level = Math.max(0, Math.min(level, this.rarity<=2 ? 4 : (this.rarity==3 ? 12 : (this.rarity==4 ? 16 : 20))));
     let levelFactor = level / 20 * 6.8 + 1.2;
     let max = character.getMaxArtifactScore(this.slotKey, buildId, level);
     if(!max)
       return 0;
     return ((score.mainScore * levelFactor / 8) + score.subScore) / max;
-  }
-  
-  getMaxCharacterScore()
-  {
-    if(!this.storedStats.characters["*"])
-    {
-      let scores = this.list.viewer.lists.CharacterList.list.map(character => [character,this.getCharacterScore(character)]);
-      let maxChar = "";
-      let maxScore = 0;
-      for(let tup of scores)
-      {
-        if(tup[1] > maxScore)
-        {
-          maxChar = tup[0].name;
-          maxScore = tup[1];
-        }
-        else if(tup[1] == maxScore)
-        {
-          maxChar = maxChar +", "+ tup[0].name;
-        }
-      }
-      this.storedStats.characters["*"] = {character:maxChar, score:maxScore};
-    }
-    return this.storedStats.characters["*"];
   }
   
   unlink(options)

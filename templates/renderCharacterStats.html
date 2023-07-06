@@ -1,0 +1,23 @@
+<div class="character-stats" data-template="renderCharacterStats" data-uuid="{{uuid item}}">
+  <h3>Current Stats (Work-in-Progress)</h3>
+  <div class="row">
+    <div class="col-3">Crit Rate</div>
+    <div class="col-3">{{> renderItemField item=item field=fields.critRate_Current wrapper="span"}}%</div>
+  </div>
+  <div class="row">
+    <div class="col-3">Crit DMG</div>
+    <div class="col-3">{{> renderItemField item=item field=fields.critDMG_Current wrapper="span"}}%</div>
+  </div>
+  <div class="row">
+    <div class="col-3">Elemental Mastery</div>
+    <div class="col-3">{{> renderItemField item=item field=fields.eleMasCurrent wrapper="span"}}</div>
+  </div>
+  <div class="row">
+    <div class="col-3">Energy Recharge</div>
+    <div class="col-3">{{> renderItemField item=item field=fields.enerRech_Current wrapper="span"}}%</div>
+  </div>
+  <div class="row">
+    <div class="col-3">Healing Bonus</div>
+    <div class="col-3">{{> renderItemField item=item field=fields.heal_Current wrapper="span"}}%</div>
+  </div>
+</div>

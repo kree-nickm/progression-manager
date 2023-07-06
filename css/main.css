@@ -223,6 +223,56 @@ table .stat-critRate_, table .stat-rating-critRate_, table .artifact-wanters {
   opacity: 0.5;
 }
 
+/* Image Icons */
+
+.item-display {
+  border: 1px solid black;
+  border-radius: 1em;
+  text-align: center;
+}
+
+.item-display.display-full {
+  max-width: min-content;
+}
+
+.item-display .display-img {
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
+
+.item-display .display-img.quality-5 {
+  background: rgba(210,180,20,0.8);
+}
+
+.item-display .display-img.quality-4 {
+  background: rgba(145,30,190,0.8);
+}
+
+.item-display .display-img.quality-3 {
+  background: rgba(40,140,220,0.8);
+}
+
+.item-display .display-img.quality-2 {
+  background: rgba(80,200,40,0.8);
+}
+
+.item-display .display-img.quality-1 {
+  background: rgba(150,150,150,0.8);
+}
+
+.item-display .display-caption {
+  line-height: 1em;
+  padding: 0em 0.8ex 0.3em 0.8em;
+}
+
+.item-display.display-full img {
+  height: 6em;
+}
+
+.item-display.item-weapon.display-full img {
+  height: 8em;
+}
+
 /* Character Details Popup */
 
 .modal-title .icon img {

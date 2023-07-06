@@ -114,7 +114,7 @@ export default class ArtifactList extends GenshinList
     });
     //console.log(`...Done.`);
     document.querySelector("#artifactEvaluateBtn")?.classList.remove("show-notice");
-    await this.render();
+    //await this.render();
   }
   
   afterUpdate(field, value, previous)
@@ -126,10 +126,23 @@ export default class ArtifactList extends GenshinList
   setupDisplay()
   {
     let idField = this.display.addField("id", {
-      label: "id",
-      sort: {generic: {type:"number",property:"id"}},
-      dynamic: false,
-      value: item => item.id,
+      label: "I",
+      labelTitle: "Sort in the same order as the in-game inventory when you select 'quality'.",
+      sort: {func: (o,a,b) => {
+        let slotSortR = ["circlet","goblet","sands","plume","flower"];
+        let A = a.rarity*52500 + a.level*2500 + Object.keys(GenshinArtifactData).indexOf(a.setKey)*25 + slotSortR.indexOf(a.slotKey)*5 + a.substats.length;
+        let B = b.rarity*52500 + b.level*2500 + Object.keys(GenshinArtifactData).indexOf(b.setKey)*25 + slotSortR.indexOf(b.slotKey)*5 + b.substats.length;
+        if(isNaN(A) && !isNaN(B))
+          return 1;
+        else if(!isNaN(A) && isNaN(B))
+          return -1;
+        else if(isNaN(A) && isNaN(B))
+          return 0;
+        else
+          return o*(B-A);
+      }},
+      dynamic: true,
+      value: item => "",
     });
     
     let setField = this.display.addField("set", {
@@ -149,7 +162,19 @@ export default class ArtifactList extends GenshinList
     
     let slotField = this.display.addField("slot", {
       label: "Slot",
-      sort: {generic: {type:"string",property:"slotKey"}},
+      sort: {func: (o,a,b) => {
+        let slotSortR = ["circlet","goblet","sands","plume","flower"];
+        let A = slotSortR.indexOf(a.slotKey);
+        let B = slotSortR.indexOf(b.slotKey);
+        if(isNaN(A) && !isNaN(B))
+          return 1;
+        else if(!isNaN(A) && isNaN(B))
+          return -1;
+        else if(isNaN(A) && isNaN(B))
+          return 0;
+        else
+          return o*(B-A);
+      }},
       dynamic: false,
       value: item => item.slotKey,
     });
@@ -213,7 +238,7 @@ export default class ArtifactList extends GenshinList
     let substatRatingGroup = {label:"Substat Ratings",title:"Weighs the current value of this substat against its maximum value, also factoring in the odds that it will increase if you continue to level up this artifact."};
     for(let statId of Artifact.substats)
     {
-      let substatRatingField = this.display.addField(statId+"Rating", {
+      let substatRatingFields = this.display.addField(statId+"Rating", {
         group: substatRatingGroup,
         label: Artifact.shorthandStat[statId] ?? statId,
         sort: {func: (o,a,b) => o * (b.getSubstatRating(statId).sum - a.getSubstatRating(statId).sum)},
@@ -231,20 +256,7 @@ export default class ArtifactList extends GenshinList
       });
     }
     
-    /*let cvField = this.display.addField("cv", {
-      group: substatRatingGroup,
-      label: "CV",
-      labelTitle: "Crit Value: a rating for artifacts devised by the Genshin community; equal to CritRate*2 + CritDMG",
-      sort: {func: (o,a,b) => o * ((b.getSubstatSum('critRate_')*2+b.getSubstatSum('critDMG_')) - (a.getSubstatSum('critRate_')*2+a.getSubstatSum('critDMG_')))},
-      dynamic: true,
-      value: artifact => (artifact.getSubstatSum('critRate_')*2 + artifact.getSubstatSum('critDMG_')).toFixed(0),
-      dependencies: artifact => [
-        {item:artifact, field:"substats"},
-      ],
-    });*/
-    
     let characterCountField = this.display.addField("characterCount", {
-      group: substatRatingGroup,
       label: "#",
       labelTitle: "The number of characters that might desire this artifact.",
       sort: {generic: {type:"number",property:"valuable"}},
@@ -326,6 +338,16 @@ export default class ArtifactList extends GenshinList
         {item:artifact, field:"level"},
         {item:artifact, field:"substats"},
       ],
+    });
+    
+    let imageField = this.display.addField("image", {
+      label: "Image",
+      tags: ["detailsOnly"],
+      dynamic: false,
+      value: item => ({
+        tag: "img",
+        src: `https://rerollcdn.com/GENSHIN/Gear/${item.name.replaceAll(' ','_').toLowerCase()}.png`,
+      }),
     });
   }
   
@@ -463,7 +485,7 @@ export default class ArtifactList extends GenshinList
           this.elements.selectSlotAdd.value = "";
           this.elements.selectStatAdd.value = "";
           this.elements.selectRarityAdd.value = "";
-          this.viewer.store();
+          //this.viewer.store();
           Renderer.renderNewItem(item, {exclude: field => field.tags.indexOf("detailsOnly") > -1});
         }
       });

@@ -1,0 +1,16 @@
+<div class="character-artifacts" data-template="renderCharacterArtifactLists" data-uuid="{{uuid item}}">
+    <div class="row">
+        <h4 class="col">Flower</h4>
+        <h4 class="col">Plume</h4>
+        <h4 class="col">Sands</h4>
+        <h4 class="col">Goblet</h4>
+        <h4 class="col">Circlet</h4>
+    </div>
+    <div class="row">
+      {{> renderListAsColumn name="ArtifactList/flower" params=(array relatedItems.buildName) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.flower fields=relatedItems.artifactFields}}
+      {{> renderListAsColumn name="ArtifactList/plume" params=(array relatedItems.buildName) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.plume fields=relatedItems.artifactFields}}
+      {{> renderListAsColumn name="ArtifactList/sands" params=(array relatedItems.buildName) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.sands fields=relatedItems.artifactFields}}
+      {{> renderListAsColumn name="ArtifactList/goblet" params=(array relatedItems.buildName) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.goblet fields=relatedItems.artifactFields}}
+      {{> renderListAsColumn name="ArtifactList/circlet" params=(array relatedItems.buildName) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.circlet fields=relatedItems.artifactFields}}
+    </div>
+</div>

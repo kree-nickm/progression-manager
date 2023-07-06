@@ -4,7 +4,7 @@ import Weapon from "./Weapon.js";
 
 export default class Material extends GenshinItem
 {
-  static dontSerialize = GenshinItem.dontSerialize.concat(["_shorthand","source","quality","days","usedBy","prevTier","nextTier"]);
+  static dontSerialize = GenshinItem.dontSerialize.concat(["_name","_shorthand","source","quality","days","usedBy","prevTier","nextTier"]);
   
   static gemQualities = {
     '5': " Gemstone",
@@ -13,9 +13,9 @@ export default class Material extends GenshinItem
     '2': " Sliver",
   };
   static masteryQualities = {
-    '4': "Philosophies Of ",
-    '3': "Guide To ",
-    '2': "Teachings Of ",
+    '4': "Philosophies of ",
+    '3': "Guide to ",
+    '2': "Teachings of ",
   };
   
   static setupTiers(matList)
@@ -41,15 +41,20 @@ export default class Material extends GenshinItem
   
   static toKey(string)
   {
-    return string.replaceAll(/\b(to|the|from|a|of)\b/g, (match, p1, offset, str) => str.at(0).toLowerCase()+str.substring(1)).replaceAll(/[-' ]/g, "");
+    return string
+      .replaceAll(/[- (][a-z]/g, (match, offset, str) => match.toUpperCase())
+      .replaceAll(/[- ()"']/g, "");
   }
   
   static fromKey(string)
   {
-    return string.replaceAll(/([A-Z])/g, " $1").trim();
+    return string
+      .replaceAll(/[A-Z]/g, " $&").trim()
+      .replaceAll(/ (a|an|the|and|but|or|for|nor|of|for|at|in|by|from|to|as) /gi, (match, p1, offset, str) => match.toLowerCase());
   }
   
   key = "";
+  _name = "";
   _count = 0;
   _shorthand;
   source = "";
@@ -68,7 +73,7 @@ export default class Material extends GenshinItem
         key: Material.toKey(goodData.goodKey),
         count: goodData.goodValue,
       };
-      data.name = (goodData.goodKey == data.key) ? Material.fromKey(goodData.goodKey) : goodData.goodKey;
+      data._name = (goodData.goodKey === data.key) ? Material.fromKey(goodData.goodKey) : goodData.goodKey;
     }
     else
       data = goodData;
@@ -89,6 +94,11 @@ export default class Material extends GenshinItem
   }
   get shorthand(){ return this._shorthand ?? this.name; }
   set shorthand(val){ this._shorthand = val; }
+  get name() {
+    if(!this._name)
+      this._name = Material.fromKey(this.key);
+    return this._name;
+  }
   
   getFullSource()
   {
@@ -98,11 +108,7 @@ export default class Material extends GenshinItem
   addUser(item)
   {
     if(this.usedBy.indexOf(item) == -1)
-    {
-      this.usedBy.push(item);
-      for(let cell of this.dependents["usedBy"] ?? [])
-        cell.needsUpdate = true;
-    }
+      this.update("usedBy", item, "push");
     return this;
   }
   

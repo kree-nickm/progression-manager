@@ -1,92 +1,88 @@
-<div class="list-item" name="{{unique item}}" data-template="renderCharacterAsPopup" data-list="CharacterList">
-    <div class="row">
-        <h5 class="col-2">Level</h5>
-        <h5 class="col-2">Constellations</h5>
-        <h5 class="col-2">Stat</h5>
+<div class="modal-content list-item" name="{{unique item}}" data-template="renderCharacterAsPopup" data-uuid="{{uuid item}}" data-list="CharacterList">
+    <div class="modal-body">
+        <button type="button" class="btn-close float-end" data-bs-dismiss="modal"></button>
+        <div class="row">
+            <div class="col-auto">
+                <div class="item-display item-character display-full">
+                    <div class="display-img quality-{{getProperty item 'rarity'}}">
+                      {{> renderItemField item=item field=fields.image wrapper="div"}}
+                    </div>
+                    <div class="display-caption">
+                      {{getProperty item "name"}}
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <h5 class="col-2">Level</h5>
+                    <h5 class="col-2">Constellations</h5>
+                    <h5 class="col-2">Stat</h5>
+                </div>
+                <div class="row">
+                    <div class="col-2">{{> renderItemField item=item field=fields.level wrapper="div"}}</div>
+                    <div class="col-2">{{> renderItemField item=item field=fields.constellation wrapper="div"}}</div>
+                    <div class="col-2">{{> renderItemField item=item field=fields.ascendStat wrapper="div"}}</div>
+                </div>
+            </div>
+        </div>
+        
+        <hr/>
+        <h3>Ascension Materials</h3>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Phase</th>
+                        <th>Gems</th>
+                        <th>World Boss Drops</th>
+                        <th>Flora</th>
+                        <th>Enemy Drops</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  {{#times 6}}
+                    <tr>
+                      {{> renderItemField item=item field=(lookup fields (concat "ascension" @index)) wrapper="td"}}
+                      {{> renderItemField item=item field=(lookup fields (concat "gemAscMat" @index)) wrapper="td"}}
+                      {{> renderItemField item=item field=(lookup fields (concat "bossAscMat" @index)) wrapper="td"}}
+                      {{> renderItemField item=item field=(lookup fields (concat "flowerAscMat" @index)) wrapper="td"}}
+                      {{> renderItemField item=item field=(lookup fields (concat "enemyAscMat" @index)) wrapper="td"}}
+                    </tr>
+                  {{/times}}
+                </tbody>
+            </table>
+        </div>
+        
+        <hr/>
+        <h3>Talent Materials</h3>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Level</th>
+                        <th class="talent-mastery">Mastery</th>
+                        <th class="talent-enemy">Enemy</th>
+                        <th class="talent-trounce">Trounce</th>
+                        <th class="talent-crown">Crown</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  {{#times 9 start=1}}
+                    <tr>
+                      {{> renderItemField item=item field=(lookup fields (concat "talentLvl" @index)) wrapper="td"}}
+                      {{> renderItemField item=item field=(lookup fields (concat "talentMasteryMat" @index)) wrapper="td"}}
+                      {{> renderItemField item=item field=(lookup fields (concat "talentEnemyMat" @index)) wrapper="td"}}
+                      {{> renderItemField item=item field=(lookup fields (concat "talentTrounceMat" @index)) wrapper="td"}}
+                      {{> renderItemField item=item field=(lookup fields (concat "talentCrownMat" @index)) wrapper="td"}}
+                    </tr>
+                  {{/times}}
+                </tbody>
+            </table>
+        </div>
+        
+        <hr/>
+      {{> renderCharacterStats .}}
+        <hr/>
+      {{> renderCharacterBuild .}}
     </div>
-    <div class="row">
-        <div class="col-2">{{> renderItemField item=item field=fields.level wrapper="div"}}</div>
-        <div class="col-2">{{> renderItemField item=item field=fields.constellation wrapper="div"}}</div>
-        <div class="col-2">{{> renderItemField item=item field=fields.ascendStat wrapper="div"}}</div>
-    </div>
-    
-    <hr/>
-    <h3>Ascension Materials</h3>
-    <div class="table-responsive">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Phase</th>
-                    <th>Gems</th>
-                    <th>World Boss Drops</th>
-                    <th>Flora</th>
-                    <th>Enemy Drops</th>
-                </tr>
-            </thead>
-            <tbody>
-              {{#times 6}}
-                <tr>
-                  {{> renderItemField item=item field=(lookup fields (concat "ascension" @index)) wrapper="td"}}
-                  {{> renderItemField item=item field=(lookup fields (concat "gemAscMat" @index)) wrapper="td"}}
-                  {{> renderItemField item=item field=(lookup fields (concat "bossAscMat" @index)) wrapper="td"}}
-                  {{> renderItemField item=item field=(lookup fields (concat "flowerAscMat" @index)) wrapper="td"}}
-                  {{> renderItemField item=item field=(lookup fields (concat "enemyAscMat" @index)) wrapper="td"}}
-                </tr>
-              {{/times}}
-            </tbody>
-        </table>
-    </div>
-    
-    <hr/>
-    <h3>Talent Materials</h3>
-    <div class="table-responsive">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Level</th>
-                    <th class="talent-mastery">Mastery</th>
-                    <th class="talent-enemy">Enemy</th>
-                    <th class="talent-trounce">Trounce</th>
-                    <th class="talent-crown">Crown</th>
-                </tr>
-            </thead>
-            <tbody>
-              {{#times 9 start=1}}
-                <tr>
-                  {{> renderItemField item=item field=(lookup fields (concat "talentLvl" @index)) wrapper="td"}}
-                  {{> renderItemField item=item field=(lookup fields (concat "talentMasteryMat" @index)) wrapper="td"}}
-                  {{> renderItemField item=item field=(lookup fields (concat "talentEnemyMat" @index)) wrapper="td"}}
-                  {{> renderItemField item=item field=(lookup fields (concat "talentTrounceMat" @index)) wrapper="td"}}
-                  {{> renderItemField item=item field=(lookup fields (concat "talentCrownMat" @index)) wrapper="td"}}
-                </tr>
-              {{/times}}
-            </tbody>
-        </table>
-    </div>
-    
-    <hr/>
-    <h3>Current Stats (Work-in-Progress)</h3>
-    <div class="row">
-      <div class="col-3">Crit Rate</div>
-      <div class="col-3">{{> renderItemField item=item field=fields.critRate_Current wrapper="span"}}%</div>
-    </div>
-    <div class="row">
-      <div class="col-3">Crit DMG</div>
-      <div class="col-3">{{> renderItemField item=item field=fields.critDMG_Current wrapper="span"}}%</div>
-    </div>
-    <div class="row">
-      <div class="col-3">Elemental Mastery</div>
-      <div class="col-3">{{> renderItemField item=item field=fields.eleMasCurrent wrapper="span"}}</div>
-    </div>
-    <div class="row">
-      <div class="col-3">Energy Recharge</div>
-      <div class="col-3">{{> renderItemField item=item field=fields.enerRech_Current wrapper="span"}}%</div>
-    </div>
-    <div class="row">
-      <div class="col-3">Healing Bonus</div>
-      <div class="col-3">{{> renderItemField item=item field=fields.heal_Current wrapper="span"}}%</div>
-    </div>
-    
-    <hr/>
-  {{> renderCharacterBuild relatedItems=relatedItems item=item}}
 </div>
