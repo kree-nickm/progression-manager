@@ -224,15 +224,7 @@ class Renderer
   
   static contentToHTML(content, path=[])
   {
-    if(Array.isArray(content?.value))
-    {
-      let result = "";
-      for(let i in content.value)
-        if(content.value[i])
-          result = result + Renderer.contentToHTML(content.value[i], path.concat([i]));
-      return result;
-    }
-    else if(typeof(content) == "string")
+    if(typeof(content) == "string")
     {
       console.warn(`String "${content}" should be an object.`);
       let classes = [];
@@ -242,21 +234,27 @@ class Renderer
     }
     else if(content !== undefined && content !== null)
     {
-      let tag = content.tag ?? "span";
+      let tag = content.tag;
       let text = "";
-      if(typeof(content) == "object")
+      if(Array.isArray(content?.value))
       {
-        if(typeof(content.value) == "object")
-        {
-          text = Renderer.contentToHTML(content.value);
-        }
-        else if(content.value !== "")
-        {
-          text = `<span class="value">${handlebars.escapeExpression(content.value)}</span>`;
-        }
+        for(let i in content.value)
+          if(content.value[i])
+            text = text + Renderer.contentToHTML(content.value[i], path.concat([i]));
+        if(!tag)
+          return text;
+      }
+      else if(typeof(content.value) == "object")
+      {
+        text = Renderer.contentToHTML(content.value);
+      }
+      else if(content.value !== "")
+      {
+        text = `<span class="value">${handlebars.escapeExpression(content.value)}</span>`;
       }
       if(content.icon)
         text = text + `<i class="icon ${handlebars.escapeExpression(content.icon)}"></i>`;
+      tag = content.tag ?? "span";
       
       let attrs = [];
       let classes = [];
@@ -570,7 +568,7 @@ class Renderer
       {
         if(!valueArr[iContent])
           continue;
-        let newParents = [...parents, ".sub-"+ iContent];
+        let newParents = [...parents, parents.length ? parents[parents.length-1]+"-"+iContent : ".sub-"+iContent];
         let subElement = element.querySelector(":scope > "+ newParents.join(" > "));
         if(!subElement)
         {
