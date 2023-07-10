@@ -7,10 +7,10 @@
         <h4 class="col">Circlet</h4>
     </div>
     <div class="row">
-      {{> renderListAsColumn name="ArtifactList/flower" params=(array relatedItems.buildName) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.flower fields=relatedItems.artifactFields}}
-      {{> renderListAsColumn name="ArtifactList/plume" params=(array relatedItems.buildName) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.plume fields=relatedItems.artifactFields}}
-      {{> renderListAsColumn name="ArtifactList/sands" params=(array relatedItems.buildName) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.sands fields=relatedItems.artifactFields}}
-      {{> renderListAsColumn name="ArtifactList/goblet" params=(array relatedItems.buildName) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.goblet fields=relatedItems.artifactFields}}
-      {{> renderListAsColumn name="ArtifactList/circlet" params=(array relatedItems.buildName) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.circlet fields=relatedItems.artifactFields}}
+      {{> renderListAsColumn filter="flower" params=(array relatedItems.buildName) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.flower fields=relatedItems.artifactFields}}
+      {{> renderListAsColumn filter="plume" params=(array relatedItems.buildName) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.plume fields=relatedItems.artifactFields}}
+      {{> renderListAsColumn filter="sands" params=(array relatedItems.buildName) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.sands fields=relatedItems.artifactFields}}
+      {{> renderListAsColumn filter="goblet" params=(array relatedItems.buildName) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.goblet fields=relatedItems.artifactFields}}
+      {{> renderListAsColumn filter="circlet" params=(array relatedItems.buildName) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.circlet fields=relatedItems.artifactFields}}
     </div>
 </div>

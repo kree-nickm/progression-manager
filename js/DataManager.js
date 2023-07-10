@@ -60,13 +60,6 @@ export default class DataManager extends UIController
     this.currentView = pane;
   }
   
-  async renderAll()
-  {
-    for(let list in this.lists)
-      await this.lists[list].render();
-    this.queueStore();
-  }
-  
   onScroll(event)
   {
     for(let element of this.stickyElements)

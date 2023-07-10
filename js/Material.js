@@ -1,10 +1,12 @@
+import GenshinLootData from "./gamedata/GenshinLootData.js";
+
 import GenshinItem from "./GenshinItem.js";
 import Character from "./Character.js";
 import Weapon from "./Weapon.js";
 
 export default class Material extends GenshinItem
 {
-  static dontSerialize = GenshinItem.dontSerialize.concat(["_name","_shorthand","source","quality","days","usedBy","prevTier","nextTier"]);
+  static dontSerialize = GenshinItem.dontSerialize.concat(["_name","_shorthand","_type","source","quality","days","usedBy","prevTier","nextTier"]);
   
   static gemQualities = {
     '5': " Gemstone",
@@ -57,6 +59,7 @@ export default class Material extends GenshinItem
   _name = "";
   _count = 0;
   _shorthand;
+  _type;
   source = "";
   quality = 1;
   days = [];
@@ -73,7 +76,7 @@ export default class Material extends GenshinItem
         key: Material.toKey(goodData.goodKey),
         count: goodData.goodValue,
       };
-      data._name = (goodData.goodKey === data.key) ? Material.fromKey(goodData.goodKey) : goodData.goodKey;
+      data.name = (goodData.goodKey === data.key) ? Material.fromKey(goodData.goodKey) : goodData.goodKey;
     }
     else
       data = goodData;
@@ -99,6 +102,27 @@ export default class Material extends GenshinItem
       this._name = Material.fromKey(this.key);
     return this._name;
   }
+  set name(val){ this._name = val; }
+  get type() {
+    if(!this._type)
+    {
+      for(let type in GenshinLootData)
+        if(this.shorthand in GenshinLootData[type])
+          this._type = type;
+      if(!this._type)
+        for(let wboss of GenshinLootData.trounce)
+          if(wboss.loot.indexOf(this.name) > -1)
+            this._type = "trounce";
+      if(!this._type)
+      {
+        let words = this.shorthand.split(" ");
+        if(words.length == 2 && Object.keys(GenshinLootData.gemstone).indexOf(words[0]) > -1 && (words[0] + Material.gemQualities[this.quality]) == this.shorthand)
+          this._type = "gemstone";
+      }
+    }
+    return this._type ?? "unknown";
+  }
+  set type(val){ this._type = val; }
   
   getFullSource()
   {
@@ -179,15 +203,37 @@ export default class Material extends GenshinItem
       return [];
   }
   
-  getRenderClasses()
+  getFieldValue(cost)
   {
-    return {
-      "material": true,
-      "q1": this.quality == 1,
-      "q2": this.quality == 2,
-      "q3": this.quality == 3,
-      "q4": this.quality == 4,
-      "q5": this.quality == 5,
-    };
+    let bosskills3 = Math.ceil((cost-this.count)/3);
+    let bosskills2 = Math.ceil((cost-this.count)/2);
+    return [
+      {
+        value: `${this.count} / ${cost}`,
+        title: this.type == "boss"
+          ? `Requires `+ (bosskills2!=bosskills3?`${bosskills3}-${bosskills2}`:bosskills2) +` more boss kill`+ (bosskills2!=1||bosskills3!=1?"s":"") +`.`
+          : this.type == "flora"
+            ? `` // TODO: Compile data for number of each flora that exists on the map and display the relevant number here.
+            : `Up to ${this.getCraftCount()} if you craft.`,
+        classes: {
+          "quantity": true,
+          "pending": this.count < cost,
+          "insufficient": this.getCraftCount() < cost,
+        },
+        edit: {target: {item:this, field:"count"}},
+      },
+      {
+        value: this.shorthand + (this.days.indexOf(this.viewer.today()) > -1 ? "*" : ""),
+        classes: {
+          "material": true,
+          "q1": this.quality == 1,
+          "q2": this.quality == 2,
+          "q3": this.quality == 3,
+          "q4": this.quality == 4,
+          "q5": this.quality == 5,
+        },
+        title: this.getFullSource(),
+      },
+    ];
   }
 }

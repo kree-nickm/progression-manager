@@ -14,7 +14,7 @@
         <div class="col-3">{{> renderItemField item=item field=fields.characterSubstatRating wrapper="span" params=(array character (lookup item.substats @index "key"))}}</div>
     </div>
       {{else}}
-    <div class="substat">-</div>
+    <div class="substat">{{> renderItemField item=item field=fields.substat params=(array @index) wrapper="span"}}</div>
       {{/if}}
   {{/times}}
   {{#if item.location}}

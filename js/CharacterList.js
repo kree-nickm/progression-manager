@@ -99,11 +99,11 @@ export default class CharacterList extends GenshinList
       button: item => {
         if(item.canUpPhase(false))
           return {
-            icon: "fa-solid fa-star",
+            icon: "fa-solid fa-circle-up",
             action: item.upPhase.bind(item),
           };
         else if(item.canUpPhase(true))
-          return {icon: "fa-solid fa-star"};
+          return {icon: "fa-solid fa-circle-up"};
       },
     });
     
@@ -217,22 +217,7 @@ export default class CharacterList extends GenshinList
           columnClasses: ["ascension-materials"],
           tags: isNaN(phase) ? undefined : ["detailsOnly"],
           dynamic: true,
-          value: item => item.getMat(mat.t,phase) && item.getMatCost(mat.t,phase) ? [
-            {
-              value: `${item.getMat(mat.t,phase).count} / ${item.getMatCost(mat.t,phase)}`,
-              classes: {
-                "quantity": true,
-                "pending": item.getMat(mat.t,phase).count < item.getMatCost(mat.t,phase),
-                "insufficient": item.getMat(mat.t,phase).getCraftCount() < item.getMatCost(mat.t,phase),
-              },
-            },
-            {
-              value: item.getMat(mat.t,phase).shorthand,
-              classes: item.getMat(mat.t,phase).getRenderClasses(),
-            },
-          ] : "",
-          title: item => item.getMat(mat.t,phase)?.getFullSource() ?? "",
-          edit: item => item.getMat(mat.t,phase) && item.getMatCost(mat.t,phase) ? {target: {item:item.getMat(mat.t,phase), field:"count"}} : null,
+          value: item => item.getMat(mat.t,phase) && item.getMatCost(mat.t,phase) ? item.getMat(mat.t,phase).getFieldValue(item.getMatCost(mat.t,phase)) : "",
           dependencies: item => [
             {item:item.base??item, field:"ascension"},
           ].concat(item.getMat(mat.t,phase)?.getCraftDependencies() ?? []),
@@ -297,22 +282,8 @@ export default class CharacterList extends GenshinList
           columnClasses: [(isNaN(i)?i:"talent")+'-'+m.l.toLowerCase()],
           tags: isNaN(i) & m.l != "Trounce" && m.l != "Crown" ? undefined : ["detailsOnly"],
           dynamic: true,
-          value: item => item.getTalentMat(m.l.toLowerCase(),i) && item.getTalent(i)['mat'+m.d+'Count'] ? [
-            {
-              value: `${item.getTalentMat(m.l.toLowerCase(),i).count} / ${item.getTalent(i)['mat'+m.d+'Count']}`,
-              classes: {
-                "quantity": true,
-                "pending": item.getTalentMat(m.l.toLowerCase(),i).count < item.getTalent(i)['mat'+m.d+'Count'],
-                "insufficient": item.getTalentMat(m.l.toLowerCase(),i).getCraftCount() < item.getTalent(i)['mat'+m.d+'Count'],
-              },
-            },
-            {
-              value: item.getTalentMatType(m.l.toLowerCase(),i) + (item.getTalentMat(m.l.toLowerCase(),i).days.indexOf(item.list.viewer.today()) > -1 ? "*" : ""),
-              classes: item.getTalentMat(m.l.toLowerCase(),i).getRenderClasses(),
-            },
-          ] : "",
+          value: item => item.getTalentMat(m.l.toLowerCase(),i) && item.getTalent(i)['mat'+m.d+'Count'] ? item.getTalentMat(m.l.toLowerCase(),i).getFieldValue(item.getTalent(i)['mat'+m.d+'Count']) : "",
           title: item => item.getTalentMat(m.l.toLowerCase(),i).getFullSource(),
-          edit: item => ({target: {item:item.getTalentMat(m.l.toLowerCase(),i), field:"count"}}),
           dependencies: item => [
             {item, field:["talent", i]},
             item.getTalentMat(m.l.toLowerCase(),i).days ? {item:this.viewer, field:"today"} : {},
@@ -566,16 +537,15 @@ export default class CharacterList extends GenshinList
     this.forceNextRender = true;
   }
   
+  prepareRender(element, data, options)
+  {
+    data.filter = "listable";
+    return {element, data, options};
+  }
+  
   async render(force=false)
   {
-    await Renderer.renderList2(this.constructor.name, {
-      template: "renderListAsTable",
-      force: force || this.forceNextRender,
-      filter: "listable",
-      exclude: field => field.tags.indexOf("detailsOnly") > -1,
-      container: this.viewer.elements[this.constructor.name],
-    });
-    this.forceNextRender = false;
+    await super.render(force);
     
     let selectAdd;
     let footer = document.getElementById("footer");

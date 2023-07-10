@@ -1,9 +1,8 @@
 import { handlebars, Renderer } from "./Renderer.js";
 
 handlebars.registerHelper("getProperty", (item, property, context) => item.getProperty(property));
-handlebars.registerHelper("uuid", (item, context) => {
-  try{return item.uuid;}catch(x){console.error(context, x);return "*INVALID UUID*";}
-});
+handlebars.registerHelper("uuid", (item, context) => item.uuid);
+handlebars.registerHelper('toParam', (item, context) => item instanceof UIController ? item.uuid : String.valueOf(item));
 
 export default class UIController {
   static dontSerialize = ["uuid","dependents"];
@@ -62,12 +61,21 @@ export default class UIController {
     return this.parseProperty(prop, false).value;
   }
   
-  update(field, value, action="")
+  update(field, value, action, options={})
   {
-    field = this.parseProperty(field, {create: value!==undefined});
-    value = this.beforeUpdate(field, value);
+    field = this.parseProperty(field, {create: action!="notify"});
+    value = this.beforeUpdate(field, value, action, options);
     let needsUpdate = false;
-    if(typeof(field.value) == "object" || typeof(field.value) == "function")
+    if(action == "notify")
+    {
+      if(typeof(value) == "object")
+        for(let prop in value)
+          options[prop] = value[prop];
+      value = field.value;
+      // Note: I'm not sure if "notify" always needs to trigger a viewer.store
+      needsUpdate = true;
+    }
+    else if(typeof(field.value) == "object" || typeof(field.value) == "function")
     {
       if(!action)
         console.warn(`${this.constructor.name}.update(3) expects a third argument when the property being updated (${field.string}) is non-scalar (it's a ${typeof(field.value)}).`);
@@ -75,10 +83,7 @@ export default class UIController {
       {
         if(Array.isArray(field.value))
         {
-          // Note: I'm not sure if "notify" always needs to trigger a viewer.store
-          if(action == "notify")
-            needsUpdate = true;
-          else if(action == "replace")
+          if(action == "replace")
           {
             field.object[field.property] = value;
             for(let prev of field.value)
@@ -105,22 +110,17 @@ export default class UIController {
         }
         else if(typeof(field.value) == "object")
         {
-          if(action == "notify")
-            needsUpdate = true;
-          else if(action == "replace")
+          if(action == "replace")
           {
             field.object[field.property] = value;
             needsUpdate = true;
           }
           else
-            console.warn(`Unknown action '${action}' in ${this.constructor.name}.update(3) when updating array '${field.string}'.`);
+            console.warn(`Unknown action '${action}' in ${this.constructor.name}.update(3) when updating object '${field.string}'.`);
         }
         else if(typeof(field.value) == "function")
         {
-          if(action == "notify")
-            needsUpdate = true;
-          else
-            console.warn(`Unknown action '${action}' in ${this.constructor.name}.update(3) when updating array '${field.string}'.`);
+          console.warn(`Unknown action '${action}' in ${this.constructor.name}.update(3) when updating function '${field.string}'.`);
         }
       }
     }
@@ -139,18 +139,21 @@ export default class UIController {
       for(let dep of this.dependents[field.string] ?? [])
         if(dep)
           Renderer.queueUpdate(dep);
+      for(let dep of this.dependents['.'] ?? [])
+        if(dep)
+          Renderer.queueUpdate(dep);
     }
-    this.afterUpdate(field, value);
+    this.afterUpdate(field, value, action, options);
     return this;
   }
   
-  beforeUpdate(field, value)
+  beforeUpdate(field, value, action, options)
   {
     // Code to validate the value before updating.
     return value;
   }
   
-  afterUpdate(field, value)
+  afterUpdate(field, value, action, options)
   {
     // Any code to run after a value is changed.
   }
@@ -171,18 +174,35 @@ export default class UIController {
   
   addDependent(prop, dep)
   {
-    prop = this.parseProperty(prop);
-    if(!this.dependents[prop.string])
-      this.dependents[prop.string] = [];
-    this.dependents[prop.string].push(dep);
+    if(prop != ".")
+    {
+      prop = this.parseProperty(prop);
+      if(!this.dependents[prop.string])
+        this.dependents[prop.string] = [];
+      this.dependents[prop.string].push(dep);
+    }
+    else
+    {
+      if(!this.dependents[prop])
+        this.dependents[prop] = [];
+      this.dependents[prop].push(dep);
+    }
     return this;
   }
   
   removeDependent(prop, dep)
   {
-    prop = this.parseProperty(prop);
-    if(this.dependents[prop.string])
-      this.dependents[prop.string] = this.dependents[prop.string].filter(element => element != dep);
+    if(prop != ".")
+    {
+      prop = this.parseProperty(prop);
+      if(this.dependents[prop.string])
+        this.dependents[prop.string] = this.dependents[prop.string].filter(element => element != dep);
+    }
+    else
+    {
+      if(this.dependents[prop])
+        this.dependents[prop] = this.dependents[prop].filter(element => element != dep);
+    }
     return this;
   }
   

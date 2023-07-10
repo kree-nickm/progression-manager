@@ -147,22 +147,8 @@ export default class WeaponList extends GenshinList
           columnClasses: ["ascension-materials"],
           tags: isNaN(phase) ? undefined : ["detailsOnly"],
           dynamic: true,
-          value: item => item.getMat(m.p,phase) && item.getMatCost(m.p,phase) ? [
-            {
-              value: `${item.getMat(m.p,phase).count} / ${item.getMatCost(m.p,phase)}`,
-              classes: {
-                "quantity": true,
-                "pending": item.getMat(m.p,phase).count < item.getMatCost(m.p,phase),
-                "insufficient": item.getMat(m.p,phase).getCraftCount() < item.getMatCost(m.p,phase),
-              },
-            },
-            {
-              value: item[m.p+'MatType'] + (item.getMat(m.p,phase).days.indexOf(item.list.viewer.today()) > -1 ? "*" : ""),
-              classes: item.getMat(m.p,phase).getRenderClasses(),
-            },
-          ] : "",
+          value: item => item.getMat(m.p,phase) && item.getMatCost(m.p,phase) ? item.getMat(m.p,phase).getFieldValue(item.getMatCost(m.p,phase)) : "",
           title: item => item.getMat(m.p,phase)?.getFullSource() ?? "",
-          edit: item => item.getMat(m.p,phase) && item.getMatCost(m.p,phase) ? {target: {item:item.getMat(m.p,phase), field:"count"}} : null,
           dependencies: item => [
             {item, field:"ascension"},
             item.getMat(m.p,phase).days ? {item:this.viewer, field:"today"} : {},
@@ -281,13 +267,7 @@ export default class WeaponList extends GenshinList
   
   async render(force=false)
   {
-    await Renderer.renderList2(this.constructor.name, {
-      template: "renderListAsTable",
-      force: force || this.forceNextRender,
-      exclude: field => field.tags.indexOf("detailsOnly") > -1,
-      container: this.viewer.elements[this.constructor.name],
-    });
-    this.forceNextRender = false;
+    await super.render(force);
     
     let footer = document.getElementById("footer");
     footer.classList.remove("d-none");

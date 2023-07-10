@@ -2,12 +2,6 @@ import { handlebars, Renderer } from "./Renderer.js";
 import UIController from "./UIController.js";
 
 handlebars.registerHelper("unique", (item, context) => item.getUnique());
-handlebars.registerHelper('toParam', function(item, context) {
-  if(typeof(item) == "object" && item instanceof UIItem)
-    return item.list.constructor.name +"##"+ item.getUnique();
-  else
-    return String.valueOf(item);
-});
 
 export default class UIItem extends UIController {
   static dontSerialize = UIController.dontSerialize.concat(["list"]);
@@ -33,7 +27,7 @@ export default class UIItem extends UIController {
   }
   
   // Note: While the uuid property is meant to be completely unique for every UIController no matter what, this is meant to be derived from the UIItem's data, in order to determine if two UIItems are duplicates.
-  // Note: Currently, this calls the UIList's method, because that can be used on generic objects with all of the UIItem's properties to see if they are potential duplicates.
+  // Note: Currently, this calls the UIList's method, because that can be used on generic objects with all of the UIItem's properties, to see if they are potential duplicates, before creating new UIItems from such objects.
   getUnique()
   {
     return this.list.getUnique(this);

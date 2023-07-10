@@ -1,3 +1,4 @@
+import { Renderer } from "./Renderer.js";
 import UIController from "./UIController.js";
 import UIItem from "./UIItem.js";
 import ListDisplayManager from "./ListDisplayManager.js";
@@ -84,9 +85,9 @@ export default class UIList extends UIController {
   
   setupDisplay(){}
   
-  afterUpdate(field, value)
+  afterUpdate(field, value, action, options)
   {
-    if(field.string == "list")
+    if(field.string == "list" && field.value.length != value.length)
     {
       this.subsets = {};
     }
@@ -175,7 +176,96 @@ export default class UIList extends UIController {
     this.forceNextRender = true;
   }
   
+  prepareRender(element, data, options)
+  {
+    return {element, data, options};
+  }
+  
+  async render(force=false)
+  {
+    let {element, data, options} = this.prepareRender(this.viewer.elements[this.constructor.name].querySelector(`.list[data-uuid="${this.uuid}"]`), {
+      item: this,
+      groups: this.display.getGroups({exclude:field => field.tags.indexOf("detailsOnly") > -1}),
+      fields: this.display.getFields({exclude:field => field.tags.indexOf("detailsOnly") > -1}),
+    }, {
+      template: "renderListAsTable",
+      force: force || this.forceNextRender,
+      parentElement: this.viewer.elements[this.constructor.name],
+    });
+    await Renderer.rerender(element, data, options);
+    this.forceNextRender = false;
+  }
+  
   onRender(element)
   {
+    super.onRender(element);
+    
+    // Add event handlers for collapsing groups.
+    element.querySelectorAll(".group-header").forEach(groupElem => {
+      if(!groupElem.onclick)
+        groupElem.onclick = event => {
+          let groupName = groupElem.attributes.getNamedItem('name')?.value ?? "???";
+          groupElem.collapsed = !groupElem.collapsed;
+          let groupMembers = element.querySelectorAll(`[data-group-name="${groupName}"]`);
+          if(groupElem.collapsed)
+          {
+            groupElem.firstElementChild.innerHTML = "-";
+            groupMembers.forEach(member => member.classList.add("group-collapsed"));
+          }
+          else
+          {
+            groupElem.firstElementChild.innerHTML = "+ "+ groupName +" +";
+            groupMembers.forEach(member => member.classList.remove("group-collapsed"));
+          }
+        };
+    });
+    
+    // Add event handlers for sorting.
+    let sortables = element.querySelectorAll(".sortable");
+    sortables.forEach(sortElem => {
+      if(!sortElem.onclick)
+        sortElem.onclick = event => {
+          let fieldName = sortElem.attributes.getNamedItem('name')?.value;
+          let field = this.display.getField(fieldName);
+          if(field)
+          {
+            // Determine sort order.
+            let order;
+            if(sortElem.classList.contains("sorted"))
+            {
+              sortables.forEach(elem => elem.classList.remove("sorted") & elem.classList.remove("sorted-r"));
+              sortElem.classList.add("sorted-r");
+              order = -1;
+            }
+            else
+            {
+              sortables.forEach(elem => elem.classList.remove("sorted") & elem.classList.remove("sorted-r"));
+              sortElem.classList.add("sorted");
+              order = 1;
+            }
+            
+            // Sort the items array.
+            if(field.sort.func)
+              this.list.sort(field.sort.func.bind(this, order));
+            else if(field.sort.generic)
+              this.list.sort(Renderer.genericSorters[field.sort.generic.type].bind(this, field.sort.generic.property, order));
+            else
+            {
+              console.warn(`No sort algorithm given for field '${fieldName}'.`);
+              return;
+            }
+            // If the list is using a filter, clear the respective subset to force it to rebuild (faster than sorting both).
+            if(element.dataset.filter)
+              this.subsets[element.dataset.filter] = null;
+            // Note: I don't know if we want to sort the base list if it's using a filter, but for now the only use case does want that. In the future maybe add an option for it.
+            
+            this.update("list", null, "notify", {reason:"sort"});
+            // Reorder the HTML elements.
+            Renderer.sortItems(element);
+          }
+          else
+            console.error(`Unable to find field '${fieldName}'.`);
+        };
+    });
   }
 }

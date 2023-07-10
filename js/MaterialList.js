@@ -116,7 +116,9 @@ export default class MaterialList extends GenshinList
     
     // Flora mats
     for(let c in GenshinCharacterData)
-      this.addGOOD({goodKey:GenshinCharacterData[c].matFlower, goodValue:0}).update("quality", 1);
+      this.addGOOD({goodKey:GenshinCharacterData[c].matFlower, goodValue:0}).update("quality", 1).update("type", "flora");
+    
+    this.addGOOD({goodKey:"Mora", goodValue:0}).update("quality", 1).update("type", "mora");
   }
   
   getUnique(item)
@@ -150,13 +152,7 @@ export default class MaterialList extends GenshinList
   
   async render(force=false)
   {
-    await Renderer.renderList2(this.constructor.name, {
-      template: "renderListAsTable",
-      force: force || this.forceNextRender,
-      exclude: field => field.tags.indexOf("detailsOnly") > -1,
-      container: this.viewer.elements[this.constructor.name],
-    });
-    this.forceNextRender = false;
+    await super.render(force);
     
     let footer = document.getElementById("footer");
     footer.classList.add("d-none");

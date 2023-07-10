@@ -82,8 +82,7 @@ export default class GenshinManager extends DataManager
     let today = DateTime.now().setZone("UTC-9").weekdayLong;
     if(this.lastDay != today)
     {
-      this.update("today", today, "notify");
-      this.renderAll();
+      this.update("today", null, "notify");
     }
     this.lastDay = today;
     return today;
@@ -277,7 +276,7 @@ export default class GenshinManager extends DataManager
       try
       {
         hasData |= this.lists.ArtifactList.fromGOOD(goodData.artifacts);
-        this.lists.ArtifactList.evaluate();
+        //this.lists.ArtifactList.evaluate(); // Re-add this somewhere so that it can be done sometime other than when the user manually clicks it.
       }
       catch(x)
       {

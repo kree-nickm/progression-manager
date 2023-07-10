@@ -53,28 +53,25 @@ export default class ArtifactList extends GenshinList
   {
     //console.log(`Evaluating all artifacts...`);
     this.list.forEach(artifact => artifact.update("wanters", [], "replace"));
-    this.list.forEach(artifact => artifact.update("valuable", 0));
     // Cycle through every character so we can access their artifact priority lists.
     this.viewer.lists.CharacterList.list.forEach(character => {
       // Cycle through all their builds.
       for(let buildId in character.getBuilds())
       {
-        let related = character.getRelatedItems(buildId);
+        let related = character.getRelatedItems(buildId, {ignoreTargets:true});
         // Handle each slot separately.
         for(let slot of ["flower","plume","sands","goblet","circlet"])
         {
           // Mark the best artifacts we have.
-          let numToKeep = 2;
+          let numToKeep = 1;
           for(let i=0; i<numToKeep; i++)
           {
             if(related.bestArtifacts[slot][i])
             {
-              related.bestArtifacts[slot][i].update("valuable", related.bestArtifacts[slot][i].valuable + 1);
-              related.bestArtifacts[slot][i].update("wanters", `#${i+1} for ${character.name} (${buildId})`, "push");
-              // Don't bother with anything worse than what they are already using (but still mark at least 2?).
+              related.bestArtifacts[slot][i].update("wanters", `#${i+1} ${slot} for ${character.name} (${buildId})`, "push");
+              // Don't bother with anything worse than what they are already using.
               if(related.bestArtifacts[slot][i].character == character)
               {
-                //numToKeep = Math.max(i, 2);
                 numToKeep = i;
               }
               // If this artifact is taken, check for 1 more in total.
@@ -87,18 +84,16 @@ export default class ArtifactList extends GenshinList
           for(let setKey in related.buildData.artifactSets)
           {
             // Mark the best artifacts we have for each desired set.
-            numToKeep = 2;
+            numToKeep = 1;
             let bestOfSet = related.bestArtifacts[slot].filter(artifact => artifact.setKey == setKey);
             for(let i=0; i<numToKeep; i++)
             {
               if(bestOfSet[i])
               {
-                bestOfSet[i].update("valuable", bestOfSet[i].valuable + 1);
-                bestOfSet[i].update("wanters", `#${i+1} ${setKey} piece for ${character.name} (${buildId})`, "push");
-                // Don't bother with anything worse than what they are already using (but still mark at least 2?).
+                bestOfSet[i].update("wanters", `#${i+1} ${setKey} ${slot} for ${character.name} (${buildId})`, "push");
+                // Don't bother with anything worse than what they are already using.
                 if(bestOfSet[i].character == character)
                 {
-                  //numToKeep = Math.max(i, 2);
                   numToKeep = i;
                 }
                 // If this artifact is taken, check for 1 more in total.
@@ -114,12 +109,12 @@ export default class ArtifactList extends GenshinList
     });
     //console.log(`...Done.`);
     document.querySelector("#artifactEvaluateBtn")?.classList.remove("show-notice");
-    //await this.render();
   }
   
-  afterUpdate(field, value, previous)
+  afterUpdate(field, value, action, options)
   {
-    if(field.string == "list")
+    super.afterUpdate(field, value, action, options);
+    if(field.string == "list" && value.length != field.value.length)
       document.querySelector("#artifactEvaluateBtn")?.classList.add("show-notice");
   }
   
@@ -130,8 +125,8 @@ export default class ArtifactList extends GenshinList
       labelTitle: "Sort in the same order as the in-game inventory when you select 'quality'.",
       sort: {func: (o,a,b) => {
         let slotSortR = ["circlet","goblet","sands","plume","flower"];
-        let A = a.rarity*52500 + a.level*2500 + Object.keys(GenshinArtifactData).indexOf(a.setKey)*25 + slotSortR.indexOf(a.slotKey)*5 + a.substats.length;
-        let B = b.rarity*52500 + b.level*2500 + Object.keys(GenshinArtifactData).indexOf(b.setKey)*25 + slotSortR.indexOf(b.slotKey)*5 + b.substats.length;
+        let A = a.rarity*52500 + a.level*2500 + Object.keys(GenshinArtifactData).indexOf(a.setKey)*25 + slotSortR.indexOf(a.slotKey)*5 + a.substats.length - a.id/2000;
+        let B = b.rarity*52500 + b.level*2500 + Object.keys(GenshinArtifactData).indexOf(b.setKey)*25 + slotSortR.indexOf(b.slotKey)*5 + b.substats.length - b.id/2000;
         if(isNaN(A) && !isNaN(B))
           return 1;
         else if(!isNaN(A) && isNaN(B))
@@ -142,7 +137,7 @@ export default class ArtifactList extends GenshinList
           return o*(B-A);
       }},
       dynamic: true,
-      value: item => "",
+      value: item => item.id,
     });
     
     let setField = this.display.addField("set", {
@@ -193,7 +188,7 @@ export default class ArtifactList extends GenshinList
       dynamic: true,
       title: item => "Is Locked?",
       classes: item => ({
-        "insufficient": !item.valuable,
+        "insufficient": !item.wanters.length,
       }),
       edit: item => ({
         target: {item:item, field:"lock"},
@@ -203,7 +198,7 @@ export default class ArtifactList extends GenshinList
         falseClasses: [],
       }),
       dependencies: item => [
-        {item:item, field:"valuable"},
+        {item:item, field:"wanters"},
       ],
     });
     
@@ -259,13 +254,12 @@ export default class ArtifactList extends GenshinList
     let characterCountField = this.display.addField("characterCount", {
       label: "#",
       labelTitle: "The number of characters that might desire this artifact.",
-      sort: {generic: {type:"number",property:"valuable"}},
+      sort: {generic: {type:"number",property:"wanters.length"}},
       columnClasses: ['artifact-wanters'],
       dynamic: true,
       title: item => item.wanters.join("\r\n"),
-      value: item => item.valuable,
+      value: item => item.wanters.length,
       dependencies: item => [
-        {item:item, field:"valuable"},
         {item:item, field:"wanters"},
       ],
     });
@@ -349,6 +343,33 @@ export default class ArtifactList extends GenshinList
         src: `https://rerollcdn.com/GENSHIN/Gear/${item.name.replaceAll(' ','_').toLowerCase()}.png`,
       }),
     });
+    
+    let substatField = this.display.addField("substat", {
+      label: "Substat",
+      tags: ["detailsOnly"],
+      dynamic: true,
+      value: (item,i) => Artifact.shorthandStat[item.substats[i]?.key] ?? "-",
+      edit: (item,i) => item.substats[i] ? undefined : {
+        func: statId => {
+          item.setSubstat(statId, 0.1);
+          let characterElement = item.viewer.elements.popup.querySelector(".list-item");
+          let character = Renderer.controllers.get(characterElement.dataset.uuid);
+          if(character)
+          {
+            let buildElement = characterElement.querySelector(".character-build");
+            let buildId = buildElement.attributes.getNamedItem('name')?.value;
+            let artifactElement = buildElement.querySelector(`.list-item[data-uuid="${item.uuid}"]`);
+            Renderer.rerender(artifactElement, {item, buildId, character}, {renderedItem:character});
+          }
+        },
+        type: "select",
+        list: Artifact.substats.filter(statId => statId != item.mainStat && item.substats.map(s => s.key).indexOf(statId) == -1),
+        displayProperty: statId => Artifact.shorthandStat[statId],
+      },
+      dependencies: artifact => [
+        {item:artifact, field:"substats"},
+      ],
+    });
   }
   
   clear()
@@ -365,13 +386,7 @@ export default class ArtifactList extends GenshinList
   
   async render(force=false)
   {
-    await Renderer.renderList2(this.constructor.name, {
-      template: "renderListAsTable",
-      force: force || this.forceNextRender,
-      exclude: field => field.tags.indexOf("detailsOnly") > -1,
-      container: this.viewer.elements[this.constructor.name],
-    });
-    this.forceNextRender = false;
+    await super.render(force);
     
     let footer = document.getElementById("footer");
     footer.classList.remove("d-none");
@@ -510,7 +525,7 @@ export default class ArtifactList extends GenshinList
           this.evaluate().then(result => evalIcon.classList.remove("fa-spin"));
         }, 1);
       });
-      
+      setTimeout(() => evalBtn.dispatchEvent(new Event("click")), 1);
     }
   }
 }

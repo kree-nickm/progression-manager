@@ -568,9 +568,9 @@ export default class Character extends GenshinItem
     }
   }
   
-  getRelatedItems(buildId="default", {skipSort=false}={})
+  getRelatedItems(buildId="default", {skipSort,forceTargets,ignoreTargets}={})
   {
-    let useTargets = document.getElementById('useTargets')?.checked;
+    let useTargets = forceTargets || !ignoreTargets && document.getElementById('useTargets')?.checked;
     let related = {
       weapons: this.list.viewer.lists.WeaponList.items(this.weaponType),
       bestArtifacts: {
@@ -665,19 +665,28 @@ export default class Character extends GenshinItem
   onRender(element)
   {
     super.onRender(element);
-    let buildSections = element.classList.contains("character-build") ? [element] : element.querySelectorAll(".character-build");
-    if(buildSections.length)
+    if(element.dataset.template == "renderCharacterAsPopup")
     {
-      for(let buildSection of buildSections)
+      for(let buildSection of element.querySelectorAll(".character-build"))
       {
         this._addBuildEventHandlers(buildSection);
       }
     }
+    else if(element.dataset.template == "renderCharacterStats")
+    {
+      // Nothing needs doing, yet.
+    }
+    else if(element.dataset.template == "renderCharacterBuild")
+    {
+      this._addBuildEventHandlers(element);
+    }
+    else if(element.dataset.template == "renderCharacterArtifactLists" || element.dataset.template == "renderArtifactAsCard")
+    {
+      this._addArtifactListsEventHandlers(element)
+    }
     else
     {
-      let characterArtifacts = element.classList.contains("character-artifacts") ? element : element.querySelector(".character-artifacts");
-      if(characterArtifacts)
-        this._addArtifactListsEventHandlers(characterArtifacts)
+      console.warn(`Character.onRender called for an unrecognized element template.`, element);
     }
   }
   
@@ -700,7 +709,7 @@ export default class Character extends GenshinItem
           if(!this.list.viewer.buildData[this.key][build])
           {
             this.list.viewer.buildData[this.key][build] = {};
-            this.update("buildData", {}, "notify");
+            this.update("buildData", null, "notify");
             Renderer.rerender(buildSection, {relatedItems:this.getRelatedItems(build)});
           }
           else
@@ -727,7 +736,7 @@ export default class Character extends GenshinItem
         if(this.list.viewer.buildData[this.key][buildId])
         {
           delete this.list.viewer.buildData[this.key][buildId];
-          this.update("buildData", {}, "notify");
+          this.update("buildData", null, "notify");
           Renderer.rerender(buildSection, {relatedItems:this.getRelatedItems()});
         }
         else
@@ -750,8 +759,9 @@ export default class Character extends GenshinItem
           if(sets.indexOf(setKey) == -1)
             delete build.artifactSets[setKey];
         });
-        this.update("buildData", {}, "notify");
+        this.update("buildData", null, "notify");
         Renderer.rerender(buildSection.querySelector(".character-artifacts"), {relatedItems: this.getRelatedItems(buildId, {skipSort:true})});
+        // TODO: Don't need to rerender everything, just elements marked .favorite and any artifacts of the selected sets.
         document.querySelector("#artifactEvaluateBtn")?.classList.add("show-notice");
       };
     
@@ -770,7 +780,7 @@ export default class Character extends GenshinItem
         slider.onchange = event => {
           let stat = slider.attributes.getNamedItem('name')?.value;
           this.getBuild(buildId)[property][stat] = parseFloat(slider.value);
-          this.update("buildData", {}, "notify");
+          this.update("buildData", null, "notify");
           label.innerHTML = slider.value;
           this.maxScores = {};
           this.viewer.lists.ArtifactList.items().forEach(artifact => {
@@ -798,7 +808,7 @@ export default class Character extends GenshinItem
         targetInput.onchange = event => {
           let lastERWithinLimit = this.getBuild(buildId).minER <= this.getStat("enerRech_") && this.getStat("enerRech_") < this.getBuild(buildId).maxER;
           this.getBuild(buildId)[property] = parseFloat(targetInput.value);
-          this.update("buildData", {}, "notify");
+          this.update("buildData", null, "notify");
           let currentERWithinLimit = this.getBuild(buildId).minER <= this.getStat("enerRech_") && this.getStat("enerRech_") < this.getBuild(buildId).maxER;
           if(property == "ratioCritRate" || property == "ratioCritDMG" || lastERWithinLimit != currentERWithinLimit)
           {
@@ -806,8 +816,9 @@ export default class Character extends GenshinItem
             this.viewer.lists.ArtifactList.items().forEach(artifact => {
               artifact.storedStats.characters[this.key][buildId].targets = null;
             });
-            Renderer.rerender(buildSection.querySelector(".character-artifacts"), {relatedItems:this.getRelatedItems(buildId)});
-            document.querySelector("#artifactEvaluateBtn")?.classList.add("show-notice");
+            let listElements = buildSection.querySelectorAll(".character-artifacts .list[data-filter]");
+            for(let listElement of listElements)
+              Renderer.sortItems(listElement);
           }
         };
       }
@@ -818,26 +829,43 @@ export default class Character extends GenshinItem
     if(!useTargetsChk.onchange)
     {
       useTargetsChk.onchange = event => {
-        Renderer.rerender(buildSection.querySelector(".character-artifacts"), {relatedItems:this.getRelatedItems(buildId)});
+        let listElements = buildSection.querySelectorAll(".character-artifacts .list[data-filter]");
+        for(let listElement of listElements)
+          Renderer.sortItems(listElement);
       };
     }
     
-    this._addArtifactListsEventHandlers(buildSection.querySelector(".character-artifacts"));
+    this._addArtifactListsEventHandlers(buildSection.querySelector(".character-artifacts"), {buildSection,buildId});
   }
   
-  _addArtifactListsEventHandlers(characterArtifacts)
+  // Note: Also works if characterArtifacts is an artifact card element, as will be the case when the onlick event below fires and rerenders the card.
+  _addArtifactListsEventHandlers(element, {buildSection,buildId,rootElement}={})
   {
+    // Determine if element is the container for artifact lists or a child of it.
+    let characterArtifacts = element;
+    while(characterArtifacts && !characterArtifacts.classList.contains("character-artifacts"))
+      characterArtifacts = characterArtifacts.parentElement;
+    if(!characterArtifacts)
+    {
+      console.error(`Element is not a child of the artifact list container.`, element);
+      return false;
+    }
+    
     // Determine the build section element.
-    let buildSection = characterArtifacts.parentElement;
-    while(buildSection && !buildSection.classList.contains("character-build"))
-      buildSection = buildSection.parentElement;
+    if(!buildSection)
+    {
+      buildSection = characterArtifacts.parentElement;
+      while(buildSection && !buildSection.classList.contains("character-build"))
+        buildSection = buildSection.parentElement;
+    }
     if(!buildSection)
     {
       console.error(`Equip button element has no ancestor with the 'list-item' class.`);
       return false;
     }
     
-    let buildId = buildSection.attributes.getNamedItem('name')?.value;
+    if(!buildId)
+      buildId = buildSection.attributes.getNamedItem('name')?.value;
     if(!buildId)
     {
       console.log(`Build section does not have a name attribute specifying what build it's for:`, buildSection);
@@ -845,9 +873,12 @@ export default class Character extends GenshinItem
     }
     
     // Determine the root template element.
-    let rootElement = buildSection.parentElement;
-    while(rootElement && rootElement.dataset.template != this.constructor.templateName)
-      rootElement = rootElement.parentElement;
+    if(!rootElement)
+    {
+      rootElement = buildSection.parentElement;
+      while(rootElement && rootElement.dataset.template != this.constructor.templateName)
+        rootElement = rootElement.parentElement;
+    }
     if(!rootElement)
     {
       console.error(`Artifact list container element has no ancestor with the template data attribute '${this.constructor.templateName}'.`, characterArtifacts);
@@ -855,14 +886,14 @@ export default class Character extends GenshinItem
     }
     
     /** Equip Artifact Button **/
-    let equipButtons = characterArtifacts.querySelectorAll(".equip-artifact");
-    for(let btn of equipButtons)
+    let equipButtons = element.querySelectorAll(".equip-artifact");
+    for(let equipBtn of equipButtons)
     {
       // Add the equip event.
-      if(!btn.onclick)
+      if(!equipBtn.onclick)
       {
         // Determine the item for the button.
-        let artifactElement = btn.parentElement;
+        let artifactElement = equipBtn.parentElement;
         while(artifactElement && !artifactElement.classList.contains("list-item"))
           artifactElement = artifactElement.parentElement;
         if(!artifactElement)
@@ -879,12 +910,19 @@ export default class Character extends GenshinItem
           return false;
         }
         
-        btn.onclick = event => {
+        equipBtn.onclick = event => {
+          let prevArtifact = this[artifact.slotKey+'Artifact'];
+          let prevArtifactElement = prevArtifact ? characterArtifacts.querySelector(`.list-item[data-uuid="${prevArtifact.uuid}"]`) : null;
           artifact.update("location", this.base?.key ?? this.key);
           let relatedItems = this.getRelatedItems(buildId);
           // This could be handled by implementing "needsUpdate" on all templated elements, and using an "update()" on an associated item.
           Renderer.rerender(rootElement.querySelector(".character-stats"), {relatedItems});
-          Renderer.rerender(characterArtifacts, {relatedItems});
+          let listElements = characterArtifacts.querySelectorAll(".list[data-filter]");
+          for(let listElement of listElements)
+            Renderer.sortItems(listElement);
+          Renderer.rerender(artifactElement, {item:artifact, buildId, character:this}, {});
+          if(prevArtifactElement)
+            Renderer.rerender(prevArtifactElement, {item:prevArtifact, buildId, character:this}, {renderedItem:this});
         };
       }
     }

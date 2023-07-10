@@ -61,20 +61,23 @@ export default class ListDisplayField
   
   get(property, item, ...params)
   {
-    if(ListDisplayField.itemFields.indexOf(property) == -1)
-    {
-      console.error(`[ListDisplayField object].${property} is not an item-specific field.`);
-      return null;
-    }
+    // If it's not a function, just return it.
+    if(typeof(this[property]) != "function")
+      return this[property];
     
-    if(!this.dynamic && this.statics[item.getUnique()]?.[property] !== undefined)
-      return this.statics[item.getUnique()][property];
+    // If it's not dynamic and is stored, return the stored value.
+    if(!this.dynamic && this.statics[item.uuid]?.[property] !== undefined)
+      return this.statics[item.uuid][property];
+    
+    // Get the value.
     let result = this[property](item, ...params);
+    
+    // If it's not dynamic, store the value before returning.
     if(!this.dynamic)
     {
-      if(!this.statics[item.getUnique()])
-        this.statics[item.getUnique()] = {};
-      this.statics[item.getUnique()][property] = result;
+      if(!this.statics[item.uuid])
+        this.statics[item.uuid] = {};
+      this.statics[item.uuid][property] = result;
     }
     return result;
   }

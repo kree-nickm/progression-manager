@@ -1,4 +1,4 @@
-<div class="col list" name="{{name}}" data-template="renderListAsColumn" data-uuid="{{uuid item}}">
+<div class="col list" data-template="renderListAsColumn" {{#if filter}}data-filter="{{filter}}"{{/if}} data-uuid="{{uuid item}}">
   {{#each items}}
       {{> renderArtifactAsCard buildId=../params.[0] character=../parent item=. fields=../fields}}
   {{/each}}

@@ -227,7 +227,7 @@ export default {
       name: "Rhodeia of Loch",
       '4': "Cleansing Heart",
     },
-    "Primo Geovishap": {
+    "Geovishap": {
       name: "Primo Geovishap",
       '4': "Juvenile Jade",
     },
@@ -251,15 +251,15 @@ export default {
       name: "Hydro Hypostasis",
       '4': "Dew of Repudiation",
     },
-    "Thunder Manifest": {
+    "Thunder Bird": {
       name: "Thunder Manifestation",
       '4': "Storm Beads",
     },
-    "Golden Wolflord": {
+    "Wolflord": {
       name: "Golden Wolflord",
       '4': "Riftborn Regalia",
     },
-    "Coral Defenders": {
+    "Vishap Duo": {
       name: "Coral Defenders",
       '4': "Dragonheir's False Fin",
     },
@@ -275,7 +275,7 @@ export default {
       name: "Electro Regisvine",
       '4': "Thunderclap Fruitcore",
     },
-    "Aeonblight Drake": {
+    "Aeonblight": {
       name: "Aeonblight Drake",
       '4': "Perpetual Caliber",
     },
@@ -287,7 +287,7 @@ export default {
       name: "Dendro Hypostasis",
       '4': "Quelled Creeper",
     },
-    "Setekh Wenut": {
+    "Wenut": {
       name: "Setekh Wenut",
       '4': "Pseudo-Stamens",
     },

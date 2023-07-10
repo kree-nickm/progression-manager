@@ -1,4 +1,4 @@
-<div class="table-responsive scroller list" name="{{name}}" data-template="renderListAsTable" data-uuid="{{uuid item}}">
+<div class="table-responsive scroller list" data-template="renderListAsTable" {{#if filter}}data-filter="{{filter}}"{{/if}} data-uuid="{{uuid item}}">
     <table class="table table-sm table-striped">
         <thead class="bg-light sticky-js">
             <tr class="group-row">
@@ -14,7 +14,7 @@
             </tr>
             <tr>
               {{#each fields}}
-                <th class="{{fieldClasses .}} {{#if sort}}sortable{{/if}}" name="{{id}}" title="{{labelTitle}}" {{#if group}} data-group-name="{{group.label}}"{{/if}}><span>{{label}}</span></th>
+                <th class="{{fieldClasses .}} {{#if sort}}sortable{{/if}}" name="{{id}}" title="{{labelTitle}}" {{#if group}}data-group-name="{{group.label}}"{{/if}}><span>{{label}}</span></th>
               {{/each}}
             </tr>
         </thead>

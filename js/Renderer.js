@@ -12,7 +12,7 @@ handlebars.registerHelper("itemField", (item, field, property, options) => {
 
 handlebars.registerHelper("itemChildren", (item, field, options) => {
   let params = options.hash.params ? (Array.isArray(options.hash.params) ? options.hash.params : [options.hash.params]) : [];
-  let result = Renderer.contentToHTML(field.get('value', item, ...params));
+  let result = Renderer.contentToHTML(field.getAll(item, ...params));
   
   let button = field.get('button',item,...params);
   if(!Array.isArray(button))
@@ -33,7 +33,7 @@ handlebars.registerHelper("itemChildren", (item, field, options) => {
         inner = inner + handlebars.escapeExpression(btn.text);
       if(btn.icon)
         inner = inner + "<i class=\""+ handlebars.escapeExpression(btn.icon) +"\"></i>";
-      result = result + "<button class=\"list-button "+ handlebars.escapeExpression(classes.join(" ")) +"\""+ (btn.action ? "" : " disabled=\"disabled\"") +" name=\""+ (btn.name??"") +"\">"+ inner +"</button>";
+      result = result + "<button class=\"field-button "+ handlebars.escapeExpression(classes.join(" ")) +"\""+ (btn.action ? "" : " disabled=\"disabled\"") +" name=\""+ (btn.name??"") +"\">"+ inner +"</button>";
     }
   }
   
@@ -224,12 +224,21 @@ class Renderer
   
   static contentToHTML(content, path=[])
   {
-    if(Array.isArray(content))
+    if(Array.isArray(content?.value))
     {
       let result = "";
-      for(let i in content)
-        result = result + Renderer.contentToHTML(content[i], path.concat([i]));
+      for(let i in content.value)
+        if(content.value[i])
+          result = result + Renderer.contentToHTML(content.value[i], path.concat([i]));
       return result;
+    }
+    else if(typeof(content) == "string")
+    {
+      console.warn(`String "${content}" should be an object.`);
+      let classes = [];
+      if(path.length)
+        classes.push("sub-"+ path.join("-"));
+      return `<span class="value ${handlebars.escapeExpression(classes.join(' '))}">${handlebars.escapeExpression(content)}</span>`;
     }
     else if(content !== undefined && content !== null)
     {
@@ -241,17 +250,15 @@ class Renderer
         {
           text = Renderer.contentToHTML(content.value);
         }
-        else if(content.value)
+        else if(content.value !== "")
         {
-          text = "<span class='value'>"+ handlebars.escapeExpression(content.value) +"</span>";
+          text = `<span class="value">${handlebars.escapeExpression(content.value)}</span>`;
         }
       }
-      else if(typeof(content) == "number" || content)
-      {
-        text = "<span class='value'>"+ handlebars.escapeExpression(content) +"</span>";
-      }
-      let attrs = [];
+      if(content.icon)
+        text = text + `<i class="icon ${handlebars.escapeExpression(content.icon)}"></i>`;
       
+      let attrs = [];
       let classes = [];
       for(let cls in content.classes ?? [])
         if(content.classes[cls])
@@ -261,173 +268,85 @@ class Renderer
       if(classes.length)
         attrs.push(`class="${handlebars.escapeExpression(classes.join(' '))}"`);
       
+      if(content.name)
+        attrs.push(`name="${handlebars.escapeExpression(content.name)}"`);
+      
       if(content.src)
         attrs.push(`src="${content.src}"`);
       
       if(content.title)
-        attrs.push(`title="${content.title}"`);
+        attrs.push(`title="${handlebars.escapeExpression(content.title)}"`);
       
-      return `<${tag} ${attrs.join(' ')}` + (text ? `>${text}</${tag}>` : `/>`);
+      if("onclick" in content && !content.onclick)
+        attrs.push(`disabled="disabled"`);
+      
+      return `<${tag} data-source-code="Renderer.contentToHTML" ${attrs.join(' ')}` + (text!=="" ? `>${text}</${tag}>` : `/>`);
     }
     else
       return "";
   }
   
-  static async renderList2(listKey, {template, items, parent, filter, include=[], exclude=[], fields, container=document, force=false}={})
+  static async rerender(element, data={}, {template,showPopup,force=true,parentElement,renderedItem}={})
   {
-    let listElements = container.querySelectorAll(`.list[name='${listKey}']`);
-    if(listElements.length)
+    if(!element)
     {
-      for(let element of listElements)
-        await Renderer.renderListElement(element, listKey, template, items, parent, filter, include, exclude, fields, force);
+      if(parentElement instanceof Element)
+      {
+        element = parentElement.appendChild(document.createElement("template"));
+        force = true;
+      }
+      else
+        return console.error(`Renderer.rerender(3) called with no element and no valid parentElement option.`);
     }
-    else
+    else if(Array.isArray(element) || element instanceof NodeList)
     {
-      let element = container.appendChild(document.createElement("template"));
-      await Renderer.renderListElement(element, listKey, template, items, parent, filter, include, exclude, fields, true)
+      return console.error(`Renderer.rerender(3) does not yet support multiple elements being passed in.`);
     }
-    
-    // Iterate through all item fields.
-    let fieldElements = document.querySelectorAll(".list-item-field");
-    fieldElements.forEach(Renderer.renderItemField);
-  }
-  
-  static async renderListElement(element, listKey, template, items, parent, filter, include, exclude, fields, force)
-  {
-    let listKeys = listKey.split("/");
-    let list = window.viewer.lists[listKeys[0]];
-    if(!items)
-      items = filter ? list.items(filter) : (listKeys[1] ? (list.items(listKeys[1]) ?? list.items()) : list.items());
-    if(force)
-    {
-      let parentElement = element.parentNode;
-      let index = Array.from(parentElement.children).indexOf(element);
-      if(!template)
-        template = element.dataset.template ?? "renderListAsTable";
-      let templates = await Renderer.getTemplates(template, "renderItemField");
-      element.outerHTML = templates[template]({
-        item: list,
-        name: listKey,
-        parent: parent,
-        groups: list.display.getGroups({include, exclude}),
-        fields: fields ?? list.display.getFields({include, exclude}),
-        items: items,
-      });
-      element = parentElement.children.item(index);
-    }
-    if(parent)
-      parent.onRender(element);
-      
-    // Add event handlers for collapsing groups.
-    element.querySelectorAll(".group-header").forEach(groupElem => {
-      if(!groupElem.onclick)
-        groupElem.onclick = event => {
-          let groupName = groupElem.attributes.getNamedItem('name')?.value ?? "???";
-          groupElem.collapsed = !groupElem.collapsed;
-          let groupMembers = element.querySelectorAll(`[data-group-name="${groupName}"]`);
-          if(groupElem.collapsed)
-          {
-            groupElem.firstElementChild.innerHTML = "-";
-            groupMembers.forEach(member => member.classList.add("group-collapsed"));
-          }
-          else
-          {
-            groupElem.firstElementChild.innerHTML = "+ "+ groupName +" +";
-            groupMembers.forEach(member => member.classList.remove("group-collapsed"));
-          }
-        };
-    });
-    
-    // Add event handlers for sorting.
-    let sortables = element.querySelectorAll(".sortable");
-    sortables.forEach(sortElem => {
-      if(!sortElem.onclick)
-        sortElem.onclick = event => {
-          let fieldName = sortElem.attributes.getNamedItem('name')?.value;
-          let field = list.display.getField(fieldName);
-          if(field)
-          {
-            // Determine sort order.
-            let order;
-            if(sortElem.classList.contains("sorted"))
-            {
-              sortables.forEach(elem => elem.classList.remove("sorted") & elem.classList.remove("sorted-r"));
-              sortElem.classList.add("sorted-r");
-              order = -1;
-            }
-            else
-            {
-              sortables.forEach(elem => elem.classList.remove("sorted") & elem.classList.remove("sorted-r"));
-              sortElem.classList.add("sorted");
-              order = 1;
-            }
-            
-            // Sort the items array.
-            if(field.sort.func)
-              list.list.sort(field.sort.func.bind(list, order));
-            else if(field.sort.generic)
-              list.list.sort(Renderer.genericSorters[field.sort.generic.type].bind(list, field.sort.generic.property, order));
-            else
-            {
-              console.warn(`No sort algorithm given for field '${fieldName}'.`);
-              return;
-            }
-            list.update("list", {}, "notify");
-            
-            // Reorder the HTML elements.
-            let listElement = element.querySelector(".list-target");
-            if(!listElement)
-              listElement = element;
-            for(let item of list.list)
-            {
-              // TODO: Only sort items that were displayed on the list in the first place, otherwise get rid of the console.warn, which might be irrelevant anyway.
-              let itemElement = listElement.children.namedItem(item.getUnique());
-              if(itemElement)
-                listElement.appendChild(itemElement);
-              else
-                console.warn(`Unable to find item element for item '${item.getUnique()}' while sorting by '${fieldName}'.`);
-            }
-            
-            //list.viewer.store();
-          }
-          else
-            console.error(`Unable to find field '${fieldName}'.`);
-        };
-    });
-  }
-  
-  static async rerender(element, data={}, {template,showPopup}={})
-  {
-    let parentElement = element.parentNode;
-    if(!parentElement) return console.error(`Element has no parent:`, element);
-    
-    let index = Array.from(parentElement.children).indexOf(element);
-    if(index == -1) return console.error(`Element can't be found within its parent:`, element, parentElement);
-    
-    if(!template)
-      template = element.dataset.template;
-    if(!template) return console.error(`Element has no template specified in a data attribute:`, element);
     
     if(!data.item)
       data.item = Renderer.controllers.get(element.dataset.uuid);
       
     if(!data.item) return console.error(`Element has no associated item:`, element);
     
-    if(!data.fields && data.item.display)
-      data.fields = data.item.display.fields;
-    
-    if(!data.relatedItems && typeof(data.item.getRelatedItems) === "function")
-      data.relatedItems = data.item.getRelatedItems();
-    
-    let templates = await Renderer.getTemplates(template, "renderItemField");
-    element.outerHTML = templates[template](data);
-    element = parentElement.children.item(index);
+    if(force)
+    {
+      let parentElement = element.parentElement;
+      if(!parentElement) return console.error(`Element has no parent:`, element);
+      
+      let index = Array.from(parentElement.children).indexOf(element);
+      if(index == -1) return console.error(`Element can't be found within its parent:`, element, parentElement);
+      
+      if(!template)
+        template = element.dataset.template;
+      if(!template) return console.error(`Element has no template:`, element);
+      
+      if(!data.filter && element.dataset.filter)
+        data.filter = element.dataset.filter;
+      
+      if(!data.fields && data.item.display)
+        data.fields = data.item.display.fields;
+      
+      if(!data.groups && data.item.display)
+        data.groups = data.item.display.groups;
+      
+      if(!data.relatedItems && typeof(data.item.getRelatedItems) === "function")
+        data.relatedItems = data.item.getRelatedItems();
+      
+      if(!data.items && typeof(data.item.items) === "function")
+        data.items = data.item.items(data.filter);
+      
+      let templates = await Renderer.getTemplates(template, "renderItemField");
+      element.outerHTML = templates[template](data);
+      element = parentElement.children.item(index);
+      
+      // Iterate through all item fields.
+      element.querySelectorAll(".list-item-field").forEach(Renderer.renderItemField);
+    }
     
     // Add context-specific event handlers.
-    data.item.onRender(element);
-    
-    // Iterate through all item fields.
-    element.querySelectorAll(".list-item-field").forEach(Renderer.renderItemField);
+    if(!renderedItem)
+      renderedItem = data.item;
+    renderedItem.onRender(element);
     
     // Final UI preperation.
     $(element).find(".selectpicker").selectpicker('render');
@@ -459,7 +378,7 @@ class Renderer
   {
     template = template ?? "renderItem";
     let templates = await Renderer.getTemplates(template, "renderItemField");
-    let element = document.querySelector(`.list[name='${item.list.constructor.name}']`); // TODO: Could match multiple.
+    let element = document.querySelector(`.list[data-uuid='${item.list.uuid}']`); // TODO: Could match multiple.
     {
       let listElement = element.querySelector(".list-target");
       if(!listElement)
@@ -480,6 +399,48 @@ class Renderer
     }
   }
   
+  static sortItems(listElement, {list,items,filter}={})
+  {
+    let listTargetElement;
+    if(listElement.classList.contains("list"))
+    {
+      listTargetElement = listElement.querySelector(".list-target");
+      if(!listTargetElement)
+        listTargetElement = listElement;
+    }
+    else if(listElement.classList.contains("list-target"))
+    {
+      listTargetElement = listElement;
+      while(listElement && !listElement.classList.contains("list"))
+        listElement = listElement.parentElement;
+      if(!listElement)
+        return console.error(`List target element has no list ancestor element.`, listTargetElement);
+    }
+    else
+    {
+      return console.error(`Element is neither a list nor list target.`, listElement);
+    }
+    
+    if(!items)
+    {
+      if(!list)
+        list = Renderer.controllers.get(listElement.dataset.uuid);
+      if(!list)
+        return console.error(`Item could not be determined from list element:`, listElement);
+      if(!filter && listElement.dataset.filter)
+        filter = listElement.dataset.filter;
+      items = list.items(filter);
+    }
+    console.debug(`Sorting these items:`, items, list, filter);
+    for(let item of items)
+    {
+      // Note: If the element list differs from the list of items, the extra elements will remain at the top.
+      let itemElement = listTargetElement.children.namedItem(item.getUnique());
+      if(itemElement)
+        listTargetElement.appendChild(itemElement);
+    }
+  }
+  
   static async renderItemField(element)
   {
     if(element.needsUpdate === false)
@@ -497,66 +458,37 @@ class Renderer
       console.error(`Item field '${fieldName}' element has no ancestor with the 'list-item' class.`, element);
       return false;
     }
-    let itemName = itemElement.attributes.getNamedItem('name')?.value;
     
-    // Determine the list, if specified.
-    let list;
-    if(itemElement.dataset.list)
-    {
-      list = window.viewer.lists[itemElement.dataset.list];
-    }
-    if(!list)
-    {
-      let listElement = itemElement.parentElement;
-      while(listElement && !listElement.classList.contains("list"))
-        listElement = listElement.parentElement;
-      if(listElement)
-      {
-        let listKey = listElement.attributes.getNamedItem('name')?.value;
-        if(listKey)
-        {
-          list = window.viewer.lists[listKey.split("/")[0]];
-        }
-      }
-      else
-      {
-        console.error(`Item '${itemName}' field '${fieldName}' element has no ancestor with the 'list' class.`, element);
-        return false;
-      }
-    }
-    if(!list)
-    {
-      console.error(`List element for item '${itemName}' field '${fieldName}' has an invalid name.`);
-      return false;
-    }
-    
-    // Verify that item and field are found.
-    let item = list.get(itemName);
+    let item = Renderer.controllers.get(itemElement.dataset.uuid);
     if(!item)
     {
-      console.error(`Unable to determine '${itemName}' item of this ${list.constructor.name} element (field '${fieldName}'):`, itemElement);
+      console.error(`Unable to find item for element`, itemElement);
       return false;
     }
     
-    let field = list.display.getField(fieldName);
+    // Get the field data.
+    let field = item.display.getField(fieldName);
     if(!field)
     {
-      console.error(`Unable to determine '${fieldName}' field of this ${list.constructor.name} element (item '${itemName}'):`, element);
+      console.error(`Unable to determine '${fieldName}' field of item '${item.name}':`, element);
       return false;
     }
     
     // Parse out the parameters for the item field.
     let params = [];
-    let p;
-    let i = 0;
-    while((p = element.dataset['param'+i]) !== undefined)
+    for(let i=0,p=element.dataset['param'+i]; p!==undefined; p=element.dataset['param'+(++i)])
     {
       let param = p.split("##");
       if(param.length == 2)
         params.push(window.viewer.lists[param[0]].get(param[1]));
       else
-        params.push(p);
-      i++;
+      {
+        let controller;
+        if(controller = Renderer.controllers.get(p))
+          params.push(controller);
+        else
+          params.push(p);
+      }
     }
     
     // Fetch some fields we need.
@@ -620,7 +552,7 @@ class Renderer
     {
       if(edit.target)
         dependencies.push(edit.target);
-      Renderer.addFieldEventListeners(element, {value, edit}, list, item, field);
+      Renderer.addFieldEventListeners(element, {value, edit}, item, field);
     }
     else if(popup)
     {
@@ -640,11 +572,16 @@ class Renderer
           continue;
         let newParents = [...parents, ".sub-"+ iContent];
         let subElement = element.querySelector(":scope > "+ newParents.join(" > "));
+        if(!subElement)
+        {
+          console.error(`Cannot find descendant of field element along the content value path.`, element, newParents);
+          return;
+        }
         if(valueArr[iContent].edit)
         {
           if(valueArr[iContent].edit.target)
             dependencies.push(valueArr[iContent].edit.target);
-          Renderer.addFieldEventListeners(subElement, valueArr[iContent], list, item, field);
+          Renderer.addFieldEventListeners(subElement, valueArr[iContent], item, field);
         }
         else if(valueArr[iContent].popup)
         {
@@ -680,7 +617,7 @@ class Renderer
     }
   }
   
-  static addFieldEventListeners(fieldElement, content, list, item, field)
+  static addFieldEventListeners(fieldElement, content, item, field)
   {
     fieldElement.editValue = content.edit.value ?? content.value ?? "";
     fieldElement.editTarget = content.edit.target;
@@ -706,8 +643,20 @@ class Renderer
         for(let opt of content.edit.list)
         {
           let option = editElement.appendChild(document.createElement("option"));
-          option.value = opt[content.edit.valueProperty];
-          option.innerHTML = opt[content.edit.displayProperty];
+          
+          if(typeof(content.edit.valueProperty) == "function")
+            option.value = content.edit.valueProperty.call(option, opt);
+          else if(content.edit.valueProperty)
+            option.value = opt[content.edit.valueProperty];
+          else
+            option.value = opt;
+          
+          if(typeof(content.edit.displayProperty) == "function")
+            option.innerHTML = content.edit.displayProperty.call(option, opt);
+          else if(content.edit.displayProperty)
+            option.innerHTML = opt[content.edit.displayProperty];
+          else
+            option.innerHTML = opt;
         }
       }
       else
@@ -734,9 +683,6 @@ class Renderer
             }
             else
               fieldElement.editTarget.item.update(fieldElement.editTarget.field, !fieldElement.editChecked);
-            //fieldElement.editTarget.item.list.viewer.updated();
-            //list.viewer.store();
-            //list.render();
           };
         else if(fieldElement.editFunc)
           fieldElement.onclick = fieldElement.editFunc;
@@ -751,6 +697,9 @@ class Renderer
         fieldElement.onclick = event => {
           if(fieldElement.classList.contains("editing") || event.target.nodeName == "OPTION")
             return;
+          let placeholder = fieldElement.editTarget?.item?.getProperty(fieldElement.editTarget?.field);
+          if(!placeholder && placeholder !== 0)
+            placeholder = fieldElement.innerText;
           fieldElement.classList.add("editing");
           if(content.edit.type == "select")
           {
@@ -764,8 +713,8 @@ class Renderer
           }
           else
           {
+            editElement.placeholder = placeholder;
             editElement.value = "";
-            editElement.placeholder = (fieldElement.editTarget?.item?.getProperty(fieldElement.editTarget?.field) ?? 0);
           }
           editElement.focus();
         };
@@ -793,9 +742,6 @@ class Renderer
                 fieldElement.editFunc(val);
               else
                 throw new Error(`Neither fieldElement.editTarget nor fieldElement.editFunc were specifed.`);
-              //fieldElement.editTarget?.item.list.viewer.updated();
-              //list.viewer.store();
-              //list.render();
             }
           }
         };

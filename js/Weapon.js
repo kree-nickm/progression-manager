@@ -79,8 +79,9 @@ export default class Weapon extends GenshinItem
     return this.loaded;
   }
   
-  afterUpdate(field, value)
+  afterUpdate(field, value, action, options)
   {
+    super.afterUpdate(field, value, action, options);
     if(field.string == "location")
     {
       if(value)

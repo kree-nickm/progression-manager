@@ -5,7 +5,7 @@ import GenshinItem from "./GenshinItem.js";
 
 export default class Artifact extends GenshinItem
 {
-  static dontSerialize = GenshinItem.dontSerialize.concat(["character","wanters","loaded","storedStats","valuable"]);
+  static dontSerialize = GenshinItem.dontSerialize.concat(["character","wanters","loaded","storedStats"]);
   static goodProperties = ["setKey","slotKey","level","rarity","mainStatKey","location","lock","substats"];
   static shorthandStat = {
     'eleMas': "EM",
@@ -58,7 +58,6 @@ export default class Artifact extends GenshinItem
   };
   loaded = false;
   character = null;
-  valuable = 1;
   wanters = [];
   
   afterLoad()
@@ -76,8 +75,9 @@ export default class Artifact extends GenshinItem
     return this.loaded;
   }
   
-  afterUpdate(field, value, previous)
+  afterUpdate(field, value, action, options)
   {
+    super.afterUpdate(field, value, action, options);
     if(field.string == "location")
     {
       if(value)
@@ -154,7 +154,7 @@ export default class Artifact extends GenshinItem
     if(found)
     {
       this.cleanSubstats();
-      this.update("substats", this.substats, "notify");
+      this.update("substats", null, "notify");
     }
   }
   
