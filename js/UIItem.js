@@ -55,9 +55,7 @@ export default class UIItem extends UIController {
   
   unlink({skipList, skipHTML}={})
   {
-    super.unlink();
-    if(!skipHTML)
-      Renderer.removeItem(this);
+    super.unlink({skipHTML});
     if(!skipList)
       this.list?.update("list", this, "remove");
   }

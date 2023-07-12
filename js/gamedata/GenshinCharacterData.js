@@ -390,7 +390,7 @@ export default {
     rarity: 4,
     ascendStat: "atk_",
     matBoss: "Thunder Bird",
-    matFlower: "Dendrobrium",
+    matFlower: "Dendrobium",
     matEnemy: "Hilichurls",
     matMastery: "Elegance",
     matTrounce: "Ashen Heart",

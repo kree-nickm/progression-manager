@@ -40,11 +40,11 @@ export default class WeaponList extends GenshinList
       value: item => item.name,
       classes: item => ({
         "material": true,
-        "q1": item.quality == 1,
-        "q2": item.quality == 2,
-        "q3": item.quality == 3,
-        "q4": item.quality == 4,
-        "q5": item.quality == 5,
+        "q1": item.rarity == 1,
+        "q2": item.rarity == 2,
+        "q3": item.rarity == 3,
+        "q4": item.rarity == 4,
+        "q5": item.rarity == 5,
       }),
     });
     
@@ -54,7 +54,8 @@ export default class WeaponList extends GenshinList
       dynamic: false,
       value: item => ({
         tag: "img",
-        src: `img/Weapon_${item.type}.png`,
+        classes: {'weapon-icon':true},
+        src: `img/Icon_${item.type}.webp`,
       }),
       classes: item => ({
         'icon': true,
@@ -224,6 +225,17 @@ export default class WeaponList extends GenshinList
       },
     });
     
+    let passiveField = this.display.addField("passive", {
+      label: "Passive",
+      tags: ["detailsOnly"],
+      dynamic: true,
+      html: true,
+      value: item => item.getPassive(),
+      dependencies: item => [
+        {item, field:"refinement"},
+      ],
+    });
+    
     let atk = this.display.addField("atk", {
       label: "ATK",
       tags: ["detailsOnly"],
@@ -236,7 +248,7 @@ export default class WeaponList extends GenshinList
     });
     
     let statVal = this.display.addField("statVal", {
-      label: "ATK",
+      label: "Stat",
       tags: ["detailsOnly"],
       dynamic: true,
       title: item => item.getStat(),
@@ -253,7 +265,7 @@ export default class WeaponList extends GenshinList
       value: item => {
         return {
           tag: "img",
-          src: `https://rerollcdn.com/GENSHIN/Weapons/${item.name.replaceAll(' ','_').replaceAll('"','')}.png`,
+          src: item.image,
         };
       },
     });

@@ -27,33 +27,49 @@ export default class UIController {
     Renderer.controllers.set(this.uuid, this);
   }
   
-  parseProperty(prop, {create=true}={})
+  parseProperty(path, {create=true}={})
   {
-    if(!Array.isArray(prop))
-      prop = prop.split(".");
+    if(!Array.isArray(path))
+      path = path.split(".");
+    let string = path.map(item => Array.isArray(item) ? (item[0] +":"+ item.slice(1).join(",")) : item).join(".");
     let obj = this;
-    for(let i=0; i<prop.length-1; i++)
+    for(let i=0; i<path.length-1; i++)
     {
-      if(obj[prop[i]] == undefined)
+      if(Array.isArray(path[i]))
+      {
+        let func = path[i].shift();
+        if(typeof(obj[func]) == "function")
+        {
+          obj = obj[func](...path[i]);
+          if(!obj)
+            break;
+        }
+        else
+        {
+          console.error(`Array given in path expression "${string}" in [${this.constructor.name} object].parseProperty, but [${obj.constructor.name} object].${func} is not a function. Arrays must correspond to functions and their arguments.`);
+          return {string, path};
+        }
+      }
+      else if(obj[path[i]] == undefined)
       {
         if(create)
-          obj[prop[i]] = {};
+          obj[path[i]] = {};
         else
         {
           obj = undefined;
           break;
         }
       }
-      else if(typeof(obj[prop[i]]) != "object")
+      else if(typeof(obj[path[i]]) != "object")
       {
-        console.error(`[${this.constructor.name} object].${prop.join('.')} encountered a non-object at '${prop[i]}'.`);
-        return {string:prop.join("."), path:prop};
+        console.error(`[${this.constructor.name} object].${string} encountered a non-object at '${path[i]}'.`);
+        return {string, path};
       }
-      obj = obj[prop[i]];
+      obj = obj[path[i]];
       if(!obj)
         break;
     }
-    return {string:prop.join("."), path:prop, object:obj, property:prop[prop.length-1], value:obj?.[prop[prop.length-1]]};
+    return {string, path, object:obj, property:path[path.length-1], value:obj?.[path[path.length-1]]};
   }
   
   getProperty(prop, {create=true}={})
@@ -78,7 +94,7 @@ export default class UIController {
     else if(typeof(field.value) == "object" || typeof(field.value) == "function")
     {
       if(!action)
-        console.warn(`${this.constructor.name}.update(3) expects a third argument when the property being updated (${field.string}) is non-scalar (it's a ${typeof(field.value)}).`);
+        console.warn(`${this.constructor.name}.update() expects a third argument when the property being updated (${field.string}) is non-scalar (it's a ${typeof(field.value)}).`);
       else
       {
         if(Array.isArray(field.value))
@@ -100,13 +116,15 @@ export default class UIController {
           }
           else if(action == "remove")
           {
-            field.object[field.property] = field.object[field.property].filter(item => item != value);
+            let index;
+            while((index = field.value.indexOf(value)) > -1)
+              field.value.splice(index, 1);
             if(value instanceof UIController)
               value.notifyAll();
             needsUpdate = true;
           }
           else
-            console.warn(`Unknown action '${action}' in ${this.constructor.name}.update(3) when updating array '${field.string}'.`);
+            console.warn(`Unknown action '${action}' in ${this.constructor.name}.update() when updating array '${field.string}'.`);
         }
         else if(typeof(field.value) == "object")
         {
@@ -115,12 +133,17 @@ export default class UIController {
             field.object[field.property] = value;
             needsUpdate = true;
           }
+          else if(action == "delete")
+          {
+            delete field.object[field.property];
+            needsUpdate = true;
+          }
           else
-            console.warn(`Unknown action '${action}' in ${this.constructor.name}.update(3) when updating object '${field.string}'.`);
+            console.warn(`Unknown action '${action}' in ${this.constructor.name}.update() when updating object '${field.string}'.`);
         }
         else if(typeof(field.value) == "function")
         {
-          console.warn(`Unknown action '${action}' in ${this.constructor.name}.update(3) when updating function '${field.string}'.`);
+          console.warn(`Unknown action '${action}' in ${this.constructor.name}.update() when updating function '${field.string}'.`);
         }
       }
     }
@@ -210,9 +233,11 @@ export default class UIController {
   {
   }
   
-  unlink(options)
+  unlink({skipHTML}={})
   {
     Renderer.controllers.delete(this.uuid);
+    if(!skipHTML)
+      Renderer.removeItem(this);
   }
   
   toJSON()

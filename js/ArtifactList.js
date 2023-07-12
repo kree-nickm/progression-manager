@@ -55,6 +55,8 @@ export default class ArtifactList extends GenshinList
     this.list.forEach(artifact => artifact.update("wanters", [], "replace"));
     // Cycle through every character so we can access their artifact priority lists.
     this.viewer.lists.CharacterList.list.forEach(character => {
+      if(!character.consider)
+        return true;
       // Cycle through all their builds.
       for(let buildId in character.getBuilds())
       {
@@ -114,7 +116,7 @@ export default class ArtifactList extends GenshinList
   afterUpdate(field, value, action, options)
   {
     super.afterUpdate(field, value, action, options);
-    if(field.string == "list" && value.length != field.value.length)
+    if(field.string == "list" && value.length != field.value.length || field.string == "evaluate")
       document.querySelector("#artifactEvaluateBtn")?.classList.add("show-notice");
   }
   

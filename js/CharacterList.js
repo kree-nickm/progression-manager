@@ -59,7 +59,8 @@ export default class CharacterList extends GenshinList
       title: item => item.weaponType,
       value: item => ({
         tag: "img",
-        src: `img/Weapon_${item.weaponType}.png`,
+        classes: {'weapon-icon':true},
+        src: `img/Icon_${item.weaponType}.webp`,
       }),
       classes: item => ({
         'icon': true,
@@ -74,7 +75,8 @@ export default class CharacterList extends GenshinList
       title: item => item.element,
       value: item => ({
         tag: "img",
-        src: `img/Element_${item.element}.png`,
+        classes: {'element-icon':true},
+        src: `img/Element_${item.element}.svg`,
       }),
       classes: item => ({
         'icon': true,
@@ -464,6 +466,21 @@ export default class CharacterList extends GenshinList
           src: src,
         };
       },
+    });
+    
+    let considerField = this.display.addField("consider", {
+      label: "Consider",
+      tags: ["detailsOnly"],
+      dynamic: true,
+      value: "Consider in Calculations",
+      title: item => `Consider ${item.name}'s preferences in the calculation that determines artifact desirability.`,
+      edit: item => ({
+        target: {item, field:"consider"},
+        type: "checkbox",
+        value: item.consider,
+        trueClasses: ["fa-solid","fa-circle-check"],
+        falseClasses: [],
+      }),
     });
   }
   

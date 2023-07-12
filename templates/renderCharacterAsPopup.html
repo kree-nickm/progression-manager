@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-auto">
                 <div class="item-display item-character display-full">
-                    <div class="display-img quality-{{getProperty item 'rarity'}}">
+                    <div class="display-img rarity-{{getProperty item 'rarity'}}">
                       {{> renderItemField item=item field=fields.image wrapper="div"}}
                     </div>
                     <div class="display-caption">
@@ -23,6 +23,7 @@
                     <div class="col-2">{{> renderItemField item=item field=fields.constellation wrapper="div"}}</div>
                     <div class="col-2">{{> renderItemField item=item field=fields.ascendStat wrapper="div"}}</div>
                 </div>
+              {{> renderItemField item=item field=fields.consider wrapper="div"}}
             </div>
         </div>
         

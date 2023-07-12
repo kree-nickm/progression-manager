@@ -129,6 +129,7 @@ export default class Artifact extends GenshinItem
     let key = this.mainStatKey.endsWith("o_dmg_") ? "elemental_dmg_" : this.mainStatKey;
     return GenshinArtifactStats[this.rarity].mainstats[key][this.level];
   }
+  get image(){ return this.loaded ? GenshinArtifactData[this.setKey][this.slotKey+'Img'] : ""; }
   
   setSubstat(statId, value)
   {
@@ -270,6 +271,6 @@ export default class Artifact extends GenshinItem
   unlink(options)
   {
     this.update("location", "");
-    super.unlink();
+    super.unlink(options);
   }
 }

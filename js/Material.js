@@ -1,4 +1,5 @@
 import GenshinLootData from "./gamedata/GenshinLootData.js";
+import GenshinMaterialData from "./gamedata/GenshinMaterialData.js";
 
 import GenshinItem from "./GenshinItem.js";
 import Character from "./Character.js";
@@ -6,7 +7,7 @@ import Weapon from "./Weapon.js";
 
 export default class Material extends GenshinItem
 {
-  static dontSerialize = GenshinItem.dontSerialize.concat(["_name","_shorthand","_type","source","quality","days","usedBy","prevTier","nextTier"]);
+  static dontSerialize = GenshinItem.dontSerialize.concat(["_shorthand","_type","source","days","usedBy","prevTier","nextTier"]);
   
   static gemQualities = {
     '5': " Gemstone",
@@ -28,7 +29,7 @@ export default class Material extends GenshinItem
         continue;
       if(!matList[m+1])
         break;
-      if(matList[m].quality > matList[m+1].quality)
+      if(matList[m].rarity > matList[m+1].rarity)
       {
         matList[m].prevTier = matList[m+1];
         matList[m+1].nextTier = matList[m];
@@ -56,12 +57,10 @@ export default class Material extends GenshinItem
   }
   
   key = "";
-  _name = "";
   _count = 0;
   _shorthand;
   _type;
   source = "";
-  quality = 1;
   days = [];
   usedBy = [];
   prevTier = null;
@@ -76,7 +75,6 @@ export default class Material extends GenshinItem
         key: Material.toKey(goodData.goodKey),
         count: goodData.goodValue,
       };
-      data.name = (goodData.goodKey === data.key) ? Material.fromKey(goodData.goodKey) : goodData.goodKey;
     }
     else
       data = goodData;
@@ -97,12 +95,7 @@ export default class Material extends GenshinItem
   }
   get shorthand(){ return this._shorthand ?? this.name; }
   set shorthand(val){ this._shorthand = val; }
-  get name() {
-    if(!this._name)
-      this._name = Material.fromKey(this.key);
-    return this._name;
-  }
-  set name(val){ this._name = val; }
+  get name() { return GenshinMaterialData[this.key]?.name ?? this.key; }
   get type() {
     if(!this._type)
     {
@@ -116,13 +109,15 @@ export default class Material extends GenshinItem
       if(!this._type)
       {
         let words = this.shorthand.split(" ");
-        if(words.length == 2 && Object.keys(GenshinLootData.gemstone).indexOf(words[0]) > -1 && (words[0] + Material.gemQualities[this.quality]) == this.shorthand)
+        if(words.length == 2 && Object.keys(GenshinLootData.gemstone).indexOf(words[0]) > -1 && (words[0] + Material.gemQualities[this.rarity]) == this.shorthand)
           this._type = "gemstone";
       }
     }
     return this._type ?? "unknown";
   }
   set type(val){ this._type = val; }
+  get image(){ return GenshinMaterialData[this.key]?.img ?? ""; }
+  get rarity(){ return GenshinMaterialData[this.key]?.rarity ?? 1; }
   
   getFullSource()
   {
@@ -222,18 +217,30 @@ export default class Material extends GenshinItem
         },
         edit: {target: {item:this, field:"count"}},
       },
-      {
+      (this.image&&false ? {
+        tag: "div",
+        value: {
+          tag: "div",
+          value: {
+            tag: "img",
+            src: this.image,
+          },
+          classes: {"display-img": true, ["rarity-"+this.rarity]: true},
+        },
+        classes: {"item-display": true, "item-material": true, "display-icon": true},
+        title: this.getFullSource(),
+      } : {
         value: this.shorthand + (this.days.indexOf(this.viewer.today()) > -1 ? "*" : ""),
         classes: {
           "material": true,
-          "q1": this.quality == 1,
-          "q2": this.quality == 2,
-          "q3": this.quality == 3,
-          "q4": this.quality == 4,
-          "q5": this.quality == 5,
+          "q1": this.rarity == 1,
+          "q2": this.rarity == 2,
+          "q3": this.rarity == 3,
+          "q4": this.rarity == 4,
+          "q5": this.rarity == 5,
         },
         title: this.getFullSource(),
-      },
+      }),
     ];
   }
 }

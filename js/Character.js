@@ -12,7 +12,7 @@ import Material from "./Material.js";
 
 export default class Character extends GenshinItem
 {
-  static dontSerialize = GenshinItem.dontSerialize.concat(["MaterialList","_weapon","_flower","_plume","_sands","_goblet","_circlet","loaded","maxScores"]);
+  static dontSerialize = GenshinItem.dontSerialize.concat(["loaded","_weapon","_flower","_plume","_sands","_goblet","_circlet","MaterialList","maxScores"]);
   static goodProperties = ["key","level","constellation","ascension","talent"];
   static templateName = "renderCharacterAsPopup";
   static statBase = {
@@ -82,20 +82,22 @@ export default class Character extends GenshinItem
     skill: 1,
     burst: 1,
   };
-  loaded = false;
   favorite = false;
+  consider = true;
+
+  loaded = false;
   _weapon = null;
   _flower = null;
   _plume = null;
   _sands = null;
   _goblet = null;
   _circlet = null;
-  maxScores = {};
   MaterialList;
+  maxScores = {};
   
   afterLoad()
   {
-    this.MaterialList = {crown: this.list.viewer.lists.MaterialList.get("Crown Of Insight")};
+    this.MaterialList = {crown: this.list.viewer.lists.MaterialList.get("CrownOfInsight")};
     if(GenshinCharacterData[this.key])
     {
       this.loaded = true;
@@ -147,6 +149,40 @@ export default class Character extends GenshinItem
     return this.loaded;
   }
   
+  afterUpdate(field, value, action, options)
+  {
+    super.afterUpdate(field, value, action, options);
+    if(field.string == "consider")
+    {
+      this.viewer.lists.ArtifactList?.update("evaluate", null, "notify");
+    }
+    else if(field.string == "buildData" || field.path[0]?.[0] == "getBuild")
+    {
+      if(options.property != "artifactSets")
+      {
+        if(options.buildId)
+        {
+          if(options.property == "sandsStat" || options.property == "gobletStat" || options.property == "circletStat")
+          {
+            this.maxScores[options.buildId][options.property.slice(0,-4)] = {};
+            if(this.maxScores[''])
+              this.maxScores[''][options.property.slice(0,-4)] = {};
+          }
+          else
+          {
+            this.maxScores[options.buildId] = {};
+            this.maxScores[''] = {};
+          }
+        }
+        else
+        {
+          this.maxScores = {};
+        }
+      }
+    }
+    return true;
+  }
+  
   equipItem(item)
   {
     // Determine the name of the property on this character that stores items of this type.
@@ -176,7 +212,7 @@ export default class Character extends GenshinItem
         log.push(`Multiple ${item.slotKey}s were located on ${this.name} during the import (${previousItem.rarity}*${previousItem.setKey}+${previousItem.level}#${previousItem.id} and ${item.rarity}*${item.setKey}+${item.level}#${item.id}).`);
       log.push(`GOOD data may have been exported incorrectly; consider reporting a bug to the developer of the export tool.`);
       let logFunc = console.warn;
-      //if(source == "Inventory_Kamera") // TODO: Implement this.
+      //if(previousItem.list.importing == "Inventory_Kamera") // TODO: Implement this.
       {
         if(item.constructor.name == "Artifact")
         {
@@ -263,6 +299,7 @@ export default class Character extends GenshinItem
     {
       //console.log(`Setting character '${previousCharacter}' ${property} slot to unequipped.`);
       previousCharacter[property] = null;
+      previousCharacter.update("gear", null, "notify", {slot:property});
     }
     else
     {
@@ -275,6 +312,7 @@ export default class Character extends GenshinItem
     
     // Finally, set the references on this character and the item to each other.
     this[property] = item;
+    this.update("gear", null, "notify", {slot:property});
     item.character = this;
     return this;
   }
@@ -299,10 +337,10 @@ export default class Character extends GenshinItem
   get level(){ return this._level; }
   set level(val){ this._level = Math.min(Math.max(val, 1), 90); }
   
-  // Getters/setters for genshin item data that is not stored on each instance of this class.
-  get name(){ return this.loaded ? GenshinCharacterData[this.key].name : this.key; }
-  get weaponType(){ return this.loaded ? GenshinCharacterData[this.key].weapon : ""; }
-  get element(){ return this.loaded ? GenshinCharacterData[this.key].element : ""; }
+  // Getters for genshin item data that is not stored on each instance of this class.
+  get name(){ return GenshinCharacterData[this.key]?.name ?? this.key; }
+  get weaponType(){ return GenshinCharacterData[this.key]?.weapon ?? ""; }
+  get element(){ return GenshinCharacterData[this.key]?.element ?? ""; }
   get rarity(){ return this.loaded ? GenshinCharacterData[this.key].rarity : 0; }
   get ascendStat(){ return this.loaded ? GenshinCharacterData[this.key].ascendStat : ""; }
   get bossMatType(){ return this.loaded ? GenshinCharacterData[this.key].matBoss : ""; }
@@ -385,8 +423,6 @@ export default class Character extends GenshinItem
     if(this.level < this.levelCap)
       this.update("level", this.levelCap);
     this.update("ascension", this.ascension+1);
-    //this.list.viewer.store();
-    //this.list.render();
   }
   
   canUpPhase(withCrafting=false)
@@ -438,7 +474,7 @@ export default class Character extends GenshinItem
         this.MaterialList.crown.count >= this.getTalent(talent).matCrownCount;
   }
   
-  getStat(stat)
+  getStat(stat, alternates)
   {
     let result = Character.statBase[stat] ?? 0;
     if(this.ascendStat == stat)
@@ -459,7 +495,7 @@ export default class Character extends GenshinItem
     return result;
   }
   
-  getSetBonus()
+  getSetBonus(alternates)
   {
     let sets = {};
     for(let slot of ['flower','plume','sands','goblet','circlet'])
@@ -590,14 +626,14 @@ export default class Character extends GenshinItem
     return related;
   }
   
-  getMaxArtifactScore(slot, buildId, level=20)
+  getMaxArtifactScore(slot, buildId="", level=20)
   {
     if(!slot)
       return null;
-    if(!this.maxScores[slot+(buildId??'')+'#'+level])
+    if(!this.maxScores[buildId]?.[slot]?.[level])
     {
       let levelFactor = level / 20 * 6.8 + 1.2;
-      let builds = buildId ? [this.getBuild(buildId)] : this.getBuilds();
+      let builds = buildId ? {[buildId]:this.getBuild(buildId)} : this.getBuilds();
       let gigaMax = 0;
       for(let b in builds)
       {
@@ -648,13 +684,24 @@ export default class Character extends GenshinItem
           if(value > max)
             max = value;
         }
-        this.maxScores[slot+b+'#'+level] = max;
+        if(!this.maxScores[b])
+          this.maxScores[b] = {};
+        if(!this.maxScores[b][slot])
+          this.maxScores[b][slot] = {};
+        this.maxScores[b][slot][level] = max;
         if(max > gigaMax)
           gigaMax = max;
       }
-      this.maxScores[slot+(buildId??'')+'#'+level] = gigaMax;
+      if(buildId == "")
+      {
+        if(!this.maxScores[buildId])
+          this.maxScores[buildId] = {};
+        if(!this.maxScores[buildId][slot])
+          this.maxScores[buildId][slot] = {};
+        this.maxScores[buildId][slot][level] = gigaMax;
+      }
     }
-    return this.maxScores[slot+(buildId??'')+'#'+level];
+    return this.maxScores[buildId][slot][level];
   }
   
   getArtifactSetPrio(setKey, build)
@@ -709,7 +756,7 @@ export default class Character extends GenshinItem
           if(!this.list.viewer.buildData[this.key][build])
           {
             this.list.viewer.buildData[this.key][build] = {};
-            this.update("buildData", null, "notify");
+            this.update("buildData", null, "notify", {build});
             Renderer.rerender(buildSection, {relatedItems:this.getRelatedItems(build)});
           }
           else
@@ -736,7 +783,7 @@ export default class Character extends GenshinItem
         if(this.list.viewer.buildData[this.key][buildId])
         {
           delete this.list.viewer.buildData[this.key][buildId];
-          this.update("buildData", null, "notify");
+          this.update("buildData", null, "notify", {buildId});
           Renderer.rerender(buildSection, {relatedItems:this.getRelatedItems()});
         }
         else
@@ -759,7 +806,7 @@ export default class Character extends GenshinItem
           if(sets.indexOf(setKey) == -1)
             delete build.artifactSets[setKey];
         });
-        this.update("buildData", null, "notify");
+        this.update("buildData", null, "notify", {property:"artifactSets", buildId});
         Renderer.rerender(buildSection.querySelector(".character-artifacts"), {relatedItems: this.getRelatedItems(buildId, {skipSort:true})});
         // TODO: Don't need to rerender everything, just elements marked .favorite and any artifacts of the selected sets.
         document.querySelector("#artifactEvaluateBtn")?.classList.add("show-notice");
@@ -780,11 +827,10 @@ export default class Character extends GenshinItem
         slider.onchange = event => {
           let stat = slider.attributes.getNamedItem('name')?.value;
           this.getBuild(buildId)[property][stat] = parseFloat(slider.value);
-          this.update("buildData", null, "notify");
+          this.update("buildData", null, "notify", {property, buildId});
           label.innerHTML = slider.value;
-          this.maxScores = {};
           this.viewer.lists.ArtifactList.items().forEach(artifact => {
-            if(property == "artifactSubstats" || artifact.slotKey === property.slice(-4))
+            if(property == "artifactSubstats" || artifact.slotKey === property.slice(0,-4))
               artifact.storedStats.characters[this.key][buildId] = {};
           });
           Renderer.rerender(buildSection.querySelector(".character-artifacts"), {relatedItems:this.getRelatedItems(buildId)});
@@ -808,11 +854,10 @@ export default class Character extends GenshinItem
         targetInput.onchange = event => {
           let lastERWithinLimit = this.getBuild(buildId).minER <= this.getStat("enerRech_") && this.getStat("enerRech_") < this.getBuild(buildId).maxER;
           this.getBuild(buildId)[property] = parseFloat(targetInput.value);
-          this.update("buildData", null, "notify");
+          this.update("buildData", null, "notify", {property,buildId});
           let currentERWithinLimit = this.getBuild(buildId).minER <= this.getStat("enerRech_") && this.getStat("enerRech_") < this.getBuild(buildId).maxER;
           if(property == "ratioCritRate" || property == "ratioCritDMG" || lastERWithinLimit != currentERWithinLimit)
           {
-            this.maxScores = {};
             this.viewer.lists.ArtifactList.items().forEach(artifact => {
               artifact.storedStats.characters[this.key][buildId].targets = null;
             });

@@ -1,6 +1,7 @@
 export default class ListDisplayField
 {
   static itemFields = ["popup", "value", "button", "edit", "title", "classes", "dependencies"];
+  static properties = ["group", "label", "labelTitle", "columnClasses", "sort", "tags", "dynamic", "html", "popup", "value", "button", "edit", "title", "classes", "dependencies"];
   static emptyFunction = item => null;
   
   manager;
@@ -13,6 +14,7 @@ export default class ListDisplayField
   sort = null;
   tags = [];
   dynamic = true;
+  html = false;
   popup = ListDisplayField.emptyFunction;
   value = ListDisplayField.emptyFunction;
   button = ListDisplayField.emptyFunction;
@@ -28,7 +30,7 @@ export default class ListDisplayField
     this.id = id;
   }
   
-  setData({group, label, labelTitle, columnClasses, sort, tags, dynamic, popup, value, button, edit, title, classes, dependencies}={})
+  setData({group, label, labelTitle, columnClasses, sort, tags, dynamic, html, popup, value, button, edit, title, classes, dependencies}={})
   {
     if(group && typeof(group) == "object") this.group = group;
     if(label !== undefined) this.label = String(label);
@@ -37,6 +39,7 @@ export default class ListDisplayField
     if(sort?.func || sort?.generic) this.sort = sort;
     if(Array.isArray(tags)) this.tags = tags;
     if(dynamic !== undefined) this.dynamic = !!dynamic;
+    if(html !== undefined) this.html = !!html;
     if(typeof(popup) == "function") this.popup = popup;
     else if(popup) this.popup = item => item;
     if(typeof(value) == "function") this.value = value;
@@ -54,7 +57,7 @@ export default class ListDisplayField
   getAll(item, ...params)
   {
     let result = {};
-    for(let property of ListDisplayField.itemFields)
+    for(let property of ListDisplayField.properties)
       result[property] = this.get(property, item, ...params);
     return result;
   }

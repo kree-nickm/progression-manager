@@ -250,7 +250,8 @@ class Renderer
       }
       else if(content.value !== "")
       {
-        text = `<span class="value">${handlebars.escapeExpression(content.value)}</span>`;
+        let str = content.html ? content.value : handlebars.escapeExpression(content.value);
+        text = `<span class="value">${str}</span>`;
       }
       if(content.icon)
         text = text + `<i class="icon ${handlebars.escapeExpression(content.icon)}"></i>`;

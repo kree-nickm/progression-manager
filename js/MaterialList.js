@@ -12,17 +12,34 @@ export default class MaterialList extends GenshinList
   
   setupDisplay()
   {
+    let iconField = this.display.addField("icon", {
+      label: "Icon",
+      dynamic: false,
+      value: item => item.image ? {
+        tag: "div",
+        value: {
+          tag: "div",
+          value: {
+            tag: "img",
+            src: item.image,
+          },
+          classes: {"display-img": true, [`rarity-${item.rarity}`]: true},
+        },
+        classes: {"item-display": true, "item-material": true, "display-icon": true},
+      } : "",
+    });
+    
     let nameField = this.display.addField("name", {
       label: "Name",
       dynamic: false,
       value: item => item.name,
       classes: item => {return{
         "material": true,
-        "q1": item.quality == 1,
-        "q2": item.quality == 2,
-        "q3": item.quality == 3,
-        "q4": item.quality == 4,
-        "q5": item.quality == 5,
+        "q1": item.rarity == 1,
+        "q2": item.rarity == 2,
+        "q3": item.rarity == 3,
+        "q4": item.rarity == 4,
+        "q5": item.rarity == 5,
       };},
     });
     
@@ -89,36 +106,36 @@ export default class MaterialList extends GenshinList
   {
     // Enemy mats
     for(let e in GenshinLootData.enemy)
-      Material.setupTiers([4,3,2,1].map(q => GenshinLootData.enemy[e][q] ? this.addGOOD({goodKey:GenshinLootData.enemy[e][q], goodValue:0}).update("source", GenshinLootData.enemy[e].source ?? e).update("quality", q).update("shorthand", e) : null));
+      Material.setupTiers([4,3,2,1].map(q => GenshinLootData.enemy[e][q] ? this.addGOOD({goodKey:GenshinLootData.enemy[e][q], goodValue:0}).update("source", GenshinLootData.enemy[e].source ?? e).update("shorthand", e) : null));
     
     // Trounce mats
     for(let domain of GenshinLootData.trounce)
       for(let itemName of domain.loot)
-        this.addGOOD({goodKey:itemName, goodValue:0}).update("source", domain.boss).update("quality", 5);
+        this.addGOOD({goodKey:itemName, goodValue:0}).update("source", domain.boss);
       
     // Boss mats
     for(let b in GenshinLootData.boss)
-      this.addGOOD({goodKey:GenshinLootData.boss[b]['4'], goodValue:0}).update("source", GenshinLootData.boss[b].name).update("quality", 4).update("shorthand", b);
+      this.addGOOD({goodKey:GenshinLootData.boss[b]['4'], goodValue:0}).update("source", GenshinLootData.boss[b].name).update("shorthand", b);
     
     // Gemstone mats
-    Material.setupTiers([5,4,3,2].map(q => this.addGOOD({goodKey:"Brilliant Diamond" + Material.gemQualities[q], goodValue:0}).update("quality", q).update("shorthand", "Diamond" + Material.gemQualities[q])));
+    Material.setupTiers([5,4,3,2].map(q => this.addGOOD({goodKey:"Brilliant Diamond" + Material.gemQualities[q], goodValue:0}).update("shorthand", "Diamond" + Material.gemQualities[q])));
     for(let elem in GenshinLootData.gemstone)
-      Material.setupTiers([5,4,3,2].map(q => this.addGOOD({goodKey:GenshinLootData.gemstone[elem].prefix + Material.gemQualities[q], goodValue:0}).update("quality", q).update("shorthand", elem + Material.gemQualities[q])));
+      Material.setupTiers([5,4,3,2].map(q => this.addGOOD({goodKey:GenshinLootData.gemstone[elem].prefix + Material.gemQualities[q], goodValue:0}).update("shorthand", elem + Material.gemQualities[q])));
     
     // Mastery mats
     for(let suffix in GenshinLootData.mastery)
-      Material.setupTiers([4,3,2].map(q => this.addGOOD({goodKey:Material.masteryQualities[q] + suffix, goodValue:0}).update("source", GenshinLootData.mastery[suffix].source).update("days", GenshinLootData.mastery[suffix].days, "replace").update("quality", q).update("shorthand", suffix)));
-    this.addGOOD({goodKey:"Crown Of Insight", goodValue:0}).update("quality", 5);
+      Material.setupTiers([4,3,2].map(q => this.addGOOD({goodKey:Material.masteryQualities[q] + suffix, goodValue:0}).update("source", GenshinLootData.mastery[suffix].source).update("days", GenshinLootData.mastery[suffix].days, "replace").update("shorthand", suffix)));
+    this.addGOOD({goodKey:"Crown Of Insight", goodValue:0});
     
     // Forgery mats
     for(let suffix in GenshinLootData.forgery)
-      Material.setupTiers([5,4,3,2].map(q => this.addGOOD({goodKey:GenshinLootData.forgery[suffix][q], goodValue:0}).update("source", GenshinLootData.forgery[suffix].source).update("days", GenshinLootData.forgery[suffix].days, "replace").update("quality", q).update("shorthand", suffix)));
+      Material.setupTiers([5,4,3,2].map(q => this.addGOOD({goodKey:GenshinLootData.forgery[suffix][q], goodValue:0}).update("source", GenshinLootData.forgery[suffix].source).update("days", GenshinLootData.forgery[suffix].days, "replace").update("shorthand", suffix)));
     
     // Flora mats
     for(let c in GenshinCharacterData)
-      this.addGOOD({goodKey:GenshinCharacterData[c].matFlower, goodValue:0}).update("quality", 1).update("type", "flora");
+      this.addGOOD({goodKey:GenshinCharacterData[c].matFlower, goodValue:0}).update("type", "flora");
     
-    this.addGOOD({goodKey:"Mora", goodValue:0}).update("quality", 1).update("type", "mora");
+    this.addGOOD({goodKey:"Mora", goodValue:0}).update("type", "mora");
   }
   
   getUnique(item)
