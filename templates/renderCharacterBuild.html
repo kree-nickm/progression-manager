@@ -72,7 +72,7 @@
                 <div class="col-1 align-self-center">
                   <input class="form-check form-check-input" type="checkbox" id="useTargets" value="targets" title="Toggle whether to respect the ER% and Crit ratio limiters when sorting the artifact lists below. Leaving this disabled might make it easier to select artifacts when first equipping a character. Enabling it might make it easier to fine-tune your artifact stats."/>
                 </div>
-                <div class="col-6" title="If your character's ER% is below the minimum, ER% will have its substat priority set to 3. If it's above the maximum, its priority will be reduced to 0. The priority you specified above will only apply when ER% is between the minimum and maximum.">
+                <div class="col-6" title="If a piece won't get you to your minimum ER%, its rank will be penalized based on how low your ER% is with it. If a piece would put you over your maximum ER%, all excess ER% that it provides past your maximum will be ignored.">
                     <div class="input-group">
                         <label class="input-group-text pe-2" for="characterMinER">ER% Target:</label>
                         <input id="characterMinER" class="stat-target form-control pe-1" type="number" min="100" max="999" value="{{relatedItems.buildData.minER}}"/>
@@ -82,7 +82,7 @@
                 </div>
                 <div class="col-5">
                     <div class="input-group">
-                        <label class="input-group-text pe-2" for="characterRatioCritRate" title="Your desired ratio for Crit Rate to Crit DMG. The further your stats stray from this ratio, the more your substat priorities will be tweaked to value artifacts higher if they get you closer to the ratio.">Crit Ratio:</label>
+                        <label class="input-group-text pe-2" for="characterRatioCritRate" title="Your desired ratio for Crit Rate to Crit DMG. If enabled, pieces will have an additional factor when sorted on the lists below based on whether they get you closer to or further from this ratio.">Crit Ratio:</label>
                         <input id="characterRatioCritRate" class="stat-target form-control pe-1" type="number" title="Crit Rate" min="0" max="10" value="{{relatedItems.buildData.ratioCritRate}}"/>
                         <label class="input-group-text px-1" for="characterRatioCritDMG">/</label>
                         <input id="characterRatioCritDMG" class="stat-target form-control ps-1" type="number" title="Crit DMG" min="0" max="10" value="{{relatedItems.buildData.ratioCritDMG}}"/>

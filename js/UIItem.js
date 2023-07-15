@@ -40,7 +40,7 @@ export default class UIItem extends UIController {
   
   notifyType(type="")
   {
-    let elements = Array.from(document.querySelectorAll(`.list-item[name='${this.getUnique()}'] .type-dependent`));
+    let elements = Array.from(document.querySelectorAll(`.list-item[data-uuid="${this.uuid}"] .type-dependent`));
     elements.forEach(element => {
       for(let dep of element.dependencies ?? [])
         if(dep?.type === type)

@@ -2,7 +2,7 @@ import { handlebars, Renderer } from "./Renderer.js";
 
 handlebars.registerHelper("getProperty", (item, property, context) => item.getProperty(property));
 handlebars.registerHelper("uuid", (item, context) => item.uuid);
-handlebars.registerHelper('toParam', (item, context) => item instanceof UIController ? item.uuid : String.valueOf(item));
+handlebars.registerHelper('toParam', (item, context) => item instanceof UIController ? item.uuid : typeof(item) == "object" ? item?.toString()??"" : item);
 
 export default class UIController {
   static dontSerialize = ["uuid","dependents"];
@@ -84,14 +84,11 @@ export default class UIController {
     let needsUpdate = false;
     if(action == "notify")
     {
-      if(typeof(value) == "object")
-        for(let prop in value)
-          options[prop] = value[prop];
       value = field.value;
       // Note: I'm not sure if "notify" always needs to trigger a viewer.store
       needsUpdate = true;
     }
-    else if(typeof(field.value) == "object" || typeof(field.value) == "function")
+    else if(typeof(field.value) == "function" || typeof(field.value) == "object")
     {
       if(!action)
         console.warn(`${this.constructor.name}.update() expects a third argument when the property being updated (${field.string}) is non-scalar (it's a ${typeof(field.value)}).`);

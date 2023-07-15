@@ -1,34 +1,31 @@
-import GiftSets from "./gamedata/GiftSets.js";
+import GenshinFurnitureSetData from "./gamedata/GenshinFurnitureSetData.js";
 
 import GenshinItem from "./GenshinItem.js";
 
 export default class FurnitureSet extends GenshinItem
 {
-  static dontSerialize = GenshinItem.dontSerialize.concat(["furniture","loaded"]);
+  static dontSerialize = GenshinItem.dontSerialize.concat(["furniture"]);
   
   key = "";
   furniture;
-  loaded = false;
   learned = false;
   settled = [];
   
   afterLoad()
   {
-    if(GiftSets[this.key])
+    if(GenshinFurnitureSetData[this.key])
     {
-      this.loaded = true;
       this.furniture = this.recipe.map(furn => this.list.viewer.lists.FurnitureList.get(furn.key));
     }
     else
     {
       console.warn(`Unknown furniture set "${this.key}".`);
-      this.loaded = false;
       this.furniture = [];
     }
-    return this.loaded;
+    return true;
   }
   
-  get name(){ return this.loaded ? GiftSets[this.key].name : this.key; }
-  get recipe(){ return this.loaded ? GiftSets[this.key].materials : []; }
-  get characters(){ return this.loaded ? GiftSets[this.key].characters : []; }
+  get name(){ return GenshinFurnitureSetData[this.key]?.name ?? this.key; }
+  get recipe(){ return GenshinFurnitureSetData[this.key]?.materials ?? []; }
+  get characters(){ return GenshinFurnitureSetData[this.key]?.characters ?? []; }
 }

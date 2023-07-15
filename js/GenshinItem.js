@@ -5,7 +5,7 @@ export default class GenshinItem extends UIItem {
   
   fromGOOD(goodData)
   {
-    if(typeof(goodData) == "object")
+    if(typeof(goodData) == "object" && goodData != null)
     {
       for(let key in goodData)
         this.#fromGOODHelper(goodData, key, [key]);
@@ -22,7 +22,7 @@ export default class GenshinItem extends UIItem {
   {
     if(Array.isArray(goodData[key]))
       this.update(keys, goodData[key], "replace");
-    else if(typeof(goodData[key]) == "object")
+    else if(typeof(goodData[key]) == "object" && goodData[key] != null)
     {
       for(let subkey in goodData[key])
         this.#fromGOODHelper(goodData[key], subkey, keys.concat([subkey]));

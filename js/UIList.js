@@ -185,8 +185,8 @@ export default class UIList extends UIController {
   {
     let {element, data, options} = this.prepareRender(this.viewer.elements[this.constructor.name].querySelector(`.list[data-uuid="${this.uuid}"]`), {
       item: this,
-      groups: this.display.getGroups({exclude:field => field.tags.indexOf("detailsOnly") > -1}),
-      fields: this.display.getFields({exclude:field => field.tags.indexOf("detailsOnly") > -1}),
+      groups: this.display.getGroups({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}),
+      fields: this.display.getFields({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}),
     }, {
       template: "renderListAsTable",
       force: force || this.forceNextRender,

@@ -198,49 +198,63 @@ export default class Material extends GenshinItem
       return [];
   }
   
-  getFieldValue(cost)
+  getFieldValue(cost, useImage=false)
   {
     let bosskills3 = Math.ceil((cost-this.count)/3);
     let bosskills2 = Math.ceil((cost-this.count)/2);
-    return [
-      {
-        value: `${this.count} / ${cost}`,
-        title: this.type == "boss"
-          ? `Requires `+ (bosskills2!=bosskills3?`${bosskills3}-${bosskills2}`:bosskills2) +` more boss kill`+ (bosskills2!=1||bosskills3!=1?"s":"") +`.`
-          : this.type == "flora"
-            ? `` // TODO: Compile data for number of each flora that exists on the map and display the relevant number here.
-            : `Up to ${this.getCraftCount()} if you craft.`,
-        classes: {
-          "quantity": true,
-          "pending": this.count < cost,
-          "insufficient": this.getCraftCount() < cost,
-        },
-        edit: {target: {item:this, field:"count"}},
+    let numbersPart = {
+      value: `${this.count} / ${cost}`,
+      title: this.type == "boss"
+        ? `Requires `+ (bosskills2!=bosskills3?`${bosskills3}-${bosskills2}`:bosskills2) +` more boss kill`+ (bosskills2!=1||bosskills3!=1?"s":"") +`.`
+        : this.type == "flora"
+          ? `` // TODO: Compile data for number of each flora that exists on the map and display the relevant number here.
+          : this.prevTier
+            ? `Up to ${this.getCraftCount()} if you craft.`
+            : ``,
+      classes: {
+        "quantity": true,
+        "pending": this.count < cost,
+        "insufficient": this.getCraftCount() < cost,
       },
-      (this.image&&false ? {
+      edit: {target: {item:this, field:"count"}},
+    };
+    let iconPart = {
+      tag: "div",
+      value: {
         tag: "div",
-        value: {
-          tag: "div",
-          value: {
+        value: [
+          {
+            tag: "i",
+            classes: {
+              "display-badge": true,
+              "fa-solid": true,
+              "fa-sun": true,
+              "d-none": this.days.indexOf(this.viewer.today()) == -1,
+            },
+            title: "This drop can be obtained today.",
+          },
+          {
             tag: "img",
             src: this.image,
-          },
-          classes: {"display-img": true, ["rarity-"+this.rarity]: true},
-        },
-        classes: {"item-display": true, "item-material": true, "display-icon": true},
-        title: this.getFullSource(),
-      } : {
-        value: this.shorthand + (this.days.indexOf(this.viewer.today()) > -1 ? "*" : ""),
-        classes: {
-          "material": true,
-          "q1": this.rarity == 1,
-          "q2": this.rarity == 2,
-          "q3": this.rarity == 3,
-          "q4": this.rarity == 4,
-          "q5": this.rarity == 5,
-        },
-        title: this.getFullSource(),
-      }),
-    ];
+          }
+        ],
+        classes: {"display-img": true, ["rarity-"+this.rarity]: true},
+      },
+      classes: {"item-display": true, "item-material": true, "display-icon": true},
+      title: this.getFullSource(),
+    };
+    let namePart = {
+      value: this.shorthand + (this.days.indexOf(this.viewer.today()) > -1 ? "*" : ""),
+      classes: {
+        "material": true,
+        "q1": this.rarity == 1,
+        "q2": this.rarity == 2,
+        "q3": this.rarity == 3,
+        "q4": this.rarity == 4,
+        "q5": this.rarity == 5,
+      },
+      title: this.getFullSource(),
+    };
+    return this.image && useImage ? [iconPart, numbersPart] : [numbersPart, namePart];
   }
 }

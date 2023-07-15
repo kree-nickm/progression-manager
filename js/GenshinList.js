@@ -28,7 +28,7 @@ export default class GenshinList extends UIList {
       for(let goodItem of goodData)
         this.addGOOD(goodItem);
     }
-    else if(typeof(goodData) == "object")
+    else if(typeof(goodData) == "object" && goodData != null)
     {
       for(let key in goodData)
         this.addGOOD({goodKey:key, goodValue:goodData[key]});

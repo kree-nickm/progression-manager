@@ -34,7 +34,7 @@ export default class WeaponList extends GenshinList
     
     let name = this.display.addField("name", {
       label: "Name",
-      popup: true,
+      popup: item => item,
       sort: {generic: {type:"string",property:"name"}},
       dynamic: false,
       value: item => item.name,
@@ -261,13 +261,16 @@ export default class WeaponList extends GenshinList
     let imageField = this.display.addField("image", {
       label: "Image",
       tags: ["detailsOnly"],
-      dynamic: false,
+      dynamic: true,
       value: item => {
         return {
           tag: "img",
           src: item.image,
         };
       },
+      dependencies: item => [
+        {item, field:"ascension"},
+      ],
     });
   }
   

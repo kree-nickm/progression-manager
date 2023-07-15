@@ -12,7 +12,7 @@ import Material from "./Material.js";
 
 export default class Character extends GenshinItem
 {
-  static dontSerialize = GenshinItem.dontSerialize.concat(["loaded","_weapon","_flower","_plume","_sands","_goblet","_circlet","MaterialList","maxScores"]);
+  static dontSerialize = GenshinItem.dontSerialize.concat(["loaded","_weapon","_flower","_plume","_sands","_goblet","_circlet","MaterialList","maxScores","storedStats"]);
   static goodProperties = ["key","level","constellation","ascension","talent"];
   static templateName = "renderCharacterAsPopup";
   static statBase = {
@@ -61,14 +61,13 @@ export default class Character extends GenshinItem
   
   static sortArtifacts(buildId,useTargets,a,b)
   {
-    let A = parseFloat(a.getCharacterScore(this,20,buildId,useTargets));
-    let B = parseFloat(b.getCharacterScore(this,20,buildId,useTargets));
-    if(isNaN(A) && !isNaN(B))
-      return 1;
-    else if(!isNaN(A) && isNaN(B))
-      return -1;
-    else if(isNaN(A) && isNaN(B))
+    let A = parseFloat(a.getCharacterScore(this,20,buildId,{useTargets}));
+    let B = parseFloat(b.getCharacterScore(this,20,buildId,{useTargets}));
+    if(isNaN(A) || isNaN(B))
+    {
+      console.error(`Cannot sort artifacts because NaN was encountered for a score.`, A, a, B, b);
       return 0;
+    }
     else
       return (B-A);
   }
@@ -94,6 +93,7 @@ export default class Character extends GenshinItem
   _circlet = null;
   MaterialList;
   maxScores = {};
+  storedStats = {};
   
   afterLoad()
   {
@@ -152,37 +152,74 @@ export default class Character extends GenshinItem
   afterUpdate(field, value, action, options)
   {
     super.afterUpdate(field, value, action, options);
-    if(field.string == "consider")
+    if(field.string == "weapon" || field.string == "flowerArtifact" || field.string == "plumeArtifact" || field.string == "sandsArtifact" || field.string == "gobletArtifact" || field.string == "circletArtifact")
+    {
+      this.viewer.lists.ArtifactList?.update("evaluate", null, "notify");
+      this.notifyType(field.string);
+      this.storedStats = {};
+      // Iterate through artifacts and clear some amount of artifact.storedStats
+      this.viewer.lists.ArtifactList?.items().forEach(artifact => {
+        for(let buildId in artifact.storedStats.characters[this.key]??[])
+          artifact.storedStats.characters[this.key][buildId].withTargets = null;
+      });
+    }
+    else if(field.string == "consider")
     {
       this.viewer.lists.ArtifactList?.update("evaluate", null, "notify");
     }
     else if(field.string == "buildData" || field.path[0]?.[0] == "getBuild")
     {
-      if(options.property != "artifactSets")
+      if(["artifactSubstats","sandsStat","gobletStat","circletStat"].indexOf(options.property) > -1)
       {
+        // Clear some amount of this.maxScores
         if(options.buildId)
         {
           if(options.property == "sandsStat" || options.property == "gobletStat" || options.property == "circletStat")
           {
-            this.maxScores[options.buildId][options.property.slice(0,-4)] = {};
+            this.maxScores[options.buildId][options.property.slice(0,-4)] = null;
             if(this.maxScores[''])
-              this.maxScores[''][options.property.slice(0,-4)] = {};
+              this.maxScores[''][options.property.slice(0,-4)] = null;
           }
           else
           {
-            this.maxScores[options.buildId] = {};
-            this.maxScores[''] = {};
+            this.maxScores[options.buildId] = null;
+            this.maxScores[''] = null;
           }
         }
         else
         {
           this.maxScores = {};
         }
+        // Iterate through artifacts and clear some amount of artifact.storedStats
+        this.viewer.lists.ArtifactList?.items().forEach(artifact => {
+          if(options.property == "artifactSubstats" || artifact.slotKey === options.property.slice(0,-4))
+          {
+            if(options.buildId)
+              artifact.storedStats.characters[this.key][options.buildId] = null;
+            else
+              artifact.storedStats.characters[this.key] = null;
+          }
+        });
       }
+      else if(["minER","maxER","ratioCritRate","ratioCritDMG"].indexOf(options.property) > -1)
+      {
+        // Iterate through artifacts and clear some amount of artifact.storedStats
+        this.viewer.lists.ArtifactList?.items().forEach(artifact => {
+          if(options.buildId)
+            artifact.storedStats.characters[this.key][options.buildId].withTargets = null;
+          else
+            for(let buildId in artifact.storedStats.characters[this.key]??[])
+              artifact.storedStats.characters[this.key][buildId].withTargets = null;
+        });
+      }
+      this.viewer.lists.ArtifactList?.update("evaluate", null, "notify");
     }
     return true;
   }
   
+  /**
+  This method should only be called by the item that is being equipped, when its "location" property is updated.
+  */
   equipItem(item)
   {
     // Determine the name of the property on this character that stores items of this type.
@@ -284,35 +321,16 @@ export default class Character extends GenshinItem
     
     // If we had an item equipped, and the new item was equipped to another character, give that character our old item.
     if(previousItem && previousCharacter)
-    {
-      //console.log(`Swapping previous item '${previousItem.name}' to '${previousCharacter.name}'.`);
       previousItem.update("location", previousCharacter.key);
-    }
     // If we had an item equipped, let it know it is now unequipped.
     else if(previousItem)
-    {
-      //console.log(`Setting item '${previousItem.name}' to unequipped.`);
       previousItem.update("location", "");
-    }
     // If the new item was equipped to another character, delete the reference to the item.
     else if(previousCharacter)
-    {
-      //console.log(`Setting character '${previousCharacter}' ${property} slot to unequipped.`);
-      previousCharacter[property] = null;
-      previousCharacter.update("gear", null, "notify", {slot:property});
-    }
-    else
-    {
-      //console.log(`Character had no previous item and item had no previous character.`);
-    }
-    
-    // Notify character item display on both this and previous that they need to update.
-    this.notifyType(property);
-    previousCharacter?.notifyType(property);
+      previousCharacter.update(property, null, "replace");
     
     // Finally, set the references on this character and the item to each other.
-    this[property] = item;
-    this.update("gear", null, "notify", {slot:property});
+    this.update(property, item, "replace");
     item.character = this;
     return this;
   }
@@ -474,24 +492,32 @@ export default class Character extends GenshinItem
         this.MaterialList.crown.count >= this.getTalent(talent).matCrownCount;
   }
   
-  getStat(stat, alternates)
+  getStat(stat, alternates=null)
   {
-    let result = Character.statBase[stat] ?? 0;
-    if(this.ascendStat == stat)
-      result += Character.ascendStatProgression[this.rarity][this.ascendStat][this.ascension];
-    if(this.weapon?.stat == stat)
-      result += this.weapon.getStat();
-    for(let slot of ['flower','plume','sands','goblet','circlet'])
+    let result;
+    if(alternates || !this.storedStats[stat])
     {
-      let prop = slot + 'Artifact';
-      if(this[prop])
+      result = Character.statBase[stat] ?? 0;
+      if(this.ascendStat == stat)
+        result += Character.ascendStatProgression[this.rarity][this.ascendStat][alternates?.ascension??this.ascension];
+      if((alternates?.weapon??this.weapon)?.stat == stat)
+        result += (alternates?.weapon??this.weapon).getStat();
+      for(let slot of ['flower','plume','sands','goblet','circlet'])
       {
-        if(this[prop].mainStatKey == stat)
-          result += this[prop].mainStatValue;
-        result += this[prop]?.getSubstatSum(stat) ?? 0;
+        let prop = slot + 'Artifact';
+        if(alternates?.[prop] || this[prop])
+        {
+          if((alternates?.[prop]??this[prop]).mainStatKey == stat)
+            result += (alternates?.[prop]??this[prop]).mainStatValue;
+          result += (alternates?.[prop]??this[prop])?.getSubstatSum(stat) ?? 0;
+        }
       }
+      result += this.getSetBonus(alternates).stats[stat] ?? 0;
+      if(!alternates)
+        this.storedStats[stat] = result;
     }
-    result += this.getSetBonus().stats[stat] ?? 0;
+    else
+      result = this.storedStats[stat];
     return result;
   }
   
@@ -501,11 +527,11 @@ export default class Character extends GenshinItem
     for(let slot of ['flower','plume','sands','goblet','circlet'])
     {
       let prop = slot + 'Artifact';
-      if(this[prop])
+      if(alternates?.[prop] || this[prop])
       {
-        if(!sets[this[prop].setKey])
-          sets[this[prop].setKey] = {count:0};
-        sets[this[prop].setKey].count++;
+        if(!sets[(alternates?.[prop]??this[prop]).setKey])
+          sets[(alternates?.[prop]??this[prop]).setKey] = {count:0};
+        sets[(alternates?.[prop]??this[prop]).setKey].count++;
       }
     }
     
@@ -607,6 +633,7 @@ export default class Character extends GenshinItem
   getRelatedItems(buildId="default", {skipSort,forceTargets,ignoreTargets}={})
   {
     let useTargets = forceTargets || !ignoreTargets && document.getElementById('useTargets')?.checked;
+    console.debug(`Getting ${this.name}'s related items for build ${buildId}.`, skipSort?`Skipping artifact sorting.`:`Sorting artifacts.`, useTargets?`Using targets.`:`Ignoring targets.`);
     let related = {
       weapons: this.list.viewer.lists.WeaponList.items(this.weaponType),
       bestArtifacts: {
@@ -756,7 +783,7 @@ export default class Character extends GenshinItem
           if(!this.list.viewer.buildData[this.key][build])
           {
             this.list.viewer.buildData[this.key][build] = {};
-            this.update("buildData", null, "notify", {build});
+            this.update("buildData", null, "notify", {buildId:build});
             Renderer.rerender(buildSection, {relatedItems:this.getRelatedItems(build)});
           }
           else
@@ -809,7 +836,6 @@ export default class Character extends GenshinItem
         this.update("buildData", null, "notify", {property:"artifactSets", buildId});
         Renderer.rerender(buildSection.querySelector(".character-artifacts"), {relatedItems: this.getRelatedItems(buildId, {skipSort:true})});
         // TODO: Don't need to rerender everything, just elements marked .favorite and any artifacts of the selected sets.
-        document.querySelector("#artifactEvaluateBtn")?.classList.add("show-notice");
       };
     
     /** Stat Priority Sliders **/
@@ -825,18 +851,28 @@ export default class Character extends GenshinItem
           label.innerHTML = slider.value;
         };
         slider.onchange = event => {
-          let stat = slider.attributes.getNamedItem('name')?.value;
-          this.getBuild(buildId)[property][stat] = parseFloat(slider.value);
-          this.update("buildData", null, "notify", {property, buildId});
           label.innerHTML = slider.value;
-          this.viewer.lists.ArtifactList.items().forEach(artifact => {
-            if(property == "artifactSubstats" || artifact.slotKey === property.slice(0,-4))
-              artifact.storedStats.characters[this.key][buildId] = {};
-          });
-          Renderer.rerender(buildSection.querySelector(".character-artifacts"), {relatedItems:this.getRelatedItems(buildId)});
-          document.querySelector("#artifactEvaluateBtn")?.classList.add("show-notice");
+          let stat = slider.attributes.getNamedItem('name')?.value;
+          if(property && stat)
+          {
+            this.getBuild(buildId)[property][stat] = parseFloat(slider.value);
+            this.update("buildData", null, "notify", {property, buildId});
+            Renderer.rerender(buildSection.querySelector(".character-artifacts"), {relatedItems:this.getRelatedItems(buildId)});
+          }
         };
       }
+    }
+    
+    /** Stat Target Toggle **/
+    let useTargetsChk = buildSection.querySelector("#useTargets");
+    if(!useTargetsChk.onchange)
+    {
+      useTargetsChk.onchange = event => {
+        this.getRelatedItems(buildId);
+        let listElements = buildSection.querySelectorAll(".character-artifacts .list[data-filter]");
+        for(let listElement of listElements)
+          Renderer.sortItems(listElement);
+      };
     }
     
     /** Stat Target Fields **/
@@ -852,32 +888,12 @@ export default class Character extends GenshinItem
         else if(targetInput.id == "characterRatioCritDMG") property = "ratioCritDMG";
         else continue;
         targetInput.onchange = event => {
-          let lastERWithinLimit = this.getBuild(buildId).minER <= this.getStat("enerRech_") && this.getStat("enerRech_") < this.getBuild(buildId).maxER;
           this.getBuild(buildId)[property] = parseFloat(targetInput.value);
           this.update("buildData", null, "notify", {property,buildId});
-          let currentERWithinLimit = this.getBuild(buildId).minER <= this.getStat("enerRech_") && this.getStat("enerRech_") < this.getBuild(buildId).maxER;
-          if(property == "ratioCritRate" || property == "ratioCritDMG" || lastERWithinLimit != currentERWithinLimit)
-          {
-            this.viewer.lists.ArtifactList.items().forEach(artifact => {
-              artifact.storedStats.characters[this.key][buildId].targets = null;
-            });
-            let listElements = buildSection.querySelectorAll(".character-artifacts .list[data-filter]");
-            for(let listElement of listElements)
-              Renderer.sortItems(listElement);
-          }
+          if(useTargetsChk.checked)
+            useTargetsChk.onchange(event);
         };
       }
-    }
-    
-    /** Stat Target Toggle **/
-    let useTargetsChk = buildSection.querySelector("#useTargets");
-    if(!useTargetsChk.onchange)
-    {
-      useTargetsChk.onchange = event => {
-        let listElements = buildSection.querySelectorAll(".character-artifacts .list[data-filter]");
-        for(let listElement of listElements)
-          Renderer.sortItems(listElement);
-      };
     }
     
     this._addArtifactListsEventHandlers(buildSection.querySelector(".character-artifacts"), {buildSection,buildId});

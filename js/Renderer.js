@@ -83,7 +83,7 @@ handlebars.registerHelper('times', function(n, options) {
 
 handlebars.registerHelper('ifeq', function(first, second, options) {return (first === second) ? options.fn(this) : options.inverse(this)});
 handlebars.registerHelper('array', (...params) => params.slice(0, -1));
-handlebars.registerHelper("fieldClasses", (field, options) => field.columnClasses.join(" "));
+handlebars.registerHelper("fieldClasses", (field, options) => (field.columnClasses??[]).join(" "));
 handlebars.registerHelper("lower", (str, options) => str.toLowerCase());
 handlebars.registerHelper('fco', (value, fallback, options) => value ? value : fallback);
 handlebars.registerHelper('nco', (value, fallback, options) => value ?? fallback);
@@ -182,7 +182,7 @@ class Renderer
         }
         else
         {
-          console.debug(`Cannot update disconnected element:`, element);
+          console.warn(`Cannot update disconnected element:`, element);
         }
       });
       Renderer._needsUpdate.clear();
@@ -309,7 +309,7 @@ class Renderer
     
     if(force)
     {
-      let parentElement = element.parentElement;
+      parentElement = element.parentElement;
       if(!parentElement) return console.error(`Element has no parent:`, element);
       
       let index = Array.from(parentElement.children).indexOf(element);
@@ -351,7 +351,7 @@ class Renderer
     $(element).find(".selectpicker").selectpicker('render');
     
     if(showPopup)
-      bootstrap.Modal.getOrCreateInstance(data.item.viewer.elements.popup).show()
+      bootstrap.Modal.getOrCreateInstance(data.item.viewer.elements.popup).show();
   }
   
   static removeItem(item)
@@ -558,6 +558,7 @@ class Renderer
       if(!element.onclick)
       {
         element.onclick = event => {
+          console.log(popup);
           Renderer.rerender(popup.viewer.elements.popup.querySelector(".modal-content"), {item:popup}, {template: popup.constructor.templateName, showPopup: true});
         };
         element.classList.add("popup");

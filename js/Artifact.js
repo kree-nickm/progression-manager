@@ -95,10 +95,7 @@ export default class Artifact extends GenshinItem
       else
       {
         if(this.character)
-        {
-          this.character[this.slotKey+'Artifact'] = null;
-          this.character.notifyType(this.slotKey+'Artifact');
-        }
+          this.character.update(this.slotKey+'Artifact', null, "replace");
         this.character = null;
       }
     }
@@ -129,7 +126,7 @@ export default class Artifact extends GenshinItem
     let key = this.mainStatKey.endsWith("o_dmg_") ? "elemental_dmg_" : this.mainStatKey;
     return GenshinArtifactStats[this.rarity].mainstats[key][this.level];
   }
-  get image(){ return this.loaded ? GenshinArtifactData[this.setKey][this.slotKey+'Img'] : ""; }
+  get image(){ return GenshinArtifactData[this.setKey]?.[this.slotKey+'Img'] ?? ""; }
   
   setSubstat(statId, value)
   {
@@ -210,62 +207,116 @@ export default class Artifact extends GenshinItem
     return this.storedStats.ratings[statId];
   }
   
-  getCharacterScoreParts(character=this.list.viewer.lists.CharacterList.list[0], buildId="default", useTargets=false)
+  getCharacterScoreParts(character, buildId="default", {useTargets=false}={})
   {
-    if(!this.storedStats.characters[character.key]?.[buildId]?.[useTargets?'targets':'base'])
+    if(!character)
     {
+      console.error(`No character provided to Artifact.getCharacterScoreParts().`);
+      return null;
+    }
+    if(!this.storedStats.characters[character.key]?.[buildId]?.[useTargets?'withTargets':'base'])
+    {
+      // Initial variables we need.
+      let build = character.getBuild(buildId);
       if(!this.storedStats.characters[character.key])
         this.storedStats.characters[character.key] = {};
       if(!this.storedStats.characters[character.key][buildId])
         this.storedStats.characters[character.key][buildId] = {};
-      let mainImportanceFactor = character?.getBuild(buildId)[this.slotKey+'Stat']?.[this.mainStatKey] ?? 0;
+      if(!this.storedStats.characters[character.key][buildId][useTargets?'withTargets':'base'])
+        this.storedStats.characters[character.key][buildId][useTargets?'withTargets':'base'] = {};
+      
+      // Determine if/how to penalize crit stats if using crit ratio target.
+      let critPenalty = 0;
+      let excessERRating = 0;
+      let deficitERFactor = 1;
+      if(useTargets)
+      {
+        if(build.ratioCritRate && build.ratioCritDMG)
+        {
+          let targetRateFactor = build.ratioCritRate / (build.ratioCritRate + build.ratioCritDMG);
+          let myRate = character.getStat("critRate_", {[this.slotKey+'Artifact']:this});
+          let myDMG = character.getStat("critDMG_", {[this.slotKey+'Artifact']:this});
+          let myRateFactor = myRate / (myRate + myDMG);
+          critPenalty = targetRateFactor - myRateFactor; // Positive -> Too much Crit DMG. Negative -> Too much Crit Rate.
+        }
+        
+        // Alter the artifacts' ratings based on the defined target stats.
+        let myER = character.getStat("enerRech_", {[this.slotKey+'Artifact']:this});
+        if(myER > build.maxER)
+        {
+          excessERRating = (myER - build.maxER) / GenshinArtifactStats[5].substats.enerRech_;
+        }
+        else if(myER < build.minER)
+        {
+          deficitERFactor = myER / build.minER - 0.25;
+        }
+      }
+      
+      // Score the main stat. A level 20 5-star artifact's main stat is about equivalent to 8 substat max rolls. The rarity factor cuts it for other rarities.
       let mainRarityFactor = (this.rarity==1 ? 0.5 : (this.rarity==2 ? 0.6 : (this.rarity==3 ? 0.75 : (this.rarity==4 ? 0.9 : 1))));
-      let mainScore = mainImportanceFactor * mainRarityFactor * 8;
+      let mainPenaltyFactor = (critPenalty>0 && this.mainStatKey=="critDMG_") ? (1-critPenalty) : (critPenalty<0 && this.mainStatKey=="critRate_") ? (1+critPenalty) : 1;
+      let mainRating = mainRarityFactor * 8 * mainPenaltyFactor;
+      if(this.mainStatKey == "enerRech_")
+      {
+        if(mainRating < excessERRating)
+        {
+          excessERRating -= mainRating;
+          mainRating = 0;
+        }
+        else if(excessERRating > 0)
+        {
+          mainRating -= excessERRating;
+          excessERRating = 0;
+        }
+      }
+      let mainScore = (build[this.slotKey+'Stat']?.[this.mainStatKey] ?? 0) * mainRating;
+      
+      // Score the substats.
       let subScore = 0;
       let subScores = {};
-      if(character?.getBuild(buildId).artifactSubstats)
+      if(build.artifactSubstats)
       {
         for(let substat of Artifact.substats)
         {
-          let prio = character.getBuild(buildId).artifactSubstats[substat] ?? 0;
-          if(useTargets)
+          let penaltyFactor = (critPenalty>0 && substat=="critDMG_") ? (1-critPenalty) : (critPenalty<0 && substat=="critRate_") ? (1+critPenalty) : 1;
+          let subRating = this.getSubstatRating(substat).sum;
+          if(substat == "enerRech_")
           {
-            if(substat == "enerRech_")
+            if(subRating < excessERRating)
             {
-              let er = character.getStat("enerRech_");
-              if(er >= character.getBuild(buildId).maxER)
-                prio = 0;
-              else if(er < character.getBuild(buildId).minER)
-                prio = 3;
+              excessERRating -= subRating;
+              subRating = 0;
             }
-            else if((substat == "critRate_" || substat == "critDMG_") && character.getBuild(buildId).ratioCritRate > 0 && character.getBuild(buildId).ratioCritDMG > 0)
+            else if(excessERRating > 0)
             {
-              let currentRatio = character.getStat("critRate_") / character.getStat("critDMG_");
-              let targetRatio = character.getBuild(buildId).ratioCritRate / character.getBuild(buildId).ratioCritDMG;
-              if(substat == "critRate_" && currentRatio > targetRatio)
-                prio -= targetRatio / currentRatio;
-              else if(substat == "critDMG_" && currentRatio < targetRatio)
-                prio -= currentRatio / targetRatio;
+              subRating -= excessERRating;
+              excessERRating = 0;
             }
           }
-          subScores[substat] = Math.max(prio, Artifact.substatMins[substat]) * this.getSubstatRating(substat).sum;
+          subScores[substat] = Math.max(build.artifactSubstats[substat] ?? 0, Artifact.substatMins[substat]) * subRating * penaltyFactor;
           subScore += subScores[substat];
         }
       }
-      this.storedStats.characters[character.key][buildId][useTargets?'targets':'base'] = {mainScore, subScore, subScores};
+      
+      this.storedStats.characters[character.key][buildId][useTargets?'withTargets':'base'] = {mainScore, subScore, subScores, deficitERFactor};
     }
-    return this.storedStats.characters[character.key][buildId][useTargets?'targets':'base'];
+    return this.storedStats.characters[character.key][buildId][useTargets?'withTargets':'base'];
   }
   
-  getCharacterScore(character=this.list.viewer.lists.CharacterList.list[0], level=20, buildId="default", useTargets=false)
+  getCharacterScore(character, level=20, buildId="default", {useTargets}={})
   {
-    let score = this.getCharacterScoreParts(character, buildId, useTargets);
+    if(!character)
+    {
+      console.error(`No character provided to Artifact.getCharacterScore().`);
+      return null;
+    }
+    let score = this.getCharacterScoreParts(character, buildId, {useTargets});
     level = Math.max(0, Math.min(level, this.rarity<=2 ? 4 : (this.rarity==3 ? 12 : (this.rarity==4 ? 16 : 20))));
     let levelFactor = level / 20 * 6.8 + 1.2;
     let max = character.getMaxArtifactScore(this.slotKey, buildId, level);
     if(!max)
       return 0;
-    return ((score.mainScore * levelFactor / 8) + score.subScore) / max;
+    return ((score.mainScore * levelFactor / 8) + score.subScore) / max * score.deficitERFactor;
   }
   
   unlink(options)

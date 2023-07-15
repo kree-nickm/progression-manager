@@ -1,4 +1,4 @@
-import GiftSets from "./gamedata/GiftSets.js";
+import GenshinFurnitureSetData from "./gamedata/GenshinFurnitureSetData.js";
 
 import { Renderer } from "./Renderer.js";
 import GenshinList from "./GenshinList.js";
@@ -11,7 +11,7 @@ export default class FurnitureSetList extends GenshinList
   
   initialize()
   {
-    for(let s in GiftSets)
+    for(let s in GenshinFurnitureSetData)
     {
       this.addGOOD({key:s, learned:false, settled:[]});
     }

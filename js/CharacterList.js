@@ -44,7 +44,7 @@ export default class CharacterList extends GenshinList
     let name = this.display.addField("name", {
       label: "Name",
       labelTitle: "Sort by name.",
-      popup: true,
+      popup: item => item,
       sort: {generic: {type:"string",property:"name"}},
       dynamic: false,
       value: item => item.name,

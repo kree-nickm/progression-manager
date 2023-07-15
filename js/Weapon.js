@@ -99,10 +99,7 @@ export default class Weapon extends GenshinItem
       else
       {
         if(this.character)
-        {
-          this.character.weapon = null;
-          this.character.notifyType("weapon");
-        }
+          this.character.update("weapon", null, "replace");
         this.character = null;
       }
     }
@@ -192,21 +189,20 @@ export default class Weapon extends GenshinItem
         this.getMat('weak').count >= this.getMatCost('weak');
   }
   
-  getATK()
+  getATK(alternates=null)
   {
-    let statLower = GenshinWeaponStats[this.rarity][this.baseATK].atk[this.ascension*2];
-    let statUpper = GenshinWeaponStats[this.rarity][this.baseATK].atk[this.ascension*2+1];
-    let lvlMin = GenshinPhaseData[this.ascension-1]?.levelCap ?? 1;
-    let lvlMax = GenshinPhaseData[this.ascension].levelCap;
-    let scale = (this.level - lvlMin) / (lvlMax - lvlMin);
+    let statLower = GenshinWeaponStats[this.rarity][this.baseATK].atk[(alternates?.ascension??this.ascension)*2];
+    let statUpper = GenshinWeaponStats[this.rarity][this.baseATK].atk[(alternates?.ascension??this.ascension)*2+1];
+    let lvlMin = GenshinPhaseData[(alternates?.ascension??this.ascension)-1]?.levelCap ?? 1;
+    let lvlMax = GenshinPhaseData[(alternates?.ascension??this.ascension)].levelCap;
+    let scale = ((alternates?.level??this.level) - lvlMin) / (lvlMax - lvlMin);
     return statLower + (statUpper-statLower) * scale;
   }
   
-  getStat()
+  getStat(alternates=null)
   {
     let stat = GenshinWeaponStats[this.rarity][this.baseATK][this.stat] ?? this.baseStat;
-    //let stat = this.baseStat;
-    let factor = 1 + 0.04038405 * (this.level-1);
+    let factor = 1 + 0.04038405 * ((alternates?.level??this.level)-1);
     return stat * factor;
   }
   

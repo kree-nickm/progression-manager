@@ -173,7 +173,15 @@ export default class ArtifactList extends GenshinList
           return o*(B-A);
       }},
       dynamic: false,
-      value: item => item.slotKey,
+      title: item => item.slotKey,
+      value: item => ({
+        tag: "img",
+        classes: {'slot-icon':true},
+        src: `img/${item.slotKey}.webp`,
+      }),
+      classes: item => ({
+        'icon': true,
+      }),
     });
     
     let levelField = this.display.addField("level", {
@@ -315,7 +323,7 @@ export default class ArtifactList extends GenshinList
       dynamic: true,
       value: (artifact,character) => Math.round(artifact.getCharacterScore(character) * 100).toFixed(0) + "%",
       title: (artifact,character) => `How close this artifact is to ${character.name}'s best possible artifact for this build.`,
-      dependencies: artifact => [
+      dependencies: (artifact,character) => [
         {item:artifact, field:"level"},
         {item:artifact, field:"substats"},
       ],
@@ -327,10 +335,15 @@ export default class ArtifactList extends GenshinList
       dynamic: true,
       value: (artifact,character,substat) => {
         let scores = artifact.getCharacterScoreParts(character);
+        if(!scores.subScores)
+        {
+          console.error(`Unknown error getting characterSubstatRating:`, scores, artifact, character, substat);
+          return "???";
+        }
         return scores.subScores[substat]?.toFixed(2) ?? "0.00";
       },
       title: (artifact,character,substat) => `How much rating ${Artifact.shorthandStat[substat]} is contributing to this artifact's score for ${character.name}.`,
-      dependencies: artifact => [
+      dependencies: (artifact,character,substat) => [
         {item:artifact, field:"level"},
         {item:artifact, field:"substats"},
       ],
@@ -342,7 +355,7 @@ export default class ArtifactList extends GenshinList
       dynamic: false,
       value: item => ({
         tag: "img",
-        src: `https://rerollcdn.com/GENSHIN/Gear/${item.name.replaceAll(' ','_').toLowerCase()}.png`,
+        src: item.image,
       }),
     });
     
@@ -502,8 +515,7 @@ export default class ArtifactList extends GenshinList
           this.elements.selectSlotAdd.value = "";
           this.elements.selectStatAdd.value = "";
           this.elements.selectRarityAdd.value = "";
-          //this.viewer.store();
-          Renderer.renderNewItem(item, {exclude: field => field.tags.indexOf("detailsOnly") > -1});
+          Renderer.renderNewItem(item, {exclude: field => (field.tags??[]).indexOf("detailsOnly") > -1});
         }
       });
       
