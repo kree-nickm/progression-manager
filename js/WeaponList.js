@@ -313,8 +313,7 @@ export default class WeaponList extends GenshinList
             lock: false,
           });
           selectAdd.value = "";
-          //this.viewer.store();
-          Renderer.renderNewItem(item, {exclude: field => field.tags.indexOf("detailsOnly") > -1});
+          Renderer.renderNewItem(item, {exclude: field => (field.tags??[]).indexOf("detailsOnly") > -1});
         }
       });
       

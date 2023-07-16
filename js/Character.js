@@ -612,6 +612,8 @@ export default class Character extends GenshinItem
           builds[b].ratioCritRate = 1;
         if(!("ratioCritDMG" in builds[b]))
           builds[b].ratioCritDMG = 2;
+        if(!("useTargets" in builds[b]))
+          builds[b].useTargets = {};
       }
       return builds;
     }
@@ -868,7 +870,15 @@ export default class Character extends GenshinItem
     if(!useTargetsChk.onchange)
     {
       useTargetsChk.onchange = event => {
-        this.getRelatedItems(buildId);
+        if(event.target == useTargetsChk)
+        {
+          this.getBuild(buildId).useTargets = { // TODO: Add a checkbox for every different stat target.
+            enerRech_: useTargetsChk.checked,
+            critRatio: useTargetsChk.checked,
+          };
+          this.update("buildData", null, "notify", {property:'useTargets',buildId});
+        }
+        this.getRelatedItems(buildId); // Causes the artifact lists to be re-sorted.
         let listElements = buildSection.querySelectorAll(".character-artifacts .list[data-filter]");
         for(let listElement of listElements)
           Renderer.sortItems(listElement);

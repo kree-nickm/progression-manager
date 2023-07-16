@@ -596,7 +596,7 @@ export default class CharacterList extends GenshinList
             },
           });
           selectAdd.needsUpdate = true;
-          Renderer.renderNewItem(item, {exclude: field => field.tags.indexOf("detailsOnly") > -1});
+          Renderer.renderNewItem(item, {exclude: field => (field.tags??[]).indexOf("detailsOnly") > -1});
         }
       });
     }

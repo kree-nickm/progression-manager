@@ -192,6 +192,8 @@ export default class UIList extends UIController {
       force: force || this.forceNextRender,
       parentElement: this.viewer.elements[this.constructor.name],
     });
+    Array.from(this.viewer.elements[this.constructor.name].querySelectorAll(`.list`)).forEach(elem => elem.classList.add("d-none"));
+    element?.classList.remove("d-none");
     await Renderer.rerender(element, data, options);
     this.forceNextRender = false;
   }

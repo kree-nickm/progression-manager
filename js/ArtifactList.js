@@ -54,7 +54,7 @@ export default class ArtifactList extends GenshinList
     //console.log(`Evaluating all artifacts...`);
     this.list.forEach(artifact => artifact.update("wanters", [], "replace"));
     // Cycle through every character so we can access their artifact priority lists.
-    this.viewer.lists.CharacterList.list.forEach(character => {
+    this.viewer.lists.CharacterList.items("listable").forEach(character => {
       if(!character.consider)
         return true;
       // Cycle through all their builds.
@@ -70,7 +70,7 @@ export default class ArtifactList extends GenshinList
           {
             if(related.bestArtifacts[slot][i])
             {
-              related.bestArtifacts[slot][i].update("wanters", `#${i+1} ${slot} for ${character.name} (${buildId})`, "push");
+              related.bestArtifacts[slot][i].update("wanters", `#${i+1} ${slot} for ${character.name} (${buildId})`, "push"); // {rank:i+1, slot, character, buildId, setKey:null}
               // Don't bother with anything worse than what they are already using.
               if(related.bestArtifacts[slot][i].character == character)
               {
@@ -92,7 +92,7 @@ export default class ArtifactList extends GenshinList
             {
               if(bestOfSet[i])
               {
-                bestOfSet[i].update("wanters", `#${i+1} ${setKey} ${slot} for ${character.name} (${buildId})`, "push");
+                bestOfSet[i].update("wanters", `#${i+1} ${setKey} ${slot} for ${character.name} (${buildId})`, "push"); // {rank:i+1, slot, character, buildId, setKey}
                 // Don't bother with anything worse than what they are already using.
                 if(bestOfSet[i].character == character)
                 {

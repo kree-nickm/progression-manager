@@ -22,7 +22,23 @@
             <button id="deleteBuildBtn" class="btn btn-danger" title="{{#ifeq relatedItems.buildName "default"}}Cannot delete the default build.{{else}}Delete this build.{{/ifeq}}"{{#ifeq relatedItems.buildName "default"}} disabled="disabled"{{/ifeq}}><i class="fa-solid fa-trash"></i></button>
         </div>
     </div>
+    
+    <!--<div class="row pt-3">
+        <div class="col-auto">
+            <label class="input-group-text" for="buildName">Build Name:</label>
+        </div>
+        <div class="col">
+            <input id="buildName" class="form-control" type="text" value="{{relatedItems.buildName}}"/>
+        </div>
+        <div class="col-auto">
+            <label class="input-group-text" for="buildImportance" title="This value will be used in artifact desirability calculations. For example, if you set this to 0, then this build will not increase any artifact's desirability score no matter how well that artifact fits this build. You might want to do this for characters/builds that you don't actually intend on ever using.">Importance:</label>
+        </div>
+        <div class="col">
+            <input id="buildImportance" type="range" class="form-range" value="100" min="0" max="100" step="1"/>
+        </div>
+    </div>
   
+    <hr/>-->
     <h3>Artifact Sets</h3>
     <select id="bestArtifactSets" class="form-control selectpicker" multiple="multiple">
       {{#each relatedItems.artifactSets as |set setKey|}}
@@ -70,7 +86,7 @@
           {{> renderArtifactStatSlider . type="circletStat" statId="heal_" value=relatedItems.buildData.circletStat.heal_}}
             <div class="row mt-2 gx-1">
                 <div class="col-1 align-self-center">
-                  <input class="form-check form-check-input" type="checkbox" id="useTargets" value="targets" title="Toggle whether to respect the ER% and Crit ratio limiters when sorting the artifact lists below. Leaving this disabled might make it easier to select artifacts when first equipping a character. Enabling it might make it easier to fine-tune your artifact stats."/>
+                  <input class="form-check form-check-input" type="checkbox" id="useTargets" value="targets" title="Toggle whether to respect the following stat targets when sorting the artifact lists below. Note that this setting is ignored on the main artifacts listing page." {{#if relatedItems.buildData.useTargets.critRatio}}checked="checked"{{/if}}/>
                 </div>
                 <div class="col-6" title="If a piece won't get you to your minimum ER%, its rank will be penalized based on how low your ER% is with it. If a piece would put you over your maximum ER%, all excess ER% that it provides past your maximum will be ignored.">
                     <div class="input-group">
@@ -82,7 +98,7 @@
                 </div>
                 <div class="col-5">
                     <div class="input-group">
-                        <label class="input-group-text pe-2" for="characterRatioCritRate" title="Your desired ratio for Crit Rate to Crit DMG. If enabled, pieces will have an additional factor when sorted on the lists below based on whether they get you closer to or further from this ratio.">Crit Ratio:</label>
+                        <label class="input-group-text pe-2" for="characterRatioCritRate" title="Your desired ratio for Crit Rate to Crit DMG. If enabled, pieces will have either their Crit Rate or Crit DMG score penalized based on how far off your Crit ratio will be from your target.">Crit Ratio:</label>
                         <input id="characterRatioCritRate" class="stat-target form-control pe-1" type="number" title="Crit Rate" min="0" max="10" value="{{relatedItems.buildData.ratioCritRate}}"/>
                         <label class="input-group-text px-1" for="characterRatioCritDMG">/</label>
                         <input id="characterRatioCritDMG" class="stat-target form-control ps-1" type="number" title="Crit DMG" min="0" max="10" value="{{relatedItems.buildData.ratioCritDMG}}"/>

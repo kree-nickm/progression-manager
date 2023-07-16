@@ -74,6 +74,9 @@ document.getElementById("loadPastebinBtn").addEventListener("click", async click
   let input = document.getElementById("loadPastebinCode");
   if(input.value)
   {
+    let msg = document.getElementById("loadMessage");
+    msg.classList.remove("d-none");
+    msg.innerHTML = `<i class="fa-solid fa-arrows-rotate fa-spin"></i> Importing...`;
     let response = await fetch("https://corsproxy.io/?https://pastebin.com/raw/"+input.value, {
       method: "GET",
     });
@@ -100,6 +103,7 @@ document.getElementById("loadPastebinBtn").addEventListener("click", async click
       document.getElementById("loadError").classList.remove("d-none");
       console.error(`Code does not match a Pastebin post with valid GOOD data.`, json);
     }
+    msg.classList.add("d-none");
   }
   else
   {
@@ -197,7 +201,7 @@ document.getElementById("savePastebinBtn").addEventListener("click", async event
   let response = await window.viewer.saveToPastebin();
   if(response)
   {
-    msg.innerHTML = `Saved to <a href="https://pastebin.com/${response}" target="_blank">Pastebin</a> successfully.<br/><b>Code: <tt>${response}</tt></b><br/>Data will be available for 24 hours.`;
+    msg.innerHTML = `Saved to <a href="https://pastebin.com/${response}" target="_blank">Pastebin</a> successfully.<br/><b>Code: <tt>${response}</tt></b><br/>Data will be available for 1 week.`;
   }
   else
   {
@@ -266,3 +270,20 @@ for(let i=0; i<navLinks.length; i++)
 }
 if(!navClicked)
   navLinks[0].click();
+
+if(location.search.at(0) == "?")
+{
+  let params = location.search.slice(1).split("&").reduce((result,param) => {
+    let p = param.split("=");
+    result[p[0]] = p[1] ?? true;
+    return result;
+  }, {});
+  /*if(params.pb)
+  {
+    document.getElementById("loadPastebinCode").value = params.pb;
+    document.getElementById("loadPastebinBtn").dispatchEvent(new Event("click"));
+    bootstrap.Modal.getOrCreateInstance(document.getElementById("newModal")).hide();
+    bootstrap.Modal.getOrCreateInstance(document.getElementById("loadModal")).show();
+    //history.replaceState({}, "", location.pathname + location.hash);
+  }*/
+}
