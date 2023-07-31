@@ -2,26 +2,20 @@ import UIList from "./UIList.js";
 import GenshinItem from "./GenshinItem.js";
 
 export default class GenshinList extends UIList {
-  static dontSerialize = UIList.dontSerialize.concat(["importing"]);
-  
   static fromJSON(data, {viewer, addProperties={}}={})
   {
-    addProperties.importing = true;
     let result = super.fromJSON(data, {viewer, addProperties});
-    result.importing = false;
     return result;
   }
-  
-  importing = false;
   
   getUnique(item)
   {
     return (this.constructor.unique ? (item.key ?? item.id) : item.uuid) ?? this.getHash(item);
   }
   
-  fromGOOD(goodData)
+  fromGOOD(goodData, {source="GOOD"}={})
   {
-    this.importing = true;
+    this.startImport(source);
     this.clear();
     if(Array.isArray(goodData))
     {
@@ -38,7 +32,7 @@ export default class GenshinList extends UIList {
       console.error("GenshinList.fromGOOD(goodData) only works if goodData is an array or object.", goodData);
     }
     this.forceNextRender = true;
-    this.importing = false;
+    this.finishImport();
     return this.list.length;
   }
   

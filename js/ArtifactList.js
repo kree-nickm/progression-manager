@@ -1,4 +1,5 @@
 import GenshinArtifactData from "./gamedata/GenshinArtifactData.js";
+import GenshinArtifactStats from "./gamedata/GenshinArtifactStats.js";
 
 import { handlebars, Renderer } from "./Renderer.js";
 import GenshinList from "./GenshinList.js";
@@ -115,7 +116,8 @@ export default class ArtifactList extends GenshinList
   
   afterUpdate(field, value, action, options)
   {
-    super.afterUpdate(field, value, action, options);
+    if(!super.afterUpdate(field, value, action, options))
+      return false;
     if(field.string == "list" && value.length != field.value.length || field.string == "evaluate")
       document.querySelector("#artifactEvaluateBtn")?.classList.add("show-notice");
   }
@@ -228,7 +230,7 @@ export default class ArtifactList extends GenshinList
         sort: {func: (o,a,b) => o * (b.getSubstatSum(statId) - a.getSubstatSum(statId))},
         columnClasses: ['stat-'+statId],
         dynamic: true,
-        value: item => { let result = item.getSubstatSum(statId); return result ? result : ""; },
+        value: item => { let result = item.getSubstatSum(statId); return result ? result.toFixed(["eleMas","hp","atk","def"].indexOf(statId)>-1?0:1) : ""; },
         edit: item => ({
           func: item.setSubstat.bind(item, statId),
           type: "number",
@@ -275,12 +277,12 @@ export default class ArtifactList extends GenshinList
     });
     
     let locationField = this.display.addField("location", {
-      label: "Equipped By",
+      label: "User",
       sort: {generic: {type:"string",property:"location"}},
       dynamic: true,
       value: item => [
         {
-          value: item.character?.name ?? "",
+          value: item.character?.name ?? "-",
           edit: {
             target: {item:item, field:"location"},
             type: "select",
@@ -288,6 +290,7 @@ export default class ArtifactList extends GenshinList
             valueProperty: "key",
             displayProperty: "name",
           },
+          classes: {"text-muted": !item.character},
         },
         item.character ? {
           tag: "i",
@@ -297,6 +300,21 @@ export default class ArtifactList extends GenshinList
       ],
       dependencies: item => [
         {item:item.list.viewer.lists.characters, field:"list"},
+      ],
+    });
+    
+    let characterIconField = this.display.addField("characterIcon", {
+      label: "User",
+      tags: ["detailsOnly"],
+      sort: {generic: {type:"string",property:"location"}},
+      dynamic: true,
+      title: item => item.character?.name??"",
+      value: item => item.character ? {
+        tag: "img",
+        src: item.character.image ?? "",
+      } : "",
+      dependencies: item => [
+        {item, field:"location"},
       ],
     });
     
@@ -321,8 +339,14 @@ export default class ArtifactList extends GenshinList
       label: "Score",
       tags: ["detailsOnly"],
       dynamic: true,
-      value: (artifact,character) => Math.round(artifact.getCharacterScore(character) * 100).toFixed(0) + "%",
-      title: (artifact,character) => `How close this artifact is to ${character.name}'s best possible artifact for this build.`,
+      value: (artifact,character) => {
+        let score = artifact.getCharacterScore(character);
+        return {
+          icon: score>0.6 ? "fa-solid fa-face-smile" : score>0.3 ? "fa-solid fa-face-meh" : "fa-solid fa-face-frown",
+          color: `rgba(${score<0.5?255:255*(2-score*2)}, ${score>0.5?255:255*score*2}, 0, 0.9)`,
+        };
+      },
+      title: (artifact,character) => `This artifact is ${Math.round(artifact.getCharacterScore(character)*100).toFixed(1)}% as good as the theoretical best possible artifact for your ${character.name}.`,
       dependencies: (artifact,character) => [
         {item:artifact, field:"level"},
         {item:artifact, field:"substats"},
@@ -359,14 +383,61 @@ export default class ArtifactList extends GenshinList
       }),
     });
     
+    let mainStatDisplayField = this.display.addField("mainStatDisplay", {
+      label: "Main Stat",
+      tags: ["detailsOnly"],
+      dynamic: true,
+      value: item => [
+          {
+            tag: "img",
+            src: item.mainStatKey.endsWith("_dmg_") ? `img/Element_${item.mainStatKey.at(0).toUpperCase()+item.mainStatKey.slice(1,-5)}.svg` : `img/stat.${item.mainStatKey}.svg`,
+            classes: {
+              "light-highlight": !(item.mainStatKey.endsWith("_dmg_") && item.mainStatKey != "physical_dmg_"),
+              "dark-highlight": item.mainStatKey.endsWith("_dmg_") && item.mainStatKey != "physical_dmg_",
+            },
+          },
+          {
+            value: ["eleMas","hp","atk","def"].indexOf(item.mainStatKey)>-1 ? item.getSubstatSum(item.mainStatKey).toFixed(0) : item.getSubstatSum(item.mainStatKey).toFixed(1) + "%",
+          },
+        ],
+      dependencies: artifact => [
+        {item:artifact, field:"level"},
+      ],
+    });
+    
     let substatField = this.display.addField("substat", {
       label: "Substat",
       tags: ["detailsOnly"],
       dynamic: true,
-      value: (item,i) => Artifact.shorthandStat[item.substats[i]?.key] ?? "-",
-      edit: (item,i) => item.substats[i] ? undefined : {
+      title: (item,i) => !item.substats[i]
+                          ? `Click to add new substat.`
+                          : `${item.getSubstatSum(item.substats[i].key).toFixed(2)} ${Artifact.shorthandStat[item.substats[i].key]}, rolled ${item.substatRolls[item.substats[i].key]?.length} times (${item.substatRolls[item.substats[i].key]?.map(r=>r*100).join('%, ')}%)`,
+      value: (item,i) => item.substats[i] ? [
+          {
+            tag: "div",
+            value: item.substatRolls[item.substats[i].key].map(roll => ({
+              value: ".".repeat(roll * 10 - 6),
+              width: `calc(${(1/item.substatRolls[item.substats[i].key].length*roll*100)}% - 2px)`,
+            })),
+            classes: {
+              "rolls-display": true,
+            }
+          },
+          {
+            tag: "img",
+            src: `img/stat.${item.substats[i].key}.svg`,
+          },
+          {
+            value: ["eleMas","hp","atk","def"].indexOf(item.substats[i].key)>-1 ? item.getSubstatSum(item.substats[i].key).toFixed(0) : item.getSubstatSum(item.substats[i].key).toFixed(1) + "%",
+          },
+        ] : "-",
+      edit: (item,i) => item.substats[i] ? {
+        func: item.setSubstat.bind(item, item.substats[i].key),
+        type: "number",
+        value: item.getSubstatSum(item.substats[i].key).toFixed(["eleMas","hp","atk","def"].indexOf(item.substats[i].key)>-1?0:1),
+      } : {
         func: statId => {
-          item.setSubstat(statId, 0.1);
+          item.setSubstat(statId, GenshinArtifactStats[item.rarity].substats[statId]*0.7);
           let characterElement = item.viewer.elements.popup.querySelector(".list-item");
           let character = Renderer.controllers.get(characterElement.dataset.uuid);
           if(character)
@@ -378,11 +449,12 @@ export default class ArtifactList extends GenshinList
           }
         },
         type: "select",
-        list: Artifact.substats.filter(statId => statId != item.mainStat && item.substats.map(s => s.key).indexOf(statId) == -1),
+        list: Artifact.substats.filter(statId => statId != item.mainStatKey && item.substats.map(s => s.key).indexOf(statId) == -1),
         displayProperty: statId => Artifact.shorthandStat[statId],
       },
       dependencies: artifact => [
         {item:artifact, field:"substats"},
+        {item:artifact, field:"level"},
       ],
     });
   }
@@ -515,7 +587,18 @@ export default class ArtifactList extends GenshinList
           this.elements.selectSlotAdd.value = "";
           this.elements.selectStatAdd.value = "";
           this.elements.selectRarityAdd.value = "";
-          Renderer.renderNewItem(item, {exclude: field => (field.tags??[]).indexOf("detailsOnly") > -1});
+          
+          let listElement = this.viewer.elements[this.constructor.name].querySelector(`.list[data-uuid="${this.uuid}"]`);
+          let listTargetElement = listElement.querySelector(".list-target");
+          if(!listTargetElement)
+            listTargetElement = listElement;
+          Renderer.rerender(null, {
+            item,
+            groups: this.display.getGroups({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}),
+            fields: this.display.getFields({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}),
+            wrapper: "tr",
+            fieldWrapper: "td",
+          }, {template:"renderItem", parentElement:listTargetElement});
         }
       });
       

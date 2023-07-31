@@ -5,7 +5,7 @@ import GenshinItem from "./GenshinItem.js";
 
 export default class Artifact extends GenshinItem
 {
-  static dontSerialize = GenshinItem.dontSerialize.concat(["character","wanters","loaded","storedStats"]);
+  static dontSerialize = GenshinItem.dontSerialize.concat(["character","wanters","storedStats","substatRolls"]);
   static goodProperties = ["setKey","slotKey","level","rarity","mainStatKey","location","lock","substats"];
   static shorthandStat = {
     'eleMas': "EM",
@@ -48,36 +48,29 @@ export default class Artifact extends GenshinItem
   mainStatKey = "";
   location = "";
   lock = false;
-  substats = {};
+  substats = [];
+  substatRolls = {};
   _level = 0;
   _rarity = 0;
   storedStats = {
-    sums: {},
     ratings: {},
     characters: {},
   };
-  loaded = false;
   character = null;
   wanters = [];
   
   afterLoad()
   {
     if(GenshinArtifactData[this.setKey])
-    {
-      this.loaded = true;
-      this.cleanSubstats();
-    }
+      this.determineRolls();
     else
-    {
-      //console.warn(`Unknown artifact set "${this.setKey}".`);
-      this.loaded = false;
-    }
-    return this.loaded;
+      console.error(`Unknown artifact set '${this.setKey}'.`);
   }
   
   afterUpdate(field, value, action, options)
   {
-    super.afterUpdate(field, value, action, options);
+    if(!super.afterUpdate(field, value, action, options))
+      return false;
     if(field.string == "location")
     {
       if(value)
@@ -101,7 +94,8 @@ export default class Artifact extends GenshinItem
     }
     else
     {
-      this.storedStats.sums = {};
+      if(!this.importing && this.substats && (field.string == "substats" || field.string == "level" || field.string == "rarity"))
+        this.determineRolls();
       this.storedStats.ratings = {};
       this.storedStats.characters = {};
     }
@@ -118,9 +112,9 @@ export default class Artifact extends GenshinItem
   get rarity(){ return this._rarity; }
   set rarity(val){ this._rarity = Math.min(Math.max(val, 1), 5); }
   
-  get name(){ return this.loaded ? GenshinArtifactData[this.setKey][this.slotKey] : `${this.setName} ${this.slotKey}`; }
-  get setName(){ return this.loaded ? GenshinArtifactData[this.setKey].name : this.setKey; }
-  get levelCap(){ return GenshinArtifactStats[this.rarity].levelCap; }
+  get name(){ return GenshinArtifactData[this.setKey]?.[this.slotKey] ?? `${this.setName} ${this.slotKey}`; }
+  get setName(){ return GenshinArtifactData[this.setKey]?.name ?? this.setKey; }
+  get levelCap(){ return GenshinArtifactStats[this.rarity]?.levelCap ?? 0; }
   get mainStatShorthand(){ return Artifact.shorthandStat[this.mainStatKey]; }
   get mainStatValue(){
     let key = this.mainStatKey.endsWith("o_dmg_") ? "elemental_dmg_" : this.mainStatKey;
@@ -151,26 +145,92 @@ export default class Artifact extends GenshinItem
     }
     if(found)
     {
-      this.cleanSubstats();
+      this.determineRolls();
       this.update("substats", null, "notify");
+    }
+  }
+  
+  determineRolls()
+  {
+    this.cleanSubstats();
+    let rollTotals = {};
+    for(let stat of this.substats)
+      rollTotals[stat.key] = (stat.value / GenshinArtifactStats[this.rarity].substats[stat.key]).toFixed(1);
+    
+    if(this.substats.length < 4)
+    {
+      this.substatRolls = {};
+      for(let statKey in rollTotals)
+        this.substatRolls[statKey] = [parseFloat(rollTotals[statKey])];
+      return this.substatRolls;
+    }
+    else
+    {
+      let possibles = {};
+      for(let statKey in rollTotals)
+      {
+        possibles[statKey] = [];
+        let minNumRolls = Math.ceil(rollTotals[statKey]);
+        let maxNumRolls = Math.floor(rollTotals[statKey]/0.7);
+        let iterations = Math.pow(5,maxNumRolls);
+        for(let iter=0; iter<iterations; iter++)
+        {
+          let statRolls = [];
+          let i = iter;
+          // Convert the iteration into a specific set of "rolls" for this stat.
+          while(i > 0)
+          {
+            // Only allow "roll" sets that are in descending order.
+            if(!statRolls.length || statRolls[statRolls.length-1] >= (i%5))
+            {
+              statRolls.push(i%5);
+              i = Math.floor(i/5);
+            }
+            else
+              i = -1;
+          }
+          if(i < 0)
+            continue;
+          // Convert the "rolls" into actual rolls.
+          statRolls = statRolls.filter(num => num > 0).map(num => num>0 ? 0.6+num*0.1 : 0);
+          // Only keep roll sets that are valid and add up to the actual stat total roll value.
+          if(statRolls.length >= minNumRolls && rollTotals[statKey] == statRolls.reduce((total,num) => total+num).toFixed(1))
+          {
+            // Only keep one roll set of a given number of rolls, since they are totally interchangeable.
+            if(!possibles[statKey].find(elem => elem.length == statRolls.length))
+              possibles[statKey].push(statRolls);
+          }
+        }
+      }
+      let minRolls = Math.max(0, Math.floor(this.level/4) + this.rarity-2);
+      let maxRolls = Math.floor(this.level/4) + this.rarity-1;
+      let keys = Object.keys(possibles);
+      for(let rollsA of possibles[keys[0]])
+        for(let rollsB of possibles[keys[1]])
+          for(let rollsC of possibles[keys[2]])
+            for(let rollsD of possibles[keys[3]])
+      {
+        let rollCount = rollsA.length + rollsB.length + rollsC.length + rollsD.length;
+        if(rollCount >= minRolls && rollCount <= maxRolls)
+        {
+          this.substatRolls = {[keys[0]]: rollsA, [keys[1]]: rollsB, [keys[2]]: rollsC, [keys[3]]: rollsD};
+          return this.substatRolls;
+        }
+      }
+      console.warn(`[Ignore if you are still editing artifact] Artifact substats do not have values that can be divided into any number of valid rolls (Rarity:${this.rarity}) (Level:${this.level}) (${minRolls}<=rollCount<=${maxRolls}).`, this.substats, rollTotals, possibles);
+      return null;
     }
   }
   
   cleanSubstats()
   {
     this.substats = this.substats.filter(stat => Artifact.substats.indexOf(stat.key) > -1 && stat.value > 0);
+    this.substats.sort((a,b) => Artifact.substats.indexOf(a.key) - Artifact.substats.indexOf(b.key));
   }
   
   getSubstatSum(statId)
   {
-    if(this.storedStats.sums[statId] === undefined)
-    {
-      this.storedStats.sums[statId] = 0;
-      for(let substat of this.substats)
-        if(substat.key == statId)
-          this.storedStats.sums[statId] = substat.value;
-    }
-    return this.storedStats.sums[statId];
+    return (this.substatRolls[statId]?.reduce((total,roll) => total+roll) ?? 0) * (GenshinArtifactStats[this.rarity]?.substats?.[statId] ?? 0);
   }
   
   getSubstatRating(statId)
@@ -182,8 +242,7 @@ export default class Artifact extends GenshinItem
         this.storedStats.ratings[statId] = {base:0, chance:0, sum:0};
       else
       {
-        let sum = this.getSubstatSum(statId);
-        let baseRating = sum / GenshinArtifactStats[5].substats[statId];
+        let baseRating = this.substatRolls[statId]?.reduce((total,roll) => total+roll) ?? 0;
         let avgRoll = GenshinArtifactStats[this.rarity].substats[statId] * (this.rarity==1 ? 0.9 : 0.85);
         let tiersRemaining = Math.ceil((this.levelCap - this.level) / 4);
         let statsOpen = 4 - this.substats.length;

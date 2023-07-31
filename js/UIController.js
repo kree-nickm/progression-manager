@@ -5,20 +5,24 @@ handlebars.registerHelper("uuid", (item, context) => item.uuid);
 handlebars.registerHelper('toParam', (item, context) => item instanceof UIController ? item.uuid : typeof(item) == "object" ? item?.toString()??"" : item);
 
 export default class UIController {
-  static dontSerialize = ["uuid","dependents"];
+  static dontSerialize = ["uuid","importing","delayedUpdates","dependents"];
   
   static fromJSON(data, {addProperties={}}={})
   {
     let obj = new this();
+    obj.startImport("GenshinManager");
     for(let prop in addProperties)
       obj[prop] = addProperties[prop];
     for(let prop in obj)
       if(this.dontSerialize.indexOf(prop) == -1 && data[prop] !== undefined)
         obj.update(prop, data[prop], "replace");
+    obj.finishImport();
     return obj;
   }
   
   uuid;
+  importing;
+  delayedUpdates = [];
   dependents = {}; // Note: In the future, properties of this object could be changed to Sets instead of Arrays.
   
   constructor()
@@ -155,13 +159,15 @@ export default class UIController {
     
     if(needsUpdate)
     {
+      // TODO: this.viewer
       window.viewer.queueStore();
-      for(let dep of this.dependents[field.string] ?? [])
-        if(dep)
-          Renderer.queueUpdate(dep);
-      for(let dep of this.dependents['.'] ?? [])
-        if(dep)
-          Renderer.queueUpdate(dep);
+      for(let i=0; i<=field.path.length; i++)
+      {
+        let str = (i == 0 ? '.' : (i == field.path.length ? field.string : field.path.slice(0, i).join('.')));
+        for(let dep of this.dependents[str] ?? [])
+          if(dep)
+            Renderer.queueUpdate(dep);
+      }
     }
     this.afterUpdate(field, value, action, options);
     return this;
@@ -175,7 +181,27 @@ export default class UIController {
   
   afterUpdate(field, value, action, options)
   {
+    /*if(this.importing)
+    {
+      this.delayedUpdates.push(this.afterUpdate.bind(this, field, value, action, options));
+      return false;
+    }
+    else*/
+      return true;
     // Any code to run after a value is changed.
+  }
+  
+  startImport(source="GenshinManager")
+  {
+    this.importing = source;
+  }
+  
+  finishImport()
+  {
+    this.importing = null;
+    for(let update of this.delayedUpdates)
+      update.call();
+    this.delayedUpdates = [];
   }
   
   notifyAll()
@@ -226,6 +252,16 @@ export default class UIController {
     return this;
   }
   
+  static clearDependencies(element, children=false)
+  {
+    if(element.dependencies)
+      for(let dep of element.dependencies)
+        if(dep?.item && dep?.field)
+          dep.item.removeDependent(dep.field, element);
+    if(children)
+      Array.from(element.children).forEach(elem => UIController.clearDependencies(elem));
+  }
+  
   onRender(element)
   {
   }
@@ -234,7 +270,7 @@ export default class UIController {
   {
     Renderer.controllers.delete(this.uuid);
     if(!skipHTML)
-      Renderer.removeItem(this);
+      Renderer.removeElementsOf(this);
   }
   
   toJSON()

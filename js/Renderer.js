@@ -102,6 +102,39 @@ handlebars.registerHelper('lookup', function(...params) {
   }
   return obj;
 });
+handlebars.registerHelper('math', function(...params) {
+  let options = params.pop();
+  let method = params.shift();
+  let operations = ["+","-","*","/","%"];
+  params = params.map(term => typeof(Math[term]) == "number" ? Math[term] : operations.indexOf(term) > -1 ? term : parseFloat(term));
+  if(typeof(Math[method]) == "function")
+    return (Math[method])(...params);
+  else
+  {
+    params.unshift(method);
+    let total = params.reduce((result,term) => {
+      if(typeof(term) == "number")
+      {
+        if(result.operation == "+")
+          result.total = result.total + term;
+        else if(result.operation == "-")
+          result.total = result.total - term;
+        else if(result.operation == "*")
+          result.total = result.total * term;
+        else if(result.operation == "/")
+          result.total = result.total / term;
+        else if(result.operation == "%")
+          result.total = result.total % term;
+        else
+          result.total = term;
+      }
+      else
+        result.operation = term;
+      return result;
+    }, {operation:null, total:NaN}).total;
+    return total;
+  }
+});
 
 class Renderer
 {
@@ -145,7 +178,7 @@ class Renderer
   static partialsUsed = {
     'renderListAsTable': ["renderItem"],
     'renderCharacterAsPopup': ["renderCharacterBuild","renderCharacterStats"],
-    'renderCharacterBuild': ["renderArtifactStatSlider","renderCharacterArtifactLists"],
+    'renderCharacterBuild': ["renderCharacterBuildSlider","renderCharacterArtifactLists"],
     'renderCharacterArtifactLists': ["renderListAsColumn"],
     'renderListAsColumn': ["renderArtifactAsCard"],
   };
@@ -162,6 +195,7 @@ class Renderer
     {
       Renderer._needsUpdate.add(element);
       element.needsUpdate = true;
+      if(window.DEBUGLOG.queueUpdate) console.debug(`Renderer.queueUpdate(1): Queuing update for:`, element);
     }
     if(Renderer._updateTimeout)
       clearTimeout(Renderer._updateTimeout);
@@ -171,18 +205,17 @@ class Renderer
         {
           if(element.classList.contains("list-item-field"))
           {
-            console.debug(`Updating list item field element:`, element);
             Renderer.renderItemField(element);
           }
           else
           {
-            console.debug(`Updating misc element:`, element);
             Renderer.rerender(element);
           }
         }
         else
         {
-          console.warn(`Cannot update disconnected element:`, element);
+          // TODO: This happens a lot, but it's hard to track down where the element is getting disconnected so that it can be removed from thr queue and dependencies appropriately. For now, the console will just be occasionally spammed.
+          console.warn(`Renderer.queueUpdate(1): Cannot update disconnected element:`, element);
         }
       });
       Renderer._needsUpdate.clear();
@@ -222,7 +255,7 @@ class Renderer
     return Renderer._templates;
   }
   
-  static contentToHTML(content, path=[])
+  static contentToHTML(content, path=[0])
   {
     if(typeof(content) == "string")
     {
@@ -232,30 +265,37 @@ class Renderer
         classes.push("sub-"+ path.join("-"));
       return `<span class="value ${handlebars.escapeExpression(classes.join(' '))}">${handlebars.escapeExpression(content)}</span>`;
     }
-    else if(content !== undefined && content !== null)
+    else if(typeof(content) == "object" && content != null)
     {
-      let tag = content.tag;
+      if(window.DEBUGLOG.contentToHTML) console.debug(`Renderer.contentToHTML(2): Handling content object.`, content, path);
+      let tag = content.tag ?? "span";
       let text = "";
-      if(Array.isArray(content?.value))
+      if(content.template?.reference)
       {
+        if(content.value)
+          console.warn(`Content has both template and value properties; ignoring value.`, content, path);
+        text = content.template.reference(content.template.data ?? {});
+      }
+      else if(Array.isArray(content.value))
+      {
+        if(window.DEBUGLOG.contentToHTML) console.debug(`Handling array content.value.`);
         for(let i in content.value)
           if(content.value[i])
             text = text + Renderer.contentToHTML(content.value[i], path.concat([i]));
-        if(!tag)
-          return text;
+        if(window.DEBUGLOG.contentToHTML) console.debug(`Finished handling array.`, text);
       }
       else if(typeof(content.value) == "object")
       {
-        text = Renderer.contentToHTML(content.value);
+        text = Renderer.contentToHTML(content.value, path.concat([0]));
       }
-      else if(content.value !== "")
+      else if(content.value || typeof(content.value) == "number")
       {
         let str = content.html ? content.value : handlebars.escapeExpression(content.value);
         text = `<span class="value">${str}</span>`;
       }
       if(content.icon)
         text = text + `<i class="icon ${handlebars.escapeExpression(content.icon)}"></i>`;
-      tag = content.tag ?? "span";
+      if(window.DEBUGLOG.contentToHTML) console.debug(`Finished building text.`, text);
       
       let attrs = [];
       let classes = [];
@@ -271,7 +311,14 @@ class Renderer
         attrs.push(`name="${handlebars.escapeExpression(content.name)}"`);
       
       if(content.src)
+      {
         attrs.push(`src="${content.src}"`);
+        if(tag == "img" && content.src.startsWith("http"))
+          attrs.push(`loading="lazy"`);
+      }
+      
+      if(content.alt)
+        attrs.push(`alt="${content.alt}"`);
       
       if(content.title)
         attrs.push(`title="${handlebars.escapeExpression(content.title)}"`);
@@ -279,7 +326,17 @@ class Renderer
       if("onclick" in content && !content.onclick)
         attrs.push(`disabled="disabled"`);
       
-      return `<${tag} data-source-code="Renderer.contentToHTML" ${attrs.join(' ')}` + (text!=="" ? `>${text}</${tag}>` : `/>`);
+      let style = "";
+      if(content.background)
+        style = style +`background:${content.background};`;
+      if(content.color)
+        style = style +`color:${content.color};`;
+      if(content.width)
+        style = style +`width:${content.width};`;
+      if(style)
+        attrs.push(`style="${style}"`);
+      
+      return `<${tag} ${attrs.join(' ')}` + (text!==""||tag=="i" ? `>${text}</${tag}>` : `/>`);
     }
     else
       return "";
@@ -334,6 +391,10 @@ class Renderer
       if(!data.items && typeof(data.item.items) === "function")
         data.items = data.item.items(data.filter);
       
+      // Iterate through _needsUpdate and remove anything that's about to get overwritten, to prevent errors.
+      data.item.constructor.clearDependencies(element, true);
+      Renderer._needsUpdate.forEach(elemToUpdate => element.contains(elemToUpdate) ? Renderer._needsUpdate.delete(elemToUpdate) : null);
+      
       let templates = await Renderer.getTemplates(template, "renderItemField");
       element.outerHTML = templates[template](data);
       element = parentElement.children.item(index);
@@ -351,51 +412,18 @@ class Renderer
     $(element).find(".selectpicker").selectpicker('render');
     
     if(showPopup)
+    {
       bootstrap.Modal.getOrCreateInstance(data.item.viewer.elements.popup).show();
+    }
   }
   
-  static removeItem(item)
+  static removeElementsOf(item)
   {
-    Array.from(document.querySelectorAll(`.list-item[data-uuid="${item.uuid}"]`)).forEach(element => {
-      let fieldElements = element.querySelectorAll(".list-item-field");
-      for(let fieldElement of fieldElements)
-      {
-        if(fieldElement.dependencies)
-        {
-          for(let dep of fieldElement.dependencies)
-          {
-            if(dep?.item && dep?.field)
-              dep.item.removeDependent(dep.field, fieldElement);
-          }
-        }
-      }
+    Array.from(document.querySelectorAll(`*[data-uuid="${item.uuid}"]`)).forEach(element => {
+      item.constructor.clearDependencies(element, true);
+      Renderer._needsUpdate.forEach(elemToUpdate => element.contains(elemToUpdate) ? Renderer._needsUpdate.delete(elemToUpdate) : null);
       element.remove();
     });
-  }
-  
-  static async renderNewItem(item, {data={}, template, include=[], exclude=[]}={})
-  {
-    template = template ?? "renderItem";
-    let templates = await Renderer.getTemplates(template, "renderItemField");
-    let element = document.querySelector(`.list[data-uuid='${item.list.uuid}']`); // TODO: Could match multiple.
-    {
-      let listElement = element.querySelector(".list-target");
-      if(!listElement)
-        listElement = element;
-      let newElement = listElement.appendChild(document.createElement("template"));
-      
-      data.item = item;
-      data.fields = data.fields ?? item.list.display.getFields({include, exclude});
-      data.wrapper = data.wrapper ?? "tr";
-      data.fieldWrapper = data.fieldWrapper ?? "td";
-      newElement.outerHTML = templates[template](data);
-      
-      // Changing outerHTML breaks DOM references, so we need to reacquire the reference to this element.
-      newElement = listElement.querySelector(`.list-item[name="${item.getUnique()}"]`);
-      
-      let fieldElements = newElement.querySelectorAll(".list-item-field");
-      fieldElements.forEach(Renderer.renderItemField);
-    }
   }
   
   static sortItems(listElement, {list,items,filter}={})
@@ -434,6 +462,7 @@ class Renderer
     for(let item of items)
     {
       // Note: If the element list differs from the list of items, the extra elements will remain at the top.
+      // TODO: Do we want to use UUID here instead of getUnique? This is the only thing keeping the "name='{{unique item}}'" attribute relavent in templates.
       let itemElement = listTargetElement.children.namedItem(item.getUnique());
       if(itemElement)
         listTargetElement.appendChild(itemElement);
@@ -490,31 +519,31 @@ class Renderer
       }
     }
     
-    // Fetch some fields we need.
-    let value = field.get("value", item, ...params);
-    let dependencies = field.get("dependencies", item, ...params) ?? [];
-    let button = field.get("button", item, ...params);
-    if(!Array.isArray(button))
-      button = [button];
-    let edit = field.get("edit", item, ...params);
+    // Fetch all the field properties, and clone the dependencies since we are about to modify them.
+    let fieldData = field.getAll(item, ...params);
+    fieldData.dependencies = fieldData.dependencies ? [...fieldData.dependencies] : [];
+    
+    if(!Array.isArray(fieldData.button))
+      fieldData.button = [fieldData.button];
+    
+    if(window.DEBUGLOG.renderItemField) console.debug(`Renderer.renderItemField(1): Rendering item field:`, element, params, fieldData);
     
     // Render the Handlebars template if the field has changed.
     if(element.needsUpdate)
     {
       // Remove old dependency definitions.
-      if(element.dependencies)
-      {
-        for(let dep of element.dependencies)
-        {
-          if(dep?.item && dep?.field)
-            dep.item.removeDependent(dep.field, element);
-        }
-      }
+      item.constructor.clearDependencies(element);
       
       // Remember specific classes that the element might have that are not a part of the template.
       let readdClasses = { // I'm not a fan of this implementation (hard-coding the classes), but it's the first one I thought of.
         'group-collapsed': element.classList.contains("group-collapsed"),
       };
+      
+      let parentElement = element.parentElement;
+      if(!parentElement) return console.error(`Element has no parent:`, element);
+      
+      let index = Array.from(parentElement.children).indexOf(element);
+      if(index == -1) return console.error(`Element can't be found within its parent:`, element, parentElement);
       
       // Load the template, set the outerHTML, and reacquire the element reference.
       let templates = await Renderer.getTemplates("renderItemField");
@@ -524,7 +553,7 @@ class Renderer
         wrapper: element.tagName,
         params: params,
       });
-      element = itemElement.querySelector(`.list-item-field[name="${field.id}"]`);
+      element = parentElement.children.item(index);
       
       // Re-add the classes that we remembered.
       for(let cls in readdClasses)
@@ -534,9 +563,9 @@ class Renderer
     element.needsUpdate = false;
     
     // Check for button event handlers. TODO: Replace this with an "onclick" check.
-    for(let b in button)
+    for(let b in fieldData.button)
     {
-      let btn = button[b];
+      let btn = fieldData.button[b];
       if(btn)
       {
         let buttonElement = element.querySelector("button[name=\""+(btn.name??"")+"\"]");
@@ -545,68 +574,48 @@ class Renderer
       }
     }
     
-    // Setup the functionality for an editable field if this is a newly-created cell.
-    let popup = field.get("popup", item, ...params);
-    if(edit)
-    {
-      if(edit.target)
-        dependencies.push(edit.target);
-      Renderer.addFieldEventListeners(element, {value, edit}, item, field);
-    }
-    else if(popup)
-    {
-      if(!element.onclick)
+    let handleSubEdit = (subContent,path=[0]) => {
+      if(Array.isArray(subContent.value))
       {
-        element.onclick = event => {
-          console.log(popup);
-          Renderer.rerender(popup.viewer.elements.popup.querySelector(".modal-content"), {item:popup}, {template: popup.constructor.templateName, showPopup: true});
-        };
-        element.classList.add("popup");
+        for(let i in subContent.value)
+          if(subContent.value[i])
+            handleSubEdit(subContent.value[i], path.concat([i]));
       }
-    }
-    
-    let handleSubEdit = (valueArr=[],parents=[]) => {
-      for(let iContent in valueArr)
+      else if(typeof(subContent.value) == "object")
+        handleSubEdit(subContent.value, path.concat([0]));
+      
+      let subElement = element.querySelector(".sub-"+ path.join("-"));
+      if(!subElement)
       {
-        if(!valueArr[iContent])
-          continue;
-        let newParents = [...parents, parents.length ? parents[parents.length-1]+"-"+iContent : ".sub-"+iContent];
-        let subElement = element.querySelector(":scope > "+ newParents.join(" > "));
-        if(!subElement)
+        console.error(`Cannot find descendant of field element along the content value path.`, element, ".sub-"+ path.join("-"), subContent);
+        return;
+      }
+      
+      if(subContent.edit)
+      {
+        if(window.DEBUGLOG.renderItemField) console.debug(`Adding edit event listeners to subelement (field:${fieldName}, item:${item.name}).`, subElement, subContent);
+        if(subContent.edit.target)
+          fieldData.dependencies.push(subContent.edit.target);
+        Renderer.addFieldEventListeners(subElement, subContent);
+      }
+      else if(subContent.popup)
+      {
+        if(!subElement.onclick)
         {
-          console.error(`Cannot find descendant of field element along the content value path.`, element, newParents);
-          return;
-        }
-        if(valueArr[iContent].edit)
-        {
-          if(valueArr[iContent].edit.target)
-            dependencies.push(valueArr[iContent].edit.target);
-          Renderer.addFieldEventListeners(subElement, valueArr[iContent], item, field);
-        }
-        else if(valueArr[iContent].popup)
-        {
-          if(!subElement.onclick)
-          {
-            subElement.onclick = event => {
-              Renderer.rerender(valueArr[iContent].popup.viewer.elements.popup.querySelector(".modal-content"), {item: valueArr[iContent].popup}, {template: valueArr[iContent].popup.constructor.templateName, showPopup: true});
-            };
-            subElement.classList.add("popup");
-          }
-        }
-        if(Array.isArray(valueArr[iContent].value))
-        {
-          handleSubEdit(valueArr[iContent].value, newParents);
+          if(window.DEBUGLOG.renderItemField) console.debug(`Adding popup event listener to subelement (field:${fieldName}, item:${item.name}).`, subElement, subContent);
+          subElement.onclick = event => {
+            Renderer.rerender(subContent.popup.viewer.elements.popup.querySelector(".modal-content"), {item: subContent.popup}, {template: subContent.popup.constructor.templateName, showPopup: true});
+          };
+          subElement.classList.add("popup");
         }
       }
     };
-    
-    if(Array.isArray(value))
-      handleSubEdit(value);
+    handleSubEdit(fieldData);
     
     // If this cell's data is dependent on other fields, set up a trigger to update this cell when those fields are changed.
     if(!element.dependencies)
     {
-      element.dependencies = dependencies;
+      element.dependencies = fieldData.dependencies;
       for(let dep of element.dependencies)
       {
         if(dep?.item && dep?.field)
@@ -617,8 +626,9 @@ class Renderer
     }
   }
   
-  static addFieldEventListeners(fieldElement, content, item, field)
+  static addFieldEventListeners(fieldElement, content)
   {
+    if(window.DEBUGLOG.addFieldEventListeners) console.debug(`Renderer.addFieldEventListeners(2): Adding event listeners:`, fieldElement, content);
     fieldElement.editValue = content.edit.value ?? content.value ?? "";
     fieldElement.editTarget = content.edit.target;
     fieldElement.editFunc = content.edit.func;
@@ -675,18 +685,31 @@ class Renderer
       if(!fieldElement.onclick)
       {
         if(fieldElement.editTarget)
+        {
           fieldElement.onclick = event => {
             let fieldData = fieldElement.editTarget.item.parseProperty(fieldElement.editTarget.field);
             if(Array.isArray(fieldData.value))
-            {
               fieldElement.editTarget.item.update(fieldElement.editTarget.field, fieldElement.editValue, fieldElement.editChecked ? "remove" : "push");
-            }
             else
               fieldElement.editTarget.item.update(fieldElement.editTarget.field, !fieldElement.editChecked);
           };
+          fieldElement.classList.add("editable");
+          if(window.DEBUGLOG.addFieldEventListeners) console.debug(`Added onclick method to field element.`, fieldElement.onclick);
+        }
         else if(fieldElement.editFunc)
+        {
           fieldElement.onclick = fieldElement.editFunc;
-        fieldElement.classList.add("editable");
+          fieldElement.classList.add("editable");
+          if(window.DEBUGLOG.addFieldEventListeners) console.debug(`Added onclick method to field element.`, fieldElement.onclick);
+        }
+        else
+        {
+          console.warn(`Field has an edit property but no target nor function specified on the field element.`, content.edit);
+        }
+      }
+      else
+      {
+        if(window.DEBUGLOG.addFieldEventListeners) console.debug(`Field element aready has an onclick method.`, fieldElement.onclick);
       }
     }
     else
@@ -697,7 +720,7 @@ class Renderer
         fieldElement.onclick = event => {
           if(fieldElement.classList.contains("editing") || event.target.nodeName == "OPTION")
             return;
-          let placeholder = fieldElement.editTarget?.item?.getProperty(fieldElement.editTarget?.field);
+          let placeholder = fieldElement.editTarget?.item?.getProperty(fieldElement.editTarget?.field) ?? fieldElement.editValue;
           if(!placeholder && placeholder !== 0)
             placeholder = fieldElement.innerText;
           fieldElement.classList.add("editing");
@@ -719,6 +742,11 @@ class Renderer
           editElement.focus();
         };
         fieldElement.classList.add("editable");
+        if(window.DEBUGLOG.addFieldEventListeners) console.debug(`Added onclick method to field element.`, fieldElement.onclick);
+      }
+      else
+      {
+        if(window.DEBUGLOG.addFieldEventListeners) console.debug(`Field element aready has an onclick method.`, fieldElement.onclick);
       }
       
       // Event to save the edit.
@@ -735,9 +763,7 @@ class Renderer
             if(!isNaN(val) || editElement.type != "number")
             {
               if(fieldElement.editTarget)
-              {
                 fieldElement.editTarget.item.update(fieldElement.editTarget.field, val);
-              }
               else if(fieldElement.editFunc)
                 fieldElement.editFunc(val);
               else

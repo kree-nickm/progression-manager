@@ -36,16 +36,41 @@ export default class WeaponList extends GenshinList
       label: "Name",
       popup: item => item,
       sort: {generic: {type:"string",property:"name"}},
-      dynamic: false,
-      value: item => item.name,
-      classes: item => ({
+      dynamic: true,
+      value: item => item.viewer.settings.preferences.listDisplay=='0' ? item.name : {
+        tag: "div",
+        value: {
+          tag: "div",
+          value: {
+            tag: "img",
+            src: item.image,
+            alt: item.name,
+          },
+          classes: {"display-img": true, ["rarity-"+item.rarity]: true},
+        },
+        classes: {
+          "item-display": true,
+          "item-material": true,
+          "display-icon": true,
+          "display-no-caption": true,
+        },
+        title: item.name,
+      },
+      classes: item => item.viewer.settings.preferences.listDisplay=='0' ? {
         "material": true,
         "q1": item.rarity == 1,
         "q2": item.rarity == 2,
         "q3": item.rarity == 3,
         "q4": item.rarity == 4,
         "q5": item.rarity == 5,
-      }),
+      } : {
+        "material": false,
+        "q1": false,
+        "q2": false,
+        "q3": false,
+        "q4": false,
+        "q5": false,
+      },
     });
     
     let type = this.display.addField("type", {
@@ -55,7 +80,7 @@ export default class WeaponList extends GenshinList
       value: item => ({
         tag: "img",
         classes: {'weapon-icon':true},
-        src: `img/Icon_${item.type}.webp`,
+        src: `img/Weapon_${item.type}.png`,
       }),
       classes: item => ({
         'icon': true,
@@ -131,6 +156,11 @@ export default class WeaponList extends GenshinList
       ].concat(item.getMat('forgery').getCraftDependencies()).concat(item.getMat('strong').getCraftDependencies()).concat(item.getMat('weak').getCraftDependencies()),
     });
     
+    let iconLookup = {
+      'forgery': `<i class="fa-solid fa-dungeon"></i>`,
+      'strong': `<i class="fa-solid fa-skull fa-lg"></i>`,
+      'weak': `<i class="fa-solid fa-skull fa-sm"></i>`,
+    };
     let mats = [
       {p:"forgery",l:"Forgery Rewards"},
       {p:"strong",l:"Strong Drops"},
@@ -143,12 +173,13 @@ export default class WeaponList extends GenshinList
       {
         let ascMat = this.display.addField(m.p+"Mat"+(phase??""), {
           group: ascGroup,
-          label: m.l,
+          label: iconLookup[m.p],
+          labelTitle: m.l,
           sort: isNaN(phase) ? {generic: {type:"string", property:m.p+'MatType'}} : undefined,
           columnClasses: ["ascension-materials"],
           tags: isNaN(phase) ? undefined : ["detailsOnly"],
           dynamic: true,
-          value: item => item.getMat(m.p,phase) && item.getMatCost(m.p,phase) ? item.getMat(m.p,phase).getFieldValue(item.getMatCost(m.p,phase)) : "",
+          value: item => item.getMat(m.p,phase) && item.getMatCost(m.p,phase) ? item.getMat(m.p,phase).getFieldValue(item.getMatCost(m.p,phase), this.viewer.settings.preferences.listDisplay=='1') : "",
           title: item => item.getMat(m.p,phase)?.getFullSource() ?? "",
           dependencies: item => [
             {item, field:"ascension"},
@@ -192,10 +223,10 @@ export default class WeaponList extends GenshinList
     }
     
     let equipped = this.display.addField("equipped", {
-      label: "Equipped By",
+      label: "User",
       sort: {generic: {type:"string", property:"location"}},
       dynamic: true,
-      value: item => item.character?.name ?? "",
+      value: item => item.character?.name ?? "-",
       edit: item => ({
         target: {item, field:"location"},
         type: "select",
@@ -203,6 +234,7 @@ export default class WeaponList extends GenshinList
         valueProperty: "key",
         displayProperty: "name",
       }),
+      classes: item => ({"text-muted": !item.character}),
       dependencies: item => [
         {item:item.list.viewer.lists.characters, field:"list"},
       ],
@@ -313,7 +345,18 @@ export default class WeaponList extends GenshinList
             lock: false,
           });
           selectAdd.value = "";
-          Renderer.renderNewItem(item, {exclude: field => (field.tags??[]).indexOf("detailsOnly") > -1});
+          
+          let listElement = this.viewer.elements[this.constructor.name].querySelector(`.list[data-uuid="${this.uuid}"]`);
+          let listTargetElement = listElement.querySelector(".list-target");
+          if(!listTargetElement)
+            listTargetElement = listElement;
+          Renderer.rerender(null, {
+            item,
+            groups: this.display.getGroups({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}),
+            fields: this.display.getFields({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}),
+            wrapper: "tr",
+            fieldWrapper: "td",
+          }, {template:"renderItem", parentElement:listTargetElement});
         }
       });
       

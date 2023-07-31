@@ -293,6 +293,7 @@ export default class Traveler extends Character
   get bossMatType(){ return ""; }
   get flowerMatType(){ return "Windwheel Aster"; }
   get enemyMatType(){ return "Hilichurls"; }
+  get image(){ return this.variants?.[0]?.image??super.image; }
   
   getMat(type, ascension=this.ascension)
   {

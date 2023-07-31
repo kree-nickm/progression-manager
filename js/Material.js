@@ -202,6 +202,54 @@ export default class Material extends GenshinItem
   {
     let bosskills3 = Math.ceil((cost-this.count)/3);
     let bosskills2 = Math.ceil((cost-this.count)/2);
+    
+    let iconPart = {
+      tag: "div",
+      value: [
+        {
+          tag: "div",
+          value: [
+            {
+              tag: "i",
+              classes: {
+                "display-badge": true,
+                "fa-solid": true,
+                "fa-sun": true,
+                "d-none": this.days.indexOf(this.viewer.today()) == -1,
+              },
+              title: "This drop can be obtained today.",
+            },
+            {
+              tag: "img",
+              src: this.image,
+              alt: this.name,
+            }
+          ],
+          classes: {"display-img": true, ["rarity-"+this.rarity]: true},
+        },
+        {
+          value: `${this.count} / ${cost}`,
+          title: this.type == "boss"
+            ? `Requires `+ (bosskills2!=bosskills3?`${bosskills3}-${bosskills2}`:bosskills2) +` more boss kill`+ (bosskills2!=1||bosskills3!=1?"s":"") +`.`
+            : this.type == "flora"
+              ? `` // TODO: Compile data for number of each flora that exists on the map and display the relevant number here.
+              : this.prevTier
+                ? `Up to ${this.getCraftCount()} if you craft.`
+                : ``,
+          classes: {"display-caption": true},
+          edit: {target: {item:this, field:"count"}},
+        }
+      ],
+      classes: {
+        "item-display": true,
+        "item-material": true,
+        "display-icon": true,
+        "pending": this.count < cost,
+        "insufficient": this.getCraftCount() < cost,
+      },
+      title: this.getFullSource(),
+    };
+    
     let numbersPart = {
       value: `${this.count} / ${cost}`,
       title: this.type == "boss"
@@ -218,31 +266,7 @@ export default class Material extends GenshinItem
       },
       edit: {target: {item:this, field:"count"}},
     };
-    let iconPart = {
-      tag: "div",
-      value: {
-        tag: "div",
-        value: [
-          {
-            tag: "i",
-            classes: {
-              "display-badge": true,
-              "fa-solid": true,
-              "fa-sun": true,
-              "d-none": this.days.indexOf(this.viewer.today()) == -1,
-            },
-            title: "This drop can be obtained today.",
-          },
-          {
-            tag: "img",
-            src: this.image,
-          }
-        ],
-        classes: {"display-img": true, ["rarity-"+this.rarity]: true},
-      },
-      classes: {"item-display": true, "item-material": true, "display-icon": true},
-      title: this.getFullSource(),
-    };
+    
     let namePart = {
       value: this.shorthand + (this.days.indexOf(this.viewer.today()) > -1 ? "*" : ""),
       classes: {
@@ -255,6 +279,7 @@ export default class Material extends GenshinItem
       },
       title: this.getFullSource(),
     };
-    return this.image && useImage ? [iconPart, numbersPart] : [numbersPart, namePart];
+    
+    return this.image && useImage ? iconPart : [numbersPart, namePart];
   }
 }

@@ -2,6 +2,7 @@ import GenshinLootData from "./gamedata/GenshinLootData.js";
 import GenshinPhaseData from "./gamedata/GenshinPhaseData.js";
 import GenshinTalentData from "./gamedata/GenshinTalentData.js";
 import GenshinCharacterData from "./gamedata/GenshinCharacterData.js";
+import GenshinCharacterStats from "./gamedata/GenshinCharacterStats.js";
 import GenshinArtifactData from "./gamedata/GenshinArtifactData.js";
 import GenshinBuilds from "./gamedata/GenshinBuilds.js";
 
@@ -15,50 +16,7 @@ export default class Character extends GenshinItem
   static dontSerialize = GenshinItem.dontSerialize.concat(["loaded","_weapon","_flower","_plume","_sands","_goblet","_circlet","MaterialList","maxScores","storedStats"]);
   static goodProperties = ["key","level","constellation","ascension","talent"];
   static templateName = "renderCharacterAsPopup";
-  static statBase = {
-    critRate_: 5,
-    critDMG_: 50,
-    enerRech_: 100,
-  };
-  static ascendStatProgression = {
-    '4': {
-      anemo_dmg_: [0,0,6,12,12,18,24],
-      cryo_dmg_: [0,0,6,12,12,18,24],
-      dendro_dmg_: [0,0,6,12,12,18,24],
-      electro_dmg_: [0,0,6,12,12,18,24],
-      geo_dmg_: [0,0,6,12,12,18,24],
-      hydro_dmg_: [0,0,6,12,12,18,24],
-      pyro_dmg_: [0,0,6,12,12,18,24],
-      atk_: [0,0,6,12,12,18,24],
-      hp_: [0,0,6,12,12,18,24],
-      critDMG_: null,
-      critRate_: null,
-      def_: [0,0,7.5,15,15,22.5,30],
-      physical_dmg_: [0,0,7.5,15,15,22.5,30],
-      eleMas: [0,0,24,48,48,72,96],
-      enerRech_: [0,0,6.7,13.4,13.4,20.1,26.8],
-      heal_: null,
-    },
-    '5': {
-      anemo_dmg_: [0,0,7.2,14.4,14.4,21.6,28.8],
-      cryo_dmg_: [0,0,7.2,14.4,14.4,21.6,28.8],
-      dendro_dmg_: [0,0,7.2,14.4,14.4,21.6,28.8],
-      electro_dmg_: [0,0,7.2,14.4,14.4,21.6,28.8],
-      geo_dmg_: [0,0,7.2,14.4,14.4,21.6,28.8],
-      hydro_dmg_: [0,0,7.2,14.4,14.4,21.6,28.8],
-      pyro_dmg_: [0,0,7.2,14.4,14.4,21.6,28.8],
-      atk_: [0,0,7.2,14.4,14.4,21.6,28.8],
-      hp_: [0,0,7.2,14.4,14.4,21.6,28.8],
-      critDMG_: [0,0,9.6,19.2,19.2,28.8,38.4],
-      critRate_: [0,0,4.8,9.6,9.6,14.4,19.2],
-      def_: null,
-      physical_dmg_: null,
-      eleMas: [0,0,28.8,57.6,57.6,86.4,115.2],
-      enerRech_: [0,0,8,16,16,24,32],
-      heal_: [0,0,5.5,11,11,16.5,22],
-    },
-  };
-  
+
   static sortArtifacts(buildId,useTargets,a,b)
   {
     let A = parseFloat(a.getCharacterScore(this,20,buildId,{useTargets}));
@@ -151,7 +109,8 @@ export default class Character extends GenshinItem
   
   afterUpdate(field, value, action, options)
   {
-    super.afterUpdate(field, value, action, options);
+    if(!super.afterUpdate(field, value, action, options))
+      return false;
     if(field.string == "weapon" || field.string == "flowerArtifact" || field.string == "plumeArtifact" || field.string == "sandsArtifact" || field.string == "gobletArtifact" || field.string == "circletArtifact")
     {
       this.viewer.lists.ArtifactList?.update("evaluate", null, "notify");
@@ -234,7 +193,7 @@ export default class Character extends GenshinItem
       return this;
     }
     
-    // Make note of existing equips and then unequip them.
+    // Make note of existing equips.
     let previousCharacter = item.character;
     let previousItem = this[property];
     
@@ -297,7 +256,6 @@ export default class Character extends GenshinItem
             logFunc = console.log;
             log.unshift(`[SOLVED]`);
             log.push(msg1);
-            return this;
           }
           else if(msg2)
           {
@@ -308,11 +266,17 @@ export default class Character extends GenshinItem
           }
         }
       }
-      if(skip)
+      if(skip && log[0] != "[SOLVED]")
+      {
+        log.unshift(`[MAYBE SOLVED]`);
         log.push(`Ignoring the most recent one, because better items generally comes first in the import, and we'll assume you have the best one equipped.`);
+      }
       logFunc(...log);
       if(skip)
+      {
+        item.update("location", "");
         return this;
+      }
     }
     
     // Unequip the previous equips that we noted above.
@@ -364,6 +328,13 @@ export default class Character extends GenshinItem
   get bossMatType(){ return this.loaded ? GenshinCharacterData[this.key].matBoss : ""; }
   get flowerMatType(){ return this.loaded ? GenshinCharacterData[this.key].matFlower : ""; }
   get enemyMatType(){ return this.loaded ? GenshinCharacterData[this.key].matEnemy : ""; }
+  get hpBaseValue(){ return GenshinCharacterData[this.key]?.hpBase ?? 0; }
+  get atkBaseValue(){ return GenshinCharacterData[this.key]?.atkBase ?? 0; }
+  get defBaseValue(){ return GenshinCharacterData[this.key]?.defBase ?? 0; }
+  get hpAscValue(){ return GenshinCharacterData[this.key]?.hpMaxAsc ?? 0; }
+  get atkAscValue(){ return GenshinCharacterData[this.key]?.atkMaxAsc ?? 0; }
+  get defAscValue(){ return GenshinCharacterData[this.key]?.defMaxAsc ?? 0; }
+  get image(){ return GenshinCharacterData[this.key]?.img ?? ""; }
   
   getPhase(ascension=this.ascension){ return GenshinPhaseData[ascension] ?? GenshinPhaseData[6]; }
   get levelCap(){ return this.getPhase().levelCap; }
@@ -472,8 +443,6 @@ export default class Character extends GenshinItem
     this.MaterialList.trounce.update("count", this.MaterialList.trounce.count - this.getTalent(talent).matTrounceCount);
     this.MaterialList.crown.update("count", this.MaterialList.crown.count - this.getTalent(talent).matCrownCount);
     this.update(["talent", talent], this.talent[talent]+1);
-    //this.list.viewer.store();
-    //this.list.render();
   }
   
   canUpTalent(talent, withCrafting=false)
@@ -497,22 +466,48 @@ export default class Character extends GenshinItem
     let result;
     if(alternates || !this.storedStats[stat])
     {
-      result = Character.statBase[stat] ?? 0;
+      result = GenshinCharacterStats.statBase[stat] ?? 0;
+      
+      let baseStat;
+      let specific;
+      let baseResult = result;
+      if(["atk","atk-base","atk-bonus","hp","hp-base","hp-bonus","def","def-base","def-bonus"].indexOf(stat) > -1)
+        [baseStat, specific] = stat.split("-");
+      
       if(this.ascendStat == stat)
-        result += Character.ascendStatProgression[this.rarity][this.ascendStat][alternates?.ascension??this.ascension];
+        result += GenshinCharacterStats.ascendStatBase[this.rarity][this.ascendStat] * GenshinPhaseData[alternates?.ascension??this.ascension].ascendStatMultiplier;
+      else if(baseStat)
+        baseResult += this[baseStat+'BaseValue'] * GenshinCharacterStats.levelMultiplier[alternates?.level??this.level][this.rarity]
+                   + this[baseStat+'AscValue'] * GenshinPhaseData[alternates?.ascension??this.ascension].baseStatMultiplier;
+      
       if((alternates?.weapon??this.weapon)?.stat == stat)
         result += (alternates?.weapon??this.weapon).getStat();
-      for(let slot of ['flower','plume','sands','goblet','circlet'])
+      else if(baseStat == "atk")
+        baseResult += (alternates?.weapon??this.weapon)?.getATK() ?? 0;
+      
+      if(specific != "base")
       {
-        let prop = slot + 'Artifact';
-        if(alternates?.[prop] || this[prop])
+        if(baseStat)
         {
-          if((alternates?.[prop]??this[prop]).mainStatKey == stat)
-            result += (alternates?.[prop]??this[prop]).mainStatValue;
-          result += (alternates?.[prop]??this[prop])?.getSubstatSum(stat) ?? 0;
+          if(specific != "bonus")
+            result = baseResult;
+          result += baseResult * this.getStat(baseStat+"_", alternates) / 100;
         }
+        for(let slot of ['flower','plume','sands','goblet','circlet'])
+        {
+          let prop = slot + 'Artifact';
+          if(alternates?.[prop] || this[prop])
+          {
+            if((alternates?.[prop]??this[prop]).mainStatKey == (baseStat??stat))
+              result += (alternates?.[prop]??this[prop]).mainStatValue;
+            result += (alternates?.[prop]??this[prop])?.getSubstatSum((baseStat??stat)) ?? 0;
+          }
+        }
+        result += this.getSetBonus(alternates).stats[(baseStat??stat)] ?? 0;
       }
-      result += this.getSetBonus(alternates).stats[stat] ?? 0;
+      else
+        result = baseResult;
+      
       if(!alternates)
         this.storedStats[stat] = result;
     }
@@ -635,7 +630,7 @@ export default class Character extends GenshinItem
   getRelatedItems(buildId="default", {skipSort,forceTargets,ignoreTargets}={})
   {
     let useTargets = forceTargets || !ignoreTargets && document.getElementById('useTargets')?.checked;
-    console.debug(`Getting ${this.name}'s related items for build ${buildId}.`, skipSort?`Skipping artifact sorting.`:`Sorting artifacts.`, useTargets?`Using targets.`:`Ignoring targets.`);
+    if(window.DEBUGLOG.getRelatedItems) console.debug(`Getting ${this.name}'s related items for build ${buildId}.`, skipSort?`Skipping artifact sorting.`:`Sorting artifacts.`, useTargets?`Using targets.`:`Ignoring targets.`);
     let related = {
       weapons: this.list.viewer.lists.WeaponList.items(this.weaponType),
       bestArtifacts: {
@@ -955,6 +950,19 @@ export default class Character extends GenshinItem
       console.error(`Artifact list container element has no ancestor with the template data attribute '${this.constructor.templateName}'.`, characterArtifacts);
       return false;
     }
+    
+    /** Equip Artifact Button **/
+    let showFavoritesToggle = document.getElementById("artifactsFilterFavorites");
+    if(!showFavoritesToggle.onchange)
+    {
+      showFavoritesToggle.onchange = event => {
+        if(event.target.checked)
+          characterArtifacts.classList.add("favorites-only");
+        else
+          characterArtifacts.classList.remove("favorites-only");
+      };
+    }
+    
     
     /** Equip Artifact Button **/
     let equipButtons = element.querySelectorAll(".equip-artifact");

@@ -46,8 +46,26 @@ export default class CharacterList extends GenshinList
       labelTitle: "Sort by name.",
       popup: item => item,
       sort: {generic: {type:"string",property:"name"}},
-      dynamic: false,
-      value: item => item.name,
+      dynamic: true,
+      value: item => item.viewer.settings.preferences.listDisplay=='0' ? item.name : {
+        tag: "div",
+        value: {
+          tag: "div",
+          value: {
+            tag: "img",
+            src: item.image,
+            alt: item.name,
+          },
+          classes: {"display-img": true, ["rarity-"+item.rarity]: true},
+        },
+        classes: {
+          "item-display": true,
+          "item-material": true,
+          "display-icon": true,
+          "display-no-caption": true,
+        },
+        title: item.name,
+      },
       title: item => `Click to open a popup to examine ${item.name} in-depth.`,
     });
     
@@ -60,7 +78,7 @@ export default class CharacterList extends GenshinList
       value: item => ({
         tag: "img",
         classes: {'weapon-icon':true},
-        src: `img/Icon_${item.weaponType}.webp`,
+        src: `img/Weapon_${item.weaponType}.png`,
       }),
       classes: item => ({
         'icon': true,
@@ -140,10 +158,23 @@ export default class CharacterList extends GenshinList
       edit: item => ({target: {item, field:"constellation"}}),
     });
     
+    let iconLookup = {
+      'auto': `<i class="fa-solid fa-a"></i>`,
+      'skill': `<i class="fa-solid fa-e"></i>`,
+      'burst': `<i class="fa-solid fa-q"></i>`,
+      'Mastery': `<i class="fa-solid fa-dungeon"></i>`,
+      'Enemy': `<i class="fa-solid fa-skull"></i>`,
+      'Trounce': `<i class="fa-solid fa-calendar-week"></i>`,
+      'Crown': `<i class="fa-solid fa-crown"></i>`,
+      'gem': `<i class="fa-solid fa-gem"></i>`,
+      'boss': `<i class="fa-solid fa-spaghetti-monster-flying"></i>`,
+      'flower': `<i class="fa-solid fa-fan"></i>`,
+      'enemy': `<i class="fa-solid fa-skull"></i>`,
+    };
     for(let i of ["auto","skill","burst"])
     {
       let talent = this.display.addField(i+"Talent", {
-        label: "T"+ i.at(0).toUpperCase(),
+        label: iconLookup[i],
         labelTitle: `Sort by "${i}" talent level.`,
         dynamic: true,
         value: item => item.talent[i],
@@ -203,7 +234,8 @@ export default class CharacterList extends GenshinList
       {
         let ascMaterial = this.display.addField(mat.t+"AscMat"+(phase??""), {
           group: ascGroup,
-          label: mat.l,
+          label: iconLookup[mat.t],
+          labelTitle: mat.l,
           sort: isNaN(phase) ? {func: (o,a,b) => {
             let A = a.getMat(mat.t,phase)?.shorthand??"";
             let B = b.getMat(mat.t,phase)?.shorthand??"";
@@ -219,7 +251,7 @@ export default class CharacterList extends GenshinList
           columnClasses: ["ascension-materials"],
           tags: isNaN(phase) ? undefined : ["detailsOnly"],
           dynamic: true,
-          value: item => item.getMat(mat.t,phase) && item.getMatCost(mat.t,phase) ? item.getMat(mat.t,phase).getFieldValue(item.getMatCost(mat.t,phase)) : "",
+          value: item => item.getMat(mat.t,phase) && item.getMatCost(mat.t,phase) ? item.getMat(mat.t,phase).getFieldValue(item.getMatCost(mat.t,phase), this.viewer.settings.preferences.listDisplay=='1') : "",
           dependencies: item => [
             {item:item.base??item, field:"ascension"},
           ].concat(item.getMat(mat.t,phase)?.getCraftDependencies() ?? []),
@@ -268,7 +300,8 @@ export default class CharacterList extends GenshinList
       {
         let talentMat = this.display.addField(isNaN(i) ? i+m.l+"Mat" : "talent"+m.l+"Mat"+i, {
           group: talGroup,
-          label: m.l + (isNaN(i) ? ` (${i})` : ""),
+          label: iconLookup[m.l] + (isNaN(i) ? iconLookup[i] : ""),
+          labelTitle: m.l + (isNaN(i) ? ` (${i})` : ""),
           sort: isNaN(i) ? {func: (o,a,b) => {
             let A = a.getTalentMatType(m.l.toLowerCase(),i)??"";
             let B = b.getTalentMatType(m.l.toLowerCase(),i)??"";
@@ -284,7 +317,7 @@ export default class CharacterList extends GenshinList
           columnClasses: [(isNaN(i)?i:"talent")+'-'+m.l.toLowerCase()],
           tags: isNaN(i) & m.l != "Trounce" && m.l != "Crown" ? undefined : ["detailsOnly"],
           dynamic: true,
-          value: item => item.getTalentMat(m.l.toLowerCase(),i) && item.getTalent(i)['mat'+m.d+'Count'] ? item.getTalentMat(m.l.toLowerCase(),i).getFieldValue(item.getTalent(i)['mat'+m.d+'Count']) : "",
+          value: item => item.getTalentMat(m.l.toLowerCase(),i) && item.getTalent(i)['mat'+m.d+'Count'] ? item.getTalentMat(m.l.toLowerCase(),i).getFieldValue(item.getTalent(i)['mat'+m.d+'Count'], this.viewer.settings.preferences.listDisplay=='1') : "",
           title: item => item.getTalentMat(m.l.toLowerCase(),i).getFullSource(),
           dependencies: item => [
             {item, field:["talent", i]},
@@ -340,38 +373,35 @@ export default class CharacterList extends GenshinList
       value: item => Artifact.shorthandStat[item.ascendStat],
     });
     
-    for(let stat of ['critRate_','critDMG_','eleMas','enerRech_','heal_'])
-    {
-      let statCurrent = this.display.addField(stat+"Current", {
-        label: Artifact.shorthandStat[stat],
-        tags: ["detailsOnly"],
-        dynamic: true,
-        title: item => item.getStat(stat),
-        value: item => item.getStat(stat).toFixed(stat=="eleMas"?0:1),
-        dependencies: item => [
-          {item:item.base??item, field:"ascension"},
-          {item:item.base??item, field:"level"},
-          item.weapon ? {item:item.weapon, field:"location"} : null,
-          item.weapon ? {item:item.weapon, field:"ascension"} : null,
-          item.weapon ? {item:item.weapon, field:"level"} : null,
-          item.flowerArtifact ? {item:item.flowerArtifact, field:"location"} : null,
-          item.flowerArtifact ? {item:item.flowerArtifact, field:"level"} : null,
-          item.flowerArtifact ? {item:item.flowerArtifact, field:"substats"} : null,
-          item.plumeArtifact ? {item:item.plumeArtifact, field:"location"} : null,
-          item.plumeArtifact ? {item:item.plumeArtifact, field:"level"} : null,
-          item.plumeArtifact ? {item:item.plumeArtifact, field:"substats"} : null,
-          item.sandsArtifact ? {item:item.sandsArtifact, field:"location"} : null,
-          item.sandsArtifact ? {item:item.sandsArtifact, field:"level"} : null,
-          item.sandsArtifact ? {item:item.sandsArtifact, field:"substats"} : null,
-          item.gobletArtifact ? {item:item.gobletArtifact, field:"location"} : null,
-          item.gobletArtifact ? {item:item.gobletArtifact, field:"level"} : null,
-          item.gobletArtifact ? {item:item.gobletArtifact, field:"substats"} : null,
-          item.circletArtifact ? {item:item.circletArtifact, field:"location"} : null,
-          item.circletArtifact ? {item:item.circletArtifact, field:"level"} : null,
-          item.circletArtifact ? {item:item.circletArtifact, field:"substats"} : null,
-        ],
-      });
-    }
+    let statField = this.display.addField("stat", {
+      label: (item,stat) => Artifact.shorthandStat[stat],
+      tags: ["detailsOnly"],
+      dynamic: true,
+      title: (item,stat) => item.getStat(stat),
+      value: (item,stat) => item.getStat(stat).toFixed(["hp","atk","def","hp-base","atk-base","def-base","hp-bonus","atk-bonus","def-bonus","eleMas"].indexOf(stat)>-1 ? 0 : 1),
+      dependencies: (item,stat) => [
+        {item:item.base??item, field:"ascension"},
+        {item:item.base??item, field:"level"},
+        item.weapon ? {item:item.weapon, field:"location"} : null,
+        item.weapon ? {item:item.weapon, field:"ascension"} : null,
+        item.weapon ? {item:item.weapon, field:"level"} : null,
+        item.flowerArtifact ? {item:item.flowerArtifact, field:"location"} : null,
+        item.flowerArtifact ? {item:item.flowerArtifact, field:"level"} : null,
+        item.flowerArtifact ? {item:item.flowerArtifact, field:"substats"} : null,
+        item.plumeArtifact ? {item:item.plumeArtifact, field:"location"} : null,
+        item.plumeArtifact ? {item:item.plumeArtifact, field:"level"} : null,
+        item.plumeArtifact ? {item:item.plumeArtifact, field:"substats"} : null,
+        item.sandsArtifact ? {item:item.sandsArtifact, field:"location"} : null,
+        item.sandsArtifact ? {item:item.sandsArtifact, field:"level"} : null,
+        item.sandsArtifact ? {item:item.sandsArtifact, field:"substats"} : null,
+        item.gobletArtifact ? {item:item.gobletArtifact, field:"location"} : null,
+        item.gobletArtifact ? {item:item.gobletArtifact, field:"level"} : null,
+        item.gobletArtifact ? {item:item.gobletArtifact, field:"substats"} : null,
+        item.circletArtifact ? {item:item.circletArtifact, field:"location"} : null,
+        item.circletArtifact ? {item:item.circletArtifact, field:"level"} : null,
+        item.circletArtifact ? {item:item.circletArtifact, field:"substats"} : null,
+      ],
+    });
     
     let gearGroup = {label:"Gear", startCollapsed:true};
     /*
@@ -394,7 +424,39 @@ export default class CharacterList extends GenshinList
       label: "Weapon",
       dynamic: true,
       popup: item => item.weapon,
-      value: item => item.weapon ? [
+      value: item => item.weapon ? (item.viewer.settings.preferences.listDisplay=='1' ? {
+        tag: "div",
+        value: [
+          {
+            tag: "div",
+            value: [
+              {
+                value: item.weapon.refinement,
+                classes: {
+                  "display-badge": true,
+                  "badge-gold": item.weapon.refinement == 5,
+                },
+                title: `Refinement Rank ${item.weapon.refinement}`,
+              },
+              {
+                tag: "img",
+                src: item.weapon.image,
+                alt: item.weapon.name,
+              }
+            ],
+            classes: {"display-img": true, ["rarity-"+item.weapon.rarity]: true},
+          },
+          {
+            value: `Lv. ${item.weapon.level}`,
+            classes: {"display-caption": true},
+          }
+        ],
+        classes: {
+          "item-display": true,
+          "item-material": true,
+          "display-icon": true,
+        },
+      } : [
         {
           value: item.weapon.display.getField("name").get("value", item.weapon),
           classes: item.weapon.display.getField("name").get("classes", item.weapon),
@@ -402,7 +464,7 @@ export default class CharacterList extends GenshinList
         {
           value: `R${item.weapon.refinement}, Lv.${item.weapon.level}`,
         },
-      ] : "",
+      ]) : "",
       title: item => item.weapon ? `Click to open a popup to examine ${item.weapon.name} in-depth.` : "",
       dependencies: item => [
         item.weapon ? {item:item.weapon, field:"location"} : undefined,
@@ -421,20 +483,64 @@ export default class CharacterList extends GenshinList
         //popup: item => item[slotKey+'Artifact'],
         value: item => {
           let artifact = item[slotKey+'Artifact'];
-          return artifact ? [
+          return artifact ? (item.viewer.settings.preferences.listDisplay=='1' ? {
+            tag: "div",
+            value: [
+              {
+                tag: "div",
+                value: [
+                  {
+                    tag: "div",
+                    value: [
+                      {
+                        value: `+${artifact.level}`,
+                        classes: {"small": true, "display-badge": true, "badge-gold":artifact.level==20},
+                      },
+                      {
+                        tag: "img",
+                        src: artifact.image,
+                        alt: artifact.name,
+                      }
+                    ],
+                    classes: {"display-img": true, ["rarity-"+artifact.rarity]: true},
+                  },
+                  {
+                    value: artifact.display.getField("mainStat").get("value", artifact),
+                    classes: {"display-caption": true},
+                  },
+                ],
+                classes: {
+                  "item-display": true,
+                  "item-material": true,
+                  "display-icon": true,
+                },
+                background: artifact.display.getField("characterScore").get("value", artifact, item).color.replace("0.9", "0.6"),
+              },
+              {
+                tag: "div",
+                value: [0,1,2,3].map(i => artifact.substats[i] ? {
+                  value: artifact.display.getField("substat").get("value", artifact, i),
+                  title: artifact.display.getField("substat").get("title", artifact, i),
+                  classes: {"substat":true},
+                } : ""),
+                classes: {"artifact-mini-stats": true},
+              },
+            ],
+            classes: {"artifact-mini": true},
+          } : [
             {
               value: artifact.display.getField("set").get("value", artifact),
               classes: artifact.display.getField("set").get("classes", artifact),
             },
             {
-              //value: `+${artifact.level}, ${Math.round(artifact.getCharacterScore(item)*100).toFixed(0)}%`,
               value: `+${artifact.level}`,
             },
-          ] : "";
+          ]) : "";
         },
         dependencies: item => [
           item[slotKey+'Artifact'] ? {item:item[slotKey+'Artifact'], field:"location"} : undefined,
           item[slotKey+'Artifact'] ? {item:item[slotKey+'Artifact'], field:"level"} : undefined,
+          item[slotKey+'Artifact'] ? {item:item[slotKey+'Artifact'], field:"substats"} : undefined,
           {type:slotKey+'Artifact'},
         ],
       });
@@ -444,28 +550,10 @@ export default class CharacterList extends GenshinList
       label: "Image",
       tags: ["detailsOnly"],
       dynamic: false,
-      value: item => {
-        let src;
-        if(item.base || item.variants)
-          src = `https://rerollcdn.com/GENSHIN/Characters/1/Traveler%20(Anemo).png`;
-        else if(item.key == "RaidenShogun")
-          src = `https://rerollcdn.com/GENSHIN/Characters/1/Raiden.png`;
-        else if(item.key == "Tartaglia")
-          src = `https://rerollcdn.com/GENSHIN/Characters/1/Childe.png`;
-        else if(item.key == "KukiShinobu")
-          src = `https://rerollcdn.com/GENSHIN/Characters/1/Kuki%20Shinobu.png`;
-        else
-        {
-          let filename = item.name;
-          if(filename.length > 8)
-            filename = filename.substring(filename.indexOf(" ")+1);
-          src = `https://rerollcdn.com/GENSHIN/Characters/1/${filename}.png`;
-        }
-        return {
-          tag: "img",
-          src: src,
-        };
-      },
+      value: item => ({
+        tag: "img",
+        src: item.image,
+      }),
     });
     
     let considerField = this.display.addField("consider", {
@@ -596,7 +684,18 @@ export default class CharacterList extends GenshinList
             },
           });
           selectAdd.needsUpdate = true;
-          Renderer.renderNewItem(item, {exclude: field => (field.tags??[]).indexOf("detailsOnly") > -1});
+          
+          let listElement = this.viewer.elements[this.constructor.name].querySelector(`.list[data-uuid="${this.uuid}"]`);
+          let listTargetElement = listElement.querySelector(".list-target");
+          if(!listTargetElement)
+            listTargetElement = listElement;
+          Renderer.rerender(null, {
+            item,
+            groups: this.display.getGroups({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}),
+            fields: this.display.getFields({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}),
+            wrapper: "tr",
+            fieldWrapper: "td",
+          }, {template:"renderItem", parentElement:listTargetElement});
         }
       });
     }

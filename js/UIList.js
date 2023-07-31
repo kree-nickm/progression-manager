@@ -12,6 +12,7 @@ export default class UIList extends UIController {
   static fromJSON(data, {viewer, addProperties={}}={})
   {
     let list = new this(viewer);
+    list.startImport("GenshinManager");
     for(let prop in addProperties)
       list[prop] = addProperties[prop];
     //if(this.name == "CharacterList") console.log(`Constructed CharacterList:`, list, list.list.length);
@@ -63,6 +64,7 @@ export default class UIList extends UIController {
           list.update(prop, data[prop], "replace");
       }
     }
+    list.finishImport();
     return list;
   }
   
@@ -87,6 +89,8 @@ export default class UIList extends UIController {
   
   afterUpdate(field, value, action, options)
   {
+    if(!super.afterUpdate(field, value, action, options))
+      return false;
     if(field.string == "list" && field.value.length != value.length)
     {
       this.subsets = {};

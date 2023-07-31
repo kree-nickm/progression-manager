@@ -1,6 +1,6 @@
 export default class ListDisplayField
 {
-  static properties = ["group", "label", "labelTitle", "columnClasses", "sort", "tags", "dynamic", "html", "popup", "value", "button", "edit", "title", "classes", "dependencies"];
+  static properties = ["group", "label", "labelTitle", "columnClasses", "sort", "tags", "dynamic", "html", "popup", "value", "button", "template", "edit", "title", "classes", "dependencies"];
   
   manager;
   id = "";

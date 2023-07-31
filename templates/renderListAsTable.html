@@ -4,17 +4,17 @@
             <tr class="group-row">
               {{#each groups}}
               {{#if label}}
-                <th class="group-header" colspan="{{size}}" name="{{label}}" title="{{title}}">
+                <th class="group-header" colspan="{{size}}" name="{{label}}" title="{{title}}" scope="colgroup">
                     <div>+ {{label}} +</div>
                 </th>
               {{else}}
-                <th class="" colspan="{{size}}"></th>
+                <th class="" colspan="{{size}}" scope="colgroup"></th>
               {{/if}}
               {{/each}}
             </tr>
             <tr>
               {{#each fields}}
-                <th class="{{fieldClasses .}} {{#if sort}}sortable{{/if}}" name="{{id}}" title="{{labelTitle}}" {{#if group}}data-group-name="{{group.label}}"{{/if}}><span>{{label}}</span></th>
+                <th class="{{fieldClasses .}} {{#if sort}}sortable{{/if}}" name="{{id}}" title="{{labelTitle}}" scope="col" {{#if group}}data-group-name="{{group.label}}"{{/if}}><span>{{{label}}}</span></th>
               {{/each}}
             </tr>
         </thead>

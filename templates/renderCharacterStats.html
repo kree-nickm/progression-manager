@@ -1,23 +1,59 @@
 <div class="character-stats" data-template="renderCharacterStats" data-uuid="{{uuid item}}">
   <h3>Current Stats (Work-in-Progress)</h3>
   <div class="row">
+    <div class="col-3">HP</div>
+    <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "hp") wrapper="span"}}</div>
+  </div>
+  <div class="row">
+    <div class="col-3">Base HP</div>
+    <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "hp-base") wrapper="span"}}</div>
+  </div>
+  <div class="row">
+    <div class="col-3">HP%</div>
+    <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "hp_") wrapper="span"}}% (+{{> renderItemField item=item field=fields.stat params=(array "hp-bonus") wrapper="span"}})</div>
+  </div>
+  <div class="row">
+    <div class="col-3">ATK</div>
+    <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "atk") wrapper="span"}}</div>
+  </div>
+  <div class="row">
+    <div class="col-3">Base ATK</div>
+    <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "atk-base") wrapper="span"}}</div>
+  </div>
+  <div class="row">
+    <div class="col-3">ATK%</div>
+    <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "atk_") wrapper="span"}}% (+{{> renderItemField item=item field=fields.stat params=(array "atk-bonus") wrapper="span"}})</div>
+  </div>
+  <div class="row">
+    <div class="col-3">DEF</div>
+    <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "def") wrapper="span"}}</div>
+  </div>
+  <div class="row">
+    <div class="col-3">Base DEF</div>
+    <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "def-base") wrapper="span"}}</div>
+  </div>
+  <div class="row">
+    <div class="col-3">DEF%</div>
+    <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "def_") wrapper="span"}}% (+{{> renderItemField item=item field=fields.stat params=(array "def-bonus") wrapper="span"}})</div>
+  </div>
+  <div class="row">
     <div class="col-3">Crit Rate</div>
-    <div class="col-3">{{> renderItemField item=item field=fields.critRate_Current wrapper="span"}}%</div>
+    <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "critRate_") wrapper="span"}}%</div>
   </div>
   <div class="row">
     <div class="col-3">Crit DMG</div>
-    <div class="col-3">{{> renderItemField item=item field=fields.critDMG_Current wrapper="span"}}%</div>
+    <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "critDMG_") wrapper="span"}}%</div>
   </div>
   <div class="row">
     <div class="col-3">Elemental Mastery</div>
-    <div class="col-3">{{> renderItemField item=item field=fields.eleMasCurrent wrapper="span"}}</div>
+    <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "eleMas") wrapper="span"}}</div>
   </div>
   <div class="row">
     <div class="col-3">Energy Recharge</div>
-    <div class="col-3">{{> renderItemField item=item field=fields.enerRech_Current wrapper="span"}}%</div>
+    <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "enerRech_") wrapper="span"}}%</div>
   </div>
   <div class="row">
     <div class="col-3">Healing Bonus</div>
-    <div class="col-3">{{> renderItemField item=item field=fields.heal_Current wrapper="span"}}%</div>
+    <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "heal_") wrapper="span"}}%</div>
   </div>
 </div>

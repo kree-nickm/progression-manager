@@ -1,24 +1,24 @@
 <div class="list-item {{#ifeq character.key item.location}}equipped{{/ifeq}} {{#iffave character item.setKey buildId}}favorite{{/iffave}}" name="{{unique item}}" data-template="renderArtifactAsCard" data-uuid="{{uuid item}}">
-  {{> renderItemField item=item field=fields.set wrapper="div"}}
-    <div class="row gx-1 main-stats">
-      <div class="col-3 level">{{> renderItemField item=item field=fields.level wrapper="span"}}</div>
-      <div class="col-6 stat-key">{{> renderItemField item=item field=fields.mainStat wrapper="span"}}</div>
-      <div class="col-3 stat-value">{{> renderItemField item=item field=fields.characterScore wrapper="span" params=(array character)}}</div>
+    <img class="rarity" src="img/Background_Item_{{getProperty item 'rarity'}}_Star.webp"/>
+    <div class="artifact-header">
+        <div class="level">{{> renderItemField item=item field=fields.level wrapper="span"}}</div>
+        <div class="stat-key">{{> renderItemField item=item field=fields.mainStat wrapper="span"}}</div>
+        <div class="stat-value">{{> renderItemField item=item field=fields.characterScore wrapper="span" params=(array character)}}</div>
     </div>
-  {{#times 4}}
-      {{#if (lookup item.substats @index "value" ignoreUndefined=true)}}
-    <div class="substat row gx-1">
-        <div class="col-4">{{artifactStat (lookup item.substats @index "key")}}</div>
-        <div class="col-2">{{> renderItemField item=item field=(lookup fields (concat (lookup item.substats @index "key") "Sum")) wrapper="span"}}</div>
-        <div class="col-3">{{> renderItemField item=item field=(lookup fields (concat (lookup item.substats @index "key") "Rating")) wrapper="span"}}</div>
-        <div class="col-3">{{> renderItemField item=item field=fields.characterSubstatRating wrapper="span" params=(array character (lookup item.substats @index "key"))}}</div>
+    <div class="artifact-content">
+        <div class="images">
+            <img class="artifact-icon" src="{{getProperty item 'image'}}" loading="lazy"/>
+            <!--<button class="btn btn-outline-secondary preview-artifact" title="Preview this artifact (see stats above)."><i class="fa-regular fa-eye"></i></button>-->
+          {{#if item.location}}
+            <div class="artifact-user equip-artifact" title="Trade artifacts with {{getProperty character 'name'}}">{{> renderItemField item=item field=fields.characterIcon params=(array character.key) wrapper="div"}}</div>
+          {{else}}
+            <button class="btn btn-outline-secondary equip-artifact" title="Equip this artifact."><i class="fa-solid fa-person-rays"></i></button>
+          {{/if}}
+        </div>
+        <div class="substats">
+          {{#times 4}}
+              {{> renderItemField item=item field=fields.substat params=(array @index) wrapper="div"}}
+          {{/times}}
+        </div>
     </div>
-      {{else}}
-    <div class="substat">{{> renderItemField item=item field=fields.substat params=(array @index) wrapper="span"}}</div>
-      {{/if}}
-  {{/times}}
-  {{#if item.location}}
-    <div class="equip"><b>User:</b> {{item.location}}</div>
-  {{/if}}
-    <button class="btn btn-sm btn-outline-secondary equip-artifact" title="Equip this artifact."><i class="fa-solid fa-person-rays"></i></button>
 </div>

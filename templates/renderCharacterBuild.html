@@ -51,39 +51,39 @@
     <div class="row">
         <div class="col-6">
             <h4>Substats</h4>
-          {{> renderArtifactStatSlider . type="artifactSubstats" statId="hp" value=relatedItems.buildData.artifactSubstats.hp}}
-          {{> renderArtifactStatSlider . type="artifactSubstats" statId="atk" value=relatedItems.buildData.artifactSubstats.atk}}
-          {{> renderArtifactStatSlider . type="artifactSubstats" statId="def" value=relatedItems.buildData.artifactSubstats.def}}
-          {{> renderArtifactStatSlider . type="artifactSubstats" statId="hp_" value=relatedItems.buildData.artifactSubstats.hp_}}
-          {{> renderArtifactStatSlider . type="artifactSubstats" statId="atk_" value=relatedItems.buildData.artifactSubstats.atk_}}
-          {{> renderArtifactStatSlider . type="artifactSubstats" statId="def_" value=relatedItems.buildData.artifactSubstats.def_}}
-          {{> renderArtifactStatSlider . type="artifactSubstats" statId="eleMas" value=relatedItems.buildData.artifactSubstats.eleMas}}
-          {{> renderArtifactStatSlider . type="artifactSubstats" statId="enerRech_" value=relatedItems.buildData.artifactSubstats.enerRech_}}
-          {{> renderArtifactStatSlider . type="artifactSubstats" statId="critRate_" value=relatedItems.buildData.artifactSubstats.critRate_}}
-          {{> renderArtifactStatSlider . type="artifactSubstats" statId="critDMG_" value=relatedItems.buildData.artifactSubstats.critDMG_}}
+          {{> renderCharacterBuildSlider . type="artifactSubstats" statId="hp" value=relatedItems.buildData.artifactSubstats.hp}}
+          {{> renderCharacterBuildSlider . type="artifactSubstats" statId="atk" value=relatedItems.buildData.artifactSubstats.atk}}
+          {{> renderCharacterBuildSlider . type="artifactSubstats" statId="def" value=relatedItems.buildData.artifactSubstats.def}}
+          {{> renderCharacterBuildSlider . type="artifactSubstats" statId="hp_" value=relatedItems.buildData.artifactSubstats.hp_}}
+          {{> renderCharacterBuildSlider . type="artifactSubstats" statId="atk_" value=relatedItems.buildData.artifactSubstats.atk_}}
+          {{> renderCharacterBuildSlider . type="artifactSubstats" statId="def_" value=relatedItems.buildData.artifactSubstats.def_}}
+          {{> renderCharacterBuildSlider . type="artifactSubstats" statId="eleMas" value=relatedItems.buildData.artifactSubstats.eleMas}}
+          {{> renderCharacterBuildSlider . type="artifactSubstats" statId="enerRech_" value=relatedItems.buildData.artifactSubstats.enerRech_}}
+          {{> renderCharacterBuildSlider . type="artifactSubstats" statId="critRate_" value=relatedItems.buildData.artifactSubstats.critRate_}}
+          {{> renderCharacterBuildSlider . type="artifactSubstats" statId="critDMG_" value=relatedItems.buildData.artifactSubstats.critDMG_}}
             <h4>Sands Stats</h4>
-          {{> renderArtifactStatSlider . type="sandsStat" statId="hp_" value=relatedItems.buildData.sandsStat.hp_}}
-          {{> renderArtifactStatSlider . type="sandsStat" statId="atk_" value=relatedItems.buildData.sandsStat.atk_}}
-          {{> renderArtifactStatSlider . type="sandsStat" statId="def_" value=relatedItems.buildData.sandsStat.def_}}
-          {{> renderArtifactStatSlider . type="sandsStat" statId="eleMas" value=relatedItems.buildData.sandsStat.eleMas}}
-          {{> renderArtifactStatSlider . type="sandsStat" statId="enerRech_" value=relatedItems.buildData.sandsStat.enerRech_}}
+          {{> renderCharacterBuildSlider . type="sandsStat" statId="hp_" value=relatedItems.buildData.sandsStat.hp_}}
+          {{> renderCharacterBuildSlider . type="sandsStat" statId="atk_" value=relatedItems.buildData.sandsStat.atk_}}
+          {{> renderCharacterBuildSlider . type="sandsStat" statId="def_" value=relatedItems.buildData.sandsStat.def_}}
+          {{> renderCharacterBuildSlider . type="sandsStat" statId="eleMas" value=relatedItems.buildData.sandsStat.eleMas}}
+          {{> renderCharacterBuildSlider . type="sandsStat" statId="enerRech_" value=relatedItems.buildData.sandsStat.enerRech_}}
         </div>
         <div class="col-6">
             <h4>Goblet Stats</h4>
-          {{> renderArtifactStatSlider . type="gobletStat" statId="hp_" value=relatedItems.buildData.gobletStat.hp_}}
-          {{> renderArtifactStatSlider . type="gobletStat" statId="atk_" value=relatedItems.buildData.gobletStat.atk_}}
-          {{> renderArtifactStatSlider . type="gobletStat" statId="def_" value=relatedItems.buildData.gobletStat.def_}}
-          {{> renderArtifactStatSlider . type="gobletStat" statId="eleMas" value=relatedItems.buildData.gobletStat.eleMas}}
-          {{> renderArtifactStatSlider . type="gobletStat" statId=(concat (lower (getProperty item "element")) "_dmg_") value=(lookup relatedItems.buildData.gobletStat (concat (lower (getProperty item "element")) "_dmg_"))}}
-          {{> renderArtifactStatSlider . type="gobletStat" statId="physical_dmg_" value=relatedItems.buildData.gobletStat.physical_dmg_}}
+          {{> renderCharacterBuildSlider . type="gobletStat" statId="hp_" value=relatedItems.buildData.gobletStat.hp_}}
+          {{> renderCharacterBuildSlider . type="gobletStat" statId="atk_" value=relatedItems.buildData.gobletStat.atk_}}
+          {{> renderCharacterBuildSlider . type="gobletStat" statId="def_" value=relatedItems.buildData.gobletStat.def_}}
+          {{> renderCharacterBuildSlider . type="gobletStat" statId="eleMas" value=relatedItems.buildData.gobletStat.eleMas}}
+          {{> renderCharacterBuildSlider . type="gobletStat" statId=(concat (lower (getProperty item "element")) "_dmg_") value=(lookup relatedItems.buildData.gobletStat (concat (lower (getProperty item "element")) "_dmg_"))}}
+          {{> renderCharacterBuildSlider . type="gobletStat" statId="physical_dmg_" value=relatedItems.buildData.gobletStat.physical_dmg_}}
             <h4>Circlet Stats</h4>
-          {{> renderArtifactStatSlider . type="circletStat" statId="hp_" value=relatedItems.buildData.circletStat.hp_}}
-          {{> renderArtifactStatSlider . type="circletStat" statId="atk_" value=relatedItems.buildData.circletStat.atk_}}
-          {{> renderArtifactStatSlider . type="circletStat" statId="def_" value=relatedItems.buildData.circletStat.def_}}
-          {{> renderArtifactStatSlider . type="circletStat" statId="eleMas" value=relatedItems.buildData.circletStat.eleMas}}
-          {{> renderArtifactStatSlider . type="circletStat" statId="critRate_" value=relatedItems.buildData.circletStat.critRate_}}
-          {{> renderArtifactStatSlider . type="circletStat" statId="critDMG_" value=relatedItems.buildData.circletStat.critDMG_}}
-          {{> renderArtifactStatSlider . type="circletStat" statId="heal_" value=relatedItems.buildData.circletStat.heal_}}
+          {{> renderCharacterBuildSlider . type="circletStat" statId="hp_" value=relatedItems.buildData.circletStat.hp_}}
+          {{> renderCharacterBuildSlider . type="circletStat" statId="atk_" value=relatedItems.buildData.circletStat.atk_}}
+          {{> renderCharacterBuildSlider . type="circletStat" statId="def_" value=relatedItems.buildData.circletStat.def_}}
+          {{> renderCharacterBuildSlider . type="circletStat" statId="eleMas" value=relatedItems.buildData.circletStat.eleMas}}
+          {{> renderCharacterBuildSlider . type="circletStat" statId="critRate_" value=relatedItems.buildData.circletStat.critRate_}}
+          {{> renderCharacterBuildSlider . type="circletStat" statId="critDMG_" value=relatedItems.buildData.circletStat.critDMG_}}
+          {{> renderCharacterBuildSlider . type="circletStat" statId="heal_" value=relatedItems.buildData.circletStat.heal_}}
             <div class="row mt-2 gx-1">
                 <div class="col-1 align-self-center">
                   <input class="form-check form-check-input" type="checkbox" id="useTargets" value="targets" title="Toggle whether to respect the following stat targets when sorting the artifact lists below. Note that this setting is ignored on the main artifacts listing page." {{#if relatedItems.buildData.useTargets.critRatio}}checked="checked"{{/if}}/>

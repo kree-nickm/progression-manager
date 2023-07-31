@@ -40,6 +40,8 @@ export default {
       '2': 1,
       '1': 1,
     },
+    baseStatMultiplier: 0,
+    ascendStatMultiplier: 0,
   },
   '1': {
     levelCap: 40,
@@ -82,6 +84,8 @@ export default {
       '2': 4,
       '1': 2,
     },
+    baseStatMultiplier: 38/182,
+    ascendStatMultiplier: 0,
   },
   '2': {
     levelCap: 50,
@@ -124,6 +128,8 @@ export default {
       '2': 3,
       '1': 2,
     },
+    baseStatMultiplier: 65/182,
+    ascendStatMultiplier: 1,
   },
   '3': {
     levelCap: 60,
@@ -166,6 +172,8 @@ export default {
       '2': 4,
       '1': 3,
     },
+    baseStatMultiplier: 101/182,
+    ascendStatMultiplier: 2,
   },
   '4': {
     levelCap: 70,
@@ -208,6 +216,8 @@ export default {
       '2': 0,
       '1': 0,
     },
+    baseStatMultiplier: 128/182,
+    ascendStatMultiplier: 2,
   },
   '5': {
     levelCap: 80,
@@ -250,6 +260,8 @@ export default {
       '2': 0,
       '1': 0,
     },
+    baseStatMultiplier: 155/182,
+    ascendStatMultiplier: 3,
   },
   '6': {
     levelCap: 90,
@@ -292,5 +304,7 @@ export default {
       '2': 0,
       '1': 0,
     },
+    baseStatMultiplier: 1,
+    ascendStatMultiplier: 4,
   },
 };

@@ -38,37 +38,6 @@ export default class GenshinManager extends DataManager
       this.elements[this.listClasses[list].name].classList.add("viewer-pane");
       this.settings.paneMemory[this.listClasses[list].name] = this.settings.paneMemory[this.listClasses[list].name] ?? {};
     }
-    /*
-    this.elements[MaterialList.name] = document.getElementById(MaterialList.name) ?? this.elements.content.appendChild(document.createElement("div"));
-    this.elements[MaterialList.name].id = MaterialList.name;
-    this.elements[MaterialList.name].classList.add("viewer-pane");
-    this.settings.paneMemory[MaterialList.name] = this.settings.paneMemory[MaterialList.name] ?? {};
-    
-    this.elements[CharacterList.name] = document.getElementById(CharacterList.name) ?? this.elements.content.appendChild(document.createElement("div"));
-    this.elements[CharacterList.name].id = MaterialList.name;
-    this.elements[CharacterList.name].classList.add("viewer-pane");
-    this.settings.paneMemory[CharacterList.name] = this.settings.paneMemory[CharacterList.name] ?? {};
-    
-    this.elements[WeaponList.name] = document.getElementById(WeaponList.name) ?? this.elements.content.appendChild(document.createElement("div"));
-    this.elements[WeaponList.name].id = MaterialList.name;
-    this.elements[WeaponList.name].classList.add("viewer-pane");
-    this.settings.paneMemory[WeaponList.name] = this.settings.paneMemory[WeaponList.name] ?? {};
-    
-    this.elements[ArtifactList.name] = document.getElementById(ArtifactList.name) ?? this.elements.content.appendChild(document.createElement("div"));
-    this.elements[ArtifactList.name].id = MaterialList.name;
-    this.elements[ArtifactList.name].classList.add("viewer-pane");
-    this.settings.paneMemory[ArtifactList.name] = this.settings.paneMemory[ArtifactList.name] ?? {};
-    
-    this.elements[FurnitureList.name] = document.getElementById(FurnitureList.name) ?? this.elements.content.appendChild(document.createElement("div"));
-    this.elements[FurnitureList.name].id = MaterialList.name;
-    this.elements[FurnitureList.name].classList.add("viewer-pane");
-    this.settings.paneMemory[FurnitureList.name] = this.settings.paneMemory[FurnitureList.name] ?? {};
-    
-    this.elements[FurnitureSetList.name] = document.getElementById(FurnitureSetList.name) ?? this.elements.content.appendChild(document.createElement("div"));
-    this.elements[FurnitureSetList.name].id = MaterialList.name;
-    this.elements[FurnitureSetList.name].classList.add("viewer-pane");
-    this.settings.paneMemory[FurnitureSetList.name] = this.settings.paneMemory[FurnitureSetList.name] ?? {};
-    */
   }
   
   get lists()
@@ -123,15 +92,14 @@ export default class GenshinManager extends DataManager
       this.lists[ArtifactList.name] = new ArtifactList(this);
       this.lists[FurnitureList.name] = new FurnitureList(this);
       this.lists[FurnitureSetList.name] = new FurnitureSetList(this);
+      //for(let list in this.listClasses)
+      //  this.lists[list] = new this.listClasses[list](this);
     }
     else if(changed)
     {
-      this.lists[MaterialList.name].forceNextRender = true;
-      this.lists[CharacterList.name].forceNextRender = true;
-      this.lists[WeaponList.name].forceNextRender = true;
-      this.lists[ArtifactList.name].forceNextRender = true;
-      this.lists[FurnitureList.name].forceNextRender = true;
-      this.lists[FurnitureSetList.name].forceNextRender = true;
+      for(let list in this.listClasses)
+        if(this.lists[list])
+          this.lists[list].forceNextRender = true;
     }
     return true;
   }

@@ -49,6 +49,9 @@
             <li class="nav-item ms-3">
               <button class="btn btn-secondary" data-bs-target="#editModal" data-bs-toggle="modal" title="Switch to another account or create a new one from scratch."><i class="fa-solid fa-user-pen"></i></button>
             </li>
+            <li class="nav-item ms-3">
+              <button class="btn btn-secondary" data-bs-target="#prefsModal" data-bs-toggle="modal" title="Change your preferences regarding how the information on the app is displayed."><i class="fa-solid fa-gear"></i></button>
+            </li>
           </ul>
         </div>
       </div>
@@ -207,7 +210,7 @@
             <!--<button id="saveAllPastebinBtn" class="btn btn-success" title="Use this to upload all of your data to Pastebin so you can transfer all of it to another device.">Upload all accounts to Pastebin (Genshin Manager Format)</button>-->
             <div id="saveMessage" class="alert alert-primary d-none"></div>
             <hr/>
-            <p class="form-text">Note: Any changes you make are saved to your browser automatically. This popup is for backing up your data so that you can access it outside of Genshin Manager on this browser.</p>
+            <p class="form-text">Note: Any changes you make are saved to your browser automatically. This popup is for backing up your data so that you can access it outside of Genshin Manager and this browser.</p>
           </div>
         </div>
       </div>
@@ -221,6 +224,39 @@
               <div class="col-6"><button id="newLoadBtn" class="btn btn-success" title="Click this if you have a JSON file or Pastebin code with either GOOD data or Genshin Manager data.">Import Genshin Impact data.</button></div>
               <div class="col-6"><button id="newFreshBtn" class="btn btn-success" title="Click this if you have no data to import and just want to use the application from scratch.">Begin without importing.</button></div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="prefsModal" class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Preferences</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-label">List Displays</div>
+            <div class="btn-group" role="group">
+              <input type="radio" class="preference-select btn-check" id="pref1a" name="listDisplay" value="0" checked="checked">
+              <label class="btn btn-outline-primary" for="pref1a">Text Only</label>
+
+              <input type="radio" class="preference-select btn-check" id="pref1b"  name="listDisplay" value="1">
+              <label class="btn btn-outline-primary" for="pref1b">Icons</label>
+            </div>
+            
+            <div class="form-label">Character Popup - Artifact Lists</div>
+            <div class="btn-group" role="group">
+              <input type="radio" class="preference-select btn-check" id="pref2a"  name="characterArtifacts" value="0" disabled="disabled">
+              <label class="btn btn-outline-primary" for="pref2a">Text Only</label>
+
+              <input type="radio" class="preference-select btn-check" id="pref2b"  name="characterArtifacts" value="1" checked="checked" disabled="disabled">
+              <label class="btn btn-outline-primary" for="pref2b">Icons</label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button id="prefsDoneBtn" type="button" class="btn btn-success" data-bs-dismiss="modal">Save</button>
           </div>
         </div>
       </div>

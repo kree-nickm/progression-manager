@@ -81,7 +81,8 @@ export default class Weapon extends GenshinItem
   
   afterUpdate(field, value, action, options)
   {
-    super.afterUpdate(field, value, action, options);
+    if(!super.afterUpdate(field, value, action, options))
+      return false;
     if(field.string == "location")
     {
       if(value)
@@ -123,7 +124,7 @@ export default class Weapon extends GenshinItem
   get forgeryMatType(){ return this.loaded ? GenshinWeaponData[this.key].matForgery : ""; }
   get strongMatType(){ return this.loaded ? GenshinWeaponData[this.key].matStrongEnemy : ""; }
   get weakMatType(){ return this.loaded ? GenshinWeaponData[this.key].matWeakEnemy : ""; }
-  get image(){ return this.loaded ? GenshinWeaponData[this.key].imgs[this.ascension > 1 ? 1 : 0] : ""; }
+  get image(){ return GenshinWeaponData[this.key]?.imgs[this.ascension > 1 ? 1 : 0] ?? ""; }
   
   getPassive(ref=this.refinement)
   {

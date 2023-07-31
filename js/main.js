@@ -1,3 +1,13 @@
+window.DEBUGLOG = {
+  queueUpdate: false,
+  renderItemField: false,
+  addFieldEventListeners: false,
+  getRelatedItems: false,
+  contentToHTML: false,
+  
+  enableAll: () => { for(let method in window.DEBUGLOG) window.DEBUGLOG[method] = true; },
+};
+
 import GenshinManager from "./GenshinManager.js";
 
 // Initialize.
@@ -43,7 +53,11 @@ document.getElementById("loadAccount").addEventListener("change", changeEvent =>
 
 document.getElementById("loadGOODFile").addEventListener("change", changeEvent => {
   let reader = new FileReader();
-  reader.addEventListener("load", loadEvent => {
+  // TODO: This doesn't seem to be working here even though it works in loadAllFile...
+  let msg = document.getElementById("loadMessage");
+  msg.classList.remove("d-none");
+  msg.innerHTML = `<i class="fa-solid fa-arrows-rotate fa-spin"></i> Importing...`;
+  reader.addEventListener("load", async loadEvent => {
     let selectedAccount = document.getElementById("loadAccount").value;
     if(!selectedAccount)
       selectedAccount = document.getElementById("loadAccountNew").value;
@@ -57,15 +71,20 @@ document.getElementById("loadGOODFile").addEventListener("change", changeEvent =
       document.getElementById("loadError").innerHTML = "Account field cannot be blank.";
       document.getElementById("loadError").classList.remove("d-none");
     }
+    msg.classList.add("d-none");
   });
   reader.readAsText(changeEvent.target.files[0]);
 });
 
 document.getElementById("loadAllFile").addEventListener("change", changeEvent => {
   let reader = new FileReader();
-  reader.addEventListener("load", loadEvent => {
+  let msg = document.getElementById("loadMessage");
+  msg.classList.remove("d-none");
+  msg.innerHTML = `<i class="fa-solid fa-arrows-rotate fa-spin"></i> Importing...`;
+  reader.addEventListener("load", async loadEvent => {
     window.viewer.load(loadEvent.target.result);
     changeEvent.target.value = "";
+    msg.classList.add("d-none");
   });
   reader.readAsText(changeEvent.target.files[0]);
 });
@@ -219,6 +238,32 @@ document.getElementById("newFreshBtn").addEventListener("click", event => {
   bootstrap.Modal.getOrCreateInstance(document.getElementById("newModal")).hide();
   bootstrap.Modal.getOrCreateInstance(document.getElementById("editModal")).show();
 });
+
+// Setup prefs popup
+document.getElementById("prefsDoneBtn").addEventListener("click", clickEvent => {
+  for(let prefElem of document.getElementsByClassName("preference-select"))
+    if(prefElem.checked)
+      window.viewer.settings.preferences[prefElem.attributes.getNamedItem('name').value] = prefElem.value;
+  for(let list in window.viewer.listClasses)
+    if(window.viewer.lists[list])
+      window.viewer.lists[list].forceNextRender = true;
+  window.viewer.view(window.viewer.currentView);
+  window.viewer.queueStore();
+});
+
+document.getElementById("prefsModal").addEventListener("show.bs.modal", showEvent => {
+  for(let pref in window.viewer.settings.preferences)
+  {
+    for(let prefElem of showEvent.target.querySelectorAll(`.preference-select[name="${pref}"]`))
+    {
+      if(prefElem.value == window.viewer.settings.preferences[pref])
+        prefElem.checked = true;
+      else
+        prefElem.checked = false;
+    }
+  }
+});
+
 
 /************************
 * Begin the Application *

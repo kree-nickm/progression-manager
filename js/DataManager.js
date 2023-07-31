@@ -1,3 +1,4 @@
+import { Renderer } from "./Renderer.js";
 import UIController from "./UIController.js";
 
 export default class DataManager extends UIController
@@ -19,12 +20,19 @@ export default class DataManager extends UIController
     super();
     this.elements['content'] = document.getElementById("content");
     this.elements['popup'] = document.getElementById("popup");
+    this.elements['popup'].addEventListener('hidden.bs.modal', event => UIController.clearDependencies(event.target, true));
     this.settings.paneMemory = {};
+    this.settings.preferences = {};
   }
   
   get lists()
   {
     return data;
+  }
+  
+  get controllers()
+  {
+    return Renderer.controllers;
   }
   
   paneFromHash()
@@ -117,7 +125,11 @@ export default class DataManager extends UIController
       let settings = JSON.parse(json);
       if(settings)
       {
-        this.settings = settings;
+        for(let s in this.settings)
+          if(s in settings)
+            this.settings[s] = settings[s];
+        for(let s in settings)
+          this.settings[s] = settings[s];
         console.log("Loaded settings from local storage.", this.settings);
       }
       else
