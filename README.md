@@ -8,20 +8,21 @@ Features include:
 * Export your data in GOOD format so you can use it on [other websites](#alternatives).
 * Easily switch between multiple accounts and/or servers whose data you've added.
 * Upload your account data to Pastebin with the click of a button, giving you a code that you can use on other devices or share with other players. Using this code will allow you to easily import your data into a different device, or send it to other players so they can review your account.
-* View a consolidated list of all of your characters, which shows you all of the materials they need for their next ascension as well as talent level-ups.
+* View a consolidated list of all of your characters, which shows you all of the materials they need for their next ascension as well as talent level-ups. Additionally, you can see their equipped gear in a consolodated format, to quickly see which ones need your resin the most.
 * As above, view a consolidated list of all of your weapons and their ascension materials, and which character is using each.
 * View a list of all of your artifacts with not only their stats, but ratings of their stats, which are based on how much they rolled each specific substat and the probability of rolling each substat further.
 * View your quantities of materials, with a list of which characters and weapons require that material for their next ascension or talent level-up.
 * View a list of furniture gift sets, so you can track which gift sets you have learned and which characters you can settle/have settled using them, so you can more easily keep track of the primogems rewards for doing so.
 * For each character, create one or more builds that specify their desired artifact sets and artifact main stat/substat priority, which will be used in calculations to determine their best artifacts.
-* For each character, see lists of all of your artifacts separated by slot, and sorted by how good they are for that character, based on the build(s) explained above.
+* For each character, see lists of all of your artifacts separated by slot, and sorted by how good they are for that character, based on the build(s) explained above. You can also filter by preferred artifact sets.
 * Using the above artifact preferences, run an algorithm that determines how valuable each artifact on your account is based on the number of you characters who might want to use it. Any artifacts that end up with a score of 0 are safe to use as fodder for levels/strongbox.
 * _(Planned Feature)_ See recommended artifact combinations that factor in the above builds as well as different combinations of your desired artifact sets.
 * _(Planned Feature)_ See each of your characters' stats based on their equipped weapon and artifacts, as well as how much damage they should be doing with various attacks, skills, bursts, reactions, etc. Additionally:
   * _(Planned Feature)_ Factor in triggered effects of artifacts or weapons, and how the damage values will change when such effects are triggered.
   * _(Planned Feature)_ Allow you to see all of that information for multiple different artifact combinations at once, and use that to decide which one you prefer.
 * _(Planned Feature)_ Allow you to set up teams, and see how the buffs provided by each team members' abilities/artifacts/weapons will affect all of the aforementioned statistics.
-* _(Planned Feature)_ Obtain your character data from Hoyoverse directly using your profile (like Enka and Akasha), so you can have at least *some* account data imported without having to use screen readers.
+* _(Planned Feature)_ Obtain your character data from Hoyoverse directly using your profile (like Enka), so you can have at least *some* account data imported without having to use screen readers.
+* _(Planned Feature)_ Set targets for your character/gear progression, so you can quickly see all of the things you need to spend resin on.
 
 ## Alternatives
 There are many other Genshin Impact managers that I am aware of, which serve similar purposes. They are all relatively specialized and probably do those things better than mine (for now, smile). However, I made this one because I did not want to have to use 3 different managers to get all the features I want. That said, with the ability to import/export data in GOOD format, you can use them alongside mine if you want to.
@@ -29,10 +30,7 @@ There are many other Genshin Impact managers that I am aware of, which serve sim
 * [SEELIE.me](https://seelie.me): Helps keep track of ascension and talent materials and helps you plan what materials to farm, but you have to manually enter all characters and weapons, and it does nothing at all for artifacts.
 * [Genshin Center's Planner](https://genshin-center.com/planner): Seems to be the same as SEELIE.me, as far as I can tell.
 * [Genshin Impact Calculator](https://genshin.aspirine.su/): Does a bunch of calculations with stats and damage, including party set-up, and helps you select artifacts for your builds, but doesn't import/store any of your stuff except for artifacts.
-* [Akasha](https://akasha.cv): Pulls your character data directly from your Genshin Impact account, but only stays updated for the 8 characters you display on your profile. Allows you to review various statistics and ratings for those characters and compare them to those of other players.
-* [Enka](https://enka.network/): Similar to Akasha in that it pulls data directly from your account. Does not include any of the subjective ratings that Akasha does. Has a convenient display for each of your characters that makes it very easy for yourself and others to review character/weapon/artifact statistics.
+* [Enka](https://enka.network/): Pulls your character data directly from your Genshin Impact profile. Has a convenient display for each of your characters that makes it very easy for yourself and others to review character/weapon/artifact statistics. Does not track materials or any gear that is not equipped to one of the 8 characters displayed on your profile, but can remember previous characters.
+* [Akasha](https://akasha.cv): Uses Enka and has the same features, but also lets you compare your characters to other players' characters who use the site.
 
-That said, my app is going to have some weaknesses of its own that I'm not sure if/when I will be able to address:
-* Slow to update. I'm lazy, and keeping up with patches is going to be a little delayed. However, perhaps the fact that this is on GitHub will motivate some contributors to help with that.
-* Use shorthand for most things instead of images. This could be a pro or a con depending on your perspective (it's strictly a pro for me, but you might disagree). For example, rather than images for the talent level-up materials, I call them by what the image looks like (cuff, tile, branch, etc.) In the future I might consider adding a preference toggle for this kind of stuff, but I'm not planning on it any time soon.
-* Related to the above point, I value function over form. This app won't look very pretty, and the interface may be confusing, but my concern is that it does what I want it to do. Once it has all the funtionality that I want, I will work on improving the UI/UX so that other people can figure out how to use it more easily, but not before.
+Lastly, I made this mostly for myself, and my main concern is that it works the way I want it to work. I hope other people find it useful as well, but if people can't figure out how to use it or want it to work differently, I am unlikely to care that much. I am more likely to make a guide than to make a functionality change for that reason.
