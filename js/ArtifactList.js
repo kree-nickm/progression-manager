@@ -147,16 +147,41 @@ export default class ArtifactList extends GenshinList
     let setField = this.display.addField("set", {
       label: "Set",
       sort: {generic: {type:"string",property:"setName"}},
-      dynamic: false,
-      value: item => item.setName,
-      classes: item => ({
+      dynamic: true,
+      value: item => item.viewer.settings.preferences.listDisplay=='0' ? item.setName : {
+        tag: "div",
+        value: {
+          tag: "div",
+          value: {
+            tag: "img",
+            src: item.image,
+            alt: item.name,
+          },
+          classes: {"display-img": true, ["rarity-"+item.rarity]: true},
+        },
+        classes: {
+          "item-display": true,
+          "item-material": true,
+          "display-sm": true,
+          "display-no-caption": true,
+        },
+        title: item.setName,
+      },
+      classes: item => item.viewer.settings.preferences.listDisplay=='0' ? {
         "material": true,
         "q1": item.rarity == 1,
         "q2": item.rarity == 2,
         "q3": item.rarity == 3,
         "q4": item.rarity == 4,
         "q5": item.rarity == 5,
-      }),
+      } : {
+        "material": false,
+        "q1": false,
+        "q2": false,
+        "q3": false,
+        "q4": false,
+        "q5": false,
+      },
     });
     
     let slotField = this.display.addField("slot", {
@@ -280,24 +305,44 @@ export default class ArtifactList extends GenshinList
       label: "User",
       sort: {generic: {type:"string",property:"location"}},
       dynamic: true,
-      value: item => [
-        {
-          value: item.character?.name ?? "-",
-          edit: {
-            target: {item:item, field:"location"},
-            type: "select",
-            list: item.list.viewer.lists.CharacterList.items("equippable"),
-            valueProperty: "key",
-            displayProperty: "name",
+      value: item => item.character ? {
+        value: [
+          {
+            value: item.viewer.settings.preferences.listDisplay=='0' ? item.character.name : {
+              tag: "img",
+              classes: {'character-icon':true},
+              src: item.character.image,
+            },
+            classes: {
+              "icon": item.viewer.settings.preferences.listDisplay=='1',
+            },
+            edit: {
+              target: {item:item, field:"location"},
+              type: "select",
+              list: item.list.viewer.lists.CharacterList.items("equippable"),
+              valueProperty: "key",
+              displayProperty: "name",
+            },
           },
-          classes: {"text-muted": !item.character},
+          {
+            tag: "i",
+            classes: {'fa-solid':true, 'fa-eye':true},
+            popup: item.character,
+          },
+        ],
+        classes: {
+          "user-field": true,
         },
-        item.character ? {
-          tag: "i",
-          classes: {'fa-solid':true, 'fa-eye':true, 'float-end':true},
-          popup: item.character,
-        } : undefined,
-      ],
+      } : {
+        value: "-",
+        edit: {
+          target: {item:item, field:"location"},
+          type: "select",
+          list: item.list.viewer.lists.CharacterList.items("equippable"),
+          valueProperty: "key",
+          displayProperty: "name",
+        },
+      },
       dependencies: item => [
         {item:item.list.viewer.lists.characters, field:"list"},
       ],

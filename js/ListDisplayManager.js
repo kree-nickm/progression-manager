@@ -29,40 +29,46 @@ export default class ListDisplayManager
     let fields = this.getFields({include, exclude});
     let result = [];
     let lastGroup;
-    for(let field of fields)
+    for(let field in fields)
     {
-      if(!field.group)
+      if(!fields[field].group)
       {
         result.push({label:"",size:1});
       }
-      else if(field.group === lastGroup)
+      else if(fields[field].group === lastGroup)
       {
-        field.group.size++;
+        fields[field].group.size++;
       }
       else
       {
-        field.group.size = 1;
-        result.push(field.group);
+        fields[field].group.size = 1;
+        result.push(fields[field].group);
       }
-      lastGroup = field.group;
+      lastGroup = fields[field].group;
     }
     return result;
   }
   
   getFields({include=[], exclude=[]}={})
   {
-    let result = Object.values(this.fields);
+    if(!exclude.length && !include.length)
+      return this.fields;
+    
+    let valid = Object.values(this.fields);
     
     if(typeof(include) == "function")
-      result = result.filter(include);
+      valid = valid.filter(include);
     else if(include.length)
-      result = result.filter(field => include.indexOf(field.id) > -1);
+      valid = valid.filter(field => include.indexOf(field.id) > -1);
     
     if(typeof(exclude) == "function")
-      result = result.filter(field => !exclude.call(this,field));
+      valid = valid.filter(field => !exclude.call(this,field));
     else if(exclude.length)
-      result = result.filter(field => exclude.indexOf(field.id) == -1);
+      valid = valid.filter(field => exclude.indexOf(field.id) == -1);
     
+    let result = {};
+    for(let field of valid)
+      result[field.id] = field;
     return result;
   }
 }

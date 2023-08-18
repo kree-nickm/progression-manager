@@ -45,8 +45,8 @@ export default class Material extends GenshinItem
   static toKey(string)
   {
     return string
-      .replaceAll(/[- (][a-z]/g, (match, offset, str) => match.toUpperCase())
-      .replaceAll(/[- ()"']/g, "");
+      .replaceAll(/[-— (][a-z]/g, (match, offset, str) => match.toUpperCase())
+      .replaceAll(/[^a-zA-Z0-9_]/g, "");
   }
   
   static fromKey(string)
@@ -99,7 +99,10 @@ export default class Material extends GenshinItem
   get type() {
     if(!this._type)
     {
-      for(let type in GenshinLootData)
+      if(this.key == "CrownOfInsight")
+        this._type = "crown";
+      if(!this._type)
+        for(let type in GenshinLootData)
         if(this.shorthand in GenshinLootData[type])
           this._type = type;
       if(!this._type)
@@ -109,7 +112,7 @@ export default class Material extends GenshinItem
       if(!this._type)
       {
         let words = this.shorthand.split(" ");
-        if(words.length == 2 && Object.keys(GenshinLootData.gemstone).indexOf(words[0]) > -1 && (words[0] + Material.gemQualities[this.rarity]) == this.shorthand)
+        if(words.length == 2 && (words[0] == "Diamond" || Object.keys(GenshinLootData.gemstone).indexOf(words[0]) > -1 && (words[0] + Material.gemQualities[this.rarity]) == this.shorthand))
           this._type = "gemstone";
       }
     }
@@ -243,7 +246,7 @@ export default class Material extends GenshinItem
       classes: {
         "item-display": true,
         "item-material": true,
-        "display-icon": true,
+        "display-sm": true,
         "pending": this.count < cost,
         "insufficient": this.getCraftCount() < cost,
       },

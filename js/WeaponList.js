@@ -51,7 +51,7 @@ export default class WeaponList extends GenshinList
         classes: {
           "item-display": true,
           "item-material": true,
-          "display-icon": true,
+          "display-sm": true,
           "display-no-caption": true,
         },
         title: item.name,
@@ -117,7 +117,7 @@ export default class WeaponList extends GenshinList
     });
     
     let ascension = this.display.addField("ascension", {
-      label: "Phs",
+      label: "",
       sort: {generic: {type:"number", property:"ascension"}},
       dynamic: true,
       value: item => item.ascension,

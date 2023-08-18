@@ -333,6 +333,8 @@ class Renderer
         style = style +`color:${content.color};`;
       if(content.width)
         style = style +`width:${content.width};`;
+      if(content.shadow)
+        style = style +`text-shadow:${content.shadow};`;
       if(style)
         attrs.push(`style="${style}"`);
       

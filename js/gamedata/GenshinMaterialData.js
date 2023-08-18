@@ -389,6 +389,66 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a7\/Item_Wanderer%27s_Blooming_Flower.png",
         "rarity": 4
     },
+    "TransoceanicPearl": {
+        "name": "Transoceanic Pearl",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/5/54/Item_Transoceanic_Pearl.png",
+        "rarity": 1
+    },
+    "TransoceanicChunk": {
+        "name": "Transoceanic Chunk",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/0/09/Item_Transoceanic_Chunk.png",
+        "rarity": 2
+    },
+    "XenochromaticCrystal": {
+        "name": "Xenochromatic Crystal",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/b/ba/Item_Xenochromatic_Crystal.png",
+        "rarity": 3
+    },
+    "MeshingGear": {
+        "name": "Meshing Gear",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/2/28/Item_Meshing_Gear.png",
+        "rarity": 1
+    },
+    "MechanicalSpurGear": {
+        "name": "Mechanical Spur Gear",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/d/da/Item_Mechanical_Spur_Gear.png",
+        "rarity": 2
+    },
+    "ArtificedDynamicGear": {
+        "name": "Artificed Dynamic Gear",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/f/fd/Item_Artificed_Dynamic_Gear.png",
+        "rarity": 3
+    },
+    "DropOfTaintedWater": {
+        "name": "Drop of Tainted Water",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/2/29/Item_Drop_of_Tainted_Water.png",
+        "rarity": 2
+    },
+    "ScoopOfTaintedWater": {
+        "name": "Scoop of Tainted Water",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/9/97/Item_Scoop_of_Tainted_Water.png",
+        "rarity": 3
+    },
+    "NewbornTaintedHydroPhantasm": {
+        "name": "Newborn Tainted Hydro Phantasm",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/3/36/Item_Newborn_Tainted_Hydro_Phantasm.png",
+        "rarity": 4
+    },
+    "RiftCore": {
+        "name": "Rift Core",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/b/b3/Item_Rift_Core.png",
+        "rarity": 2
+    },
+    "ForeignSynapse": {
+        "name": "Foreign Synapse",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/4/42/Item_Foreign_Synapse.png",
+        "rarity": 3
+    },
+    "AlienLifeCore": {
+        "name": "Alien Life Core",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/1/1c/Item_Alien_Life_Core.png",
+        "rarity": 4
+    },
     "HurricaneSeed": {
         "name": "Hurricane Seed",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5e\/Item_Hurricane_Seed.png",
@@ -502,6 +562,21 @@ export default {
     "EvergloomRing": {
         "name": "Evergloom Ring",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4d\/Item_Evergloom_Ring.png",
+        "rarity": 4
+    },
+    "ArtificedSpareClockworkComponentCoppelia": {
+        "name": "Artificed Spare Clockwork Component — Coppelia",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/4/4b/Item_Artificed_Spare_Clockwork_Component_%E2%80%94_Coppelia.png",
+        "rarity": 4
+    },
+    "ArtificedSpareClockworkComponentCoppelius": {
+        "name": "Artificed Spare Clockwork Component — Coppelius",
+        "img": "",
+        "rarity": 4
+    },
+    "EmperorsResolution": {
+        "name": "Emperor's Resolution",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/0/03/Item_Emperor's_Resolution.png",
         "rarity": 4
     },
     "DvalinsPlume": {
@@ -962,6 +1037,51 @@ export default {
     "PhilosophiesOfPraxis": {
         "name": "Philosophies of Praxis",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/82\/Item_Philosophies_of_Praxis.png",
+        "rarity": 4
+    },
+    "TeachingsOfEquity": {
+        "name": "Teachings of Equity",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/c/ca/Item_Teachings_of_Equity.png",
+        "rarity": 2
+    },
+    "GuideToEquity": {
+        "name": "Guide to Equity",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/c/ce/Item_Guide_to_Equity.png",
+        "rarity": 3
+    },
+    "PhilosophiesOfEquity": {
+        "name": "Philosophies of Equity",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/a/a0/Item_Philosophies_of_Equity.png",
+        "rarity": 4
+    },
+    "TeachingsOfJustice": {
+        "name": "Teachings of Justice",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/f/f1/Item_Teachings_of_Justice.png",
+        "rarity": 2
+    },
+    "GuideToJustice": {
+        "name": "Guide to Justice",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/e/ea/Item_Guide_to_Justice.png",
+        "rarity": 3
+    },
+    "PhilosophiesOfJustice": {
+        "name": "Philosophies of Justice",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/3/37/Item_Philosophies_of_Justice.png",
+        "rarity": 4
+    },
+    "TeachingsOfOrder": {
+        "name": "Teachings of Order",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/7/74/Item_Teachings_of_Order.png",
+        "rarity": 2
+    },
+    "GuideToOrder": {
+        "name": "Guide to Order",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/2/2a/Item_Guide_to_Order.png",
+        "rarity": 3
+    },
+    "PhilosophiesOfOrder": {
+        "name": "Philosophies of Order",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/3/32/Item_Philosophies_of_Order.png",
         "rarity": 4
     },
     "CrownOfInsight": {
@@ -1442,6 +1562,26 @@ export default {
     "Scarab": {
         "name": "Scarab",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a7\/Item_Scarab.png",
+        "rarity": 1
+    },
+    "BerylConch": {
+        "name": "Beryl Conch",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/1/1c/Item_Beryl_Conch.png",
+        "rarity": 1
+    },
+    "RomaritimeFlower": {
+        "name": "Romaritime Flower",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/e/ea/Item_Romaritime_Flower.png",
+        "rarity": 1
+    },
+    "LumidouceBell": {
+        "name": "Lumidouce Bell",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/f/fe/Item_Lumidouce_Bell.png",
+        "rarity": 1
+    },
+    "RainbowRose": {
+        "name": "Rainbow Rose",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/c/cd/Item_Rainbow_Rose.png",
         "rarity": 1
     },
     "SweetFlowerSeed": {

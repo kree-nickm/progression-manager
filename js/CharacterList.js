@@ -61,7 +61,7 @@ export default class CharacterList extends GenshinList
         classes: {
           "item-display": true,
           "item-material": true,
-          "display-icon": true,
+          "display-sm": true,
           "display-no-caption": true,
         },
         title: item.name,
@@ -102,7 +102,7 @@ export default class CharacterList extends GenshinList
     });
     
     let ascension = this.display.addField("ascension", {
-      label: "Phs",
+      label: "",
       labelTitle: "Sort by phase/ascension.",
       sort: {generic: {type:"number",property:"ascension"}},
       dynamic: true,
@@ -162,8 +162,8 @@ export default class CharacterList extends GenshinList
       'auto': `<i class="fa-solid fa-a"></i>`,
       'skill': `<i class="fa-solid fa-e"></i>`,
       'burst': `<i class="fa-solid fa-q"></i>`,
-      'Mastery': `<i class="fa-solid fa-dungeon"></i>`,
-      'Enemy': `<i class="fa-solid fa-skull"></i>`,
+      'Mastery': `<i class="fa-solid fa-dungeon mx-1"></i>`,
+      'Enemy': `<i class="fa-solid fa-skull mx-1"></i>`,
       'Trounce': `<i class="fa-solid fa-calendar-week"></i>`,
       'Crown': `<i class="fa-solid fa-crown"></i>`,
       'gem': `<i class="fa-solid fa-gem"></i>`,
@@ -421,7 +421,7 @@ export default class CharacterList extends GenshinList
     */
     let weaponName = this.display.addField("weaponName", {
       group: gearGroup,
-      label: "Weapon",
+      label: "",
       dynamic: true,
       popup: item => item.weapon,
       value: item => item.weapon ? (item.viewer.settings.preferences.listDisplay=='1' ? {
@@ -454,7 +454,7 @@ export default class CharacterList extends GenshinList
         classes: {
           "item-display": true,
           "item-material": true,
-          "display-icon": true,
+          "display-sm": true,
         },
       } : [
         {
@@ -478,7 +478,7 @@ export default class CharacterList extends GenshinList
     {
       let artifactField = this.display.addField(slotKey, {
         group: gearGroup,
-        label: slotKey,
+        label: `<img src="img/${slotKey}.webp"/>`,
         dynamic: true,
         //popup: item => item[slotKey+'Artifact'],
         value: item => {
@@ -512,9 +512,10 @@ export default class CharacterList extends GenshinList
                 classes: {
                   "item-display": true,
                   "item-material": true,
-                  "display-icon": true,
+                  "display-sm": true,
                 },
                 background: artifact.display.getField("characterScore").get("value", artifact, item).color.replace("0.9", "0.6"),
+                title: artifact.display.getField("characterScore").get("title", artifact, item),
               },
               {
                 tag: "div",
@@ -527,13 +528,19 @@ export default class CharacterList extends GenshinList
               },
             ],
             classes: {"artifact-mini": true},
+        // Begin text-only rendering.
           } : [
             {
-              value: artifact.display.getField("set").get("value", artifact),
-              classes: artifact.display.getField("set").get("classes", artifact),
+              value: artifact.display.getField("characterScore").get("value", artifact, item),
+              title: artifact.display.getField("characterScore").get("title", artifact, item),
+              shadow: "0px 0px 3px black",
             },
             {
               value: `+${artifact.level}`,
+            },
+            {
+              value: artifact.display.getField("set").get("value", artifact),
+              classes: artifact.display.getField("set").get("classes", artifact),
             },
           ]) : "";
         },
@@ -541,6 +548,7 @@ export default class CharacterList extends GenshinList
           item[slotKey+'Artifact'] ? {item:item[slotKey+'Artifact'], field:"location"} : undefined,
           item[slotKey+'Artifact'] ? {item:item[slotKey+'Artifact'], field:"level"} : undefined,
           item[slotKey+'Artifact'] ? {item:item[slotKey+'Artifact'], field:"substats"} : undefined,
+          {item:item, field:"buildData"},
           {type:slotKey+'Artifact'},
         ],
       });

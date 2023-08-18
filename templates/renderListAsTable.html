@@ -14,7 +14,7 @@
             </tr>
             <tr>
               {{#each fields}}
-                <th class="{{fieldClasses .}} {{#if sort}}sortable{{/if}}" name="{{id}}" title="{{labelTitle}}" scope="col" {{#if group}}data-group-name="{{group.label}}"{{/if}}><span>{{{label}}}</span></th>
+                <th class="label {{fieldClasses .}} {{#if sort}}sortable{{/if}}" name="{{id}}" title="{{labelTitle}}" scope="col" {{#if group}}data-group-name="{{group.label}}"{{/if}}><span>{{{label}}}</span></th>
               {{/each}}
             </tr>
         </thead>

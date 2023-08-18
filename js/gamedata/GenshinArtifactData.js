@@ -1068,5 +1068,59 @@ export default {
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d4\/Item_Ancient_Abscission.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/99\/Item_Feast_of_Boundless_Joy.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fa\/Item_Heart_of_Khvarena%27s_Brilliance.png"
+    },
+    "MarechausseeHunter": {
+        "name": "Marechaussee Hunter",
+        "flower": "Hunter's Brooch",
+        "plume": "Masterpiece's Overture",
+        "sands": "Moment of Judgment",
+        "goblet": "Forgotten Vessel",
+        "circlet": "Veteran's Visage",
+        "bonus2": "Normal and Charged Attack DMG +15%.",
+        "bonus2code": [
+            "stat",
+            [
+                [
+                    "normal_dmg_",
+                    "charged_dmg_"
+                ],
+                15
+            ]
+        ],
+        "bonus4": "When current HP increases or decreases, CRIT Rate will be increased by 12% for 5s. Max 3 stacks. ",
+        "flowerImg": "https://static.wikia.nocookie.net/gensin-impact/images/9/96/Item_Marechaussee_Hunter_Flower.png",
+        "plumeImg": "https://static.wikia.nocookie.net/gensin-impact/images/9/96/Item_Marechaussee_Hunter_Flower.png",
+        "sandsImg": "https://static.wikia.nocookie.net/gensin-impact/images/9/96/Item_Marechaussee_Hunter_Flower.png",
+        "gobletImg": "https://static.wikia.nocookie.net/gensin-impact/images/9/96/Item_Marechaussee_Hunter_Flower.png",
+        "circletImg": "https://static.wikia.nocookie.net/gensin-impact/images/9/96/Item_Marechaussee_Hunter_Flower.png"
+    },
+    "GoldenTroupe": {
+        "name": "Golden Troupe",
+        "flower": "Golden Song's Variation",
+        "plume": "Golden Bird's Shedding",
+        "sands": "Golden Era's Prelude",
+        "goblet": "Golden Night's Bustle",
+        "circlet": "Golden Troupe's Reward",
+        "bonus2": "Increases Elemental Skill DMG by 20%.",
+        "bonus2code": [
+            "stat",
+            [
+                "skill_dmg_",
+                20
+            ]
+        ],
+        "bonus4": "Increases Elemental Skill DMG by 25%. Additionally, when not on the field, Elemental Skill DMG will be further increased by 25%. This effect will be cleared 2s after taking the field. ",
+        "bonus4code": [
+            "stat",
+            [
+                "skill_dmg_",
+                25
+            ]
+        ],
+        "flowerImg": "https://static.wikia.nocookie.net/gensin-impact/images/6/6a/Item_Golden_Troupe_Flower.png",
+        "plumeImg": "https://static.wikia.nocookie.net/gensin-impact/images/6/6a/Item_Golden_Troupe_Flower.png",
+        "sandsImg": "https://static.wikia.nocookie.net/gensin-impact/images/6/6a/Item_Golden_Troupe_Flower.png",
+        "gobletImg": "https://static.wikia.nocookie.net/gensin-impact/images/6/6a/Item_Golden_Troupe_Flower.png",
+        "circletImg": "https://static.wikia.nocookie.net/gensin-impact/images/6/6a/Item_Golden_Troupe_Flower.png"
     }
 };

@@ -9,26 +9,19 @@ export default class MaterialList extends GenshinList
 {
   static unique = true;
   static itemClass = Material;
+  static subsetDefinitions = {
+    'enemy': item => item.type == "enemy",
+    'trounce': item => item.type == "trounce",
+    'boss': item => item.type == "boss",
+    'gemstone': item => item.type == "gemstone",
+    'mastery': item => item.type == "mastery",
+    'crown': item => item.type == "crown",
+    'forgery': item => item.type == "forgery",
+    'unknown': item => item.type == "unknown",
+  };
   
   setupDisplay()
   {
-    let iconField = this.display.addField("icon", {
-      label: "Icon",
-      dynamic: false,
-      value: item => item.image ? {
-        tag: "div",
-        value: {
-          tag: "div",
-          value: {
-            tag: "img",
-            src: item.image,
-          },
-          classes: {"display-img": true, [`rarity-${item.rarity}`]: true},
-        },
-        classes: {"item-display": true, "item-material": true, "display-icon": true},
-      } : "",
-    });
-    
     let nameField = this.display.addField("name", {
       label: "Name",
       dynamic: false,
@@ -81,24 +74,28 @@ export default class MaterialList extends GenshinList
       label: "Image",
       tags: ["detailsOnly"],
       dynamic: false,
-      value: item => {
-        let filename = item.name;
-        if(!filename)
-        {
-          console.warn(`Material has invalid name:`, item);
-          return "";
-        }
-        if(item.shorthand in GenshinLootData.forgery)
-          return "";
-        else if(item.shorthand in GenshinLootData.mastery)
-          filename = item.name.split(" ").pop();
-        else
-          filename = filename.replace(" ", "_");
-        return {
-          tag: "img",
-          src: `https://rerollcdn.com/GENSHIN/Farming/NEW/${filename}.png`,
-        };
-      },
+      value: item => ({
+        tag: "div",
+        title: item.getFullSource(),
+        value: [
+          {
+            tag: "i",
+            title: "This drop can be obtained today.",
+            classes: {
+              "display-badge": true,
+              "fa-solid": true,
+              "fa-sun": true,
+              "d-none": item.days.indexOf(item.viewer.today()) == -1,
+            },
+          },
+          {
+            tag: "img",
+            src: item.image,
+            alt: item.name,
+          }
+        ],
+        classes: {"display-img": true, ["rarity-"+item.rarity]: true},
+      }),
     });
   }
   
@@ -165,6 +162,26 @@ export default class MaterialList extends GenshinList
     {
       item.update("count", 0);
     }
+  }
+  
+  prepareRender(element, data, options)
+  {
+    if(this.viewer.settings.preferences.listDisplay == '1')
+    {
+      data.items = {
+        'enemy': this.items('enemy'),
+        'trounce': this.items('trounce'),
+        'boss': this.items('boss'),
+        'gemstone': this.items('gemstone'),
+        'mastery': this.items('mastery'),
+        'crown': this.items('crown'),
+        'forgery': this.items('forgery'),
+        'unknown': this.items('unknown'),
+      };
+      data.fields = this.display.fields;
+      options.template = "renderMaterialList";
+    }
+    return {element, data, options};
   }
   
   async render(force=false)

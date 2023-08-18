@@ -1,0 +1,16 @@
+<div class="scroller list" data-template="renderMaterialList" data-uuid="{{uuid item}}">
+  {{#each items as |materials type|}}
+    <div class="material-row">
+      {{#each materials}}
+        <div class="list-item material-{{type}}" data-uuid="{{uuid .}}">
+            <div class="item-display item-material display-md">
+              {{> renderItemField item=. field=../../fields.image wrapper="div"}}
+                <div class="display-caption">
+                  {{> renderItemField item=. field=../../fields.count wrapper="div"}}
+                </div>
+            </div>
+        </div>
+      {{/each}}
+    </div>
+  {{/each}}
+</div>

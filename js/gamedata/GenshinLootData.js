@@ -132,6 +132,26 @@ export default {
       "2": "A Flower Yet to Bloom",
       "3": "Treasured Flower",
       "4": "Wanderer's Blooming Flower"
+    },
+    "Fontemer Aberrants": {
+      "1": "Transoceanic Pearl",
+      "2": "Transoceanic Chunk",
+      "3": "Xenochromatic Crystal"
+    },
+    "Clockwork Meka": {
+      "1": "Meshing Gear",
+      "2": "Mechanical Spur Gear",
+      "3": "Artificed Dynamic Gear"
+    },
+    "Hydro Phantasms": {
+      "2": "Drop of Tainted Water",
+      "3": "Scoop of Tainted Water",
+      "4": "Newborn Tainted Hydro Phantasm"
+    },
+    "Breacher Primuses": {
+      "2": "Rift Core",
+      "3": "Foreign Synapse",
+      "4": "Alien Life Core"
     }
   },
   
@@ -279,7 +299,7 @@ export default {
       "name": "Aeonblight Drake",
       "4": "Perpetual Caliber"
     },
-    "Matrix Boss": {
+    "ASIMON": {
       "name": "Algorithm of Semi-Intransient Matrix of Overseer Network",
       "4": "Light Guiding Tetrahedron"
     },
@@ -294,6 +314,18 @@ export default {
     "Baptist": {
       "name": "Iniquitous Baptist",
       "4": "Evergloom Ring"
+    },
+    "Coppelia": {
+      "name": "Icewind Suite (Coppelia)",
+      "4": "Artificed Spare Clockwork Component — Coppelia"
+    },
+    "Coppelius": {
+      "name": "Icewind Suite (Coppelius)",
+      "4": "Artificed Spare Clockwork Component — Coppelius"
+    },
+    "Pyro Crab": {
+      "name": "Emperor of Fire and Iron",
+      "4": "Emperor's Resolution"
     }
   },
   
@@ -368,6 +400,18 @@ export default {
     },
     "Praxis": {
       "source": "Steeple of Ignorance",
+      "days": ["Wednesday","Saturday","Sunday"]
+    },
+    "Equity": {
+      "source": "Pale Forgotten Glory",
+      "days": ["Monday","Thursday","Sunday"]
+    },
+    "Justice": {
+      "source": "Pale Forgotten Glory",
+      "days": ["Tuesday","Friday","Sunday"]
+    },
+    "Order": {
+      "source": "Pale Forgotten Glory",
       "days": ["Wednesday","Saturday","Sunday"]
     }
   },
@@ -467,6 +511,30 @@ export default {
       "4": "Dream of Scorching Might",
       "5": "Olden Days of Scorching Might",
       "source": "Tower of Abject Pride",
+      "days": ["Wednesday","Saturday","Sunday"]
+    },
+    "Chord": {
+      "2": "Fragment of an Ancient Chord",
+      "3": "Chapter of an Ancient Chord",
+      "4": "Movement of an Ancient Chord",
+      "5": "Echo of an Ancient Chord",
+      "source": "Echoes of the Deep Tide",
+      "days": ["Monday","Thursday","Sunday"]
+    },
+    "Droplet": {
+      "2": "Dross of Pure Sacred Dewdrop",
+      "3": "Sublimation of Pure Sacred Dewdrop",
+      "4": "Spring of Pure Sacred Dewdrop",
+      "5": "Essence of Pure Sacred Dewdrop",
+      "source": "Echoes of the Deep Tide",
+      "days": ["Tuesday","Friday","Sunday"]
+    },
+    "Chalice": {
+      "2": "Broken Goblet of the Pristine Sea",
+      "3": "Wine Goblet of the Pristine Sea",
+      "4": "Silver Goblet of the Pristine Sea",
+      "5": "Golden Goblet of the Pristine Sea",
+      "source": "Echoes of the Deep Tide",
       "days": ["Wednesday","Saturday","Sunday"]
     }
   }
