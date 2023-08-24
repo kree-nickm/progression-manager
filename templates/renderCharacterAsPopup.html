@@ -28,8 +28,8 @@
         </div>
         
         <hr/>
-        <h3>Ascension Materials</h3>
-        <div class="table-responsive">
+        <h3 class="collapsed" data-bs-toggle="collapse" href="#ascensionMaterials">Ascension Materials</h3>
+        <div id="ascensionMaterials" class="table-responsive collapse">
             <table class="table">
                 <thead>
                     <tr>
@@ -38,6 +38,7 @@
                         <th>World Boss Drops</th>
                         <th>Flora</th>
                         <th>Enemy Drops</th>
+                        <th>Mora</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,6 +49,7 @@
                       {{> renderItemField item=item field=(lookup fields (concat "bossAscMat" @index)) wrapper="td"}}
                       {{> renderItemField item=item field=(lookup fields (concat "flowerAscMat" @index)) wrapper="td"}}
                       {{> renderItemField item=item field=(lookup fields (concat "enemyAscMat" @index)) wrapper="td"}}
+                      {{> renderItemField item=item field=(lookup fields (concat "moraAscMat" @index)) wrapper="td"}}
                     </tr>
                   {{/times}}
                 </tbody>
@@ -55,8 +57,8 @@
         </div>
         
         <hr/>
-        <h3>Talent Materials</h3>
-        <div class="table-responsive">
+        <h3 class="collapsed" data-bs-toggle="collapse" href="#talentMaterials">Talent Materials</h3>
+        <div id="talentMaterials" class="table-responsive collapse">
             <table class="table">
                 <thead>
                     <tr>
@@ -65,6 +67,7 @@
                         <th class="talent-enemy">Enemy</th>
                         <th class="talent-trounce">Trounce</th>
                         <th class="talent-crown">Crown</th>
+                        <th class="talent-crown">Mora</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -75,6 +78,7 @@
                       {{> renderItemField item=item field=(lookup fields (concat "talentEnemyMat" @index)) wrapper="td"}}
                       {{> renderItemField item=item field=(lookup fields (concat "talentTrounceMat" @index)) wrapper="td"}}
                       {{> renderItemField item=item field=(lookup fields (concat "talentCrownMat" @index)) wrapper="td"}}
+                      {{> renderItemField item=item field=(lookup fields (concat "talentMoraMat" @index)) wrapper="td"}}
                     </tr>
                   {{/times}}
                 </tbody>

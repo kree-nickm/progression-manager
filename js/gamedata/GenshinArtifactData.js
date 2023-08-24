@@ -122,8 +122,10 @@ export default {
             "proc",
             [
                 "stat",
-                "elemental_res_",
-                30
+                [
+                    "elemental_res_",
+                    30
+                ]
             ]
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/68\/Item_Tiny_Miracle%27s_Flower.png",
@@ -152,8 +154,10 @@ export default {
             "proc",
             [
                 "stat",
-                "critRate_",
-                24
+                [
+                    "critRate_",
+                    24
+                ]
             ]
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c1\/Item_Berserker%27s_Rose.png",
@@ -232,6 +236,9 @@ export default {
             ]
         ],
         "bonus4": "For each different element present in your own party, the wearer's Elemental RES to that corresponding element is increased by 30%.",
+        "bonus4code": [
+            "custom"
+        ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/63\/Item_Guardian%27s_Flower.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/ff\/Item_Guardian%27s_Sigil.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/51\/Item_Guardian%27s_Clock.png",
@@ -258,8 +265,10 @@ export default {
             "proc",
             [
                 "stat",
-                "dmg_",
-                30
+                [
+                    "dmg_",
+                    30
+                ]
             ]
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9e\/Item_Medal_of_the_Brave.png",
@@ -390,6 +399,16 @@ export default {
             ]
         ],
         "bonus4": "Upon obtaining an Elemental Shard created through a Crystallize Reaction, all party members gain 35% DMG Bonus for that particular element for 10s. Only one form of Elemental DMG Bonus can be gained in this manner at any one time.",
+        "bonus4code": [
+            "proc",
+            [
+                "stat",
+                [
+                    "elemental_dmg_",
+                    35
+                ]
+            ]
+        ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9f\/Item_Flower_of_Creviced_Cliff.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a5\/Item_Feather_of_Jagged_Peaks.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1d\/Item_Sundial_of_Enduring_Jade.png",
@@ -404,7 +423,27 @@ export default {
         "goblet": "Summer Night's Waterballoon",
         "circlet": "Summer Night's Mask",
         "bonus2": "Increases Shield Strength by 35%.",
+        "bonus2code": [
+            "stat",
+            [
+                "shield_",
+                35
+            ]
+        ],
         "bonus4": "While protected by a shield, gain an additional 40% Normal and Charged Attack DMG.",
+        "bonus4code": [
+            "proc",
+            [
+                "stat",
+                [
+                    [
+                        "normal_dmg_",
+                        "charged_dmg_"
+                    ],
+                    40
+                ]
+            ]
+        ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a6\/Item_Summer_Night%27s_Bloom.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ec\/Item_Summer_Night%27s_Finale.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/34\/Item_Summer_Night%27s_Moment.png",
@@ -427,6 +466,16 @@ export default {
             ]
         ],
         "bonus4": "Increases DMG against opponents affected by Pyro by 35%.",
+        "bonus4code": [
+            "proc",
+            [
+                "stat",
+                [
+                    "dmg_",
+                    35
+                ]
+            ]
+        ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b5\/Item_Lavawalker%27s_Resolution.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0a\/Item_Lavawalker%27s_Salvation.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3f\/Item_Lavawalker%27s_Torment.png",
@@ -449,6 +498,39 @@ export default {
             ]
         ],
         "bonus4": "Increases Overloaded and Burning, and Burgeon DMG by 40%. Increases Vaporize and Melt DMG by 15%. Using Elemental Skill increases the 2-Piece Set Bonus by 50% of its starting value for 10s. Max 3 stacks.",
+        "bonus4code": [
+            [
+                "stat",
+                [
+                    [
+                        "overloaded_dmg_",
+                        "burning_dmg_"
+                    ],
+                    40
+                ]
+            ],
+            [
+                "stat",
+                [
+                    [
+                        "vaporize_dmg_",
+                        "melt_dmg_"
+                    ],
+                    15
+                ]
+            ],
+            [
+                "proc",
+                [
+                  "stat",
+                  [
+                      "pyro_dmg_",
+                      7.5
+                  ]
+                ],
+                3
+            ]
+        ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0f\/Item_Witch%27s_Flower_of_Blaze.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b3\/Item_Witch%27s_Ever-Burning_Plume.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/14\/Item_Witch%27s_End_Time.png",
@@ -471,6 +553,17 @@ export default {
             ]
         ],
         "bonus4": "When a character attacks an opponent affected by Cryo, their CRIT Rate is increased by 20%. If the opponent is Frozen, CRIT Rate is increased by an additional 20%.",
+        "bonus4code": [
+            "proc",
+            [
+                "stat",
+                [
+                    "critRate_",
+                    20
+                ]
+            ],
+            2
+        ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/69\/Item_Snowswept_Memory.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d6\/Item_Icebreaker%27s_Resolve.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/58\/Item_Frozen_Homeland%27s_Demise.png",
@@ -493,6 +586,16 @@ export default {
             ]
         ],
         "bonus4": "Increases DMG against opponents affected by Electro by 35%.",
+        "bonus4code": [
+            "proc",
+            [
+                "stat",
+                [
+                    "dmg_",
+                    35
+                ]
+            ]
+        ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ef\/Item_Thundersoother%27s_Heart.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cb\/Item_Thundersoother%27s_Plume.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b7\/Item_Hour_of_Soothing_Thunder.png",
@@ -657,6 +760,27 @@ export default {
             ]
         ],
         "bonus4": "Increases DMG caused by Overloaded, Electro-Charged, Superconduct, and Hyperbloom by 40%, and the DMG Bonus conferred by Aggravate is increased by 20%. When Quicken or the aforementioned Elemental Reactions are triggered, Elemental Skill CD is decreased by 1s. Can only occur once every 0.8s.",
+        "bonus4code": [
+            [
+                "stat",
+                [
+                    [
+                        "overloaded_dmg_",
+                        "electrocharged_dmg_",
+                        "superconduct_dmg_",
+                        "hyperbloom_dmg_"
+                    ],
+                    40
+                ]
+            ],
+            [
+                "stat",
+                [
+                    "aggravate_dmg_",
+                    20
+                ]
+            ]
+        ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/57\/Item_Thunderbird%27s_Mercy.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e9\/Item_Survivor_of_Catastrophe.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/94\/Item_Hourglass_of_Thunder.png",
@@ -682,7 +806,7 @@ export default {
         "bonus4code": [
             "proc",
             [
-                "stat",
+                "pstat",
                 [
                     "atk_",
                     20
@@ -743,6 +867,19 @@ export default {
             ]
         ],
         "bonus4": "After using an Elemental Skill, increases Normal Attack and Charged Attack DMG by 30% for 15s.",
+        "bonus4code": [
+            "proc",
+            [
+                "stat",
+                [
+                    [
+                        "normal_dmg_",
+                        "charged_dmg_"
+                    ],
+                    30
+                ]
+            ]
+        ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/40\/Item_Gilded_Corsage.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/92\/Item_Gust_of_Nostalgia.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/83\/Item_Copper_Compass.png",
@@ -765,6 +902,25 @@ export default {
             ]
         ],
         "bonus4": "When an Elemental Skill hits an opponent, the ATK of all nearby party members is increased by 20% and their Shield Strength is increased by 30% for 3s. This effect can be triggered once every 0.5s. This effect can still be triggered even when the character who is using this artifact set is not on the field.",
+        "bonus4code": [
+            "proc",
+            [
+              [
+                  "stat",
+                  [
+                      "atk_",
+                      20
+                  ]
+              ],
+              [
+                  "stat",
+                  [
+                      "shield_",
+                      30
+                  ]
+              ]
+            ]
+        ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/51\/Item_Flower_of_Accolades.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/86\/Item_Ceremonial_War-Plume.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/92\/Item_Orichalceous_Time-Dial.png",
@@ -787,6 +943,23 @@ export default {
             ]
         ],
         "bonus4": "When an Elemental Skill hits an opponent, ATK is increased by 9% for 7s. This effect stacks up to 2 times and can be triggered once every 0.3s. Once 2 stacks are reached, the 2-set effect is increased by 100%.",
+        "bonus4code": [
+            [
+              "proc",
+              [
+                  "atk_",
+                  9
+              ],
+              2
+            ],
+            [
+              "proc",
+              [
+                  "physical_dmg_",
+                  25
+              ]
+            ]
+        ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e7\/Item_Stainless_Bloom.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e8\/Item_Wise_Doctor%27s_Pinion.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/85\/Item_Moment_of_Cessation.png",
@@ -809,6 +982,20 @@ export default {
             ]
         ],
         "bonus4": "When casting an Elemental Skill, if the character has 15 or more Energy, they lose 15 Energy and Normal\/Charged\/Plunging Attack DMG is increased by 50% for 10s. This effect will not trigger again during that duration.",
+        "bonus4code": [
+            "proc",
+            [
+                "stat",
+                [
+                    [
+                        "normal_dmg_",
+                        "charged_dmg_",
+                        "plunging_dmg_"
+                    ],
+                    50
+                ]
+            ]
+        ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c2\/Item_Entangling_Bloom.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/41\/Item_Shaft_of_Remembrance.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/92\/Item_Morning_Dew%27s_Moment.png",
@@ -832,16 +1019,7 @@ export default {
         ],
         "bonus4": "Increases Elemental Burst DMG by 25% of Energy Recharge. A maximum of 75% bonus DMG can be obtained in this way.",
         "bonus4code": [
-            "stat",
-            [
-                "burst_dmg_",
-                [
-                    "%ofOther",
-                    "enerRech_",
-                    0.25,
-                    75
-                ]
-            ]
+            "custom"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/53\/Item_Magnificent_Tsuba.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d6\/Item_Sundered_Feather.png",
@@ -864,7 +1042,21 @@ export default {
                 30
             ]
         ],
-        "bonus4": "A character equipped with this Artifact set will obtain the Curiosity effect in the following conditions:When on the field, the character gains 1 stack after hitting an opponent with a Geo attack, triggering a maximum of once every 0.3s.When off the field, the character gains 1 stack every 3s.Curiosity can stack up to 4 times, each providing 6% DEF and a 6% Geo DMG Bonus.When 6 seconds pass without gaining a Curiosity stack, 1 stack is lost.",
+        "bonus4": "A character equipped with this Artifact set will obtain the Curiosity effect in the following conditions: When on the field, the character gains 1 stack after hitting an opponent with a Geo attack, triggering a maximum of once every 0.3s. When off the field, the character gains 1 stack every 3s. Curiosity can stack up to 4 times, each providing 6% DEF and a 6% Geo DMG Bonus. When 6 seconds pass without gaining a Curiosity stack, 1 stack is lost.",
+        "bonus4code": [
+            "proc",
+            [
+                "stat",
+                [
+                    [
+                        "def_",
+                        "geo_dmg_"
+                    ],
+                    6
+                ]
+            ],
+            4
+        ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2b\/Item_Bloom_Times.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2d\/Item_Plume_of_Luxury.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4f\/Item_Song_of_Life.png",
@@ -908,7 +1100,30 @@ export default {
                 18
             ]
         ],
-        "bonus4": "After using an Elemental Burst. this character will gain the Nascent Light effect, increasing their ATK by 8% for 16s. When the character's HP decreases, their ATK will further increase by 10%. This increase can occur this way maximum of 4 times. This effect can be triggered once every 0.8s. Nascent Light will be dispelled when the character leaves the field. If an Elemental Burst is used again during the duration of Nascent Light, the original Nascent Light will be dispelled.",
+        "bonus4": "After using an Elemental Burst, this character will gain the Nascent Light effect, increasing their ATK by 8% for 16s. When the character's HP decreases, their ATK will further increase by 10%. This increase can occur this way maximum of 4 times. This effect can be triggered once every 0.8s. Nascent Light will be dispelled when the character leaves the field. If an Elemental Burst is used again during the duration of Nascent Light, the original Nascent Light will be dispelled.",
+        "bonus4code": [
+            [
+                "proc",
+                [
+                    "stat",
+                    [
+                        "atk_",
+                        8
+                    ]
+                ]
+            ],
+            [
+                "proc",
+                [
+                    "stat",
+                    [
+                        "atk_",
+                        10
+                    ]
+                ],
+                4
+            ]
+        ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/11\/Item_Flowering_Life.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a7\/Item_Feather_of_Nascent_Light.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/12\/Item_Solar_Relic.png",
@@ -953,6 +1168,16 @@ export default {
             ]
         ],
         "bonus4": "After Elemental Skills or Bursts hit opponents, the targets' Dendro RES will be decreased by 30% for 8s. This effect can be triggered even if the equipping character is not on the field.",
+        "bonus4code": [
+            "proc",
+            [
+                "estat",
+                [
+                    "dendro_res_",
+                    -30
+                ]
+            ]
+        ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ab\/Item_Labyrinth_Wayfarer.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0f\/Item_Scholar_of_Vines.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7c\/Item_A_Time_of_Insight.png",
@@ -975,6 +1200,30 @@ export default {
             ]
         ],
         "bonus4": "Within 8s of triggering an Elemental Reaction, the character equipping this will obtain buffs based on the Elemental Type of the other party members. ATK is increased by 14% for each party member whose Elemental Type is the same as the equipping character, and Elemental Mastery is increased by 50 for every party member with a different Elemental Type. Each of the aforementioned buffs will count up to 3 characters. This effect can be triggered once every 8s. The character who equips this can still trigger its effects when not on the field.",
+        "bonus4code": [
+            [
+                "proc",
+                [
+                    "stat",
+                    [
+                        "atk_",
+                        14
+                    ]
+                ],
+                3
+            ],
+            [
+                "proc",
+                [
+                    "stat",
+                    [
+                        "eleMas",
+                        50
+                    ]
+                ],
+                3
+            ]
+        ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0c\/Item_Dreaming_Steelbloom.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1b\/Item_Feather_of_Judgment.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/92\/Item_The_Sunken_Years.png",
@@ -997,6 +1246,20 @@ export default {
             ]
         ],
         "bonus4": "When Charged Attacks hit opponents, the equipping character's Normal Attack SPD will increase by 10% while Normal, Charged, and Plunging Attack DMG will increase by 40% for 15s.",
+        "bonus4code": [
+            "proc",
+            [
+                "stat",
+                [
+                    [
+                        "normal_dmg_",
+                        "charged_dmg_",
+                        "plunging_dmg_"
+                    ],
+                    40
+                ]
+            ]
+        ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/01\/Item_The_First_Days_of_the_City_of_Kings.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/49\/Item_End_of_the_Golden_Realm.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/45\/Item_Timepiece_of_the_Lost_Path.png",
@@ -1019,6 +1282,34 @@ export default {
             ]
         ],
         "bonus4": "The equipping character's Bloom, Hyperbloom, and Burgeon reaction DMG are increased by 40%. Additionally, after the equipping character triggers Bloom, Hyperbloom, or Burgeon, they will gain another 25% bonus to the effect mentioned prior. Each stack of this lasts 10s. Max 4 stacks simultaneously. This effect can only be triggered once per second. The character who equips this can still trigger its effects when not on the field.",
+        "bonus4code": [
+            [
+                "stat",
+                [
+                    [
+                        "bloom_dmg_",
+                        "hyperbloom_dmg_",
+                        "burgeon_dmg_"
+                    ],
+                    40
+                ]
+            ],
+            [
+                "proc",
+                [
+                    "stat",
+                    [
+                        [
+                            "bloom_dmg_",
+                            "hyperbloom_dmg_",
+                            "burgeon_dmg_"
+                        ],
+                        25
+                    ]
+                ],
+                4
+            ]
+        ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8f\/Item_Ay-Khanoum%27s_Myriad.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f1\/Item_Wilting_Feast.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/33\/Item_A_Moment_Congealed.png",
@@ -1041,6 +1332,26 @@ export default {
             ]
         ],
         "bonus4": "After Normal, Charged, and Plunging Attacks, Elemental Skills, and Elemental Bursts hit opponents. 1 stack of Mirrored Nymph will triggered, lasting 8s. When under the effect of 1, 2, or 3 or more Mirrored Nymph stacks, ATK will be increased by 7%\/16%\/25%, and Hydro DMG will be increased by 4%\/9%\/15% Mirrored Nymph created by Normal, Charged, and Plunging Attacks, Elemental Skills, and Elemental Bursts exist independently.",
+        "bonus4code": [
+            "proc",
+            [
+                [
+                    "stat",
+                    [
+                        "atk_",
+                        8.3333333
+                    ]
+                ],
+                [
+                    "stat",
+                    [
+                        "hydro_dmg_",
+                        5
+                    ]
+                ]
+            ],
+            3
+        ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7b\/Item_Odyssean_Flower.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ea\/Item_Wicked_Mage%27s_Plumule.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/66\/Item_Nymph%27s_Constancy.png",
@@ -1063,6 +1374,32 @@ export default {
             ]
         ],
         "bonus4": "Elemental Skill and Elemental Burst DMG will be increased by 10%. After the equipping character takes DMG, the aforementioned DMG Bonus is increased by 80% for 5s. This effect increase can have 5 stacks. The duration of each stack is counted independently. These effects can be triggered even when the equipping character is not on the field.",
+        "bonus4code": [
+            [
+                "stat",
+                [
+                    [
+                        "skill_dmg_",
+                        "burst_dmg_"
+                    ],
+                    10
+                ]
+            ],
+            [
+                "proc",
+                [
+                    "stat",
+                    [
+                        [
+                            "skill_dmg_",
+                            "burst_dmg_"
+                        ],
+                        8
+                    ]
+                ],
+                5
+            ]
+        ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c5\/Item_Stamen_of_Khvarena%27s_Origin.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/09\/Item_Vibrant_Pinion.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d4\/Item_Ancient_Abscission.png",
@@ -1087,12 +1424,23 @@ export default {
                 15
             ]
         ],
-        "bonus4": "When current HP increases or decreases, CRIT Rate will be increased by 12% for 5s. Max 3 stacks. ",
-        "flowerImg": "https://static.wikia.nocookie.net/gensin-impact/images/9/96/Item_Marechaussee_Hunter_Flower.png",
-        "plumeImg": "https://static.wikia.nocookie.net/gensin-impact/images/9/96/Item_Marechaussee_Hunter_Flower.png",
-        "sandsImg": "https://static.wikia.nocookie.net/gensin-impact/images/9/96/Item_Marechaussee_Hunter_Flower.png",
-        "gobletImg": "https://static.wikia.nocookie.net/gensin-impact/images/9/96/Item_Marechaussee_Hunter_Flower.png",
-        "circletImg": "https://static.wikia.nocookie.net/gensin-impact/images/9/96/Item_Marechaussee_Hunter_Flower.png"
+        "bonus4": "When current HP increases or decreases, CRIT Rate will be increased by 12% for 5s. Max 3 stacks.",
+        "bonus4code": [
+            "proc",
+            [
+                "stat",
+                [
+                    "critRate_",
+                    12
+                ]
+            ],
+            3
+        ],
+        "flowerImg": "https://static.wikia.nocookie.net/gensin-impact/images/8/8d/Item_Hunter's_Brooch.png",
+        "plumeImg": "https://static.wikia.nocookie.net/gensin-impact/images/1/1b/Item_Masterpiece's_Overture.png",
+        "sandsImg": "https://static.wikia.nocookie.net/gensin-impact/images/2/25/Item_Moment_of_Judgment.png",
+        "gobletImg": "https://static.wikia.nocookie.net/gensin-impact/images/3/3b/Item_Forgotten_Vessel.png",
+        "circletImg": "https://static.wikia.nocookie.net/gensin-impact/images/c/c3/Item_Veteran's_Visage.png"
     },
     "GoldenTroupe": {
         "name": "Golden Troupe",
@@ -1111,16 +1459,28 @@ export default {
         ],
         "bonus4": "Increases Elemental Skill DMG by 25%. Additionally, when not on the field, Elemental Skill DMG will be further increased by 25%. This effect will be cleared 2s after taking the field. ",
         "bonus4code": [
-            "stat",
             [
-                "skill_dmg_",
-                25
+                "stat",
+                [
+                    "skill_dmg_",
+                    25
+                ]
+            ],
+            [
+                "proc",
+                [
+                    "stat",
+                    [
+                        "skill_dmg_",
+                        25
+                    ]
+                ]
             ]
         ],
-        "flowerImg": "https://static.wikia.nocookie.net/gensin-impact/images/6/6a/Item_Golden_Troupe_Flower.png",
-        "plumeImg": "https://static.wikia.nocookie.net/gensin-impact/images/6/6a/Item_Golden_Troupe_Flower.png",
-        "sandsImg": "https://static.wikia.nocookie.net/gensin-impact/images/6/6a/Item_Golden_Troupe_Flower.png",
-        "gobletImg": "https://static.wikia.nocookie.net/gensin-impact/images/6/6a/Item_Golden_Troupe_Flower.png",
-        "circletImg": "https://static.wikia.nocookie.net/gensin-impact/images/6/6a/Item_Golden_Troupe_Flower.png"
+        "flowerImg": "https://static.wikia.nocookie.net/gensin-impact/images/4/4d/Item_Golden_Song's_Variation.png",
+        "plumeImg": "https://static.wikia.nocookie.net/gensin-impact/images/8/83/Item_Golden_Bird's_Shedding.png",
+        "sandsImg": "https://static.wikia.nocookie.net/gensin-impact/images/b/b3/Item_Golden_Era's_Prelude.png",
+        "gobletImg": "https://static.wikia.nocookie.net/gensin-impact/images/0/0b/Item_Golden_Night's_Bustle.png",
+        "circletImg": "https://static.wikia.nocookie.net/gensin-impact/images/f/f6/Item_Golden_Troupe's_Reward.png"
     }
 };

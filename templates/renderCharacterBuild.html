@@ -47,8 +47,8 @@
     </select>
     
     <hr/>
-    <h3>Artifact Stat Priorities</h3>
-    <div class="row">
+    <h3 class="collapsed" data-bs-toggle="collapse" href="#artifactStatPriorities">Artifact Stat Priorities</h3>
+    <div id="artifactStatPriorities" class="collapse row">
         <div class="col-6">
             <h4>Substats</h4>
           {{> renderCharacterBuildSlider . type="artifactSubstats" statId="hp" value=relatedItems.buildData.artifactSubstats.hp}}
@@ -110,5 +110,5 @@
     
     <hr/>
     <h3>Best Artifacts That You Have</h3>
-  {{> renderCharacterArtifactLists .}}
+  {{> renderCharacterArtifactLists . placeholder=1}}
 </div>

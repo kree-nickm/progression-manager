@@ -55,7 +55,10 @@ export default class Character extends GenshinItem
   
   afterLoad()
   {
-    this.MaterialList = {crown: this.list.viewer.lists.MaterialList.get("CrownOfInsight")};
+    this.MaterialList = {
+      crown: this.list.viewer.lists.MaterialList.get("CrownOfInsight"),
+      mora: this.list.viewer.lists.MaterialList.get("Mora"),
+    };
     if(GenshinCharacterData[this.key])
     {
       this.loaded = true;
@@ -349,6 +352,8 @@ export default class Character extends GenshinItem
       return this.MaterialList.flower;
     else if(type == "enemy")
       return this.MaterialList.enemy[this.getPhase(ascension).ascendMatEnemyQuality];
+    else if(type == "mora")
+      return this.MaterialList.mora;
     else
       return null;
   }
@@ -363,6 +368,8 @@ export default class Character extends GenshinItem
       return this.getPhase(ascension).ascendMatFlowerCount;
     else if(type == "enemy")
       return this.getPhase(ascension).ascendMatEnemyCount;
+    else if(type == "mora")
+      return this.getPhase(ascension).ascendMoraCost;
     else
       return 0;
   }
@@ -378,8 +385,13 @@ export default class Character extends GenshinItem
       return this.MaterialList.trounce;
     else if(type == "crown")
       return this.MaterialList.crown;
+    else if(type == "mora")
+      return this.MaterialList.mora;
     else
+    {
+      console.warn(`Invalid talent mat type '${type}'.`);
       return null;
+    }
   }
   
   getTalentMatType(type, talent)
@@ -392,6 +404,8 @@ export default class Character extends GenshinItem
       return this.loaded ? GenshinCharacterData[this.key].matTrounce : "";
     else if(type == "crown")
       return "Crown";
+    else if(type == "mora")
+      return "Mora";
     else
       return "";
   }
@@ -409,6 +423,7 @@ export default class Character extends GenshinItem
       this.getMat('boss').update("count", this.getMat('boss').count - this.getMatCost('boss'));
     this.getMat('flower').update("count", this.getMat('flower').count - this.getMatCost('flower'));
     this.getMat('enemy').update("count", this.getMat('enemy').count - this.getMatCost('enemy'));
+    this.getMat('mora').update("count", this.getMat('mora').count - this.getMatCost('mora'));
     if(this.level < this.levelCap)
       this.update("level", this.levelCap);
     this.update("ascension", this.ascension+1);
@@ -422,12 +437,14 @@ export default class Character extends GenshinItem
       return this.getMat('gem').getCraftCount() >= this.getMatCost('gem') &&
         (!this.getMat('boss') || this.getMat('boss').getCraftCount() >= this.getMatCost('boss')) &&
         this.getMat('flower').getCraftCount() >= this.getMatCost('flower') &&
-        this.getMat('enemy').getCraftCount() >= this.getMatCost('enemy');
+        this.getMat('enemy').getCraftCount() >= this.getMatCost('enemy') &&
+        this.getMat('mora').getCraftCount() >= this.getMatCost('mora');
     else
       return this.getMat('gem').count >= this.getMatCost('gem') &&
         (!this.getMat('boss') || this.getMat('boss').count >= this.getMatCost('boss')) &&
         this.getMat('flower').count >= this.getMatCost('flower') &&
-        this.getMat('enemy').count >= this.getMatCost('enemy');
+        this.getMat('enemy').count >= this.getMatCost('enemy') &&
+        this.getMat('mora').count >= this.getMatCost('mora');
   }
   
   upTalent(talent, event)
@@ -442,6 +459,7 @@ export default class Character extends GenshinItem
     this.getTalentMat('enemy',talent).update("count", this.getTalentMat('enemy',talent).count - this.getTalent(talent).matEnemyCount);
     this.MaterialList.trounce.update("count", this.MaterialList.trounce.count - this.getTalent(talent).matTrounceCount);
     this.MaterialList.crown.update("count", this.MaterialList.crown.count - this.getTalent(talent).matCrownCount);
+    this.MaterialList.mora.update("count", this.MaterialList.mora.count - this.getTalent(talent).matMoraCount);
     this.update(["talent", talent], this.talent[talent]+1);
   }
   
@@ -453,12 +471,14 @@ export default class Character extends GenshinItem
       return this.getTalentMat('mastery',talent).getCraftCount() >= this.getTalent(talent).matDomainCount &&
         this.getTalentMat('enemy',talent).getCraftCount() >= this.getTalent(talent).matEnemyCount &&
         this.MaterialList.trounce.getCraftCount() >= this.getTalent(talent).matTrounceCount &&
-        this.MaterialList.crown.getCraftCount() >= this.getTalent(talent).matCrownCount;
+        this.MaterialList.crown.getCraftCount() >= this.getTalent(talent).matCrownCount &&
+        this.MaterialList.mora.getCraftCount() >= this.getTalent(talent).matMoraCount;
     else
       return this.getTalentMat('mastery',talent).count >= this.getTalent(talent).matDomainCount &&
         this.getTalentMat('enemy',talent).count >= this.getTalent(talent).matEnemyCount &&
         this.MaterialList.trounce.count >= this.getTalent(talent).matTrounceCount &&
-        this.MaterialList.crown.count >= this.getTalent(talent).matCrownCount;
+        this.MaterialList.crown.count >= this.getTalent(talent).matCrownCount &&
+        this.MaterialList.mora.count >= this.getTalent(talent).matMoraCount;
   }
   
   getStat(stat, alternates=null)
@@ -516,6 +536,25 @@ export default class Character extends GenshinItem
     return result;
   }
   
+  /**
+  bonus#code is an array.
+    If element 0 is a string, then the array is a command. [0] is the command name and [1] is an array of arguments (unless the command name is 'proc' or 'custom').
+    If element 0 is an array, then the array is multiple commands, and we iterate through them as if they were bonus#code.
+  Valid commands are:
+    stat: 2 arguments, increase a stat
+      1: a string stat id, or an array of string stat ids for multiple stats.
+      2: amount to increase the stat by.
+    pstat: 2 arguments, increase a stat for entire party
+      1: a string stat id, or an array of string stat ids for multiple stats.
+      2: amount to increase the stat by.
+    sstat: 3 arguments, increase a stat but only for specific usages
+      1: specifier for the situation the bonus applies
+      2: a string stat id, or an array of string stat ids for multiple stats.
+      3: amount to increase the stat by.
+    estat: 2 arguments, increase (or decrease) a stat for enemies
+      1: a string stat id, or an array of string stat ids for multiple stats.
+      2: amount to increase the stat by (negative to decrease).
+  */
   getSetBonus(alternates)
   {
     let sets = {};
@@ -584,7 +623,9 @@ export default class Character extends GenshinItem
   {
     if(this.loaded)
     {
-      let builds = this.list.viewer.buildData[this.key] ?? {};
+      if(!this.list.viewer.buildData[this.key])
+        this.list.viewer.buildData[this.key] = {};
+      let builds = this.list.viewer.buildData[this.key];
       if(!builds.default)
         builds.default = {};
       for(let b in builds)
@@ -951,9 +992,17 @@ export default class Character extends GenshinItem
       return false;
     }
     
+    /** Load Artifacts Button **/
+    let loadBtn = document.getElementById("loadArtifacts");
+    if(loadBtn && !loadBtn.onclick)
+      loadBtn.onclick = event => {
+        Renderer.rerender(characterArtifacts, {relatedItems:this.getRelatedItems(buildId)});
+      };
+      
+    
     /** Equip Artifact Button **/
     let showFavoritesToggle = document.getElementById("artifactsFilterFavorites");
-    if(!showFavoritesToggle.onchange)
+    if(showFavoritesToggle && !showFavoritesToggle.onchange)
     {
       showFavoritesToggle.onchange = event => {
         if(event.target.checked)

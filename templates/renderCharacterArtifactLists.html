@@ -1,5 +1,8 @@
 <div class="character-artifacts" data-template="renderCharacterArtifactLists" data-uuid="{{uuid item}}">
-    <input id="artifactsFilterFavorites" type="checkbox" title="Only show favorite artifact sets."/>
+  {{#if placeholder}}
+    <button id="loadArtifacts" class="btn btn-primary">Load Artifacts</button>
+  {{else}}
+    <label for="artifactsFilterFavorites" title="Only show favorite artifact sets."><input id="artifactsFilterFavorites" type="checkbox"/> Filter Sets</label>
     <div class="row">
         <h4 class="col">Flower</h4>
         <h4 class="col">Plume</h4>
@@ -14,4 +17,5 @@
       {{> renderListAsColumn filter="goblet" params=(array relatedItems.buildName) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.goblet fields=relatedItems.artifactFields}}
       {{> renderListAsColumn filter="circlet" params=(array relatedItems.buildName) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.circlet fields=relatedItems.artifactFields}}
     </div>
+  {{/if}}
 </div>

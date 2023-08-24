@@ -1,6 +1,6 @@
 export default {
   '1': {
-    moraCost: 12500,
+    matMoraCount: 12500,
     matEnemyCount: 6,
     matEnemyQuality: 1,
     matDomainCount: 3,
@@ -9,7 +9,7 @@ export default {
     matCrownCount: 0,
   },
   '2': {
-    moraCost: 17500,
+    matMoraCount: 17500,
     matEnemyCount: 3,
     matEnemyQuality: 2,
     matDomainCount: 2,
@@ -18,7 +18,7 @@ export default {
     matCrownCount: 0,
   },
   '3': {
-    moraCost: 25000,
+    matMoraCount: 25000,
     matEnemyCount: 4,
     matEnemyQuality: 2,
     matDomainCount: 4,
@@ -27,7 +27,7 @@ export default {
     matCrownCount: 0,
   },
   '4': {
-    moraCost: 30000,
+    matMoraCount: 30000,
     matEnemyCount: 6,
     matEnemyQuality: 2,
     matDomainCount: 6,
@@ -36,7 +36,7 @@ export default {
     matCrownCount: 0,
   },
   '5': {
-    moraCost: 37500,
+    matMoraCount: 37500,
     matEnemyCount: 9,
     matEnemyQuality: 2,
     matDomainCount: 9,
@@ -45,7 +45,7 @@ export default {
     matCrownCount: 0,
   },
   '6': {
-    moraCost: 120000,
+    matMoraCount: 120000,
     matEnemyCount: 4,
     matEnemyQuality: 3,
     matDomainCount: 4,
@@ -54,7 +54,7 @@ export default {
     matCrownCount: 0,
   },
   '7': {
-    moraCost: 260000,
+    matMoraCount: 260000,
     matEnemyCount: 6,
     matEnemyQuality: 3,
     matDomainCount: 6,
@@ -63,7 +63,7 @@ export default {
     matCrownCount: 0,
   },
   '8': {
-    moraCost: 450000,
+    matMoraCount: 450000,
     matEnemyCount: 9,
     matEnemyQuality: 3,
     matDomainCount: 12,
@@ -72,7 +72,7 @@ export default {
     matCrownCount: 0,
   },
   '9': {
-    moraCost: 700000,
+    matMoraCount: 700000,
     matEnemyCount: 12,
     matEnemyQuality: 3,
     matDomainCount: 16,
@@ -81,7 +81,7 @@ export default {
     matCrownCount: 1,
   },
   '10': {
-    moraCost: 0,
+    matMoraCount: 0,
     matEnemyCount: 0,
     matEnemyQuality: 3,
     matDomainCount: 0,

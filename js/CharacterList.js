@@ -170,6 +170,8 @@ export default class CharacterList extends GenshinList
       'boss': `<i class="fa-solid fa-spaghetti-monster-flying"></i>`,
       'flower': `<i class="fa-solid fa-fan"></i>`,
       'enemy': `<i class="fa-solid fa-skull"></i>`,
+      'Mora': `<i class="fa-solid fa-coins"></i>`,
+      'mora': `<i class="fa-solid fa-coins"></i>`,
     };
     for(let i of ["auto","skill","burst"])
     {
@@ -226,6 +228,7 @@ export default class CharacterList extends GenshinList
       {t:"boss",l:"World Boss Drops"},
       {t:"flower",l:"Flora"},
       {t:"enemy",l:"Enemy Drops"},
+      {t:"mora",l:"Mora"},
     ];
     let ascGroup = {label:"Ascension Materials"};
     for(let phase of [undefined,0,1,2,3,4,5])
@@ -249,7 +252,7 @@ export default class CharacterList extends GenshinList
               return o*A.localeCompare(B);
           }} : undefined,
           columnClasses: ["ascension-materials"],
-          tags: isNaN(phase) ? undefined : ["detailsOnly"],
+          tags: isNaN(phase) & mat.l != "Mora" ? undefined : ["detailsOnly"],
           dynamic: true,
           value: item => item.getMat(mat.t,phase) && item.getMatCost(mat.t,phase) ? item.getMat(mat.t,phase).getFieldValue(item.getMatCost(mat.t,phase), this.viewer.settings.preferences.listDisplay=='1') : "",
           dependencies: item => [
@@ -296,7 +299,7 @@ export default class CharacterList extends GenshinList
     let talGroup = {label:"Talent Materials", startCollapsed:true};
     for(let i of ["auto","skill","burst",1,2,3,4,5,6,7,8,9])
     {
-      for(let m of [{l:"Mastery",d:"Domain"},{l:"Enemy",d:"Enemy"},{l:"Trounce",d:"Trounce"},{l:"Crown",d:"Crown"}])
+      for(let m of [{l:"Mastery",d:"Domain"},{l:"Enemy",d:"Enemy"},{l:"Trounce",d:"Trounce"},{l:"Crown",d:"Crown"},{l:"Mora",d:"Mora"}])
       {
         let talentMat = this.display.addField(isNaN(i) ? i+m.l+"Mat" : "talent"+m.l+"Mat"+i, {
           group: talGroup,
@@ -315,7 +318,7 @@ export default class CharacterList extends GenshinList
               return o*A.localeCompare(B);
           }} : undefined,
           columnClasses: [(isNaN(i)?i:"talent")+'-'+m.l.toLowerCase()],
-          tags: isNaN(i) & m.l != "Trounce" && m.l != "Crown" ? undefined : ["detailsOnly"],
+          tags: isNaN(i) & m.l != "Trounce" && m.l != "Crown" && m.l != "Mora" ? undefined : ["detailsOnly"],
           dynamic: true,
           value: item => item.getTalentMat(m.l.toLowerCase(),i) && item.getTalent(i)['mat'+m.d+'Count'] ? item.getTalentMat(m.l.toLowerCase(),i).getFieldValue(item.getTalent(i)['mat'+m.d+'Count'], this.viewer.settings.preferences.listDisplay=='1') : "",
           title: item => item.getTalentMat(m.l.toLowerCase(),i).getFullSource(),
@@ -587,6 +590,9 @@ export default class CharacterList extends GenshinList
     let geo = this.get("TravelerGeo");
     let electro = this.get("TravelerElectro");
     let dendro = this.get("TravelerDendro");
+    let hydro = this.get("TravelerHydro");
+    //let pyro = this.get("TravelerPyro");
+    //let cryo = this.get("TravelerCryo");
     
     if(!base)
     {
@@ -613,13 +619,31 @@ export default class CharacterList extends GenshinList
       dendro = Traveler.fromJSON({__class__:"Traveler",key:"TravelerDendro"}, {addProperties:{list:this}});
       this.update("list", dendro, "push");
     }
+    if(!hydro)
+    {
+      hydro = Traveler.fromJSON({__class__:"Traveler",key:"TravelerHydro"}, {addProperties:{list:this}});
+      this.update("list", hydro, "push");
+    }
+    /*if(!pyro)
+    {
+      pyro = Traveler.fromJSON({__class__:"Traveler",key:"TravelerPyro"}, {addProperties:{list:this}});
+      this.update("list", pyro, "push");
+    }*/
+    /*if(!cryo)
+    {
+      cryo = Traveler.fromJSON({__class__:"Traveler",key:"TravelerCryo"}, {addProperties:{list:this}});
+      this.update("list", cryo, "push");
+    }*/
     
     anemo.base = base;
     geo.base = base;
     electro.base = base;
     dendro.base = base;
+    hydro.base = base;
+    //pyro.base = base;
+    //cryo.base = base;
     
-    base.variants = [anemo,geo,electro,dendro];
+    base.variants = [anemo,geo,electro,dendro,hydro/*,pyro,cyro*/];
   }
   
   fromGOOD(goodData)

@@ -130,7 +130,8 @@ export default class MaterialList extends GenshinList
     
     // Flora mats
     for(let c in GenshinCharacterData)
-      this.addGOOD({goodKey:GenshinCharacterData[c].matFlower, goodValue:0}).update("type", "flora");
+      if(GenshinCharacterData[c].matFlower)
+        this.addGOOD({goodKey:GenshinCharacterData[c].matFlower, goodValue:0}).update("type", "flora");
     
     this.addGOOD({goodKey:"Mora", goodValue:0}).update("type", "mora");
   }

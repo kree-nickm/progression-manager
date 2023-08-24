@@ -126,6 +126,33 @@ export default class Traveler extends Character
       ];
       this.MaterialList.trounce = this.list.viewer.lists.MaterialList.get("Mudra Of The Malefic General");
     }
+    else if(this.key.endsWith("Hydro"))
+    {
+      this._element = "Hydro";
+      this._talentEnemyMatType = "Fontemer Aberrants";
+      this._talentMasteryMatTypes = ["Equity","Justice","Order"];
+      this.MaterialList.talentEnemy = {
+        '1': this.list.viewer.lists.MaterialList.get("Transoceanic Pearl"),
+        '2': this.list.viewer.lists.MaterialList.get("Transoceanic Chunk"),
+        '3': this.list.viewer.lists.MaterialList.get("Xenochromatic Crystal"),
+      };
+      this.MaterialList.mastery = [
+        {
+          '2': this.list.viewer.lists.MaterialList.get("Teachings Of Equity"),
+          '3': this.list.viewer.lists.MaterialList.get("Guide To Equity"),
+          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Equity"),
+        },
+        {
+          '3': this.list.viewer.lists.MaterialList.get("Guide To Justice"),
+          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Justice"),
+        },
+        {
+          '3': this.list.viewer.lists.MaterialList.get("Guide To Order"),
+          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Order"),
+        },
+      ];
+      this.MaterialList.trounce = this.list.viewer.lists.MaterialList.get("Worldspan Fern");
+    }
     else
     {
       this.MaterialList.gem = {
@@ -154,6 +181,7 @@ export default class Traveler extends Character
     if(this.element)
     {
       this.MaterialList.crown = this.list.viewer.lists.MaterialList.get("Crown Of Insight");
+      this.MaterialList.mora = this.list.viewer.lists.MaterialList.get("Mora");
       
       for(let i in this.MaterialList.talentEnemy)
         this.MaterialList.talentEnemy[i].addUser(this);
@@ -290,6 +318,8 @@ export default class Traveler extends Character
   get name(){ return this.element ? "Traveler: "+ this.element : "Traveler"; }
   get weaponType(){ return "Sword"; }
   get element(){ return this._element; }
+  get rarity(){ return 4; }
+  get ascendStat(){ return "atk_"; }
   get bossMatType(){ return ""; }
   get flowerMatType(){ return "Windwheel Aster"; }
   get enemyMatType(){ return "Hilichurls"; }
@@ -340,5 +370,13 @@ export default class Traveler extends Character
       return "Crown";
     else
       return "";
+  }
+  
+  onRender(element)
+  {
+    if(this.base)
+      super.onRender(element);
+    else
+      this.variants[0].onRender(element);
   }
 }

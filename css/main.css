@@ -385,6 +385,14 @@ img.element-icon {
 
 /* Character Details Popup */
 
+.collapsed[data-bs-toggle="collapse"]::before {
+  content: "\25B8";
+}
+
+[data-bs-toggle="collapse"]:not(.collapsed)::before {
+  content: "\25BE";
+}
+
 .character-build {
   border: 1px solid gray;
   border-radius: 1em;

@@ -164,6 +164,36 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/36\/Item_Rich_Red_Brocade.png",
         "rarity": 3
     },
+    "TransoceanicPearl": {
+        "name": "Transoceanic Pearl",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/54\/Item_Transoceanic_Pearl.png",
+        "rarity": 1
+    },
+    "TransoceanicChunk": {
+        "name": "Transoceanic Chunk",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/09\/Item_Transoceanic_Chunk.png",
+        "rarity": 2
+    },
+    "XenochromaticCrystal": {
+        "name": "Xenochromatic Crystal",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/ba\/Item_Xenochromatic_Crystal.png",
+        "rarity": 3
+    },
+    "MeshingGear": {
+        "name": "Meshing Gear",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/28\/Item_Meshing_Gear.png",
+        "rarity": 1
+    },
+    "MechanicalSpurGear": {
+        "name": "Mechanical Spur Gear",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/da\/Item_Mechanical_Spur_Gear.png",
+        "rarity": 2
+    },
+    "ArtificedDynamicGear": {
+        "name": "Artificed Dynamic Gear",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fd\/Item_Artificed_Dynamic_Gear.png",
+        "rarity": 3
+    },
     "HeavyHorn": {
         "name": "Heavy Horn",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c0\/Item_Heavy_Horn.png",
@@ -389,64 +419,34 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a7\/Item_Wanderer%27s_Blooming_Flower.png",
         "rarity": 4
     },
-    "TransoceanicPearl": {
-        "name": "Transoceanic Pearl",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/5/54/Item_Transoceanic_Pearl.png",
-        "rarity": 1
-    },
-    "TransoceanicChunk": {
-        "name": "Transoceanic Chunk",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/0/09/Item_Transoceanic_Chunk.png",
-        "rarity": 2
-    },
-    "XenochromaticCrystal": {
-        "name": "Xenochromatic Crystal",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/b/ba/Item_Xenochromatic_Crystal.png",
-        "rarity": 3
-    },
-    "MeshingGear": {
-        "name": "Meshing Gear",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/2/28/Item_Meshing_Gear.png",
-        "rarity": 1
-    },
-    "MechanicalSpurGear": {
-        "name": "Mechanical Spur Gear",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/d/da/Item_Mechanical_Spur_Gear.png",
-        "rarity": 2
-    },
-    "ArtificedDynamicGear": {
-        "name": "Artificed Dynamic Gear",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/f/fd/Item_Artificed_Dynamic_Gear.png",
-        "rarity": 3
-    },
     "DropOfTaintedWater": {
         "name": "Drop of Tainted Water",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/2/29/Item_Drop_of_Tainted_Water.png",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/29\/Item_Drop_of_Tainted_Water.png",
         "rarity": 2
     },
     "ScoopOfTaintedWater": {
         "name": "Scoop of Tainted Water",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/9/97/Item_Scoop_of_Tainted_Water.png",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/97\/Item_Scoop_of_Tainted_Water.png",
         "rarity": 3
     },
     "NewbornTaintedHydroPhantasm": {
         "name": "Newborn Tainted Hydro Phantasm",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/3/36/Item_Newborn_Tainted_Hydro_Phantasm.png",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/36\/Item_Newborn_Tainted_Hydro_Phantasm.png",
         "rarity": 4
     },
     "RiftCore": {
         "name": "Rift Core",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/b/b3/Item_Rift_Core.png",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b3\/Item_Rift_Core.png",
         "rarity": 2
     },
     "ForeignSynapse": {
         "name": "Foreign Synapse",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/4/42/Item_Foreign_Synapse.png",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/42\/Item_Foreign_Synapse.png",
         "rarity": 3
     },
     "AlienLifeCore": {
         "name": "Alien Life Core",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/1/1c/Item_Alien_Life_Core.png",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1c\/Item_Alien_Life_Core.png",
         "rarity": 4
     },
     "HurricaneSeed": {
@@ -565,18 +565,18 @@ export default {
         "rarity": 4
     },
     "ArtificedSpareClockworkComponentCoppelia": {
-        "name": "Artificed Spare Clockwork Component — Coppelia",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/4/4b/Item_Artificed_Spare_Clockwork_Component_%E2%80%94_Coppelia.png",
+        "name": "Artificed Spare Clockwork Component \u2014 Coppelia",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4b\/Item_Artificed_Spare_Clockwork_Component_%E2%80%94_Coppelia.png",
         "rarity": 4
     },
     "ArtificedSpareClockworkComponentCoppelius": {
-        "name": "Artificed Spare Clockwork Component — Coppelius",
-        "img": "",
+        "name": "Artificed Spare Clockwork Component \u2014 Coppelius",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bf\/Item_Artificed_Spare_Clockwork_Component_%E2%80%94_Coppelius.png",
         "rarity": 4
     },
     "EmperorsResolution": {
         "name": "Emperor's Resolution",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/0/03/Item_Emperor's_Resolution.png",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/03\/Item_Emperor%27s_Resolution.png",
         "rarity": 4
     },
     "DvalinsPlume": {
@@ -1041,47 +1041,47 @@ export default {
     },
     "TeachingsOfEquity": {
         "name": "Teachings of Equity",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/c/ca/Item_Teachings_of_Equity.png",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/ca\/Item_Teachings_of_Equity.png",
         "rarity": 2
     },
     "GuideToEquity": {
         "name": "Guide to Equity",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/c/ce/Item_Guide_to_Equity.png",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/ce\/Item_Guide_to_Equity.png",
         "rarity": 3
     },
     "PhilosophiesOfEquity": {
         "name": "Philosophies of Equity",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/a/a0/Item_Philosophies_of_Equity.png",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a0\/Item_Philosophies_of_Equity.png",
         "rarity": 4
     },
     "TeachingsOfJustice": {
         "name": "Teachings of Justice",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/f/f1/Item_Teachings_of_Justice.png",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f1\/Item_Teachings_of_Justice.png",
         "rarity": 2
     },
     "GuideToJustice": {
         "name": "Guide to Justice",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/e/ea/Item_Guide_to_Justice.png",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ea\/Item_Guide_to_Justice.png",
         "rarity": 3
     },
     "PhilosophiesOfJustice": {
         "name": "Philosophies of Justice",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/3/37/Item_Philosophies_of_Justice.png",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/37\/Item_Philosophies_of_Justice.png",
         "rarity": 4
     },
     "TeachingsOfOrder": {
         "name": "Teachings of Order",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/7/74/Item_Teachings_of_Order.png",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/74\/Item_Teachings_of_Order.png",
         "rarity": 2
     },
     "GuideToOrder": {
         "name": "Guide to Order",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/2/2a/Item_Guide_to_Order.png",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2a\/Item_Guide_to_Order.png",
         "rarity": 3
     },
     "PhilosophiesOfOrder": {
         "name": "Philosophies of Order",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/3/32/Item_Philosophies_of_Order.png",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/32\/Item_Philosophies_of_Order.png",
         "rarity": 4
     },
     "CrownOfInsight": {
@@ -1329,6 +1329,66 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/26\/Item_Olden_Days_of_Scorching_Might.png",
         "rarity": 5
     },
+    "FragmentOfAnAncientChord": {
+        "name": "Fragment of an Ancient Chord",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8e\/Item_Fragment_of_an_Ancient_Chord.png",
+        "rarity": 2
+    },
+    "ChapterOfAnAncientChord": {
+        "name": "Chapter of an Ancient Chord",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b7\/Item_Chapter_of_an_Ancient_Chord.png",
+        "rarity": 3
+    },
+    "MovementOfAnAncientChord": {
+        "name": "Movement of an Ancient Chord",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/32\/Item_Movement_of_an_Ancient_Chord.png",
+        "rarity": 4
+    },
+    "EchoOfAnAncientChord": {
+        "name": "Echo of an Ancient Chord",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2b\/Item_Echo_of_an_Ancient_Chord.png",
+        "rarity": 5
+    },
+    "DrossOfPureSacredDewdrop": {
+        "name": "Dross of Pure Sacred Dewdrop",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a3\/Item_Dross_of_Pure_Sacred_Dewdrop.png",
+        "rarity": 2
+    },
+    "SublimationOfPureSacredDewdrop": {
+        "name": "Sublimation of Pure Sacred Dewdrop",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6e\/Item_Sublimation_of_Pure_Sacred_Dewdrop.png",
+        "rarity": 3
+    },
+    "SpringOfPureSacredDewdrop": {
+        "name": "Spring of Pure Sacred Dewdrop",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c6\/Item_Spring_of_Pure_Sacred_Dewdrop.png",
+        "rarity": 4
+    },
+    "EssenceOfPureSacredDewdrop": {
+        "name": "Essence of Pure Sacred Dewdrop",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/07\/Item_Essence_of_Pure_Sacred_Dewdrop.png",
+        "rarity": 5
+    },
+    "BrokenGobletOfThePristineSea": {
+        "name": "Broken Goblet of the Pristine Sea",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5f\/Item_Broken_Goblet_of_the_Pristine_Sea.png",
+        "rarity": 2
+    },
+    "WineGobletOfThePristineSea": {
+        "name": "Wine Goblet of the Pristine Sea",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Item_Wine_Goblet_of_the_Pristine_Sea.png",
+        "rarity": 3
+    },
+    "SilverGobletOfThePristineSea": {
+        "name": "Silver Goblet of the Pristine Sea",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/54\/Item_Silver_Goblet_of_the_Pristine_Sea.png",
+        "rarity": 4
+    },
+    "GoldenGobletOfThePristineSea": {
+        "name": "Golden Goblet of the Pristine Sea",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/84\/Item_Golden_Goblet_of_the_Pristine_Sea.png",
+        "rarity": 5
+    },
     "FesteringDragonMarrow": {
         "name": "Festering Dragon Marrow",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/41\/Item_Festering_Dragon_Marrow.png",
@@ -1392,6 +1452,11 @@ export default {
     "CongealedPupaWax": {
         "name": "Congealed Pupa Wax",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/17\/Item_Congealed_Pupa_Wax.png",
+        "rarity": 4
+    },
+    "MartensOmniFix": {
+        "name": "Martens' Omni-Fix",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/75\/Item_Martens%27_Omni-Fix.png",
         "rarity": 4
     },
     "Wolfhook": {
@@ -1566,22 +1631,22 @@ export default {
     },
     "BerylConch": {
         "name": "Beryl Conch",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/1/1c/Item_Beryl_Conch.png",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1c\/Item_Beryl_Conch.png",
         "rarity": 1
     },
     "RomaritimeFlower": {
         "name": "Romaritime Flower",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/e/ea/Item_Romaritime_Flower.png",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ea\/Item_Romaritime_Flower.png",
         "rarity": 1
     },
     "LumidouceBell": {
         "name": "Lumidouce Bell",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/f/fe/Item_Lumidouce_Bell.png",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fe\/Item_Lumidouce_Bell.png",
         "rarity": 1
     },
     "RainbowRose": {
         "name": "Rainbow Rose",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/c/cd/Item_Rainbow_Rose.png",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cd\/Item_Rainbow_Rose.png",
         "rarity": 1
     },
     "SweetFlowerSeed": {
@@ -1632,6 +1697,11 @@ export default {
     "ZaytunPeachSeed": {
         "name": "Zaytun Peach Seed",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4d\/Item_Zaytun_Peach_Seed.png",
+        "rarity": 1
+    },
+    "MarcotteSeed": {
+        "name": "Marcotte Seed",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/50\/Item_Marcotte_Seed.png",
         "rarity": 1
     },
     "HorsetailSeed": {
@@ -1719,6 +1789,16 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e5\/Item_Sumeru_Rose_Seed.png",
         "rarity": 1
     },
+    "LumidouceBellSeed": {
+        "name": "Lumidouce Bell Seed",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cd\/Item_Lumidouce_Bell_Seed.png",
+        "rarity": 1
+    },
+    "RainbowRoseSeed": {
+        "name": "Rainbow Rose Seed",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ad\/Item_Rainbow_Rose_Seed.png",
+        "rarity": 1
+    },
     "FruitPasteBait": {
         "name": "Fruit Paste Bait",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a7\/Item_Fruit_Paste_Bait.png",
@@ -1747,6 +1827,16 @@ export default {
     "SugardewBait": {
         "name": "Sugardew Bait",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d6\/Item_Sugardew_Bait.png",
+        "rarity": 2
+    },
+    "SourBait": {
+        "name": "Sour Bait",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5b\/Item_Sour_Bait.png",
+        "rarity": 2
+    },
+    "FlashingMaintenanceMekBait": {
+        "name": "Flashing Maintenance Mek Bait",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4a\/Item_Flashing_Maintenance_Mek_Bait.png",
         "rarity": 2
     },
     "Medaka": {
@@ -1887,6 +1977,41 @@ export default {
     "TrueFruitAngler": {
         "name": "True Fruit Angler",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9f\/Item_True_Fruit_Angler.png",
+        "rarity": 3
+    },
+    "RipplingHeartfeatherBass": {
+        "name": "Rippling Heartfeather Bass",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c3\/Item_Rippling_Heartfeather_Bass.png",
+        "rarity": 3
+    },
+    "BlazingHeartfeatherBass": {
+        "name": "Blazing Heartfeather Bass",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e4\/Item_Blazing_Heartfeather_Bass.png",
+        "rarity": 3
+    },
+    "MaintenanceMekInitialConfiguration": {
+        "name": "Maintenance Mek: Initial Configuration",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/da\/Item_Maintenance_Mek_Initial_Configuration.png",
+        "rarity": 3
+    },
+    "MaintenanceMekPlatinumCollection": {
+        "name": "Maintenance Mek: Platinum Collection",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/be\/Item_Maintenance_Mek_Platinum_Collection.png",
+        "rarity": 3
+    },
+    "MaintenanceMekSituationController": {
+        "name": "Maintenance Mek: Situation Controller",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/ba\/Item_Maintenance_Mek_Situation_Controller.png",
+        "rarity": 3
+    },
+    "MaintenanceMekWaterBodyCleaner": {
+        "name": "Maintenance Mek: Water Body Cleaner",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/19\/Item_Maintenance_Mek_Water_Body_Cleaner.png",
+        "rarity": 3
+    },
+    "StreamingAxeMarlin": {
+        "name": "Streaming Axe Marlin",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/26\/Item_Streaming_Axe_Marlin.png",
         "rarity": 3
     },
     "Mushroom": {
@@ -2064,6 +2189,11 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/be\/Item_Coffee_Beans.png",
         "rarity": 1
     },
+    "FermentedJuice": {
+        "name": "Fermented Juice",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/82\/Item_Fermented_Juice.png",
+        "rarity": 1
+    },
     "Seagrass": {
         "name": "Seagrass",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0e\/Item_Seagrass.png",
@@ -2092,6 +2222,16 @@ export default {
     "AjilenakhNut": {
         "name": "Ajilenakh Nut",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/72\/Item_Ajilenakh_Nut.png",
+        "rarity": 1
+    },
+    "Marcotte": {
+        "name": "Marcotte",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5b\/Item_Marcotte.png",
+        "rarity": 1
+    },
+    "Tidalga": {
+        "name": "Tidalga",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/90\/Item_Tidalga.png",
         "rarity": 1
     },
     "MysteriousMeatProduct": {
@@ -2244,6 +2384,31 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6f\/Item_Athel_Wood.png",
         "rarity": 1
     },
+    "MallowWood": {
+        "name": "Mallow Wood",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f0\/Item_Mallow_Wood.png",
+        "rarity": 1
+    },
+    "LindenWood": {
+        "name": "Linden Wood",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/68\/Item_Linden_Wood.png",
+        "rarity": 1
+    },
+    "AshWood": {
+        "name": "Ash Wood",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1c\/Item_Ash_Wood.png",
+        "rarity": 1
+    },
+    "CypressWood": {
+        "name": "Cypress Wood",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ae\/Item_Cypress_Wood.png",
+        "rarity": 1
+    },
+    "TorchWood": {
+        "name": "Torch Wood",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d9\/Item_Torch_Wood.png",
+        "rarity": 1
+    },
     "Fabric": {
         "name": "Fabric",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6f\/Item_Fabric.png",
@@ -2282,6 +2447,11 @@ export default {
     "AmethystLump": {
         "name": "Amethyst Lump",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7d\/Item_Amethyst_Lump.png",
+        "rarity": 1
+    },
+    "CondessenceCrystal": {
+        "name": "Condessence Crystal",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a3\/Item_Condessence_Crystal.png",
         "rarity": 1
     },
     "NorthlanderSwordBillet": {
@@ -2409,6 +2579,11 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/78\/Item_Plaustrite_Shard.png",
         "rarity": 3
     },
+    "PluieLotus": {
+        "name": "Pluie Lotus",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/eb\/Item_Pluie_Lotus.png",
+        "rarity": 1
+    },
     "WanderersAdvice": {
         "name": "Wanderer's Advice",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/60\/Item_Wanderer%27s_Advice.png",
@@ -2469,6 +2644,11 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/23\/Item_Dendroculus.png",
         "rarity": 1
     },
+    "Hydroculus": {
+        "name": "Hydroculus",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9e\/Item_Hydroculus.png",
+        "rarity": 1
+    },
     "MondstadtShrineOfDepthsKey": {
         "name": "Mondstadt Shrine of Depths Key",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2b\/Item_Mondstadt_Shrine_of_Depths_Key.png",
@@ -2482,6 +2662,11 @@ export default {
     "InazumaShrineOfDepthsKey": {
         "name": "Inazuma Shrine of Depths Key",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/20\/Item_Inazuma_Shrine_of_Depths_Key.png",
+        "rarity": 1
+    },
+    "FontaineShrineOfDepthsKey": {
+        "name": "Fontaine Shrine of Depths Key",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/86\/Item_Fontaine_Shrine_of_Depths_Key.png",
         "rarity": 1
     },
     "SumeruShrineOfDepthsKey": {
@@ -2517,6 +2702,31 @@ export default {
     "HuntingTrap": {
         "name": "Hunting Trap",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/84\/Item_Hunting_Trap.png",
+        "rarity": 1
+    },
+    "KeySigilType1": {
+        "name": "Key Sigil (Type 1)",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/54\/Item_Key_Sigil_Type_1.png",
+        "rarity": 1
+    },
+    "KeySigilType2": {
+        "name": "Key Sigil (Type 2)",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/38\/Item_Key_Sigil_Type_2.png",
+        "rarity": 1
+    },
+    "KeySigilType3": {
+        "name": "Key Sigil (Type 3)",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5b\/Item_Key_Sigil_Type_3.png",
+        "rarity": 1
+    },
+    "KeySigilType4": {
+        "name": "Key Sigil (Type 4)",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/11\/Item_Key_Sigil_Type_4.png",
+        "rarity": 1
+    },
+    "KeySigilType5": {
+        "name": "Key Sigil (Type 5)",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9a\/Item_Key_Sigil_Type_5.png",
         "rarity": 1
     },
     "DustOfAzoth": {
@@ -2573,31 +2783,6 @@ export default {
         "name": "Nature's True Fruit",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/be\/Item_Nature%27s_True_Fruit.png",
         "rarity": 4
-    },
-    "KeySigilType1": {
-        "name": "Key Sigil (Type 1)",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/54\/Item_Key_Sigil_Type_1.png",
-        "rarity": 1
-    },
-    "KeySigilType2": {
-        "name": "Key Sigil (Type 2)",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/38\/Item_Key_Sigil_Type_2.png",
-        "rarity": 1
-    },
-    "KeySigilType3": {
-        "name": "Key Sigil (Type 3)",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5b\/Item_Key_Sigil_Type_3.png",
-        "rarity": 1
-    },
-    "KeySigilType4": {
-        "name": "Key Sigil (Type 4)",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/11\/Item_Key_Sigil_Type_4.png",
-        "rarity": 1
-    },
-    "KeySigilType5": {
-        "name": "Key Sigil (Type 5)",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9a\/Item_Key_Sigil_Type_5.png",
-        "rarity": 1
     },
     "CakeForTraveler20202021": {
         "name": "Cake for Traveler (2020 - 2021)",
@@ -2899,6 +3084,11 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e3\/Item_Geo_Sigil.png",
         "rarity": 3
     },
+    "HydroSigil": {
+        "name": "Hydro Sigil",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ed\/Item_Hydro_Sigil.png",
+        "rarity": 3
+    },
     "MasterlessStardust": {
         "name": "Masterless Stardust",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7c\/Item_Masterless_Stardust.png",
@@ -3109,6 +3299,11 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/ba\/Item_Invokation_Coupons.png",
         "rarity": 3
     },
+    "JoyeuxVoucher": {
+        "name": "Joyeux Voucher",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2e\/Item_Joyeux_Voucher.png",
+        "rarity": 3
+    },
     "FascinatingPhenocryst": {
         "name": "Fascinating Phenocryst",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/28\/Item_Fascinating_Phenocryst.png",
@@ -3117,11 +3312,6 @@ export default {
     "LightRealmSigil": {
         "name": "Light Realm Sigil",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/28\/Item_Light_Realm_Sigil.png",
-        "rarity": 3
-    },
-    "JoyeuxVoucher": {
-        "name": "Joyeux Voucher",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2e\/Item_Joyeux_Voucher.png",
         "rarity": 3
     }
 };
