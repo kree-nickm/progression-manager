@@ -81,6 +81,12 @@ handlebars.registerHelper('times', function(n, options) {
   return accum;
 });
 
+handlebars.registerHelper('invalidPartialCall', function(partial, note, options) {
+  console.error(`Error using '${partial}' partial: ${note}`);
+  console.error("Data:", this, "Options:", options);
+  return new handlebars.SafeString(`<span style="color:red;" title="An error occurred in the handlebards template. Check JavaScript console for details.">!</span>`);
+});
+
 handlebars.registerHelper('ifeq', function(first, second, options) {return (first === second) ? options.fn(this) : options.inverse(this)});
 handlebars.registerHelper('array', (...params) => params.slice(0, -1));
 handlebars.registerHelper("fieldClasses", (field, options) => (field.columnClasses??[]).join(" "));

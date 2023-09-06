@@ -1,11 +1,11 @@
 import { handlebars, Renderer } from "./Renderer.js";
 
-handlebars.registerHelper("getProperty", (item, property, context) => item.getProperty(property));
-handlebars.registerHelper("uuid", (item, context) => item.uuid);
-handlebars.registerHelper('toParam', (item, context) => item instanceof UIController ? item.uuid : typeof(item) == "object" ? item?.toString()??"" : item);
+handlebars.registerHelper("getProperty", (item, property, options) => item.getProperty(property));
+handlebars.registerHelper("uuid", (item, options) => item.uuid);
+handlebars.registerHelper('toParam', (item, options) => item instanceof UIController ? item.uuid : typeof(item) == "object" ? item?.toString()??"" : item);
 
 export default class UIController {
-  static dontSerialize = ["uuid","importing","delayedUpdates","dependents"];
+  static dontSerialize = ["uuid","importing","delayedUpdates","dependents","memory"];
   
   static fromJSON(data, {addProperties={}}={})
   {
@@ -24,6 +24,7 @@ export default class UIController {
   importing;
   delayedUpdates = [];
   dependents = {}; // Note: In the future, properties of this object could be changed to Sets instead of Arrays.
+  memory = {};
   
   constructor()
   {
@@ -260,6 +261,60 @@ export default class UIController {
           dep.item.removeDependent(dep.field, element);
     if(children)
       Array.from(element.children).forEach(elem => UIController.clearDependencies(elem));
+  }
+  
+  saveMemory(data, ...path)
+  {
+    let mem = this.memory;
+    for(let p of path)
+    {
+      if(!(p in mem))
+        mem[p] = {};
+      if(typeof(mem[p]) != "object")
+      {
+        console.error(`Memory address encountered a non-object along the path:`, mem[p], p, path.join("/"));
+        return false;
+      }
+      mem = mem[p];
+    }
+    mem.__DATA__ = data;
+    return true;
+  }
+  
+  loadMemory(...path)
+  {
+    let mem = this.memory;
+    for(let p of path)
+    {
+      if(!(p in mem))
+        return undefined;
+      if(typeof(mem[p]) != "object")
+      {
+        console.error(`Memory address encountered a non-object along the path:`, mem[p], p, path.join("/"));
+        return undefined;
+      }
+      mem = mem[p];
+    }
+    return mem.__DATA__;
+  }
+  
+  clearMemory(...path)
+  {
+    let fp = path.pop();
+    let mem = this.memory;
+    for(let p of path)
+    {
+      if(!(p in mem))
+        mem[p] = {};
+      if(typeof(mem[p]) != "object")
+      {
+        console.error(`Memory address encountered a non-object along the path:`, mem[p], p, path.join("/"));
+        return false;
+      }
+      mem = mem[p];
+    }
+    mem[fp] = {};
+    return true;
   }
   
   onRender(element)

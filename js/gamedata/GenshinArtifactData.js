@@ -91,9 +91,9 @@ export default {
         "bonus4code": [
             "sstat",
             [
-                "Charged Attack",
                 "critRate_",
-                30
+                30,
+                "Charged Attack"
             ]
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fc\/Item_Heart_of_Comradeship.png",
@@ -113,7 +113,7 @@ export default {
         "bonus2code": [
             "stat",
             [
-                "elemental_res_",
+                ["anemo_res_","cryo_res_","dendro_res_","electro_res_","hydro_res_","geo_res_","pyro_res_"],
                 20
             ]
         ],
@@ -123,7 +123,7 @@ export default {
             [
                 "stat",
                 [
-                    "elemental_res_",
+                    ["anemo_res_","cryo_res_","dendro_res_","electro_res_","hydro_res_","geo_res_","pyro_res_"],
                     30
                 ]
             ]
@@ -404,7 +404,12 @@ export default {
             [
                 "stat",
                 [
-                    "elemental_dmg_",
+                    [
+                        "cryo_dmg_",
+                        "hydro_dmg_",
+                        "electro_dmg_",
+                        "pyro_dmg_"
+                    ],
                     35
                 ]
             ]
@@ -1304,7 +1309,7 @@ export default {
                             "hyperbloom_dmg_",
                             "burgeon_dmg_"
                         ],
-                        25
+                        10
                     ]
                 ],
                 4

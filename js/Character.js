@@ -6,14 +6,48 @@ import GenshinCharacterStats from "./gamedata/GenshinCharacterStats.js";
 import GenshinArtifactData from "./gamedata/GenshinArtifactData.js";
 import GenshinBuilds from "./gamedata/GenshinBuilds.js";
 
-import { Renderer } from "./Renderer.js";
+import { handlebars, Renderer } from "./Renderer.js";
 import GenshinItem from "./GenshinItem.js";
 import Artifact from "./Artifact.js";
 import Material from "./Material.js";
 
+handlebars.registerHelper("ifHasStat", function(character, statId, options) {
+  if(!character || !character.getStat)
+  {
+    console.error(`Helper 'ifHasStat' called with invalid character argument:`, character);
+    return null;
+  }
+  if(options.hash.situation)
+  {
+    let general = character.getStat(statId,undefined,true);
+    let situational = character.getStat(statId, {situation:options.hash.situation}, true);
+    if(general !== situational)
+      return options.fn(this);
+    return options.inverse(this);
+  }
+  else
+  {
+    if(character.getStat(statId,undefined,true) !== null)
+      return options.fn(this);
+    return options.inverse(this);
+  }
+});
+
+handlebars.registerHelper("getTalentValues", function(character, talent, options) {
+  return character.getTalentValues(talent);
+});
+
+handlebars.registerHelper("isPreviewing", function(character, item, options) {
+  if(item instanceof Artifact)
+    return character.preview[item.slotKey] == item;
+  else
+    console.warn(`Invalid item being checked in isPreview for '${character.name}':`, item);
+  return false;
+});
+
 export default class Character extends GenshinItem
 {
-  static dontSerialize = GenshinItem.dontSerialize.concat(["loaded","_weapon","_flower","_plume","_sands","_goblet","_circlet","MaterialList","maxScores","storedStats"]);
+  static dontSerialize = GenshinItem.dontSerialize.concat(["loaded","_weapon","_flower","_plume","_sands","_goblet","_circlet","preview","MaterialList","maxScores","procs"]);
   static goodProperties = ["key","level","constellation","ascension","talent"];
   static templateName = "renderCharacterAsPopup";
 
@@ -42,6 +76,7 @@ export default class Character extends GenshinItem
   favorite = false;
   consider = true;
 
+  MaterialList;
   loaded = false;
   _weapon = null;
   _flower = null;
@@ -49,9 +84,10 @@ export default class Character extends GenshinItem
   _sands = null;
   _goblet = null;
   _circlet = null;
-  MaterialList;
+  preview = {};
   maxScores = {};
-  storedStats = {};
+  procs = {};
+  targetEnemyData = {};
   
   afterLoad()
   {
@@ -118,12 +154,25 @@ export default class Character extends GenshinItem
     {
       this.viewer.lists.ArtifactList?.update("evaluate", null, "notify");
       this.notifyType(field.string);
-      this.storedStats = {};
+      this.clearMemory("stats");
+      this.clearMemory("motionValues");
+      this.update("procs", {}, "replace");
       // Iterate through artifacts and clear some amount of artifact.storedStats
       this.viewer.lists.ArtifactList?.items().forEach(artifact => {
         for(let buildId in artifact.storedStats.characters[this.key]??[])
           artifact.storedStats.characters[this.key][buildId].withTargets = null;
       });
+    }
+    else if(field.path[0] == "preview")
+    {
+      this.clearMemory("stats", "preview");
+      this.clearMemory("motionValues", "preview");
+      this.update("procs", {}, "replace");
+    }
+    else if(field.path[0] == "talent")
+    {
+      this.clearMemory("motionValues", "current", field.path[1]);
+      this.clearMemory("motionValues", "preview", field.path[1]);
     }
     else if(field.string == "consider")
     {
@@ -323,6 +372,7 @@ export default class Character extends GenshinItem
   set level(val){ this._level = Math.min(Math.max(val, 1), 90); }
   
   // Getters for genshin item data that is not stored on each instance of this class.
+  get data(){ return GenshinCharacterData[this.key]; }
   get name(){ return GenshinCharacterData[this.key]?.name ?? this.key; }
   get weaponType(){ return GenshinCharacterData[this.key]?.weapon ?? ""; }
   get element(){ return GenshinCharacterData[this.key]?.element ?? ""; }
@@ -481,58 +531,440 @@ export default class Character extends GenshinItem
         this.MaterialList.mora.count >= this.getTalent(talent).matMoraCount;
   }
   
-  getStat(stat, alternates=null)
+  getStat(stat, alternates={}, returnNull=false)
   {
+    let baseStat;
+    let variant;
+    [baseStat, variant] = stat.split("-");
+    let isPrimary = ["atk","hp","def"].indexOf(baseStat) > -1;
+    
+    // If this is a calculated value, pass it off to the calculated method.
+    if(["swirl","superconduct","spread","bloom","burning","aggravate","hyperbloom","electrocharged","overloaded","burgeon","shattered","melt","vaporize","melt","vaporize"].indexOf(baseStat) > -1)
+      return this.getReaction(stat, alternates);
+    
     let result;
-    if(alternates || !this.storedStats[stat])
+    let remembered = this.loadMemory("stats", alternates?.preview?"preview":"current", stat, alternates?.situation??"general");
+    //Check if this is a value we should use memory for.
+    let useMemory = !(alternates?.level || alternates?.ascension || alternates?.weapon || alternates?.weaponLevel || alternates?.weaponAscension || alternates?.refinement || alternates?.flower || alternates?.plume || alternates?.sands || alternates?.goblet || alternates?.circlet || alternates?.constellation || alternates?.talent);
+    if(!useMemory || !remembered)
     {
+      let exists = !returnNull;
       result = GenshinCharacterStats.statBase[stat] ?? 0;
-      
-      let baseStat;
-      let specific;
       let baseResult = result;
-      if(["atk","atk-base","atk-bonus","hp","hp-base","hp-bonus","def","def-base","def-bonus"].indexOf(stat) > -1)
-        [baseStat, specific] = stat.split("-");
       
+      // Bonus from character level/ascension
       if(this.ascendStat == stat)
-        result += GenshinCharacterStats.ascendStatBase[this.rarity][this.ascendStat] * GenshinPhaseData[alternates?.ascension??this.ascension].ascendStatMultiplier;
-      else if(baseStat)
-        baseResult += this[baseStat+'BaseValue'] * GenshinCharacterStats.levelMultiplier[alternates?.level??this.level][this.rarity]
-                   + this[baseStat+'AscValue'] * GenshinPhaseData[alternates?.ascension??this.ascension].baseStatMultiplier;
+        result += GenshinCharacterStats.ascendStatBase[this.rarity][this.ascendStat] * GenshinPhaseData[alternates?.ascension??(alternates?.preview?(this.preview.ascension??this.ascension):this.ascension)].ascendStatMultiplier;
+      else if(isPrimary)
+        baseResult += this[baseStat+'BaseValue'] * GenshinCharacterStats.levelMultiplier[alternates?.level??(alternates?.preview?(this.preview.level??this.level):this.level)][this.rarity]
+                   + this[baseStat+'AscValue'] * GenshinPhaseData[alternates?.ascension??(alternates?.preview?(this.preview.ascension??this.ascension):this.ascension)].baseStatMultiplier;
       
-      if((alternates?.weapon??this.weapon)?.stat == stat)
-        result += (alternates?.weapon??this.weapon).getStat();
+      // Bonus from weapon stats
+      if((alternates?.weapon??(alternates?.preview?(this.preview.weapon??this.weapon):this.weapon))?.stat == stat)
+        result += (alternates?.weapon??(alternates?.preview?(this.preview.weapon??this.weapon):this.weapon)).getStat();
       else if(baseStat == "atk")
-        baseResult += (alternates?.weapon??this.weapon)?.getATK() ?? 0;
+        baseResult += (alternates?.weapon??(alternates?.preview?(this.preview.weapon??this.weapon):this.weapon))?.getATK() ?? 0;
       
-      if(specific != "base")
+      if(variant != "base")
       {
-        if(baseStat)
+        if(isPrimary)
         {
-          if(specific != "bonus")
+          if(variant != "bonus")
             result = baseResult;
           result += baseResult * this.getStat(baseStat+"_", alternates) / 100;
         }
+        
+        // Bonus from weapon passive
+        let weaponPassive = (alternates?.weapon??(alternates?.preview?(this.preview.weapon??this.weapon):this.weapon)).getCode();
+        if(weaponPassive)
+          result += this.handleCode(weaponPassive, {}, alternates, "weaponPassive")[(baseStat)] ?? 0;
+        
+        // Bonus from artifact substats
         for(let slot of ['flower','plume','sands','goblet','circlet'])
         {
           let prop = slot + 'Artifact';
-          if(alternates?.[prop] || this[prop])
+          if(alternates?.[slot] || alternates?.preview && this.preview[slot] || this[prop])
           {
-            if((alternates?.[prop]??this[prop]).mainStatKey == (baseStat??stat))
-              result += (alternates?.[prop]??this[prop]).mainStatValue;
-            result += (alternates?.[prop]??this[prop])?.getSubstatSum((baseStat??stat)) ?? 0;
+            if((alternates?.[slot]??(alternates?.preview?(this.preview[slot]??this[prop]):this[prop])).mainStatKey == (baseStat))
+              result += (alternates?.[slot]??(alternates?.preview?(this.preview[slot]??this[prop]):this[prop])).mainStatValue;
+            result += (alternates?.[slot]??(alternates?.preview?(this.preview[slot]??this[prop]):this[prop]))?.getSubstatSum((baseStat)) ?? 0;
           }
         }
-        result += this.getSetBonus(alternates).stats[(baseStat??stat)] ?? 0;
+        
+        // Bonus from artifact set
+        let setBonus = this.getSetBonus(alternates);
+        result += setBonus.stats[(baseStat)] ?? 0;
+        
+        // Hard-coded artifact sets.
+        if(setBonus.sets.EmblemOfSeveredFate?.count >= 4 && stat == "burst_dmg_")
+        {
+          result += Math.min(75, this.getStat("enerRech_", alternates)/4);
+        }
+        
+        // Bonus from active procs
+        let procStats = {};
+        for(let proc in this.procs)
+        {
+          if(alternates?.preview && this.procs[proc].preview || !alternates?.preview && this.procs[proc].current)
+          {
+            if(this.procs[proc].active)
+            {
+              for(let i=0; i<this.procs[proc].active; i++)
+                this.handleCode({
+                  source: this.procs[proc].bonus.source,
+                  sourcePart: this.procs[proc].bonus.sourcePart,
+                  code: this.procs[proc].code,
+                  description: this.procs[proc].bonus.description
+                }, procStats, alternates, this.procs[proc].sourceType);
+            }
+            else if(this.handleCode({
+                source: this.procs[proc].bonus.source,
+                sourcePart: this.procs[proc].bonus.sourcePart,
+                code: this.procs[proc].code,
+                description: this.procs[proc].bonus.description
+              }, {}, alternates, this.procs[proc].sourceType)[baseStat])
+              exists = true;
+          }
+        }
+        result += procStats[(baseStat)] ?? 0;
       }
       else
         result = baseResult;
       
-      if(!alternates)
-        this.storedStats[stat] = result;
+      result = (exists||result) ? result : null;
+      if(useMemory)
+        this.saveMemory(result, "stats", alternates?.preview?"preview":"current", stat, alternates?.situation??"general");
     }
     else
-      result = this.storedStats[stat];
+    {
+      result = remembered;
+    }
+    return result;
+  }
+  
+  getReaction(type, alternates={})
+  {
+    let baseType;
+    let variant;
+    let variant2;
+    [baseType, variant, variant2] = type.split("-");
+    
+    let dmgType;
+    if(["swirl"].indexOf(baseType) > -1)
+      dmgType = variant;
+    if(["superconduct"].indexOf(baseType) > -1 || baseType=="melt" && variant=="reverse")
+      dmgType = "cryo";
+    if(["bloom","hyperbloom","burgeon","spread"].indexOf(baseType) > -1)
+      dmgType = "dendro";
+    if(["burning","overloaded"].indexOf(baseType) > -1 || baseType=="melt" && variant=="forward" || baseType=="vaporize" && variant=="reverse")
+      dmgType = "pyro";
+    if(["electrocharged","aggravate"].indexOf(baseType) > -1)
+      dmgType = "electro";
+    if(baseType=="vaporize" && variant=="forward")
+      dmgType = "hydro";
+    if(["shattered"].indexOf(baseType) > -1)
+      dmgType = "physical";
+    
+    if(variant2 == "swirl")
+    {
+      let swirl = this.getReaction("swirl-"+dmgType, alternates);
+      let mult = this.getReaction(baseType+"-"+variant, alternates);
+      return swirl * mult;
+    }
+    
+    if(["swirl","superconduct","bloom","burning","hyperbloom","electrocharged","overloaded","burgeon","shattered"].indexOf(baseType) > -1)
+    {
+      let rxnMult;
+      if(["burning"].indexOf(baseType) > -1)
+        rxnMult = 0.25;
+      if(["superconduct"].indexOf(baseType) > -1)
+        rxnMult = 0.5;
+      if(["swirl"].indexOf(baseType) > -1)
+        rxnMult = 0.6;
+      if(["electrocharged"].indexOf(baseType) > -1)
+        rxnMult = 1.2;
+      if(["shattered"].indexOf(baseType) > -1)
+        rxnMult = 1.5;
+      if(["bloom","overloaded"].indexOf(baseType) > -1)
+        rxnMult = 2;
+      if(["hyperbloom","burgeon"].indexOf(baseType) > -1)
+        rxnMult = 3;
+      
+      let bonusEM = 16 * this.getStat("eleMas",alternates) / (this.getStat("eleMas",alternates) + 2000);
+      let RES = (this.targetEnemyData[`enemy${dmgType.at(0).toUpperCase()+dmgType.slice(1)}RES`]??10) + this.getStat("enemy_"+dmgType+"_res_",alternates);
+      let reduction = RES>=75 ? 1/(4*RES+1) : RES>=0 ? 1-RES/100 : 1-RES/200;
+      return rxnMult * GenshinCharacterStats.levelReactionMultiplier[this.level].pc * (1 + bonusEM + this.getStat(baseType+"_dmg_",alternates) / 100) * reduction;
+    }
+    else if(["aggravate","spread"].indexOf(baseType) > -1)
+    {
+      let rxnMult;
+      if(["aggravate"].indexOf(baseType) > -1)
+        rxnMult = 1.15;
+      if(["spread"].indexOf(baseType) > -1)
+        rxnMult = 1.25;
+      
+      let bonusEM = 5 * this.getStat("eleMas",alternates) / (this.getStat("eleMas",alternates) + 1200);
+      let RES = (this.targetEnemyData[`enemy${dmgType.at(0).toUpperCase()+dmgType.slice(1)}RES`]??10) + this.getStat("enemy_"+dmgType+"_res_",alternates);
+      let reduction = RES>=75 ? 1/(4*RES/100+1) : RES>=0 ? 1-RES/100 : 1-RES/200;
+      return rxnMult * GenshinCharacterStats.levelReactionMultiplier[this.level].pc * (1 + bonusEM + this.getStat(baseType+"_dmg_",alternates) / 100);// * reduction;
+    }
+    else if(["vaporize","melt"].indexOf(baseType) > -1)
+    {
+      let rxnMult = variant=="forward" ? 2 : 1.5;
+      let bonusEM = 2.78 * this.getStat("eleMas",alternates) / (this.getStat("eleMas",alternates) + 1400);
+      return rxnMult * (1 + bonusEM + this.getStat(baseType+"_dmg_",alternates) / 100);
+    }
+    console.warn(`Unknown calculation type:`, type);
+    return 0;
+  }
+  
+  getTalentValues(talent, alternates={})
+  {
+    let result = [];
+    let remembered = this.loadMemory("motionValues", alternates?.preview?"preview":"current", talent);
+    let situation = alternates.situation;
+    alternates.situation = null;
+    
+    if(remembered)
+      result = remembered;
+    else
+    {
+      // Determine which talent to use the scaling properties of.
+      let scaling;
+      if(talent == "auto")
+        scaling = GenshinCharacterData[this.key].talents["Normal Attack"].scaling;
+      else if(talent == "skill")
+        scaling = GenshinCharacterData[this.key].talents["Elemental Skill"].scaling;
+      else if(talent == "burst")
+        scaling = GenshinCharacterData[this.key].talents["Elemental Burst"].scaling;
+      else
+      {
+        console.error(`Invalid talent in getTalentValues: ${talent}`);
+        return null;
+      }
+      if(!scaling)
+      {
+        console.error(`Character ${this.key} has potentially invalid talents:`, GenshinCharacterData[this.key].talents);
+        return null;
+      }
+      // Iterate through each line of the talent properties.
+      for(let key in scaling)
+      {
+        // Determine current value based on talent level.
+        let value = scaling[key][this.talent[talent]/*TODO: add bonus if constellation*/];
+        if(!value)
+        {
+          console.error(`Character ${this.key} has potentially invalid ${talent} talent at key '${key}' talent lvl '${this.talent[talent]}':`, GenshinCharacterData[this.key].talents);
+          return null;
+        }
+        // Parse and calculate the values.
+        let values = value.split("+");
+        let calcValues = [];
+        let newKey = key;
+        for(let v in values)
+        {
+          let val = values[v];
+          let hits = 1;
+          let stat;
+          // Parse out some data based on the value.
+          if(val.includes("×") || val.includes("*"))
+            [val, hits] = val.split(/[×*]/);
+          if(val.endsWith("%"))
+          {
+            val = val.slice(0, -1);
+            stat = "atk";
+          }
+          else if(val.endsWith("% Max HP"))
+          {
+            val = val.slice(0, -8);
+            stat = "hp";
+          }
+          else if(val.endsWith("% DEF"))
+          {
+            val = val.slice(0, -5);
+            stat = "def";
+          }
+          if(!isNaN(val.replaceAll(",","")))
+            val = val.replaceAll(",","");
+          if(!isNaN(val))
+          {
+            // Determine stat scaling.
+            let healing = key.includes("Regeneration") || key.includes("Healing");
+            let shielding = key.includes("Absorption");
+            let justPercent = key.includes("RES Decrease") || key.includes("Ratio");
+            if(key.endsWith(" (%)"))
+            {
+              if(key == newKey)
+                newKey = key.slice(0, -4);
+              stat = "atk";
+            }
+            else if(key.endsWith(" (% Max HP)"))
+            {
+              if(key == newKey)
+                newKey = key.slice(0, -11);
+              stat = "hp";
+            }
+            else if(key.endsWith(" (% DEF)"))
+            {
+              if(key == newKey)
+                newKey = key.slice(0, -8);
+              stat = "def";
+            }
+            else if(key.endsWith(" (% ATK + % Elemental Mastery)"))
+            {
+              if(key == newKey)
+                newKey = key.slice(0, -30);
+              stat = v ? "eleMas" : "atk";
+            }
+            // Do the calculation.
+            if(!justPercent && stat)
+            {
+              if(healing)
+              {
+                if(!newKey.endsWith(` (healing)`))
+                  newKey = newKey + ` (healing)`;
+                val = val/100 * this.getStat(stat, alternates) * (1 + this.getStat("heal_", alternates)/100);
+              }
+              else if(shielding)
+              {
+                if(!newKey.endsWith(` (shield)`))
+                  newKey = newKey + ` (shield)`;
+                val = val/100 * this.getStat(stat, alternates) * (1 + this.getStat("shield_", alternates)/100);
+              }
+              else
+              {
+                let baseDMG = val/100 * this.getStat(stat, alternates);
+                let baseMult = 1; // TODO: A couple passives/cons add this.
+                let baseAdd = 0; // TODO: A lot of things add this.
+                let dmgType;
+                let dmgMult;
+                if(talent == "auto")
+                {
+                  if(this.weaponType == "Catalyst")
+                    dmgType = this.element.toLowerCase();
+                  else
+                    dmgType = "physical";
+                  
+                  if(key.includes("Plunge DMG"))
+                  {
+                    dmgMult = this.getStat("plunging_dmg_", alternates);
+                    alternates.situation = "Plunging Attack";
+                  }
+                  else if(key.includes("-Hit DMG") || newKey == "Aimed Shot")
+                  {
+                    dmgMult = this.getStat("normal_dmg_", alternates);
+                    alternates.situation = "Normal Attack";
+                  }
+                  else
+                  {
+                    if(this.weaponType == "Bow")
+                      dmgType = this.element.toLowerCase();
+                    dmgMult = this.getStat("charged_dmg_", alternates);
+                    alternates.situation = "Charged Attack";
+                  }
+                }
+                else
+                {
+                  dmgType = this.element.toLowerCase();
+                  dmgMult = this.getStat(talent+"_dmg_", alternates);
+                  if(talent == "skill")
+                    alternates.situation = "Elemental Skill";
+                  else if(talent == "burst")
+                    alternates.situation = "Elemental Burst";
+                }
+                dmgMult += this.getStat(dmgType+"_dmg_", alternates);
+                if(!newKey.endsWith(` (${dmgType})`))
+                  newKey = newKey + ` (${dmgType})`;
+                // Defense
+                let DEF = 5 * (this.targetEnemyData[`enemyLevel`]??90) + 500;
+                let k = (1 + this.getStat("enemy_def_",alternates)/100) * (1 - this.getStat("ignore_def_",alternates)/100); // TODO: Ignore def is probably not a stat, because it's attack-specific and not an actual buff to the character.
+                let reductionDEF = (this.level + 100) / (k * ((this.targetEnemyData[`enemyLevel`]??90) + 100) + (this.level + 100));
+                // Resistances
+                let RES = (this.targetEnemyData[`enemy${dmgType.at(0).toUpperCase()+dmgType.slice(1)}RES`]??10) + this.getStat("enemy_"+dmgType+"_res_",alternates);
+                let reductionRES = RES>=75 ? 1/(4*RES+1) : RES>=0 ? 1-RES/100 : 1-RES/200;
+                // Final
+                console.debug(`Damage calculations for "${newKey}":`, {val, [stat]:this.getStat(stat, alternates), baseDMG, baseMult, baseAdd, dmgMult, hits, resistance:{RES, reductionRES}, defense:{DEF, k, reductionDEF}, alternates});
+                val = (baseDMG * baseMult + baseAdd) * (1 + dmgMult/100) * reductionRES * reductionDEF;
+              }
+            }
+            else if(key == "Energy Cost" || key.endsWith("Stamina Cost"))
+            {
+              val = parseFloat(val);
+            }
+            else if(typeof(finalVal) == "number" && (healing || shielding))
+            {
+              if(healing)
+                val = val * (1 + this.getStat("heal_", alternates)/100);
+              else if(shielding)
+                val = val * (1 + this.getStat("shield_", alternates)/100);
+            }
+            // Specific hard-coded formulas that are too hard to handle automatically.
+            else if(this.key == "Bennett" && key == "ATK Bonus Ratio (% Base ATK)")
+            {
+              newKey = "ATK Bonus";
+              val = val/100 * this.getStat("atk-base", alternates);
+            }
+            else if(this.key == "Shenhe" && key == "DMG Bonus (% ATK)")
+            {
+              newKey = "DMG Bonus";
+              val = val/100 * this.getStat("atk", alternates);
+            }
+            else if(this.key == "Nahida" && key.startsWith("Pyro: DMG Bonus"))
+            {
+              newKey = key.replace("% - ", "");
+              val = val + "%";
+            }
+            // Everything else.
+            else if(justPercent)
+            {
+              newKey = key.replace(" (%)", "");
+              val = val + "%";
+            }
+            else
+            {
+              console.warn(`Unhandled numeric motion value.`, key, values, v);
+              val = "**" + values[v];
+            }
+          }
+          else if(values[v].endsWith("s"))
+          {
+            // This is fine as-is.
+          }
+          else
+          {
+            val = "**" + values[v];
+          }
+          calcValues.push({val, hits});
+        }
+        let isAllNumeric = calcValues.every(elem => !isNaN(elem.val));
+        let critRate, critDMG;
+        if(isAllNumeric)
+        {
+          calcValues.forEach(elem => elem.val = parseFloat(elem.val));
+          if(alternates.situation)
+          {
+            critRate = this.getStat("critRate_", alternates);
+            critDMG = this.getStat("critDMG_", alternates);
+          }
+        }
+        let stringOut = calcValues.reduce((out, elem) => {
+          return (out!==null ? (out+" + ") : "") + (isAllNumeric ? elem.val.toFixed(0) + (critDMG?` (${(elem.val*(1+critDMG/100)).toFixed(0)})`:"") : elem.val) + (elem.hits>1?" × "+elem.hits:"");
+        }, null);
+        let valueOut = isAllNumeric ? calcValues.reduce((out, elem) => {
+          return out + elem.val * elem.hits;
+        }, 0) : stringOut;
+        result.push({
+          rawKey: key,
+          key: newKey,
+          rawValue: value,
+          string: stringOut,
+          value: valueOut,
+        });
+        alternates.situation = null;
+      }
+      this.saveMemory(result, "motionValues", alternates?.preview?"preview":"current", talent);
+    }
+    alternates.situation = situation;
     return result;
   }
   
@@ -547,7 +979,7 @@ export default class Character extends GenshinItem
     pstat: 2 arguments, increase a stat for entire party
       1: a string stat id, or an array of string stat ids for multiple stats.
       2: amount to increase the stat by.
-    sstat: 3 arguments, increase a stat but only for specific usages
+    sstat: 3 arguments, increase a stat but only for specific situations
       1: specifier for the situation the bonus applies
       2: a string stat id, or an array of string stat ids for multiple stats.
       3: amount to increase the stat by.
@@ -555,68 +987,104 @@ export default class Character extends GenshinItem
       1: a string stat id, or an array of string stat ids for multiple stats.
       2: amount to increase the stat by (negative to decrease).
   */
-  getSetBonus(alternates)
+  getSetBonus(alternates={})
   {
+    // Count the pieces of each set.
     let sets = {};
     for(let slot of ['flower','plume','sands','goblet','circlet'])
     {
       let prop = slot + 'Artifact';
-      if(alternates?.[prop] || this[prop])
+      if(alternates?.[slot] || alternates?.preview && this.preview[slot] || this[prop])
       {
-        if(!sets[(alternates?.[prop]??this[prop]).setKey])
-          sets[(alternates?.[prop]??this[prop]).setKey] = {count:0};
-        sets[(alternates?.[prop]??this[prop]).setKey].count++;
+        if(!sets[(alternates?.[slot]??(alternates?.preview?(this.preview[slot]??this[prop]):this[prop])).setKey])
+          sets[(alternates?.[slot]??(alternates?.preview?(this.preview[slot]??this[prop]):this[prop])).setKey] = {count:0};
+        sets[(alternates?.[slot]??(alternates?.preview?(this.preview[slot]??this[prop]):this[prop])).setKey].count++;
       }
     }
     
-    // Collect the current bonuses and their code.
+    // Collect the current bonuses and their codes.
     let bonuses = [];
-    let codes = [];
-    for(let set in sets)
+    for(let source in sets)
     {
-      for(let i=1; i<=sets[set].count; i++)
+      for(let sourcePart=1; sourcePart<=sets[source].count; sourcePart++)
       {
-        let b = 'bonus'+i;
-        let c = 'bonus'+i+'code';
-        if(GenshinArtifactData[set][b])
-          bonuses.push([set, i, GenshinArtifactData[set][b]]);
-        if(GenshinArtifactData[set][c])
-        {
-          if(Array.isArray(GenshinArtifactData[set][c][0]))
-            codes = codes.concat(GenshinArtifactData[set][c]);
-          else
-            codes.push(GenshinArtifactData[set][c]);
-        }
+        let description = GenshinArtifactData[source]['bonus'+sourcePart];
+        let code = GenshinArtifactData[source]['bonus'+sourcePart+'code'];
+        if(description)
+          bonuses.push({source, sourcePart, code, description});
       }
     }
     
     // Handle the codes.
-    let substats = [];
     let stats = {};
-    for(let code of codes)
+    for(let bonus of bonuses)
+      this.handleCode(bonus, stats, alternates, "setBonus");
+    
+    return {sets, bonuses, stats}
+  }
+  
+  handleCode(bonus, stats={}, alternates={}, sourceType="")
+  {
+    if(!bonus.code)
+      return stats;
+    if(Array.isArray(bonus.code[0]))
     {
-      if(code[0] == "proc")
+      for(let c in bonus.code)
+        this.handleCode({source:bonus.source, sourcePart:bonus.sourcePart+String.fromCharCode(97+parseInt(c)), code:bonus.code[c], description:bonus.description}, stats, alternates, sourceType);
+    }
+    else if(bonus.code[0] == "proc")
+    {
+      let proc = `${bonus.source},${bonus.sourcePart}`;
+      if(!this.procs[proc])
       {
-      }
-      else if(code[0] == "stat")
-      {
-        // code[1][0] is the stat to change, or array of stats
-        // code[1][1] is the amount, or an array defining a calculation
-        let which = Array.isArray(code[1][0]) ? code[1][0] : [code[1][0]];
-        for(let s of which)
-        {
-          if(Array.isArray(code[1][1]))
-            console.log("func to handle:", code[1][1]);
-          else
-            stats[s] = (stats[s] ?? 0) + code[1][1];
-        }
+        this.procs[proc] = {
+          active: 0,
+          stacks: bonus.code[2]??1,
+          code: bonus.code[1],
+          current: !alternates?.preview,
+          preview: !!alternates?.preview,
+          sourceType,
+          sourceIndex: isNaN(bonus.sourcePart) ? parseInt(bonus.sourcePart.charAt(0)) : bonus.sourcePart,
+          bonus,
+        };
+        this.update("procs", {}, "notify");
       }
       else
       {
-        console.log("Unhandled set bonus code:", code);
+        if(alternates?.preview)
+          this.procs[proc].preview = true;
+        else
+          this.procs[proc].current = true;
       }
     }
-    return {sets, bonuses, codes, stats, substats}
+    else if(bonus.code[0] == "stat" || bonus.code[0] == "pstat" || bonus.code[0] == "sstat" || bonus.code[0] == "estat")
+    {
+      // bonus.code[1][0] is the stat to change, or array of stats
+      // bonus.code[1][1] is the amount, or an array defining a calculation
+      // bonus.code[1][2] is the situation the stat applies in (if doing 'sstat')
+      if(bonus.code[0] != "sstat" || bonus.code[1][2] == alternates?.situation)
+      {
+        let which = Array.isArray(bonus.code[1][0]) ? bonus.code[1][0] : [bonus.code[1][0]];
+        for(let s of which)
+        {
+          if(bonus.code[0] == "estat")
+            s = "enemy_" + s;
+          if(Array.isArray(bonus.code[1][1]))
+            console.log("func to handle:", bonus.code[1][1]);
+          else
+            stats[s] = (stats[s] ?? 0) + bonus.code[1][1];
+        }
+      }
+    }
+    else if(bonus.code[0] == "custom" && bonus.source == "EmblemOfSeveredFate")
+    {
+      // Handle after everything else has been calculated to prevent recursion.
+    }
+    else
+    {
+      console.log(`Unhandled ${bonus.source} (${bonus.sourcePart}) code "${bonus.code[0]}".`);
+    }
+    return stats;
   }
   
   getBuilds()
@@ -779,6 +1247,7 @@ export default class Character extends GenshinItem
     super.onRender(element);
     if(element.dataset.template == "renderCharacterAsPopup")
     {
+      this._addStatsEventHandlers(element.querySelector(".character-stats"));
       for(let buildSection of element.querySelectorAll(".character-build"))
       {
         this._addBuildEventHandlers(buildSection);
@@ -786,7 +1255,7 @@ export default class Character extends GenshinItem
     }
     else if(element.dataset.template == "renderCharacterStats")
     {
-      // Nothing needs doing, yet.
+      this._addStatsEventHandlers(element);
     }
     else if(element.dataset.template == "renderCharacterBuild")
     {
@@ -799,6 +1268,38 @@ export default class Character extends GenshinItem
     else
     {
       console.warn(`Character.onRender called for an unrecognized element template.`, element);
+    }
+  }
+  
+  _addStatsEventHandlers(statSection)
+  {
+    let procInputs = statSection.querySelectorAll("input.proc-input");
+    for(let procInput of procInputs)
+    {
+      if(!procInput.onchange)
+      {
+        procInput.onchange = event => {
+          this.procs[event.target.id].active = parseInt(event.target.value);
+          this.clearMemory("stats");
+          this.clearMemory("motionValues");
+          this.update("procs", {}, "notify");
+        };
+      }
+    }
+    
+    let enemyInputs = statSection.querySelectorAll("input.enemy-stat");
+    for(let enemyInput of enemyInputs)
+    {
+      if(!enemyInput.onchange)
+      {
+        this.targetEnemyData[enemyInput.id] = parseFloat(enemyInput.value);
+        enemyInput.onchange = event => {
+          this.targetEnemyData[event.target.id] = parseFloat(event.target.value);
+          this.clearMemory("stats");
+          this.clearMemory("motionValues");
+          this.update("targetEnemyData", {}, "notify");
+        };
+      }
     }
   }
   
@@ -1012,6 +1513,57 @@ export default class Character extends GenshinItem
       };
     }
     
+    // TODO: Combine the two loops below into maybe a new method for rendering the artifact card.
+    /** Preview Artifact Button **/
+    let previewButtons = element.querySelectorAll(".preview-artifact");
+    for(let equipBtn of previewButtons)
+    {
+      // Add the equip event.
+      if(!equipBtn.onclick)
+      {
+        // Determine the item for the button.
+        let artifactElement = equipBtn.parentElement;
+        while(artifactElement && !artifactElement.classList.contains("list-item"))
+          artifactElement = artifactElement.parentElement;
+        if(!artifactElement)
+        {
+          console.error(`Preview button element has no ancestor with the 'list-item' class.`);
+          return false;
+        }
+        
+        // Verify that item and field are found.
+        let artifact = Renderer.controllers.get(artifactElement.dataset.uuid);
+        if(!artifact)
+        {
+          console.error(`Unable to determine item of this button element to preview.`, artifactElement);
+          return false;
+        }
+        
+        equipBtn.onclick = event => {
+          let prevArtifact = this.preview[artifact.slotKey];
+          let prevArtifactElement;
+          if(prevArtifact == artifact)
+          {
+            this.preview[artifact.slotKey] = null;
+          }
+          else
+          {
+            prevArtifactElement = prevArtifact ? characterArtifacts.querySelector(`.list-item[data-uuid="${prevArtifact.uuid}"]`) : null;
+            this.preview[artifact.slotKey] = artifact;
+          }
+          this.update("preview", {}, "notify");
+          let relatedItems = this.getRelatedItems(buildId);
+          // This could be handled by implementing "needsUpdate" on all templated elements, and using an "update()" on an associated item.
+          Renderer.rerender(rootElement.querySelector(".character-stats"), {relatedItems});
+          let listElements = characterArtifacts.querySelectorAll(".list[data-filter]");
+          for(let listElement of listElements)
+            Renderer.sortItems(listElement);
+          Renderer.rerender(artifactElement, {item:artifact, buildId, character:this}, {renderedItem:this});
+          if(prevArtifactElement)
+            Renderer.rerender(prevArtifactElement, {item:prevArtifact, buildId, character:this}, {renderedItem:this});
+        };
+      }
+    }
     
     /** Equip Artifact Button **/
     let equipButtons = element.querySelectorAll(".equip-artifact");
@@ -1048,7 +1600,7 @@ export default class Character extends GenshinItem
           let listElements = characterArtifacts.querySelectorAll(".list[data-filter]");
           for(let listElement of listElements)
             Renderer.sortItems(listElement);
-          Renderer.rerender(artifactElement, {item:artifact, buildId, character:this}, {});
+          Renderer.rerender(artifactElement, {item:artifact, buildId, character:this}, {renderedItem:this});
           if(prevArtifactElement)
             Renderer.rerender(prevArtifactElement, {item:prevArtifact, buildId, character:this}, {renderedItem:this});
         };

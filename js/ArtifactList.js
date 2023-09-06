@@ -36,6 +36,8 @@ handlebars.registerHelper("artifactRating", (artifact, statKey, character, conte
     return artifact.getSubstatRating(statKey).sum.toFixed(2);
 });
 
+handlebars.registerHelper("getArtifactSetData", (set, context) => GenshinArtifactData[set]);
+
 export default class ArtifactList extends GenshinList
 {
   static dontSerialize = GenshinList.dontSerialize.concat(["elements"]);

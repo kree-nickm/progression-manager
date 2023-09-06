@@ -104,6 +104,10 @@ export default class Weapon extends GenshinItem
         this.character = null;
       }
     }
+    else if(field.string == "refinement")
+    {
+      this.clearMemory("code");
+    }
   }
   
   // Getters/setters that enforce a value range.
@@ -198,6 +202,46 @@ export default class Weapon extends GenshinItem
     let lvlMax = GenshinPhaseData[(alternates?.ascension??this.ascension)].levelCap;
     let scale = ((alternates?.level??this.level) - lvlMin) / (lvlMax - lvlMin);
     return statLower + (statUpper-statLower) * scale;
+  }
+  
+  cloneCode(array=[])
+  {
+    let clone = [];
+    for(let elem of array)
+    {
+      if(typeof(elem) == "object")
+        clone.push(this.cloneCode(elem));
+      else
+      {
+        if(typeof(elem) == "string" && elem.charAt(0) == "@")
+          elem = this.loaded ? GenshinWeaponData[this.key].refinementData[elem.slice(1)][this.refinement] : 0;
+        clone.push(elem);
+      }
+    }
+    return clone;
+  }
+  
+  getCode(alternates)
+  {
+    let result;
+    let remembered = this.loadMemory("code");
+    if(!remembered)
+    {
+      let code = this.cloneCode(GenshinWeaponData[this.key]?.code??[]);
+      if(code.length)
+      {
+        result = {
+          source: this.key,
+          sourcePart: this.refinement,
+          code,
+          description: this.getPassive(alternates?.refinement??this.refinement),
+        };
+        this.saveMemory(result, "code");
+      }
+    }
+    else
+      result = remembered;
+    return result;
   }
   
   getStat(alternates=null)

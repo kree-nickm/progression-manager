@@ -1,3 +1,5 @@
+{{#if item}}
+{{#if field}}
 <{{wrapper}}
   class="list-item-field {{itemClasses item field params=params}} {{fieldClasses field}} {{class}}"
   name="{{field.id}}"
@@ -11,3 +13,9 @@
 >
   {{itemChildren item field params=params}}
 </{{wrapper}}>
+{{else}}
+{{invalidPartialCall "renderItemField" "invalid field"}}
+{{/if}}
+{{else}}
+{{invalidPartialCall "renderItemField" "invalid item"}}
+{{/if}}

@@ -1,9 +1,11 @@
 import GenshinWeaponData from "./gamedata/GenshinWeaponData.js";
 
-import { Renderer } from "./Renderer.js";
+import { handlebars, Renderer } from "./Renderer.js";
 import GenshinList from "./GenshinList.js";
 import Artifact from "./Artifact.js";
 import Weapon from "./Weapon.js";
+
+handlebars.registerHelper("getWeaponData", (key, context) => GenshinWeaponData[key]);
 
 export default class WeaponList extends GenshinList
 {

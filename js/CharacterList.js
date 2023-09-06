@@ -320,12 +320,12 @@ export default class CharacterList extends GenshinList
           columnClasses: [(isNaN(i)?i:"talent")+'-'+m.l.toLowerCase()],
           tags: isNaN(i) & m.l != "Trounce" && m.l != "Crown" && m.l != "Mora" ? undefined : ["detailsOnly"],
           dynamic: true,
-          value: item => item.getTalentMat(m.l.toLowerCase(),i) && item.getTalent(i)['mat'+m.d+'Count'] ? item.getTalentMat(m.l.toLowerCase(),i).getFieldValue(item.getTalent(i)['mat'+m.d+'Count'], this.viewer.settings.preferences.listDisplay=='1') : "",
-          title: item => item.getTalentMat(m.l.toLowerCase(),i).getFullSource(),
+          value: item => item.getTalentMat(m.l.toLowerCase(),i) && item.getTalent(i)['mat'+m.d+'Count'] ? (item.getTalentMat(m.l.toLowerCase(),i)?.getFieldValue(item.getTalent(i)['mat'+m.d+'Count'], this.viewer.settings.preferences.listDisplay=='1')??"!ERROR!") : "",
+          title: item => item.getTalentMat(m.l.toLowerCase(),i)?.getFullSource()??"!ERROR!",
           dependencies: item => [
             {item, field:["talent", i]},
-            item.getTalentMat(m.l.toLowerCase(),i).days ? {item:this.viewer, field:"today"} : {},
-          ].concat(item.getTalentMat(m.l.toLowerCase(),i).getCraftDependencies()),
+            item.getTalentMat(m.l.toLowerCase(),i)?.days ? {item:this.viewer, field:"today"} : {},
+          ].concat(item.getTalentMat(m.l.toLowerCase(),i)?.getCraftDependencies()??[]),
         });
       }
       if(!isNaN(i))
@@ -377,15 +377,62 @@ export default class CharacterList extends GenshinList
     });
     
     let statField = this.display.addField("stat", {
-      label: (item,stat) => Artifact.shorthandStat[stat],
+      label: (item,stat,preview,situation) => Artifact.shorthandStat[stat],
       tags: ["detailsOnly"],
       dynamic: true,
-      title: (item,stat) => item.getStat(stat),
-      value: (item,stat) => item.getStat(stat).toFixed(["hp","atk","def","hp-base","atk-base","def-base","hp-bonus","atk-bonus","def-bonus","eleMas"].indexOf(stat)>-1 ? 0 : 1),
-      dependencies: (item,stat) => [
+      title: (item,stat,preview,situation) => {
+        let result = item.getStat(stat, {situation, preview});
+        return result;
+      },
+      value: (item,stat,preview,situation) => {
+        let result = item.getStat(stat, {situation, preview});
+        return result.toFixed(stat.slice(-1)=="_" ? 1 : ["melt-forward","vaporize-forward","melt-reverse","vaporize-reverse"].indexOf(stat) > -1 ? 3 : 0)??"null";
+      },
+      dependencies: (item,stat,preview,situation) => [
+        {item:item.base??item, field:"constellation"},
         {item:item.base??item, field:"ascension"},
         {item:item.base??item, field:"level"},
+        {item:item.base??item, field:"procs"},
+        {item:item.base??item, field:"targetEnemyData"},
+        preview ? {item:item.base??item, field:"preview"} : null,
         item.weapon ? {item:item.weapon, field:"location"} : null,
+        item.weapon ? {item:item.weapon, field:"refinement"} : null,
+        item.weapon ? {item:item.weapon, field:"ascension"} : null,
+        item.weapon ? {item:item.weapon, field:"level"} : null,
+        item.flowerArtifact ? {item:item.flowerArtifact, field:"location"} : null,
+        item.flowerArtifact ? {item:item.flowerArtifact, field:"level"} : null,
+        item.flowerArtifact ? {item:item.flowerArtifact, field:"substats"} : null,
+        item.plumeArtifact ? {item:item.plumeArtifact, field:"location"} : null,
+        item.plumeArtifact ? {item:item.plumeArtifact, field:"level"} : null,
+        item.plumeArtifact ? {item:item.plumeArtifact, field:"substats"} : null,
+        item.sandsArtifact ? {item:item.sandsArtifact, field:"location"} : null,
+        item.sandsArtifact ? {item:item.sandsArtifact, field:"level"} : null,
+        item.sandsArtifact ? {item:item.sandsArtifact, field:"substats"} : null,
+        item.gobletArtifact ? {item:item.gobletArtifact, field:"location"} : null,
+        item.gobletArtifact ? {item:item.gobletArtifact, field:"level"} : null,
+        item.gobletArtifact ? {item:item.gobletArtifact, field:"substats"} : null,
+        item.circletArtifact ? {item:item.circletArtifact, field:"location"} : null,
+        item.circletArtifact ? {item:item.circletArtifact, field:"level"} : null,
+        item.circletArtifact ? {item:item.circletArtifact, field:"substats"} : null,
+      ],
+    });
+    
+    let mvField = this.display.addField("mv", {
+      label: (item,talent,mv,preview) => mv,
+      tags: ["detailsOnly"],
+      dynamic: true,
+      title: (item,talent,mv,preview) => item.getTalentValues(talent,{preview}).find(v => v.rawKey == mv)?.rawValue,
+      value: (item,talent,mv,preview) => item.getTalentValues(talent,{preview}).find(v => v.rawKey == mv)?.string,
+      dependencies: (item,talent,mv,preview) => [
+        {item:item.base??item, field:"constellation"},
+        {item:item.base??item, field:"ascension"},
+        {item:item.base??item, field:"level"},
+        {item:item.base??item, field:"talent"},
+        {item:item.base??item, field:"procs"},
+        {item:item.base??item, field:"targetEnemyData"},
+        preview ? {item:item.base??item, field:"preview"} : null,
+        item.weapon ? {item:item.weapon, field:"location"} : null,
+        item.weapon ? {item:item.weapon, field:"refinement"} : null,
         item.weapon ? {item:item.weapon, field:"ascension"} : null,
         item.weapon ? {item:item.weapon, field:"level"} : null,
         item.flowerArtifact ? {item:item.flowerArtifact, field:"location"} : null,

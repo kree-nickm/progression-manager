@@ -53,6 +53,26 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0d\/Weapon_Amos%27_Bow_2nd.png"
         ],
         "passive": "Increases Normal Attack and Charged Attack DMG by @0%. After a Normal or Charged Attack is fired, DMG dealt increases by a further @1% every 0.1 seconds the arrow is in the air for up to 5 times.",
+        "code": [
+          [
+            "stat",
+            [
+              ["normal_dmg_","charged_dmg_"],
+              "@0"
+            ]
+          ],
+          [
+            "proc",
+            [
+              "stat",
+              [
+                ["normal_dmg_","charged_dmg_"],
+                "@1"
+              ]
+            ],
+            5
+          ]
+        ],
         "refinementData": [
             {
                 "1": 12,
@@ -937,6 +957,13 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8e\/Weapon_Skyward_Pride_2nd.png"
         ],
         "passive": "Increases all DMG by @0%. After using an Elemental Burst, Normal or Charged Attack, on hit, creates a vacuum blade that does @1% of ATK as DMG to opponents along its path. Lasts for 20s or 8 vacuum blades.",
+        "code": [
+          "stat",
+          [
+            "dmg_",
+            "@0"
+          ]
+        ],
         "refinementData": [
             {
                 "1": 8,
@@ -1127,6 +1154,73 @@ export default {
                 "5": 8
             }
         ]
+    },
+    "TheFirstGreatMagic": {
+        "name": "The First Great Magic",
+        "imgs": [
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/03\/Weapon_The_First_Great_Magic.png",
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cc\/Weapon_The_First_Great_Magic_2nd.png"
+        ],
+        "rarity": 5,
+        "type": "Bow",
+        "passive": "DMG dealt by Charged Attacks increased by @0%. For every party member with the same Elemental Type as the wielder (including the wielder themselves), gain 1 Gimmick stack. For every party member with a different Elemental Type from the wielder, gain 1 Theatrics stack. When the wielder has 1\/2\/3 or more Gimmick stacks, ATK will be increased by @1%\/@2%\/@3%. When the wielder has 1\/2\/3 or more Theatrics stacks, Movement SPD will be increased by @4%\/@5%\/@6%.",
+        "refinementData": [
+            {
+                "1": 16,
+                "2": 20,
+                "3": 24,
+                "4": 28,
+                "5": 32
+            },
+            {
+                "1": 16,
+                "2": 20,
+                "3": 24,
+                "4": 28,
+                "5": 32
+            },
+            {
+                "1": 32,
+                "2": 40,
+                "3": 48,
+                "4": 56,
+                "5": 64
+            },
+            {
+                "1": 48,
+                "2": 60,
+                "3": 72,
+                "4": 84,
+                "5": 96
+            },
+            {
+                "1": 4,
+                "2": 6,
+                "3": 8,
+                "4": 10,
+                "5": 12
+            },
+            {
+                "1": 7,
+                "2": 9,
+                "3": 11,
+                "4": 13,
+                "5": 15
+            },
+            {
+                "1": 10,
+                "2": 12,
+                "3": 14,
+                "4": 16,
+                "5": 18
+            }
+        ],
+        "matForgery": "Chord",
+        "matStrongEnemy": "Hydro Phantasms",
+        "matWeakEnemy": "Fontemer Aberrants",
+        "baseATK": 46,
+        "stat": "critDMG_",
+        "baseStat": 14.4
     },
     "TheUnforged": {
         "name": "The Unforged",
@@ -1331,6 +1425,23 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/45\/Weapon_The_Catch_2nd.png"
         ],
         "passive": "Increases Elemental Burst DMG by @0% and Elemental Burst CRIT Rate by @1%.",
+        "code": [
+            [
+                "stat",
+                [
+                    "burst_dmg_",
+                    "@0"
+                ]
+            ],
+            [
+                "sstat",
+                [
+                    "critRate_",
+                    "@1",
+                    "Elemental Burst"
+                ]
+            ]
+        ],
         "refinementData": [
             {
                 "1": 16,
@@ -1443,6 +1554,31 @@ export default {
                 "5": 12
             }
         ]
+    },
+    "BalladOfTheFjords": {
+        "name": "Ballad of the Fjords",
+        "imgs": [
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/82\/Weapon_Ballad_of_the_Fjords.png",
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/be\/Weapon_Ballad_of_the_Fjords_2nd.png"
+        ],
+        "rarity": 4,
+        "type": "Polearm",
+        "passive": "When there are at least 3 different Elemental Types in your party, Elemental Mastery will be increased by @0.",
+        "refinementData": [
+            {
+                "1": 120,
+                "2": 150,
+                "3": 180,
+                "4": 210,
+                "5": 240
+            }
+        ],
+        "matForgery": "Chalice",
+        "matStrongEnemy": "Hilichurl Rogues",
+        "matWeakEnemy": "Whopperflowers",
+        "baseATK": 42,
+        "stat": "critRate_",
+        "baseStat": 6
     },
     "BlackcliffAgate": {
         "name": "Blackcliff Agate",
@@ -1666,6 +1802,37 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/df\/Weapon_Deathmatch_2nd.png"
         ],
         "passive": "If there are at least 2 opponents nearby, ATK is increased by @0% and DEF is increased by @1%. If there are fewer than 2 opponents nearby, ATK is increased by @2%.",
+        "code": [
+          [
+            "proc",
+            [
+              [
+                "stat",
+                [
+                  "atk_",
+                  "@0"
+                ]
+              ],
+              [
+                "stat",
+                [
+                  "def_",
+                  "@1"
+                ]
+              ]
+            ]
+          ],
+          [
+            "proc",
+            [
+              "stat",
+              [
+                "atk_",
+                "@2"
+              ]
+            ]
+          ]
+        ],
         "refinementData": [
             {
                 "1": 16,
@@ -2074,6 +2241,116 @@ export default {
             }
         ]
     },
+    "FinaleOfTheDeep": {
+        "name": "Finale of the Deep",
+        "imgs": [
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5a\/Weapon_Finale_of_the_Deep.png",
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ad\/Weapon_Finale_of_the_Deep_2nd.png"
+        ],
+        "rarity": 4,
+        "type": "Sword",
+        "passive": "When using an Elemental Skill, ATK will be increased by @0% for 15s, and a Bond of Life worth 25% of Max HP will be granted. This effect can be triggered once every 10s. When the Bond of Life is cleared, a maximum of @1 ATK will be gained based on @2% of the total amount of the Life Bond cleared, lasting for 15s.",
+        "refinementData": [
+            {
+                "1": 12,
+                "2": 15,
+                "3": 18,
+                "4": 21,
+                "5": 24
+            },
+            {
+                "1": 150,
+                "2": 187.5,
+                "3": 225,
+                "4": 262.5,
+                "5": 300
+            },
+            {
+                "1": 2.4,
+                "2": 3,
+                "3": 3.5999999999999996,
+                "4": 4.199999999999999,
+                "5": 4.8
+            }
+        ],
+        "matForgery": "Droplet",
+        "matStrongEnemy": "Hydro Phantasms",
+        "matWeakEnemy": "Nobushi",
+        "baseATK": 44,
+        "stat": "atk_",
+        "baseStat": 6
+    },
+    "FleuveCendreFerryman": {
+        "name": "Fleuve Cendre Ferryman",
+        "imgs": [
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7e\/Weapon_Fleuve_Cendre_Ferryman.png",
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6f\/Weapon_Fleuve_Cendre_Ferryman_2nd.png"
+        ],
+        "rarity": 4,
+        "type": "Sword",
+        "passive": "Increases Elemental Skill CRIT Rate by @0%. Additionally, increases Energy Recharge by @1% for 5s after using an Elemental Skill.",
+        "refinementData": [
+            {
+                "1": 8,
+                "2": 10,
+                "3": 12,
+                "4": 14,
+                "5": 16
+            },
+            {
+                "1": 16,
+                "2": 20,
+                "3": 24,
+                "4": 28,
+                "5": 32
+            }
+        ],
+        "matForgery": "Chord",
+        "matStrongEnemy": "Hydro Phantasms",
+        "matWeakEnemy": "Fontemer Aberrants",
+        "baseATK": 42,
+        "stat": "enerRech_",
+        "baseStat": 10
+    },
+    "FlowingPurity": {
+        "name": "Flowing Purity",
+        "imgs": [
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/01\/Weapon_Flowing_Purity.png",
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/be\/Weapon_Flowing_Purity_2nd.png"
+        ],
+        "rarity": 4,
+        "type": "Catalyst",
+        "passive": "When using an Elemental Skill, All Elemental DMG Bonus will be increased by @0% for 15s, and a Bond of Life worth 24% of Max HP will be granted. This effect can be triggered once every 10s. When the Bond Of Life is cleared, every 1,000 HP cleared in the process will provide @1% All Elemental DMG Bonus, up to a maximum of @2%. This effect lasts 15s.",
+        "refinementData": [
+            {
+                "1": 8,
+                "2": 10,
+                "3": 12,
+                "4": 14,
+                "5": 16
+            },
+            {
+                "1": 2,
+                "2": 2.5,
+                "3": 3,
+                "4": 3.5,
+                "5": 4
+            },
+            {
+                "1": 12,
+                "2": 15,
+                "3": 18,
+                "4": 21,
+                "5": 24
+            }
+        ],
+        "matForgery": "Droplet",
+        "matStrongEnemy": "Breacher Primuses",
+        "matWeakEnemy": "Fontemer Aberrants",
+        "baseATK": 44,
+        "stat": "atk_",
+        "baseStat": 6
+    },
     "ForestRegalia": {
         "name": "Forest Regalia",
         "rarity": 4,
@@ -2178,6 +2455,16 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6f\/Weapon_Hakushin_Ring_2nd.png"
         ],
         "passive": "After the character equipped with this weapon triggers an Electro elemental reaction, nearby party members of an Elemental Type involved in the elemental reaction receive a @0% Elemental DMG Bonus for their element, lasting 6s. Elemental Bonuses gained in this way cannot be stacked.",
+        "code": [
+          "proc",
+          [
+            "stat",
+            [
+              ["anemo_dmg_","cryo_dmg_","dendro_dmg_","geo_dmg_","hydro_dmg_","electro_dmg_","pyro_dmg_"],
+              "@0"
+            ]
+          ]
+        ],
         "refinementData": [
             {
                 "1": 10,
@@ -2203,6 +2490,41 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e0\/Weapon_Hamayumi_2nd.png"
         ],
         "passive": "Increases Normal Attack DMG by @0% and Charged Attack DMG by @1%. When the equipping character's Energy reaches 100%, this effect is increased by 100%.",
+        "code": [
+          [
+            "stat",
+            [
+              "normal_dmg_",
+              "@0"
+            ]
+          ],
+          [
+            "stat",
+            [
+              "charged_dmg_",
+              "@1"
+            ]
+          ],
+          [
+            "proc",
+            [
+              [
+                "stat",
+                [
+                  "normal_dmg_",
+                  "@0"
+                ]
+              ],
+              [
+                "stat",
+                [
+                  "charged_dmg_",
+                  "@1"
+                ]
+              ]
+            ]
+          ]
+        ],
         "refinementData": [
             {
                 "1": 16,
@@ -2235,6 +2557,17 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cb\/Weapon_Ibis_Piercer_2nd.png"
         ],
         "passive": "The character's Elemental Mastery will increase by @0 within 6s after Charged Attacks hit opponents. Max 2 stacks. This effect can triggered once every 0.5s.",
+        "code": [
+          "proc",
+          [
+            "stat",
+            [
+              "eleMas",
+              "@0"
+            ]
+          ],
+          2
+        ],
         "refinementData": [
             {
                 "1": 40,
@@ -2260,6 +2593,17 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ac\/Weapon_Iron_Sting_2nd.png"
         ],
         "passive": "Dealing Elemental DMG increases all DMG by @0% for 6s. Max 2 stacks. Can only occur once every 1s.",
+        "code": [
+          "proc",
+          [
+            "stat",
+            [
+              "dmg_",
+              "@0"
+            ]
+          ],
+          2
+        ],
         "refinementData": [
             {
                 "1": 6,
@@ -2366,6 +2710,13 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5d\/Weapon_Kitain_Cross_Spear_2nd.png"
         ],
         "passive": "Increases Elemental Skill DMG by @0%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates @1 Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field.",
+        "code": [
+          "stat",
+          [
+            "skill_dmg_",
+            "@0"
+          ]
+        ],
         "refinementData": [
             {
                 "1": 6,
@@ -2821,6 +3172,16 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7d\/Weapon_Prototype_Crescent_2nd.png"
         ],
         "passive": "Charged Attack hits on weak points increase Movement SPD by 10% and ATK by @0% for 10s.",
+        "code": [
+          "proc",
+          [
+            "stat",
+            [
+              "atk_",
+              "@0"
+            ]
+          ]
+        ],
         "refinementData": [
             {
                 "1": 36,
@@ -2905,6 +3266,31 @@ export default {
                 "5": 36
             }
         ]
+    },
+    "RightfulReward": {
+        "name": "Rightful Reward",
+        "imgs": [
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8d\/Weapon_Rightful_Reward.png",
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dc\/Weapon_Rightful_Reward_2nd.png"
+        ],
+        "rarity": 4,
+        "type": "Polearm",
+        "passive": "When the wielder is healed, restore @0 Energy. This effect can triggered once every 10s, and can occur even when the character is not on the field.",
+        "refinementData": [
+            {
+                "1": 8,
+                "2": 10,
+                "3": 12,
+                "4": 14,
+                "5": 16
+            }
+        ],
+        "matForgery": "Chalice",
+        "matStrongEnemy": "Breacher Primuses",
+        "matWeakEnemy": "Clockwork Meka",
+        "baseATK": 44,
+        "stat": "hp_",
+        "baseStat": 6
     },
     "RoyalBow": {
         "name": "Royal Bow",
@@ -3152,6 +3538,38 @@ export default {
             }
         ]
     },
+    "SacrificialJade": {
+        "name": "Sacrificial Jade",
+        "imgs": [
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/86\/Weapon_Sacrificial_Jade.png",
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/79\/Weapon_Sacrificial_Jade_2nd.png"
+        ],
+        "rarity": 4,
+        "type": "Catalyst",
+        "passive": "When not on the field for more than 5s, Max HP will be increased by @0% and Elemental Mastery will be increased by @1. These effects will be canceled after the wielder has been on the field for 10s.",
+        "refinementData": [
+            {
+                "1": 32,
+                "2": 40,
+                "3": 48,
+                "4": 56,
+                "5": 64
+            },
+            {
+                "1": 40,
+                "2": 50,
+                "3": 60,
+                "4": 70,
+                "5": 80
+            }
+        ],
+        "matForgery": "Pillar",
+        "matStrongEnemy": "Fatui Cicin Mages",
+        "matWeakEnemy": "Samachurls",
+        "baseATK": 41,
+        "stat": "critRate_",
+        "baseStat": 8
+    },
     "SacrificialSword": {
         "name": "Sacrificial Sword",
         "rarity": 4,
@@ -3199,6 +3617,16 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/29\/Weapon_Sapwood_Blade_2nd.png"
         ],
         "passive": "After triggering Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon, a Leaf of Consciousness will be created around the character for a maximum of 10s. When picked up, the Leaf will grant the character @0 Elemental Mastery for 12s. Only 1 Leaf can be generated this way every 20s. This effect can still be triggered if the character is not on the field. The Leaf of Consciousness' effect cannot stack.",
+        "code": [
+          "proc",
+          [
+            "stat",
+            [
+              "eleMas",
+              "@0"
+            ]
+          ]
+        ],
         "refinementData": [
             {
                 "1": 60,
@@ -3208,6 +3636,38 @@ export default {
                 "5": 120
             }
         ]
+    },
+    "ScionOfTheBlazingSun": {
+        "name": "Scion of the Blazing Sun",
+        "imgs": [
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/83\/Weapon_Scion_of_the_Blazing_Sun.png",
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f3\/Weapon_Scion_of_the_Blazing_Sun_2nd.png"
+        ],
+        "rarity": 4,
+        "type": "Bow",
+        "passive": "After a Charged Attack hits an opponent, a Sunfire Arrow will descend upon the opponent hit, dealing @0% ATK as DMG, and applying the Heartsearer effect to the opponent damaged by said Arrow for 10s. Opponents affected by Heartsearer take @1% more Charged Attack DMG from the wielder. A Sunfire Arrow can be triggered once every 10s.",
+        "refinementData": [
+            {
+                "1": 60,
+                "2": 75,
+                "3": 90,
+                "4": 105,
+                "5": 120
+            },
+            {
+                "1": 28,
+                "2": 35,
+                "3": 42,
+                "4": 49,
+                "5": 56
+            }
+        ],
+        "matForgery": "Scarab",
+        "matStrongEnemy": "Hilichurl Rogues",
+        "matWeakEnemy": "Fungi",
+        "baseATK": 44,
+        "stat": "critRate_",
+        "baseStat": 4
     },
     "SerpentSpine": {
         "name": "Serpent Spine",
@@ -3223,7 +3683,27 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/88\/Weapon_Serpent_Spine.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/10\/Weapon_Serpent_Spine_2nd.png"
         ],
-        "passive": "Every 4s a character is on the field, they will deal @0% more DMG and take @1%  more DMG. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be reduced by 1 stack when the character takes DMG.",
+        "passive": "Every 4s a character is on the field, they will deal @0% more DMG and take @1% more DMG. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be reduced by 1 stack when the character takes DMG.",
+        "code": [
+          "proc",
+          [
+            [
+              "stat",
+              [
+                "dmg_",
+                "@0"
+              ]
+            ],
+            [
+              "stat",
+              [
+                "inDmg_",
+                "@1"
+              ]
+            ]
+          ],
+          5
+        ],
         "refinementData": [
             {
                 "1": 6,
@@ -3312,6 +3792,31 @@ export default {
             }
         ]
     },
+    "SongOfStillness": {
+        "name": "Song of Stillness",
+        "imgs": [
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bd\/Weapon_Song_of_Stillness.png",
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/21\/Weapon_Song_of_Stillness_2nd.png"
+        ],
+        "rarity": 4,
+        "type": "Bow",
+        "passive": "After the wielder is healed, they will deal @0% more DMG for 8s. This can be triggered even when the character is not on the field.",
+        "refinementData": [
+            {
+                "1": 16,
+                "2": 20,
+                "3": 24,
+                "4": 28,
+                "5": 32
+            }
+        ],
+        "matForgery": "Chord",
+        "matStrongEnemy": "Hydro Phantasms",
+        "matWeakEnemy": "Hilichurl Archers",
+        "baseATK": 42,
+        "stat": "atk_",
+        "baseStat": 9
+    },
     "SwordOfDescension": {
         "name": "Sword of Descension",
         "rarity": 4,
@@ -3328,6 +3833,31 @@ export default {
         ],
         "passive": "Hitting enemies with Normal or Charged Attacks grants a 50% chance to deal 200% ATK as DMG in a small AoE. This effect can only occur once every 10s.\nAdditionally, if the Traveler equips the Sword of Descension, their ATK is increased by 66.",
         "refinementData": []
+    },
+    "TalkingStick": {
+        "name": "Talking Stick",
+        "imgs": [
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/28\/Weapon_Talking_Stick.png",
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c8\/Weapon_Talking_Stick_2nd.png"
+        ],
+        "rarity": 4,
+        "type": "Claymore",
+        "passive": "ATK will be increased by 16% for 15s after being affected by Pyro. This effect can be triggered once every 12s. All Elemental DMG Bonus will be increased by @0% for 15s after being affected by Hydro, Cryo, Electro, or Dendro. This effect can be triggered once every 12s.",
+        "refinementData": [
+            {
+                "1": 12,
+                "2": 15,
+                "3": 18,
+                "4": 21,
+                "5": 24
+            }
+        ],
+        "matForgery": "Plate",
+        "matStrongEnemy": "Consecrated Beasts",
+        "matWeakEnemy": "Slimes",
+        "baseATK": 44,
+        "stat": "critRate_",
+        "baseStat": 4
     },
     "TheAlleyFlash": {
         "name": "The Alley Flash",
@@ -3401,6 +3931,13 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/47\/Weapon_The_Black_Sword_2nd.png"
         ],
         "passive": "Increases DMG dealt by Normal and Charged Attacks by @0%.\nAdditionally, regenerates @1% of ATK as HP when Normal and Charged Attacks score a CRIT Hit. This effect can occur once every 5s.",
+        "code": [
+          "stat",
+          [
+            ["normal_dmg_","charged_dmg_"],
+            "@0"
+          ]
+        ],
         "refinementData": [
             {
                 "1": 20,
@@ -3458,6 +3995,13 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f0\/Weapon_The_Stringless_2nd.png"
         ],
         "passive": "Increases Elemental Skill and Elemental Burst DMG by @0%.",
+        "code": [
+          "stat",
+          [
+            ["skill_dmg_","burst_dmg_"],
+            "@0"
+          ]
+        ],
         "refinementData": [
             {
                 "1": 24,
@@ -3538,6 +4082,31 @@ export default {
                 "5": 480
             }
         ]
+    },
+    "TidalShadow": {
+        "name": "Tidal Shadow",
+        "imgs": [
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/69\/Weapon_Tidal_Shadow.png",
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/17\/Weapon_Tidal_Shadow_2nd.png"
+        ],
+        "rarity": 4,
+        "type": "Claymore",
+        "passive": "After the wielder is healed, ATK will be increased by @0% for 8s. This can be triggered even when the character is not on the field.",
+        "refinementData": [
+            {
+                "1": 24,
+                "2": 30,
+                "3": 36,
+                "4": 42,
+                "5": 48
+            }
+        ],
+        "matForgery": "Chalice",
+        "matStrongEnemy": "Breacher Primuses",
+        "matWeakEnemy": "Clockwork Meka",
+        "baseATK": 42,
+        "stat": "atk_",
+        "baseStat": 9
     },
     "ToukabouShigure": {
         "name": "Toukabou Shigure",
@@ -3709,6 +4278,45 @@ export default {
                 "5": 40
             }
         ]
+    },
+    "WolfFang": {
+        "name": "Wolf-Fang",
+        "imgs": [
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e3\/Weapon_Wolf-Fang.png",
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a4\/Weapon_Wolf-Fang_2nd.png"
+        ],
+        "rarity": 4,
+        "type": "Sword",
+        "passive": "DMG dealt by Elemental Skill and Elemental Burst is increased by @0%. When an Elemental Skill hits an opponent, its CRIT Rate will be increased by @1%. When an Elemental Burst hits an opponent, its CRIT Rate will be increased by @2%. Both of these effects last 10s separately, have 4 max stacks, and can be triggered once every 0.1s.",
+        "refinementData": [
+            {
+                "1": 16,
+                "2": 20,
+                "3": 24,
+                "4": 28,
+                "5": 32
+            },
+            {
+                "1": 2,
+                "2": 2.5,
+                "3": 3,
+                "4": 3.5,
+                "5": 4
+            },
+            {
+                "1": 2,
+                "2": 2.5,
+                "3": 3,
+                "4": 3.5,
+                "5": 4
+            }
+        ],
+        "matForgery": "Tile",
+        "matStrongEnemy": "Ruin Guards",
+        "matWeakEnemy": "Hilichurls",
+        "baseATK": 42,
+        "stat": "critRate_",
+        "baseStat": 6
     },
     "XiphosMoonlight": {
         "name": "Xiphos' Moonlight",
@@ -3989,6 +4597,16 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fd\/Weapon_Harbinger_of_Dawn_2nd.png"
         ],
         "passive": "When HP is above 90%, increases CRIT Rate by @0%.",
+        "code": [
+          "proc",
+          [
+            "stat",
+            [
+              "critRate_",
+              "@0"
+            ]
+          ]
+        ],
         "refinementData": [
             {
                 "1": 14,

@@ -1,7 +1,7 @@
 import { handlebars, Renderer } from "./Renderer.js";
 import UIController from "./UIController.js";
 
-handlebars.registerHelper("unique", (item, context) => item.getUnique());
+handlebars.registerHelper("unique", (item, options) => item.getUnique());
 
 export default class UIItem extends UIController {
   static dontSerialize = UIController.dontSerialize.concat(["list"]);

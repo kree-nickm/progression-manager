@@ -581,3 +581,7 @@ img.element-icon {
   border-bottom: 1px solid rgba(0,0,0,0.5);
   color: rgba(0,0,0,0.5);
 }
+
+.btn.preview-artifact {
+  border-width: 0px;
+}
