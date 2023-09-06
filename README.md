@@ -16,10 +16,9 @@ Features include:
 * For each character, create one or more builds that specify their desired artifact sets and artifact main stat/substat priority, which will be used in calculations to determine their best artifacts.
 * For each character, see lists of all of your artifacts separated by slot, and sorted by how good they are for that character, based on the build(s) explained above. You can also filter by preferred artifact sets.
 * Using the above artifact preferences, run an algorithm that determines how valuable each artifact on your account is based on the number of you characters who might want to use it. Any artifacts that end up with a score of 0 are safe to use as fodder for levels/strongbox.
-* _(Planned Feature)_ See recommended artifact combinations that factor in the above builds as well as different combinations of your desired artifact sets.
-* _(Planned Feature)_ See each of your characters' stats based on their equipped weapon and artifacts, as well as how much damage they should be doing with various attacks, skills, bursts, reactions, etc. Additionally:
-  * _(Planned Feature)_ Factor in triggered effects of artifacts or weapons, and how the damage values will change when such effects are triggered.
-  * _(Planned Feature)_ Allow you to see all of that information for multiple different artifact combinations at once, and use that to decide which one you prefer.
+* _(Work-In-Progress)_ See each of your characters' stats based on their equipped weapon, artifacts, unlocked talents and constellations, as well as how much damage they should be doing with various attacks, skills, bursts, reactions, etc. Additionally:
+  * _(Work-In-Progress)_ Factor in triggered effects from those aforementioned sources, and how the damage values will change when such effects are triggered.
+  * Allow you to see all of that information for an alternate gear set (preview) alongside your current one, and use that to decide which one you prefer.
 * _(Planned Feature)_ Allow you to set up teams, and see how the buffs provided by each team members' abilities/artifacts/weapons will affect all of the aforementioned statistics.
 * _(Planned Feature)_ Obtain your character data from Hoyoverse directly using your profile (like Enka), so you can have at least *some* account data imported without having to use screen readers.
 * _(Planned Feature)_ Set targets for your character/gear progression, so you can quickly see all of the things you need to spend resin on.
