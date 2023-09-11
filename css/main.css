@@ -399,7 +399,7 @@ img.element-icon {
   padding: 1ex;
 }
 
-.artifact-stat-slider .form-range::-moz-range-track {
+.form-range::-moz-range-track {
   background-color: #ddd;
 }
 

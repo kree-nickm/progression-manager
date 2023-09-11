@@ -328,7 +328,8 @@ export default class Artifact extends GenshinItem
           excessERRating = 0;
         }
       }
-      let mainScore = (build[this.slotKey+'Stat']?.[this.mainStatKey] ?? 0) * mainRating;
+      // Give the mainstat of flowers and plumes an automatic preference of 1, otherwise their scores get way out of whack with the other pieces.
+      let mainScore = (this.slotKey=="flower"||this.slotKey=="plume" ? 1 : (build[this.slotKey+'Stat']?.[this.mainStatKey] ?? 0)) * mainRating;
       
       // Score the substats.
       let subScore = 0;

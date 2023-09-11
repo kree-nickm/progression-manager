@@ -1024,7 +1024,11 @@ export default {
         ],
         "bonus4": "Increases Elemental Burst DMG by 25% of Energy Recharge. A maximum of 75% bonus DMG can be obtained in this way.",
         "bonus4code": [
-            "custom"
+            "stat",
+            [
+                "burst_dmg_",
+                ["stat%", 0.25, "enerRech_", 75]
+            ]
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/53\/Item_Magnificent_Tsuba.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d6\/Item_Sundered_Feather.png",

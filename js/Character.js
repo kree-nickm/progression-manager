@@ -19,15 +19,15 @@ handlebars.registerHelper("ifHasStat", function(character, statId, options) {
   }
   if(options.hash.situation)
   {
-    let general = character.getStat(statId,undefined,true);
+    let general = character.getStat(statId,{},true);
     let situational = character.getStat(statId, {situation:options.hash.situation}, true);
-    if(general !== situational)
+    if(general !== situational) // TODO: IDK how to handle it if the stat is normally 0, but can proc to be increased, but only in specific situations. For example, Candace increasing the Hydro DMG Bonus for only Normal Attacks after her burst, when she has no Hydro DMG Bonus to begin with.
       return options.fn(this);
     return options.inverse(this);
   }
   else
   {
-    if(character.getStat(statId,undefined,true) !== null)
+    if(character.getStat(statId,{},true) !== null)
       return options.fn(this);
     return options.inverse(this);
   }
@@ -47,9 +47,21 @@ handlebars.registerHelper("isPreviewing", function(character, item, options) {
 
 export default class Character extends GenshinItem
 {
-  static dontSerialize = GenshinItem.dontSerialize.concat(["loaded","_weapon","_flower","_plume","_sands","_goblet","_circlet","preview","MaterialList","maxScores","procs"]);
+  static dontSerialize = GenshinItem.dontSerialize.concat(["MaterialList","loaded","_weapon","_flower","_plume","_sands","_goblet","_circlet","preview","maxScores","statModifiers"]);
   static goodProperties = ["key","level","constellation","ascension","talent"];
   static templateName = "renderCharacterAsPopup";
+  static universalStatModifiers = {
+    "PyroResonance": ["pstat",["atk_",25]],
+    "CryoResonance": ["pstat",["critRate_",15]],
+    "HydroResonance": ["pstat",["hp_",25]],
+    "AnemoResonance": [["pstat",["stamina_cost_",-15]],["pstat",["skill_cd_",-5]]],
+    "DendroResonance": ["pstat",["eleMas",50]],
+    "DendroResonanceA": ["pstat",["eleMas",30]],
+    "DendroResonanceB": ["pstat",["eleMas",20]],
+    "GeoResonance": ["pstat",["shield_",15]],
+    "GeoResonanceA": ["pstat",["dmg_",15]],
+    "GeoResonanceB": ["estat",["geo_res_",20]],
+  };
 
   static sortArtifacts(buildId,useTargets,a,b)
   {
@@ -74,7 +86,6 @@ export default class Character extends GenshinItem
     burst: 1,
   };
   favorite = false;
-  consider = true;
 
   MaterialList;
   loaded = false;
@@ -86,8 +97,7 @@ export default class Character extends GenshinItem
   _circlet = null;
   preview = {};
   maxScores = {};
-  procs = {};
-  targetEnemyData = {};
+  statModifiers = {};
   
   afterLoad()
   {
@@ -156,7 +166,7 @@ export default class Character extends GenshinItem
       this.notifyType(field.string);
       this.clearMemory("stats");
       this.clearMemory("motionValues");
-      this.update("procs", {}, "replace");
+      this.update("statModifiers", {}, "replace");
       // Iterate through artifacts and clear some amount of artifact.storedStats
       this.viewer.lists.ArtifactList?.items().forEach(artifact => {
         for(let buildId in artifact.storedStats.characters[this.key]??[])
@@ -167,16 +177,12 @@ export default class Character extends GenshinItem
     {
       this.clearMemory("stats", "preview");
       this.clearMemory("motionValues", "preview");
-      this.update("procs", {}, "replace");
+      this.update("statModifiers", {}, "replace");
     }
     else if(field.path[0] == "talent")
     {
       this.clearMemory("motionValues", "current", field.path[1]);
       this.clearMemory("motionValues", "preview", field.path[1]);
-    }
-    else if(field.string == "consider")
-    {
-      this.viewer.lists.ArtifactList?.update("evaluate", null, "notify");
     }
     else if(field.string == "buildData" || field.path[0]?.[0] == "getBuild")
     {
@@ -265,7 +271,7 @@ export default class Character extends GenshinItem
         if(item.constructor.name == "Artifact")
         {
           log.pop();
-          log.push(`Inventory Kamera is known to misread the "Source" label of any artifact where said label is visible, and think it's an "Equipped By" label.`);
+          log.push(`Inventory Kamera V<1.3.10  is known to misread the "Source" label of any artifact where said label is visible, and think it's an "Equipped By" label.`);
           let detectProblem = artifact => {
             if(artifact.rarity == 5)
             {
@@ -567,6 +573,7 @@ export default class Character extends GenshinItem
       
       if(variant != "base")
       {
+        let stats = {__calculations__:{}};
         if(isPrimary)
         {
           if(variant != "bonus")
@@ -574,10 +581,46 @@ export default class Character extends GenshinItem
           result += baseResult * this.getStat(baseStat+"_", alternates) / 100;
         }
         
+        // Bonus from resonances
+        for(let resonance in Character.universalStatModifiers)
+        {
+          this.handleCode({
+              source: `${resonance}`,
+              sourcePart: "",
+              code: ["proc", Character.universalStatModifiers[resonance]],
+            }, stats, alternates, "resonance");
+        }
+        
+        // Bonus from talents
+        for(let talent in GenshinCharacterData[this.key].talents??[])
+        {
+          if(talent == "1st Ascension Passive" && this.ascension < 1)
+            continue;
+          if(talent == "4th Ascension Passive" && this.ascension < 4)
+            continue;
+          if(GenshinCharacterData[this.key].talents[talent].code)
+            this.handleCode({
+                source: `${this.name} ${talent}`,
+                sourcePart: "",
+                code: GenshinCharacterData[this.key].talents[talent].code,
+              }, stats, alternates, "talentPassive");
+        }
+            
+        // Bonus from constellations
+        for(let c=1; c<=this.constellation; c++)
+        {
+          if(GenshinCharacterData[this.key].constellations?.[c]?.code)
+            this.handleCode({
+                source: this.name + " Constellation " + c,
+                sourcePart: "",
+                code: GenshinCharacterData[this.key].constellations[c].code,
+              }, stats, alternates, "constellation");
+        }
+        
         // Bonus from weapon passive
         let weaponPassive = (alternates?.weapon??(alternates?.preview?(this.preview.weapon??this.weapon):this.weapon)).getCode();
         if(weaponPassive)
-          result += this.handleCode(weaponPassive, {}, alternates, "weaponPassive")[(baseStat)] ?? 0;
+          this.handleCode(weaponPassive, stats, alternates, "weaponPassive");
         
         // Bonus from artifact substats
         for(let slot of ['flower','plume','sands','goblet','circlet'])
@@ -591,42 +634,76 @@ export default class Character extends GenshinItem
           }
         }
         
+        result += stats[(baseStat)] ?? 0;
+        
         // Bonus from artifact set
         let setBonus = this.getSetBonus(alternates);
         result += setBonus.stats[(baseStat)] ?? 0;
         
-        // Hard-coded artifact sets.
-        if(setBonus.sets.EmblemOfSeveredFate?.count >= 4 && stat == "burst_dmg_")
-        {
-          result += Math.min(75, this.getStat("enerRech_", alternates)/4);
-        }
-        
         // Bonus from active procs
-        let procStats = {};
-        for(let proc in this.procs)
+        let procStats = {__calculations__:{}};
+        for(let proc in this.statModifiers)
         {
-          if(alternates?.preview && this.procs[proc].preview || !alternates?.preview && this.procs[proc].current)
+          if(alternates?.preview && this.statModifiers[proc].preview || !alternates?.preview && this.statModifiers[proc].current)
           {
-            if(this.procs[proc].active)
+            if(this.statModifiers[proc].stacks && this.statModifiers[proc].active > 0)
             {
-              for(let i=0; i<this.procs[proc].active; i++)
+              for(let i=0; i<this.statModifiers[proc].active; i++)
                 this.handleCode({
-                  source: this.procs[proc].bonus.source,
-                  sourcePart: this.procs[proc].bonus.sourcePart,
-                  code: this.procs[proc].code,
-                  description: this.procs[proc].bonus.description
-                }, procStats, alternates, this.procs[proc].sourceType);
+                  source: this.statModifiers[proc].bonus.source,
+                  sourcePart: this.statModifiers[proc].bonus.sourcePart,
+                  code: this.statModifiers[proc].code,
+                }, procStats, alternates, "proc");
             }
-            else if(this.handleCode({
-                source: this.procs[proc].bonus.source,
-                sourcePart: this.procs[proc].bonus.sourcePart,
-                code: this.procs[proc].code,
-                description: this.procs[proc].bonus.description
-              }, {}, alternates, this.procs[proc].sourceType)[baseStat])
+            else if(this.statModifiers[proc].stacks && baseStat in this.handleCode({
+                source: this.statModifiers[proc].bonus.source,
+                sourcePart: this.statModifiers[proc].bonus.sourcePart,
+                code: this.statModifiers[proc].code,
+              }, {}, alternates, "proc"))
               exists = true;
           }
         }
         result += procStats[(baseStat)] ?? 0;
+        
+        // Bonus from dependant effects that need all other stats to be calculated beforehand.
+        let calculations = Object.assign(stats.__calculations__, setBonus.stats.__calculations__, procStats.__calculations__);
+        for(let src in calculations)
+        {
+          if(stat == calculations[src].stat)
+          {
+            //console.debug(`Handling "${src}":`, calculations[src]);
+            switch(calculations[src].func)
+            {
+              case "mv":
+                  let talent;
+                  for(let t of ["Normal Attack","Elemental Burst","Elemental Skill"])
+                  {
+                    for(let mv in GenshinCharacterData[this.key].talents?.[t]?.scaling ?? [])
+                      if(mv == calculations[src].args[0])
+                        talent = t
+                  }
+                  if(talent)
+                  {
+                    let motionValue = this.getTalentValues(talent, alternates, {onlyKey:calculations[src].args[0]}).find(mv => mv.rawKey == calculations[src].args[0]);
+                    if(typeof(motionValue.value) == "number")
+                      result += motionValue.value;
+                    else
+                      console.warn(`Function 'mv': "${calculations[src].args[0]}" is not a usable motion value:`, motionValue);
+                  }
+                  else
+                    console.warn(`Function 'mv': "${calculations[src].args[0]}" doesn't match any motion value.`);
+                break;
+              case "stat%":
+                  if(calculations[src].args[2])
+                    result += Math.min(calculations[src].args[2], this.getStat(calculations[src].args[1], alternates) * calculations[src].args[0]);
+                  else
+                    result += this.getStat(calculations[src].args[1], alternates) * calculations[src].args[0];
+                break;
+              default:
+                console.warn(`Unhandled function "${func}" in stat calculation for "${src}":`, calculations[src]);
+            }
+          }
+        }
       }
       else
         result = baseResult;
@@ -691,7 +768,7 @@ export default class Character extends GenshinItem
         rxnMult = 3;
       
       let bonusEM = 16 * this.getStat("eleMas",alternates) / (this.getStat("eleMas",alternates) + 2000);
-      let RES = (this.targetEnemyData[`enemy${dmgType.at(0).toUpperCase()+dmgType.slice(1)}RES`]??10) + this.getStat("enemy_"+dmgType+"_res_",alternates);
+      let RES = (this.list.targetEnemyData[`enemy${dmgType.at(0).toUpperCase()+dmgType.slice(1)}RES`]??10) + this.getStat("enemy_"+dmgType+"_res_",alternates);
       let reduction = RES>=75 ? 1/(4*RES+1) : RES>=0 ? 1-RES/100 : 1-RES/200;
       return rxnMult * GenshinCharacterStats.levelReactionMultiplier[this.level].pc * (1 + bonusEM + this.getStat(baseType+"_dmg_",alternates) / 100) * reduction;
     }
@@ -704,7 +781,7 @@ export default class Character extends GenshinItem
         rxnMult = 1.25;
       
       let bonusEM = 5 * this.getStat("eleMas",alternates) / (this.getStat("eleMas",alternates) + 1200);
-      let RES = (this.targetEnemyData[`enemy${dmgType.at(0).toUpperCase()+dmgType.slice(1)}RES`]??10) + this.getStat("enemy_"+dmgType+"_res_",alternates);
+      let RES = (this.list.targetEnemyData[`enemy${dmgType.at(0).toUpperCase()+dmgType.slice(1)}RES`]??10) + this.getStat("enemy_"+dmgType+"_res_",alternates);
       let reduction = RES>=75 ? 1/(4*RES/100+1) : RES>=0 ? 1-RES/100 : 1-RES/200;
       return rxnMult * GenshinCharacterStats.levelReactionMultiplier[this.level].pc * (1 + bonusEM + this.getStat(baseType+"_dmg_",alternates) / 100);// * reduction;
     }
@@ -718,12 +795,10 @@ export default class Character extends GenshinItem
     return 0;
   }
   
-  getTalentValues(talent, alternates={})
+  getTalentValues(talent, alternates={}, {onlyKey}={})
   {
     let result = [];
     let remembered = this.loadMemory("motionValues", alternates?.preview?"preview":"current", talent);
-    let situation = alternates.situation;
-    alternates.situation = null;
     
     if(remembered)
       result = remembered;
@@ -731,12 +806,35 @@ export default class Character extends GenshinItem
     {
       // Determine which talent to use the scaling properties of.
       let scaling;
-      if(talent == "auto")
+      let mvModifiers = [];
+      for(let p in this.statModifiers)
+      {
+        if(this.statModifiers[p].active)
+        {
+          let codes = Array.isArray(this.statModifiers[p].code[0]) ? this.statModifiers[p].code : [this.statModifiers[p].code];
+          for(let modifier of codes)
+            if(["editmv","addmv","infuse","pinfuse","oinfuse"].indexOf(modifier[0]) > -1)
+              mvModifiers.push(modifier);
+        }
+      }
+      if(talent == "auto" || talent == "Normal Attack")
+      {
+        talent = "auto";
         scaling = GenshinCharacterData[this.key].talents["Normal Attack"].scaling;
-      else if(talent == "skill")
+        mvModifiers = mvModifiers.filter(modifier => modifier[1][0] == "Normal Attack" || ["infuse","pinfuse","oinfuse"].indexOf(modifier[0]) > -1);
+      }
+      else if(talent == "skill" || talent == "Elemental Skill")
+      {
+        talent = "skill";
         scaling = GenshinCharacterData[this.key].talents["Elemental Skill"].scaling;
-      else if(talent == "burst")
+        mvModifiers = mvModifiers.filter(modifier => modifier[1][0] == "Elemental Skill");
+      }
+      else if(talent == "burst" || talent == "Elemental Burst")
+      {
+        talent = "burst";
         scaling = GenshinCharacterData[this.key].talents["Elemental Burst"].scaling;
+        mvModifiers = mvModifiers.filter(modifier => modifier[1][0] == "Elemental Burst");
+      }
       else
       {
         console.error(`Invalid talent in getTalentValues: ${talent}`);
@@ -747,28 +845,85 @@ export default class Character extends GenshinItem
         console.error(`Character ${this.key} has potentially invalid talents:`, GenshinCharacterData[this.key].talents);
         return null;
       }
+      //console.log(`Pre`, talent, mvModifiers);
+      
+      // If any new motion values are being dynamically added, do it here. We clone the scaling object so it doesn't modify the default character data.
+      scaling = Object.assign({}, scaling);
+      for(let modifier of mvModifiers)
+      {
+        if(modifier[0] == "addmv")
+        {
+          scaling[modifier[1][1]] = {};
+          for(let lvl in scaling[Object.keys(scaling)[0]])
+            scaling[modifier[1][1]][lvl] = modifier[1][2];
+        }
+      }
+      
       // Iterate through each line of the talent properties.
       for(let key in scaling)
       {
+        if(onlyKey && key != onlyKey)
+          continue;
         // Determine current value based on talent level.
-        let value = scaling[key][this.talent[talent]/*TODO: add bonus if constellation*/];
+        let talentLvl = this.talent[talent] + this.getStat(talent+"Level", alternates);
+        let value = scaling[key][talentLvl];
         if(!value)
         {
-          console.error(`Character ${this.key} has potentially invalid ${talent} talent at key '${key}' talent lvl '${this.talent[talent]}':`, GenshinCharacterData[this.key].talents);
+          console.error(`Character ${this.key} has potentially invalid ${talent} talent at key '${key}' talent lvl '${talentLvl}':`, GenshinCharacterData[this.key].talents);
           return null;
         }
         // Parse and calculate the values.
-        let values = value.split("+");
+        let values = typeof(value)=="string" ? value.split("+") : [value];
         let calcValues = [];
+        let dmgType;
         let newKey = key;
+        for(let modifier of mvModifiers)
+        {
+          if(modifier[0] == "editmv" && (Array.isArray(modifier[1][1]) ? modifier[1][1].indexOf(key) > -1 : modifier[1][1] == key))
+          {
+            if(modifier[1][2] == "+hit")
+              values.push(modifier[1][3]);
+          }
+        }
         for(let v in values)
         {
-          let val = values[v];
+          let val = String(values[v]);
+          let baseDMG, critical, average;
           let hits = 1;
           let stat;
+          dmgType = null;
+          for(let modifier of mvModifiers)
+          {
+            if(talent == "auto" && (modifier[0] == "infuse" || modifier[0] == "pinfuse" || modifier[0] == "oinfuse") && (this.weaponType == "Claymore" || this.weaponType == "Sword" || this.weaponType == "Polearm"))
+            {
+              dmgType = modifier[1];
+              if(modifier[0] == "oinfuse")
+                break;
+            }
+          }
+          
           // Parse out some data based on the value.
           if(val.includes("×") || val.includes("*"))
             [val, hits] = val.split(/[×*]/);
+          if(val.includes("@"))
+            [val, dmgType] = val.split("@");
+          if(val.includes("%:"))
+          {
+            let other, idx;
+            [val, other] = val.split("%:");
+            [other, idx] = other.split(".");
+            idx = idx ?? 0;
+            let otherAttack = result.find(attack => attack.rawKey == other);
+            if(!otherAttack)
+            {
+              console.error(`Invalid motion value specification "${values[v]}" for ${this.name}: can't find existing motion value "${other}"`);
+              continue;
+            }
+            val = String(parseFloat(val)/100 * parseFloat(otherAttack.valueList[idx]?.baseDMG));
+            stat = "flat";
+          }
+          
+          // Try to turn val into a number, parsing out any non-numeric components where possible
           if(val.endsWith("%"))
           {
             val = val.slice(0, -1);
@@ -786,13 +941,23 @@ export default class Character extends GenshinItem
           }
           if(!isNaN(val.replaceAll(",","")))
             val = val.replaceAll(",","");
+          
           if(!isNaN(val))
           {
             // Determine stat scaling.
-            let healing = key.includes("Regeneration") || key.includes("Healing");
-            let shielding = key.includes("Absorption");
-            let justPercent = key.includes("RES Decrease") || key.includes("Ratio");
-            if(key.endsWith(" (%)"))
+            if(key.includes("Regeneration") || key.includes("Healing"))
+              dmgType = "healing";
+            else if(key.includes("Absorption"))
+              dmgType = "shielding";
+            else if(key.startsWith("Inherited HP"))
+              dmgType = "hp";
+            
+            if(key.includes("RES Decrease") || key.includes("Ratio"))
+            {
+              dmgType = "percent";
+              stat = null;
+            }
+            else if(key.endsWith(" (%)"))
             {
               if(key == newKey)
                 newKey = key.slice(0, -4);
@@ -816,86 +981,30 @@ export default class Character extends GenshinItem
                 newKey = key.slice(0, -30);
               stat = v ? "eleMas" : "atk";
             }
-            // Do the calculation.
-            if(!justPercent && stat)
+            else if(talent == "auto" && key.includes("DMG"))
             {
-              if(healing)
-              {
-                if(!newKey.endsWith(` (healing)`))
-                  newKey = newKey + ` (healing)`;
-                val = val/100 * this.getStat(stat, alternates) * (1 + this.getStat("heal_", alternates)/100);
-              }
-              else if(shielding)
-              {
-                if(!newKey.endsWith(` (shield)`))
-                  newKey = newKey + ` (shield)`;
-                val = val/100 * this.getStat(stat, alternates) * (1 + this.getStat("shield_", alternates)/100);
-              }
-              else
-              {
-                let baseDMG = val/100 * this.getStat(stat, alternates);
-                let baseMult = 1; // TODO: A couple passives/cons add this.
-                let baseAdd = 0; // TODO: A lot of things add this.
-                let dmgType;
-                let dmgMult;
-                if(talent == "auto")
-                {
-                  if(this.weaponType == "Catalyst")
-                    dmgType = this.element.toLowerCase();
-                  else
-                    dmgType = "physical";
-                  
-                  if(key.includes("Plunge DMG"))
-                  {
-                    dmgMult = this.getStat("plunging_dmg_", alternates);
-                    alternates.situation = "Plunging Attack";
-                  }
-                  else if(key.includes("-Hit DMG") || newKey == "Aimed Shot")
-                  {
-                    dmgMult = this.getStat("normal_dmg_", alternates);
-                    alternates.situation = "Normal Attack";
-                  }
-                  else
-                  {
-                    if(this.weaponType == "Bow")
-                      dmgType = this.element.toLowerCase();
-                    dmgMult = this.getStat("charged_dmg_", alternates);
-                    alternates.situation = "Charged Attack";
-                  }
-                }
-                else
-                {
-                  dmgType = this.element.toLowerCase();
-                  dmgMult = this.getStat(talent+"_dmg_", alternates);
-                  if(talent == "skill")
-                    alternates.situation = "Elemental Skill";
-                  else if(talent == "burst")
-                    alternates.situation = "Elemental Burst";
-                }
-                dmgMult += this.getStat(dmgType+"_dmg_", alternates);
-                if(!newKey.endsWith(` (${dmgType})`))
-                  newKey = newKey + ` (${dmgType})`;
-                // Defense
-                let DEF = 5 * (this.targetEnemyData[`enemyLevel`]??90) + 500;
-                let k = (1 + this.getStat("enemy_def_",alternates)/100) * (1 - this.getStat("ignore_def_",alternates)/100); // TODO: Ignore def is probably not a stat, because it's attack-specific and not an actual buff to the character.
-                let reductionDEF = (this.level + 100) / (k * ((this.targetEnemyData[`enemyLevel`]??90) + 100) + (this.level + 100));
-                // Resistances
-                let RES = (this.targetEnemyData[`enemy${dmgType.at(0).toUpperCase()+dmgType.slice(1)}RES`]??10) + this.getStat("enemy_"+dmgType+"_res_",alternates);
-                let reductionRES = RES>=75 ? 1/(4*RES+1) : RES>=0 ? 1-RES/100 : 1-RES/200;
-                // Final
-                console.debug(`Damage calculations for "${newKey}":`, {val, [stat]:this.getStat(stat, alternates), baseDMG, baseMult, baseAdd, dmgMult, hits, resistance:{RES, reductionRES}, defense:{DEF, k, reductionDEF}, alternates});
-                val = (baseDMG * baseMult + baseAdd) * (1 + dmgMult/100) * reductionRES * reductionDEF;
-              }
+              stat = "atk";
+            }
+            
+            // Do the calculation.
+            if(stat)
+            {
+              ({damage:val, dmgType, baseDMG, critical, average} = this.getDamage(val, stat, alternates, {key, talent, dmgType, mvModifiers}));
+              if(dmgType != "hp" && !newKey.endsWith(` (${dmgType})`))
+                newKey = newKey + ` (${dmgType})`;
             }
             else if(key == "Energy Cost" || key.endsWith("Stamina Cost"))
             {
               val = parseFloat(val);
+              dmgType = null;
             }
-            else if(typeof(finalVal) == "number" && (healing || shielding))
+            // Healing and shielding often add flat values to the stat-scaled value, so handle it here.
+            else if(dmgType == "healing" || dmgType == "shielding" || dmgType == "hp")
             {
-              if(healing)
+              //({damage:val, dmgType, baseDMG, critical, average} = this.getDamage(val, "flat", alternates, {key, talent, dmgType, mvModifiers}));
+              if(dmgType == "healing")
                 val = val * (1 + this.getStat("heal_", alternates)/100);
-              else if(shielding)
+              else if(dmgType == "shielding")
                 val = val * (1 + this.getStat("shield_", alternates)/100);
             }
             // Specific hard-coded formulas that are too hard to handle automatically.
@@ -903,69 +1012,222 @@ export default class Character extends GenshinItem
             {
               newKey = "ATK Bonus";
               val = val/100 * this.getStat("atk-base", alternates);
+              dmgType = "bonus";
             }
             else if(this.key == "Shenhe" && key == "DMG Bonus (% ATK)")
             {
               newKey = "DMG Bonus";
               val = val/100 * this.getStat("atk", alternates);
+              dmgType = "bonus";
             }
             else if(this.key == "Nahida" && key.startsWith("Pyro: DMG Bonus"))
             {
               newKey = key.replace("% - ", "");
-              val = val + "%";
+              dmgType = "percent";
+            }
+            else if(key.includes("Instances")) // Candace "Wave Instances"
+            {
+              dmgType = null;
             }
             // Everything else.
-            else if(justPercent)
+            else if(dmgType == "percent")
             {
               newKey = key.replace(" (%)", "");
-              val = val + "%";
             }
             else
             {
               console.warn(`Unhandled numeric motion value.`, key, values, v);
               val = "**" + values[v];
+              dmgType = null;
             }
           }
           else if(values[v].endsWith("s"))
           {
-            // This is fine as-is.
+            let cdTiers = values[v].slice(0,-1).split("/");
+            for(let modifier of mvModifiers)
+            {
+              if(modifier[0] == "editmv" && (Array.isArray(modifier[1][1]) ? modifier[1][1].indexOf(key) > -1 : modifier[1][1] == key))
+              {
+                if(modifier[1][2] == "s")
+                {
+                  cdTiers.forEach((cd,i) => cdTiers[i] = parseFloat(cd) * (1-modifier[1][3]));
+                }
+              }
+            }
+            val = cdTiers.join("/") + "s";
+            dmgType = null;
           }
           else
           {
             val = "**" + values[v];
+            dmgType = null;
           }
-          calcValues.push({val, hits});
+          calcValues.push({raw:values[v], val, hits, baseDMG, critical, average});
         }
+        
+        newKey = newKey.replace(") (", " + ");
+        for(let modifier of mvModifiers)
+        {
+          if(modifier[0] == "editmv" && (Array.isArray(modifier[1][1]) ? modifier[1][1].indexOf(key) > -1 : modifier[1][1] == key))
+          {
+            if(modifier[1][2] == "+hit*")
+            {
+              calcValues.push({val:calcValues[calcValues.length-1].val*modifier[1][3], hits:1});
+            }
+          }
+        }
+        
         let isAllNumeric = calcValues.every(elem => !isNaN(elem.val));
-        let critRate, critDMG;
+        let canCrit = isAllNumeric && calcValues.every(elem => !isNaN(elem.critical) && !isNaN(elem.average) && elem.val != elem.critical);
+        let valueOut;
         if(isAllNumeric)
         {
-          calcValues.forEach(elem => elem.val = parseFloat(elem.val));
-          if(alternates.situation)
-          {
-            critRate = this.getStat("critRate_", alternates);
-            critDMG = this.getStat("critDMG_", alternates);
-          }
+          calcValues.forEach(elem => {
+            elem.val = parseFloat(elem.val);
+            elem.critical = parseFloat(elem.critical);
+            elem.average = parseFloat(elem.average);
+          });
+          if(dmgType)
+            valueOut = calcValues.reduce((out, elem) => out + (canCrit?elem.average:elem.val) * elem.hits, 0);
+          else
+            valueOut = "";
         }
+        else
+          valueOut = "";
+        
         let stringOut = calcValues.reduce((out, elem) => {
-          return (out!==null ? (out+" + ") : "") + (isAllNumeric ? elem.val.toFixed(0) + (critDMG?` (${(elem.val*(1+critDMG/100)).toFixed(0)})`:"") : elem.val) + (elem.hits>1?" × "+elem.hits:"");
-        }, null);
-        let valueOut = isAllNumeric ? calcValues.reduce((out, elem) => {
-          return out + elem.val * elem.hits;
-        }, 0) : stringOut;
+          return (out!==null ? `${out} + ` : ``) + (isAllNumeric ? elem.val.toFixed(0) + (canCrit ? ` (${elem.critical.toFixed(0)})` : ``) : elem.val) + (elem.hits>1 ? ` × ${elem.hits}` : ``);
+        }, null) + (dmgType=="percent"?"%":"");
+        
         result.push({
           rawKey: key,
           key: newKey,
           rawValue: value,
+          valueList: calcValues,
           string: stringOut,
           value: valueOut,
         });
-        alternates.situation = null;
       }
-      this.saveMemory(result, "motionValues", alternates?.preview?"preview":"current", talent);
+      if(!onlyKey)
+        this.saveMemory(result, "motionValues", alternates?.preview?"preview":"current", talent);
     }
-    alternates.situation = situation;
     return result;
+  }
+  
+  getDamage(value, stat, rawAlternates, {key="", talent, dmgType, mvModifiers=[], ignoreRES, ignoreDEF}={})
+  {
+    if(isNaN(value))
+    {
+      console.error(`NaN (${value}) passed to `);
+      return {
+        damage: NaN,
+        dmgType,
+      };
+    }
+    
+    let alternates = Object.assign({}, rawAlternates);
+    value = parseFloat(value);
+    let baseDMG = stat=="flat" ? value : value/100 * this.getStat(stat, alternates);
+    
+    if(dmgType == "healing")
+    {
+      let value = baseDMG * (1 + this.getStat("heal_", rawAlternates)/100);
+      return {
+        baseDMG,
+        damage: value,
+        dmgType,
+        critical: value,
+        average: value,
+      };
+    }
+    else if(dmgType == "shielding")
+    {
+      let value = baseDMG * (1 + this.getStat("shield_", rawAlternates)/100);
+      return {
+        baseDMG,
+        damage: value,
+        dmgType,
+        critical: value,
+        average: value,
+      };
+    }
+    else if(dmgType == "hp")
+    {
+      return {
+        baseDMG,
+        damage: baseDMG,
+        dmgType,
+        critical: baseDMG,
+        average: baseDMG,
+      };
+    }
+    
+    let critRate = this.getStat("critRate_", alternates)/100;
+    let critDMG = 1 + this.getStat("critDMG_", alternates)/100;
+    let dmgMult = 100;
+    if(talent == "auto")
+    {
+      if(this.weaponType == "Catalyst")
+        dmgType = dmgType ?? this.element.toLowerCase();
+      
+      if(key.includes("Plunge DMG"))
+      {
+        dmgType = dmgType ?? "physical";
+        alternates.situation = "Plunging Attack";
+        dmgMult = this.getStat("plunging_dmg_", alternates);
+      }
+      else if(key.includes("-Hit DMG") || key.includes("Aimed Shot") && !key.includes("Charge"))
+      {
+        dmgType = dmgType ?? "physical";
+        alternates.situation = "Normal Attack";
+        dmgMult = this.getStat("normal_dmg_", alternates);
+      }
+      else
+      {
+        if(this.weaponType == "Bow")
+          dmgType = dmgType ?? this.element.toLowerCase();
+        else
+          dmgType = dmgType ?? "physical";
+        alternates.situation = "Charged Attack";
+        dmgMult = this.getStat("charged_dmg_", alternates);
+      }
+      dmgMult += this.getStat(dmgType+"_dmg_", alternates) + this.getStat("dmg_", alternates);
+    }
+    else if(talent == "reaction")
+    {
+      dmgMult = this.getStat(stat+"_dmg_", alternates);
+      critRate = 0;
+      critDMG = 0;
+    }
+    else
+    {
+      if(talent == "skill")
+        alternates.situation = "Elemental Skill";
+      else if(talent == "burst")
+        alternates.situation = "Elemental Burst";
+      dmgType = dmgType ?? this.element.toLowerCase();
+      dmgMult = this.getStat(talent+"_dmg_", alternates);
+      dmgMult += this.getStat(dmgType+"_dmg_", alternates) + this.getStat("dmg_", alternates);
+    }
+    
+    let baseMult = 1; // TODO: A couple passives/cons add this.
+    let baseAdd = 0; // TODO: A lot of things add this.
+    
+    // Defense
+    let DEF = 5 * (this.list.targetEnemyData[`enemyLevel`]??90) + 500;
+    let k = (1 + this.getStat("enemy_def_",alternates)/100) * (1 - this.getStat("ignore_def_",alternates)/100); // TODO: Ignore def is probably not a stat, because it's attack-specific and not an actual buff to the character.
+    let reductionDEF = (this.level + 100) / (k * ((this.list.targetEnemyData[`enemyLevel`]??90) + 100) + (this.level + 100));
+    
+    // Resistances
+    let RES = (this.list.targetEnemyData[`enemy${dmgType.at(0).toUpperCase()+dmgType.slice(1)}RES`]??10) + this.getStat("enemy_"+dmgType+"_res_",alternates);
+    let reductionRES = RES>=75 ? 1/(4*RES+1) : RES>=0 ? 1-RES/100 : 1-RES/200;
+    
+    // Final
+    //console.debug(`Damage calculations for "${newKey}":`, {value, [stat]:this.getStat(stat, alternates), baseDMG, baseMult, baseAdd, dmgMult, hits, resistance:{RES, reductionRES}, defense:{DEF, k, reductionDEF}, alternates});
+    let damage = (baseDMG * baseMult + baseAdd) * (1 + dmgMult/100) * (ignoreRES ? 1 : reductionRES) * (ignoreDEF ? 1 : reductionDEF);
+    let critical = damage * critDMG;
+    let average = critRate * critical + (1-critRate) * damage;
+    return {baseDMG, damage, dmgType, critical, average};
   }
   
   /**
@@ -1008,15 +1270,14 @@ export default class Character extends GenshinItem
     {
       for(let sourcePart=1; sourcePart<=sets[source].count; sourcePart++)
       {
-        let description = GenshinArtifactData[source]['bonus'+sourcePart];
         let code = GenshinArtifactData[source]['bonus'+sourcePart+'code'];
-        if(description)
-          bonuses.push({source, sourcePart, code, description});
+        if(code)
+          bonuses.push({source, sourcePart, code});
       }
     }
     
     // Handle the codes.
-    let stats = {};
+    let stats = {__calculations__:{}};
     for(let bonus of bonuses)
       this.handleCode(bonus, stats, alternates, "setBonus");
     
@@ -1027,64 +1288,164 @@ export default class Character extends GenshinItem
   {
     if(!bonus.code)
       return stats;
+    if(!stats.__calculations__)
+      stats.__calculations__ = {};
+    let codeSource = `${bonus.source},${bonus.sourcePart}`;
     if(Array.isArray(bonus.code[0]))
     {
+      if(this.statModifiers[codeSource])
+        this.statModifiers[codeSource].description = bonus.code.map(code => Character.codeToString(code)).join(" ");
       for(let c in bonus.code)
-        this.handleCode({source:bonus.source, sourcePart:bonus.sourcePart+String.fromCharCode(97+parseInt(c)), code:bonus.code[c], description:bonus.description}, stats, alternates, sourceType);
-    }
-    else if(bonus.code[0] == "proc")
-    {
-      let proc = `${bonus.source},${bonus.sourcePart}`;
-      if(!this.procs[proc])
-      {
-        this.procs[proc] = {
-          active: 0,
-          stacks: bonus.code[2]??1,
-          code: bonus.code[1],
-          current: !alternates?.preview,
-          preview: !!alternates?.preview,
-          sourceType,
-          sourceIndex: isNaN(bonus.sourcePart) ? parseInt(bonus.sourcePart.charAt(0)) : bonus.sourcePart,
-          bonus,
-        };
-        this.update("procs", {}, "notify");
-      }
-      else
-      {
-        if(alternates?.preview)
-          this.procs[proc].preview = true;
-        else
-          this.procs[proc].current = true;
-      }
-    }
-    else if(bonus.code[0] == "stat" || bonus.code[0] == "pstat" || bonus.code[0] == "sstat" || bonus.code[0] == "estat")
-    {
-      // bonus.code[1][0] is the stat to change, or array of stats
-      // bonus.code[1][1] is the amount, or an array defining a calculation
-      // bonus.code[1][2] is the situation the stat applies in (if doing 'sstat')
-      if(bonus.code[0] != "sstat" || bonus.code[1][2] == alternates?.situation)
-      {
-        let which = Array.isArray(bonus.code[1][0]) ? bonus.code[1][0] : [bonus.code[1][0]];
-        for(let s of which)
-        {
-          if(bonus.code[0] == "estat")
-            s = "enemy_" + s;
-          if(Array.isArray(bonus.code[1][1]))
-            console.log("func to handle:", bonus.code[1][1]);
-          else
-            stats[s] = (stats[s] ?? 0) + bonus.code[1][1];
-        }
-      }
-    }
-    else if(bonus.code[0] == "custom" && bonus.source == "EmblemOfSeveredFate")
-    {
-      // Handle after everything else has been calculated to prevent recursion.
+        this.handleCode({source:bonus.source, sourcePart:bonus.sourcePart+String.fromCharCode(97+parseInt(c)), code:bonus.code[c]}, stats, alternates, sourceType);
     }
     else
     {
-      console.log(`Unhandled ${bonus.source} (${bonus.sourcePart}) code "${bonus.code[0]}".`);
+      // First create a statModifiers entry, or update it if it already exists, skipping codes within procs because that would be redundant.
+      if(sourceType != "proc")
+      {
+        if(!this.statModifiers[codeSource])
+        {
+          this.statModifiers[codeSource] = {
+            active: bonus.code[0]=="proc" ? 0 : ("procActive" in bonus ? bonus.procActive : 1),
+            stacks: bonus.code[0]=="proc" ? (bonus.code[2]??1) : 0,
+            code: bonus.code[0]=="proc" ? bonus.code[1] : bonus.code,
+            current: !alternates?.preview,
+            preview: !!alternates?.preview,
+            sourceType,
+            sourceIndex: isNaN(bonus.sourcePart) ? parseInt(bonus.sourcePart.charAt(0)) : bonus.sourcePart,
+            bonus,
+            description: Character.codeToString(bonus.code),
+          };
+          this.update("statModifiers", null, "notify");
+        }
+        else
+        {
+          if(alternates?.preview)
+            this.statModifiers[codeSource].preview = true;
+          else
+            this.statModifiers[codeSource].current = true;
+        }
+      }
+      // Handle the code itself.
+      let command, parameters; [command, parameters] = bonus.code;
+      if(command == "proc")
+      {
+        // These need to be handled by the getStat method. This method just collects them.
+      }
+      else if(command == "stat" || command == "pstat" || command == "sstat" || command == "estat")
+      {
+        let targetStats, amount, situation; [targetStats, amount, situation] = parameters;
+          targetStats = Array.isArray(targetStats) ? targetStats : [targetStats];
+          for(let i in targetStats)
+          {
+            let stat = targetStats[i];
+            if(command != "sstat" || situation == alternates?.situation)
+            {
+              if(command == "estat")
+                stat = "enemy_" + stat;
+              if(Array.isArray(amount))
+              {
+                let func, args; [func, ...args] = amount;
+                stats.__calculations__[codeSource+"."+i] = {command, stat, func, args};
+                stats[stat] = (stats[stat] ?? 0);
+              }
+              else
+                stats[stat] = (stats[stat] ?? 0) + amount;
+            }
+            else if(command == "sstat")
+            {
+              stats[stat] = (stats[stat] ?? 0);
+            }
+          }
+      }
+      else if(command == "editmv" || command == "addmv" || command == "infuse" || command == "pinfuse" || command == "oinfuse")
+      {
+        // These need to be handled by the getTalentValues method. This method just collects them.
+      }
+      else if(command == "custom")
+      {
+        if(false)
+        {
+        }
+        else
+          console.log(`Unhandled ${bonus.source} (${bonus.sourcePart}) code "${command}".`);
+      }
+      else
+      {
+        console.log(`Unhandled ${bonus.source} (${bonus.sourcePart}) code "${command}".`);
+      }
     }
     return stats;
+  }
+  
+  static codeToString(code)
+  {
+    const [command, parameters, stacks] = code;
+    if(command == "proc")
+    {
+      return "When active: " + Character.codeToString(parameters) + (stacks ? ` (Stacks up to ${stacks} times.)` : "");
+    }
+    else if(command == "stat" || command == "pstat" || command == "sstat" || command == "estat")
+    {
+      const [stat, amount, situation] = parameters;
+      let statStr = Array.isArray(stat) ? stat.reduce((acc,s,i) => acc + ", " + (i==stat.length-1?"and ":"") + s) : stat;
+      let result = `${situation?situation+" ":""}${statStr}`;
+      if(Array.isArray(amount))
+      {
+        const [func, ...args] = amount;
+        if(func == "mv")
+        {
+          result = `Change ${result} by the motion value of "${args[0]}".`;
+        }
+        else if(func == "stat%")
+        {
+          result = `${args[0]>0?"Increase":"Decrease"} ${result} by ${Math.abs(args[0])}% of ${args[1]}${args[2]?", to a max of "+args[2]+"%":""}.`;
+        }
+        else
+        {
+          result = `Change ${result} by some function "${func}"; ${args.join(", ")}.`;
+        }
+      }
+      else
+      {
+        result = `${amount>0?"Increase":"Decrease"} ${result} by ${Math.abs(amount)}.`;
+      }
+      return result;
+    }
+    else if(command == "editmv")
+    {
+      let result = `Edit "${parameters[0]}" motion value "${parameters[1]}"`;
+      if(parameters[2] == "+hit")
+        result += `, adding an additional amount of ${parameters[3]}.`;
+      else if(parameters[2] == "+hit*")
+        result += `, adding an additional amount equal to ${parameters[3]*100}% of the existing value.`;
+      else if(parameters[2] == "s")
+        result += `, reducing the time by ${parameters[3]*100}%.`;
+      else
+        result += `, affecting it in some way (TBA) by ${parameters[3]}.`;
+      return result;
+    }
+    else if(command == "addmv")
+    {
+      let result = `Add a new "${parameters[0]}" motion value ("${parameters[1]}")`;
+      if(typeof(parameters[2]) == "string" && parameters[2].includes("%:"))
+      {
+        const [amount, other] = parameters[2].split("%:");
+        const [otherMV, otherPart] = other.split(".");
+        result += `, that is ${amount}% of the motion value "${otherMV}"` + (otherPart!==undefined ? ` (hit ${parseInt(otherPart)+1})` : "") +  `.`;
+      }
+      else
+        result += ` with value ${parameters[2]}.`;
+      return result;
+    }
+    else if(command == "infuse" || command == "pinfuse" || command == "binfuse" || command == "oinfuse")
+    {
+      return `Infuse ${command=="pinfuse"?"Swords, Claymores, and Polearms":"your attacks"} with ${parameters}${command=="oinfuse"?" that cannot be overridden":""}.`;
+    }
+    else if(command == "custom")
+      return `Custom code.`;
+    else
+      return `Unknown code.`;
   }
   
   getBuilds()
@@ -1118,6 +1479,8 @@ export default class Character extends GenshinItem
           builds[b].ratioCritDMG = 2;
         if(!("useTargets" in builds[b]))
           builds[b].useTargets = {};
+        if(!("importance" in builds[b]))
+          builds[b].importance = 100;
       }
       return builds;
     }
@@ -1204,9 +1567,9 @@ export default class Character extends GenshinItem
         
         let buildSlot;
         if(slot == "flower")
-          buildSlot = {hp:0};
+          buildSlot = {hp:1};
         else if(slot == "plume")
-          buildSlot = {atk:0};
+          buildSlot = {atk:1};
         else
           buildSlot = build[slot+'Stat'] ?? {'':0};
         let max = 0;
@@ -1279,10 +1642,10 @@ export default class Character extends GenshinItem
       if(!procInput.onchange)
       {
         procInput.onchange = event => {
-          this.procs[event.target.id].active = parseInt(event.target.value);
+          this.statModifiers[event.target.id].active = parseInt(event.target.value);
           this.clearMemory("stats");
           this.clearMemory("motionValues");
-          this.update("procs", {}, "notify");
+          this.update("statModifiers", null, "notify");
         };
       }
     }
@@ -1292,12 +1655,12 @@ export default class Character extends GenshinItem
     {
       if(!enemyInput.onchange)
       {
-        this.targetEnemyData[enemyInput.id] = parseFloat(enemyInput.value);
+        this.list.targetEnemyData[enemyInput.id] = parseFloat(enemyInput.value);
         enemyInput.onchange = event => {
-          this.targetEnemyData[event.target.id] = parseFloat(event.target.value);
+          this.list.targetEnemyData[event.target.id] = parseFloat(event.target.value);
           this.clearMemory("stats");
           this.clearMemory("motionValues");
-          this.update("targetEnemyData", {}, "notify");
+          this.list.update("targetEnemyData", null, "notify");
         };
       }
     }
@@ -1355,6 +1718,16 @@ export default class Character extends GenshinItem
         else
           console.warn(`Cannot delete nonexistent build '${buildId}'.`);
       };
+    
+    /** Build Importance **/
+    let importanceSlider = buildSection.querySelector("#buildImportance");
+    if(!importanceSlider.onchange)
+    {
+      importanceSlider.onchange = event => {
+        this.getBuild(buildId).importance = parseInt(importanceSlider.value);
+        this.update("buildData", null, "notify", {buildId});
+      };
+    }
       
     /** Artifact Set Preferences **/
     let artifactSets = buildSection.querySelector("#bestArtifactSets");
@@ -1551,7 +1924,7 @@ export default class Character extends GenshinItem
             prevArtifactElement = prevArtifact ? characterArtifacts.querySelector(`.list-item[data-uuid="${prevArtifact.uuid}"]`) : null;
             this.preview[artifact.slotKey] = artifact;
           }
-          this.update("preview", {}, "notify");
+          this.update("preview", null, "notify");
           let relatedItems = this.getRelatedItems(buildId);
           // This could be handled by implementing "needsUpdate" on all templated elements, and using an "update()" on an associated item.
           Renderer.rerender(rootElement.querySelector(".character-stats"), {relatedItems});

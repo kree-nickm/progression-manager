@@ -2,6 +2,13 @@
     <h3 class="collapsed" data-bs-toggle="collapse" href="#characterStats">Current Stats (Work-in-Progress)</h3>
     <div id="characterStats" class="collapse">
         <div class="row">
+            <div class="col-3">Stat/Attack/Reaction/Etc.</div>
+            <div class="col-3">Value with Current Gear</div>
+            <div class="col-1" title="Total average damage/healing/etc. dealt by the attack, factoring in all hits and crit chance.">Calc'd</div>
+            <div class="col-3">Value with Previewed Gear</div>
+            <div class="col-1" title="Total average damage/healing/etc. dealt by the attack, factoring in all hits and crit chance.">Calc'd</div>
+        </div>
+        <div class="row">
           <h4 class="col" data-bs-toggle="collapse" href="#characterStats.MainStats">Main Stats</h4>
         </div>
         <div id="characterStats.MainStats" class="collapse show">
@@ -10,68 +17,97 @@
               <div class="col-3">
                 {{> renderItemField item=item field=fields.stat params=(array "hp") wrapper="span"}} ({{> renderItemField item=item field=fields.stat params=(array "hp-base") wrapper="span"}}+{{> renderItemField item=item field=fields.stat params=(array "hp-bonus") wrapper="span"}})
               </div>
+              <div class="col-1"></div>
               <div class="col-3">
                 {{> renderItemField item=item field=fields.stat params=(array "hp" 1) wrapper="span"}} ({{> renderItemField item=item field=fields.stat params=(array "hp-base" 1) wrapper="span"}}+{{> renderItemField item=item field=fields.stat params=(array "hp-bonus" 1) wrapper="span"}})
               </div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">ATK</div>
               <div class="col-3">
                 {{> renderItemField item=item field=fields.stat params=(array "atk") wrapper="span"}} ({{> renderItemField item=item field=fields.stat params=(array "atk-base") wrapper="span"}}+{{> renderItemField item=item field=fields.stat params=(array "atk-bonus") wrapper="span"}})
               </div>
+              <div class="col-1"></div>
               <div class="col-3">
                 {{> renderItemField item=item field=fields.stat params=(array "atk" 1) wrapper="span"}} ({{> renderItemField item=item field=fields.stat params=(array "atk-base" 1) wrapper="span"}}+{{> renderItemField item=item field=fields.stat params=(array "atk-bonus" 1) wrapper="span"}})
               </div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">DEF</div>
               <div class="col-3">
                 {{> renderItemField item=item field=fields.stat params=(array "def") wrapper="span"}} ({{> renderItemField item=item field=fields.stat params=(array "def-base") wrapper="span"}}+{{> renderItemField item=item field=fields.stat params=(array "def-bonus") wrapper="span"}})
               </div>
+              <div class="col-1"></div>
               <div class="col-3">
                 {{> renderItemField item=item field=fields.stat params=(array "def" 1) wrapper="span"}} ({{> renderItemField item=item field=fields.stat params=(array "def-base" 1) wrapper="span"}}+{{> renderItemField item=item field=fields.stat params=(array "def-bonus" 1) wrapper="span"}})
               </div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Crit Rate</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "critRate_") wrapper="span"}}%</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "critRate_" 1) wrapper="span"}}%</div>
+              <div class="col-1"></div>
             </div>
           {{#ifHasStat item "critRate_" situation="Charged Attack"}}
             <div class="row">
               <div class="col-3">| Charged Attacks</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "critRate_" 0 "Charged Attack") wrapper="span"}}%</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "critRate_" 1 "Charged Attack") wrapper="span"}}%</div>
+              <div class="col-1"></div>
             </div>
           {{/ifHasStat}}
           {{#ifHasStat item "critRate_" situation="Elemental Burst"}}
             <div class="row">
               <div class="col-3">| Elemental Burst</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "critRate_" 0 "Elemental Burst") wrapper="span"}}%</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "critRate_" 1 "Elemental Burst") wrapper="span"}}%</div>
+              <div class="col-1"></div>
             </div>
           {{/ifHasStat}}
             <div class="row">
               <div class="col-3">Crit DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "critDMG_") wrapper="span"}}%</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "critDMG_" 1) wrapper="span"}}%</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Elemental Mastery</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "eleMas") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "eleMas" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Energy Recharge</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "enerRech_") wrapper="span"}}%</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "enerRech_" 1) wrapper="span"}}%</div>
+              <div class="col-1"></div>
             </div>
           {{#each (array (array "dmg_" "DMG Bonus") (array "normal_dmg_" "Normal Attack DMG Bonus") (array "charged_dmg_" "Charged Attack DMG Bonus") (array "plunging_dmg_" "Plunging Attack DMG Bonus") (array "skill_dmg_" "Elemental Skill DMG Bonus") (array "burst_dmg_" "Elemental Burst DMG Bonus") (array "anemo_dmg_" "Anemo DMG Bonus") (array "cryo_dmg_" "Cryo DMG Bonus") (array "dendro_dmg_" "Dendro DMG Bonus") (array "electro_dmg_" "Electro DMG Bonus") (array "geo_dmg_" "Geo DMG Bonus") (array "hydro_dmg_" "Hydro DMG Bonus") (array "pyro_dmg_" "Pyro DMG Bonus") (array "physical_dmg_" "Physical DMG Bonus") (array "enemy_anemo_res_" "Anemo RES Shred") (array "enemy_cryo_res_" "Cryo RES Shred") (array "enemy_dendro_res_" "Dendro RES Shred") (array "enemy_electro_res_" "Electro RES Shred") (array "enemy_geo_res_" "Geo RES Shred") (array "enemy_hydro_res_" "Hydro RES Shred") (array "enemy_pyro_res_" "Pyro RES Shred") (array "enemy_def_" "DEF Shred") (array "swirl_dmg_" "Swirl DMG Bonus") (array "superconduct_dmg_" "Superconduct DMG Bonus") (array "melt_dmg_" "Melt DMG Bonus") (array "spread_dmg_" "Spread DMG Bonus") (array "aggravate_dmg_" "Aggravate DMG Bonus") (array "bloom_dmg_" "Bloom DMG Bonus") (array "hyperbloom_dmg_" "Hyperbloom DMG Bonus") (array "burgeon_dmg_" "Burgeon DMG Bonus") (array "burning_dmg_" "Burning DMG Bonus") (array "electrocharged_dmg_" "Electro-Charged DMG Bonus") (array "overloaded_dmg_" "Overloaded DMG Bonus") (array "vaporize_dmg_" "Vaporize DMG Bonus") (array "heal_" "Healing Bonus") (array "inHeal_" "Incoming Healing Bonus") (array "shield_" "Shield Strength") (array "anemo_res_" "Anemo RES") (array "cryo_res_" "Cryo RES") (array "dendro_res_" "Dendro RES") (array "electro_res_" "Electro RES") (array "geo_res_" "Geo RES") (array "hydro_res_" "Hydro RES") (array "pyro_res_" "Pyro RES"))}}
               {{#ifHasStat ../item [0]}}
             <div class="row">
               <div class="col-3">{{[1]}}</div>
               <div class="col-3">{{> renderItemField item=../item field=../fields.stat params=(array [0]) wrapper="span"}}%</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=../item field=../fields.stat params=(array [0] 1) wrapper="span"}}%</div>
+              <div class="col-1"></div>
+            </div>
+              {{/ifHasStat}}
+              {{#ifHasStat ../item [0] situation="Normal Attack"}}
+            <div class="row">
+              <div class="col-3">| Normal Attacks</div>
+              <div class="col-3">{{> renderItemField item=../item field=../fields.stat params=(array [0] 0 "Normal Attack") wrapper="span"}}%</div>
+              <div class="col-1"></div>
+              <div class="col-3">{{> renderItemField item=../item field=../fields.stat params=(array [0] 1 "Normal Attack") wrapper="span"}}%</div>
+              <div class="col-1"></div>
             </div>
               {{/ifHasStat}}
           {{/each}}
@@ -84,9 +120,12 @@
         <div id="characterStats.NormalAttack" class="collapse show">
       {{#each (getTalentValues item "auto")}}
             <div class="row">
-              <div class="col-3">{{key}}</div>
+              <!--<div class="col-1"><input data-talent="auto" data-key="{{rawKey}}" class="rotation-count form-control form-control-sm" type="number" value="0"/></div>-->
+              <div class="col-3">{{> renderItemField item=../item field=../fields.mv params=(array "auto" rawKey 0 -1) wrapper="span"}}</div>
               <div class="col-3">{{> renderItemField item=../item field=../fields.mv params=(array "auto" rawKey) wrapper="span"}}</div>
+              <div class="col-1">{{> renderItemField item=../item field=../fields.mv params=(array "auto" rawKey 0 1) wrapper="span"}}</div>
               <div class="col-3">{{> renderItemField item=../item field=../fields.mv params=(array "auto" rawKey 1) wrapper="span"}}</div>
+              <div class="col-1">{{> renderItemField item=../item field=../fields.mv params=(array "auto" rawKey 1 1) wrapper="span"}}</div>
             </div>
       {{/each}}
         </div>
@@ -98,9 +137,12 @@
         <div id="characterStats.ElementalSkill" class="collapse show">
       {{#each (getTalentValues item "skill")}}
             <div class="row">
-              <div class="col-3">{{key}}</div>
+              <!--<div class="col-1"><input data-talent="skill" data-key="{{rawKey}}" class="rotation-count form-control form-control-sm" type="number" value="0"/></div>-->
+              <div class="col-3">{{> renderItemField item=../item field=../fields.mv params=(array "skill" rawKey 0 -1) wrapper="span"}}</div>
               <div class="col-3">{{> renderItemField item=../item field=../fields.mv params=(array "skill" rawKey) wrapper="span"}}</div>
+              <div class="col-1">{{> renderItemField item=../item field=../fields.mv params=(array "skill" rawKey 0 1) wrapper="span"}}</div>
               <div class="col-3">{{> renderItemField item=../item field=../fields.mv params=(array "skill" rawKey 1) wrapper="span"}}</div>
+              <div class="col-1">{{> renderItemField item=../item field=../fields.mv params=(array "skill" rawKey 1 1) wrapper="span"}}</div>
             </div>
       {{/each}}
         </div>
@@ -112,9 +154,12 @@
         <div id="characterStats.ElementalBurst" class="collapse show">
       {{#each (getTalentValues item "burst")}}
             <div class="row">
-              <div class="col-3">{{key}}</div>
+              <!--<div class="col-1"><input data-talent="burst" data-key="{{rawKey}}" class="rotation-count form-control form-control-sm" type="number" value="0"/></div>-->
+              <div class="col-3">{{> renderItemField item=../item field=../fields.mv params=(array "burst" rawKey 0 -1) wrapper="span"}}</div>
               <div class="col-3">{{> renderItemField item=../item field=../fields.mv params=(array "burst" rawKey) wrapper="span"}}</div>
+              <div class="col-1">{{> renderItemField item=../item field=../fields.mv params=(array "burst" rawKey 0 1) wrapper="span"}}</div>
               <div class="col-3">{{> renderItemField item=../item field=../fields.mv params=(array "burst" rawKey 1) wrapper="span"}}</div>
+              <div class="col-1">{{> renderItemField item=../item field=../fields.mv params=(array "burst" rawKey 1 1) wrapper="span"}}</div>
             </div>
       {{/each}}
         </div>
@@ -126,140 +171,193 @@
         <div id="characterStats.Reactions" class="collapse show">
           {{#ifeq (getProperty item "element") "Anemo"}}
             <div class="row">
+              <!--<div class="col-1"><input data-talent="reaction" data-key="swirl-cryo" class="rotation-count form-control form-control-sm" type="number" value="0"/></div>-->
               <div class="col-3">Cryo Swirl DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "swirl-cryo") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "swirl-cryo" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Electro Swirl DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "swirl-electro") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "swirl-electro" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Hydro Swirl DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "swirl-hydro") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "swirl-hydro" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Pyro Swirl DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "swirl-pyro") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "swirl-pyro" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Swirled Superconduct DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "superconduct") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "superconduct" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Swirled Electro-Charged DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "electrocharged") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "electrocharged" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Swirled Overloaded DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "overloaded") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "overloaded" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Swirled Forward Melt DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "melt-forward-swirl") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "melt-forward-swirl" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Swirled Reverse Melt DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "melt-reverse-swirl") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "melt-reverse-swirl" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Swirled Forward Vaporize DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "vaporize-forward-swirl") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "vaporize-forward-swirl" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Swirled Reverse Vaporize DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "vaporize-reverse-swirl") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "vaporize-reverse-swirl" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Swirled Aggravate DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "aggravate-swirl") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "aggravate-swirl" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Swirled Burning DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "burning") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "burning" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Swirled Bloom DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "bloom") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "bloom" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Swirled Hyperbloom DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "hyperbloom") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "hyperbloom" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Swirled Burgeon DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "burgeon") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "burgeon" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
           {{/ifeq}}
           {{#ifeq (getProperty item "element") "Cryo"}}
             <div class="row">
               <div class="col-3">Superconduct DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "superconduct") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "superconduct" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Reverse Melt Multiplier</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "melt-reverse") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "melt-reverse" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
           {{/ifeq}}
           {{#ifeq (getProperty item "element") "Dendro"}}
             <div class="row">
               <div class="col-3">Spread DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "spread") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "spread" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Bloom DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "bloom") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "bloom" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Burning DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "burning") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "burning" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
           {{/ifeq}}
           {{#ifeq (getProperty item "element") "Electro"}}
             <div class="row">
               <div class="col-3">Superconduct DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "superconduct") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "superconduct" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Aggravate DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "aggravate") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "aggravate" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Hyperbloom DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "hyperbloom") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "hyperbloom" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Electro-Charged DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "electrocharged") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "electrocharged" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Overloaded DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "overloaded") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "overloaded" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
           {{/ifeq}}
           {{#ifeq (getProperty item "element") "Geo"}}
@@ -268,66 +366,88 @@
             <div class="row">
               <div class="col-3">Forward Vaporize Multiplier</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "vaporize-forward") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "vaporize-forward" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Bloom DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "bloom") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "bloom" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Electro-Charged DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "electrocharged") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "electrocharged" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
           {{/ifeq}}
           {{#ifeq (getProperty item "element") "Pyro"}}
             <div class="row">
               <div class="col-3">Forward Melt Multiplier</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "melt-forward") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "melt-forward" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Reverse Vaporize Multiplier</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "vaporize-reverse") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "vaporize-reverse" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Burning DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "burning") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "burning" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Burgeon DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "burgeon") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "burgeon" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
             <div class="row">
               <div class="col-3">Overloaded DMG</div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "overloaded") wrapper="span"}}</div>
+              <div class="col-1"></div>
               <div class="col-3">{{> renderItemField item=item field=fields.stat params=(array "overloaded" 1) wrapper="span"}}</div>
+              <div class="col-1"></div>
             </div>
           {{/ifeq}}
         </div>
       
 <!--    PROCS    -->
         <div class="row">
-          <h4 class="col" data-bs-toggle="collapse" href="#characterStats.ConditionalModifiers">Conditional Modifiers</h4>
+          <h4 class="col" data-bs-toggle="collapse" href="#characterStats.ConditionalModifiers">Modifiers</h4>
         </div>
         <div id="characterStats.ConditionalModifiers" class="collapse show">
-      {{#each (getProperty item "procs") as |procData procId|}}
+      {{#each (getProperty item "statModifiers") as |procData procId|}}
             <div class="row">
-                <div class="col-1"><input id="{{procId}}" class="proc-input form-control" type="number" value="{{procData.active}}" min="0" max="{{procData.stacks}}" title="Number of stacks active."/></div>
+              {{#ifeq procData.stacks 0}}
+                <div class="col-1">Passive</div>
+              {{else}}
+                <div class="col-1">
+                  <input id="{{procId}}" class="proc-input form-control form-control-sm" type="number" value="{{procData.active}}" min="0" max="{{procData.stacks}}" title="Number of stacks active. For effects without multiple stacks: 1 means it's active; 0 means it's inactive."/>
+                </div>
+              {{/ifeq}}
               {{#ifeq procData.sourceType "setBonus"}}
-                <div class="col-2"><label class="form-label" for="{{procId}}">{{lookup (getArtifactSetData procData.bonus.source) "name"}} {{procData.sourceIndex}}-piece</label></div>
+                <div class="col-3"><label class="form-label" for="{{procId}}">{{lookup (getArtifactSetData procData.bonus.source) "name"}} {{procData.sourceIndex}}-piece</label></div>
               {{else}}
               {{#ifeq procData.sourceType "weaponPassive"}}
-                <div class="col-2"><label class="form-label" for="{{procId}}">{{lookup (getWeaponData procData.bonus.source) "name"}} R{{procData.sourceIndex}}</label></div>
+                <div class="col-3"><label class="form-label" for="{{procId}}">{{lookup (getWeaponData procData.bonus.source) "name"}} R{{procData.sourceIndex}}</label></div>
               {{else}}
-                <div class="col-2"><label class="form-label" for="{{procId}}">{{procData.bonus.source}}</label></div>
+                <div class="col-3"><label class="form-label" for="{{procId}}">{{procData.bonus.source}}</label></div>
               {{/ifeq}}
               {{/ifeq}}
-                <div class="col-9"><label class="form-label" for="{{procId}}" title="If this description refers to multiple different effects, use this to figure out which one this is: {{procData.code}}">{{{procData.bonus.description}}}{{#if procData.preview}}{{#if procData.current}}{{else}}<span class="badge text-bg-secondary ms-2">Preview</span>
+                <div class="col-8"><label class="form-label" for="{{procId}}" title="If this description refers to multiple different effects, use this to figure out which one this is: {{procData.code}}">{{{procData.description}}}{{#if procData.preview}}{{#if procData.current}}{{else}}<span class="badge text-bg-secondary ms-2">Preview</span>
 {{/if}}{{else}}{{#if procData.current}}<span class="badge text-bg-dark ms-2">Current</span>{{else}}{{/if}}{{/if}}</label></div>
             </div>
       {{/each}}
@@ -339,15 +459,15 @@
         </div>
         <div id="characterStats.TargetEnemyStats" class="collapse show">
             <div class="row">
-              <div class="col-2"><label for="enemyLevel" class="form-text">Level</label><input id="enemyLevel" class="enemy-stat form-control form-control-sm" type="number" min="1" max="100" value="90"/></div>
-              <div class="col-2"><label for="enemyAnemoRES" class="form-text">Anemo RES</label><input id="enemyAnemoRES" class="enemy-stat form-control form-control-sm" type="number" value="10"/></div>
-              <div class="col-2"><label for="enemyCryoRES" class="form-text">Cryo RES</label><input id="enemyCryoRES" class="enemy-stat form-control form-control-sm" type="number" value="10"/></div>
-              <div class="col-2"><label for="enemyDendroRES" class="form-text">Dendro RES</label><input id="enemyDendroRES" class="enemy-stat form-control form-control-sm" type="number" value="10"/></div>
-              <div class="col-2"><label for="enemyElectroRES" class="form-text">Electro RES</label><input id="enemyElectroRES" class="enemy-stat form-control form-control-sm" type="number" value="10"/></div>
-              <div class="col-2"><label for="enemyGeoRES" class="form-text">Geo RES</label><input id="enemyGeoRES" class="enemy-stat form-control form-control-sm" type="number" value="10"/></div>
-              <div class="col-2"><label for="enemyHydroRES" class="form-text">Hydro RES</label><input id="enemyHydroRES" class="enemy-stat form-control form-control-sm" type="number" value="10"/></div>
-              <div class="col-2"><label for="enemyPyroRES" class="form-text">Pyro RES</label><input id="enemyPyroRES" class="enemy-stat form-control form-control-sm" type="number" value="10"/></div>
-              <div class="col-2"><label for="enemyPhysicalRES" class="form-text">Physical RES</label><input id="enemyPhysicalRES" class="enemy-stat form-control form-control-sm" type="number" value="10"/></div>
+              <div class="col-2"><label for="enemyLevel" class="form-text">Level</label><input id="enemyLevel" class="enemy-stat form-control form-control-sm" type="number" min="1" max="100" value="{{item.list.targetEnemyData.enemyLevel}}"/></div>
+              <div class="col-2"><label for="enemyAnemoRES" class="form-text">Anemo RES</label><input id="enemyAnemoRES" class="enemy-stat form-control form-control-sm" type="number" value="{{item.list.targetEnemyData.enemyAnemoRES}}"/></div>
+              <div class="col-2"><label for="enemyCryoRES" class="form-text">Cryo RES</label><input id="enemyCryoRES" class="enemy-stat form-control form-control-sm" type="number" value="{{item.list.targetEnemyData.enemyCryoRES}}"/></div>
+              <div class="col-2"><label for="enemyDendroRES" class="form-text">Dendro RES</label><input id="enemyDendroRES" class="enemy-stat form-control form-control-sm" type="number" value="{{item.list.targetEnemyData.enemyDendroRES}}"/></div>
+              <div class="col-2"><label for="enemyElectroRES" class="form-text">Electro RES</label><input id="enemyElectroRES" class="enemy-stat form-control form-control-sm" type="number" value="{{item.list.targetEnemyData.enemyElectroRES}}"/></div>
+              <div class="col-2"><label for="enemyGeoRES" class="form-text">Geo RES</label><input id="enemyGeoRES" class="enemy-stat form-control form-control-sm" type="number" value="{{item.list.targetEnemyData.enemyGeoRES}}"/></div>
+              <div class="col-2"><label for="enemyHydroRES" class="form-text">Hydro RES</label><input id="enemyHydroRES" class="enemy-stat form-control form-control-sm" type="number" value="{{item.list.targetEnemyData.enemyHydroRES}}"/></div>
+              <div class="col-2"><label for="enemyPyroRES" class="form-text">Pyro RES</label><input id="enemyPyroRES" class="enemy-stat form-control form-control-sm" type="number" value="{{item.list.targetEnemyData.enemyPyroRES}}"/></div>
+              <div class="col-2"><label for="enemyPhysicalRES" class="form-text">Physical RES</label><input id="enemyPhysicalRES" class="enemy-stat form-control form-control-sm" type="number" value="{{item.list.targetEnemyData.enemyPhysicalRES}}"/></div>
             </div>
         </div>
     </div>

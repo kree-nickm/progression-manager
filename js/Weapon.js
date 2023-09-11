@@ -234,7 +234,6 @@ export default class Weapon extends GenshinItem
           source: this.key,
           sourcePart: this.refinement,
           code,
-          description: this.getPassive(alternates?.refinement??this.refinement),
         };
         this.saveMemory(result, "code");
       }

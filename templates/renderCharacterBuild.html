@@ -23,22 +23,22 @@
         </div>
     </div>
     
-    <!--<div class="row pt-3">
-        <div class="col-auto">
-            <label class="input-group-text" for="buildName">Build Name:</label>
+    <div class="row pt-3">
+        <div class="col-4">
+            <div class="input-group">
+                <label class="input-group-text" for="buildName">Build Name:</label>
+                <input id="buildName" class="form-control" type="text" value="{{relatedItems.buildName}}" disabled="disabled" title="Not yet implemented."/>
+            </div>
         </div>
-        <div class="col">
-            <input id="buildName" class="form-control" type="text" value="{{relatedItems.buildName}}"/>
+        <div class="col-auto align-self-end">
+            <label class="form-label" for="buildImportance" title="This value will be used in artifact desirability calculations. For example, if you set this to 0, then this build will not increase any artifact's desirability score no matter how well that artifact fits this build. You might want to do this for characters/builds that you don't actually intend on ever using.">Importance:</label>
         </div>
-        <div class="col-auto">
-            <label class="input-group-text" for="buildImportance" title="This value will be used in artifact desirability calculations. For example, if you set this to 0, then this build will not increase any artifact's desirability score no matter how well that artifact fits this build. You might want to do this for characters/builds that you don't actually intend on ever using.">Importance:</label>
-        </div>
-        <div class="col">
-            <input id="buildImportance" type="range" class="form-range" value="100" min="0" max="100" step="1"/>
+        <div class="col align-self-end">
+            <input id="buildImportance" type="range" class="form-range" value="{{relatedItems.buildData.importance}}" min="0" max="100" step="1"/>
         </div>
     </div>
   
-    <hr/>-->
+    <hr/>
     <h3>Artifact Sets</h3>
     <select id="bestArtifactSets" class="form-control selectpicker" multiple="multiple">
       {{#each relatedItems.artifactSets as |set setKey|}}

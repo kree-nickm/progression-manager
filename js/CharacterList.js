@@ -24,6 +24,8 @@ export default class CharacterList extends GenshinList
     return list;
   }
   
+  targetEnemyData = {};
+  
   setupDisplay()
   {
     let favorite = this.display.addField("favorite", {
@@ -392,8 +394,8 @@ export default class CharacterList extends GenshinList
         {item:item.base??item, field:"constellation"},
         {item:item.base??item, field:"ascension"},
         {item:item.base??item, field:"level"},
-        {item:item.base??item, field:"procs"},
-        {item:item.base??item, field:"targetEnemyData"},
+        {item:item.base??item, field:"statModifiers"},
+        {item:item.list, field:"targetEnemyData"},
         preview ? {item:item.base??item, field:"preview"} : null,
         item.weapon ? {item:item.weapon, field:"location"} : null,
         item.weapon ? {item:item.weapon, field:"refinement"} : null,
@@ -421,15 +423,43 @@ export default class CharacterList extends GenshinList
       label: (item,talent,mv,preview) => mv,
       tags: ["detailsOnly"],
       dynamic: true,
-      title: (item,talent,mv,preview) => item.getTalentValues(talent,{preview}).find(v => v.rawKey == mv)?.rawValue,
-      value: (item,talent,mv,preview) => item.getTalentValues(talent,{preview}).find(v => v.rawKey == mv)?.string,
-      dependencies: (item,talent,mv,preview) => [
+      title: (item,talent,mv,preview,format) => {
+        preview = !!parseInt(preview);
+        format = parseInt(format);
+        let motionValue = item.getTalentValues(talent,{preview}).find(v => v.rawKey == mv);
+        if(motionValue)
+        {
+          if(format==-1)
+            return motionValue.rawKey;
+          else
+            return motionValue.rawValue;
+        }
+        else
+          return "null";
+      },
+      value: (item,talent,mv,preview,format) => {
+        preview = !!parseInt(preview);
+        format = parseInt(format);
+        let motionValue = item.getTalentValues(talent,{preview}).find(v => v.rawKey == mv);
+        if(motionValue)
+        {
+          if(format==1)
+            return typeof(motionValue.value)=="number" ? motionValue.value.toFixed(0) : motionValue.value;
+          else if(format==-1)
+            return motionValue.key;
+          else
+            return motionValue.string;
+        }
+        else
+          return "null";
+      },
+      dependencies: (item,talent,mv,preview,format) => [
         {item:item.base??item, field:"constellation"},
         {item:item.base??item, field:"ascension"},
         {item:item.base??item, field:"level"},
         {item:item.base??item, field:"talent"},
-        {item:item.base??item, field:"procs"},
-        {item:item.base??item, field:"targetEnemyData"},
+        {item:item.base??item, field:"statModifiers"},
+        {item:item.list, field:"targetEnemyData"},
         preview ? {item:item.base??item, field:"preview"} : null,
         item.weapon ? {item:item.weapon, field:"location"} : null,
         item.weapon ? {item:item.weapon, field:"refinement"} : null,
@@ -611,21 +641,6 @@ export default class CharacterList extends GenshinList
       value: item => ({
         tag: "img",
         src: item.image,
-      }),
-    });
-    
-    let considerField = this.display.addField("consider", {
-      label: "Consider",
-      tags: ["detailsOnly"],
-      dynamic: true,
-      value: "Consider in Calculations",
-      title: item => `Consider ${item.name}'s preferences in the calculation that determines artifact desirability.`,
-      edit: item => ({
-        target: {item, field:"consider"},
-        type: "checkbox",
-        value: item.consider,
-        trueClasses: ["fa-solid","fa-circle-check"],
-        falseClasses: [],
       }),
     });
   }

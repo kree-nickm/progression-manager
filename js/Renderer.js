@@ -221,7 +221,7 @@ class Renderer
         else
         {
           // TODO: This happens a lot, but it's hard to track down where the element is getting disconnected so that it can be removed from thr queue and dependencies appropriately. For now, the console will just be occasionally spammed.
-          console.warn(`Renderer.queueUpdate(1): Cannot update disconnected element:`, element);
+          if(window.DEBUGLOG.queueUpdate) console.warn(`Renderer.queueUpdate(1): Cannot update disconnected element:`, element);
         }
       });
       Renderer._needsUpdate.clear();

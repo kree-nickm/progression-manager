@@ -958,10 +958,15 @@ export default {
         ],
         "passive": "Increases all DMG by @0%. After using an Elemental Burst, Normal or Charged Attack, on hit, creates a vacuum blade that does @1% of ATK as DMG to opponents along its path. Lasts for 20s or 8 vacuum blades.",
         "code": [
-          "stat",
           [
-            "dmg_",
-            "@0"
+            "stat",
+            [
+              "dmg_",
+              "@0"
+            ]
+          ],
+          [
+            "addmv",["Normal Attack","Skyward Pride Vaccuum Blade (%)","@1"]
           ]
         ],
         "refinementData": [

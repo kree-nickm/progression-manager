@@ -54,12 +54,9 @@ export default class ArtifactList extends GenshinList
   
   async evaluate()
   {
-    //console.log(`Evaluating all artifacts...`);
     this.list.forEach(artifact => artifact.update("wanters", [], "replace"));
     // Cycle through every character so we can access their artifact priority lists.
     this.viewer.lists.CharacterList.items("listable").forEach(character => {
-      if(!character.consider)
-        return true;
       // Cycle through all their builds.
       for(let buildId in character.getBuilds())
       {
@@ -68,51 +65,34 @@ export default class ArtifactList extends GenshinList
         for(let slot of ["flower","plume","sands","goblet","circlet"])
         {
           // Mark the best artifacts we have.
-          let numToKeep = 1;
-          for(let i=0; i<numToKeep; i++)
+          let startDevaluing = false;
+          for(let i=0; i<related.bestArtifacts[slot].length; i++)
           {
             if(related.bestArtifacts[slot][i])
             {
-              related.bestArtifacts[slot][i].update("wanters", `#${i+1} ${slot} for ${character.name} (${buildId})`, "push"); // {rank:i+1, slot, character, buildId, setKey:null}
-              // Don't bother with anything worse than what they are already using.
-              if(related.bestArtifacts[slot][i].character == character)
-              {
-                numToKeep = i;
-              }
-              // If this artifact is taken, check for 1 more in total.
-              else if(related.bestArtifacts[slot][i].character)
-              {
-                numToKeep++;
-              }
+              let score = related.bestArtifacts[slot][i].getCharacterScore(character, 20, buildId, {useTargets:false});
+              let scaledScore = score * Math.max(0,1-i*0.05) * character.getBuild(buildId).importance/100;
+              related.bestArtifacts[slot][i].update("wanters", {rank:i+1, character, buildId, score, scaledScore}, "push");
             }
           }
           for(let setKey in related.buildData.artifactSets)
           {
             // Mark the best artifacts we have for each desired set.
-            numToKeep = 1;
             let bestOfSet = related.bestArtifacts[slot].filter(artifact => artifact.setKey == setKey);
-            for(let i=0; i<numToKeep; i++)
+            for(let i=0; i<bestOfSet.length; i++)
             {
               if(bestOfSet[i])
               {
-                bestOfSet[i].update("wanters", `#${i+1} ${setKey} ${slot} for ${character.name} (${buildId})`, "push"); // {rank:i+1, slot, character, buildId, setKey}
-                // Don't bother with anything worse than what they are already using.
-                if(bestOfSet[i].character == character)
-                {
-                  numToKeep = i;
-                }
-                // If this artifact is taken, check for 1 more in total.
-                else if(bestOfSet[i].character)
-                {
-                  numToKeep++;
-                }
+                let score = bestOfSet[i].getCharacterScore(character, 20, buildId, {useTargets:false});
+                let scaledScore = score * Math.max(0,1-i*0.04) * character.getBuild(buildId).importance/100;
+                bestOfSet[i].update("wanters", {rank:i+1, character, buildId, score, scaledScore, onSet:true}, "push");
               }
             }
           }
         }
       }
     });
-    //console.log(`...Done.`);
+    this.list.forEach(artifact => artifact.wanters.sort((a,b) => b.scaledScore-a.scaledScore));
     document.querySelector("#artifactEvaluateBtn")?.classList.remove("show-notice");
   }
   
@@ -227,7 +207,7 @@ export default class ArtifactList extends GenshinList
       dynamic: true,
       title: item => "Is Locked?",
       classes: item => ({
-        "insufficient": !item.wanters.length,
+        "insufficient": item.wanters.reduce((result, wanter, idx) => result+Math.pow(wanter.scaledScore, 1+idx), 0) < 1,
       }),
       edit: item => ({
         target: {item:item, field:"lock"},
@@ -292,12 +272,25 @@ export default class ArtifactList extends GenshinList
     
     let characterCountField = this.display.addField("characterCount", {
       label: "#",
-      labelTitle: "The number of characters that might desire this artifact.",
-      sort: {generic: {type:"number",property:"wanters.length"}},
+      labelTitle: "Desireability rating of this artifact based on your build preferences across all of your characters. The number itself is somewhat arbitrary, but the ranking should be significant. Choose a rating where you think all artifacts are worth keeping, set it in your general artifact preferences (not yet implemented), and then you can easily see which artifacts are recommended for use as strongbox/exp fodder.",
+      sort: {func: (o,a,b) => {
+        let A = a.wanters.reduce((result, wanter, idx) => result+Math.pow(wanter.scaledScore, 1+idx), 0);
+        let B = b.wanters.reduce((result, wanter, idx) => result+Math.pow(wanter.scaledScore, 1+idx), 0);
+        if(isNaN(A) && !isNaN(B))
+          return 1;
+        else if(!isNaN(A) && isNaN(B))
+          return -1;
+        else if(isNaN(A) && isNaN(B))
+          return 0;
+        else
+          return o*(B-A);
+      }},
       columnClasses: ['artifact-wanters'],
       dynamic: true,
-      title: item => item.wanters.join("\r\n"),
-      value: item => item.wanters.length,
+      title: item => {
+        return item.wanters.map((wanter,idx) => wanter.scaledScore>0.01?`#${wanter.rank} ${wanter.onSet?item.setKey:""} ${item.slotKey} for ${wanter.character.name} (${wanter.buildId}); score:${(wanter.score*100).toFixed(1)}%, scaled:${wanter.scaledScore.toFixed(2)}, contribution:${Math.pow(wanter.scaledScore, 1+idx).toFixed(2)}`:null).filter(w=>w).join("\r\n");
+      },
+      value: item => item.wanters.reduce((result, wanter, idx) => result+Math.pow(wanter.scaledScore, 1+idx), 0).toFixed(2),
       dependencies: item => [
         {item:item, field:"wanters"},
       ],
@@ -630,10 +623,8 @@ export default class ArtifactList extends GenshinList
             substats: [],
             lock: false,
           });
-          this.elements.selectSetAdd.value = "";
           this.elements.selectSlotAdd.value = "";
           this.elements.selectStatAdd.value = "";
-          this.elements.selectRarityAdd.value = "";
           
           let listElement = this.viewer.elements[this.constructor.name].querySelector(`.list[data-uuid="${this.uuid}"]`);
           let listTargetElement = listElement.querySelector(".list-target");
