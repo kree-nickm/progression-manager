@@ -275,7 +275,7 @@ setInterval(window.viewer.today.bind(window.viewer), 60000);
 
 // Set up nav.
 let navClicked = false;
-let navLinks = document.querySelectorAll(".nav-link[href]");
+let navLinks = document.querySelectorAll(".pane-select");
 for(let i=0; i<navLinks.length; i++)
 {
   navLinks[i].addEventListener("click", event => {

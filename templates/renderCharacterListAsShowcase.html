@@ -1,43 +1,41 @@
-<div class="modal-content list" data-template="renderCharacterListAsShowcase" {{#if filter}}data-filter="{{filter}}"{{/if}} data-uuid="{{uuid item}}">
-    <div class="modal-body showcase list-target">
+<div class="container showcase list" data-template="renderCharacterListAsShowcase" {{#if filter}}data-filter="{{filter}}"{{/if}} data-uuid="{{uuid item}}">
   {{#each items}}
-        <div class="showcase-row list-item" data-uuid="{{uuid .}}">
-            <div class="showcase-character">{{> renderItemField item=. field=../fields.icon params=(array "md" 1 1) wrapper="span"}}</div>
-            <div class="showcase-talents">
-                <div class="showcase-talent">
-                    <span class="{{#ifeq (getProperty . "autoTalentLevel") talent.auto}}{{else}}increased{{/ifeq}}">{{getProperty . "autoTalentLevel"}}</span>
-                    <img src="https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0d\/Sword_Pyro.png"/>
-                </div>
-                <div class="showcase-talent">
-                    <span class="{{#ifeq (getProperty . "skillTalentLevel") talent.skill}}{{else}}increased{{/ifeq}}">{{getProperty . "skillTalentLevel"}}</span>
-                    <img src="https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0d\/Sword_Pyro.png"/>
-                </div>
-                <div class="showcase-talent">
-                    <span class="{{#ifeq (getProperty . "burstTalentLevel") talent.burst}}{{else}}increased{{/ifeq}}">{{getProperty . "burstTalentLevel"}}</span>
-                    <img src="https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0d\/Sword_Pyro.png"/>
-                </div>
+    <div class="showcase-row list-item" data-uuid="{{uuid .}}">
+        <div class="showcase-character">{{> renderItemField item=. field=../fields.icon params=(array "md" 1 1) wrapper="span"}}</div>
+        <div class="showcase-talents">
+            <div class="showcase-talent">
+                <span class="{{#ifeq (getProperty . "autoTalentLevel") talent.auto}}{{else}}increased{{/ifeq}}">{{getProperty . "autoTalentLevel"}}</span>
+                <img src="{{getProperty . 'autoIcon'}}"/>
             </div>
-            <div class="showcase-stats showcase-stats-a">
-                <div><img src="img/stat.hp.svg">{{> renderItemField item=. field=../fields.stat params=(array "hp") wrapper="span"}}</div>
-                <div><img src="img/stat.atk.svg">{{> renderItemField item=. field=../fields.stat params=(array "atk") wrapper="span"}}</div>
-                <div><img src="img/stat.def.svg">{{> renderItemField item=. field=../fields.stat params=(array "def") wrapper="span"}}</div>
-                <div><img src="img/stat.eleMas.svg">{{> renderItemField item=. field=../fields.stat params=(array "eleMas") wrapper="span"}}</div>
+            <div class="showcase-talent">
+                <span class="{{#ifeq (getProperty . "skillTalentLevel") talent.skill}}{{else}}increased{{/ifeq}}">{{getProperty . "skillTalentLevel"}}</span>
+                <img src="{{getProperty . 'skillIcon'}}"/>
             </div>
-            <div class="showcase-stats showcase-stats-b">
-                <div><img src="img/stat.critRate_.svg">{{> renderItemField item=. field=../fields.stat params=(array "critRate_") wrapper="span"}}%</div>
-                <div><img src="img/stat.critDMG_.svg">{{> renderItemField item=. field=../fields.stat params=(array "critDMG_") wrapper="span"}}%</div>
-                <div><img src="img/stat.enerRech_.svg">{{> renderItemField item=. field=../fields.stat params=(array "enerRech_") wrapper="span"}}%</div>
-                <div><img class="element-icon" src="img/Element_{{getProperty . 'element'}}.svg">{{> renderItemField item=. field=../fields.stat params=(array (concat (lower (getProperty . "element")) "_dmg_")) wrapper="span"}}%</div>
-            </div>
-            <div class="showcase-weapon">{{> renderItemField item=. field=../fields.weaponName params=(array "1" "md") wrapper="span"}}</div>
-            <div class="showcase-artifacts">
-                <div>{{> renderItemField item=. field=../fields.flower params=(array "1" "md") wrapper="span"}}</div>
-                <div>{{> renderItemField item=. field=../fields.plume params=(array "1" "md") wrapper="span"}}</div>
-                <div>{{> renderItemField item=. field=../fields.sands params=(array "1" "md") wrapper="span"}}</div>
-                <div>{{> renderItemField item=. field=../fields.goblet params=(array "1" "md") wrapper="span"}}</div>
-                <div>{{> renderItemField item=. field=../fields.circlet params=(array "1" "md") wrapper="span"}}</div>
+            <div class="showcase-talent">
+                <span class="{{#ifeq (getProperty . "burstTalentLevel") talent.burst}}{{else}}increased{{/ifeq}}">{{getProperty . "burstTalentLevel"}}</span>
+                <img src="{{getProperty . 'burstIcon'}}"/>
             </div>
         </div>
-  {{/each}}
+        <div class="showcase-stats showcase-stats-a">
+            <div><img src="img/stat.hp.svg">{{> renderItemField item=. field=../fields.stat params=(array "hp") wrapper="span"}}</div>
+            <div><img src="img/stat.atk.svg">{{> renderItemField item=. field=../fields.stat params=(array "atk") wrapper="span"}}</div>
+            <div><img src="img/stat.def.svg">{{> renderItemField item=. field=../fields.stat params=(array "def") wrapper="span"}}</div>
+            <div><img src="img/stat.eleMas.svg">{{> renderItemField item=. field=../fields.stat params=(array "eleMas") wrapper="span"}}</div>
+        </div>
+        <div class="showcase-stats showcase-stats-b">
+            <div><img src="img/stat.critRate_.svg">{{> renderItemField item=. field=../fields.stat params=(array "critRate_") wrapper="span"}}%</div>
+            <div><img src="img/stat.critDMG_.svg">{{> renderItemField item=. field=../fields.stat params=(array "critDMG_") wrapper="span"}}%</div>
+            <div><img src="img/stat.enerRech_.svg">{{> renderItemField item=. field=../fields.stat params=(array "enerRech_") wrapper="span"}}%</div>
+            <div><img class="element-icon" src="img/Element_{{getProperty . 'element'}}.svg">{{> renderItemField item=. field=../fields.stat params=(array (concat (lower (getProperty . "element")) "_dmg_")) wrapper="span"}}%</div>
+        </div>
+        <div class="showcase-weapon">{{> renderItemField item=. field=../fields.weaponName params=(array "1" "md") wrapper="span"}}</div>
+        <div class="showcase-artifacts">
+            <div>{{> renderItemField item=. field=../fields.flower params=(array "1" "md") wrapper="span"}}</div>
+            <div>{{> renderItemField item=. field=../fields.plume params=(array "1" "md") wrapper="span"}}</div>
+            <div>{{> renderItemField item=. field=../fields.sands params=(array "1" "md") wrapper="span"}}</div>
+            <div>{{> renderItemField item=. field=../fields.goblet params=(array "1" "md") wrapper="span"}}</div>
+            <div>{{> renderItemField item=. field=../fields.circlet params=(array "1" "md") wrapper="span"}}</div>
+        </div>
     </div>
+  {{/each}}
 </div>

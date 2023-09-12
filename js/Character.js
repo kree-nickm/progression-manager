@@ -397,6 +397,9 @@ export default class Character extends GenshinItem
   get atkAscValue(){ return GenshinCharacterData[this.key]?.atkMaxAsc ?? 0; }
   get defAscValue(){ return GenshinCharacterData[this.key]?.defMaxAsc ?? 0; }
   get image(){ return GenshinCharacterData[this.key]?.img ?? ""; }
+  get autoIcon(){ return GenshinCharacterData[this.key]?.talents?.["Normal Attack"]?.img ?? ""; }
+  get skillIcon(){ return GenshinCharacterData[this.key]?.talents?.["Elemental Skill"]?.img ?? ""; }
+  get burstIcon(){ return GenshinCharacterData[this.key]?.talents?.["Elemental Burst"]?.img ?? ""; }
   
   getPhase(ascension=this.ascension){ return GenshinPhaseData[ascension] ?? GenshinPhaseData[6]; }
   get levelCap(){ return this.getPhase().levelCap; }

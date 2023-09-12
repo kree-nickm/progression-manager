@@ -866,7 +866,15 @@ export default class CharacterList extends GenshinList
       if(!showcaseBtn.onclick)
       {
         showcaseBtn.onclick = event => {
-          Renderer.rerender(this.viewer.elements.popup.querySelector(".modal-content"), {item: this, filter: "listable"}, {template: "renderCharacterListAsShowcase", showPopup: true});
+          let showcase = open("showcase.html", "_blank");
+          showcase.addEventListener("DOMContentLoaded", event => {
+            document.head.querySelectorAll('link, style').forEach(htmlElement => {
+              showcase.document.head.appendChild(htmlElement.cloneNode(true));
+            });
+            let container = showcase.document.body.appendChild(document.createElement("div"));
+            Renderer.rerender(container, {item: this, filter: "listable"}, {template: "renderCharacterListAsShowcase"});
+          });
+          //Renderer.rerender(this.viewer.elements.popup.querySelector(".modal-content"), {item: this, filter: "listable"}, {template: "renderCharacterListAsShowcase", showPopup: true});
         };
       }
     }
