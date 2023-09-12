@@ -51,16 +51,16 @@ export default class Character extends GenshinItem
   static goodProperties = ["key","level","constellation","ascension","talent"];
   static templateName = "renderCharacterAsPopup";
   static universalStatModifiers = {
-    "PyroResonance": ["pstat",["atk_",25]],
-    "CryoResonance": ["pstat",["critRate_",15]],
-    "HydroResonance": ["pstat",["hp_",25]],
-    "AnemoResonance": [["pstat",["stamina_cost_",-15]],["pstat",["skill_cd_",-5]]],
-    "DendroResonance": ["pstat",["eleMas",50]],
-    "DendroResonanceA": ["pstat",["eleMas",30]],
-    "DendroResonanceB": ["pstat",["eleMas",20]],
-    "GeoResonance": ["pstat",["shield_",15]],
-    "GeoResonanceA": ["pstat",["dmg_",15]],
-    "GeoResonanceB": ["estat",["geo_res_",20]],
+    "Pyro Resonance": ["pstat",["atk_",25]],
+    "Cryo Resonance": ["pstat",["critRate_",15]],
+    "Hydro Resonance": ["pstat",["hp_",25]],
+    "Anemo Resonance": [["pstat",["stamina_cost_",-15]],["pstat",["skill_cd_",-5]]],
+    "Dendro Resonance": ["pstat",["eleMas",50]],
+    "Dendro Resonance A": ["pstat",["eleMas",30]],
+    "Dendro Resonance B": ["pstat",["eleMas",20]],
+    "Geo Resonance": ["pstat",["shield_",15]],
+    "Geo Resonance A": ["pstat",["dmg_",15]],
+    "Geo Resonance B": ["estat",["geo_res_",-20]],
   };
 
   static sortArtifacts(buildId,useTargets,a,b)
@@ -376,6 +376,9 @@ export default class Character extends GenshinItem
   set ascension(val){ this._ascension = Math.min(Math.max(val, 0), 6); }
   get level(){ return this._level; }
   set level(val){ this._level = Math.min(Math.max(val, 1), 90); }
+  get autoTalentLevel(){ return this.talent.auto + this.getStat("autoLevel"); }
+  get skillTalentLevel(){ return this.talent.skill + this.getStat("skillLevel"); }
+  get burstTalentLevel(){ return this.talent.burst + this.getStat("burstLevel"); }
   
   // Getters for genshin item data that is not stored on each instance of this class.
   get data(){ return GenshinCharacterData[this.key]; }
@@ -545,7 +548,7 @@ export default class Character extends GenshinItem
     let isPrimary = ["atk","hp","def"].indexOf(baseStat) > -1;
     
     // If this is a calculated value, pass it off to the calculated method.
-    if(["swirl","superconduct","spread","bloom","burning","aggravate","hyperbloom","electrocharged","overloaded","burgeon","shattered","melt","vaporize","melt","vaporize"].indexOf(baseStat) > -1)
+    if(["swirl","superconduct","spread","bloom","burning","aggravate","hyperbloom","electrocharged","overloaded","burgeon","shattered","melt","vaporize"].indexOf(baseStat) > -1)
       return this.getReaction(stat, alternates);
     
     let result;
@@ -860,10 +863,37 @@ export default class Character extends GenshinItem
       }
       
       // Iterate through each line of the talent properties.
-      for(let key in scaling)
+      let allKeys = Object.keys(scaling);
+      for(let k=0; k<allKeys.length; k++)
       {
+        let rawKey = allKeys[k];
+        let key = rawKey;
         if(onlyKey && key != onlyKey)
           continue;
+        
+        // If this is a dynamically-added key for the purpose of additional reaction data, figure that out now.
+        let multiplier;
+        if(key.endsWith(" [melt-reverse]"))
+        {
+          multiplier = "melt-reverse";
+          key = key.slice(0, -15);
+        }
+        else if(key.endsWith(" [melt-forward]"))
+        {
+          multiplier = "melt-forward";
+          key = key.slice(0, -15);
+        }
+        else if(key.endsWith(" [vaporize-reverse]"))
+        {
+          multiplier = "vaporize-reverse";
+          key = key.slice(0, -19);
+        }
+        else if(key.endsWith(" [vaporize-forward]"))
+        {
+          multiplier = "vaporize-forward";
+          key = key.slice(0, -19);
+        }
+        
         // Determine current value based on talent level.
         let talentLvl = this.talent[talent] + this.getStat(talent+"Level", alternates);
         let value = scaling[key][talentLvl];
@@ -989,9 +1019,9 @@ export default class Character extends GenshinItem
             // Do the calculation.
             if(stat)
             {
-              ({damage:val, dmgType, baseDMG, critical, average} = this.getDamage(val, stat, alternates, {key, talent, dmgType, mvModifiers}));
-              if(dmgType != "hp" && !newKey.endsWith(` (${dmgType})`))
-                newKey = newKey + ` (${dmgType})`;
+              ({damage:val, dmgType, baseDMG, critical, average} = this.getDamage(val, stat, alternates, {key, talent, dmgType, mvModifiers, multiplier}));
+              if(dmgType != "hp" && !newKey.endsWith(` (${multiplier??dmgType})`))
+                newKey = newKey + ` (${multiplier??dmgType})`;
             }
             else if(key == "Energy Cost" || key.endsWith("Stamina Cost"))
             {
@@ -1001,7 +1031,7 @@ export default class Character extends GenshinItem
             // Healing and shielding often add flat values to the stat-scaled value, so handle it here.
             else if(dmgType == "healing" || dmgType == "shielding" || dmgType == "hp")
             {
-              //({damage:val, dmgType, baseDMG, critical, average} = this.getDamage(val, "flat", alternates, {key, talent, dmgType, mvModifiers}));
+              //({damage:val, dmgType, baseDMG, critical, average} = this.getDamage(val, "flat", alternates, {key, talent, dmgType, mvModifiers, multiplier}));
               if(dmgType == "healing")
                 val = val * (1 + this.getStat("heal_", alternates)/100);
               else if(dmgType == "shielding")
@@ -1062,7 +1092,7 @@ export default class Character extends GenshinItem
             val = "**" + values[v];
             dmgType = null;
           }
-          calcValues.push({raw:values[v], val, hits, baseDMG, critical, average});
+          calcValues.push({raw:values[v], val, hits, baseDMG, critical, average, dmgType});
         }
         
         newKey = newKey.replace(") (", " + ");
@@ -1087,7 +1117,7 @@ export default class Character extends GenshinItem
             elem.critical = parseFloat(elem.critical);
             elem.average = parseFloat(elem.average);
           });
-          if(dmgType)
+          if(calcValues.every(elem => elem.dmgType))
             valueOut = calcValues.reduce((out, elem) => out + (canCrit?elem.average:elem.val) * elem.hits, 0);
           else
             valueOut = "";
@@ -1096,17 +1126,31 @@ export default class Character extends GenshinItem
           valueOut = "";
         
         let stringOut = calcValues.reduce((out, elem) => {
-          return (out!==null ? `${out} + ` : ``) + (isAllNumeric ? elem.val.toFixed(0) + (canCrit ? ` (${elem.critical.toFixed(0)})` : ``) : elem.val) + (elem.hits>1 ? ` × ${elem.hits}` : ``);
-        }, null) + (dmgType=="percent"?"%":"");
+          return (out!==null ? `${out} + ` : ``) + (isAllNumeric ? elem.val.toFixed(0) + (canCrit ? ` (${elem.critical.toFixed(0)})` : ``) : elem.val) + (elem.dmgType=="percent"?"%":"") + (elem.hits>1 ? ` × ${elem.hits}` : ``);
+        }, null);
         
         result.push({
-          rawKey: key,
+          rawKey,
           key: newKey,
           rawValue: value,
           valueList: calcValues,
           string: stringOut,
           value: valueOut,
         });
+        
+        if(!multiplier)
+        {
+          if(calcValues.some(elem => elem.dmgType == "cryo"))
+            allKeys.push(key+" [melt-reverse]");
+          if(calcValues.some(elem => elem.dmgType == "hydro"))
+            allKeys.push(key+" [vaporize-forward]");
+          if(calcValues.some(elem => elem.dmgType == "pyro"))
+          {
+            allKeys.push(key+" [melt-forward]");
+            allKeys.push(key+" [vaporize-reverse]");
+          }
+        }
+        // TODO: If an infusion is toggled-on, these values will not be added, because new motion values are not added on normal value updates, only full statblock updates.
       }
       if(!onlyKey)
         this.saveMemory(result, "motionValues", alternates?.preview?"preview":"current", talent);
@@ -1114,7 +1158,7 @@ export default class Character extends GenshinItem
     return result;
   }
   
-  getDamage(value, stat, rawAlternates, {key="", talent, dmgType, mvModifiers=[], ignoreRES, ignoreDEF}={})
+  getDamage(value, stat, rawAlternates, {key="", talent, dmgType, mvModifiers=[], ignoreRES, ignoreDEF, multiplier}={})
   {
     if(isNaN(value))
     {
@@ -1222,9 +1266,14 @@ export default class Character extends GenshinItem
     let RES = (this.list.targetEnemyData[`enemy${dmgType.at(0).toUpperCase()+dmgType.slice(1)}RES`]??10) + this.getStat("enemy_"+dmgType+"_res_",alternates);
     let reductionRES = RES>=75 ? 1/(4*RES+1) : RES>=0 ? 1-RES/100 : 1-RES/200;
     
+    // Vape/Melt
+    let rxnMult = 1;
+    if(dmgType == "cryo" && multiplier == "melt-reverse" || dmgType == "hydro" && multiplier == "vaporize-forward" || dmgType == "pyro" && (multiplier == "melt-forward" || multiplier == "vaporize-reverse"))
+      rxnMult = this.getReaction(multiplier, alternates);
+    
     // Final
     //console.debug(`Damage calculations for "${newKey}":`, {value, [stat]:this.getStat(stat, alternates), baseDMG, baseMult, baseAdd, dmgMult, hits, resistance:{RES, reductionRES}, defense:{DEF, k, reductionDEF}, alternates});
-    let damage = (baseDMG * baseMult + baseAdd) * (1 + dmgMult/100) * (ignoreRES ? 1 : reductionRES) * (ignoreDEF ? 1 : reductionDEF);
+    let damage = (baseDMG * baseMult + baseAdd) * (1 + dmgMult/100) * (ignoreRES ? 1 : reductionRES) * (ignoreDEF ? 1 : reductionDEF) * rxnMult;
     let critical = damage * critDMG;
     let average = critRate * critical + (1-critRate) * damage;
     return {baseDMG, damage, dmgType, critical, average};
@@ -1389,7 +1438,7 @@ export default class Character extends GenshinItem
     {
       const [stat, amount, situation] = parameters;
       let statStr = Array.isArray(stat) ? stat.reduce((acc,s,i) => acc + ", " + (i==stat.length-1?"and ":"") + s) : stat;
-      let result = `${situation?situation+" ":""}${statStr}`;
+      let result = `${command=="pstat"?"all characters' ":""}${command=="estat"?"enemy's ":""}${situation?situation+" ":""}${statStr}`;
       if(Array.isArray(amount))
       {
         const [func, ...args] = amount;

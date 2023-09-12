@@ -71,6 +71,54 @@ export default class CharacterList extends GenshinList
       title: item => `Click to open a popup to examine ${item.name} in-depth.`,
     });
     
+    let icon = this.display.addField("icon", {
+      label: "Name",
+      labelTitle: "Sort by name.",
+      tags: ["detailsOnly"],
+      sort: {generic: {type:"string",property:"name"}},
+      dynamic: false,
+      value: (item,size="sm",showCons,showLevel) => {
+        showCons = !!parseInt(showCons);
+        showLevel = !!parseInt(showLevel);
+        return {
+          tag: "div",
+          value: [
+            {
+              tag: "div",
+              value: [
+                showCons ? {
+                  value: `C${item.constellation}`,
+                  classes: {"small": true, "display-badge": true},
+                } : undefined,
+                item.base ? {
+                  tag: "img",
+                  src: `img/Element_${item.element}.svg`,
+                  classes: {"small": true, "display-badge": true, "badge-right": true, "element-icon": true},
+                } : undefined,
+                {
+                  tag: "img",
+                  src: item.image,
+                  alt: item.name,
+                },
+              ],
+              classes: {"display-img": true, ["rarity-"+item.rarity]: true},
+            },
+            showLevel ? {
+              value: `${item.level} / ${item.levelCap}`,
+              classes: {"display-caption": true},
+            } : undefined,
+          ],
+          classes: {
+            "item-display": true,
+            "item-material": true,
+            ["display-"+size]: true,
+            "display-no-caption": !showLevel,
+          },
+          title: item.name,
+        };
+      }
+    });
+    
     let weaponType = this.display.addField("weaponType", {
       label: "Wpn",
       labelTitle: "Sort by weapon type.",
@@ -504,7 +552,7 @@ export default class CharacterList extends GenshinList
       label: "",
       dynamic: true,
       popup: item => item.weapon,
-      value: item => item.weapon ? (item.viewer.settings.preferences.listDisplay=='1' ? {
+      value: (item,useImages=this.viewer.settings.preferences.listDisplay,size) => item.weapon ? (useImages=='1' ? {
         tag: "div",
         value: [
           {
@@ -527,14 +575,14 @@ export default class CharacterList extends GenshinList
             classes: {"display-img": true, ["rarity-"+item.weapon.rarity]: true},
           },
           {
-            value: `Lv. ${item.weapon.level}`,
+            value: `${item.weapon.level} / ${item.weapon.levelCap}`,
             classes: {"display-caption": true},
           }
         ],
         classes: {
           "item-display": true,
           "item-material": true,
-          "display-sm": true,
+          ["display-"+size]: true,
         },
       } : [
         {
@@ -561,9 +609,9 @@ export default class CharacterList extends GenshinList
         label: `<img src="img/${slotKey}.webp"/>`,
         dynamic: true,
         //popup: item => item[slotKey+'Artifact'],
-        value: item => {
+        value: (item,useImages=this.viewer.settings.preferences.listDisplay,size) => {
           let artifact = item[slotKey+'Artifact'];
-          return artifact ? (item.viewer.settings.preferences.listDisplay=='1' ? {
+          return artifact ? (useImages=='1' ? {
             tag: "div",
             value: [
               {
@@ -592,7 +640,7 @@ export default class CharacterList extends GenshinList
                 classes: {
                   "item-display": true,
                   "item-material": true,
-                  "display-sm": true,
+                  ["display-"+size]: true,
                 },
                 background: artifact.display.getField("characterScore").get("value", artifact, item).color.replace("0.9", "0.6"),
                 title: artifact.display.getField("characterScore").get("title", artifact, item),
@@ -608,8 +656,8 @@ export default class CharacterList extends GenshinList
               },
             ],
             classes: {"artifact-mini": true},
-        // Begin text-only rendering.
           } : [
+        // Begin text-only rendering.
             {
               value: artifact.display.getField("characterScore").get("value", artifact, item),
               title: artifact.display.getField("characterScore").get("title", artifact, item),
@@ -754,8 +802,19 @@ export default class CharacterList extends GenshinList
       footer.replaceChildren();
       footer.dataset.list = this.uuid;
       
-      let divAdd = footer.appendChild(document.createElement("div"));
-      divAdd.classList.add("input-group", "mt-2");
+      let container = footer.appendChild(document.createElement("div"));
+      container.classList.add("container-fluid", "navbar-expand");
+      
+      let ul = container.appendChild(document.createElement("ul"));
+      ul.classList.add("navbar-nav");
+      
+      // Add Character
+      let li1 = ul.appendChild(document.createElement("li"));
+      li1.classList.add("nav-item", "me-2");
+      
+      let divAdd = li1.appendChild(document.createElement("div"));
+      divAdd.classList.add("input-group");
+      
       selectAdd = divAdd.appendChild(document.createElement("select"));
       selectAdd.id = "addCharacterSelect";
       selectAdd.classList.add("form-select", "size-to-content");
@@ -792,6 +851,24 @@ export default class CharacterList extends GenshinList
           }, {template:"renderItem", parentElement:listTargetElement});
         }
       });
+      
+      // Display Showcase
+      let li2 = ul.appendChild(document.createElement("li"));
+      li2.classList.add("nav-item", "me-2");
+      
+      let showcaseBtn = li2.appendChild(document.createElement("button"));
+      showcaseBtn.id = "characterShowcaseBtn";
+      showcaseBtn.classList.add("btn", "btn-primary");
+      showcaseBtn.title = "Display your characters' stats and gear in a nice window that you can screenshot and show to others.";
+      let showcaseIcon = showcaseBtn.appendChild(document.createElement("i"));
+      showcaseIcon.classList.add("fa-solid", "fa-camera");
+      
+      if(!showcaseBtn.onclick)
+      {
+        showcaseBtn.onclick = event => {
+          Renderer.rerender(this.viewer.elements.popup.querySelector(".modal-content"), {item: this, filter: "listable"}, {template: "renderCharacterListAsShowcase", showPopup: true});
+        };
+      }
     }
     selectAdd = document.getElementById("addCharacterSelect");
     if(!selectAdd.children.length || selectAdd.needsUpdate)
