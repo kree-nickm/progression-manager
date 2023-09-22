@@ -51,10 +51,10 @@ export default class ListDisplayManager
   
   getFields({include=[], exclude=[]}={})
   {
-    if(!exclude.length && !include.length)
-      return this.fields;
-    
     let valid = Object.values(this.fields);
+    
+    if(!exclude.length && !include.length)
+      return valid;
     
     if(typeof(include) == "function")
       valid = valid.filter(include);
@@ -66,9 +66,6 @@ export default class ListDisplayManager
     else if(exclude.length)
       valid = valid.filter(field => exclude.indexOf(field.id) == -1);
     
-    let result = {};
-    for(let field of valid)
-      result[field.id] = field;
-    return result;
+    return valid;
   }
 }

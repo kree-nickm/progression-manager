@@ -32,6 +32,9 @@
               <a class="nav-link pane-select" href="#artifacts">Artifacts</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link pane-select" href="#teams">Teams</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link pane-select" href="#materials">Materials</a>
             </li>
             <li class="nav-item">
@@ -52,8 +55,8 @@
             <li class="nav-item ms-3">
               <button class="btn btn-secondary" data-bs-target="#prefsModal" data-bs-toggle="modal" title="Change your preferences regarding how the information on the app is displayed."><i class="fa-solid fa-gear"></i></button>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" target="_blank" href="https://github.com/kree-nickm/genshin-manager" title="Go here to find details on this app.">Github</a>
+            <li class="nav-item mx-3">
+              <a class="nav-link" target="_blank" href="https://github.com/kree-nickm/genshin-manager" title="Check out the app on GitHub."><i class="fa-brands fa-github"></i></a>
             </li>
           </ul>
         </div>
@@ -240,7 +243,25 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
           <div class="modal-body">
-            <div class="form-label">List Displays</div>
+            <div class="form-label">Character List</div>
+            <div class="btn-group" role="group">
+              <input type="radio" class="preference-select btn-check" id="pref3a" name="characterList" value="0" checked="checked">
+              <label class="btn btn-outline-primary" for="pref3a">Text Only</label>
+
+              <input type="radio" class="preference-select btn-check" id="pref3b"  name="characterList" value="1">
+              <label class="btn btn-outline-primary" for="pref3b">Icons</label>
+            </div>
+            
+            <div class="form-label">Materials List</div>
+            <div class="btn-group" role="group">
+              <input type="radio" class="preference-select btn-check" id="pref4a" name="materialList" value="0" checked="checked">
+              <label class="btn btn-outline-primary" for="pref4a">Text Only</label>
+
+              <input type="radio" class="preference-select btn-check" id="pref4b"  name="materialList" value="1">
+              <label class="btn btn-outline-primary" for="pref4b">Icons</label>
+            </div>
+            
+            <div class="form-label">Other Lists</div>
             <div class="btn-group" role="group">
               <input type="radio" class="preference-select btn-check" id="pref1a" name="listDisplay" value="0" checked="checked">
               <label class="btn btn-outline-primary" for="pref1a">Text Only</label>
@@ -249,7 +270,7 @@
               <label class="btn btn-outline-primary" for="pref1b">Icons</label>
             </div>
             
-            <div class="form-label">Character Popup - Artifact Lists</div>
+            <div class="form-label">Character Popup</div>
             <div class="btn-group" role="group">
               <input type="radio" class="preference-select btn-check" id="pref2a"  name="characterArtifacts" value="0" disabled="disabled">
               <label class="btn btn-outline-primary" for="pref2a">Text Only</label>

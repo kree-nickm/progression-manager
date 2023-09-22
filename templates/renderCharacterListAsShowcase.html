@@ -1,7 +1,7 @@
 <div class="container showcase list" data-template="renderCharacterListAsShowcase" {{#if filter}}data-filter="{{filter}}"{{/if}} data-uuid="{{uuid item}}">
   {{#each items}}
     <div class="showcase-row list-item" data-uuid="{{uuid .}}">
-        <div class="showcase-character">{{> renderItemField item=. field=../fields.icon params=(array "md" 1 1) wrapper="span"}}</div>
+        <div class="showcase-character">{{> renderItemField item=. field="icon" params=(array "md" 1 1) wrapper="span"}}</div>
         <div class="showcase-talents">
             <div class="showcase-talent">
                 <span class="{{#ifeq (getProperty . "autoTalentLevel") talent.auto}}{{else}}increased{{/ifeq}}">{{getProperty . "autoTalentLevel"}}</span>
@@ -17,24 +17,38 @@
             </div>
         </div>
         <div class="showcase-stats showcase-stats-a">
-            <div><img src="img/stat.hp.svg">{{> renderItemField item=. field=../fields.stat params=(array "hp") wrapper="span"}}</div>
-            <div><img src="img/stat.atk.svg">{{> renderItemField item=. field=../fields.stat params=(array "atk") wrapper="span"}}</div>
-            <div><img src="img/stat.def.svg">{{> renderItemField item=. field=../fields.stat params=(array "def") wrapper="span"}}</div>
-            <div><img src="img/stat.eleMas.svg">{{> renderItemField item=. field=../fields.stat params=(array "eleMas") wrapper="span"}}</div>
+            <div class="highlighter highlight-hp"><img src="img/stat.hp.svg">{{> renderItemField item=. field="stat" params=(array "hp" -1) wrapper="span"}}</div>
+            <div class="highlighter highlight-atk"><img src="img/stat.atk.svg">{{> renderItemField item=. field="stat" params=(array "atk" -1) wrapper="span"}}</div>
+            <div class="highlighter highlight-def"><img src="img/stat.def.svg">{{> renderItemField item=. field="stat" params=(array "def" -1) wrapper="span"}}</div>
+            <div class="highlighter highlight-eleMas"><img src="img/stat.eleMas.svg">{{> renderItemField item=. field="stat" params=(array "eleMas" -1) wrapper="span"}}</div>
         </div>
         <div class="showcase-stats showcase-stats-b">
-            <div><img src="img/stat.critRate_.svg">{{> renderItemField item=. field=../fields.stat params=(array "critRate_") wrapper="span"}}%</div>
-            <div><img src="img/stat.critDMG_.svg">{{> renderItemField item=. field=../fields.stat params=(array "critDMG_") wrapper="span"}}%</div>
-            <div><img src="img/stat.enerRech_.svg">{{> renderItemField item=. field=../fields.stat params=(array "enerRech_") wrapper="span"}}%</div>
-            <div><img class="element-icon" src="img/Element_{{getProperty . 'element'}}.svg">{{> renderItemField item=. field=../fields.stat params=(array (concat (lower (getProperty . "element")) "_dmg_")) wrapper="span"}}%</div>
+            <div class="highlighter highlight-critRate_"><img src="img/stat.critRate_.svg">{{> renderItemField item=. field="stat" params=(array "critRate_" -1) wrapper="span"}}%</div>
+            <div class="highlighter highlight-critDMG_"><img src="img/stat.critDMG_.svg">{{> renderItemField item=. field="stat" params=(array "critDMG_" -1) wrapper="span"}}%</div>
+            <div class="highlighter highlight-enerRech_"><img src="img/stat.enerRech_.svg">{{> renderItemField item=. field="stat" params=(array "enerRech_" -1) wrapper="span"}}%</div>
+            <div class="highlighter highlight-{{getProperty . 'element'}}"><img class="element-icon element-{{getProperty . 'element'}}" src="img/Element_{{getProperty . 'element'}}.svg">{{> renderItemField item=. field="stat" params=(array (concat (lower (getProperty . "element")) "_dmg_") -1) wrapper="span"}}%</div>
         </div>
-        <div class="showcase-weapon">{{> renderItemField item=. field=../fields.weaponName params=(array "1" "md") wrapper="span"}}</div>
+        <div class="showcase-weapon">{{> renderItemField item=. field="weaponName" params=(array "1" "md") wrapper="span"}}</div>
         <div class="showcase-artifacts">
-            <div>{{> renderItemField item=. field=../fields.flower params=(array "1" "md") wrapper="span"}}</div>
-            <div>{{> renderItemField item=. field=../fields.plume params=(array "1" "md") wrapper="span"}}</div>
-            <div>{{> renderItemField item=. field=../fields.sands params=(array "1" "md") wrapper="span"}}</div>
-            <div>{{> renderItemField item=. field=../fields.goblet params=(array "1" "md") wrapper="span"}}</div>
-            <div>{{> renderItemField item=. field=../fields.circlet params=(array "1" "md") wrapper="span"}}</div>
+            <div>{{> renderItemField item=. field="flower" params=(array "1" "md") wrapper="span"}}</div>
+            <div>{{> renderItemField item=. field="plume" params=(array "1" "md") wrapper="span"}}</div>
+            <div>{{> renderItemField item=. field="sands" params=(array "1" "md") wrapper="span"}}</div>
+            <div>{{> renderItemField item=. field="goblet" params=(array "1" "md") wrapper="span"}}</div>
+            <div>{{> renderItemField item=. field="circlet" params=(array "1" "md") wrapper="span"}}</div>
+        </div>
+        <div class="showcase-substats showcase-substats-a">
+            <div class="highlighter highlight-critRate_"><img src="img/stat.critRate_.svg">{{> renderItemField item=. field="stat" params=(array "critRate_" -2) wrapper="span"}}</div>
+            <div class="highlighter highlight-critDMG_"><img src="img/stat.critDMG_.svg">{{> renderItemField item=. field="stat" params=(array "critDMG_" -2) wrapper="span"}}</div>
+            <div class="highlighter highlight-hp"><img src="img/stat.hp_.svg">{{> renderItemField item=. field="stat" params=(array "hp_" -2) wrapper="span"}}</div>
+            <div class="highlighter highlight-atk"><img src="img/stat.atk_.svg">{{> renderItemField item=. field="stat" params=(array "atk_" -2) wrapper="span"}}</div>
+            <div class="highlighter highlight-def"><img src="img/stat.def_.svg">{{> renderItemField item=. field="stat" params=(array "def_" -2) wrapper="span"}}</div>
+        </div>
+        <div class="showcase-substats showcase-substats-b">
+            <div class="highlighter highlight-enerRech_"><img src="img/stat.enerRech_.svg">{{> renderItemField item=. field="stat" params=(array "enerRech_" -2) wrapper="span"}}</div>
+            <div class="highlighter highlight-eleMas"><img src="img/stat.eleMas.svg">{{> renderItemField item=. field="stat" params=(array "eleMas" -2) wrapper="span"}}</div>
+            <div class="highlighter highlight-hp"><img src="img/stat.hp.svg">{{> renderItemField item=. field="stat" params=(array "hp" -2) wrapper="span"}}</div>
+            <div class="highlighter highlight-atk"><img src="img/stat.atk.svg">{{> renderItemField item=. field="stat" params=(array "atk" -2) wrapper="span"}}</div>
+            <div class="highlighter highlight-def"><img src="img/stat.def.svg">{{> renderItemField item=. field="stat" params=(array "def" -2) wrapper="span"}}</div>
         </div>
     </div>
   {{/each}}

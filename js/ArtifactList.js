@@ -19,9 +19,9 @@ handlebars.registerHelper('iffave', function(character, setKey, build, options) 
 
 handlebars.registerHelper("artifactStat", (key, character, context) => {
   if(key == "elemental_dmg_" && character instanceof Character)
-    return Artifact.shorthandStat[character.element.toLowerCase()+'_dmg_'];
+    return Artifact.getStatShorthand(character.element.toLowerCase()+'_dmg_');
   else
-    return Artifact.shorthandStat[key];
+    return Artifact.getStatShorthand(key);
 });
 
 handlebars.registerHelper("artifactRating", (artifact, statKey, character, context) => {
@@ -130,7 +130,7 @@ export default class ArtifactList extends GenshinList
       label: "Set",
       sort: {generic: {type:"string",property:"setName"}},
       dynamic: true,
-      value: item => item.viewer.settings.preferences.listDisplay=='0' ? item.setName : {
+      value: item => item.viewer.settings.preferences.listDisplay=='1' ? {
         tag: "div",
         value: {
           tag: "div",
@@ -148,21 +148,21 @@ export default class ArtifactList extends GenshinList
           "display-no-caption": true,
         },
         title: item.setName,
-      },
-      classes: item => item.viewer.settings.preferences.listDisplay=='0' ? {
-        "material": true,
-        "q1": item.rarity == 1,
-        "q2": item.rarity == 2,
-        "q3": item.rarity == 3,
-        "q4": item.rarity == 4,
-        "q5": item.rarity == 5,
-      } : {
+      } : item.setName,
+      classes: item => item.viewer.settings.preferences.listDisplay=='1' ? {
         "material": false,
         "q1": false,
         "q2": false,
         "q3": false,
         "q4": false,
         "q5": false,
+      } : {
+        "material": true,
+        "q1": item.rarity == 1,
+        "q2": item.rarity == 2,
+        "q3": item.rarity == 3,
+        "q4": item.rarity == 4,
+        "q5": item.rarity == 5,
       },
     });
     
@@ -206,15 +206,15 @@ export default class ArtifactList extends GenshinList
       sort: {generic: {type:"boolean",property:"lock"}},
       dynamic: true,
       title: item => "Is Locked?",
-      classes: item => ({
-        "insufficient": item.wanters.reduce((result, wanter, idx) => result+Math.pow(wanter.scaledScore, 1+idx), 0) < 1,
+      classes: (item,showUnlocked,showRed=1) => ({
+        "insufficient": parseInt(showRed) && item.wanters.reduce((result, wanter, idx) => result+Math.pow(wanter.scaledScore, 1+idx), 0) < 1,
       }),
-      edit: item => ({
+      edit: (item,showUnlocked,showRed=1) => ({
         target: {item:item, field:"lock"},
         type: "checkbox",
         value: item.lock,
         trueClasses: ["fa-solid","fa-lock"],
-        falseClasses: [],
+        falseClasses: parseInt(showUnlocked) ? ["fa-solid","fa-lock-open"] : [],
       }),
       dependencies: item => [
         {item:item, field:"wanters"},
@@ -225,7 +225,7 @@ export default class ArtifactList extends GenshinList
       label: "Main",
       sort: {generic: {type:"string",property:"mainStatKey"}},
       dynamic: false,
-      value: item => Artifact.shorthandStat[item.mainStatKey] ?? item.mainStatKey,
+      value: item => Artifact.getStatShorthand(item.mainStatKey),
     });
     
     let substatValueGroup = {label:"Substat Values"};
@@ -233,7 +233,7 @@ export default class ArtifactList extends GenshinList
     {
       let substatSumField = this.display.addField(statId+"Sum", {
         group: substatValueGroup,
-        label: Artifact.shorthandStat[statId] ?? statId,
+        label: Artifact.getStatShorthand(statId),
         sort: {func: (o,a,b) => o * (b.getSubstatSum(statId) - a.getSubstatSum(statId))},
         columnClasses: ['stat-'+statId],
         dynamic: true,
@@ -254,7 +254,7 @@ export default class ArtifactList extends GenshinList
     {
       let substatRatingFields = this.display.addField(statId+"Rating", {
         group: substatRatingGroup,
-        label: Artifact.shorthandStat[statId] ?? statId,
+        label: Artifact.getStatShorthand(statId),
         sort: {func: (o,a,b) => o * (b.getSubstatRating(statId).sum - a.getSubstatRating(statId).sum)},
         columnClasses: ['stat-rating-'+statId],
         dynamic: true,
@@ -303,11 +303,11 @@ export default class ArtifactList extends GenshinList
       value: item => item.character ? {
         value: [
           {
-            value: item.viewer.settings.preferences.listDisplay=='0' ? item.character.name : {
+            value: item.viewer.settings.preferences.listDisplay=='1' ? {
               tag: "img",
               classes: {'character-icon':true},
               src: item.character.image,
-            },
+            } : item.character.name,
             classes: {
               "icon": item.viewer.settings.preferences.listDisplay=='1',
             },
@@ -322,7 +322,7 @@ export default class ArtifactList extends GenshinList
           {
             tag: "i",
             classes: {'fa-solid':true, 'fa-eye':true},
-            popup: item.character,
+            popup: item.character.variants?.length ? item.character.variants[0] : item.character,
           },
         ],
         classes: {
@@ -379,15 +379,15 @@ export default class ArtifactList extends GenshinList
       label: "Score",
       tags: ["detailsOnly"],
       dynamic: true,
-      value: (artifact,character) => {
-        let score = artifact.getCharacterScore(character);
+      value: (artifact,character,buildId) => {
+        let score = artifact.getCharacterScore(character,undefined,buildId);
         return {
           icon: score>0.6 ? "fa-solid fa-face-smile" : score>0.3 ? "fa-solid fa-face-meh" : "fa-solid fa-face-frown",
           color: `rgba(${score<0.5?255:255*(2-score*2)}, ${score>0.5?255:255*score*2}, 0, 0.9)`,
         };
       },
-      title: (artifact,character) => `This artifact is ${Math.round(artifact.getCharacterScore(character)*100).toFixed(1)}% as good as the theoretical best possible artifact for your ${character.name}.`,
-      dependencies: (artifact,character) => [
+      title: (artifact,character,buildId) => `This artifact is ${Math.round(artifact.getCharacterScore(character,undefined,buildId)*100).toFixed(1)}% as good as the theoretical best possible artifact for your ${character.name}.`,
+      dependencies: (artifact,character,buildId) => [
         {item:artifact, field:"level"},
         {item:artifact, field:"substats"},
       ],
@@ -406,7 +406,7 @@ export default class ArtifactList extends GenshinList
         }
         return scores.subScores[substat]?.toFixed(2) ?? "0.00";
       },
-      title: (artifact,character,substat) => `How much rating ${Artifact.shorthandStat[substat]} is contributing to this artifact's score for ${character.name}.`,
+      title: (artifact,character,substat) => `How much rating ${Artifact.getStatShorthand(substat)} is contributing to this artifact's score for ${character.name}.`,
       dependencies: (artifact,character,substat) => [
         {item:artifact, field:"level"},
         {item:artifact, field:"substats"},
@@ -451,7 +451,7 @@ export default class ArtifactList extends GenshinList
       dynamic: true,
       title: (item,i) => !item.substats[i]
                           ? `Click to add new substat.`
-                          : `${item.getSubstatSum(item.substats[i].key).toFixed(2)} ${Artifact.shorthandStat[item.substats[i].key]}, rolled ${item.substatRolls[item.substats[i].key]?.length} times (${item.substatRolls[item.substats[i].key]?.map(r=>r*100).join('%, ')}%)`,
+                          : `${item.getSubstatSum(item.substats[i].key).toFixed(2)} ${Artifact.getStatShorthand(item.substats[i].key)}, rolled ${item.substatRolls[item.substats[i].key]?.length} times (${item.substatRolls[item.substats[i].key]?.map(r=>r*100).join('%, ')}%)`,
       value: (item,i) => item.substats[i] ? [
           {
             tag: "div",
@@ -490,7 +490,7 @@ export default class ArtifactList extends GenshinList
         },
         type: "select",
         list: Artifact.substats.filter(statId => statId != item.mainStatKey && item.substats.map(s => s.key).indexOf(statId) == -1),
-        displayProperty: statId => Artifact.shorthandStat[statId],
+        displayProperty: statId => Artifact.getStatShorthand(statId),
       },
       dependencies: artifact => [
         {item:artifact, field:"substats"},
@@ -603,7 +603,7 @@ export default class ArtifactList extends GenshinList
       {
         let option = this.elements.selectStatAdd.appendChild(document.createElement("option"));
         option.value = itm;
-        option.innerHTML = Artifact.shorthandStat[itm];
+        option.innerHTML = Artifact.getStatShorthand(itm);
       }
       
       this.elements.btnAdd = inputGroup.appendChild(document.createElement("button"));
@@ -633,7 +633,7 @@ export default class ArtifactList extends GenshinList
           Renderer.rerender(null, {
             item,
             groups: this.display.getGroups({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}),
-            fields: this.display.getFields({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}),
+            fields: this.display.getFields({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}).map(field => ({field, params:[]})),
             wrapper: "tr",
             fieldWrapper: "td",
           }, {template:"renderItem", parentElement:listTargetElement});

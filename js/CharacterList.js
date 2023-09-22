@@ -49,7 +49,7 @@ export default class CharacterList extends GenshinList
       popup: item => item,
       sort: {generic: {type:"string",property:"name"}},
       dynamic: true,
-      value: item => item.viewer.settings.preferences.listDisplay=='0' ? item.name : {
+      value: item => item.viewer.settings.preferences.characterList=='1' ? {
         tag: "div",
         value: {
           tag: "div",
@@ -67,7 +67,7 @@ export default class CharacterList extends GenshinList
           "display-no-caption": true,
         },
         title: item.name,
-      },
+      } : item.name,
       title: item => `Click to open a popup to examine ${item.name} in-depth.`,
     });
     
@@ -76,10 +76,10 @@ export default class CharacterList extends GenshinList
       labelTitle: "Sort by name.",
       tags: ["detailsOnly"],
       sort: {generic: {type:"string",property:"name"}},
-      dynamic: false,
+      dynamic: true,
       value: (item,size="sm",showCons,showLevel) => {
-        showCons = !!parseInt(showCons);
-        showLevel = !!parseInt(showLevel);
+        showCons = !!parseInt(showCons) && !size.endsWith("xs");
+        showLevel = !!parseInt(showLevel) && !size.endsWith("xs");
         return {
           tag: "div",
           value: [
@@ -101,7 +101,7 @@ export default class CharacterList extends GenshinList
                   alt: item.name,
                 },
               ],
-              classes: {"display-img": true, ["rarity-"+item.rarity]: true},
+              classes: {"display-img": true, ["rarity-"+item.rarity]: !size.endsWith("xs")},
             },
             showLevel ? {
               value: `${item.level} / ${item.levelCap}`,
@@ -110,7 +110,6 @@ export default class CharacterList extends GenshinList
           ],
           classes: {
             "item-display": true,
-            "item-material": true,
             ["display-"+size]: true,
             "display-no-caption": !showLevel,
           },
@@ -169,11 +168,15 @@ export default class CharacterList extends GenshinList
       button: item => {
         if(item.canUpPhase(false))
           return {
+            title: "Ascend the character. This will spend the resources for you and increase their level if necessary.",
             icon: "fa-solid fa-circle-up",
             action: item.upPhase.bind(item),
           };
         else if(item.canUpPhase(true))
-          return {icon: "fa-solid fa-circle-up"};
+          return {
+            title: "Not enough materials to ascend, but you have enough lower quality materials to craft them.",
+            icon: "fa-solid fa-circle-up"
+          };
       },
     });
     
@@ -245,6 +248,7 @@ export default class CharacterList extends GenshinList
             if(item.canUpTalent(i, false))
             {
               return {
+                title: "Level up the talent. This will spend the resources for you.",
                 icon: "fa-solid fa-circle-up",
                 action: item.upTalent.bind(item, i),
                 classes: {
@@ -257,6 +261,7 @@ export default class CharacterList extends GenshinList
             else
             {
               return {
+                title: "Not enough materials to level up. If the button is green, you could craft those materials now. If the button is yellow, it involves time-gated materials you could obtain today. If red, you can't obtain those materials today.",
                 icon: "fa-solid fa-circle-up",
                 classes: {
                   "sufficient": item.canUpTalent(i, true),
@@ -304,7 +309,7 @@ export default class CharacterList extends GenshinList
           columnClasses: ["ascension-materials"],
           tags: isNaN(phase) & mat.l != "Mora" ? undefined : ["detailsOnly"],
           dynamic: true,
-          value: item => item.getMat(mat.t,phase) && item.getMatCost(mat.t,phase) ? item.getMat(mat.t,phase).getFieldValue(item.getMatCost(mat.t,phase), this.viewer.settings.preferences.listDisplay=='1') : "",
+          value: item => item.getMat(mat.t,phase) && item.getMatCost(mat.t,phase) ? item.getMat(mat.t,phase).getFieldValue(item.getMatCost(mat.t,phase), this.viewer.settings.preferences.characterList=='1') : "",
           dependencies: item => [
             {item:item.base??item, field:"ascension"},
           ].concat(item.getMat(mat.t,phase)?.getCraftDependencies() ?? []),
@@ -330,6 +335,7 @@ export default class CharacterList extends GenshinList
               if(item.canUpPhase(false))
               {
                 return {
+                  title: "Ascend the character. This will spend the resources for you and increase their level if necessary.",
                   icon: "fa-solid fa-circle-up",
                   action: item.upPhase.bind(item),
                 };
@@ -337,6 +343,7 @@ export default class CharacterList extends GenshinList
               else
               {
                 return {
+                  title: "Not enough materials to ascend.",
                   icon: "fa-solid fa-circle-up",
                 };
               }
@@ -370,7 +377,7 @@ export default class CharacterList extends GenshinList
           columnClasses: [(isNaN(i)?i:"talent")+'-'+m.l.toLowerCase()],
           tags: isNaN(i) & m.l != "Trounce" && m.l != "Crown" && m.l != "Mora" ? undefined : ["detailsOnly"],
           dynamic: true,
-          value: item => item.getTalentMat(m.l.toLowerCase(),i) && item.getTalent(i)['mat'+m.d+'Count'] ? (item.getTalentMat(m.l.toLowerCase(),i)?.getFieldValue(item.getTalent(i)['mat'+m.d+'Count'], this.viewer.settings.preferences.listDisplay=='1')??"!ERROR!") : "",
+          value: item => item.getTalentMat(m.l.toLowerCase(),i) && item.getTalent(i)['mat'+m.d+'Count'] ? (item.getTalentMat(m.l.toLowerCase(),i)?.getFieldValue(item.getTalent(i)['mat'+m.d+'Count'], this.viewer.settings.preferences.characterList=='1')??"!ERROR!") : "",
           title: item => item.getTalentMat(m.l.toLowerCase(),i)?.getFullSource()??"!ERROR!",
           dependencies: item => [
             {item, field:["talent", i]},
@@ -396,18 +403,21 @@ export default class CharacterList extends GenshinList
           ],
           button: item => [
             (item.talent.auto != i) ? null : {
+              title: item.talent.auto < item.getPhase().maxTalent && item.canUpTalent('auto', false) ? "Level up the talent. This will spend the resources for you." : item.talent.auto < item.getPhase().maxTalent ? "Not enough materials to level up." : "You've reached the maximum talent level for this character's ascension.",
               name: "auto",
               text: "auto",
               icon: item.talent.auto < item.getPhase().maxTalent ? "fa-solid fa-circle-up" : undefined,
               action: item.talent.auto < item.getPhase().maxTalent && item.canUpTalent('auto', false) ? item.upTalent.bind(item, 'auto') : undefined,
             },
             (item.talent.skill != i) ? null : {
+              title: item.talent.skill < item.getPhase().maxTalent && item.canUpTalent('skill', false) ? "Level up the talent. This will spend the resources for you." : item.talent.skill < item.getPhase().maxTalent ? "Not enough materials to level up." : "You've reached the maximum talent level for this character's ascension.",
               name: "skill",
               text: "skill",
               icon: item.talent.skill < item.getPhase().maxTalent ? "fa-solid fa-circle-up" : undefined,
               action: item.talent.skill < item.getPhase().maxTalent && item.canUpTalent('skill', false) ? item.upTalent.bind(item, 'skill') : undefined,
             },
             (item.talent.burst != i) ? null : {
+              title: item.talent.burst < item.getPhase().maxTalent && item.canUpTalent('burst', false) ? "Level up the talent. This will spend the resources for you." : item.talent.burst < item.getPhase().maxTalent ? "Not enough materials to level up." : "You've reached the maximum talent level for this character's ascension.",
               name: "burst",
               text: "burst",
               icon: item.talent.burst < item.getPhase().maxTalent ? "fa-solid fa-circle-up" : undefined,
@@ -423,28 +433,44 @@ export default class CharacterList extends GenshinList
       sort: {generic: {type:"string",property:"ascendStat"}},
       tags: ["detailsOnly"],
       dynamic: false,
-      value: item => Artifact.shorthandStat[item.ascendStat],
+      value: item => Artifact.getStatShorthand(item.ascendStat),
     });
     
     let statField = this.display.addField("stat", {
-      label: (item,stat,preview,situation) => Artifact.shorthandStat[stat],
+      label: (item,stat,mode,situation) => Artifact.getStatShorthand(stat),
       tags: ["detailsOnly"],
       dynamic: true,
-      title: (item,stat,preview,situation) => {
-        let result = item.getStat(stat, {situation, preview});
-        return result;
+      title: (item,stat,mode,situation) => {
+        mode = parseInt(mode);
+        if(mode == 2)
+        {
+          let currentstat = item.getStat(stat, {situation, preview:0});
+          let previewstat = item.getStat(stat, {situation, preview:1});
+          let result = (previewstat-currentstat)/currentstat;
+          return result || "";
+        }
+        else
+          return item.getStat(stat, {situation, preview:mode==1, unmodified:mode==-1, substats:mode==-2});
       },
-      value: (item,stat,preview,situation) => {
-        let result = item.getStat(stat, {situation, preview});
-        return result.toFixed(stat.slice(-1)=="_" ? 1 : ["melt-forward","vaporize-forward","melt-reverse","vaporize-reverse"].indexOf(stat) > -1 ? 3 : 0)??"null";
+      value: (item,stat,mode,situation) => {
+        mode = parseInt(mode);
+        if(mode == 2)
+        {
+          let currentstat = item.getStat(stat, {situation, preview:0});
+          let previewstat = item.getStat(stat, {situation, preview:1});
+          let result = (previewstat-currentstat)/currentstat*100;
+          return result ? ((previewstat-currentstat)/currentstat*100).toFixed(1)+"%" : "";
+        }
+        else
+          return item.getStat(stat, {situation, preview:mode==1, unmodified:mode==-1, substats:mode==-2}).toFixed(stat.slice(-1)=="_" ? 1 : ["melt-forward","vaporize-forward","melt-reverse","vaporize-reverse"].indexOf(stat) > -1 ? 3 : 0)??"null";
       },
-      dependencies: (item,stat,preview,situation) => [
+      dependencies: (item,stat,mode,situation) => [
         {item:item.base??item, field:"constellation"},
         {item:item.base??item, field:"ascension"},
         {item:item.base??item, field:"level"},
         {item:item.base??item, field:"statModifiers"},
         {item:item.list, field:"targetEnemyData"},
-        preview ? {item:item.base??item, field:"preview"} : null,
+        mode ? {item:item.base??item, field:"preview"} : null,
         item.weapon ? {item:item.weapon, field:"location"} : null,
         item.weapon ? {item:item.weapon, field:"refinement"} : null,
         item.weapon ? {item:item.weapon, field:"ascension"} : null,
@@ -472,34 +498,54 @@ export default class CharacterList extends GenshinList
       tags: ["detailsOnly"],
       dynamic: true,
       title: (item,talent,mv,preview,format) => {
-        preview = !!parseInt(preview);
+        preview = parseInt(preview);
         format = parseInt(format);
-        let motionValue = item.getTalentValues(talent,{preview}).find(v => v.rawKey == mv);
-        if(motionValue)
+        if(preview == 2)
         {
-          if(format==-1)
-            return motionValue.rawKey;
-          else
-            return motionValue.rawValue;
+          let currentMotionValue = item.getMotionValues(talent,{preview:0}).find(v => v.rawKey == mv).value;
+          let previewMotionValue = item.getMotionValues(talent,{preview:1}).find(v => v.rawKey == mv).value;
+          let result = (previewMotionValue-currentMotionValue)/currentMotionValue;
+          return result || "";
         }
         else
-          return "null";
+        {
+          let motionValue = item.getMotionValues(talent,{preview}).find(v => v.rawKey == mv);
+          if(motionValue)
+          {
+            if(format==-1)
+              return motionValue.rawKey;
+            else
+              return motionValue.rawValue;
+          }
+          else
+            return "null";
+        }
       },
       value: (item,talent,mv,preview,format) => {
-        preview = !!parseInt(preview);
+        preview = parseInt(preview);
         format = parseInt(format);
-        let motionValue = item.getTalentValues(talent,{preview}).find(v => v.rawKey == mv);
-        if(motionValue)
+        if(preview == 2)
         {
-          if(format==1)
-            return typeof(motionValue.value)=="number" ? motionValue.value.toFixed(0) : motionValue.value;
-          else if(format==-1)
-            return motionValue.key;
-          else
-            return motionValue.string;
+          let currentMotionValue = item.getMotionValues(talent,{preview:0}).find(v => v.rawKey == mv).value;
+          let previewMotionValue = item.getMotionValues(talent,{preview:1}).find(v => v.rawKey == mv).value;
+          let result = (previewMotionValue-currentMotionValue)/currentMotionValue*100;
+          return result ? result.toFixed(1)+"%" : "";
         }
         else
-          return "null";
+        {
+          let motionValue = item.getMotionValues(talent,{preview}).find(v => v.rawKey == mv);
+          if(motionValue)
+          {
+            if(format==1)
+              return typeof(motionValue.value)=="number" ? motionValue.value.toFixed(0) : motionValue.value;
+            else if(format==-1)
+              return motionValue.key;
+            else
+              return motionValue.string;
+          }
+          else
+            return "null";
+        }
       },
       dependencies: (item,talent,mv,preview,format) => [
         {item:item.base??item, field:"constellation"},
@@ -552,7 +598,7 @@ export default class CharacterList extends GenshinList
       label: "",
       dynamic: true,
       popup: item => item.weapon,
-      value: (item,useImages=this.viewer.settings.preferences.listDisplay,size) => item.weapon ? (useImages=='1' ? {
+      value: (item,useImages=this.viewer.settings.preferences.characterList,size) => item.weapon ? (useImages=='1' ? {
         tag: "div",
         value: [
           {
@@ -609,7 +655,7 @@ export default class CharacterList extends GenshinList
         label: `<img src="img/${slotKey}.webp"/>`,
         dynamic: true,
         //popup: item => item[slotKey+'Artifact'],
-        value: (item,useImages=this.viewer.settings.preferences.listDisplay,size) => {
+        value: (item,useImages=this.viewer.settings.preferences.characterList,size) => {
           let artifact = item[slotKey+'Artifact'];
           return artifact ? (useImages=='1' ? {
             tag: "div",
@@ -634,7 +680,7 @@ export default class CharacterList extends GenshinList
                   },
                   {
                     value: artifact.display.getField("mainStat").get("value", artifact),
-                    classes: {"display-caption": true},
+                    classes: {"display-caption": true, "highlighter":true, ["highlight-"+(['hp_','atk_','def_'].indexOf(artifact.mainStatKey)>-1?artifact.mainStatKey.slice(0,-1):artifact.mainStatKey)]:true},
                   },
                 ],
                 classes: {
@@ -650,7 +696,7 @@ export default class CharacterList extends GenshinList
                 value: [0,1,2,3].map(i => artifact.substats[i] ? {
                   value: artifact.display.getField("substat").get("value", artifact, i),
                   title: artifact.display.getField("substat").get("title", artifact, i),
-                  classes: {"substat":true},
+                  classes: {"substat":true, "highlighter":true, ["highlight-"+(['hp_','atk_','def_'].indexOf(artifact.substats[i].key)>-1?artifact.substats[i].key.slice(0,-1):artifact.substats[i].key)]:true},
                 } : ""),
                 classes: {"artifact-mini-stats": true},
               },
@@ -837,6 +883,8 @@ export default class CharacterList extends GenshinList
             },
           });
           selectAdd.needsUpdate = true;
+          selectAdd.removeChild(selectAdd.selectedOptions.item(0));
+          selectAdd.value = "";
           
           let listElement = this.viewer.elements[this.constructor.name].querySelector(`.list[data-uuid="${this.uuid}"]`);
           let listTargetElement = listElement.querySelector(".list-target");
@@ -845,7 +893,7 @@ export default class CharacterList extends GenshinList
           Renderer.rerender(null, {
             item,
             groups: this.display.getGroups({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}),
-            fields: this.display.getFields({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}),
+            fields: this.display.getFields({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}).map(field => ({field, params:[]})),
             wrapper: "tr",
             fieldWrapper: "td",
           }, {template:"renderItem", parentElement:listTargetElement});
@@ -866,15 +914,17 @@ export default class CharacterList extends GenshinList
       if(!showcaseBtn.onclick)
       {
         showcaseBtn.onclick = event => {
-          let showcase = open("showcase.html", "_blank");
-          showcase.addEventListener("DOMContentLoaded", event => {
+          let showcase = window.open("showcase.html", "_blank");
+          showcase.addEventListener("DOMContentLoaded", async event => {
             document.head.querySelectorAll('link, style').forEach(htmlElement => {
               showcase.document.head.appendChild(htmlElement.cloneNode(true));
             });
             let container = showcase.document.body.appendChild(document.createElement("div"));
-            Renderer.rerender(container, {item: this, filter: "listable"}, {template: "renderCharacterListAsShowcase"});
+            await Renderer.rerender(container, {item: this, filter: "listable"}, {template: "renderCharacterListAsShowcase"});
           });
-          //Renderer.rerender(this.viewer.elements.popup.querySelector(".modal-content"), {item: this, filter: "listable"}, {template: "renderCharacterListAsShowcase", showPopup: true});
+          showcase.addEventListener("beforeunload", event => {
+            this.constructor.clearDependencies(showcase.document.body, true);
+          });
         };
       }
     }
@@ -893,5 +943,48 @@ export default class CharacterList extends GenshinList
         }
       }
     }
+  }
+  
+  onRender(element)
+  {
+    super.onRender(element);
+    
+    element.querySelectorAll(".highlighter").forEach(elem => {
+      let stat;
+      elem.classList.forEach(cls => {
+        if(cls.startsWith("highlight-"))
+          stat = cls.slice(10);
+      });
+      if(stat)
+      {
+        if(!elem.onmouseenter)
+        {
+          elem.onmouseenter = event => {
+            element.querySelectorAll(".highlighter").forEach(otherElem => {
+              if(otherElem.classList.contains("highlight-"+stat))
+              {
+                otherElem.classList.add("highlighted");
+                otherElem.classList.remove("unhighlighted");
+              }
+              else
+              {
+                otherElem.classList.add("unhighlighted");
+                otherElem.classList.remove("highlighted");
+              }
+            })
+          };
+        }
+        
+        if(!elem.onmouseleave)
+        {
+          elem.onmouseleave = event => {
+            element.querySelectorAll(".highlighter").forEach(otherElem => {
+              otherElem.classList.remove("highlighted");
+              otherElem.classList.remove("unhighlighted");
+            })
+          };
+        }
+      }
+    });
   }
 }

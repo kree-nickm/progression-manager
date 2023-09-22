@@ -115,7 +115,7 @@ export default class Artifact extends GenshinItem
   get name(){ return GenshinArtifactData[this.setKey]?.[this.slotKey] ?? `${this.setName} ${this.slotKey}`; }
   get setName(){ return GenshinArtifactData[this.setKey]?.name ?? this.setKey; }
   get levelCap(){ return GenshinArtifactStats[this.rarity]?.levelCap ?? 0; }
-  get mainStatShorthand(){ return Artifact.shorthandStat[this.mainStatKey]; }
+  get mainStatShorthand(){ return GenshinItem.getStatShorthand(this.mainStatKey); }
   get mainStatValue(){
     let key = this.mainStatKey.endsWith("o_dmg_") ? "elemental_dmg_" : this.mainStatKey;
     return GenshinArtifactStats[this.rarity].mainstats[key][this.level];

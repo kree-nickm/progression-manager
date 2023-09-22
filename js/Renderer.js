@@ -1,18 +1,9 @@
 import handlebars from 'https://cdn.jsdelivr.net/npm/handlebars@4.7.7/+esm';
 
-handlebars.registerHelper('logparams', function(...params) {
-  console.log(this, ...params);
-  return "";
-});
-
-handlebars.registerHelper("itemField", (item, field, property, options) => {
-  let params = options.hash.params ? (Array.isArray(options.hash.params) ? options.hash.params : [options.hash.params]) : [];
-  return field.get(property, item, ...params);
-});
-
 handlebars.registerHelper("itemChildren", (item, field, options) => {
   let params = options.hash.params ? (Array.isArray(options.hash.params) ? options.hash.params : [options.hash.params]) : [];
   let result = Renderer.contentToHTML(field.getAll(item, ...params));
+  result = item.processRenderText(result);
   
   let button = field.get('button',item,...params);
   if(!Array.isArray(button))
@@ -33,31 +24,11 @@ handlebars.registerHelper("itemChildren", (item, field, options) => {
         inner = inner + handlebars.escapeExpression(btn.text);
       if(btn.icon)
         inner = inner + "<i class=\""+ handlebars.escapeExpression(btn.icon) +"\"></i>";
-      result = result + "<button class=\"field-button "+ handlebars.escapeExpression(classes.join(" ")) +"\""+ (btn.action ? "" : " disabled=\"disabled\"") +" name=\""+ (btn.name??"") +"\">"+ inner +"</button>";
+      result = result + "<button class=\"field-button "+ handlebars.escapeExpression(classes.join(" ")) +"\""+ (btn.action ? "" : " disabled=\"disabled\"") +" title=\""+ handlebars.escapeExpression(btn.title??"") +"\" name=\""+ (btn.name??"") +"\">"+ inner +"</button>";
     }
   }
   
   return new handlebars.SafeString(result);
-});
-
-handlebars.registerHelper("itemClasses", (item, field, options) => {
-  let params = options.hash.params ? (Array.isArray(options.hash.params) ? options.hash.params : [options.hash.params]) : [];
-  let result = [];
-  if(!item)
-  {
-    console.error(`item passed to itemClasses helper is invalid`, item, field, options);
-    return "";
-  }
-  if(!field)
-  {
-    console.error(`field passed to itemClasses helper is invalid`, item, field, options);
-    return "";
-  }
-  let classes = field.get('classes', item, ...params);
-  for(let cls in classes)
-    if(classes[cls])
-      result.push(cls);
-  return result.join(" ");
 });
 
 handlebars.registerHelper("concat", (...params) => {
@@ -87,9 +58,13 @@ handlebars.registerHelper('invalidPartialCall', function(partial, note, options)
   return new handlebars.SafeString(`<span style="color:red;" title="An error occurred in the handlebards template. Check JavaScript console for details.">!</span>`);
 });
 
+handlebars.registerHelper('logparams', function(...params) {
+  console.log(this, ...params);
+  return "";
+});
+
 handlebars.registerHelper('ifeq', function(first, second, options) {return (first === second) ? options.fn(this) : options.inverse(this)});
 handlebars.registerHelper('array', (...params) => params.slice(0, -1));
-handlebars.registerHelper("fieldClasses", (field, options) => (field.columnClasses??[]).join(" "));
 handlebars.registerHelper("lower", (str, options) => str.toLowerCase());
 handlebars.registerHelper('fco', (value, fallback, options) => value ? value : fallback);
 handlebars.registerHelper('nco', (value, fallback, options) => value ?? fallback);
@@ -187,6 +162,7 @@ class Renderer
     'renderCharacterBuild': ["renderCharacterBuildSlider","renderCharacterArtifactLists"],
     'renderCharacterArtifactLists': ["renderListAsColumn"],
     'renderListAsColumn': ["renderArtifactAsCard"],
+    'renderCharacterStats': ["renderCharacterStatModifiers","renderCharacterMotionValues"],
   };
   
   static controllers = new Map();
@@ -220,8 +196,7 @@ class Renderer
         }
         else
         {
-          // TODO: This happens a lot, but it's hard to track down where the element is getting disconnected so that it can be removed from thr queue and dependencies appropriately. For now, the console will just be occasionally spammed.
-          if(window.DEBUGLOG.queueUpdate) console.warn(`Renderer.queueUpdate(1): Cannot update disconnected element:`, element);
+          console.warn(`Renderer.queueUpdate(1): Cannot update disconnected element:`, element);
         }
       });
       Renderer._needsUpdate.clear();
@@ -372,6 +347,10 @@ class Renderer
       
     if(!data.item) return console.error(`Element has no associated item:`, element);
     
+    // Anything the item needs to do to prepare for rendering. 
+    renderedItem?.preRender(element, {template,force});
+    data.item.preRender(element, {template,force});
+    
     if(force)
     {
       parentElement = element.parentElement;
@@ -388,7 +367,7 @@ class Renderer
         data.filter = element.dataset.filter;
       
       if(!data.fields && data.item.display)
-        data.fields = data.item.display.fields;
+        data.fields = data.item.display.getFields().map(field => ({field, params:[]}));
       
       if(!data.groups && data.item.display)
         data.groups = data.item.display.groups;
@@ -398,6 +377,23 @@ class Renderer
       
       if(!data.items && typeof(data.item.items) === "function")
         data.items = data.item.items(data.filter);
+      
+      if(element.dataset.strings)
+      {
+        let strings = element.dataset.strings.split("; ");
+        strings.forEach(str => {
+          let idx = str.indexOf(":");
+          if(idx > -1)
+          {
+            let key = str.slice(0, idx);
+            let val = str.slice(idx+1);
+            if(!data[key])
+              data[key] = val;
+            else
+              console.warn(`Cannot overwrite existing data value with provided string value:`, {key, prev:data[key], val});
+          }
+        });
+      }
       
       // Iterate through _needsUpdate and remove anything that's about to get overwritten, to prevent errors.
       data.item.constructor.clearDependencies(element, true);

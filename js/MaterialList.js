@@ -167,7 +167,7 @@ export default class MaterialList extends GenshinList
   
   prepareRender(element, data, options)
   {
-    if(this.viewer.settings.preferences.listDisplay == '1')
+    if(this.viewer.settings.preferences.materialList == '1')
     {
       data.items = {
         'enemy': this.items('enemy'),
@@ -179,7 +179,7 @@ export default class MaterialList extends GenshinList
         'forgery': this.items('forgery'),
         'unknown': this.items('unknown'),
       };
-      data.fields = this.display.fields;
+      data.fields = this.display.getFields().map(field => ({field, params:[]}));
       options.template = "renderMaterialList";
     }
     return {element, data, options};

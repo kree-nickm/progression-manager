@@ -19,7 +19,7 @@ Features include:
 * _(Work-In-Progress)_ See each of your characters' stats based on their equipped weapon, artifacts, unlocked talents and constellations, as well as how much damage they should be doing with various attacks, skills, bursts, reactions, etc. Additionally:
   * _(Work-In-Progress)_ Factor in triggered effects from those aforementioned sources, and how the damage values will change when such effects are triggered.
   * Allow you to see all of that information for an alternate gear set (preview) alongside your current one, and use that to decide which one you prefer.
-* _(Planned Feature)_ Allow you to set up teams, and see how the buffs provided by each team members' abilities/artifacts/weapons will affect all of the aforementioned statistics.
+* _(Work-In-Progress)_ Allow you to set up teams, and see how the buffs provided by each team members' abilities/artifacts/weapons will affect all of the aforementioned statistics.
 * _(Planned Feature)_ Obtain your character data from Hoyoverse directly using your profile (like Enka), so you can have at least *some* account data imported without having to use screen readers.
 * _(Planned Feature)_ Set targets for your character/gear progression, so you can quickly see all of the things you need to spend resin on.
 

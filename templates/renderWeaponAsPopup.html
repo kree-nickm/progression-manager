@@ -5,7 +5,7 @@
             <div class="col-auto">
                 <div class="item-display item-weapon display-md">
                     <div class="display-img rarity-{{getProperty item 'rarity'}}">
-                      {{> renderItemField item=item field=fields.image wrapper="div"}}
+                      {{> renderItemField item=item field="image" wrapper="div"}}
                     </div>
                     <div class="display-caption">
                       {{getProperty item "name"}}
@@ -17,15 +17,15 @@
                     <h5 class="col-2">Level</h5>
                     <h5 class="col-2">Refinement</h5>
                     <h5 class="col-2">ATK</h5>
-                    <h5 class="col-2">{{> renderItemField item=item field=fields.stat wrapper="div"}}</h5>
+                    <h5 class="col-2">{{> renderItemField item=item field="stat" wrapper="div"}}</h5>
                 </div>
                 <div class="row">
-                    <div class="col-2">{{> renderItemField item=item field=fields.level wrapper="div"}}</div>
-                    <div class="col-2">{{> renderItemField item=item field=fields.refinement wrapper="div"}}</div>
-                    <div class="col-2">{{> renderItemField item=item field=fields.atk wrapper="div"}}</div>
-                    <div class="col-2">{{> renderItemField item=item field=fields.statVal wrapper="div"}}</div>
+                    <div class="col-2">{{> renderItemField item=item field="level" wrapper="div"}}</div>
+                    <div class="col-2">{{> renderItemField item=item field="refinement" wrapper="div"}}</div>
+                    <div class="col-2">{{> renderItemField item=item field="atk" wrapper="div"}}</div>
+                    <div class="col-2">{{> renderItemField item=item field="statVal" wrapper="div"}}</div>
                 </div>
-              {{> renderItemField item=item field=fields.passive wrapper="p"}}
+              {{> renderItemField item=item field="passive" wrapper="p"}}
             </div>
         </div>
         
@@ -44,10 +44,10 @@
                 <tbody>
                   {{#times 6}}
                     <tr>
-                      {{> renderItemField item=item field=(lookup fields (concat "ascension" @index)) wrapper="td"}}
-                      {{> renderItemField item=item field=(lookup fields (concat "forgeryMat" @index)) wrapper="td"}}
-                      {{> renderItemField item=item field=(lookup fields (concat "strongMat" @index)) wrapper="td"}}
-                      {{> renderItemField item=item field=(lookup fields (concat "weakMat" @index)) wrapper="td"}}
+                      {{> renderItemField item=item field=(concat "ascension" @index) wrapper="td"}}
+                      {{> renderItemField item=item field=(concat "forgeryMat" @index) wrapper="td"}}
+                      {{> renderItemField item=item field=(concat "strongMat" @index) wrapper="td"}}
+                      {{> renderItemField item=item field=(concat "weakMat" @index) wrapper="td"}}
                     </tr>
                   {{/times}}
                 </tbody>

@@ -57,7 +57,7 @@ export default class DataManager extends UIController
     
     await this.lists[pane].render();
     this.stickyElements = document.querySelectorAll(".sticky-js");
-    window.scrollTo({left:0, top:this.settings.paneMemory[pane].scrollY ?? 0, behavior:"instant"});
+    window.scrollTo({left:0, top:this.settings.paneMemory[pane]?.scrollY ?? 0, behavior:"instant"});
     for(let l in this.lists)
     {
       if(l == pane)
@@ -78,13 +78,15 @@ export default class DataManager extends UIController
   
   saveScrollX(px)
   {
-    this.settings.paneMemory[this.currentView].scrollX = px;
+    if(this.settings.paneMemory[this.currentView])
+      this.settings.paneMemory[this.currentView].scrollX = px;
     //console.log(this.settings.paneMemory[this.currentView].scrollX, this.settings.paneMemory[this.currentView].scrollY);
   }
   
   saveScrollY(px)
   {
-    this.settings.paneMemory[this.currentView].scrollY = px;
+    if(this.settings.paneMemory[this.currentView])
+      this.settings.paneMemory[this.currentView].scrollY = px;
     //console.log(this.settings.paneMemory[this.currentView].scrollX, this.settings.paneMemory[this.currentView].scrollY);
   }
   

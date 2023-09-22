@@ -194,60 +194,56 @@ export default class Weapon extends GenshinItem
         this.getMat('weak').count >= this.getMatCost('weak');
   }
   
-  getATK(alternates=null)
+  getATK(alternates={})
   {
-    let statLower = GenshinWeaponStats[this.rarity][this.baseATK].atk[(alternates?.ascension??this.ascension)*2];
-    let statUpper = GenshinWeaponStats[this.rarity][this.baseATK].atk[(alternates?.ascension??this.ascension)*2+1];
-    let lvlMin = GenshinPhaseData[(alternates?.ascension??this.ascension)-1]?.levelCap ?? 1;
-    let lvlMax = GenshinPhaseData[(alternates?.ascension??this.ascension)].levelCap;
-    let scale = ((alternates?.level??this.level) - lvlMin) / (lvlMax - lvlMin);
+    let statLower = GenshinWeaponStats[this.rarity][this.baseATK].atk[(alternates?.weaponAscension??(alternates?.preview?(alternates.character?.preview.weaponAscension??this.ascension):this.ascension))*2];
+    let statUpper = GenshinWeaponStats[this.rarity][this.baseATK].atk[(alternates?.weaponAscension??(alternates?.preview?(alternates.character?.preview.weaponAscension??this.ascension):this.ascension))*2+1];
+    let lvlMin = GenshinPhaseData[(alternates?.weaponAscension??(alternates?.preview?(alternates.character?.preview.weaponAscension??this.ascension):this.ascension))-1]?.levelCap ?? 1;
+    let lvlMax = GenshinPhaseData[alternates?.weaponAscension??(alternates?.preview?(alternates.character?.preview.weaponAscension??this.ascension):this.ascension)].levelCap;
+    let scale = ((alternates?.weaponLevel??(alternates?.preview?(alternates.character?.preview.weaponLevel??this.level):this.level)) - lvlMin) / (lvlMax - lvlMin);
     return statLower + (statUpper-statLower) * scale;
   }
   
-  cloneCode(array=[])
+  getStat(alternates={})
+  {
+    let stat = GenshinWeaponStats[this.rarity][this.baseATK][this.stat] ?? this.baseStat;
+    let factor = 1 + 0.04038405 * ((alternates?.weaponLevel??(alternates?.preview?(alternates.character?.preview.weaponLevel??this.level):this.level))-1);
+    return stat * factor;
+  }
+  
+  cloneCode(array=[], alternates={})
   {
     let clone = [];
     for(let elem of array)
     {
       if(typeof(elem) == "object")
-        clone.push(this.cloneCode(elem));
+        clone.push(this.cloneCode(elem, alternates));
       else
       {
         if(typeof(elem) == "string" && elem.charAt(0) == "@")
-          elem = this.loaded ? GenshinWeaponData[this.key].refinementData[elem.slice(1)][this.refinement] : 0;
+          elem = this.loaded ? GenshinWeaponData[this.key].refinementData[elem.slice(1)][alternates?.refinement??(alternates?.preview?(alternates.character?.preview.refinement??this.refinement):this.refinement)] : 0;
         clone.push(elem);
       }
     }
     return clone;
   }
   
-  getCode(alternates)
+  getCode(alternates={})
   {
     let result;
     let remembered = this.loadMemory("code");
     if(!remembered)
     {
-      let code = this.cloneCode(GenshinWeaponData[this.key]?.code??[]);
+      let code = this.cloneCode(GenshinWeaponData[this.key]?.code??[], alternates);
       if(code.length)
       {
-        result = {
-          source: this.key,
-          sourcePart: this.refinement,
-          code,
-        };
+        result = code;
         this.saveMemory(result, "code");
       }
     }
     else
       result = remembered;
     return result;
-  }
-  
-  getStat(alternates=null)
-  {
-    let stat = GenshinWeaponStats[this.rarity][this.baseATK][this.stat] ?? this.baseStat;
-    let factor = 1 + 0.04038405 * ((alternates?.level??this.level)-1);
-    return stat * factor;
   }
   
   unlink(options)

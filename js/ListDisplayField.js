@@ -1,3 +1,42 @@
+import { handlebars } from "./Renderer.js";
+
+handlebars.registerHelper("findField", (item, field, options) => {
+  if(field instanceof ListDisplayField)
+    return field;
+  let foundField = item?.display?.getField(field);
+  if(foundField instanceof ListDisplayField)
+    return foundField;
+  console.error(`Error in 'fieldField' helper: cannot find field based on arguments;`, {item, field, options});
+  return null;
+});
+
+handlebars.registerHelper("itemField", (item, field, property, options) => {
+  let params = options.hash.params ? (Array.isArray(options.hash.params) ? options.hash.params : [options.hash.params]) : [];
+  return field.get(property, item, ...params);
+});
+
+handlebars.registerHelper("itemClasses", (item, field, options) => {
+  let params = options.hash.params ? (Array.isArray(options.hash.params) ? options.hash.params : [options.hash.params]) : [];
+  let result = [];
+  if(!item)
+  {
+    console.error(`item passed to itemClasses helper is invalid`, item, field, options);
+    return "";
+  }
+  if(!field)
+  {
+    console.error(`field passed to itemClasses helper is invalid`, item, field, options);
+    return "";
+  }
+  let classes = field.get('classes', item, ...params);
+  for(let cls in classes)
+    if(classes[cls])
+      result.push(cls);
+  return result.join(" ");
+});
+
+handlebars.registerHelper("fieldClasses", (field, options) => (field.columnClasses??[]).join(" "));
+
 export default class ListDisplayField
 {
   static properties = ["group", "label", "labelTitle", "columnClasses", "sort", "tags", "dynamic", "html", "popup", "value", "button", "template", "edit", "title", "classes", "dependencies"];

@@ -4,9 +4,9 @@
       {{#each materials}}
         <div class="list-item material-{{type}}" data-uuid="{{uuid .}}">
             <div class="item-display item-material display-md">
-              {{> renderItemField item=. field=../../fields.image wrapper="div"}}
+              {{> renderItemField item=. field="image" wrapper="div"}}
                 <div class="display-caption">
-                  {{> renderItemField item=. field=../../fields.count wrapper="div"}}
+                  {{> renderItemField item=. field="count" wrapper="div"}}
                 </div>
             </div>
         </div>

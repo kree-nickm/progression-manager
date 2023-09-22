@@ -7,6 +7,7 @@ import MaterialList from "./MaterialList.js";
 import CharacterList from "./CharacterList.js";
 import WeaponList from "./WeaponList.js";
 import ArtifactList from "./ArtifactList.js";
+import TeamList from "./TeamList.js";
 import FurnitureList from "./FurnitureList.js";
 import FurnitureSetList from "./FurnitureSetList.js";
 
@@ -28,6 +29,7 @@ export default class GenshinManager extends DataManager
     this.listClasses.CharacterList = CharacterList;
     this.listClasses.WeaponList = WeaponList;
     this.listClasses.ArtifactList = ArtifactList;
+    this.listClasses.TeamList = TeamList;
     this.listClasses.FurnitureList = FurnitureList;
     this.listClasses.FurnitureSetList = FurnitureSetList;
     
@@ -53,6 +55,8 @@ export default class GenshinManager extends DataManager
       return "WeaponList";
     else if(location.hash == "#artifacts")
       return "ArtifactList";
+    else if(location.hash == "#teams")
+      return "TeamList";
     else if(location.hash == "#furnitureSets")
       return "FurnitureSetList";
     else if(location.hash == "#furniture")
@@ -84,23 +88,13 @@ export default class GenshinManager extends DataManager
     if(!this.data[this.settings.account])
       this.data[this.settings.account] = {};
     if(!this.data[this.settings.account][this.settings.server])
-    {
       this.data[this.settings.account][this.settings.server] = {};
-      this.lists[MaterialList.name] = new MaterialList(this);
-      this.lists[CharacterList.name] = new CharacterList(this);
-      this.lists[WeaponList.name] = new WeaponList(this);
-      this.lists[ArtifactList.name] = new ArtifactList(this);
-      this.lists[FurnitureList.name] = new FurnitureList(this);
-      this.lists[FurnitureSetList.name] = new FurnitureSetList(this);
-      //for(let list in this.listClasses)
-      //  this.lists[list] = new this.listClasses[list](this);
-    }
-    else if(changed)
-    {
+    for(let list in this.listClasses)
+      if(!this.lists[list])
+        this.lists[list] = new this.listClasses[list](this);
+    if(changed)
       for(let list in this.listClasses)
-        if(this.lists[list])
-          this.lists[list].forceNextRender = true;
-    }
+        this.lists[list].forceNextRender = true;
     return true;
   }
   
@@ -267,6 +261,18 @@ export default class GenshinManager extends DataManager
         this.errors = true;
       }
     }
+    if(goodData.teams)
+    {
+      try
+      {
+        hasData |= this.lists.TeamList.fromGOOD(goodData.teams);
+      }
+      catch(x)
+      {
+        console.error("Error when loading teams from GOOD data.", x);
+        this.errors = true;
+      }
+    }
     if(goodData.furniture)
     {
       try
@@ -391,6 +397,8 @@ export default class GenshinManager extends DataManager
     this.settingsFromJSON(window.localStorage.getItem("goodViewerSettings"));
     this.settings.account = this.settings.account ?? Object.keys(this.data ?? {})[0] ?? "";
     this.settings.server = this.settings.server ?? Object.keys(this.data?.[this.settings.account] ?? {})[0] ?? "";
+    
+    this.activateAccount(this.settings.account, this.settings.server)
     
     if(this.currentView)
       this.view(this.currentView);

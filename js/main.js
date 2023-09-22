@@ -295,6 +295,8 @@ for(let i=0; i<navLinks.length; i++)
         window.viewer.view("WeaponList");
       else if(event.target.hash == "#artifacts")
         window.viewer.view("ArtifactList");
+      else if(event.target.hash == "#teams")
+        window.viewer.view("TeamList");
       else if(event.target.hash == "#furnitureSets")
         window.viewer.view("FurnitureSetList");
       else if(event.target.hash == "#furniture")

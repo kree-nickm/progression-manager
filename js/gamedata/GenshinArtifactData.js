@@ -911,20 +911,21 @@ export default {
             "proc",
             [
               [
-                  "stat",
+                  "pstat",
                   [
                       "atk_",
                       20
                   ]
               ],
               [
-                  "stat",
+                  "pstat",
                   [
                       "shield_",
                       30
                   ]
               ]
-            ]
+            ],
+            "After Elemental Skill Hit (3s)"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/51\/Item_Flower_of_Accolades.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/86\/Item_Ceremonial_War-Plume.png",

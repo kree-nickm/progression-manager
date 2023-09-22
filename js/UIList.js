@@ -190,7 +190,7 @@ export default class UIList extends UIController {
     let {element, data, options} = this.prepareRender(this.viewer.elements[this.constructor.name].querySelector(`.list[data-uuid="${this.uuid}"]`), {
       item: this,
       groups: this.display.getGroups({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}),
-      fields: this.display.getFields({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}),
+      fields: this.display.getFields({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}).map(field => ({field, params:[]})),
     }, {
       template: "renderListAsTable",
       force: force || this.forceNextRender,
@@ -198,8 +198,27 @@ export default class UIList extends UIController {
     });
     Array.from(this.viewer.elements[this.constructor.name].querySelectorAll(`.list`)).forEach(elem => elem.classList.add("d-none"));
     element?.classList.remove("d-none");
-    await Renderer.rerender(element, data, options);
+    let render = await Renderer.rerender(element, data, options);
     this.forceNextRender = false;
+    
+    let footer = document.getElementById("footer");
+    let updateFooter = false;
+    let ul;
+    /*footer.classList.add("d-none");
+    if(footer.dataset.list != this.uuid)
+    {
+      updateFooter = true;
+      footer.replaceChildren();
+      footer.dataset.list = this.uuid;
+      
+      let container = footer.appendChild(document.createElement("div"));
+      container.classList.add("container-fluid", "navbar-expand");
+      
+      ul = container.appendChild(document.createElement("ul"));
+      ul.classList.add("navbar-nav");
+    }*/
+    
+    return {render, footer, updateFooter, ul};
   }
   
   onRender(element)

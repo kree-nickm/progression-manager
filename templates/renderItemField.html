@@ -1,17 +1,17 @@
 {{#if item}}
-{{#if field}}
+{{#if (findField item field)}}
 <{{wrapper}}
-  class="list-item-field {{itemClasses item field params=params}} {{fieldClasses field}} {{class}}"
-  name="{{field.id}}"
-  title="{{itemField item field 'title' params=params}}"
-  {{#if field.group}}data-group-name="{{field.group.label}}"{{/if}}
+  class="list-item-field {{itemClasses item (findField item field) params=params}} {{fieldClasses (findField item field)}} {{class}}"
+  name="{{lookup (findField item field) 'id'}}"
+  title="{{itemField item (findField item field) 'title' params=params}}"
+  {{#if (lookup (findField item field) 'group')}}data-group-name="{{lookup (findField item field) 'group' 'label'}}"{{/if}}
   data-template="renderItemField"
   data-uuid="{{uuid item}}"
   {{#each params}}
   data-param{{@index}}="{{toParam .}}"
   {{/each}}
 >
-  {{itemChildren item field params=params}}
+  {{itemChildren item (findField item field) params=params}}
 </{{wrapper}}>
 {{else}}
 {{invalidPartialCall "renderItemField" "invalid field"}}

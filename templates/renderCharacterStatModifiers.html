@@ -1,0 +1,16 @@
+<div id="characterStats.ConditionalModifiers" class="collapse show stat-list" data-template="renderCharacterStatModifiers" data-uuid="{{uuid item}}">
+  {{#each (lookup item "teamStatModifiers")}}
+    <div class="row gx-1">
+      {{#if isProc}}
+        <div class="col-1">
+          <input id="{{id}}" class="proc-input form-control" type="number" value="{{active}}" min="0" max="{{maxStacks}}" title="Number of stacks active. For effects without multiple stacks: 1 means it's active; 0 means it's inactive."{{#ifeq ../item characterSource}}{{else}} data-owner="{{uuid characterSource}}"{{/ifeq}}/>
+        </div>
+      {{else}}
+        <div class="col-1">Passive</div>
+      {{/if}}
+        <div class="col-3"><label class="form-label m-0" for="{{id}}">{{#ifeq type "resonance"}}<img class="element-icon element-{{resonance}}" src="img/Element_{{resonance}}.svg">{{else}}{{> renderItemField item=characterSource field="icon" params=(array "xs" 0 0) wrapper="span"}}{{/ifeq}}{{{label}}}</label></div>
+        <div class="col-8"><label class="form-label m-0" for="{{id}}" title="In case the description is bugged, here's the code: {{code}}">{{{lookup . "description"}}}{{#if (lookup . "isPreview")}}{{#if (lookup . "isCurrent")}}{{else}}<span class="badge text-bg-secondary ms-2">Preview</span>
+{{/if}}{{else}}{{#if (lookup . "isCurrent")}}<span class="badge text-bg-dark ms-2">Current</span>{{else}}{{/if}}{{/if}}</label></div>
+    </div>
+  {{/each}}
+</div>

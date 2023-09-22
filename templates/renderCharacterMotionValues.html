@@ -1,0 +1,13 @@
+<div id="characterStats.{{talent}}" class="collapse show stat-list" data-template="renderCharacterMotionValues" data-uuid="{{uuid item}}" data-strings="talent:{{talent}}">
+  {{#each (getMotionValues item talent)}}
+    <div class="row gx-1">
+      <!--<div class="col-1"><input data-talent="{{../talent}}" data-key="{{rawKey}}" class="rotation-count form-control form-control-sm" type="number" value="0"/></div>-->
+      <div class="col-3">{{> renderItemField item=../item field="mv" params=(array ../talent rawKey 0 -1) wrapper="span"}}</div>
+      <div class="col-2">{{> renderItemField item=../item field="mv" params=(array ../talent rawKey) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=../item field="mv" params=(array ../talent rawKey 0 1) wrapper="span"}}</div>
+      <div class="col-2">{{> renderItemField item=../item field="mv" params=(array ../talent rawKey 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=../item field="mv" params=(array ../talent rawKey 1 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=../item field="mv" params=(array ../talent rawKey 2) wrapper="span"}}</div>
+    </div>
+  {{/each}}
+</div>

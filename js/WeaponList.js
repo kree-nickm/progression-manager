@@ -5,7 +5,8 @@ import GenshinList from "./GenshinList.js";
 import Artifact from "./Artifact.js";
 import Weapon from "./Weapon.js";
 
-handlebars.registerHelper("getWeaponData", (key, context) => GenshinWeaponData[key]);
+handlebars.registerHelper("getWeaponData", (key, options) => GenshinWeaponData[key]);
+handlebars.registerHelper("weaponList", (item, options) => item.viewer.lists.WeaponList.items(options.hash.filter));
 
 export default class WeaponList extends GenshinList
 {
@@ -39,7 +40,7 @@ export default class WeaponList extends GenshinList
       popup: item => item,
       sort: {generic: {type:"string",property:"name"}},
       dynamic: true,
-      value: item => item.viewer.settings.preferences.listDisplay=='0' ? item.name : {
+      value: item => item.viewer.settings.preferences.listDisplay=='1' ? {
         tag: "div",
         value: {
           tag: "div",
@@ -57,21 +58,21 @@ export default class WeaponList extends GenshinList
           "display-no-caption": true,
         },
         title: item.name,
-      },
-      classes: item => item.viewer.settings.preferences.listDisplay=='0' ? {
-        "material": true,
-        "q1": item.rarity == 1,
-        "q2": item.rarity == 2,
-        "q3": item.rarity == 3,
-        "q4": item.rarity == 4,
-        "q5": item.rarity == 5,
-      } : {
+      } : item.name,
+      classes: item => item.viewer.settings.preferences.listDisplay=='1' ? {
         "material": false,
         "q1": false,
         "q2": false,
         "q3": false,
         "q4": false,
         "q5": false,
+      } : {
+        "material": true,
+        "q1": item.rarity == 1,
+        "q2": item.rarity == 2,
+        "q3": item.rarity == 3,
+        "q4": item.rarity == 4,
+        "q5": item.rarity == 5,
       },
     });
     
@@ -93,7 +94,7 @@ export default class WeaponList extends GenshinList
       label: "Stat",
       sort: {generic: {type:"string", property:"stat"}},
       dynamic: false,
-      value: item => Artifact.shorthandStat[item.stat],
+      value: item => Artifact.getStatShorthand(item.stat),
     });
     
     let refinement = this.display.addField("refinement", {
@@ -355,7 +356,7 @@ export default class WeaponList extends GenshinList
           Renderer.rerender(null, {
             item,
             groups: this.display.getGroups({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}),
-            fields: this.display.getFields({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}),
+            fields: this.display.getFields({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}).map(field => ({field, params:[]})),
             wrapper: "tr",
             fieldWrapper: "td",
           }, {template:"renderItem", parentElement:listTargetElement});

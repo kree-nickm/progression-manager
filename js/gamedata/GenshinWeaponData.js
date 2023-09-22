@@ -1569,6 +1569,7 @@ export default {
         "rarity": 4,
         "type": "Polearm",
         "passive": "When there are at least 3 different Elemental Types in your party, Elemental Mastery will be increased by @0.",
+        "code": ["proc",["stat",["eleMas","@0"]]],
         "refinementData": [
             {
                 "1": 120,

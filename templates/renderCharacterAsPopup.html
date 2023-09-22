@@ -5,7 +5,7 @@
             <div class="col-auto">
                 <div class="item-display item-character display-md">
                     <div class="display-img rarity-{{getProperty item 'rarity'}}">
-                      {{> renderItemField item=item field=fields.image wrapper="div"}}
+                      {{> renderItemField item=item field="image" wrapper="div"}}
                     </div>
                     <div class="display-caption">
                       {{getProperty item "name"}}
@@ -19,12 +19,21 @@
                     <h5 class="col-2">Stat</h5>
                 </div>
                 <div class="row">
-                    <div class="col-2">{{> renderItemField item=item field=fields.level wrapper="div"}}</div>
-                    <div class="col-2">{{> renderItemField item=item field=fields.constellation wrapper="div"}}</div>
-                    <div class="col-2">{{> renderItemField item=item field=fields.ascendStat wrapper="div"}}</div>
+                    <div class="col-2">{{> renderItemField item=item field="level" wrapper="div"}}</div>
+                    <div class="col-2">{{> renderItemField item=item field="constellation" wrapper="div"}}</div>
+                    <div class="col-2">{{> renderItemField item=item field="ascendStat" wrapper="div"}}</div>
                 </div>
             </div>
         </div>
+        
+      {{#if item.base}}
+        <div class="row">
+            <div class="col-auto">Variants:</div>
+          {{#each item.base.variants}}
+            <div class="col-auto list-item" data-uuid="{{uuid .}}">{{> renderItemField item=. field="name" wrapper="span"}}</div>
+          {{/each}}
+        </div>
+      {{/if}}
         
         <hr/>
         <h3 class="collapsed" data-bs-toggle="collapse" href="#ascensionMaterials">Ascension Materials</h3>
@@ -43,12 +52,12 @@
                 <tbody>
                   {{#times 6}}
                     <tr>
-                      {{> renderItemField item=item field=(lookup fields (concat "ascension" @index)) wrapper="td"}}
-                      {{> renderItemField item=item field=(lookup fields (concat "gemAscMat" @index)) wrapper="td"}}
-                      {{> renderItemField item=item field=(lookup fields (concat "bossAscMat" @index)) wrapper="td"}}
-                      {{> renderItemField item=item field=(lookup fields (concat "flowerAscMat" @index)) wrapper="td"}}
-                      {{> renderItemField item=item field=(lookup fields (concat "enemyAscMat" @index)) wrapper="td"}}
-                      {{> renderItemField item=item field=(lookup fields (concat "moraAscMat" @index)) wrapper="td"}}
+                      {{> renderItemField item=item field=(concat "ascension" @index) wrapper="td"}}
+                      {{> renderItemField item=item field=(concat "gemAscMat" @index) wrapper="td"}}
+                      {{> renderItemField item=item field=(concat "bossAscMat" @index) wrapper="td"}}
+                      {{> renderItemField item=item field=(concat "flowerAscMat" @index) wrapper="td"}}
+                      {{> renderItemField item=item field=(concat "enemyAscMat" @index) wrapper="td"}}
+                      {{> renderItemField item=item field=(concat "moraAscMat" @index) wrapper="td"}}
                     </tr>
                   {{/times}}
                 </tbody>
@@ -72,12 +81,12 @@
                 <tbody>
                   {{#times 9 start=1}}
                     <tr>
-                      {{> renderItemField item=item field=(lookup fields (concat "talentLvl" @index)) wrapper="td"}}
-                      {{> renderItemField item=item field=(lookup fields (concat "talentMasteryMat" @index)) wrapper="td"}}
-                      {{> renderItemField item=item field=(lookup fields (concat "talentEnemyMat" @index)) wrapper="td"}}
-                      {{> renderItemField item=item field=(lookup fields (concat "talentTrounceMat" @index)) wrapper="td"}}
-                      {{> renderItemField item=item field=(lookup fields (concat "talentCrownMat" @index)) wrapper="td"}}
-                      {{> renderItemField item=item field=(lookup fields (concat "talentMoraMat" @index)) wrapper="td"}}
+                      {{> renderItemField item=item field=(concat "talentLvl" @index) wrapper="td"}}
+                      {{> renderItemField item=item field=(concat "talentMasteryMat" @index) wrapper="td"}}
+                      {{> renderItemField item=item field=(concat "talentEnemyMat" @index) wrapper="td"}}
+                      {{> renderItemField item=item field=(concat "talentTrounceMat" @index) wrapper="td"}}
+                      {{> renderItemField item=item field=(concat "talentCrownMat" @index) wrapper="td"}}
+                      {{> renderItemField item=item field=(concat "talentMoraMat" @index) wrapper="td"}}
                     </tr>
                   {{/times}}
                 </tbody>

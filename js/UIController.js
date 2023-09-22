@@ -1,7 +1,7 @@
 import { handlebars, Renderer } from "./Renderer.js";
 
-handlebars.registerHelper("getProperty", (item, property, options) => item.getProperty(property));
-handlebars.registerHelper("uuid", (item, options) => item.uuid);
+handlebars.registerHelper("getProperty", (item, property, options) => item instanceof UIController ? item.getProperty(property) : null);
+handlebars.registerHelper("uuid", (item, options) => item instanceof UIController ? item.uuid : null);
 handlebars.registerHelper('toParam', (item, options) => item instanceof UIController ? item.uuid : typeof(item) == "object" ? item?.toString()??"" : item);
 
 export default class UIController {
@@ -73,6 +73,8 @@ export default class UIController {
       obj = obj[path[i]];
       if(!obj)
         break;
+      if(obj instanceof UIController)
+        console.warn(`[UIController].parseProperty is traversing a different UIController from the one that called this method. Generally you should not do this, and should call parseProperty on that other UIController directly.`, {path, i, obj});
     }
     return {string, path, object:obj, property:path[path.length-1], value:obj?.[path[path.length-1]]};
   }
@@ -82,6 +84,9 @@ export default class UIController {
     return this.parseProperty(prop, false).value;
   }
   
+  /**
+  The intended way to update any property on a UIController object, because it informs the dependent HTMLElements that the property has changed, so that they can updated.
+  */
   update(field, value, action, options={})
   {
     field = this.parseProperty(field, {create: action!="notify"});
@@ -219,6 +224,9 @@ export default class UIController {
       this.dependents[field] = this.dependents[field].filter(element => element && element.isConnected);
   }
   
+  /**
+  Add an HTMLElement that will need to be updated when the specified property(s) of this UIController are changed.
+  */
   addDependent(prop, dep)
   {
     if(prop != ".")
@@ -260,8 +268,10 @@ export default class UIController {
         if(dep?.item && dep?.field)
           dep.item.removeDependent(dep.field, element);
     if(children)
-      Array.from(element.children).forEach(elem => UIController.clearDependencies(elem));
+      Array.from(element.children).forEach(elem => UIController.clearDependencies(elem,children));
   }
+  
+  /* Methods for saving/loading the results of other intensive methods that get called repeatedly in rapid succession, but will always return the same value. */
   
   saveMemory(data, ...path)
   {
@@ -315,6 +325,28 @@ export default class UIController {
     }
     mem[fp] = {};
     return true;
+  }
+  
+  memoryFunction(func, ...path)
+  {
+    let result = this.loadMemory(...path);
+    if(result === null || result === undefined)
+    {
+      result = func();
+      this.saveMemory(result, ...path);
+    }
+    return result;
+  }
+  
+  /* Methods with code specifically related to the HTML rendering of this UIController. */
+  
+  processRenderText(html)
+  {
+    return html;
+  }
+  
+  preRender(element, options)
+  {
   }
   
   onRender(element)
