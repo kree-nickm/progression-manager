@@ -29,6 +29,7 @@ There are many other Genshin Impact managers that I am aware of, which serve sim
 * [SEELIE.me](https://seelie.me): Helps keep track of ascension and talent materials and helps you plan what materials to farm, but you have to manually enter all characters and weapons, and it does nothing at all for artifacts.
 * [Genshin Center's Planner](https://genshin-center.com/planner): Seems to be the same as SEELIE.me, as far as I can tell.
 * [Genshin Impact Calculator](https://genshin.aspirine.su/): Does a bunch of calculations with stats and damage, including party set-up, and helps you select artifacts for your builds, but doesn't import/store any of your stuff except for artifacts.
+* [gcsim](https://gcsim.app): Allows you to input characters, stats, and gear, then define an example combat and run a simulation to determine theoretical team DPS. You can import your characters and gear to streamline the process, and look up combats created by others so that you don't have to program your own.
 * [Enka](https://enka.network/): Pulls your character data directly from your Genshin Impact profile. Has a convenient display for each of your characters that makes it very easy for yourself and others to review character/weapon/artifact statistics. Does not track materials or any gear that is not equipped to one of the 8 characters displayed on your profile, but can remember previous characters.
 * [Akasha](https://akasha.cv): Uses Enka and has the same features, but also lets you compare your characters to other players' characters who use the site.
 
