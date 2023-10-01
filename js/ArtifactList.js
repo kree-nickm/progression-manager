@@ -60,7 +60,7 @@ export default class ArtifactList extends GenshinList
       // Cycle through all their builds.
       for(let buildId in character.getBuilds())
       {
-        let related = character.getRelatedItems(buildId, {ignoreTargets:true});
+        let related = character.getRelatedItems({buildId,ignoreTargets:true});
         // Handle each slot separately.
         for(let slot of ["flower","plume","sands","goblet","circlet"])
         {
@@ -70,21 +70,22 @@ export default class ArtifactList extends GenshinList
           {
             if(related.bestArtifacts[slot][i])
             {
-              let score = related.bestArtifacts[slot][i].getCharacterScore(character, 20, buildId, {useTargets:false});
+              let score = related.bestArtifacts[slot][i].getCharacterScore(character, parseInt(this.viewer.settings.preferences.artifactMaxLevel ?? 20), buildId, {useTargets:false});
               let scaledScore = score * Math.max(0,1-i*0.05) * character.getBuild(buildId).importance/100;
               related.bestArtifacts[slot][i].update("wanters", {rank:i+1, character, buildId, score, scaledScore}, "push");
             }
           }
           for(let setKey in related.buildData.artifactSets)
           {
+            let rarityFactor = 1 + (5 - (GenshinArtifactData[setKey].maxRarity ?? 5)) * 0.15;
             // Mark the best artifacts we have for each desired set.
             let bestOfSet = related.bestArtifacts[slot].filter(artifact => artifact.setKey == setKey);
             for(let i=0; i<bestOfSet.length; i++)
             {
               if(bestOfSet[i])
               {
-                let score = bestOfSet[i].getCharacterScore(character, 20, buildId, {useTargets:false});
-                let scaledScore = score * Math.max(0,1-i*0.04) * character.getBuild(buildId).importance/100;
+                let score = bestOfSet[i].getCharacterScore(character, parseInt(this.viewer.settings.preferences.artifactMaxLevel ?? 20), buildId, {useTargets:false});
+                let scaledScore = score * Math.max(0,1-i*0.04) * rarityFactor * character.getBuild(buildId).importance/100;
                 bestOfSet[i].update("wanters", {rank:i+1, character, buildId, score, scaledScore, onSet:true}, "push");
               }
             }
@@ -205,10 +206,13 @@ export default class ArtifactList extends GenshinList
       label: "L",
       sort: {generic: {type:"boolean",property:"lock"}},
       dynamic: true,
-      title: item => "Is Locked?",
-      classes: (item,showUnlocked,showRed=1) => ({
-        "insufficient": parseInt(showRed) && item.wanters.reduce((result, wanter, idx) => result+Math.pow(wanter.scaledScore, 1+idx), 0) < 1,
-      }),
+      title: item => "Whether the artifact is locked. Red background indicates the artifact is below your minimum desirability rating, which theoretically means you should unlock it and use it as fodder in-game.",
+      classes: (item,showUnlocked,showRed=1) => {
+        let minRating = item.maxRarity==4 ? parseFloat(item.viewer.settings.preferences.artifactMinRating4 ?? 0.6) : parseFloat(item.viewer.settings.preferences.artifactMinRating ?? 1);
+        return {
+          "insufficient": parseInt(showRed) && item.wanters.reduce((result, wanter, idx) => result+Math.pow(wanter.scaledScore, 1+idx), 0) < minRating,
+        };
+      },
       edit: (item,showUnlocked,showRed=1) => ({
         target: {item:item, field:"lock"},
         type: "checkbox",
@@ -272,7 +276,7 @@ export default class ArtifactList extends GenshinList
     
     let characterCountField = this.display.addField("characterCount", {
       label: "#",
-      labelTitle: "Desireability rating of this artifact based on your build preferences across all of your characters. The number itself is somewhat arbitrary, but the ranking should be significant. Choose a rating where you think all artifacts are worth keeping, set it in your general artifact preferences (not yet implemented), and then you can easily see which artifacts are recommended for use as strongbox/exp fodder.",
+      labelTitle: "Desireability rating of this artifact based on your build preferences across all of your characters. The number itself is somewhat arbitrary, but the ranking should be significant. Choose a rating where you think all artifacts are worth keeping, set it in the preferences above, and then you can easily see which artifacts are recommended for use as strongbox/exp fodder.",
       sort: {func: (o,a,b) => {
         let A = a.wanters.reduce((result, wanter, idx) => result+Math.pow(wanter.scaledScore, 1+idx), 0);
         let B = b.wanters.reduce((result, wanter, idx) => result+Math.pow(wanter.scaledScore, 1+idx), 0);
@@ -386,7 +390,7 @@ export default class ArtifactList extends GenshinList
           color: `rgba(${score<0.5?255:255*(2-score*2)}, ${score>0.5?255:255*score*2}, 0, 0.9)`,
         };
       },
-      title: (artifact,character,buildId) => `This artifact is ${Math.round(artifact.getCharacterScore(character,undefined,buildId)*100).toFixed(1)}% as good as the theoretical best possible artifact for your ${character.name}.`,
+      title: (artifact,character,buildId) => `${Math.round(artifact.getCharacterScore(character,undefined,buildId)*100).toFixed(1)}% of the BiS piece for ${character.name} (${buildId??character.selectedBuild}).`,
       dependencies: (artifact,character,buildId) => [
         {item:artifact, field:"level"},
         {item:artifact, field:"substats"},

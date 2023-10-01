@@ -12,6 +12,7 @@ export default class TeamList extends GenshinList {
   {
     let nameField = this.display.addField("name", {
       label: "Name",
+      sort: {generic: {type:"string",property:"name"}},
       dynamic: true,
       //popup: item => item,
       value: item => item.name,

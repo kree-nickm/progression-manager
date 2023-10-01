@@ -162,7 +162,7 @@ class Renderer
     'renderCharacterBuild': ["renderCharacterBuildSlider","renderCharacterArtifactLists"],
     'renderCharacterArtifactLists': ["renderListAsColumn"],
     'renderListAsColumn': ["renderArtifactAsCard"],
-    'renderCharacterStats': ["renderCharacterStatModifiers","renderCharacterMotionValues"],
+    'renderCharacterStats': ["renderCharacterMainStats","renderCharacterReactions","renderCharacterMotionValues","renderCharacterStatModifiers"],
   };
   
   static controllers = new Map();
@@ -344,7 +344,7 @@ class Renderer
     
     if(!data.item)
       data.item = Renderer.controllers.get(element.dataset.uuid);
-      
+    
     if(!data.item) return console.error(`Element has no associated item:`, element);
     
     // Anything the item needs to do to prepare for rendering. 
@@ -357,7 +357,7 @@ class Renderer
       if(!parentElement) return console.error(`Element has no parent:`, element);
       
       let index = Array.from(parentElement.children).indexOf(element);
-      if(index == -1) return console.error(`Element can't be found within its parent:`, element, parentElement);
+      if(index == -1) return console.error(`Element can't be found within its parent:`, {element, parentElement});
       
       if(!template)
         template = element.dataset.template;
@@ -373,7 +373,13 @@ class Renderer
         data.groups = data.item.display.groups;
       
       if(!data.relatedItems && typeof(data.item.getRelatedItems) === "function")
-        data.relatedItems = data.item.getRelatedItems();
+      {
+        data.relatedParams = data.relatedParams ?? {};
+        for(let attr in element.dataset)
+          if(attr.startsWith("related_") && !(attr.slice(8) in data.relatedParams))
+            data.relatedParams[attr.slice(8)] = element.dataset[attr];
+        data.relatedItems = data.item.getRelatedItems(data.relatedParams);
+      }
       
       if(!data.items && typeof(data.item.items) === "function")
         data.items = data.item.items(data.filter);
@@ -643,7 +649,12 @@ class Renderer
       if(content.edit.type == "checkbox")
       {
         // Add icon to indicate status.
-        if(content.edit.prepend)
+        if(content.edit.applySelf)
+        {
+          editElement = fieldElement;
+          editElement.classList.add("apply-self");
+        }
+        else if(content.edit.prepend)
           editElement = fieldElement.insertBefore(document.createElement("i"), fieldElement.childNodes[0] ?? null);
         else
           editElement = fieldElement.appendChild(document.createElement("i"));

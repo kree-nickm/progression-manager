@@ -242,8 +242,17 @@ document.getElementById("newFreshBtn").addEventListener("click", event => {
 // Setup prefs popup
 document.getElementById("prefsDoneBtn").addEventListener("click", clickEvent => {
   for(let prefElem of document.getElementsByClassName("preference-select"))
-    if(prefElem.checked)
+  {
+    if(prefElem.type == "radio" || prefElem.type == "checkbox")
+    {
+      if(prefElem.checked)
+        window.viewer.settings.preferences[prefElem.attributes.getNamedItem('name').value] = prefElem.value;
+    }
+    else if(prefElem.type == "number")
+    {
       window.viewer.settings.preferences[prefElem.attributes.getNamedItem('name').value] = prefElem.value;
+    }
+  }
   for(let list in window.viewer.listClasses)
     if(window.viewer.lists[list])
       window.viewer.lists[list].forceNextRender = true;
@@ -256,10 +265,17 @@ document.getElementById("prefsModal").addEventListener("show.bs.modal", showEven
   {
     for(let prefElem of showEvent.target.querySelectorAll(`.preference-select[name="${pref}"]`))
     {
-      if(prefElem.value == window.viewer.settings.preferences[pref])
-        prefElem.checked = true;
-      else
-        prefElem.checked = false;
+      if(prefElem.type == "radio" || prefElem.type == "checkbox")
+      {
+        if(prefElem.value == window.viewer.settings.preferences[pref])
+          prefElem.checked = true;
+        else
+          prefElem.checked = false;
+      }
+      else if(prefElem.type == "number")
+      {
+        prefElem.value = window.viewer.settings.preferences[pref];
+      }
     }
   }
 });

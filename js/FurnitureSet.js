@@ -26,6 +26,7 @@ export default class FurnitureSet extends GenshinItem
   }
   
   get name(){ return GenshinFurnitureSetData[this.key]?.name ?? this.key; }
+  get image(){ return GenshinFurnitureSetData[this.key]?.img ?? ""; }
   get recipe(){ return GenshinFurnitureSetData[this.key]?.materials ?? []; }
   get characters(){ return GenshinFurnitureSetData[this.key]?.characters ?? []; }
 }

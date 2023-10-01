@@ -1,5 +1,6 @@
 export default {
     "Initiate": {
+        "maxRarity": 1,
         "name": "Initiate",
         "flower": "Initiate's Flower",
         "plume": "Initiate's Feather",
@@ -7,6 +8,7 @@ export default {
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a0\/Item_Initiate%27s_Feather.png"
     },
     "Adventurer": {
+        "maxRarity": 3,
         "name": "Adventurer",
         "flower": "Adventurer's Flower",
         "plume": "Adventurer's Tail Feather",
@@ -29,6 +31,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/43\/Item_Adventurer%27s_Bandana.png"
     },
     "LuckyDog": {
+        "maxRarity": 3,
         "name": "Lucky Dog",
         "flower": "Lucky Dog's Clover",
         "plume": "Lucky Dog's Eagle Feather",
@@ -51,6 +54,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6a\/Item_Lucky_Dog%27s_Silver_Circlet.png"
     },
     "TravelingDoctor": {
+        "maxRarity": 3,
         "name": "Traveling Doctor",
         "flower": "Traveling Doctor's Silver Lotus",
         "plume": "Traveling Doctor's Owl Feather",
@@ -73,6 +77,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/18\/Item_Traveling_Doctor%27s_Handkerchief.png"
     },
     "ResolutionOfSojourner": {
+        "maxRarity": 4,
         "name": "Resolution of Sojourner",
         "flower": "Heart of Comradeship",
         "plume": "Feather of Homecoming",
@@ -103,6 +108,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/25\/Item_Crown_of_Parting.png"
     },
     "TinyMiracle": {
+        "maxRarity": 4,
         "name": "Tiny Miracle",
         "flower": "Tiny Miracle's Flower",
         "plume": "Tiny Miracle's Feather",
@@ -126,7 +132,7 @@ export default {
                     ["anemo_res_","cryo_res_","dendro_res_","electro_res_","hydro_res_","geo_res_","pyro_res_"],
                     30
                 ]
-            ]
+            ],"After taking Elemental DMG (10s)"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/68\/Item_Tiny_Miracle%27s_Flower.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/89\/Item_Tiny_Miracle%27s_Feather.png",
@@ -135,6 +141,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/73\/Item_Tiny_Miracle%27s_Earrings.png"
     },
     "Berserker": {
+        "maxRarity": 4,
         "name": "Berserker",
         "flower": "Berserker's Rose",
         "plume": "Berserker's Indigo Feather",
@@ -158,7 +165,7 @@ export default {
                     "critRate_",
                     24
                 ]
-            ]
+            ],"While HP < 70%"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c1\/Item_Berserker%27s_Rose.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/10\/Item_Berserker%27s_Indigo_Feather.png",
@@ -167,6 +174,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5e\/Item_Berserker%27s_Battle_Mask.png"
     },
     "Instructor": {
+        "maxRarity": 4,
         "name": "Instructor",
         "flower": "Instructor's Brooch",
         "plume": "Instructor's Feather Accessory",
@@ -190,7 +198,7 @@ export default {
                     "eleMas",
                     120
                 ]
-            ]
+            ],"After triggering Elemental Reaction (8s)"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/35\/Item_Instructor%27s_Brooch.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/af\/Item_Instructor%27s_Feather_Accessory.png",
@@ -199,6 +207,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/da\/Item_Instructor%27s_Cap.png"
     },
     "TheExile": {
+        "maxRarity": 4,
         "name": "The Exile",
         "flower": "Exile's Flower",
         "plume": "Exile's Feather",
@@ -221,6 +230,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b3\/Item_Exile%27s_Circlet.png"
     },
     "DefendersWill": {
+        "maxRarity": 4,
         "name": "Defender's Will",
         "flower": "Guardian's Flower",
         "plume": "Guardian's Sigil",
@@ -246,6 +256,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c4\/Item_Guardian%27s_Band.png"
     },
     "BraveHeart": {
+        "maxRarity": 4,
         "name": "Brave Heart",
         "flower": "Medal of the Brave",
         "plume": "Prospect of the Brave",
@@ -269,7 +280,7 @@ export default {
                     "dmg_",
                     30
                 ]
-            ]
+            ],"Enemy HP > 50%"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9e\/Item_Medal_of_the_Brave.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2f\/Item_Prospect_of_the_Brave.png",
@@ -278,6 +289,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b3\/Item_Crown_of_the_Brave.png"
     },
     "MartialArtist": {
+        "maxRarity": 4,
         "name": "Martial Artist",
         "flower": "Martial Artist's Red Flower",
         "plume": "Martial Artist's Feather Accessory",
@@ -307,7 +319,7 @@ export default {
                     ],
                     25
                 ]
-            ]
+            ],"After Elemental Skill (8s)"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a7\/Item_Martial_Artist%27s_Red_Flower.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6e\/Item_Martial_Artist%27s_Feather_Accessory.png",
@@ -316,6 +328,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4c\/Item_Martial_Artist%27s_Bandana.png"
     },
     "Gambler": {
+        "maxRarity": 4,
         "name": "Gambler",
         "flower": "Gambler's Brooch",
         "plume": "Gambler's Feather Accessory",
@@ -338,6 +351,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/43\/Item_Gambler%27s_Earrings.png"
     },
     "Scholar": {
+        "maxRarity": 4,
         "name": "Scholar",
         "flower": "Scholar's Bookmark",
         "plume": "Scholar's Quill Pen",
@@ -360,30 +374,35 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/93\/Item_Scholar%27s_Lens.png"
     },
     "PrayersForWisdom": {
+        "maxRarity": 4,
         "name": "Prayers for Wisdom",
         "circlet": "Tiara of Thunder",
         "bonus1": "Affected by Electro for 40% less time.",
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f6\/Item_Tiara_of_Thunder.png"
     },
     "PrayersForDestiny": {
+        "maxRarity": 4,
         "name": "Prayers for Destiny",
         "circlet": "Tiara of Torrents",
         "bonus1": "Affected by Hydro for 40% less time.",
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0a\/Item_Tiara_of_Torrents.png"
     },
     "PrayersForIllumination": {
+        "maxRarity": 4,
         "name": "Prayers for Illumination",
         "circlet": "Tiara of Flame",
         "bonus1": "Affected by Pyro for 40% less time.",
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/18\/Item_Tiara_of_Flame.png"
     },
     "PrayersToSpringtime": {
+        "maxRarity": 4,
         "name": "Prayers to Springtime",
         "circlet": "Tiara of Frost",
         "bonus1": "Affected by Cryo for 40% less time.",
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/14\/Item_Tiara_of_Frost.png"
     },
     "ArchaicPetra": {
+        "maxRarity": 5,
         "name": "Archaic Petra",
         "flower": "Flower of Creviced Cliff",
         "plume": "Feather of Jagged Peaks",
@@ -412,7 +431,7 @@ export default {
                     ],
                     35
                 ]
-            ]
+            ],"After obtaining Elemental Shard (10s)"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9f\/Item_Flower_of_Creviced_Cliff.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a5\/Item_Feather_of_Jagged_Peaks.png",
@@ -421,6 +440,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/09\/Item_Mask_of_Solitude_Basalt.png"
     },
     "RetracingBolide": {
+        "maxRarity": 5,
         "name": "Retracing Bolide",
         "flower": "Summer Night's Bloom",
         "plume": "Summer Night's Finale",
@@ -447,7 +467,7 @@ export default {
                     ],
                     40
                 ]
-            ]
+            ],"While shielded"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a6\/Item_Summer_Night%27s_Bloom.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ec\/Item_Summer_Night%27s_Finale.png",
@@ -456,6 +476,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8a\/Item_Summer_Night%27s_Mask.png"
     },
     "Lavawalker": {
+        "maxRarity": 5,
         "name": "Lavawalker",
         "flower": "Lavawalker's Resolution",
         "plume": "Lavawalker's Salvation",
@@ -479,7 +500,7 @@ export default {
                     "dmg_",
                     35
                 ]
-            ]
+            ],"Against Pyro-affected enemy"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b5\/Item_Lavawalker%27s_Resolution.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0a\/Item_Lavawalker%27s_Salvation.png",
@@ -488,6 +509,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/63\/Item_Lavawalker%27s_Wisdom.png"
     },
     "CrimsonWitchOfFlames": {
+        "maxRarity": 5,
         "name": "Crimson Witch of Flames",
         "flower": "Witch's Flower of Blaze",
         "plume": "Witch's Ever-Burning Plume",
@@ -532,7 +554,7 @@ export default {
                       "pyro_dmg_",
                       7.5
                   ]
-                ],
+                ],"After Elemental Skill (10s)",
                 3
             ]
         ],
@@ -543,6 +565,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ea\/Item_Witch%27s_Scorching_Hat.png"
     },
     "BlizzardStrayer": {
+        "maxRarity": 5,
         "name": "Blizzard Strayer",
         "flower": "Snowswept Memory",
         "plume": "Icebreaker's Resolve",
@@ -566,7 +589,7 @@ export default {
                     "critRate_",
                     20
                 ]
-            ],
+            ],"Against Cryo-affected (1) or Frozen (2) enemy",
             2
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/69\/Item_Snowswept_Memory.png",
@@ -576,6 +599,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/df\/Item_Broken_Rime%27s_Echo.png"
     },
     "Thundersoother": {
+        "maxRarity": 5,
         "name": "Thundersoother",
         "flower": "Thundersoother's Heart",
         "plume": "Thundersoother's Plume",
@@ -599,7 +623,7 @@ export default {
                     "dmg_",
                     35
                 ]
-            ]
+            ],"Against Electro-affected enemy"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ef\/Item_Thundersoother%27s_Heart.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cb\/Item_Thundersoother%27s_Plume.png",
@@ -608,6 +632,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/14\/Item_Thundersoother%27s_Diadem.png"
     },
     "MaidenBeloved": {
+        "maxRarity": 5,
         "name": "Maiden Beloved",
         "flower": "Maiden's Distant Love",
         "plume": "Maiden's Heart-Stricken Infatuation",
@@ -631,7 +656,7 @@ export default {
                     "inHeal_",
                     20
                 ]
-            ]
+            ],"After Elemental Skill or Burst (10s)"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dc\/Item_Maiden%27s_Distant_Love.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7b\/Item_Maiden%27s_Heart-Stricken_Infatuation.png",
@@ -640,6 +665,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/82\/Item_Maiden%27s_Fading_Beauty.png"
     },
     "GladiatorsFinale": {
+        "maxRarity": 5,
         "name": "Gladiator's Finale",
         "flower": "Gladiator's Nostalgia",
         "plume": "Gladiator's Destiny",
@@ -663,7 +689,7 @@ export default {
                     "normal_dmg_",
                     35
                 ]
-            ]
+            ],"While wielding Sword, Claymore, or Polearm"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b1\/Item_Gladiator%27s_Nostalgia.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/94\/Item_Gladiator%27s_Destiny.png",
@@ -672,6 +698,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9b\/Item_Gladiator%27s_Triumphus.png"
     },
     "ViridescentVenerer": {
+        "maxRarity": 5,
         "name": "Viridescent Venerer",
         "flower": "In Remembrance of Viridescent Fields",
         "plume": "Viridescent Arrow Feather",
@@ -708,7 +735,7 @@ export default {
                         ],
                         -40
                     ]
-                ]
+                ],"After Swirl (10s)"
             ]
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/90\/Item_In_Remembrance_of_Viridescent_Fields.png",
@@ -718,6 +745,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8b\/Item_Viridescent_Venerer%27s_Diadem.png"
     },
     "WanderersTroupe": {
+        "maxRarity": 5,
         "name": "Wanderer's Troupe",
         "flower": "Troupe's Dawnlight",
         "plume": "Bard's Arrow Feather",
@@ -741,7 +769,7 @@ export default {
                     "charged_dmg_",
                     35
                 ]
-            ]
+            ],"While wielding Catalyst or Bow"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ad\/Item_Troupe%27s_Dawnlight.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4e\/Item_Bard%27s_Arrow_Feather.png",
@@ -750,6 +778,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/81\/Item_Conductor%27s_Top_Hat.png"
     },
     "ThunderingFury": {
+        "maxRarity": 5,
         "name": "Thundering Fury",
         "flower": "Thunderbird's Mercy",
         "plume": "Survivor of Catastrophe",
@@ -793,6 +822,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a5\/Item_Thunder_Summoner%27s_Crown.png"
     },
     "NoblesseOblige": {
+        "maxRarity": 5,
         "name": "Noblesse Oblige",
         "flower": "Royal Flora",
         "plume": "Royal Plume",
@@ -816,7 +846,7 @@ export default {
                     "atk_",
                     20
                 ]
-            ]
+            ],"After Elemental Burst (12s)"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/71\/Item_Royal_Flora.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ee\/Item_Royal_Plume.png",
@@ -825,6 +855,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/eb\/Item_Royal_Masque.png"
     },
     "BloodstainedChivalry": {
+        "maxRarity": 5,
         "name": "Bloodstained Chivalry",
         "flower": "Bloodstained Flower of Iron",
         "plume": "Bloodstained Black Plume",
@@ -843,12 +874,22 @@ export default {
         "bonus4code": [
             "proc",
             [
+              [
                 "stat",
                 [
                     "charged_dmg_",
                     50
                 ]
-            ]
+              ],
+              [
+                "sstat",
+                [
+                    "stamina_cost_",
+                    -100,
+                    "Charged Attack"
+                ]
+              ]
+            ],"After enemy defeated (10s)"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5b\/Item_Bloodstained_Flower_of_Iron.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5c\/Item_Bloodstained_Black_Plume.png",
@@ -857,6 +898,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0c\/Item_Bloodstained_Iron_Mask.png"
     },
     "HeartOfDepth": {
+        "maxRarity": 5,
         "name": "Heart of Depth",
         "flower": "Gilded Corsage",
         "plume": "Gust of Nostalgia",
@@ -883,7 +925,7 @@ export default {
                     ],
                     30
                 ]
-            ]
+            ],"After Elemental Skill (15s)"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/40\/Item_Gilded_Corsage.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/92\/Item_Gust_of_Nostalgia.png",
@@ -892,6 +934,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a6\/Item_Wine-Stained_Tricorne.png"
     },
     "TenacityOfTheMillelith": {
+        "maxRarity": 5,
         "name": "Tenacity of the Millelith",
         "flower": "Flower of Accolades",
         "plume": "Ceremonial War-Plume",
@@ -934,6 +977,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b9\/Item_General%27s_Ancient_Helm.png"
     },
     "PaleFlame": {
+        "maxRarity": 5,
         "name": "Pale Flame",
         "flower": "Stainless Bloom",
         "plume": "Wise Doctor's Pinion",
@@ -955,7 +999,7 @@ export default {
               [
                   "atk_",
                   9
-              ],
+              ],"After Elemental Skill hit (7s)",
               2
             ],
             [
@@ -963,7 +1007,7 @@ export default {
               [
                   "physical_dmg_",
                   25
-              ]
+              ],"At 2 stacks"
             ]
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e7\/Item_Stainless_Bloom.png",
@@ -973,6 +1017,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/23\/Item_Mocking_Mask.png"
     },
     "ShimenawasReminiscence": {
+        "maxRarity": 5,
         "name": "Shimenawa's Reminiscence",
         "flower": "Entangling Bloom",
         "plume": "Shaft of Remembrance",
@@ -1000,7 +1045,7 @@ export default {
                     ],
                     50
                 ]
-            ]
+            ],"After Elemental Skill (10s)"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c2\/Item_Entangling_Bloom.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/41\/Item_Shaft_of_Remembrance.png",
@@ -1009,6 +1054,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8f\/Item_Capricious_Visage.png"
     },
     "EmblemOfSeveredFate": {
+        "maxRarity": 5,
         "name": "Emblem of Severed Fate",
         "flower": "Magnificent Tsuba",
         "plume": "Sundered Feather",
@@ -1038,6 +1084,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/04\/Item_Ornate_Kabuto.png"
     },
     "HuskOfOpulentDreams": {
+        "maxRarity": 5,
         "name": "Husk of Opulent Dreams",
         "flower": "Bloom Times",
         "plume": "Plume of Luxury",
@@ -1064,7 +1111,7 @@ export default {
                     ],
                     6
                 ]
-            ],
+            ],"While off-field for 3s, or after Geo hit (6s): \"Curiosity\"",
             4
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2b\/Item_Bloom_Times.png",
@@ -1074,6 +1121,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/84\/Item_Skeletal_Hat.png"
     },
     "OceanHuedClam": {
+        "maxRarity": 5,
         "name": "Ocean-Hued Clam",
         "flower": "Sea-Dyed Blossom",
         "plume": "Deep Palace's Plume",
@@ -1096,6 +1144,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/60\/Item_Crown_of_Watatsumi.png"
     },
     "VermillionHereafter": {
+        "maxRarity": 5,
         "name": "Vermillion Hereafter",
         "flower": "Flowering Life",
         "plume": "Feather of Nascent Light",
@@ -1120,7 +1169,7 @@ export default {
                         "atk_",
                         8
                     ]
-                ]
+                ],"After Elemental Burst (16s): \"Nascent Light\""
             ],
             [
                 "proc",
@@ -1130,7 +1179,7 @@ export default {
                         "atk_",
                         10
                     ]
-                ],
+                ],"When HP decreases during \"Nascent Light\"",
                 4
             ]
         ],
@@ -1141,6 +1190,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0e\/Item_Thundering_Poise.png"
     },
     "EchoesOfAnOffering": {
+        "maxRarity": 5,
         "name": "Echoes of an Offering",
         "flower": "Soulscent Bloom",
         "plume": "Jade Leaf",
@@ -1163,6 +1213,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/53\/Item_Flowing_Rings.png"
     },
     "DeepwoodMemories": {
+        "maxRarity": 5,
         "name": "Deepwood Memories",
         "flower": "Labyrinth Wayfarer",
         "plume": "Scholar of Vines",
@@ -1186,7 +1237,7 @@ export default {
                     "dendro_res_",
                     -30
                 ]
-            ]
+            ],"After Elemental Skill or Burst hit (8s)"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ab\/Item_Labyrinth_Wayfarer.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0f\/Item_Scholar_of_Vines.png",
@@ -1195,6 +1246,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b8\/Item_Laurel_Coronet.png"
     },
     "GildedDreams": {
+        "maxRarity": 5,
         "name": "Gilded Dreams",
         "flower": "Dreaming Steelbloom",
         "plume": "Feather of Judgment",
@@ -1219,7 +1271,7 @@ export default {
                         "atk_",
                         14
                     ]
-                ],
+                ],"After Elemental Reaction (8s): Per same-element teammate",
                 3
             ],
             [
@@ -1230,7 +1282,7 @@ export default {
                         "eleMas",
                         50
                     ]
-                ],
+                ],"After Elemental Reaction (8s): Per different-element teammate",
                 3
             ]
         ],
@@ -1241,6 +1293,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2b\/Item_Shadow_of_the_Sand_King.png"
     },
     "DesertPavilionChronicle": {
+        "maxRarity": 5,
         "name": "Desert Pavilion Chronicle",
         "flower": "The First Days of the City of Kings",
         "plume": "End of the Golden Realm",
@@ -1268,7 +1321,7 @@ export default {
                     ],
                     40
                 ]
-            ]
+            ],"After Charged Attack hit (15s)"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/01\/Item_The_First_Days_of_the_City_of_Kings.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/49\/Item_End_of_the_Golden_Realm.png",
@@ -1277,6 +1330,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0c\/Item_Legacy_of_the_Desert_High-Born.png"
     },
     "FlowerOfParadiseLost": {
+        "maxRarity": 5,
         "name": "Flower of Paradise Lost",
         "flower": "Ay-Khanoum's Myriad",
         "plume": "Wilting Feast",
@@ -1316,7 +1370,7 @@ export default {
                         ],
                         10
                     ]
-                ],
+                ],"After Bloom, Hyperbloom, or Burgeon (10s)",
                 4
             ]
         ],
@@ -1327,6 +1381,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/09\/Item_Amethyst_Crown.png"
     },
     "NymphsDream": {
+        "maxRarity": 5,
         "name": "Nymph's Dream",
         "flower": "Odyssean Flower",
         "plume": "Wicked Mage's Plumule",
@@ -1359,7 +1414,7 @@ export default {
                         5
                     ]
                 ]
-            ],
+            ],"After Normal, Charged, or Plunging Attack, Elemental Skill, or Elemental Burst hit (8s): \"Mirrored Nymph\"",
             3
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7b\/Item_Odyssean_Flower.png",
@@ -1369,6 +1424,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/ff\/Item_Fell_Dragon%27s_Monocle.png"
     },
     "VourukashasGlow": {
+        "maxRarity": 5,
         "name": "Vourukasha's Glow",
         "flower": "Stamen of Khvarena's Origin",
         "plume": "Vibrant Pinion",
@@ -1406,7 +1462,7 @@ export default {
                         ],
                         8
                     ]
-                ],
+                ],"After taking DMG (5s)",
                 5
             ]
         ],
@@ -1417,6 +1473,7 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fa\/Item_Heart_of_Khvarena%27s_Brilliance.png"
     },
     "MarechausseeHunter": {
+        "maxRarity": 5,
         "name": "Marechaussee Hunter",
         "flower": "Hunter's Brooch",
         "plume": "Masterpiece's Overture",
@@ -1443,7 +1500,7 @@ export default {
                     "critRate_",
                     12
                 ]
-            ],
+            ],"After HP increases or decreases",
             3
         ],
         "flowerImg": "https://static.wikia.nocookie.net/gensin-impact/images/8/8d/Item_Hunter's_Brooch.png",
@@ -1453,6 +1510,7 @@ export default {
         "circletImg": "https://static.wikia.nocookie.net/gensin-impact/images/c/c3/Item_Veteran's_Visage.png"
     },
     "GoldenTroupe": {
+        "maxRarity": 5,
         "name": "Golden Troupe",
         "flower": "Golden Song's Variation",
         "plume": "Golden Bird's Shedding",
@@ -1484,7 +1542,7 @@ export default {
                         "skill_dmg_",
                         25
                     ]
-                ]
+                ],"While off-field"
             ]
         ],
         "flowerImg": "https://static.wikia.nocookie.net/gensin-impact/images/4/4d/Item_Golden_Song's_Variation.png",

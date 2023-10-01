@@ -55,8 +55,8 @@ export default class Character extends GenshinItem
 
   static sortArtifacts(buildId,useTargets,a,b)
   {
-    let A = parseFloat(a.getCharacterScore(this,20,buildId,{useTargets}));
-    let B = parseFloat(b.getCharacterScore(this,20,buildId,{useTargets}));
+    let A = parseFloat(a.getCharacterScore(this,parseInt(a.viewer.settings.preferences.artifactMaxLevel ?? 20),buildId,{useTargets}));
+    let B = parseFloat(b.getCharacterScore(this,parseInt(b.viewer.settings.preferences.artifactMaxLevel ?? 20),buildId,{useTargets}));
     if(isNaN(A) || isNaN(B))
     {
       console.error(`Cannot sort artifacts because NaN was encountered for a score.`, A, a, B, b);
@@ -76,6 +76,7 @@ export default class Character extends GenshinItem
     burst: 1,
   };
   favorite = false;
+  selectedBuild = "default";
 
   MaterialList;
   loaded = false;
@@ -576,28 +577,7 @@ export default class Character extends GenshinItem
   
   get teamStatModifiers()
   {
-    let result = this.statModifiers;
-    if(this.activeTeam)
-    {
-      let teamElements = {Anemo:0, Cryo:0, Dendro:0, Electro:0, Geo:0, Hydro:0, Pyro:0};
-      this.activeTeam.characters.forEach(teammate => {
-        teamElements[teammate.element]++;
-        if(teammate != this)
-          result = result.concat(teammate.statModifiers.filter(mod => mod.teamwide));
-      });
-      let unique = true;
-      for(let element in teamElements)
-      {
-        if(teamElements[element] > 1)
-        {
-          unique = false;
-          result = result.concat(Team.statModifiers.filter(mod => mod.resonance == element));
-        }
-      }
-      if(unique)
-        result = result.concat(Team.statModifiers.filter(mod => mod.resonance == "Unique"));
-    }
-    return result;
+    return this.activeTeam ? this.activeTeam.getStatModifiers(this) : this.statModifiers;
   }
   
   getStat(stat, alternates={}, returnNull=false)
@@ -1209,7 +1189,7 @@ export default class Character extends GenshinItem
     
     let alternates = Object.assign({}, rawAlternates);
     value = parseFloat(value);
-    let baseDMG = stat=="flat" ? value : value/100 * this.getStat(stat, alternates);
+    let baseDMG = stat=="flat" ? value : value*this.getStat(stat, alternates)/100;
     
     if(dmgType == "healing")
     {
@@ -1411,18 +1391,18 @@ export default class Character extends GenshinItem
       return {};
   }
   
-  getBuild(build="default")
+  getBuild(buildId=this.selectedBuild)
   {
-    if(this.getBuilds()[build])
-      return this.getBuilds()[build];
+    if(this.getBuilds()[buildId])
+      return this.getBuilds()[buildId];
     else
     {
-      console.warn(`${this.name} has no build '${build}'.`);
+      console.warn(`${this.name} has no build '${buildId}'.`);
       return {};
     }
   }
   
-  getRelatedItems(buildId="default", {skipSort,forceTargets,ignoreTargets}={})
+  getRelatedItems({buildId=this.selectedBuild,skipSort,forceTargets,ignoreTargets}={})
   {
     let useTargets = forceTargets || !ignoreTargets && document.getElementById('useTargets')?.checked;
     if(window.DEBUGLOG.getRelatedItems) console.debug(`Getting ${this.name}'s related items for build ${buildId}.`, skipSort?`Skipping artifact sorting.`:`Sorting artifacts.`, useTargets?`Using targets.`:`Ignoring targets.`);
@@ -1445,7 +1425,7 @@ export default class Character extends GenshinItem
     return related;
   }
   
-  getMaxArtifactScore(slot, buildId="", level=20)
+  getMaxArtifactScore(slot, buildId=this.selectedBuild, level=parseInt(this.viewer.settings.preferences.artifactMaxLevel ?? 20))
   {
     if(!slot)
       return null;
@@ -1518,9 +1498,9 @@ export default class Character extends GenshinItem
     return result;
   }
   
-  getArtifactSetPrio(setKey, build)
+  getArtifactSetPrio(setKey, buildId=this.selectedBuild)
   {
-    return this.getBuild(build).artifactSets?.[setKey] ? 1 : 0;
+    return this.getBuild(buildId).artifactSets?.[setKey] ? 1 : 0;
   }
   
   preRender(element, options)
@@ -1657,22 +1637,23 @@ export default class Character extends GenshinItem
       console.log(`Build section does not have a name attribute specifying what build it's for:`, buildSection);
       return false;
     }
+    this.update("selectedBuild", buildId);
     
     /** Add Build Button **/
     let addBuild = buildSection.querySelector("#addBuildBtn");
     if(addBuild && !addBuild.onclick)
       addBuild.onclick = event => {
-        let build = buildSection.querySelector("#addBuildFld")?.value;
-        if(build && this.loaded)
+        let buildId = buildSection.querySelector("#addBuildFld")?.value;
+        if(buildId && this.loaded)
         {
-          if(!this.list.viewer.buildData[this.key][build])
+          if(!this.list.viewer.buildData[this.key][buildId])
           {
-            this.list.viewer.buildData[this.key][build] = {};
-            this.update("buildData", null, "notify", {buildId:build});
-            Renderer.rerender(buildSection, {relatedItems:this.getRelatedItems(build)});
+            this.list.viewer.buildData[this.key][buildId] = {};
+            this.update("buildData", null, "notify", {buildId});
+            Renderer.rerender(buildSection, {relatedItems:this.getRelatedItems({buildId})});
           }
           else
-            console.warn(`Cannot add two builds with the same name '${build}'.`);
+            console.warn(`Cannot add two builds with the same name '${buildId}'.`);
         }
         else
           console.warn(`Unable to add build.`);
@@ -1684,7 +1665,8 @@ export default class Character extends GenshinItem
     {
       if(!buildTab.onclick)
         buildTab.onclick = event => {
-          Renderer.rerender(buildSection, {relatedItems:this.getRelatedItems(buildTab.innerHTML)});
+          // TODO: This will need to be changed away from innerHTML once build names are a thing.
+          Renderer.rerender(buildSection, {relatedItems:this.getRelatedItems({buildId:buildTab.innerHTML})});
         };
     }
     
@@ -1729,7 +1711,7 @@ export default class Character extends GenshinItem
             delete build.artifactSets[setKey];
         });
         this.update("buildData", null, "notify", {property:"artifactSets", buildId});
-        Renderer.rerender(buildSection.querySelector(".character-artifacts"), {relatedItems: this.getRelatedItems(buildId, {skipSort:true})});
+        Renderer.rerender(buildSection.querySelector(".character-artifacts"), {relatedItems: this.getRelatedItems({buildId, skipSort:true})});
         // TODO: Don't need to rerender everything, just elements marked .favorite and any artifacts of the selected sets.
       };
     
@@ -1752,7 +1734,7 @@ export default class Character extends GenshinItem
           {
             this.getBuild(buildId)[property][stat] = parseFloat(slider.value);
             this.update("buildData", null, "notify", {property, buildId});
-            Renderer.rerender(buildSection.querySelector(".character-artifacts"), {relatedItems:this.getRelatedItems(buildId)});
+            Renderer.rerender(buildSection.querySelector(".character-artifacts"), {relatedItems:this.getRelatedItems({buildId})});
           }
         };
       }
@@ -1771,7 +1753,7 @@ export default class Character extends GenshinItem
           };
           this.update("buildData", null, "notify", {property:'useTargets',buildId});
         }
-        this.getRelatedItems(buildId); // Causes the artifact lists to be re-sorted.
+        this.getRelatedItems({buildId}); // Causes the artifact lists to be re-sorted.
         let listElements = buildSection.querySelectorAll(".character-artifacts .list[data-filter]");
         for(let listElement of listElements)
           Renderer.sortItems(listElement);
@@ -1853,7 +1835,7 @@ export default class Character extends GenshinItem
     let loadBtn = document.getElementById("loadArtifacts");
     if(loadBtn && !loadBtn.onclick)
       loadBtn.onclick = event => {
-        Renderer.rerender(characterArtifacts, {relatedItems:this.getRelatedItems(buildId)});
+        Renderer.rerender(characterArtifacts, {relatedItems:this.getRelatedItems({buildId})});
       };
       
     
@@ -1908,7 +1890,7 @@ export default class Character extends GenshinItem
             this.preview[artifact.slotKey] = artifact;
           }
           this.update("preview", null, "notify");
-          let relatedItems = this.getRelatedItems(buildId);
+          let relatedItems = this.getRelatedItems({buildId});
           // This could be handled by implementing "needsUpdate" on all templated elements, and using an "update()" on an associated item.
           Renderer.rerender(rootElement.querySelector(".character-stats"), {relatedItems});
           let listElements = characterArtifacts.querySelectorAll(".list[data-filter]");
@@ -1950,7 +1932,7 @@ export default class Character extends GenshinItem
           let prevArtifact = this[artifact.slotKey+'Artifact'];
           let prevArtifactElement = prevArtifact ? characterArtifacts.querySelector(`.list-item[data-uuid="${prevArtifact.uuid}"]`) : null;
           artifact.update("location", this.base?.key ?? this.key);
-          let relatedItems = this.getRelatedItems(buildId);
+          let relatedItems = this.getRelatedItems({buildId});
           // This could be handled by implementing "needsUpdate" on all templated elements, and using an "update()" on an associated item.
           Renderer.rerender(rootElement.querySelector(".character-stats"), {relatedItems});
           let listElements = characterArtifacts.querySelectorAll(".list[data-filter]");

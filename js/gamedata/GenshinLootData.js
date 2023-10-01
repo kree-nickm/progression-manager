@@ -148,10 +148,15 @@ export default {
       "3": "Scoop of Tainted Water",
       "4": "Newborn Tainted Hydro Phantasm"
     },
-    "Breacher Primuses": {
+    "Breacher Primus": {
       "2": "Rift Core",
       "3": "Foreign Synapse",
       "4": "Alien Life Core"
+    },
+    "Fatui Operatives": {
+      "2": "Old Operative's Pocket Watch",
+      "3": "Operative's Standard Pocket Watch",
+      "4": "Operative's Constancy"
     }
   },
   
@@ -326,6 +331,14 @@ export default {
     "Pyro Crab": {
       "name": "Emperor of Fire and Iron",
       "4": "Emperor's Resolution"
+    },
+    "Prototype": {
+      "name": "Prototype Cal. Breguet",
+      "4": "\"Tourbillon Device\""
+    },
+    "Unicorn": {
+      "name": "Millennial Pearl Seahorse",
+      "4": "Fontemer Unihorn"
     }
   },
   

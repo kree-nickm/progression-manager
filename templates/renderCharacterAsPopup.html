@@ -35,66 +35,69 @@
         </div>
       {{/if}}
         
-        <hr/>
-        <h3 class="collapsed" data-bs-toggle="collapse" href="#ascensionMaterials">Ascension Materials</h3>
-        <div id="ascensionMaterials" class="table-responsive collapse">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Phase</th>
-                        <th>Gems</th>
-                        <th>World Boss Drops</th>
-                        <th>Flora</th>
-                        <th>Enemy Drops</th>
-                        <th>Mora</th>
-                    </tr>
-                </thead>
-                <tbody>
-                  {{#times 6}}
-                    <tr>
-                      {{> renderItemField item=item field=(concat "ascension" @index) wrapper="td"}}
-                      {{> renderItemField item=item field=(concat "gemAscMat" @index) wrapper="td"}}
-                      {{> renderItemField item=item field=(concat "bossAscMat" @index) wrapper="td"}}
-                      {{> renderItemField item=item field=(concat "flowerAscMat" @index) wrapper="td"}}
-                      {{> renderItemField item=item field=(concat "enemyAscMat" @index) wrapper="td"}}
-                      {{> renderItemField item=item field=(concat "moraAscMat" @index) wrapper="td"}}
-                    </tr>
-                  {{/times}}
-                </tbody>
-            </table>
+        <div class="popup-section">
+          <h3 class="popup-section-header collapsed" data-bs-toggle="collapse" href="#ascensionMaterials">Ascension Materials</h3>
+          <div id="ascensionMaterials" class="table-responsive collapse popup-section-content">
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th>Phase</th>
+                          <th>Gems</th>
+                          <th>World Boss Drops</th>
+                          <th>Flora</th>
+                          <th>Enemy Drops</th>
+                          <th>Mora</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    {{#times 6}}
+                      <tr>
+                        {{> renderItemField item=item field=(concat "ascension" @index) wrapper="td"}}
+                        {{> renderItemField item=item field=(concat "gemAscMat" @index) wrapper="td"}}
+                        {{> renderItemField item=item field=(concat "bossAscMat" @index) wrapper="td"}}
+                        {{> renderItemField item=item field=(concat "flowerAscMat" @index) wrapper="td"}}
+                        {{> renderItemField item=item field=(concat "enemyAscMat" @index) wrapper="td"}}
+                        {{> renderItemField item=item field=(concat "moraAscMat" @index) wrapper="td"}}
+                      </tr>
+                    {{/times}}
+                  </tbody>
+              </table>
+          </div>
         </div>
         
-        <hr/>
-        <h3 class="collapsed" data-bs-toggle="collapse" href="#talentMaterials">Talent Materials</h3>
-        <div id="talentMaterials" class="table-responsive collapse">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Level</th>
-                        <th class="talent-mastery">Mastery</th>
-                        <th class="talent-enemy">Enemy</th>
-                        <th class="talent-trounce">Trounce</th>
-                        <th class="talent-crown">Crown</th>
-                        <th class="talent-crown">Mora</th>
-                    </tr>
-                </thead>
-                <tbody>
-                  {{#times 9 start=1}}
-                    <tr>
-                      {{> renderItemField item=item field=(concat "talentLvl" @index) wrapper="td"}}
-                      {{> renderItemField item=item field=(concat "talentMasteryMat" @index) wrapper="td"}}
-                      {{> renderItemField item=item field=(concat "talentEnemyMat" @index) wrapper="td"}}
-                      {{> renderItemField item=item field=(concat "talentTrounceMat" @index) wrapper="td"}}
-                      {{> renderItemField item=item field=(concat "talentCrownMat" @index) wrapper="td"}}
-                      {{> renderItemField item=item field=(concat "talentMoraMat" @index) wrapper="td"}}
-                    </tr>
-                  {{/times}}
-                </tbody>
-            </table>
+        <div class="popup-section">
+          <h3 class="popup-section-header collapsed" data-bs-toggle="collapse" href="#talentMaterials">Talent Materials</h3>
+          <div id="talentMaterials" class="table-responsive collapse popup-section-content">
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th>Level</th>
+                          <th class="talent-mastery">Mastery</th>
+                          <th class="talent-enemy">Enemy</th>
+                          <th class="talent-trounce">Trounce</th>
+                          <th class="talent-crown">Crown</th>
+                          <th class="talent-crown">Mora</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    {{#times 9 start=1}}
+                      <tr>
+                        {{> renderItemField item=item field=(concat "talentLvl" @index) wrapper="td"}}
+                        {{> renderItemField item=item field=(concat "talentMasteryMat" @index) wrapper="td"}}
+                        {{> renderItemField item=item field=(concat "talentEnemyMat" @index) wrapper="td"}}
+                        {{> renderItemField item=item field=(concat "talentTrounceMat" @index) wrapper="td"}}
+                        {{> renderItemField item=item field=(concat "talentCrownMat" @index) wrapper="td"}}
+                        {{> renderItemField item=item field=(concat "talentMoraMat" @index) wrapper="td"}}
+                      </tr>
+                    {{/times}}
+                  </tbody>
+              </table>
+          </div>
         </div>
         
-        <hr/>
-      {{> renderCharacterStats .}}
+        <!--<div class="popup-section">-->
+          {{> renderCharacterStats .}}
+        <!--</div>-->
         <hr/>
       {{> renderCharacterBuild .}}
     </div>

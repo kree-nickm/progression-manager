@@ -1,6 +1,6 @@
 import GenshinCharacterData from "./gamedata/GenshinCharacterData.js";
 
-import { Renderer } from "./Renderer.js";
+import { handlebars, Renderer } from "./Renderer.js";
 import GenshinList from "./GenshinList.js";
 import Character from "./Character.js";
 import Traveler from "./Traveler.js";
@@ -77,17 +77,35 @@ export default class CharacterList extends GenshinList
       tags: ["detailsOnly"],
       sort: {generic: {type:"string",property:"name"}},
       dynamic: true,
-      value: (item,size="sm",showCons,showLevel) => {
-        showCons = !!parseInt(showCons) && !size.endsWith("xs");
-        showLevel = !!parseInt(showLevel) && !size.endsWith("xs");
+      value: (item,size="sm",badge,caption) => {
+        if(size.endsWith("xs"))
+        {
+          badge = null;
+          caption = null;
+        }
+        else
+        {
+          switch(parseInt(badge))
+          {
+            case 1:
+              badge = `C${item.constellation}`;
+              break;
+          }
+          switch(parseInt(caption))
+          {
+            case 1:
+              caption = `${item.level} / ${item.levelCap}`;
+              break;
+          }
+        }
         return {
           tag: "div",
           value: [
             {
               tag: "div",
               value: [
-                showCons ? {
-                  value: `C${item.constellation}`,
+                badge ? {
+                  value: badge,
                   classes: {"small": true, "display-badge": true},
                 } : undefined,
                 item.base ? {
@@ -103,15 +121,15 @@ export default class CharacterList extends GenshinList
               ],
               classes: {"display-img": true, ["rarity-"+item.rarity]: !size.endsWith("xs")},
             },
-            showLevel ? {
-              value: `${item.level} / ${item.levelCap}`,
+            caption ? {
+              value: caption,
               classes: {"display-caption": true},
             } : undefined,
           ],
           classes: {
             "item-display": true,
             ["display-"+size]: true,
-            "display-no-caption": !showLevel,
+            "display-no-caption": !caption,
           },
           title: item.name,
         };
@@ -913,17 +931,36 @@ export default class CharacterList extends GenshinList
       
       if(!showcaseBtn.onclick)
       {
-        showcaseBtn.onclick = event => {
-          let showcase = window.open("showcase.html", "_blank");
-          showcase.addEventListener("DOMContentLoaded", async event => {
-            document.head.querySelectorAll('link, style').forEach(htmlElement => {
-              showcase.document.head.appendChild(htmlElement.cloneNode(true));
-            });
-            let container = showcase.document.body.appendChild(document.createElement("div"));
-            await Renderer.rerender(container, {item: this, filter: "listable"}, {template: "renderCharacterListAsShowcase"});
-          });
-          showcase.addEventListener("beforeunload", event => {
-            this.constructor.clearDependencies(showcase.document.body, true);
+        showcaseBtn.onclick = async event => {
+          let template = await fetch(`templates/renderShowcaseConfigPopup.html`, {cache:"no-cache"})
+          .then(response => response.text())
+          .then(src => handlebars.compile(src));
+          
+          let modalElement = document.body.appendChild(document.createElement("template"));
+          let index = Array.from(document.body.children).indexOf(modalElement);
+          modalElement.outerHTML = template({characters:this.items("listable")});
+          modalElement = document.body.children.item(index);
+          $(modalElement).find(".selectpicker").selectpicker('render');
+          
+          let modal = new bootstrap.Modal(modalElement);
+          modal.show();
+          modalElement.addEventListener("hide.bs.modal", event => {
+            if(event.explicitOriginalTarget?.classList.contains("popup-ok-btn"))
+            {
+              let characters = Array.from(modalElement.querySelector("select.character-filter").selectedOptions).map(optionElement => Renderer.controllers.get(optionElement.value));
+              let showcase = window.open("showcase.html", "_blank");
+              showcase.addEventListener("DOMContentLoaded", async event => {
+                document.head.querySelectorAll('link, style').forEach(htmlElement => {
+                  showcase.document.head.appendChild(htmlElement.cloneNode(true));
+                });
+                let container = showcase.document.body.appendChild(document.createElement("div"));
+                await Renderer.rerender(container, {item:this, items:characters}, {template: "renderCharacterListAsShowcase"});
+              });
+              showcase.addEventListener("beforeunload", event => {
+                this.constructor.clearDependencies(showcase.document.body, true);
+              });
+            }
+            modalElement.remove();
           });
         };
       }

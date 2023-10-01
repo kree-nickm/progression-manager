@@ -23,6 +23,29 @@ export default class Team extends GenshinItem {
     return true;
   }
   
+  getStatModifiers(asker)
+  {
+    let result = asker ? asker.statModifiers : [];
+    let teamElements = {Anemo:0, Cryo:0, Dendro:0, Electro:0, Geo:0, Hydro:0, Pyro:0};
+    this.characters.forEach(teammate => {
+      teamElements[teammate.element]++;
+      if(teammate != asker)
+        result = result.concat(teammate.statModifiers.filter(mod => mod.teamwide));
+    });
+    let unique = true;
+    for(let element in teamElements)
+    {
+      if(teamElements[element] > 1)
+      {
+        unique = false;
+        result = result.concat(Team.statModifiers.filter(mod => mod.resonance == element));
+      }
+    }
+    if(unique)
+      result = result.concat(Team.statModifiers.filter(mod => mod.resonance == "Unique"));
+    return result;
+  }
+  
   get characters()
   {
     if(!this._characters)

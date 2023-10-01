@@ -1,0 +1,101 @@
+<div id="characterStats.MainStats" class="collapse show stat-list popup-subsection-content" data-template="renderCharacterMainStats" data-uuid="{{uuid item}}">
+    <div class="row gx-1">
+      <div class="col-3">HP</div>
+      <div class="col-3">
+        {{> renderItemField item=item field="stat" params=(array "hp-base") wrapper="span"}}+{{> renderItemField item=item field="stat" params=(array "hp-bonus") wrapper="span"}}
+      </div>
+      <div class="col-1">
+        {{> renderItemField item=item field="stat" params=(array "hp") wrapper="span"}}
+      </div>
+      <div class="col-3">
+        {{> renderItemField item=item field="stat" params=(array "hp-base" 1) wrapper="span"}}+{{> renderItemField item=item field="stat" params=(array "hp-bonus" 1) wrapper="span"}}
+      </div>
+      <div class="col-1">
+        {{> renderItemField item=item field="stat" params=(array "hp" 1) wrapper="span"}}
+      </div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "hp" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">ATK</div>
+      <div class="col-3">
+        {{> renderItemField item=item field="stat" params=(array "atk-base") wrapper="span"}}+{{> renderItemField item=item field="stat" params=(array "atk-bonus") wrapper="span"}}
+      </div>
+      <div class="col-1">
+        {{> renderItemField item=item field="stat" params=(array "atk") wrapper="span"}}
+      </div>
+      <div class="col-3">
+        {{> renderItemField item=item field="stat" params=(array "atk-base" 1) wrapper="span"}}+{{> renderItemField item=item field="stat" params=(array "atk-bonus" 1) wrapper="span"}}
+      </div>
+      <div class="col-1">
+        {{> renderItemField item=item field="stat" params=(array "atk" 1) wrapper="span"}}
+      </div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "atk" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">DEF</div>
+      <div class="col-3">
+        {{> renderItemField item=item field="stat" params=(array "def-base") wrapper="span"}}+{{> renderItemField item=item field="stat" params=(array "def-bonus") wrapper="span"}}
+      </div>
+      <div class="col-1">
+        {{> renderItemField item=item field="stat" params=(array "def") wrapper="span"}}
+      </div>
+      <div class="col-3">
+        {{> renderItemField item=item field="stat" params=(array "def-base" 1) wrapper="span"}}+{{> renderItemField item=item field="stat" params=(array "def-bonus" 1) wrapper="span"}}
+      </div>
+      <div class="col-1">
+        {{> renderItemField item=item field="stat" params=(array "def" 1) wrapper="span"}}
+      </div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "def" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Crit Rate</div>
+      <div class="col-4">{{> renderItemField item=item field="stat" params=(array "critRate_") wrapper="span"}}%</div>
+      <div class="col-4">{{> renderItemField item=item field="stat" params=(array "critRate_" 1) wrapper="span"}}%</div>
+    </div>
+  {{#ifHasStat item "critRate_" situation="Charged Attack"}}
+    <div class="row gx-1">
+      <div class="col-3">| Charged Attacks</div>
+      <div class="col-4">{{> renderItemField item=item field="stat" params=(array "critRate_" 0 "Charged Attack") wrapper="span"}}%</div>
+      <div class="col-4">{{> renderItemField item=item field="stat" params=(array "critRate_" 1 "Charged Attack") wrapper="span"}}%</div>
+    </div>
+  {{/ifHasStat}}
+  {{#ifHasStat item "critRate_" situation="Elemental Burst"}}
+    <div class="row gx-1">
+      <div class="col-3">| Elemental Burst</div>
+      <div class="col-4">{{> renderItemField item=item field="stat" params=(array "critRate_" 0 "Elemental Burst") wrapper="span"}}%</div>
+      <div class="col-4">{{> renderItemField item=item field="stat" params=(array "critRate_" 1 "Elemental Burst") wrapper="span"}}%</div>
+    </div>
+  {{/ifHasStat}}
+    <div class="row gx-1">
+      <div class="col-3">Crit DMG</div>
+      <div class="col-4">{{> renderItemField item=item field="stat" params=(array "critDMG_") wrapper="span"}}%</div>
+      <div class="col-4">{{> renderItemField item=item field="stat" params=(array "critDMG_" 1) wrapper="span"}}%</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Elemental Mastery</div>
+      <div class="col-4">{{> renderItemField item=item field="stat" params=(array "eleMas") wrapper="span"}}</div>
+      <div class="col-4">{{> renderItemField item=item field="stat" params=(array "eleMas" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "eleMas" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Energy Recharge</div>
+      <div class="col-4">{{> renderItemField item=item field="stat" params=(array "enerRech_") wrapper="span"}}%</div>
+      <div class="col-4">{{> renderItemField item=item field="stat" params=(array "enerRech_" 1) wrapper="span"}}%</div>
+    </div>
+  {{#each (array (array "dmg_" "DMG Bonus") (array "normal_dmg_" "Normal Attack DMG Bonus") (array "charged_dmg_" "Charged Attack DMG Bonus") (array "plunging_dmg_" "Plunging Attack DMG Bonus") (array "skill_dmg_" "Elemental Skill DMG Bonus") (array "burst_dmg_" "Elemental Burst DMG Bonus") (array "anemo_dmg_" "Anemo DMG Bonus") (array "cryo_dmg_" "Cryo DMG Bonus") (array "dendro_dmg_" "Dendro DMG Bonus") (array "electro_dmg_" "Electro DMG Bonus") (array "geo_dmg_" "Geo DMG Bonus") (array "hydro_dmg_" "Hydro DMG Bonus") (array "pyro_dmg_" "Pyro DMG Bonus") (array "physical_dmg_" "Physical DMG Bonus") (array "enemy_anemo_res_" "Anemo RES Shred") (array "enemy_cryo_res_" "Cryo RES Shred") (array "enemy_dendro_res_" "Dendro RES Shred") (array "enemy_electro_res_" "Electro RES Shred") (array "enemy_geo_res_" "Geo RES Shred") (array "enemy_hydro_res_" "Hydro RES Shred") (array "enemy_pyro_res_" "Pyro RES Shred") (array "enemy_def_" "DEF Shred") (array "swirl_dmg_" "Swirl DMG Bonus") (array "superconduct_dmg_" "Superconduct DMG Bonus") (array "melt_dmg_" "Melt DMG Bonus") (array "spread_dmg_" "Spread DMG Bonus") (array "aggravate_dmg_" "Aggravate DMG Bonus") (array "bloom_dmg_" "Bloom DMG Bonus") (array "hyperbloom_dmg_" "Hyperbloom DMG Bonus") (array "burgeon_dmg_" "Burgeon DMG Bonus") (array "burning_dmg_" "Burning DMG Bonus") (array "electrocharged_dmg_" "Electro-Charged DMG Bonus") (array "overloaded_dmg_" "Overloaded DMG Bonus") (array "vaporize_dmg_" "Vaporize DMG Bonus") (array "heal_" "Healing Bonus") (array "inHeal_" "Incoming Healing Bonus") (array "shield_" "Shield Strength") (array "anemo_res_" "Anemo RES") (array "cryo_res_" "Cryo RES") (array "dendro_res_" "Dendro RES") (array "electro_res_" "Electro RES") (array "geo_res_" "Geo RES") (array "hydro_res_" "Hydro RES") (array "pyro_res_" "Pyro RES"))}}
+      {{#ifHasStat ../item [0]}}
+    <div class="row gx-1">
+      <div class="col-3">{{[1]}}</div>
+      <div class="col-4">{{> renderItemField item=../item field="stat" params=(array [0]) wrapper="span"}}%</div>
+      <div class="col-4">{{> renderItemField item=../item field="stat" params=(array [0] 1) wrapper="span"}}%</div>
+    </div>
+      {{/ifHasStat}}
+      {{#ifHasStat ../item [0] situation="Normal Attack"}}
+    <div class="row gx-1">
+      <div class="col-3">| Normal Attacks</div>
+      <div class="col-4">{{> renderItemField item=../item field="stat" params=(array [0] 0 "Normal Attack") wrapper="span"}}%</div>
+      <div class="col-4">{{> renderItemField item=../item field="stat" params=(array [0] 1 "Normal Attack") wrapper="span"}}%</div>
+    </div>
+      {{/ifHasStat}}
+  {{/each}}
+</div>

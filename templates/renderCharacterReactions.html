@@ -1,0 +1,220 @@
+<div id="characterStats.Reactions" class="collapse show stat-list popup-subsection-content" data-template="renderCharacterReactions" data-uuid="{{uuid item}}">
+  {{#ifeq (getProperty item "element") "Anemo"}}
+    <div class="row gx-1">
+      <div class="col-3">Cryo Swirl DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "swirl-cryo") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "swirl-cryo" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "swirl-cryo" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Electro Swirl DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "swirl-electro") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "swirl-electro" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "swirl-electro" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Hydro Swirl DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "swirl-hydro") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "swirl-hydro" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "swirl-hydro" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Pyro Swirl DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "swirl-pyro") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "swirl-pyro" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "swirl-pyro" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Swirled Superconduct DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "superconduct") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "superconduct" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "superconduct" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Swirled Electro-Charged DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "electrocharged") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "electrocharged" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "electrocharged" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Swirled Overloaded DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "overloaded") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "overloaded" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "overloaded" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Swirled Forward Melt DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "melt-forward-swirl") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "melt-forward-swirl" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "melt-forward-swirl" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Swirled Reverse Melt DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "melt-reverse-swirl") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "melt-reverse-swirl" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "melt-reverse-swirl" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Swirled Forward Vaporize DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "vaporize-forward-swirl") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "vaporize-forward-swirl" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "vaporize-forward-swirl" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Swirled Reverse Vaporize DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "vaporize-reverse-swirl") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "vaporize-reverse-swirl" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "vaporize-reverse-swirl" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Swirled Aggravate DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "aggravate-swirl") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "aggravate-swirl" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "aggravate-swirl" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Swirled Burning DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "burning") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "burning" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "burning" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Swirled Bloom DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "bloom") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "bloom" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "bloom" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Swirled Hyperbloom DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "hyperbloom") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "hyperbloom" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "hyperbloom" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Swirled Burgeon DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "burgeon") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "burgeon" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "burgeon" 2) wrapper="span"}}</div>
+    </div>
+  {{/ifeq}}
+  {{#ifeq (getProperty item "element") "Cryo"}}
+    <div class="row gx-1">
+      <div class="col-3">Superconduct DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "superconduct") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "superconduct" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "superconduct" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Reverse Melt Multiplier</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "melt-reverse") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "melt-reverse" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "melt-reverse" 2) wrapper="span"}}</div>
+    </div>
+  {{/ifeq}}
+  {{#ifeq (getProperty item "element") "Dendro"}}
+    <div class="row gx-1">
+      <div class="col-3">Spread DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "spread") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "spread" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "spread" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Bloom DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "bloom") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "bloom" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "bloom" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Burning DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "burning") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "burning" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "burning" 2) wrapper="span"}}</div>
+    </div>
+  {{/ifeq}}
+  {{#ifeq (getProperty item "element") "Electro"}}
+    <div class="row gx-1">
+      <div class="col-3">Superconduct DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "superconduct") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "superconduct" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "superconduct" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Aggravate DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "aggravate") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "aggravate" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "aggravate" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Hyperbloom DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "hyperbloom") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "hyperbloom" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "hyperbloom" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Electro-Charged DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "electrocharged") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "electrocharged" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "electrocharged" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Overloaded DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "overloaded") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "overloaded" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "overloaded" 2) wrapper="span"}}</div>
+    </div>
+  {{/ifeq}}
+  {{#ifeq (getProperty item "element") "Geo"}}
+  {{/ifeq}}
+  {{#ifeq (getProperty item "element") "Hydro"}}
+    <div class="row gx-1">
+      <div class="col-3">Forward Vaporize Multiplier</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "vaporize-forward") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "vaporize-forward" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "vaporize-forward" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Bloom DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "bloom") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "bloom" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "bloom" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Electro-Charged DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "electrocharged") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "electrocharged" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "electrocharged" 2) wrapper="span"}}</div>
+    </div>
+  {{/ifeq}}
+  {{#ifeq (getProperty item "element") "Pyro"}}
+    <div class="row gx-1">
+      <div class="col-3">Forward Melt Multiplier</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "melt-forward") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "melt-forward" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "melt-forward" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Reverse Vaporize Multiplier</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "vaporize-reverse") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "vaporize-reverse" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "vaporize-reverse" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Burning DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "burning") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "burning" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "burning" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Burgeon DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "burgeon") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "burgeon" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "burgeon" 2) wrapper="span"}}</div>
+    </div>
+    <div class="row gx-1">
+      <div class="col-3">Overloaded DMG</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "overloaded") wrapper="span"}}</div>
+      <div class="col-3">{{> renderItemField item=item field="stat" params=(array "overloaded" 1) wrapper="span"}}</div>
+      <div class="col-1">{{> renderItemField item=item field="stat" params=(array "overloaded" 2) wrapper="span"}}</div>
+    </div>
+  {{/ifeq}}
+</div>

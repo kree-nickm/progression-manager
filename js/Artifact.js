@@ -114,13 +114,14 @@ export default class Artifact extends GenshinItem
   
   get name(){ return GenshinArtifactData[this.setKey]?.[this.slotKey] ?? `${this.setName} ${this.slotKey}`; }
   get setName(){ return GenshinArtifactData[this.setKey]?.name ?? this.setKey; }
+  get maxRarity(){ return GenshinArtifactData[this.setKey]?.maxRarity ?? 5; }
+  get image(){ return GenshinArtifactData[this.setKey]?.[this.slotKey+'Img'] ?? ""; }
   get levelCap(){ return GenshinArtifactStats[this.rarity]?.levelCap ?? 0; }
   get mainStatShorthand(){ return GenshinItem.getStatShorthand(this.mainStatKey); }
   get mainStatValue(){
     let key = this.mainStatKey.endsWith("o_dmg_") ? "elemental_dmg_" : this.mainStatKey;
     return GenshinArtifactStats[this.rarity].mainstats[key][this.level];
   }
-  get image(){ return GenshinArtifactData[this.setKey]?.[this.slotKey+'Img'] ?? ""; }
   
   setSubstat(statId, value)
   {
@@ -266,7 +267,7 @@ export default class Artifact extends GenshinItem
     return this.storedStats.ratings[statId];
   }
   
-  getCharacterScoreParts(character, buildId="default", {useTargets=false}={})
+  getCharacterScoreParts(character, buildId=character.selectedBuild, {useTargets=false}={})
   {
     if(!character)
     {
@@ -363,7 +364,7 @@ export default class Artifact extends GenshinItem
     return this.storedStats.characters[character.key][buildId][useTargets?'withTargets':'base'];
   }
   
-  getCharacterScore(character, level=20, buildId="default", {useTargets}={})
+  getCharacterScore(character, level=parseInt(this.viewer.settings.preferences.artifactMaxLevel ?? 20), buildId=character.selectedBuild, {useTargets}={})
   {
     if(!character)
     {

@@ -20,27 +20,33 @@ export default class FurnitureSetList extends GenshinList
   setupDisplay()
   {
     let nameField = this.display.addField("name", {
-      label: "Set Name",
-      dynamic: false,
-      value: item => item.name,
-    });
-    
-    let learnedField = this.display.addField("learned", {
-      label: "?",
-      sort: {generic: {type:"boolean",property:"learned"}},
+      label: "Furniture Set",
       dynamic: true,
-      title: item => "Is Learned?",
-      edit: item => ({
-        target: {item:item, field:"learned"},
-        type: "checkbox",
-        value: item.learned,
-        trueClasses: ["fa-solid","fa-scroll"],
-        falseClasses: [],
-      }),
+      value: item => [
+        {
+          title: `Click to toggle if this set is learned or not learned. Currently: ${item.learned?"Learned":"Not Learned"}`,
+          tag: "img",
+          src: item.image,
+          classes: {"furniture-set-picture":true},
+          edit: {
+            target: {item:item, field:"learned"},
+            type: "checkbox",
+            value: item.learned,
+            trueClasses: ["set-learned"],
+            falseClasses: ["set-unlearned"],
+            applySelf: true,
+          },
+        },
+        {
+          value: item.name,
+          classes: {"furniture-set-title":true},
+        }
+      ],
+      classes: {"furniture-set-label":true},
     });
     
     let recipeField = this.display.addField("recipe", {
-      label: "Furniture",
+      label: "Furniture Recipe",
       dynamic: true,
       value: item => item.furniture.map((furniture,i) => {
         return {
@@ -57,8 +63,8 @@ export default class FurnitureSetList extends GenshinList
             },
             {
               value: furniture.name,
-              title: `Toggle whether you've learned the schematic for ${furniture.name} yet.`,
-              edit: {
+              title: furniture.type=="purchasable" ? `${furniture.name} must be purchased from the Realm Depot.` : `Toggle whether you've learned the schematic for ${furniture.name} yet.`,
+              edit: furniture.type=="purchasable" ? undefined : {
                 target: {item:furniture, field:"learned"},
                 type: "checkbox",
                 value: furniture.learned,
@@ -70,7 +76,7 @@ export default class FurnitureSetList extends GenshinList
           ], 
         };
       }),
-      dependencies: item => item.furniture.map(furniture => ({item:furniture, field:"count"})),
+      //dependencies: item => item.furniture.map(furniture => ({item:furniture, field:"count"})),
     });
     
     let charactersField = this.display.addField("characters", {

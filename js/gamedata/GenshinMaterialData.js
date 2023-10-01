@@ -449,6 +449,26 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1c\/Item_Alien_Life_Core.png",
         "rarity": 4
     },
+    "OldOperativesPocketWatch": {
+        "name": "Old Operative's Pocket Watch",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/04\/Item_Old_Operative%27s_Pocket_Watch.png",
+        "rarity": 2
+    },
+    "OperativesStandardPocketWatch": {
+        "name": "Operative's Standard Pocket Watch",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d4\/Item_Operative%27s_Standard_Pocket_Watch.png",
+        "rarity": 3
+    },
+    "OperativesConstancy": {
+        "name": "Operative's Constancy",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2f\/Item_Operative%27s_Constancy.png",
+        "rarity": 4
+    },
+    "MaintenanceMekSalvagedParts": {
+        "name": "\"Maintenance Mek\" Salvaged Parts",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/43\/Item_Maintenance_Mek_Salvaged_Parts.png",
+        "rarity": 2
+    },
     "HurricaneSeed": {
         "name": "Hurricane Seed",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5e\/Item_Hurricane_Seed.png",
@@ -577,6 +597,16 @@ export default {
     "EmperorsResolution": {
         "name": "Emperor's Resolution",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/03\/Item_Emperor%27s_Resolution.png",
+        "rarity": 4
+    },
+    "TourbillonDevice": {
+        "name": "\"Tourbillon Device\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7d\/Item_%22Tourbillon_Device%22.png",
+        "rarity": 4
+    },
+    "FontemerUnihorn": {
+        "name": "Fontemer Unihorn",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/40\/Item_Fontemer_Unihorn.png",
         "rarity": 4
     },
     "DvalinsPlume": {
@@ -1649,6 +1679,16 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cd\/Item_Rainbow_Rose.png",
         "rarity": 1
     },
+    "Lumitoile": {
+        "name": "Lumitoile",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dd\/Item_Lumitoile.png",
+        "rarity": 1
+    },
+    "SubdetectionUnit": {
+        "name": "Subdetection Unit",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/21\/Item_Subdetection_Unit.png",
+        "rarity": 1
+    },
     "SweetFlowerSeed": {
         "name": "Sweet Flower Seed",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/84\/Item_Sweet_Flower_Seed.png",
@@ -1732,6 +1772,11 @@ export default {
     "SeaGanodermaCutting": {
         "name": "Sea Ganoderma Cutting",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/33\/Item_Sea_Ganoderma_Cutting.png",
+        "rarity": 1
+    },
+    "PluieLotusSeed": {
+        "name": "Pluie Lotus Seed",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e0\/Item_Pluie_Lotus_Seed.png",
         "rarity": 1
     },
     "SilkFlowerSeed": {
@@ -1979,6 +2024,11 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9f\/Item_True_Fruit_Angler.png",
         "rarity": 3
     },
+    "StreamingAxeMarlin": {
+        "name": "Streaming Axe Marlin",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/26\/Item_Streaming_Axe_Marlin.png",
+        "rarity": 3
+    },
     "RipplingHeartfeatherBass": {
         "name": "Rippling Heartfeather Bass",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c3\/Item_Rippling_Heartfeather_Bass.png",
@@ -1994,9 +2044,9 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/da\/Item_Maintenance_Mek_Initial_Configuration.png",
         "rarity": 3
     },
-    "MaintenanceMekPlatinumCollection": {
-        "name": "Maintenance Mek: Platinum Collection",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/be\/Item_Maintenance_Mek_Platinum_Collection.png",
+    "MaintenanceMekWaterBodyCleaner": {
+        "name": "Maintenance Mek: Water Body Cleaner",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/19\/Item_Maintenance_Mek_Water_Body_Cleaner.png",
         "rarity": 3
     },
     "MaintenanceMekSituationController": {
@@ -2004,14 +2054,9 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/ba\/Item_Maintenance_Mek_Situation_Controller.png",
         "rarity": 3
     },
-    "MaintenanceMekWaterBodyCleaner": {
-        "name": "Maintenance Mek: Water Body Cleaner",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/19\/Item_Maintenance_Mek_Water_Body_Cleaner.png",
-        "rarity": 3
-    },
-    "StreamingAxeMarlin": {
-        "name": "Streaming Axe Marlin",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/26\/Item_Streaming_Axe_Marlin.png",
+    "MaintenanceMekPlatinumCollection": {
+        "name": "Maintenance Mek: Platinum Collection",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/be\/Item_Maintenance_Mek_Platinum_Collection.png",
         "rarity": 3
     },
     "Mushroom": {
@@ -2564,6 +2609,11 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/09\/Item_Viparyas.png",
         "rarity": 1
     },
+    "PluieLotus": {
+        "name": "Pluie Lotus",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/eb\/Item_Pluie_Lotus.png",
+        "rarity": 1
+    },
     "LanternFiber": {
         "name": "Lantern Fiber",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7f\/Item_Lantern_Fiber.png",
@@ -2578,11 +2628,6 @@ export default {
         "name": "Plaustrite Shard",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/78\/Item_Plaustrite_Shard.png",
         "rarity": 3
-    },
-    "PluieLotus": {
-        "name": "Pluie Lotus",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/eb\/Item_Pluie_Lotus.png",
-        "rarity": 1
     },
     "WanderersAdvice": {
         "name": "Wanderer's Advice",
@@ -2664,14 +2709,14 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/20\/Item_Inazuma_Shrine_of_Depths_Key.png",
         "rarity": 1
     },
-    "FontaineShrineOfDepthsKey": {
-        "name": "Fontaine Shrine of Depths Key",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/86\/Item_Fontaine_Shrine_of_Depths_Key.png",
-        "rarity": 1
-    },
     "SumeruShrineOfDepthsKey": {
         "name": "Sumeru Shrine of Depths Key",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/14\/Item_Sumeru_Shrine_of_Depths_Key.png",
+        "rarity": 1
+    },
+    "FontaineShrineOfDepthsKey": {
+        "name": "Fontaine Shrine of Depths Key",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/86\/Item_Fontaine_Shrine_of_Depths_Key.png",
         "rarity": 1
     },
     "LumenstoneOre": {
@@ -3064,6 +3109,11 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d4\/Item_Primogem.png",
         "rarity": 5
     },
+    "HydroSigil": {
+        "name": "Hydro Sigil",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ed\/Item_Hydro_Sigil.png",
+        "rarity": 3
+    },
     "DendroSigil": {
         "name": "Dendro Sigil",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e9\/Item_Dendro_Sigil.png",
@@ -3082,11 +3132,6 @@ export default {
     "GeoSigil": {
         "name": "Geo Sigil",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e3\/Item_Geo_Sigil.png",
-        "rarity": 3
-    },
-    "HydroSigil": {
-        "name": "Hydro Sigil",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ed\/Item_Hydro_Sigil.png",
         "rarity": 3
     },
     "MasterlessStardust": {
@@ -3307,6 +3352,11 @@ export default {
     "FascinatingPhenocryst": {
         "name": "Fascinating Phenocryst",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/28\/Item_Fascinating_Phenocryst.png",
+        "rarity": 3
+    },
+    "EnigmaticCopperMainspring": {
+        "name": "Enigmatic Copper Mainspring",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/27\/Item_Enigmatic_Copper_Mainspring.png",
         "rarity": 3
     },
     "LightRealmSigil": {

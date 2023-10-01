@@ -279,7 +279,7 @@ export default class StatModifier {
       return ['flower','plume','sands','goblet','circlet'].filter(slotKey => {
         let prop = slotKey + 'Artifact';
         let artifact = this.characterSource[prop];
-        return artifact.setKey == this.artifactSet;
+        return artifact?.setKey == this.artifactSet;
       }).length >= this.artifactPieces;
     }
     else if(this.type == "weapon")
@@ -315,7 +315,7 @@ export default class StatModifier {
       return ['flower','plume','sands','goblet','circlet'].filter(slotKey => {
         let prop = slotKey + 'Artifact';
         let artifact = this.characterSource.preview[slotKey] ?? this.characterSource[prop];
-        return artifact.setKey == this.artifactSet;
+        return artifact?.setKey == this.artifactSet;
       }).length >= this.artifactPieces;
     }
     else if(this.type == "weapon")
@@ -444,7 +444,7 @@ export default class StatModifier {
       
       let result = this.motionValues.padded.filter(mv => mv.talent == talent);
       if(asker == this.characterSource)
-        result.concat(this.motionValues.added.filter(mv => mv.talent == talent));
+        result = result.concat(this.motionValues.added.filter(mv => mv.talent == talent));
       return result;
     }
     else
@@ -463,7 +463,9 @@ export default class StatModifier {
       
       let result = this.motionValues.pedited.filter(mv => mv.talent == talent);
       if(asker == this.characterSource)
-        result.concat(this.motionValues.edited.filter(mv => mv.talent == talent));
+        result = result.concat(this.motionValues.edited.filter(mv => mv.talent == talent));
+      
+      // Check for modifications that override all other similar ones, such as certain weapon infusions.
       let permInfuseIdx = result.findIndex(mv => mv.method == "infuse" && mv.value.endsWith("!"));
       if(permInfuseIdx > -1)
       {

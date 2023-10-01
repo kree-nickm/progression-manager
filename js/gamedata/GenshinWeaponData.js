@@ -36,7 +36,8 @@ export default {
                 "4": 46,
                 "5": 48
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/A_Thousand_Floating_Dreams"
     },
     "AmosBow": {
         "name": "Amos' Bow",
@@ -54,24 +55,30 @@ export default {
         ],
         "passive": "Increases Normal Attack and Charged Attack DMG by @0%. After a Normal or Charged Attack is fired, DMG dealt increases by a further @1% every 0.1 seconds the arrow is in the air for up to 5 times.",
         "code": [
-          [
-            "stat",
             [
-              ["normal_dmg_","charged_dmg_"],
-              "@0"
-            ]
-          ],
-          [
-            "proc",
-            [
-              "stat",
-              [
-                ["normal_dmg_","charged_dmg_"],
-                "@1"
-              ]
+                "stat",
+                [
+                    [
+                        "normal_dmg_",
+                        "charged_dmg_"
+                    ],
+                    "@0"
+                ]
             ],
-            5
-          ]
+            [
+                "proc",
+                [
+                    "stat",
+                    [
+                        [
+                            "normal_dmg_",
+                            "charged_dmg_"
+                        ],
+                        "@1"
+                    ]
+                ],
+                5
+            ]
         ],
         "refinementData": [
             {
@@ -88,7 +95,8 @@ export default {
                 "4": 14,
                 "5": 16
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Amos%27_Bow"
     },
     "AquaSimulacra": {
         "name": "Aqua Simulacra",
@@ -120,7 +128,8 @@ export default {
                 "4": 35,
                 "5": 40
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Aqua_Simulacra"
     },
     "AquilaFavonia": {
         "name": "Aquila Favonia",
@@ -159,7 +168,8 @@ export default {
                 "4": 290,
                 "5": 320
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Aquila_Favonia"
     },
     "BeaconOfTheReedSea": {
         "name": "Beacon of the Reed Sea",
@@ -198,7 +208,8 @@ export default {
                 "4": 56,
                 "5": 64
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Beacon_of_the_Reed_Sea"
     },
     "CalamityQueller": {
         "name": "Calamity Queller",
@@ -224,13 +235,14 @@ export default {
                 "5": 24
             },
             {
-                "1": 3,
-                "2": 3.8,
-                "3": 4.6,
-                "4": 5.4,
-                "5": 6.2
+                "1": 3.2,
+                "2": 4,
+                "3": 4.800000000000001,
+                "4": 5.6000000000000005,
+                "5": 6.4
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Calamity_Queller"
     },
     "ElegyForTheEnd": {
         "name": "Elegy for the End",
@@ -269,7 +281,8 @@ export default {
                 "4": 35,
                 "5": 40
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Elegy_for_the_End"
     },
     "EngulfingLightning": {
         "name": "Engulfing Lightning",
@@ -308,7 +321,8 @@ export default {
                 "4": 45,
                 "5": 50
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Engulfing_Lightning"
     },
     "EverlastingMoonglow": {
         "name": "Everlasting Moonglow",
@@ -340,7 +354,8 @@ export default {
                 "4": 2.5,
                 "5": 3
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Everlasting_Moonglow"
     },
     "FreedomSworn": {
         "name": "Freedom-Sworn",
@@ -379,7 +394,8 @@ export default {
                 "4": 35,
                 "5": 40
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Freedom-Sworn"
     },
     "HaranGeppakuFutsu": {
         "name": "Haran Geppaku Futsu",
@@ -411,7 +427,8 @@ export default {
                 "4": 35,
                 "5": 40
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Haran_Geppaku_Futsu"
     },
     "HuntersPath": {
         "name": "Hunter's Path",
@@ -443,7 +460,8 @@ export default {
                 "4": 280,
                 "5": 320
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Hunter%27s_Path"
     },
     "JadefallsSplendor": {
         "name": "Jadefall's Splendor",
@@ -462,18 +480,18 @@ export default {
         "passive": "For 3s after using an Elemental Burst or creating a shield, the equipping character can gain the Primordial Jade Regalia effect: Restore @0 Energy every 2.5s, and gain @1% Elemental DMG Bonus for their corresponding Elemental Type for every 1,000 Max HP they possess, up to @2%. Primordial Jade Regalia will still take effect even if the equipping character is not on the field.",
         "refinementData": [
             {
-                "1": 4,
-                "2": 4.5,
-                "3": 5,
-                "4": 5.5,
-                "5": 6
+                "1": 4.5,
+                "2": 5,
+                "3": 5.5,
+                "4": 6,
+                "5": 6.5
             },
             {
-                "1": 0,
-                "2": 0.2,
-                "3": 0.4,
-                "4": 0.6,
-                "5": 0.8
+                "1": 0.3,
+                "2": 0.5,
+                "3": 0.7,
+                "4": 0.9000000000000001,
+                "5": 1.1
             },
             {
                 "1": 12,
@@ -482,7 +500,8 @@ export default {
                 "4": 36,
                 "5": 44
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Jadefall%27s_Splendor"
     },
     "KagurasVerity": {
         "name": "Kagura's Verity",
@@ -514,7 +533,8 @@ export default {
                 "4": 21,
                 "5": 24
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Kagura%27s_Verity"
     },
     "KeyOfKhajNisut": {
         "name": "Key of Khaj-Nisut",
@@ -540,20 +560,21 @@ export default {
                 "5": 40
             },
             {
-                "1": 0,
-                "2": 0.03,
-                "3": 0.06,
-                "4": 0.09,
-                "5": 0.12
+                "1": 0.12,
+                "2": 0.15,
+                "3": 0.18,
+                "4": 0.21,
+                "5": 0.24
             },
             {
-                "1": 0,
-                "2": 0.05,
-                "3": 0.1,
-                "4": 0.15,
-                "5": 0.2
+                "1": 0.2,
+                "2": 0.25,
+                "3": 0.30000000000000004,
+                "4": 0.35000000000000003,
+                "5": 0.4
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Key_of_Khaj-Nisut"
     },
     "LightOfFoliarIncision": {
         "name": "Light of Foliar Incision",
@@ -585,7 +606,8 @@ export default {
                 "4": 210,
                 "5": 240
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Light_of_Foliar_Incision"
     },
     "LostPrayerToTheSacredWinds": {
         "name": "Lost Prayer to the Sacred Winds",
@@ -610,7 +632,8 @@ export default {
                 "4": 14,
                 "5": 16
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Lost_Prayer_to_the_Sacred_Winds"
     },
     "MemoryOfDust": {
         "name": "Memory of Dust",
@@ -642,7 +665,8 @@ export default {
                 "4": 7,
                 "5": 8
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Memory_of_Dust"
     },
     "MistsplitterReforged": {
         "name": "Mistsplitter Reforged",
@@ -688,7 +712,8 @@ export default {
                 "4": 49,
                 "5": 56
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Mistsplitter_Reforged"
     },
     "PolarStar": {
         "name": "Polar Star",
@@ -741,7 +766,8 @@ export default {
                 "4": 84,
                 "5": 96
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Polar_Star"
     },
     "PrimordialJadeCutter": {
         "name": "Primordial Jade Cutter",
@@ -767,13 +793,14 @@ export default {
                 "5": 40
             },
             {
-                "1": 1,
-                "2": 1.3,
-                "3": 1.6,
-                "4": 1.9,
-                "5": 2.2
+                "1": 1.2,
+                "2": 1.5,
+                "3": 1.7999999999999998,
+                "4": 2.0999999999999996,
+                "5": 2.4
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Primordial_Jade_Cutter"
     },
     "PrimordialJadeWingedSpear": {
         "name": "Primordial Jade Winged-Spear",
@@ -792,11 +819,11 @@ export default {
         "passive": "On hit, increases ATK by @0% for 6s. Max 7 stacks. This effect can only occur once every 0.3s. While in possession of the maximum possible stacks, DMG dealt is increased by @1%.",
         "refinementData": [
             {
-                "1": 3,
-                "2": 3.7,
-                "3": 4.4,
-                "4": 5.1,
-                "5": 5.8
+                "1": 3.2,
+                "2": 3.9000000000000004,
+                "3": 4.6,
+                "4": 5.3,
+                "5": 6
             },
             {
                 "1": 12,
@@ -805,10 +832,11 @@ export default {
                 "4": 21,
                 "5": 24
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Primordial_Jade_Winged-Spear"
     },
     "RedhornStonethresher": {
-        "name": "Redhorn Stone\u00adthresher",
+        "name": "Redhorn Stonethresher",
         "rarity": 5,
         "type": "Claymore",
         "matForgery": "Claw",
@@ -837,7 +865,8 @@ export default {
                 "4": 70,
                 "5": 80
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Redhorn_Stonethresher"
     },
     "SkywardAtlas": {
         "name": "Skyward Atlas",
@@ -869,7 +898,8 @@ export default {
                 "4": 280,
                 "5": 320
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyward_Atlas"
     },
     "SkywardBlade": {
         "name": "Skyward Blade",
@@ -901,7 +931,8 @@ export default {
                 "4": 35,
                 "5": 40
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyward_Blade"
     },
     "SkywardHarp": {
         "name": "Skyward Harp",
@@ -940,7 +971,8 @@ export default {
                 "4": 2.5,
                 "5": 2
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyward_Harp"
     },
     "SkywardPride": {
         "name": "Skyward Pride",
@@ -958,16 +990,21 @@ export default {
         ],
         "passive": "Increases all DMG by @0%. After using an Elemental Burst, Normal or Charged Attack, on hit, creates a vacuum blade that does @1% of ATK as DMG to opponents along its path. Lasts for 20s or 8 vacuum blades.",
         "code": [
-          [
-            "stat",
             [
-              "dmg_",
-              "@0"
+                "stat",
+                [
+                    "dmg_",
+                    "@0"
+                ]
+            ],
+            [
+                "addmv",
+                [
+                    "Normal Attack",
+                    "Skyward Pride Vaccuum Blade (%)",
+                    "@1"
+                ]
             ]
-          ],
-          [
-            "addmv",["Normal Attack","Skyward Pride Vaccuum Blade (%)","@1"]
-          ]
         ],
         "refinementData": [
             {
@@ -984,7 +1021,8 @@ export default {
                 "4": 140,
                 "5": 160
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyward_Pride"
     },
     "SkywardSpine": {
         "name": "Skyward Spine",
@@ -1016,7 +1054,8 @@ export default {
                 "4": 85,
                 "5": 100
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyward_Spine"
     },
     "SongOfBrokenPines": {
         "name": "Song of Broken Pines",
@@ -1055,7 +1094,8 @@ export default {
                 "4": 35,
                 "5": 40
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Song_of_Broken_Pines"
     },
     "StaffOfHoma": {
         "name": "Staff of Homa",
@@ -1081,11 +1121,11 @@ export default {
                 "5": 40
             },
             {
-                "1": 0,
-                "2": 0.2,
-                "3": 0.4,
-                "4": 0.6,
-                "5": 0.8
+                "1": 0.8,
+                "2": 1,
+                "3": 1.2000000000000002,
+                "4": 1.4000000000000001,
+                "5": 1.6
             },
             {
                 "1": 1,
@@ -1094,7 +1134,8 @@ export default {
                 "4": 1.6,
                 "5": 1.8
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Staff_of_Homa"
     },
     "StaffOfTheScarletSands": {
         "name": "Staff of the Scarlet Sands",
@@ -1126,7 +1167,8 @@ export default {
                 "4": 49,
                 "5": 56
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Staff_of_the_Scarlet_Sands"
     },
     "SummitShaper": {
         "name": "Summit Shaper",
@@ -1158,7 +1200,8 @@ export default {
                 "4": 7,
                 "5": 8
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Summit_Shaper"
     },
     "TheFirstGreatMagic": {
         "name": "The First Great Magic",
@@ -1225,7 +1268,8 @@ export default {
         "matWeakEnemy": "Fontemer Aberrants",
         "baseATK": 46,
         "stat": "critDMG_",
-        "baseStat": 14.4
+        "baseStat": 14.4,
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_First_Great_Magic"
     },
     "TheUnforged": {
         "name": "The Unforged",
@@ -1257,7 +1301,8 @@ export default {
                 "4": 7,
                 "5": 8
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Unforged"
     },
     "ThunderingPulse": {
         "name": "Thundering Pulse",
@@ -1303,10 +1348,50 @@ export default {
                 "4": 70,
                 "5": 80
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Thundering_Pulse"
+    },
+    "TomeOfTheEternalFlow": {
+        "name": "Tome of the Eternal Flow",
+        "type": "Catalyst",
+        "rarity": 5,
+        "baseATK": 44,
+        "stat": "critDMG_",
+        "passive": "HP is increased by @0%. When current HP increases or decreases, Charged Attack DMG will be increased by @1% for 4s. Max 3 stacks, can be triggered once every 0.3s. When you have 3 stacks or refresh a third stack's duration, @2 Energy will be restored. This Energy restoration effect can be triggered once every 12s.",
+        "refinementData": [
+            {
+                "1": 16,
+                "2": 20,
+                "3": 24,
+                "4": 28,
+                "5": 32
+            },
+            {
+                "1": 14,
+                "2": 18,
+                "3": 22,
+                "4": 26,
+                "5": 30
+            },
+            {
+                "1": 8,
+                "2": 9,
+                "3": 10,
+                "4": 11,
+                "5": 12
+            }
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Tome_of_the_Eternal_Flow",
+        "imgs": [
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/91\/Weapon_Tome_of_the_Eternal_Flow.png",
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/85\/Weapon_Tome_of_the_Eternal_Flow_2nd.png"
+        ],
+        "matForgery": "Droplet",
+        "matStrongEnemy": "Breacher Primus",
+        "matWeakEnemy": "Clockwork Meka"
     },
     "TulaytullahsRemembrance": {
-        "name": "Tulay\u00adtullah's Remem\u00adbrance",
+        "name": "Tulaytullah's Remembrance",
         "rarity": 5,
         "type": "Catalyst",
         "matForgery": "Scarab",
@@ -1329,18 +1414,18 @@ export default {
                 "5": 20
             },
             {
-                "1": 4,
-                "2": 5.2,
-                "3": 6.4,
-                "4": 7.6,
-                "5": 8.8
+                "1": 4.8,
+                "2": 6,
+                "3": 7.199999999999999,
+                "4": 8.399999999999999,
+                "5": 9.6
             },
             {
-                "1": 9,
-                "2": 11.4,
-                "3": 13.8,
-                "4": 16.2,
-                "5": 18.6
+                "1": 9.6,
+                "2": 12,
+                "3": 14.399999999999999,
+                "4": 16.799999999999997,
+                "5": 19.2
             },
             {
                 "1": 48,
@@ -1349,7 +1434,8 @@ export default {
                 "4": 84,
                 "5": 96
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Tulaytullah%27s_Remembrance"
     },
     "VortexVanquisher": {
         "name": "Vortex Vanquisher",
@@ -1381,7 +1467,8 @@ export default {
                 "4": 7,
                 "5": 8
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Vortex_Vanquisher"
     },
     "WolfsGravestone": {
         "name": "Wolf's Gravestone",
@@ -1413,7 +1500,8 @@ export default {
                 "4": 70,
                 "5": 80
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Wolf%27s_Gravestone"
     },
     "TheCatch": {
         "name": "\"The Catch\"",
@@ -1462,7 +1550,8 @@ export default {
                 "4": 10.5,
                 "5": 12
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/%22The_Catch%22"
     },
     "Akuoumaru": {
         "name": "Akuoumaru",
@@ -1481,11 +1570,11 @@ export default {
         "passive": "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by @0%. A maximum of @1% increased Elemental Burst DMG can be achieved this way.",
         "refinementData": [
             {
-                "1": 0,
-                "2": 0.03,
-                "3": 0.06,
-                "4": 0.09,
-                "5": 0.12
+                "1": 0.12,
+                "2": 0.15,
+                "3": 0.18,
+                "4": 0.21,
+                "5": 0.24
             },
             {
                 "1": 40,
@@ -1494,7 +1583,8 @@ export default {
                 "4": 70,
                 "5": 80
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Akuoumaru"
     },
     "AlleyHunter": {
         "name": "Alley Hunter",
@@ -1533,7 +1623,8 @@ export default {
                 "4": 7,
                 "5": 8
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Alley_Hunter"
     },
     "AmenomaKageuchi": {
         "name": "Amenoma Kageuchi",
@@ -1558,7 +1649,22 @@ export default {
                 "4": 10.5,
                 "5": 12
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Amenoma_Kageuchi"
+    },
+    "BalladOfTheBoundlessBlue": {
+        "name": "Ballad of the Boundless Blue",
+        "type": "Catalyst",
+        "rarity": 4,
+        "baseATK": 44,
+        "stat": "enerRech_",
+        "passive": "Within 6s after Normal or Charged Attacks hit an opponent, Normal Attack DMG will be increased by <b>8<\/b>~<b>?<\/b>% and Charged Attack DMG will be increased by <b>6<\/b>~<b>?<\/b>%. Max 3 stacks. This effect can be triggered once every 0.3s.",
+        "refinementData": [],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Ballad_of_the_Boundless_Blue",
+        "imgs": [],
+        "matForgery": "Tooth",
+        "matStrongEnemy": "Geovishaps",
+        "matWeakEnemy": "Treasure Hoarders"
     },
     "BalladOfTheFjords": {
         "name": "Ballad of the Fjords",
@@ -1569,7 +1675,16 @@ export default {
         "rarity": 4,
         "type": "Polearm",
         "passive": "When there are at least 3 different Elemental Types in your party, Elemental Mastery will be increased by @0.",
-        "code": ["proc",["stat",["eleMas","@0"]]],
+        "code": [
+            "proc",
+            [
+                "stat",
+                [
+                    "eleMas",
+                    "@0"
+                ]
+            ]
+        ],
         "refinementData": [
             {
                 "1": 120,
@@ -1584,7 +1699,8 @@ export default {
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 42,
         "stat": "critRate_",
-        "baseStat": 6
+        "baseStat": 6,
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Ballad_of_the_Fjords"
     },
     "BlackcliffAgate": {
         "name": "Blackcliff Agate",
@@ -1609,7 +1725,8 @@ export default {
                 "4": 21,
                 "5": 24
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Blackcliff_Agate"
     },
     "BlackcliffLongsword": {
         "name": "Blackcliff Longsword",
@@ -1634,7 +1751,8 @@ export default {
                 "4": 21,
                 "5": 24
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Blackcliff_Longsword"
     },
     "BlackcliffPole": {
         "name": "Blackcliff Pole",
@@ -1659,7 +1777,8 @@ export default {
                 "4": 21,
                 "5": 24
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Blackcliff_Pole"
     },
     "BlackcliffSlasher": {
         "name": "Blackcliff Slasher",
@@ -1684,7 +1803,8 @@ export default {
                 "4": 21,
                 "5": 24
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Blackcliff_Slasher"
     },
     "BlackcliffWarbow": {
         "name": "Blackcliff Warbow",
@@ -1709,7 +1829,8 @@ export default {
                 "4": 21,
                 "5": 24
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Blackcliff_Warbow"
     },
     "CinnabarSpindle": {
         "name": "Cinnabar Spindle",
@@ -1734,7 +1855,8 @@ export default {
                 "4": 70,
                 "5": 80
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Cinnabar_Spindle"
     },
     "CompoundBow": {
         "name": "Compound Bow",
@@ -1762,11 +1884,12 @@ export default {
             {
                 "1": 1.2,
                 "2": 1.5,
-                "3": 1.8,
-                "4": 2.1,
+                "3": 1.7999999999999998,
+                "4": 2.0999999999999996,
                 "5": 2.4
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Compound_Bow"
     },
     "CrescentPike": {
         "name": "Crescent Pike",
@@ -1791,7 +1914,8 @@ export default {
                 "4": 35,
                 "5": 40
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Crescent_Pike"
     },
     "Deathmatch": {
         "name": "Deathmatch",
@@ -1809,35 +1933,35 @@ export default {
         ],
         "passive": "If there are at least 2 opponents nearby, ATK is increased by @0% and DEF is increased by @1%. If there are fewer than 2 opponents nearby, ATK is increased by @2%.",
         "code": [
-          [
-            "proc",
             [
-              [
-                "stat",
+                "proc",
                 [
-                  "atk_",
-                  "@0"
+                    [
+                        "stat",
+                        [
+                            "atk_",
+                            "@0"
+                        ]
+                    ],
+                    [
+                        "stat",
+                        [
+                            "def_",
+                            "@1"
+                        ]
+                    ]
                 ]
-              ],
-              [
-                "stat",
-                [
-                  "def_",
-                  "@1"
-                ]
-              ]
-            ]
-          ],
-          [
-            "proc",
+            ],
             [
-              "stat",
-              [
-                "atk_",
-                "@2"
-              ]
+                "proc",
+                [
+                    "stat",
+                    [
+                        "atk_",
+                        "@2"
+                    ]
+                ]
             ]
-          ]
         ],
         "refinementData": [
             {
@@ -1861,7 +1985,8 @@ export default {
                 "4": 42,
                 "5": 48
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Deathmatch"
     },
     "DodocoTales": {
         "name": "Dodoco Tales",
@@ -1893,7 +2018,8 @@ export default {
                 "4": 14,
                 "5": 16
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Dodoco_Tales"
     },
     "DragonsBane": {
         "name": "Dragon's Bane",
@@ -1918,7 +2044,8 @@ export default {
                 "4": 32,
                 "5": 36
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Dragon%27s_Bane"
     },
     "DragonspineSpear": {
         "name": "Dragonspine Spear",
@@ -1957,7 +2084,8 @@ export default {
                 "4": 320,
                 "5": 360
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Dragonspine_Spear"
     },
     "EndOfTheLine": {
         "name": "End of the Line",
@@ -1982,7 +2110,8 @@ export default {
                 "4": 140,
                 "5": 160
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/End_of_the_Line"
     },
     "EyeOfPerception": {
         "name": "Eye of Perception",
@@ -2014,7 +2143,8 @@ export default {
                 "4": 9,
                 "5": 8
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Eye_of_Perception"
     },
     "FadingTwilight": {
         "name": "Fading Twilight",
@@ -2053,7 +2183,8 @@ export default {
                 "4": 24.5,
                 "5": 28
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Fading_Twilight"
     },
     "FavoniusCodex": {
         "name": "Favonius Codex",
@@ -2085,7 +2216,8 @@ export default {
                 "4": 7.5,
                 "5": 6
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Favonius_Codex"
     },
     "FavoniusGreatsword": {
         "name": "Favonius Greatsword",
@@ -2117,7 +2249,8 @@ export default {
                 "4": 7.5,
                 "5": 6
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Favonius_Greatsword"
     },
     "FavoniusLance": {
         "name": "Favonius Lance",
@@ -2149,7 +2282,8 @@ export default {
                 "4": 7.5,
                 "5": 6
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Favonius_Lance"
     },
     "FavoniusSword": {
         "name": "Favonius Sword",
@@ -2181,7 +2315,8 @@ export default {
                 "4": 7.5,
                 "5": 6
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Favonius_Sword"
     },
     "FavoniusWarbow": {
         "name": "Favonius Warbow",
@@ -2213,7 +2348,8 @@ export default {
                 "4": 7.5,
                 "5": 6
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Favonius_Warbow"
     },
     "FesteringDesire": {
         "name": "Festering Desire",
@@ -2245,7 +2381,8 @@ export default {
                 "4": 10.5,
                 "5": 12
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Festering_Desire"
     },
     "FinaleOfTheDeep": {
         "name": "Finale of the Deep",
@@ -2284,7 +2421,8 @@ export default {
         "matWeakEnemy": "Nobushi",
         "baseATK": 44,
         "stat": "atk_",
-        "baseStat": 6
+        "baseStat": 6,
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Finale_of_the_Deep"
     },
     "FleuveCendreFerryman": {
         "name": "Fleuve Cendre Ferryman",
@@ -2316,7 +2454,8 @@ export default {
         "matWeakEnemy": "Fontemer Aberrants",
         "baseATK": 42,
         "stat": "enerRech_",
-        "baseStat": 10
+        "baseStat": 10,
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Fleuve_Cendre_Ferryman"
     },
     "FlowingPurity": {
         "name": "Flowing Purity",
@@ -2355,7 +2494,8 @@ export default {
         "matWeakEnemy": "Fontemer Aberrants",
         "baseATK": 44,
         "stat": "atk_",
-        "baseStat": 6
+        "baseStat": 6,
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Flowing_Purity"
     },
     "ForestRegalia": {
         "name": "Forest Regalia",
@@ -2380,7 +2520,8 @@ export default {
                 "4": 105,
                 "5": 120
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Forest_Regalia"
     },
     "Frostbearer": {
         "name": "Frostbearer",
@@ -2419,7 +2560,8 @@ export default {
                 "4": 320,
                 "5": 360
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Frostbearer"
     },
     "FruitOfFulfillment": {
         "name": "Fruit of Fulfillment",
@@ -2444,7 +2586,8 @@ export default {
                 "4": 33,
                 "5": 36
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Fruit_of_Fulfillment"
     },
     "HakushinRing": {
         "name": "Hakushin Ring",
@@ -2462,14 +2605,22 @@ export default {
         ],
         "passive": "After the character equipped with this weapon triggers an Electro elemental reaction, nearby party members of an Elemental Type involved in the elemental reaction receive a @0% Elemental DMG Bonus for their element, lasting 6s. Elemental Bonuses gained in this way cannot be stacked.",
         "code": [
-          "proc",
-          [
-            "stat",
+            "proc",
             [
-              ["anemo_dmg_","cryo_dmg_","dendro_dmg_","geo_dmg_","hydro_dmg_","electro_dmg_","pyro_dmg_"],
-              "@0"
+                "stat",
+                [
+                    [
+                        "anemo_dmg_",
+                        "cryo_dmg_",
+                        "dendro_dmg_",
+                        "geo_dmg_",
+                        "hydro_dmg_",
+                        "electro_dmg_",
+                        "pyro_dmg_"
+                    ],
+                    "@0"
+                ]
             ]
-          ]
         ],
         "refinementData": [
             {
@@ -2479,7 +2630,8 @@ export default {
                 "4": 17.5,
                 "5": 20
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Hakushin_Ring"
     },
     "Hamayumi": {
         "name": "Hamayumi",
@@ -2497,39 +2649,39 @@ export default {
         ],
         "passive": "Increases Normal Attack DMG by @0% and Charged Attack DMG by @1%. When the equipping character's Energy reaches 100%, this effect is increased by 100%.",
         "code": [
-          [
-            "stat",
             [
-              "normal_dmg_",
-              "@0"
-            ]
-          ],
-          [
-            "stat",
-            [
-              "charged_dmg_",
-              "@1"
-            ]
-          ],
-          [
-            "proc",
-            [
-              [
                 "stat",
                 [
-                  "normal_dmg_",
-                  "@0"
+                    "normal_dmg_",
+                    "@0"
                 ]
-              ],
-              [
+            ],
+            [
                 "stat",
                 [
-                  "charged_dmg_",
-                  "@1"
+                    "charged_dmg_",
+                    "@1"
                 ]
-              ]
+            ],
+            [
+                "proc",
+                [
+                    [
+                        "stat",
+                        [
+                            "normal_dmg_",
+                            "@0"
+                        ]
+                    ],
+                    [
+                        "stat",
+                        [
+                            "charged_dmg_",
+                            "@1"
+                        ]
+                    ]
+                ]
             ]
-          ]
         ],
         "refinementData": [
             {
@@ -2546,7 +2698,8 @@ export default {
                 "4": 21,
                 "5": 24
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Hamayumi"
     },
     "IbisPiercer": {
         "name": "Ibis Piercer",
@@ -2564,15 +2717,15 @@ export default {
         ],
         "passive": "The character's Elemental Mastery will increase by @0 within 6s after Charged Attacks hit opponents. Max 2 stacks. This effect can triggered once every 0.5s.",
         "code": [
-          "proc",
-          [
-            "stat",
+            "proc",
             [
-              "eleMas",
-              "@0"
-            ]
-          ],
-          2
+                "stat",
+                [
+                    "eleMas",
+                    "@0"
+                ]
+            ],
+            2
         ],
         "refinementData": [
             {
@@ -2582,7 +2735,8 @@ export default {
                 "4": 70,
                 "5": 80
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Ibis_Piercer"
     },
     "IronSting": {
         "name": "Iron Sting",
@@ -2600,15 +2754,15 @@ export default {
         ],
         "passive": "Dealing Elemental DMG increases all DMG by @0% for 6s. Max 2 stacks. Can only occur once every 1s.",
         "code": [
-          "proc",
-          [
-            "stat",
+            "proc",
             [
-              "dmg_",
-              "@0"
-            ]
-          ],
-          2
+                "stat",
+                [
+                    "dmg_",
+                    "@0"
+                ]
+            ],
+            2
         ],
         "refinementData": [
             {
@@ -2618,7 +2772,8 @@ export default {
                 "4": 10.5,
                 "5": 12
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Iron_Sting"
     },
     "KagotsurubeIsshin": {
         "name": "Kagotsurube Isshin",
@@ -2635,10 +2790,11 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/07\/Weapon_Kagotsurube_Isshin_2nd.png"
         ],
         "passive": "When a Normal, Charged, or Plunging Attack hits an opponent, it will whip up a Hewing Gale, dealing AoE DMG equal to 180% of ATK and increasing ATK by 15% for 8s. This effect can be triggered once every 8s.",
-        "refinementData": []
+        "refinementData": [],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Kagotsurube_Isshin"
     },
     "KatsuragikiriNagamasa": {
-        "name": "Katsuragi\u00adkiri Nagamasa",
+        "name": "Katsuragikiri Nagamasa",
         "rarity": 4,
         "type": "Claymore",
         "matForgery": "Claw",
@@ -2667,7 +2823,8 @@ export default {
                 "4": 4.5,
                 "5": 5
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Katsuragikiri_Nagamasa"
     },
     "KingsSquire": {
         "name": "King's Squire",
@@ -2699,7 +2856,8 @@ export default {
                 "4": 160,
                 "5": 180
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/King%27s_Squire"
     },
     "KitainCrossSpear": {
         "name": "Kitain Cross Spear",
@@ -2717,11 +2875,11 @@ export default {
         ],
         "passive": "Increases Elemental Skill DMG by @0%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates @1 Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field.",
         "code": [
-          "stat",
-          [
-            "skill_dmg_",
-            "@0"
-          ]
+            "stat",
+            [
+                "skill_dmg_",
+                "@0"
+            ]
         ],
         "refinementData": [
             {
@@ -2738,7 +2896,8 @@ export default {
                 "4": 4.5,
                 "5": 5
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Kitain_Cross_Spear"
     },
     "LionsRoar": {
         "name": "Lion's Roar",
@@ -2763,7 +2922,8 @@ export default {
                 "4": 32,
                 "5": 36
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Lion%27s_Roar"
     },
     "LithicBlade": {
         "name": "Lithic Blade",
@@ -2795,7 +2955,8 @@ export default {
                 "4": 6,
                 "5": 7
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Lithic_Blade"
     },
     "LithicSpear": {
         "name": "Lithic Spear",
@@ -2827,7 +2988,8 @@ export default {
                 "4": 6,
                 "5": 7
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Lithic_Spear"
     },
     "LuxuriousSeaLord": {
         "name": "Luxurious Sea-Lord",
@@ -2859,7 +3021,8 @@ export default {
                 "4": 175,
                 "5": 200
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Luxurious_Sea-Lord"
     },
     "MailedFlower": {
         "name": "Mailed Flower",
@@ -2891,7 +3054,8 @@ export default {
                 "4": 84,
                 "5": 96
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Mailed_Flower"
     },
     "MakhairaAquamarine": {
         "name": "Makhaira Aquamarine",
@@ -2916,7 +3080,8 @@ export default {
                 "4": 42,
                 "5": 48
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Makhaira_Aquamarine"
     },
     "MappaMare": {
         "name": "Mappa Mare",
@@ -2941,7 +3106,8 @@ export default {
                 "4": 14,
                 "5": 16
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Mappa_Mare"
     },
     "MissiveWindspear": {
         "name": "Missive Windspear",
@@ -2973,7 +3139,8 @@ export default {
                 "4": 84,
                 "5": 96
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Missive_Windspear"
     },
     "MitternachtsWaltz": {
         "name": "Mitternachts Waltz",
@@ -3005,7 +3172,8 @@ export default {
                 "4": 35,
                 "5": 40
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Mitternachts_Waltz"
     },
     "Moonpiercer": {
         "name": "Moonpiercer",
@@ -3030,7 +3198,8 @@ export default {
                 "4": 28,
                 "5": 32
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Moonpiercer"
     },
     "MouunsMoon": {
         "name": "Mouun's Moon",
@@ -3062,7 +3231,8 @@ export default {
                 "4": 70,
                 "5": 80
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Mouun%27s_Moon"
     },
     "OathswornEye": {
         "name": "Oathsworn Eye",
@@ -3087,7 +3257,40 @@ export default {
                 "4": 42,
                 "5": 48
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Oathsworn_Eye"
+    },
+    "PortablePowerSaw": {
+        "name": "Portable Power Saw",
+        "type": "Claymore",
+        "rarity": 4,
+        "baseATK": 41,
+        "stat": "hp_",
+        "passive": "When the wielder is healed or heals others, they will gain a Stoic's Symbol that lasts 30s, up to a maximum of 3 Symbols. When using their Elemental Skill or Burst, all Symbols will be consumed and the Roused effect will be granted for 10s. For each Symbol consumed. gain @0 Elemental Mastery. and 2s after the effect occurs, @1 Energy per Symbol consumed will be restored for said character. The Roused effect can be triggered once every 15s, and Symbols can be gained even when the character is not on the field.",
+        "refinementData": [
+            {
+                "1": 40,
+                "2": 50,
+                "3": 60,
+                "4": 70,
+                "5": 80
+            },
+            {
+                "1": 2,
+                "2": 2.5,
+                "3": 3,
+                "4": 3.5,
+                "5": 4
+            }
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Portable_Power_Saw",
+        "imgs": [
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/49\/Weapon_Portable_Power_Saw.png",
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/40\/Weapon_Portable_Power_Saw_2nd.png"
+        ],
+        "matForgery": "Chalice",
+        "matStrongEnemy": "Breacher Primus",
+        "matWeakEnemy": "Clockwork Meka"
     },
     "Predator": {
         "name": "Predator",
@@ -3104,7 +3307,8 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/48\/Weapon_Predator_2nd.png"
         ],
         "passive": "Dealing Cryo DMG to opponents increases this character's Normal and Charged Attack DMG by 10% for 6s. This effect can have a maximum of 2 stacks.\nAdditionally, when Aloy equips Predator, ATK is increased by 66.",
-        "refinementData": []
+        "refinementData": [],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Predator"
     },
     "PrototypeAmber": {
         "name": "Prototype Amber",
@@ -3136,7 +3340,8 @@ export default {
                 "4": 5.5,
                 "5": 6
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Prototype_Amber"
     },
     "PrototypeArchaic": {
         "name": "Prototype Archaic",
@@ -3161,7 +3366,8 @@ export default {
                 "4": 420,
                 "5": 480
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Prototype_Archaic"
     },
     "PrototypeCrescent": {
         "name": "Prototype Crescent",
@@ -3179,14 +3385,14 @@ export default {
         ],
         "passive": "Charged Attack hits on weak points increase Movement SPD by 10% and ATK by @0% for 10s.",
         "code": [
-          "proc",
-          [
-            "stat",
+            "proc",
             [
-              "atk_",
-              "@0"
+                "stat",
+                [
+                    "atk_",
+                    "@0"
+                ]
             ]
-          ]
         ],
         "refinementData": [
             {
@@ -3196,7 +3402,8 @@ export default {
                 "4": 63,
                 "5": 72
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Prototype_Crescent"
     },
     "PrototypeRancour": {
         "name": "Prototype Rancour",
@@ -3221,7 +3428,8 @@ export default {
                 "4": 7,
                 "5": 8
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Prototype_Rancour"
     },
     "PrototypeStarglitter": {
         "name": "Prototype Starglitter",
@@ -3246,7 +3454,8 @@ export default {
                 "4": 14,
                 "5": 16
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Prototype_Starglitter"
     },
     "Rainslasher": {
         "name": "Rainslasher",
@@ -3271,7 +3480,8 @@ export default {
                 "4": 32,
                 "5": 36
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Rainslasher"
     },
     "RightfulReward": {
         "name": "Rightful Reward",
@@ -3296,7 +3506,8 @@ export default {
         "matWeakEnemy": "Clockwork Meka",
         "baseATK": 44,
         "stat": "hp_",
-        "baseStat": 6
+        "baseStat": 6,
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Rightful_Reward"
     },
     "RoyalBow": {
         "name": "Royal Bow",
@@ -3321,7 +3532,8 @@ export default {
                 "4": 14,
                 "5": 16
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Royal_Bow"
     },
     "RoyalGreatsword": {
         "name": "Royal Greatsword",
@@ -3346,7 +3558,8 @@ export default {
                 "4": 14,
                 "5": 16
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Royal_Greatsword"
     },
     "RoyalGrimoire": {
         "name": "Royal Grimoire",
@@ -3371,7 +3584,8 @@ export default {
                 "4": 14,
                 "5": 16
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Royal_Grimoire"
     },
     "RoyalLongsword": {
         "name": "Royal Longsword",
@@ -3396,7 +3610,8 @@ export default {
                 "4": 14,
                 "5": 16
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Royal_Longsword"
     },
     "RoyalSpear": {
         "name": "Royal Spear",
@@ -3421,7 +3636,8 @@ export default {
                 "4": 14,
                 "5": 16
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Royal_Spear"
     },
     "Rust": {
         "name": "Rust",
@@ -3446,7 +3662,8 @@ export default {
                 "4": 70,
                 "5": 80
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Rust"
     },
     "SacrificialBow": {
         "name": "Sacrificial Bow",
@@ -3478,7 +3695,8 @@ export default {
                 "4": 19.5,
                 "5": 16
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sacrificial_Bow"
     },
     "SacrificialFragments": {
         "name": "Sacrificial Fragments",
@@ -3510,7 +3728,8 @@ export default {
                 "4": 19.5,
                 "5": 16
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sacrificial_Fragments"
     },
     "SacrificialGreatsword": {
         "name": "Sacrificial Greatsword",
@@ -3542,7 +3761,8 @@ export default {
                 "4": 19.5,
                 "5": 16
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sacrificial_Greatsword"
     },
     "SacrificialJade": {
         "name": "Sacrificial Jade",
@@ -3574,7 +3794,8 @@ export default {
         "matWeakEnemy": "Samachurls",
         "baseATK": 41,
         "stat": "critRate_",
-        "baseStat": 8
+        "baseStat": 8,
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sacrificial_Jade"
     },
     "SacrificialSword": {
         "name": "Sacrificial Sword",
@@ -3606,7 +3827,8 @@ export default {
                 "4": 19.5,
                 "5": 16
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sacrificial_Sword"
     },
     "SapwoodBlade": {
         "name": "Sapwood Blade",
@@ -3624,14 +3846,14 @@ export default {
         ],
         "passive": "After triggering Burning, Quicken, Aggravate, Spread, Bloom, Hyperbloom, or Burgeon, a Leaf of Consciousness will be created around the character for a maximum of 10s. When picked up, the Leaf will grant the character @0 Elemental Mastery for 12s. Only 1 Leaf can be generated this way every 20s. This effect can still be triggered if the character is not on the field. The Leaf of Consciousness' effect cannot stack.",
         "code": [
-          "proc",
-          [
-            "stat",
+            "proc",
             [
-              "eleMas",
-              "@0"
+                "stat",
+                [
+                    "eleMas",
+                    "@0"
+                ]
             ]
-          ]
         ],
         "refinementData": [
             {
@@ -3641,7 +3863,8 @@ export default {
                 "4": 105,
                 "5": 120
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sapwood_Blade"
     },
     "ScionOfTheBlazingSun": {
         "name": "Scion of the Blazing Sun",
@@ -3673,7 +3896,8 @@ export default {
         "matWeakEnemy": "Fungi",
         "baseATK": 44,
         "stat": "critRate_",
-        "baseStat": 4
+        "baseStat": 4,
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Scion_of_the_Blazing_Sun"
     },
     "SerpentSpine": {
         "name": "Serpent Spine",
@@ -3689,26 +3913,26 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/88\/Weapon_Serpent_Spine.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/10\/Weapon_Serpent_Spine_2nd.png"
         ],
-        "passive": "Every 4s a character is on the field, they will deal @0% more DMG and take @1% more DMG. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be reduced by 1 stack when the character takes DMG.",
+        "passive": "Every 4s a character is on the field, they will deal @0% more DMG and take @1%  more DMG. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be reduced by 1 stack when the character takes DMG.",
         "code": [
-          "proc",
-          [
+            "proc",
             [
-              "stat",
-              [
-                "dmg_",
-                "@0"
-              ]
+                [
+                    "stat",
+                    [
+                        "dmg_",
+                        "@0"
+                    ]
+                ],
+                [
+                    "stat",
+                    [
+                        "inDmg_",
+                        "@1"
+                    ]
+                ]
             ],
-            [
-              "stat",
-              [
-                "inDmg_",
-                "@1"
-              ]
-            ]
-          ],
-          5
+            5
         ],
         "refinementData": [
             {
@@ -3725,7 +3949,8 @@ export default {
                 "4": 2.25,
                 "5": 2
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Serpent_Spine"
     },
     "SnowTombedStarsilver": {
         "name": "Snow-Tombed Starsilver",
@@ -3764,7 +3989,8 @@ export default {
                 "4": 320,
                 "5": 360
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Snow-Tombed_Starsilver"
     },
     "SolarPearl": {
         "name": "Solar Pearl",
@@ -3796,7 +4022,8 @@ export default {
                 "4": 35,
                 "5": 40
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Solar_Pearl"
     },
     "SongOfStillness": {
         "name": "Song of Stillness",
@@ -3821,7 +4048,8 @@ export default {
         "matWeakEnemy": "Hilichurl Archers",
         "baseATK": 42,
         "stat": "atk_",
-        "baseStat": 9
+        "baseStat": 9,
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Song_of_Stillness"
     },
     "SwordOfDescension": {
         "name": "Sword of Descension",
@@ -3838,7 +4066,8 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a8\/Weapon_Sword_of_Descension_2nd.png"
         ],
         "passive": "Hitting enemies with Normal or Charged Attacks grants a 50% chance to deal 200% ATK as DMG in a small AoE. This effect can only occur once every 10s.\nAdditionally, if the Traveler equips the Sword of Descension, their ATK is increased by 66.",
-        "refinementData": []
+        "refinementData": [],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sword_of_Descension"
     },
     "TalkingStick": {
         "name": "Talking Stick",
@@ -3863,7 +4092,8 @@ export default {
         "matWeakEnemy": "Slimes",
         "baseATK": 44,
         "stat": "critRate_",
-        "baseStat": 4
+        "baseStat": 4,
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Talking_Stick"
     },
     "TheAlleyFlash": {
         "name": "The Alley Flash",
@@ -3888,7 +4118,8 @@ export default {
                 "4": 21,
                 "5": 24
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Alley_Flash"
     },
     "TheBell": {
         "name": "The Bell",
@@ -3920,7 +4151,8 @@ export default {
                 "4": 21,
                 "5": 24
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Bell"
     },
     "TheBlackSword": {
         "name": "The Black Sword",
@@ -3938,11 +4170,14 @@ export default {
         ],
         "passive": "Increases DMG dealt by Normal and Charged Attacks by @0%.\nAdditionally, regenerates @1% of ATK as HP when Normal and Charged Attacks score a CRIT Hit. This effect can occur once every 5s.",
         "code": [
-          "stat",
-          [
-            ["normal_dmg_","charged_dmg_"],
-            "@0"
-          ]
+            "stat",
+            [
+                [
+                    "normal_dmg_",
+                    "charged_dmg_"
+                ],
+                "@0"
+            ]
         ],
         "refinementData": [
             {
@@ -3959,7 +4194,40 @@ export default {
                 "4": 90,
                 "5": 100
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Black_Sword"
+    },
+    "TheDockhandsAssistant": {
+        "name": "The Dockhand's Assistant",
+        "type": "Sword",
+        "rarity": 4,
+        "baseATK": 42,
+        "stat": "hp_",
+        "passive": "When the wielder is healed or heals others, they will gain a Stoic's Symbol that lasts 30s, up to a maximum of 3 Symbols. When using their Elemental Skill or Burst, all Symbols will be consumed and the Roused effect will be granted for 10s. For each Symbol consumed, gain @0 Elemental Mastery, and 2s after the effect occurs, @1 Energy per Symbol consumed will be restored for said character. The Roused effect can be triggered once every 15s, and Symbols can be gained even when the character is not on the field.",
+        "refinementData": [
+            {
+                "1": 40,
+                "2": 50,
+                "3": 60,
+                "4": 70,
+                "5": 80
+            },
+            {
+                "1": 2,
+                "2": 2.5,
+                "3": 3,
+                "4": 3.5,
+                "5": 4
+            }
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Dockhand%27s_Assistant",
+        "imgs": [
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/eb\/Weapon_The_Dockhand%27s_Assistant.png",
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b1\/Weapon_The_Dockhand%27s_Assistant_2nd.png"
+        ],
+        "matForgery": "Droplet",
+        "matStrongEnemy": "Fatui Operatives",
+        "matWeakEnemy": "Fontemer Aberrants"
     },
     "TheFlute": {
         "name": "The Flute",
@@ -3984,7 +4252,8 @@ export default {
                 "4": 175,
                 "5": 200
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Flute"
     },
     "TheStringless": {
         "name": "The Stringless",
@@ -4002,11 +4271,14 @@ export default {
         ],
         "passive": "Increases Elemental Skill and Elemental Burst DMG by @0%.",
         "code": [
-          "stat",
-          [
-            ["skill_dmg_","burst_dmg_"],
-            "@0"
-          ]
+            "stat",
+            [
+                [
+                    "skill_dmg_",
+                    "burst_dmg_"
+                ],
+                "@0"
+            ]
         ],
         "refinementData": [
             {
@@ -4016,7 +4288,8 @@ export default {
                 "4": 42,
                 "5": 48
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Stringless"
     },
     "TheViridescentHunt": {
         "name": "The Viridescent Hunt",
@@ -4048,7 +4321,8 @@ export default {
                 "4": 11,
                 "5": 10
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Viridescent_Hunt"
     },
     "TheWidsith": {
         "name": "The Widsith",
@@ -4087,7 +4361,8 @@ export default {
                 "4": 420,
                 "5": 480
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Widsith"
     },
     "TidalShadow": {
         "name": "Tidal Shadow",
@@ -4112,7 +4387,8 @@ export default {
         "matWeakEnemy": "Clockwork Meka",
         "baseATK": 42,
         "stat": "atk_",
-        "baseStat": 9
+        "baseStat": 9,
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Tidal_Shadow"
     },
     "ToukabouShigure": {
         "name": "Toukabou Shigure",
@@ -4137,7 +4413,8 @@ export default {
                 "4": 28,
                 "5": 32
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Toukabou_Shigure"
     },
     "WanderingEvenstar": {
         "name": "Wandering Evenstar",
@@ -4162,10 +4439,11 @@ export default {
                 "4": 42,
                 "5": 48
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Wandering_Evenstar"
     },
     "WavebreakersFin": {
-        "name": "Wave\u00adbreaker's Fin",
+        "name": "Wavebreaker's Fin",
         "rarity": 4,
         "type": "Polearm",
         "matForgery": "Mask",
@@ -4194,7 +4472,8 @@ export default {
                 "4": 70,
                 "5": 80
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Wavebreaker%27s_Fin"
     },
     "Whiteblind": {
         "name": "Whiteblind",
@@ -4226,7 +4505,8 @@ export default {
                 "4": 42,
                 "5": 48
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Whiteblind"
     },
     "WindblumeOde": {
         "name": "Windblume Ode",
@@ -4251,7 +4531,8 @@ export default {
                 "4": 28,
                 "5": 32
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Windblume_Ode"
     },
     "WineAndSong": {
         "name": "Wine and Song",
@@ -4283,7 +4564,8 @@ export default {
                 "4": 35,
                 "5": 40
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Wine_and_Song"
     },
     "WolfFang": {
         "name": "Wolf-Fang",
@@ -4294,6 +4576,44 @@ export default {
         "rarity": 4,
         "type": "Sword",
         "passive": "DMG dealt by Elemental Skill and Elemental Burst is increased by @0%. When an Elemental Skill hits an opponent, its CRIT Rate will be increased by @1%. When an Elemental Burst hits an opponent, its CRIT Rate will be increased by @2%. Both of these effects last 10s separately, have 4 max stacks, and can be triggered once every 0.1s.",
+        "code": [
+            [
+                "stat",
+                [
+                    [
+                        "skill_dmg_",
+                        "burst_dmg_"
+                    ],
+                    "@0"
+                ]
+            ],
+            [
+                "proc",
+                [
+                    "sstat",
+                    [
+                        "critRate_",
+                        "@1",
+                        "Elemental Skill"
+                    ]
+                ],
+                "After Elemental Skill Hit (10s)",
+                4
+            ],
+            [
+                "proc",
+                [
+                    "sstat",
+                    [
+                        "critRate_",
+                        "@2",
+                        "Elemental Burst"
+                    ]
+                ],
+                "After Elemental Burst Hit (10s)",
+                4
+            ]
+        ],
         "refinementData": [
             {
                 "1": 16,
@@ -4322,7 +4642,8 @@ export default {
         "matWeakEnemy": "Hilichurls",
         "baseATK": 42,
         "stat": "critRate_",
-        "baseStat": 6
+        "baseStat": 6,
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Wolf-Fang"
     },
     "XiphosMoonlight": {
         "name": "Xiphos' Moonlight",
@@ -4343,11 +4664,12 @@ export default {
             {
                 "1": 0.036,
                 "2": 0.045,
-                "3": 0.054,
+                "3": 0.05399999999999999,
                 "4": 0.063,
                 "5": 0.072
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Xiphos%27_Moonlight"
     },
     "BlackTassel": {
         "name": "Black Tassel",
@@ -4372,7 +4694,8 @@ export default {
                 "4": 70,
                 "5": 80
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Black_Tassel"
     },
     "BloodtaintedGreatsword": {
         "name": "Bloodtainted Greatsword",
@@ -4397,7 +4720,8 @@ export default {
                 "4": 21,
                 "5": 24
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Bloodtainted_Greatsword"
     },
     "CoolSteel": {
         "name": "Cool Steel",
@@ -4422,7 +4746,8 @@ export default {
                 "4": 21,
                 "5": 24
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Cool_Steel"
     },
     "DarkIronSword": {
         "name": "Dark Iron Sword",
@@ -4447,7 +4772,8 @@ export default {
                 "4": 35,
                 "5": 40
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Dark_Iron_Sword"
     },
     "DebateClub": {
         "name": "Debate Club",
@@ -4472,7 +4798,8 @@ export default {
                 "4": 105,
                 "5": 120
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Debate_Club"
     },
     "EmeraldOrb": {
         "name": "Emerald Orb",
@@ -4497,7 +4824,8 @@ export default {
                 "4": 35,
                 "5": 40
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Emerald_Orb"
     },
     "FerrousShadow": {
         "name": "Ferrous Shadow",
@@ -4529,7 +4857,8 @@ export default {
                 "4": 45,
                 "5": 50
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Ferrous_Shadow"
     },
     "FilletBlade": {
         "name": "Fillet Blade",
@@ -4561,7 +4890,8 @@ export default {
                 "4": 12,
                 "5": 11
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Fillet_Blade"
     },
     "Halberd": {
         "name": "Halberd",
@@ -4586,7 +4916,8 @@ export default {
                 "4": 280,
                 "5": 320
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Halberd"
     },
     "HarbingerOfDawn": {
         "name": "Harbinger of Dawn",
@@ -4604,14 +4935,14 @@ export default {
         ],
         "passive": "When HP is above 90%, increases CRIT Rate by @0%.",
         "code": [
-          "proc",
-          [
-            "stat",
+            "proc",
             [
-              "critRate_",
-              "@0"
+                "stat",
+                [
+                    "critRate_",
+                    "@0"
+                ]
             ]
-          ]
         ],
         "refinementData": [
             {
@@ -4621,7 +4952,8 @@ export default {
                 "4": 24.5,
                 "5": 28
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Harbinger_of_Dawn"
     },
     "MagicGuide": {
         "name": "Magic Guide",
@@ -4646,7 +4978,8 @@ export default {
                 "4": 21,
                 "5": 24
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Magic_Guide"
     },
     "Messenger": {
         "name": "Messenger",
@@ -4671,7 +5004,8 @@ export default {
                 "4": 175,
                 "5": 200
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Messenger"
     },
     "OtherworldlyStory": {
         "name": "Otherworldly Story",
@@ -4696,7 +5030,8 @@ export default {
                 "4": 1.75,
                 "5": 2
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Otherworldly_Story"
     },
     "RavenBow": {
         "name": "Raven Bow",
@@ -4721,7 +5056,8 @@ export default {
                 "4": 21,
                 "5": 24
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Raven_Bow"
     },
     "RecurveBow": {
         "name": "Recurve Bow",
@@ -4746,10 +5082,11 @@ export default {
                 "4": 14,
                 "5": 16
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Recurve_Bow"
     },
     "SharpshootersOath": {
-        "name": "Sharp\u00adshooter's Oath",
+        "name": "Sharpshooter's Oath",
         "rarity": 3,
         "type": "Bow",
         "matForgery": "Tooth",
@@ -4771,7 +5108,8 @@ export default {
                 "4": 42,
                 "5": 48
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sharpshooter%27s_Oath"
     },
     "SkyriderGreatsword": {
         "name": "Skyrider Greatsword",
@@ -4796,7 +5134,8 @@ export default {
                 "4": 9,
                 "5": 10
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyrider_Greatsword"
     },
     "SkyriderSword": {
         "name": "Skyrider Sword",
@@ -4821,7 +5160,8 @@ export default {
                 "4": 21,
                 "5": 24
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyrider_Sword"
     },
     "Slingshot": {
         "name": "Slingshot",
@@ -4846,7 +5186,8 @@ export default {
                 "4": 54,
                 "5": 60
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Slingshot"
     },
     "ThrillingTalesOfDragonSlayers": {
         "name": "Thrilling Tales of Dragon Slayers",
@@ -4871,7 +5212,8 @@ export default {
                 "4": 42,
                 "5": 48
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Thrilling_Tales_of_Dragon_Slayers"
     },
     "TravelersHandySword": {
         "name": "Traveler's Handy Sword",
@@ -4896,7 +5238,8 @@ export default {
                 "4": 1.75,
                 "5": 2
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Traveler%27s_Handy_Sword"
     },
     "TwinNephrite": {
         "name": "Twin Nephrite",
@@ -4921,7 +5264,8 @@ export default {
                 "4": 18,
                 "5": 20
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Twin_Nephrite"
     },
     "WhiteIronGreatsword": {
         "name": "White Iron Greatsword",
@@ -4946,7 +5290,8 @@ export default {
                 "4": 14,
                 "5": 16
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/White_Iron_Greatsword"
     },
     "WhiteTassel": {
         "name": "White Tassel",
@@ -4971,7 +5316,8 @@ export default {
                 "4": 42,
                 "5": 48
             }
-        ]
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/White_Tassel"
     },
     "IronPoint": {
         "name": "Iron Point",
@@ -4988,7 +5334,8 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/64\/Weapon_Iron_Point_2nd.png"
         ],
         "passive": "None",
-        "refinementData": []
+        "refinementData": [],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Iron_Point"
     },
     "OldMercsPal": {
         "name": "Old Merc's Pal",
@@ -5005,7 +5352,8 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/80\/Weapon_Old_Merc%27s_Pal_2nd.png"
         ],
         "passive": "None",
-        "refinementData": []
+        "refinementData": [],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Old_Merc%27s_Pal"
     },
     "PocketGrimoire": {
         "name": "Pocket Grimoire",
@@ -5022,7 +5370,8 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fa\/Weapon_Pocket_Grimoire_2nd.png"
         ],
         "passive": "None",
-        "refinementData": []
+        "refinementData": [],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Pocket_Grimoire"
     },
     "SeasonedHuntersBow": {
         "name": "Seasoned Hunter's Bow",
@@ -5039,7 +5388,8 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8b\/Weapon_Seasoned_Hunter%27s_Bow_2nd.png"
         ],
         "passive": "None",
-        "refinementData": []
+        "refinementData": [],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Seasoned_Hunter%27s_Bow"
     },
     "SilverSword": {
         "name": "Silver Sword",
@@ -5056,7 +5406,8 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bd\/Weapon_Silver_Sword_2nd.png"
         ],
         "passive": "None",
-        "refinementData": []
+        "refinementData": [],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Silver_Sword"
     },
     "ApprenticesNotes": {
         "name": "Apprentice's Notes",
@@ -5073,7 +5424,8 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bc\/Weapon_Apprentice%27s_Notes_2nd.png"
         ],
         "passive": "None",
-        "refinementData": []
+        "refinementData": [],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Apprentice%27s_Notes"
     },
     "BeginnersProtector": {
         "name": "Beginner's Protector",
@@ -5090,7 +5442,8 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Weapon_Beginner%27s_Protector_2nd.png"
         ],
         "passive": "None",
-        "refinementData": []
+        "refinementData": [],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Beginner%27s_Protector"
     },
     "DullBlade": {
         "name": "Dull Blade",
@@ -5107,7 +5460,8 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/ba\/Weapon_Dull_Blade_2nd.png"
         ],
         "passive": "None",
-        "refinementData": []
+        "refinementData": [],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Dull_Blade"
     },
     "HuntersBow": {
         "name": "Hunter's Bow",
@@ -5124,7 +5478,8 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/31\/Weapon_Hunter%27s_Bow_2nd.png"
         ],
         "passive": "None",
-        "refinementData": []
+        "refinementData": [],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Hunter%27s_Bow"
     },
     "WasterGreatsword": {
         "name": "Waster Greatsword",
@@ -5141,6 +5496,7 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bd\/Weapon_Waster_Greatsword_2nd.png"
         ],
         "passive": "None",
-        "refinementData": []
+        "refinementData": [],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Waster_Greatsword"
     }
 };

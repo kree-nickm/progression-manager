@@ -57,7 +57,8 @@ export default {
             "Jean",
             "Lisa",
             "Mona"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/17\/Furnishing_Set_Amidst_Poetic_Pondering_Display.png"
     },
     "AmidstWhisperingWinds": {
         "name": "Amidst Whispering Winds",
@@ -123,7 +124,8 @@ export default {
             "Barbara",
             "Eula",
             "Noelle"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ad\/Furnishing_Set_Amidst_Whispering_Winds_Display.png"
     },
     "FeiyunStudyRoom": {
         "name": "Feiyun Study Room",
@@ -183,7 +185,8 @@ export default {
             "Xingqiu",
             "YunJin",
             "Zhongli"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e6\/Furnishing_Set_Feiyun_Study_Room_Display.png"
     },
     "CloudyHazeDreamCourt": {
         "name": "Cloudy Haze Dream-Court",
@@ -243,7 +246,8 @@ export default {
             "Keqing",
             "HuTao",
             "Yanfei"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3c\/Furnishing_Set_Cloudy_Haze_Dream-Court_Display.png"
     },
     "SecretResearchLab": {
         "name": "Secret Research Lab",
@@ -306,7 +310,8 @@ export default {
             "Klee",
             "Lisa",
             "Sucrose"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a2\/Furnishing_Set_Secret_Research_Lab_Display.png"
     },
     "CottageKitchen": {
         "name": "Cottage Kitchen",
@@ -349,7 +354,8 @@ export default {
             "Xiangling",
             "Xiao",
             "Yaoyao"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5f\/Furnishing_Set_Cottage_Kitchen_Display.png"
     },
     "EternalDomainOfFleetingDreams": {
         "name": "Eternal Domain Of Fleeting Dreams",
@@ -391,7 +397,8 @@ export default {
             "Sayu",
             "SangonomiyaKokomi",
             "ShikanoinHeizou"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b3\/Furnishing_Set_Eternal_Domain_of_Fleeting_Dreams_Display.png"
     },
     "AThousandSwings": {
         "name": "A Thousand Swings",
@@ -428,7 +435,8 @@ export default {
         "characters": [
             "RaidenShogun",
             "KamisatoAyaka"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/66\/Furnishing_Set_A_Thousand_Swings_Display.png"
     },
     "ScholarlyTrove": {
         "name": "Scholarly Trove",
@@ -477,7 +485,8 @@ export default {
         "characters": [
             "SangonomiyaKokomi",
             "KukiShinobu"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a5\/Furnishing_Set_Scholarly_Trove_Display.png"
     },
     "OfMapleAndTeaScentsEntwined": {
         "name": "Of Maple And Tea Scents Entwined",
@@ -526,7 +535,8 @@ export default {
         "characters": [
             "Thoma",
             "KaedeharaKazuha"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/20\/Furnishing_Set_Of_Maple_and_Tea_Scents_Entwined_Display.png"
     },
     "ForestPatrolAnecdotes": {
         "name": "Forest Patrol Anecdotes",
@@ -555,7 +565,8 @@ export default {
         "characters": [
             "Tighnari",
             "Collei"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fb\/Furnishing_Set_Forest_Patrol_Anecdotes_Display.png"
     },
     "CoalescedBrilliance": {
         "name": "Coalesced Brilliance",
@@ -600,7 +611,8 @@ export default {
         "characters": [
             "Dori",
             "Nilou"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8a\/Furnishing_Set_Coalesced_Brilliance_Display.png"
     },
     "FervidAroma": {
         "name": "Fervid Aroma",
@@ -649,17 +661,18 @@ export default {
         "characters": [
             "Alhaitham",
             "Dehya"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/36\/Furnishing_Set_Fervid_Aroma_Display.png"
     },
     "OfSettledThoughts": {
         "name": "Of Settled Thoughts",
         "materials": [
             {
-                "key": "TreasurefromTheLandOfWisdom",
+                "key": "TreasureFromTheLandOfWisdom",
                 "count": 1
             },
             {
-                "key": "ScrollsfromTheLandOfWisdom",
+                "key": "ScrollsFromTheLandOfWisdom",
                 "count": 3
             },
             {
@@ -679,7 +692,8 @@ export default {
             "Alhaitham",
             "Cyno",
             "Faruzan"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/24\/Furnishing_Set_Of_Settled_Thoughts_Display.png"
     },
     "AFarewellBriefToBustleAndBother": {
         "name": "A Farewell Brief To Bustle And Bother",
@@ -724,7 +738,8 @@ export default {
         "characters": [
             "Nahida",
             "Layla"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9e\/Furnishing_Set_A_Farewell_Brief_to_Bustle_and_Bother_Display.png"
     },
     "DwellingAmidstTheSands": {
         "name": "Dwelling Amidst The Sands",
@@ -760,7 +775,8 @@ export default {
         ],
         "characters": [
             "Candace"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ef\/Furnishing_Set_Dwelling_Amidst_the_Sands_Display.png"
     },
     "WeaponForgingStation": {
         "name": "Weapon Forging Station",
@@ -811,7 +827,8 @@ export default {
             "Diluc",
             "Diona",
             "Noelle"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3e\/Furnishing_Set_Weapon_Forging_Station_Display.png"
     },
     "IdyllicTown": {
         "name": "Idyllic Town",
@@ -873,7 +890,8 @@ export default {
             "Amber",
             "Diona",
             "Razor"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e8\/Furnishing_Set_Idyllic_Town_Display.png"
     },
     "BirdAndBlossomPark": {
         "name": "Bird And Blossom Park",
@@ -921,7 +939,8 @@ export default {
             "Kaeya",
             "Rosaria",
             "Venti"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/51\/Furnishing_Set_Bird_and_Blossom_Park_Display.png"
     },
     "GatheringOfGourmets": {
         "name": "Gathering Of Gourmets",
@@ -994,7 +1013,8 @@ export default {
             "Xiangling",
             "Xinyan",
             "Yelan"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5c\/Furnishing_Set_Gathering_of_Gourmets_Display.png"
     },
     "GlitteringStreet": {
         "name": "Glittering Street",
@@ -1064,7 +1084,8 @@ export default {
             "Yanfei",
             "YunJin",
             "Zhongli"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/57\/Furnishing_Set_Glittering_Street_Display.png"
     },
     "QingceCloudResidence": {
         "name": "Qingce Cloud Residence",
@@ -1142,7 +1163,8 @@ export default {
             "Shenhe",
             "Yaoyao",
             "Yelan"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a7\/Furnishing_Set_Qingce_Cloud_Residence_Display.png"
     },
     "OfHuntingAndDancing": {
         "name": "Of Hunting And Dancing",
@@ -1226,7 +1248,8 @@ export default {
             "Beidou",
             "Klee",
             "Sucrose"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4b\/Furnishing_Set_Of_Hunting_and_Dancing_Display.png"
     },
     "IterAdAstraAbyssosque": {
         "name": "Iter Ad Astra Abyssosque",
@@ -1280,7 +1303,8 @@ export default {
             "Fischl",
             "Mika",
             "Qiqi"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/90\/Furnishing_Set_Iter_Ad_Astra_Abyssosque_Display.png"
     },
     "DawnOrchard": {
         "name": "Dawn Orchard",
@@ -1331,7 +1355,8 @@ export default {
             "Kaeya",
             "Rosaria",
             "Venti"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ee\/Furnishing_Set_Dawn_Orchard_Display.png"
     },
     "CourtOfTheUpright": {
         "name": "Court Of The Upright",
@@ -1376,7 +1401,8 @@ export default {
         "characters": [
             "KujouSara",
             "KamisatoAyato"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/77\/Furnishing_Set_Court_of_the_Upright_Display.png"
     },
     "WakefulSpring": {
         "name": "Wakeful Spring",
@@ -1422,7 +1448,7 @@ export default {
                 "count": 1
             },
             {
-                "key": "HotSpringFoyerShelterfromTheCold",
+                "key": "HotSpringFoyerShelterFromTheCold",
                 "count": 1
             }
         ],
@@ -1431,7 +1457,8 @@ export default {
             "YaeMiko",
             "Gorou",
             "ShikanoinHeizou"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dc\/Furnishing_Set_Wakeful_Spring_Display.png"
     },
     "RuralConcealment": {
         "name": "Rural Concealment",
@@ -1476,7 +1503,8 @@ export default {
         "characters": [
             "Sayu",
             "Gorou"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/01\/Furnishing_Set_Rural_Concealment_Display.png"
     },
     "AncientBranchShrine": {
         "name": "Ancient Branch Shrine",
@@ -1541,7 +1569,8 @@ export default {
         "characters": [
             "RaidenShogun",
             "YaeMiko"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/24\/Furnishing_Set_Ancient_Branch_Shrine_Display.png"
     },
     "MilitaryExerciseGrounds": {
         "name": "Military Exercise Grounds",
@@ -1601,7 +1630,8 @@ export default {
         ],
         "characters": [
             "KujouSara"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/08\/Furnishing_Set_Military_Exercise_Grounds_Display.png"
     },
     "JadeWilds": {
         "name": "Jade Wilds",
@@ -1650,7 +1680,8 @@ export default {
         "characters": [
             "KaedeharaKazuha",
             "AratakiItto"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b1\/Furnishing_Set_Jade_Wilds_Display.png"
     },
     "SummerNightsRecollection": {
         "name": "Summer Night's Recollection",
@@ -1708,7 +1739,8 @@ export default {
             "KamisatoAyaka",
             "AratakiItto",
             "KamisatoAyato"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/77\/Furnishing_Set_Summer_Night%27s_Recollection_Display.png"
     },
     "SakuraHuedStreet": {
         "name": "Sakura-Hued Street",
@@ -1771,7 +1803,8 @@ export default {
             "Thoma",
             "KukiShinobu",
             "Kirara"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ec\/Furnishing_Set_Sakura-Hued_Street_Display.png"
     },
     "AmidstProsperingMarkets": {
         "name": "Amidst Prospering Markets",
@@ -1824,7 +1857,8 @@ export default {
         "characters": [
             "Dori",
             "Faruzan"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b9\/Furnishing_Set_Amidst_Prospering_Markets_Display.png"
     },
     "DeepInTheQuietForest": {
         "name": "Deep In The Quiet Forest",
@@ -1865,7 +1899,8 @@ export default {
         "characters": [
             "Collei",
             "Cyno"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/44\/Furnishing_Set_Deep_in_the_Quiet_Forest_Display.png"
     },
     "OfTwirlingDancesUnfettered": {
         "name": "Of Twirling Dances Unfettered",
@@ -1887,17 +1922,19 @@ export default {
                 "count": 20
             },
             {
-                "key": "ClarityfromTheLandOfWisdom",
+                "key": "ClarityFromTheLandOfWisdom",
                 "count": 1
             }
         ],
         "characters": [
             "Kaveh",
             "Nilou"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/05\/Furnishing_Set_Of_Twirling_Dances_Unfettered_Display.png"
     },
-    "QuietTimesbyTheRiverbank": {
-        "name": "Quiet Times by The Riverbank",
+    "QuietTimesByTheRiverbank": {
+        "name": "Quiet Times By The Riverbank",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c1\/Furnishing_Set_Quiet_Times_by_the_Riverbank_Display.png",
         "materials": [
             {
                 "key": "FlamingCatalyst",
@@ -1999,7 +2036,8 @@ export default {
         "characters": [
             "Candace",
             "Layla"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/62\/Furnishing_Set_Setekh_Demurs_Display.png"
     },
     "TheTravelingTroopsPomp": {
         "name": "The Traveling Troop's Pomp",
@@ -2039,7 +2077,8 @@ export default {
         ],
         "characters": [
             "Dehya"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/18\/Furnishing_Set_The_Traveling_Troop%27s_Pomp_Display.png"
     },
     "AmidstScentsAndSerenity": {
         "name": "Amidst Scents And Serenity",
@@ -2053,7 +2092,7 @@ export default {
                 "count": 22
             },
             {
-                "key": "ClarityfromTheLandOfWisdom",
+                "key": "ClarityFromTheLandOfWisdom",
                 "count": 1
             },
             {
@@ -2081,7 +2120,8 @@ export default {
             "Kaveh",
             "Nahida",
             "Kirara"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/70\/Furnishing_Set_Amidst_Scents_and_Serenity_Display.png"
     },
     "ChorusOfDesertAndWood": {
         "name": "Chorus Of Desert And Wood",
@@ -2106,6 +2146,7 @@ export default {
         "characters": [
             "Tighnari",
             "Wanderer"
-        ]
+        ],
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/19\/Furnishing_Set_Chorus_of_Desert_and_Wood_Display.png"
     }
 };

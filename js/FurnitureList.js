@@ -21,6 +21,7 @@ export default class FurnitureList extends GenshinList
   {
     let nameField = this.display.addField("name", {
       label: "Name",
+      sort: {generic: {type:"string",property:"name"}},
       dynamic: false,
       value: item => item.name,
     });
