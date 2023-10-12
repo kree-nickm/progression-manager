@@ -5,7 +5,7 @@ import GenshinItem from "./GenshinItem.js";
 
 export default class Artifact extends GenshinItem
 {
-  static dontSerialize = GenshinItem.dontSerialize.concat(["character","wanters","storedStats","substatRolls"]);
+  static dontSerialize = GenshinItem.dontSerialize.concat(["character","wanters","substatRolls"]);
   static goodProperties = ["setKey","slotKey","level","rarity","mainStatKey","location","lock","substats"];
   static shorthandStat = {
     'eleMas': "EM",
@@ -52,10 +52,6 @@ export default class Artifact extends GenshinItem
   substatRolls = {};
   _level = 0;
   _rarity = 0;
-  storedStats = {
-    ratings: {},
-    characters: {},
-  };
   character = null;
   wanters = [];
   
@@ -96,8 +92,8 @@ export default class Artifact extends GenshinItem
     {
       if(!this.importing && this.substats && (field.string == "substats" || field.string == "level" || field.string == "rarity"))
         this.determineRolls();
-      this.storedStats.ratings = {};
-      this.storedStats.characters = {};
+      this.clearMemory("storedStats", "ratings");
+      this.clearMemory("storedStats", "characters");
     }
     if(field.string != "lock")
       document.querySelector("#artifactEvaluateBtn")?.classList.add("show-notice");
@@ -236,11 +232,15 @@ export default class Artifact extends GenshinItem
   
   getSubstatRating(statId)
   {
-    if(this.storedStats.ratings[statId] === undefined)
+    let stored = this.loadMemory("storedStats", "ratings", statId);
+    if(stored === undefined)
     {
       // Can't roll it if it's a main stat.
       if(this.mainStatKey == statId)
-        this.storedStats.ratings[statId] = {base:0, chance:0, sum:0};
+      {
+        stored = {base:0, chance:0, sum:0};
+        this.saveMemory(stored, "storedStats", "ratings", statId);
+      }
       else
       {
         let baseRating = this.substatRolls[statId]?.reduce((total,roll) => total+roll) ?? 0;
@@ -251,7 +251,10 @@ export default class Artifact extends GenshinItem
         
         // If we have the stat, we only need to factor in the boosts.
         if(baseRating > 0)
-          this.storedStats.ratings[statId] = {base:baseRating, chance:chanceRating, sum:baseRating+chanceRating};
+        {
+          stored = {base:baseRating, chance:chanceRating, sum:baseRating+chanceRating};
+          this.saveMemory(stored, "storedStats", "ratings", statId);
+        }
         else
         {
           // Instead, now we need to calculate the odds of gaining the stat first...
@@ -260,11 +263,12 @@ export default class Artifact extends GenshinItem
             if(s != this.mainStatKey)
               total += GenshinArtifactStats.odds[s];
           let chance = 1 - Math.pow(1 - GenshinArtifactStats.odds[statId] / total, Math.min(tiersRemaining, statsOpen));
-          this.storedStats.ratings[statId] = {base:0, chance:chance*chanceRating, sum:chance*chanceRating};
+          stored = {base:0, chance:chance*chanceRating, sum:chance*chanceRating};
+          this.saveMemory(stored, "storedStats", "ratings", statId);
         }
       }
     }
-    return this.storedStats.ratings[statId];
+    return stored;
   }
   
   getCharacterScoreParts(character, buildId=character.selectedBuild, {useTargets=false}={})
@@ -274,34 +278,31 @@ export default class Artifact extends GenshinItem
       console.error(`No character provided to Artifact.getCharacterScoreParts().`);
       return null;
     }
-    if(!this.storedStats.characters[character.key]?.[buildId]?.[useTargets?'withTargets':'base'])
+    // TODO: Better tracking of score.
+    let stored = this.loadMemory("storedStats", "characters", character.key, buildId, useTargets?'withTargets':'base');
+    if(!stored)
     {
-      // Initial variables we need.
       let build = character.getBuild(buildId);
-      if(!this.storedStats.characters[character.key])
-        this.storedStats.characters[character.key] = {};
-      if(!this.storedStats.characters[character.key][buildId])
-        this.storedStats.characters[character.key][buildId] = {};
-      if(!this.storedStats.characters[character.key][buildId][useTargets?'withTargets':'base'])
-        this.storedStats.characters[character.key][buildId][useTargets?'withTargets':'base'] = {};
       
       // Determine if/how to penalize crit stats if using crit ratio target.
       let critPenalty = 0;
       let excessERRating = 0;
       let deficitERFactor = 1;
-      if(useTargets)
+      if(useTargets && build.useTargets.critRatio)
       {
         if(build.ratioCritRate && build.ratioCritDMG)
         {
           let targetRateFactor = build.ratioCritRate / (build.ratioCritRate + build.ratioCritDMG);
-          let myRate = character.getStat("critRate_", {[this.slotKey+'Artifact']:this});
-          let myDMG = character.getStat("critDMG_", {[this.slotKey+'Artifact']:this});
+          let myRate = character.getStat("critRate_", {unmodified:!build.useTargets.modifiers, [this.slotKey+'Artifact']:this});
+          let myDMG = character.getStat("critDMG_", {unmodified:!build.useTargets.modifiers, [this.slotKey+'Artifact']:this});
           let myRateFactor = myRate / (myRate + myDMG);
           critPenalty = targetRateFactor - myRateFactor; // Positive -> Too much Crit DMG. Negative -> Too much Crit Rate.
         }
-        
+      }
+      if(useTargets && build.useTargets.enerRech_)
+      {
         // Alter the artifacts' ratings based on the defined target stats.
-        let myER = character.getStat("enerRech_", {[this.slotKey+'Artifact']:this});
+        let myER = character.getStat("enerRech_", {unmodified:!build.useTargets.modifiers, [this.slotKey+'Artifact']:this});
         if(myER > build.maxER)
         {
           excessERRating = (myER - build.maxER) / GenshinArtifactStats[5].substats.enerRech_;
@@ -359,9 +360,10 @@ export default class Artifact extends GenshinItem
         }
       }
       
-      this.storedStats.characters[character.key][buildId][useTargets?'withTargets':'base'] = {mainScore, subScore, subScores, deficitERFactor};
+      stored = {mainScore, subScore, subScores, deficitERFactor};
+      this.saveMemory(stored, "storedStats", "characters", character.key, buildId, useTargets?'withTargets':'base')
     }
-    return this.storedStats.characters[character.key][buildId][useTargets?'withTargets':'base'];
+    return stored;
   }
   
   getCharacterScore(character, level=parseInt(this.viewer.settings.preferences.artifactMaxLevel ?? 20), buildId=character.selectedBuild, {useTargets}={})

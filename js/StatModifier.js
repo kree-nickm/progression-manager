@@ -199,7 +199,10 @@ export default class StatModifier {
       for(let codeStat of (Array.isArray(targetStats) ? targetStats : [targetStats]))
       {
         if(command == "estat")
+        {
+          this.teamwide = true;
           codeStat = "enemy_" + codeStat + "*";
+        }
         else if(command == "pstat")
         {
           this.teamwide = true;

@@ -367,6 +367,7 @@ export default class ArtifactList extends GenshinList
       dynamic: true,
       dependencies: item => [
         {item:item, field:"lock"},
+        {item:item, field:"location"},
       ],
       title: item => (item.lock || item.location) ? "Unlock/unequip the artifact before deleting it." : "Delete this artifact from the list.",
       button: item => (item.lock || item.location) ? {icon: "fa-solid fa-trash-can"} : {

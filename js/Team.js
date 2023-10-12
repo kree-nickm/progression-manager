@@ -20,6 +20,10 @@ export default class Team extends GenshinItem {
     {
       this._characters = null;
     }
+    else if(field.path[0] == "statModifiers")
+    {
+      this.characters.forEach(character => character.update(field.string, value, action, Object.assign({teammate:true}, options)));
+    }
     return true;
   }
   

@@ -155,7 +155,7 @@ export default class Character extends GenshinItem
     {
       this.clearMemory("stats");
       this.clearMemory("motionValues");
-      this.update("statModifiers", null, "notify", {listChange:true, mvChange:"*"});
+      this.update("statModifiers", null, "notify", {listChange:true, mvChange:"*", mainChange:true, rxnChange:false});
       
       if(!["preview"].includes(field.path[0]))
       {
@@ -163,26 +163,38 @@ export default class Character extends GenshinItem
         this.notifyType(field.string);
         // Iterate through artifacts and clear some amount of artifact.storedStats
         this.viewer.lists.ArtifactList?.items().forEach(artifact => {
-          for(let buildId in artifact.storedStats.characters[this.key]??[])
-            artifact.storedStats.characters[this.key][buildId].withTargets = null;
+          artifact.clearMemory("storedStats", "characters", this.key);
         });
       }
     }
     else if(field.path[0] == "statModifiers")
     {
+      // TODO: Stuff like this should be handled using dependencies, but at the moment, only item fields are easy to handle using dependencies, which these are not.
+      if(options.mainChange)
+      {
+        let element = document.querySelector(`[data-template="renderCharacterMainStats"][data-uuid="${this.uuid}"]`);
+        if(element) Renderer.queueUpdate(element);
+      }
+      if(options.rxnChange)
+      {
+        let element = document.querySelector(`[data-template="renderCharacterReactions"][data-uuid="${this.uuid}"]`);
+        if(element) Renderer.queueUpdate(element);
+      }
       // listChange should be true when modifiers could have been added or removed from the list.
       if(options.listChange)
       {
-        let statModifiersElement = document.querySelector(`[data-template="renderCharacterStatModifiers"][data-uuid="${this.uuid}"]`);
-        if(statModifiersElement) Renderer.queueUpdate(statModifiersElement);
+        let element = document.querySelector(`[data-template="renderCharacterStatModifiers"][data-uuid="${this.uuid}"]`);
+        if(element) Renderer.queueUpdate(element);
       }
       // mvChange should be true when motion values could have been added or removed from a list or motion values.
       if(options.mvChange == "*")
+      {
         document.querySelectorAll(`[data-template="renderCharacterMotionValues"][data-uuid="${this.uuid}"]`).forEach(elem => Renderer.queueUpdate(elem));
+      }
       else if(["auto","skill","burst"].indexOf(options.mvChange) > -1)
       {
-        let motionValuesElement = document.querySelector(`#characterStats\.${options.mvChange}[data-template="renderCharacterMotionValues"][data-uuid="${this.uuid}"]`);
-        if(motionValuesElement) Renderer.queueUpdate(motionValuesElement);
+        let element = document.querySelector(`#characterStats\\.${options.mvChange}[data-template="renderCharacterMotionValues"][data-uuid="${this.uuid}"]`);
+        if(element) Renderer.queueUpdate(element);
       }
     }
     else if(field.string == "activeTeam")
@@ -239,21 +251,20 @@ export default class Character extends GenshinItem
           if(options.property == "artifactSubstats" || artifact.slotKey === options.property.slice(0,-4))
           {
             if(options.buildId)
-              artifact.storedStats.characters[this.key][options.buildId] = null;
+              artifact.clearMemory("storedStats", "characters", this.key, options.buildId);
             else
-              artifact.storedStats.characters[this.key] = null;
+              artifact.clearMemory("storedStats", "characters", this.key);
           }
         });
       }
-      else if(["minER","maxER","ratioCritRate","ratioCritDMG"].indexOf(options.property) > -1)
+      else if(["minER","maxER","ratioCritRate","ratioCritDMG","enerRech_","critRatio","modifiers"].indexOf(options.property) > -1)
       {
         // Iterate through artifacts and clear some amount of artifact.storedStats
         this.viewer.lists.ArtifactList?.items().forEach(artifact => {
           if(options.buildId)
-            artifact.storedStats.characters[this.key][options.buildId].withTargets = null;
+            artifact.clearMemory("storedStats", "characters", this.key, options.buildId, "withTargets");
           else
-            for(let buildId in artifact.storedStats.characters[this.key]??[])
-              artifact.storedStats.characters[this.key][buildId].withTargets = null;
+            artifact.clearMemory("storedStats", "characters", this.key);
         });
       }
       this.viewer.lists.ArtifactList?.update("evaluate", null, "notify");
@@ -1404,7 +1415,7 @@ export default class Character extends GenshinItem
   
   getRelatedItems({buildId=this.selectedBuild,skipSort,forceTargets,ignoreTargets}={})
   {
-    let useTargets = forceTargets || !ignoreTargets && document.getElementById('useTargets')?.checked;
+    let useTargets = forceTargets || !ignoreTargets;
     if(window.DEBUGLOG.getRelatedItems) console.debug(`Getting ${this.name}'s related items for build ${buildId}.`, skipSort?`Skipping artifact sorting.`:`Sorting artifacts.`, useTargets?`Using targets.`:`Ignoring targets.`);
     let related = {
       weapons: this.list.viewer.lists.WeaponList.items(this.weaponType),
@@ -1553,13 +1564,25 @@ export default class Character extends GenshinItem
           this.clearMemory("motionValues");
           if(event.target.dataset?.owner)
           {
-            let character = Renderer.controllers.get(event.target.dataset?.owner);
-            let mod = character?.statModifiers.find(mod => mod.id == event.target.id);
-            if(mod)
+            if(event.target.dataset?.owner == "Team")
             {
-              mod.active = parseInt(event.target.value);
-              character.update("statModifiers", null, "notify", {mvChange:mod.mvChange});
-              this.update("statModifiers", null, "notify", {mvChange:mod.mvChange});
+              let mod = Team.statModifiers.find(mod => mod.id == event.target.id);
+              if(mod)
+              {
+                mod.active = parseInt(event.target.value);
+                this.activeTeam.update("statModifiers", null, "notify", {mvChange:mod.mvChange});
+              }
+            }
+            else
+            {
+              let character = Renderer.controllers.get(event.target.dataset?.owner);
+              let mod = character?.statModifiers.find(mod => mod.id == event.target.id);
+              if(mod)
+              {
+                mod.active = parseInt(event.target.value);
+                character.update("statModifiers", null, "notify", {mvChange:mod.mvChange});
+                this.update("statModifiers", null, "notify", {mvChange:mod.mvChange});
+              }
             }
           }
           else
@@ -1741,24 +1764,20 @@ export default class Character extends GenshinItem
     }
     
     /** Stat Target Toggle **/
-    let useTargetsChk = buildSection.querySelector("#useTargets");
-    if(!useTargetsChk.onchange)
-    {
-      useTargetsChk.onchange = event => {
-        if(event.target == useTargetsChk)
-        {
-          this.getBuild(buildId).useTargets = { // TODO: Add a checkbox for every different stat target.
-            enerRech_: useTargetsChk.checked,
-            critRatio: useTargetsChk.checked,
-          };
-          this.update("buildData", null, "notify", {property:'useTargets',buildId});
-        }
-        this.getRelatedItems({buildId}); // Causes the artifact lists to be re-sorted.
-        let listElements = buildSection.querySelectorAll(".character-artifacts .list[data-filter]");
-        for(let listElement of listElements)
-          Renderer.sortItems(listElement);
-      };
-    }
+    let useTargetsChks = buildSection.querySelectorAll(".target-options");
+    useTargetsChks.forEach(useTargetsChk => {
+      if(!useTargetsChk.onchange)
+      {
+        useTargetsChk.onchange = event => {
+          this.getBuild(buildId).useTargets[event.target.value] = event.target.checked;
+          this.update("buildData", null, "notify", {property:event.target.value,buildId});
+          this.getRelatedItems({buildId}); // Causes the artifact lists to be re-sorted.
+          let listElements = buildSection.querySelectorAll(".character-artifacts .list[data-filter]");
+          for(let listElement of listElements)
+            Renderer.sortItems(listElement);
+        };
+      }
+    });
     
     /** Stat Target Fields **/
     let targetInputs = buildSection.querySelectorAll("input.stat-target");
@@ -1775,13 +1794,32 @@ export default class Character extends GenshinItem
         targetInput.onchange = event => {
           this.getBuild(buildId)[property] = parseFloat(targetInput.value);
           this.update("buildData", null, "notify", {property,buildId});
-          if(useTargetsChk.checked)
-            useTargetsChk.onchange(event);
+          this.getRelatedItems({buildId}); // Causes the artifact lists to be re-sorted.
+          let listElements = buildSection.querySelectorAll(".character-artifacts .list[data-filter]");
+          for(let listElement of listElements)
+            Renderer.sortItems(listElement);
         };
       }
     }
     
-    this._addArtifactListsEventHandlers(buildSection.querySelector(".character-artifacts"), {buildSection,buildId});
+    let characterArtifacts = buildSection.querySelector(".character-artifacts");
+    if(characterArtifacts)
+    {
+      /** Load Artifacts On Expand **/
+      let artifactLists = document.getElementById("characterArtifactLists");
+      if(artifactLists && !artifactLists.onexpand)
+      {
+        artifactLists.addEventListener("show.bs.collapse", event => {
+          document.getElementById("loadArtifacts")?.dispatchEvent(new Event("click"));
+          //Renderer.rerender(characterArtifacts, {relatedItems:this.getRelatedItems({buildId})});
+        });
+        artifactLists.onexpand = true;
+      }
+      
+      this._addArtifactListsEventHandlers(characterArtifacts, {buildSection,buildId});
+    }
+    else
+      console.warn(`Build section has no artifact lists section.`);
   }
   
   // Note: Also works if characterArtifacts is an artifact card element, as will be the case when the onlick event below fires and rerenders the card.
@@ -1837,7 +1875,7 @@ export default class Character extends GenshinItem
       loadBtn.onclick = event => {
         Renderer.rerender(characterArtifacts, {relatedItems:this.getRelatedItems({buildId})});
       };
-      
+    
     
     /** Equip Artifact Button **/
     let showFavoritesToggle = document.getElementById("artifactsFilterFavorites");
@@ -1892,7 +1930,7 @@ export default class Character extends GenshinItem
           this.update("preview", null, "notify");
           let relatedItems = this.getRelatedItems({buildId});
           // This could be handled by implementing "needsUpdate" on all templated elements, and using an "update()" on an associated item.
-          Renderer.rerender(rootElement.querySelector(".character-stats"), {relatedItems});
+          //Renderer.rerender(rootElement.querySelector(".character-stats"), {relatedItems});
           let listElements = characterArtifacts.querySelectorAll(".list[data-filter]");
           for(let listElement of listElements)
             Renderer.sortItems(listElement);
@@ -1934,7 +1972,7 @@ export default class Character extends GenshinItem
           artifact.update("location", this.base?.key ?? this.key);
           let relatedItems = this.getRelatedItems({buildId});
           // This could be handled by implementing "needsUpdate" on all templated elements, and using an "update()" on an associated item.
-          Renderer.rerender(rootElement.querySelector(".character-stats"), {relatedItems});
+          //Renderer.rerender(rootElement.querySelector(".character-stats"), {relatedItems});
           let listElements = characterArtifacts.querySelectorAll(".list[data-filter]");
           for(let listElement of listElements)
             Renderer.sortItems(listElement);

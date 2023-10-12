@@ -1658,10 +1658,28 @@ export default {
         "rarity": 4,
         "baseATK": 44,
         "stat": "enerRech_",
-        "passive": "Within 6s after Normal or Charged Attacks hit an opponent, Normal Attack DMG will be increased by <b>8<\/b>~<b>?<\/b>% and Charged Attack DMG will be increased by <b>6<\/b>~<b>?<\/b>%. Max 3 stacks. This effect can be triggered once every 0.3s.",
-        "refinementData": [],
+        "passive": "Within 6s after Normal or Charged Attacks hit an opponent, Normal Attack DMG will be increased by @0% and Charged Attack DMG will be increased by @1%. Max 3 stacks. This effect can be triggered once every 0.3s.",
+        "refinementData": [
+            {
+                "1": 8,
+                "2": 10,
+                "3": 12,
+                "4": 14,
+                "5": 16
+            },
+            {
+                "1": 6,
+                "2": 7.5,
+                "3": 9,
+                "4": 10.5,
+                "5": 12
+            }
+        ],
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Ballad_of_the_Boundless_Blue",
-        "imgs": [],
+        "imgs": [
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b5\/Weapon_Ballad_of_the_Boundless_Blue.png",
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1d\/Weapon_Ballad_of_the_Boundless_Blue_2nd.png"
+        ],
         "matForgery": "Tooth",
         "matStrongEnemy": "Geovishaps",
         "matWeakEnemy": "Treasure Hoarders"

@@ -38,77 +38,90 @@
         </div>
     </div>
   
-    <hr/>
-    <h3>Artifact Sets</h3>
-    <select id="bestArtifactSets" class="form-control selectpicker" multiple="multiple">
-      {{#each relatedItems.artifactSets as |set setKey|}}
-        <option value="{{setKey}}" {{#iffave ../item setKey ../relatedItems.buildName}}selected{{/iffave}}>{{set.name}}</option>
-      {{/each}}
-    </select>
+    <div class="popup-subsection">
+      <h3 class="popup-subsection-header">Artifact Sets</h3>
+      <div class="popup-subsection-content">
+        <select id="bestArtifactSets" class="form-control selectpicker" data-container=".character-build" multiple="multiple">
+          {{#each relatedItems.artifactSets as |set setKey|}}
+            <option value="{{setKey}}" {{#iffave ../item setKey ../relatedItems.buildName}}selected{{/iffave}}>{{set.name}}</option>
+          {{/each}}
+        </select>
+      </div>
+    </div>
     
-    <hr/>
-    <h3 class="collapsed" data-bs-toggle="collapse" href="#artifactStatPriorities">Artifact Stat Priorities</h3>
-    <div id="artifactStatPriorities" class="collapse row">
-        <div class="col-6">
-            <h4>Substats</h4>
-          {{> renderCharacterBuildSlider . type="artifactSubstats" statId="hp" value=relatedItems.buildData.artifactSubstats.hp}}
-          {{> renderCharacterBuildSlider . type="artifactSubstats" statId="atk" value=relatedItems.buildData.artifactSubstats.atk}}
-          {{> renderCharacterBuildSlider . type="artifactSubstats" statId="def" value=relatedItems.buildData.artifactSubstats.def}}
-          {{> renderCharacterBuildSlider . type="artifactSubstats" statId="hp_" value=relatedItems.buildData.artifactSubstats.hp_}}
-          {{> renderCharacterBuildSlider . type="artifactSubstats" statId="atk_" value=relatedItems.buildData.artifactSubstats.atk_}}
-          {{> renderCharacterBuildSlider . type="artifactSubstats" statId="def_" value=relatedItems.buildData.artifactSubstats.def_}}
-          {{> renderCharacterBuildSlider . type="artifactSubstats" statId="eleMas" value=relatedItems.buildData.artifactSubstats.eleMas}}
-          {{> renderCharacterBuildSlider . type="artifactSubstats" statId="enerRech_" value=relatedItems.buildData.artifactSubstats.enerRech_}}
-          {{> renderCharacterBuildSlider . type="artifactSubstats" statId="critRate_" value=relatedItems.buildData.artifactSubstats.critRate_}}
-          {{> renderCharacterBuildSlider . type="artifactSubstats" statId="critDMG_" value=relatedItems.buildData.artifactSubstats.critDMG_}}
-            <h4>Sands Stats</h4>
-          {{> renderCharacterBuildSlider . type="sandsStat" statId="hp_" value=relatedItems.buildData.sandsStat.hp_}}
-          {{> renderCharacterBuildSlider . type="sandsStat" statId="atk_" value=relatedItems.buildData.sandsStat.atk_}}
-          {{> renderCharacterBuildSlider . type="sandsStat" statId="def_" value=relatedItems.buildData.sandsStat.def_}}
-          {{> renderCharacterBuildSlider . type="sandsStat" statId="eleMas" value=relatedItems.buildData.sandsStat.eleMas}}
-          {{> renderCharacterBuildSlider . type="sandsStat" statId="enerRech_" value=relatedItems.buildData.sandsStat.enerRech_}}
+    <div class="popup-subsection">
+      <h3 class="collapsed popup-subsection-header" data-bs-toggle="collapse" href="#artifactStatPriorities">Artifact Stat Priorities</h3>
+      <div id="artifactStatPriorities" class="collapse popup-subsection-content">
+        <div class="row">
+            <div class="col-6">
+                <h4>Substats</h4>
+              {{> renderCharacterBuildSlider . type="artifactSubstats" statId="hp" value=relatedItems.buildData.artifactSubstats.hp}}
+              {{> renderCharacterBuildSlider . type="artifactSubstats" statId="atk" value=relatedItems.buildData.artifactSubstats.atk}}
+              {{> renderCharacterBuildSlider . type="artifactSubstats" statId="def" value=relatedItems.buildData.artifactSubstats.def}}
+              {{> renderCharacterBuildSlider . type="artifactSubstats" statId="hp_" value=relatedItems.buildData.artifactSubstats.hp_}}
+              {{> renderCharacterBuildSlider . type="artifactSubstats" statId="atk_" value=relatedItems.buildData.artifactSubstats.atk_}}
+              {{> renderCharacterBuildSlider . type="artifactSubstats" statId="def_" value=relatedItems.buildData.artifactSubstats.def_}}
+              {{> renderCharacterBuildSlider . type="artifactSubstats" statId="eleMas" value=relatedItems.buildData.artifactSubstats.eleMas}}
+              {{> renderCharacterBuildSlider . type="artifactSubstats" statId="enerRech_" value=relatedItems.buildData.artifactSubstats.enerRech_}}
+              {{> renderCharacterBuildSlider . type="artifactSubstats" statId="critRate_" value=relatedItems.buildData.artifactSubstats.critRate_}}
+              {{> renderCharacterBuildSlider . type="artifactSubstats" statId="critDMG_" value=relatedItems.buildData.artifactSubstats.critDMG_}}
+                <h4>Sands Stats</h4>
+              {{> renderCharacterBuildSlider . type="sandsStat" statId="hp_" value=relatedItems.buildData.sandsStat.hp_}}
+              {{> renderCharacterBuildSlider . type="sandsStat" statId="atk_" value=relatedItems.buildData.sandsStat.atk_}}
+              {{> renderCharacterBuildSlider . type="sandsStat" statId="def_" value=relatedItems.buildData.sandsStat.def_}}
+              {{> renderCharacterBuildSlider . type="sandsStat" statId="eleMas" value=relatedItems.buildData.sandsStat.eleMas}}
+              {{> renderCharacterBuildSlider . type="sandsStat" statId="enerRech_" value=relatedItems.buildData.sandsStat.enerRech_}}
+            </div>
+            <div class="col-6">
+                <h4>Goblet Stats</h4>
+              {{> renderCharacterBuildSlider . type="gobletStat" statId="hp_" value=relatedItems.buildData.gobletStat.hp_}}
+              {{> renderCharacterBuildSlider . type="gobletStat" statId="atk_" value=relatedItems.buildData.gobletStat.atk_}}
+              {{> renderCharacterBuildSlider . type="gobletStat" statId="def_" value=relatedItems.buildData.gobletStat.def_}}
+              {{> renderCharacterBuildSlider . type="gobletStat" statId="eleMas" value=relatedItems.buildData.gobletStat.eleMas}}
+              {{> renderCharacterBuildSlider . type="gobletStat" statId=(concat (lower (getProperty item "element")) "_dmg_") value=(lookup relatedItems.buildData.gobletStat (concat (lower (getProperty item "element")) "_dmg_"))}}
+              {{> renderCharacterBuildSlider . type="gobletStat" statId="physical_dmg_" value=relatedItems.buildData.gobletStat.physical_dmg_}}
+                <h4>Circlet Stats</h4>
+              {{> renderCharacterBuildSlider . type="circletStat" statId="hp_" value=relatedItems.buildData.circletStat.hp_}}
+              {{> renderCharacterBuildSlider . type="circletStat" statId="atk_" value=relatedItems.buildData.circletStat.atk_}}
+              {{> renderCharacterBuildSlider . type="circletStat" statId="def_" value=relatedItems.buildData.circletStat.def_}}
+              {{> renderCharacterBuildSlider . type="circletStat" statId="eleMas" value=relatedItems.buildData.circletStat.eleMas}}
+              {{> renderCharacterBuildSlider . type="circletStat" statId="critRate_" value=relatedItems.buildData.circletStat.critRate_}}
+              {{> renderCharacterBuildSlider . type="circletStat" statId="critDMG_" value=relatedItems.buildData.circletStat.critDMG_}}
+              {{> renderCharacterBuildSlider . type="circletStat" statId="heal_" value=relatedItems.buildData.circletStat.heal_}}
+            </div>
         </div>
-        <div class="col-6">
-            <h4>Goblet Stats</h4>
-          {{> renderCharacterBuildSlider . type="gobletStat" statId="hp_" value=relatedItems.buildData.gobletStat.hp_}}
-          {{> renderCharacterBuildSlider . type="gobletStat" statId="atk_" value=relatedItems.buildData.gobletStat.atk_}}
-          {{> renderCharacterBuildSlider . type="gobletStat" statId="def_" value=relatedItems.buildData.gobletStat.def_}}
-          {{> renderCharacterBuildSlider . type="gobletStat" statId="eleMas" value=relatedItems.buildData.gobletStat.eleMas}}
-          {{> renderCharacterBuildSlider . type="gobletStat" statId=(concat (lower (getProperty item "element")) "_dmg_") value=(lookup relatedItems.buildData.gobletStat (concat (lower (getProperty item "element")) "_dmg_"))}}
-          {{> renderCharacterBuildSlider . type="gobletStat" statId="physical_dmg_" value=relatedItems.buildData.gobletStat.physical_dmg_}}
-            <h4>Circlet Stats</h4>
-          {{> renderCharacterBuildSlider . type="circletStat" statId="hp_" value=relatedItems.buildData.circletStat.hp_}}
-          {{> renderCharacterBuildSlider . type="circletStat" statId="atk_" value=relatedItems.buildData.circletStat.atk_}}
-          {{> renderCharacterBuildSlider . type="circletStat" statId="def_" value=relatedItems.buildData.circletStat.def_}}
-          {{> renderCharacterBuildSlider . type="circletStat" statId="eleMas" value=relatedItems.buildData.circletStat.eleMas}}
-          {{> renderCharacterBuildSlider . type="circletStat" statId="critRate_" value=relatedItems.buildData.circletStat.critRate_}}
-          {{> renderCharacterBuildSlider . type="circletStat" statId="critDMG_" value=relatedItems.buildData.circletStat.critDMG_}}
-          {{> renderCharacterBuildSlider . type="circletStat" statId="heal_" value=relatedItems.buildData.circletStat.heal_}}
-            <div class="row mt-2 gx-1">
-                <div class="col-1 align-self-center">
-                  <input class="form-check form-check-input" type="checkbox" id="useTargets" value="targets" title="Toggle whether to respect the following stat targets when sorting the artifact lists below. Note that this setting is ignored on the main artifacts listing page." {{#if relatedItems.buildData.useTargets.critRatio}}checked="checked"{{/if}}/>
+        <div class="row mt-2">
+            <h4 class="col-4">Options</h4>
+            <div class="col-4" title="When enabled: The below stat targets will factor in various effects that can modify your stats, which you must configure in the above 'Current Stats' section.">
+              <input class="form-check form-check-input target-options" type="checkbox" value="modifiers" {{#if relatedItems.buildData.useTargets.modifiers}}checked="checked"{{/if}}/>
+              Respect Modifiers
+            </div>
+            <div class="col-4" title="When enabled: If a piece won't get you to your minimum ER%, its rank will be penalized based on how low your ER% is with it. If a piece would put you over your maximum ER%, all excess ER% that it provides past your maximum will be ignored.">
+                <input class="form-check form-check-input target-options" type="checkbox" value="enerRech_" {{#if relatedItems.buildData.useTargets.enerRech_}}checked="checked"{{/if}}/>
+                <div class="input-group">
+                    <label class="input-group-text pe-2" for="characterMinER">ER% Target:</label>
+                    <input id="characterMinER" class="stat-target form-control pe-1" type="number" min="100" max="999" value="{{relatedItems.buildData.minER}}"/>
+                    <label class="input-group-text px-1" for="characterMaxER">to</label>
+                    <input id="characterMaxER" class="stat-target form-control ps-1" type="number" min="100" max="999" value="{{relatedItems.buildData.maxER}}"/>
                 </div>
-                <div class="col-6" title="If a piece won't get you to your minimum ER%, its rank will be penalized based on how low your ER% is with it. If a piece would put you over your maximum ER%, all excess ER% that it provides past your maximum will be ignored.">
-                    <div class="input-group">
-                        <label class="input-group-text pe-2" for="characterMinER">ER% Target:</label>
-                        <input id="characterMinER" class="stat-target form-control pe-1" type="number" min="100" max="999" value="{{relatedItems.buildData.minER}}"/>
-                        <label class="input-group-text px-1" for="characterMaxER">to</label>
-                        <input id="characterMaxER" class="stat-target form-control ps-1" type="number" min="100" max="999" value="{{relatedItems.buildData.maxER}}"/>
-                    </div>
-                </div>
-                <div class="col-5">
-                    <div class="input-group">
-                        <label class="input-group-text pe-2" for="characterRatioCritRate" title="Your desired ratio for Crit Rate to Crit DMG. If enabled, pieces will have either their Crit Rate or Crit DMG score penalized based on how far off your Crit ratio will be from your target.">Crit Ratio:</label>
-                        <input id="characterRatioCritRate" class="stat-target form-control pe-1" type="number" title="Crit Rate" min="0" max="10" value="{{relatedItems.buildData.ratioCritRate}}"/>
-                        <label class="input-group-text px-1" for="characterRatioCritDMG">/</label>
-                        <input id="characterRatioCritDMG" class="stat-target form-control ps-1" type="number" title="Crit DMG" min="0" max="10" value="{{relatedItems.buildData.ratioCritDMG}}"/>
-                    </div>
+            </div>
+            <div class="col-4" title="If enabled: Your desired ratio for Crit Rate to Crit DMG. Pieces will have either their Crit Rate or Crit DMG score penalized based on how far off your Crit ratio will be from your target.">
+                <input class="form-check form-check-input target-options" type="checkbox" value="critRatio" {{#if relatedItems.buildData.useTargets.critRatio}}checked="checked"{{/if}}/>
+                <div class="input-group">
+                    <label class="input-group-text pe-2" for="characterRatioCritRate">Crit Ratio:</label>
+                    <input id="characterRatioCritRate" class="stat-target form-control pe-1" type="number" title="Crit Rate" min="0" max="10" value="{{relatedItems.buildData.ratioCritRate}}"/>
+                    <label class="input-group-text px-1" for="characterRatioCritDMG">/</label>
+                    <input id="characterRatioCritDMG" class="stat-target form-control ps-1" type="number" title="Crit DMG" min="0" max="10" value="{{relatedItems.buildData.ratioCritDMG}}"/>
                 </div>
             </div>
         </div>
+      </div>
     </div>
     
-    <hr/>
-    <h3>Best Artifacts That You Have</h3>
-  {{> renderCharacterArtifactLists . placeholder=1}}
+    <div class="popup-subsection">
+        <h3 class="collapsed popup-subsection-header" data-bs-toggle="collapse" href="#characterArtifactLists">Best Artifacts That You Have</h3>
+        <div id="characterArtifactLists" class="collapse popup-subsection-content">
+      {{> renderCharacterArtifactLists . placeholder=1}}
+        </div>
+    </div>
 </div>

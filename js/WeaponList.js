@@ -248,6 +248,7 @@ export default class WeaponList extends GenshinList
       dynamic: true,
       dependencies: item => [
         {item, field:"lock"},
+        {item, field:"location"},
       ],
       title: item => (item.lock || item.location) ? "Unlock/unequip the weapon before deleting it." : "Delete this weapon from the list.",
       button: item => (item.lock || item.location) ? {icon: "fa-solid fa-trash-can"} : {
