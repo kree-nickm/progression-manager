@@ -1,22 +1,19 @@
 <div class="character-stats popup-section" data-template="renderCharacterStats" data-uuid="{{uuid item}}">
     <h3 class="popup-section-header collapsed" data-bs-toggle="collapse" href="#characterStats" title="All values should be accurate, though some may differ from what you see in game very slightly due to rounding errors. However, most characters and weapons still do not have their passives/cons factored in; you can see what bonusus are being applied in the Modifiers section, as well as toggle temporary/conditional bonuses on or off. Additionally, some numbers, especially preview numbers, may not update after every change you make. That said, changing artifact previews will force the entire stat section to update.">Current Stats (Work-in-Progress)</h3>
     <div id="characterStats" class="collapse popup-section-content">
-        <div class="input-group" title="If you have a team set up with this character, you can select it here to see the team-wide modifiers provided by other members of the team.">
-            <label class="input-group-text" for="activeTeam">Use Team:</label>
-            <select class="form-select" id="activeTeam">
-                <option value=""></option>
-              {{#each (getProperty item "teams")}}
-                <option value="{{uuid .}}"{{#ifeq ../item.activeTeam .}} selected="selected"{{/ifeq}}>{{name}}</option>
-              {{/each}}
-            </select>
-        </div>
-        <div class="row gx-1 mt-2">
-            <div class="col-3">Stat/Attack/Reaction/Etc.</div>
-            <div class="col-3" title="Damage values in parinthesis are critical hits.">Current Values</div>
-            <div class="col-1" title="Total average damage/healing/etc. dealt by the attack, factoring in all hits and crit chance.">Final</div>
-            <div class="col-3" title="Damage values in parinthesis are critical hits.">Preview Values</div>
-            <div class="col-1" title="Total average damage/healing/etc. dealt by the attack, factoring in all hits and crit chance.">Final</div>
-            <div class="col-1" title="">Delta</div>
+        <div class="row">
+            <div class="col-3" title="If you have a team set up with this character, you can select it here to see the team-wide modifiers provided by other members of the team.">
+              {{> renderItemField item=item field="activeTeam" wrapper="span"}}
+            </div>
+            <div class="col-3">
+              {{> renderItemField item=item field="teammate" params=(array 0) wrapper="span"}}
+            </div>
+            <div class="col-3">
+              {{> renderItemField item=item field="teammate" params=(array 1) wrapper="span"}}
+            </div>
+            <div class="col-3">
+              {{> renderItemField item=item field="teammate" params=(array 2) wrapper="span"}}
+            </div>
         </div>
         
 <!--    MAIN STATS    -->

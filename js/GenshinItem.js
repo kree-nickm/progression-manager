@@ -1,4 +1,7 @@
+import { handlebars } from "./Renderer.js";
 import UIItem from "./UIItem.js";
+
+handlebars.registerHelper("statText", (id, options) => options.hash?.percent ? (GenshinItem.isStatPercent(id) ? "%" : "") : options.hash?.shorthand ? GenshinItem.getStatShorthand(id) : GenshinItem.getStatFull(id));
 
 export default class GenshinItem extends UIItem {
   static goodProperties = [];
@@ -41,6 +44,15 @@ export default class GenshinItem extends UIItem {
     {id:"dendro_res_", shorthand:"DendroRES", full:"Dendro RES", percent:true},
     {id:"geo_res_", shorthand:"GeoRES", full:"Geo RES", percent:true},
     {id:"physical_res_", shorthand:"PhysRES", full:"Physical RES", percent:true},
+    {id:"enemy_def_", shorthand:"DEFShred", full:"DEF Shred", percent:true},
+    {id:"enemy_anemo_res_", shorthand:"AnemoShred", full:"Anemo RES Shred", percent:true},
+    {id:"enemy_hydro_res_", shorthand:"HydroShred", full:"Hydro RES Shred", percent:true},
+    {id:"enemy_cryo_res_", shorthand:"CryoShred", full:"Cryo RES Shred", percent:true},
+    {id:"enemy_pyro_res_", shorthand:"PyroShred", full:"Pyro RES Shred", percent:true},
+    {id:"enemy_electro_res_", shorthand:"ElectroShred", full:"Electro RES Shred", percent:true},
+    {id:"enemy_dendro_res_", shorthand:"DendroShred", full:"Dendro RES Shred", percent:true},
+    {id:"enemy_geo_res_", shorthand:"GeoShred", full:"Geo RES Shred", percent:true},
+    {id:"enemy_physical_res_", shorthand:"PhysShred", full:"Physical RES Shred", percent:true},
     {id:"dmg_", shorthand:"DMG%", full:"All DMG Bonus", percent:true},
     {id:"spd_", shorthand:"ATKSPD", full:"ATK SPD", percent:true},
     {id:"normal_dmg_", shorthand:"Normal%", full:"Normal Attack DMG Bonus", percent:true},

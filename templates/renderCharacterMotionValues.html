@@ -1,7 +1,14 @@
 <div id="characterStats.{{talent}}" class="collapse show stat-list popup-subsection-content" data-template="renderCharacterMotionValues" data-uuid="{{uuid item}}" data-strings="talent:{{talent}}">
+    <div class="row gx-1 small text-decoration-underline">
+        <div class="col-3" title="These should match the list in-game when you: select character -> click Talents -> select talent -> click Skill Attributes. Additional lines will be added for any reactions the character is capable of while using that ability.">Motion Value</div>
+        <div class="col-3" title="Each calculated numerical value of each motion value, with critical hits given in parinthesis. Where applicable, these numbers should match the floating numbers in-game when you hit with an ability.">Current Values</div>
+        <div class="col-1" title="Final calculated average damage/healing/etc of this motion value, if applicable, factoring in all hits and crit chance.">Calculated</div>
+        <div class="col-3" title="If you've previewed any artifacts or changed any fields in the 'Preview Changes' section below, these values reflect that. See the tooltip of the 'Current Values' column for more info.">Previewed Values</div>
+        <div class="col-1" title="Final calculated average damage/healing/etc of this motion value, if applicable, factoring in all hits and crit chance. Using any previewed gear and stats.">Calculated</div>
+        <div class="col-1" title="Percentage change in this motion value if you switch from current to previewed gear/stats.">Delta</div>
+    </div>
   {{#each (getMotionValues item talent)}}
     <div class="row gx-1">
-      <!--<div class="col-1"><input data-talent="{{../talent}}" data-key="{{rawKey}}" class="rotation-count form-control form-control-sm" type="number" value="0"/></div>-->
       <div class="col-3">{{> renderItemField item=../item field="mv" params=(array ../talent rawKey 0 -1) wrapper="span"}}</div>
       <div class="col-3">{{> renderItemField item=../item field="mv" params=(array ../talent rawKey) wrapper="span"}}</div>
       <div class="col-1">{{> renderItemField item=../item field="mv" params=(array ../talent rawKey 0 1) wrapper="span"}}</div>

@@ -1,4 +1,10 @@
 <div id="characterStats.Reactions" class="collapse show stat-list popup-subsection-content" data-template="renderCharacterReactions" data-uuid="{{uuid item}}">
+  <div class="row gx-1 small text-decoration-underline">
+      <div class="col-3" title="">Reaction</div>
+      <div class="col-3" title="">Current Values</div>
+      <div class="col-3" title="If you've previewed any artifacts or changed any fields in the 'Preview Changes' section below, these values reflect that.">Previewed Values</div>
+      <div class="col-1" title="Percentage change in this reaction if you switch from current to previewed gear/stats.">Delta</div>
+  </div>
   {{#ifeq (getProperty item "element") "Anemo"}}
     <div class="row gx-1">
       <div class="col-3">Cryo Swirl DMG</div>

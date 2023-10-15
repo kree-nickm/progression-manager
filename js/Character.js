@@ -1550,10 +1550,6 @@ export default class Character extends GenshinItem
   
   _addStatsEventHandlers(statSection)
   {
-    let activeTeam = statSection.querySelector("#activeTeam");
-    if(activeTeam && !activeTeam.onchange)
-      activeTeam.onchange = event => this.update("activeTeam", event.target.value ? Renderer.controllers.get(event.target.value) : null, "replace");
-    
     let procInputs = statSection.querySelectorAll("input.proc-input");
     for(let procInput of procInputs)
     {
@@ -1562,6 +1558,8 @@ export default class Character extends GenshinItem
         procInput.onchange = event => {
           this.clearMemory("stats");
           this.clearMemory("motionValues");
+          console.log(event.target);
+          let value = event.target.type=="checkbox" ? Number(event.target.checked) : parseInt(event.target.value);
           if(event.target.dataset?.owner)
           {
             if(event.target.dataset?.owner == "Team")
@@ -1569,7 +1567,7 @@ export default class Character extends GenshinItem
               let mod = Team.statModifiers.find(mod => mod.id == event.target.id);
               if(mod)
               {
-                mod.active = parseInt(event.target.value);
+                mod.active = value;
                 this.activeTeam.update("statModifiers", null, "notify", {mvChange:mod.mvChange});
               }
             }
@@ -1579,7 +1577,7 @@ export default class Character extends GenshinItem
               let mod = character?.statModifiers.find(mod => mod.id == event.target.id);
               if(mod)
               {
-                mod.active = parseInt(event.target.value);
+                mod.active = value;
                 character.update("statModifiers", null, "notify", {mvChange:mod.mvChange});
                 this.update("statModifiers", null, "notify", {mvChange:mod.mvChange});
               }
@@ -1590,7 +1588,7 @@ export default class Character extends GenshinItem
             let mod = this.statModifiers.find(mod => mod.id == event.target.id);
             if(mod)
             {
-              mod.active = parseInt(event.target.value);
+              mod.active = value;
               this.update("statModifiers", null, "notify", {mvChange:mod.mvChange});
             }
           }

@@ -642,7 +642,9 @@ class Renderer
     fieldElement.editValue = content.edit.value ?? content.value ?? "";
     fieldElement.editTarget = content.edit.target;
     fieldElement.editFunc = content.edit.func;
+    fieldElement.editValueFormat = content.edit.valueFormat;
     let editElement = fieldElement.querySelector(".edit-element");
+    // TODO: Move this to contentToHTML
     if(!editElement)
     {
       // Create the input element for editing.
@@ -683,6 +685,9 @@ class Renderer
           else
             option.innerHTML = opt;
         }
+        for(let opt of editElement.options)
+          if(opt.innerHTML == fieldElement.editValue)
+            editElement.selectedIndex = opt.index;
       }
       else
       {
@@ -742,12 +747,8 @@ class Renderer
           if(content.edit.type == "select")
           {
             for(let opt of editElement.options)
-            {
               if(opt.innerHTML == fieldElement.editValue)
-              {
                 editElement.selectedIndex = opt.index;
-              }
-            }
           }
           else
           {
@@ -757,6 +758,8 @@ class Renderer
           editElement.focus();
         };
         fieldElement.classList.add("editable");
+        if(content.edit.alwaysShow)
+          fieldElement.classList.add("editing");
         if(window.DEBUGLOG.addFieldEventListeners) console.debug(`Added onclick method to field element.`, fieldElement.onclick);
       }
       else
@@ -771,14 +774,17 @@ class Renderer
           if((event.type == "keydown" && event.which != 13 && event.which != 27) || !fieldElement.classList.contains("editing"))
             return true;
           event.stopPropagation();
-          fieldElement.classList.remove("editing");
+          if(!content.edit.alwaysShow)
+            fieldElement.classList.remove("editing");
           if(event.type != "keydown" || event.which != 27)
           {
             let val = (editElement.type == "number" ? parseFloat(editElement.value) : editElement.value);
+            if(fieldElement.editValueFormat == "uuid")
+              val = Renderer.controllers.get(val);
             if(!isNaN(val) || editElement.type != "number")
             {
               if(fieldElement.editTarget)
-                fieldElement.editTarget.item.update(fieldElement.editTarget.field, val);
+                fieldElement.editTarget.item.update(fieldElement.editTarget.field, val, "replace");
               else if(fieldElement.editFunc)
                 fieldElement.editFunc(val);
               else

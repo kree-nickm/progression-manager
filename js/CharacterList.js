@@ -755,6 +755,45 @@ export default class CharacterList extends GenshinList
         src: item.image,
       }),
     });
+    
+    let activeTeam = this.display.addField("activeTeam", {
+      label: "Active Team",
+      tags: ["detailsOnly"],
+      dynamic: true,
+      edit: item => ({
+        target: {item, field:"activeTeam"},
+        type: "select",
+        list: item.teams,
+        value: item.activeTeam?.name ?? "",
+        valueProperty: "uuid",
+        valueFormat: "uuid",
+        displayProperty: "name",
+        alwaysShow: true,
+      }),
+      dependencies: item => [
+      ],
+    });
+    
+    let teammate = this.display.addField("teammate", {
+      label: "Teammate",
+      tags: ["detailsOnly"],
+      dynamic: true,
+      value: (item,index) => {
+        let teammates = item.activeTeam?.characters.filter(teammate => teammate != item) ?? [];
+        if(teammates[index])
+        {
+          return {
+            value: teammates[index].name,
+            popup: teammates[index],
+          };
+        }
+        else
+          return "";
+      },
+      dependencies: item => [
+        {item:item, field:"activeTeam"},
+      ],
+    });
   }
   
   addTraveler()

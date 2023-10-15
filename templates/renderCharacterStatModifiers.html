@@ -3,7 +3,11 @@
     <div class="row gx-1">
       {{#if isProc}}
         <div class="col-1">
-          <input id="{{id}}" class="proc-input form-control" type="number" value="{{active}}" min="0" max="{{maxStacks}}" title="Number of stacks active. For effects without multiple stacks: 1 means it's active; 0 means it's inactive."{{#ifeq ../item characterSource}}{{else}} data-owner="{{#ifeq type 'resonance'}}Team{{else}}{{uuid characterSource}}{{/ifeq}}"{{/ifeq}}/>
+          {{#ifeq maxStacks 1}}
+            <input id="{{id}}" class="proc-input" type="checkbox" {{#if active}}checked="checked"{{/if}} {{#ifeq ../item characterSource}}{{else}}data-owner="{{#ifeq type 'resonance'}}Team{{else}}{{uuid characterSource}}{{/ifeq}}"{{/ifeq}}/>
+          {{else}}
+            <input id="{{id}}" class="proc-input form-control" type="number" value="{{active}}" min="0" max="{{maxStacks}}" title="Number of stacks active." {{#ifeq ../item characterSource}}{{else}}data-owner="{{#ifeq type 'resonance'}}Team{{else}}{{uuid characterSource}}{{/ifeq}}"{{/ifeq}}/>
+          {{/ifeq}}
         </div>
       {{else}}
         <div class="col-1">Passive</div>

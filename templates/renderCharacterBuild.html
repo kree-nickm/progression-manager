@@ -90,15 +90,23 @@
               {{> renderCharacterBuildSlider . type="circletStat" statId="heal_" value=relatedItems.buildData.circletStat.heal_}}
             </div>
         </div>
-        <div class="row mt-2">
+        <div class="row mt-2 g-2">
             <h4 class="col-4">Options</h4>
-            <div class="col-4" title="When enabled: The below stat targets will factor in various effects that can modify your stats, which you must configure in the above 'Current Stats' section.">
-              <input class="form-check form-check-input target-options" type="checkbox" value="modifiers" {{#if relatedItems.buildData.useTargets.modifiers}}checked="checked"{{/if}}/>
-              Respect Modifiers
+            <div class="col-4" title="When enabled: The stat targets in this 'Options' section will factor in various effects that can modify your stats, which you must configure in the above 'Current Stats' section.">
+                <div class="input-group">
+                    <div class="input-group-text bg-secondary-subtle">
+                      <input id="modifiers" class="form-check-input target-options" type="checkbox" value="modifiers" {{#if relatedItems.buildData.useTargets.modifiers}}checked="checked"{{/if}}/>
+                    </div>
+                    <label class="input-group-text" for="modifiers">Respect Modifiers</label>
+                </div>
+            </div>
+            <div class="col-4"><!-- placeholder -->
             </div>
             <div class="col-4" title="When enabled: If a piece won't get you to your minimum ER%, its rank will be penalized based on how low your ER% is with it. If a piece would put you over your maximum ER%, all excess ER% that it provides past your maximum will be ignored.">
-                <input class="form-check form-check-input target-options" type="checkbox" value="enerRech_" {{#if relatedItems.buildData.useTargets.enerRech_}}checked="checked"{{/if}}/>
                 <div class="input-group">
+                    <div class="input-group-text bg-secondary-subtle">
+                      <input class="form-check-input target-options" type="checkbox" value="enerRech_" {{#if relatedItems.buildData.useTargets.enerRech_}}checked="checked"{{/if}}/>
+                    </div>
                     <label class="input-group-text pe-2" for="characterMinER">ER% Target:</label>
                     <input id="characterMinER" class="stat-target form-control pe-1" type="number" min="100" max="999" value="{{relatedItems.buildData.minER}}"/>
                     <label class="input-group-text px-1" for="characterMaxER">to</label>
@@ -106,8 +114,10 @@
                 </div>
             </div>
             <div class="col-4" title="If enabled: Your desired ratio for Crit Rate to Crit DMG. Pieces will have either their Crit Rate or Crit DMG score penalized based on how far off your Crit ratio will be from your target.">
-                <input class="form-check form-check-input target-options" type="checkbox" value="critRatio" {{#if relatedItems.buildData.useTargets.critRatio}}checked="checked"{{/if}}/>
                 <div class="input-group">
+                    <div class="input-group-text bg-secondary-subtle">
+                      <input class="form-check-input target-options" type="checkbox" value="critRatio" {{#if relatedItems.buildData.useTargets.critRatio}}checked="checked"{{/if}}/>
+                    </div>
                     <label class="input-group-text pe-2" for="characterRatioCritRate">Crit Ratio:</label>
                     <input id="characterRatioCritRate" class="stat-target form-control pe-1" type="number" title="Crit Rate" min="0" max="10" value="{{relatedItems.buildData.ratioCritRate}}"/>
                     <label class="input-group-text px-1" for="characterRatioCritDMG">/</label>

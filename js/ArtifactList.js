@@ -258,6 +258,7 @@ export default class ArtifactList extends GenshinList
     {
       let substatRatingFields = this.display.addField(statId+"Rating", {
         group: substatRatingGroup,
+        tags: ["detailsOnly"],
         label: Artifact.getStatShorthand(statId),
         sort: {func: (o,a,b) => o * (b.getSubstatRating(statId).sum - a.getSubstatRating(statId).sum)},
         columnClasses: ['stat-rating-'+statId],
@@ -370,7 +371,7 @@ export default class ArtifactList extends GenshinList
         {item:item, field:"location"},
       ],
       title: item => (item.lock || item.location) ? "Unlock/unequip the artifact before deleting it." : "Delete this artifact from the list.",
-      button: item => (item.lock || item.location) ? {icon: "fa-solid fa-trash-can"} : {
+      button: (item,alwaysShow=1) => (item.lock || item.location) ? (alwaysShow ? {icon: "fa-solid fa-trash-can"} : undefined) : {
         icon: "fa-solid fa-trash-can",
         action: event => {
           event.stopPropagation();
