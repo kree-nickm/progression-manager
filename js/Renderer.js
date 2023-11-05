@@ -196,7 +196,7 @@ class Renderer
         }
         else
         {
-          console.warn(`Renderer.queueUpdate(1): Cannot update disconnected element:`, element);
+          if(window.DEBUGLOG.queueUpdate) console.warn(`Renderer.queueUpdate(1): Cannot update disconnected element:`, element);
         }
       });
       Renderer._needsUpdate.clear();

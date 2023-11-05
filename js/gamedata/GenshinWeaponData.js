@@ -244,6 +244,52 @@ export default {
         ],
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Calamity_Queller"
     },
+    "CashflowSupervision": {
+        "name": "Cashflow Supervision",
+        "type": "Catalyst",
+        "rarity": 5,
+        "baseATK": 48,
+        "stat": "critRate_",
+        "passive": "ATK is increased by @0%. When current HP increases or decreases, Normal Attack DMG will be increased by @1% and Charged Attack DMG will be increased by @2% for 4s. Max 3 stacks. This effect can be triggered once every 0.3s. When the wielder has 3 stacks, ATK SPD will be increased by @3%.",
+        "refinementData": [
+            {
+                "1": 16,
+                "2": 20,
+                "3": 24,
+                "4": 28,
+                "5": 32
+            },
+            {
+                "1": 16,
+                "2": 20,
+                "3": 24,
+                "4": 28,
+                "5": 32
+            },
+            {
+                "1": 14,
+                "2": 17.5,
+                "3": 21,
+                "4": 24.5,
+                "5": 28
+            },
+            {
+                "1": 8,
+                "2": 10,
+                "3": 12,
+                "4": 14,
+                "5": 16
+            }
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Cashflow_Supervision",
+        "imgs": [
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f2\/Weapon_Cashflow_Supervision.png",
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/45\/Weapon_Cashflow_Supervision_2nd.png"
+        ],
+        "matForgery": "Chalice",
+        "matStrongEnemy": "Fatui Operatives",
+        "matWeakEnemy": "Fontemer Aberrants"
+    },
     "ElegyForTheEnd": {
         "name": "Elegy for the End",
         "rarity": 5,
@@ -3807,6 +3853,7 @@ export default {
                 "5": 80
             }
         ],
+        "code": ["proc",[["stat",["hp_","@0"]],["stat",["eleMas","@1"]]],"After 5s off field (10s)"],
         "matForgery": "Pillar",
         "matStrongEnemy": "Fatui Cicin Mages",
         "matWeakEnemy": "Samachurls",
@@ -4097,6 +4144,13 @@ export default {
         "type": "Claymore",
         "passive": "ATK will be increased by 16% for 15s after being affected by Pyro. This effect can be triggered once every 12s. All Elemental DMG Bonus will be increased by @0% for 15s after being affected by Hydro, Cryo, Electro, or Dendro. This effect can be triggered once every 12s.",
         "refinementData": [
+            {
+                "1": 16,
+                "2": 20,
+                "3": 24,
+                "4": 28,
+                "5": 32
+            },
             {
                 "1": 12,
                 "2": 15,

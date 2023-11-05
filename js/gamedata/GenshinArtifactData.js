@@ -997,17 +997,11 @@ export default {
             [
               "proc",
               [
-                  "atk_",
-                  9
-              ],"After Elemental Skill hit (7s)",
+                ["stat",["atk_",9]],
+                ["stat",["physical_dmg_",["stacks",0,25]]]
+              ],
+              "After Elemental Skill hit (7s)",
               2
-            ],
-            [
-              "proc",
-              [
-                  "physical_dmg_",
-                  25
-              ],"At 2 stacks"
             ]
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e7\/Item_Stainless_Bloom.png",
@@ -1205,7 +1199,20 @@ export default {
                 18
             ]
         ],
-        "bonus4": "When Normal Attacks hit opponents, there is a 36% chance that it will trigger Valley Rite, which will increase Normal Attack DMG by 70% of ATK.This effect will be dispelled 0.05s after a Normal Attack deals DMG.If a Normal Attack fails to trigger Valley Rite, the odds of it triggering the next time will increase by 20%.This trigger can occur once every 0.2s.",
+        "bonus4": "When Normal Attacks hit opponents, there is a 36% chance that it will trigger Valley Rite, which will increase Normal Attack DMG by 70% of ATK. This effect will be dispelled 0.05s after a Normal Attack deals DMG. If a Normal Attack fails to trigger Valley Rite, the odds of it triggering the next time will increase by 20%. This trigger can occur once every 0.2s.",
+        "bonus4code": [
+            "proc",
+            [
+                "editmv",["Normal Attack",
+                            [
+                                "1-Hit DMG (%)",
+                                "2-Hit DMG (%)",
+                                "3-Hit DMG (%)",
+                                "4-Hit DMG (%)",
+                                "5-Hit DMG (%)"
+                            ],"+base",["stat%",0.7,"atk"]]
+            ],"After Normal Attack hit (36% chance): \"Valley Rite\""
+        ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/64\/Item_Soulscent_Bloom.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/97\/Item_Jade_Leaf.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/03\/Item_Symbol_of_Felicitation.png",
@@ -1404,14 +1411,14 @@ export default {
                     "stat",
                     [
                         "atk_",
-                        8.3333333
+                        ["stacks",7,16,25]
                     ]
                 ],
                 [
                     "stat",
                     [
                         "hydro_dmg_",
-                        5
+                        ["stacks",4,9,15]
                     ]
                 ]
             ],"After Normal, Charged, or Plunging Attack, Elemental Skill, or Elemental Burst hit (8s): \"Mirrored Nymph\"",
@@ -1500,7 +1507,7 @@ export default {
                     "critRate_",
                     12
                 ]
-            ],"After HP increases or decreases",
+            ],"After HP increases or decreases (5s)",
             3
         ],
         "flowerImg": "https://static.wikia.nocookie.net/gensin-impact/images/8/8d/Item_Hunter's_Brooch.png",

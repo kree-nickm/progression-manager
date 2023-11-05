@@ -123,21 +123,21 @@ export default class Character extends GenshinItem
       
       // Inform those materials that this character uses them.
       for(let i in this.MaterialList.gem)
-        this.MaterialList.gem[i].addUser(this);
+        this.MaterialList.gem[i]?.addUser(this);
       
       for(let i in this.MaterialList.enemy)
-        this.MaterialList.enemy[i].addUser(this);
+        this.MaterialList.enemy[i]?.addUser(this);
       
       if(this.MaterialList.boss)
-        this.MaterialList.boss.addUser(this);
+        this.MaterialList.boss?.addUser(this);
       
-      this.MaterialList.flower.addUser(this);
+      this.MaterialList.flower?.addUser(this);
         
       for(let i in this.MaterialList.mastery)
-        this.MaterialList.mastery[i].addUser(this);
+        this.MaterialList.mastery[i]?.addUser(this);
       
-      this.MaterialList.trounce.addUser(this);
-      this.MaterialList.crown.addUser(this);
+      this.MaterialList.trounce?.addUser(this);
+      this.MaterialList.crown?.addUser(this);
     }
     else
     {
@@ -534,17 +534,17 @@ export default class Character extends GenshinItem
     if(this.ascension == 6)
       return false;
     else if(withCrafting)
-      return this.getMat('gem').getCraftCount() >= this.getMatCost('gem') &&
+      return this.getMat('gem')?.getCraftCount() >= this.getMatCost('gem') &&
         (!this.getMat('boss') || this.getMat('boss').getCraftCount() >= this.getMatCost('boss')) &&
-        this.getMat('flower').getCraftCount() >= this.getMatCost('flower') &&
-        this.getMat('enemy').getCraftCount() >= this.getMatCost('enemy') &&
-        this.getMat('mora').getCraftCount() >= this.getMatCost('mora');
+        this.getMat('flower')?.getCraftCount() >= this.getMatCost('flower') &&
+        this.getMat('enemy')?.getCraftCount() >= this.getMatCost('enemy') &&
+        this.getMat('mora')?.getCraftCount() >= this.getMatCost('mora');
     else
-      return this.getMat('gem').count >= this.getMatCost('gem') &&
+      return this.getMat('gem')?.count >= this.getMatCost('gem') &&
         (!this.getMat('boss') || this.getMat('boss').count >= this.getMatCost('boss')) &&
-        this.getMat('flower').count >= this.getMatCost('flower') &&
-        this.getMat('enemy').count >= this.getMatCost('enemy') &&
-        this.getMat('mora').count >= this.getMatCost('mora');
+        this.getMat('flower')?.count >= this.getMatCost('flower') &&
+        this.getMat('enemy')?.count >= this.getMatCost('enemy') &&
+        this.getMat('mora')?.count >= this.getMatCost('mora');
   }
   
   upTalent(talent, event)
@@ -568,17 +568,17 @@ export default class Character extends GenshinItem
     if(this.talent[talent] == 10)
       return false;
     else if(withCrafting)
-      return this.getTalentMat('mastery',talent).getCraftCount() >= this.getTalent(talent).matDomainCount &&
-        this.getTalentMat('enemy',talent).getCraftCount() >= this.getTalent(talent).matEnemyCount &&
-        this.MaterialList.trounce.getCraftCount() >= this.getTalent(talent).matTrounceCount &&
-        this.MaterialList.crown.getCraftCount() >= this.getTalent(talent).matCrownCount &&
-        this.MaterialList.mora.getCraftCount() >= this.getTalent(talent).matMoraCount;
+      return this.getTalentMat('mastery',talent)?.getCraftCount() >= this.getTalent(talent).matDomainCount &&
+        this.getTalentMat('enemy',talent)?.getCraftCount() >= this.getTalent(talent).matEnemyCount &&
+        this.MaterialList.trounce?.getCraftCount() >= this.getTalent(talent).matTrounceCount &&
+        this.MaterialList.crown?.getCraftCount() >= this.getTalent(talent).matCrownCount &&
+        this.MaterialList.mora?.getCraftCount() >= this.getTalent(talent).matMoraCount;
     else
-      return this.getTalentMat('mastery',talent).count >= this.getTalent(talent).matDomainCount &&
-        this.getTalentMat('enemy',talent).count >= this.getTalent(talent).matEnemyCount &&
-        this.MaterialList.trounce.count >= this.getTalent(talent).matTrounceCount &&
-        this.MaterialList.crown.count >= this.getTalent(talent).matCrownCount &&
-        this.MaterialList.mora.count >= this.getTalent(talent).matMoraCount;
+      return this.getTalentMat('mastery',talent)?.count >= this.getTalent(talent).matDomainCount &&
+        this.getTalentMat('enemy',talent)?.count >= this.getTalent(talent).matEnemyCount &&
+        this.MaterialList.trounce?.count >= this.getTalent(talent).matTrounceCount &&
+        this.MaterialList.crown?.count >= this.getTalent(talent).matCrownCount &&
+        this.MaterialList.mora?.count >= this.getTalent(talent).matMoraCount;
   }
   
   get teams()
@@ -799,6 +799,9 @@ export default class Character extends GenshinItem
   
   getMotionValues(talent, alternates={}, {onlyKey}={})
   {
+    if(!GenshinCharacterData[this.key].talents)
+      return [];
+    
     let result = [];
     let remembered = this.loadMemory("motionValues", alternates?.preview?"preview":"current", talent);
     
@@ -813,7 +816,7 @@ export default class Character extends GenshinItem
         talent = null;
         for(let t of ["Normal Attack","Elemental Burst","Elemental Skill"])
         {
-          for(let mv in GenshinCharacterData[this.key].talents?.[t]?.scaling ?? [])
+          for(let mv in GenshinCharacterData[this.key].talents[t]?.scaling ?? [])
             if(mv == onlyKey)
               talent = t
         }
@@ -856,7 +859,7 @@ export default class Character extends GenshinItem
       console.debug({character:this.key, talent, alternates});
       let mvModifiers = [];
       this.teamStatModifiers.forEach(mod => {
-        console.debug(mod);
+        //console.debug(mod);
         mod.getAddedMotionValues(talent, this, alternates).forEach(mv => {
           scaling[mv.label] = {};
           for(let lvl in scaling[Object.keys(scaling)[0]])
@@ -864,7 +867,7 @@ export default class Character extends GenshinItem
         });
         mvModifiers = mvModifiers.concat(mod.getEditedMotionValues(talent, this, alternates));
       });
-      console.debug({mvModifiers});
+      //console.debug({teamStatModifiers:this.teamStatModifiers, mvModifiers});
       
       // Iterate through each line of the talent properties.
       let allKeys = Object.keys(scaling);
@@ -972,9 +975,11 @@ export default class Character extends GenshinItem
             val = val.slice(0, -1);
             stat = "atk";
           }
-          else if(val.endsWith("% Max HP"))
+          else if(val.endsWith(" Max HP"))
           {
-            val = val.slice(0, -8);
+            val = val.slice(0, -7);
+            if(val.endsWith("%"))
+              val = val.slice(0, -1);
             stat = "hp";
           }
           else if(val.endsWith("% DEF"))
@@ -1032,7 +1037,24 @@ export default class Character extends GenshinItem
             // Do the calculation.
             if(stat)
             {
-              ({damage:val, dmgType, baseDMG, critical, average} = this.getDamage(val, stat, alternates, {key, talent, dmgType, reaction}));
+              let baseAdd = 0;
+              let baseMult = 1;
+              // Motion value modifications that need to be passed to this.getDamage()
+              for(let modifier of mvModifiers)
+              {
+                if(Array.isArray(modifier.label) ? modifier.label.indexOf(key) > -1 : modifier.label == key)
+                {
+                  if(modifier.method == "+base")
+                  {
+                    baseAdd += modifier.value;
+                  }
+                  else if(modifier.method == "*base")
+                  {
+                    baseMult += modifier.value;
+                  }
+                }
+              }
+              ({damage:val, dmgType, baseDMG, critical, average} = this.getDamage(val, stat, alternates, {key, talent, dmgType, reaction, baseAdd, baseMult}));
               if(dmgType != "hp" && !newKey.endsWith(` (${reaction??dmgType})`))
                 newKey = newKey + ` (${reaction??dmgType})`;
             }
@@ -1049,7 +1071,6 @@ export default class Character extends GenshinItem
             // Healing and shielding often add flat values to the stat-scaled value, so handle it here.
             else if(dmgType == "healing" || dmgType == "shielding" || dmgType == "hp")
             {
-              //({damage:val, dmgType, baseDMG, critical, average} = this.getDamage(val, "flat", alternates, {key, talent, dmgType, reaction}));
               if(dmgType == "healing")
                 val = val * (1 + this.getStat("heal_", alternates)/100);
               else if(dmgType == "shielding")
@@ -1112,18 +1133,25 @@ export default class Character extends GenshinItem
         }
         newKey = newKey.replace(") (", " + ");
         
-        // Motion value modifications that require the motion value to be calculated first.
+        // Motion value modifications that require the entire motion value to be calculated first.
         for(let modifier of mvModifiers)
         {
           if(Array.isArray(modifier.label) ? modifier.label.indexOf(key) > -1 : modifier.label == key)
           {
             if(modifier.method == "+hit*")
             {
-              calcValues.push({val:calcValues[calcValues.length-1].val*modifier.value, hits:1});
+              calcValues.push({
+                val: calcValues[calcValues.length-1].val * modifier.value,
+                hits: 1,
+              });
             }
             else if(modifier.method == "*")
             {
-              calcValues.forEach(cv => cv.val *= 1+modifier.value);
+              calcValues.forEach(cv => {
+                cv.val *= 1+modifier.value;
+                cv.critical *= 1+modifier.value;
+                cv.average *= 1+modifier.value;
+              });
             }
           }
         }
@@ -1187,7 +1215,7 @@ export default class Character extends GenshinItem
     return result;
   }
   
-  getDamage(value, stat, rawAlternates, {key="", talent, dmgType, ignoreRES, ignoreDEF, reaction}={})
+  getDamage(value, stat, rawAlternates, {key="", talent, dmgType, ignoreRES, ignoreDEF, reaction, baseAdd=0, baseMult=1}={})
   {
     if(isNaN(value))
     {
@@ -1284,8 +1312,6 @@ export default class Character extends GenshinItem
     }
     
     let level = alternates?.level??(alternates?.preview?(this.preview.level??this.level):this.level);
-    let baseMult = 1; // TODO: A couple passives/cons add this.
-    let baseAdd = 0; // TODO: A lot of things add this.
     if(dmgType == "electro" && reaction == "aggravate" || dmgType == "dendro" && reaction == "spread")
     {
       let rxnMult;

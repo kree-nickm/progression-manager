@@ -8863,6 +8863,28 @@ export default {
             }
         }
     },
+    "Furina": {
+        "name": "Furina",
+        "weapon": "Sword",
+        "element": "Hydro",
+        "rarity": 5,
+        "ascendStat": "critRate_",
+        "matBoss": "Tulpas",
+        "matFlower": "Lakelight Lily",
+        "matEnemy": "Whopperflowers",
+        "matMastery": "Justice",
+        "matTrounce": "",
+        "img": "https://api.ambr.top/assets/UI/UI_AvatarIcon_Furina.png",
+        "region": "Fontaine",
+        "release": "",
+        "patch": "4.2",
+        "hpBase": 1192,
+        "atkBase": 18.9924,
+        "defBase": 54.36375,
+        "hpMaxAsc": 4890.112,
+        "atkMaxAsc": 78.0254,
+        "defMaxAsc": 220.915
+    },
     "Ganyu": {
         "name": "Ganyu",
         "weapon": "Bow",
@@ -17606,12 +17628,14 @@ export default {
             "1st Ascension Passive": {
                 "name": "Heir to the Ancient Sea's Authority",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/69\/Talent_Heir_to_the_Ancient_Sea%27s_Authority.png",
-                "text": "When a party member triggers a Vaporize, Frozen, Electro-Charged, Bloom, Hydro Swirl, or a Hydro Crystallize reaction on opponents, 1 stack of Past Draconic Glories will be granted to Neuvillette for 30s. Max 3 stacks. Past Draconic Glories causes Charged Attack: Equitable Judgment to deal 110%\/125%\/160% of its original DMG.<br\/>The stacks of Past Draconic Glories created by each kind of Elemental Reaction exist independently."
+                "text": "When a party member triggers a Vaporize, Frozen, Electro-Charged, Bloom, Hydro Swirl, or a Hydro Crystallize reaction on opponents, 1 stack of Past Draconic Glories will be granted to Neuvillette for 30s. Max 3 stacks. Past Draconic Glories causes Charged Attack: Equitable Judgment to deal 110%\/125%\/160% of its original DMG.<br\/>The stacks of Past Draconic Glories created by each kind of Elemental Reaction exist independently.",
+                "code": ["proc",["editmv",["Normal Attack","Charged Attack: Equitable Judgment","*base",["stacks",0.1,0.25,0.6]]],3,"After Hydro reaction (30s): \"Past Draconic Glories\""]
             },
             "4th Ascension Passive": {
                 "name": "Discipline of the Supreme Arbitration",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/41\/Talent_Discipline_of_the_Supreme_Arbitration.png",
-                "text": "For each 1% of Neuvillette's current HP greater than 30% of Max HP, he will gain 0.6% <span class=\"text-hydro\"><b>Hydro DMG Bonus<\/b><\/span>. A maximum bonus of 30% can be obtained this way."
+                "text": "For each 1% of Neuvillette's current HP greater than 30% of Max HP, he will gain 0.6% <span class=\"text-hydro\"><b>Hydro DMG Bonus<\/b><\/span>. A maximum bonus of 30% can be obtained this way.",
+                "code": ["proc",["stat",["hydro_dmg_",0.6]],"Per percent of HP > 30% of Max HP",50]
             },
             "Utility Passive": {
                 "name": "Gather Like the Tide",
@@ -24775,6 +24799,372 @@ export default {
                 "name": "Shugen: The Curtains' Melancholic Sway",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/01\/Constellation_Shugen_The_Curtains%27_Melancholic_Sway.png",
                 "text": "When the Wanderer actively hits an opponent with Kuugo: Fushoudan while in the Windfavored state, the following effects will occur:\n<ul><li>Deals an additional instance of Kuugo: Fushoudan at the position hit, dealing 40% of the attack's original DMG. This DMG will be considered Normal Attack DMG.<\/li>\n<li>When the Wanderer falls below 40 Kuugoryoku Points, restores 4 Points to him. Kuugoryoku Points can be restored in this manner once every 0.2s. This restoration can occur up to 5 times within one Windfavored duration.<\/li><\/ul>"
+            }
+        }
+    },
+    "Wriothesley": {
+        "name": "Wriothesley",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bb\/Wriothesley_Icon.png",
+        "rarity": 5,
+        "ascendStat": "critDMG_",
+        "element": "Cryo",
+        "weapon": "Catalyst",
+        "region": "Fontaine",
+        "release": "October 17, 2023",
+        "patch": "4.1",
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Wriothesley",
+        "hpBase": 1058.18518,
+        "atkBase": 24.206,
+        "defBase": 59.41119,
+        "hpMaxAsc": 4345.48,
+        "atkMaxAsc": 99.39566,
+        "defMaxAsc": 243.9801,
+        "matFlower": "Subdetection Unit",
+        "matEnemy": "Clockwork Meka",
+        "matBoss": "Prototype",
+        "matMastery": "Order",
+        "matTrounce": "Primordial Greenbloom",
+        "talents": {
+            "Normal Attack": {
+                "name": "Forceful Fists of Frost",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/03\/Catalyst_Cryo.png",
+                "text": "<b>Normal Attack<\/b><br\/>Coalescing frost about his fist, Wriothesley will unleash powerful Repelling Fists, performing up to 5 rapid attacks that deal <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span>.<br\/>Apart from this, Normal Attack combo count will not reset for a short time after using Icefang Rush or sprinting.<br\/><br\/><b>Charged Attack<\/b><br\/>Consumes a fixed amount of Stamina to leap and unleash a Vaulting Fist, dealing <span class=\"text-cryo\"><b>AoE Cryo DMG<\/b><\/span>.<br\/><br\/><b>Plunging Attack<\/b><br\/>Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing <span class=\"text-cryo\"><b>AoE Cryo DMG<\/b><\/span> upon impact.",
+                "scaling": {
+                    "1-Hit DMG (%)": {
+                        "1": "53.36",
+                        "2": "57.7",
+                        "3": "62.05",
+                        "4": "68.25",
+                        "5": "72.59",
+                        "6": "77.56",
+                        "7": "84.38",
+                        "8": "91.21",
+                        "9": "98.03",
+                        "10": "105.48",
+                        "11": "112.92",
+                        "12": "120.37",
+                        "13": "127.81"
+                    },
+                    "2-Hit DMG (%)": {
+                        "1": "51.8",
+                        "2": "56.01",
+                        "3": "60.23",
+                        "4": "66.25",
+                        "5": "70.47",
+                        "6": "75.29",
+                        "7": "81.91",
+                        "8": "88.54",
+                        "9": "95.17",
+                        "10": "102.39",
+                        "11": "109.62",
+                        "12": "116.85",
+                        "13": "124.08"
+                    },
+                    "3-Hit DMG (%)": {
+                        "1": "67.22",
+                        "2": "72.69",
+                        "3": "78.17",
+                        "4": "85.98",
+                        "5": "91.45",
+                        "6": "97.71",
+                        "7": "106.31",
+                        "8": "114.9",
+                        "9": "123.5",
+                        "10": "132.88",
+                        "11": "142.26",
+                        "12": "151.64",
+                        "13": "161.02"
+                    },
+                    "4-Hit DMG (%)": {
+                        "1": "37.9+37.9",
+                        "2": "40.99+40.99",
+                        "3": "44.07+44.07",
+                        "4": "48.48+48.48",
+                        "5": "51.57+51.57",
+                        "6": "55.09+55.09",
+                        "7": "59.94+59.94",
+                        "8": "64.79+64.79",
+                        "9": "69.64+69.64",
+                        "10": "74.93+74.93",
+                        "11": "80.22+80.22",
+                        "12": "85.5+85.5",
+                        "13": "90.79+90.79"
+                    },
+                    "5-Hit DMG (%)": {
+                        "1": "90.74",
+                        "2": "98.13",
+                        "3": "105.51",
+                        "4": "116.07",
+                        "5": "123.45",
+                        "6": "131.89",
+                        "7": "143.5",
+                        "8": "155.11",
+                        "9": "166.71",
+                        "10": "179.37",
+                        "11": "192.04",
+                        "12": "204.7",
+                        "13": "217.36"
+                    },
+                    "Charged Attack DMG (%)": {
+                        "1": "152.96",
+                        "2": "164.43",
+                        "3": "175.9",
+                        "4": "191.2",
+                        "5": "202.67",
+                        "6": "214.14",
+                        "7": "229.44",
+                        "8": "244.74",
+                        "9": "260.03",
+                        "10": "275.33",
+                        "11": "290.62",
+                        "12": "305.92",
+                        "13": "325.04"
+                    },
+                    "Charged Attack Stamina Cost": {
+                        "1": "50",
+                        "2": "50",
+                        "3": "50",
+                        "4": "50",
+                        "5": "50",
+                        "6": "50",
+                        "7": "50",
+                        "8": "50",
+                        "9": "50",
+                        "10": "50",
+                        "11": "50",
+                        "12": "50",
+                        "13": "50"
+                    },
+                    "Plunge DMG (%)": {
+                        "1": "56.83",
+                        "2": "61.45",
+                        "3": "66.08",
+                        "4": "72.69",
+                        "5": "77.31",
+                        "6": "82.6",
+                        "7": "89.87",
+                        "8": "97.14",
+                        "9": "104.41",
+                        "10": "112.34",
+                        "11": "120.27",
+                        "12": "128.2",
+                        "13": "136.12"
+                    },
+                    "Low Plunge DMG (%)": {
+                        "1": "113.63",
+                        "2": "122.88",
+                        "3": "132.13",
+                        "4": "145.35",
+                        "5": "154.59",
+                        "6": "165.16",
+                        "7": "179.7",
+                        "8": "194.23",
+                        "9": "208.77",
+                        "10": "224.62",
+                        "11": "240.48",
+                        "12": "256.34",
+                        "13": "272.19"
+                    },
+                    "High Plunge DMG (%)": {
+                        "1": "141.93",
+                        "2": "153.49",
+                        "3": "165.04",
+                        "4": "181.54",
+                        "5": "193.1",
+                        "6": "206.3",
+                        "7": "224.45",
+                        "8": "242.61",
+                        "9": "260.76",
+                        "10": "280.57",
+                        "11": "300.37",
+                        "12": "320.18",
+                        "13": "339.98"
+                    }
+                }
+            },
+            "Elemental Skill": {
+                "name": "Icefang Rush",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d7\/Talent_Icefang_Rush.png",
+                "text": "Adjusting his breathing, rhythm, and pace, Wriothesley sprints forward a short distance, entering the Chilling Penalty state and unleashing more powerful attacks than before.<br\/><br\/><b>Chilling Penalty<\/b><br\/><ul><li>Increases Wriothesley's interruption resistance<\/li><li>When his HP is above 50%, it will enhance the Repelling Fists of Normal Attack: Forceful Fists of Frost and increase its DMG. When such an attack hits, it will consume a fixed amount of Wriothesley's HP. HP can be lost this way once every 0.1s.<\/li><\/ul>This effect will be canceled should Wriothesley leave the field.",
+                "scaling": {
+                    "Enhanced Repelling Fist DMG (% Normal Attack DMG)": {
+                        "1": "143.17",
+                        "2": "145.75",
+                        "3": "148.34",
+                        "4": "151.7",
+                        "5": "154.29",
+                        "6": "156.87",
+                        "7": "160.23",
+                        "8": "163.59",
+                        "9": "166.95",
+                        "10": "170.31"
+                    },
+                    "HP Cost": {
+                        "1": "4.5% Max HP",
+                        "2": "4.5% Max HP",
+                        "3": "4.5% Max HP",
+                        "4": "4.5% Max HP",
+                        "5": "4.5% Max HP",
+                        "6": "4.5% Max HP",
+                        "7": "4.5% Max HP",
+                        "8": "4.5% Max HP",
+                        "9": "4.5% Max HP",
+                        "10": "4.5% Max HP"
+                    },
+                    "Duration": {
+                        "1": "10s",
+                        "2": "10s",
+                        "3": "10s",
+                        "4": "10s",
+                        "5": "10s",
+                        "6": "10s",
+                        "7": "10s",
+                        "8": "10s",
+                        "9": "10s",
+                        "10": "10s"
+                    },
+                    "CD": {
+                        "1": "16s",
+                        "2": "16s",
+                        "3": "16s",
+                        "4": "16s",
+                        "5": "16s",
+                        "6": "16s",
+                        "7": "16s",
+                        "8": "16s",
+                        "9": "16s",
+                        "10": "16s"
+                    }
+                }
+            },
+            "Elemental Burst": {
+                "name": "Darkgold Wolfbite",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/88\/Talent_Darkgold_Wolfbite.png",
+                "text": "Activating his boxing gloves, Wriothesley strikes out with an icy straight, then uses Icicle Impact to cause multiple instances of <span class=\"text-cryo\"><b>AoE Cryo DMG<\/b><\/span> in a frontal area.<br\/><br\/><b>Arkhe: Ousia<\/b><br\/>After Icicle Impact ends, a Surging Blade will descend upon the opponent's position, dealing Ousia-aligned <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span>.",
+                "scaling": {
+                    "Skill DMG (%)": {
+                        "1": "127.2\u00d75",
+                        "2": "136.74\u00d75",
+                        "3": "146.28\u00d75",
+                        "4": "159\u00d75",
+                        "5": "168.54\u00d75",
+                        "6": "178.08\u00d75",
+                        "7": "190.8\u00d75",
+                        "8": "203.52\u00d75",
+                        "9": "216.24\u00d75",
+                        "10": "228.96\u00d75",
+                        "11": "241.68\u00d75",
+                        "12": "254.4\u00d75",
+                        "13": "270.3\u00d75"
+                    },
+                    "Surging Blade DMG (%)": {
+                        "1": "42.4",
+                        "2": "45.58",
+                        "3": "48.76",
+                        "4": "53",
+                        "5": "56.18",
+                        "6": "59.36",
+                        "7": "63.6",
+                        "8": "67.84",
+                        "9": "72.08",
+                        "10": "76.32",
+                        "11": "80.56",
+                        "12": "84.8",
+                        "13": "90.1"
+                    },
+                    "CD": {
+                        "1": "15s",
+                        "2": "15s",
+                        "3": "15s",
+                        "4": "15s",
+                        "5": "15s",
+                        "6": "15s",
+                        "7": "15s",
+                        "8": "15s",
+                        "9": "15s",
+                        "10": "15s",
+                        "11": "15s",
+                        "12": "15s",
+                        "13": "15s"
+                    },
+                    "Surging Blade CD": {
+                        "1": "10s",
+                        "2": "10s",
+                        "3": "10s",
+                        "4": "10s",
+                        "5": "10s",
+                        "6": "10s",
+                        "7": "10s",
+                        "8": "10s",
+                        "9": "10s",
+                        "10": "10s",
+                        "11": "10s",
+                        "12": "10s",
+                        "13": "10s"
+                    },
+                    "Energy Cost": {
+                        "1": "60",
+                        "2": "60",
+                        "3": "60",
+                        "4": "60",
+                        "5": "60",
+                        "6": "60",
+                        "7": "60",
+                        "8": "60",
+                        "9": "60",
+                        "10": "60",
+                        "11": "60",
+                        "12": "60",
+                        "13": "60"
+                    }
+                }
+            },
+            "1st Ascension Passive": {
+                "name": "There Shall Be a Plea for Justice",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/10\/Talent_There_Shall_Be_a_Plea_for_Justice.png",
+                "text": "When Wriothesley's HP is less than 60%, he will obtain a Gracious Rebuke. The next Charged Attack of his Normal Attack: Forceful Fists of Frost will be enhanced to become Rebuke: Vaulting Fist. It will not consume Stamina, will deal 50% increased DMG, and after hitting will restore HP for Wriothesley equal to 30% of his Max HP.<br\/>You can gain a Gracious Rebuke this way once every 5s."
+            },
+            "4th Ascension Passive": {
+                "name": "There Shall Be a Reckoning for Sin",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/02\/Talent_There_Shall_Be_a_Reckoning_for_Sin.png",
+                "text": "When Wriothesley's current HP increases or decreases, if he is in the Chilling Penalty state conferred by Icefang Rush, Chilling Penalty will gain one stack of Prosecution Edict. Max 5 stacks. Each stack will increase Wriothesley's ATK by 6%."
+            },
+            "Utility Passive": {
+                "name": "The Duke's Grace",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/53\/Talent_The_Duke%27s_Grace.png",
+                "text": "When Wriothesley crafts Weapon Ascension Materials, he has a 10% chance to receive double the product."
+            }
+        },
+        "constellations": {
+            "1": {
+                "name": "Terror for the Evildoers",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/08\/Constellation_Terror_for_the_Evildoers.png",
+                "text": "The Gracious Rebuke from the Passive Talent \"There Shall Be a Plea for Justice\" is changed to this:<br\/>When Wriothesley's HP is less than 60% or while he is in the Chilling Penalty state caused by Icefang Rush, when the fifth attack of Repelling Fists hits, it will create a Gracious Rebuke. 1 Gracious Rebuke effect can be obtained every 2.5s.<br\/><br\/>Additionally, Rebuke: Vaulting Fist will obtain the following enhancement:<br\/><ul><li>The DMG Bonus gained will be further increased to 200%.<\/li><li>When it hits while Wriothesley is in the Chilling Penalty state, that state's duration is extended by 4s. 1 such extension can occur per 1 Chilling Penalty duration.<\/li><\/ul><br\/>You must first unlock the Passive Talent \"There Shall Be a Plea for Justice.\""
+            },
+            "2": {
+                "name": "Shackles for the Arrogant",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Constellation_Shackles_for_the_Arrogant.png",
+                "text": "When using Darkgold Wolfbite, each Prosecution Edict stack from the Passive Talent \"There Shall Be a Reckoning for Sin\" will increase said ability's DMG dealt by 40%.<br\/>You must first unlock the Passive Talent \"There Shall Be a Reckoning for Sin.\""
+            },
+            "3": {
+                "name": "Punishment for the Frauds",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/58\/Constellation_Punishment_for_the_Frauds.png",
+                "text": "Increases the Level of Normal Attack: Forceful Fists of Frost by 3.<br\/>Maximum upgrade level is 15."
+            },
+            "4": {
+                "name": "Redemption for the Suffering",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/eb\/Constellation_Redemption_for_the_Suffering.png",
+                "text": "The HP restored to Wriothesley through Rebuke: Vaulting Fist will be increased to 50% of his Max HP. You must first unlock the Passive Talent \"There Shall Be a Plea for Justice.\"<br\/>Additionally, when Wriothesley is healed, if the amount of healing overflows, the following effects will occur depending on whether he is on the field or not. If he is on the field, his ATK SPD will be increased by 20% for 4s. If he is off-field, all of your own party members' ATK SPD will be increased by 10% for 6s. These two methods of increasing ATK SPD cannot stack."
+            },
+            "5": {
+                "name": "Mercy for the Wronged",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f4\/Constellation_Mercy_for_the_Wronged.png",
+                "text": "Increases the Level of Darkgold Wolfbite by 3.<br\/>Maximum upgrade level is 15."
+            },
+            "6": {
+                "name": "Esteem for the Innocent",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ec\/Constellation_Esteem_for_the_Innocent.png",
+                "text": "The CRIT Rate of Rebuke: Vaulting Fist will be increased by 10%, and its CRIT DMG by 80%. When unleashed, it will also create an additional icicle that deals 100% of Rebuke: Vaulting Fist's Base DMG as <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span>. DMG dealt this way is regarded as Charged Attack DMG.<br\/>You must first unlock the Passive Talent \"There Shall Be a Plea for Justice.\""
             }
         }
     },

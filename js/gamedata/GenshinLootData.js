@@ -339,6 +339,10 @@ export default {
     "Unicorn": {
       "name": "Millennial Pearl Seahorse",
       "4": "Fontemer Unihorn"
+    },
+    "Tulpas": {
+      "name": "Hydro Tulpas",
+      "4": "Water That Failed To Transcend"
     }
   },
   

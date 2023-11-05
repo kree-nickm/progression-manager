@@ -253,11 +253,22 @@ export default class StatModifier {
     }
     else if(command == "editmv")
     {
-      motionValues.edited.push({talent:parameters[0], label:parameters[1], method:parameters[2], value:parameters[3]});
+      motionValues.edited.push({
+        talent: parameters[0],
+        label: parameters[1],
+        method: parameters[2],
+        value: Array.isArray(parameters[3]) ? undefined : parameters[3],
+        calc: Array.isArray(parameters[3]) ? {func:parameters[3][0], args:parameters[3].slice(1)} : undefined,
+      });
     }
     else if(command == "addmv")
     {
-      motionValues.added.push({talent:parameters[0], label:parameters[1], value:parameters[2]});
+      motionValues.added.push({
+        talent: parameters[0],
+        label: parameters[1],
+        value: Array.isArray(parameters[2]) ? undefined : parameters[2],
+        calc: Array.isArray(parameters[2]) ? {func:parameters[2][0], args:parameters[2].slice(1)} : undefined,
+      });
     }
     else
     {
@@ -386,6 +397,10 @@ export default class StatModifier {
         {
           result = `${args[0]>0?"Increase":"Decrease"} ${result} by ${Math.abs(args[0])}${GenshinItem.isStatPercent(args[1])?"":"%"} of ${GenshinItem.getStatFull(args[1])}${args[2]?", to a max of "+args[2]+"%":""}.`;
         }
+        else if(func == "stacks")
+        {
+          result = `Change ${result} by ${args.join('/')} depending on stacks.`;
+        }
         else
         {
           result = `Change ${result} by some function "${func}"; ${args.join(", ")}.`;
@@ -467,6 +482,10 @@ export default class StatModifier {
       let result = this.motionValues.pedited.filter(mv => mv.talent == talent);
       if(asker == this.characterSource)
         result = result.concat(this.motionValues.edited.filter(mv => mv.talent == talent));
+      result.forEach(mv => {
+        if(mv.calc)
+          mv.value = this.calcStat(mv.calc, asker, alternates) * this.active;
+      });
       
       // Check for modifications that override all other similar ones, such as certain weapon infusions.
       let permInfuseIdx = result.findIndex(mv => mv.method == "infuse" && mv.value.endsWith("!"));
@@ -508,12 +527,17 @@ export default class StatModifier {
   
   calcStat(stat, asker, alternates={})
   {
-    if(!this.stats.__calculations__[stat])
+    let calc;
+    if(typeof(stat) == "object" && stat.func && stat.args)
+      calc = stat;
+    else if(!this.stats.__calculations__[stat])
       return 0;
-    switch(this.stats.__calculations__[stat].func)
+    else
+      calc = this.stats.__calculations__[stat];
+    switch(calc.func)
     {
       case "mv":
-        const [ mvKey ] = this.stats.__calculations__[stat].args;
+        const [ mvKey ] = calc.args;
         let motionValue = this.characterSource.getMotionValues(null, alternates, {onlyKey:mvKey}).find(mv => mv.rawKey == mvKey);
         if(typeof(motionValue?.value) == "number")
           return motionValue.value;
@@ -521,10 +545,10 @@ export default class StatModifier {
           console.warn(`Function 'mv': "${mvKey}" is not a usable motion value:`, motionValue);
         break;
       case "stat%":
-        const [ amount, otherStat, cap ] = this.stats.__calculations__[stat].args;
+        const [ amount, otherStat, cap ] = calc.args;
         if(stat == otherStat && this.characterSource == asker)
         {
-          console.warn(`Infinite recursion prevented. ${this.name}'s ${stat} is using itself in its own calculation because of:`, this.stats.__calculations__[stat]);
+          console.warn(`Infinite recursion prevented. ${this.name}'s ${stat} is using itself in its own calculation because of:`, calc);
         }
         else
         {
@@ -534,8 +558,15 @@ export default class StatModifier {
             return this.characterSource.getStat(otherStat, alternates) * amount;
         }
         break;
+      case "stacks":
+        if(this.active)
+          // TODO: Dividing out this.active here is cringe, but it's the easiest way to deal with this.active being a multiplier in this.getStat()
+          return (calc.args[this.active-1]??0) / this.active;
+        else
+          return 0;
+        break;
       default:
-        console.warn(`Unhandled function "${this.stats.__calculations__[stat].func}" in stat calculation for "${stat}":`, this.stats.__calculations__[stat]);
+        console.warn(`Unhandled function "${calc.func}" in stat calculation for "${stat}":`, calc);
     }
     return 0;
   }

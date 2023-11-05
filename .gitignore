@@ -1,2 +1,4 @@
 php/
 *.php
+*.old.js
+*.auto.js
