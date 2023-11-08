@@ -293,6 +293,13 @@
             <div class="form-label">Assume Artifact Level <i class="fa-solid fa-circle-question" title="When calculating artifact stats and ratings, this is the maximum level that will be used to determine their current/potential stats. Long-time players should leave this at 20, but newer players who don't yet have artifacts at level 20 should set this to whatever the highest level is that they are comfortable leveling their artifacts to."></i></div>
             <input type="number" class="preference-select form-control" id="pref6"  name="artifactMaxLevel" value="20" min="0" max="20" step="1">
             
+            <div class="input-group">
+                <div class="input-group-text bg-secondary-subtle">
+                  <input id="pref8" class="form-check-input preference-select" type="checkbox" name="showLeaks" value="1">
+                </div>
+                <label class="input-group-text" for="pref8">Show Leaks</label>
+            </div>
+            
           </div>
           <div class="modal-footer">
             <button id="prefsDoneBtn" type="button" class="btn btn-success" data-bs-dismiss="modal">Save</button>

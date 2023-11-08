@@ -224,6 +224,14 @@ export default {
         "Primordial Greenbloom",
         "Everamber"
       ]
+    },
+    {
+      "boss": "All-Devouring Narwhal",
+      "loot": [
+        "Lightless Eye of the Maelstrom",
+        "Lightless Mass",
+        "Lightless Silk String"
+      ]
     }
   ],
   
@@ -340,8 +348,8 @@ export default {
       "name": "Millennial Pearl Seahorse",
       "4": "Fontemer Unihorn"
     },
-    "Tulpas": {
-      "name": "Hydro Tulpas",
+    "Tulpa": {
+      "name": "Hydro Tulpa",
       "4": "Water That Failed To Transcend"
     }
   },

@@ -609,6 +609,11 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/40\/Item_Fontemer_Unihorn.png",
         "rarity": 4
     },
+    "WaterThatFailedToTranscend": {
+        "name": "Water That Failed To Transcend",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a9\/Item_Water_That_Failed_To_Transcend.png",
+        "rarity": 4
+    },
     "DvalinsPlume": {
         "name": "Dvalin's Plume",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bf\/Item_Dvalin%27s_Plume.png",
@@ -727,6 +732,21 @@ export default {
     "Everamber": {
         "name": "Everamber",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/26\/Item_Everamber.png",
+        "rarity": 5
+    },
+    "LightlessSilkString": {
+        "name": "Lightless Silk String",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c2\/Item_Lightless_Silk_String.png",
+        "rarity": 5
+    },
+    "LightlessEyeOfTheMaelstrom": {
+        "name": "Lightless Eye of the Maelstrom",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c3\/Item_Lightless_Eye_of_the_Maelstrom.png",
+        "rarity": 5
+    },
+    "LightlessMass": {
+        "name": "Lightless Mass",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ae\/Item_Lightless_Mass.png",
         "rarity": 5
     },
     "BrilliantDiamondSliver": {
@@ -1489,6 +1509,11 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/75\/Item_Martens%27_Omni-Fix.png",
         "rarity": 4
     },
+    "DandelionBookmark": {
+        "name": "Dandelion Bookmark",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fe\/Item_Dandelion_Bookmark.png",
+        "rarity": 4
+    },
     "Wolfhook": {
         "name": "Wolfhook",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/57\/Item_Wolfhook.png",
@@ -1684,9 +1709,19 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dd\/Item_Lumitoile.png",
         "rarity": 1
     },
+    "LakelightLily": {
+        "name": "Lakelight Lily",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fc\/Item_Lakelight_Lily.png",
+        "rarity": 1
+    },
     "SubdetectionUnit": {
         "name": "Subdetection Unit",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/21\/Item_Subdetection_Unit.png",
+        "rarity": 1
+    },
+    "SpringOfTheFirstDewdrop": {
+        "name": "Spring of the First Dewdrop",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/08\/Item_Spring_of_the_First_Dewdrop.png",
         "rarity": 1
     },
     "SweetFlowerSeed": {
@@ -2814,6 +2849,11 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5d\/Item_Dream_Solvent.png",
         "rarity": 4
     },
+    "WelfareMeal": {
+        "name": "Welfare Meal",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/35\/Item_Welfare_Meal.png",
+        "rarity": 1
+    },
     "CondensedResin": {
         "name": "Condensed Resin",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cd\/Item_Condensed_Resin.png",
@@ -2842,6 +2882,11 @@ export default {
     "CakeForTraveler20222023": {
         "name": "Cake for Traveler (2022 - 2023)",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e7\/Item_Cake_for_Traveler_3.png",
+        "rarity": 4
+    },
+    "CakeForTraveler20232024": {
+        "name": "Cake for Traveler (2023 - 2024)",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9a\/Item_Cake_for_Traveler_4.png",
         "rarity": 4
     },
     "AnAppellativeStroke": {
@@ -3143,6 +3188,31 @@ export default {
         "name": "Masterless Starglitter",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/69\/Item_Masterless_Starglitter.png",
         "rarity": 5
+    },
+    "AHugeBagOfMora": {
+        "name": "A Huge Bag of Mora",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cc\/Item_Bag_of_Mora.png",
+        "rarity": 1
+    },
+    "ChildeAndTeucersMoraPouch": {
+        "name": "Childe and Teucer's Mora Pouch",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cc\/Item_Bag_of_Mora.png",
+        "rarity": 1
+    },
+    "StoriesOfYouAndTheAranara": {
+        "name": "Stories of You and the Aranara",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5f\/Item_Stories_of_You_and_the_Aranara.png",
+        "rarity": 4
+    },
+    "StrangePart": {
+        "name": "Strange Part",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/be\/Item_Strange_Part.png",
+        "rarity": 1
+    },
+    "CreditCoupons": {
+        "name": "Credit Coupons",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6d\/Item_Credit_Coupons.png",
+        "rarity": 1
     },
     "FadingStarsMight": {
         "name": "Fading Star's Might",
