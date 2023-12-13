@@ -21,15 +21,15 @@ handlebars.registerHelper("ifHasStat", function(character, statId, options) {
   }
   if(options.hash.situation)
   {
-    let general = character.getStat(statId,{},true);
-    let situational = character.getStat(statId, {situation:options.hash.situation}, true);
+    let general = character.getStat(statId, {}, {returnNull:true});
+    let situational = character.getStat(statId, {situation:options.hash.situation}, {returnNull:true});
     if(general !== situational) // TODO: IDK how to handle it if the stat is normally 0, but can proc to be increased, but only in specific situations. For example, Candace increasing the Hydro DMG Bonus for only Normal Attacks after her burst, when she has no Hydro DMG Bonus to begin with.
       return options.fn(this);
     return options.inverse(this);
   }
   else
   {
-    if(character.getStat(statId,{},true) !== null)
+    if(character.getStat(statId, {}, {returnNull:true}) !== null)
       return options.fn(this);
     return options.inverse(this);
   }
@@ -591,7 +591,7 @@ export default class Character extends GenshinItem
     return this.activeTeam ? this.activeTeam.getStatModifiers(this) : this.statModifiers;
   }
   
-  getStat(stat, alternates={}, returnNull=false)
+  getStat(stat, alternates={}, {returnNull=false}={})
   {
     let baseStat;
     let variant;
@@ -852,107 +852,95 @@ export default class Character extends GenshinItem
         return null;
       }
       
-      // We clone the scaling object so it doesn't modify the default character data.
-      scaling = Object.assign({}, scaling);
       
-      // If any new motion values are being dynamically added, do it here.
-      console.debug({character:this.key, talent, alternates});
+      // We clone the scaling object so it doesn't modify the default character data when we dynamically add motion values.
+      scaling = Object.assign({}, scaling);
+      let addedMVs = [];
       let mvModifiers = [];
       this.teamStatModifiers.forEach(mod => {
-        //console.debug(mod);
+        // Dynamically add any motion values we need from stat modifiers.
         mod.getAddedMotionValues(talent, this, alternates).forEach(mv => {
           scaling[mv.label] = {};
           for(let lvl in scaling[Object.keys(scaling)[0]])
             scaling[mv.label][lvl] = mv.value;
+          addedMVs.push(mv.label);
         });
+        // Collect all the edits to the motion values from stat modifiers.
         mvModifiers = mvModifiers.concat(mod.getEditedMotionValues(talent, this, alternates));
       });
-      //console.debug({teamStatModifiers:this.teamStatModifiers, mvModifiers});
       
       // Iterate through each line of the talent properties.
       let allKeys = Object.keys(scaling);
       for(let k=0; k<allKeys.length; k++)
       {
-        let rawKey = allKeys[k];
-        let key = rawKey;
-        if(onlyKey && key != onlyKey)
+        if(onlyKey && allKeys[k] != onlyKey)
           continue;
         
-        // If this is a dynamically-added key for the purpose of additional reaction data, figure that out now.
-        let reaction;
-        if(key.endsWith(" [melt-reverse]"))
-        {
-          reaction = "melt-reverse";
-          key = key.slice(0, -15);
-        }
-        else if(key.endsWith(" [melt-forward]"))
-        {
-          reaction = "melt-forward";
-          key = key.slice(0, -15);
-        }
-        else if(key.endsWith(" [vaporize-reverse]"))
-        {
-          reaction = "vaporize-reverse";
-          key = key.slice(0, -19);
-        }
-        else if(key.endsWith(" [vaporize-forward]"))
-        {
-          reaction = "vaporize-forward";
-          key = key.slice(0, -19);
-        }
-        else if(key.endsWith(" [aggravate]"))
-        {
-          reaction = "aggravate";
-          key = key.slice(0, -12);
-        }
-        else if(key.endsWith(" [spread]"))
-        {
-          reaction = "spread";
-          key = key.slice(0, -9);
-        }
+        let motionValue = {
+          talent,
+          rawKey: allKeys[k],
+          key: allKeys[k],
+        };
         
-        // Determine current value based on talent level.
+        // If this is a dynamically-added key for the purpose of additional reaction data, figure that out now.
+        ["melt-reverse","melt-forward","vaporize-reverse","vaporize-forward","aggravate","spread"].forEach(rxn => {
+          if(motionValue.key.endsWith(` [${rxn}]`))
+          {
+            motionValue.reaction = rxn;
+            motionValue.key = motionValue.key.slice(0, -1*(rxn.length+3));
+          }
+        });
+        motionValue.newKey = motionValue.key;
+        
+        // Note if this motion value was added by a stat modifier.
+        if(addedMVs.includes(motionValue.key))
+          motionValue.fromModifier = true;
+        
+        // Determine current raw value based on talent level.
         let talentLvl = (alternates?.[talent+'Talent']??(alternates?.preview?(this.preview[talent+'Talent']??this.talent[talent]):this.talent[talent])) + this.getStat(talent+"Level", alternates);
-        let value = scaling[key][talentLvl];
-        if(!value)
+        motionValue.rawValue = scaling[motionValue.key]?.[talentLvl];
+        if(!motionValue.rawValue)
         {
-          console.error(`Character ${this.key} has potentially invalid ${talent} talent at key '${key}' talent lvl '${talentLvl}':`, GenshinCharacterData[this.key].talents);
+          console.error(`Character ${this.key} has potentially invalid ${talent} talent at key '${motionValue.key}' talent lvl '${talentLvl}':`, GenshinCharacterData[this.key].talents);
           return null;
         }
-        // Parse and calculate the values.
-        let values = typeof(value)=="string" ? value.split("+") : [value];
-        let calcValues = [];
-        let dmgType;
-        let newKey = key;
+        
+        // Parse the values.
+        motionValue.rawValues = typeof(motionValue.rawValue) == "string" ? motionValue.rawValue.split("+") : [motionValue.rawValue];
+        motionValue.values = new Array(motionValue.rawValues.length);
+        
         // Motion value modifications that do not require the motion value to be calculated first.
         for(let modifier of mvModifiers)
         {
-          if(Array.isArray(modifier.label) ? modifier.label.indexOf(key) > -1 : modifier.label == key)
+          if(Array.isArray(modifier.label) ? modifier.label.indexOf(motionValue.key) > -1 : modifier.label == motionValue.key)
           {
             if(modifier.method == "+hit")
-              values.push(modifier.value);
+            {
+              motionValue.rawValues.push(modifier.value);
+              motionValue.values.push({fromModifier:true});
+            }
           }
         }
-        for(let v in values)
+        
+        for(let v in motionValue.rawValues)
         {
-          let val = String(values[v]);
-          let baseDMG, critical, average;
-          let hits = 1;
-          let stat;
-          dmgType = null;
+          if(!motionValue.values[v])
+            motionValue.values[v] = {};
+          motionValue.values[v].value = String(motionValue.rawValues[v]).trim();
+          motionValue.values[v].hits = 1;
           for(let modifier of mvModifiers)
             if((modifier.method == "infuse") && (this.weaponType == "Claymore" || this.weaponType == "Sword" || this.weaponType == "Polearm"))
-              dmgType = modifier.value;
+              motionValue.values[v].dmgType = modifier.value;
           
           // Parse out some data based on the value.
-          if(val.includes("×") || val.includes("*"))
-            [val, hits] = val.split(/[×*]/);
-          if(val.includes("@"))
-            [val, dmgType] = val.split("@");
-          if(val.includes("%:"))
+          if(motionValue.values[v].value.includes("×") || motionValue.values[v].value.includes("*"))
+            [motionValue.values[v].value, motionValue.values[v].hits] = motionValue.values[v].value.split(/[×*]/);
+          if(motionValue.values[v].value.includes("@"))
+            [motionValue.values[v].value, motionValue.values[v].dmgType] = motionValue.values[v].value.split("@");
+          if(motionValue.values[v].value.includes("%:"))
           {
             let other, idx;
-            [val, other] = val.split("%:");
+            [motionValue.values[v].value, other] = motionValue.values[v].value.split("%:");
             [other, idx] = other.split(".");
             idx = idx ?? 0;
             let otherAttack = result.find(attack => attack.rawKey == other);
@@ -961,88 +949,140 @@ export default class Character extends GenshinItem
               otherAttack = this.getMotionValues("", alternates, {onlyKey:other})?.find(attack => attack.rawKey == other);
               if(!otherAttack)
               {
-                console.error(`Invalid motion value specification "${values[v]}" for ${this.name}: can't find existing motion value "${other}"`);
+                console.error(`Invalid motion value specification "${motionValue.rawValues[v]}" for ${this.name}: can't find existing motion value "${other}"`);
                 continue;
               }
             }
-            val = String(parseFloat(val)/100 * parseFloat(otherAttack.valueList[idx]?.baseDMG));
-            stat = "flat";
+            motionValue.values[v].value = String(parseFloat(motionValue.values[v].value)/100 * parseFloat(otherAttack.values[idx]?.baseDMG));
+            motionValue.values[v].stat = "flat";
           }
           
-          // Try to turn val into a number, parsing out any non-numeric components where possible
-          if(val.endsWith("%"))
+          // Try to turn motionValue.values[v].value into a number, parsing out any non-numeric components where possible
+          if(motionValue.values[v].value.endsWith("%"))
           {
-            val = val.slice(0, -1);
-            stat = "atk";
+            motionValue.values[v].value = motionValue.values[v].value.slice(0, -1);
+            motionValue.values[v].stat = "atk";
           }
-          else if(val.endsWith(" Max HP"))
+          else if(motionValue.values[v].value.endsWith(" Max HP"))
           {
-            val = val.slice(0, -7);
-            if(val.endsWith("%"))
-              val = val.slice(0, -1);
-            stat = "hp";
+            motionValue.values[v].value = motionValue.values[v].value.slice(0, -7);
+            if(motionValue.values[v].value.endsWith("%"))
+              motionValue.values[v].value = motionValue.values[v].value.slice(0, -1);
+            motionValue.values[v].stat = "hp";
           }
-          else if(val.endsWith("% DEF"))
+          else if(motionValue.values[v].value.endsWith("% ATK"))
           {
-            val = val.slice(0, -5);
-            stat = "def";
+            motionValue.values[v].value = motionValue.values[v].value.slice(0, -5);
+            motionValue.values[v].stat = "atk";
           }
-          if(!isNaN(val.replaceAll(",","")))
-            val = val.replaceAll(",","");
+          else if(motionValue.values[v].value.endsWith("% DEF"))
+          {
+            motionValue.values[v].value = motionValue.values[v].value.slice(0, -5);
+            motionValue.values[v].stat = "def";
+          }
+          else if(motionValue.values[v].value.endsWith("/s"))
+          {
+            // per second, as with many charged attacks
+          }
+          else if(motionValue.values[v].value.endsWith("s"))
+          {
+            // duration, for CDs etc.
+          }
+          if(!isNaN(motionValue.values[v].value.replaceAll(",","")))
+            motionValue.values[v].value = motionValue.values[v].value.replaceAll(",","");
           
-          if(!isNaN(val))
+          if(!isNaN(motionValue.values[v].value))
           {
-            // Determine stat scaling.
-            if(key.includes("Regeneration") || key.includes("Healing"))
-              dmgType = "healing";
-            else if(key.includes("Absorption"))
-              dmgType = "shielding";
-            else if(key.startsWith("Inherited HP"))
-              dmgType = "hp";
+            // Determine any special dmgType
+            if(motionValue.key.includes("RES") || motionValue.key.includes("Ratio") || motionValue.key.includes("Chance"))
+            {
+              motionValue.values[v].dmgType = "percent";
+              motionValue.values[v].stat = "";
+            }
+            else if(motionValue.key.includes("Bonus Ratio") || motionValue.key.includes("ATK Bonus"))
+              motionValue.values[v].dmgType = "bonus";
+            else if(motionValue.key.includes("Regeneration") || motionValue.key.includes("Healing"))
+              motionValue.values[v].dmgType = "healing";
+            else if(motionValue.key.includes("Absorption"))
+              motionValue.values[v].dmgType = "shielding";
+            else if(motionValue.key.startsWith("Inherited HP"))
+              motionValue.values[v].dmgType = "hp";
             
-            if(key.includes("RES Decrease") || key.includes("Ratio"))
+            // Determine stat scaling for poorly-labeled talents that can't be handled with general rules.
+            if(this.key == "KujouSara" && motionValue.key == "ATK Bonus Ratio (%)" || this.key == "Bennett" && motionValue.key == "ATK Bonus Ratio (% Base ATK)")
             {
-              dmgType = "percent";
-              stat = null;
+              if(motionValue.key == motionValue.newKey)
+                motionValue.newKey = motionValue.key.slice(0, motionValue.key.indexOf("(")-1);
+              motionValue.values[v].stat = "atk-base";
+              motionValue.values[v].dmgType = "bonus";
             }
-            else if(key.endsWith(" (%)"))
+            else if(this.key == "Furina" && motionValue.key.endsWith("HP Consumption (% Max HP)"))
             {
-              if(key == newKey)
-                newKey = key.slice(0, -4);
-              stat = "atk";
+              if(motionValue.key == motionValue.newKey)
+                motionValue.newKey = motionValue.key.slice(0, -11);
+              motionValue.values[v].dmgType = "self";
             }
-            else if(key.endsWith(" (% Max HP)"))
+            else if(this.key == "Gorou" && motionValue.key == "DEF Increase")
             {
-              if(key == newKey)
-                newKey = key.slice(0, -11);
-              stat = "hp";
+              motionValue.values[v].stat = null;
+              motionValue.values[v].dmgType = "bonus";
             }
-            else if(key.endsWith(" (% DEF)"))
+            else if(this.key == "Gorou" && motionValue.key == "Geo DMG Bonus")
             {
-              if(key == newKey)
-                newKey = key.slice(0, -8);
-              stat = "def";
+              motionValue.values[v].stat = null;
+              motionValue.values[v].dmgType = "percent";
             }
-            else if(key.endsWith(" (% ATK + % Elemental Mastery)"))
+            // Determine stat scaling.
+            else if(motionValue.key.endsWith(" (%)"))
             {
-              if(key == newKey)
-                newKey = key.slice(0, -30);
-              stat = v ? "eleMas" : "atk";
+              if(motionValue.key == motionValue.newKey)
+                motionValue.newKey = motionValue.key.slice(0, -4);
+              motionValue.values[v].stat = motionValue.values[v].stat ?? "atk";
             }
-            else if(talent == "auto" && key.includes("DMG"))
+            else if(motionValue.key.endsWith(" (% Max HP)"))
             {
-              stat = "atk";
+              if(motionValue.key == motionValue.newKey)
+                motionValue.newKey = motionValue.key.slice(0, -11);
+              motionValue.values[v].stat = motionValue.values[v].stat ?? "hp";
+            }
+            else if(motionValue.key.endsWith(" (%Max HP)"))
+            {
+              if(motionValue.key == motionValue.newKey)
+                motionValue.newKey = motionValue.key.slice(0, -10);
+              motionValue.values[v].stat = motionValue.values[v].stat ?? "hp";
+            }
+            else if(motionValue.key.endsWith(" (% DEF)"))
+            {
+              if(motionValue.key == motionValue.newKey)
+                motionValue.newKey = motionValue.key.slice(0, -8);
+              motionValue.values[v].stat = motionValue.values[v].stat ?? "def";
+            }
+            else if(motionValue.key.endsWith(" (% Base ATK)"))
+            {
+              if(motionValue.key == motionValue.newKey)
+                motionValue.newKey = motionValue.key.slice(0, -13);
+              motionValue.values[v].stat = motionValue.values[v].stat ?? "atk-base";
+            }
+            else if(motionValue.key.endsWith(" (% ATK + % Elemental Mastery)"))
+            {
+              if(motionValue.key == motionValue.newKey)
+                motionValue.newKey = motionValue.key.slice(0, -30);
+              motionValue.values[v].stat = motionValue.values[v].stat ?? (v ? "eleMas" : "atk");
+            }
+            else if(talent == "auto" && motionValue.key.includes("DMG"))
+            {
+              motionValue.values[v].stat = motionValue.values[v].stat ?? "atk";
             }
             
             // Do the calculation.
-            if(stat)
+            if(motionValue.values[v].stat)
             {
               let baseAdd = 0;
               let baseMult = 1;
-              // Motion value modifications that need to be passed to this.getDamage()
+              // Motion value modifications that need to be passed to this.applyFormulas()
               for(let modifier of mvModifiers)
               {
-                if(Array.isArray(modifier.label) ? modifier.label.indexOf(key) > -1 : modifier.label == key)
+                if(Array.isArray(modifier.label) ? modifier.label.indexOf(motionValue.key) > -1 : modifier.label == motionValue.key)
                 {
                   if(modifier.method == "+base")
                   {
@@ -1054,157 +1094,159 @@ export default class Character extends GenshinItem
                   }
                 }
               }
-              ({damage:val, dmgType, baseDMG, critical, average} = this.getDamage(val, stat, alternates, {key, talent, dmgType, reaction, baseAdd, baseMult}));
-              if(dmgType != "hp" && !newKey.endsWith(` (${reaction??dmgType})`))
-                newKey = newKey + ` (${reaction??dmgType})`;
+              this.applyFormulas(motionValue, v, alternates, {baseAdd, baseMult});
+              if(motionValue.reaction && !motionValue.newKey.startsWith(`{{reaction:${motionValue.reaction}}} `))
+                motionValue.newKey = `{{reaction:${motionValue.reaction}}} ` + motionValue.newKey;
             }
-            else if(key.endsWith("Stamina Cost"))
+            else if(motionValue.key.endsWith("Stamina Cost"))
             {
-              val = parseFloat(val) * (1 + (this.getStat("stamina_cost_", alternates))/100);
-              dmgType = null;
+              motionValue.values[v].value = parseFloat(motionValue.values[v].value) * (1 + (this.getStat("stamina_cost_", alternates))/100);
+              motionValue.values[v].dmgType = null;
             }
-            else if(key == "Energy Cost")
+            else if(motionValue.key == "Energy Cost")
             {
-              val = parseFloat(val);
-              dmgType = null;
+              motionValue.values[v].value = parseFloat(motionValue.values[v].value);
+              motionValue.values[v].dmgType = null;
             }
             // Healing and shielding often add flat values to the stat-scaled value, so handle it here.
-            else if(dmgType == "healing" || dmgType == "shielding" || dmgType == "hp")
+            else if(motionValue.values[v].dmgType == "healing" || motionValue.values[v].dmgType == "shielding" || motionValue.values[v].dmgType == "hp")
             {
-              if(dmgType == "healing")
-                val = val * (1 + this.getStat("heal_", alternates)/100);
-              else if(dmgType == "shielding")
-                val = val * (1 + this.getStat("shield_", alternates)/100);
+              if(motionValue.values[v].dmgType == "healing")
+                motionValue.values[v].value = motionValue.values[v].value * (1 + this.getStat("heal_", alternates)/100);
+              else if(motionValue.values[v].dmgType == "shielding")
+                motionValue.values[v].value = motionValue.values[v].value * (1 + this.getStat("shield_", alternates)/100);
             }
             // Specific hard-coded formulas that are too hard to handle automatically.
-            else if(this.key == "Bennett" && key == "ATK Bonus Ratio (% Base ATK)")
+            else if(this.key == "Shenhe" && motionValue.key == "DMG Bonus (% ATK)")
             {
-              newKey = "ATK Bonus";
-              val = val/100 * this.getStat("atk-base", alternates);
-              dmgType = "bonus";
+              motionValue.newKey = "DMG Bonus";
+              motionValue.values[v].value = motionValue.values[v].value/100 * this.getStat("atk", alternates);
+              motionValue.values[v].dmgType = "bonus";
             }
-            else if(this.key == "Shenhe" && key == "DMG Bonus (% ATK)")
+            else if(this.key == "Nahida" && motionValue.key.startsWith("Pyro: DMG Bonus"))
             {
-              newKey = "DMG Bonus";
-              val = val/100 * this.getStat("atk", alternates);
-              dmgType = "bonus";
+              motionValue.newKey = motionValue.key.replace("% - ", "");
+              motionValue.values[v].dmgType = "percent";
             }
-            else if(this.key == "Nahida" && key.startsWith("Pyro: DMG Bonus"))
+            else if(motionValue.key == "Wave Instances" || motionValue.key == "Maximum Fanfare" || motionValue.key.endsWith("Trigger Quota"))
             {
-              newKey = key.replace("% - ", "");
-              dmgType = "percent";
-            }
-            else if(key.includes("Instances")) // Candace "Wave Instances"
-            {
-              dmgType = null;
+              motionValue.values[v].dmgType = null;
             }
             // Everything else.
-            else if(dmgType == "percent")
+            else if(motionValue.values[v].dmgType == "percent" || motionValue.values[v].dmgType == "self" || motionValue.values[v].dmgType == "bonus")
             {
-              newKey = key.replace(" (%)", "");
+              motionValue.newKey = motionValue.key.replace(" (%)", "");
             }
             else
             {
-              console.warn(`Unhandled numeric motion value.`, key, values, v);
-              val = "**" + values[v];
-              dmgType = null;
+              console.warn(`Unhandled numeric motion value.`, motionValue.key, motionValue.rawValues, v);
+              motionValue.values[v].value = "**" + motionValue.rawValues[v];
+              motionValue.values[v].dmgType = null;
             }
           }
-          else if(key.endsWith("CD"))
+          else if(motionValue.key.endsWith("CD"))
           {
-            let tiers = values[v].slice(0,-1).split("/");
-            tiers.forEach((cd,i) => tiers[i] = (parseFloat(cd) * (1 - (this.getStat("cd_", alternates) + this.getStat(talent+"_cd_", alternates))/100)).toFixed(1));
-            val = tiers.join("/") + "s";
-            dmgType = null;
+            let tiers = motionValue.rawValues[v].split("/");
+            tiers.forEach((cd,i) => tiers[i] = (parseFloat(cd.endsWith("s")?cd.slice(0,-1):cd) * (1 - (this.getStat("cd_", alternates) + this.getStat(talent+"_cd_", alternates))/100)).toFixed(1));
+            motionValue.values[v].value = tiers.join("/") + "s";
+            motionValue.values[v].dmgType = null;
           }
-          else if(key.endsWith("Duration"))
+          else if(motionValue.key.endsWith("Duration"))
           {
-            let tiers = values[v].slice(0,-1).split("/");
-            tiers.forEach((cd,i) => tiers[i] = (parseFloat(cd) + this.getStat(talent+"_duration", alternates)).toFixed(1));
-            val = tiers.join("/") + "s";
-            dmgType = null;
+            let tiers = motionValue.rawValues[v].split("/");
+            tiers.forEach((cd,i) => tiers[i] = (parseFloat(cd.endsWith("s")?cd.slice(0,-1):cd) + this.getStat(talent+"_duration", alternates)).toFixed(1));
+            motionValue.values[v].value = tiers.join("/") + "s";
+            motionValue.values[v].dmgType = null;
+          }
+          else if(motionValue.key.endsWith("Interval"))
+          {
+            let tiers = motionValue.rawValues[v].split("/");
+            tiers.forEach((cd,i) => tiers[i] = parseFloat(cd.endsWith("s")?cd.slice(0,-1):cd).toFixed(1));
+            motionValue.values[v].value = tiers.join("/") + "s";
+            motionValue.values[v].dmgType = null;
           }
           else
           {
-            val = "**" + values[v];
-            dmgType = null;
+            motionValue.values[v].value = "**" + motionValue.rawValues[v];
+            motionValue.values[v].dmgType = null;
           }
-          calcValues.push({raw:values[v], val, hits, baseDMG, critical, average, dmgType});
         }
-        newKey = newKey.replace(") (", " + ");
+        motionValue.newKey = motionValue.newKey.replace(") (", " + ");
         
+        // Determine the numeric qualities of the motion value.
+        let isAllNumeric = motionValue.values.every(elem => !isNaN(elem.value));
+        let canCrit = isAllNumeric && motionValue.values.every(elem => !isNaN(elem.critical) && !isNaN(elem.average) && elem.value != elem.critical && elem.dmgType!="percent" && elem.dmgType!="self");
+        if(isAllNumeric)
+        {
+          motionValue.values.forEach(hit => {
+            hit.value = parseFloat(hit.value);
+            hit.critical = parseFloat(hit.critical);
+            hit.average = parseFloat(hit.average);
+          });
+        }
+
         // Motion value modifications that require the entire motion value to be calculated first.
         for(let modifier of mvModifiers)
         {
-          if(Array.isArray(modifier.label) ? modifier.label.indexOf(key) > -1 : modifier.label == key)
+          if(Array.isArray(modifier.label) ? modifier.label.indexOf(motionValue.key) > -1 : modifier.label == motionValue.key)
           {
-            if(modifier.method == "+hit*")
+            if(isAllNumeric && modifier.method == "+hit*")
             {
-              calcValues.push({
-                val: calcValues[calcValues.length-1].val * modifier.value,
-                hits: 1,
-              });
+              let additional = Object.assign({}, motionValue.values[motionValue.values.length-1]);
+              additional.value *= modifier.value;
+              additional.critical *= modifier.value;
+              additional.average *= modifier.value;
+              additional.hits = 1;
+              motionValue.rawValues.push("");
+              motionValue.values.push(additional);
             }
-            else if(modifier.method == "*")
+            else if(isAllNumeric && modifier.method == "*")
             {
-              calcValues.forEach(cv => {
-                cv.val *= 1+modifier.value;
-                cv.critical *= 1+modifier.value;
-                cv.average *= 1+modifier.value;
+              motionValue.values.forEach(hit => {
+                hit.value *= 1+modifier.value;
+                hit.critical *= 1+modifier.value;
+                hit.average *= 1+modifier.value;
               });
             }
           }
         }
         
-        let isAllNumeric = calcValues.every(elem => !isNaN(elem.val));
-        let canCrit = isAllNumeric && calcValues.every(elem => !isNaN(elem.critical) && !isNaN(elem.average) && elem.val != elem.critical);
-        let valueOut;
+        // Calculate the final number to output.
         if(isAllNumeric)
         {
-          calcValues.forEach(elem => {
-            elem.val = parseFloat(elem.val);
-            elem.critical = parseFloat(elem.critical);
-            elem.average = parseFloat(elem.average);
-          });
-          if(calcValues.every(elem => elem.dmgType))
-            valueOut = calcValues.reduce((out, elem) => out + (canCrit?elem.average:elem.val) * elem.hits, 0);
+          if(motionValue.values.every(elem => elem.dmgType))
+            motionValue.final = motionValue.values.reduce((out, elem) => out + (canCrit?elem.average:elem.value) * elem.hits, 0);
           else
-            valueOut = "";
+            motionValue.final = "";
         }
         else
-          valueOut = "";
+          motionValue.final = "";
         
-        let stringOut = calcValues.reduce((out, elem) => {
+        // Calculate the text to output.
+        motionValue.string = motionValue.values.reduce((out, elem) => {
           return (out!==null ? `${out} + ` : ``)
-            //+ (["anemo","cryo","dendro","electro","hydro","geo","pyro","physical"].indexOf(elem.dmgType)>-1 ? `{{element:${elem.dmgType.slice(0,1).toUpperCase()+elem.dmgType.slice(1).toLowerCase()}}}` : "")
-            + (isAllNumeric ? elem.val.toFixed(0) + (canCrit ? ` (${elem.critical.toFixed(0)})` : ``) : elem.val)
-            + (elem.dmgType=="percent" ? "%" : "")
+            + (["anemo","cryo","dendro","electro","hydro","geo","pyro","physical"].indexOf(elem.dmgType)>-1 ? `{{element:${elem.dmgType.slice(0,1).toUpperCase()+elem.dmgType.slice(1).toLowerCase()}}}` : "")
+            + (isAllNumeric&&elem.dmgType!="percent"&&elem.dmgType!="self" ? elem.value.toFixed(0) + (canCrit ? ` (${elem.critical.toFixed(0)})` : ``) : elem.value)
+            + (elem.dmgType=="percent"||elem.dmgType=="self" ? "%" : "")
             + (elem.hits>1 ? ` × ${elem.hits}` : ``);
         }, null);
         
-        result.push({
-          rawKey,
-          key: newKey,
-          rawValue: value,
-          valueList: calcValues,
-          string: stringOut,
-          value: valueOut,
-        });
+        result.push(motionValue);
         
-        if(!reaction)
+        if(!motionValue.reaction)
         {
-          if(calcValues.some(elem => elem.dmgType == "electro"))
-            allKeys.push(key+" [aggravate]");
-          if(calcValues.some(elem => elem.dmgType == "dendro"))
-            allKeys.push(key+" [spread]");
-          if(calcValues.some(elem => elem.dmgType == "cryo"))
-            allKeys.push(key+" [melt-reverse]");
-          if(calcValues.some(elem => elem.dmgType == "hydro"))
-            allKeys.push(key+" [vaporize-forward]");
-          if(calcValues.some(elem => elem.dmgType == "pyro"))
+          if(motionValue.values.some(elem => elem.dmgType == "electro"))
+            allKeys.push(motionValue.key+" [aggravate]");
+          if(motionValue.values.some(elem => elem.dmgType == "dendro"))
+            allKeys.push(motionValue.key+" [spread]");
+          if(motionValue.values.some(elem => elem.dmgType == "cryo"))
+            allKeys.push(motionValue.key+" [melt-reverse]");
+          if(motionValue.values.some(elem => elem.dmgType == "hydro"))
+            allKeys.push(motionValue.key+" [vaporize-forward]");
+          if(motionValue.values.some(elem => elem.dmgType == "pyro"))
           {
-            allKeys.push(key+" [melt-forward]");
-            allKeys.push(key+" [vaporize-reverse]");
+            allKeys.push(motionValue.key+" [melt-forward]");
+            allKeys.push(motionValue.key+" [vaporize-reverse]");
           }
           // TODO: If an infusion is toggled-on, these values will not be added, because new motion values are not added on normal value updates, only full statblock updates.
         }
@@ -1215,134 +1257,112 @@ export default class Character extends GenshinItem
     return result;
   }
   
-  getDamage(value, stat, rawAlternates, {key="", talent, dmgType, ignoreRES, ignoreDEF, reaction, baseAdd=0, baseMult=1}={})
+  applyFormulas(motionValue, iValue, rawAlternates, {ignoreRES, ignoreDEF, baseAdd=0, baseMult=1}={})
   {
-    if(isNaN(value))
+    let partialValue = motionValue?.values?.[iValue];
+    if(isNaN(partialValue.value))
     {
-      console.error(`NaN (${value}) passed to `);
-      return {
-        damage: NaN,
-        dmgType,
-      };
+      console.error(`NaN (${partialValue.value}) passed to `);
+      return;
     }
     
     let alternates = Object.assign({}, rawAlternates);
-    value = parseFloat(value);
-    let baseDMG = stat=="flat" ? value : value*this.getStat(stat, alternates)/100;
+    partialValue.value = parseFloat(partialValue.value);
+    partialValue.baseDMG = partialValue.stat=="flat" ? partialValue.value : partialValue.value*this.getStat(partialValue.stat, alternates)/100;
     
-    if(dmgType == "healing")
+    if(partialValue.dmgType == "healing")
     {
-      let value = baseDMG * (1 + this.getStat("heal_", rawAlternates)/100);
-      return {
-        baseDMG,
-        damage: value,
-        dmgType,
-        critical: value,
-        average: value,
-      };
+      partialValue.value = partialValue.baseDMG * (1 + this.getStat("heal_", rawAlternates)/100);
+      return;
     }
-    else if(dmgType == "shielding")
+    else if(partialValue.dmgType == "shielding")
     {
-      let value = baseDMG * (1 + this.getStat("shield_", rawAlternates)/100);
-      return {
-        baseDMG,
-        damage: value,
-        dmgType,
-        critical: value,
-        average: value,
-      };
+      partialValue.value = partialValue.baseDMG * (1 + this.getStat("shield_", rawAlternates)/100);
+      return;
     }
-    else if(dmgType == "hp")
+    else if(partialValue.dmgType == "hp" || partialValue.dmgType == "percent" || partialValue.dmgType == "self" || partialValue.dmgType == "bonus")
     {
-      return {
-        baseDMG,
-        damage: baseDMG,
-        dmgType,
-        critical: baseDMG,
-        average: baseDMG,
-      };
+      return;
     }
     
     let critRate = this.getStat("critRate_", alternates)/100;
     let critDMG = 1 + this.getStat("critDMG_", alternates)/100;
     let dmgMult = 100;
-    if(talent == "auto")
+    if(motionValue.talent == "auto")
     {
       if(this.weaponType == "Catalyst")
-        dmgType = dmgType ?? this.element.toLowerCase();
+        partialValue.dmgType = partialValue.dmgType ?? this.element.toLowerCase();
       
-      if(key.includes("Plunge DMG"))
+      if(motionValue.key.includes("Plunge DMG"))
       {
-        dmgType = dmgType ?? "physical";
+        partialValue.dmgType = partialValue.dmgType ?? "physical";
         alternates.situation = "Plunging Attack";
         dmgMult = this.getStat("plunging_dmg_", alternates);
       }
-      else if(key.includes("-Hit DMG") || key.includes("Aimed Shot") && !key.includes("Charge"))
+      else if(motionValue.key.includes("-Hit DMG") || motionValue.key.includes("Aimed Shot") && !motionValue.key.includes("Charge"))
       {
-        dmgType = dmgType ?? "physical";
+        partialValue.dmgType = partialValue.dmgType ?? "physical";
         alternates.situation = "Normal Attack";
         dmgMult = this.getStat("normal_dmg_", alternates);
       }
       else
       {
         if(this.weaponType == "Bow")
-          dmgType = dmgType ?? this.element.toLowerCase();
+          partialValue.dmgType = partialValue.dmgType ?? this.element.toLowerCase();
         else
-          dmgType = dmgType ?? "physical";
+          partialValue.dmgType = partialValue.dmgType ?? "physical";
         alternates.situation = "Charged Attack";
         dmgMult = this.getStat("charged_dmg_", alternates);
       }
-      dmgMult += this.getStat(dmgType+"_dmg_", alternates) + this.getStat("dmg_", alternates);
+      dmgMult += this.getStat(partialValue.dmgType+"_dmg_", alternates) + this.getStat("dmg_", alternates);
     }
-    else if(talent == "reaction")
+    else if(motionValue.talent == "reaction")
     {
-      dmgMult = this.getStat(stat+"_dmg_", alternates);
+      dmgMult = this.getStat(partialValue.stat+"_dmg_", alternates);
       critRate = 0;
       critDMG = 0;
     }
     else
     {
-      if(talent == "skill")
+      if(motionValue.talent == "skill")
         alternates.situation = "Elemental Skill";
-      else if(talent == "burst")
+      else if(motionValue.talent == "burst")
         alternates.situation = "Elemental Burst";
-      dmgType = dmgType ?? this.element.toLowerCase();
-      dmgMult = this.getStat(talent+"_dmg_", alternates);
-      dmgMult += this.getStat(dmgType+"_dmg_", alternates) + this.getStat("dmg_", alternates);
+      partialValue.dmgType = partialValue.dmgType ?? this.element.toLowerCase();
+      dmgMult = this.getStat(motionValue.talent+"_dmg_", alternates);
+      dmgMult += this.getStat(partialValue.dmgType+"_dmg_", alternates) + this.getStat("dmg_", alternates);
     }
     
     let level = alternates?.level??(alternates?.preview?(this.preview.level??this.level):this.level);
-    if(dmgType == "electro" && reaction == "aggravate" || dmgType == "dendro" && reaction == "spread")
+    if(partialValue.dmgType == "electro" && motionValue.reaction == "aggravate" || partialValue.dmgType == "dendro" && motionValue.reaction == "spread")
     {
       let rxnMult;
-      if(reaction == "aggravate")
+      if(motionValue.reaction == "aggravate")
         rxnMult = 1.15;
-      if(reaction == "spread")
+      if(motionValue.reaction == "spread")
         rxnMult = 1.25;
       let bonusEM = 5 * this.getStat("eleMas",alternates) / (this.getStat("eleMas",alternates) + 1200);
-      baseAdd += rxnMult * GenshinCharacterStats.levelReactionMultiplier[level].pc * (1 + bonusEM + this.getStat(reaction+"_dmg_",alternates) / 100);
+      baseAdd += rxnMult * GenshinCharacterStats.levelReactionMultiplier[level].pc * (1 + bonusEM + this.getStat(motionValue.reaction+"_dmg_",alternates) / 100);
     }
     
     // Defense
     let DEF = 5 * (this.list.targetEnemyData[`enemyLevel`]??90) + 500;
     let k = (1 + this.getStat("enemy_def_",alternates)/100) * (1 - this.getStat("ignore_def_",alternates)/100); // TODO: Ignore def is probably not a stat, because it's attack-specific and not an actual buff to the character.
-    let reductionDEF = (this.level + 100) / (k * ((this.list.targetEnemyData[`enemyLevel`]??90) + 100) + (this.level + 100));
+    let reductionDEF = (level + 100) / (k * ((this.list.targetEnemyData[`enemyLevel`]??90) + 100) + (level + 100));
     
     // Resistances
-    let RES = (this.list.targetEnemyData[`enemy${dmgType.at(0).toUpperCase()+dmgType.slice(1)}RES`]??10) + this.getStat("enemy_"+dmgType+"_res_",alternates);
+    let RES = (this.list.targetEnemyData[`enemy${partialValue.dmgType.at(0).toUpperCase()+partialValue.dmgType.slice(1)}RES`]??10) + this.getStat("enemy_"+partialValue.dmgType+"_res_",alternates);
     let reductionRES = RES>=75 ? 1/(4*RES+1) : RES>=0 ? 1-RES/100 : 1-RES/200;
     
     // Vape/Melt
     let rxnMult = 1;
-    if(dmgType == "cryo" && reaction == "melt-reverse" || dmgType == "hydro" && reaction == "vaporize-forward" || dmgType == "pyro" && (reaction == "melt-forward" || reaction == "vaporize-reverse"))
-      rxnMult = this.getReaction(reaction, alternates);
+    if(partialValue.dmgType == "cryo" && motionValue.reaction == "melt-reverse" || partialValue.dmgType == "hydro" && motionValue.reaction == "vaporize-forward" || partialValue.dmgType == "pyro" && (motionValue.reaction == "melt-forward" || motionValue.reaction == "vaporize-reverse"))
+      rxnMult = this.getReaction(motionValue.reaction, alternates);
     
     // Final
-    //console.debug(`Damage calculations for "${newKey}":`, {value, [stat]:this.getStat(stat, alternates), baseDMG, baseMult, baseAdd, dmgMult, hits, resistance:{RES, reductionRES}, defense:{DEF, k, reductionDEF}, alternates});
-    let damage = (baseDMG * baseMult + baseAdd) * (1 + dmgMult/100) * (ignoreRES ? 1 : reductionRES) * (ignoreDEF ? 1 : reductionDEF) * rxnMult;
-    let critical = damage * critDMG;
-    let average = critRate * critical + (1-critRate) * damage;
-    return {baseDMG, damage, dmgType, critical, average};
+    partialValue.value = (partialValue.baseDMG * baseMult + baseAdd) * (1 + dmgMult/100) * (ignoreRES ? 1 : reductionRES) * (ignoreDEF ? 1 : reductionDEF) * rxnMult;
+    partialValue.critical = partialValue.value * critDMG;
+    partialValue.average = critRate * partialValue.critical + (1-critRate) * partialValue.value;
   }
   
   /**
@@ -1901,7 +1921,7 @@ export default class Character extends GenshinItem
       };
     
     
-    /** Equip Artifact Button **/
+    /** showFavoritesToggle **/
     let showFavoritesToggle = document.getElementById("artifactsFilterFavorites");
     if(showFavoritesToggle && !showFavoritesToggle.onchange)
     {
@@ -1910,6 +1930,19 @@ export default class Character extends GenshinItem
           characterArtifacts.classList.add("favorites-only");
         else
           characterArtifacts.classList.remove("favorites-only");
+      };
+    }
+    
+    
+    /** Equip Artifact Button **/
+    let showTakenToggle = document.getElementById("artifactsFilterTaken");
+    if(showTakenToggle && !showTakenToggle.onchange)
+    {
+      showTakenToggle.onchange = event => {
+        if(event.target.checked)
+          characterArtifacts.classList.add("available-only");
+        else
+          characterArtifacts.classList.remove("available-only");
       };
     }
     

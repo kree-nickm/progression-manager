@@ -340,11 +340,11 @@ export default {
       "name": "Emperor of Fire and Iron",
       "4": "Emperor's Resolution"
     },
-    "Prototype": {
+    "Generator": {
       "name": "Prototype Cal. Breguet",
       "4": "\"Tourbillon Device\""
     },
-    "Unicorn": {
+    "Seahorse": {
       "name": "Millennial Pearl Seahorse",
       "4": "Fontemer Unihorn"
     },

@@ -299,6 +299,7 @@ export default class ArtifactList extends GenshinList
       dependencies: item => [
         {item:item, field:"wanters"},
       ],
+      popup: item => item,
     });
     
     let locationField = this.display.addField("location", {

@@ -1,6 +1,11 @@
 import GenshinArtifactData from "./gamedata/GenshinArtifactData.js";
 
+import { handlebars } from "./Renderer.js";
 import GenshinItem from "./GenshinItem.js";
+
+handlebars.registerHelper("maxStacks", function(modifier, asker, preview, options) {
+  return modifier.maxStacks(asker, {preview:Boolean(preview)});
+});
 
 export default class StatModifier {
   static create(code, characterSource, type, properties={})
@@ -106,15 +111,19 @@ export default class StatModifier {
     if(code[0] == "proc")
     {
       this.isProc = true;
-      if(typeof(code[2]) == "number")
+      if(typeof(code[2]) == "number" || Array.isArray(code[2]) && (code[2][0] == "mv"))
       {
-        this.maxStacks = code[2];
+        this._maxStacks = code[2];
         this.trigger = code[3] ?? "When active";
       }
       else
       {
-        this.maxStacks = code[3] ?? 1;
+        this._maxStacks = code[3] ?? 1;
         this.trigger = code[2] ?? "When active";
+      }
+      if(Array.isArray(this._maxStacks))
+      {
+        this._maxStacks = {func:this._maxStacks[0], args:this._maxStacks.slice(1)};
       }
     }
     else
@@ -277,6 +286,14 @@ export default class StatModifier {
     return { stats, motionValues };
   }
   
+  maxStacks(asker, alternates={})
+  {
+    if(typeof(this._maxStacks) == "object")
+      return this.calcStat(this._maxStacks, asker, alternates);
+    else
+      return this._maxStacks;
+  }
+  
   get isAvailable()
   {
     return this.isCurrent || this.isPreview;
@@ -367,7 +384,7 @@ export default class StatModifier {
     if(code[0] == "proc")
     {
       let stacks, trigger;
-      if(typeof(code[2]) == "number")
+      if(typeof(code[2]) == "number" || Array.isArray(code[2]) && (code[2][0] == "mv"))
       {
         stacks = code[2];
         trigger = code[3];
@@ -376,6 +393,13 @@ export default class StatModifier {
       {
         stacks = code[3];
         trigger = code[2];
+      }
+      if(Array.isArray(stacks))
+      {
+        if(stacks[0] == "mv")
+        {
+          stacks = `(the motion value "${stacks[1]}")`;
+        }
       }
       return (trigger ? `<i>${trigger}:</i> ` : `<i>When active:</i> `) + StatModifier.codeToString(code[1]) + (stacks ? ` (Stacks up to ${stacks} times.)` : "");
     }
@@ -414,17 +438,24 @@ export default class StatModifier {
     }
     else if(command == "editmv")
     {
-      let result = `Edit ${parameters[0]} motion value "${parameters[1]}"`;
+      let mvStr = Array.isArray(parameters[1]) ? parameters[1].reduce((acc,mv,i) => (acc ? acc + (i==parameters[1].length-1?'" and "':'", "') : '') + mv, '') : parameters[1];
+      let valueNumber = Array.isArray(parameters[3]) ? parameters[3].slice(1).join(' / ')+" (based on stacks)" : parameters[3];
+      let valuePercent = Array.isArray(parameters[3]) ? parameters[3].slice(1).map(v=>(v*100)+"%").join(' / ')+" (based on stacks)" : (parameters[3]*100)+"%";
+      let result = `Edit ${parameters[0]} motion value "${mvStr}"`;
       if(parameters[2] == "+hit")
-        result += `, adding an additional hit of ${parameters[3]}.`;
+        result += `, adding an additional hit of ${valueNumber}.`;
       else if(parameters[2] == "+hit*")
-        result += `, adding an additional hit equal to ${parameters[3]*100}% of the existing value.`;
+        result += `, adding an additional hit equal to ${valuePercent} of the existing value.`;
       else if(parameters[2] == "*")
-        result += `, increasing it by ${parameters[3]*100}%.`;
+        result += `, increasing it by ${valuePercent}.`;
       else if(parameters[2] == "s")
-        result += `, reducing the time by ${parameters[3]*100}%.`;
+        result += `, reducing the time by ${valuePercent}.`;
+      else if(parameters[2] == "*base")
+        result += `, increasing the base DMG multiplier by ${valuePercent}.`;
+      else if(parameters[2] == "+base")
+        result += `, increasing the base DMG by ${valueNumber}.`;
       else
-        result += `, affecting it in some way (TBA) by ${parameters[3]}.`;
+        result += `, affecting it in some way (TBA) by ${valueNumber}.`;
       return result;
     }
     else if(command == "addmv")
@@ -484,7 +515,16 @@ export default class StatModifier {
         result = result.concat(this.motionValues.edited.filter(mv => mv.talent == talent));
       result.forEach(mv => {
         if(mv.calc)
-          mv.value = this.calcStat(mv.calc, asker, alternates) * this.active;
+        {
+          let thisStatModifier = this;
+          Object.defineProperty(mv, "value", {
+            get() {
+              if(!("_value" in this))
+                this._value = thisStatModifier.calcStat(this.calc, asker, alternates) * thisStatModifier.active;
+              return this._value;
+            },
+          });
+        }
       });
       
       // Check for modifications that override all other similar ones, such as certain weapon infusions.
@@ -539,8 +579,8 @@ export default class StatModifier {
       case "mv":
         const [ mvKey ] = calc.args;
         let motionValue = this.characterSource.getMotionValues(null, alternates, {onlyKey:mvKey}).find(mv => mv.rawKey == mvKey);
-        if(typeof(motionValue?.value) == "number")
-          return motionValue.value;
+        if(typeof(motionValue?.final) == "number")
+          return motionValue.final;
         else
           console.warn(`Function 'mv': "${mvKey}" is not a usable motion value:`, motionValue);
         break;

@@ -1143,6 +1143,38 @@ export default {
         ],
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Song_of_Broken_Pines"
     },
+    "SplendorOfTranquilWaters": {
+        "name": "Splendor of Tranquil Waters",
+        "type": "Sword",
+        "rarity": 5,
+        "baseATK": 44,
+        "stat": "critDMG_",
+        "passive": "When the equipping character's current HP increases or decreases, Elemental Skill DMG dealt will be increased by @0% for 6s. Max 3 stacks. This effect can be triggered once every 0.2s. When other party members' current HP increases or decreases, the equipping character's Max HP will be increased by @1% for 6s. Max 2 stacks. This effect can be triggered once every 0.2s. The aforementioned effects can be triggered even if the wielder is off-field.",
+        "refinementData": [
+            {
+                "1": 8,
+                "2": 10,
+                "3": 12,
+                "4": 14,
+                "5": 16
+            },
+            {
+                "1": 14,
+                "2": 17.5,
+                "3": 21,
+                "4": 24.5,
+                "5": 28
+            }
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Splendor_of_Tranquil_Waters",
+        "imgs": [
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4f\/Weapon_Splendor_of_Tranquil_Waters.png",
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a0\/Weapon_Splendor_of_Tranquil_Waters_2nd.png"
+        ],
+        "matForgery": "Droplet",
+        "matStrongEnemy": "Hydro Phantasms",
+        "matWeakEnemy": "Fontemer Aberrants"
+    },
     "StaffOfHoma": {
         "name": "Staff of Homa",
         "rarity": 5,
@@ -3374,6 +3406,38 @@ export default {
         "refinementData": [],
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Predator"
     },
+    "ProspectorsDrill": {
+        "name": "Prospector's Drill",
+        "type": "Polearm",
+        "rarity": 4,
+        "baseATK": 44,
+        "stat": "atk_",
+        "passive": "When the wielder is healed or heals others, they will gain a Unity's Symbol that lasts 30s, up to a maximum of 3 Symbols. When using their Elemental Skill or Burst, all Symbols will be consumed and the Struggle effect will be granted for 10s. For each Symbol consumed, gain @0% ATK and @1% All Elemental DMG Bonus. The Struggle effect can be triggered once every 15s, and Symbols can be gained even when the character is not on the field.",
+        "refinementData": [
+            {
+                "1": 3,
+                "2": 4,
+                "3": 5,
+                "4": 6,
+                "5": 7
+            },
+            {
+                "1": 7,
+                "2": 8.5,
+                "3": 10,
+                "4": 11.5,
+                "5": 13
+            }
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Prospector%27s_Drill",
+        "imgs": [
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b1\/Weapon_Prospector%27s_Drill.png",
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a9\/Weapon_Prospector%27s_Drill_2nd.png"
+        ],
+        "matForgery": "Chord",
+        "matStrongEnemy": "Fatui Operatives",
+        "matWeakEnemy": "Clockwork Meka"
+    },
     "PrototypeAmber": {
         "name": "Prototype Amber",
         "rarity": 4,
@@ -3546,6 +3610,38 @@ export default {
             }
         ],
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Rainslasher"
+    },
+    "RangeGauge": {
+        "name": "Range Gauge",
+        "type": "Bow",
+        "rarity": 4,
+        "baseATK": 44,
+        "stat": "atk_",
+        "passive": "When the wielder is healed or heals others, they will gain a Unity's Symbol that lasts 30s, up to a maximum of 3 Symbols. When using their Elemental Skill or Burst, all Symbols will be consumed and the Struggle effect will be granted for 10s. For each Symbol consumed, gain @0% ATK and @1% All Elemental DMG Bonus. The Struggle effect can be triggered once every 15s, and Symbols can be gained even when the character is not on the field.",
+        "refinementData": [
+            {
+                "1": 3,
+                "2": 4,
+                "3": 5,
+                "4": 6,
+                "5": 7
+            },
+            {
+                "1": 7,
+                "2": 8.5,
+                "3": 10,
+                "4": 11.5,
+                "5": 13
+            }
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Range_Gauge",
+        "imgs": [
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/11\/Weapon_Range_Gauge.png",
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/be\/Weapon_Range_Gauge_2nd.png"
+        ],
+        "matForgery": "Chord",
+        "matStrongEnemy": "Hydro Phantasms",
+        "matWeakEnemy": "Fontemer Aberrants"
     },
     "RightfulReward": {
         "name": "Rightful Reward",
@@ -3853,7 +3949,26 @@ export default {
                 "5": 80
             }
         ],
-        "code": ["proc",[["stat",["hp_","@0"]],["stat",["eleMas","@1"]]],"After 5s off field (10s)"],
+        "code": [
+            "proc",
+            [
+                [
+                    "stat",
+                    [
+                        "hp_",
+                        "@0"
+                    ]
+                ],
+                [
+                    "stat",
+                    [
+                        "eleMas",
+                        "@1"
+                    ]
+                ]
+            ],
+            "After 5s off field (10s)"
+        ],
         "matForgery": "Pillar",
         "matStrongEnemy": "Fatui Cicin Mages",
         "matWeakEnemy": "Samachurls",
@@ -4133,6 +4248,31 @@ export default {
         "passive": "Hitting enemies with Normal or Charged Attacks grants a 50% chance to deal 200% ATK as DMG in a small AoE. This effect can only occur once every 10s.\nAdditionally, if the Traveler equips the Sword of Descension, their ATK is increased by 66.",
         "refinementData": [],
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sword_of_Descension"
+    },
+    "SwordOfNarzissenkreuz": {
+        "name": "Sword of Narzissenkreuz",
+        "type": "Sword",
+        "rarity": 4,
+        "baseATK": 42,
+        "stat": "atk_",
+        "passive": "When the equipping character does not have an Arkhe: When Normal Attacks, Charged Attacks, or Plunging Attacks strike, a Pneuma or Ousia energy blast will be unleashed, dealing @0% of ATK as DMG. This effect can be triggered once every 12s. The energy blast type is determined by the current type of the Sword of Narzissenkreuz.",
+        "refinementData": [
+            {
+                "1": 160,
+                "2": 200,
+                "3": 240,
+                "4": 280,
+                "5": 320
+            }
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sword_of_Narzissenkreuz",
+        "imgs": [
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1f\/Weapon_Sword_of_Narzissenkreuz_Pneuma.png",
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/30\/Weapon_Sword_of_Narzissenkreuz_Ousia.png"
+        ],
+        "matForgery": "Chord",
+        "matStrongEnemy": "Fatui Operatives",
+        "matWeakEnemy": "Fontemer Aberrants"
     },
     "TalkingStick": {
         "name": "Talking Stick",

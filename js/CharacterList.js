@@ -520,8 +520,8 @@ export default class CharacterList extends GenshinList
         format = parseInt(format);
         if(preview == 2)
         {
-          let currentMotionValue = item.getMotionValues(talent,{preview:0}).find(v => v.rawKey == mv).value;
-          let previewMotionValue = item.getMotionValues(talent,{preview:1}).find(v => v.rawKey == mv).value;
+          let currentMotionValue = item.getMotionValues(talent,{preview:0}).find(v => v.rawKey == mv).final;
+          let previewMotionValue = item.getMotionValues(talent,{preview:1}).find(v => v.rawKey == mv).final;
           let result = (previewMotionValue-currentMotionValue)/currentMotionValue;
           return result || "";
         }
@@ -532,6 +532,13 @@ export default class CharacterList extends GenshinList
           {
             if(format==-1)
               return motionValue.rawKey;
+            else if(format==1)
+              return Object.keys(motionValue)
+                .filter(k => !['string','newKey'].includes(k))
+                .map(k => k != 'values'
+                  ? `${k}: ${String(motionValue[k])}`
+                  : motionValue[k].map((v,i) => Object.keys(v).map(kk => `${k}[${i}].${kk}: ${String(v[kk])}`).join(`\r\n`)).join(`\r\n`))
+                .join(`\r\n`);
             else
               return motionValue.rawValue;
           }
@@ -544,8 +551,8 @@ export default class CharacterList extends GenshinList
         format = parseInt(format);
         if(preview == 2)
         {
-          let currentMotionValue = item.getMotionValues(talent,{preview:0}).find(v => v.rawKey == mv).value;
-          let previewMotionValue = item.getMotionValues(talent,{preview:1}).find(v => v.rawKey == mv).value;
+          let currentMotionValue = item.getMotionValues(talent,{preview:0}).find(v => v.rawKey == mv).final;
+          let previewMotionValue = item.getMotionValues(talent,{preview:1}).find(v => v.rawKey == mv).final;
           let result = (previewMotionValue-currentMotionValue)/currentMotionValue*100;
           return result ? result.toFixed(1)+"%" : "";
         }
@@ -555,9 +562,9 @@ export default class CharacterList extends GenshinList
           if(motionValue)
           {
             if(format==1)
-              return typeof(motionValue.value)=="number" ? motionValue.value.toFixed(0) : motionValue.value;
+              return typeof(motionValue.final)=="number" ? motionValue.final.toFixed(0) : motionValue.final;
             else if(format==-1)
-              return motionValue.key;
+              return motionValue.newKey;
             else
               return motionValue.string;
           }
@@ -616,7 +623,7 @@ export default class CharacterList extends GenshinList
       label: "",
       dynamic: true,
       popup: item => item.weapon,
-      value: (item,useImages=this.viewer.settings.preferences.characterList,size) => item.weapon ? (useImages=='1' ? {
+      value: (item,useImages=this.viewer.settings.preferences.characterList,size="sm") => item.weapon ? (useImages=='1' ? {
         tag: "div",
         value: [
           {
@@ -673,7 +680,7 @@ export default class CharacterList extends GenshinList
         label: `<img src="img/${slotKey}.webp"/>`,
         dynamic: true,
         //popup: item => item[slotKey+'Artifact'],
-        value: (item,useImages=this.viewer.settings.preferences.characterList,size) => {
+        value: (item,useImages=this.viewer.settings.preferences.characterList,size="sm") => {
           let artifact = item[slotKey+'Artifact'];
           return artifact ? (useImages=='1' ? {
             tag: "div",

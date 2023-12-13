@@ -53,7 +53,7 @@ export default class Team extends GenshinItem {
   get characters()
   {
     if(!this._characters)
-      this._characters = this.memberKeys.map(key => this.viewer.lists.CharacterList.get(key));
+      this._characters = this.memberKeys.map(key => this.viewer.lists.CharacterList.get(key)).filter(character => character);
     return this._characters;
   }
 }

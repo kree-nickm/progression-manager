@@ -7,6 +7,7 @@ export default class Artifact extends GenshinItem
 {
   static dontSerialize = GenshinItem.dontSerialize.concat(["character","wanters","substatRolls"]);
   static goodProperties = ["setKey","slotKey","level","rarity","mainStatKey","location","lock","substats"];
+  static templateName = "renderArtifactAsPopup";
   static shorthandStat = {
     'eleMas': "EM",
     'enerRech_': "ER%",

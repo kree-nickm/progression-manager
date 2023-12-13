@@ -1,4 +1,4 @@
-<div class="list-item {{#ifeq (lookup (nco character.base character) 'key') item.location}}equipped{{/ifeq}} {{#iffave character item.setKey buildId}}favorite{{/iffave}}" name="{{unique item}}" data-template="renderArtifactAsCard" data-uuid="{{uuid item}}">
+<div class="list-item {{#ifeq (lookup (nco character.base character) 'key') item.location}}equipped{{/ifeq}} {{#iffave character item.setKey buildId}}favorite{{/iffave}} {{#if item.location}}{{#ifeq character.key item.location}}{{else}}taken{{/ifeq}}{{/if}}" name="{{unique item}}" data-template="renderArtifactAsCard" data-uuid="{{uuid item}}">
     <img class="rarity" src="img/Background_Item_{{getProperty item 'rarity'}}_Star.webp"/>
     <div class="artifact-header">
         <div class="level">{{> renderItemField item=item field="level" wrapper="span"}}</div>
