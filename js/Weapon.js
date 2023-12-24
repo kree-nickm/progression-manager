@@ -129,6 +129,7 @@ export default class Weapon extends GenshinItem
   get strongMatType(){ return this.loaded ? GenshinWeaponData[this.key].matStrongEnemy : ""; }
   get weakMatType(){ return this.loaded ? GenshinWeaponData[this.key].matWeakEnemy : ""; }
   get image(){ return GenshinWeaponData[this.key]?.imgs[this.ascension > 1 ? 1 : 0] ?? ""; }
+  get releaseTimestamp(){ return GenshinWeaponData[this.key]?.release ? Date.parse(GenshinWeaponData[this.key]?.release) : 0; }
   
   getPassive(ref=this.refinement)
   {

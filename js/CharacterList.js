@@ -803,6 +803,16 @@ export default class CharacterList extends GenshinList
     });
   }
   
+  afterUpdate(field, value, action, options)
+  {
+    if(!super.afterUpdate(field, value, action, options))
+      return false;
+    if(field.string == "list" && (field.value.length != value.length || options.force))
+    {
+      document.getElementById("addCharacterSelect").needsUpdate = true;
+    }
+  }
+  
   addTraveler()
   {
     let base = this.get("Traveler");
@@ -1020,6 +1030,8 @@ export default class CharacterList extends GenshinList
       {
         if(!this.get(chara))
         {
+          if(!this.viewer.settings.preferences.showLeaks && Date.parse(GenshinCharacterData[chara].release) > Date.now())
+            continue;
           let option = selectAdd.appendChild(document.createElement("option"));
           option.value = chara;
           option.innerHTML = GenshinCharacterData[chara].name;

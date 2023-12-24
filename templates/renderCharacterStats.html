@@ -92,6 +92,11 @@
                 <div class="col-2"><label for="previewWeaponLevel" class="form-text">Weapon Level</label><input id="previewWeaponLevel" data-stat="weaponLevel" class="preview-stat form-control form-control-sm" type="number" min="1" max="90" value="{{nco item.preview.weaponLevel (getProperty (getProperty item 'weapon') 'level')}}" data-current="{{getProperty (getProperty item 'weapon') 'level'}}"/></div>
                 <div class="col-2"><label for="previewWeaponAscend" class="form-text">Weap. Ascension</label><input id="previewWeaponAscend" data-stat="weaponAscension" class="preview-stat form-control form-control-sm" type="number" min="0" max="6" value="{{nco item.preview.weaponAscension (getProperty (getProperty item 'weapon') 'ascension')}}" data-current="{{getProperty (getProperty item 'weapon') 'ascension'}}"/></div>
                 <div class="col-2"><label for="previewRefinement" class="form-text">Weap. Refinement</label><input id="previewRefinement" data-stat="refinement" class="preview-stat form-control form-control-sm" type="number" min="1" max="5" value="{{nco item.preview.refinement (getProperty (getProperty item 'weapon') 'refinement')}}" data-current="{{getProperty (getProperty item 'weapon') 'refinement'}}"/></div>
+                <div class="col-2">
+                  <label for="previewSet1" class="form-text">Set Bonus 1</label>
+                  <select id="previewSet1" class="preview-stat form-select form-select-sm" data-current="">
+                  </select>
+                </div>
               </div>
               <button class="preview-reset btn btn-sm btn-outline-dark"><i class="fa-solid fa-rotate-left"></i></button>
           </div>

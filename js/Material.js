@@ -121,6 +121,7 @@ export default class Material extends GenshinItem
   set type(val){ this._type = val; }
   get image(){ return GenshinMaterialData[this.key]?.img ?? ""; }
   get rarity(){ return GenshinMaterialData[this.key]?.rarity ?? 1; }
+  get releaseTimestamp(){ return GenshinMaterialData[this.key]?.release ? Date.parse(GenshinMaterialData[this.key]?.release) : 0; }
   
   getFullSource()
   {

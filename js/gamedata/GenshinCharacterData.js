@@ -4643,6 +4643,28 @@ export default {
             }
         }
     },
+    "Chevreuse": {
+        "name": "Chevreuse",
+        "weapon": "Polearm",
+        "element": "Pyro",
+        "rarity": 4,
+        "ascendStat": "hp_",
+        "matBoss": "Seahorse",
+        "matFlower": "Lumidouce Bell",
+        "matEnemy": "Clockwork Meka",
+        "matMastery": "Order",
+        "matTrounce": "Lightless Eye of the Maelstrom",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/8/8a/Chevreuse_Icon.png",
+        "region": "Fontaine",
+        "release": "January 10, 2024",
+        "patch": "4.3",
+        "hpBase": 1003,
+        "atkBase": 16,
+        "defBase": 51,
+        "hpMaxAsc": 3587.953,
+        "atkMaxAsc": 59.416,
+        "defMaxAsc": 179.201
+    },
     "Chongyun": {
         "name": "Chongyun",
         "weapon": "Claymore",
@@ -18234,6 +18256,28 @@ export default {
             }
         }
     },
+    "Navia": {
+        "name": "Navia",
+        "weapon": "Claymore",
+        "element": "Geo",
+        "rarity": 5,
+        "ascendStat": "critDMG_",
+        "matBoss": "Coppelius",
+        "matFlower": "Spring of the First Dewdrop",
+        "matEnemy": "Fontemer Aberrants",
+        "matMastery": "Equity",
+        "matTrounce": "Lightless Silk String",
+        "img": "https://static.wikia.nocookie.net/gensin-impact/images/c/c0/Navia_Icon.png",
+        "region": "Fontaine",
+        "release": "December 20, 2023",
+        "patch": "4.3",
+        "hpBase": 985,
+        "atkBase": 27,
+        "defBase": 62,
+        "hpMaxAsc": 4042.085,
+        "atkMaxAsc": 116.047,
+        "defMaxAsc": 251.182
+    },
     "Neuvillette": {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Neuvillette",
         "ascendStat": "critDMG_",
@@ -26566,6 +26610,28 @@ export default {
                 "text": "For the duration of Pyronado, all party members receive a 15% <span class=\"text-pyro\"><b>Pyro DMG Bonus<\/b><\/span>."
             }
         }
+    },
+    "Xianyun": {
+        "name": "Xianyun",
+        "weapon": "Catalyst",
+        "element": "Anemo",
+        "rarity": 5,
+        "ascendStat": "atk_",
+        "matBoss": "Hidden Beast",
+        "matFlower": "NewFlower44",
+        "matEnemy": "Samachurls",
+        "matMastery": "Gold",
+        "matTrounce": "Lightless Eye of the Maelstrom",
+        "img": "https://api.ambr.top/assets/UI/UI_AvatarIcon_Liuyun.png",
+        "region": "Liyue",
+        "release": "January 31, 2024",
+        "patch": "4.4",
+        "hpBase": 810,
+        "atkBase": 26,
+        "defBase": 45,
+        "hpMaxAsc": 3646.31,
+        "atkMaxAsc": 117.926,
+        "defMaxAsc": 197.295
     },
     "Xiao": {
         "name": "Xiao",

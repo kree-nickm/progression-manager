@@ -1,4 +1,4 @@
-<div class="character-build" name="{{relatedItems.buildName}}" data-template="renderCharacterBuild" data-uuid="{{uuid item}}">
+<div class="character-build" name="{{relatedItems.buildId}}" data-template="renderCharacterBuild" data-uuid="{{uuid item}}">
     <div class="row">
         <div class="col">
             <ul class="nav nav-tabs">
@@ -7,7 +7,7 @@
                 </li>
               {{#each relatedItems.builds}}
                 <li class="nav-item">
-                    <a class="nav-link {{#ifeq . ../relatedItems.buildName}}active{{else}}select-build{{/ifeq}}">{{.}}</a>
+                    <a class="nav-link {{#ifeq @index ../relatedItems.buildId}}active{{else}}select-build{{/ifeq}}" data-build-id="{{@index}}">{{name}}</a>
                 </li>
               {{/each}}
             </ul>
@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="col-auto">
-            <button id="deleteBuildBtn" class="btn btn-danger" title="{{#ifeq relatedItems.buildName "default"}}Cannot delete the default build.{{else}}Delete this build.{{/ifeq}}"{{#ifeq relatedItems.buildName "default"}} disabled="disabled"{{/ifeq}}><i class="fa-solid fa-trash"></i></button>
+            <button id="deleteBuildBtn" class="btn btn-danger" title="{{#ifeq relatedItems.builds.length 1}}Cannot delete the default build.{{else}}Delete this build.{{/ifeq}}"{{#ifeq relatedItems.builds.length 1}} disabled="disabled"{{/ifeq}}><i class="fa-solid fa-trash"></i></button>
         </div>
     </div>
     
@@ -27,7 +27,7 @@
         <div class="col-4">
             <div class="input-group">
                 <label class="input-group-text" for="buildName">Build Name:</label>
-                <input id="buildName" class="form-control" type="text" value="{{relatedItems.buildName}}" disabled="disabled" title="Not yet implemented."/>
+                <input id="buildName" class="form-control" type="text" value="{{relatedItems.buildData.name}}"/>
             </div>
         </div>
         <div class="col-auto align-self-end">
@@ -43,7 +43,7 @@
       <div class="popup-subsection-content">
         <select id="bestArtifactSets" class="form-control selectpicker" data-container=".character-build" multiple="multiple">
           {{#each relatedItems.artifactSets as |set setKey|}}
-            <option value="{{setKey}}" {{#iffave ../item setKey ../relatedItems.buildName}}selected{{/iffave}}>{{set.name}}</option>
+            <option value="{{setKey}}" {{#iffave ../item setKey ../relatedItems.buildId}}selected{{/iffave}}>{{set.name}}</option>
           {{/each}}
         </select>
       </div>

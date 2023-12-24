@@ -157,6 +157,11 @@ export default {
       "2": "Old Operative's Pocket Watch",
       "3": "Operative's Standard Pocket Watch",
       "4": "Operative's Constancy"
+    },
+    "Xuanwen Beasts": {
+      "2": "Feathery Fin",
+      "3": "Lunar Fin",
+      "4": "Chasmlight Fin"
     }
   },
   
@@ -351,6 +356,10 @@ export default {
     "Tulpa": {
       "name": "Hydro Tulpa",
       "4": "Water That Failed To Transcend"
+    },
+    "Hidden Beast": {
+      "name": "Hidden Beast of the South",
+      "4": "Cloudseam Scale"
     }
   },
   

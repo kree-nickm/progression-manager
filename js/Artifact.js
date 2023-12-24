@@ -119,6 +119,7 @@ export default class Artifact extends GenshinItem
     let key = this.mainStatKey.endsWith("o_dmg_") ? "elemental_dmg_" : this.mainStatKey;
     return GenshinArtifactStats[this.rarity].mainstats[key][this.level];
   }
+  get releaseTimestamp(){ return GenshinArtifactData[this.key]?.release ? Date.parse(GenshinArtifactData[this.key]?.release) : 0; }
   
   setSubstat(statId, value)
   {

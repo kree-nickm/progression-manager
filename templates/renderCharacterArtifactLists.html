@@ -12,11 +12,11 @@
         <h4 class="col">Circlet</h4>
     </div>
     <div class="row">
-      {{> renderListAsColumn filter="flower" params=(array relatedItems.buildName) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.flower}}
-      {{> renderListAsColumn filter="plume" params=(array relatedItems.buildName) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.plume}}
-      {{> renderListAsColumn filter="sands" params=(array relatedItems.buildName) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.sands}}
-      {{> renderListAsColumn filter="goblet" params=(array relatedItems.buildName) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.goblet}}
-      {{> renderListAsColumn filter="circlet" params=(array relatedItems.buildName) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.circlet}}
+      {{> renderListAsColumn filter="flower" params=(array relatedItems.buildId) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.flower}}
+      {{> renderListAsColumn filter="plume" params=(array relatedItems.buildId) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.plume}}
+      {{> renderListAsColumn filter="sands" params=(array relatedItems.buildId) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.sands}}
+      {{> renderListAsColumn filter="goblet" params=(array relatedItems.buildId) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.goblet}}
+      {{> renderListAsColumn filter="circlet" params=(array relatedItems.buildId) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.circlet}}
     </div>
   {{/if}}
 </div>

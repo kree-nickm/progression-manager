@@ -1,6 +1,6 @@
 import { DateTime } from 'https://cdn.jsdelivr.net/npm/luxon@3.3.0/+esm';
 
-import GenshinBuilds from "./gamedata/GenshinBuilds.js";
+//import GenshinBuilds from "./gamedata/GenshinBuilds.js";
 
 import DataManager from "./DataManager.js";
 import MaterialList from "./MaterialList.js";
@@ -16,7 +16,7 @@ export default class GenshinManager extends DataManager
   static dontSerialize = DataManager.dontSerialize.concat(["lastDay"]);
   
   lastDay = DateTime.now().setZone("UTC-9").weekdayLong;
-  buildData = GenshinBuilds;
+  buildData = {};//GenshinBuilds;
   
   constructor()
   {
@@ -148,11 +148,16 @@ export default class GenshinManager extends DataManager
       for(let c in data.buildData)
       {
         if(!this.buildData[c])
-          this.buildData[c] = {};
-        for(let b in data.buildData[c])
-        {
-          this.buildData[c][b] = data.buildData[c][b];
-        }
+          this.buildData[c] = [];
+        Object.values(data.buildData[c]).forEach(newBuild => {
+          let overwriteBuild = this.buildData[c].find(oldBuild => oldBuild.name == newBuild.name);
+          if(overwriteBuild)
+          {
+            // check if it's literally the same build, or different with the same name
+            newBuild.name = newBuild.name + " (new)";
+          }
+          this.buildData[c].push(newBuild);
+        });
       }
       console.log("Loaded build data from file.", this.buildData);
     }
@@ -344,11 +349,16 @@ export default class GenshinManager extends DataManager
       for(let c in builds)
       {
         if(!this.buildData[c])
-          this.buildData[c] = {};
-        for(let b in builds[c])
-        {
-          this.buildData[c][b] = builds[c][b];
-        }
+          this.buildData[c] = [];
+        Object.values(builds[c]).forEach(newBuild => {
+          let overwriteBuild = this.buildData[c].find(oldBuild => oldBuild.name == newBuild.name);
+          if(overwriteBuild)
+          {
+            // check if it's literally the same build, or different with the same name
+            newBuild.name = newBuild.name + " (new)";
+          }
+          this.buildData[c].push(newBuild);
+        });
       }
     }
     catch(x)

@@ -76,7 +76,7 @@ export default class Character extends GenshinItem
     burst: 1,
   };
   favorite = false;
-  selectedBuild = "default";
+  selectedBuild = 0;
 
   MaterialList;
   loaded = false;
@@ -438,6 +438,7 @@ export default class Character extends GenshinItem
   get autoIcon(){ return GenshinCharacterData[this.key]?.talents?.["Normal Attack"]?.img ?? ""; }
   get skillIcon(){ return GenshinCharacterData[this.key]?.talents?.["Elemental Skill"]?.img ?? ""; }
   get burstIcon(){ return GenshinCharacterData[this.key]?.talents?.["Elemental Burst"]?.img ?? ""; }
+  get releaseTimestamp(){ return GenshinCharacterData[this.key]?.release ? Date.parse(GenshinCharacterData[this.key]?.release) : 0; }
   
   getPhase(ascension=this.ascension){ return GenshinPhaseData[ascension] ?? GenshinPhaseData[6]; }
   get levelCap(){ return this.getPhase().levelCap; }
@@ -970,15 +971,26 @@ export default class Character extends GenshinItem
               motionValue.values[v].value = motionValue.values[v].value.slice(0, -1);
             motionValue.values[v].stat = "hp";
           }
-          else if(motionValue.values[v].value.endsWith("% ATK"))
+          else if(motionValue.values[v].value.endsWith(" ATK"))
           {
-            motionValue.values[v].value = motionValue.values[v].value.slice(0, -5);
+            motionValue.values[v].value = motionValue.values[v].value.slice(0, -4);
+            if(motionValue.values[v].value.endsWith("%"))
+              motionValue.values[v].value = motionValue.values[v].value.slice(0, -1);
             motionValue.values[v].stat = "atk";
           }
-          else if(motionValue.values[v].value.endsWith("% DEF"))
+          else if(motionValue.values[v].value.endsWith(" DEF"))
           {
-            motionValue.values[v].value = motionValue.values[v].value.slice(0, -5);
+            motionValue.values[v].value = motionValue.values[v].value.slice(0, -4);
+            if(motionValue.values[v].value.endsWith("%"))
+              motionValue.values[v].value = motionValue.values[v].value.slice(0, -1);
             motionValue.values[v].stat = "def";
+          }
+          else if(motionValue.values[v].value.endsWith(" Elemental Mastery"))
+          {
+            motionValue.values[v].value = motionValue.values[v].value.slice(0, -18);
+            if(motionValue.values[v].value.endsWith("%"))
+              motionValue.values[v].value = motionValue.values[v].value.slice(0, -1);
+            motionValue.values[v].stat = "eleMas";
           }
           else if(motionValue.values[v].value.endsWith("/s"))
           {
@@ -1413,49 +1425,52 @@ export default class Character extends GenshinItem
     if(this.loaded)
     {
       if(!this.list.viewer.buildData[this.key])
-        this.list.viewer.buildData[this.key] = {};
-      let builds = this.list.viewer.buildData[this.key];
-      if(!builds.default)
-        builds.default = {};
-      for(let b in builds)
+        this.list.viewer.buildData[this.key] = [];
+      let builds = Object.values(this.list.viewer.buildData[this.key]);
+      if(!builds.length)
+        builds.push({name:"default"});
+      for(let build of builds)
       {
-        if(!builds[b].artifactSets)
-          builds[b].artifactSets = {};
-        if(!builds[b].artifactSubstats)
-          builds[b].artifactSubstats = {};
-        if(!builds[b].sandsStat)
-          builds[b].sandsStat = {};
-        if(!builds[b].gobletStat)
-          builds[b].gobletStat = {};
-        if(!builds[b].circletStat)
-          builds[b].circletStat = {};
-        if(!("minER" in builds[b]))
-          builds[b].minER = 100;
-        if(!("maxER" in builds[b]))
-          builds[b].maxER = 300;
-        if(!("ratioCritRate" in builds[b]))
-          builds[b].ratioCritRate = 1;
-        if(!("ratioCritDMG" in builds[b]))
-          builds[b].ratioCritDMG = 2;
-        if(!("useTargets" in builds[b]))
-          builds[b].useTargets = {};
-        if(!("importance" in builds[b]))
-          builds[b].importance = 100;
+        if(!build.name)
+          build.name = "???";
+        if(!build.artifactSets)
+          build.artifactSets = {};
+        if(!build.artifactSubstats)
+          build.artifactSubstats = {};
+        if(!build.sandsStat)
+          build.sandsStat = {};
+        if(!build.gobletStat)
+          build.gobletStat = {};
+        if(!build.circletStat)
+          build.circletStat = {};
+        if(!("minER" in build))
+          build.minER = 100;
+        if(!("maxER" in build))
+          build.maxER = 300;
+        if(!("ratioCritRate" in build))
+          build.ratioCritRate = 1;
+        if(!("ratioCritDMG" in build))
+          build.ratioCritDMG = 2;
+        if(!("useTargets" in build))
+          build.useTargets = {};
+        if(!("importance" in build))
+          build.importance = 100;
       }
       return builds;
     }
     else
-      return {};
+      return [];
   }
   
   getBuild(buildId=this.selectedBuild)
   {
-    if(this.getBuilds()[buildId])
-      return this.getBuilds()[buildId];
+    let builds = this.getBuilds();
+    if(builds[buildId])
+      return builds[buildId];
     else
     {
       console.warn(`${this.name} has no build '${buildId}'.`);
-      return {};
+      return builds[0] ?? {};
     }
   }
   
@@ -1472,11 +1487,10 @@ export default class Character extends GenshinItem
         goblet: skipSort ? this.list.viewer.lists.ArtifactList.items("goblet") : this.list.viewer.lists.ArtifactList.items("goblet").sort(Character.sortArtifacts.bind(this,buildId,useTargets)),
         circlet: skipSort ? this.list.viewer.lists.ArtifactList.items("circlet") : this.list.viewer.lists.ArtifactList.items("circlet").sort(Character.sortArtifacts.bind(this,buildId,useTargets)),
       },
-      //artifactFields: this.list.viewer.lists.ArtifactList.display.getFields().map(field => ({field, params:[]})),
       artifactSets: GenshinArtifactData,
       buildData: this.getBuild(buildId),
-      buildName: buildId,
-      builds: Object.keys(this.getBuilds()),
+      buildId: buildId,
+      builds: this.getBuilds(),
       artifactList: this.list.viewer.lists.ArtifactList,
     };
     return related;
@@ -1710,17 +1724,17 @@ export default class Character extends GenshinItem
     let addBuild = buildSection.querySelector("#addBuildBtn");
     if(addBuild && !addBuild.onclick)
       addBuild.onclick = event => {
-        let buildId = buildSection.querySelector("#addBuildFld")?.value;
-        if(buildId && this.loaded)
+        let buildName = buildSection.querySelector("#addBuildFld")?.value;
+        if(buildName && this.loaded)
         {
-          if(!this.list.viewer.buildData[this.key][buildId])
+          if(!this.list.viewer.buildData[this.key].some(build => build.name == buildName))
           {
-            this.list.viewer.buildData[this.key][buildId] = {};
-            this.update("buildData", null, "notify", {buildId});
-            Renderer.rerender(buildSection, {relatedItems:this.getRelatedItems({buildId})});
+            this.list.viewer.buildData[this.key].push({name:buildName});
+            this.update("buildData", null, "notify", {buildId:this.list.viewer.buildData[this.key].length-1});
+            Renderer.rerender(buildSection, {relatedItems:this.getRelatedItems({buildId:this.list.viewer.buildData[this.key].length-1})});
           }
           else
-            console.warn(`Cannot add two builds with the same name '${buildId}'.`);
+            console.warn(`Cannot add two builds with the same name '${buildName}'.`);
         }
         else
           console.warn(`Unable to add build.`);
@@ -1732,8 +1746,7 @@ export default class Character extends GenshinItem
     {
       if(!buildTab.onclick)
         buildTab.onclick = event => {
-          // TODO: This will need to be changed away from innerHTML once build names are a thing.
-          Renderer.rerender(buildSection, {relatedItems:this.getRelatedItems({buildId:buildTab.innerHTML})});
+          Renderer.rerender(buildSection, {relatedItems:this.getRelatedItems({buildId:buildTab.dataset.buildId})});
         };
     }
     
@@ -1741,15 +1754,37 @@ export default class Character extends GenshinItem
     let deleteBuild = buildSection.querySelector("#deleteBuildBtn");
     if(deleteBuild && !deleteBuild.onclick)
       deleteBuild.onclick = event => {
-        if(this.list.viewer.buildData[this.key][buildId])
+        if(this.list.viewer.buildData[this.key].length <= 1)
         {
-          delete this.list.viewer.buildData[this.key][buildId];
+          console.warn(`Character must keep at least one build.`);
+        }
+        else if(this.list.viewer.buildData[this.key][buildId])
+        {
+          this.list.viewer.buildData[this.key].splice(buildId, 1);
           this.update("buildData", null, "notify", {buildId});
+          this.update("selectedBuild", 0);
           Renderer.rerender(buildSection, {relatedItems:this.getRelatedItems()});
         }
         else
           console.warn(`Cannot delete nonexistent build '${buildId}'.`);
       };
+    
+    /** Build Name **/
+    let buildTab = buildSection.querySelector(`.nav-item [data-build-id="${buildId}"]`);
+    let nameInput = buildSection.querySelector("#buildName");
+    if(!nameInput.oninput)
+    {
+      nameInput.oninput = event => {
+        buildTab.innerHTML = nameInput.value;
+      };
+    }
+    if(!nameInput.onblur)
+    {
+      nameInput.onblur = event => {
+        this.getBuild(buildId).name = nameInput.value;
+        this.update("buildData", null, "notify", {buildId});
+      };
+    }
     
     /** Build Importance **/
     let importanceSlider = buildSection.querySelector("#buildImportance");

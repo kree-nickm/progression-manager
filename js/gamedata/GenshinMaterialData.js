@@ -464,6 +464,24 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2f\/Item_Operative%27s_Constancy.png",
         "rarity": 4
     },
+    "FeatheryFin": {
+        "name": "Feathery Fin",
+        "img": "https://api.ambr.top/assets/UI/UI_ItemIcon_112095.png",
+        "rarity": 2,
+        "release": "January 31, 2024"
+    },
+    "LunarFin": {
+        "name": "Lunar Fin",
+        "img": "https://api.ambr.top/assets/UI/UI_ItemIcon_112096.png",
+        "rarity": 3,
+        "release": "January 31, 2024"
+    },
+    "ChasmlightFin": {
+        "name": "Chasmlight Fin",
+        "img": "https://api.ambr.top/assets/UI/UI_ItemIcon_112097.png",
+        "rarity": 4,
+        "release": "January 31, 2024"
+    },
     "MaintenanceMekSalvagedParts": {
         "name": "\"Maintenance Mek\" Salvaged Parts",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/43\/Item_Maintenance_Mek_Salvaged_Parts.png",
@@ -613,6 +631,12 @@ export default {
         "name": "Water That Failed To Transcend",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a9\/Item_Water_That_Failed_To_Transcend.png",
         "rarity": 4
+    },
+    "CloudseamScale": {
+        "name": "Cloudseam Scale",
+        "img": "https://api.ambr.top/assets/UI/UI_ItemIcon_113058.png",
+        "rarity": 4,
+        "release": "January 31, 2024"
     },
     "DvalinsPlume": {
         "name": "Dvalin's Plume",
@@ -1723,6 +1747,12 @@ export default {
         "name": "Spring of the First Dewdrop",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/08\/Item_Spring_of_the_First_Dewdrop.png",
         "rarity": 1
+    },
+    "NewFlower44": {
+        "name": "New 4.4 Flower",
+        "img": "https://api.ambr.top/assets/UI/UI_ItemIcon_101241.png",
+        "rarity": 1,
+        "release": "January 31, 2024"
     },
     "SweetFlowerSeed": {
         "name": "Sweet Flower Seed",

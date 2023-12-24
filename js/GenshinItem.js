@@ -91,6 +91,9 @@ export default class GenshinItem extends UIItem {
     return !!this.statNames.find(s=>s.id==id)?.percent;
   }
   
+  get releaseTimestamp(){ return 0; }
+  get isLeakHidden(){ return !this.viewer.settings.preferences.showLeaks && this.releaseTimestamp > Date.now() }
+  
   fromGOOD(goodData)
   {
     if(typeof(goodData) == "object" && goodData != null)

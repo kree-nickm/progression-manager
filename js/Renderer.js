@@ -63,7 +63,7 @@ handlebars.registerHelper('logparams', function(...params) {
   return "";
 });
 
-handlebars.registerHelper('ifeq', function(first, second, options) {return (first === second) ? options.fn(this) : options.inverse(this)});
+handlebars.registerHelper('ifeq', function(first, second, options) {return (first === second || first == second && !options.hash.strict) ? options.fn(this) : options.inverse(this);});
 handlebars.registerHelper('array', (...params) => params.slice(0, -1));
 handlebars.registerHelper("lower", (str, options) => str.toLowerCase());
 handlebars.registerHelper('fco', (value, fallback, options) => value ? value : fallback);

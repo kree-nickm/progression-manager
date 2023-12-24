@@ -1557,5 +1557,41 @@ export default {
         "sandsImg": "https://static.wikia.nocookie.net/gensin-impact/images/b/b3/Item_Golden_Era's_Prelude.png",
         "gobletImg": "https://static.wikia.nocookie.net/gensin-impact/images/0/0b/Item_Golden_Night's_Bustle.png",
         "circletImg": "https://static.wikia.nocookie.net/gensin-impact/images/f/f6/Item_Golden_Troupe's_Reward.png"
+    },
+    "NighttimeWhispersInTheEchoingWoods": {
+        "maxRarity": 5,
+        "name": "Nighttime Whispers in the Echoing Woods",
+        "flower": "Selfless Floral Accessory",
+        "plume": "Honest Quill",
+        "sands": "Faithful Hourglass",
+        "goblet": "Magnanimous Ink Bottle",
+        "circlet": "Compassionate Ladies' Hat",
+        "bonus2": "ATK +18%",
+        "bonus2code": ["stat",["atk_",18]],
+        "bonus4": "After using an Elemental Skill, gain a 20% Geo DMG Bonus for 10s. While under a shield granted by the Crystallize reaction, the above effect will be increased by 150%, and this additional increase disappears 1s after that shield is lost.",
+        "bonus4code": [["proc",["stat",["geo_dmg_",20]],"After Elemental Skill (10s)"],["proc",["stat",["geo_dmg_",25]],"With Crystallize Shield"]],
+        "flowerImg": "https://static.wikia.nocookie.net/gensin-impact/images/9/9f/Item_Selfless_Floral_Accessory.png",
+        "plumeImg": "https://static.wikia.nocookie.net/gensin-impact/images/4/4e/Item_Honest_Quill.png",
+        "sandsImg": "https://static.wikia.nocookie.net/gensin-impact/images/a/a8/Item_Faithful_Hourglass.png",
+        "gobletImg": "https://static.wikia.nocookie.net/gensin-impact/images/2/24/Item_Magnanimous_Ink_Bottle.png",
+        "circletImg": "https://static.wikia.nocookie.net/gensin-impact/images/d/d3/Item_Compassionate_Ladies'_Hat.png"
+    },
+    "SongOfDaysPast": {
+        "maxRarity": 5,
+        "name": "Song of Days Past",
+        "flower": "Forgotten Oath of Days Past",
+        "plume": "Recollection of Days Past",
+        "sands": "Echoing Sound From Days Past",
+        "goblet": "Promised Dream of Days Past",
+        "circlet": "Poetry of Days Past",
+        "bonus2": "Healing Bonus +15%",
+        "bonus2code": ["stat",["heal_",15]],
+        "bonus4": "When the equipping character heals a party member, the Yearning effect will be created for 6s, which records the total amount of healing provided (including overflow healing). When the duration expires, the Yearning effect will be transformed into the \"Waves of Days Past\" effect: When your active party member hits an opponent with a Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, or Elemental Burst, the DMG dealt will be increased by 8% of the total healing amount recorded by the Yearning effect. The \"Waves of Days Past\" effect is removed after it has taken effect 5 times or after 10s. A single instance of the Yearning effect can record up to 15,000 healing, and only a single instance can exist at once, but it can record the healing from multiple equipping characters. Equipping characters on standby can still trigger this effect.",
+        "bonus4code": [],
+        "flowerImg": "https://static.wikia.nocookie.net/gensin-impact/images/4/4b/Item_Forgotten_Oath_of_Days_Past.png",
+        "plumeImg": "https://static.wikia.nocookie.net/gensin-impact/images/f/fc/Item_Recollection_of_Days_Past.png",
+        "sandsImg": "https://static.wikia.nocookie.net/gensin-impact/images/6/62/Item_Echoing_Sound_From_Days_Past.png",
+        "gobletImg": "https://static.wikia.nocookie.net/gensin-impact/images/1/16/Item_Promised_Dream_of_Days_Past.png",
+        "circletImg": "https://static.wikia.nocookie.net/gensin-impact/images/d/db/Item_Poetry_of_Days_Past.png"
     }
 };

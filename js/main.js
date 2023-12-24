@@ -243,10 +243,14 @@ document.getElementById("newFreshBtn").addEventListener("click", event => {
 document.getElementById("prefsDoneBtn").addEventListener("click", clickEvent => {
   for(let prefElem of document.getElementsByClassName("preference-select"))
   {
-    if(prefElem.type == "radio" || prefElem.type == "checkbox")
+    if(prefElem.type == "radio")
     {
       if(prefElem.checked)
         window.viewer.settings.preferences[prefElem.attributes.getNamedItem('name').value] = prefElem.value;
+    }
+    else if(prefElem.type == "checkbox")
+    {
+      window.viewer.settings.preferences[prefElem.attributes.getNamedItem('name').value] = prefElem.checked;
     }
     else if(prefElem.type == "number")
     {
@@ -255,7 +259,10 @@ document.getElementById("prefsDoneBtn").addEventListener("click", clickEvent => 
   }
   for(let list in window.viewer.listClasses)
     if(window.viewer.lists[list])
+    {
       window.viewer.lists[list].forceNextRender = true;
+      window.viewer.lists[list].subsets = {};
+    }
   window.viewer.view(window.viewer.currentView);
   window.viewer.queueStore();
 });

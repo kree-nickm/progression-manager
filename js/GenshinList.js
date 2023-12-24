@@ -59,6 +59,11 @@ export default class GenshinList extends UIList {
     return this.createItem(goodData);
   }
   
+  items(a, b)
+  {
+    return super.items(a, b).filter(item => !item.isLeakHidden);
+  }
+  
   createItem(goodData)
   {
     let item = new this.constructor.itemClass();
