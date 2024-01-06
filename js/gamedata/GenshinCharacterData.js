@@ -4602,7 +4602,8 @@ export default {
             "4th Ascension Passive": {
                 "name": "Diversified Investigation",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/03\/Talent_Diversified_Investigation.png",
-                "text": "When the party contains 1\/2\/3 Fontainians other than herself, Charlotte gains a 5%\/10%\/15% Healing Bonus. When the party contains 1\/2\/3 non-Fontainians, Charlotte gains a 5%\/10%\/15% Cryo DMG Bonus."
+                "text": "When the party contains 1\/2\/3 Fontainians other than herself, Charlotte gains a 5%\/10%\/15% Healing Bonus. When the party contains 1\/2\/3 non-Fontainians, Charlotte gains a 5%\/10%\/15% Cryo DMG Bonus.",
+                "code": [["proc",["stat",["heal_",5]],"Other Fontainians in party",3], ["proc",["stat",["cryo_dmg_",5]],"Non-Fontainians in party",3]]
             },
             "Utility Passive": {
                 "name": "First-Person Shutter",
@@ -22736,6 +22737,7 @@ export default {
                 "name": "Spring Spirit Summoning",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6c\/Talent_Spring_Spirit_Summoning.png",
                 "text": "The frosted dew, silvery and dense, shall exorcise all demons.<br\/>Grants all nearby party members the Icy Quill effect and deals <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span> in different ways based on whether it is pressed or held.<br\/><br\/><b>Press<\/b><br\/>Rushes forward together with a Talisman Spirit, dealing <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span> to opponents along the path.<br\/><br\/><b>Hold<\/b><br\/>Commands the Talisman Spirit to deal <span class=\"text-cryo\"><b>AoE Cryo DMG<\/b><\/span>.<br\/><br\/><b>Icy Quill<\/b><br\/>When Normal, Charged, and Plunging Attacks, Elemental Skills, and Elemental Bursts deal <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span> to opponents, the DMG dealt is increased based on Shenhe's current ATK.<br\/><br\/>The Icy Quill's effects will be cleared once its duration ends or after being triggered a certain number of times.<br\/>When held rather than pressed, the Icy Quill's effect lasts longer and can be triggered more times.<br\/>When one <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span> instance strikes multiple opponents, the effect is triggered multiple times based on the number of opponents hit. The number of times the effect is triggered is calculated independently for each party member with the Icy Quill.",
+                "code": [["proc",["pstat",[["normal_dmg","charged_dmg","plunging_dmg","skill_dmg","burst_dmg"],["mv","DMG Bonus (% ATK)"]]],"\"Icy Quills\""]],
                 "scaling": {
                     "Press Skill DMG (%)": {
                         "1": "139.2",
@@ -22855,6 +22857,7 @@ export default {
                 "name": "Divine Maiden's Deliverance",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d5\/Talent_Divine_Maiden%27s_Deliverance.png",
                 "text": "Unleashes the power of the Talisman Spirit, allowing it to roam free in this plane, dealing <span class=\"text-cryo\"><b>AoE Cryo DMG<\/b><\/span>.<br\/>The Talisman Spirit then creates a field that decreases the <span class=\"text-cryo\"><b>Cryo RES<\/b><\/span> and <span class=\"text-physical\"><b>Physical RES<\/b><\/span> of opponents within it. It also deals periodic <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span> to opponents within the field.",
+                "code": ["proc",["estat",[["cryo_res_","physical_res_"],["mv","RES Decrease (%)"]]],"During Elemental Burst"],
                 "scaling": {
                     "Skill DMG (%)": {
                         "1": "100.8",
@@ -22957,12 +22960,14 @@ export default {
             "1st Ascension Passive": {
                 "name": "Deific Embrace",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/29\/Talent_Deific_Embrace.png",
-                "text": "An active character within the field created by Divine Maiden's Deliverance gains 15% <span class=\"text-cryo\"><b>Cryo DMG Bonus<\/b><\/span>."
+                "text": "An active character within the field created by Divine Maiden's Deliverance gains 15% <span class=\"text-cryo\"><b>Cryo DMG Bonus<\/b><\/span>.",
+                "code": ["proc",["pstat",["cryo_dmg_",15]],"During Elemental Burst"]
             },
             "4th Ascension Passive": {
                 "name": "Spirit Communion Seal",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5c\/Talent_Spirit_Communion_Seal.png",
-                "text": "After Shenhe uses Spring Spirit Summoning, she will grant all nearby party members the following effects:\n<ul><li>Press: Elemental Skill and Elemental Burst DMG increased by 15% for 10s.<\/li>\n<li>Hold: Normal, Charged, and Plunging Attack DMG increased by 15% for 15s.<\/li><\/ul>"
+                "text": "After Shenhe uses Spring Spirit Summoning, she will grant all nearby party members the following effects:\n<ul><li>Press: Elemental Skill and Elemental Burst DMG increased by 15% for 10s.<\/li>\n<li>Hold: Normal, Charged, and Plunging Attack DMG increased by 15% for 15s.<\/li><\/ul>",
+                "code": [["proc",["pstat",[["skill_dmg_","burst_dmg_"],15]],"After Press Elemental Skill (10s)"],["proc",["pstat",[["normal_dmg_","charged_dmg_","plunging_dmg_"],15]],"After Hold Elemental Skill (15s)"]]
             },
             "Utility Passive": {
                 "name": "Precise Comings and Goings",
@@ -26618,7 +26623,7 @@ export default {
         "rarity": 5,
         "ascendStat": "atk_",
         "matBoss": "Hidden Beast",
-        "matFlower": "NewFlower44",
+        "matFlower": "Clearwater Jade",
         "matEnemy": "Samachurls",
         "matMastery": "Gold",
         "matTrounce": "Lightless Eye of the Maelstrom",

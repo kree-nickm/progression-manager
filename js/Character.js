@@ -55,8 +55,8 @@ export default class Character extends GenshinItem
 
   static sortArtifacts(buildId,useTargets,a,b)
   {
-    let A = parseFloat(a.getCharacterScore(this,parseInt(a.viewer.settings.preferences.artifactMaxLevel ?? 20),buildId,{useTargets}));
-    let B = parseFloat(b.getCharacterScore(this,parseInt(b.viewer.settings.preferences.artifactMaxLevel ?? 20),buildId,{useTargets}));
+    let A = parseFloat(a.getCharacterScore(this, parseInt(a.viewer.settings.preferences.artifactMaxLevel ?? 20), buildId, {useTargets}));
+    let B = parseFloat(b.getCharacterScore(this, parseInt(b.viewer.settings.preferences.artifactMaxLevel ?? 20), buildId, {useTargets}));
     if(isNaN(A) || isNaN(B))
     {
       console.error(`Cannot sort artifacts because NaN was encountered for a score.`, A, a, B, b);
@@ -159,12 +159,12 @@ export default class Character extends GenshinItem
       
       if(!["preview"].includes(field.path[0]))
       {
-        this.viewer.lists.ArtifactList?.update("evaluate", null, "notify");
         this.notifyType(field.string);
         // Iterate through artifacts and clear some amount of artifact.storedStats
         this.viewer.lists.ArtifactList?.items().forEach(artifact => {
           artifact.clearMemory("storedStats", "characters", this.key);
         });
+        this.viewer.lists.ArtifactList?.update("evaluate", null, "notify");
       }
     }
     else if(field.path[0] == "statModifiers")
@@ -854,7 +854,7 @@ export default class Character extends GenshinItem
       }
       
       
-      // We clone the scaling object so it doesn't modify the default character data when we dynamically add motion values.
+      // We clone the scaling object so this function doesn't modify the default character data when we dynamically add motion values.
       scaling = Object.assign({}, scaling);
       let addedMVs = [];
       let mvModifiers = [];
@@ -1294,6 +1294,7 @@ export default class Character extends GenshinItem
     }
     else if(partialValue.dmgType == "hp" || partialValue.dmgType == "percent" || partialValue.dmgType == "self" || partialValue.dmgType == "bonus")
     {
+      partialValue.value = partialValue.baseDMG;
       return;
     }
     
@@ -1309,12 +1310,14 @@ export default class Character extends GenshinItem
       {
         partialValue.dmgType = partialValue.dmgType ?? "physical";
         alternates.situation = "Plunging Attack";
+        baseAdd += this.getStat("plunging_dmg", alternates);
         dmgMult = this.getStat("plunging_dmg_", alternates);
       }
       else if(motionValue.key.includes("-Hit DMG") || motionValue.key.includes("Aimed Shot") && !motionValue.key.includes("Charge"))
       {
         partialValue.dmgType = partialValue.dmgType ?? "physical";
         alternates.situation = "Normal Attack";
+        baseAdd += this.getStat("normal_dmg", alternates);
         dmgMult = this.getStat("normal_dmg_", alternates);
       }
       else
@@ -1324,8 +1327,10 @@ export default class Character extends GenshinItem
         else
           partialValue.dmgType = partialValue.dmgType ?? "physical";
         alternates.situation = "Charged Attack";
+        baseAdd += this.getStat("charged_dmg", alternates);
         dmgMult = this.getStat("charged_dmg_", alternates);
       }
+      baseAdd += this.getStat(partialValue.dmgType+"_dmg", alternates) + this.getStat("dmg", alternates);
       dmgMult += this.getStat(partialValue.dmgType+"_dmg_", alternates) + this.getStat("dmg_", alternates);
     }
     else if(motionValue.talent == "reaction")
@@ -1341,7 +1346,9 @@ export default class Character extends GenshinItem
       else if(motionValue.talent == "burst")
         alternates.situation = "Elemental Burst";
       partialValue.dmgType = partialValue.dmgType ?? this.element.toLowerCase();
+      baseAdd += this.getStat(motionValue.talent+"_dmg", alternates);
       dmgMult = this.getStat(motionValue.talent+"_dmg_", alternates);
+      baseAdd += this.getStat(partialValue.dmgType+"_dmg", alternates) + this.getStat("dmg", alternates);
       dmgMult += this.getStat(partialValue.dmgType+"_dmg_", alternates) + this.getStat("dmg_", alternates);
     }
     
@@ -1474,18 +1481,23 @@ export default class Character extends GenshinItem
     }
   }
   
-  getRelatedItems({buildId=this.selectedBuild,skipSort,forceTargets,ignoreTargets}={})
+  getRelatedItems({buildId=this.selectedBuild, skipSort, forceTargets, ignoreTargets}={})
   {
     let useTargets = forceTargets || !ignoreTargets;
-    if(window.DEBUGLOG.getRelatedItems) console.debug(`Getting ${this.name}'s related items for build ${buildId}.`, skipSort?`Skipping artifact sorting.`:`Sorting artifacts.`, useTargets?`Using targets.`:`Ignoring targets.`);
+    if(!skipSort)
+    {
+      this.list.viewer.lists.ArtifactList.list.sort(Character.sortArtifacts.bind(this, buildId, useTargets));
+      this.list.viewer.lists.ArtifactList.subsets = {};
+      this.list.viewer.lists.ArtifactList.update("list", null, "notify", {reason:"sort"});
+    }
     let related = {
       weapons: this.list.viewer.lists.WeaponList.items(this.weaponType),
       bestArtifacts: {
-        flower: skipSort ? this.list.viewer.lists.ArtifactList.items("flower") : this.list.viewer.lists.ArtifactList.items("flower").sort(Character.sortArtifacts.bind(this,buildId,useTargets)),
-        plume: skipSort ? this.list.viewer.lists.ArtifactList.items("plume") : this.list.viewer.lists.ArtifactList.items("plume").sort(Character.sortArtifacts.bind(this,buildId,useTargets)),
-        sands: skipSort ? this.list.viewer.lists.ArtifactList.items("sands") : this.list.viewer.lists.ArtifactList.items("sands").sort(Character.sortArtifacts.bind(this,buildId,useTargets)),
-        goblet: skipSort ? this.list.viewer.lists.ArtifactList.items("goblet") : this.list.viewer.lists.ArtifactList.items("goblet").sort(Character.sortArtifacts.bind(this,buildId,useTargets)),
-        circlet: skipSort ? this.list.viewer.lists.ArtifactList.items("circlet") : this.list.viewer.lists.ArtifactList.items("circlet").sort(Character.sortArtifacts.bind(this,buildId,useTargets)),
+        flower: this.list.viewer.lists.ArtifactList.items("flower"),
+        plume: this.list.viewer.lists.ArtifactList.items("plume"),
+        sands: this.list.viewer.lists.ArtifactList.items("sands"),
+        goblet: this.list.viewer.lists.ArtifactList.items("goblet"),
+        circlet: this.list.viewer.lists.ArtifactList.items("circlet"),
       },
       artifactSets: GenshinArtifactData,
       buildData: this.getBuild(buildId),
@@ -1493,6 +1505,11 @@ export default class Character extends GenshinItem
       builds: this.getBuilds(),
       artifactList: this.list.viewer.lists.ArtifactList,
     };
+    if(window.DEBUGLOG.getRelatedItems)
+    {
+      console.debug(`Getting ${this.name}'s related items for build "${related.buildData?.name}" (${buildId}).`, skipSort?`Skipping artifact sorting.`:`Sorting artifacts.`, useTargets?`Using targets.`:`Ignoring targets.`, related, related.bestArtifacts.goblet[0]);
+      console.trace();
+    }
     return related;
   }
   

@@ -1539,5 +1539,455 @@ export default {
         "name": "Clarity From The Land Of Wisdom",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5b\/Item_Clarity_from_the_Land_of_Wisdom.png",
         "type": "craftable"
+    },
+    "MallowWoodMultiModelWardrobe": {
+        "name": "Mallow Wood \"Multi-Model\" Wardrobe",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/af\/Item_Mallow_Wood_%22Multi-Model%22_Wardrobe.png",
+        "type": "craftable"
+    },
+    "WitnessToGreatFocus": {
+        "name": "\"Witness To Great Focus\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6a\/Item_Witness_to_Great_Focus.png",
+        "type": "craftable"
+    },
+    "RestaurantRugBathingInTheBreeze": {
+        "name": "Restaurant Rug: \"Bathing In The Breeze\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/eb\/Item_Restaurant_Rug_Bathing_in_the_Breeze.png",
+        "type": "craftable"
+    },
+    "MaisonCardinalicesStores": {
+        "name": "\"Maison Cardinalice's Stores\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/31\/Item_Maison_Cardinalice%27s_Stores.png",
+        "type": "craftable"
+    },
+    "ElationOfSocialDrinking": {
+        "name": "\"Elation Of Social Drinking\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9f\/Item_Elation_of_Social_Drinking.png",
+        "type": "craftable"
+    },
+    "MaisonCardinalicesLockbox": {
+        "name": "\"Maison Cardinalice's Lockbox\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b7\/Item_Maison_Cardinalice%27s_Lockbox.png",
+        "type": "craftable"
+    },
+    "LindenWoodSweetSlumberBed": {
+        "name": "Linden Wood \"Sweet Slumber\" Bed",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/21\/Item_Linden_Wood_%22Sweet_Slumber%22_Bed.png",
+        "type": "craftable"
+    },
+    "MaisonCardinalicesPunctuality": {
+        "name": "\"Maison Cardinalice's Punctuality\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/50\/Item_Maison_Cardinalice%27s_Punctuality.png",
+        "type": "craftable"
+    },
+    "PassagesStableStorage": {
+        "name": "\"Passage's Stable Storage\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b8\/Item_%22Passage%27s_Stable_Storage%22.png",
+        "type": "craftable"
+    },
+    "MallowWoodSturdyCargoContainer": {
+        "name": "Mallow Wood \"Sturdy\" Cargo Container",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7c\/Item_Mallow_Wood_Sturdy_Cargo_Container.png",
+        "type": "craftable"
+    },
+    "MaisonCardinalicesMusicalTone": {
+        "name": "\"Maison Cardinalice's Musical Tone\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0f\/Item_Maison_Cardinalice%27s_Musical_Tone.png",
+        "type": "craftable"
+    },
+    "FloralArrangementNearlyAquamarine": {
+        "name": "Floral Arrangement: \"Nearly Aquamarine\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ae\/Item_Floral_Arrangement_Nearly_Aquamarine.png",
+        "type": "craftable"
+    },
+    "MaisonCardinalicesCabinet": {
+        "name": "\"Maison Cardinalice's Cabinet\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bb\/Item_Maison_Cardinalice%27s_Cabinet.png",
+        "type": "craftable"
+    },
+    "CompactAirSupplyDevice": {
+        "name": "Compact Air Supply Device",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f8\/Item_Compact_Air_Supply_Device.png",
+        "type": "craftable"
+    },
+    "TheLeisureOfDailyMeetings": {
+        "name": "\"The Leisure Of Daily Meetings\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/09\/Item_%22The_Leisure_of_Daily_Meetings%22.png",
+        "type": "craftable"
+    },
+    "FloralArrangementBloomingPurity": {
+        "name": "Floral Arrangement: \"Blooming Purity\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/44\/Item_Floral_Arrangement_Blooming_Purity.png",
+        "type": "craftable"
+    },
+    "ModelContraptionReasonableRoundabout": {
+        "name": "Model Contraption: Reasonable Roundabout",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0a\/Item_Model_Contraption_Reasonable_Roundabout.png",
+        "type": "craftable"
+    },
+    "MaisonCardinalicesFocus": {
+        "name": "\"Maison Cardinalice's Focus\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/ba\/Item_Maison_Cardinalice%27s_Focus.png",
+        "type": "craftable"
+    },
+    "RestaurantRugEqualDialogue": {
+        "name": "Restaurant Rug: \"Equal Dialogue\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/32\/Item_Restaurant_Rug_Equal_Dialogue.png",
+        "type": "craftable"
+    },
+    "FloralArrangementArtOfContrast": {
+        "name": "Floral Arrangement: \"Art Of Contrast\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/32\/Item_Floral_Arrangement_Art_of_Contrast.png",
+        "type": "craftable"
+    },
+    "ComfortOfAHomeAwayFromHome": {
+        "name": "\"Comfort Of A Home Away From Home\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2d\/Item_Comfort_of_a_Home_Away_From_Home.png",
+        "type": "craftable"
+    },
+    "ChillAfternoonTeaTime": {
+        "name": "\"Chill Afternoon Tea Time\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/92\/Item_Chill_Afternoon_Tea_Time.png",
+        "type": "craftable"
+    },
+    "SteadyStatelyStability": {
+        "name": "\"Steady Stately Stability\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3b\/Item_Steady_Stately_Stability.png",
+        "type": "craftable"
+    },
+    "MallowWoodViewingRitesChair": {
+        "name": "Mallow Wood \"Viewing Rites\" Chair",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4f\/Item_Mallow_Wood_%22Viewing_Rites%22_Chair.png",
+        "type": "purchasable"
+    },
+    "CelebrationOfAnAdHocPerformance": {
+        "name": "\"Celebration Of An Ad-Hoc Performance\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ab\/Item_%22Celebration_of_an_Ad-Hoc_Performance%22.png",
+        "type": "purchasable"
+    },
+    "StandardMusicStandAccurateTuning": {
+        "name": "Standard Music Stand: Accurate Tuning",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/53\/Item_Standard_Music_Stand_Accurate_Tuning.png",
+        "type": "purchasable"
+    },
+    "MaisonCardinalicesWingedShelf": {
+        "name": "\"Maison Cardinalice's Winged Shelf\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e5\/Item_Maison_Cardinalice%27s_Winged_Shelf.png",
+        "type": "craftable"
+    },
+    "WisdomOfTheForbiddenFortress": {
+        "name": "\"Wisdom Of The Forbidden Fortress\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/82\/Item_Wisdom_of_the_Forbidden_Fortress.png",
+        "type": "craftable"
+    },
+    "StudyOfTheForbiddenFortress": {
+        "name": "\"Study Of The Forbidden Fortress\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/16\/Item_Study_of_the_Forbidden_Fortress.png",
+        "type": "craftable"
+    },
+    "ConversationOfTheForbiddenFortress": {
+        "name": "\"Conversation Of The Forbidden Fortress\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f3\/Item_Conversation_of_the_Forbidden_Fortress.png",
+        "type": "craftable"
+    },
+    "BurdenOfTheForbiddenFortress": {
+        "name": "\"Burden Of The Forbidden Fortress\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/30\/Item_Burden_of_the_Forbidden_Fortress.png",
+        "type": "craftable"
+    },
+    "StableWorkStationInTheCentralHub": {
+        "name": "\"Stable Work Station In The Central Hub\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/82\/Item_%22Stable_Work_Station_in_the_Central_Hub%22.png",
+        "type": "craftable"
+    },
+    "LindenWoodSubduingSeatBackedChair": {
+        "name": "Linden Wood \"Subduing Seat\" Backed Chair",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Item_Linden_Wood_%22Subduing_Seat%22_Backed_Chair.png",
+        "type": "craftable"
+    },
+    "MomentaryRestInTheCentralHub": {
+        "name": "\"Momentary Rest In The Central Hub\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a2\/Item_%22Momentary_Rest_in_the_Central_Hub%22.png",
+        "type": "craftable"
+    },
+    "AThousandTextsInTheCentralHub": {
+        "name": "\"A Thousand Texts In The Central Hub\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/79\/Item_%22A_Thousand_Texts_in_the_Central_Hub%22.png",
+        "type": "craftable"
+    },
+    "CourtOfJusticesCommerce": {
+        "name": "Court Of Justice's Commerce",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/42\/Item_Court_of_Justice%27s_Commerce.png",
+        "type": "craftable"
+    },
+    "MekaLuminaireRadiantGrounds": {
+        "name": "Meka Luminaire: Radiant Grounds",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9a\/Item_Meka_Luminaire_Radiant_Grounds.png",
+        "type": "craftable"
+    },
+    "PassagesPerfumedPottedPlants": {
+        "name": "Passage's Perfumed Potted Plants",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3a\/Item_Passage%27s_Perfumed_Potted_Plants.png",
+        "type": "craftable"
+    },
+    "CourtOfJusticesLeisure": {
+        "name": "Court Of Justice's Leisure",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6f\/Item_Court_of_Justice%27s_Leisure.png",
+        "type": "craftable"
+    },
+    "MekaLuminaireRadiantPath": {
+        "name": "Meka Luminaire: Radiant Path",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b0\/Item_Meka_Luminaire_Radiant_Path.png",
+        "type": "craftable"
+    },
+    "CourtOfJusticesNewsstand": {
+        "name": "Court Of Justice's Newsstand",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b4\/Item_Court_of_Justice%27s_Newsstand.png",
+        "type": "craftable"
+    },
+    "CourtOfJusticesMerchandise": {
+        "name": "Court Of Justice's Merchandise",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/04\/Item_Court_of_Justice%27s_Merchandise.png",
+        "type": "craftable"
+    },
+    "CourtOfJusticesProsperity": {
+        "name": "Court Of Justice's Prosperity",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c9\/Item_Court_of_Justice%27s_Prosperity.png",
+        "type": "craftable"
+    },
+    "PassagesLanguidLifestyle": {
+        "name": "Passage's Languid Lifestyle",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d0\/Item_Passage%27s_Languid_Lifestyle.png",
+        "type": "craftable"
+    },
+    "PassagesPristineRoundTable": {
+        "name": "Passage's Pristine Round Table",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/aa\/Item_Passage%27s_Pristine_Round_Table.png",
+        "type": "craftable"
+    },
+    "PassagesEveningEnsemble": {
+        "name": "Passage's Evening Ensemble",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4f\/Item_Passage%27s_Evening_Ensemble.png",
+        "type": "craftable"
+    },
+    "BookshelfSpeedyBrowsing": {
+        "name": "Bookshelf: Speedy Browsing",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/70\/Item_Bookshelf_Speedy_Browsing.png",
+        "type": "craftable"
+    },
+    "BookshelfFreeReading": {
+        "name": "Bookshelf: Free Reading",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/79\/Item_Bookshelf_Free_Reading.png",
+        "type": "craftable"
+    },
+    "CourtOfJusticesCouture": {
+        "name": "Court Of Justice's Couture",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e7\/Item_Court_of_Justice%27s_Couture.png",
+        "type": "craftable"
+    },
+    "CourtOfJusticesBarrier": {
+        "name": "Court Of Justice's Barrier",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cb\/Item_Court_of_Justice%27s_Barrier.png",
+        "type": "craftable"
+    },
+    "CourtOfJusticesFragrance": {
+        "name": "Court Of Justice's Fragrance",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/35\/Item_Court_of_Justice%27s_Fragrance.png",
+        "type": "craftable"
+    },
+    "CourtOfJusticesConscientiousness": {
+        "name": "Court Of Justice's Conscientiousness",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Item_Court_of_Justice%27s_Conscientiousness.png",
+        "type": "craftable"
+    },
+    "CourtOfJusticesMellowAroma": {
+        "name": "Court Of Justice's Mellow Aroma",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8d\/Item_Court_of_Justice%27s_Mellow_Aroma.png",
+        "type": "craftable"
+    },
+    "PassagesAppetizingLamp": {
+        "name": "Passage's Appetizing Lamp",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b4\/Item_Passage%27s_Appetizing_Lamp.png",
+        "type": "craftable"
+    },
+    "LaneTreeStandard": {
+        "name": "Lane Tree: Standard \u2160",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fa\/Item_Lane_Tree_Standard_I.png",
+        "type": "purchasable"
+    },
+    "LindenWoodHalfMetalAnnouncementBoard": {
+        "name": "Linden Wood Half-Metal Announcement Board",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ad\/Item_Linden_Wood_Half-Metal_Announcement_Board.png",
+        "type": "craftable"
+    },
+    "AThousandEphemeralVisionsOfDew": {
+        "name": "\"A Thousand Ephemeral Visions Of Dew\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/35\/Item_A_Thousand_Ephemeral_Visions_of_Dew.png",
+        "type": "craftable"
+    },
+    "RoyalPurple": {
+        "name": "\"Royal Purple\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f5\/Item_Royal_Purple.png",
+        "type": "craftable"
+    },
+    "StandardRailingScatteredStructure": {
+        "name": "Standard Railing: Scattered Structure",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a2\/Item_Standard_Railing_Scattered_Structure.png",
+        "type": "craftable"
+    },
+    "AutomnequisCask": {
+        "name": "Automnequi's Cask",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7d\/Item_Automnequi%27s_Cask.png",
+        "type": "craftable"
+    },
+    "MekaLuminaireRadiantCountryside": {
+        "name": "Meka Luminaire: Radiant Countryside",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f5\/Item_Meka_Luminaire_Radiant_Countryside.png",
+        "type": "craftable"
+    },
+    "TheWisdomOfPoisson": {
+        "name": "\"The Wisdom Of Poisson\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7f\/Item_%22The_Wisdom_of_Poisson%22.png",
+        "type": "craftable"
+    },
+    "ASimpleResidenceInPoisson": {
+        "name": "\"A Simple Residence In Poisson\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/68\/Item_%22A_Simple_Residence_in_Poisson%22.png",
+        "type": "craftable"
+    },
+    "QuickTemporaryWorkshed": {
+        "name": "\"Quick Temporary Workshed\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f3\/Item_%22Quick_Temporary_Workshed%22.png",
+        "type": "craftable"
+    },
+    "PoissonsSeasonalProduce": {
+        "name": "\"Poisson's Seasonal Produce\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d1\/Item_%22Poisson%27s_Seasonal_Produce%22.png",
+        "type": "craftable"
+    },
+    "StandardShippingPallet": {
+        "name": "Standard Shipping Pallet",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ed\/Item_Standard_Shipping_Pallet.png",
+        "type": "craftable"
+    },
+    "BellflowerHaze": {
+        "name": "Bellflower Haze",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7f\/Item_Bellflower_Haze.png",
+        "type": "purchasable"
+    },
+    "CeruleanGem": {
+        "name": "Cerulean Gem",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/82\/Item_Cerulean_Gem.png",
+        "type": "purchasable"
+    },
+    "SlipperyShack": {
+        "name": "\"Slippery Shack\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f8\/Item_%22Slippery_Shack%22.png",
+        "type": "craftable"
+    },
+    "BedroomBedlam": {
+        "name": "\"Bedroom Bedlam\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f8\/Item_%22Bedroom_Bedlam%22.png",
+        "type": "craftable"
+    },
+    "SmallStonecrab": {
+        "name": "\"Small Stonecrab\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3a\/Item_%22Small_Stonecrab%22.png",
+        "type": "craftable"
+    },
+    "LetsPlay": {
+        "name": "\"Let's Play!\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/90\/Item_%22Let%27s_Play%21%22.png",
+        "type": "craftable"
+    },
+    "ASistersDuty": {
+        "name": "\"A Sister's Duty\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c5\/Item_%22A_Sister%27s_Duty%22.png",
+        "type": "craftable"
+    },
+    "HelloWelcome": {
+        "name": "\"Hello! Welcome!\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/46\/Item_%22Hello%21_Welcome%21%22.png",
+        "type": "craftable"
+    },
+    "ShinyShell": {
+        "name": "\"Shiny Shell\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/56\/Item_%22Shiny_Shell%22.png",
+        "type": "craftable"
+    },
+    "SoftWatersVoice": {
+        "name": "\"Soft Water's Voice\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5f\/Item_%22Soft_Water%27s_Voice%22.png",
+        "type": "craftable"
+    },
+    "GoodStuffIsForSharing": {
+        "name": "\"Good Stuff Is For Sharing!\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d0\/Item_%22Good_Stuff_Is_for_Sharing%21%22.png",
+        "type": "craftable"
+    },
+    "SatisfyingWeight": {
+        "name": "\"Satisfying Weight\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0e\/Item_%22Satisfying_Weight%22.png",
+        "type": "craftable"
+    },
+    "TheArenaWhereFistsReemerge": {
+        "name": "\"The Arena Where Fists Reemerge\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4f\/Item_%22The_Arena_Where_Fists_Reemerge%22.png",
+        "type": "craftable"
+    },
+    "ProductionRackTheBasics": {
+        "name": "Production Rack: The Basics",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2c\/Item_Production_Rack_The_Basics.png",
+        "type": "craftable"
+    },
+    "ProductionRackCustomBuild": {
+        "name": "Production Rack: Custom Build",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b6\/Item_Production_Rack_Custom_Build.png",
+        "type": "craftable"
+    },
+    "OverburdeningOfTheForbiddenFortress": {
+        "name": "\"Overburdening Of The Forbidden Fortress\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cf\/Item_%22Overburdening_of_the_Forbidden_Fortress%22.png",
+        "type": "craftable"
+    },
+    "ForbiddenZoneFloorLampIronhammer": {
+        "name": "Forbidden Zone Floor Lamp: Ironhammer",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5a\/Item_Forbidden_Zone_Floor_Lamp_Ironhammer.png",
+        "type": "craftable"
+    },
+    "ForbiddenZoneFloorLampNightlight": {
+        "name": "Forbidden Zone Floor Lamp: Nightlight",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7d\/Item_Forbidden_Zone_Floor_Lamp_Nightlight.png",
+        "type": "craftable"
+    },
+    "AreaMarkerDownward": {
+        "name": "Area Marker: Downward",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/97\/Item_Area_Marker_Downward.png",
+        "type": "craftable"
+    },
+    "BoxingTargetOfTheForbiddenFortress": {
+        "name": "\"Boxing Target Of The Forbidden Fortress\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3b\/Item_%22Boxing_Target_of_the_Forbidden_Fortress%22.png",
+        "type": "craftable"
+    },
+    "AreaMarkerUpward": {
+        "name": "Area Marker: Upward",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3b\/Item_Area_Marker_Upward.png",
+        "type": "craftable"
+    },
+    "AutomnequisChimneySmoke": {
+        "name": "Automnequi's Chimney Smoke",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d7\/Item_Automnequi%27s_Chimney_Smoke.png",
+        "type": "craftable"
+    },
+    "PassagesPolychromaticPottedPlants": {
+        "name": "Passage's Polychromatic Potted Plants",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1a\/Item_Passage%27s_Polychromatic_Potted_Plants.png",
+        "type": "craftable"
+    },
+    "SunflowerAquarelle": {
+        "name": "Sunflower Aquarelle",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/02\/Item_Sunflower_Aquarelle.png",
+        "type": "purchasable"
     }
 };

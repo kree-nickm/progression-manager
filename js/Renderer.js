@@ -468,7 +468,7 @@ class Renderer
         filter = listElement.dataset.filter;
       items = list.items(filter);
     }
-    console.debug(`Sorting these items:`, items, list, filter);
+    if(window.DEBUGLOG.sortItems) console.debug(`Sorting these items:`, {items, list, filter, listElement, listTargetElement});
     for(let item of items)
     {
       // Note: If the element list differs from the list of items, the extra elements will remain at the top.

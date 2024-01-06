@@ -1,4 +1,5 @@
 import { DateTime } from 'https://cdn.jsdelivr.net/npm/luxon@3.3.0/+esm';
+import { Renderer } from "./Renderer.js";
 
 //import GenshinBuilds from "./gamedata/GenshinBuilds.js";
 
@@ -13,6 +14,7 @@ import FurnitureSetList from "./FurnitureSetList.js";
 
 export default class GenshinManager extends DataManager
 {
+  static Renderer = Renderer; // Only here so the browser console can access it.
   static dontSerialize = DataManager.dontSerialize.concat(["lastDay"]);
   
   lastDay = DateTime.now().setZone("UTC-9").weekdayLong;

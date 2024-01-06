@@ -1748,8 +1748,8 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/08\/Item_Spring_of_the_First_Dewdrop.png",
         "rarity": 1
     },
-    "NewFlower44": {
-        "name": "New 4.4 Flower",
+    "ClearwaterJade": {
+        "name": "Clearwater Jade",
         "img": "https://api.ambr.top/assets/UI/UI_ItemIcon_101241.png",
         "rarity": 1,
         "release": "January 31, 2024"

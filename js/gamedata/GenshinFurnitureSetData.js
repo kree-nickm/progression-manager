@@ -135,15 +135,11 @@ export default {
                 "count": 2
             },
             {
-                "key": "CalligraphySetAssiduousCalligraphy",
-                "count": 1
-            },
-            {
-                "key": "EntranceRugAWarmWelcome",
-                "count": 1
-            },
-            {
                 "key": "IntricatelyCarvedCalligraphyTable",
+                "count": 1
+            },
+            {
+                "key": "CalligraphySetAssiduousCalligraphy",
                 "count": 1
             },
             {
@@ -176,6 +172,10 @@ export default {
             },
             {
                 "key": "RedPineWoodRoundStool",
+                "count": 1
+            },
+            {
+                "key": "EntranceRugAWarmWelcome",
                 "count": 1
             }
         ],
@@ -2148,5 +2148,642 @@ export default {
             "Wanderer"
         ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/19\/Furnishing_Set_Chorus_of_Desert_and_Wood_Display.png"
+    },
+    "KeyToAStableWorkRestCycle": {
+        "name": "Key To A Stable Work-Rest Cycle",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6a\/Furnishing_Set_Key_to_a_Stable_Work-Rest_Cycle_Display.png",
+        "materials": [
+            {
+                "key": "MallowWoodMultiModelWardrobe",
+                "count": 1
+            },
+            {
+                "key": "WitnessToGreatFocus",
+                "count": 1
+            },
+            {
+                "key": "RestaurantRugBathingInTheBreeze",
+                "count": 1
+            },
+            {
+                "key": "MaisonCardinalicesStores",
+                "count": 1
+            },
+            {
+                "key": "ElationOfSocialDrinking",
+                "count": 1
+            },
+            {
+                "key": "MaisonCardinalicesLockbox",
+                "count": 1
+            },
+            {
+                "key": "LindenWoodSweetSlumberBed",
+                "count": 1
+            },
+            {
+                "key": "MaisonCardinalicesPunctuality",
+                "count": 1
+            },
+            {
+                "key": "PassagesStableStorage",
+                "count": 3
+            },
+            {
+                "key": "MallowWoodSturdyCargoContainer",
+                "count": 1
+            },
+            {
+                "key": "MaisonCardinalicesMusicalTone",
+                "count": 1
+            },
+            {
+                "key": "FloralArrangementNearlyAquamarine",
+                "count": 2
+            },
+            {
+                "key": "MaisonCardinalicesCabinet",
+                "count": 1
+            },
+            {
+                "key": "CompactAirSupplyDevice",
+                "count": 1
+            },
+            {
+                "key": "TheLeisureOfDailyMeetings",
+                "count": 1
+            },
+            {
+                "key": "FloralArrangementBloomingPurity",
+                "count": 1
+            }
+        ],
+        "characters": [
+            "Charlotte",
+            "Chevreuse"
+        ]
+    },
+    "StrictAdherenceToOfficeCodes": {
+        "name": "Strict Adherence To Office Codes",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/05\/Furnishing_Set_Strict_Adherence_to_Office_Codes_Display.png",
+        "materials": [
+            {
+                "key": "ModelContraptionReasonableRoundabout",
+                "count": 1
+            },
+            {
+                "key": "MaisonCardinalicesCabinet",
+                "count": 2
+            },
+            {
+                "key": "MaisonCardinalicesFocus",
+                "count": 1
+            },
+            {
+                "key": "FloralArrangementNearlyAquamarine",
+                "count": 1
+            },
+            {
+                "key": "PassagesStableStorage",
+                "count": 1
+            },
+            {
+                "key": "WitnessToGreatFocus",
+                "count": 1
+            },
+            {
+                "key": "RestaurantRugEqualDialogue",
+                "count": 1
+            },
+            {
+                "key": "MaisonCardinalicesPunctuality",
+                "count": 1
+            },
+            {
+                "key": "FloralArrangementArtOfContrast",
+                "count": 2
+            },
+            {
+                "key": "ComfortOfAHomeAwayFromHome",
+                "count": 2
+            }
+        ],
+        "characters": [
+            "Neuvillette"
+        ]
+    },
+    "GarbForGloriousGourmet": {
+        "name": "Garb For Glorious Gourmet",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c0\/Furnishing_Set_Garb_for_Glorious_Gourmet_Display.png",
+        "materials": [
+            {
+                "key": "ChillAfternoonTeaTime",
+                "count": 2
+            },
+            {
+                "key": "SteadyStatelyStability",
+                "count": 2
+            },
+            {
+                "key": "FloralArrangementNearlyAquamarine",
+                "count": 2
+            },
+            {
+                "key": "WitnessToGreatFocus",
+                "count": 3
+            },
+            {
+                "key": "ComfortOfAHomeAwayFromHome",
+                "count": 2
+            },
+            {
+                "key": "MallowWoodSturdyCargoContainer",
+                "count": 1
+            },
+            {
+                "key": "MaisonCardinalicesMusicalTone",
+                "count": 1
+            },
+            {
+                "key": "FloralArrangementArtOfContrast",
+                "count": 2
+            },
+            {
+                "key": "RestaurantRugBathingInTheBreeze",
+                "count": 4
+            }
+        ],
+        "characters": [
+            "Furina",
+            "Navia"
+        ]
+    },
+    "PerfectlyDrawnFocus": {
+        "name": "Perfectly-Drawn Focus",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ea\/Furnishing_Set_Perfectly-Drawn_Focus_Display.png",
+        "materials": [
+            {
+                "key": "RestaurantRugBathingInTheBreeze",
+                "count": 2
+            },
+            {
+                "key": "MallowWoodSturdyCargoContainer",
+                "count": 1
+            },
+            {
+                "key": "MaisonCardinalicesMusicalTone",
+                "count": 1
+            },
+            {
+                "key": "MallowWoodViewingRitesChair",
+                "count": 3
+            },
+            {
+                "key": "FloralArrangementArtOfContrast",
+                "count": 2
+            },
+            {
+                "key": "CelebrationOfAnAdHocPerformance",
+                "count": 1
+            },
+            {
+                "key": "StandardMusicStandAccurateTuning",
+                "count": 1
+            }
+        ],
+        "characters": [
+            "Lynette",
+            "Lyney"
+        ]
+    },
+    "ContinuousClockworkInspiration": {
+        "name": "Continuous Clockwork Inspiration",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/83\/Furnishing_Set_Continuous_Clockwork_Inspiration_Display.png",
+        "materials": [
+            {
+                "key": "PassagesStableStorage",
+                "count": 3
+            },
+            {
+                "key": "MaisonCardinalicesWingedShelf",
+                "count": 1
+            },
+            {
+                "key": "WisdomOfTheForbiddenFortress",
+                "count": 2
+            },
+            {
+                "key": "StudyOfTheForbiddenFortress",
+                "count": 1
+            },
+            {
+                "key": "ConversationOfTheForbiddenFortress",
+                "count": 2
+            },
+            {
+                "key": "BurdenOfTheForbiddenFortress",
+                "count": 1
+            },
+            {
+                "key": "CompactAirSupplyDevice",
+                "count": 1
+            },
+            {
+                "key": "MaisonCardinalicesLockbox",
+                "count": 2
+            },
+            {
+                "key": "MaisonCardinalicesCabinet",
+                "count": 1
+            },
+            {
+                "key": "ModelContraptionReasonableRoundabout",
+                "count": 1
+            },
+            {
+                "key": "MallowWoodSturdyCargoContainer",
+                "count": 1
+            }
+        ],
+        "characters": [
+            "Freminet"
+        ]
+    },
+    "WellspringOfRuleViolationPrevention": {
+        "name": "Wellspring Of Rule Violation Prevention",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ac\/Furnishing_Set_Wellspring_of_Rule_Violation_Prevention_Display.png",
+        "materials": [
+            {
+                "key": "WisdomOfTheForbiddenFortress",
+                "count": 1
+            },
+            {
+                "key": "StableWorkStationInTheCentralHub",
+                "count": 1
+            },
+            {
+                "key": "LindenWoodSubduingSeatBackedChair",
+                "count": 1
+            },
+            {
+                "key": "MomentaryRestInTheCentralHub",
+                "count": 2
+            },
+            {
+                "key": "AThousandTextsInTheCentralHub",
+                "count": 1
+            },
+            {
+                "key": "MallowWoodSturdyCargoContainer",
+                "count": 1
+            },
+            {
+                "key": "MaisonCardinalicesMusicalTone",
+                "count": 1
+            },
+            {
+                "key": "FloralArrangementBloomingPurity",
+                "count": 2
+            },
+            {
+                "key": "MaisonCardinalicesCabinet",
+                "count": 2
+            },
+            {
+                "key": "RestaurantRugBathingInTheBreeze",
+                "count": 2
+            }
+        ],
+        "characters": [
+            "Wriothesley"
+        ]
+    },
+    "CourtOfJusticesPlacidDays": {
+        "name": "Court Of Justice's Placid Days",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/ca\/Furnishing_Set_Court_of_Justice%27s_Placid_Days_Display.png",
+        "materials": [
+            {
+                "key": "CourtOfJusticesCommerce",
+                "count": 1
+            },
+            {
+                "key": "MekaLuminaireRadiantGrounds",
+                "count": 2
+            },
+            {
+                "key": "PassagesPerfumedPottedPlants",
+                "count": 2
+            },
+            {
+                "key": "CourtOfJusticesLeisure",
+                "count": 1
+            },
+            {
+                "key": "MekaLuminaireRadiantPath",
+                "count": 3
+            },
+            {
+                "key": "CourtOfJusticesNewsstand",
+                "count": 2
+            },
+            {
+                "key": "CourtOfJusticesMerchandise",
+                "count": 1
+            },
+            {
+                "key": "CourtOfJusticesProsperity",
+                "count": 1
+            },
+            {
+                "key": "PassagesLanguidLifestyle",
+                "count": 4
+            },
+            {
+                "key": "PassagesPristineRoundTable",
+                "count": 2
+            },
+            {
+                "key": "PassagesEveningEnsemble",
+                "count": 2
+            },
+            {
+                "key": "BookshelfSpeedyBrowsing",
+                "count": 1
+            },
+            {
+                "key": "BookshelfFreeReading",
+                "count": 1
+            }
+        ],
+        "characters": [
+            "Charlotte"
+        ]
+    },
+    "CourtOfJusticesBoomingCommerce": {
+        "name": "Court Of Justice's Booming Commerce",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/22\/Furnishing_Set_Court_of_Justice%27s_Booming_Commerce_Display.png",
+        "materials": [
+            {
+                "key": "CourtOfJusticesCouture",
+                "count": 1
+            },
+            {
+                "key": "CourtOfJusticesBarrier",
+                "count": 9
+            },
+            {
+                "key": "MekaLuminaireRadiantPath",
+                "count": 2
+            },
+            {
+                "key": "CourtOfJusticesFragrance",
+                "count": 1
+            },
+            {
+                "key": "CourtOfJusticesConscientiousness",
+                "count": 1
+            },
+            {
+                "key": "CourtOfJusticesMellowAroma",
+                "count": 1
+            },
+            {
+                "key": "PassagesPristineRoundTable",
+                "count": 2
+            },
+            {
+                "key": "PassagesAppetizingLamp",
+                "count": 2
+            },
+            {
+                "key": "PassagesLanguidLifestyle",
+                "count": 5
+            },
+            {
+                "key": "LaneTreeStandard",
+                "count": 1
+            },
+            {
+                "key": "LindenWoodHalfMetalAnnouncementBoard",
+                "count": 1
+            }
+        ],
+        "characters": [
+            "Lynette",
+            "Lyney"
+        ]
+    },
+    "CourtOfJusticesFreshMist": {
+        "name": "Court Of Justice's Fresh Mist",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f0\/Furnishing_Set_Court_of_Justice%27s_Fresh_Mist_Display.png",
+        "materials": [
+            {
+                "key": "LindenWoodHalfMetalAnnouncementBoard",
+                "count": 1
+            },
+            {
+                "key": "AThousandEphemeralVisionsOfDew",
+                "count": 1
+            },
+            {
+                "key": "PassagesEveningEnsemble",
+                "count": 8
+            },
+            {
+                "key": "RoyalPurple",
+                "count": 4
+            },
+            {
+                "key": "StandardRailingScatteredStructure",
+                "count": 14
+            },
+            {
+                "key": "MekaLuminaireRadiantPath",
+                "count": 6
+            }
+        ],
+        "characters": [
+            "Neuvillette",
+            "Furina"
+        ]
+    },
+    "PoissonTheUnassuming": {
+        "name": "Poisson The Unassuming",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7c\/Furnishing_Set_Poisson_the_Unassuming_Display.png",
+        "materials": [
+            {
+                "key": "AutomnequisCask",
+                "count": 1
+            },
+            {
+                "key": "MekaLuminaireRadiantCountryside",
+                "count": 3
+            },
+            {
+                "key": "TheWisdomOfPoisson",
+                "count": 1
+            },
+            {
+                "key": "ASimpleResidenceInPoisson",
+                "count": 1
+            },
+            {
+                "key": "QuickTemporaryWorkshed",
+                "count": 1
+            },
+            {
+                "key": "PoissonsSeasonalProduce",
+                "count": 2
+            },
+            {
+                "key": "StandardShippingPallet",
+                "count": 2
+            },
+            {
+                "key": "BellflowerHaze",
+                "count": 3
+            },
+            {
+                "key": "CeruleanGem",
+                "count": 1
+            }
+        ],
+        "characters": [
+            "Navia"
+        ]
+    },
+    "UnderseaMeruseasLuster": {
+        "name": "Undersea Merusea's Luster",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c7\/Furnishing_Set_Undersea_Merusea%27s_Luster_Display.png",
+        "materials": [
+            {
+                "key": "SlipperyShack",
+                "count": 1
+            },
+            {
+                "key": "BedroomBedlam",
+                "count": 1
+            },
+            {
+                "key": "SmallStonecrab",
+                "count": 2
+            },
+            {
+                "key": "LetsPlay",
+                "count": 2
+            },
+            {
+                "key": "ASistersDuty",
+                "count": 1
+            },
+            {
+                "key": "HelloWelcome",
+                "count": 3
+            },
+            {
+                "key": "ShinyShell",
+                "count": 1
+            },
+            {
+                "key": "SoftWatersVoice",
+                "count": 1
+            },
+            {
+                "key": "GoodStuffIsForSharing",
+                "count": 7
+            },
+            {
+                "key": "SatisfyingWeight",
+                "count": 2
+            }
+        ],
+        "characters": [
+            "Freminet"
+        ]
+    },
+    "FullForceForwardInTheForbiddenFortress": {
+        "name": "Full Force Forward In The Forbidden Fortress",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3b\/Furnishing_Set_Full_Force_Forward_in_the_Forbidden_Fortress_Display.png",
+        "materials": [
+            {
+                "key": "TheArenaWhereFistsReemerge",
+                "count": 1
+            },
+            {
+                "key": "ProductionRackTheBasics",
+                "count": 2
+            },
+            {
+                "key": "ProductionRackCustomBuild",
+                "count": 2
+            },
+            {
+                "key": "OverburdeningOfTheForbiddenFortress",
+                "count": 4
+            },
+            {
+                "key": "ForbiddenZoneFloorLampIronhammer",
+                "count": 2
+            },
+            {
+                "key": "ForbiddenZoneFloorLampNightlight",
+                "count": 1
+            },
+            {
+                "key": "AreaMarkerDownward",
+                "count": 1
+            },
+            {
+                "key": "BoxingTargetOfTheForbiddenFortress",
+                "count": 2
+            },
+            {
+                "key": "AreaMarkerUpward",
+                "count": 1
+            }
+        ],
+        "characters": [
+            "Wriothesley",
+            "Chevreuse"
+        ]
+    },
+    "TheNationOfHydrosMottledColors": {
+        "name": "The Nation Of Hydro's Mottled Colors",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/16\/Furnishing_Set_The_Nation_of_Hydro%27s_Mottled_Colors_Display.png",
+        "materials": [
+            {
+                "key": "LaneTreeStandard",
+                "count": 1
+            },
+            {
+                "key": "BellflowerHaze",
+                "count": 3
+            },
+            {
+                "key": "CeruleanGem",
+                "count": 3
+            },
+            {
+                "key": "AutomnequisChimneySmoke",
+                "count": 1
+            },
+            {
+                "key": "AutomnequisCask",
+                "count": 1
+            },
+            {
+                "key": "PassagesPolychromaticPottedPlants",
+                "count": 2
+            },
+            {
+                "key": "MekaLuminaireRadiantCountryside",
+                "count": 1
+            },
+            {
+                "key": "SunflowerAquarelle",
+                "count": 9
+            }
+        ],
+        "characters": []
     }
 };

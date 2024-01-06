@@ -4,6 +4,8 @@ window.DEBUGLOG = {
   addFieldEventListeners: false,
   getRelatedItems: false,
   contentToHTML: false,
+  sortItems: false,
+  StatModifier_create: false,
   
   enableAll: () => { for(let method in window.DEBUGLOG) window.DEBUGLOG[method] = true; },
 };

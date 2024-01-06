@@ -310,7 +310,7 @@ export default class UIController {
   
   clearMemory(...path)
   {
-    let fp = path.pop();
+    let pathEnd = path.pop();
     let mem = this.memory;
     for(let p of path)
     {
@@ -323,7 +323,7 @@ export default class UIController {
       }
       mem = mem[p];
     }
-    mem[fp] = {};
+    mem[pathEnd] = {};
     return true;
   }
   

@@ -51,13 +51,12 @@ export default class StatModifier {
     }
     if(!found)
     {
-      console.debug("StatModifier.create", {code, characterSource, type, properties});
-      code = StatModifier.normalizeCode(code);
-      console.debug(code);
-      for(let c in code)
+      let normalizedCode = StatModifier.normalizeCode(code);
+      if(window.DEBUGLOG?.StatModifier_create) console.debug("StatModifier.create", {code, normalizedCode, characterSource, type, properties});
+      for(let c in normalizedCode)
       {
         properties.partIdx = c;
-        found = new StatModifier(code[c], characterSource, type, properties);
+        found = new StatModifier(normalizedCode[c], characterSource, type, properties);
         characterSource.statModifiers.push(found);
       }
     }

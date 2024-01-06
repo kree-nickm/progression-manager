@@ -84,6 +84,7 @@ export default class Artifact extends GenshinItem
       }
       else
       {
+        // Just unequip from current character, if any.
         if(this.character)
           this.character.update(this.slotKey+'Artifact', null, "replace");
         this.character = null;
