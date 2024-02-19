@@ -325,7 +325,7 @@ class Renderer
       return "";
   }
   
-  static async rerender(element, data={}, {template,showPopup,force=true,parentElement,renderedItem}={})
+  static async rerender(element, data={}, {template,partials=[],showPopup,force=true,parentElement,renderedItem}={})
   {
     if(!element)
     {
@@ -405,7 +405,7 @@ class Renderer
       data.item.constructor.clearDependencies(element, true);
       Renderer._needsUpdate.forEach(elemToUpdate => element.contains(elemToUpdate) ? Renderer._needsUpdate.delete(elemToUpdate) : null);
       
-      let templates = await Renderer.getTemplates(template, "renderItemField");
+      let templates = await Renderer.getTemplates(template, "renderItemField", ...partials);
       element.outerHTML = templates[template](data);
       element = parentElement.children.item(index);
       
@@ -614,7 +614,7 @@ class Renderer
         {
           if(window.DEBUGLOG.renderItemField) console.debug(`Adding popup event listener to subelement (field:${fieldName}, item:${item.name}).`, subElement, subContent);
           subElement.onclick = event => {
-            Renderer.rerender(subContent.popup.viewer.elements.popup.querySelector(".modal-content"), {item: subContent.popup}, {template: subContent.popup.constructor.templateName, showPopup: true});
+            Renderer.rerender(subContent.popup.viewer.elements.popup.querySelector(".modal-content"), {item: subContent.popup}, {template: subContent.popup.constructor.templateName, partials: subContent.popup.constructor.templatePartials, showPopup: true});
           };
           subElement.classList.add("popup");
         }

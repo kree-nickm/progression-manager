@@ -1,6 +1,6 @@
 import GenshinArtifactData from "./gamedata/GenshinArtifactData.js";
 
-import { handlebars } from "./Renderer.js";
+import { handlebars } from "../Renderer.js";
 import GenshinItem from "./GenshinItem.js";
 
 handlebars.registerHelper("maxStacks", function(modifier, asker, preview, options) {

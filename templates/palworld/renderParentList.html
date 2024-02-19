@@ -1,0 +1,19 @@
+<div class="" data-template="palworld/renderParentList" data-uuid="{{uuid item}}">
+  {{#each parents}}
+    <div class="row">
+        <div class="col-2">
+          {{parentA.sex}}: {{parentA.name}}
+        </div>
+        <div class="col-4">
+          {{parentA.passivesKeys}}
+        </div>
+        <div class="col-2">
+          {{parentB.sex}}: {{parentB.name}}
+        </div>
+        <div class="col-4">
+          {{parentB.passivesKeys}}
+        </div>
+    </div>
+    <p>{{passiveScore}} - {{potentialPassives}}</p>
+  {{/each}}
+</div>

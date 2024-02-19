@@ -23,6 +23,7 @@ export default class DataManager extends UIController
     this.elements['popup'].addEventListener('hidden.bs.modal', event => UIController.clearDependencies(event.target, true));
     this.settings.paneMemory = {};
     this.settings.preferences = {};
+    this.settings.server = null;
   }
   
   get lists()
@@ -159,17 +160,55 @@ export default class DataManager extends UIController
   {
     if(this.errors)
     {
-      console.warn(`Prevented saving of local data in order to prevent corruption, due to errors being detected during load. You must reload the page to clear this. If the problem persists, you may have to report a bug to the developer.`);
+      console.warn(`Prevented saving of local data due to errors being detected during load, in order to prevent saved data corruption. You must reload the page to clear this. If the problem persist, you may have to report a bug to the developer here: https://github.com/kree-nickm/genshin-manager/issues`);
       return false;
     }
-    window.localStorage.setItem("DataManagerSettings", JSON.stringify(this.settings));
+    
+    this.settings.server = this.settings.server ?? Object.keys(this.data ?? {})[0] ?? "";
+    if(!this.data)
+      this.data = {};
+    this.data[this.settings.server] = this.lists;
+    window.localStorage.setItem(`${this.constructor.name}Data`, JSON.stringify(this.data));
+    window.localStorage.setItem(`${this.constructor.name}Settings`, JSON.stringify(this.settings));
     console.log(`Local data saved.`);
   }
   
   retrieve()
   {
+    let data;
+    try
+    {
+      data = JSON.parse(window.localStorage.getItem(`${this.constructor.name}Data`) ?? "null");
+      if(data)
+      {
+        for(let srv in data)
+        {
+          if(!this.data[srv])
+            this.data[srv] = {};
+          this.settings.server = srv;
+          for(let list in data[srv])
+          {
+            this.data[srv][this.listClasses[data[srv][list].__class__].name] = this.listClasses[data[srv][list].__class__].fromJSON(data[srv][list], {viewer:this});
+          }
+        }
+        console.log("Loaded account data from local storage.", data);
+      }
+      else
+      {
+        console.log("No account data to load.");
+      }
+    }
+    catch(x)
+    {
+      console.error("Could not load stored local account data.", x);
+      this.errors = true;
+    }
+    
     // Load site-specific preferences.
-    this.settingsFromJSON(window.localStorage.getItem("DataManagerSettings"));
+    this.settingsFromJSON(window.localStorage.getItem(`${this.constructor.name}Settings`));
+    this.settings.server = this.settings.server ?? Object.keys(this.data ?? {})[0] ?? "";
+    
+    this.activateAccount(this.settings.server)
     
     if(this.currentView)
       this.view(this.currentView);

@@ -6,7 +6,7 @@ import GenshinCharacterStats from "./gamedata/GenshinCharacterStats.js";
 import GenshinArtifactData from "./gamedata/GenshinArtifactData.js";
 import GenshinBuilds from "./gamedata/GenshinBuilds.js";
 
-import { handlebars, Renderer } from "./Renderer.js";
+import { handlebars, Renderer } from "../Renderer.js";
 import GenshinItem from "./GenshinItem.js";
 import Artifact from "./Artifact.js";
 import Material from "./Material.js";
@@ -1435,7 +1435,10 @@ export default class Character extends GenshinItem
         this.list.viewer.buildData[this.key] = [];
       let builds = Object.values(this.list.viewer.buildData[this.key]);
       if(!builds.length)
+      {
         builds.push({name:"default"});
+        this.list.viewer.buildData[this.key] = builds;
+      }
       for(let build of builds)
       {
         if(!build.name)

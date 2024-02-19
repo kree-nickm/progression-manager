@@ -296,8 +296,18 @@ export default {
         "rarity": 5,
         "baseATK": 49,
         "stat": "atk_",
-        "passive": "When the equipping character hits an opponent with a Plunging Attack, all nearby party members' Plunging Attacks deal @0% increased DMG for 20s. When other nearby party members hit opponents with Plunging Attacks, they will restore @1 Energy to the equipping character. Energy can be restored this way every 0.7s.",
-        "code": ["proc",["pstat",["plunging_dmg_","@0"]],"After Plunging Attack"],
+        "passive": "After the equipping character hits an opponent with a Plunging Attack, all nearby party members' Plunging Attacks will deal @0% increased DMG for 20s. When nearby party members hit opponents with Plunging Attacks, they will restore @1 Energy to the equipping character. Energy can restored this way every 0.7s. This energy regain effect can be triggered even if the equipping character is not on the field.",
+        "code": [
+            "proc",
+            [
+                "pstat",
+                [
+                    "plunging_dmg_",
+                    "@0"
+                ]
+            ],
+            "After Plunging Attack"
+        ],
         "refinementData": [
             {
                 "1": 28,
@@ -315,12 +325,13 @@ export default {
             }
         ],
         "imgs": [
-            "https://api.ambr.top/assets/UI/UI_EquipIcon_Catalyst_MountainGale.png",
-            "https://api.ambr.top/assets/UI/UI_EquipIcon_Catalyst_MountainGale.png"
+            "https:\/\/api.ambr.top\/assets\/UI\/UI_EquipIcon_Catalyst_MountainGale.png",
+            "https:\/\/api.ambr.top\/assets\/UI\/UI_EquipIcon_Catalyst_MountainGale.png"
         ],
         "matForgery": "Balls",
         "matStrongEnemy": "Xuanwen Beasts",
-        "matWeakEnemy": "Samachurl"
+        "matWeakEnemy": "Samachurl",
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Crane%27s_Echoing_Call"
     },
     "ElegyForTheEnd": {
         "name": "Elegy for the End",
@@ -1066,7 +1077,7 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0b\/Weapon_Skyward_Pride.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8e\/Weapon_Skyward_Pride_2nd.png"
         ],
-        "passive": "Increases all DMG by @0%. After using an Elemental Burst, Normal or Charged Attack, on hit, creates a vacuum blade that does @1% of ATK as DMG to opponents along its path. Lasts for 20s or 8 vacuum blades.",
+        "passive": "Increases all DMG by @0%. After using an Elemental Burst, a vacuum blade that does @1% of ATK as DMG to opponents along its path will be created when Normal or Charged Attacks hit. Lasts for 20s or 8 vacuum blades.",
         "code": [
             [
                 "stat",
@@ -1558,8 +1569,8 @@ export default {
         "stat": "critRate_",
         "baseStat": 4.8,
         "imgs": [
-            "https://static.wikia.nocookie.net/gensin-impact/images/1/1d/Weapon_Verdict.png",
-            "https://static.wikia.nocookie.net/gensin-impact/images/e/ef/Weapon_Verdict_2nd.png"
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1d\/Weapon_Verdict.png",
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ef\/Weapon_Verdict_2nd.png"
         ],
         "passive": "Increases ATK by @0%. When characters in your party obtain Elemental Shards from Crystallize reactions, the equipping character will gain 1 Seal, increasing Elemental Skill DMG by @1%. The Seal lasts for 15s, and the equipped may have up to 2 Seals at once. All of the equipper's Seals will disappear 0.2s after their Elemental Skill deals DMG.",
         "refinementData": [
@@ -1578,7 +1589,7 @@ export default {
                 "5": 36
             }
         ],
-        "linkFandom": "https://genshin-impact.fandom.com/wiki/Verdict"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Verdict"
     },
     "VortexVanquisher": {
         "name": "Vortex Vanquisher",
@@ -1707,8 +1718,8 @@ export default {
         "stat": "enerRech_",
         "baseStat": 6.7,
         "imgs": [
-            "https://static.wikia.nocookie.net/gensin-impact/images/6/6e/Weapon_Ultimate_Overlord's_Mega_Magic_Sword.png",
-            "https://static.wikia.nocookie.net/gensin-impact/images/4/48/Weapon_Ultimate_Overlord's_Mega_Magic_Sword_2nd.png"
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6e\/Weapon_Ultimate_Overlord's_Mega_Magic_Sword.png",
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/48\/Weapon_Ultimate_Overlord's_Mega_Magic_Sword_2nd.png"
         ],
         "passive": "ATK increased by @0%. That's not all! The support from all Melusines you've helped in Merusea Village fills you with strength! Based on the number of them you've helped, your ATK is increased by up to an additional @1%.",
         "code": [
@@ -1743,7 +1754,7 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https://genshin-impact.fandom.com/wiki/%22Ultimate_Overlord's_Mega_Magic_Sword%22"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/%22Ultimate_Overlord%27s_Mega_Magic_Sword%22"
     },
     "Akuoumaru": {
         "name": "Akuoumaru",
@@ -3476,7 +3487,7 @@ export default {
         "rarity": 4,
         "baseATK": 41,
         "stat": "hp_",
-        "passive": "When the wielder is healed or heals others, they will gain a Stoic's Symbol that lasts 30s, up to a maximum of 3 Symbols. When using their Elemental Skill or Burst, all Symbols will be consumed and the Roused effect will be granted for 10s. For each Symbol consumed. gain @0 Elemental Mastery. and 2s after the effect occurs, @1 Energy per Symbol consumed will be restored for said character. The Roused effect can be triggered once every 15s, and Symbols can be gained even when the character is not on the field.",
+        "passive": "When the wielder is healed or heals others, they will gain a Stoic's Symbol that lasts 30s, up to a maximum of 3 Symbols. When using their Elemental Skill or Burst, all Symbols will be consumed and the Roused effect will be granted for 10s. For each Symbol consumed, gain @0 Elemental Mastery, and 2s after the effect occurs, @1 Energy per Symbol consumed will be restored for said character. The Roused effect can be triggered once every 15s, and Symbols can be gained even when the character is not on the field.",
         "refinementData": [
             {
                 "1": 40,

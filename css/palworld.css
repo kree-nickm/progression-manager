@@ -1,0 +1,68 @@
+.sub-0.tier-3, .sub-0.tier-2, .sub-0.tier-1, .sub-0.tier--1, .sub-0.tier--2, .sub-0.tier--3 {
+  border: 1px solid;
+  border-radius: 1ex;
+  padding: 0px 0.5ex;
+}
+
+.sub-0.tier-3 {
+  border-color: rgb(255, 200, 0);
+  background-color: rgba(255, 200, 0, 0.3);
+}
+
+.sub-0.tier-2 {
+  border-color: rgb(200, 150, 0);
+  background-color: rgba(255, 200, 0, 0.1);
+}
+
+.sub-0.tier-1 {
+  border-color: black;
+}
+
+.sub-0.tier--3 {
+  border-color: rgb(255, 0, 0);
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+.sub-0.tier--2 {
+  border-color: rgb(240, 0, 0);
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+.sub-0.tier--1 {
+  border-color: rgb(180, 0, 0);
+}
+
+.sub-0.tier-3::before, .sub-0.tier-2::before, .sub-0.tier-1::before, .sub-0.tier--3::before, .sub-0.tier--2::before, .sub-0.tier--1::before {
+  width: 1em;
+  display: inline-block;
+  text-align: center;
+}
+
+.sub-0.tier-3::before {
+  content: "\27F0";
+  color: black;
+}
+
+.sub-0.tier-2::before {
+  content: "\21D1";
+  color: black;
+}
+
+.sub-0.tier-1::before {
+  content: "\2191";
+}
+
+.sub-0.tier--3::before {
+  content: "\27F1";
+  color: red;
+}
+
+.sub-0.tier--2::before {
+  content: "\21D3";
+  color: red;
+}
+
+.sub-0.tier--1::before {
+  content: "\2193";
+  color: red;
+}

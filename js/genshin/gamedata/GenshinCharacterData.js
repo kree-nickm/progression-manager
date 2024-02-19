@@ -4485,7 +4485,7 @@ export default {
             "Elemental Burst": {
                 "name": "Still Photo: Comprehensive Confirmation",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/89\/Talent_Still_Photo_Comprehensive_Confirmation.png",
-                "text": "Condensing ice to create The Steambird's signature, Charlotte creates a Newsflash Field that will deal <span class=\"text-cryo\"><b>AoE Cryo DMG<\/b><\/span> and restores HP for all nearby party members based on Charlotte's% ATK +.<br\/><b>Newsflash Field<\/b><br\/><ul><li>While the ability is active, Monsieur Verite will deal <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span> at intervals to opponents within its AoE.<\/li><li>Will continuously restore HP to active character(s) within its AoE based on Charlotte's ATK.<\/li><\/ul>",
+                "text": "Condensing ice to create The Steambird's signature, Charlotte creates a Newsflash Field that will deal <span class=\"text-cryo\"><b>AoE Cryo DMG<\/b><\/span> and restores HP for all nearby party members based on Charlotte's ATK.<br\/><b>Newsflash Field<\/b><br\/><ul><li>While the ability is active, Monsieur Verite will deal <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span> at intervals to opponents within its AoE.<\/li><li>Will continuously restore HP to active character(s) within its AoE based on Charlotte's ATK.<\/li><\/ul>",
                 "scaling": {
                     "Cast Healing": {
                         "1": "256.57% ATK +1608",
@@ -4603,7 +4603,32 @@ export default {
                 "name": "Diversified Investigation",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/03\/Talent_Diversified_Investigation.png",
                 "text": "When the party contains 1\/2\/3 Fontainians other than herself, Charlotte gains a 5%\/10%\/15% Healing Bonus. When the party contains 1\/2\/3 non-Fontainians, Charlotte gains a 5%\/10%\/15% Cryo DMG Bonus.",
-                "code": [["proc",["stat",["heal_",5]],"Other Fontainians in party",3], ["proc",["stat",["cryo_dmg_",5]],"Non-Fontainians in party",3]]
+                "code": [
+                    [
+                        "proc",
+                        [
+                            "stat",
+                            [
+                                "heal_",
+                                5
+                            ]
+                        ],
+                        "Other Fontainians in party",
+                        3
+                    ],
+                    [
+                        "proc",
+                        [
+                            "stat",
+                            [
+                                "cryo_dmg_",
+                                5
+                            ]
+                        ],
+                        "Non-Fontainians in party",
+                        3
+                    ]
+                ]
             },
             "Utility Passive": {
                 "name": "First-Person Shutter",
@@ -4655,16 +4680,451 @@ export default {
         "matEnemy": "Clockwork Meka",
         "matMastery": "Order",
         "matTrounce": "Lightless Eye of the Maelstrom",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/8/8a/Chevreuse_Icon.png",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8a\/Chevreuse_Icon.png",
         "region": "Fontaine",
-        "release": "January 10, 2024",
+        "release": "January 09, 2024",
         "patch": "4.3",
-        "hpBase": 1003,
-        "atkBase": 16,
-        "defBase": 51,
-        "hpMaxAsc": 3587.953,
-        "atkMaxAsc": 59.416,
-        "defMaxAsc": 179.201
+        "hpBase": 1002.9700927734,
+        "atkBase": 16.205280303955,
+        "defBase": 50.701351165771,
+        "hpMaxAsc": 3588.6091308594,
+        "atkMaxAsc": 57.983562469482,
+        "defMaxAsc": 181.40849304199,
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Chevreuse",
+        "talents": {
+            "Normal Attack": {
+                "name": "Line Bayonet Thrust EX",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fe\/Polearm_Pyro.png",
+                "text": "<b>Normal Attack<\/b><br\/>Performs up to 4 consecutive spear strikes.<br\/><br\/><b>Charged Attack<\/b><br\/>Consumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.<br\/><br\/><b>Plunging Attack<\/b><br\/>Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                "scaling": {
+                    "1-Hit DMG (%)": {
+                        "1": "53.1",
+                        "2": "57.5",
+                        "3": "61.8",
+                        "4": "68",
+                        "5": "72.3",
+                        "6": "77.2",
+                        "7": "84",
+                        "8": "90.8",
+                        "9": "97.6",
+                        "10": "105",
+                        "11": "112.4"
+                    },
+                    "2-Hit DMG (%)": {
+                        "1": "49.3",
+                        "2": "53.3",
+                        "3": "57.3",
+                        "4": "63.1",
+                        "5": "67.1",
+                        "6": "71.7",
+                        "7": "78",
+                        "8": "84.3",
+                        "9": "90.6",
+                        "10": "97.5",
+                        "11": "104.4"
+                    },
+                    "3-Hit DMG (%)": {
+                        "1": "27.6+32.5",
+                        "2": "29.9+35.1",
+                        "3": "32.1+37.7",
+                        "4": "35.4+41.5",
+                        "5": "37.6+44.2",
+                        "6": "40.2+47.2",
+                        "7": "43.7+51.3",
+                        "8": "47.3+55.5",
+                        "9": "50.8+59.6",
+                        "10": "54.6+64.2",
+                        "11": "58.5+68.7"
+                    },
+                    "4-Hit DMG (%)": {
+                        "1": "77.3",
+                        "2": "83.6",
+                        "3": "89.8",
+                        "4": "98.8",
+                        "5": "105.1",
+                        "6": "112.3",
+                        "7": "122.2",
+                        "8": "132.1",
+                        "9": "141.9",
+                        "10": "152.7",
+                        "11": "163.5"
+                    },
+                    "Charged Attack DMG (%)": {
+                        "1": "121.7",
+                        "2": "131.6",
+                        "3": "141.5",
+                        "4": "155.7",
+                        "5": "165.6",
+                        "6": "176.9",
+                        "7": "192.4",
+                        "8": "208",
+                        "9": "223.6",
+                        "10": "240.6",
+                        "11": "257.5"
+                    },
+                    "Charged Attack Stamina Cost": {
+                        "1": "25",
+                        "2": "25",
+                        "3": "25",
+                        "4": "25",
+                        "5": "25",
+                        "6": "25",
+                        "7": "25",
+                        "8": "25",
+                        "9": "25",
+                        "10": "25",
+                        "11": "25"
+                    },
+                    "Plunge DMG (%)": {
+                        "1": "63.9",
+                        "2": "69.1",
+                        "3": "74.3",
+                        "4": "81.8",
+                        "5": "87",
+                        "6": "92.9",
+                        "7": "101.1",
+                        "8": "109.3",
+                        "9": "117.5",
+                        "10": "126.4",
+                        "11": "135.3"
+                    },
+                    "Low Plunge DMG (%)": {
+                        "1": "128",
+                        "2": "138",
+                        "3": "149",
+                        "4": "164",
+                        "5": "174",
+                        "6": "186",
+                        "7": "202",
+                        "8": "219",
+                        "9": "235",
+                        "10": "253",
+                        "11": "271"
+                    },
+                    "High Plunge DMG (%)": {
+                        "1": "160",
+                        "2": "173",
+                        "3": "186",
+                        "4": "204",
+                        "5": "217",
+                        "6": "232",
+                        "7": "253",
+                        "8": "273",
+                        "9": "293",
+                        "10": "316",
+                        "11": "338"
+                    }
+                }
+            },
+            "Elemental Skill": {
+                "name": "Short-Range Rapid Interdiction Fire",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0b\/Talent_Short-Range_Rapid_Interdiction_Fire.png",
+                "text": "Chevreuse quickly shoulders her musket and fires at her opponent(s), dealing <span class=\"text-pyro\"><b>AoE Pyro DMG<\/b><\/span>.<br\/>For a short duration after Chevreuse fires a shot, she will continuously restore HP to the active character on the field. The amount healed is based on her Max HP.<br\/>Hold to fire in a different fashion.<br\/><br\/><b>Hold<\/b><br\/>Enter Aiming Mode, locking a target in her sights to fire a precise interdiction shot. If Chevreuse has an Overcharged Ball, then she will fire the Overcharged Ball instead, dealing greater <span class=\"text-pyro\"><b>Pyro DMG<\/b><\/span> in a larger area.<br\/>Chevreuse gains 1 Overcharged Ball every time a nearby character in the party triggers an Overloaded reaction, and can have up to 1 Overcharged Ball at a time.<br\/><br\/><b>Arkhe: Ousia<\/b><br\/>Periodically, after Chevreuse's Short-Range Rapid Interdiction Fire hits, a Surging Blade will be called forth that deals <span class=\"text-ousia\"><b>Ousia<\/b><\/span>-aligned <span class=\"text-pyro\"><b>Pyro DMG<\/b><\/span>.",
+                "scaling": {
+                    "Press DMG (%)": {
+                        "1": "115.2",
+                        "2": "123.84",
+                        "3": "132.48",
+                        "4": "144",
+                        "5": "152.64",
+                        "6": "161.28",
+                        "7": "172.8",
+                        "8": "184.32",
+                        "9": "195.84",
+                        "10": "207.36",
+                        "11": "218.88",
+                        "12": "230.4",
+                        "13": "244.8"
+                    },
+                    "Hold DMG (%)": {
+                        "1": "172.8",
+                        "2": "185.76",
+                        "3": "198.72",
+                        "4": "216",
+                        "5": "228.96",
+                        "6": "241.92",
+                        "7": "259.2",
+                        "8": "276.48",
+                        "9": "293.76",
+                        "10": "311.04",
+                        "11": "328.32",
+                        "12": "345.6",
+                        "13": "367.2"
+                    },
+                    "Overcharged Ball DMG (%)": {
+                        "1": "282.4",
+                        "2": "303.58",
+                        "3": "324.76",
+                        "4": "353",
+                        "5": "374.18",
+                        "6": "395.36",
+                        "7": "423.6",
+                        "8": "451.84",
+                        "9": "480.08",
+                        "10": "508.32",
+                        "11": "536.56",
+                        "12": "564.8",
+                        "13": "600.1"
+                    },
+                    "HP Regeneration Over Time": {
+                        "1": "2.67% Max HP+257",
+                        "2": "2.87% Max HP+282",
+                        "3": "3.07% Max HP+310",
+                        "4": "3.33% Max HP+340",
+                        "5": "3.53% Max HP+372",
+                        "6": "3.73% Max HP+407",
+                        "7": "4% Max HP+443",
+                        "8": "4.27% Max HP+482",
+                        "9": "4.53% Max HP+522",
+                        "10": "4.8% Max HP+565",
+                        "11": "5.07% Max HP+610",
+                        "12": "5.33% Max HP+657",
+                        "13": "5.67% Max HP+706"
+                    },
+                    "Healing Duration": {
+                        "1": "12s",
+                        "2": "12s",
+                        "3": "12s",
+                        "4": "12s",
+                        "5": "12s",
+                        "6": "12s",
+                        "7": "12s",
+                        "8": "12s",
+                        "9": "12s",
+                        "10": "12s",
+                        "11": "12s",
+                        "12": "12s",
+                        "13": "12s"
+                    },
+                    "Surging Blade DMG (%)": {
+                        "1": "28.8",
+                        "2": "30.96",
+                        "3": "33.12",
+                        "4": "36",
+                        "5": "38.16",
+                        "6": "40.32",
+                        "7": "43.2",
+                        "8": "46.08",
+                        "9": "48.96",
+                        "10": "51.84",
+                        "11": "54.72",
+                        "12": "57.6",
+                        "13": "61.2"
+                    },
+                    "Surging Blade Interval": {
+                        "1": "10s",
+                        "2": "10s",
+                        "3": "10s",
+                        "4": "10s",
+                        "5": "10s",
+                        "6": "10s",
+                        "7": "10s",
+                        "8": "10s",
+                        "9": "10s",
+                        "10": "10s",
+                        "11": "10s",
+                        "12": "10s",
+                        "13": "10s"
+                    },
+                    "CD": {
+                        "1": "15s",
+                        "2": "15s",
+                        "3": "15s",
+                        "4": "15s",
+                        "5": "15s",
+                        "6": "15s",
+                        "7": "15s",
+                        "8": "15s",
+                        "9": "15s",
+                        "10": "15s",
+                        "11": "15s",
+                        "12": "15s",
+                        "13": "15s"
+                    }
+                }
+            },
+            "Elemental Burst": {
+                "name": "Ring of Bursting Grenades",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/be\/Talent_Ring_of_Bursting_Grenades.png",
+                "text": "Chevreuse fires an explosive grenade at opponents with her musket, dealing <span class=\"text-pyro\"><b>AoE Pyro DMG.<\/b><\/span> After the projectile hits, it will split into many secondary explosive shells.<br\/>The secondary explosive shells will burst after a short interval, dealing <span class=\"text-pyro\"><b>Pyro DMG<\/b><\/span> to nearby opponents.",
+                "scaling": {
+                    "Explosive Grenade DMG (%)": {
+                        "1": "368.16",
+                        "2": "395.77",
+                        "3": "423.38",
+                        "4": "460.2",
+                        "5": "487.81",
+                        "6": "515.42",
+                        "7": "552.24",
+                        "8": "589.06",
+                        "9": "625.87",
+                        "10": "662.69",
+                        "11": "699.5",
+                        "12": "736.32",
+                        "13": "782.34"
+                    },
+                    "Secondary Explosive Shell DMG (%)": {
+                        "1": "49.09",
+                        "2": "52.77",
+                        "3": "56.45",
+                        "4": "61.36",
+                        "5": "65.04",
+                        "6": "68.72",
+                        "7": "73.63",
+                        "8": "78.54",
+                        "9": "83.45",
+                        "10": "88.36",
+                        "11": "93.27",
+                        "12": "98.18",
+                        "13": "104.31"
+                    },
+                    "CD": {
+                        "1": "15s",
+                        "2": "15s",
+                        "3": "15s",
+                        "4": "15s",
+                        "5": "15s",
+                        "6": "15s",
+                        "7": "15s",
+                        "8": "15s",
+                        "9": "15s",
+                        "10": "15s",
+                        "11": "15s",
+                        "12": "15s",
+                        "13": "15s"
+                    },
+                    "Energy Cost": {
+                        "1": "60",
+                        "2": "60",
+                        "3": "60",
+                        "4": "60",
+                        "5": "60",
+                        "6": "60",
+                        "7": "60",
+                        "8": "60",
+                        "9": "60",
+                        "10": "60",
+                        "11": "60",
+                        "12": "60",
+                        "13": "60"
+                    }
+                }
+            },
+            "1st Ascension Passive": {
+                "name": "Vanguard's Coordinated Tactics",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/27\/Talent_Vanguard%27s_Coordinated_Tactics.png",
+                "text": "When all party members are <span class=\"text-pyro\"><b>Pyro<\/b><\/span> and <span class=\"text-electro\"><b>Electro<\/b><\/span> characters and there is at least one Pyro and one Electro character each in the party:<br\/>Chevreuse grants \"Coordinated Tactics\" to nearby party members: After a character triggers the Overloaded reaction, the <span class=\"text-pyro\"><b>Pyro<\/b><\/span> and <span class=\"text-electro\"><b>Electro<\/b><\/span> RES of the opponent(s) affected by this Overloaded reaction will be decreased by 40% for 6s.<br\/>The \"Coordinated Tactics\" effect will be removed when the Elemental Types of the characters in the party do not meet the basic requirements for the Passive Talent.",
+                "code": [
+                    "proc",
+                    [
+                        "estat",
+                        [
+                            [
+                                "pyro_res_",
+                                "electro_res_"
+                            ],
+                            -40
+                        ]
+                    ],
+                    "After Overloaded w\/ all Pyro\/Electro team (6s): \"Coordinated Tactics\""
+                ]
+            },
+            "4th Ascension Passive": {
+                "name": "Vertical Force Coordination",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4f\/Talent_Vertical_Force_Coordination.png",
+                "text": "After Chevreuse fires an Overcharged Ball using Short-Range Rapid Interdiction Fire, nearby <span class=\"text-pyro\"><b>Pyro<\/b><\/span> and <span class=\"text-electro\"><b>Electro<\/b><\/span> characters in the party gain 1% increased ATK for every 1,000 Max HP Chevreuse has for 30s. ATK can be increased by up to 40% in this way.",
+                "code": [
+                    "proc",
+                    [
+                        "pstat",
+                        [
+                            "atk_",
+                            [
+                                "stat%",
+                                0.001,
+                                "hp",
+                                40
+                            ]
+                        ]
+                    ],
+                    "After Overcharged Ball (30s)"
+                ]
+            },
+            "Utility Passive": {
+                "name": "Double Time March",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/49\/Talent_Double_Time_March.png",
+                "text": "Decreases sprinting Stamina consumption for your own party members by 20%.<br\/>Not stackable with Passive Talents that provide the exact same effects."
+            }
+        },
+        "constellations": {
+            "1": {
+                "name": "Stable Front Line's Resolve",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f8\/Constellation_Stable_Front_Line%27s_Resolve.png",
+                "text": "When the active character with the \"Coordinated Tactics\" status (not including Chevreuse herself) triggers the Overloaded reaction, they will recover 6 Energy. This effect can be triggered once every 10s.<br\/>You must first unlock the Passive Talent \"Vanguard's Coordinated Tactics.\""
+            },
+            "2": {
+                "name": "Sniper Induced Explosion",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/73\/Constellation_Sniper_Induced_Explosion.png",
+                "text": "After Holding Short-Range Rapid Interdiction Fire and hitting a target, 2 chain explosions will be triggered near the location where said target is hit. Each explosion deals <span class=\"text-pyro\"><b>Pyro DMG<\/b><\/span> equal to 120% of Chevreuse's ATK. This effect can be triggered up to once every 10s, and DMG dealt this way is considered Elemental Skill DMG.",
+                "code": [
+                    "addmv",
+                    [
+                        "Elemental Skill",
+                        "C2 Explosion DMG (% ATK)",
+                        "120*2"
+                    ]
+                ]
+            },
+            "3": {
+                "name": "Practiced Field Stripping Technique",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9c\/Constellation_Practiced_Field_Stripping_Technique.png",
+                "code": [
+                    "stat",
+                    [
+                        "skillLevel",
+                        3
+                    ]
+                ],
+                "text": "Increases the Level of Short-Range Rapid Interdiction Fire by 3.<br\/>Maximum upgrade level is 15."
+            },
+            "4": {
+                "name": "The Secret to Rapid-Fire Multishots",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/96\/Constellation_The_Secret_to_Rapid-Fire_Multishots.png",
+                "text": "After using Ring of Bursting Grenades, the Hold mode of Short-Range Rapid Interdiction Fire will not go on cooldown when Chevreuse uses it. This effect is removed after Short-Range Rapid Interdiction Fire has been fired twice using Hold or after 6s."
+            },
+            "5": {
+                "name": "Enhanced Incendiary Firepower",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cb\/Constellation_Enhanced_Incendiary_Firepower.png",
+                "code": [
+                    "stat",
+                    [
+                        "burstLevel",
+                        3
+                    ]
+                ],
+                "text": "Increases the Level of Ring of Bursting Grenades by 3.<br\/>Maximum upgrade level is 15."
+            },
+            "6": {
+                "name": "In Pursuit of Ending Evil",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e5\/Constellation_In_Pursuit_of_Ending_Evil.png",
+                "code": [
+                    "proc",
+                    [
+                        "pstat",
+                        [
+                            [
+                                "pyro_dmg_",
+                                "electro_dmg_"
+                            ],
+                            20
+                        ]
+                    ],
+                    "After Elemental Skill heal (8s)",
+                    3
+                ],
+                "text": "After 12s of the healing effect from Short-Range Rapid Interdiction Fire, all nearby party members recover HP equivalent to 10% of Chevreuse's Max HP once.<br\/>After a party member is healed by Short-Range Rapid Interdiction Fire, they gain a 20% <span class=\"text-pyro\"><b>Pyro DMG Bonus<\/b><\/span> and <span class=\"text-electro\"><b>Electro DMG Bonus<\/b><\/span> for 8s. Max 3 stacks. Each stack's duration is counted independently."
+            }
+        }
     },
     "Chongyun": {
         "name": "Chongyun",
@@ -9374,7 +9834,7 @@ export default {
             "Normal Attack": {
                 "name": "Soloist's Solicitation",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ea\/Sword_Hydro.png",
-                "text": "<b>Normal Attack<\/b><br\/>Performs up to 4 consecutive strikes.<br\/><br\/><b>Charged Attack<\/b><br\/>Consumes a certain amount of Stamina to unleash a solo dance, dealing Physical DMG to nearby opponents and changing her Arkhe alignment. If Salon Members or Singer of Many Waters summoned by her Elemental Skill \"Salon Solitaire\" are present, their lineup will switch in response.<br\/><br\/><b>Arkhe: Seats Sacred and Secular<\/b><br\/>At intervals, when Furina's Normal Attacks hit, a Spiritbreath Thorn or a Surging Blade will descend based on her current alignment, dealing <span class=\"text-hydro\"><b>Hydro DMG<\/b><\/span> based on her current alignment.<br\/>When Furina takes the field, her starting Arkhe will be Ousia.<br\/><br\/><b>Plunging Attack<\/b><br\/>Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                "text": "<b>Normal Attack<\/b><br\/>Performs up to 4 consecutive strikes.<br\/><br\/><b>Charged Attack<\/b><br\/>Consumes a certain amount of Stamina to unleash a solo dance, dealing <span class=\"text-physical\"><b>Physical DMG<\/b><\/span> to nearby opponents and changing her Arkhe alignment. If Salon Members or Singer of Many Waters summoned by her Elemental Skill \"Salon Solitaire\" are present, their lineup will switch in response.<br\/><br\/><b>Arkhe: Seats Sacred and Secular<\/b><br\/>At intervals, when Furina's Normal Attacks hit, a Spiritbreath Thorn or a Surging Blade will descend based on her current alignment, dealing <span class=\"text-hydro\"><b>Hydro DMG<\/b><\/span> based on her current alignment.<br\/>When Furina takes the field, her starting Arkhe will be <span class=\"text-ousia\"><b>Ousia<\/b><\/span>.<br\/><br\/><b>Plunging Attack<\/b><br\/>Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
                 "scaling": {
                     "1-Hit DMG (%)": {
                         "1": "48.39",
@@ -9524,8 +9984,31 @@ export default {
             "Elemental Skill": {
                 "name": "Salon Solitaire",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6f\/Talent_Salon_Solitaire.png",
-                "text": "Invites the guests of the Salon Solitaire to come forth and abet in Furina's performance. Will summon either the Salon Members or the Singer of Many Waters based on Furina's current Arkhe alignment.<br\/><br\/><b>Ousia<\/b><br\/>Foaming bubbles like celebrants shall dance, dealing <span class=\"text-hydro\"><b>AoE Hydro DMG<\/b><\/span> based on Furina's Max HP and summoning 3 Salon Members: the Ball Octopus-shaped Gentilhomme Usher, the Bubbly Seahorse-shaped Surintendante Chevalmarin, and the Armored Crab-shaped Mademoiselle Crabaletta.<br\/>They will attack nearby opponents at intervals, prioritizing the target of the active character, dealing <span class=\"text-hydro\"><b>Hydro<\/b><\/span> DMG based on Max HP.<br\/>When they attack, if character(s) with more than 50% HP are nearby, the Members will increase their current attack's power based on the number of such characters, and consume said characters' HP. If the characters who meet these requirements are 1\/2\/3\/4 (or more), the Members' attacks will deal 110%\/120%\/130%\/140% of their original DMG.<br\/><br\/><b>Pneuma<\/b><br\/>Summons the Singer of Many Waters, who will heal nearby active character(s) based on Max HP at intervals.<br\/><br\/>The Salon Members and Singer of Many Waters share a duration, and when Furina uses her Charged Attack to change the guest type, the new guests will inherit the initial duration.<br\/>While the Salon Members and the Singer of Many Waters are on the field, Furina can move on the water's surface.",
-                "code": ["proc", ["editmv", ["Elemental Skill", ["Gentilhomme Usher DMG (% Max HP)","Surintendante Chevalmarin DMG (% Max HP)","Mademoiselle Crabaletta DMG (% Max HP)"], "*base", ["stacks",0.1,0.2,0.3,0.4]]], "Nearby characters with HP > 50%", 4],
+                "text": "Invites the guests of the Salon Solitaire to come forth and aid in Furina's performance. Will summon either the Salon Members or the Singer of Many Waters based on Furina's current Arkhe alignment.<br\/><br\/><b>Ousia<\/b><br\/>Foaming bubbles like celebrants shall dance, dealing <span class=\"text-hydro\"><b>AoE Hydro DMG<\/b><\/span> based on Furina's Max HP and summoning 3 Salon Members: the Ball Octopus-shaped Gentilhomme Usher, the Bubbly Seahorse-shaped Surintendante Chevalmarin, and the Armored Crab-shaped Mademoiselle Crabaletta.<br\/>They will attack nearby opponents at intervals, prioritizing the target of the active character, dealing <span class=\"text-hydro\"><b>Hydro<\/b><\/span> DMG based on Max HP.<br\/>When they attack, if character(s) with more than 50% HP are nearby, the Members will increase their current attack's power based on the number of such characters, and consume said characters' HP. If the characters who meet these requirements are 1\/2\/3\/4 (or more), the Members' attacks will deal 110%\/120%\/130%\/140% of their original DMG.<br\/><br\/><b>Pneuma<\/b><br\/>Summons the Singer of Many Waters, who will heal nearby active character(s) based on Max HP at intervals.<br\/><br\/>The Salon Members and Singer of Many Waters share a duration, and when Furina uses her Charged Attack to change the guest type, the new guests will inherit the initial duration.<br\/>While the Salon Members and the Singer of Many Waters are on the field, Furina can move on the water's surface.",
+                "code": [
+                    "proc",
+                    [
+                        "editmv",
+                        [
+                            "Elemental Skill",
+                            [
+                                "Gentilhomme Usher DMG (% Max HP)",
+                                "Surintendante Chevalmarin DMG (% Max HP)",
+                                "Mademoiselle Crabaletta DMG (% Max HP)"
+                            ],
+                            "*base",
+                            [
+                                "stacks",
+                                0.1,
+                                0.2,
+                                0.3,
+                                0.4
+                            ]
+                        ]
+                    ],
+                    "Nearby characters with HP > 50%",
+                    4
+                ],
                 "scaling": {
                     "Ousia Bubble DMG (% Max HP)": {
                         "1": "7.86",
@@ -9683,7 +10166,33 @@ export default {
                 "name": "Let the People Rejoice",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/66\/Talent_Let_the_People_Rejoice.png",
                 "text": "Rouses the impulse to revel, creating a stage of foam that will deal <span class=\"text-hydro\"><b>AoE Hydro DMG<\/b><\/span> based on Furina's Max HP and cause nearby party members to enter the Universal Revelry state: During this time, when nearby party members' HP increases or decreases, 1 Fanfare point will be granted to Furina for each percentage point of their Max HP by which their HP changes.<br\/>At the same time, Furina will increase the DMG dealt by and Incoming Healing Bonus of all nearby party members based on the amount of Fanfare she has.<br\/>When the duration ends, Furina's Fanfare points will be cleared.",
-                "code": ["proc", [["pstat",["dmg_",["mv","Fanfare to DMG Increase Conversion Ratio (%)"]]],["pstat",["inHeal_",["mv","Fanfare to Incoming Healing Bonus Conversion Ratio (%)"]]]], "\"Universal Revelry\": \"Fanfare\" stacks", 300],
+                "code": [
+                    "proc",
+                    [
+                        [
+                            "pstat",
+                            [
+                                "dmg_",
+                                [
+                                    "mv",
+                                    "Fanfare to DMG Increase Conversion Ratio (%)"
+                                ]
+                            ]
+                        ],
+                        [
+                            "pstat",
+                            [
+                                "inHeal_",
+                                [
+                                    "mv",
+                                    "Fanfare to Incoming Healing Bonus Conversion Ratio (%)"
+                                ]
+                            ]
+                        ]
+                    ],
+                    "\"Universal Revelry\": \"Fanfare\" stacks",
+                    300
+                ],
                 "scaling": {
                     "Skill DMG (%Max HP)": {
                         "1": "11.41",
@@ -9795,7 +10304,7 @@ export default {
             "1st Ascension Passive": {
                 "name": "Endless Waltz",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e3\/Talent_Endless_Waltz.png",
-                "text": "When the active character in your party receives healing, if the source of the healing is not Furina herself and the healing overflows, then Furina will heal a nearby party member for 2% of their Max HP once every 2s within the next 4s."
+                "text": "When the active character in your party receives healing, if the source of the healing is not Furina herself and the healing overflows, then Furina will heal nearby party members for 2% of their Max HP once every 2s within the next 4s."
             },
             "4th Ascension Passive": {
                 "name": "Unheard Confession",
@@ -9827,7 +10336,7 @@ export default {
             "4": {
                 "name": "\"They Know Not Life, Who Dwelt in the Netherworld Not!\"",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2d\/Constellation_They_Know_Not_Life%2C_Who_Dwelt_in_the_Netherworld_Not%21.png",
-                "text": "When the Salon Members from Salon Solitaire hit an opponent, or the Singer of Many Waters restores HP to the active character, Furina will restore 4 Energy. This effect triggers once every 5s."
+                "text": "When the Salon Members from Salon Solitaire hit an opponent, or the Singer of Many Waters restores HP to nearby active characters, Furina will restore 4 Energy. This effect can be triggered once every 5s."
             },
             "5": {
                 "name": "\"His Name I Now Know, It Is..",
@@ -9838,6 +10347,93 @@ export default {
                 "name": "\"Hear Me \u2014 Let Us Raise the Chalice of Love!\"",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/63\/Constellation_Hear_Me_%E2%80%94_Let_Us_Raise_the_Chalice_of_Love%21.png",
                 "text": "When using Salon Solitaire, Furina gains \"Center of Attention\" for 10s.<br\/>Throughout the duration, Furina's Normal Attacks, Charged Attacks, and Plunging Attacks are converted into <span class=\"text-hydro\"><b>Hydro DMG<\/b><\/span> which cannot be overridden by any other elemental infusion. DMG is also increased by an amount equivalent to 18% of Furina's max HP.<br\/>Throughout the duration, Furina's Normal Attacks (not including Arkhe: Seats Sacred and Secular Attacks), Charged Attacks, and the impact of Plunging Attacks will cause different effects up to every 0.1s after hitting opponents depending on her current Arkhe alignment:<br\/><br\/>Arkhe: Ousia<br\/>Every 1s, all nearby characters in the party will be healed by 4% of Furina's max HP, for a duration of 2.9s. Triggering this effect again will extend its duration.<br\/>Arkhe: Pneuma<br\/>This Normal Attack (not including Arkhe: Seats Sacred and Secular Attacks), Charged Attack, or Plunging Attack ground impact DMG will be further increased by an amount equivalent to 25% of Furina's max HP. When any of the attacks mentioned previously hit an opponent, all nearby characters in the party will consume 1% of their current HP.<br\/><br\/>During the duration of each instance of \"Center of Attention,\" the above effects can be triggered up to 6 times. \"Center of Attention\" will end when its effects have triggered 6 times or when the duration expires."
+            }
+        }
+    },
+    "Gaming": {
+        "name": "Gaming",
+        "weapon": "Claymore",
+        "element": "Pyro",
+        "rarity": 4,
+        "ascendStat": "atk_",
+        "matBoss": "Pyro Crab",
+        "matFlower": "Starconch",
+        "matEnemy": "Slimes",
+        "matMastery": "Prosperity",
+        "matTrounce": "Lightless Mass",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/77\/Gaming_Icon.png",
+        "region": "Liyue",
+        "release": "January 31, 2024",
+        "patch": "4.4",
+        "hpBase": 957.38055419922,
+        "atkBase": 25.287359237671,
+        "defBase": 58.941749572754,
+        "hpMaxAsc": 3425.4904785156,
+        "atkMaxAsc": 90.479843139648,
+        "defMaxAsc": 210.89250183105,
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Gaming",
+        "talents": {
+            "Normal Attack": {
+                "name": "Stellar Rend",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/57\/Claymore_Pyro.png",
+                "text": "<b>Normal Attack<\/b><br\/>Performs up to 4 consecutive strikes.<br\/><br\/><b>Charged Attack<\/b><br\/>Drains Stamina over time to perform continuous spinning attacks against all nearby opponents.<br\/>At the end of the sequence, performs a more powerful slash. <br\/><br\/><b>Plunging Attack<\/b><br\/>Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+            },
+            "Elemental Skill": {
+                "name": "Bestial Ascent",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f1\/Talent_Bestial_Ascent.png",
+                "text": "Pounces forward using the Wushou arts, leaping high into the air after coming into contact with a target or surface.<br\/>After Gaming has used Bestial Ascent to rise into the air, he will use the especially powerful Plunging Attack: Charmed Cloudstrider when performing a Plunging Attack.<br\/><br\/><b>Plunging Attack: Charmed Cloudstrider<\/b><br\/>The DMG from Plunging Attacks caused by Bestial Ascent is converted to <span class=\"text-pyro\"><b>Pyro DMG<\/b><\/span> that cannot be overridden by other elemental infusions. Upon landing, Gaming will consume a fixed amount of HP. Gaming's HP cannot be reduced below 10% by this method.<br\/>Charmed Cloudstrider DMG is considered Plunging Attack DMG."
+            },
+            "Elemental Burst": {
+                "name": "Suanni's Gilded Dance",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/15\/Talent_Suanni%27s_Gilded_Dance.png",
+                "text": "Gaming enters Wushou Stance, briefly applying <span class=\"text-pyro\"><b>Pyro<\/b><\/span> to him, recovering a fixed amount of HP, and summons his companion, the Suanni Man Chai, to smash into his target, dealing <span class=\"text-pyro\"><b>AoE Pyro DMG<\/b><\/span>.<br\/>After bashing its target, Man Chai will roll to a nearby location before moving towards Gaming. When it links up with Gaming, Man Chai will leave the field and reset the CD for Gaming's Elemental Skill, Bestial Ascent.<br\/>While Wushou Stance is active, his resistance to interruption is increased, and when Gaming lands with Charmed Cloudstrider attack or completes the forward pounce attack from Bestial Ascent with over 50% HP, he will summon Man Chai again.<br\/>Each Gaming can only have 1 Man Chai on the field simultaneously.<br\/>This effect will be canceled once Gaming leaves the field."
+            },
+            "1st Ascension Passive": {
+                "name": "Dance of Amity",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/de\/Talent_Dance_of_Amity.png",
+                "text": "After Bestial Ascent's Plunging Attack: Charmed Cloudstrider hits an opponent, Gaming will regain 1.5% of his Max HP once every 0.2s for 0.8s."
+            },
+            "4th Ascension Passive": {
+                "name": "Air of Prosperity",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/67\/Talent_Air_of_Prosperity.png",
+                "text": "When Gaming has less than 50% HP, he will receive a 20% Incoming Healing Bonus. When Gaming has 50% HP or more, Plunging Attack: Charmed Cloudstrider will deal 20% more DMG."
+            },
+            "Utility Passive": {
+                "name": "The Striding Beast",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ee\/Talent_The_Sunlit_Way.png",
+                "text": "Increases the Movement SPD of your own party members by 10% during the day (6:00 \u2013 18:00).<br\/>Does not take effect in Domains, Trounce Domains, or Spiral Abyss. Not stackable with Passive Talents that provide the exact same effects."
+            }
+        },
+        "constellations": {
+            "1": {
+                "name": "Bringer of Blessing",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/11\/Constellation_Bringer_of_Blessing.png",
+                "text": "When the Suanni Man Chai from Suanni's Gilded Dance meets back up with Gaming, it will heal 15% of Gaming's HP."
+            },
+            "2": {
+                "name": "Plum Blossoms Underfoot",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/50\/Constellation_Plum_Blossoms_Underfoot.png",
+                "text": "When Gaming receives healing and this instance of healing overflows, his ATK will be increased by 20% for 5s."
+            },
+            "3": {
+                "name": "Awakening Spirit",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fd\/Constellation_Awakening_Spirit.png",
+                "text": "Increases the Level of Bestial Ascent by 3.<br\/>Maximum upgrade level is 15."
+            },
+            "4": {
+                "name": "Soar Across Mountains",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/55\/Constellation_Soar_Across_Mountains.png",
+                "text": "When Bestial Ascent's Plunging Attack: Charmed Cloudstrider hits an opponent, it will restore 2 Energy to Gaming. This effect can be triggered once every 0.2s."
+            },
+            "5": {
+                "name": "Evil-Daunting Roar",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/da\/Constellation_Evil-Daunting_Roar.png",
+                "text": "Increases the Level of Suanni's Gilded Dance by 3.<br\/>Maximum upgrade level is 15."
+            },
+            "6": {
+                "name": "To Tame All Beasts",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3f\/Constellation_To_Tame_All_Beasts.png",
+                "text": "Bestial Ascent's Plunging Attack: Charmed Cloudstrider CRIT Rate increased by 20% and CRIT DMG increased by 40%, and its attack radius will be increased."
             }
         }
     },
@@ -10396,7 +10992,36 @@ export default {
                 "name": "Inuzaka All-Round Defense",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e6\/Talent_Inuzaka_All-Round_Defense.png",
                 "text": "Deals <span class=\"text-geo\"><b>AoE Geo DMG<\/b><\/span> and sets up a General's War Banner.<br\/><br\/><b>General's War Banner<\/b><br\/>Provides up to 3 buffs to active characters within the skill's AoE based on the number of <span class=\"text-geo\"><b>Geo<\/b><\/span> characters in the party at the time of casting:<ul><li>1 Geo character: Adds \"Standing Firm\" - DEF Bonus.<\/li><li>2 Geo characters: Adds \"Impregnable\" - Increased resistance to interruption.<\/li><li>3 Geo characters: Adds \"Crunch\" - <span class=\"text-geo\"><b>Geo DMG Bonus<\/b><\/span>.<\/li><\/ul><br\/>Gorou can deploy only 1 General's War Banner on the field at any one time.<br\/>Characters can only benefit from 1 General's War Banner at a time. When a party member leaves the field, the active buff will last for 2s.<br\/><br\/><b>Hold<\/b><br\/>Adjust the location of the skill.",
-                "code": [["proc",["pstat",["def",["mv","DEF Increase"]]],"During Elemental Skill (1+ Geo): \"Standing Firm\""],["proc",["pstat",["geo_dmg_",["mv","Geo DMG Bonus"]]],"During Elemental Skill (3+ Geo): \"Crunch\""]],
+                "code": [
+                    [
+                        "proc",
+                        [
+                            "pstat",
+                            [
+                                "def",
+                                [
+                                    "mv",
+                                    "DEF Increase"
+                                ]
+                            ]
+                        ],
+                        "During Elemental Skill (1+ Geo): \"Standing Firm\""
+                    ],
+                    [
+                        "proc",
+                        [
+                            "pstat",
+                            [
+                                "geo_dmg_",
+                                [
+                                    "mv",
+                                    "Geo DMG Bonus"
+                                ]
+                            ]
+                        ],
+                        "During Elemental Skill (3+ Geo): \"Crunch\""
+                    ]
+                ],
                 "scaling": {
                     "Skill DMG (%)": {
                         "1": "107.2",
@@ -10565,13 +11190,53 @@ export default {
             "1st Ascension Passive": {
                 "name": "Heedless of the Wind and Weather",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/89\/Talent_Heedless_of_the_Wind_and_Weather.png",
-                "code": ["proc",["pstat",["def_",25]],"After Elemental Burst (12s)"],
+                "code": [
+                    "proc",
+                    [
+                        "pstat",
+                        [
+                            "def_",
+                            25
+                        ]
+                    ],
+                    "After Elemental Burst (12s)"
+                ],
                 "text": "After using Juuga: Forward Unto Victory, all nearby party members' DEF is increased by 25% for 12s."
             },
             "4th Ascension Passive": {
                 "name": "A Favor Repaid",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/61\/Talent_A_Favor_Repaid.png",
-                "code": [["editmv",["Elemental Skill","Skill DMG (%)","+base",["stat%",1.56,"def"]]],["editmv",["Elemental Burst",["Skill DMG (% DEF)","Crystal Collapse DMG (% DEF)"],"+base",["stat%",0.156,"def"]]]],
+                "code": [
+                    [
+                        "editmv",
+                        [
+                            "Elemental Skill",
+                            "Skill DMG (%)",
+                            "+base",
+                            [
+                                "stat%",
+                                1.56,
+                                "def"
+                            ]
+                        ]
+                    ],
+                    [
+                        "editmv",
+                        [
+                            "Elemental Burst",
+                            [
+                                "Skill DMG (% DEF)",
+                                "Crystal Collapse DMG (% DEF)"
+                            ],
+                            "+base",
+                            [
+                                "stat%",
+                                0.156,
+                                "def"
+                            ]
+                        ]
+                    ]
+                ],
                 "text": "Gorou receives the following DMG Bonuses to his attacks based on his DEF:\n<ul><li>Inuzaka All-Round Defense: Skill DMG increased by 156% of DEF<\/li>\n<li>Juuga: Forward Unto Victory: Skill DMG and Crystal Collapse DMG increased by 15.6% of DEF<\/li><\/ul>"
             },
             "Utility Passive": {
@@ -10606,7 +11271,14 @@ export default {
             "4": {
                 "name": "Lapping Hound: Warm as Water",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4d\/Constellation_Lapping_Hound_Warm_as_Water.png",
-                "code": ["addmv",["Elemental Burst","C4 Healing (% DEF)","50"]],
+                "code": [
+                    "addmv",
+                    [
+                        "Elemental Burst",
+                        "C4 Healing (% DEF)",
+                        "50"
+                    ]
+                ],
                 "text": "When General's Glory is in the \"Impregnable\" or \"Crunch\" states, it will also heal active characters within its AoE by 50% of Gorou's own DEF every 1.5s."
             },
             "5": {
@@ -10624,7 +11296,18 @@ export default {
             "6": {
                 "name": "Valiant Hound: Mountainous Fealty",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9d\/Constellation_Valiant_Hound_Mountainous_Fealty.png",
-                "code": ["proc",["pstat",["critDMG_",10]],"After Elemental Skill or Burst (12s)",3],
+                "code": [
+                    "proc",
+                    [
+                        "pstat",
+                        [
+                            "critDMG_",
+                            10
+                        ]
+                    ],
+                    "After Elemental Skill or Burst (12s)",
+                    3
+                ],
                 "text": "For 12s after using Inuzaka All-Round Defense or Juuga: Forward Unto Victory, increases the CRIT DMG of all nearby party members' <span class=\"text-geo\"><b>Geo DMG<\/b><\/span> based on the buff level of the skill's field at the time of use:<ul><li>\"Standing Firm\": +10%<\/li><li>\"Impregnable\": +20%<\/li><li>\"Crunch\": +40%<\/li><\/ul><br\/>This effect cannot stack and will take reference from the last instance of the effect that is triggered."
             }
         }
@@ -16462,7 +17145,7 @@ export default {
             "4th Ascension Passive": {
                 "name": "Props Positively Prepped",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/20\/Talent_Props_Positively_Prepped.png",
-                "text": "After the Bogglecat Box summoned by Magic Trick: Astonishing Shift performs Elemental Coversion, Lynette's Elemental Burst will deal 15% more DMG. This effect will persist until the Bogglecat Box's duration ends."
+                "text": "After the Bogglecat Box summoned by Magic Trick: Astonishing Shift performs Elemental Conversion, Lynette's Elemental Burst will deal 15% more DMG. This effect will persist until the Bogglecat Box's duration ends."
             },
             "Utility Passive": {
                 "name": "Loci-Based Mnemonics",
@@ -18268,16 +18951,380 @@ export default {
         "matEnemy": "Fontemer Aberrants",
         "matMastery": "Equity",
         "matTrounce": "Lightless Silk String",
-        "img": "https://static.wikia.nocookie.net/gensin-impact/images/c/c0/Navia_Icon.png",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c0\/Navia_Icon.png",
         "region": "Fontaine",
         "release": "December 20, 2023",
         "patch": "4.3",
-        "hpBase": 985,
-        "atkBase": 27,
-        "defBase": 62,
-        "hpMaxAsc": 4042.085,
-        "atkMaxAsc": 116.047,
-        "defMaxAsc": 251.182
+        "hpBase": 984.78,
+        "atkBase": 27.3714,
+        "defBase": 61.74456,
+        "hpMaxAsc": 4044.0373535156,
+        "atkMaxAsc": 112.3935546875,
+        "defMaxAsc": 253.56239318848,
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Navia",
+        "talents": {
+            "Normal Attack": {
+                "name": "Blunt Refusal",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/65\/Claymore_Geo.png",
+                "text": "<b>Normal Attack<\/b><br\/>Performs up to 4 consecutive strikes.<br\/><br\/><b>Charged Attack<\/b><br\/>Drains Stamina over time to perform continuous spinning attacks against all nearby opponents.<br\/>At the end of the sequence, performs a more powerful slash.<br\/><br\/><b>Plunging Attack<\/b><br\/>Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                "scaling": {
+                    "1-Hit DMG (%)": {
+                        "1": "93.52",
+                        "2": "101.13",
+                        "3": "108.74",
+                        "4": "119.62",
+                        "5": "127.23",
+                        "6": "135.93",
+                        "7": "147.89",
+                        "8": "159.85",
+                        "9": "171.81",
+                        "10": "184.86",
+                        "11": "197.91"
+                    },
+                    "2-Hit DMG (%)": {
+                        "1": "86.51",
+                        "2": "93.55",
+                        "3": "100.59",
+                        "4": "110.65",
+                        "5": "117.69",
+                        "6": "125.74",
+                        "7": "136.8",
+                        "8": "147.87",
+                        "9": "158.93",
+                        "10": "171",
+                        "11": "183.07"
+                    },
+                    "3-Hit DMG (%)": {
+                        "1": "34.89\u00d73",
+                        "2": "37.73\u00d73",
+                        "3": "40.56\u00d73",
+                        "4": "44.62\u00d73",
+                        "5": "47.46\u00d73",
+                        "6": "50.71\u00d73",
+                        "7": "55.17\u00d73",
+                        "8": "59.63\u00d73",
+                        "9": "64.09\u00d73",
+                        "10": "68.96\u00d73",
+                        "11": "73.83\u00d73"
+                    },
+                    "4-Hit DMG (%)": {
+                        "1": "133.43",
+                        "2": "144.29",
+                        "3": "155.15",
+                        "4": "170.67",
+                        "5": "181.53",
+                        "6": "193.94",
+                        "7": "211.01",
+                        "8": "228.07",
+                        "9": "245.14",
+                        "10": "263.76",
+                        "11": "282.38"
+                    },
+                    "Charged Attack Cyclic DMG (%)": {
+                        "1": "62.52",
+                        "2": "67.61",
+                        "3": "72.7",
+                        "4": "79.97",
+                        "5": "85.06",
+                        "6": "90.87",
+                        "7": "98.87",
+                        "8": "106.87",
+                        "9": "114.87",
+                        "10": "123.59",
+                        "11": "132.31"
+                    },
+                    "Charged Attack Final DMG (%)": {
+                        "1": "113.09",
+                        "2": "122.29",
+                        "3": "131.5",
+                        "4": "144.65",
+                        "5": "153.86",
+                        "6": "164.37",
+                        "7": "178.84",
+                        "8": "193.31",
+                        "9": "207.77",
+                        "10": "223.55",
+                        "11": "239.33"
+                    },
+                    "Charged Attack Stamina Cost": {
+                        "1": "40\/s",
+                        "2": "40\/s",
+                        "3": "40\/s",
+                        "4": "40\/s",
+                        "5": "40\/s",
+                        "6": "40\/s",
+                        "7": "40\/s",
+                        "8": "40\/s",
+                        "9": "40\/s",
+                        "10": "40\/s",
+                        "11": "40\/s"
+                    },
+                    "Max Duration": {
+                        "1": "5s",
+                        "2": "5s",
+                        "3": "5s",
+                        "4": "5s",
+                        "5": "5s",
+                        "6": "5s",
+                        "7": "5s",
+                        "8": "5s",
+                        "9": "5s",
+                        "10": "5s",
+                        "11": "5s"
+                    },
+                    "Plunge DMG (%)": {
+                        "1": "74.59",
+                        "2": "80.66",
+                        "3": "86.73",
+                        "4": "95.4",
+                        "5": "101.47",
+                        "6": "108.41",
+                        "7": "117.95",
+                        "8": "127.49",
+                        "9": "137.03",
+                        "10": "147.44",
+                        "11": "157.85"
+                    },
+                    "Low Plunge DMG (%)": {
+                        "1": "149.14",
+                        "2": "161.28",
+                        "3": "173.42",
+                        "4": "190.77",
+                        "5": "202.91",
+                        "6": "216.78",
+                        "7": "235.86",
+                        "8": "254.93",
+                        "9": "274.01",
+                        "10": "294.82",
+                        "11": "315.63"
+                    },
+                    "High Plunge DMG (%)": {
+                        "1": "186.29",
+                        "2": "201.45",
+                        "3": "216.62",
+                        "4": "238.28",
+                        "5": "253.44",
+                        "6": "270.77",
+                        "7": "294.6",
+                        "8": "318.42",
+                        "9": "342.25",
+                        "10": "368.25",
+                        "11": "394.24"
+                    }
+                }
+            },
+            "Elemental Skill": {
+                "name": "Ceremonial Crystalshot",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4e\/Talent_Ceremonial_Crystalshot.png",
+                "text": "When a character in the party obtains an Elemental Shard created from the Crystallize reaction, Navia will gain 1 Crystal Shrapnel stack. Navia can have up to 6 stacks of Crystal Shrapnel at once. Each time Crystal Shrapnel gain is triggered, the duration of the Crystal Shrapnel stacks you already have will be reset.<br\/>When she fires, Navia will consume all Crystal Shrapnel stacks and open her elegant yet lethal Gunbrella, firing multiple Rosula Shardshots that can penetrate opponents, dealing <span class=\"text-geo\"><b>Geo DMG<\/b><\/span> to opponents hit.<br\/>When 0\/1\/2\/3 or more stacks of Crystal Shrapnel are consumed, 5\/7\/9\/11 Rosula Shardshots will be fired respectively. The more Rosula Shardshots that strike a single opponent, the greater the DMG dealt to them. When all 11 Rosula Shardshots strike, 200% of the original amount of DMG is dealt.<br\/>In addition, when more than 3 stacks of Crystal Shrapnel are consumed, every stack consumed beyond those 3 will increase the DMG dealt by this Gunbrella attack by an additional 15%.<br\/><br\/><b>Hold<\/b><br\/>Enter Aiming Mode, continually collecting nearby Elemental Shards created by Crystallize reactions. When released, fire Rosula Shardshots with the same effect as when the skill is Tapped.<br\/><br\/>Two initial charges.<br\/><br\/><b>Arkhe: Ousia<\/b><br\/>Periodically, when Navia fires her Gunbrella, a Surging Blade will be summoned, dealing <span class=\"text-ousia\"><b>Ousia<\/b><\/span>-aligned <span class=\"text-geo\"><b>Geo DMG<\/b><\/span>.",
+                "scaling": {
+                    "Rosula Shardshot Base DMG (%)": {
+                        "1": "394.8",
+                        "2": "424.41",
+                        "3": "454.02",
+                        "4": "493.5",
+                        "5": "523.11",
+                        "6": "552.72",
+                        "7": "592.2",
+                        "8": "631.68",
+                        "9": "671.16",
+                        "10": "710.64",
+                        "11": "750.12",
+                        "12": "789.6",
+                        "13": "838.95"
+                    },
+                    "Crystal Shrapnel Duration": {
+                        "1": "300s",
+                        "2": "300s",
+                        "3": "300s",
+                        "4": "300s",
+                        "5": "300s",
+                        "6": "300s",
+                        "7": "300s",
+                        "8": "300s",
+                        "9": "300s",
+                        "10": "300s",
+                        "11": "300s",
+                        "12": "300s",
+                        "13": "300s"
+                    },
+                    "Surging Blade DMG (%)": {
+                        "1": "36",
+                        "2": "38.7",
+                        "3": "41.4",
+                        "4": "45",
+                        "5": "47.7",
+                        "6": "50.4",
+                        "7": "54",
+                        "8": "57.6",
+                        "9": "61.2",
+                        "10": "64.8",
+                        "11": "68.4",
+                        "12": "72",
+                        "13": "76.5"
+                    },
+                    "Surging Blade Interval": {
+                        "1": "7s",
+                        "2": "7s",
+                        "3": "7s",
+                        "4": "7s",
+                        "5": "7s",
+                        "6": "7s",
+                        "7": "7s",
+                        "8": "7s",
+                        "9": "7s",
+                        "10": "7s",
+                        "11": "7s",
+                        "12": "7s",
+                        "13": "7s"
+                    },
+                    "CD": {
+                        "1": "9s",
+                        "2": "9s",
+                        "3": "9s",
+                        "4": "9s",
+                        "5": "9s",
+                        "6": "9s",
+                        "7": "9s",
+                        "8": "9s",
+                        "9": "9s",
+                        "10": "9s",
+                        "11": "9s",
+                        "12": "9s",
+                        "13": "9s"
+                    }
+                }
+            },
+            "Elemental Burst": {
+                "name": "As the Sunlit Sky's Singing Salute",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f1\/Talent_As_the_Sunlit_Sky%27s_Singing_Salute.png",
+                "text": "On the orders of the President of the Spina di Rosula, call for a magnificent Rosula Dorata Salute. Unleashes a massive cannon bombardment on opponents in front of her, dealing <span class=\"text-geo\"><b>AoE Geo DMG<\/b><\/span> and providing Cannon Fire Support for a duration afterward, periodically dealing <span class=\"text-geo\"><b>Geo DMG<\/b><\/span> to nearby opponents.<br\/>When cannon attacks hit opponents, Navia will gain 1 stack of Crystal Shrapnel. This effect can be triggered up to once every 2.4s.",
+                "scaling": {
+                    "Skill DMG (%)": {
+                        "1": "75.2",
+                        "2": "80.84",
+                        "3": "86.48",
+                        "4": "94",
+                        "5": "99.64",
+                        "6": "105.28",
+                        "7": "112.8",
+                        "8": "120.32",
+                        "9": "127.84",
+                        "10": "135.36",
+                        "11": "142.88",
+                        "12": "150.4",
+                        "13": "159.8"
+                    },
+                    "Cannon Fire Support DMG (%)": {
+                        "1": "43.15",
+                        "2": "46.39",
+                        "3": "49.62",
+                        "4": "53.94",
+                        "5": "57.17",
+                        "6": "60.41",
+                        "7": "64.72",
+                        "8": "69.04",
+                        "9": "73.36",
+                        "10": "77.67",
+                        "11": "81.99",
+                        "12": "86.3",
+                        "13": "91.69"
+                    },
+                    "Cannon Fire Support Duration": {
+                        "1": "12s",
+                        "2": "12s",
+                        "3": "12s",
+                        "4": "12s",
+                        "5": "12s",
+                        "6": "12s",
+                        "7": "12s",
+                        "8": "12s",
+                        "9": "12s",
+                        "10": "12s",
+                        "11": "12s",
+                        "12": "12s",
+                        "13": "12s"
+                    },
+                    "CD": {
+                        "1": "15s",
+                        "2": "15s",
+                        "3": "15s",
+                        "4": "15s",
+                        "5": "15s",
+                        "6": "15s",
+                        "7": "15s",
+                        "8": "15s",
+                        "9": "15s",
+                        "10": "15s",
+                        "11": "15s",
+                        "12": "15s",
+                        "13": "15s"
+                    },
+                    "Energy Cost": {
+                        "1": "60",
+                        "2": "60",
+                        "3": "60",
+                        "4": "60",
+                        "5": "60",
+                        "6": "60",
+                        "7": "60",
+                        "8": "60",
+                        "9": "60",
+                        "10": "60",
+                        "11": "60",
+                        "12": "60",
+                        "13": "60"
+                    }
+                }
+            },
+            "1st Ascension Passive": {
+                "name": "Undisclosed Distribution Channels",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0b\/Talent_Undisclosed_Distribution_Channels.png",
+                "text": "For 4s after using Ceremonial Crystalshot, the DMG dealt by Navia's Normal Attacks, Charged Attacks, and Plunging Attacks will be converted into <span class=\"text-geo\"><b>Geo DMG<\/b><\/span> which cannot be overridden by other Elemental infusions, and the DMG dealt by Navia's Normal Attacks, Charged Attacks, and Plunging Attacks will be increased by 40%."
+            },
+            "4th Ascension Passive": {
+                "name": "Mutual Assistance Network",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/42\/Talent_Mutual_Assistance_Network.png",
+                "text": "For each <span class=\"text-pyro\"><b>Pyro<\/b><\/span>\/<span class=\"text-electro\"><b>Electro<\/b><\/span>\/<span class=\"text-cryo\"><b>Cryo<\/b><\/span>\/<span class=\"text-hydro\"><b>Hydro<\/b><\/span> party member, Navia gains 20% increased ATK. This effect can stack up to 2 times."
+            },
+            "Utility Passive": {
+                "name": "Painstaking Transaction",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9a\/Talent_Painstaking_Transaction.png",
+                "text": "Gains 25% more rewards when dispatched on a Fontaine Expedition for 20 hours."
+            }
+        },
+        "constellations": {
+            "1": {
+                "name": "A Lady's Rules for Keeping a Courteous Distance",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/31\/Constellation_A_Lady%27s_Rules_for_Keeping_a_Courteous_Distance.png",
+                "text": "Each stack of Crystal Shrapnel consumed when Navia uses Ceremonial Crystalshot will restore 3 Energy to her and decrease the CD of As the Sunlit Sky's Singing Salute by 1s. Up to 9 Energy can be gained this way, and the CD of \"As the Sunlit Sky's Singing Salute\" can be decreased by up to 3s."
+            },
+            "2": {
+                "name": "The President's Pursuit of Victory",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/66\/Constellation_The_President%27s_Pursuit_of_Victory.png",
+                "text": "Each stack of Crystal Shrapnel consumed will increase the CRIT Rate of this Ceremonial Crystalshot instance by 12%. CRIT Rate can be increased by up to 36% in this way.<br\/>In addition, when Ceremonial Crystalshot hits an opponent, one Cannon Fire Support shot from As the Sunlit Sky's Singing Salute will strike near the location of the hit. Up to one instance of Cannon Fire Support can be triggered each time Ceremonial Crystalshot is used, and DMG dealt by said Cannon Fire Support this way is considered Elemental Burst DMG."
+            },
+            "3": {
+                "name": "Businesswoman's Broad Vision",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b2\/Constellation_Businesswoman%27s_Broad_Vision.png",
+                "text": "Increases the Level of Ceremonial Crystalshot by 3.<br\/>Maximum upgrade level is 15."
+            },
+            "4": {
+                "name": "The Oathsworn Never Capitulate",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1c\/Constellation_The_Oathsworn_Never_Capitulate.png",
+                "text": "When As the Sunlit Sky's Singing Salute hits an opponent, that opponent's <span class=\"text-geo\"><b>Geo RES<\/b><\/span> will be decreased by 20% for 8s."
+            },
+            "5": {
+                "name": "Negotiator's Resolute Negotiations",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dc\/Constellation_Negotiator%27s_Resolute_Negotiations.png",
+                "text": "Increases the Level of As the Sunlit Sky's Singing Salute by 3.<br\/>Maximum upgrade level is 15."
+            },
+            "6": {
+                "name": "The Flexible Finesse of the Spina's President",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/54\/Constellation_The_Flexible_Finesse_of_the_Spina%27s_President.png",
+                "text": "If more than 3 stacks of Crystal Shrapnel are consumed when using Ceremonial Crystalshot, each stack consumed beyond the first 3 increases the CRIT DMG of that Ceremonial Crystalshot by 45%, and any stacks consumed beyond the first 3 are returned to Navia."
+            }
+        }
     },
     "Neuvillette": {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Neuvillette",
@@ -19653,7 +20700,26 @@ export default {
                 "name": "Sweeping Time",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7c\/Talent_Sweeping_Time.png",
                 "text": "Gathering the strength of stone around her weapon, Noelle strikes the opponents surrounding her within a large AoE, dealing <span class=\"text-geo\"><b>Geo DMG<\/b><\/span>.<br\/>Afterwards, Noelle gains the following effects:<ul><li>Larger attack AoE.<\/li><li>Converts attack DMG to <span class=\"text-geo\"><b>Geo DMG<\/b><\/span> that cannot be overridden by any other elemental infusion.<\/li><li>Increased ATK that scales based on her DEF.<\/li><\/ul>",
-                "code": ["proc",[["oinfuse","geo"],["stat",["atk",["mv","ATK Bonus (% DEF)"]]]],"During Sweeping Time"],
+                "code": [
+                    "proc",
+                    [
+                        [
+                            "oinfuse",
+                            "geo"
+                        ],
+                        [
+                            "stat",
+                            [
+                                "atk",
+                                [
+                                    "mv",
+                                    "ATK Bonus (% DEF)"
+                                ]
+                            ]
+                        ]
+                    ],
+                    "During Sweeping Time"
+                ],
                 "scaling": {
                     "Burst DMG (%)": {
                         "1": "67.2",
@@ -19778,7 +20844,24 @@ export default {
             "2": {
                 "name": "Combat Maid",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/73\/Constellation_Combat_Maid.png",
-                "code": [["editmv",["Normal Attack","Charged Attack Stamina Cost","*",-0.2]],["stat",["charged_dmg_",15]]],
+                "code": [
+                    [
+                        "editmv",
+                        [
+                            "Normal Attack",
+                            "Charged Attack Stamina Cost",
+                            "*",
+                            -0.2
+                        ]
+                    ],
+                    [
+                        "stat",
+                        [
+                            "charged_dmg_",
+                            15
+                        ]
+                    ]
+                ],
                 "text": "Decreases the Stamina Consumption of Noelle's Charged Attacks by 20% and increases her Charged Attack DMG by 15%."
             },
             "3": {
@@ -19796,7 +20879,14 @@ export default {
             "4": {
                 "name": "To Be Cleaned",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/81\/Constellation_To_Be_Cleaned.png",
-                "code": ["addmv",["Elemental Skill","C4 Ending DMG (%)","400"]],
+                "code": [
+                    "addmv",
+                    [
+                        "Elemental Skill",
+                        "C4 Ending DMG (%)",
+                        "400"
+                    ]
+                ],
                 "text": "When Breastplate's duration expires or it is destroyed by DMG, it will deal 400% of Noelle's ATK of <span class=\"text-geo\"><b>Geo DMG<\/b><\/span> to surrounding opponents."
             },
             "5": {
@@ -19814,7 +20904,21 @@ export default {
             "6": {
                 "name": "Must Be Spotless",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/14\/Constellation_Must_Be_Spotless.png",
-                "code": ["proc",["stat",["atk",["stat%",0.5,"def"]]],"During Sweeping Time"],
+                "code": [
+                    "proc",
+                    [
+                        "stat",
+                        [
+                            "atk",
+                            [
+                                "stat%",
+                                0.5,
+                                "def"
+                            ]
+                        ]
+                    ],
+                    "During Sweeping Time"
+                ],
                 "text": "Sweeping Time increases Noelle's ATK by an additional 50% of her DEF.<br\/>Additionally, every opponent defeated during the skill's duration adds 1s to the duration, up to 10s."
             }
         }
@@ -20783,6 +21887,17 @@ export default {
             "2": {
                 "name": "Steelbreaker",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4e\/Constellation_Steelbreaker.png",
+                "code": [
+                    "proc",
+                    [
+                        "stat",
+                        [
+                            "ignore_def_",
+                            60
+                        ]
+                    ],
+                    "C2"
+                ],
                 "text": "While using Musou no Hitotachi and in the Musou Isshin state applied by <span class=\"text-physical\"><b>Secret Art: Musou Shinsetsu<\/b><\/span>, the Raiden Shogun's attacks ignore 60% of opponents' DEF."
             },
             "3": {
@@ -22737,7 +23852,28 @@ export default {
                 "name": "Spring Spirit Summoning",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6c\/Talent_Spring_Spirit_Summoning.png",
                 "text": "The frosted dew, silvery and dense, shall exorcise all demons.<br\/>Grants all nearby party members the Icy Quill effect and deals <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span> in different ways based on whether it is pressed or held.<br\/><br\/><b>Press<\/b><br\/>Rushes forward together with a Talisman Spirit, dealing <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span> to opponents along the path.<br\/><br\/><b>Hold<\/b><br\/>Commands the Talisman Spirit to deal <span class=\"text-cryo\"><b>AoE Cryo DMG<\/b><\/span>.<br\/><br\/><b>Icy Quill<\/b><br\/>When Normal, Charged, and Plunging Attacks, Elemental Skills, and Elemental Bursts deal <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span> to opponents, the DMG dealt is increased based on Shenhe's current ATK.<br\/><br\/>The Icy Quill's effects will be cleared once its duration ends or after being triggered a certain number of times.<br\/>When held rather than pressed, the Icy Quill's effect lasts longer and can be triggered more times.<br\/>When one <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span> instance strikes multiple opponents, the effect is triggered multiple times based on the number of opponents hit. The number of times the effect is triggered is calculated independently for each party member with the Icy Quill.",
-                "code": [["proc",["pstat",[["normal_dmg","charged_dmg","plunging_dmg","skill_dmg","burst_dmg"],["mv","DMG Bonus (% ATK)"]]],"\"Icy Quills\""]],
+                "code": [
+                    [
+                        "proc",
+                        [
+                            "pstat",
+                            [
+                                [
+                                    "normal_dmg",
+                                    "charged_dmg",
+                                    "plunging_dmg",
+                                    "skill_dmg",
+                                    "burst_dmg"
+                                ],
+                                [
+                                    "mv",
+                                    "DMG Bonus (% ATK)"
+                                ]
+                            ]
+                        ],
+                        "\"Icy Quills\""
+                    ]
+                ],
                 "scaling": {
                     "Press Skill DMG (%)": {
                         "1": "139.2",
@@ -22857,7 +23993,23 @@ export default {
                 "name": "Divine Maiden's Deliverance",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d5\/Talent_Divine_Maiden%27s_Deliverance.png",
                 "text": "Unleashes the power of the Talisman Spirit, allowing it to roam free in this plane, dealing <span class=\"text-cryo\"><b>AoE Cryo DMG<\/b><\/span>.<br\/>The Talisman Spirit then creates a field that decreases the <span class=\"text-cryo\"><b>Cryo RES<\/b><\/span> and <span class=\"text-physical\"><b>Physical RES<\/b><\/span> of opponents within it. It also deals periodic <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span> to opponents within the field.",
-                "code": ["proc",["estat",[["cryo_res_","physical_res_"],["mv","RES Decrease (%)"]]],"During Elemental Burst"],
+                "code": [
+                    "proc",
+                    [
+                        "estat",
+                        [
+                            [
+                                "cryo_res_",
+                                "physical_res_"
+                            ],
+                            [
+                                "mv",
+                                "RES Decrease (%)"
+                            ]
+                        ]
+                    ],
+                    "During Elemental Burst"
+                ],
                 "scaling": {
                     "Skill DMG (%)": {
                         "1": "100.8",
@@ -22961,13 +24113,53 @@ export default {
                 "name": "Deific Embrace",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/29\/Talent_Deific_Embrace.png",
                 "text": "An active character within the field created by Divine Maiden's Deliverance gains 15% <span class=\"text-cryo\"><b>Cryo DMG Bonus<\/b><\/span>.",
-                "code": ["proc",["pstat",["cryo_dmg_",15]],"During Elemental Burst"]
+                "code": [
+                    "proc",
+                    [
+                        "pstat",
+                        [
+                            "cryo_dmg_",
+                            15
+                        ]
+                    ],
+                    "During Elemental Burst"
+                ]
             },
             "4th Ascension Passive": {
                 "name": "Spirit Communion Seal",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5c\/Talent_Spirit_Communion_Seal.png",
                 "text": "After Shenhe uses Spring Spirit Summoning, she will grant all nearby party members the following effects:\n<ul><li>Press: Elemental Skill and Elemental Burst DMG increased by 15% for 10s.<\/li>\n<li>Hold: Normal, Charged, and Plunging Attack DMG increased by 15% for 15s.<\/li><\/ul>",
-                "code": [["proc",["pstat",[["skill_dmg_","burst_dmg_"],15]],"After Press Elemental Skill (10s)"],["proc",["pstat",[["normal_dmg_","charged_dmg_","plunging_dmg_"],15]],"After Hold Elemental Skill (15s)"]]
+                "code": [
+                    [
+                        "proc",
+                        [
+                            "pstat",
+                            [
+                                [
+                                    "skill_dmg_",
+                                    "burst_dmg_"
+                                ],
+                                15
+                            ]
+                        ],
+                        "After Press Elemental Skill (10s)"
+                    ],
+                    [
+                        "proc",
+                        [
+                            "pstat",
+                            [
+                                [
+                                    "normal_dmg_",
+                                    "charged_dmg_",
+                                    "plunging_dmg_"
+                                ],
+                                15
+                            ]
+                        ],
+                        "After Hold Elemental Skill (15s)"
+                    ]
+                ]
             },
             "Utility Passive": {
                 "name": "Precise Comings and Goings",
@@ -26627,16 +27819,81 @@ export default {
         "matEnemy": "Samachurls",
         "matMastery": "Gold",
         "matTrounce": "Lightless Eye of the Maelstrom",
-        "img": "https://api.ambr.top/assets/UI/UI_AvatarIcon_Liuyun.png",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d3\/Xianyun_Icon.png",
         "region": "Liyue",
         "release": "January 31, 2024",
         "patch": "4.4",
-        "hpBase": 810,
-        "atkBase": 26,
-        "defBase": 45,
-        "hpMaxAsc": 3646.31,
-        "atkMaxAsc": 117.926,
-        "defMaxAsc": 197.295
+        "hpBase": 810.32202148438,
+        "atkBase": 26.068000793457,
+        "defBase": 44.573348999023,
+        "hpMaxAsc": 3327.6201171875,
+        "atkMaxAsc": 107.04148101807,
+        "defMaxAsc": 183.04649353027,
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Xianyun",
+        "talents": {
+            "Normal Attack": {
+                "name": "Word of Wind and Flower",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dd\/Catalyst_Anemo.png",
+                "text": "<b>Normal Attack<\/b><br\/>Summons swirling winds to perform up to 4 attacks, dealing <span class=\"text-anemo\"><b>Anemo DMG<\/b><\/span>.<br\/><br\/><b>Charged Attack<\/b><br\/>Consumes a certain amount of Stamina and launches a Breeze Bolt in a straight line that deals <span class=\"text-anemo\"><b>Anemo DMG<\/b><\/span> to opponents along its path.<br\/><br\/><b>Plunging Attack<\/b><br\/>Gathers the power of Anemo and plunges towards the ground from mid-air, damaging all opponents in her path. Deals <span class=\"text-anemo\"><b>AoE Anemo DMG<\/b><\/span> upon impact with the ground."
+            },
+            "Elemental Skill": {
+                "name": "White Clouds at Dawn",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/89\/Talent_White_Clouds_at_Dawn.png",
+                "text": "Xianyun enters the Cloud Transmogrification state, in which she will not take Fall DMG, and uses Skyladder once.<br\/>In this state, her Plunging Attack will be converted into Driftcloud Wave instead, which deals <span class=\"text-anemo\"><b>AoE Anemo DMG<\/b><\/span> and ends the Cloud Transmogrification state. This DMG is considered Plunging Attack DMG.<br\/>Each use of Skyladder while in this state increases the DMG and AoE of the next Driftcloud Wave used.<br\/><br\/><b>Skyladder<\/b><br\/>Can be used while in mid-air. Xianyun leaps forward, dealing <span class=\"text-anemo\"><b>Anemo DMG<\/b><\/span> to targets along her path.<br\/>During each Cloud Transmogrification state Xianyun enters, Skyladder may be used up to 3 times and only 1 instance of Skyladder DMG can be dealt to any one opponent.<br\/>If Skyladder is not used again in a short period, the Cloud Transmogrification state will be canceled.<br\/><br\/>If Xianyun does not use Driftcloud Wave while in this state, the next CD of White Clouds at Dawn will be decreased by 3s."
+            },
+            "Elemental Burst": {
+                "name": "Stars Gather at Dusk",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/28\/Talent_Stars_Gather_at_Dusk.png",
+                "text": "Brings forth a sacred breeze that deals <span class=\"text-anemo\"><b>AoE Anemo DMG<\/b><\/span> and heals all nearby characters based on Xianyun's ATK. It will also summon the \"Starwicker\" mechanism.<br\/><br\/><b>Starwicker<\/b><br\/><ul><li>Continuously follows the active character and periodically heals all nearby party members based on Xianyun's ATK.<\/li><li>Starts with 8 stacks of Adeptal Assistance. While Adeptal Assistance is active, nearby active characters in the party will have their jump height increased.<\/li><li>When the active character completes a Plunging Attack, Starwicker will consume 1 stack of Adeptal Assistance and deal <span class=\"text-anemo\"><b>AoE Anemo DMG<\/b><\/span>.<\/li><\/ul>Only 1 Starwicker can exist simultaneously."
+            },
+            "1st Ascension Passive": {
+                "name": "Galefeather Pursuit",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2d\/Talent_Galefeather_Pursuit.png",
+                "text": "Each opponent hit by Driftcloud Waves from White Clouds at Dawn will grant all nearby party members 1 stack of Storm Pinion for 20s. Max 4 stacks. These will cause the characters' Plunging Attack CRIT Rate to increase by 4%\/6%\/8%\/10% respectively.<br\/>Each Storm Pinion created by hitting an opponent has an independent duration."
+            },
+            "4th Ascension Passive": {
+                "name": "Consider, the Adeptus in Her Realm",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b5\/Talent_Consider%2C_the_Adeptus_in_Her_Realm.png",
+                "text": "When the Starwicker created by Stars Gather at Dusk has Adeptal Assistance stacks, nearby active characters' Plunging Attack shockwave DMG will be increased by 200% of Xianyun's ATK. The maximum DMG increase that can be achieved this way is 9,000.<br\/>Each Plunging Attack shockwave DMG instance can only apply this increased DMG effect to a single opponent. Each character can trigger this effect once every 0.4s."
+            },
+            "Utility Passive": {
+                "name": "Crane Form",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d0\/Talent_Crane_Form.png",
+                "text": "Increases gliding SPD for your own party members by 15%.<br\/>Not stackable with Passive Talents that provide the exact same effects."
+            }
+        },
+        "constellations": {
+            "1": {
+                "name": "Purifying Wind",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/15\/Constellation_Purifying_Wind.png",
+                "text": "White Clouds at Dawn gains 1 additional charge."
+            },
+            "2": {
+                "name": "Aloof From the World",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/87\/Constellation_Aloof_From_the_World.png",
+                "text": "After using a Skyladder from White Clouds at Dawn, Xianyun's ATK will be increased by 20% for 15s.<br\/>Additionally, the effects of the Passive Talent \"Consider, the Adeptus in Her Realm\" will be enhanced: When the Starwicker created by Stars Gather at Dusk has Adeptal Assistance stacks, nearby active characters' Plunging Attack shockwave DMG will be increased by 400% of Xianyun's ATK. The maximum DMG increase that can be achieved this way is 18,000.<br\/>Each Plunging Attack shockwave DMG instance can only apply this increased DMG effect to a single opponent. Each character can trigger this effect once every 0.4s.<br\/>You must first unlock the Passive Talent \"Consider, the Adeptus in Her Realm.\""
+            },
+            "3": {
+                "name": "Creations of Star and Moon",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/45\/Constellation_Creations_of_Star_and_Moon.png",
+                "text": "Increases the Level of Stars Gather at Dusk by 3.<br\/>Maximum upgrade level is 15."
+            },
+            "4": {
+                "name": "Mystery Millet Gourmet",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/68\/Constellation_Mystery_Millet_Gourmet.png",
+                "text": "After using Skyladder 1\/2\/3 times during one White Clouds at Dawn Cloud Transmogrification state, when a Driftcloud Wave unleashed during that instance hits an opponent, it will heal all nearby party members for 50%\/80%\/150% of Xianyun's ATK. This effect can be triggered once every 5s."
+            },
+            "5": {
+                "name": "Astride Rose-Colored Clouds",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/92\/Constellation_Astride_Rose-Colored_Clouds.png",
+                "text": "Increases the Level of White Clouds at Dawn by 3.<br\/>Maximum upgrade level is 15."
+            },
+            "6": {
+                "name": "They Call Her Cloud Retainer",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2a\/Constellation_They_Call_Her_Cloud_Retainer.png",
+                "text": "After Xianyun uses 1\/2\/3 Skyladders within one Cloud Transmogrification caused by White Clouds at Dawn, the CRIT DMG of a Driftcloud Wave created in this instance of Cloud Transmogrification will be increased by 15%\/35%\/70%.<br\/>Within 16s after Xianyun has used Stars Gather at Dusk, White Clouds at Dawn will not enter CD. This effect will be canceled once she has used White Clouds at Dawn 8 times."
+            }
+        }
     },
     "Xiao": {
         "name": "Xiao",
@@ -28832,7 +30089,7 @@ export default {
             "6": {
                 "name": "Beneficent",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/02\/Constellation_Beneficent.png",
-                "text": "For every 2 White Jade Radishes Yuegui: Throwing Mode throws out, it will also throw a Mega Radish that will have a larger AoE than the standard White Jade Radish and have the following effects upon exploding:<ul><li>Deals <span class=\"text-dendro\"><b>AoE Dendro DMG<\/b><\/span> based on 75% of Yaoyao's ATK.<\/li><li>Restores HP for the active character based on 7.5% of Yaoyao's Max HP.<\/li><\/ul><br\/>Every Yuegei: Throwing Mode can throw out a maximum of 2 Mega Radishes."
+                "text": "For every 2 White Jade Radishes Yuegui: Throwing Mode throws out, it will also throw a Mega Radish that will have a larger AoE than the standard White Jade Radish and have the following effects upon exploding:<ul><li>Deals <span class=\"text-dendro\"><b>AoE Dendro DMG<\/b><\/span> based on 75% of Yaoyao's ATK.<\/li><li>Restores HP for the active character based on 7.5% of Yaoyao's Max HP.<\/li><\/ul><br\/>Every Yuegui: Throwing Mode can throw out a maximum of 2 Mega Radishes."
             }
         }
     },

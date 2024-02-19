@@ -1,4 +1,4 @@
-import { handlebars, Renderer } from "./Renderer.js";
+import { handlebars, Renderer } from "../Renderer.js";
 import GenshinList from "./GenshinList.js";
 import Team from "./Team.js";
 import Character from "./Character.js";

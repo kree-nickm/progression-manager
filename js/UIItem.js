@@ -48,11 +48,6 @@ export default class UIItem extends UIController {
     });
   }
   
-  getRelatedItems()
-  {
-    return {};
-  }
-  
   unlink({skipList, skipHTML}={})
   {
     super.unlink({skipHTML});

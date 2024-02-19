@@ -1,0 +1,35 @@
+<div class="modal-content list-item" data-template="palworld/renderPalAsPopup" data-uuid="{{uuid item}}">
+    <div class="modal-body">
+        <button type="button" class="btn-close float-end" data-bs-dismiss="modal"></button>
+        
+        {{> renderItemField item=item field="name" wrapper="h2"}}
+        {{> renderItemField item=item field="type" wrapper="span"}}
+        <div class="row">
+            <div class="col-3">{{> renderItemField item=item field="passive" params=(array 0) wrapper="span"}}</div>
+            <div class="col-3">{{> renderItemField item=item field="passive" params=(array 1) wrapper="span"}}</div>
+            <div class="col-3">{{> renderItemField item=item field="passive" params=(array 2) wrapper="span"}}</div>
+            <div class="col-3">{{> renderItemField item=item field="passive" params=(array 3) wrapper="span"}}</div>
+        </div>
+        
+        <hr/>
+        <h3>Possible Children</h3>
+        <div class="row">
+            <div class="h4 col-1">Child</div>
+            <div class="h4 col-2">Coparent</div>
+            <div class="h4 col-2">Passive 1</div>
+            <div class="h4 col-2">Passive 2</div>
+            <div class="h4 col-2">Passive 3</div>
+            <div class="h4 col-2">Passive 4</div>
+        </div>
+      {{#each relatedItems.children}}
+        <div class="row">
+            <div class="col-2">{{child.type}} ({{child.breedPower}})</div>
+            <div class="col-2">{{getProperty coparent "type"}} Lv.{{getProperty coparent "level"}}</div>
+            <div class="col-2">{{> renderItemField item=coparent field="passive" params=(array 0) wrapper="span"}}</div>
+            <div class="col-2">{{> renderItemField item=coparent field="passive" params=(array 1) wrapper="span"}}</div>
+            <div class="col-2">{{> renderItemField item=coparent field="passive" params=(array 2) wrapper="span"}}</div>
+            <div class="col-2">{{> renderItemField item=coparent field="passive" params=(array 3) wrapper="span"}}</div>
+        </div>
+      {{/each}}
+    </div>
+</div>

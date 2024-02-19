@@ -1,6 +1,6 @@
 import GenshinCharacterData from "./gamedata/GenshinCharacterData.js";
 
-import { handlebars, Renderer } from "./Renderer.js";
+import { handlebars, Renderer } from "../Renderer.js";
 import GenshinList from "./GenshinList.js";
 import Character from "./Character.js";
 import Traveler from "./Traveler.js";
@@ -255,6 +255,7 @@ export default class CharacterList extends GenshinList
         edit: item => ({target: {item, field:["talent", i]}}),
         sort: {generic: {type:"number",property:["talent",i]}},
         dependencies: item => [
+            {item:item.viewer.lists.MaterialList.get("Mora"), field:"count"},
             {item:item.getTalentMat('mastery',i), field:"count"},
             {item:item.getTalentMat('enemy',i), field:"count"},
             {item:item.base??item, field:"ascension"},
@@ -330,6 +331,7 @@ export default class CharacterList extends GenshinList
           value: item => item.getMat(mat.t,phase) && item.getMatCost(mat.t,phase) ? item.getMat(mat.t,phase).getFieldValue(item.getMatCost(mat.t,phase), this.viewer.settings.preferences.characterList=='1') : "",
           dependencies: item => [
             {item:item.base??item, field:"ascension"},
+            {item:item.viewer.lists.MaterialList.get("Mora"), field:"count"},
           ].concat(item.getMat(mat.t,phase)?.getCraftDependencies() ?? []),
         });
       }
@@ -341,6 +343,7 @@ export default class CharacterList extends GenshinList
           dynamic: true,
           value: item => `${phase} ➤ ${phase+1}`,
           dependencies: item => [
+            {item:item.viewer.lists.MaterialList.get("Mora"), field:"count"},
             {item:item.getMat('gem',phase), field:"count"},
             item.getMat('boss',phase) ? {item:item.getMat('boss',phase), field:"count"} : null,
             {item:item.getMat('flower',phase), field:"count"},
@@ -399,6 +402,7 @@ export default class CharacterList extends GenshinList
           title: item => item.getTalentMat(m.l.toLowerCase(),i)?.getFullSource()??"!ERROR!",
           dependencies: item => [
             {item, field:["talent", i]},
+            {item:item.viewer.lists.MaterialList.get("Mora"), field:"count"},
             item.getTalentMat(m.l.toLowerCase(),i)?.days ? {item:this.viewer, field:"today"} : {},
           ].concat(item.getTalentMat(m.l.toLowerCase(),i)?.getCraftDependencies()??[]),
         });
@@ -411,6 +415,7 @@ export default class CharacterList extends GenshinList
           dynamic: true,
           value: item => `${i} ➤ ${i+1}`,
           dependencies: item => [
+            {item:item.viewer.lists.MaterialList.get("Mora"), field:"count"},
             {item:item.getTalentMat('mastery','auto'), field:"count"},
             {item:item.getTalentMat('enemy','auto'), field:"count"},
             {item:item.getTalentMat('mastery','skill'), field:"count"},

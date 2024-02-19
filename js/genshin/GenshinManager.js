@@ -1,9 +1,9 @@
 import { DateTime } from 'https://cdn.jsdelivr.net/npm/luxon@3.3.0/+esm';
-import { Renderer } from "./Renderer.js";
+import { Renderer } from "../Renderer.js";
 
 //import GenshinBuilds from "./gamedata/GenshinBuilds.js";
 
-import DataManager from "./DataManager.js";
+import DataManager from "../DataManager.js";
 import MaterialList from "./MaterialList.js";
 import CharacterList from "./CharacterList.js";
 import WeaponList from "./WeaponList.js";

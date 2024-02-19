@@ -1,6 +1,6 @@
 import GenshinWeaponData from "./gamedata/GenshinWeaponData.js";
 
-import { handlebars, Renderer } from "./Renderer.js";
+import { handlebars, Renderer } from "../Renderer.js";
 import GenshinList from "./GenshinList.js";
 import Artifact from "./Artifact.js";
 import Weapon from "./Weapon.js";

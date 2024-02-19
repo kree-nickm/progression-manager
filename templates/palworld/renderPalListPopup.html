@@ -1,0 +1,33 @@
+<div class="modal-content list" data-template="palworld/renderPalListPopup" data-uuid="{{uuid item}}">
+    <div class="modal-body">
+        <button type="button" class="btn-close float-end" data-bs-dismiss="modal"></button>
+        
+        <h3>Breeding Calculator</h3>
+        <div class="row">
+          <div class="col-3">
+            <select class="form-select" id="breedingChild">
+              {{#each relatedItems.palsData}}
+                <option value="{{@key}}">#{{number}} {{type}}</option>
+              {{/each}}
+            </select>
+          </div>
+          <div class="col-8">
+            <select title="Primary passives" class="selectpicker" id="breedingPassives" multiple="multiple">
+              {{#each relatedItems.passives}}
+                <option value="{{@key}}">{{name}}: {{effect}}</option>
+              {{/each}}
+            </select>
+            <select title="Secondary passives" class="selectpicker" id="breedingPassivesSecondary" multiple="multiple">
+              {{#each relatedItems.passives}}
+                <option value="{{@key}}">{{name}}: {{effect}}</option>
+              {{/each}}
+            </select>
+          </div>
+          <div class="col-1">
+            <button class="btn btn-success" id="breedingFind">Find</button>
+          </div>
+        </div>
+        
+        {{> palworld/renderParentList}}
+    </div>
+</div>

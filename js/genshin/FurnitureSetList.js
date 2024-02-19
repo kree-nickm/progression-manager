@@ -1,6 +1,6 @@
 import GenshinFurnitureSetData from "./gamedata/GenshinFurnitureSetData.js";
 
-import { Renderer } from "./Renderer.js";
+import { Renderer } from "../Renderer.js";
 import GenshinList from "./GenshinList.js";
 import FurnitureSet from "./FurnitureSet.js";
 

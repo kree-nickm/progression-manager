@@ -1,7 +1,7 @@
 import GenshinArtifactData from "./gamedata/GenshinArtifactData.js";
 import GenshinArtifactStats from "./gamedata/GenshinArtifactStats.js";
 
-import { handlebars, Renderer } from "./Renderer.js";
+import { handlebars, Renderer } from "../Renderer.js";
 import GenshinList from "./GenshinList.js";
 import Artifact from "./Artifact.js";
 
@@ -51,9 +51,11 @@ export default class ArtifactList extends GenshinList
   };
   
   elements = {};
+  setWanterFactor = {};
   
   async evaluate()
   {
+    this.update("setWanterFactor", {}, "replace");
     this.list.forEach(artifact => artifact.update("wanters", [], "replace"));
     // Cycle through every character so we can access their artifact priority lists.
     this.viewer.lists.CharacterList.items("listable").forEach(character => {
@@ -71,7 +73,7 @@ export default class ArtifactList extends GenshinList
             if(related.bestArtifacts[slot][i])
             {
               let score = related.bestArtifacts[slot][i].getCharacterScore(character, parseInt(this.viewer.settings.preferences.artifactMaxLevel ?? 20), buildId, {useTargets:false});
-              let scaledScore = score * Math.max(0,1-i*0.05) * character.getBuild(buildId).importance/100;
+              let scaledScore = score * Math.max(0,1-i*0.05) * related.buildData.importance/100;
               related.bestArtifacts[slot][i].update("wanters", {rank:i+1, character, buildId, score, scaledScore}, "push");
             }
           }
@@ -85,14 +87,17 @@ export default class ArtifactList extends GenshinList
               if(bestOfSet[i])
               {
                 let score = bestOfSet[i].getCharacterScore(character, parseInt(this.viewer.settings.preferences.artifactMaxLevel ?? 20), buildId, {useTargets:false});
-                let scaledScore = score * Math.max(0,1-i*0.04) * rarityFactor * character.getBuild(buildId).importance/100;
+                let scaledScore = score * Math.max(0,1-i*0.04) * rarityFactor * related.buildData.importance/100;
                 bestOfSet[i].update("wanters", {rank:i+1, character, buildId, score, scaledScore, onSet:true}, "push");
               }
             }
           }
         }
+        for(let setKey in related.buildData.artifactSets)
+          this.setWanterFactor[setKey] = (this.setWanterFactor[setKey] ?? 0) + related.buildData.importance/100;
       }
     });
+    this.update("setWanterFactor", {}, "notify");
     this.list.forEach(artifact => artifact.wanters.sort((a,b) => b.scaledScore-a.scaledScore));
     document.querySelector("#artifactEvaluateBtn")?.classList.remove("show-notice");
   }
@@ -208,9 +213,8 @@ export default class ArtifactList extends GenshinList
       dynamic: true,
       title: item => "Whether the artifact is locked. Red background indicates the artifact is below your minimum desirability rating, which theoretically means you should unlock it and use it as fodder in-game.",
       classes: (item,showUnlocked,showRed=1) => {
-        let minRating = item.maxRarity==4 ? parseFloat(item.viewer.settings.preferences.artifactMinRating4 ?? 0.6) : parseFloat(item.viewer.settings.preferences.artifactMinRating ?? 1);
         return {
-          "insufficient": parseInt(showRed) && item.wanters.reduce((result, wanter, idx) => result+Math.pow(wanter.scaledScore, 1+idx), 0) < minRating,
+          "insufficient": parseInt(showRed) && item.isFodder,
         };
       },
       edit: (item,showUnlocked,showRed=1) => ({

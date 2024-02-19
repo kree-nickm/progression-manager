@@ -164,11 +164,13 @@ export default class UIList extends UIController {
       return this.list;
   }
   
-  createItem()
+  createItem(data={})
   {
     let item = new this.constructor.itemClass();
     item.list = this;
     this.update("list", item, "push");
+    for(let property in data)
+      item.update(property, data[property], "replace");
     return item;
   }
   

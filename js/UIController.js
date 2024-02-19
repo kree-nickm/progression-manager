@@ -6,6 +6,8 @@ handlebars.registerHelper('toParam', (item, options) => item instanceof UIContro
 
 export default class UIController {
   static dontSerialize = ["uuid","importing","delayedUpdates","dependents","memory"];
+  static templateName = "renderItemAsPopup";
+  static templatePartials = [];
   
   static fromJSON(data, {addProperties={}}={})
   {
@@ -339,6 +341,11 @@ export default class UIController {
   }
   
   /* Methods with code specifically related to the HTML rendering of this UIController. */
+  
+  getRelatedItems()
+  {
+    return {};
+  }
   
   processRenderText(html)
   {

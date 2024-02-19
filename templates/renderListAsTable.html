@@ -14,7 +14,7 @@
             </tr>
             <tr>
               {{#each fields}}
-                <th class="label {{fieldClasses field}} {{#if field.sort}}sortable{{/if}}" name="{{field.id}}" title="{{field.labelTitle}}" scope="col" {{#if field.group}}data-group-name="{{field.group.label}}"{{/if}}><span>{{{field.label}}}</span></th>
+                <th class="label {{fieldClasses field}} {{#if (itemField '' field 'sort' params=params)}}sortable{{/if}}" name="{{field.id}}" title="{{itemField '' field 'labelTitle' params=params}}" scope="col" {{#if (itemField '' field 'group' params=params)}}data-group-name="{{lookup (itemField '' field 'group' params=params) 'label'}}"{{/if}}><span>{{{itemField "" field "label" params=params}}}</span></th>
               {{/each}}
             </tr>
         </thead>

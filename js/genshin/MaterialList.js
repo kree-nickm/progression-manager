@@ -1,7 +1,7 @@
 import GenshinLootData from "./gamedata/GenshinLootData.js";
 import GenshinCharacterData from "./gamedata/GenshinCharacterData.js";
 
-import { Renderer } from "./Renderer.js";
+import { Renderer } from "../Renderer.js";
 import GenshinList from "./GenshinList.js";
 import Material from "./Material.js";
 

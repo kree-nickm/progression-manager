@@ -5,7 +5,6 @@ window.DEBUGLOG = {
   getRelatedItems: false,
   contentToHTML: false,
   sortItems: false,
-  StatModifier_create: false,
   
   enableAll: () => { for(let method in window.DEBUGLOG) window.DEBUGLOG[method] = true; },
 };
@@ -16,7 +15,7 @@ if(typeof(Storage) !== "undefined")
 else
   console.error("Your browser does not support Web Storage, and therefore we cannot save your data between sessions (data is too large for standard cookies).");
 
-import GenshinManager from "./genshin/GenshinManager.js";
+import PalworldManager from "./palworld/PalworldManager.js";
 
 /************************
 * Setup Event Listeners *
@@ -28,54 +27,7 @@ document.addEventListener("scrollend", event => window.viewer.saveScrollY(window
 
 // Set up JSON loader.
 document.getElementById("loadModal").addEventListener("show.bs.modal", showEvent => {
-  document.getElementById("loadGOODTab").dispatchEvent(new Event("click"));
-  
-  let selectElem = document.getElementById("loadAccount");
-  selectElem.replaceChildren();
-  selectElem.add((()=>{let e=document.createElement("option");e.value="";e.text="Create New...";return e;})());
-  for(let what in window.viewer.data)
-    selectElem.add((()=>{let e=document.createElement("option");e.value=what;e.text=what;return e;})());
-  selectElem.selectedIndex = Array.from(selectElem.options).findIndex(elem => elem.value == window.viewer.settings.account);
-  selectElem.dispatchEvent(new Event("change"));
-  
-  let selectElem2 = document.getElementById("loadServer");
-  if(window.viewer.settings.server)
-    selectElem2.selectedIndex = Array.from(selectElem2.options).findIndex(elem => elem.value == window.viewer.settings.server);
-  else
-    selectElem2.selectedIndex = 0;
-  selectElem2.dispatchEvent(new Event("change"));
-});
-
-document.getElementById("loadAccount").addEventListener("change", changeEvent => {
-  if(changeEvent.target.value)
-    document.getElementById("loadAccountNew").classList.add("d-none");
-  else
-    document.getElementById("loadAccountNew").classList.remove("d-none");
-});
-
-document.getElementById("loadGOODFile").addEventListener("change", changeEvent => {
-  let reader = new FileReader();
-  // TODO: This doesn't seem to be working here even though it works in loadAllFile...
-  let msg = document.getElementById("loadMessage");
-  msg.classList.remove("d-none");
-  msg.innerHTML = `<i class="fa-solid fa-arrows-rotate fa-spin"></i> Importing...`;
-  reader.addEventListener("load", async loadEvent => {
-    let selectedAccount = document.getElementById("loadAccount").value;
-    if(!selectedAccount)
-      selectedAccount = document.getElementById("loadAccountNew").value;
-    if(selectedAccount)
-    {
-      window.viewer.load(loadEvent.target.result, {account: selectedAccount, server: document.getElementById("loadServer").value});
-      changeEvent.target.value = "";
-    }
-    else
-    {
-      document.getElementById("loadError").innerHTML = "Account field cannot be blank.";
-      document.getElementById("loadError").classList.remove("d-none");
-    }
-    msg.classList.add("d-none");
-  });
-  reader.readAsText(changeEvent.target.files[0]);
+  document.getElementById("loadAllTab").dispatchEvent(new Event("click"));
 });
 
 document.getElementById("loadAllFile").addEventListener("change", changeEvent => {
@@ -89,48 +41,6 @@ document.getElementById("loadAllFile").addEventListener("change", changeEvent =>
     msg.classList.add("d-none");
   });
   reader.readAsText(changeEvent.target.files[0]);
-});
-
-document.getElementById("loadPastebinBtn").addEventListener("click", async clickEvent => {
-  let input = document.getElementById("loadPastebinCode");
-  if(input.value)
-  {
-    let msg = document.getElementById("loadMessage");
-    msg.classList.remove("d-none");
-    msg.innerHTML = `<i class="fa-solid fa-arrows-rotate fa-spin"></i> Importing...`;
-    let response = await fetch("https://corsproxy.io/?https://pastebin.com/raw/"+input.value, {
-      method: "GET",
-    });
-    let json = await response.json();
-    if(json.format == "GOOD")
-    {
-      let selectedAccount = document.getElementById("loadAccount").value;
-      if(!selectedAccount)
-        selectedAccount = document.getElementById("loadAccountNew").value;
-      if(selectedAccount)
-      {
-        window.viewer.load(json, {account: selectedAccount, server: document.getElementById("loadServer").value});
-        input.value = "";
-      }
-      else
-      {
-        document.getElementById("loadError").innerHTML = "Account field cannot be blank.";
-        document.getElementById("loadError").classList.remove("d-none");
-      }
-    }
-    else
-    {
-      document.getElementById("loadError").innerHTML = "Code does not match a Pastebin post with valid GOOD data.";
-      document.getElementById("loadError").classList.remove("d-none");
-      console.error(`Code does not match a Pastebin post with valid GOOD data.`, json);
-    }
-    msg.classList.add("d-none");
-  }
-  else
-  {
-    document.getElementById("loadError").innerHTML = "Pastebin code cannot be blank.";
-    document.getElementById("loadError").classList.remove("d-none");
-  }
 });
 
 /*document.getElementById("loadGOODBtn").addEventListener("click", event => {
@@ -149,15 +59,8 @@ document.getElementById("editModal").addEventListener("show.bs.modal", showEvent
   selectElem.add((()=>{let e=document.createElement("option");e.value="";e.text="Create New...";return e;})());
   for(let what in window.viewer.data)
     selectElem.add((()=>{let e=document.createElement("option");e.value=what;e.text=what;return e;})());
-  selectElem.selectedIndex = Array.from(selectElem.options).findIndex(elem => elem.value == window.viewer.settings.account);
+  selectElem.selectedIndex = Array.from(selectElem.options).findIndex(elem => elem.value == window.viewer.settings.server);
   selectElem.dispatchEvent(new Event("change"));
-  
-  let selectElem2 = document.getElementById("editServer");
-  if(window.viewer.settings.server)
-    selectElem2.selectedIndex = Array.from(selectElem2.options).findIndex(elem => elem.value == window.viewer.settings.server);
-  else
-    selectElem2.selectedIndex = 0;
-  selectElem2.dispatchEvent(new Event("change"));
 });
 
 document.getElementById("editAccount").addEventListener("change", changeEvent => {
@@ -173,7 +76,7 @@ document.getElementById("editDoneBtn").addEventListener("click", clickEvent => {
     selectedAccount = document.getElementById("editAccountNew").value;
   if(selectedAccount)
   {
-    if(window.viewer.switchAccount(selectedAccount, document.getElementById("editServer").value))
+    if(window.viewer.switchAccount(selectedAccount))
     {
       bootstrap.Modal.getOrCreateInstance(document.getElementById("editModal")).hide();
       document.getElementById("editError").classList.add("d-none");
@@ -205,29 +108,8 @@ const saveTemplateAsFile = (filename, dataObjToWrite) => {
   link.remove()
 };
 
-document.getElementById("saveGOODBtn").addEventListener("click", event => {
-  saveTemplateAsFile("GenshinData.GOOD.json", window.viewer.toGOOD());
-});
-
 document.getElementById("saveAllBtn").addEventListener("click", event => {
   saveTemplateAsFile("GenshinData.json", window.viewer);
-});
-
-document.getElementById("savePastebinBtn").addEventListener("click", async event => {
-  event.target.disabled = true;
-  setTimeout(() => event.target.disabled = false, 60000);
-  let msg = document.getElementById("saveMessage");
-  msg.classList.remove("d-none");
-  msg.innerHTML = `<i class="fa-solid fa-arrows-rotate fa-spin"></i> Uploading...`;
-  let response = await window.viewer.saveToPastebin();
-  if(response)
-  {
-    msg.innerHTML = `Saved to <a href="https://pastebin.com/${response}" target="_blank">Pastebin</a> successfully.<br/><b>Code: <tt>${response}</tt></b><br/>Data will be available for 1 week.`;
-  }
-  else
-  {
-    msg.innerHTML = `An error occured trying to upload data to Pastebin. Check the JavaScript console (F12) for more information.`;
-  }
 });
 
 // Setup "new user" popup.
@@ -294,9 +176,8 @@ document.getElementById("prefsModal").addEventListener("show.bs.modal", showEven
 * Begin the Application *
 ************************/
 
-window.viewer = new GenshinManager();
+window.viewer = new PalworldManager();
 window.viewer.retrieve();
-setInterval(window.viewer.today.bind(window.viewer), 60000);
 
 // Set up nav.
 let navClicked = false;
@@ -312,22 +193,12 @@ for(let i=0; i<navLinks.length; i++)
         navLinks[k].classList.remove("active");
     }
     // Do a check to see if this is the user's first visit.
-    if(window.viewer.settings.account && window.viewer.settings.server)
+    if(window.viewer.settings.server)
     {
-      if(event.target.hash == "#materials")
-        window.viewer.view("MaterialList");
-      else if(event.target.hash == "#weapons")
-        window.viewer.view("WeaponList");
-      else if(event.target.hash == "#artifacts")
-        window.viewer.view("ArtifactList");
-      else if(event.target.hash == "#teams")
-        window.viewer.view("TeamList");
-      else if(event.target.hash == "#furnitureSets")
-        window.viewer.view("FurnitureSetList");
-      else if(event.target.hash == "#furniture")
-        window.viewer.view("FurnitureList");
+      if(event.target.hash == "#pals")
+        window.viewer.view("PalList");
       else
-        window.viewer.view("CharacterList");
+        window.viewer.view("PalList");
     }
     else
     {

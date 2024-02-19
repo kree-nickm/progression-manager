@@ -1,4 +1,4 @@
-import UIList from "./UIList.js";
+import UIList from "../UIList.js";
 import GenshinItem from "./GenshinItem.js";
 
 export default class GenshinList extends UIList {

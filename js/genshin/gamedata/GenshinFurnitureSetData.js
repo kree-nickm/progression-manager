@@ -241,11 +241,12 @@ export default {
             }
         ],
         "characters": [
-            "Chongyun",
+            "HuTao",
+            "Yanfei",
             "Ganyu",
             "Keqing",
-            "HuTao",
-            "Yanfei"
+            "Chongyun",
+            "Gaming"
         ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3c\/Furnishing_Set_Cloudy_Haze_Dream-Court_Display.png"
     },
@@ -1008,11 +1009,13 @@ export default {
         ],
         "characters": [
             "Beidou",
-            "Ganyu",
-            "Tartaglia",
             "Xiangling",
+            "Ganyu",
             "Xinyan",
-            "Yelan"
+            "Tartaglia",
+            "Yelan",
+            "Gaming",
+            "Xianyun"
         ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5c\/Furnishing_Set_Gathering_of_Gourmets_Display.png"
     },
@@ -1156,13 +1159,14 @@ export default {
             }
         ],
         "characters": [
+            "Xinyan",
+            "Xiao",
             "HuTao",
             "Qiqi",
-            "Xiao",
-            "Xinyan",
             "Shenhe",
+            "Yelan",
             "Yaoyao",
-            "Yelan"
+            "Xianyun"
         ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a7\/Furnishing_Set_Qingce_Cloud_Residence_Display.png"
     },
