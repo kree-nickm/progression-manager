@@ -51,7 +51,13 @@ export default {
                 "count": 1
             }
         ],
-        "characters": [],
+        "characters": [
+            "Eula",
+            "Fischl",
+            "Jean",
+            "Lisa",
+            "Mona"
+        ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/17\/Furnishing_Set_Amidst_Poetic_Pondering_Display.png"
     },
     "AmidstWhisperingWinds": {
@@ -817,7 +823,12 @@ export default {
                 "count": 1
             }
         ],
-        "characters": [],
+        "characters": [
+            "Bennett",
+            "Diluc",
+            "Diona",
+            "Noelle"
+        ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3e\/Furnishing_Set_Weapon_Forging_Station_Display.png"
     },
     "IdyllicTown": {
@@ -876,7 +887,11 @@ export default {
                 "count": 1
             }
         ],
-        "characters": [],
+        "characters": [
+            "Amber",
+            "Diona",
+            "Razor"
+        ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e8\/Furnishing_Set_Idyllic_Town_Display.png"
     },
     "BirdAndBlossomPark": {
@@ -919,7 +934,13 @@ export default {
                 "count": 1
             }
         ],
-        "characters": [],
+        "characters": [
+            "Barbara",
+            "Jean",
+            "Kaeya",
+            "Rosaria",
+            "Venti"
+        ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/51\/Furnishing_Set_Bird_and_Blossom_Park_Display.png"
     },
     "GatheringOfGourmets": {
@@ -986,7 +1007,16 @@ export default {
                 "count": 1
             }
         ],
-        "characters": [],
+        "characters": [
+            "Beidou",
+            "Xiangling",
+            "Ganyu",
+            "Xinyan",
+            "Tartaglia",
+            "Yelan",
+            "Gaming",
+            "Xianyun"
+        ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5c\/Furnishing_Set_Gathering_of_Gourmets_Display.png"
     },
     "GlitteringStreet": {
@@ -1049,7 +1079,15 @@ export default {
                 "count": 1
             }
         ],
-        "characters": [],
+        "characters": [
+            "Keqing",
+            "Ningguang",
+            "Shenhe",
+            "Xingqiu",
+            "Yanfei",
+            "YunJin",
+            "Zhongli"
+        ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/57\/Furnishing_Set_Glittering_Street_Display.png"
     },
     "QingceCloudResidence": {
@@ -1120,7 +1158,16 @@ export default {
                 "count": 2
             }
         ],
-        "characters": [],
+        "characters": [
+            "Xinyan",
+            "Xiao",
+            "HuTao",
+            "Qiqi",
+            "Shenhe",
+            "Yelan",
+            "Yaoyao",
+            "Xianyun"
+        ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a7\/Furnishing_Set_Qingce_Cloud_Residence_Display.png"
     },
     "OfHuntingAndDancing": {
@@ -1199,7 +1246,13 @@ export default {
                 "count": 1
             }
         ],
-        "characters": [],
+        "characters": [
+            "Aloy",
+            "Amber",
+            "Beidou",
+            "Klee",
+            "Sucrose"
+        ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4b\/Furnishing_Set_Of_Hunting_and_Dancing_Display.png"
     },
     "IterAdAstraAbyssosque": {
@@ -1246,7 +1299,15 @@ export default {
                 "count": 1
             }
         ],
-        "characters": [],
+        "characters": [
+            "Albedo",
+            "Aloy",
+            "Bennett",
+            "Chongyun",
+            "Fischl",
+            "Mika",
+            "Qiqi"
+        ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/90\/Furnishing_Set_Iter_Ad_Astra_Abyssosque_Display.png"
     },
     "DawnOrchard": {
@@ -1293,7 +1354,12 @@ export default {
                 "count": 8
             }
         ],
-        "characters": [],
+        "characters": [
+            "Diluc",
+            "Kaeya",
+            "Rosaria",
+            "Venti"
+        ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ee\/Furnishing_Set_Dawn_Orchard_Display.png"
     },
     "CourtOfTheUpright": {
@@ -1336,7 +1402,10 @@ export default {
                 "count": 2
             }
         ],
-        "characters": [],
+        "characters": [
+            "KujouSara",
+            "KamisatoAyato"
+        ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/77\/Furnishing_Set_Court_of_the_Upright_Display.png"
     },
     "WakefulSpring": {
@@ -1387,7 +1456,12 @@ export default {
                 "count": 1
             }
         ],
-        "characters": [],
+        "characters": [
+            "Yoimiya",
+            "YaeMiko",
+            "Gorou",
+            "ShikanoinHeizou"
+        ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dc\/Furnishing_Set_Wakeful_Spring_Display.png"
     },
     "RuralConcealment": {
@@ -1430,7 +1504,10 @@ export default {
                 "count": 6
             }
         ],
-        "characters": [],
+        "characters": [
+            "Sayu",
+            "Gorou"
+        ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/01\/Furnishing_Set_Rural_Concealment_Display.png"
     },
     "AncientBranchShrine": {
@@ -1493,7 +1570,10 @@ export default {
                 "count": 2
             }
         ],
-        "characters": [],
+        "characters": [
+            "RaidenShogun",
+            "YaeMiko"
+        ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/24\/Furnishing_Set_Ancient_Branch_Shrine_Display.png"
     },
     "MilitaryExerciseGrounds": {
@@ -1552,7 +1632,9 @@ export default {
                 "count": 5
             }
         ],
-        "characters": [],
+        "characters": [
+            "KujouSara"
+        ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/08\/Furnishing_Set_Military_Exercise_Grounds_Display.png"
     },
     "JadeWilds": {
@@ -1599,7 +1681,10 @@ export default {
                 "count": 2
             }
         ],
-        "characters": [],
+        "characters": [
+            "KaedeharaKazuha",
+            "AratakiItto"
+        ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b1\/Furnishing_Set_Jade_Wilds_Display.png"
     },
     "SummerNightsRecollection": {
@@ -1654,7 +1739,11 @@ export default {
                 "count": 4
             }
         ],
-        "characters": [],
+        "characters": [
+            "KamisatoAyaka",
+            "AratakiItto",
+            "KamisatoAyato"
+        ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/77\/Furnishing_Set_Summer_Night%27s_Recollection_Display.png"
     },
     "SakuraHuedStreet": {
@@ -1713,7 +1802,12 @@ export default {
                 "count": 1
             }
         ],
-        "characters": [],
+        "characters": [
+            "Yoimiya",
+            "Thoma",
+            "KukiShinobu",
+            "Kirara"
+        ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ec\/Furnishing_Set_Sakura-Hued_Street_Display.png"
     },
     "AmidstProsperingMarkets": {
@@ -2478,7 +2572,10 @@ export default {
                 "count": 1
             }
         ],
-        "characters": []
+        "characters": [
+            "Lynette",
+            "Lyney"
+        ]
     },
     "CourtOfJusticesFreshMist": {
         "name": "Court Of Justice's Fresh Mist",
