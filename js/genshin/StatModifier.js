@@ -259,18 +259,30 @@ export default class StatModifier {
       }
       this.mvChange = "auto";
     }
-    else if(command == "editmv")
+    else if(command == "editmv" || command == "peditmv")
     {
-      motionValues.edited.push({
-        talent: parameters[0],
-        label: parameters[1],
-        method: parameters[2],
-        value: Array.isArray(parameters[3]) ? undefined : parameters[3],
-        calc: Array.isArray(parameters[3]) ? {func:parameters[3][0], args:parameters[3].slice(1)} : undefined,
-      });
+      if(command == "peditmv")
+        this.teamwide = true;
+      let collection = command=="peditmv" ? motionValues.pedited : motionValues.edited;
+      let labels = parameters[1];
+      if(!Array.isArray(labels))
+        labels = [labels];
+      for(let label of labels)
+      {
+        collection.push({
+          talent: parameters[0],
+          label: label,
+          method: parameters[2],
+          value: Array.isArray(parameters[3]) ? undefined : parameters[3],
+          calc: Array.isArray(parameters[3]) ? {func:parameters[3][0], args:parameters[3].slice(1)} : undefined,
+        });
+      }
     }
-    else if(command == "addmv")
+    else if(command == "addmv" || command == "paddmv")
     {
+      if(command == "paddmv")
+        this.teamwide = true;
+      let collection = command=="paddmv" ? motionValues.padded : motionValues.added;
       motionValues.added.push({
         talent: parameters[0],
         label: parameters[1],
@@ -404,11 +416,11 @@ export default class StatModifier {
     }
     
     const [command, parameters] = code;
-    if(command == "stat" || command == "pstat" || command == "sstat" || command == "estat" || command == "opstat")
+    if(command == "stat" || command == "estat" || command == "pstat" || command == "opstat" || command == "sstat" || command == "spstat" || command == "sopstat")
     {
       const [stat, amount, situation] = parameters;
       let statStr = Array.isArray(stat) ? stat.reduce((acc,s,i) => (acc ? acc + (i==stat.length-1?" and ":", ") : "") + GenshinItem.getStatFull(s), "") : GenshinItem.getStatFull(stat);
-      let result = `${command=="pstat"?"all characters' ":""}${command=="estat"?"enemy's ":""}${command=="opstat"?"other team members' ":""}${situation?situation+" ":""}${statStr}`;
+      let result = `${command=="pstat"||command=="spstat"?"all characters' ":""}${command=="estat"?"enemy's ":""}${command=="opstat"||command=="sopstat"?"other team members' ":""}${situation?situation+" ":""}${statStr}`;
       if(Array.isArray(amount))
       {
         const [func, ...args] = amount;
@@ -435,12 +447,14 @@ export default class StatModifier {
       }
       return result;
     }
-    else if(command == "editmv")
+    else if(command == "editmv" || command == "peditmv")
     {
       let mvStr = Array.isArray(parameters[1]) ? parameters[1].reduce((acc,mv,i) => (acc ? acc + (i==parameters[1].length-1?'" and "':'", "') : '') + mv, '') : parameters[1];
       let valueNumber = Array.isArray(parameters[3]) ? parameters[3].slice(1).join(' / ')+" (based on stacks)" : parameters[3];
       let valuePercent = Array.isArray(parameters[3]) ? parameters[3].slice(1).map(v=>(v*100)+"%").join(' / ')+" (based on stacks)" : (parameters[3]*100)+"%";
       let result = `Edit ${parameters[0]} motion value "${mvStr}"`;
+      if(command == "peditmv")
+        result += ` of the whole party`;
       if(parameters[2] == "+hit")
         result += `, adding an additional hit of ${valueNumber}.`;
       else if(parameters[2] == "+hit*")
@@ -457,9 +471,11 @@ export default class StatModifier {
         result += `, affecting it in some way (TBA) by ${valueNumber}.`;
       return result;
     }
-    else if(command == "addmv")
+    else if(command == "addmv" || command == "paddmv")
     {
       let result = `Add a new ${parameters[0]} motion value "${parameters[1]}"`;
+      if(command == "paddmv")
+        result += ` to the whole party`;
       if(typeof(parameters[2]) == "string" && parameters[2].includes("%:"))
       {
         const [amount, other] = parameters[2].split("%:");
@@ -486,6 +502,9 @@ export default class StatModifier {
       return [];
     if(this.isAvailable)
     {
+      if(!talent)
+        return asker == this.characterSource ? this.motionValues.padded.concat(this.motionValues.added) : this.motionValues.padded;
+      
       if(talent == "auto") talent = "Normal Attack";
       else if(talent == "skill") talent = "Elemental Skill";
       else if(talent == "burst") talent = "Elemental Burst";
@@ -599,7 +618,7 @@ export default class StatModifier {
         break;
       case "stacks":
         if(this.active)
-          // TODO: Dividing out this.active here is cringe, but it's the easiest way to deal with this.active being a multiplier in this.getStat()
+          // Dividing out this.active here is cringe, but it's the easiest way to deal with this.active being a multiplier in this.getStat()
           return (calc.args[this.active-1]??0) / this.active;
         else
           return 0;
@@ -612,18 +631,29 @@ export default class StatModifier {
   
   hasStat(stat, asker, alternates={})
   {
-    return ((stat in this.stats) && asker == this.characterSource
-      || ((stat + "*") in this.stats)
-      || ((stat + "!") in this.stats) && asker != this.characterSource
-      || ((stat + ":" + alternates?.situation) in this.stats) && asker == this.characterSource
-      || ((stat + ":" + alternates?.situation + "*") in this.stats)
-      || ((stat + ":" + alternates?.situation + "!") in this.stats) && asker != this.characterSource
-      || (stat in this.stats.__calculations__) && asker == this.characterSource
-      || ((stat + "*") in this.stats.__calculations__)
-      || ((stat + "!") in this.stats.__calculations__) && asker != this.characterSource
-      || ((stat + ":" + alternates?.situation) in this.stats.__calculations__) && asker == this.characterSource
-      || ((stat + ":" + alternates?.situation + "*") in this.stats.__calculations__)
-      || ((stat + ":" + alternates?.situation + "!") in this.stats.__calculations__) && asker != this.characterSource
-    );
+    for(let mvStat of Object.keys(this.stats).concat(Object.keys(this.stats.__calculations__)))
+    {
+      if(alternates?.situation)
+      {
+        if(mvStat.startsWith(stat + ":" + alternates.situation))
+        {
+          if(mvStat.endsWith("*"))
+            return true;
+          else
+            return mvStat.endsWith("!") == (asker != this.characterSource);
+        }
+      }
+      else
+      {
+        if(mvStat.startsWith(stat))
+        {
+          if(mvStat.endsWith("*"))
+            return true;
+          else
+            return mvStat.endsWith("!") == (asker != this.characterSource);
+        }
+      }
+    }
+    return false;
   }
 }

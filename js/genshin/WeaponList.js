@@ -168,6 +168,7 @@ export default class WeaponList extends GenshinList
       {p:"forgery",l:"Forgery Rewards"},
       {p:"strong",l:"Strong Drops"},
       {p:"weak",l:"Weak Drops"},
+      {p:"mora",l:"Mora"},
     ];
     let ascGroup = {label:"Ascension Materials"};
     for(let phase of [undefined,0,1,2,3,4,5])
@@ -180,12 +181,13 @@ export default class WeaponList extends GenshinList
           labelTitle: m.l,
           sort: isNaN(phase) ? {generic: {type:"string", property:m.p+'MatType'}} : undefined,
           columnClasses: ["ascension-materials"],
-          tags: isNaN(phase) ? undefined : ["detailsOnly"],
+          tags: isNaN(phase) && m.l != "Mora" ? undefined : ["detailsOnly"],
           dynamic: true,
           value: item => item.getMat(m.p,phase) && item.getMatCost(m.p,phase) ? item.getMat(m.p,phase).getFieldValue(item.getMatCost(m.p,phase), this.viewer.settings.preferences.listDisplay=='1') : "",
           title: item => item.getMat(m.p,phase)?.getFullSource() ?? "",
           dependencies: item => [
             {item, field:"ascension"},
+            {item:item.viewer.lists.MaterialList.get("Mora"), field:"count"},
             item.getMat(m.p,phase).days ? {item:this.viewer, field:"today"} : {},
           ].concat(item.getMat(m.p,phase).getCraftDependencies()),
         });
@@ -201,6 +203,7 @@ export default class WeaponList extends GenshinList
             {item:item.getMat('forgery',phase), field:"count"},
             {item:item.getMat('strong',phase), field:"count"},
             {item:item.getMat('weak',phase), field:"count"},
+            {item:item.getMat('mora',phase), field:"count"},
             {item, field:"ascension"},
           ],
           button: item => {

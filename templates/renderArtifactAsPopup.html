@@ -56,9 +56,9 @@
         </div>
       {{#each item.wanters}}
         <div class="row">
-            <div class="col-1">#{{ math @key "+" 1}}</div>
+            <div class="col-1">#{{math @key "+" 1}}</div>
             <div class="col-2">{{> renderItemField item=character field="name" wrapper="div"}}</div>
-            <div class="col-1">{{buildId}}</div>
+            <div class="col-1">{{buildName character buildId}}</div>
             <div class="col-1">{{#if onSet}}Yes{{/if}}</div>
             <div class="col-1">#{{rank}}</div>
             <div class="col-2">{{math (math "round" (math score "*" 100000)) "/" 1000}}</div>

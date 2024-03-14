@@ -39,6 +39,7 @@
                         <th>Forgery Mat</th>
                         <th>Strong Mat</th>
                         <th>Weak Mat</th>
+                        <th>Mora</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,6 +49,7 @@
                       {{> renderItemField item=item field=(concat "forgeryMat" @index) wrapper="td"}}
                       {{> renderItemField item=item field=(concat "strongMat" @index) wrapper="td"}}
                       {{> renderItemField item=item field=(concat "weakMat" @index) wrapper="td"}}
+                      {{> renderItemField item=item field=(concat "moraMat" @index) wrapper="td"}}
                     </tr>
                   {{/times}}
                 </tbody>

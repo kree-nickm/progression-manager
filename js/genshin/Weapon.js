@@ -25,7 +25,9 @@ export default class Weapon extends GenshinItem
   
   afterLoad()
   {
-    this.MaterialList = {};
+    this.MaterialList = {
+      mora: this.list.viewer.lists.MaterialList.get("Mora"),
+    };
     if(GenshinWeaponData[this.key])
     {
       this.loaded = true;
@@ -147,6 +149,8 @@ export default class Weapon extends GenshinItem
       return this.MaterialList.strong[this.getPhase(ascension).ascendMatStrongQuality];
     else if(type == "weak")
       return this.MaterialList.weak[this.getPhase(ascension).ascendMatWeakQuality];
+    else if(type == "mora")
+      return this.MaterialList.mora;
     else
       return null;
   }
@@ -159,6 +163,8 @@ export default class Weapon extends GenshinItem
       return this.getPhase(ascension).ascendMatStrongCount[this.rarity];
     else if(type == "weak")
       return this.getPhase(ascension).ascendMatWeakCount[this.rarity];
+    else if(type == "mora")
+      return this.getPhase(ascension).ascendWpnMoraCost[this.rarity];
     else
       return 0;
   }
@@ -174,6 +180,7 @@ export default class Weapon extends GenshinItem
     this.getMat('forgery').update("count", this.getMat('forgery').count - this.getMatCost('forgery'));
     this.getMat('strong').update("count", this.getMat('strong').count - this.getMatCost('strong'));
     this.getMat('weak').update("count", this.getMat('weak').count - this.getMatCost('weak'));
+    this.getMat('mora').update("count", this.getMat('mora').count - this.getMatCost('mora'));
     if(this.level < this.levelCap)
       this.update("level", this.levelCap);
     this.update("ascension", this.ascension+1);
@@ -188,11 +195,13 @@ export default class Weapon extends GenshinItem
     else if(withCrafting)
       return this.getMat('forgery').getCraftCount() >= this.getMatCost('forgery') &&
         this.getMat('strong').getCraftCount() >= this.getMatCost('strong') &&
-        this.getMat('weak').getCraftCount() >= this.getMatCost('weak');
+        this.getMat('weak').getCraftCount() >= this.getMatCost('weak') &&
+        this.getMat('mora')?.getCraftCount() >= this.getMatCost('mora');
     else
       return this.getMat('forgery').count >= this.getMatCost('forgery') &&
         this.getMat('strong').count >= this.getMatCost('strong') &&
-        this.getMat('weak').count >= this.getMatCost('weak');
+        this.getMat('weak').count >= this.getMatCost('weak') &&
+        this.getMat('mora')?.count >= this.getMatCost('mora');
   }
   
   getATK(alternates={})

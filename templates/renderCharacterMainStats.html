@@ -25,7 +25,7 @@
       <div class="col-1">{{> renderItemField item=../item field="stat" params=(array (lower .) 2) wrapper="span"}}</div>
     </div>
   {{/each}}
-  {{#each (array "critRate_" "critDMG_" "eleMas" "enerRech_" "dmg_" "normal_dmg_" "charged_dmg_" "plunging_dmg_" "skill_dmg_" "burst_dmg_" "anemo_dmg_" "cryo_dmg_" "dendro_dmg_" "electro_dmg_" "geo_dmg_" "hydro_dmg_" "pyro_dmg_" "physical_dmg_" "enemy_anemo_res_" "enemy_cryo_res_" "enemy_dendro_res_" "enemy_electro_res_" "enemy_geo_res_" "enemy_hydro_res_" "enemy_pyro_res_" "enemy_def_" "swirl_dmg_" "superconduct_dmg_" "melt_dmg_" "spread_dmg_" "aggravate_dmg_" "bloom_dmg_" "hyperbloom_dmg_" "burgeon_dmg_" "burning_dmg_" "electrocharged_dmg_" "overloaded_dmg_" "vaporize_dmg_" "heal_" "inHeal_" "shield_" "anemo_res_" "cryo_res_" "dendro_res_" "electro_res_" "geo_res_" "hydro_res_" "pyro_res_")}}
+  {{#each (array "critRate_" "critDMG_" "eleMas" "enerRech_" "dmg_" "normal_dmg_" "charged_dmg_" "plunging_dmg_" "skill_dmg_" "burst_dmg_" "anemo_dmg_" "cryo_dmg_" "dendro_dmg_" "electro_dmg_" "geo_dmg_" "hydro_dmg_" "pyro_dmg_" "elemental_dmg_" "physical_dmg_" "enemy_anemo_res_" "enemy_cryo_res_" "enemy_dendro_res_" "enemy_electro_res_" "enemy_geo_res_" "enemy_hydro_res_" "enemy_pyro_res_" "enemy_def_" "swirl_dmg_" "superconduct_dmg_" "melt_dmg_" "spread_dmg_" "aggravate_dmg_" "bloom_dmg_" "hyperbloom_dmg_" "burgeon_dmg_" "burning_dmg_" "electrocharged_dmg_" "overloaded_dmg_" "vaporize_dmg_" "heal_" "inHeal_" "shield_" "anemo_res_" "cryo_res_" "dendro_res_" "electro_res_" "geo_res_" "hydro_res_" "pyro_res_")}}
       {{#ifHasStat ../item .}}
     <div class="row gx-1">
       <div class="col-3">{{statText .}}</div>
@@ -36,7 +36,7 @@
       {{/if}}
     </div>
       {{/ifHasStat}}
-      {{#each (array "Normal Attack" "Charged Attack" "Elemental Skill" "Elemental Burst")}}
+      {{#each (array "Normal Attack" "Charged Attack" "Plunging Attack" "Elemental Skill" "Elemental Burst")}}
           {{#ifHasStat ../../item ../. situation=.}}
     <div class="row gx-1">
       <div class="col-3">&#8627; {{.}}s</div>

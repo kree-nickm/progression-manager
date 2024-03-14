@@ -19,20 +19,15 @@ handlebars.registerHelper("ifHasStat", function(character, statId, options) {
     console.error(`Helper 'ifHasStat' called with invalid character argument:`, character);
     return null;
   }
-  if(options.hash.situation)
-  {
-    let general = character.getStat(statId, {}, {returnNull:true});
-    let situational = character.getStat(statId, {situation:options.hash.situation}, {returnNull:true});
-    if(general !== situational) // TODO: IDK how to handle it if the stat is normally 0, but can proc to be increased, but only in specific situations. For example, Candace increasing the Hydro DMG Bonus for only Normal Attacks after her burst, when she has no Hydro DMG Bonus to begin with.
+  
+  for(let mod of character.teamStatModifiers)
+    if(mod.hasStat(statId, character, {situation:options.hash.situation}))
       return options.fn(this);
-    return options.inverse(this);
-  }
-  else
-  {
-    if(character.getStat(statId, {}, {returnNull:true}) !== null)
-      return options.fn(this);
-    return options.inverse(this);
-  }
+  
+  if(!options.hash.situation && character.getStat(statId))
+    return options.fn(this);
+  
+  return options.inverse(this);
 });
 
 handlebars.registerHelper("getMotionValues", function(character, talent, options) {
@@ -46,6 +41,8 @@ handlebars.registerHelper("isPreviewing", function(character, item, options) {
     console.warn(`Invalid item being checked in isPreview for '${character.name}':`, item);
   return false;
 });
+
+handlebars.registerHelper("buildName", (character, buildId, options) => character?.getBuild(buildId)?.name);
 
 export default class Character extends GenshinItem
 {
@@ -592,7 +589,7 @@ export default class Character extends GenshinItem
     return this.activeTeam ? this.activeTeam.getStatModifiers(this) : this.statModifiers;
   }
   
-  getStat(stat, alternates={}, {returnNull=false}={})
+  getStat(stat, alternates={})
   {
     let baseStat;
     let variant;
@@ -619,7 +616,6 @@ export default class Character extends GenshinItem
     let useMemory = !(alternates?.level || alternates?.ascension || alternates?.weapon || alternates?.weaponLevel || alternates?.weaponAscension || alternates?.refinement || alternates?.flower || alternates?.plume || alternates?.sands || alternates?.goblet || alternates?.circlet || alternates?.constellation || alternates?.autoTalent || alternates?.skillTalent || alternates?.burstTalent);
     if(!useMemory || !remembered)
     {
-      let exists = !returnNull;
       result = GenshinCharacterStats.statBase[stat] ?? 0;
       let baseResult = result;
       let level = alternates?.level??(alternates?.preview?(this.preview.level??this.level):this.level);
@@ -695,15 +691,12 @@ export default class Character extends GenshinItem
           // Apply all valid bonuses.
           this.teamStatModifiers.forEach(mod => {
             result += mod.getStat(baseStat, this, alternates);
-            if(mod.hasStat(baseStat, this, alternates))
-              exists = true;
           });
         }
       }
       else
         result = baseResult;
       
-      result = (exists||result) ? result : null;
       if(useMemory)
         this.saveMemory(result, "stats", alternates?.preview?"preview":alternates?.substats?"artifacts":alternates?.unmodified?"unmodified":"current", stat, alternates?.situation??"general");
     }
@@ -820,6 +813,16 @@ export default class Character extends GenshinItem
           for(let mv in GenshinCharacterData[this.key].talents[t]?.scaling ?? [])
             if(mv == onlyKey)
               talent = t
+        }
+        if(!talent)
+        {
+          this.teamStatModifiers.forEach(mod => {
+            // Dynamically add any motion values we need from stat modifiers.
+            mod.getAddedMotionValues(null, this, alternates).forEach(mv => {
+              if(mv.label == onlyKey)
+                talent = mv.talent;
+            });
+          });
         }
         if(!talent)
         {
@@ -1135,6 +1138,12 @@ export default class Character extends GenshinItem
               motionValue.values[v].value = motionValue.values[v].value/100 * this.getStat("atk", alternates);
               motionValue.values[v].dmgType = "bonus";
             }
+            else if(this.key == "Xianyun" && motionValue.key == "Plunging Attack Shockwave DMG Bonus (% ATK)")
+            {
+              motionValue.newKey = "Plunging Attack Shockwave DMG Bonus";
+              motionValue.values[v].value = motionValue.values[v].value/100 * this.getStat("atk", alternates);
+              motionValue.values[v].dmgType = "bonus";
+            }
             else if(this.key == "Nahida" && motionValue.key.startsWith("Pyro: DMG Bonus"))
             {
               motionValue.newKey = motionValue.key.replace("% - ", "");
@@ -1298,8 +1307,8 @@ export default class Character extends GenshinItem
       return;
     }
     
-    let critRate = this.getStat("critRate_", alternates)/100;
-    let critDMG = 1 + this.getStat("critDMG_", alternates)/100;
+    let critRate;
+    let critDMG;
     let dmgMult = 100;
     if(motionValue.talent == "auto")
     {
@@ -1330,8 +1339,12 @@ export default class Character extends GenshinItem
         baseAdd += this.getStat("charged_dmg", alternates);
         dmgMult = this.getStat("charged_dmg_", alternates);
       }
+      critRate = this.getStat("critRate_", alternates)/100;
+      critDMG = 1 + this.getStat("critDMG_", alternates)/100;
       baseAdd += this.getStat(partialValue.dmgType+"_dmg", alternates) + this.getStat("dmg", alternates);
       dmgMult += this.getStat(partialValue.dmgType+"_dmg_", alternates) + this.getStat("dmg_", alternates);
+      if(partialValue.dmgType != "physical")
+        dmgMult += this.getStat("elemental_dmg_", alternates);
     }
     else if(motionValue.talent == "reaction")
     {
@@ -1346,10 +1359,14 @@ export default class Character extends GenshinItem
       else if(motionValue.talent == "burst")
         alternates.situation = "Elemental Burst";
       partialValue.dmgType = partialValue.dmgType ?? this.element.toLowerCase();
+      critRate = this.getStat("critRate_", alternates)/100;
+      critDMG = 1 + this.getStat("critDMG_", alternates)/100;
       baseAdd += this.getStat(motionValue.talent+"_dmg", alternates);
       dmgMult = this.getStat(motionValue.talent+"_dmg_", alternates);
       baseAdd += this.getStat(partialValue.dmgType+"_dmg", alternates) + this.getStat("dmg", alternates);
       dmgMult += this.getStat(partialValue.dmgType+"_dmg_", alternates) + this.getStat("dmg_", alternates);
+      if(partialValue.dmgType != "physical")
+        dmgMult += this.getStat("elemental_dmg_", alternates);
     }
     
     let level = alternates?.level??(alternates?.preview?(this.preview.level??this.level):this.level);

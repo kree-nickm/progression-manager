@@ -1558,6 +1558,45 @@ export default {
         ],
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Tulaytullah%27s_Remembrance"
     },
+    "UrakuMisugiri": {
+        "name": "Uraku Misugiri",
+        "type": "Sword",
+        "rarity": 5,
+        "baseATK": 44,
+        "stat": "critDMG_",
+        "passive": "Normal Attack DMG is increased by @0% and Elemental Skill DMG is increased by @1%. After a nearby active character deals Geo DMG, the aforementioned effects increase by 100% for 15s. Additionally, the wielder's DEF is increased by @2%.",
+        "refinementData": [
+            {
+                "1": 16,
+                "2": 20,
+                "3": 24,
+                "4": 28,
+                "5": 32
+            },
+            {
+                "1": 24,
+                "2": 30,
+                "3": 36,
+                "4": 42,
+                "5": 48
+            },
+            {
+                "1": 20,
+                "2": 25,
+                "3": 30,
+                "4": 35,
+                "5": 40
+            }
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Uraku_Misugiri",
+        "imgs": [
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/44\/Weapon_Uraku_Misugiri.png",
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/ca\/Weapon_Uraku_Misugiri_2nd.png"
+        ],
+        "matForgery": "Branch",
+        "matStrongEnemy": "Ruin Sentinels",
+        "matWeakEnemy": "Nobushi"
+    },
     "Verdict": {
         "name": "Verdict",
         "rarity": 5,

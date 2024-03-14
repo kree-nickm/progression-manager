@@ -23,6 +23,7 @@ export default class GenshinItem extends UIItem {
     {id:"electro_dmg_", shorthand:"Electro%", full:"Electro DMG Bonus", percent:true},
     {id:"dendro_dmg_", shorthand:"Dendro%", full:"Dendro DMG Bonus", percent:true},
     {id:"geo_dmg_", shorthand:"Geo%", full:"Geo DMG Bonus", percent:true},
+    {id:"elemental_dmg_", shorthand:"Elem%", full:"All Elemental DMG Bonus", percent:true},
     {id:"physical_dmg_", shorthand:"Phys%", full:"Physical DMG Bonus", percent:true},
     {id:"heal_", shorthand:"Heal%", full:"Healing Bonus", percent:true},
     {id:"inHeal_", shorthand:"InHeal%", full:"Incoming Healing Bonus", percent:true},

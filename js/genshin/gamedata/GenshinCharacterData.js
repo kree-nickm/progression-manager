@@ -2961,7 +2961,7 @@ export default {
             "Elemental Skill": {
                 "name": "Tidecaller",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/92\/Talent_Tidecaller.png",
-                "text": "Nothing to worry about. Should anyone raise a hand against her or her men, she will avenge it ten-fold with sword and thunder.<br\/><br\/><b>Press<\/b><br\/>Accumulating the power of lightning, Beidou swings her blade forward fiercely, dealing <span class=\"text-electro\"><b>Electro DMG<\/b><\/span>.<br\/><br\/><b>Hold<\/b><br\/>Lifts her weapon up as a shield. Max DMG absorbed scales off Beidou's Max HP.<br\/>Attacks using the energy stored within the greatsword upon release or once this ability's duration expires, dealing <span class=\"text-electro\"><b>Electro DMG<\/b><\/span>. DMG dealt scales with the number of times Beidou is attacked in the skill's duration. The greatest DMG Bonus will be attained once this effect is triggered twice.<br\/>The shield possesses the following properties:<ul><li>Has 250% <span class=\"text-electro\"><b>Electro DMG<\/b><\/span> Absorption Efficiency.<\/li><li>Applies the <span class=\"text-electro\"><b>Electro element<\/b><\/span> to Beidou upon activation.<\/li><\/ul>",
+                "text": "Nothing to worry about. Should anyone raise a hand against her or her men, she will avenge it ten-fold with sword and thunder.<br\/><br\/><b>(<span class=\"text-tooltip hover-tooltip\">Press<\/span>PressText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">Tap<\/span>TapText for touch screen)<\/b><br\/>Accumulating the power of lightning, Beidou swings her blade forward fiercely, dealing <span class=\"text-electro\"><b>Electro DMG<\/b><\/span>.<br\/><br\/><b>Hold<\/b><br\/>Lifts her weapon up as a shield. Max DMG absorbed scales off Beidou's Max HP.<br\/>Attacks using the energy stored within the greatsword upon release or once this ability's duration expires, dealing <span class=\"text-electro\"><b>Electro DMG<\/b><\/span>. DMG dealt scales with the number of times Beidou is attacked in the skill's duration. The greatest DMG Bonus will be attained once this effect is triggered twice.<br\/>The shield possesses the following properties:<ul><li>Has 250% <span class=\"text-electro\"><b>Electro DMG<\/b><\/span> Absorption Efficiency.<\/li><li>Applies the <span class=\"text-electro\"><b>Electro element<\/b><\/span> to Beidou upon activation.<\/li><\/ul>",
                 "scaling": {
                     "Shield DMG Absorption": {
                         "1": "14.4% Max HP+1,386",
@@ -3410,7 +3410,7 @@ export default {
             "Elemental Skill": {
                 "name": "Passion Overload",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/66\/Talent_Passion_Overload.png",
-                "text": "Bennett puts all his fire and passion for adventuring into his sword. Results may vary based on how fired up he is...<br\/><br\/><b>Press<\/b><br\/>A single, swift flame strike that deals <span class=\"text-pyro\"><b>Pyro DMG<\/b><\/span>.<br\/><br\/><b>Hold (Short)<\/b><br\/>Charges up, resulting in different effects when unleashed based on the Charge Level.<ul><li>Level 1: Strikes twice, dealing <span class=\"text-pyro\"><b>Pyro DMG<\/b><\/span> and launching opponents.<\/li><li>Level 2: Unleashes 3 consecutive attacks that deal impressive <span class=\"text-pyro\"><b>Pyro DMG<\/b><\/span>, but the last attack triggers an explosion that launches both Bennett and the enemy.<\/li><\/ul>Bennett takes no damage from being launched.",
+                "text": "Bennett puts all his fire and passion for adventuring into his sword. Results may vary based on how fired up he is...<br\/><br\/><b>(<span class=\"text-tooltip hover-tooltip\">Press<\/span>PressText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">Tap<\/span>TapText for touch screen)<\/b><br\/>A single, swift flame strike that deals <span class=\"text-pyro\"><b>Pyro DMG<\/b><\/span>.<br\/><br\/><b>Hold (Short)<\/b><br\/>Charges up, resulting in different effects when unleashed based on the Charge Level.<ul><li>Level 1: Strikes twice, dealing <span class=\"text-pyro\"><b>Pyro DMG<\/b><\/span> and launching opponents.<\/li><li>Level 2: Unleashes 3 consecutive attacks that deal impressive <span class=\"text-pyro\"><b>Pyro DMG<\/b><\/span>, but the last attack triggers an explosion that launches both Bennett and the enemy.<\/li><\/ul>Bennett takes no damage from being launched.",
                 "scaling": {
                     "Press DMG (%)": {
                         "1": "137.6",
@@ -4099,9 +4099,9 @@ export default {
                 "code": [
                     "proc",
                     [
-                        "sstat",
+                        "spstat",
                         [
-                            "hydro_dmg_",
+                            "elemental_dmg_",
                             [
                                 "stat%",
                                 0.0005,
@@ -4109,7 +4109,8 @@ export default {
                             ],
                             "Normal Attack"
                         ]
-                    ]
+                    ],
+                    "During Elemental Burst"
                 ]
             },
             "Utility Passive": {
@@ -5125,6 +5126,337 @@ export default {
                 "text": "After 12s of the healing effect from Short-Range Rapid Interdiction Fire, all nearby party members recover HP equivalent to 10% of Chevreuse's Max HP once.<br\/>After a party member is healed by Short-Range Rapid Interdiction Fire, they gain a 20% <span class=\"text-pyro\"><b>Pyro DMG Bonus<\/b><\/span> and <span class=\"text-electro\"><b>Electro DMG Bonus<\/b><\/span> for 8s. Max 3 stacks. Each stack's duration is counted independently."
             }
         }
+    },
+    "Chiori": {
+        "name": "Chiori",
+        "weapon": "Sword",
+        "element": "Geo",
+        "rarity": 5,
+        "ascendStat": "critRate_",
+        "matBoss": "Coppelia",
+        "matFlower": "Dendrobium",
+        "matEnemy": "Specters",
+        "matMastery": "Light",
+        "matTrounce": "Lightless Silk String",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/88\/Chiori_Icon.png",
+        "region": "Inazuma",
+        "release": "March 13, 2024",
+        "patch": "4.5",
+        "hpBase": 890.4,
+        "atkBase": 25.137,
+        "defBase": 74.19,
+        "hpMaxAsc": 3656.4672851562,
+        "atkMaxAsc": 103.21856689453,
+        "defMaxAsc": 304.66799926758,
+        "hakushinID": "10000094",
+        "talents": {
+            "Normal Attack": {
+                "name": "Weaving Blade",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/79\/Sword_Geo.png",
+                "text": "<b>Normal Attack<\/b><br\/>Performs up to 4 rapid strikes.<br\/><br\/><b>Charged Attack<\/b><br\/>Consumes a certain amount of Stamina to unleash 2 rapid sword strikes.<br\/><br\/><b>Plunging Attack<\/b><br\/>Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                "scaling": {
+                    "1-Hit DMG (%)": {
+                        "1": "49.41",
+                        "2": "53.43",
+                        "3": "57.45",
+                        "4": "63.2",
+                        "5": "67.22",
+                        "6": "71.82",
+                        "7": "78.14",
+                        "8": "84.46",
+                        "9": "90.78",
+                        "10": "97.67",
+                        "11": "104.57"
+                    },
+                    "2-Hit DMG (%)": {
+                        "1": "46.83",
+                        "2": "50.65",
+                        "3": "54.46",
+                        "4": "59.9",
+                        "5": "63.72",
+                        "6": "68.07",
+                        "7": "74.06",
+                        "8": "80.05",
+                        "9": "86.04",
+                        "10": "92.58",
+                        "11": "99.11"
+                    },
+                    "3-Hit DMG (%)": {
+                        "1": "30.42+30.42",
+                        "2": "32.89+32.89",
+                        "3": "35.37+35.37",
+                        "4": "38.9+38.9",
+                        "5": "41.38+41.38",
+                        "6": "44.21+44.21",
+                        "7": "48.1+48.1",
+                        "8": "51.99+51.99",
+                        "9": "55.88+55.88",
+                        "10": "60.13+60.13",
+                        "11": "64.37+64.37"
+                    },
+                    "4-Hit DMG (%)": {
+                        "1": "75.12",
+                        "2": "81.24",
+                        "3": "87.35",
+                        "4": "96.09",
+                        "5": "102.2",
+                        "6": "109.19",
+                        "7": "118.8",
+                        "8": "128.41",
+                        "9": "138.02",
+                        "10": "148.5",
+                        "11": "158.98"
+                    },
+                    "Charged Attack DMG (%)": {
+                        "1": "54.31+54.31",
+                        "2": "58.73+58.73",
+                        "3": "63.15+63.15",
+                        "4": "69.46+69.46",
+                        "5": "73.89+73.89",
+                        "6": "78.94+78.94",
+                        "7": "85.88+85.88",
+                        "8": "92.83+92.83",
+                        "9": "99.78+99.78",
+                        "10": "107.35+107.35",
+                        "11": "114.93+114.93"
+                    },
+                    "Charged Attack Stamina Cost": {
+                        "1": "20",
+                        "2": "20",
+                        "3": "20",
+                        "4": "20",
+                        "5": "20",
+                        "6": "20",
+                        "7": "20",
+                        "8": "20",
+                        "9": "20",
+                        "10": "20",
+                        "11": "20"
+                    },
+                    "Plunge DMG (%)": {
+                        "1": "63.93",
+                        "2": "69.14",
+                        "3": "74.34",
+                        "4": "81.77",
+                        "5": "86.98",
+                        "6": "92.93",
+                        "7": "101.1",
+                        "8": "109.28",
+                        "9": "117.46",
+                        "10": "126.38",
+                        "11": "135.3"
+                    },
+                    "Low Plunge DMG (%)": {
+                        "1": "127.84",
+                        "2": "138.24",
+                        "3": "148.65",
+                        "4": "163.51",
+                        "5": "173.92",
+                        "6": "185.81",
+                        "7": "202.16",
+                        "8": "218.51",
+                        "9": "234.86",
+                        "10": "252.7",
+                        "11": "270.54"
+                    },
+                    "High Plunge DMG (%)": {
+                        "1": "159.68",
+                        "2": "172.67",
+                        "3": "185.67",
+                        "4": "204.24",
+                        "5": "217.23",
+                        "6": "232.09",
+                        "7": "252.51",
+                        "8": "272.93",
+                        "9": "293.36",
+                        "10": "315.64",
+                        "11": "337.92"
+                    }
+                }
+            },
+            "Elemental Skill": {
+                "name": "Fluttering Hasode",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4d\/Talent_Fluttering_Hasode.png",
+                "text": "Dashes nimbly forward with silken steps. Once this dash ends, Chiori will summon the automaton doll \"Tamoto\" beside her and sweep her blade upward, dealing <span class=\"text-geo\"><b>AoE Geo DMG<\/b><\/span> to nearby opponents based on her ATK and DEF.<br\/>Holding the Skill will cause it to behave differently.<br\/><br\/><b>Hold<\/b><br\/>Enter Aiming Mode to adjust the dash direction.<br\/><br\/><b>Tamoto<\/b><br\/><ul><li>Will slash at nearby opponents at intervals, dealing <span class=\"text-geo\"><b>AoE Geo DMG<\/b><\/span> based on Chiori's ATK and DEF.<\/li><li>While active, if there are nearby <span class=\"text-geo\"><b>Geo Construct(s)<\/b><\/span> or <span class=\"text-geo\"><b>Geo Construct(s)<\/b><\/span> are created nearby, an additional Tamoto will be summoned next to your active character. Only 1 additional Tamoto can be summoned in this manner, and its duration is independently counted.<\/li><\/ul>",
+                "scaling": {
+                    "Tamoto DMG": {
+                        "1": "82.08% ATK +102.6% DEF",
+                        "2": "88.24% ATK +110.29% DEF",
+                        "3": "94.39% ATK +117.99% DEF",
+                        "4": "102.6% ATK +128.25% DEF",
+                        "5": "108.76% ATK +135.94% DEF",
+                        "6": "114.91% ATK +143.64% DEF",
+                        "7": "123.12% ATK +153.9% DEF",
+                        "8": "131.33% ATK +164.16% DEF",
+                        "9": "139.54% ATK +174.42% DEF",
+                        "10": "147.74% ATK +184.68% DEF",
+                        "11": "155.95% ATK +194.94% DEF",
+                        "12": "164.16% ATK +205.2% DEF",
+                        "13": "174.42% ATK +218.02% DEF"
+                    },
+                    "Tamoto Duration": {
+                        "1": "17s",
+                        "2": "17s",
+                        "3": "17s",
+                        "4": "17s",
+                        "5": "17s",
+                        "6": "17s",
+                        "7": "17s",
+                        "8": "17s",
+                        "9": "17s",
+                        "10": "17s",
+                        "11": "17s",
+                        "12": "17s",
+                        "13": "17s"
+                    },
+                    "Tamoto Attack Interval": {
+                        "1": "3.6s",
+                        "2": "3.6s",
+                        "3": "3.6s",
+                        "4": "3.6s",
+                        "5": "3.6s",
+                        "6": "3.6s",
+                        "7": "3.6s",
+                        "8": "3.6s",
+                        "9": "3.6s",
+                        "10": "3.6s",
+                        "11": "3.6s",
+                        "12": "3.6s",
+                        "13": "3.6s"
+                    },
+                    "Upward Sweep Attack DMG": {
+                        "1": "149.28% ATK +186.6% DEF",
+                        "2": "160.48% ATK +200.59% DEF",
+                        "3": "171.67% ATK +214.59% DEF",
+                        "4": "186.6% ATK +233.25% DEF",
+                        "5": "197.8% ATK +247.25% DEF",
+                        "6": "208.99% ATK +261.24% DEF",
+                        "7": "223.92% ATK +279.9% DEF",
+                        "8": "238.85% ATK +298.56% DEF",
+                        "9": "253.78% ATK +317.22% DEF",
+                        "10": "268.7% ATK +335.88% DEF",
+                        "11": "283.63% ATK +354.54% DEF",
+                        "12": "298.56% ATK +373.2% DEF",
+                        "13": "317.22% ATK +396.53% DEF"
+                    },
+                    "CD": {
+                        "1": "16s",
+                        "2": "16s",
+                        "3": "16s",
+                        "4": "16s",
+                        "5": "16s",
+                        "6": "16s",
+                        "7": "16s",
+                        "8": "16s",
+                        "9": "16s",
+                        "10": "16s",
+                        "11": "16s",
+                        "12": "16s",
+                        "13": "16s"
+                    }
+                }
+            },
+            "Elemental Burst": {
+                "name": "Hiyoku: Twin Blades",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e5\/Talent_Hiyoku_Twin_Blades.png",
+                "text": "Twin blades leave their sheaths as Chiori slices with the clean cuts of a master tailor, dealing <span class=\"text-geo\"><b>AoE Geo DMG<\/b><\/span> based on her ATK and DEF.",
+                "scaling": {
+                    "Skill DMG": {
+                        "1": "256.32% ATK+320.4% DEF",
+                        "2": "275.54% ATK+344.43% DEF",
+                        "3": "294.77% ATK+368.46% DEF",
+                        "4": "320.4% ATK+400.5% DEF",
+                        "5": "339.62% ATK+424.53% DEF",
+                        "6": "358.85% ATK+448.56% DEF",
+                        "7": "384.48% ATK+480.6% DEF",
+                        "8": "410.11% ATK+512.64% DEF",
+                        "9": "435.74% ATK+544.68% DEF",
+                        "10": "461.38% ATK+576.72% DEF",
+                        "11": "487.01% ATK+608.76% DEF",
+                        "12": "512.64% ATK+640.8% DEF",
+                        "13": "544.68% ATK+680.85% DEF"
+                    },
+                    "CD": {
+                        "1": "13.5s",
+                        "2": "13.5s",
+                        "3": "13.5s",
+                        "4": "13.5s",
+                        "5": "13.5s",
+                        "6": "13.5s",
+                        "7": "13.5s",
+                        "8": "13.5s",
+                        "9": "13.5s",
+                        "10": "13.5s",
+                        "11": "13.5s",
+                        "12": "13.5s",
+                        "13": "13.5s"
+                    },
+                    "Energy Cost": {
+                        "1": "50",
+                        "2": "50",
+                        "3": "50",
+                        "4": "50",
+                        "5": "50",
+                        "6": "50",
+                        "7": "50",
+                        "8": "50",
+                        "9": "50",
+                        "10": "50",
+                        "11": "50",
+                        "12": "50",
+                        "13": "50"
+                    }
+                }
+            },
+            "1st Ascension Passive": {
+                "name": "Tailor-Made",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/16\/Talent_Tailor-Made.png",
+                "text": "Gain different effects depending on the next action you take within a short duration after using Fluttering Hasode's upward sweep. If you (<span class=\"text-tooltip hover-tooltip\">Press<\/span>PressText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">Tap<\/span>TapText for touch screen) the Elemental Skill, you will trigger the Tapestry effect. If you (<span class=\"text-tooltip hover-tooltip\">Press<\/span>PressText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">Tap<\/span>TapText for touch screen) your Normal Attack, the Tailoring effect will be triggered instead.<br\/><br\/><b>Tapestry<\/b><br\/><ul><li>Switches to the next character in your roster.<\/li><li>Grants all your party members \"Seize the Moment\": When your active party member's Normal Attacks, Charged Attacks, and Plunging Attacks hit a nearby opponent, \"Tamoto\" will execute a coordinated attack, dealing 100% of Fluttering Hasode's upward sweep DMG as <span class=\"text-geo\"><b>AoE Geo DMG<\/b><\/span> at the opponent's location. DMG dealt this way is considered Elemental Skill DMG.<\/li><li>\"Seize the Moment\" lasts 8s, and 1 of \"Tamoto\"'s coordinated attack can be unleashed every 2s. 2 such coordinated attacks can occur per \"Seize the Moment\" effect duration.<\/li><\/ul><br\/><b>Tailoring<\/b><br\/><ul><li>Chiori gains <span class=\"text-geo\"><b>Geo infusion<\/b><\/span> for 5s.<\/li><\/ul><br\/>When on the field, if Chiori does not either (<span class=\"text-tooltip hover-tooltip\">Press<\/span>PressText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">Tap<\/span>TapText for touch screen) her Elemental Skill or use a Normal Attack within a short time after using Fluttering Hasode's upward sweep, the Tailoring effect will be triggered by default."
+            },
+            "4th Ascension Passive": {
+                "name": "The Finishing Touch",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b6\/Talent_The_Finishing_Touch.png",
+                "text": "When a nearby party member creates a <span class=\"text-geo\"><b>Geo Construct<\/b><\/span>, Chiori will gain 20% <span class=\"text-geo\"><b>Geo DMG Bonus<\/b><\/span> for 20s."
+            },
+            "Utility Passive": {
+                "name": "Brocaded Collar's Beauteous Silhouette",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b7\/Talent_Brocaded_Collar%27s_Beauteous_Silhouette.png",
+                "text": "When any party member is wearing an outfit apart from their default outfit, or is wearing a wind glider other than the Wings of First Flight, your party members will obtain the Swift Stride effect: Movement SPD is increased by 10%.<br\/>This effect does not take effect in Domains, Trounce Domains and the Spiral Abyss. Swift Stride does not stack."
+            }
+        },
+        "constellations": {
+            "1": {
+                "name": "Six Paths of Sage Silkcraft",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/86\/Constellation_Six_Paths_of_Sage_Silkcraft.png",
+                "text": "The AoE of the automaton doll \"Tamoto\" summoned by Fluttering Hasode is increased by 50%.<br\/>Additionally, if there is a <span class=\"text-geo\"><b>Geo<\/b><\/span> party member other than Chiori, Fluttering Hasode will trigger the following after the dash is completed:<br\/><ul><li>Summon an additional Tamoto. Only one additional Tamoto can exist at the same time, whether summoned by Chiori this way or through the presence of a Geo Construct.<\/li><li>Triggers the Passive Talent \"The Finishing Touch.\" This effect requires you to first unlock the Passive Talent \"The Finishing Touch.\"<\/li><\/ul>"
+            },
+            "2": {
+                "name": "In Five Colors Dyed",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/69\/Constellation_In_Five_Colors_Dyed.png",
+                "text": "For 10s after using Hiyoku: Twin Blades, a simplified automaton doll, \"Kinu,\" will be summoned next to your active character every 3s. Kinu will attack nearby opponents, dealing <span class=\"text-geo\"><b>AoE Geo DMG<\/b><\/span> equivalent to 170% of Tamoto's DMG. DMG dealt this way is considered Elemental Skill DMG.<br\/>Kinu will leave the field after 1 attack or after lasting 3s."
+            },
+            "3": {
+                "name": "Four Brocade Embellishments",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/96\/Constellation_Four_Brocade_Embellishments.png",
+                "text": "Increases the Level of Fluttering Hasode by 3.<br\/>Maximum upgrade level is 15."
+            },
+            "4": {
+                "name": "A Tailor's Three Courtesies",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1f\/Constellation_A_Tailor%27s_Three_Courtesies.png",
+                "text": "For 8s after triggering either follow-up effect of the Passive Talent \"Tailor-Made,\" when your current active character's Normal, Charged, or Plunging Attacks hit a nearby opponent, a simplified automaton doll, \"Kinu,\" will be summoned near this opponent. You can summon 1 Kinu every 1s in this way, and up to 3 Kinu may be summoned this way during each instance of \"Tailor-Made\"'s Seize the Moment or Tailoring effect. The above effect can be triggered up to once every 15s.<br\/>Must unlock the Passive Talent \"Tailor-Made\" first."
+            },
+            "5": {
+                "name": "Two Silken Plumules",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/41\/Constellation_Two_Silken_Plumules.png",
+                "text": "Increases the Level of Hiyoku: Twin Blades by 3.<br\/>Maximum upgrade level is 15."
+            },
+            "6": {
+                "name": "Sole Principle Pursuit",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/93\/Constellation_Sole_Principle_Pursuit.png",
+                "text": "After triggering a follow-up effect of the Passive Talent \"Tailor-Made,\" Chiori's own Fluttering Hasode's CD is decreased by 12s. Must unlock the Passive \"Tailor-Made\" first.<br\/>In addition, the DMG dealt by Chiori's own Normal Attacks is increased by an amount equal to 235% of her own DEF."
+            }
+        },
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Chiori"
     },
     "Chongyun": {
         "name": "Chongyun",
@@ -6702,7 +7034,7 @@ export default {
             "Utility Passive": {
                 "name": "The Sunlit Way",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ee\/Talent_The_Sunlit_Way.png",
-                "text": "Increases the Movement SPD of your own party members by 10% during the day (6:00 \u2013 18:00).<br\/>Does not take effect in Domains, Trounce Domains, or Spiral Abyss. Not stackable with Passive Talents that provide the exact same effects."
+                "text": "During the day (6:00 \u2013 18:00), your party members gain the Swift Stride effect: Movement SPD increased by 10%.<br\/>Does not take effect in Domains, Trounce Domains, or Spiral Abyss. Swift Stride does not stack."
             }
         },
         "constellations": {
@@ -7325,7 +7657,7 @@ export default {
             "Elemental Skill": {
                 "name": "Icy Paws",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e9\/Talent_Icy_Paws.png",
-                "text": "Fires an Icy Paw that deals <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span> to opponents and forms a shield on hit.<br\/>The shield's DMG Absorption scales based on Diona's Max HP, and its duration scales off the number of Icy Paws that hit their target.<br\/><br\/><b>Press<\/b><br\/>Rapidly fires off 2 Icy Paws.<br\/><br\/><b>Hold<\/b><br\/>Dashes back quickly before firing 5 Icy Paws.<br\/>The shield created by a Hold attack will gain a 75% DMG Absorption Bonus.<br\/><br\/>The shield has a 250% <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span> Absorption Bonus, and will cause your active character to become affected by <span class=\"text-cryo\"><b>Cryo<\/b><\/span> at the point of formation for a short duration.",
+                "text": "Fires an Icy Paw that deals <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span> to opponents and forms a shield on hit.<br\/>The shield's DMG Absorption scales based on Diona's Max HP, and its duration scales off the number of Icy Paws that hit their target.<br\/><br\/><b>(<span class=\"text-tooltip hover-tooltip\">Press<\/span>PressText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">Tap<\/span>TapText for touch screen)<\/b><br\/>Rapidly fires off 2 Icy Paws.<br\/><br\/><b>Hold<\/b><br\/>Dashes back quickly before firing 5 Icy Paws.<br\/>The shield created by a Hold attack will gain a 75% DMG Absorption Bonus.<br\/><br\/>The shield has a 250% <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span> Absorption Bonus, and will cause your active character to become affected by <span class=\"text-cryo\"><b>Cryo<\/b><\/span> at the point of formation for a short duration.",
                 "scaling": {
                     "Icy Paw DMG (%)": {
                         "1": "41.92 per Paw",
@@ -8200,7 +8532,7 @@ export default {
             "Elemental Skill": {
                 "name": "Icetide Vortex",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ae\/Talent_Icetide_Vortex.png",
-                "text": "Sharp frost, swift blade.<br\/><br\/><b>Press<\/b><br\/>Slashes swiftly, dealing <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span>.<br\/>When it hits an opponent, Eula gains a stack of Grimheart that stacks up to 2 times. These stacks can only be gained once every 0.3s.<br\/><br\/><b>Grimheart<\/b><br\/>Increases Eula's resistance to interruption and DEF.<br\/><br\/><b>Hold<\/b><br\/>Wielding her sword, Eula consumes all the stacks of Grimheart and lashes forward, dealing <span class=\"text-cryo\"><b>AoE Cryo DMG<\/b><\/span> to opponents in front of her.<br\/>If Grimheart stacks are consumed, surrounding opponents will have their <span class=\"text-physical\"><b>Physical RES<\/b><\/span> and <span class=\"text-cryo\"><b>Cryo RES<\/b><\/span> decreased.<br\/>Each consumed stack of Grimheart will be converted into an Icewhirl Brand that deals <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span> to nearby opponents.",
+                "text": "Sharp frost, swift blade.<br\/><br\/><b>(<span class=\"text-tooltip hover-tooltip\">Press<\/span>PressText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">Tap<\/span>TapText for touch screen)<\/b><br\/>Slashes swiftly, dealing <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span>.<br\/>When it hits an opponent, Eula gains a stack of Grimheart that stacks up to 2 times. These stacks can only be gained once every 0.3s.<br\/><br\/><b>Grimheart<\/b><br\/>Increases Eula's resistance to interruption and DEF.<br\/><br\/><b>Hold<\/b><br\/>Wielding her sword, Eula consumes all the stacks of Grimheart and lashes forward, dealing <span class=\"text-cryo\"><b>AoE Cryo DMG<\/b><\/span> to opponents in front of her.<br\/>If Grimheart stacks are consumed, surrounding opponents will have their <span class=\"text-physical\"><b>Physical RES<\/b><\/span> and <span class=\"text-cryo\"><b>Cryo RES<\/b><\/span> decreased.<br\/>Each consumed stack of Grimheart will be converted into an Icewhirl Brand that deals <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span> to nearby opponents.",
                 "scaling": {
                     "Press DMG (%)": {
                         "1": "146.4",
@@ -8492,7 +8824,7 @@ export default {
             "2": {
                 "name": "Lady of Seafoam",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cf\/Constellation_Lady_of_Seafoam.png",
-                "text": "Decreases the CD of Icetide Vortex's Holding Mode, rendering it identical to Tapping CD."
+                "text": "Decreases the CD of Icetide Vortex's Holding Mode, rendering it identical to (<span class=\"text-tooltip hover-tooltip\">Press<\/span>PressText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">Tapping<\/span>TappingText for touch screen) CD."
             },
             "3": {
                 "name": "Lawrence Pedigree",
@@ -9097,7 +9429,7 @@ export default {
             "Elemental Skill": {
                 "name": "Nightrider",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b3\/Talent_Nightrider.png",
-                "text": "Summons Oz. The night raven forged of darkness and lightning descends upon the land, dealing <span class=\"text-electro\"><b>Electro DMG<\/b><\/span> in a small AoE.<br\/>For the ability's duration, Oz will continuously attack nearby opponents with <span class=\"text-electro\"><b>Freikugel<\/b><\/span>.<br\/><br\/>Hold to adjust the location Oz will be summoned to.<br\/>Press again any time during the ability's duration to once again summon him to Fischl's side.",
+                "text": "Summons Oz. The night raven forged of darkness and lightning descends upon the land, dealing <span class=\"text-electro\"><b>Electro DMG<\/b><\/span> in a small AoE.<br\/>For the ability's duration, Oz will continuously attack nearby opponents with <span class=\"text-electro\"><b>Freikugel<\/b><\/span>.<br\/><br\/>Hold to adjust the location Oz will be summoned to.<br\/>(<span class=\"text-tooltip hover-tooltip\">Press<\/span>PressText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">Tap<\/span>TapText for touch screen) again any time during the ability's duration to once again summon him to Fischl's side.",
                 "scaling": {
                     "Oz's ATK DMG (%)": {
                         "1": "88.8",
@@ -10376,17 +10708,286 @@ export default {
             "Normal Attack": {
                 "name": "Stellar Rend",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/57\/Claymore_Pyro.png",
-                "text": "<b>Normal Attack<\/b><br\/>Performs up to 4 consecutive strikes.<br\/><br\/><b>Charged Attack<\/b><br\/>Drains Stamina over time to perform continuous spinning attacks against all nearby opponents.<br\/>At the end of the sequence, performs a more powerful slash. <br\/><br\/><b>Plunging Attack<\/b><br\/>Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact."
+                "text": "<b>Normal Attack<\/b><br\/>Performs up to 4 consecutive strikes.<br\/><br\/><b>Charged Attack<\/b><br\/>Drains Stamina over time to perform continuous spinning attacks against all nearby opponents.<br\/>At the end of the sequence, performs a more powerful slash. <br\/><br\/><b>Plunging Attack<\/b><br\/>Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                "scaling": {
+                    "1-Hit DMG (%)": {
+                        "1": "83.86",
+                        "2": "90.68",
+                        "3": "97.51",
+                        "4": "107.26",
+                        "5": "114.08",
+                        "6": "121.88",
+                        "7": "132.61",
+                        "8": "143.34",
+                        "9": "154.06",
+                        "10": "165.76",
+                        "11": "177.46"
+                    },
+                    "2-Hit DMG (%)": {
+                        "1": "79.04",
+                        "2": "85.48",
+                        "3": "91.91",
+                        "4": "101.1",
+                        "5": "107.54",
+                        "6": "114.89",
+                        "7": "125",
+                        "8": "135.11",
+                        "9": "145.22",
+                        "10": "156.25",
+                        "11": "167.28"
+                    },
+                    "3-Hit DMG (%)": {
+                        "1": "106.65",
+                        "2": "115.33",
+                        "3": "124.01",
+                        "4": "136.41",
+                        "5": "145.09",
+                        "6": "155.01",
+                        "7": "168.65",
+                        "8": "182.29",
+                        "9": "195.93",
+                        "10": "210.81",
+                        "11": "225.69"
+                    },
+                    "4-Hit DMG (%)": {
+                        "1": "127.95",
+                        "2": "138.36",
+                        "3": "148.78",
+                        "4": "163.66",
+                        "5": "174.07",
+                        "6": "185.97",
+                        "7": "202.34",
+                        "8": "218.7",
+                        "9": "235.07",
+                        "10": "252.92",
+                        "11": "270.78"
+                    },
+                    "Charged Attack Cyclic DMG (%)": {
+                        "1": "62.52",
+                        "2": "67.61",
+                        "3": "72.7",
+                        "4": "79.97",
+                        "5": "85.06",
+                        "6": "90.87",
+                        "7": "98.87",
+                        "8": "106.87",
+                        "9": "114.87",
+                        "10": "123.59",
+                        "11": "132.31"
+                    },
+                    "Charged Attack Final DMG (%)": {
+                        "1": "113.09",
+                        "2": "122.29",
+                        "3": "131.5",
+                        "4": "144.65",
+                        "5": "153.86",
+                        "6": "164.37",
+                        "7": "178.84",
+                        "8": "193.31",
+                        "9": "207.77",
+                        "10": "223.55",
+                        "11": "239.33"
+                    },
+                    "Charged Attack Stamina Cost": {
+                        "1": "40\/s",
+                        "2": "40\/s",
+                        "3": "40\/s",
+                        "4": "40\/s",
+                        "5": "40\/s",
+                        "6": "40\/s",
+                        "7": "40\/s",
+                        "8": "40\/s",
+                        "9": "40\/s",
+                        "10": "40\/s",
+                        "11": "40\/s"
+                    },
+                    "Max Duration": {
+                        "1": "5s",
+                        "2": "5s",
+                        "3": "5s",
+                        "4": "5s",
+                        "5": "5s",
+                        "6": "5s",
+                        "7": "5s",
+                        "8": "5s",
+                        "9": "5s",
+                        "10": "5s",
+                        "11": "5s"
+                    },
+                    "Plunge DMG (%)": {
+                        "1": "64.15",
+                        "2": "69.37",
+                        "3": "74.59",
+                        "4": "82.05",
+                        "5": "87.27",
+                        "6": "93.23",
+                        "7": "101.44",
+                        "8": "109.64",
+                        "9": "117.85",
+                        "10": "126.8",
+                        "11": "135.75"
+                    },
+                    "Low Plunge DMG (%)": {
+                        "1": "128.26",
+                        "2": "138.7",
+                        "3": "149.14",
+                        "4": "164.06",
+                        "5": "174.5",
+                        "6": "186.43",
+                        "7": "202.84",
+                        "8": "219.24",
+                        "9": "235.65",
+                        "10": "253.54",
+                        "11": "271.44"
+                    },
+                    "High Plunge DMG (%)": {
+                        "1": "160.21",
+                        "2": "173.25",
+                        "3": "186.29",
+                        "4": "204.92",
+                        "5": "217.96",
+                        "6": "232.86",
+                        "7": "253.35",
+                        "8": "273.84",
+                        "9": "294.34",
+                        "10": "316.69",
+                        "11": "339.05"
+                    }
+                }
             },
             "Elemental Skill": {
                 "name": "Bestial Ascent",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f1\/Talent_Bestial_Ascent.png",
-                "text": "Pounces forward using the Wushou arts, leaping high into the air after coming into contact with a target or surface.<br\/>After Gaming has used Bestial Ascent to rise into the air, he will use the especially powerful Plunging Attack: Charmed Cloudstrider when performing a Plunging Attack.<br\/><br\/><b>Plunging Attack: Charmed Cloudstrider<\/b><br\/>The DMG from Plunging Attacks caused by Bestial Ascent is converted to <span class=\"text-pyro\"><b>Pyro DMG<\/b><\/span> that cannot be overridden by other elemental infusions. Upon landing, Gaming will consume a fixed amount of HP. Gaming's HP cannot be reduced below 10% by this method.<br\/>Charmed Cloudstrider DMG is considered Plunging Attack DMG."
+                "text": "Pounces forward using the Wushou arts, leaping high into the air after coming into contact with a target or surface.<br\/>After Gaming has used Bestial Ascent to rise into the air, he will use the especially powerful Plunging Attack: Charmed Cloudstrider when performing a Plunging Attack.<br\/><br\/><b>Plunging Attack: Charmed Cloudstrider<\/b><br\/>The DMG from Plunging Attacks caused by Bestial Ascent is converted to <span class=\"text-pyro\"><b>Pyro DMG<\/b><\/span> that cannot be overridden by other elemental infusions. Upon landing, Gaming will consume a fixed amount of HP. Gaming's HP cannot be reduced below 10% by this method.<br\/>Charmed Cloudstrider DMG is considered Plunging Attack DMG.",
+                "scaling": {
+                    "Plunging Attack: Charmed Cloudstrider DMG (%)": {
+                        "1": "230.4",
+                        "2": "247.68",
+                        "3": "264.96",
+                        "4": "288",
+                        "5": "305.28",
+                        "6": "322.56",
+                        "7": "345.6",
+                        "8": "368.64",
+                        "9": "391.68",
+                        "10": "414.72",
+                        "11": "437.76",
+                        "12": "460.8",
+                        "13": "489.6"
+                    },
+                    "HP Cost": {
+                        "1": "15% Max HP",
+                        "2": "15% Max HP",
+                        "3": "15% Max HP",
+                        "4": "15% Max HP",
+                        "5": "15% Max HP",
+                        "6": "15% Max HP",
+                        "7": "15% Max HP",
+                        "8": "15% Max HP",
+                        "9": "15% Max HP",
+                        "10": "15% Max HP",
+                        "11": "15% Max HP",
+                        "12": "15% Max HP",
+                        "13": "15% Max HP"
+                    },
+                    "CD": {
+                        "1": "6s",
+                        "2": "6s",
+                        "3": "6s",
+                        "4": "6s",
+                        "5": "6s",
+                        "6": "6s",
+                        "7": "6s",
+                        "8": "6s",
+                        "9": "6s",
+                        "10": "6s",
+                        "11": "6s",
+                        "12": "6s",
+                        "13": "6s"
+                    }
+                }
             },
             "Elemental Burst": {
                 "name": "Suanni's Gilded Dance",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/15\/Talent_Suanni%27s_Gilded_Dance.png",
-                "text": "Gaming enters Wushou Stance, briefly applying <span class=\"text-pyro\"><b>Pyro<\/b><\/span> to him, recovering a fixed amount of HP, and summons his companion, the Suanni Man Chai, to smash into his target, dealing <span class=\"text-pyro\"><b>AoE Pyro DMG<\/b><\/span>.<br\/>After bashing its target, Man Chai will roll to a nearby location before moving towards Gaming. When it links up with Gaming, Man Chai will leave the field and reset the CD for Gaming's Elemental Skill, Bestial Ascent.<br\/>While Wushou Stance is active, his resistance to interruption is increased, and when Gaming lands with Charmed Cloudstrider attack or completes the forward pounce attack from Bestial Ascent with over 50% HP, he will summon Man Chai again.<br\/>Each Gaming can only have 1 Man Chai on the field simultaneously.<br\/>This effect will be canceled once Gaming leaves the field."
+                "text": "Gaming enters Wushou Stance, briefly applying <span class=\"text-pyro\"><b>Pyro<\/b><\/span> to him, recovering a fixed amount of HP, and summons his companion, the Suanni Man Chai, to smash into his target, dealing <span class=\"text-pyro\"><b>AoE Pyro DMG<\/b><\/span>.<br\/>After bashing its target, Man Chai will roll to a nearby location before moving towards Gaming. When it links up with Gaming, Man Chai will leave the field and reset the CD for Gaming's Elemental Skill, Bestial Ascent.<br\/>While Wushou Stance is active, his resistance to interruption is increased, and when Gaming lands with Charmed Cloudstrider attack or completes the forward pounce attack from Bestial Ascent with over 50% HP, he will summon Man Chai again.<br\/>Each Gaming can only have 1 Man Chai on the field simultaneously.<br\/>This effect will be canceled once Gaming leaves the field.",
+                "scaling": {
+                    "Suanni Man Chai Smash DMG": {
+                        "1": "370.4",
+                        "2": "398.18",
+                        "3": "425.96",
+                        "4": "463",
+                        "5": "490.78",
+                        "6": "518.56",
+                        "7": "555.6",
+                        "8": "592.64",
+                        "9": "629.68",
+                        "10": "666.72",
+                        "11": "703.76",
+                        "12": "740.8",
+                        "13": "787.1"
+                    },
+                    "Skill Healing": {
+                        "1": "30% Max HP",
+                        "2": "30% Max HP",
+                        "3": "30% Max HP",
+                        "4": "30% Max HP",
+                        "5": "30% Max HP",
+                        "6": "30% Max HP",
+                        "7": "30% Max HP",
+                        "8": "30% Max HP",
+                        "9": "30% Max HP",
+                        "10": "30% Max HP",
+                        "11": "30% Max HP",
+                        "12": "30% Max HP",
+                        "13": "30% Max HP"
+                    },
+                    "Wushou Stance Duration": {
+                        "1": "12s",
+                        "2": "12s",
+                        "3": "12s",
+                        "4": "12s",
+                        "5": "12s",
+                        "6": "12s",
+                        "7": "12s",
+                        "8": "12s",
+                        "9": "12s",
+                        "10": "12s",
+                        "11": "12s",
+                        "12": "12s",
+                        "13": "12s"
+                    },
+                    "CD": {
+                        "1": "15s",
+                        "2": "15s",
+                        "3": "15s",
+                        "4": "15s",
+                        "5": "15s",
+                        "6": "15s",
+                        "7": "15s",
+                        "8": "15s",
+                        "9": "15s",
+                        "10": "15s",
+                        "11": "15s",
+                        "12": "15s",
+                        "13": "15s"
+                    },
+                    "Energy Cost": {
+                        "1": "60",
+                        "2": "60",
+                        "3": "60",
+                        "4": "60",
+                        "5": "60",
+                        "6": "60",
+                        "7": "60",
+                        "8": "60",
+                        "9": "60",
+                        "10": "60",
+                        "11": "60",
+                        "12": "60",
+                        "13": "60"
+                    }
+                }
             },
             "1st Ascension Passive": {
                 "name": "Dance of Amity",
@@ -10401,7 +11002,7 @@ export default {
             "Utility Passive": {
                 "name": "The Striding Beast",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ee\/Talent_The_Sunlit_Way.png",
-                "text": "Increases the Movement SPD of your own party members by 10% during the day (6:00 \u2013 18:00).<br\/>Does not take effect in Domains, Trounce Domains, or Spiral Abyss. Not stackable with Passive Talents that provide the exact same effects."
+                "text": "During the day (6:00 \u2013 18:00), your party members gain the Swift Stride effect: Movement SPD increased by 10%.<br\/>Does not take effect in Domains, Trounce Domains, or Spiral Abyss. Swift Stride does not stack."
             }
         },
         "constellations": {
@@ -12314,7 +12915,7 @@ export default {
             "Elemental Skill": {
                 "name": "Chihayaburu",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/22\/Talent_Chihayaburu.png",
-                "text": "Unleashes a secret technique as fierce as the rushing wind that pulls objects and opponents towards Kazuha's current position before launching opponents within the AoE, dealing <span class=\"text-anemo\"><b>Anemo DMG<\/b><\/span> and lifting Kazuha into the air on a rushing gust of wind.<br\/>Within 10s of remaining airborne after casting Chihayaburu, Kazuha can unleash a powerful Plunging Attack known as Midare Ranzan.<br\/><br\/><b>Press<\/b><br\/>Can be used in mid-air.<br\/><br\/><b>Hold<\/b><br\/>Charges up before unleashing greater <span class=\"text-anemo\"><b>Anemo DMG<\/b><\/span> over a larger AoE than Press Mode.<br\/><br\/><b>Plunging Attack: Midare Ranzan<\/b><br\/>When a Plunging Attack is performed using the effects of the Elemental Skill Chihayaburu, Plunging Attack DMG is converted to <span class=\"text-anemo\"><b>Anemo DMG<\/b><\/span>. On landing, Kazuha creates a small wind tunnel via a secret blade technique that pulls in nearby objects and opponents.<br\/>Midare Ranzan's DMG is considered Plunging Attack DMG.",
+                "text": "Unleashes a secret technique as fierce as the rushing wind that pulls objects and opponents towards Kazuha's current position before launching opponents within the AoE, dealing <span class=\"text-anemo\"><b>Anemo DMG<\/b><\/span> and lifting Kazuha into the air on a rushing gust of wind.<br\/>Within 10s of remaining airborne after casting Chihayaburu, Kazuha can unleash a powerful Plunging Attack known as Midare Ranzan.<br\/><br\/><b>(<span class=\"text-tooltip hover-tooltip\">Press<\/span>PressText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">Tap<\/span>TapText for touch screen)<\/b><br\/>Can be used in mid-air.<br\/><br\/><b>Hold<\/b><br\/>Charges up before unleashing greater <span class=\"text-anemo\"><b>Anemo DMG<\/b><\/span> over a larger AoE than (<span class=\"text-tooltip hover-tooltip\">Press<\/span>PressText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">Tap<\/span>TapText for touch screen) Mode.<br\/><br\/><b>Plunging Attack: Midare Ranzan<\/b><br\/>When a Plunging Attack is performed using the effects of the Elemental Skill Chihayaburu, Plunging Attack DMG is converted to <span class=\"text-anemo\"><b>Anemo DMG<\/b><\/span>. On landing, Kazuha creates a small wind tunnel via a secret blade technique that pulls in nearby objects and opponents.<br\/>Midare Ranzan's DMG is considered Plunging Attack DMG.",
                 "scaling": {
                     "Press Skill DMG (%)": {
                         "1": "192.00",
@@ -12546,7 +13147,7 @@ export default {
             "4": {
                 "name": "Oozora Genpou",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/07\/Constellation_Oozora_Genpou.png",
-                "text": "When Kaedehara Kazuha's Energy is lower than 45, he obtains the following effects:\n<ul><li>Pressing or Holding Chihayaburu regenerates 3 or 4 Energy for Kaedehara Kazuha, respectively.<\/li>\n<li>When gliding, Kaedehara Kazuha regenerates 2 Energy per second.<\/li><\/ul>"
+                "text": "When Kaedehara Kazuha's Energy is lower than 45, he obtains the following effects:\n<ul><li>(<span class=\"text-tooltip hover-tooltip\">Pressing<\/span>PressingText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">Tapping<\/span>TappingText for touch screen) or Holding Chihayaburu regenerates 3 or 4 Energy for Kaedehara Kazuha, respectively.<\/li>\n<li>When gliding, Kaedehara Kazuha regenerates 2 Energy per second.<\/li><\/ul>"
             },
             "5": {
                 "name": "Wisdom of Bansei",
@@ -14664,7 +15265,7 @@ export default {
             "Elemental Skill": {
                 "name": "Meow-teor Kick",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/79\/Talent_Meow-teor_Kick.png",
-                "text": "<b>Press<\/b><br\/>Leaps into the air with all the agility of a cat passing through the bushes, and thwacks her foes with a flying kick that deals <span class=\"text-dendro\"><b>AoE Dendro DMG<\/b><\/span> while creating a Shield of Safe Transport. This will also briefly apply <span class=\"text-dendro\"><b>Dendro<\/b><\/span> to Kirara.<br\/>The shield will absorb <span class=\"text-dendro\"><b>Dendro DMG<\/b><\/span> with 250% effectiveness. The shield's DMG absorption will be based on Kirara's Max HP and will not exceed a certain percentage of that Max HP. The remaining DMG absorption on a Shield of Safe Transport will stack on a new one when it is created, and its duration will reset.<br\/><br\/><b>Hold<\/b><br\/>Out of her desire to \"deliver within half a day,\" Kirara deploys a Shield of Safe Transport identical to the one that can be created by pressing the skill. She will also curl up into a special express delivery box, entering the Urgent Neko Parcel state in order to move and fight more swiftly.<br\/><br\/><b>Urgent Neko Parcel<\/b><ul><li>Deals Dendro DMG to opponents she crashes into. This effect can be triggered once on each opponent every 0.5s.<\/li><li>When in this state, Kirara's movement speed, climbing speed, and jumping power are all increased, and her Stamina Consumption from climbing is increased.<\/li><li>When the duration ends or the skill is used again, a Flipclaw Strike more powerful than the attack in the Mode will be unleashed, dealing <span class=\"text-dendro\"><b>AoE Dendro DMG<\/b><\/span>.<\/li><li>The Urgent Neko Parcel state lasts a maximum of 10s. When the state ends, the skill will enter CD. The longer Kirara spends in this state, the longer the CD will be.<\/li><li>Sprinting or actively canceling climbing will end this state early.<\/li><\/ul>",
+                "text": "<b>(<span class=\"text-tooltip hover-tooltip\">Press<\/span>PressText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">Tap<\/span>TapText for touch screen)<\/b><br\/>Leaps into the air with all the agility of a cat passing through the bushes, and thwacks her foes with a flying kick that deals <span class=\"text-dendro\"><b>AoE Dendro DMG<\/b><\/span> while creating a Shield of Safe Transport. This will also briefly apply <span class=\"text-dendro\"><b>Dendro<\/b><\/span> to Kirara.<br\/>The shield will absorb <span class=\"text-dendro\"><b>Dendro DMG<\/b><\/span> with 250% effectiveness. The shield's DMG absorption will be based on Kirara's Max HP and will not exceed a certain percentage of that Max HP. The remaining DMG absorption on a Shield of Safe Transport will stack on a new one when it is created, and its duration will reset.<br\/><br\/><b>Hold<\/b><br\/>Out of her desire to \"deliver within half a day,\" Kirara deploys a Shield of Safe Transport identical to the one that can be created by (<span class=\"text-tooltip hover-tooltip\">pressing<\/span>pressingText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">tapping<\/span>tappingText for touch screen) the skill. She will also curl up into a special express delivery box, entering the Urgent Neko Parcel state in order to move and fight more swiftly.<br\/><br\/><b>Urgent Neko Parcel<\/b><ul><li>Deals Dendro DMG to opponents she crashes into. This effect can be triggered once on each opponent every 0.5s.<\/li><li>When in this state, Kirara's movement speed, climbing speed, and jumping power are all increased, and her Stamina Consumption from climbing is increased.<\/li><li>When the duration ends or the skill is used again, a Flipclaw Strike more powerful than the attack in the (<span class=\"text-tooltip hover-tooltip\">Press<\/span>PressText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">Tap<\/span>TapText for touch screen) Mode will be unleashed, dealing <span class=\"text-dendro\"><b>AoE Dendro DMG<\/b><\/span>.<\/li><li>The Urgent Neko Parcel state lasts a maximum of 10s. When the state ends, the skill will enter CD. The longer Kirara spends in this state, the longer the CD will be.<\/li><li>Sprinting or actively canceling climbing will end this state early.<\/li><\/ul>",
                 "scaling": {
                     "Tail-Flicking Flying Kick DMG": {
                         "1": "104",
@@ -16538,7 +17139,7 @@ export default {
             "Elemental Skill": {
                 "name": "Violet Arc",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c8\/Talent_Violet_Arc.png",
-                "text": "Channels the power of lightning to sweep bothersome matters away.<br\/><br\/><b>Press<\/b><br\/>Releases a homing Lightning Orb.<br\/>On hit, it deals <span class=\"text-electro\"><b>Electro DMG<\/b><\/span> and applies a stack of the Conductive status (max 3 stacks) to opponents in a small AoE.<br\/><br\/><b>Hold<\/b><br\/>After an extended casting time, calls down lightning from the heavens, dealing massive <span class=\"text-electro\"><b>Electro DMG<\/b><\/span> to all nearby opponents.<br\/>Deals great amounts of extra damage to opponents based on the number of Conductive stacks applied to them, and clears their Conductive status.",
+                "text": "Channels the power of lightning to sweep bothersome matters away.<br\/><br\/><b>(<span class=\"text-tooltip hover-tooltip\">Press<\/span>PressText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">Tap<\/span>TapText for touch screen)<\/b><br\/>Releases a homing Lightning Orb.<br\/>On hit, it deals <span class=\"text-electro\"><b>Electro DMG<\/b><\/span> and applies a stack of the Conductive status (max 3 stacks) to opponents in a small AoE.<br\/><br\/><b>Hold<\/b><br\/>After an extended casting time, calls down lightning from the heavens, dealing massive <span class=\"text-electro\"><b>Electro DMG<\/b><\/span> to all nearby opponents.<br\/>Deals great amounts of extra damage to opponents based on the number of Conductive stacks applied to them, and clears their Conductive status.",
                 "scaling": {
                     "Press DMG (%)": {
                         "1": "80",
@@ -16931,7 +17532,7 @@ export default {
             "Elemental Skill": {
                 "name": "Enigmatic Feint",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4e\/Talent_Enigmatic_Feint.png",
-                "text": "Flicks her mantle and executes an Enigma Thrust, dealing <span class=\"text-anemo\"><b>Anemo DMG<\/b><\/span>.<br\/>When the Enigma Thrust hits an opponent, it will restore Lynette's HP based on her Max HP, and in the 4s afterward, she will lose a certain amount of HP per second.<br\/>Based on whether you press or hold this ability, she will use Enigma Thrust differently.<br\/><br\/><b>Press<\/b><br\/>She swiftly uses an Enigma Thrust.<br\/><br\/><b>Hold<\/b><br\/>Lynette will enter a high-speed Pilfering Shadow state and apply Shadowsign to a nearby opponent. You can control her movement direction during this state, and you can end it prematurely by using this skill again.<br\/>When this high-speed state ends, Lynette will unleash her Enigma Thrust. If there is an opponent with Shadowsign applied to them nearby, Lynette will approach them in a flash before using Enigma Thrust.<br\/><br\/>A maximum of 1 opponent can have Shadowsign at any one time. When this opponent gets too far from Lynette, the Shadowsign will be canceled.<br\/><br\/><b>Arkhe: Ousia<\/b><br\/>At specific intervals, Lynette will unleash a Surging Blade when she uses Enigma Thrust, dealing Ousia-aligned <span class=\"text-anemo\"><b>Anemo DMG<\/b><\/span>.",
+                "text": "Flicks her mantle and executes an Enigma Thrust, dealing <span class=\"text-anemo\"><b>Anemo DMG<\/b><\/span>.<br\/>When the Enigma Thrust hits an opponent, it will restore Lynette's HP based on her Max HP, and in the 4s afterward, she will lose a certain amount of HP per second.<br\/>Based on whether you (<span class=\"text-tooltip hover-tooltip\">press<\/span>pressText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">tap<\/span>tapText for touch screen) or hold this ability, she will use Enigma Thrust differently.<br\/><br\/><b>(<span class=\"text-tooltip hover-tooltip\">Press<\/span>PressText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">Tap<\/span>TapText for touch screen)<\/b><br\/>She swiftly uses an Enigma Thrust.<br\/><br\/><b>Hold<\/b><br\/>Lynette will enter a high-speed Pilfering Shadow state and apply Shadowsign to a nearby opponent. You can control her movement direction during this state, and you can end it prematurely by using this skill again.<br\/>When this high-speed state ends, Lynette will unleash her Enigma Thrust. If there is an opponent with Shadowsign applied to them nearby, Lynette will approach them in a flash before using Enigma Thrust.<br\/><br\/>A maximum of 1 opponent can have Shadowsign at any one time. When this opponent gets too far from Lynette, the Shadowsign will be canceled.<br\/><br\/><b>Arkhe: Ousia<\/b><br\/>At specific intervals, Lynette will unleash a Surging Blade when she uses Enigma Thrust, dealing Ousia-aligned <span class=\"text-anemo\"><b>Anemo DMG<\/b><\/span>.",
                 "scaling": {
                     "Enigma Thrust DMG": {
                         "1": "268",
@@ -22112,7 +22713,7 @@ export default {
             "Elemental Skill": {
                 "name": "Claw and Thunder",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/06\/Talent_Claw_and_Thunder.png",
-                "text": "Hunts his prey using the techniques taught to him by his master and his lupical.<br\/><br\/><b>Press<\/b><br\/>Swings the Thunder Wolf Claw, dealing <span class=\"text-electro\"><b>Electro DMG<\/b><\/span> to opponents in front of Razor.<br\/>Upon striking an opponent, Razor will gain an Electro Sigil, which increases his Energy Recharge rate.<br\/>Razor can have up to 3 Electro Sigils simultaneously, and gaining a new Electro Sigil refreshes their duration.<br\/><br\/><b>Hold<\/b><br\/>Gathers Electro energy to unleash a lightning storm over a small AoE, causing massive <span class=\"text-electro\"><b>Electro DMG<\/b><\/span>, and clears all of Razor's Electro Sigils.<br\/>Each Electro Sigil cleared in this manner will be converted into Energy for Razor.",
+                "text": "Hunts his prey using the techniques taught to him by his master and his lupical.<br\/><br\/><b>(<span class=\"text-tooltip hover-tooltip\">Press<\/span>PressText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">Tap<\/span>TapText for touch screen)<\/b><br\/>Swings the Thunder Wolf Claw, dealing <span class=\"text-electro\"><b>Electro DMG<\/b><\/span> to opponents in front of Razor.<br\/>Upon striking an opponent, Razor will gain an Electro Sigil, which increases his Energy Recharge rate.<br\/>Razor can have up to 3 Electro Sigils simultaneously, and gaining a new Electro Sigil refreshes their duration.<br\/><br\/><b>Hold<\/b><br\/>Gathers Electro energy to unleash a lightning storm over a small AoE, causing massive <span class=\"text-electro\"><b>Electro DMG<\/b><\/span>, and clears all of Razor's Electro Sigils.<br\/>Each Electro Sigil cleared in this manner will be converted into Energy for Razor.",
                 "scaling": {
                     "Press Skill DMG (%)": {
                         "1": "199.2",
@@ -22389,7 +22990,7 @@ export default {
             "4": {
                 "name": "Bite",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/01\/Constellation_Bite.png",
-                "text": "When casting Claw and Thunder (Press), opponents hit will have their DEF decreased by 15% for 7s."
+                "text": "When casting Claw and Thunder ((<span class=\"text-tooltip hover-tooltip\">Press<\/span>PressText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">Tap<\/span>TapText for touch screen)), opponents hit will have their DEF decreased by 15% for 7s."
             },
             "5": {
                 "name": "Sharpened Claws",
@@ -22734,7 +23335,7 @@ export default {
             "Utility Passive": {
                 "name": "Night Walk",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c8\/Talent_Night_Walk.png",
-                "text": "At night (18:00 \u2013 6:00), increases the Movement SPD of your own party members by 10%.<br\/>Does not take effect in Domains, Trounce Domains, or Spiral Abyss. Not stackable with Passive Talents that provide the same effects."
+                "text": "At night (18:00 \u2013 6:00), your party members gain the Swift Stride effect: Movement SPD increased by 10%.<br\/>Does not take effect in Domains, Trounce Domains, or Spiral Abyss. Swift Stride does not stack."
             }
         },
         "constellations": {
@@ -23404,7 +24005,7 @@ export default {
             "Elemental Skill": {
                 "name": "Yoohoo Art: Fuuin Dash",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4b\/Talent_Yoohoo_Art_Fuuin_Dash.png",
-                "text": "The special technique of the Yoohoo Ninja Arts!<br\/>Sayu curls up into a rolling Fuufuu Windwheel and smashes into opponents at high speed, dealing <span class=\"text-anemo\"><b>Anemo DMG<\/b><\/span>. When the duration ends, she unleashes a Fuufuu Whirlwind Kick, dealing <span class=\"text-anemo\"><b>AoE Anemo DMG<\/b><\/span>.<br\/><br\/><b>Press<\/b><br\/>Enters the Fuufuu Windwheel state, rolling forward a short distance before using the Fuufuu Whirlwind Kick.<br\/><br\/><b>Hold<\/b><br\/>Rolls about continuously in the Fuufuu Windwheel state, increasing Sayu's resistance to interruption while within that state.<br\/>During this time, Sayu can control the direction of her roll, and can use the skill again to end her Windwheel state early and unleash a stronger version of the Fuufuu Whirlwind Kick.<br\/>The Hold version of this skill can trigger Elemental Absorption.<br\/><br\/>This skill has a maximum duration of 10s and enters CD once its effects end.<br\/>The longer Sayu remains in her Windwheel state, the longer the CD.<br\/><br\/><b>Elemental Absorption<\/b><br\/>If Sayu comes into contact with <span class=\"text-hydro\"><b>Hydro<\/b><\/span>\/<span class=\"text-pyro\"><b>Pyro<\/b><\/span>\/<span class=\"text-cryo\"><b>Cryo<\/b><\/span>\/<span class=\"text-electro\"><b>Electro<\/b><\/span> while in her Windwheel state, she will deal additional elemental DMG of that type.<br\/>Elemental Absorption may only occur once per use of this skill.",
+                "text": "The special technique of the Yoohoo Ninja Arts!<br\/>Sayu curls up into a rolling Fuufuu Windwheel and smashes into opponents at high speed, dealing <span class=\"text-anemo\"><b>Anemo DMG<\/b><\/span>. When the duration ends, she unleashes a Fuufuu Whirlwind Kick, dealing <span class=\"text-anemo\"><b>AoE Anemo DMG<\/b><\/span>.<br\/><br\/><b>(<span class=\"text-tooltip hover-tooltip\">Press<\/span>PressText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">Tap<\/span>TapText for touch screen)<\/b><br\/>Enters the Fuufuu Windwheel state, rolling forward a short distance before using the Fuufuu Whirlwind Kick.<br\/><br\/><b>Hold<\/b><br\/>Rolls about continuously in the Fuufuu Windwheel state, increasing Sayu's resistance to interruption while within that state.<br\/>During this time, Sayu can control the direction of her roll, and can use the skill again to end her Windwheel state early and unleash a stronger version of the Fuufuu Whirlwind Kick.<br\/>The Hold version of this skill can trigger Elemental Absorption.<br\/><br\/>This skill has a maximum duration of 10s and enters CD once its effects end.<br\/>The longer Sayu remains in her Windwheel state, the longer the CD.<br\/><br\/><b>Elemental Absorption<\/b><br\/>If Sayu comes into contact with <span class=\"text-hydro\"><b>Hydro<\/b><\/span>\/<span class=\"text-pyro\"><b>Pyro<\/b><\/span>\/<span class=\"text-cryo\"><b>Cryo<\/b><\/span>\/<span class=\"text-electro\"><b>Electro<\/b><\/span> while in her Windwheel state, she will deal additional elemental DMG of that type.<br\/>Elemental Absorption may only occur once per use of this skill.",
                 "scaling": {
                     "Fuufuu Windwheel DMG (%)": {
                         "1": "36.0",
@@ -23650,7 +24251,7 @@ export default {
             "2": {
                 "name": "Egress Prep",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/31\/Constellation_Egress_Prep.png",
-                "text": "Yoohoo Art: Fuuin Dash gains the following effects:\n<ul><li>DMG of Fuufuu Whirlwind Kick in Tapping <i>(mobile)<\/i>\/Press <i>(PC & PlayStation)<\/i> Mode increased by 3.3%.<\/li>\n<li>Every 0.5s in the Fuufuu Windwheel state will increase the DMG of this Fuufuu Whirlwind Kick by 3.3%. The maximum DMG increase possible through this method is 66%.<\/li><\/ul>"
+                "text": "Yoohoo Art: Fuuin Dash gains the following effects:\n<ul><li>DMG of Fuufuu Whirlwind Kick in (<span class=\"text-tooltip hover-tooltip\">Press<\/span>PressText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">Tapping<\/span>TappingText for touch screen) Mode increased by 3.3%.<\/li>\n<li>Every 0.5s in the Fuufuu Windwheel state will increase the DMG of this Fuufuu Whirlwind Kick by 3.3%. The maximum DMG increase possible through this method is 66%.<\/li><\/ul>"
             },
             "3": {
                 "name": "Eh, the Bunshin Can Handle It",
@@ -23851,7 +24452,7 @@ export default {
             "Elemental Skill": {
                 "name": "Spring Spirit Summoning",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6c\/Talent_Spring_Spirit_Summoning.png",
-                "text": "The frosted dew, silvery and dense, shall exorcise all demons.<br\/>Grants all nearby party members the Icy Quill effect and deals <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span> in different ways based on whether it is pressed or held.<br\/><br\/><b>Press<\/b><br\/>Rushes forward together with a Talisman Spirit, dealing <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span> to opponents along the path.<br\/><br\/><b>Hold<\/b><br\/>Commands the Talisman Spirit to deal <span class=\"text-cryo\"><b>AoE Cryo DMG<\/b><\/span>.<br\/><br\/><b>Icy Quill<\/b><br\/>When Normal, Charged, and Plunging Attacks, Elemental Skills, and Elemental Bursts deal <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span> to opponents, the DMG dealt is increased based on Shenhe's current ATK.<br\/><br\/>The Icy Quill's effects will be cleared once its duration ends or after being triggered a certain number of times.<br\/>When held rather than pressed, the Icy Quill's effect lasts longer and can be triggered more times.<br\/>When one <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span> instance strikes multiple opponents, the effect is triggered multiple times based on the number of opponents hit. The number of times the effect is triggered is calculated independently for each party member with the Icy Quill.",
+                "text": "The frosted dew, silvery and dense, shall exorcise all demons.<br\/>Grants all nearby party members the Icy Quill effect and deals <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span> in different ways based on whether it is (<span class=\"text-tooltip hover-tooltip\">pressed<\/span>pressedText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">tapped<\/span>tappedText for touch screen) or held.<br\/><br\/><b>(<span class=\"text-tooltip hover-tooltip\">Press<\/span>PressText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">Tap<\/span>TapText for touch screen)<\/b><br\/>Rushes forward together with a Talisman Spirit, dealing <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span> to opponents along the path.<br\/><br\/><b>Hold<\/b><br\/>Commands the Talisman Spirit to deal <span class=\"text-cryo\"><b>AoE Cryo DMG<\/b><\/span>.<br\/><br\/><b>Icy Quill<\/b><br\/>When Normal, Charged, and Plunging Attacks, Elemental Skills, and Elemental Bursts deal <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span> to opponents, the DMG dealt is increased based on Shenhe's current ATK.<br\/><br\/>The Icy Quill's effects will be cleared once its duration ends or after being triggered a certain number of times.<br\/>When held rather than (<span class=\"text-tooltip hover-tooltip\">pressed<\/span>pressedText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">tapped<\/span>tappedText for touch screen), the Icy Quill's effect lasts longer and can be triggered more times.<br\/>When one <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span> instance strikes multiple opponents, the effect is triggered multiple times based on the number of opponents hit. The number of times the effect is triggered is calculated independently for each party member with the Icy Quill.",
                 "code": [
                     [
                         "proc",
@@ -24128,7 +24729,7 @@ export default {
             "4th Ascension Passive": {
                 "name": "Spirit Communion Seal",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5c\/Talent_Spirit_Communion_Seal.png",
-                "text": "After Shenhe uses Spring Spirit Summoning, she will grant all nearby party members the following effects:\n<ul><li>Press: Elemental Skill and Elemental Burst DMG increased by 15% for 10s.<\/li>\n<li>Hold: Normal, Charged, and Plunging Attack DMG increased by 15% for 15s.<\/li><\/ul>",
+                "text": "After Shenhe uses Spring Spirit Summoning, she will grant all nearby party members the following effects:\n<ul><li>(<span class=\"text-tooltip hover-tooltip\">Press<\/span>PressText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">Tap<\/span>TapText for touch screen): Elemental Skill and Elemental Burst DMG increased by 15% for 10s.<\/li>\n<li>Hold: Normal, Charged, and Plunging Attack DMG increased by 15% for 15s.<\/li><\/ul>",
                 "code": [
                     [
                         "proc",
@@ -26469,7 +27070,7 @@ export default {
             "Elemental Skill": {
                 "name": "Skyward Sonnet",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/17\/Talent_Skyward_Sonnet.png",
-                "text": "O wind upon which all hymns and songs fly, bear these earth-walkers up into the sky!<br\/><br\/><b>Press<\/b><br\/>Summons a Wind Domain at the opponent's location, dealing <span class=\"text-anemo\"><b>AoE Anemo DMG<\/b><\/span> and launching opponents into the air.<br\/><br\/><b>Hold<\/b><br\/>Summons an even larger Wind Domain with Venti as the epicenter, dealing <span class=\"text-anemo\"><b>AoE Anemo DMG<\/b><\/span> and launching affected opponents into the air.<br\/>After unleashing the Hold version of this ability, Venti rides the wind into the air.<br\/><br\/>Opponents hit by Skyward Sonnet will fall to the ground slowly.",
+                "text": "O wind upon which all hymns and songs fly, bear these earth-walkers up into the sky!<br\/><br\/><b>(<span class=\"text-tooltip hover-tooltip\">Press<\/span>PressText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">Tap<\/span>TapText for touch screen)<\/b><br\/>Summons a Wind Domain at the opponent's location, dealing <span class=\"text-anemo\"><b>AoE Anemo DMG<\/b><\/span> and launching opponents into the air.<br\/><br\/><b>Hold<\/b><br\/>Summons an even larger Wind Domain with Venti as the epicenter, dealing <span class=\"text-anemo\"><b>AoE Anemo DMG<\/b><\/span> and launching affected opponents into the air.<br\/>After unleashing the Hold version of this ability, Venti rides the wind into the air.<br\/><br\/>Opponents hit by Skyward Sonnet will fall to the ground slowly.",
                 "scaling": {
                     "Press DMG (%)": {
                         "1": "276",
@@ -27834,27 +28435,348 @@ export default {
             "Normal Attack": {
                 "name": "Word of Wind and Flower",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dd\/Catalyst_Anemo.png",
-                "text": "<b>Normal Attack<\/b><br\/>Summons swirling winds to perform up to 4 attacks, dealing <span class=\"text-anemo\"><b>Anemo DMG<\/b><\/span>.<br\/><br\/><b>Charged Attack<\/b><br\/>Consumes a certain amount of Stamina and launches a Breeze Bolt in a straight line that deals <span class=\"text-anemo\"><b>Anemo DMG<\/b><\/span> to opponents along its path.<br\/><br\/><b>Plunging Attack<\/b><br\/>Gathers the power of Anemo and plunges towards the ground from mid-air, damaging all opponents in her path. Deals <span class=\"text-anemo\"><b>AoE Anemo DMG<\/b><\/span> upon impact with the ground."
+                "text": "<b>Normal Attack<\/b><br\/>Summons swirling winds to perform up to 4 attacks, dealing <span class=\"text-anemo\"><b>Anemo DMG<\/b><\/span>.<br\/><br\/><b>Charged Attack<\/b><br\/>Consumes a certain amount of Stamina and launches a Breeze Bolt in a straight line that deals <span class=\"text-anemo\"><b>Anemo DMG<\/b><\/span> to opponents along its path.<br\/><br\/><b>Plunging Attack<\/b><br\/>Gathers the power of Anemo and plunges towards the ground from mid-air, damaging all opponents in her path. Deals <span class=\"text-anemo\"><b>AoE Anemo DMG<\/b><\/span> upon impact with the ground.",
+                "scaling": {
+                    "1-Hit DMG (%)": {
+                        "1": "40.3",
+                        "2": "43.33",
+                        "3": "46.35",
+                        "4": "50.38",
+                        "5": "53.4",
+                        "6": "56.42",
+                        "7": "60.45",
+                        "8": "64.48",
+                        "9": "68.51",
+                        "10": "72.54",
+                        "11": "76.57"
+                    },
+                    "2-Hit DMG (%)": {
+                        "1": "38.86",
+                        "2": "41.77",
+                        "3": "44.68",
+                        "4": "48.57",
+                        "5": "51.48",
+                        "6": "54.4",
+                        "7": "58.28",
+                        "8": "62.17",
+                        "9": "66.05",
+                        "10": "69.94",
+                        "11": "73.82"
+                    },
+                    "3-Hit DMG (%)": {
+                        "1": "48.88",
+                        "2": "52.54",
+                        "3": "56.21",
+                        "4": "61.1",
+                        "5": "64.76",
+                        "6": "68.43",
+                        "7": "73.32",
+                        "8": "78.2",
+                        "9": "83.09",
+                        "10": "87.98",
+                        "11": "92.87"
+                    },
+                    "4-Hit DMG (%)": {
+                        "1": "64.92",
+                        "2": "69.79",
+                        "3": "74.65",
+                        "4": "81.15",
+                        "5": "86.01",
+                        "6": "90.88",
+                        "7": "97.38",
+                        "8": "103.87",
+                        "9": "110.36",
+                        "10": "116.85",
+                        "11": "123.34"
+                    },
+                    "Charged Attack DMG (%)": {
+                        "1": "123.12",
+                        "2": "132.35",
+                        "3": "141.59",
+                        "4": "153.9",
+                        "5": "163.13",
+                        "6": "172.37",
+                        "7": "184.68",
+                        "8": "196.99",
+                        "9": "209.3",
+                        "10": "221.62",
+                        "11": "233.93"
+                    },
+                    "Charged Attack Stamina Cost": {
+                        "1": "50",
+                        "2": "50",
+                        "3": "50",
+                        "4": "50",
+                        "5": "50",
+                        "6": "50",
+                        "7": "50",
+                        "8": "50",
+                        "9": "50",
+                        "10": "50",
+                        "11": "50"
+                    },
+                    "Plunge DMG (%)": {
+                        "1": "56.83",
+                        "2": "61.45",
+                        "3": "66.08",
+                        "4": "72.69",
+                        "5": "77.31",
+                        "6": "82.6",
+                        "7": "89.87",
+                        "8": "97.14",
+                        "9": "104.41",
+                        "10": "112.34",
+                        "11": "120.27"
+                    },
+                    "Low Plunge DMG (%)": {
+                        "1": "113.63",
+                        "2": "122.88",
+                        "3": "132.13",
+                        "4": "145.35",
+                        "5": "154.59",
+                        "6": "165.16",
+                        "7": "179.7",
+                        "8": "194.23",
+                        "9": "208.77",
+                        "10": "224.62",
+                        "11": "240.48"
+                    },
+                    "High Plunge DMG (%)": {
+                        "1": "141.93",
+                        "2": "153.49",
+                        "3": "165.04",
+                        "4": "181.54",
+                        "5": "193.1",
+                        "6": "206.3",
+                        "7": "224.45",
+                        "8": "242.61",
+                        "9": "260.76",
+                        "10": "280.57",
+                        "11": "300.37"
+                    }
+                }
             },
             "Elemental Skill": {
                 "name": "White Clouds at Dawn",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/89\/Talent_White_Clouds_at_Dawn.png",
-                "text": "Xianyun enters the Cloud Transmogrification state, in which she will not take Fall DMG, and uses Skyladder once.<br\/>In this state, her Plunging Attack will be converted into Driftcloud Wave instead, which deals <span class=\"text-anemo\"><b>AoE Anemo DMG<\/b><\/span> and ends the Cloud Transmogrification state. This DMG is considered Plunging Attack DMG.<br\/>Each use of Skyladder while in this state increases the DMG and AoE of the next Driftcloud Wave used.<br\/><br\/><b>Skyladder<\/b><br\/>Can be used while in mid-air. Xianyun leaps forward, dealing <span class=\"text-anemo\"><b>Anemo DMG<\/b><\/span> to targets along her path.<br\/>During each Cloud Transmogrification state Xianyun enters, Skyladder may be used up to 3 times and only 1 instance of Skyladder DMG can be dealt to any one opponent.<br\/>If Skyladder is not used again in a short period, the Cloud Transmogrification state will be canceled.<br\/><br\/>If Xianyun does not use Driftcloud Wave while in this state, the next CD of White Clouds at Dawn will be decreased by 3s."
+                "text": "Xianyun enters the Cloud Transmogrification state, in which she will not take Fall DMG, and uses Skyladder once.<br\/>In this state, her Plunging Attack will be converted into Driftcloud Wave instead, which deals <span class=\"text-anemo\"><b>AoE Anemo DMG<\/b><\/span> and ends the Cloud Transmogrification state. This DMG is considered Plunging Attack DMG.<br\/>Each use of Skyladder while in this state increases the DMG and AoE of the next Driftcloud Wave used.<br\/><br\/><b>Skyladder<\/b><br\/>Can be used while in mid-air. Xianyun leaps forward, dealing <span class=\"text-anemo\"><b>Anemo DMG<\/b><\/span> to targets along her path.<br\/>During each Cloud Transmogrification state Xianyun enters, Skyladder may be used up to 3 times and only 1 instance of Skyladder DMG can be dealt to any one opponent.<br\/>If Skyladder is not used again in a short period, the Cloud Transmogrification state will be canceled.<br\/><br\/>If Xianyun does not use Driftcloud Wave while in this state, the next CD of White Clouds at Dawn will be decreased by 3s.",
+                "scaling": {
+                    "Skill DMG (%)": {
+                        "1": "24.8",
+                        "2": "26.66",
+                        "3": "28.52",
+                        "4": "31",
+                        "5": "32.86",
+                        "6": "34.72",
+                        "7": "37.2",
+                        "8": "39.68",
+                        "9": "42.16",
+                        "10": "44.64",
+                        "11": "47.12",
+                        "12": "49.6",
+                        "13": "52.7"
+                    },
+                    "Driftcloud Wave DMG (%)": {
+                        "1": "116\/148\/337.6",
+                        "2": "124.7\/159.1\/362.92",
+                        "3": "133.4\/170.2\/388.24",
+                        "4": "145\/185\/422",
+                        "5": "153.7\/196.1\/447.32",
+                        "6": "162.4\/207.2\/472.64",
+                        "7": "174\/222\/506.4",
+                        "8": "185.6\/236.8\/540.16",
+                        "9": "197.2\/251.6\/573.92",
+                        "10": "208.8\/266.4\/607.68",
+                        "11": "220.4\/281.2\/641.44",
+                        "12": "232\/296\/675.2",
+                        "13": "246.5\/314.5\/717.4"
+                    },
+                    "CD": {
+                        "1": "12s",
+                        "2": "12s",
+                        "3": "12s",
+                        "4": "12s",
+                        "5": "12s",
+                        "6": "12s",
+                        "7": "12s",
+                        "8": "12s",
+                        "9": "12s",
+                        "10": "12s",
+                        "11": "12s",
+                        "12": "12s",
+                        "13": "12s"
+                    }
+                }
             },
             "Elemental Burst": {
                 "name": "Stars Gather at Dusk",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/28\/Talent_Stars_Gather_at_Dusk.png",
-                "text": "Brings forth a sacred breeze that deals <span class=\"text-anemo\"><b>AoE Anemo DMG<\/b><\/span> and heals all nearby characters based on Xianyun's ATK. It will also summon the \"Starwicker\" mechanism.<br\/><br\/><b>Starwicker<\/b><br\/><ul><li>Continuously follows the active character and periodically heals all nearby party members based on Xianyun's ATK.<\/li><li>Starts with 8 stacks of Adeptal Assistance. While Adeptal Assistance is active, nearby active characters in the party will have their jump height increased.<\/li><li>When the active character completes a Plunging Attack, Starwicker will consume 1 stack of Adeptal Assistance and deal <span class=\"text-anemo\"><b>AoE Anemo DMG<\/b><\/span>.<\/li><\/ul>Only 1 Starwicker can exist simultaneously."
+                "text": "Brings forth a sacred breeze that deals <span class=\"text-anemo\"><b>AoE Anemo DMG<\/b><\/span> and heals all nearby characters based on Xianyun's ATK. It will also summon the \"Starwicker\" mechanism.<br\/><br\/><b>Starwicker<\/b><br\/><ul><li>Continuously follows the active character and periodically heals all nearby party members based on Xianyun's ATK.<\/li><li>Starts with 8 stacks of Adeptal Assistance. While Adeptal Assistance is active, nearby active characters in the party will have their jump height increased.<\/li><li>When the active character completes a Plunging Attack, Starwicker will consume 1 stack of Adeptal Assistance and deal <span class=\"text-anemo\"><b>AoE Anemo DMG<\/b><\/span>.<\/li><\/ul>Only 1 Starwicker can exist simultaneously.",
+                "scaling": {
+                    "Skill DMG (%)": {
+                        "1": "108",
+                        "2": "116.1",
+                        "3": "124.2",
+                        "4": "135",
+                        "5": "143.1",
+                        "6": "151.2",
+                        "7": "162",
+                        "8": "172.8",
+                        "9": "183.6",
+                        "10": "194.4",
+                        "11": "205.2",
+                        "12": "216",
+                        "13": "229.5"
+                    },
+                    "Starwicker DMG (%)": {
+                        "1": "39.2",
+                        "2": "42.14",
+                        "3": "45.08",
+                        "4": "49",
+                        "5": "51.94",
+                        "6": "54.88",
+                        "7": "58.8",
+                        "8": "62.72",
+                        "9": "66.64",
+                        "10": "70.56",
+                        "11": "74.48",
+                        "12": "78.4",
+                        "13": "83.3"
+                    },
+                    "Healing": {
+                        "1": "92.16% ATK+578",
+                        "2": "99.07% ATK+636",
+                        "3": "105.98% ATK+698",
+                        "4": "115.2% ATK+766",
+                        "5": "122.11% ATK+838",
+                        "6": "129.02% ATK+915",
+                        "7": "138.24% ATK+997",
+                        "8": "147.46% ATK+1083",
+                        "9": "156.67% ATK+1175",
+                        "10": "165.89% ATK+1271",
+                        "11": "175.1% ATK+1372",
+                        "12": "184.32% ATK+1478",
+                        "13": "195.84% ATK+1589"
+                    },
+                    "Continuous Healing": {
+                        "1": "43.01% ATK+270",
+                        "2": "46.23% ATK+297",
+                        "3": "49.46% ATK+326",
+                        "4": "53.76% ATK+357",
+                        "5": "56.99% ATK+391",
+                        "6": "60.21% ATK+427",
+                        "7": "64.51% ATK+465",
+                        "8": "68.81% ATK+506",
+                        "9": "73.11% ATK+548",
+                        "10": "77.41% ATK+593",
+                        "11": "81.72% ATK+640",
+                        "12": "86.02% ATK+690",
+                        "13": "91.39% ATK+742"
+                    },
+                    "Duration": {
+                        "1": "16s",
+                        "2": "16s",
+                        "3": "16s",
+                        "4": "16s",
+                        "5": "16s",
+                        "6": "16s",
+                        "7": "16s",
+                        "8": "16s",
+                        "9": "16s",
+                        "10": "16s",
+                        "11": "16s",
+                        "12": "16s",
+                        "13": "16s"
+                    },
+                    "CD": {
+                        "1": "18s",
+                        "2": "18s",
+                        "3": "18s",
+                        "4": "18s",
+                        "5": "18s",
+                        "6": "18s",
+                        "7": "18s",
+                        "8": "18s",
+                        "9": "18s",
+                        "10": "18s",
+                        "11": "18s",
+                        "12": "18s",
+                        "13": "18s"
+                    },
+                    "Energy Cost": {
+                        "1": "70",
+                        "2": "70",
+                        "3": "70",
+                        "4": "70",
+                        "5": "70",
+                        "6": "70",
+                        "7": "70",
+                        "8": "70",
+                        "9": "70",
+                        "10": "70",
+                        "11": "70",
+                        "12": "70",
+                        "13": "70"
+                    }
+                }
             },
             "1st Ascension Passive": {
                 "name": "Galefeather Pursuit",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2d\/Talent_Galefeather_Pursuit.png",
-                "text": "Each opponent hit by Driftcloud Waves from White Clouds at Dawn will grant all nearby party members 1 stack of Storm Pinion for 20s. Max 4 stacks. These will cause the characters' Plunging Attack CRIT Rate to increase by 4%\/6%\/8%\/10% respectively.<br\/>Each Storm Pinion created by hitting an opponent has an independent duration."
+                "text": "Each opponent hit by Driftcloud Waves from White Clouds at Dawn will grant all nearby party members 1 stack of Storm Pinion for 20s. Max 4 stacks. These will cause the characters' Plunging Attack CRIT Rate to increase by 4%\/6%\/8%\/10% respectively.<br\/>Each Storm Pinion created by hitting an opponent has an independent duration.",
+                "code": [
+                    "proc",
+                    [
+                        "spstat",
+                        [
+                            "critRate_",
+                            [
+                                "stacks",
+                                4,
+                                6,
+                                8,
+                                10
+                            ],
+                            "Plunging Attack"
+                        ]
+                    ],
+                    "Per opponent hit by Driftcloud Wave: \"Storm Pinion\"",
+                    4
+                ]
             },
             "4th Ascension Passive": {
                 "name": "Consider, the Adeptus in Her Realm",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b5\/Talent_Consider%2C_the_Adeptus_in_Her_Realm.png",
-                "text": "When the Starwicker created by Stars Gather at Dusk has Adeptal Assistance stacks, nearby active characters' Plunging Attack shockwave DMG will be increased by 200% of Xianyun's ATK. The maximum DMG increase that can be achieved this way is 9,000.<br\/>Each Plunging Attack shockwave DMG instance can only apply this increased DMG effect to a single opponent. Each character can trigger this effect once every 0.4s."
+                "text": "When the Starwicker created by Stars Gather at Dusk has Adeptal Assistance stacks, nearby active characters' Plunging Attack shockwave DMG will be increased by 200% of Xianyun's ATK. The maximum DMG increase that can be achieved this way is 9,000.<br\/>Each Plunging Attack shockwave DMG instance can only apply this increased DMG effect to a single opponent. Each character can trigger this effect once every 0.4s.",
+                "code": [
+                    [
+                        "addmv",
+                        [
+                            "Elemental Burst",
+                            "Plunging Attack Shockwave DMG Bonus (% ATK)",
+                            200
+                        ]
+                    ],
+                    [
+                        "proc",
+                        [
+                            "peditmv",
+                            [
+                                "Normal Attack",
+                                [
+                                    "Low Plunge DMG (%)",
+                                    "High Plunge DMG (%)"
+                                ],
+                                "+base",
+                                [
+                                    "mv",
+                                    "Plunging Attack Shockwave DMG Bonus (% ATK)"
+                                ]
+                            ]
+                        ],
+                        "With \"Adeptal Assistance\""
+                    ]
+                ]
             },
             "Utility Passive": {
                 "name": "Crane Form",
@@ -30991,7 +31913,7 @@ export default {
             "Elemental Skill": {
                 "name": "Opening Flourish",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/92\/Talent_Opening_Flourish.png",
-                "text": "Ms. Yun may just be acting out fights on stage, but her skills with the spear are real enough to defend against her foes.<br\/><br\/><b>Press<\/b><br\/>Flourishes her polearm in a cloud-grasping stance, dealing <span class=\"text-geo\"><b>Geo DMG<\/b><\/span>.<br\/><br\/><b>Hold<\/b><br\/>Takes up the Opening Flourish stance and charges up, forming a shield. DMG Absorption is based on Yun Jin's Max HP and has 150% effectiveness against all <b>Elemental DMG<\/b> and <span class=\"text-physical\"><b>Physical DMG<\/b><\/span>. The shield lasts until she finishes unleashing her Elemental Skill.<br\/>When the skill is released, when its duration ends, or when the shield breaks, Yun Jin will unleash the charged energy as an attack, dealing <span class=\"text-geo\"><b>Geo DMG<\/b><\/span>.<br\/>Based on the time spent charging, it will either unleash an attack at Charge Level 1 or Level 2.",
+                "text": "Ms. Yun may just be acting out fights on stage, but her skills with the spear are real enough to defend against her foes.<br\/><br\/><b>(<span class=\"text-tooltip hover-tooltip\">Press<\/span>PressText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">Tap<\/span>TapText for touch screen)<\/b><br\/>Flourishes her polearm in a cloud-grasping stance, dealing <span class=\"text-geo\"><b>Geo DMG<\/b><\/span>.<br\/><br\/><b>Hold<\/b><br\/>Takes up the Opening Flourish stance and charges up, forming a shield. DMG Absorption is based on Yun Jin's Max HP and has 150% effectiveness against all <b>Elemental DMG<\/b> and <span class=\"text-physical\"><b>Physical DMG<\/b><\/span>. The shield lasts until she finishes unleashing her Elemental Skill.<br\/>When the skill is released, when its duration ends, or when the shield breaks, Yun Jin will unleash the charged energy as an attack, dealing <span class=\"text-geo\"><b>Geo DMG<\/b><\/span>.<br\/>Based on the time spent charging, it will either unleash an attack at Charge Level 1 or Level 2.",
                 "scaling": {
                     "Press DMG (% DEF)": {
                         "1": "149.12",
@@ -31412,7 +32334,7 @@ export default {
             "Elemental Skill": {
                 "name": "Dominus Lapidis",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/93\/Talent_Dominus_Lapidis.png",
-                "text": "Every mountain, rock and inch of land is filled with the power of Geo, but those who can wield such powers freely are few and far between.<br\/><br\/><b>Press<\/b><br\/>Commands the power of earth to create a Stone Stele.<br\/><br\/><b>Hold<\/b><br\/>Causes nearby Geo energy to explode, causing the following effects:<ul><li>If their maximum number hasn't been reached, creates a Stone Stele.<\/li><li>Creates a shield of jade. The shield's DMG Absorption scales based on Zhongli's Max HP.<\/li><li>Deals <span class=\"text-geo\"><b>AoE Geo DMG<\/b><\/span>.<\/li><li>If there are nearby targets with the <span class=\"text-geo\"><b>Geo element<\/b><\/span>, it will drain a large amount of <span class=\"text-geo\"><b>Geo element<\/b><\/span> from a maximum of 2 such targets. This effect does not cause DMG.<\/li><\/ul><br\/><b>Stone Stele<\/b><br\/>When created, deals <span class=\"text-geo\"><b>AoE Geo DMG<\/b><\/span>.<br\/>Additionally, it will intermittently resonate with other nearby <span class=\"text-geo\"><b>Geo constructs<\/b><\/span>, dealing <span class=\"text-geo\"><b>Geo DMG<\/b><\/span> to surrounding opponents.<br\/>The Stone Stele is considered a <span class=\"text-geo\"><b>Geo construct<\/b><\/span> that can both be climbed and used to block attacks.<br\/>Only one Stele created by Zhongli himself may initially exist at any one time.<br\/><br\/><b>Jade Shield<\/b><br\/>Possesses 150% DMG Absorption against all Elemental and Physical DMG.<br\/>Characters protected by the Jade Shield will decrease the <b>Elemental RES<\/b> and <span class=\"text-physical\"><b>Physical RES<\/b><\/span> of opponents in a small AoE by 20%. This effect cannot be stacked.",
+                "text": "Every mountain, rock and inch of land is filled with the power of Geo, but those who can wield such powers freely are few and far between.<br\/><br\/><b>(<span class=\"text-tooltip hover-tooltip\">Press<\/span>PressText for mouse and keyboard and controller\/<span class=\"text-tooltip hover-tooltip\">Tap<\/span>TapText for touch screen)<\/b><br\/>Commands the power of earth to create a Stone Stele.<br\/><br\/><b>Hold<\/b><br\/>Causes nearby Geo energy to explode, causing the following effects:<ul><li>If their maximum number hasn't been reached, creates a Stone Stele.<\/li><li>Creates a shield of jade. The shield's DMG Absorption scales based on Zhongli's Max HP.<\/li><li>Deals <span class=\"text-geo\"><b>AoE Geo DMG<\/b><\/span>.<\/li><li>If there are nearby targets with the <span class=\"text-geo\"><b>Geo element<\/b><\/span>, it will drain a large amount of <span class=\"text-geo\"><b>Geo element<\/b><\/span> from a maximum of 2 such targets. This effect does not cause DMG.<\/li><\/ul><br\/><b>Stone Stele<\/b><br\/>When created, deals <span class=\"text-geo\"><b>AoE Geo DMG<\/b><\/span>.<br\/>Additionally, it will intermittently resonate with other nearby <span class=\"text-geo\"><b>Geo constructs<\/b><\/span>, dealing <span class=\"text-geo\"><b>Geo DMG<\/b><\/span> to surrounding opponents.<br\/>The Stone Stele is considered a <span class=\"text-geo\"><b>Geo construct<\/b><\/span> that can both be climbed and used to block attacks.<br\/>Only one Stele created by Zhongli himself may initially exist at any one time.<br\/><br\/><b>Jade Shield<\/b><br\/>Possesses 150% DMG Absorption against all Elemental and Physical DMG.<br\/>Characters protected by the Jade Shield will decrease the <b>Elemental RES<\/b> and <span class=\"text-physical\"><b>Physical RES<\/b><\/span> of opponents in a small AoE by 20%. This effect cannot be stacked.",
                 "scaling": {
                     "Stone Stele\/Resonance DMG (%)": {
                         "1": "16\/32",
@@ -31613,6 +32535,11 @@ export default {
                 "name": "Arcanum of Crystal",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/90\/Talent_Arcanum_of_Crystal.png",
                 "text": "Refunds 15% of the ore used when crafting Polearm-type weapons."
+            },
+            "-": {
+                "name": "Planet Befall",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/76\/Talent_Planet_Befall.png",
+                "text": "Brings a falling meteor down to earth, dealing massive <span class=\"text-geo\"><b>Geo DMG<\/b><\/span> to opponents caught in its AoE and applying the <span class=\"text-geo\"><b>Petrification<\/b><\/span> status to them.<br\/><br\/><b>Petrification<\/b><br\/>Opponents affected by the <span class=\"text-geo\"><b>Petrification<\/b><\/span> status cannot move."
             }
         },
         "constellations": {
@@ -31659,6 +32586,11 @@ export default {
                 "name": "Chrysos, Bounty of Dominator",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7c\/Constellation_Chrysos%2C_Bounty_of_Dominator.png",
                 "text": "When the Jade Shield takes DMG, 40% of that incoming DMG is converted to HP for the current character.<br\/>A single instance of regeneration cannot exceed 8% of that character's Max HP."
+            },
+            "0": {
+                "name": "Stone, the Cradle of Jade",
+                "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/aa\/Constellation_Stone%2C_the_Cradle_of_Jade.png",
+                "text": "Planet Befall grants nearby characters on the field a Jade Shield when it descends."
             }
         }
     },
