@@ -2248,6 +2248,31 @@ export default {
         ],
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Deathmatch"
     },
+    "DialoguesOfTheDesertSages": {
+        "name": "Dialogues of the Desert Sages",
+        "type": "Polearm",
+        "rarity": 4,
+        "baseATK": 42,
+        "stat": "hp_",
+        "passive": "When the wielder performs healing, restore @0 Energy. This effect can be triggered once every 10s and can occur even when the character is not on the field.",
+        "refinementData": [
+            {
+                "1": 8,
+                "2": 10,
+                "3": 12,
+                "4": 14,
+                "5": 16
+            }
+        ],
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Dialogues_of_the_Desert_Sages",
+        "imgs": [
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ea\/Weapon_Dialogues_of_the_Desert_Sages.png",
+            "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ab\/Weapon_Dialogues_of_the_Desert_Sages_2nd.png"
+        ],
+        "matForgery": "Talisman",
+        "matStrongEnemy": "Xuanwen Beasts",
+        "matWeakEnemy": "Specters"
+    },
     "DodocoTales": {
         "name": "Dodoco Tales",
         "rarity": 4,
@@ -4446,7 +4471,7 @@ export default {
         ],
         "rarity": 4,
         "type": "Claymore",
-        "passive": "ATK will be increased by 16% for 15s after being affected by Pyro. This effect can be triggered once every 12s. All Elemental DMG Bonus will be increased by @0% for 15s after being affected by Hydro, Cryo, Electro, or Dendro. This effect can be triggered once every 12s.",
+        "passive": "ATK will be increased by @0% for 15s after being affected by Pyro. This effect can be triggered once every 12s. All Elemental DMG Bonus will be increased by @1% for 15s after being affected by Hydro, Cryo, Electro, or Dendro. This effect can be triggered once every 12s.",
         "refinementData": [
             {
                 "1": 16,
