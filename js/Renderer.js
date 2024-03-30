@@ -158,11 +158,11 @@ class Renderer
   
   static partialsUsed = {
     'renderListAsTable': ["renderItem"],
-    'renderCharacterAsPopup': ["renderCharacterBuild","renderCharacterStats"],
-    'renderCharacterBuild': ["renderCharacterBuildSlider","renderCharacterArtifactLists"],
-    'renderCharacterArtifactLists': ["renderListAsColumn"],
-    'renderListAsColumn': ["renderArtifactAsCard"],
-    'renderCharacterStats': ["renderCharacterMainStats","renderCharacterReactions","renderCharacterMotionValues","renderCharacterStatModifiers"],
+    'genshin/renderCharacterAsPopup': ["genshin/renderCharacterBuild","genshin/renderCharacterStats"],
+    'genshin/renderCharacterBuild': ["genshin/renderCharacterBuildSlider","genshin/renderCharacterArtifactLists"],
+    'genshin/renderCharacterArtifactLists': ["genshin/renderListAsColumn"],
+    'genshin/renderListAsColumn': ["genshin/renderArtifactAsCard"],
+    'genshin/renderCharacterStats': ["genshin/renderCharacterMainStats","genshin/renderCharacterReactions","genshin/renderCharacterMotionValues","genshin/renderCharacterStatModifiers"],
   };
   
   static controllers = new Map();
@@ -370,7 +370,7 @@ class Renderer
         data.fields = data.item.display.getFields().map(field => ({field, params:[]}));
       
       if(!data.groups && data.item.display)
-        data.groups = data.item.display.groups;
+        data.groups = data.item.display.getGroups({fields: data.fields.map(fieldTuple => fieldTuple.field)});
       
       if(!data.relatedItems && typeof(data.item.getRelatedItems) === "function")
       {
@@ -420,16 +420,61 @@ class Renderer
     
     // Final UI preperation.
     $(element).find(".selectpicker").selectpicker('render');
+    element.querySelectorAll(".popup-trigger").forEach(popupTrigger => {
+      let item = Renderer.controllers.get(popupTrigger.dataset.uuid);
+      if(!item)
+      {
+        let popupParent = popupTrigger.parentElement;
+        while(popupParent && !popupParent.classList.contains("list-item"))
+          popupParent = popupParent.parentElement;
+        item = Renderer.controllers.get(popupParent.dataset.uuid);
+      }
+      if(item)
+      {
+        popupTrigger.onclick = event => {
+          Renderer.rerender(item.viewer.elements.popup.querySelector(".modal-content"), {item}, {template: item.constructor.templateName, partials: item.constructor.templatePartials, showPopup: true});
+        };
+      }
+    });
     
+    // If we're opening a popup, handle the popup display.
     if(showPopup)
     {
+      data.item.viewer.elements.popup.addEventListener("hidden.bs.modal", event => {
+        event.target.breadcrumb = [];
+      });
+      let popup = data.item.viewer.elements.popup.querySelector(".modal-content");
+      if(popup == element)
+      {
+        let breadcrumb = element.querySelector(".breadcrumb");
+        if(!breadcrumb)
+        {
+          let modalBody = element.querySelector(".modal-body");
+          breadcrumb = modalBody.insertBefore(document.createElement("ol"), modalBody.querySelector("[data-bs-dismiss='modal']").nextSibling ?? modalBody.firstChild);
+          breadcrumb.classList.add("breadcrumb");
+        }
+        data.item.viewer.elements.popup.breadcrumb = data.item.viewer.elements.popup.breadcrumb ?? [];
+        let idx = data.item.viewer.elements.popup.breadcrumb.indexOf(data.item);
+        if(idx == -1)
+          data.item.viewer.elements.popup.breadcrumb.push(data.item);
+        breadcrumb.innerHTML = data.item.viewer.elements.popup.breadcrumb.map((item,i,array) => `<li class="breadcrumb-item ${item==data.item?"active":""}"><span data-uuid="${item.uuid}" data-breadcrumb-index="${i}">${item.name}</span></li>`).join("");
+        for(let elem of breadcrumb.querySelectorAll(".breadcrumb-item:not(.active) span"))
+        {
+          elem.onclick = event => {
+            let item = Renderer.controllers.get(event.target.dataset.uuid);
+            item.viewer.elements.popup.breadcrumb = item.viewer.elements.popup.breadcrumb.slice(0, event.target.dataset.breadcrumbIndex);
+            Renderer.rerender(element, {item}, {template: item.constructor.templateName, partials: item.constructor.templatePartials, showPopup: true});
+          };
+        }
+      }
       bootstrap.Modal.getOrCreateInstance(data.item.viewer.elements.popup).show();
     }
   }
   
   static removeElementsOf(item)
   {
-    Array.from(document.querySelectorAll(`*[data-uuid="${item.uuid}"]`)).forEach(element => {
+    Array.from(document.querySelectorAll(`*[data-uuid="${item.uuid}"]:not(.modal-content)`)).forEach(element => {
+      //if(element == modal) continue;
       item.constructor.clearDependencies(element, true);
       Renderer._needsUpdate.forEach(elemToUpdate => element.contains(elemToUpdate) ? Renderer._needsUpdate.delete(elemToUpdate) : null);
       element.remove();
@@ -614,7 +659,7 @@ class Renderer
         {
           if(window.DEBUGLOG.renderItemField) console.debug(`Adding popup event listener to subelement (field:${fieldName}, item:${item.name}).`, subElement, subContent);
           subElement.onclick = event => {
-            Renderer.rerender(subContent.popup.viewer.elements.popup.querySelector(".modal-content"), {item: subContent.popup}, {template: subContent.popup.constructor.templateName, partials: subContent.popup.constructor.templatePartials, showPopup: true});
+            Renderer.rerender(subContent.popup.viewer.elements.popup.querySelector(".modal-content"), {item: subContent.popup}, {template: subContent.popup.constructor.templateName, partials: subContent.popup.constructor.templatePartials, showPopup: true, parentElement: subContent.popup.viewer.elements.popup});
           };
           subElement.classList.add("popup");
         }

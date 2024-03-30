@@ -93,6 +93,7 @@ export default class UIList extends UIController {
       return false;
     if(field.string == "list" && (field.value.length != value.length || options.force))
     {
+      // TODO: Theoretically we can check the elements that were added/removed and only clear the subsets that would include them.
       this.subsets = {};
     }
   }
@@ -119,11 +120,7 @@ export default class UIList extends UIController {
   
   get(unique)
   {
-    for(let item of this.list)
-      if(unique == this.getUnique(item))
-        return item;
-    //console.debug(`[object ${this.constructor.name}].get("${unique}") -> null`);
-    return null;
+    return this.list.find(item => unique === this.getUnique(item));
   }
   
   items(a, b)
@@ -153,22 +150,24 @@ export default class UIList extends UIController {
         {
           console.warn(`Unknown subset '${subset}' given for ${this.constructor.name}.items() with no function.`);
           console.trace();
-          return this.list;
+          return this.list.slice();
         }
       }
-      return this.subsets[subset];
+      return this.subsets[subset].slice();
     }
     else if(func)
-      return this.list.filter(func);
+      return this.list.filter(func).slice();
     else
-      return this.list;
+      return this.list.slice();
   }
   
   createItem(data={})
   {
+    // TODO: itemClass can be an array if the UIList supports multiple UIItem subclasses. At the moment, those are handled by custom code within the UIList subclass, but it could probably be done here.
     let item = new this.constructor.itemClass();
     item.list = this;
     this.update("list", item, "push");
+    // TODO: It might be useful to set a flag on the object here that it is being initialized. Some of the updates below might trigger things that are redundant when the object is mass-setting all of its properties during initialization.
     for(let property in data)
       item.update(property, data[property], "replace");
     return item;

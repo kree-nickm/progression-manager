@@ -1,4 +1,4 @@
-<div class="character-stats popup-section" data-template="renderCharacterStats" data-uuid="{{uuid item}}">
+<div class="character-stats popup-section" data-template="genshin/renderCharacterStats" data-uuid="{{uuid item}}">
     <h3 class="popup-section-header collapsed" data-bs-toggle="collapse" href="#characterStats" title="All values should be accurate, though some may differ from what you see in game very slightly due to rounding errors. However, most characters and weapons still do not have their passives/cons factored in; you can see what bonusus are being applied in the Modifiers section, as well as toggle temporary/conditional bonuses on or off. Additionally, some numbers, especially preview numbers, may not update after every change you make. That said, changing artifact previews will force the entire stat section to update.">Current Stats (Work-in-Progress)</h3>
     <div id="characterStats" class="collapse popup-section-content">
         <div class="row">
@@ -19,37 +19,37 @@
 <!--    MAIN STATS    -->
         <div class="popup-subsection">
             <h4 class="popup-subsection-header" data-bs-toggle="collapse" href="#characterStats.MainStats">Main Stats</h4>
-          {{> renderCharacterMainStats .}}
+          {{> genshin/renderCharacterMainStats .}}
         </div>
       
 <!--    NORMAL ATTACKS    -->
         <div class="popup-subsection">
             <h4 class="popup-subsection-header" data-bs-toggle="collapse" href="#characterStats.auto">Normal Attack</h4>
-          {{> renderCharacterMotionValues . talent="auto"}}
+          {{> genshin/renderCharacterMotionValues . talent="auto"}}
         </div>
       
 <!--    ELEMENTAL SKILL    -->
         <div class="popup-subsection">
             <h4 class="popup-subsection-header" data-bs-toggle="collapse" href="#characterStats.skill">Elemental Skill</h4>
-          {{> renderCharacterMotionValues . talent="skill"}}
+          {{> genshin/renderCharacterMotionValues . talent="skill"}}
         </div>
       
 <!--    ELEMENTAL BURST    -->
         <div class="popup-subsection">
             <h4 class="popup-subsection-header" data-bs-toggle="collapse" href="#characterStats.burst">Elemental Burst</h4>
-          {{> renderCharacterMotionValues . talent="burst"}}
+          {{> genshin/renderCharacterMotionValues . talent="burst"}}
         </div>
       
 <!--    REACTIONS    -->
         <div class="popup-subsection">
             <h4 class="popup-subsection-header" data-bs-toggle="collapse" href="#characterStats.Reactions">Reactions</h4>
-          {{> renderCharacterReactions .}}
+          {{> genshin/renderCharacterReactions .}}
         </div>
       
 <!--    PROCS    -->
         <div class="popup-subsection">
             <h4 class="popup-subsection-header" data-bs-toggle="collapse" href="#characterStats.ConditionalModifiers">Modifiers</h4>
-          {{> renderCharacterStatModifiers .}}
+          {{> genshin/renderCharacterStatModifiers .}}
         </div>
       
 <!--    ENEMY STATS    -->

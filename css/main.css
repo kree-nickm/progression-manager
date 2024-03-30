@@ -1,6 +1,6 @@
 /* Display Tables */
 
-td {
+.list td {
   white-space: nowrap;
 }
 
@@ -107,6 +107,18 @@ i.edit-element {
 
 /* Utilities */
 
+.breadcrumb-item:not(.active) span {
+  cursor: pointer;
+}
+
+.breadcrumb-item.active span {
+  font-weight: bold;
+}
+
+.popup-trigger {
+  cursor: help;
+}
+
 .sticky-js {
   position: relative;
   z-index: 10;
@@ -139,6 +151,8 @@ span.quantity, .quantity > span:not(.value) {
   display: inline-block;
   margin-right: 1ex;
   padding: 2px 4px;
+  min-width: 4em;
+  text-align: center;
 }
 
 span.material, .material > span:not(.value) {
@@ -190,6 +204,10 @@ span.q5, .q5 > span:not(.value) {
 }
 
 .insufficient {
+  background-color: rgba(255,0,0,0.3) !important;
+}
+
+.list-item-field.undesirable {
   background-color: rgba(255,0,0,0.3) !important;
 }
 
@@ -256,31 +274,60 @@ option:disabled {
   display: block !important;
 }
 
+.list-item-field {
+  position: relative;
+}
+
+.list-item-field.can-inc .value::after {
+  content: "🡅";
+  position: absolute;
+  color: green;
+  font-size: 0.6em;
+}
+
+.list-item-field.can-farm .value::after {
+  content: "🡅";
+  position: absolute;
+  color: orange;
+  font-size: 0.6em;
+}
+
+.list-item-field.cant-inc .value::after {
+  content: "🡅";
+  position: absolute;
+  color: red;
+  font-size: 0.6em;
+  opacity: 0.1;
+}
+
+.list-item-field.at-max .value {
+  opacity: 0.5;
+}
+
 /* Specific List CSS */
 
-.viewer-pane .ascension-materials {
+.list table .ascension-materials {
   background-color: var(--colgroup-alt-background) !important;
 }
 
-.skill-mastery, .skill-enemy {
+.list table .skill-mastery, .list table .skill-enemy {
   background-color: var(--column-alt-background) !important;
 }
 
-table .stat-critRate_, table .stat-atk_, table .stat-eleMas, table .stat-def_, table .stat-hp,
-table .stat-rating-critRate_, table .stat-rating-atk_, table .stat-rating-eleMas, table .stat-rating-def_, table .stat-rating-hp, table .stat-character-rating {
+.list table .character-weapon {
+  background-color: var(--colgroup-alt-background) !important;
+}
+
+.list table .stat-critRate_, .list table .stat-atk_, .list table .stat-eleMas, .list table .stat-def_, .list table .stat-hp,
+.list table .stat-rating-critRate_, .list table .stat-rating-atk_, .list table .stat-rating-eleMas, .list table .stat-rating-def_, .list table .stat-rating-hp, .list table .stat-character-rating {
   background-color: var(--column-alt-background) !important;
 }
 
-table .stat-critRate_, table .stat-atk_, table .stat-eleMas, table .stat-def_, table .stat-hp,
-table .stat-rating-critRate_, table .stat-rating-atk_, table .stat-rating-eleMas, table .stat-rating-def_, table .stat-rating-hp, table .stat-character-rating {
-  background-color: var(--column-alt-background) !important;
-}
-
-table .stat-def, table .stat-rating-def {
+.list table .stat-def, .list table .stat-rating-def {
   border-right: 1px solid black;
 }
 
-table .stat-critRate_, table .stat-rating-critRate_, table .artifact-wanters {
+.list table .stat-critRate_, .list table .stat-rating-critRate_, .list table .artifact-wanters {
   border-left: 1px solid black;
 }
 
@@ -390,34 +437,66 @@ img.element-icon {
 }
 
 img.element-icon.element-Anemo {
-  filter: saturate(1.5) drop-shadow(0px 0px 2px rgba(0,200,200,0.5));
+  filter: saturate(1.5) brightness(0.5) drop-shadow(0px 0px 2px rgba(0,200,200,0.5));
 }
 
 img.element-icon.element-Cryo {
-  filter: saturate(1.5) drop-shadow(0px 0px 2px rgba(50,50,200,0.5));
+  filter: saturate(1.5) brightness(0.5) drop-shadow(0px 0px 2px rgba(50,50,200,0.5));
 }
 
 img.element-icon.element-Dendro {
-  filter: saturate(1.5) drop-shadow(0px 0px 2px rgba(0,200,0,0.5));
+  filter: saturate(1.5) brightness(0.5) drop-shadow(0px 0px 2px rgba(0,200,0,0.5));
 }
 
 img.element-icon.element-Electro {
-  filter: saturate(1.5) drop-shadow(0px 0px 2px rgba(200,0,200,0.5));
+  filter: saturate(1.5) brightness(0.5) drop-shadow(0px 0px 2px rgba(200,0,200,0.5));
 }
 
 img.element-icon.element-Geo {
-  filter: saturate(1.5) drop-shadow(0px 0px 2px rgba(200,200,0,0.5));
+  filter: saturate(1.5) brightness(0.5) drop-shadow(0px 0px 2px rgba(200,200,0,0.5));
 }
 
 img.element-icon.element-Hydro {
-  filter: saturate(1.5) drop-shadow(0px 0px 2px rgba(0,0,200,0.5));
+  filter: saturate(1.5) brightness(0.5) drop-shadow(0px 0px 2px rgba(0,0,200,0.5));
 }
 
 img.element-icon.element-Pyro {
-  filter: saturate(1.5) drop-shadow(0px 0px 2px rgba(200,100,0,0.5));
+  filter: saturate(1.5) brightness(0.5) drop-shadow(0px 0px 2px rgba(200,100,0,0.5));
 }
 
 img.element-icon.element-Physical {
+  filter: drop-shadow(0px 0px 0.5px rgba(0,0,0,0.3));
+}
+
+body.dark-mode img.element-icon.element-Anemo {
+  filter: saturate(1.5) brightness(1.5) drop-shadow(0px 0px 2px rgba(0,200,200,0.5));
+}
+
+body.dark-mode img.element-icon.element-Cryo {
+  filter: saturate(1.5) brightness(1.5) drop-shadow(0px 0px 2px rgba(50,50,200,0.5));
+}
+
+body.dark-mode img.element-icon.element-Dendro {
+  filter: saturate(1.5) brightness(1.5) drop-shadow(0px 0px 2px rgba(0,200,0,0.5));
+}
+
+body.dark-mode img.element-icon.element-Electro {
+  filter: saturate(1.5) brightness(1.5) drop-shadow(0px 0px 2px rgba(200,0,200,0.5));
+}
+
+body.dark-mode img.element-icon.element-Geo {
+  filter: saturate(1.5) brightness(1.5) drop-shadow(0px 0px 2px rgba(200,200,0,0.5));
+}
+
+body.dark-mode img.element-icon.element-Hydro {
+  filter: saturate(1.5) brightness(1.5) drop-shadow(0px 0px 2px rgba(0,0,200,0.5));
+}
+
+body.dark-mode img.element-icon.element-Pyro {
+  filter: saturate(1.5) brightness(1.5) drop-shadow(0px 0px 2px rgba(200,100,0,0.5));
+}
+
+body.dark-mode img.element-icon.element-Physical {
   filter: drop-shadow(0px 0px 0.5px rgba(0,0,0,0.3));
 }
 
@@ -549,7 +628,7 @@ img.element-icon.element-Physical {
   content: "\25BE";
 }
 
-.stat-list[data-template="renderCharacterStatModifiers"] img.element-icon {
+.stat-list[data-template="genshin/renderCharacterStatModifiers"] img.element-icon {
   height: 2.4em;
 }
 

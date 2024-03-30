@@ -1,0 +1,22 @@
+<div class="character-artifacts" data-template="genshin/renderCharacterArtifactLists" data-uuid="{{uuid item}}">
+  {{#if placeholder}}
+    <button id="loadArtifacts" class="btn btn-primary">Load Artifacts</button>
+  {{else}}
+    <label for="artifactsFilterFavorites" title="Only show favorite artifact sets."><input id="artifactsFilterFavorites" type="checkbox"/> Filter Sets</label>
+    <label for="artifactsFilterTaken" title="Only show unequipped artifact sets."><input id="artifactsFilterTaken" type="checkbox"/> Filter Already Equipped</label>
+    <div class="row">
+        <h4 class="col">Flower</h4>
+        <h4 class="col">Plume</h4>
+        <h4 class="col">Sands</h4>
+        <h4 class="col">Goblet</h4>
+        <h4 class="col">Circlet</h4>
+    </div>
+    <div class="row">
+      {{> genshin/renderListAsColumn filter="flower" params=(array relatedItems.buildId) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.flower}}
+      {{> genshin/renderListAsColumn filter="plume" params=(array relatedItems.buildId) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.plume}}
+      {{> genshin/renderListAsColumn filter="sands" params=(array relatedItems.buildId) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.sands}}
+      {{> genshin/renderListAsColumn filter="goblet" params=(array relatedItems.buildId) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.goblet}}
+      {{> genshin/renderListAsColumn filter="circlet" params=(array relatedItems.buildId) parent=item item=relatedItems.artifactList items=relatedItems.bestArtifacts.circlet}}
+    </div>
+  {{/if}}
+</div>

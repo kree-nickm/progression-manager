@@ -1,27 +1,28 @@
-<div class="modal-content list-item" data-template="renderCharacterAsPopup" data-uuid="{{uuid item}}">
+<div class="modal-content list-item" data-template="genshin/renderCharacterAsPopup" data-uuid="{{uuid item}}">
     <div class="modal-body">
         <button type="button" class="btn-close float-end" data-bs-dismiss="modal"></button>
         <div class="row">
             <div class="col-auto">
-                <div class="item-display item-character display-md">
+                <div class="item-display item-character display-md display-no-caption">
                     <div class="display-img rarity-{{getProperty item 'rarity'}}">
-                      {{> renderItemField item=item field="image" wrapper="div"}}
-                    </div>
-                    <div class="display-caption">
-                      {{getProperty item "name"}}
+                        <img class="" src="{{getProperty item 'image'}}" loading="lazy"/>
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="row">
                     <h5 class="col-2">Level</h5>
-                    <h5 class="col-2">Constellations</h5>
+                    <h5 class="col-2">Phase</h5>
+                    <h5 class="col-2">Cons</h5>
                     <h5 class="col-2">Stat</h5>
+                    <h5 class="col-2">Weapon</h5>
                 </div>
                 <div class="row">
                     <div class="col-2">{{> renderItemField item=item field="level" wrapper="div"}}</div>
+                    <div class="col-2">{{> renderItemField item=item field="ascension" wrapper="div"}}</div>
                     <div class="col-2">{{> renderItemField item=item field="constellation" wrapper="div"}}</div>
                     <div class="col-2">{{> renderItemField item=item field="ascendStat" wrapper="div"}}</div>
+                    <div class="col-2">{{> renderItemField item=item field="equipWeapon" wrapper="div"}}</div>
                 </div>
             </div>
         </div>
@@ -52,12 +53,12 @@
                   <tbody>
                     {{#times 6}}
                       <tr>
-                        {{> renderItemField item=item field=(concat "ascension" @index) wrapper="td"}}
-                        {{> renderItemField item=item field=(concat "gemAscMat" @index) wrapper="td"}}
-                        {{> renderItemField item=item field=(concat "bossAscMat" @index) wrapper="td"}}
-                        {{> renderItemField item=item field=(concat "flowerAscMat" @index) wrapper="td"}}
-                        {{> renderItemField item=item field=(concat "enemyAscMat" @index) wrapper="td"}}
-                        {{> renderItemField item=item field=(concat "moraAscMat" @index) wrapper="td"}}
+                        {{> renderItemField item=item field="ascensionMaterial" params=(array "label" @index) wrapper="td"}}
+                        {{> renderItemField item=item field="ascensionMaterial" params=(array "gem" @index) wrapper="td"}}
+                        {{> renderItemField item=item field="ascensionMaterial" params=(array "boss" @index) wrapper="td"}}
+                        {{> renderItemField item=item field="ascensionMaterial" params=(array "flower" @index) wrapper="td"}}
+                        {{> renderItemField item=item field="ascensionMaterial" params=(array "enemy" @index) wrapper="td"}}
+                        {{> renderItemField item=item field="ascensionMaterial" params=(array "mora" @index) wrapper="td"}}
                       </tr>
                     {{/times}}
                   </tbody>
@@ -96,9 +97,9 @@
         </div>
         
         <!--<div class="popup-section">-->
-          {{> renderCharacterStats .}}
+          {{> genshin/renderCharacterStats .}}
         <!--</div>-->
         <hr/>
-      {{> renderCharacterBuild .}}
+      {{> genshin/renderCharacterBuild .}}
     </div>
 </div>

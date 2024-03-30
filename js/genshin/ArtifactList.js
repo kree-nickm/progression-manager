@@ -113,7 +113,7 @@ export default class ArtifactList extends GenshinList
   setupDisplay()
   {
     let idField = this.display.addField("id", {
-      label: "I",
+      label: "#",
       labelTitle: "Sort in the same order as the in-game inventory when you select 'quality'.",
       sort: {func: (o,a,b) => {
         let slotSortR = ["circlet","goblet","sands","plume","flower"];
@@ -170,6 +170,7 @@ export default class ArtifactList extends GenshinList
         "q4": item.rarity == 4,
         "q5": item.rarity == 5,
       },
+      popup: item => item,
     });
     
     let slotField = this.display.addField("slot", {
@@ -208,13 +209,13 @@ export default class ArtifactList extends GenshinList
     });
     
     let lockField = this.display.addField("lock", {
-      label: "L",
+      label: "<i class='fa-solid fa-lock'></i>",
       sort: {generic: {type:"boolean",property:"lock"}},
       dynamic: true,
       title: item => "Whether the artifact is locked. Red background indicates the artifact is below your minimum desirability rating, which theoretically means you should unlock it and use it as fodder in-game.",
       classes: (item,showUnlocked,showRed=1) => {
         return {
-          "insufficient": parseInt(showRed) && item.isFodder,
+          "undesirable": parseInt(showRed) && item.isFodder,
         };
       },
       edit: (item,showUnlocked,showRed=1) => ({
@@ -241,7 +242,8 @@ export default class ArtifactList extends GenshinList
     {
       let substatSumField = this.display.addField(statId+"Sum", {
         group: substatValueGroup,
-        label: Artifact.getStatShorthand(statId),
+        //label: Artifact.getStatShorthand(statId),
+        label: `<img class="icon-inline" src="img/stat.${statId}.svg"/>`,
         sort: {func: (o,a,b) => o * (b.getSubstatSum(statId) - a.getSubstatSum(statId))},
         columnClasses: ['stat-'+statId],
         dynamic: true,
@@ -280,7 +282,7 @@ export default class ArtifactList extends GenshinList
     }
     
     let characterCountField = this.display.addField("characterCount", {
-      label: "#",
+      label: "$",
       labelTitle: "Desireability rating of this artifact based on your build preferences across all of your characters. The number itself is somewhat arbitrary, but the ranking should be significant. Choose a rating where you think all artifacts are worth keeping, set it in the preferences above, and then you can easily see which artifacts are recommended for use as strongbox/exp fodder.",
       sort: {func: (o,a,b) => {
         let A = a.wanters.reduce((result, wanter, idx) => result+Math.pow(wanter.scaledScore, 1+idx), 0);
@@ -303,7 +305,6 @@ export default class ArtifactList extends GenshinList
       dependencies: item => [
         {item:item, field:"wanters"},
       ],
-      popup: item => item,
     });
     
     let locationField = this.display.addField("location", {
@@ -349,7 +350,7 @@ export default class ArtifactList extends GenshinList
         },
       },
       dependencies: item => [
-        {item:item.list.viewer.lists.characters, field:"list"},
+        {item:item.list.viewer.lists.CharacterList, field:"list"},
       ],
     });
     
@@ -369,7 +370,7 @@ export default class ArtifactList extends GenshinList
     });
     
     let deleteBtn = this.display.addField("deleteBtn", {
-      label: "D",
+      label: "<i class='fa-solid fa-trash-can'></i>",
       dynamic: true,
       dependencies: item => [
         {item:item, field:"lock"},
@@ -552,6 +553,8 @@ export default class ArtifactList extends GenshinList
       this.elements.selectSetAdd.appendChild(document.createElement("option"))
       for(let itm in GenshinArtifactData)
       {
+        if(!this.viewer.settings.preferences.showLeaks && Date.parse(GenshinArtifactData[itm].release) > Date.now())
+          continue;
         let option = this.elements.selectSetAdd.appendChild(document.createElement("option"));
         option.value = itm;
         option.innerHTML = GenshinArtifactData[itm].name;

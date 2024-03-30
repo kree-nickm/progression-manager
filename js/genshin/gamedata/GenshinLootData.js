@@ -15,7 +15,8 @@ export default {
       "2": "Sealed Scroll",
       "3": "Forbidden Curse Scroll"
     },
-    "Hilichurl Archers": {
+    "Hili.Archers": {
+      "source": "Hilichurl Archers",
       "1": "Firm Arrowhead",
       "2": "Sharp Arrowhead",
       "3": "Weathered Arrowhead"
@@ -52,12 +53,14 @@ export default {
       "2": "Sergeant's Insignia",
       "3": "Lieutenant's Insignia"
     },
-    "Treasure Hoarders": {
+    "T.Hoarders": {
+      "source": "Treasure Hoarders",
       "1": "Treasure Hoarder Insignia",
       "2": "Silver Raven Insignia",
       "3": "Golden Raven Insignia"
     },
     "Whopperflowers": {
+      "source": "Whopperflowers",
       "1": "Whopperflower Nectar",
       "2": "Shimmering Nectar",
       "3": "Energy Nectar"
@@ -133,12 +136,14 @@ export default {
       "3": "Treasured Flower",
       "4": "Wanderer's Blooming Flower"
     },
-    "Fontemer Aberrants": {
+    "Fontemer": {
+      "source": "Fontemer Aberrants",
       "1": "Transoceanic Pearl",
       "2": "Transoceanic Chunk",
       "3": "Xenochromatic Crystal"
     },
-    "Clockwork Meka": {
+    "Meka": {
+      "source": "Clockwork Meka",
       "1": "Meshing Gear",
       "2": "Mechanical Spur Gear",
       "3": "Artificed Dynamic Gear"
@@ -162,6 +167,13 @@ export default {
       "2": "Feathery Fin",
       "3": "Lunar Fin",
       "4": "Chasmlight Fin"
+    },
+    "Praetorians": {
+      "source": "Praetorian Golems",
+      "release": "April 24, 2024",
+      "2": "Ruined Hilt",
+      "3": "Splintered Hilt",
+      "4": "Still-Smoldering Hilt"
     }
   },
   
@@ -236,6 +248,15 @@ export default {
         "Lightless Eye of the Maelstrom",
         "Lightless Mass",
         "Lightless Silk String"
+      ]
+    },
+    {
+      "boss": "The Knave",
+      "release": "April 24, 2024",
+      "loot": [
+        "The Knave Mat 1",
+        "The Knave Mat 2",
+        "The Knave Mat 3"
       ]
     }
   ],
@@ -360,6 +381,11 @@ export default {
     "Hidden Beast": {
       "name": "Hidden Beast of the South",
       "4": "Cloudseam Scale"
+    },
+    "Legatus": {
+      "name": "Legatus Golem",
+      "release": "April 24, 2024",
+      "4": "Fragment of a Golden Melody"
     }
   },
   

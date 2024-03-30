@@ -24,9 +24,10 @@ export default class ListDisplayManager
     return this.fields[id];
   }
   
-  getGroups({include=[], exclude=[]}={})
+  getGroups({fields, include=[], exclude=[]}={})
   {
-    let fields = this.getFields({include, exclude});
+    if(!fields)
+      fields = this.getFields({include, exclude});
     let result = [];
     let lastGroup;
     for(let field in fields)

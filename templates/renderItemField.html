@@ -1,7 +1,7 @@
 {{#if item}}
 {{#if (findField item field)}}
 <{{wrapper}}
-  class="list-item-field {{itemClasses item (findField item field) params=params}} {{fieldClasses (findField item field)}} {{class}}"
+  class="list-item-field {{itemClasses item (findField item field) params=params}} {{fieldClasses (findField item field) params=params}} {{class}}"
   name="{{lookup (findField item field) 'id'}}"
   title="{{itemField item (findField item field) 'title' params=params}}"
   {{#if (lookup (findField item field) 'group')}}data-group-name="{{lookup (findField item field) 'group' 'label'}}"{{/if}}

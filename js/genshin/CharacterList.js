@@ -173,9 +173,13 @@ export default class CharacterList extends GenshinList
       labelTitle: "Sort by phase/ascension.",
       sort: {generic: {type:"number",property:"ascension"}},
       dynamic: true,
-      title: item => "Click to change.",
+      title: item => "Click to change." + (item.canUpPhase(true) ? "\r\nNote: You have enough materials to ascend. Open character details to use the ascension feature." : ""),
       value: item => item.ascension,
       edit: item => ({target: {item:item.base??item, field:"ascension"}}),
+      classes: item => ({
+        'can-inc': item.canUpPhase(true),
+        "at-max": item.ascension >= 6,
+      }),
       dependencies: item => [
         {item:item.base??item, field:"ascension"},
         {item:item.getMat('gem'), field:"count"},
@@ -183,19 +187,6 @@ export default class CharacterList extends GenshinList
         {item:item.getMat('flower'), field:"count"},
         {item:item.getMat('enemy'), field:"count"},
       ].concat(item.getMat('gem').getCraftDependencies()).concat(item.getMat('enemy').getCraftDependencies()),
-      button: item => {
-        if(item.canUpPhase(false))
-          return {
-            title: "Ascend the character. This will spend the resources for you and increase their level if necessary.",
-            icon: "fa-solid fa-circle-up",
-            action: item.upPhase.bind(item),
-          };
-        else if(item.canUpPhase(true))
-          return {
-            title: "Not enough materials to ascend, but you have enough lower quality materials to craft them.",
-            icon: "fa-solid fa-circle-up"
-          };
-      },
     });
     
     let level = this.display.addField("level", {
@@ -207,7 +198,7 @@ export default class CharacterList extends GenshinList
       value: item => item.level,
       edit: item => ({target: {item:item.base??item, field:"level"}}),
       classes: item => ({
-        "pending": item.level < item.levelCap,
+        "at-max": item.level >= item.levelCap,
       }),
       dependencies: item => [
           {item:item.base??item, field:"level"},
@@ -226,6 +217,9 @@ export default class CharacterList extends GenshinList
       dynamic: true,
       value: item => item.constellation,
       title: item => "Click to change.",
+      classes: item => ({
+        "at-max": item.constellation >= 6,
+      }),
       edit: item => ({target: {item, field:"constellation"}}),
     });
     
@@ -253,6 +247,10 @@ export default class CharacterList extends GenshinList
         value: item => item.talent[i],
         title: item => (item.getTalent(i).matTrounceCount ? `Also requires ${item.getTalent(i).matTrounceCount} ${item.MaterialList.trounce.name}, dropped by ${item.MaterialList.trounce.source} (you have ${item.MaterialList.trounce.getCraftCount()})` : ""),
         edit: item => ({target: {item, field:["talent", i]}}),
+        classes: item => ({
+          "can-inc": item.canUpTalent(i, true),
+          "at-max": item.talent[i] >= item.talentCap,
+        }),
         sort: {generic: {type:"number",property:["talent",i]}},
         dependencies: item => [
             {item:item.viewer.lists.MaterialList.get("Mora"), field:"count"},
@@ -261,131 +259,94 @@ export default class CharacterList extends GenshinList
             {item:item.base??item, field:"ascension"},
             item.getTalentMat('mastery',i).days ? {item:this.viewer, field:"today"} : {},
           ].concat(item.getTalentMat('mastery',i).getCraftDependencies()).concat(item.getTalentMat('enemy',i).getCraftDependencies()),
-        button: item => {
-          if(item.talent[i] < item.getPhase().maxTalent)
-          {
-            if(item.canUpTalent(i, false))
-            {
-              return {
-                title: "Level up the talent. This will spend the resources for you.",
-                icon: "fa-solid fa-circle-up",
-                action: item.upTalent.bind(item, i),
-                classes: {
-                  "sufficient": false,
-                  "pending": false,
-                  "insufficient": false,
-                },
-              };
-            }
-            else
-            {
-              return {
-                title: "Not enough materials to level up. If the button is green, you could craft those materials now. If the button is yellow, it involves time-gated materials you could obtain today. If red, you can't obtain those materials today.",
-                icon: "fa-solid fa-circle-up",
-                classes: {
-                  "sufficient": item.canUpTalent(i, true),
-                  "pending": item.getTalentMat('mastery',i).getCraftCount() < item.getTalent(i).matDomainCount &&
-                             item.getTalentMat('mastery',i).days.indexOf(item.list.viewer.today()) > -1,
-                  "insufficient": item.getTalentMat('mastery',i).getCraftCount() < item.getTalent(i).matDomainCount &&
-                                  item.getTalentMat('mastery',i).days.indexOf(item.list.viewer.today()) == -1,
-                },
-              };
-            }
-          }
-          return null;
-        },
       });
     }
     
     let mats = [
       {t:"gem",l:"Gems"},
-      {t:"boss",l:"World Boss Drops"},
+      {t:"boss",l:"World Boss"},
       {t:"flower",l:"Flora"},
       {t:"enemy",l:"Enemy Drops"},
       {t:"mora",l:"Mora"},
     ];
-    let ascGroup = {label:"Ascension Materials"};
-    for(let phase of [undefined,0,1,2,3,4,5])
-    {
-      for(let mat of mats)
-      {
-        let ascMaterial = this.display.addField(mat.t+"AscMat"+(phase??""), {
-          group: ascGroup,
-          label: iconLookup[mat.t],
-          labelTitle: mat.l,
-          sort: isNaN(phase) ? {func: (o,a,b) => {
-            let A = a.getMat(mat.t,phase)?.shorthand??"";
-            let B = b.getMat(mat.t,phase)?.shorthand??"";
-            if(!A && B)
-              return 1;
-            else if(A && !B)
-              return -1;
-            else if(!A && !B)
-              return 0;
-            else
-              return o*A.localeCompare(B);
-          }} : undefined,
-          columnClasses: ["ascension-materials"],
-          tags: isNaN(phase) & mat.l != "Mora" ? undefined : ["detailsOnly"],
-          dynamic: true,
-          value: item => item.getMat(mat.t,phase) && item.getMatCost(mat.t,phase) ? item.getMat(mat.t,phase).getFieldValue(item.getMatCost(mat.t,phase), this.viewer.settings.preferences.characterList=='1') : "",
-          dependencies: item => [
-            {item:item.base??item, field:"ascension"},
-            {item:item.viewer.lists.MaterialList.get("Mora"), field:"count"},
-          ].concat(item.getMat(mat.t,phase)?.getCraftDependencies() ?? []),
-        });
-      }
-      if(!isNaN(phase))
-      {
-        let ascPhase = this.display.addField("ascension"+phase, {
-          label: "Phs"+phase,
-          tags: ["detailsOnly"],
-          dynamic: true,
-          value: item => `${phase} ➤ ${phase+1}`,
-          dependencies: item => [
-            {item:item.viewer.lists.MaterialList.get("Mora"), field:"count"},
-            {item:item.getMat('gem',phase), field:"count"},
-            item.getMat('boss',phase) ? {item:item.getMat('boss',phase), field:"count"} : null,
-            {item:item.getMat('flower',phase), field:"count"},
-            {item:item.getMat('enemy',phase), field:"count"},
-            {item:item.base??item, field:"ascension"},
-          ],
-          button: item => {
-            if(phase == item.ascension)
-            {
-              if(item.canUpPhase(false))
-              {
-                return {
-                  title: "Ascend the character. This will spend the resources for you and increase their level if necessary.",
-                  icon: "fa-solid fa-circle-up",
-                  action: item.upPhase.bind(item),
-                };
-              }
-              else
-              {
-                return {
-                  title: "Not enough materials to ascend.",
-                  icon: "fa-solid fa-circle-up",
-                };
-              }
-            }
-          },
-        });
-      }
-    }
+    this.display.addField("ascensionMaterial", {
+      group: {label:"Ascension Materials"},
+      label: (item, type, phase) => iconLookup[type] ?? type,
+      labelTitle: (item, type, phase) => mats.find(m=>m.t==type)?.l,
+      /*sort: isNaN(phase) ? {func: (o,a,b) => {
+        let A = a.getMat(mat.t,phase)?.shorthand??"";
+        let B = b.getMat(mat.t,phase)?.shorthand??"";
+        if(!A && B)
+          return 1;
+        else if(A && !B)
+          return -1;
+        else if(!A && !B)
+          return 0;
+        else
+          return o*A.localeCompare(B);
+      }} : undefined,*/
+      columnClasses: ["ascension-materials"],
+      dynamic: true,
+      value: (item, type, phase) => type == "label" ? `${phase} ➤ ${phase+1}` : (item.getMat(type,phase) && item.getMatCost(type,phase) ? item.getMat(type,phase).getFieldValue(item.getMatCost(type,phase), this.viewer.settings.preferences.characterList=='1') : ""),
+      dependencies: (item, type, phase) => [
+        {item:item.base??item, field:"ascension"},
+        {item:item.viewer.lists.MaterialList.get("Mora"), field:"count"},
+      ].concat(type == "label" ?
+        [
+          {item:item.getMat('gem',phase), field:"count"},
+          item.getMat('boss',phase) ? {item:item.getMat('boss',phase), field:"count"} : null,
+          {item:item.getMat('flower',phase), field:"count"},
+          {item:item.getMat('enemy',phase), field:"count"},
+        ] : (item.getMat(type,phase)?.getCraftDependencies() ?? [])
+      ),
+      button: (item, type, phase) => {
+        if(type == "label" && phase == item.ascension)
+        {
+          if(item.canUpPhase(false))
+          {
+            return {
+              title: "Ascend the character. This will spend the resources for you and increase their level if necessary.",
+              icon: "fa-solid fa-circle-up",
+              action: item.upPhase.bind(item),
+            };
+          }
+          else
+          {
+            return {
+              title: "Not enough materials to ascend.",
+              icon: "fa-solid fa-circle-up",
+            };
+          }
+        }
+      },
+    });
     
     let talGroup = {label:"Talent Materials", startCollapsed:true};
+    this.display.addField("talentMaterial", {
+      group: talGroup,
+      label: (item, type, level) => iconLookup[type] + (isNaN(level) ? iconLookup[level] : ""),
+      labelTitle: (item, type, level) => type + (isNaN(level) ? ` (${level})` : ""),
+      columnClasses: (item, type, level) => [(isNaN(level)?level:"talent")+'-'+type?.toLowerCase()],
+      dynamic: true,
+      value: (item, type, level) => item.getTalentMat(type?.toLowerCase(),level) && item.getTalent(level)['mat'+type+'Count'] ? (item.getTalentMat(type?.toLowerCase(),level)?.getFieldValue(item.getTalent(level)['mat'+type+'Count'], this.viewer.settings.preferences.characterList=='1')??"!ERROR!") : "",
+      title: (item, type, level) => item.getTalentMat(type?.toLowerCase(),level)?.getFullSource()??"!ERROR!",
+      dependencies: (item, type, level) => [
+        {item, field:["talent", level]},
+        {item:item.viewer.lists.MaterialList.get("Mora"), field:"count"},
+        item.getTalentMat(type?.toLowerCase(),level)?.days ? {item:this.viewer, field:"today"} : {},
+      ].concat(item.getTalentMat(type?.toLowerCase(),level)?.getCraftDependencies()??[]),
+    });
     for(let i of ["auto","skill","burst",1,2,3,4,5,6,7,8,9])
     {
-      for(let m of [{l:"Mastery",d:"Domain"},{l:"Enemy",d:"Enemy"},{l:"Trounce",d:"Trounce"},{l:"Crown",d:"Crown"},{l:"Mora",d:"Mora"}])
+      for(let m of ["Mastery","Enemy","Trounce","Crown","Mora"])
       {
-        let talentMat = this.display.addField(isNaN(i) ? i+m.l+"Mat" : "talent"+m.l+"Mat"+i, {
+        let talentMat = this.display.addField(isNaN(i) ? i+m+"Mat" : "talent"+m+"Mat"+i, {
           group: talGroup,
-          label: iconLookup[m.l] + (isNaN(i) ? iconLookup[i] : ""),
-          labelTitle: m.l + (isNaN(i) ? ` (${i})` : ""),
+          label: iconLookup[m] + (isNaN(i) ? iconLookup[i] : ""),
+          labelTitle: m + (isNaN(i) ? ` (${i})` : ""),
           sort: isNaN(i) ? {func: (o,a,b) => {
-            let A = a.getTalentMatType(m.l.toLowerCase(),i)??"";
-            let B = b.getTalentMatType(m.l.toLowerCase(),i)??"";
+            let A = a.getTalentMatType(m.toLowerCase(),i)??"";
+            let B = b.getTalentMatType(m.toLowerCase(),i)??"";
             if(!A && B)
               return 1;
             else if(A && !B)
@@ -395,16 +356,16 @@ export default class CharacterList extends GenshinList
             else
               return o*A.localeCompare(B);
           }} : undefined,
-          columnClasses: [(isNaN(i)?i:"talent")+'-'+m.l.toLowerCase()],
-          tags: isNaN(i) & m.l != "Trounce" && m.l != "Crown" && m.l != "Mora" ? undefined : ["detailsOnly"],
+          columnClasses: [(isNaN(i)?i:"talent")+'-'+m.toLowerCase()],
+          tags: isNaN(i) & m != "Trounce" && m != "Crown" && m != "Mora" ? undefined : ["detailsOnly"],
           dynamic: true,
-          value: item => item.getTalentMat(m.l.toLowerCase(),i) && item.getTalent(i)['mat'+m.d+'Count'] ? (item.getTalentMat(m.l.toLowerCase(),i)?.getFieldValue(item.getTalent(i)['mat'+m.d+'Count'], this.viewer.settings.preferences.characterList=='1')??"!ERROR!") : "",
-          title: item => item.getTalentMat(m.l.toLowerCase(),i)?.getFullSource()??"!ERROR!",
+          value: item => item.getTalentMat(m.toLowerCase(),i) && item.getTalent(i)['mat'+m+'Count'] ? (item.getTalentMat(m.toLowerCase(),i)?.getFieldValue(item.getTalent(i)['mat'+m+'Count'], this.viewer.settings.preferences.characterList=='1')??"!ERROR!") : "",
+          title: item => item.getTalentMat(m.toLowerCase(),i)?.getFullSource()??"!ERROR!",
           dependencies: item => [
             {item, field:["talent", i]},
             {item:item.viewer.lists.MaterialList.get("Mora"), field:"count"},
-            item.getTalentMat(m.l.toLowerCase(),i)?.days ? {item:this.viewer, field:"today"} : {},
-          ].concat(item.getTalentMat(m.l.toLowerCase(),i)?.getCraftDependencies()??[]),
+            item.getTalentMat(m.toLowerCase(),i)?.days ? {item:this.viewer, field:"today"} : {},
+          ].concat(item.getTalentMat(m.toLowerCase(),i)?.getCraftDependencies()??[]),
         });
       }
       if(!isNaN(i))
@@ -485,7 +446,7 @@ export default class CharacterList extends GenshinList
           return result ? ((previewstat-currentstat)/currentstat*100).toFixed(1)+"%" : "";
         }
         else
-          return item.getStat(stat, {situation, preview:mode==1, unmodified:mode==-1, substats:mode==-2}).toFixed(stat.slice(-1)=="_" ? 1 : ["melt-forward","vaporize-forward","melt-reverse","vaporize-reverse"].indexOf(stat) > -1 ? 3 : 0)??"null";
+          return item.getStat(stat, {situation, preview:mode==1, unmodified:mode==-1, substats:mode==-2})?.toFixed(stat.slice(-1)=="_" ? 1 : ["melt-forward","vaporize-forward","melt-reverse","vaporize-reverse"].indexOf(stat) > -1 ? 3 : 0)??"null";
       },
       dependencies: (item,stat,mode,situation) => [
         {item:item.base??item, field:"constellation"},
@@ -670,6 +631,7 @@ export default class CharacterList extends GenshinList
         },
       ]) : "",
       title: item => item.weapon ? `Click to open a popup to examine ${item.weapon.name} in-depth.` : "",
+      columnClasses: ["character-weapon"],
       dependencies: item => [
         item.weapon ? {item:item.weapon, field:"location"} : undefined,
         item.weapon ? {item:item.weapon, field:"refinement"} : undefined,
@@ -753,19 +715,58 @@ export default class CharacterList extends GenshinList
           item[slotKey+'Artifact'] ? {item:item[slotKey+'Artifact'], field:"level"} : undefined,
           item[slotKey+'Artifact'] ? {item:item[slotKey+'Artifact'], field:"substats"} : undefined,
           {item:item, field:"buildData"},
+          {item:item, field:"selectedBuild"},
           {type:slotKey+'Artifact'},
         ],
       });
     }
-    
-    let imageField = this.display.addField("image", {
-      label: "Image",
-      tags: ["detailsOnly"],
-      dynamic: false,
-      value: item => ({
-        tag: "img",
-        src: item.image,
-      }),
+     
+    this.display.addField("equipWeapon", {
+      label: "Weapon",
+      dynamic: true,
+      value: item => item.weapon ? {
+        value: [
+          {
+            value: item.viewer.settings.preferences.listDisplay=='1' ? {
+              tag: "img",
+              classes: {'character-icon':true},
+              src: item.weapon.image,
+            } : item.weapon.name,
+            classes: {
+              "icon": item.viewer.settings.preferences.listDisplay=='1',
+            },
+            edit: {
+              func: wpn => item.equipItem(wpn),
+              type: "select",
+              list: item.viewer.lists.WeaponList.items(item.weaponType),
+              valueProperty: "uuid",
+              valueFormat: "uuid",
+              displayProperty: "name",
+            },
+          },
+          {
+            tag: "i",
+            classes: {'fa-solid':true, 'fa-eye':true},
+            popup: item.weapon,
+          },
+        ],
+        classes: {
+          "user-field": true,
+        },
+      } : {
+        value: "-",
+        edit: {
+          func: wpn => item.equipItem(wpn),
+          type: "select",
+          list: item.viewer.lists.WeaponList.items(item.weaponType),
+          valueProperty: "uuid",
+          valueFormat: "uuid",
+          displayProperty: "name",
+        },
+      },
+      dependencies: item => [
+        {item:item.list.viewer.lists.WeaponList, field:"list"},
+      ],
     });
     
     let activeTeam = this.display.addField("activeTeam", {
@@ -912,6 +913,34 @@ export default class CharacterList extends GenshinList
   prepareRender(element, data, options)
   {
     data.filter = "listable";
+    data.fields = [];
+    data.fields.push({field:this.display.getField("favorite"), params:[]});
+    data.fields.push({field:this.display.getField("name"), params:[]});
+    data.fields.push({field:this.display.getField("weaponType"), params:[]});
+    data.fields.push({field:this.display.getField("element"), params:[]});
+    data.fields.push({field:this.display.getField("ascension"), params:[]});
+    data.fields.push({field:this.display.getField("level"), params:[]});
+    data.fields.push({field:this.display.getField("constellation"), params:[]});
+    data.fields.push({field:this.display.getField("autoTalent"), params:[]});
+    data.fields.push({field:this.display.getField("skillTalent"), params:[]});
+    data.fields.push({field:this.display.getField("burstTalent"), params:[]});
+    data.fields.push({field:this.display.getField("ascensionMaterial"), params:['gem']});
+    data.fields.push({field:this.display.getField("ascensionMaterial"), params:['boss']});
+    data.fields.push({field:this.display.getField("ascensionMaterial"), params:['flower']});
+    data.fields.push({field:this.display.getField("ascensionMaterial"), params:['enemy']});
+    data.fields.push({field:this.display.getField("talentMaterial"), params:['Mastery', 'auto']});
+    data.fields.push({field:this.display.getField("talentMaterial"), params:['Enemy', 'auto']});
+    data.fields.push({field:this.display.getField("talentMaterial"), params:['Mastery', 'skill']});
+    data.fields.push({field:this.display.getField("talentMaterial"), params:['Enemy', 'skill']});
+    data.fields.push({field:this.display.getField("talentMaterial"), params:['Mastery', 'burst']});
+    data.fields.push({field:this.display.getField("talentMaterial"), params:['Enemy', 'burst']});
+    data.fields.push({field:this.display.getField("weaponName"), params:[this.viewer.settings.preferences.characterList, "sm"]});
+    data.fields.push({field:this.display.getField("flower"), params:[this.viewer.settings.preferences.characterList, "sm"]});
+    data.fields.push({field:this.display.getField("plume"), params:[this.viewer.settings.preferences.characterList, "sm"]});
+    data.fields.push({field:this.display.getField("sands"), params:[this.viewer.settings.preferences.characterList, "sm"]});
+    data.fields.push({field:this.display.getField("goblet"), params:[this.viewer.settings.preferences.characterList, "sm"]});
+    data.fields.push({field:this.display.getField("circlet"), params:[this.viewer.settings.preferences.characterList, "sm"]});
+    data.groups = this.display.getGroups({fields: data.fields.map(fieldTuple => fieldTuple.field)});
     return {element, data, options};
   }
   
@@ -969,10 +998,11 @@ export default class CharacterList extends GenshinList
           let listTargetElement = listElement.querySelector(".list-target");
           if(!listTargetElement)
             listTargetElement = listElement;
+          let renderData = this.prepareRender(listElement, {}, {});
           Renderer.rerender(null, {
             item,
-            groups: this.display.getGroups({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}),
-            fields: this.display.getFields({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}).map(field => ({field, params:[]})),
+            groups: renderData.data.groups,
+            fields: renderData.data.fields,
             wrapper: "tr",
             fieldWrapper: "td",
           }, {template:"renderItem", parentElement:listTargetElement});
@@ -1015,7 +1045,7 @@ export default class CharacterList extends GenshinList
                   showcase.document.head.appendChild(htmlElement.cloneNode(true));
                 });
                 let container = showcase.document.body.appendChild(document.createElement("div"));
-                await Renderer.rerender(container, {item:this, items:characters}, {template: "renderCharacterListAsShowcase"});
+                await Renderer.rerender(container, {item:this, items:characters}, {template: "genshin/renderCharacterListAsShowcase"});
               });
               showcase.addEventListener("beforeunload", event => {
                 this.constructor.clearDependencies(showcase.document.body, true);

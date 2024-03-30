@@ -1,0 +1,5 @@
+<div class="col list" data-template="genshin/renderListAsColumn" {{#if filter}}data-filter="{{filter}}"{{/if}} data-uuid="{{uuid item}}">
+  {{#each items}}
+      {{> genshin/renderArtifactAsCard buildId=../params.[0] character=../parent item=.}}
+  {{/each}}
+</div>

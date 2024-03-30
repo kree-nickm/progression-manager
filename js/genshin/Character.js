@@ -48,7 +48,7 @@ export default class Character extends GenshinItem
 {
   static dontSerialize = GenshinItem.dontSerialize.concat(["MaterialList","loaded","_weapon","_flower","_plume","_sands","_goblet","_circlet","preview","statModifiers","activeTeam"]);
   static goodProperties = ["key","level","constellation","ascension","talent"];
-  static templateName = "renderCharacterAsPopup";
+  static templateName = "genshin/renderCharacterAsPopup";
 
   static sortArtifacts(buildId,useTargets,a,b)
   {
@@ -169,28 +169,28 @@ export default class Character extends GenshinItem
       // TODO: Stuff like this should be handled using dependencies, but at the moment, only item fields are easy to handle using dependencies, which these are not.
       if(options.mainChange)
       {
-        let element = document.querySelector(`[data-template="renderCharacterMainStats"][data-uuid="${this.uuid}"]`);
+        let element = document.querySelector(`[data-template="genshin/renderCharacterMainStats"][data-uuid="${this.uuid}"]`);
         if(element) Renderer.queueUpdate(element);
       }
       if(options.rxnChange)
       {
-        let element = document.querySelector(`[data-template="renderCharacterReactions"][data-uuid="${this.uuid}"]`);
+        let element = document.querySelector(`[data-template="genshin/renderCharacterReactions"][data-uuid="${this.uuid}"]`);
         if(element) Renderer.queueUpdate(element);
       }
       // listChange should be true when modifiers could have been added or removed from the list.
       if(options.listChange)
       {
-        let element = document.querySelector(`[data-template="renderCharacterStatModifiers"][data-uuid="${this.uuid}"]`);
+        let element = document.querySelector(`[data-template="genshin/renderCharacterStatModifiers"][data-uuid="${this.uuid}"]`);
         if(element) Renderer.queueUpdate(element);
       }
       // mvChange should be true when motion values could have been added or removed from a list or motion values.
       if(options.mvChange == "*")
       {
-        document.querySelectorAll(`[data-template="renderCharacterMotionValues"][data-uuid="${this.uuid}"]`).forEach(elem => Renderer.queueUpdate(elem));
+        document.querySelectorAll(`[data-template="genshin/renderCharacterMotionValues"][data-uuid="${this.uuid}"]`).forEach(elem => Renderer.queueUpdate(elem));
       }
       else if(["auto","skill","burst"].indexOf(options.mvChange) > -1)
       {
-        let element = document.querySelector(`#characterStats\\.${options.mvChange}[data-template="renderCharacterMotionValues"][data-uuid="${this.uuid}"]`);
+        let element = document.querySelector(`#characterStats\\.${options.mvChange}[data-template="genshin/renderCharacterMotionValues"][data-uuid="${this.uuid}"]`);
         if(element) Renderer.queueUpdate(element);
       }
     }
@@ -438,7 +438,8 @@ export default class Character extends GenshinItem
   get releaseTimestamp(){ return GenshinCharacterData[this.key]?.release ? Date.parse(GenshinCharacterData[this.key]?.release) : 0; }
   
   getPhase(ascension=this.ascension){ return GenshinPhaseData[ascension] ?? GenshinPhaseData[6]; }
-  get levelCap(){ return this.getPhase().levelCap; }
+  get levelCap() { return this.getPhase().levelCap; }
+  get talentCap() { return this.getPhase().maxTalent; }
   
   getMat(type, ascension=this.ascension)
   {
@@ -476,7 +477,7 @@ export default class Character extends GenshinItem
   getTalentMat(type, talent)
   {
     if(type == "mastery")
-      return this.MaterialList.mastery[this.getTalent(talent).matDomainQuality];
+      return this.MaterialList.mastery[this.getTalent(talent).matMasteryQuality];
     else if(type == "enemy")
       return this.MaterialList.enemy[this.getTalent(talent).matEnemyQuality];
     else if(type == "trounce")
@@ -547,13 +548,13 @@ export default class Character extends GenshinItem
   
   upTalent(talent, event)
   {
-    if(this.talent[talent] == 10)
+    if(this.talent[talent] >= this.talentCap)
     {
       console.error(`Tried to increase ${talent} talent of ${this.name}, but already at max.`);
       return false;
     }
     event.stopPropagation();
-    this.getTalentMat('mastery',talent).update("count", this.getTalentMat('mastery',talent).count - this.getTalent(talent).matDomainCount);
+    this.getTalentMat('mastery',talent).update("count", this.getTalentMat('mastery',talent).count - this.getTalent(talent).matMasteryCount);
     this.getTalentMat('enemy',talent).update("count", this.getTalentMat('enemy',talent).count - this.getTalent(talent).matEnemyCount);
     this.MaterialList.trounce.update("count", this.MaterialList.trounce.count - this.getTalent(talent).matTrounceCount);
     this.MaterialList.crown.update("count", this.MaterialList.crown.count - this.getTalent(talent).matCrownCount);
@@ -563,16 +564,16 @@ export default class Character extends GenshinItem
   
   canUpTalent(talent, withCrafting=false)
   {
-    if(this.talent[talent] == 10)
+    if(this.talent[talent] >= this.talentCap)
       return false;
     else if(withCrafting)
-      return this.getTalentMat('mastery',talent)?.getCraftCount() >= this.getTalent(talent).matDomainCount &&
+      return this.getTalentMat('mastery',talent)?.getCraftCount() >= this.getTalent(talent).matMasteryCount &&
         this.getTalentMat('enemy',talent)?.getCraftCount() >= this.getTalent(talent).matEnemyCount &&
         this.MaterialList.trounce?.getCraftCount() >= this.getTalent(talent).matTrounceCount &&
         this.MaterialList.crown?.getCraftCount() >= this.getTalent(talent).matCrownCount &&
         this.MaterialList.mora?.getCraftCount() >= this.getTalent(talent).matMoraCount;
     else
-      return this.getTalentMat('mastery',talent)?.count >= this.getTalent(talent).matDomainCount &&
+      return this.getTalentMat('mastery',talent)?.count >= this.getTalent(talent).matMasteryCount &&
         this.getTalentMat('enemy',talent)?.count >= this.getTalent(talent).matEnemyCount &&
         this.MaterialList.trounce?.count >= this.getTalent(talent).matTrounceCount &&
         this.MaterialList.crown?.count >= this.getTalent(talent).matCrownCount &&
@@ -591,6 +592,12 @@ export default class Character extends GenshinItem
   
   getStat(stat, alternates={})
   {
+    if(!stat)
+    {
+      console.error(`Character.getStat for '${this.name}' called with no stat.`);
+      return null;
+    }
+    
     let baseStat;
     let variant;
     [baseStat, variant] = stat.split("-");
@@ -1504,20 +1511,24 @@ export default class Character extends GenshinItem
   getRelatedItems({buildId=this.selectedBuild, skipSort, forceTargets, ignoreTargets}={})
   {
     let useTargets = forceTargets || !ignoreTargets;
+    /*let artifacts;
     if(!skipSort)
-    {
-      this.list.viewer.lists.ArtifactList.list.sort(Character.sortArtifacts.bind(this, buildId, useTargets));
-      this.list.viewer.lists.ArtifactList.subsets = {};
-      this.list.viewer.lists.ArtifactList.update("list", null, "notify", {reason:"sort"});
-    }
+      artifacts = this.list.viewer.lists.ArtifactList.list.toSorted(Character.sortArtifacts.bind(this, buildId, useTargets));
+    else
+      artifacts = this.list.viewer.lists.ArtifactList.list;*/
     let related = {
       weapons: this.list.viewer.lists.WeaponList.items(this.weaponType),
       bestArtifacts: {
-        flower: this.list.viewer.lists.ArtifactList.items("flower"),
-        plume: this.list.viewer.lists.ArtifactList.items("plume"),
-        sands: this.list.viewer.lists.ArtifactList.items("sands"),
-        goblet: this.list.viewer.lists.ArtifactList.items("goblet"),
-        circlet: this.list.viewer.lists.ArtifactList.items("circlet"),
+        /*flower: artifacts.filter(this.list.viewer.lists.ArtifactList.subsetDefinitions['flower']),
+        plume: artifacts.filter(this.list.viewer.lists.ArtifactList.subsetDefinitions['plume']),
+        sands: artifacts.filter(this.list.viewer.lists.ArtifactList.subsetDefinitions['sands']),
+        goblet: artifacts.filter(this.list.viewer.lists.ArtifactList.subsetDefinitions['goblet']),
+        circlet: artifacts.filter(this.list.viewer.lists.ArtifactList.subsetDefinitions['circlet']),*/
+        flower: this.list.viewer.lists.ArtifactList.items('flower'),
+        plume: this.list.viewer.lists.ArtifactList.items('plume'),
+        sands: this.list.viewer.lists.ArtifactList.items('sands'),
+        goblet: this.list.viewer.lists.ArtifactList.items('goblet'),
+        circlet: this.list.viewer.lists.ArtifactList.items('circlet'),
       },
       artifactSets: GenshinArtifactData,
       buildData: this.getBuild(buildId),
@@ -1525,6 +1536,15 @@ export default class Character extends GenshinItem
       builds: this.getBuilds(),
       artifactList: this.list.viewer.lists.ArtifactList,
     };
+    if(!skipSort)
+    {
+      let sorter = Character.sortArtifacts.bind(this, buildId, useTargets);
+      related.bestArtifacts.flower.sort(sorter);
+      related.bestArtifacts.plume.sort(sorter);
+      related.bestArtifacts.sands.sort(sorter);
+      related.bestArtifacts.goblet.sort(sorter);
+      related.bestArtifacts.circlet.sort(sorter);
+    }
     if(window.DEBUGLOG.getRelatedItems)
     {
       console.debug(`Getting ${this.name}'s related items for build "${related.buildData?.name}" (${buildId}).`, skipSort?`Skipping artifact sorting.`:`Sorting artifacts.`, useTargets?`Using targets.`:`Ignoring targets.`, related, related.bestArtifacts.goblet[0]);
@@ -1619,7 +1639,7 @@ export default class Character extends GenshinItem
   onRender(element)
   {
     super.onRender(element);
-    if(element.dataset.template == "renderCharacterAsPopup")
+    if(element.dataset.template == "genshin/renderCharacterAsPopup")
     {
       this._addStatsEventHandlers(element.querySelector(".character-stats"));
       for(let buildSection of element.querySelectorAll(".character-build"))
@@ -1627,15 +1647,15 @@ export default class Character extends GenshinItem
         this._addBuildEventHandlers(buildSection);
       }
     }
-    else if(element.dataset.template == "renderCharacterStats" || element.dataset.template == "renderCharacterStatModifiers" || element.dataset.template == "renderCharacterMotionValues")
+    else if(element.dataset.template == "genshin/renderCharacterStats" || element.dataset.template == "genshin/renderCharacterStatModifiers" || element.dataset.template == "genshin/renderCharacterMotionValues")
     {
       this._addStatsEventHandlers(element);
     }
-    else if(element.dataset.template == "renderCharacterBuild")
+    else if(element.dataset.template == "genshin/renderCharacterBuild")
     {
       this._addBuildEventHandlers(element);
     }
-    else if(element.dataset.template == "renderCharacterArtifactLists" || element.dataset.template == "renderArtifactAsCard")
+    else if(element.dataset.template == "genshin/renderCharacterArtifactLists" || element.dataset.template == "genshin/renderArtifactAsCard")
     {
       this._addArtifactListsEventHandlers(element)
     }
@@ -1887,10 +1907,10 @@ export default class Character extends GenshinItem
         useTargetsChk.onchange = event => {
           this.getBuild(buildId).useTargets[event.target.value] = event.target.checked;
           this.update("buildData", null, "notify", {property:event.target.value,buildId});
-          this.getRelatedItems({buildId}); // Causes the artifact lists to be re-sorted.
+          let relatedItems = this.getRelatedItems({buildId}); // Causes the artifact lists to be re-sorted.
           let listElements = buildSection.querySelectorAll(".character-artifacts .list[data-filter]");
           for(let listElement of listElements)
-            Renderer.sortItems(listElement);
+            Renderer.sortItems(listElement, {items:relatedItems.bestArtifacts[listElement.dataset.filter]});
         };
       }
     });
@@ -1910,10 +1930,10 @@ export default class Character extends GenshinItem
         targetInput.onchange = event => {
           this.getBuild(buildId)[property] = parseFloat(targetInput.value);
           this.update("buildData", null, "notify", {property,buildId});
-          this.getRelatedItems({buildId}); // Causes the artifact lists to be re-sorted.
+          let relatedItems = this.getRelatedItems({buildId}); // Causes the artifact lists to be re-sorted.
           let listElements = buildSection.querySelectorAll(".character-artifacts .list[data-filter]");
           for(let listElement of listElements)
-            Renderer.sortItems(listElement);
+            Renderer.sortItems(listElement, {items:relatedItems.bestArtifacts[listElement.dataset.filter]});
         };
       }
     }
@@ -2062,7 +2082,7 @@ export default class Character extends GenshinItem
           //Renderer.rerender(rootElement.querySelector(".character-stats"), {relatedItems});
           let listElements = characterArtifacts.querySelectorAll(".list[data-filter]");
           for(let listElement of listElements)
-            Renderer.sortItems(listElement);
+            Renderer.sortItems(listElement, {items:relatedItems.bestArtifacts[listElement.dataset.filter]});
           Renderer.rerender(artifactElement, {item:artifact, buildId, character:this}, {renderedItem:this});
           if(prevArtifactElement)
             Renderer.rerender(prevArtifactElement, {item:prevArtifact, buildId, character:this}, {renderedItem:this});
@@ -2104,7 +2124,7 @@ export default class Character extends GenshinItem
           //Renderer.rerender(rootElement.querySelector(".character-stats"), {relatedItems});
           let listElements = characterArtifacts.querySelectorAll(".list[data-filter]");
           for(let listElement of listElements)
-            Renderer.sortItems(listElement);
+            Renderer.sortItems(listElement, {items:relatedItems.bestArtifacts[listElement.dataset.filter]});
           Renderer.rerender(artifactElement, {item:artifact, buildId, character:this}, {renderedItem:this});
           if(prevArtifactElement)
             Renderer.rerender(prevArtifactElement, {item:prevArtifact, buildId, character:this}, {renderedItem:this});

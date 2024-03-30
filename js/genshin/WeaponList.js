@@ -103,6 +103,9 @@ export default class WeaponList extends GenshinList
       dynamic: true,
       value: item => item.refinement,
       edit: item => ({target: {item, field:"refinement"}}),
+      classes: item => ({
+        'at-max': item.refinement >= 5,
+      }),
     });
     
     let lock = this.display.addField("lock", {
@@ -130,15 +133,9 @@ export default class WeaponList extends GenshinList
         {item:item.getMat('strong'), field:"count"},
         {item:item.getMat('weak'), field:"count"},
       ].concat(item.getMat('forgery').getCraftDependencies()).concat(item.getMat('strong').getCraftDependencies()).concat(item.getMat('weak').getCraftDependencies()),
-      button: item => {
-        if(item.canUpPhase(false))
-          return {
-            icon: "fa-solid fa-star",
-            action: item.upPhase.bind(item),
-          };
-        else if(item.canUpPhase(true))
-          return {icon: "fa-solid fa-star"};
-      },
+      classes: item => ({
+        'at-max': item.ascension >= 6,
+      }),
     });
     
     let level = this.display.addField("level", {
@@ -148,7 +145,7 @@ export default class WeaponList extends GenshinList
       value: item => item.level,
       edit: item => ({target: {item, field:"level"}}),
       classes: item => ({
-        "pending": item.level < item.levelCap,
+        "at-max": item.level >= item.levelCap,
       }),
       dependencies: item => [
         {item:item.getMat('forgery'), field:"count"},
@@ -228,21 +225,50 @@ export default class WeaponList extends GenshinList
       }
     }
     
-    let equipped = this.display.addField("equipped", {
+    let locationField = this.display.addField("location", {
       label: "User",
-      sort: {generic: {type:"string", property:"location"}},
+      sort: {generic: {type:"string",property:"location"}},
       dynamic: true,
-      value: item => item.character?.name ?? "-",
-      edit: item => ({
-        target: {item, field:"location"},
-        type: "select",
-        list: item.list.viewer.lists.CharacterList.items("equippable").filter(cha => item.type == cha.weaponType),
-        valueProperty: "key",
-        displayProperty: "name",
-      }),
-      classes: item => ({"text-muted": !item.character}),
+      value: item => item.character ? {
+        value: [
+          {
+            value: item.viewer.settings.preferences.listDisplay=='1' ? {
+              tag: "img",
+              classes: {'character-icon':true},
+              src: item.character.image,
+            } : item.character.name,
+            classes: {
+              "icon": item.viewer.settings.preferences.listDisplay=='1',
+            },
+            edit: {
+              target: {item:item, field:"location"},
+              type: "select",
+              list: item.list.viewer.lists.CharacterList.items("equippable").filter(cha => item.type == cha.weaponType),
+              valueProperty: "key",
+              displayProperty: "name",
+            },
+          },
+          {
+            tag: "i",
+            classes: {'fa-solid':true, 'fa-eye':true},
+            popup: item.character.variants?.length ? item.character.variants[0] : item.character,
+          },
+        ],
+        classes: {
+          "user-field": true,
+        },
+      } : {
+        value: "-",
+        edit: {
+          target: {item:item, field:"location"},
+          type: "select",
+          list: item.list.viewer.lists.CharacterList.items("equippable").filter(cha => item.type == cha.weaponType),
+          valueProperty: "key",
+          displayProperty: "name",
+        },
+      },
       dependencies: item => [
-        {item:item.list.viewer.lists.characters, field:"list"},
+        {item:item.list.viewer.lists.CharacterList, field:"list"},
       ],
     });
     
@@ -370,6 +396,8 @@ export default class WeaponList extends GenshinList
       selectAdd.appendChild(document.createElement("option"))
       for(let itm in GenshinWeaponData)
       {
+        if(!this.viewer.settings.preferences.showLeaks && Date.parse(GenshinWeaponData[itm].release) > Date.now())
+          continue;
         let option = selectAdd.appendChild(document.createElement("option"));
         option.value = itm;
         option.innerHTML = GenshinWeaponData[itm].name;

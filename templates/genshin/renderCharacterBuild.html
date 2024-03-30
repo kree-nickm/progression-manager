@@ -1,4 +1,4 @@
-<div class="character-build" name="{{relatedItems.buildId}}" data-template="renderCharacterBuild" data-uuid="{{uuid item}}">
+<div class="character-build" name="{{relatedItems.buildId}}" data-template="genshin/renderCharacterBuild" data-uuid="{{uuid item}}">
     <div class="row">
         <div class="col">
             <ul class="nav nav-tabs">
@@ -55,39 +55,39 @@
         <div class="row">
             <div class="col-6">
                 <h4>Substats</h4>
-              {{> renderCharacterBuildSlider . type="artifactSubstats" statId="hp" value=relatedItems.buildData.artifactSubstats.hp}}
-              {{> renderCharacterBuildSlider . type="artifactSubstats" statId="atk" value=relatedItems.buildData.artifactSubstats.atk}}
-              {{> renderCharacterBuildSlider . type="artifactSubstats" statId="def" value=relatedItems.buildData.artifactSubstats.def}}
-              {{> renderCharacterBuildSlider . type="artifactSubstats" statId="hp_" value=relatedItems.buildData.artifactSubstats.hp_}}
-              {{> renderCharacterBuildSlider . type="artifactSubstats" statId="atk_" value=relatedItems.buildData.artifactSubstats.atk_}}
-              {{> renderCharacterBuildSlider . type="artifactSubstats" statId="def_" value=relatedItems.buildData.artifactSubstats.def_}}
-              {{> renderCharacterBuildSlider . type="artifactSubstats" statId="eleMas" value=relatedItems.buildData.artifactSubstats.eleMas}}
-              {{> renderCharacterBuildSlider . type="artifactSubstats" statId="enerRech_" value=relatedItems.buildData.artifactSubstats.enerRech_}}
-              {{> renderCharacterBuildSlider . type="artifactSubstats" statId="critRate_" value=relatedItems.buildData.artifactSubstats.critRate_}}
-              {{> renderCharacterBuildSlider . type="artifactSubstats" statId="critDMG_" value=relatedItems.buildData.artifactSubstats.critDMG_}}
+              {{> genshin/renderCharacterBuildSlider . type="artifactSubstats" statId="hp" value=relatedItems.buildData.artifactSubstats.hp}}
+              {{> genshin/renderCharacterBuildSlider . type="artifactSubstats" statId="atk" value=relatedItems.buildData.artifactSubstats.atk}}
+              {{> genshin/renderCharacterBuildSlider . type="artifactSubstats" statId="def" value=relatedItems.buildData.artifactSubstats.def}}
+              {{> genshin/renderCharacterBuildSlider . type="artifactSubstats" statId="hp_" value=relatedItems.buildData.artifactSubstats.hp_}}
+              {{> genshin/renderCharacterBuildSlider . type="artifactSubstats" statId="atk_" value=relatedItems.buildData.artifactSubstats.atk_}}
+              {{> genshin/renderCharacterBuildSlider . type="artifactSubstats" statId="def_" value=relatedItems.buildData.artifactSubstats.def_}}
+              {{> genshin/renderCharacterBuildSlider . type="artifactSubstats" statId="eleMas" value=relatedItems.buildData.artifactSubstats.eleMas}}
+              {{> genshin/renderCharacterBuildSlider . type="artifactSubstats" statId="enerRech_" value=relatedItems.buildData.artifactSubstats.enerRech_}}
+              {{> genshin/renderCharacterBuildSlider . type="artifactSubstats" statId="critRate_" value=relatedItems.buildData.artifactSubstats.critRate_}}
+              {{> genshin/renderCharacterBuildSlider . type="artifactSubstats" statId="critDMG_" value=relatedItems.buildData.artifactSubstats.critDMG_}}
                 <h4>Sands Stats</h4>
-              {{> renderCharacterBuildSlider . type="sandsStat" statId="hp_" value=relatedItems.buildData.sandsStat.hp_}}
-              {{> renderCharacterBuildSlider . type="sandsStat" statId="atk_" value=relatedItems.buildData.sandsStat.atk_}}
-              {{> renderCharacterBuildSlider . type="sandsStat" statId="def_" value=relatedItems.buildData.sandsStat.def_}}
-              {{> renderCharacterBuildSlider . type="sandsStat" statId="eleMas" value=relatedItems.buildData.sandsStat.eleMas}}
-              {{> renderCharacterBuildSlider . type="sandsStat" statId="enerRech_" value=relatedItems.buildData.sandsStat.enerRech_}}
+              {{> genshin/renderCharacterBuildSlider . type="sandsStat" statId="hp_" value=relatedItems.buildData.sandsStat.hp_}}
+              {{> genshin/renderCharacterBuildSlider . type="sandsStat" statId="atk_" value=relatedItems.buildData.sandsStat.atk_}}
+              {{> genshin/renderCharacterBuildSlider . type="sandsStat" statId="def_" value=relatedItems.buildData.sandsStat.def_}}
+              {{> genshin/renderCharacterBuildSlider . type="sandsStat" statId="eleMas" value=relatedItems.buildData.sandsStat.eleMas}}
+              {{> genshin/renderCharacterBuildSlider . type="sandsStat" statId="enerRech_" value=relatedItems.buildData.sandsStat.enerRech_}}
             </div>
             <div class="col-6">
                 <h4>Goblet Stats</h4>
-              {{> renderCharacterBuildSlider . type="gobletStat" statId="hp_" value=relatedItems.buildData.gobletStat.hp_}}
-              {{> renderCharacterBuildSlider . type="gobletStat" statId="atk_" value=relatedItems.buildData.gobletStat.atk_}}
-              {{> renderCharacterBuildSlider . type="gobletStat" statId="def_" value=relatedItems.buildData.gobletStat.def_}}
-              {{> renderCharacterBuildSlider . type="gobletStat" statId="eleMas" value=relatedItems.buildData.gobletStat.eleMas}}
-              {{> renderCharacterBuildSlider . type="gobletStat" statId=(concat (lower (getProperty item "element")) "_dmg_") value=(lookup relatedItems.buildData.gobletStat (concat (lower (getProperty item "element")) "_dmg_"))}}
-              {{> renderCharacterBuildSlider . type="gobletStat" statId="physical_dmg_" value=relatedItems.buildData.gobletStat.physical_dmg_}}
+              {{> genshin/renderCharacterBuildSlider . type="gobletStat" statId="hp_" value=relatedItems.buildData.gobletStat.hp_}}
+              {{> genshin/renderCharacterBuildSlider . type="gobletStat" statId="atk_" value=relatedItems.buildData.gobletStat.atk_}}
+              {{> genshin/renderCharacterBuildSlider . type="gobletStat" statId="def_" value=relatedItems.buildData.gobletStat.def_}}
+              {{> genshin/renderCharacterBuildSlider . type="gobletStat" statId="eleMas" value=relatedItems.buildData.gobletStat.eleMas}}
+              {{> genshin/renderCharacterBuildSlider . type="gobletStat" statId=(concat (lower (getProperty item "element")) "_dmg_") value=(lookup relatedItems.buildData.gobletStat (concat (lower (getProperty item "element")) "_dmg_"))}}
+              {{> genshin/renderCharacterBuildSlider . type="gobletStat" statId="physical_dmg_" value=relatedItems.buildData.gobletStat.physical_dmg_}}
                 <h4>Circlet Stats</h4>
-              {{> renderCharacterBuildSlider . type="circletStat" statId="hp_" value=relatedItems.buildData.circletStat.hp_}}
-              {{> renderCharacterBuildSlider . type="circletStat" statId="atk_" value=relatedItems.buildData.circletStat.atk_}}
-              {{> renderCharacterBuildSlider . type="circletStat" statId="def_" value=relatedItems.buildData.circletStat.def_}}
-              {{> renderCharacterBuildSlider . type="circletStat" statId="eleMas" value=relatedItems.buildData.circletStat.eleMas}}
-              {{> renderCharacterBuildSlider . type="circletStat" statId="critRate_" value=relatedItems.buildData.circletStat.critRate_}}
-              {{> renderCharacterBuildSlider . type="circletStat" statId="critDMG_" value=relatedItems.buildData.circletStat.critDMG_}}
-              {{> renderCharacterBuildSlider . type="circletStat" statId="heal_" value=relatedItems.buildData.circletStat.heal_}}
+              {{> genshin/renderCharacterBuildSlider . type="circletStat" statId="hp_" value=relatedItems.buildData.circletStat.hp_}}
+              {{> genshin/renderCharacterBuildSlider . type="circletStat" statId="atk_" value=relatedItems.buildData.circletStat.atk_}}
+              {{> genshin/renderCharacterBuildSlider . type="circletStat" statId="def_" value=relatedItems.buildData.circletStat.def_}}
+              {{> genshin/renderCharacterBuildSlider . type="circletStat" statId="eleMas" value=relatedItems.buildData.circletStat.eleMas}}
+              {{> genshin/renderCharacterBuildSlider . type="circletStat" statId="critRate_" value=relatedItems.buildData.circletStat.critRate_}}
+              {{> genshin/renderCharacterBuildSlider . type="circletStat" statId="critDMG_" value=relatedItems.buildData.circletStat.critDMG_}}
+              {{> genshin/renderCharacterBuildSlider . type="circletStat" statId="heal_" value=relatedItems.buildData.circletStat.heal_}}
             </div>
         </div>
         <div class="row mt-2 g-2">
@@ -131,7 +131,7 @@
     <div class="popup-subsection">
         <h3 class="collapsed popup-subsection-header" data-bs-toggle="collapse" href="#characterArtifactLists">Best Artifacts That You Have</h3>
         <div id="characterArtifactLists" class="collapse popup-subsection-content">
-      {{> renderCharacterArtifactLists . placeholder=1}}
+      {{> genshin/renderCharacterArtifactLists . placeholder=1}}
         </div>
     </div>
 </div>

@@ -122,7 +122,7 @@ export default class MaterialList extends GenshinList
     // Mastery mats
     for(let suffix in GenshinLootData.mastery)
       Material.setupTiers([4,3,2].map(q => this.addGOOD({goodKey:Material.masteryQualities[q] + suffix, goodValue:0}).update("source", GenshinLootData.mastery[suffix].source).update("days", GenshinLootData.mastery[suffix].days, "replace").update("shorthand", suffix)));
-    this.addGOOD({goodKey:"Crown Of Insight", goodValue:0});
+    this.addGOOD({goodKey:"Crown Of Insight", goodValue:0}).update("shorthand", "Crown");
     
     // Forgery mats
     for(let suffix in GenshinLootData.forgery)
@@ -180,7 +180,7 @@ export default class MaterialList extends GenshinList
         'unknown': this.items('unknown'),
       };
       data.fields = this.display.getFields().map(field => ({field, params:[]}));
-      options.template = "renderMaterialList";
+      options.template = "genshin/renderMaterialList";
     }
     return {element, data, options};
   }

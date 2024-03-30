@@ -40,7 +40,7 @@ export default class TeamList extends GenshinList {
     });
     
     let deleteField = this.display.addField("delete", {
-      label: "D",
+      label: "<i class='fa-solid fa-trash-can'></i>",
       dynamic: true,
       button: item => ({
         icon: "fa-solid fa-trash-can",

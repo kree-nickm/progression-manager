@@ -164,12 +164,12 @@ export default class Material extends GenshinItem
         if(this == item.getTalentMat('enemy','burst') && item.getTalent('burst').matEnemyCount)
           amount.push(item.getTalent('burst').matEnemyCount);
         
-        if(this == item.getTalentMat('mastery','auto') && item.getTalent('auto').matDomainCount)
-          amount.push(item.getTalent('auto').matDomainCount);
-        if(this == item.getTalentMat('mastery','skill') && item.getTalent('skill').matDomainCount)
-          amount.push(item.getTalent('skill').matDomainCount);
-        if(this == item.getTalentMat('mastery','burst') && item.getTalent('burst').matDomainCount)
-          amount.push(item.getTalent('burst').matDomainCount);
+        if(this == item.getTalentMat('mastery','auto') && item.getTalent('auto').matMasteryCount)
+          amount.push(item.getTalent('auto').matMasteryCount);
+        if(this == item.getTalentMat('mastery','skill') && item.getTalent('skill').matMasteryCount)
+          amount.push(item.getTalent('skill').matMasteryCount);
+        if(this == item.getTalentMat('mastery','burst') && item.getTalent('burst').matMasteryCount)
+          amount.push(item.getTalent('burst').matMasteryCount);
         
         if(this == item.MaterialList.trounce)
           amount.push(item.getTalent('auto').matTrounceCount + item.getTalent('skill').matTrounceCount + item.getTalent('burst').matTrounceCount);
@@ -202,7 +202,7 @@ export default class Material extends GenshinItem
       return [];
   }
   
-  getFieldValue(cost, useImage=false)
+  getFieldValue(cost, useImage=false, {noName=false}={})
   {
     let bosskills3 = Math.ceil((cost-this.count)/3);
     let bosskills2 = Math.ceil((cost-this.count)/2);
@@ -283,7 +283,10 @@ export default class Material extends GenshinItem
       },
       title: this.getFullSource(),
     };
+    if(this.type == "gemstone")
+      for(let element of ["Anemo","Cryo","Dendro","Electro","Geo","Hydro","Pyro"])
+        namePart.value = namePart.value.replace(element, `{{element:${element}}}`);
     
-    return this.image && useImage ? iconPart : [numbersPart, namePart];
+    return this.image && useImage ? iconPart : noName ? numbersPart : [numbersPart, namePart];
   }
 }

@@ -1593,5 +1593,43 @@ export default {
         "sandsImg": "https://static.wikia.nocookie.net/gensin-impact/images/6/62/Item_Echoing_Sound_From_Days_Past.png",
         "gobletImg": "https://static.wikia.nocookie.net/gensin-impact/images/1/16/Item_Promised_Dream_of_Days_Past.png",
         "circletImg": "https://static.wikia.nocookie.net/gensin-impact/images/d/db/Item_Poetry_of_Days_Past.png"
+    },
+    "FragmentOfHarmonicWhimsy": {
+        "release": "April 24, 2024",
+        "maxRarity": 5,
+        "name": "Fragment of Harmonic Whimsy",
+        "flower": "Fragment of Harmonic Whimsy",
+        "plume": "Fragment of Harmonic Whimsy",
+        "sands": "Fragment of Harmonic Whimsy",
+        "goblet": "Fragment of Harmonic Whimsy",
+        "circlet": "Fragment of Harmonic Whimsy",
+        "bonus2": "ATK +18%",
+        "bonus2code": ["stat",["atk_",18]],
+        "bonus4": "When the value of a Bond of Life increases or decreases, this character deals 18% increased DMG for 6s. Max 3 stacks.",
+        "bonus4code": ["proc", ["stat", ["dmg_", 18]], "After Bond of Life changes (6s)", 3],
+        "flowerImg": "https://api.hakush.in/gi/UI/UI_RelicIcon_15035_4.webp",
+        "plumeImg": "https://api.hakush.in/gi/UI/UI_RelicIcon_15035_2.webp",
+        "sandsImg": "https://api.hakush.in/gi/UI/UI_RelicIcon_15035_5.webp",
+        "gobletImg": "https://api.hakush.in/gi/UI/UI_RelicIcon_15035_1.webp",
+        "circletImg": "https://api.hakush.in/gi/UI/UI_RelicIcon_15035_3.webp"
+    },
+    "Unfinished Reverie": {
+        "release": "April 24, 2024",
+        "maxRarity": 5,
+        "name": "Unfinished Reverie",
+        "flower": "Unfinished Reverie",
+        "plume": "Unfinished Reverie",
+        "sands": "Unfinished Reverie",
+        "goblet": "Unfinished Reverie",
+        "circlet": "Unfinished Reverie",
+        "bonus2": "ATK +18%",
+        "bonus2code": ["stat",["atk_",18]],
+        "bonus4": "After leaving combat for 3s, DMG dealt increased by 50%. In combat, if no Burning opponents are nearby for more than 6s, this DMG Bonus will decrease by 10% per second until it reaches 0%. When a Burning opponent exists, it will increase by 10% instead until it reaches 50%. This effect still triggers if the equipping character is off-field.",
+        "bonus4code": ["proc", ["stat", ["dmg_", 10]], 5],
+        "flowerImg": "https://api.hakush.in/gi/UI/UI_RelicIcon_15036_4.webp",
+        "plumeImg": "https://api.hakush.in/gi/UI/UI_RelicIcon_15036_2.webp",
+        "sandsImg": "https://api.hakush.in/gi/UI/UI_RelicIcon_15036_5.webp",
+        "gobletImg": "https://api.hakush.in/gi/UI/UI_RelicIcon_15036_1.webp",
+        "circletImg": "https://api.hakush.in/gi/UI/UI_RelicIcon_15036_3.webp"
     }
 };

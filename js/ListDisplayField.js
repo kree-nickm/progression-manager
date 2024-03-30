@@ -35,7 +35,7 @@ handlebars.registerHelper("itemClasses", (item, field, options) => {
   return result.join(" ");
 });
 
-handlebars.registerHelper("fieldClasses", (field, options) => (field.columnClasses??[]).join(" "));
+handlebars.registerHelper("fieldClasses", (field, options) => ((options.hash.params ? field.get("columnClasses", null, ...options.hash.params) : field.get("columnClasses")) ?? []).join(" "));
 
 export default class ListDisplayField
 {

@@ -9,7 +9,7 @@ export default class Weapon extends GenshinItem
 {
   static dontSerialize = GenshinItem.dontSerialize.concat(["MaterialList","loaded","character"]);
   static goodProperties = ["key","level","ascension","refinement","location","lock"];
-  static templateName = "renderWeaponAsPopup";
+  static templateName = "genshin/renderWeaponAsPopup";
   
   id;
   key = "";

@@ -48,7 +48,7 @@ export default class Traveler extends Character
     else if(this.key.endsWith("Geo"))
     {
       this._element = "Geo";
-      this._talentEnemyMatType = "Hilichurl Archers";
+      this._talentEnemyMatType = "Hili.Archers";
       this._talentMasteryMatTypes = ["Prosperity","Diligence","Gold"];
       this.MaterialList.talentEnemy = {
         '1': this.list.viewer.lists.MaterialList.get("Firm Arrowhead"),
@@ -129,7 +129,7 @@ export default class Traveler extends Character
     else if(this.key.endsWith("Hydro"))
     {
       this._element = "Hydro";
-      this._talentEnemyMatType = "Fontemer Aberrants";
+      this._talentEnemyMatType = "Fontemer";
       this._talentMasteryMatTypes = ["Equity","Justice","Order"];
       this.MaterialList.talentEnemy = {
         '1': this.list.viewer.lists.MaterialList.get("Transoceanic Pearl"),
@@ -342,7 +342,7 @@ export default class Traveler extends Character
   getTalentMat(type, talent)
   {
     if(type == "mastery")
-      return this.MaterialList.mastery?.[((isNaN(talent)?this.talent[talent]:talent)-1)%3][this.getTalent(talent).matDomainQuality] ?? null;
+      return this.MaterialList.mastery?.[((isNaN(talent)?this.talent[talent]:talent)-1)%3][this.getTalent(talent).matMasteryQuality] ?? null;
     else if(type == "enemy")
       return this.MaterialList.talentEnemy?.[this.getTalent(talent).matEnemyQuality] ?? null;
     else if(type == "trounce")

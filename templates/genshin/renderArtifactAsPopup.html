@@ -1,0 +1,78 @@
+<div class="modal-content list-item" data-template="genshin/renderArtifactAsPopup" data-uuid="{{uuid item}}">
+    <div class="modal-body">
+        <button type="button" class="btn-close float-end" data-bs-dismiss="modal"></button>
+        <div class="row">
+            <h5 class="col-1">Stars</h5>
+            <h5 class="col-1">Slot</h5>
+            <h5 class="col-4">Set</h5>
+            <h5 class="col-1">Lock</h5>
+            <h5 class="col-1">Level</h5>
+            <h5 class="col-2">Main</h5>
+            <h5 class="col-2">User</h5>
+        </div>
+        <div class="row">
+            <div class="col-1">{{getProperty item 'rarity'}}</div>
+            <div class="col-1">{{> renderItemField item=item field="slot" wrapper="div"}}</div>
+            <div class="col-4">{{getProperty item 'setName'}}</div>
+            <div class="col-1">{{> renderItemField item=item field="lock" wrapper="div"}}</div>
+            <div class="col-1">{{> renderItemField item=item field="level" wrapper="div"}}</div>
+            <div class="col-2">{{> renderItemField item=item field="mainStat" wrapper="div"}}</div>
+            <div class="col-2">{{> renderItemField item=item field="location" wrapper="div"}}</div>
+        </div>
+        <div class="row">
+            <h5 class="col-1">C.Rate</h5>
+            <h5 class="col-1">C.DMG</h5>
+            <h5 class="col-1">ATK%</h5>
+            <h5 class="col-1">ER%</h5>
+            <h5 class="col-1">EM</h5>
+            <h5 class="col-1">HP%</h5>
+            <h5 class="col-1">DEF%</h5>
+            <h5 class="col-1">ATK</h5>
+            <h5 class="col-1">HP</h5>
+            <h5 class="col-1">DEF</h5>
+            <h5 class="col-2" title="An overall rating of how desirable this artifact is to all of the characters on your account. The lower the desirability, the safer it is to use this artifact as fodder.">Desirability</h5>
+        </div>
+        <div class="row">
+            <div class="col-1">{{> renderItemField item=item field="critRate_Sum" wrapper="div"}}</div>
+            <div class="col-1">{{> renderItemField item=item field="critDMG_Sum" wrapper="div"}}</div>
+            <div class="col-1">{{> renderItemField item=item field="atk_Sum" wrapper="div"}}</div>
+            <div class="col-1">{{> renderItemField item=item field="enerRech_Sum" wrapper="div"}}</div>
+            <div class="col-1">{{> renderItemField item=item field="eleMasSum" wrapper="div"}}</div>
+            <div class="col-1">{{> renderItemField item=item field="hp_Sum" wrapper="div"}}</div>
+            <div class="col-1">{{> renderItemField item=item field="def_Sum" wrapper="div"}}</div>
+            <div class="col-1">{{> renderItemField item=item field="atkSum" wrapper="div"}}</div>
+            <div class="col-1">{{> renderItemField item=item field="hpSum" wrapper="div"}}</div>
+            <div class="col-1">{{> renderItemField item=item field="defSum" wrapper="div"}}</div>
+            <div class="col-2">{{> renderItemField item=item field="characterCount" wrapper="div"}}</div>
+        </div>
+        <hr/>
+        <table class="table table-sm table-striped">
+            <thead>
+                <tr>
+                    <th title="Ranking of which character build wants this artifact the most.">Prio</th>
+                    <th>Character</th>
+                    <th>Build</th>
+                    <th>On Set</th>
+                    <th title="Where this artifact ranks among other artifacts of the same set (or off-set) for the listed character build.">Desire</th>
+                    <th title="Percentage of how close this artifact is to the best possible artifact that could ever exist for the listed character build, based on your build preferences. For artifacts that are not +20, this factors in the probability that it will gain stats that the character wants.">Score</th>
+                    <th title="The score, scaled down based on the importance of the listed character build according to your preferences, and also scaled down based on how many better artifacts of the same set (or off-set) there are for this character build.">Scaled</th>
+                    <th title="The scaled score, but further scaled down based on how many other character builds want this artifact more than the listed character build. This is the score that is used in the desirability rating.">Final</th>
+                </tr>
+            </thead>
+            <tbody>
+              {{#each item.wanters}}
+                <tr class="list-item" data-uuid="{{uuid character}}">
+                    <td>#{{math @key "+" 1}}</td>
+                    <td>{{> renderItemField item=character field="name" wrapper="u"}}</td>
+                    <td>{{buildName character buildId}}</td>
+                    <td>{{#if onSet}}Yes{{/if}}</td>
+                    <td>#{{rank}}</td>
+                    <td>{{math (math "round" (math score "*" 100000)) "/" 1000}}</td>
+                    <td>{{math (math "round" (math scaledScore "*" 100000)) "/" 1000}}</td>
+                    <td>{{math (math "round" (math (math "pow" scaledScore (math @key "+" 1)) "*" 100000)) "/" 1000}}</td>
+                </tr>
+              {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -243,43 +243,73 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
           <div class="modal-body">
-            <div class="form-label">Character List</div>
-            <div class="btn-group" role="group">
-              <input type="radio" class="preference-select btn-check" id="pref3a" name="characterList" value="0" checked="checked">
-              <label class="btn btn-outline-primary" for="pref3a">Text Only</label>
-
-              <input type="radio" class="preference-select btn-check" id="pref3b"  name="characterList" value="1">
-              <label class="btn btn-outline-primary" for="pref3b">Icons</label>
-            </div>
-            
-            <div class="form-label">Materials List</div>
-            <div class="btn-group" role="group">
-              <input type="radio" class="preference-select btn-check" id="pref4a" name="materialList" value="0" checked="checked">
-              <label class="btn btn-outline-primary" for="pref4a">Text Only</label>
-
-              <input type="radio" class="preference-select btn-check" id="pref4b"  name="materialList" value="1">
-              <label class="btn btn-outline-primary" for="pref4b">Icons</label>
-            </div>
-            
-            <div class="form-label">Other Lists</div>
-            <div class="btn-group" role="group">
-              <input type="radio" class="preference-select btn-check" id="pref1a" name="listDisplay" value="0" checked="checked">
-              <label class="btn btn-outline-primary" for="pref1a">Text Only</label>
-
-              <input type="radio" class="preference-select btn-check" id="pref1b"  name="listDisplay" value="1">
-              <label class="btn btn-outline-primary" for="pref1b">Icons</label>
-            </div>
-            
-            <div class="form-label">Character Popup</div>
-            <div class="btn-group" role="group">
-              <input type="radio" class="preference-select btn-check" id="pref2a"  name="characterArtifacts" value="0" disabled="disabled">
-              <label class="btn btn-outline-primary" for="pref2a">Text Only</label>
-
-              <input type="radio" class="preference-select btn-check" id="pref2b"  name="characterArtifacts" value="1" checked="checked" disabled="disabled">
-              <label class="btn btn-outline-primary" for="pref2b">Icons</label>
-            </div>
-            
+          
             <div class="row">
+              <div class="col-6">
+                <!--<div class="input-group">
+                  <div class="input-group-text bg-secondary-subtle">
+                    <input id="pref9" class="form-check-input preference-select" type="checkbox" name="darkMode" value="1">
+                  </div>
+                  <label class="input-group-text" for="pref9">Dark Mode</label>
+                </div>-->
+              </div>
+              <div class="col-6">
+                <div class="input-group">
+                  <div class="input-group-text bg-secondary-subtle">
+                    <input id="pref8" class="form-check-input preference-select" type="checkbox" name="showLeaks" value="1">
+                  </div>
+                  <label class="input-group-text" for="pref8">Show Leaks</label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="row mt-3">
+              <div class="col-6">
+                <div class="form-label">Character List</div>
+                <div class="btn-group" role="group">
+                  <input type="radio" class="preference-select btn-check" id="pref3a" name="characterList" value="0" checked="checked">
+                  <label class="btn btn-outline-primary" for="pref3a">Text Only</label>
+
+                  <input type="radio" class="preference-select btn-check" id="pref3b"  name="characterList" value="1">
+                  <label class="btn btn-outline-primary" for="pref3b">Icons</label>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-label">Materials List</div>
+                <div class="btn-group" role="group">
+                  <input type="radio" class="preference-select btn-check" id="pref4a" name="materialList" value="0" checked="checked">
+                  <label class="btn btn-outline-primary" for="pref4a">Text Only</label>
+
+                  <input type="radio" class="preference-select btn-check" id="pref4b"  name="materialList" value="1">
+                  <label class="btn btn-outline-primary" for="pref4b">Icons</label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="row mt-3">
+              <div class="col-6">
+                <div class="form-label">Other Lists</div>
+                <div class="btn-group" role="group">
+                  <input type="radio" class="preference-select btn-check" id="pref1a" name="listDisplay" value="0" checked="checked">
+                  <label class="btn btn-outline-primary" for="pref1a">Text Only</label>
+
+                  <input type="radio" class="preference-select btn-check" id="pref1b"  name="listDisplay" value="1">
+                  <label class="btn btn-outline-primary" for="pref1b">Icons</label>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-label">Character Popup</div>
+                <div class="btn-group" role="group">
+                  <input type="radio" class="preference-select btn-check" id="pref2a"  name="characterArtifacts" value="0" disabled="disabled">
+                  <label class="btn btn-outline-primary" for="pref2a">Text Only</label>
+
+                  <input type="radio" class="preference-select btn-check" id="pref2b"  name="characterArtifacts" value="1" checked="checked" disabled="disabled">
+                  <label class="btn btn-outline-primary" for="pref2b">Icons</label>
+                </div>
+              </div>
+            </div>
+            
+            <div class="row mt-3">
               <div class="col-6">
                 <div class="form-label">Minimum Artifact Rating<i class="fa-solid fa-circle-question" title="Artifacts with a desirability rating below this number will have a red mark on the artifact list. The desirability rating is calculated based on your build stat priorities that you've set up for your characters, and scaled based on how many other artifacts you have that fulfill those priorities even better."></i></div>
                 <input type="number" class="preference-select form-control" id="pref5"  name="artifactMinRating" value="1" min="0" max="10" step="0.01">
@@ -290,14 +320,13 @@
               </div>
             </div>
             
-            <div class="form-label">Assume Artifact Level <i class="fa-solid fa-circle-question" title="When calculating artifact stats and ratings, this is the maximum level that will be used to determine their current/potential stats. Long-time players should leave this at 20, but newer players who don't yet have artifacts at level 20 should set this to whatever the highest level is that they are comfortable leveling their artifacts to."></i></div>
-            <input type="number" class="preference-select form-control" id="pref6"  name="artifactMaxLevel" value="20" min="0" max="20" step="1">
-            
-            <div class="input-group">
-                <div class="input-group-text bg-secondary-subtle">
-                  <input id="pref8" class="form-check-input preference-select" type="checkbox" name="showLeaks" value="1">
-                </div>
-                <label class="input-group-text" for="pref8">Show Leaks</label>
+            <div class="row mt-3">
+              <div class="col-6">
+                <div class="form-label">Assume Artifact Level <i class="fa-solid fa-circle-question" title="When calculating artifact stats and ratings, this is the maximum level that will be used to determine their current/potential stats. Long-time players should leave this at 20, but newer players who don't yet have artifacts at level 20 should set this to whatever the highest level is that they are comfortable leveling their artifacts to."></i></div>
+                <input type="number" class="preference-select form-control" id="pref6"  name="artifactMaxLevel" value="20" min="0" max="20" step="1">
+              </div>
+              <div class="col-6">
+              </div>
             </div>
             
           </div>

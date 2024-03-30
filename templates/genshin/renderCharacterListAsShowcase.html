@@ -1,4 +1,4 @@
-<div class="container showcase list" data-template="renderCharacterListAsShowcase" {{#if filter}}data-filter="{{filter}}"{{/if}} data-uuid="{{uuid item}}">
+<div class="container showcase list" data-template="genshin/renderCharacterListAsShowcase" {{#if filter}}data-filter="{{filter}}"{{/if}} data-uuid="{{uuid item}}">
   {{#each items}}
     <div class="showcase-row list-item" data-uuid="{{uuid .}}">
         <div class="showcase-character">{{> renderItemField item=. field="icon" params=(array "md" 1 1) wrapper="span"}}</div>

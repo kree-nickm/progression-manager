@@ -482,6 +482,24 @@ export default {
         "rarity": 4,
         "release": "January 31, 2024"
     },
+    "RuinedHilt": {
+        "name": "Ruined Hilt",
+        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_112098.webp",
+        "rarity": 2,
+        "release": "April 24, 2024"
+    },
+    "SplinteredHilt": {
+        "name": "Splintered Hilt",
+        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_112099.webp",
+        "rarity": 3,
+        "release": "April 24, 2024"
+    },
+    "StillSmolderingHilt": {
+        "name": "Still-Smoldering Hilt",
+        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_112100.webp",
+        "rarity": 4,
+        "release": "April 24, 2024"
+    },
     "MaintenanceMekSalvagedParts": {
         "name": "\"Maintenance Mek\" Salvaged Parts",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/43\/Item_Maintenance_Mek_Salvaged_Parts.png",
@@ -638,6 +656,12 @@ export default {
         "rarity": 4,
         "release": "January 31, 2024"
     },
+    "FragmentOfAGoldenMelody": {
+        "name": "Fragment of a Golden Melody",
+        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_113059.webp",
+        "rarity": 4,
+        "release": "April 24, 2024"
+    },
     "DvalinsPlume": {
         "name": "Dvalin's Plume",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bf\/Item_Dvalin%27s_Plume.png",
@@ -771,6 +795,24 @@ export default {
     "LightlessMass": {
         "name": "Lightless Mass",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ae\/Item_Lightless_Mass.png",
+        "rarity": 5
+    },
+    "TheKnaveMat1": {
+        "name": "The Knave Mat 1",
+        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_113060.webp",
+        "release": "April 24, 2024",
+        "rarity": 5
+    },
+    "TheKnaveMat2": {
+        "name": "The Knave Mat 2",
+        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_113061.webp",
+        "release": "April 24, 2024",
+        "rarity": 5
+    },
+    "TheKnaveMat3": {
+        "name": "The Knave Mat 3",
+        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_113062.web",
+        "release": "April 24, 2024",
         "rarity": 5
     },
     "BrilliantDiamondSliver": {
