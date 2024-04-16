@@ -318,15 +318,11 @@ export default class StatModifier {
     }
     else if(this.type == "setBonus")
     {
-      return ['flower','plume','sands','goblet','circlet'].filter(slotKey => {
-        let prop = slotKey + 'Artifact';
-        let artifact = this.characterSource[prop];
-        return artifact?.setKey == this.artifactSet;
-      }).length >= this.artifactPieces;
+      return this.characterSource.getSetBonuses()[this.artifactSet]?.count >= this.artifactPieces;
     }
     else if(this.type == "weapon")
     {
-      return this.characterSource.weapon == this.weapon && this.characterSource.weapon?.refinement == this.weaponRefinement;
+      return this.characterSource.weapon?.key == this.weapon.key && this.characterSource.weapon?.refinement == this.weaponRefinement;
     }
     else if(this.type == "constellation")
     {
@@ -354,25 +350,21 @@ export default class StatModifier {
     }
     else if(this.type == "setBonus")
     {
-      return ['flower','plume','sands','goblet','circlet'].filter(slotKey => {
-        let prop = slotKey + 'Artifact';
-        let artifact = this.characterSource.preview[slotKey] ?? this.characterSource[prop];
-        return artifact?.setKey == this.artifactSet;
-      }).length >= this.artifactPieces;
+      return this.characterSource.getSetBonuses({preview:1})[this.artifactSet]?.count >= this.artifactPieces;
     }
     else if(this.type == "weapon")
     {
-      return (this.characterSource.preview.weapon ?? this.characterSource.weapon) == this.weapon && (this.characterSource.preview.weaponRefinement ?? (this.characterSource.preview.weapon ?? this.characterSource.weapon)?.refinement) == this.weaponRefinement;
+      return (this.characterSource.previewWeapon?.key ?? this.characterSource.weapon?.key) == this.weapon.key && (this.characterSource.previews.weaponRefinement ?? (this.characterSource.previewWeapon ?? this.characterSource.weapon)?.refinement) == this.weaponRefinement;
     }
     else if(this.type == "constellation")
     {
-      return (this.characterSource.preview.constellation ?? this.characterSource.constellation) >= this.constellation;
+      return (this.characterSource.previews.constellation ?? this.characterSource.constellation) >= this.constellation;
     }
     else if(this.type == "talentPassive")
     {
-      if(this.talent == "1st Ascension Passive" && (this.characterSource.preview.ascension ?? this.characterSource.ascension) < 1)
+      if(this.talent == "1st Ascension Passive" && (this.characterSource.previews.ascension ?? this.characterSource.ascension) < 1)
         return false;
-      if(this.talent == "4th Ascension Passive" && (this.characterSource.preview.ascension ?? this.characterSource.ascension) < 4)
+      if(this.talent == "4th Ascension Passive" && (this.characterSource.previews.ascension ?? this.characterSource.ascension) < 4)
         return false;
       return true;
     }

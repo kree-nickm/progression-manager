@@ -52,6 +52,6 @@ export default class UIItem extends UIController {
   {
     super.unlink({skipHTML});
     if(!skipList)
-      this.list?.update("list", this, "remove");
+      this.list?.update("list", this, "remove", {skipHTML:true}); // UIController.unlink handles removing the HTML elements in case the UIItem isn't part of a UIList, so tell the UIList not to also do it.
   }
 }

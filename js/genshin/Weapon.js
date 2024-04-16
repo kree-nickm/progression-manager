@@ -7,30 +7,41 @@ import GenshinItem from "./GenshinItem.js";
 
 export default class Weapon extends GenshinItem
 {
-  static dontSerialize = GenshinItem.dontSerialize.concat(["MaterialList","loaded","character"]);
+  static dontSerialize = GenshinItem.dontSerialize.concat(["MaterialList","character"]);
   static goodProperties = ["key","level","ascension","refinement","location","lock"];
   static templateName = "genshin/renderWeaponAsPopup";
   
-  id;
   key = "";
-  _refinement = 1;
-  _ascension = 0;
   _level = 1;
+  _ascension = 0;
+  _refinement = 1;
   location = "";
   lock = false;
-  loaded = false;
+  
+  isPreview = false;
   favorite = false;
+  
   character = null;
   MaterialList;
   
   afterLoad()
   {
-    this.MaterialList = {
-      mora: this.list.viewer.lists.MaterialList.get("Mora"),
-    };
-    if(GenshinWeaponData[this.key])
+    if(this.isPreview)
     {
-      this.loaded = true;
+    }
+    else if(!GenshinWeaponData[this.key])
+    {
+      console.warn(`Unknown weapon "${this.key}".`);
+    }
+    else if(!this.list?.viewer?.lists?.MaterialList)
+    {
+      console.warn(`Weapon cannot access the material list.`);
+    }
+    else
+    {
+      this.MaterialList = {
+        mora: this.list.viewer.lists.MaterialList.get("Mora"),
+      };
       
       // Retrieve the materials used by this character.
       this.MaterialList.forgery = {
@@ -73,28 +84,31 @@ export default class Weapon extends GenshinItem
           console.error(`${this.name} has an invalid weak enemy material at rarity ${i}.`);
       }
     }
-    else
-    {
-      console.warn(`Unknown weapon "${this.key}".`);
-      this.loaded = false;
-    }
-    return this.loaded;
   }
   
   afterUpdate(field, value, action, options)
   {
     if(!super.afterUpdate(field, value, action, options))
       return false;
-    if(field.string == "location")
+    if(field.string == "location" && !this.isPreview)
     {
       if(value)
       {
-        let newCharacter = this.list.viewer.lists.CharacterList.get(value);
-        if(newCharacter)
-          newCharacter.equipItem(this);
+        if(this.list?.viewer?.lists?.CharacterList)
+        {
+          let newCharacter = this.list.viewer.lists.CharacterList.get(value);
+          if(newCharacter)
+            newCharacter.equipItem(this);
+          else
+          {
+            console.warn(`Cannot equip ${this.name} to non-existent character "${this.location}".`);
+            field.object[field.property] = "";
+            this.character = null;
+          }
+        }
         else
         {
-          console.warn(`Cannot equip ${this.name} to non-existent character "${this.location}".`);
+          console.warn(`Cannot equip ${this.name} to character "${this.location}" because character list is inaccessible.`);
           field.object[field.property] = "";
           this.character = null;
         }
@@ -121,21 +135,20 @@ export default class Weapon extends GenshinItem
   set level(val){ this._level = Math.min(Math.max(val, 1), 90); }
   
   // Getters/setters for genshin item data that is not stored on each instance of this class.
-  get name(){ return this.loaded ? GenshinWeaponData[this.key].name : this.key; }
-  get rarity(){ return this.loaded ? GenshinWeaponData[this.key].rarity : 0; }
-  get type(){ return this.loaded ? GenshinWeaponData[this.key].type : ""; }
-  get stat(){ return this.loaded ? GenshinWeaponData[this.key].stat : ""; }
-  get baseStat(){ return this.loaded ? GenshinWeaponData[this.key].baseStat : 0; }
-  get baseATK(){ return this.loaded ? GenshinWeaponData[this.key].baseATK : 0; }
-  get forgeryMatType(){ return this.loaded ? GenshinWeaponData[this.key].matForgery : ""; }
-  get strongMatType(){ return this.loaded ? GenshinWeaponData[this.key].matStrongEnemy : ""; }
-  get weakMatType(){ return this.loaded ? GenshinWeaponData[this.key].matWeakEnemy : ""; }
-  get image(){ return GenshinWeaponData[this.key]?.imgs[this.ascension > 1 ? 1 : 0] ?? ""; }
+  get name(){ return GenshinWeaponData[this.key]?.name; }
+  get rarity(){ return GenshinWeaponData[this.key]?.rarity; }
+  get type(){ return GenshinWeaponData[this.key]?.type; }
+  get stat(){ return GenshinWeaponData[this.key]?.stat; }
+  get baseATK(){ return GenshinWeaponData[this.key]?.baseATK; }
+  get forgeryMatType(){ return GenshinWeaponData[this.key]?.matForgery; }
+  get strongMatType(){ return GenshinWeaponData[this.key]?.matStrongEnemy; }
+  get weakMatType(){ return GenshinWeaponData[this.key]?.matWeakEnemy; }
+  get image(){ return GenshinWeaponData[this.key]?.imgs[this.ascension > 1 ? 1 : 0]; }
   get releaseTimestamp(){ return GenshinWeaponData[this.key]?.release ? Date.parse(GenshinWeaponData[this.key]?.release) : 0; }
   
   getPassive(ref=this.refinement)
   {
-    return this.loaded ? GenshinWeaponData[this.key].passive.replaceAll(/@(\d+)/g, (x, id, d) => `<b title="${Object.values(GenshinWeaponData[this.key].refinementData[id]).join(' / ')}">${GenshinWeaponData[this.key].refinementData[id][ref]}</b>`).replaceAll(`\n`,"<br/>") : "";
+    return GenshinWeaponData[this.key]?.passive?.replaceAll(/@(\d+)/g, (x, id, d) => `<b title="${Object.values(GenshinWeaponData[this.key]?.refinementData?.[id]??[]).join(' / ')}">${GenshinWeaponData[this.key]?.refinementData?.[id]?.[ref]}</b>`).replaceAll(`\n`,"<br/>");
   }
   
   getPhase(phase=this.ascension) { return GenshinPhaseData[phase] ?? GenshinPhaseData[6]; }
@@ -144,13 +157,13 @@ export default class Weapon extends GenshinItem
   getMat(type, ascension=this.ascension)
   {
     if(type == "forgery")
-      return this.MaterialList.forgery[this.getPhase(ascension).ascendMatForgeQuality];
+      return this.MaterialList?.forgery[this.getPhase(ascension).ascendMatForgeQuality];
     else if(type == "strong")
-      return this.MaterialList.strong[this.getPhase(ascension).ascendMatStrongQuality];
+      return this.MaterialList?.strong[this.getPhase(ascension).ascendMatStrongQuality];
     else if(type == "weak")
-      return this.MaterialList.weak[this.getPhase(ascension).ascendMatWeakQuality];
+      return this.MaterialList?.weak[this.getPhase(ascension).ascendMatWeakQuality];
     else if(type == "mora")
-      return this.MaterialList.mora;
+      return this.MaterialList?.mora;
     else
       return null;
   }
@@ -158,13 +171,13 @@ export default class Weapon extends GenshinItem
   getMatCost(type, ascension=this.ascension)
   {
     if(type == "forgery")
-      return this.getPhase(ascension).ascendMatForgeCount[this.rarity];
+      return this.getPhase(ascension)?.ascendMatForgeCount[this.rarity];
     else if(type == "strong")
-      return this.getPhase(ascension).ascendMatStrongCount[this.rarity];
+      return this.getPhase(ascension)?.ascendMatStrongCount[this.rarity];
     else if(type == "weak")
-      return this.getPhase(ascension).ascendMatWeakCount[this.rarity];
+      return this.getPhase(ascension)?.ascendMatWeakCount[this.rarity];
     else if(type == "mora")
-      return this.getPhase(ascension).ascendWpnMoraCost[this.rarity];
+      return this.getPhase(ascension)?.ascendWpnMoraCost[this.rarity];
     else
       return 0;
   }
@@ -177,15 +190,14 @@ export default class Weapon extends GenshinItem
       return false;
     }
     event.stopPropagation();
-    this.getMat('forgery').update("count", this.getMat('forgery').count - this.getMatCost('forgery'));
-    this.getMat('strong').update("count", this.getMat('strong').count - this.getMatCost('strong'));
-    this.getMat('weak').update("count", this.getMat('weak').count - this.getMatCost('weak'));
-    this.getMat('mora').update("count", this.getMat('mora').count - this.getMatCost('mora'));
+    this.getMat('forgery')?.update("count", this.getMat('forgery')?.count - this.getMatCost('forgery'));
+    this.getMat('strong')?.update("count", this.getMat('strong')?.count - this.getMatCost('strong'));
+    this.getMat('weak')?.update("count", this.getMat('weak')?.count - this.getMatCost('weak'));
+    this.getMat('mora')?.update("count", this.getMat('mora')?.count - this.getMatCost('mora'));
     if(this.level < this.levelCap)
       this.update("level", this.levelCap);
     this.update("ascension", this.ascension+1);
-    //this.list.viewer.store();
-    //this.list.render();
+    return true;
   }
   
   canUpPhase(withCrafting=false)
@@ -193,36 +205,33 @@ export default class Weapon extends GenshinItem
     if(this.ascension == 6)
       return false;
     else if(withCrafting)
-      return this.getMat('forgery').getCraftCount() >= this.getMatCost('forgery') &&
-        this.getMat('strong').getCraftCount() >= this.getMatCost('strong') &&
-        this.getMat('weak').getCraftCount() >= this.getMatCost('weak') &&
+      return this.getMat('forgery')?.getCraftCount() >= this.getMatCost('forgery') &&
+        this.getMat('strong')?.getCraftCount() >= this.getMatCost('strong') &&
+        this.getMat('weak')?.getCraftCount() >= this.getMatCost('weak') &&
         this.getMat('mora')?.getCraftCount() >= this.getMatCost('mora');
     else
-      return this.getMat('forgery').count >= this.getMatCost('forgery') &&
-        this.getMat('strong').count >= this.getMatCost('strong') &&
-        this.getMat('weak').count >= this.getMatCost('weak') &&
+      return this.getMat('forgery')?.count >= this.getMatCost('forgery') &&
+        this.getMat('strong')?.count >= this.getMatCost('strong') &&
+        this.getMat('weak')?.count >= this.getMatCost('weak') &&
         this.getMat('mora')?.count >= this.getMatCost('mora');
   }
   
   getATK(alternates={})
   {
-    let statLower = GenshinWeaponStats[this.rarity][this.baseATK].atk[(alternates?.weaponAscension??(alternates?.preview?(alternates.character?.preview.weaponAscension??this.ascension):this.ascension))*2];
-    let statUpper = GenshinWeaponStats[this.rarity][this.baseATK].atk[(alternates?.weaponAscension??(alternates?.preview?(alternates.character?.preview.weaponAscension??this.ascension):this.ascension))*2+1];
-    let lvlMin = GenshinPhaseData[(alternates?.weaponAscension??(alternates?.preview?(alternates.character?.preview.weaponAscension??this.ascension):this.ascension))-1]?.levelCap ?? 1;
-    let lvlMax = GenshinPhaseData[alternates?.weaponAscension??(alternates?.preview?(alternates.character?.preview.weaponAscension??this.ascension):this.ascension)].levelCap;
-    let scale = ((alternates?.weaponLevel??(alternates?.preview?(alternates.character?.preview.weaponLevel??this.level):this.level)) - lvlMin) / (lvlMax - lvlMin);
-    return statLower + (statUpper-statLower) * scale;
+    let tempAscension = alternates?.weaponAscension ?? (alternates?.preview ? (alternates.character?.preview.weaponAscension ?? this.ascension) : this.ascension);
+    let tempLevel = alternates?.weaponLevel ?? (alternates?.preview ? (alternates.character?.preview.weaponLevel ?? this.level) : this.level);
+    return GenshinWeaponStats[this.rarity][this.baseATK].atk[0] * GenshinWeaponStats[GenshinWeaponStats[this.rarity][this.baseATK].levelAtkScale][tempLevel-1] + (tempAscension > 1 ? GenshinWeaponStats[this.rarity].ascendValues[tempAscension-1] : 0);
   }
   
   getStat(alternates={})
   {
-    let stat = GenshinWeaponStats[this.rarity][this.baseATK][this.stat] ?? this.baseStat;
-    let factor = 1 + 0.04038405 * ((alternates?.weaponLevel??(alternates?.preview?(alternates.character?.preview.weaponLevel??this.level):this.level))-1);
-    return stat * factor;
+    let tempLevel = alternates?.weaponLevel ?? (alternates?.preview ? (alternates.character?.preview.weaponLevel ?? this.level) : this.level);
+    return GenshinWeaponStats[this.rarity][this.baseATK][this.stat] * GenshinWeaponStats[GenshinWeaponStats[this.rarity][this.baseATK].levelStatScale][tempLevel-1];
   }
   
   cloneCode(array=[], alternates={})
   {
+    let tempRefine = alternates?.refinement ?? (alternates?.preview ? (alternates.character?.preview.refinement ?? this.refinement) : this.refinement);
     let clone = [];
     for(let elem of array)
     {
@@ -231,7 +240,7 @@ export default class Weapon extends GenshinItem
       else
       {
         if(typeof(elem) == "string" && elem.charAt(0) == "@")
-          elem = this.loaded ? GenshinWeaponData[this.key].refinementData[elem.slice(1)][alternates?.refinement??(alternates?.preview?(alternates.character?.preview.refinement??this.refinement):this.refinement)] : 0;
+          elem = GenshinWeaponData[this.key]?.refinementData?.[elem.slice(1)]?.[tempRefine];
         clone.push(elem);
       }
     }
@@ -244,6 +253,7 @@ export default class Weapon extends GenshinItem
     let remembered = this.loadMemory("code");
     if(!remembered)
     {
+      // Clone because we don't want GenshinWeaponData to be modified when we substitute the passive's refinement-dependent values.
       let code = this.cloneCode(GenshinWeaponData[this.key]?.code??[], alternates);
       if(code.length)
       {

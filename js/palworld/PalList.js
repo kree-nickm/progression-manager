@@ -315,20 +315,6 @@ export default class PalList extends PalworldList
             name: selectAdd.value,
           });
           //selectAdd.value = "";
-          
-          // TODO: createItem should automatically trigger an update that handles the below addition to the DOM
-          let listElement = this.viewer.elements[this.constructor.name].querySelector(`.list[data-uuid="${this.uuid}"]`);
-          let listTargetElement = listElement.querySelector(".list-target");
-          if(!listTargetElement)
-            listTargetElement = listElement;
-          let temp = this.prepareRender(listElement, {}, {});
-          Renderer.rerender(null, {
-            item,
-            groups: temp.data.groups,
-            fields: temp.data.fields,
-            wrapper: "tr",
-            fieldWrapper: "td",
-          }, {template:"renderItem", parentElement:listTargetElement});
         }
       });
       

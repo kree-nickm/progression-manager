@@ -1,18 +1,18 @@
 <div class="character-stats popup-section" data-template="genshin/renderCharacterStats" data-uuid="{{uuid item}}">
     <h3 class="popup-section-header collapsed" data-bs-toggle="collapse" href="#characterStats" title="All values should be accurate, though some may differ from what you see in game very slightly due to rounding errors. However, most characters and weapons still do not have their passives/cons factored in; you can see what bonusus are being applied in the Modifiers section, as well as toggle temporary/conditional bonuses on or off. Additionally, some numbers, especially preview numbers, may not update after every change you make. That said, changing artifact previews will force the entire stat section to update.">Current Stats (Work-in-Progress)</h3>
     <div id="characterStats" class="collapse popup-section-content">
-        <div class="row">
-            <div class="col-3" title="If you have a team set up with this character, you can select it here to see the team-wide modifiers provided by other members of the team.">
+        <div class="row m-0">
+            <div class="col-3">
               {{> renderItemField item=item field="activeTeam" wrapper="span"}}
             </div>
             <div class="col-3">
-              {{> renderItemField item=item field="teammate" params=(array 0) wrapper="span"}}
+              {{> renderItemField item=item field="teammate" params=(array 0) wrapper="u"}}
             </div>
             <div class="col-3">
-              {{> renderItemField item=item field="teammate" params=(array 1) wrapper="span"}}
+              {{> renderItemField item=item field="teammate" params=(array 1) wrapper="u"}}
             </div>
             <div class="col-3">
-              {{> renderItemField item=item field="teammate" params=(array 2) wrapper="span"}}
+              {{> renderItemField item=item field="teammate" params=(array 2) wrapper="u"}}
             </div>
         </div>
         
@@ -75,30 +75,28 @@
           <h4 class="popup-subsection-header" data-bs-toggle="collapse" href="#characterStats.PreviewChanges">Preview Changes</h4>
           <div id="characterStats.PreviewChanges" class="collapse show popup-subsection-content">
               <div class="row gx-1">
-                <div class="col-2"><label for="previewLevel" class="form-text">Character Level</label><input id="previewLevel" data-stat="level" class="preview-stat form-control form-control-sm" type="number" min="1" max="90" value="{{nco item.preview.level (getProperty item 'level')}}" data-current="{{getProperty item 'level'}}"/></div>
-                <div class="col-2"><label for="previewAscend" class="form-text">Char. Ascension</label><input id="previewAscend" data-stat="ascension" class="preview-stat form-control form-control-sm" type="number" min="0" max="6" value="{{nco item.preview.ascension (getProperty item 'ascension')}}" data-current="{{getProperty item 'ascension'}}"/></div>
-                <div class="col-2"><label for="previewCons" class="form-text">Constellations</label><input id="previewCons" data-stat="constellation" class="preview-stat form-control form-control-sm" type="number" min="0" max="6" value="{{nco item.preview.constellation (getProperty item 'constellation')}}" data-current="{{getProperty item 'constellation'}}"/></div>
-                <div class="col-2"><label for="previewTalentAuto" class="form-text">Auto Level</label><input id="previewTalentAuto" data-stat="autoTalent" class="preview-stat form-control form-control-sm" type="number" min="1" max="10" value="{{nco item.preview.autoTalent (getProperty item 'talent.auto')}}" data-current="{{getProperty item 'talent.auto'}}"/></div>
-                <div class="col-2"><label for="previewTalentSkill" class="form-text">Skill Level</label><input id="previewTalentSkill" data-stat="skillTalent" class="preview-stat form-control form-control-sm" type="number" min="1" max="10" value="{{nco item.preview.skillTalent (getProperty item 'talent.skill')}}" data-current="{{getProperty item 'talent.skill'}}"/></div>
-                <div class="col-2"><label for="previewTalentBurst" class="form-text">Burst Level</label><input id="previewTalentBurst" data-stat="burstTalent" class="preview-stat form-control form-control-sm" type="number" min="1" max="10" value="{{nco item.preview.burstTalent (getProperty item 'talent.burst')}}" data-current="{{getProperty item 'talent.burst'}}"/></div>
-                <div class="col-2">
-                  <label for="previewWeapon" class="form-text">Weapon</label>
-                  <select id="previewWeapon" class="preview-stat form-select form-select-sm" data-current="{{uuid (lookup item 'weapon')}}">
-                    {{#each (weaponList item filter=(getProperty item 'weaponType'))}}
-                      <option value="{{uuid .}}"{{#ifeq (uuid (nco ../item.preview.weapon (lookup ../item 'weapon'))) (uuid .)}} selected="selected"{{/ifeq}}>R{{getProperty . 'refinement'}} {{getProperty . 'name'}} Lv.{{getProperty . 'level'}}</option>
-                    {{/each}}
-                  </select>
-                </div>
-                <div class="col-2"><label for="previewWeaponLevel" class="form-text">Weapon Level</label><input id="previewWeaponLevel" data-stat="weaponLevel" class="preview-stat form-control form-control-sm" type="number" min="1" max="90" value="{{nco item.preview.weaponLevel (getProperty (getProperty item 'weapon') 'level')}}" data-current="{{getProperty (getProperty item 'weapon') 'level'}}"/></div>
-                <div class="col-2"><label for="previewWeaponAscend" class="form-text">Weap. Ascension</label><input id="previewWeaponAscend" data-stat="weaponAscension" class="preview-stat form-control form-control-sm" type="number" min="0" max="6" value="{{nco item.preview.weaponAscension (getProperty (getProperty item 'weapon') 'ascension')}}" data-current="{{getProperty (getProperty item 'weapon') 'ascension'}}"/></div>
-                <div class="col-2"><label for="previewRefinement" class="form-text">Weap. Refinement</label><input id="previewRefinement" data-stat="refinement" class="preview-stat form-control form-control-sm" type="number" min="1" max="5" value="{{nco item.preview.refinement (getProperty (getProperty item 'weapon') 'refinement')}}" data-current="{{getProperty (getProperty item 'weapon') 'refinement'}}"/></div>
-                <div class="col-2">
-                  <label for="previewSet1" class="form-text">Set Bonus 1</label>
-                  <select id="previewSet1" class="preview-stat form-select form-select-sm" data-current="">
-                  </select>
-                </div>
+                <div class="col-2"><label class="form-text">Character Level</label>{{> renderItemField item=item field="previewLevel" wrapper="div"}}</div>
+                <div class="col-2"><label class="form-text">Char. Ascension</label>{{> renderItemField item=item field="previewAscension" wrapper="div"}}</div>
+                <div class="col-2"><label class="form-text">Constellations</label>{{> renderItemField item=item field="previewConstellation" wrapper="div"}}</div>
+                <div class="col-2"><label class="form-text">Auto Level</label>{{> renderItemField item=item field="previewTalent" params=(array "auto") wrapper="div"}}</div>
+                <div class="col-2"><label class="form-text">Auto Level</label>{{> renderItemField item=item field="previewTalent" params=(array "skill") wrapper="div"}}</div>
+                <div class="col-2"><label class="form-text">Auto Level</label>{{> renderItemField item=item field="previewTalent" params=(array "burst") wrapper="div"}}</div>
+                <div class="col-2"><label class="form-text">Weapon</label>{{> renderItemField item=item field="previewWeapon" wrapper="div"}}</div>
+                <div class="col-2"><label class="form-text">Weapon Level</label>{{> renderItemField item=item field="previewWeaponLevel" wrapper="div"}}</div>
+                <div class="col-2"><label class="form-text">Weap. Ascension</label>{{> renderItemField item=item field="previewWeaponAscension" wrapper="div"}}</div>
+                <div class="col-2"><label class="form-text">Weap. Refinement</label>{{> renderItemField item=item field="previewWeaponRefinement" wrapper="div"}}</div>
+                <div class="col-2"><label class="form-text">Set Bonus 1</label>{{> renderItemField item=item field="previewArtifactSet" params=(array 0) wrapper="div"}}</div>
+                <div class="col-2"><label class="form-text">Set Bonus 2</label>{{> renderItemField item=item field="previewArtifactSet" params=(array 1) wrapper="div"}}</div>
+                <div class="col-2"><label class="form-text">Sands Stat</label>{{> renderItemField item=item field="previewArtifactStat" params=(array "sands") wrapper="div"}}</div>
+                <div class="col-2"><label class="form-text">Goblet Stat</label>{{> renderItemField item=item field="previewArtifactStat" params=(array "goblet") wrapper="div"}}</div>
+                <div class="col-2"><label class="form-text">Circlet Stat</label>{{> renderItemField item=item field="previewArtifactStat" params=(array "circlet") wrapper="div"}}</div>
               </div>
-              <button class="preview-reset btn btn-sm btn-outline-dark"><i class="fa-solid fa-rotate-left"></i></button>
+              <div class="mt-3 ms-3">
+                <b class="form-label">Reset Previews For:</b>
+                <button class="preview-reset btn btn-sm btn-outline-dark ms-2"><i class="fa-solid fa-rotate-left"></i> {{getProperty item 'name'}}</button>
+                <button class="preview-reset-team btn btn-sm btn-outline-dark ms-2"><i class="fa-solid fa-rotate-left"></i> Team</button>
+                <button class="preview-reset-all btn btn-sm btn-outline-dark ms-2"><i class="fa-solid fa-rotate-left"></i> All Characters</button>
+              </div>
           </div>
         </div>
     </div>

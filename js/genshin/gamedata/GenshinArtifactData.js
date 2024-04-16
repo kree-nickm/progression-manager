@@ -1595,7 +1595,6 @@ export default {
         "circletImg": "https://static.wikia.nocookie.net/gensin-impact/images/d/db/Item_Poetry_of_Days_Past.png"
     },
     "FragmentOfHarmonicWhimsy": {
-        "release": "April 24, 2024",
         "maxRarity": 5,
         "name": "Fragment of Harmonic Whimsy",
         "flower": "Fragment of Harmonic Whimsy",
@@ -1614,7 +1613,6 @@ export default {
         "circletImg": "https://api.hakush.in/gi/UI/UI_RelicIcon_15035_3.webp"
     },
     "Unfinished Reverie": {
-        "release": "April 24, 2024",
         "maxRarity": 5,
         "name": "Unfinished Reverie",
         "flower": "Unfinished Reverie",

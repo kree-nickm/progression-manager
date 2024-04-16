@@ -24,13 +24,16 @@ export default class UIController {
   
   uuid;
   importing;
-  delayedUpdates = [];
-  dependents = {}; // Note: In the future, properties of this object could be changed to Sets instead of Arrays.
-  memory = {};
+  delayedUpdates;
+  dependents;
+  memory;
   
   constructor()
   {
     this.uuid = crypto.randomUUID();
+    this.delayedUpdates = [];
+    this.dependents = {};
+    this.memory = {};
     Renderer.controllers.set(this.uuid, this);
   }
   
@@ -44,10 +47,10 @@ export default class UIController {
     {
       if(Array.isArray(path[i]))
       {
-        let func = path[i].shift();
+        let func = path[i][0];
         if(typeof(obj[func]) == "function")
         {
-          obj = obj[func](...path[i]);
+          obj = obj[func](...path[i].slice(1));
           if(!obj)
             break;
         }

@@ -1,4 +1,6 @@
 import GenshinCharacterData from "./gamedata/GenshinCharacterData.js";
+import GenshinArtifactData from "./gamedata/GenshinArtifactData.js";
+import GenshinWeaponData from "./gamedata/GenshinWeaponData.js";
 
 import { handlebars, Renderer } from "../Renderer.js";
 import GenshinList from "./GenshinList.js";
@@ -771,6 +773,7 @@ export default class CharacterList extends GenshinList
     
     let activeTeam = this.display.addField("activeTeam", {
       label: "Active Team",
+      title: "If you have a team set up with this character, you can select it here to see the team-wide modifiers provided by other members of the team.",
       tags: ["detailsOnly"],
       dynamic: true,
       edit: item => ({
@@ -778,6 +781,7 @@ export default class CharacterList extends GenshinList
         type: "select",
         list: item.teams,
         value: item.activeTeam?.name ?? "",
+        defaultOption: {value: "", display: "Select team..."},
         valueProperty: "uuid",
         valueFormat: "uuid",
         displayProperty: "name",
@@ -805,6 +809,137 @@ export default class CharacterList extends GenshinList
       },
       dependencies: item => [
         {item:item, field:"activeTeam"},
+      ],
+    });
+    
+    this.display.addField("previewLevel", {
+      dynamic: true,
+      value: item => item.previews.level ?? item.level,
+      edit: item => ({target: {item, field:"previews.level"}, alwaysShow:true}),
+      dependencies: item => [
+        {item:item, field:"previews"},
+      ],
+    });
+    
+    this.display.addField("previewAscension", {
+      dynamic: true,
+      value: item => item.previews.ascension ?? item.ascension,
+      edit: item => ({target: {item, field:"previews.ascension"}, alwaysShow:true}),
+      dependencies: item => [
+        {item:item, field:"previews"},
+      ],
+    });
+    
+    this.display.addField("previewConstellation", {
+      dynamic: true,
+      value: item => item.previews.constellation ?? item.constellation,
+      edit: item => ({target: {item, field:"previews.constellation"}, alwaysShow:true}),
+      dependencies: item => [
+        {item:item, field:"previews"},
+      ],
+    });
+    
+    this.display.addField("previewTalent", {
+      dynamic: true,
+      value: (item,talent) => item.previews.talent?.[talent] ?? item.talent[talent],
+      edit: (item,talent) => ({target: {item, field:"previews.talent."+talent}, alwaysShow:true}),
+      dependencies: item => [
+        {item:item, field:"previews"},
+      ],
+    });
+    
+    this.display.addField("previewWeapon", {
+      dynamic: true,
+      value: item => GenshinWeaponData[item.previews.weaponKey]?.name ?? item.weapon?.name ?? "",
+      edit: item => ({
+        type: "select",
+        target: {item, field:"previews.weaponKey"},
+        alwaysShow: true,
+        list: Object.keys(GenshinWeaponData).filter(wKey => GenshinWeaponData[wKey].type == item.weaponType).map(wKey => ({value: wKey, display: GenshinWeaponData[wKey].name})),
+        valueProperty: "value",
+        displayProperty: "display",
+        defaultOption: {value:"", display:"(No preview)"},
+      }),
+      dependencies: item => [
+        {item:item, field:"previews"},
+      ],
+    });
+    
+    this.display.addField("previewWeaponLevel", {
+      dynamic: true,
+      value: item => item.previews.weaponLevel ?? item.weapon.level,
+      edit: item => ({target: {item, field:"previews.weaponLevel"}, alwaysShow:true}),
+      dependencies: item => [
+        {item:item, field:"previews"},
+      ],
+    });
+    
+    this.display.addField("previewWeaponAscension", {
+      dynamic: true,
+      value: item => item.previews.weaponAscension ?? item.weapon.ascension,
+      edit: item => ({target: {item, field:"previews.weaponAscension"}, alwaysShow:true}),
+      dependencies: item => [
+        {item:item, field:"previews"},
+      ],
+    });
+    
+    this.display.addField("previewWeaponRefinement", {
+      dynamic: true,
+      value: item => item.previews.weaponRefinement ?? item.weapon.refinement,
+      edit: item => ({target: {item, field:"previews.weaponRefinement"}, alwaysShow:true}),
+      dependencies: item => [
+        {item:item, field:"previews"},
+      ],
+    });
+    
+    this.display.addField("previewArtifactSet", {
+      dynamic: true,
+      value: (item,num) => {
+        if(GenshinArtifactData[item.previews.artifactSet?.[num]]?.name)
+          return GenshinArtifactData[item.previews.artifactSet?.[num]]?.name;
+        let sets = item.getSetBonuses();
+        for(let set in sets)
+        {
+          if(sets[set].count >= 4)
+            return GenshinArtifactData[set]?.name;
+          else if(sets[set].count >= 2)
+          {
+            if(num == 0)
+              return GenshinArtifactData[set]?.name;
+            else
+              num--;
+          }
+        }
+        return "";
+      },
+      edit: (item,num) => ({
+        type: "select",
+        target: {item, field:"previews.artifactSet."+num},
+        alwaysShow: true,
+        list: Object.keys(GenshinArtifactData).filter(aKey => GenshinArtifactData[aKey].bonus4).map(aKey => ({value: aKey, display: GenshinArtifactData[aKey].name})),
+        valueProperty: "value",
+        displayProperty: "display",
+        defaultOption: {value:"", display:"(No preview)"},
+      }),
+      dependencies: item => [
+        {item:item, field:"previews"},
+      ],
+    });
+    
+    this.display.addField("previewArtifactStat", {
+      dynamic: true,
+      value: (item,slotKey) => Character.getStatFull(item.previews[slotKey+'Stat'] ?? item[slotKey+'Artifact']?.mainStatKey),
+      edit: (item,slotKey) => ({
+        type: "select",
+        target: {item, field:`previews.${slotKey}Stat`},
+        alwaysShow: true,
+        list: ({sands:["hp_","atk_","def_","eleMas","enerRech_"],goblet:["hp_","atk_","def_","eleMas","anemo_dmg_","cryo_dmg_","dendro_dmg_","electro_dmg_","geo_dmg_","hydro_dmg_","pyro_dmg_","physical_dmg_"],circlet:["hp_","atk_","def_","eleMas","critRate_","critDMG_","heal_"]})[slotKey].map(statId => ({value:statId, display:Character.getStatFull(statId)})),
+        valueProperty: "value",
+        displayProperty: "display",
+        defaultOption: {value:"", display:"(No preview)"},
+      }),
+      dependencies: (item,slotKey) => [
+        {item:item, field:"previews"},
       ],
     });
   }
@@ -906,8 +1041,6 @@ export default class CharacterList extends GenshinList
   {
     this.items("nottraveler").forEach(item => item.unlink());
     this.update("list", this.items("traveler"), "replace");
-    this.subsets = {};
-    this.forceNextRender = true;
   }
   
   prepareRender(element, data, options)
@@ -993,7 +1126,7 @@ export default class CharacterList extends GenshinList
           selectAdd.needsUpdate = true;
           selectAdd.removeChild(selectAdd.selectedOptions.item(0));
           selectAdd.value = "";
-          
+          /*
           let listElement = this.viewer.elements[this.constructor.name].querySelector(`.list[data-uuid="${this.uuid}"]`);
           let listTargetElement = listElement.querySelector(".list-target");
           if(!listTargetElement)
@@ -1005,7 +1138,7 @@ export default class CharacterList extends GenshinList
             fields: renderData.data.fields,
             wrapper: "tr",
             fieldWrapper: "td",
-          }, {template:"renderItem", parentElement:listTargetElement});
+          }, {template:"renderItem", parentElement:listTargetElement});*/
         }
       });
       

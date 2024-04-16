@@ -3,10 +3,11 @@ import UIController from "./UIController.js";
 
 export default class DataManager extends UIController
 {
-  static dontSerialize = UIController.dontSerialize.concat(["listClasses","elements","stickyElements","errors","storeTimeout"]);
+  static dontSerialize = UIController.dontSerialize.concat(["listClasses","navigation","elements","stickyElements","errors","storeTimeout"]);
   
   dataVersion = 1;
   currentView;
+  navigation = {};
   settings = {};
   listClasses = {};
   data = {};
@@ -18,12 +19,51 @@ export default class DataManager extends UIController
   constructor()
   {
     super();
+    this.elements['nav'] = document.getElementById("navigation");
     this.elements['content'] = document.getElementById("content");
     this.elements['popup'] = document.getElementById("popup");
     this.elements['popup'].addEventListener('hidden.bs.modal', event => UIController.clearDependencies(event.target, true));
     this.settings.paneMemory = {};
     this.settings.preferences = {};
     this.settings.server = null;
+  }
+  
+  registerList(listClass, {listName}={})
+  {
+    this.listClasses[listName ?? listClass.name] = listClass;
+  }
+  
+  registerNavItem(label, hash, {list, isDefault}={})
+  {
+    let tempNav = Object.values(this.navigation);
+    if(list)
+    {
+      this.elements[this.listClasses[list].name] = document.getElementById(this.listClasses[list].name) ?? this.elements.content.appendChild(document.createElement("div"));
+      this.elements[this.listClasses[list].name].id = this.listClasses[list].name;
+      this.elements[this.listClasses[list].name].classList.add("viewer-pane");
+      this.settings.paneMemory[this.listClasses[list].name] = this.settings.paneMemory[this.listClasses[list].name] ?? {};
+      if(this.navigation[`#${hash}`])
+        console.warn(`#${hash} is already used as a navigation link, overwriting this data:`, this.navigation[`#${hash}`]);
+      this.navigation[`#${hash}`] = {list};
+    }
+    else
+    {
+      console.error(`Navigation link (${label}, ${hash}) must specify list.`);
+      return false;
+    }
+    if(isDefault)
+    {
+      if(this.navigation[''])
+        console.warn(`Default navigation link is already set, overwriting this data:`, this.navigation['']);
+      this.navigation[''] = this.navigation[`#${hash}`];
+    }
+    this.navigation[`#${hash}`].element = this.elements['nav'].insertBefore(document.createElement("li"), tempNav.length ? tempNav[tempNav.length-1].element.nextSibling : this.elements['nav'].firstChild);
+    this.navigation[`#${hash}`].element.classList.add("nav-item");
+    let link = this.navigation[`#${hash}`].element.appendChild(document.createElement("a"));
+    link.classList.add("nav-link");
+    link.classList.add("pane-select");
+    link.href = `#${hash}`;
+    link.innerHTML = label;
   }
   
   get lists()
@@ -36,26 +76,22 @@ export default class DataManager extends UIController
     return Renderer.controllers;
   }
   
-  paneFromHash()
+  paneFromHash(hash)
   {
-    return null;
+    if(this.navigation[hash ?? location.hash])
+      return this.navigation[hash ?? location.hash].list;
+    else if(this.navigation[''])
+      return this.navigation[''].list;
+    else
+    {
+      console.error(`Navigation has not been set up.`);
+      return "";
+    }
   }
   
-  async view(pane)
+  async view({hash,pane}={})
   {
-    if(!pane)
-    {
-      if(Object.keys(this.listClasses).length)
-      {
-        pane = this.paneFromHash();
-        console.log(`No pane given in ${this.constructor.name}.view(1), using "${pane}".`);
-      }
-      else
-        throw new Error(`${this.constructor.name} has no list classes defined.`);
-    }
-    if(!this.lists[pane])
-      throw new Error(`${this.constructor.name} has no list "${pane}".`);
-    
+    pane = pane ?? this.paneFromHash(hash);
     await this.lists[pane].render();
     this.stickyElements = document.querySelectorAll(".sticky-js");
     window.scrollTo({left:0, top:this.settings.paneMemory[pane]?.scrollY ?? 0, behavior:"instant"});
@@ -117,7 +153,7 @@ export default class DataManager extends UIController
     this.queueStore();
     bootstrap.Modal.getOrCreateInstance(this.elements.loadModal).hide();
     this.elements.loadError.classList.add("d-none");
-    this.view(this.currentView);
+    this.view({pane:this.currentView});
     return true;
   }
   
@@ -211,6 +247,6 @@ export default class DataManager extends UIController
     this.activateAccount(this.settings.server)
     
     if(this.currentView)
-      this.view(this.currentView);
+      this.view({pane:this.currentView});
   }
 }

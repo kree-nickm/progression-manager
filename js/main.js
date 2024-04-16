@@ -265,7 +265,7 @@ document.getElementById("prefsDoneBtn").addEventListener("click", clickEvent => 
       window.viewer.lists[list].forceNextRender = true;
       window.viewer.lists[list].subsets = {};
     }
-  window.viewer.view(window.viewer.currentView);
+  window.viewer.view({pane:window.viewer.currentView});
   window.viewer.queueStore();
 });
 
@@ -313,26 +313,9 @@ for(let i=0; i<navLinks.length; i++)
     }
     // Do a check to see if this is the user's first visit.
     if(window.viewer.settings.account && window.viewer.settings.server)
-    {
-      if(event.target.hash == "#materials")
-        window.viewer.view("MaterialList");
-      else if(event.target.hash == "#weapons")
-        window.viewer.view("WeaponList");
-      else if(event.target.hash == "#artifacts")
-        window.viewer.view("ArtifactList");
-      else if(event.target.hash == "#teams")
-        window.viewer.view("TeamList");
-      else if(event.target.hash == "#furnitureSets")
-        window.viewer.view("FurnitureSetList");
-      else if(event.target.hash == "#furniture")
-        window.viewer.view("FurnitureList");
-      else
-        window.viewer.view("CharacterList");
-    }
+      window.viewer.view({hash:navLinks[i].hash});
     else
-    {
       bootstrap.Modal.getOrCreateInstance(document.getElementById("newModal")).show();
-    }
   });
   if(navLinks[i].hash == location.hash)
   {
@@ -342,6 +325,8 @@ for(let i=0; i<navLinks.length; i++)
 }
 if(!navClicked)
   navLinks[0].click();
+
+// TODO: Back/forward browser buttons don't work.
 
 if(location.search.at(0) == "?")
 {

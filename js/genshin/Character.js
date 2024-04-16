@@ -9,6 +9,7 @@ import GenshinBuilds from "./gamedata/GenshinBuilds.js";
 import { handlebars, Renderer } from "../Renderer.js";
 import GenshinItem from "./GenshinItem.js";
 import Artifact from "./Artifact.js";
+import Weapon from "./Weapon.js";
 import Material from "./Material.js";
 import Team from "./Team.js";
 import StatModifier from "./StatModifier.js";
@@ -46,7 +47,7 @@ handlebars.registerHelper("buildName", (character, buildId, options) => characte
 
 export default class Character extends GenshinItem
 {
-  static dontSerialize = GenshinItem.dontSerialize.concat(["MaterialList","loaded","_weapon","_flower","_plume","_sands","_goblet","_circlet","preview","statModifiers","activeTeam"]);
+  static dontSerialize = GenshinItem.dontSerialize.concat(["MaterialList","loaded","_weapon","_flower","_plume","_sands","_goblet","_circlet","_previewGear","preview","statModifiers","activeTeam"]);
   static goodProperties = ["key","level","constellation","ascension","talent"];
   static templateName = "genshin/renderCharacterAsPopup";
 
@@ -64,16 +65,19 @@ export default class Character extends GenshinItem
   }
   
   key = "";
+  _level = 1;
   _constellation = 0;
   _ascension = 0;
-  _level = 1;
   talent = {
     auto: 1,
     skill: 1,
     burst: 1,
   };
+
   favorite = false;
   selectedBuild = 0;
+  wishlist = {};
+  previews = {};
 
   MaterialList;
   loaded = false;
@@ -83,6 +87,7 @@ export default class Character extends GenshinItem
   _sands = null;
   _goblet = null;
   _circlet = null;
+  _previewGear = {};
   preview = {};
   statModifiers = [];
   activeTeam = null;
@@ -266,6 +271,12 @@ export default class Character extends GenshinItem
       }
       this.viewer.lists.ArtifactList?.update("evaluate", null, "notify");
     }
+    else if(field.string.startsWith("previews"))
+    {
+      this.clearMemory("stats");
+      this.clearMemory("motionValues");
+      this.update("statModifiers", null, "notify", {listChange:true, mvChange:"*", mainChange:true, rxnChange:false});
+    }
     return true;
   }
   
@@ -441,6 +452,53 @@ export default class Character extends GenshinItem
   get levelCap() { return this.getPhase().levelCap; }
   get talentCap() { return this.getPhase().maxTalent; }
   
+  get previewWeapon()
+  {
+    if(!this.previews.weaponKey && !this.previews.weaponLevel && !this.previews.weaponAscension && !this.previews.weaponRefinement)
+      return null;
+    let key = this.previews?.weaponKey ?? this.weapon?.key;
+    if(!key)
+      return null;
+    let level = this.previews?.weaponLevel ?? this.weapon?.level ?? 1;
+    let ascension = this.previews?.weaponAscension ?? this.weapon?.ascension ?? 0;
+    let refinement = this.previews?.weaponRefinement ?? this.weapon?.refinement ?? 1;
+    if(key == this.weapon?.key && level == this.weapon?.level && ascension == this.weapon?.ascension && refinement == this.weapon?.refinement)
+      return null;
+    if(!this._previewGear.weapon)
+      this._previewGear.weapon = new Weapon();
+    this._previewGear.weapon.key = key;
+    this._previewGear.weapon.isPreview = true;
+    this._previewGear.weapon.character = this;
+    this._previewGear.weapon.level = this.previews?.weaponLevel ?? this.weapon?.level ?? 1;
+    this._previewGear.weapon.ascension = this.previews?.weaponAscension ?? this.weapon?.ascension ?? 0;
+    this._previewGear.weapon.refinement = this.previews?.weaponRefinement ?? this.weapon?.refinement ?? 1;
+    return this._previewGear.weapon;
+  }
+  // Lowercase because the slot key is always lowercase.
+  getPreviewArtifact(slotKey)
+  {
+    let current = this.preview[slotKey] ?? this[slotKey+'Artifact'];
+    if(!current)
+      return null;
+    if(!this.previews[slotKey+'Stat'] || this.previews[slotKey+'Stat'] == current.mainStatKey)
+      return this.preview[slotKey];
+    if(!this._previewGear[slotKey])
+      this._previewGear[slotKey] = new Artifact();
+    this._previewGear[slotKey].isPreview = true;
+    this._previewGear[slotKey].character = this;
+    this._previewGear[slotKey].setKey = current.setKey;
+    this._previewGear[slotKey].slotKey = current.slotKey;
+    this._previewGear[slotKey].level = current.level;
+    this._previewGear[slotKey].rarity = current.rarity;
+    this._previewGear[slotKey].mainStatKey = this.previews[slotKey+'Stat'];
+    if(this._previewGear[slotKey].substats != current.substats)
+    {
+      this._previewGear[slotKey].substats = current.substats;
+      this._previewGear[slotKey].determineRolls();
+    }
+    return this._previewGear[slotKey];
+  }
+  
   getMat(type, ascension=this.ascension)
   {
     if(type == "gem")
@@ -602,7 +660,6 @@ export default class Character extends GenshinItem
     let variant;
     [baseStat, variant] = stat.split("-");
     let isPrimary = ["atk","hp","def"].indexOf(baseStat) > -1;
-    alternates.character = this;
     
     // If this is a calculated value, pass it off to the calculated method.
     if(["swirl","superconduct","spread","bloom","burning","aggravate","hyperbloom","electrocharged","overloaded","burgeon","shattered","melt","vaporize"].indexOf(baseStat) > -1)
@@ -625,11 +682,11 @@ export default class Character extends GenshinItem
     {
       result = GenshinCharacterStats.statBase[stat] ?? 0;
       let baseResult = result;
-      let level = alternates?.level??(alternates?.preview?(this.preview.level??this.level):this.level);
-      let ascension = alternates?.ascension??(alternates?.preview?(this.preview.ascension??this.ascension):this.ascension);
-      let constellation = alternates?.constellation??(alternates?.preview?(this.preview.constellation??this.constellation):this.constellation);
-      let weapon = alternates?.weapon??(alternates?.preview?(this.preview.weapon??this.weapon):this.weapon);
-      let weaponRefinement = alternates?.refinement??(alternates?.preview?(this.preview.refinement??weapon?.refinement):weapon?.refinement)
+      let level = alternates?.level ?? (alternates?.preview ? (this.previews.level??this.level) : this.level);
+      let ascension = alternates?.ascension ?? (alternates?.preview ? (this.previews.ascension??this.ascension) : this.ascension);
+      let constellation = alternates?.constellation ?? (alternates?.preview ? (this.previews.constellation??this.constellation) : this.constellation);
+      let weapon = alternates?.weapon ?? (alternates?.preview ? (this.previewWeapon??this.weapon) : this.weapon);
+      let weaponRefinement = alternates?.refinement ?? weapon?.refinement;
       
       // Bonus from character level/ascension
       if(this.ascendStat == stat)
@@ -659,7 +716,7 @@ export default class Character extends GenshinItem
         for(let slot of ['flower','plume','sands','goblet','circlet'])
         {
           let prop = slot + 'Artifact';
-          let artifact = alternates?.[slot]??(alternates?.preview?(this.preview[slot]??this[prop]):this[prop]);
+          let artifact = alternates?.[slot] ?? (alternates?.preview ? (this.getPreviewArtifact(slot)??this[prop]) : this[prop]);
           if(artifact)
           {
             if(!alternates?.substats && artifact.mainStatKey == (baseStat))
@@ -693,7 +750,37 @@ export default class Character extends GenshinItem
             StatModifier.create(weaponPassive, this, "weapon", {weapon, weaponRefinement});
           
           // Collect bonuses from artifact set
-          let setBonus = this.handleSetBonus(alternates);
+          let setBonus = this.getSetBonuses(alternates);
+          for(let set in setBonus)
+          {
+            for(let i=1; i<=setBonus[set].count; i++)
+            {
+              let code = GenshinArtifactData[set]['bonus'+i+'code'];
+              if(code)
+              {
+                StatModifier.create(code, this, "setBonus", {set, pieces:i});
+              }
+            }
+          }
+          /**
+          bonus#code is an array.
+            If element 0 is a string, then the array is a command. [0] is the command name and [1] is an array of arguments (unless the command name is 'proc' or 'custom').
+            If element 0 is an array, then the array is multiple commands, and we iterate through them as if they were bonus#code.
+          Valid commands are:
+            stat: 2 arguments, increase a stat
+              1: a string stat id, or an array of string stat ids for multiple stats.
+              2: amount to increase the stat by.
+            pstat: 2 arguments, increase a stat for entire party
+              1: a string stat id, or an array of string stat ids for multiple stats.
+              2: amount to increase the stat by.
+            sstat: 3 arguments, increase a stat but only for specific situations
+              1: specifier for the situation the bonus applies
+              2: a string stat id, or an array of string stat ids for multiple stats.
+              3: amount to increase the stat by.
+            estat: 2 arguments, increase (or decrease) a stat for enemies
+              1: a string stat id, or an array of string stat ids for multiple stats.
+              2: amount to increase the stat by (negative to decrease).
+          */
           
           // Apply all valid bonuses.
           this.teamStatModifiers.forEach(mod => {
@@ -744,7 +831,7 @@ export default class Character extends GenshinItem
       return swirl * mult;
     }
     
-    let level = alternates?.level??(alternates?.preview?(this.preview.level??this.level):this.level);
+    let level = alternates?.level??(alternates?.preview?(this.previews.level??this.level):this.level);
     if(["swirl","superconduct","bloom","burning","hyperbloom","electrocharged","overloaded","burgeon","shattered"].indexOf(baseType) > -1)
     {
       let rxnMult;
@@ -908,7 +995,7 @@ export default class Character extends GenshinItem
           motionValue.fromModifier = true;
         
         // Determine current raw value based on talent level.
-        let talentLvl = (alternates?.[talent+'Talent']??(alternates?.preview?(this.preview[talent+'Talent']??this.talent[talent]):this.talent[talent])) + this.getStat(talent+"Level", alternates);
+        let talentLvl = (alternates?.[talent+'Talent']??(alternates?.preview?(this.previews.talent?.[talent]??this.talent[talent]):this.talent[talent])) + this.getStat(talent+"Level", alternates);
         motionValue.rawValue = scaling[motionValue.key]?.[talentLvl];
         if(!motionValue.rawValue)
         {
@@ -1178,6 +1265,7 @@ export default class Character extends GenshinItem
             tiers.forEach((cd,i) => tiers[i] = (parseFloat(cd.endsWith("s")?cd.slice(0,-1):cd) * (1 - (this.getStat("cd_", alternates) + this.getStat(talent+"_cd_", alternates))/100)).toFixed(1));
             motionValue.values[v].value = tiers.join("/") + "s";
             motionValue.values[v].dmgType = null;
+            // TODO: Some modifiers reduce cooldowns by a flat number of seconds. Will need to see if that applied before or after % reductions.
           }
           else if(motionValue.key.endsWith("Duration"))
           {
@@ -1376,7 +1464,7 @@ export default class Character extends GenshinItem
         dmgMult += this.getStat("elemental_dmg_", alternates);
     }
     
-    let level = alternates?.level??(alternates?.preview?(this.preview.level??this.level):this.level);
+    let level = alternates?.level??(alternates?.preview?(this.previews.level??this.level):this.level);
     if(partialValue.dmgType == "electro" && motionValue.reaction == "aggravate" || partialValue.dmgType == "dendro" && motionValue.reaction == "spread")
     {
       let rxnMult;
@@ -1408,44 +1496,61 @@ export default class Character extends GenshinItem
     partialValue.average = critRate * partialValue.critical + (1-critRate) * partialValue.value;
   }
   
-  /**
-  bonus#code is an array.
-    If element 0 is a string, then the array is a command. [0] is the command name and [1] is an array of arguments (unless the command name is 'proc' or 'custom').
-    If element 0 is an array, then the array is multiple commands, and we iterate through them as if they were bonus#code.
-  Valid commands are:
-    stat: 2 arguments, increase a stat
-      1: a string stat id, or an array of string stat ids for multiple stats.
-      2: amount to increase the stat by.
-    pstat: 2 arguments, increase a stat for entire party
-      1: a string stat id, or an array of string stat ids for multiple stats.
-      2: amount to increase the stat by.
-    sstat: 3 arguments, increase a stat but only for specific situations
-      1: specifier for the situation the bonus applies
-      2: a string stat id, or an array of string stat ids for multiple stats.
-      3: amount to increase the stat by.
-    estat: 2 arguments, increase (or decrease) a stat for enemies
-      1: a string stat id, or an array of string stat ids for multiple stats.
-      2: amount to increase the stat by (negative to decrease).
-  */
-  handleSetBonus(alternates={})
+  getSetBonuses(alternates={})
   {
     // Count the pieces of each set.
     let sets = {};
     for(let slot of ['flower','plume','sands','goblet','circlet'])
     {
       let prop = slot + 'Artifact';
-      let artifact = alternates?.[slot]??(alternates?.preview?(this.preview[slot]??this[prop]):this[prop]);
+      let artifact = alternates?.[slot]??(alternates?.preview?(this.getPreviewArtifact(slot)??this[prop]):this[prop]);
       if(artifact)
       {
         if(!sets[artifact.setKey])
           sets[artifact.setKey] = {count:0};
         sets[artifact.setKey].count++;
-        // If you have enough pieces for a set bonus, create a stat modifier for it.
-        let code = GenshinArtifactData[artifact.setKey]['bonus'+sets[artifact.setKey].count+'code'];
-        if(code)
+      }
+    }
+    if(alternates.preview)
+    {
+      if(this.previews.artifactSet?.[0] && !sets[this.previews.artifactSet[0]])
+        sets[this.previews.artifactSet[0]] = {count:0};
+      if(this.previews.artifactSet?.[1] && !sets[this.previews.artifactSet[1]])
+        sets[this.previews.artifactSet[1]] = {count:0};
+      // Apply alternates
+      let setsFound = 0;
+      for(let set in sets)
+      {
+        if(sets[set].count >= 4)
         {
-          StatModifier.create(code, this, "setBonus", {set:artifact.setKey, pieces:sets[artifact.setKey].count});
+          if(this.previews.artifactSet?.[0])
+          {
+            sets[set].count -= 2;
+            sets[this.previews.artifactSet[0]].count += 2;
+          }
+          if(this.previews.artifactSet?.[1])
+          {
+            sets[set].count -= 2;
+            sets[this.previews.artifactSet[1]].count += 2;
+          }
+          setsFound += 2;
         }
+        else if(sets[set].count >= 2)
+        {
+          if(this.previews.artifactSet?.[setsFound])
+          {
+            sets[set].count -= 2;
+            sets[this.previews.artifactSet[setsFound]].count += 2;
+          }
+          setsFound++;
+        }
+        else if(set == this.previews.artifactSet?.[setsFound])
+        {
+          sets[this.previews.artifactSet[setsFound]].count += 2;
+          setsFound++;
+        }
+        if(setsFound > 1)
+          break;
       }
     }
     return sets;
@@ -1675,7 +1780,6 @@ export default class Character extends GenshinItem
         procInput.onchange = event => {
           this.clearMemory("stats");
           this.clearMemory("motionValues");
-          console.log(event.target);
           let value = event.target.type=="checkbox" ? Number(event.target.checked) : parseInt(event.target.value);
           if(event.target.dataset?.owner)
           {
@@ -1733,37 +1837,28 @@ export default class Character extends GenshinItem
       previewResetBtn.onclick = event => {
         event.stopPropagation();
         event.preventDefault();
-        let previewInputs = statSection.querySelectorAll("input.preview-stat, select.preview-stat");
-        for(let previewInput of previewInputs)
-        {
-          if(previewInput.value != previewInput.dataset.current)
-          {
-            previewInput.value = previewInput.dataset.current;
-            previewInput.dispatchEvent(new Event("change"));
-          }
-        }
-        this.update("preview", null, "notify");
+        this.update("previews", {}, "replace");
       };
     }
     
-    let previewInputs = statSection.querySelectorAll("input.preview-stat, select.preview-stat");
-    for(let previewInput of previewInputs)
+    previewResetBtn = statSection.querySelector(".preview-reset-team");
+    if(previewResetBtn && !previewResetBtn.onclick)
     {
-      if(!previewInput.onchange)
-      {
-        previewInput.onchange = event => {
-          if(previewInput.id == "previewWeapon")
-          {
-            this.preview.weapon = Renderer.controllers.get(previewInput.value);
-            this.preview.weaponLevel = parseFloat(document.getElementById('previewWeaponLevel').value);
-            this.preview.weaponAscension = parseFloat(document.getElementById('previewWeaponAscend').value);
-            this.preview.refinement = parseFloat(document.getElementById('previewRefinement').value);
-            this.update("preview", null, "notify");
-          }
-          else
-            this.update(["preview", previewInput.dataset.stat], parseFloat(previewInput.value));
-        };
-      }
+      previewResetBtn.onclick = event => {
+        event.stopPropagation();
+        event.preventDefault();
+        this.activeTeam?.characters.forEach(chara => chara.update("previews", {}, "replace"));
+      };
+    }
+    
+    previewResetBtn = statSection.querySelector(".preview-reset-all");
+    if(previewResetBtn && !previewResetBtn.onclick)
+    {
+      previewResetBtn.onclick = event => {
+        event.stopPropagation();
+        event.preventDefault();
+        this.list.list.forEach(chara => chara.update("previews", {}, "replace"));
+      };
     }
   }
   

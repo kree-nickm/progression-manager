@@ -147,7 +147,7 @@ document.getElementById("prefsDoneBtn").addEventListener("click", clickEvent => 
       window.viewer.lists[list].forceNextRender = true;
       window.viewer.lists[list].subsets = {};
     }
-  window.viewer.view(window.viewer.currentView);
+  window.viewer.view({pane:window.viewer.currentView});
   window.viewer.queueStore();
 });
 
@@ -194,16 +194,9 @@ for(let i=0; i<navLinks.length; i++)
     }
     // Do a check to see if this is the user's first visit.
     if(window.viewer.settings.server)
-    {
-      if(event.target.hash == "#pals")
-        window.viewer.view("PalList");
-      else
-        window.viewer.view("PalList");
-    }
+      window.viewer.view({hash:navLinks[i].hash});
     else
-    {
       bootstrap.Modal.getOrCreateInstance(document.getElementById("newModal")).show();
-    }
   });
   if(navLinks[i].hash == location.hash)
   {

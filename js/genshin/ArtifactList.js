@@ -463,13 +463,13 @@ export default class ArtifactList extends GenshinList
       dynamic: true,
       title: (item,i) => !item.substats[i]
                           ? `Click to add new substat.`
-                          : `${item.getSubstatSum(item.substats[i].key).toFixed(2)} ${Artifact.getStatShorthand(item.substats[i].key)}, rolled ${item.substatRolls[item.substats[i].key]?.length} times (${item.substatRolls[item.substats[i].key]?.map(r=>r*100).join('%, ')}%)`,
+                          : `${item.getSubstatSum(item.substats[i].key).toFixed(2)} ${Artifact.getStatShorthand(item.substats[i].key)}, rolled ${item.substatRolls[item.substats[i].key]?.length} times (${item.substatRolls[item.substats[i].key]?.map(r=>(0.7+r*0.1)*100).join('%, ')}%)`, // TODO: Doesn't work for rarity 1 and 2
       value: (item,i) => item.substats[i] ? [
           {
             tag: "div",
             value: item.substatRolls[item.substats[i].key].map(roll => ({
-              value: ".".repeat(roll * 10 - 6),
-              width: `calc(${(1/item.substatRolls[item.substats[i].key].length*roll*100)}% - 2px)`,
+              value: ".".repeat(roll+1),
+              width: `calc(${(1/item.substatRolls[item.substats[i].key].length*(0.7+roll*0.1)*100)}% - 2px)`, // TODO: Doesn't work for rarity 1 and 2
             })),
             classes: {
               "rolls-display": true,
@@ -489,7 +489,7 @@ export default class ArtifactList extends GenshinList
         value: item.getSubstatSum(item.substats[i].key).toFixed(["eleMas","hp","atk","def"].indexOf(item.substats[i].key)>-1?0:1),
       } : {
         func: statId => {
-          item.setSubstat(statId, GenshinArtifactStats[item.rarity].substats[statId]*0.7);
+          item.setSubstat(statId, GenshinArtifactStats[item.rarity].substats[statId][0]);
           let characterElement = item.viewer.elements.popup.querySelector(".list-item");
           let character = Renderer.controllers.get(characterElement.dataset.uuid);
           if(character)
@@ -639,18 +639,19 @@ export default class ArtifactList extends GenshinList
           });
           this.elements.selectSlotAdd.value = "";
           this.elements.selectStatAdd.value = "";
-          
+          /*
           let listElement = this.viewer.elements[this.constructor.name].querySelector(`.list[data-uuid="${this.uuid}"]`);
           let listTargetElement = listElement.querySelector(".list-target");
           if(!listTargetElement)
             listTargetElement = listElement;
+          
           Renderer.rerender(null, {
             item,
             groups: this.display.getGroups({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}),
             fields: this.display.getFields({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}).map(field => ({field, params:[]})),
             wrapper: "tr",
             fieldWrapper: "td",
-          }, {template:"renderItem", parentElement:listTargetElement});
+          }, {template:"renderItem", parentElement:listTargetElement});*/
         }
       });
       

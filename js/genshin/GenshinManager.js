@@ -16,6 +16,12 @@ export default class GenshinManager extends DataManager
 {
   static Renderer = Renderer; // Only here so the browser console can access it.
   static dontSerialize = DataManager.dontSerialize.concat(["lastDay"]);
+  static timezones = {
+    'na': "UTC-9",
+    'eu': "UTC-3",
+    'as': "UTC+4",
+    'tw': "UTC+4",
+  };
   
   lastDay = DateTime.now().setZone("UTC-9").weekdayLong;
   buildData = {};//GenshinBuilds;
@@ -27,21 +33,22 @@ export default class GenshinManager extends DataManager
     this.elements['loadError'] = document.getElementById("loadError");
     this.settings.account = "";
     this.settings.server = "";
-    this.listClasses.MaterialList = MaterialList;
-    this.listClasses.CharacterList = CharacterList;
-    this.listClasses.WeaponList = WeaponList;
-    this.listClasses.ArtifactList = ArtifactList;
-    this.listClasses.TeamList = TeamList;
-    this.listClasses.FurnitureList = FurnitureList;
-    this.listClasses.FurnitureSetList = FurnitureSetList;
     
-    for(let list in this.listClasses)
-    {
-      this.elements[this.listClasses[list].name] = document.getElementById(this.listClasses[list].name) ?? this.elements.content.appendChild(document.createElement("div"));
-      this.elements[this.listClasses[list].name].id = this.listClasses[list].name;
-      this.elements[this.listClasses[list].name].classList.add("viewer-pane");
-      this.settings.paneMemory[this.listClasses[list].name] = this.settings.paneMemory[this.listClasses[list].name] ?? {};
-    }
+    this.registerList(MaterialList);
+    this.registerList(CharacterList);
+    this.registerList(WeaponList);
+    this.registerList(ArtifactList);
+    this.registerList(TeamList);
+    this.registerList(FurnitureList);
+    this.registerList(FurnitureSetList);
+    
+    this.registerNavItem("Characters", "characters", {list:"CharacterList", isDefault:true});
+    this.registerNavItem("Weapons", "weapons", {list:"WeaponList"});
+    this.registerNavItem("Artifacts", "artifacts", {list:"ArtifactList"});
+    this.registerNavItem("Teams", "teams", {list:"TeamList"});
+    this.registerNavItem("Materials", "materials", {list:"MaterialList"});
+    this.registerNavItem("Furniture Sets", "furnitureSets", {list:"FurnitureSetList"});
+    this.registerNavItem("Furniture", "furniture", {list:"FurnitureList"});
   }
   
   get lists()
@@ -49,27 +56,9 @@ export default class GenshinManager extends DataManager
     return this.data?.[this.settings.account]?.[this.settings.server] ?? {};
   }
   
-  paneFromHash()
-  {
-    if(location.hash == "#materials")
-      return "MaterialList";
-    else if(location.hash == "#weapons")
-      return "WeaponList";
-    else if(location.hash == "#artifacts")
-      return "ArtifactList";
-    else if(location.hash == "#teams")
-      return "TeamList";
-    else if(location.hash == "#furnitureSets")
-      return "FurnitureSetList";
-    else if(location.hash == "#furniture")
-      return "FurnitureList";
-    else
-      return "CharacterList";
-  }
-  
   today()
   {
-    let today = DateTime.now().setZone("UTC-9").weekdayLong;
+    let today = DateTime.now().setZone(GenshinManager.timezones[this.settings.server] ?? "UTC-9").weekdayLong;
     if(this.lastDay != today)
     {
       this.update("today", null, "notify");
@@ -85,6 +74,7 @@ export default class GenshinManager extends DataManager
       changed = true;
     this.settings.account = account;
     this.settings.server = server;
+    this.today();
     if(!this.data)
       this.data = {};
     if(!this.data[this.settings.account])
@@ -104,7 +94,7 @@ export default class GenshinManager extends DataManager
   {
     this.activateAccount(account, server);
     this.lists[CharacterList.name].addTraveler();
-    this.view(this.currentView);
+    this.view({pane:this.currentView});
     console.log(`Switching to account '${this.settings.account}' on server '${this.settings.server}'.`);
     return true;
   }
@@ -199,6 +189,7 @@ export default class GenshinManager extends DataManager
     
     this.settings.account = this.settings.account ?? Object.keys(this.data ?? {})[0] ?? "";
     this.settings.server = this.settings.server ?? Object.keys(this.data?.[this.settings.account] ?? {})[0] ?? "";
+    this.today();
     
     return hasData;
   }
@@ -340,6 +331,7 @@ export default class GenshinManager extends DataManager
     window.localStorage.setItem("genshinAccount", JSON.stringify(this.data));
     window.localStorage.setItem("genshinBuilds", JSON.stringify(this.buildData));
     console.log(`Local data saved.`);
+    this.today();
   }
   
   retrieve()
@@ -413,7 +405,7 @@ export default class GenshinManager extends DataManager
     this.activateAccount(this.settings.account, this.settings.server)
     
     if(this.currentView)
-      this.view(this.currentView);
+      this.view({pane:this.currentView});
   }
   
   async saveToPastebin()

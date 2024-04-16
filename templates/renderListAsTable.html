@@ -18,7 +18,7 @@
               {{/each}}
             </tr>
         </thead>
-        <tbody class="list-target">
+        <tbody class="list-target" data-uuid="{{uuid item}}">
           {{#each items}}
               {{> renderItem item=. fields=../fields wrapper="tr" fieldWrapper="td"}}
           {{/each}}

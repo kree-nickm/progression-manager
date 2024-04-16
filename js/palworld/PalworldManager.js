@@ -60,7 +60,7 @@ export default class PalworldManager extends DataManager
   switchAccount(server)
   {
     this.activateAccount(server);
-    this.view(this.currentView);
+    this.view({pane:this.currentView});
     console.log(`Switching to account '${this.settings.server}'.`);
     return true;
   }

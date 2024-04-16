@@ -51,6 +51,7 @@
                 <tr>
                     <th title="Ranking of which character build wants this artifact the most.">Prio</th>
                     <th>Character</th>
+                    <th title="The artifact that the listed character currently has equipped.">Current</th>
                     <th>Build</th>
                     <th>On Set</th>
                     <th title="Where this artifact ranks among other artifacts of the same set (or off-set) for the listed character build.">Desire</th>
@@ -61,9 +62,20 @@
             </thead>
             <tbody>
               {{#each item.wanters}}
-                <tr class="list-item" data-uuid="{{uuid character}}">
+                <tr class="list-item {{#ifeq character ../item.character}}table-primary{{/ifeq}}" data-uuid="{{uuid character}}">
                     <td>#{{math @key "+" 1}}</td>
                     <td>{{> renderItemField item=character field="name" wrapper="u"}}</td>
+                      {{#if (lookup character (concat (lookup ../item 'slotKey') 'Artifact'))}}
+                      {{#with (lookup character (concat (lookup ../item 'slotKey') 'Artifact'))}}
+                    <td class="list-item" data-uuid="{{uuid .}}">
+                        <img class="artifact-icon-inline" src="{{lookup . 'image'}}"/>
+                        <span style="text-shadow:0px 0px 3px black;">{{> renderItemField item=. field="characterScore" wrapper="span" params=(array ../character ../buildId)}}</span>
+                        +{{lookup . 'level'}}
+                    </td>
+                      {{/with}}
+                      {{else}}
+                    <td></td>
+                      {{/if}}
                     <td>{{buildName character buildId}}</td>
                     <td>{{#if onSet}}Yes{{/if}}</td>
                     <td>#{{rank}}</td>

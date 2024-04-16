@@ -74,12 +74,18 @@ handlebars.registerHelper('lookup', function(...params) {
   let obj = base;
   for(let prop of params)
   {
-    if(obj === undefined)
+    if(obj === undefined || obj === null)
     {
-      if(!options.hash.ignoreUndefined) console.warn(`Helper 'lookup' attempted to get property '${prop}' on non-existent object: [base].${params.join('.')}; base:`, base);
-      return obj;
+      if(!options.hash.ignoreEmpty) console.warn(`Helper 'lookup' attempted to get property '${prop}' on undefined/null object: [base].${params.join('.')}; base:`, base);
+      return "";
     }
-    obj = obj[prop];
+    if(typeof(obj) == "object")
+      obj = obj[prop];
+    else
+    {
+      if(!options.hash.returnFirstScalar) console.warn(`Helper 'lookup' attempted to get property '${prop}' on a ${typeof(obj)}: [base].${params.join('.')}; base:`, base);
+      return options.hash.returnFirstScalar ? obj : "";
+    }
   }
   return obj;
 });
@@ -167,7 +173,6 @@ class Renderer
   
   static controllers = new Map();
   static _needsUpdate = new Set();
-  static _queuedUpdates = [];
   static _updateTimeout;
   static _templates = {};
   
@@ -486,14 +491,14 @@ class Renderer
     let listTargetElement;
     if(listElement.classList.contains("list"))
     {
-      listTargetElement = listElement.querySelector(".list-target");
+      listTargetElement = listElement.querySelector(`.list-target[data-uuid="${listElement.dataset.uuid}"]`);
       if(!listTargetElement)
         listTargetElement = listElement;
     }
     else if(listElement.classList.contains("list-target"))
     {
       listTargetElement = listElement;
-      while(listElement && !listElement.classList.contains("list"))
+      while(listElement && !listElement.classList.contains("list") && listElement.dataset.uuid != listTargetElement.dataset.uuid)
         listElement = listElement.parentElement;
       if(!listElement)
         return console.error(`List target element has no list ancestor element.`, listTargetElement);
@@ -531,14 +536,33 @@ class Renderer
     
     // Get the field name first for reference.
     let fieldName = element.attributes.getNamedItem('name')?.value;
+    if(!fieldName)
+    {
+      console.error(`Element has no name attribute specifying a field.`, element);
+      return;
+    }
     
     // Determine the item for the field.
     let itemElement = element.parentElement;
-    while(itemElement && !itemElement.classList.contains("list-item"))
-      itemElement = itemElement.parentElement;
+    if(element.classList.contains("list-item-field"))
+    {
+      while(itemElement && !itemElement.classList.contains("list-item"))
+        itemElement = itemElement.parentElement;
+    }
+    else if(element.classList.contains("list-field"))
+    {
+      while(itemElement && !itemElement.classList.contains("list"))
+        itemElement = itemElement.parentElement;
+    }
+    else
+    {
+      console.error(`Field '${fieldName}' element does not have an appropriate field class.`, element);
+      return;
+    }
+    
     if(!itemElement)
     {
-      console.error(`Item field '${fieldName}' element has no ancestor with the 'list-item' class.`, element);
+      console.error(`Field '${fieldName}' element has no ancestor with the appropriate class to determine which item/list to which it belongs.`, element);
       return false;
     }
     
@@ -553,7 +577,7 @@ class Renderer
     let field = item.display.getField(fieldName);
     if(!field)
     {
-      console.error(`Unable to determine '${fieldName}' field of item '${item.name}':`, element);
+      console.error(`Unable to determine '${fieldName}' field of item '${item.name??item.uuid}':`, element);
       return false;
     }
     
@@ -648,7 +672,7 @@ class Renderer
       
       if(subContent.edit)
       {
-        if(window.DEBUGLOG.renderItemField) console.debug(`Adding edit event listeners to subelement (field:${fieldName}, item:${item.name}).`, subElement, subContent);
+        if(window.DEBUGLOG.renderItemField) console.debug(`Adding edit event listeners to subelement (field:${fieldName}, item:${item.name??item.uuid}).`, subElement, subContent);
         if(subContent.edit.target)
           fieldData.dependencies.push(subContent.edit.target);
         Renderer.addFieldEventListeners(subElement, subContent);
@@ -657,7 +681,7 @@ class Renderer
       {
         if(!subElement.onclick)
         {
-          if(window.DEBUGLOG.renderItemField) console.debug(`Adding popup event listener to subelement (field:${fieldName}, item:${item.name}).`, subElement, subContent);
+          if(window.DEBUGLOG.renderItemField) console.debug(`Adding popup event listener to subelement (field:${fieldName}, item:${item.name??item.uuid}).`, subElement, subContent);
           subElement.onclick = event => {
             Renderer.rerender(subContent.popup.viewer.elements.popup.querySelector(".modal-content"), {item: subContent.popup}, {template: subContent.popup.constructor.templateName, partials: subContent.popup.constructor.templatePartials, showPopup: true, parentElement: subContent.popup.viewer.elements.popup});
           };
@@ -688,6 +712,7 @@ class Renderer
     fieldElement.editTarget = content.edit.target;
     fieldElement.editFunc = content.edit.func;
     fieldElement.editValueFormat = content.edit.valueFormat;
+    fieldElement.editingData = content.edit;
     let editElement = fieldElement.querySelector(".edit-element");
     // TODO: Move this to contentToHTML
     if(!editElement)
@@ -711,7 +736,12 @@ class Renderer
       {
         // Add select element.
         editElement = fieldElement.appendChild(document.createElement("select"));
-        editElement.appendChild(document.createElement("option"));
+        let optionDefault = editElement.appendChild(document.createElement("option"));
+        if(content.edit.defaultOption)
+        {
+          optionDefault.value = content.edit.defaultOption.value;
+          optionDefault.innerHTML = content.edit.defaultOption.display;
+        }
         for(let opt of content.edit.list)
         {
           let option = editElement.appendChild(document.createElement("option"));
@@ -728,7 +758,7 @@ class Renderer
           else if(content.edit.displayProperty)
             option.innerHTML = opt[content.edit.displayProperty];
           else
-            option.innerHTML = opt;
+            option.innerHTML = option.value;
         }
         for(let opt of editElement.options)
           if(opt.innerHTML == fieldElement.editValue)
@@ -803,9 +833,18 @@ class Renderer
           editElement.focus();
         };
         fieldElement.classList.add("editable");
-        if(content.edit.alwaysShow)
-          fieldElement.classList.add("editing");
         if(window.DEBUGLOG.addFieldEventListeners) console.debug(`Added onclick method to field element.`, fieldElement.onclick);
+        if(content.edit.alwaysShow)
+        {
+          fieldElement.dispatchEvent(new Event("click"));
+          if(content.edit.type != "select")
+            editElement.value = editElement.placeholder;
+          editElement.classList.remove("edit-box");
+          if(content.edit.type == "select")
+            editElement.classList.add("form-select");
+          else
+            editElement.classList.add("form-control");
+        }
       }
       else
       {
@@ -837,9 +876,10 @@ class Renderer
             }
           }
         };
-        editElement.onchange = saveEdit;
-        editElement.onblur = saveEdit;
         editElement.onkeydown = saveEdit;
+        editElement.onchange = saveEdit;
+        if(!content.edit.type == "select" && !content.edit.type == "checkbox")
+          editElement.onblur = saveEdit;
       }
     }
     

@@ -181,8 +181,10 @@ export default class MaterialList extends GenshinList
       };
       data.fields = this.display.getFields().map(field => ({field, params:[]}));
       options.template = "genshin/renderMaterialList";
+      return {element, data, options};
     }
-    return {element, data, options};
+    else
+      return super.prepareRender(element, data, options);
   }
   
   async render(force=false)

@@ -143,6 +143,7 @@ export default class Material extends GenshinItem
       if(item.favorite === false)
         continue;
       let amount = [];
+      let note = [];
       if(item instanceof Character)
       {
         if(this == item.getMat('gem') && item.getPhase().ascendMatGemCount)
@@ -173,6 +174,24 @@ export default class Material extends GenshinItem
         
         if(this == item.MaterialList.trounce)
           amount.push(item.getTalent('auto').matTrounceCount + item.getTalent('skill').matTrounceCount + item.getTalent('burst').matTrounceCount);
+        
+        if(this.type == "mastery" || this.type == "trounce")
+        {
+          if(item.talent.auto < 10 || item.talent.skill < 10 || item.talent.burst < 10)
+            note.push(`${item.talent.auto}/${item.talent.skill}/${item.talent.burst}`);
+        }
+        else if(this.type == "enemy")
+        {
+          if(item.ascension < 6)
+            note.push(`A${item.ascension}`);
+          if(item.talent.auto < 10 || item.talent.skill < 10 || item.talent.burst < 10)
+            note.push(`${item.talent.auto}/${item.talent.skill}/${item.talent.burst}`);
+        }
+        else if(this.type == "gemstone" || this.type == "flora" || this.type == "boss")
+        {
+          if(item.ascension < 6)
+            note.push(`A${item.ascension}`);
+        }
       }
       if(item instanceof Weapon)
       {
@@ -182,11 +201,18 @@ export default class Material extends GenshinItem
           amount.push(item.getMatCost('strong'));
         if(this == item.getMat('weak') && item.getMatCost('weak'))
           amount.push(item.getMatCost('weak'));
+        
+        if(this.type == "enemy" || this.type == "forgery")
+        {
+          if(item.ascension < 6)
+            note.push(`A${item.ascension}`);
+        }
       }
       if(amount.length)
-        results.push({name:item.name, amount:amount.join(", ")});
+        results.push({name:item.name, amount:amount.join(", "), note});
     }
-    return results.map(user => user.name + ` (${user.amount})`).join("; ");
+    //return results.map(user => user.name + ` (${user.amount})`).join("; ");
+    return results.map(user => `${user.name}` + (user.note.length ? ` (${user.note.join(', ')})` : ``)).join("; ");
   }
   
   getCraftCount()

@@ -384,7 +384,6 @@ export default {
     },
     "Legatus": {
       "name": "Legatus Golem",
-      "release": "April 24, 2024",
       "4": "Fragment of a Golden Melody"
     }
   },
@@ -501,7 +500,7 @@ export default {
       "source": "Cecilia Garden",
       "days": ["Wednesday","Saturday","Sunday"]
     },
-    "Pillar": {
+    "Guyun": {
       "2": "Luminous Sands from Guyun",
       "3": "Lustrous Stone from Guyun",
       "4": "Relic from Guyun",
@@ -509,7 +508,7 @@ export default {
       "source": "Hidden Palace of Lianshan Formula",
       "days": ["Monday","Thursday","Sunday"]
     },
-    "Balls": {
+    "Elixir": {
       "2": "Mist Veiled Lead Elixir",
       "3": "Mist Veiled Mercury Elixir",
       "4": "Mist Veiled Gold Elixir",
@@ -517,7 +516,7 @@ export default {
       "source": "Hidden Palace of Lianshan Formula",
       "days": ["Tuesday","Friday","Sunday"]
     },
-    "Piece": {
+    "Aeros": {
       "2": "Grain of Aerosiderite",
       "3": "Piece of Aerosiderite",
       "4": "Bit of Aerosiderite",
@@ -581,7 +580,7 @@ export default {
       "source": "Echoes of the Deep Tide",
       "days": ["Monday","Thursday","Sunday"]
     },
-    "Droplet": {
+    "Dewdrop": {
       "2": "Dross of Pure Sacred Dewdrop",
       "3": "Sublimation of Pure Sacred Dewdrop",
       "4": "Spring of Pure Sacred Dewdrop",

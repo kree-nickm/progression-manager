@@ -43,18 +43,22 @@ export default class Artifact extends GenshinItem
     'def': 0.01,
   };
   
-  id;
-  slotKey = "";
   setKey = "";
+  slotKey = "";
+  _level = 0;
+  _rarity = 0;
   mainStatKey = "";
   location = "";
   lock = false;
   substats = [];
-  substatRolls = {};
-  _level = 0;
-  _rarity = 0;
+  
+  id;
+  isPreview;
+  
   character = null;
   wanters = [];
+  substatRolls = {};
+  
   
   afterLoad()
   {
@@ -130,6 +134,7 @@ export default class Artifact extends GenshinItem
   
   setSubstat(statId, value)
   {
+    // Check if we already have the substat, and update it if so.
     let found = false;
     for(let substat of this.substats)
     {
@@ -139,6 +144,7 @@ export default class Artifact extends GenshinItem
         found = true;
       }
     }
+    // If we don't have it, add it if possible.
     if(!found)
     {
       if(Artifact.substats.indexOf(statId) > -1 && this.substats.length < 4)
@@ -149,6 +155,7 @@ export default class Artifact extends GenshinItem
       else
         console.warn(`Could not update substat ${statId} to value ${value}, current substats:`, this.substats);
     }
+    // If a change was made, trigger an update()
     if(found)
     {
       this.determineRolls();
@@ -161,32 +168,48 @@ export default class Artifact extends GenshinItem
     this.cleanSubstats();
     let rollTotals = {};
     for(let stat of this.substats)
-      rollTotals[stat.key] = (stat.value / GenshinArtifactStats[this.rarity].substats[stat.key]).toFixed(1);
+    {
+      // This is a ballpark value based on the erroneous assumption that lower rolls are 0.9, 0.8, or 0.7 of the highest roll, however, they should be close enough.
+      // Or 0.85 for 2-star, 0.8 for 1-star
+      rollTotals[stat.key] = (stat.value / GenshinArtifactStats[this.rarity].substats[stat.key][GenshinArtifactStats[this.rarity].substats[stat.key].length-1]).toFixed(1);
+    }
     
     if(this.substats.length < 4)
     {
       this.substatRolls = {};
       for(let statKey in rollTotals)
-        this.substatRolls[statKey] = [parseFloat(rollTotals[statKey])];
+      {
+        if(this.rarity > 2)
+          this.substatRolls[statKey] = [{'0.7':0,'0.8':1,'0.9':2,'1.0':3}[rollTotals[statKey]]];
+        else if(this.rarity == 2)
+          this.substatRolls[statKey] = [{'0.7':0,'0.8':1,'0.9':1,'1.0':2}[rollTotals[statKey]]];
+        else if(this.rarity == 1)
+          this.substatRolls[statKey] = [{'0.8':0,'1.0':1}[rollTotals[statKey]]];
+      }
       return this.substatRolls;
     }
     else
     {
       let possibles = {};
+      let notpossibles = {};
       for(let statKey in rollTotals)
       {
         possibles[statKey] = [];
-        let minNumRolls = Math.ceil(rollTotals[statKey]);
-        let maxNumRolls = Math.floor(rollTotals[statKey]/0.7);
+        notpossibles[statKey] = [];
+        let minNumRolls = Math.ceil(parseFloat(rollTotals[statKey]));
+        let maxNumRolls = Math.floor(parseFloat(rollTotals[statKey])/0.7);
         let iterations = Math.pow(5,maxNumRolls);
         for(let iter=0; iter<iterations; iter++)
         {
+          /*
+          This loop will go through 5 possible values for each potential roll.
+          */
           let statRolls = [];
           let i = iter;
-          // Convert the iteration into a specific set of "rolls" for this stat.
+          // Convert the iteration into a specific set of rolls for this stat.
           while(i > 0)
           {
-            // Only allow "roll" sets that are in descending order.
+            // Only allow roll sets that are in descending order.
             if(!statRolls.length || statRolls[statRolls.length-1] >= (i%5))
             {
               statRolls.push(i%5);
@@ -197,14 +220,27 @@ export default class Artifact extends GenshinItem
           }
           if(i < 0)
             continue;
-          // Convert the "rolls" into actual rolls.
-          statRolls = statRolls.filter(num => num > 0).map(num => num>0 ? 0.6+num*0.1 : 0);
-          // Only keep roll sets that are valid and add up to the actual stat total roll value.
-          if(statRolls.length >= minNumRolls && rollTotals[statKey] == statRolls.reduce((total,num) => total+num).toFixed(1))
+          statRolls = statRolls.filter(num => num > 0).map(num => num-1);
+          if(statRolls.length >= minNumRolls)
           {
-            // Only keep one roll set of a given number of rolls, since they are totally interchangeable.
-            if(!possibles[statKey].find(elem => elem.length == statRolls.length))
-              possibles[statKey].push(statRolls);
+            let sum;
+            if(this.rarity > 2)
+              sum = statRolls.reduce((total,num) => total+(0.7+num*0.1), 0).toFixed(1);
+            else if(this.rarity == 2)
+              sum = statRolls.reduce((total,num) => total+(0.7+num*0.15), 0).toFixed(1);
+            else if(this.rarity == 1)
+              sum = statRolls.reduce((total,num) => total+(0.8+num*0.2), 0).toFixed(1);
+            // Only keep roll sets that are valid and add up to the actual stat total roll value.
+            if(rollTotals[statKey] == sum)
+            {
+              // Only keep one roll set of a given number of rolls, since they are totally interchangeable.
+              if(!possibles[statKey].find(elem => elem.length == statRolls.length))
+                possibles[statKey].push(statRolls);
+            }
+            else
+            {
+              notpossibles[statKey].push({sum, statRolls});
+            }
           }
         }
       }
@@ -223,7 +259,7 @@ export default class Artifact extends GenshinItem
           return this.substatRolls;
         }
       }
-      console.warn(`[Ignore if you are still editing artifact] Artifact substats do not have values that can be divided into any number of valid rolls (Rarity:${this.rarity}) (Level:${this.level}) (${minRolls}<=rollCount<=${maxRolls}).`, this.substats, rollTotals, possibles);
+      console.warn(`[Ignore if you are still editing artifact] Artifact substats do not have values that can be divided into any number of valid rolls (Rarity:${this.rarity}) (Level:${this.level}) (${minRolls}<=rollCount<=${maxRolls}).`, this.substats, rollTotals, possibles, notpossibles);
       return null;
     }
   }
@@ -236,7 +272,7 @@ export default class Artifact extends GenshinItem
   
   getSubstatSum(statId)
   {
-    return (this.substatRolls[statId]?.reduce((total,roll) => total+roll) ?? 0) * (GenshinArtifactStats[this.rarity]?.substats?.[statId] ?? 0);
+    return this.substatRolls[statId]?.reduce((total,roll) => total+GenshinArtifactStats[this.rarity]?.substats?.[statId][roll], 0) ?? 0;
   }
   
   getSubstatRating(statId)
@@ -252,11 +288,11 @@ export default class Artifact extends GenshinItem
       }
       else
       {
-        let baseRating = this.substatRolls[statId]?.reduce((total,roll) => total+roll) ?? 0;
-        let avgRoll = GenshinArtifactStats[this.rarity].substats[statId] * (this.rarity==1 ? 0.9 : 0.85);
+        let baseRating = this.substatRolls[statId]?.reduce((total,roll) => total+(0.7+roll*0.1), 0) ?? 0; // TODO: Doesn't work for rarity 1 and 2
+        let avgRoll = GenshinArtifactStats[this.rarity].substats[statId][GenshinArtifactStats[this.rarity].substats[statId].length-1] * (this.rarity==1 ? 0.9 : 0.85);
         let tiersRemaining = Math.ceil((this.levelCap - this.level) / 4);
         let statsOpen = 4 - this.substats.length;
-        let chanceRating = (0.25 * (tiersRemaining - statsOpen) * avgRoll) / GenshinArtifactStats[5].substats[statId];
+        let chanceRating = (0.25 * (tiersRemaining - statsOpen) * avgRoll) / GenshinArtifactStats[5].substats[statId][GenshinArtifactStats[5].substats[statId].length-1];
         
         // If we have the stat, we only need to factor in the boosts.
         if(baseRating > 0)
@@ -302,8 +338,8 @@ export default class Artifact extends GenshinItem
         if(build.ratioCritRate && build.ratioCritDMG)
         {
           let targetRateFactor = build.ratioCritRate / (build.ratioCritRate + build.ratioCritDMG);
-          let myRate = character.getStat("critRate_", {unmodified:!build.useTargets.modifiers, [this.slotKey+'Artifact']:this});
-          let myDMG = character.getStat("critDMG_", {unmodified:!build.useTargets.modifiers, [this.slotKey+'Artifact']:this});
+          let myRate = character.getStat("critRate_", {unmodified:!build.useTargets.modifiers, [this.slotKey]:this});
+          let myDMG = character.getStat("critDMG_", {unmodified:!build.useTargets.modifiers, [this.slotKey]:this});
           let myRateFactor = myRate / (myRate + myDMG);
           critPenalty = targetRateFactor - myRateFactor; // Positive -> Too much Crit DMG. Negative -> Too much Crit Rate.
         }
@@ -311,10 +347,10 @@ export default class Artifact extends GenshinItem
       if(useTargets && build.useTargets.enerRech_)
       {
         // Alter the artifacts' ratings based on the defined target stats.
-        let myER = character.getStat("enerRech_", {unmodified:!build.useTargets.modifiers, [this.slotKey+'Artifact']:this});
+        let myER = character.getStat("enerRech_", {unmodified:!build.useTargets.modifiers, [this.slotKey]:this});
         if(myER > build.maxER)
         {
-          excessERRating = (myER - build.maxER) / GenshinArtifactStats[5].substats.enerRech_;
+          excessERRating = (myER - build.maxER) / GenshinArtifactStats[5].substats.enerRech_[GenshinArtifactStats[5].substats.enerRech_.length-1];
         }
         else if(myER < build.minER)
         {

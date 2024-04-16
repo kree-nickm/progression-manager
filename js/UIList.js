@@ -68,17 +68,21 @@ export default class UIList extends UIController {
     return list;
   }
   
+  list;
+  
   viewer;
   display;
-  subsets = {};
-  forceNextRender = true;
-  list = [];
+  subsets;
+  forceNextRender;
   
   constructor(viewer)
   {
     super();
+    this.list = [];
     this.viewer = viewer;
     this.display = new ListDisplayManager(this);
+    this.subsets = {};
+    this.forceNextRender = true;
     this.initialize();
     this.setupDisplay();
   }
@@ -93,8 +97,38 @@ export default class UIList extends UIController {
       return false;
     if(field.string == "list" && (field.value.length != value.length || options.force))
     {
-      // TODO: Theoretically we can check the elements that were added/removed and only clear the subsets that would include them.
-      this.subsets = {};
+      if(action == "push")
+      {
+        for(let subset in this.constructor.subsetDefinitions)
+        {
+          if(subset in this.subsets && this.constructor.subsetDefinitions[subset](value))
+            this.subsets[subset].push(value);
+        }
+      
+        let listElements = this.viewer.elements[this.constructor.name].querySelectorAll(`.list[data-uuid="${this.uuid}"]`);
+        for(let listElement of listElements)
+        {
+          if(listElement.dataset.filter)
+            if(!this.constructor.subsetDefinitions[listElement.dataset.filter](value))
+              continue;
+          let listTargetElement = listElement.querySelector(`.list-target[data-uuid="${this.uuid}"]`); // TODO: Nested lists of the same UIList object could make this incorrect, but that's weird, so let's just pretend no one is gonna do that for now.
+          if(!listTargetElement)
+            listTargetElement = listElement;
+          let renderData = this.prepareRender(listElement, {}, {});
+          Renderer.rerender(null, {
+            item: value,
+            groups: renderData.data.groups,
+            fields: renderData.data.fields,
+            wrapper: "tr", // TODO: Not all lists use tr/td
+            fieldWrapper: "td",
+          }, {template:"renderItem", parentElement:listTargetElement});
+        }
+      }
+      else if(action == "replace")
+      {
+        this.subsets = {};
+        this.forceNextRender = true;
+      }
     }
   }
   
@@ -175,14 +209,14 @@ export default class UIList extends UIController {
   
   clear()
   {
-    this.list.forEach(item => item.unlink());
+    this.list.forEach(item => item.unlink({skipList:true}));
     this.update("list", [], "replace");
-    this.subsets = {};
-    this.forceNextRender = true;
   }
   
   prepareRender(element, data, options)
   {
+    data.groups = this.display.getGroups({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1});
+    data.fields = this.display.getFields({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}).map(field => ({field, params:[]}));
     return {element, data, options};
   }
   
@@ -190,8 +224,6 @@ export default class UIList extends UIController {
   {
     let {element, data, options} = this.prepareRender(this.viewer.elements[this.constructor.name].querySelector(`.list[data-uuid="${this.uuid}"]`), {
       item: this,
-      groups: this.display.getGroups({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}),
-      fields: this.display.getFields({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}).map(field => ({field, params:[]})),
     }, {
       template: "renderListAsTable",
       force: force || this.forceNextRender,

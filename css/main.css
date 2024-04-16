@@ -431,6 +431,14 @@ th.label[data-group-name="Gear"] {
 
 /* Image Icons */
 
+img.artifact-icon-inline {
+  height: 1em;
+  transform: scale(2.3);
+  vertical-align: baseline;
+  margin-left: 0.75ex;
+  margin-right: 0.75ex;
+}
+
 img.element-icon {
 	filter: saturate(1.5);
 	transform: scale(1.1);
