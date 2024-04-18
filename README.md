@@ -24,6 +24,7 @@ Features include:
 * Allow you to set up teams, and see how the buffs provided by each team members' abilities/artifacts/weapons will affect all of the aforementioned statistics.
 * _(Work-In-Progress)_ Set targets for your character/gear progression, so you can quickly see all of the things you need to spend resin on.
 * _(Planned Feature)_ Obtain your character data from Hoyoverse directly using your profile (like Enka), so you can have at least *some* account data imported without having to use screen readers.
+* _(Planned Feature)_ Sync your data to Google Drive so it's easier to back up and transfer between devices.
 
 ## Alternatives
 There are many other Genshin Impact managers that I am aware of, which serve similar purposes. They are all relatively specialized and probably do those things better than mine (for now, smile). However, I made this one because I did not want to have to use 3 different managers to get all the features I want. That said, with the ability to import/export data in GOOD format, you can use them alongside mine if you want to.
