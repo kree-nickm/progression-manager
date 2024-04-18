@@ -3,6 +3,7 @@ import GenshinArtifactData from "./gamedata/GenshinArtifactData.js";
 import GenshinWeaponData from "./gamedata/GenshinWeaponData.js";
 
 import { handlebars, Renderer } from "../Renderer.js";
+import { mergeObjects } from "../Util.js";
 import GenshinList from "./GenshinList.js";
 import Character from "./Character.js";
 import Traveler from "./Traveler.js";
@@ -13,16 +14,28 @@ export default class CharacterList extends GenshinList
   static unique = true;
   static itemClass = [Character,Traveler];
   static subsetDefinitions = {
-    'traveler': item => item instanceof Traveler,
-    'nottraveler': item => !(item instanceof Traveler),
-    'equippable': item => !(item instanceof Traveler) || !item.base,
-    'listable': item => !(item instanceof Traveler) || item.base,
+    'traveler': item => item instanceof Traveler && item.owned,
+    'nottraveler': item => !(item instanceof Traveler) && item.owned,
+    'equippable': item => (!(item instanceof Traveler) || !item.base) && item.owned,
+    'listable': item => (!(item instanceof Traveler) || item.base) && item.owned,
+    
+    'traveler-all': item => item instanceof Traveler,
+    'nottraveler-all': item => !(item instanceof Traveler),
+    'equippable-all': item => (!(item instanceof Traveler) || !item.base),
+    'listable-all': item => (!(item instanceof Traveler) || item.base),
+    
+    'owned': item => item.owned,
+    'unowned': item => !item.owned,
   };
   
   static fromJSON(data, options)
   {
+    for(let key in data?.list??[])
+      if(data.list[key] === undefined)
+        data.list[key].owned = true;
     let list = super.fromJSON(data, options);
     list.addTraveler();
+    list.addRemaining();
     return list;
   }
   
@@ -541,11 +554,11 @@ export default class CharacterList extends GenshinList
         }
       },
       dependencies: (item,talent,mv,preview,format) => [
-        {item:item.base??item, field:"constellation"},
+        {item:item, field:"constellation"},
         {item:item.base??item, field:"ascension"},
         {item:item.base??item, field:"level"},
-        {item:item.base??item, field:"talent"},
-        {item:item.base??item, field:"statModifiers"},
+        {item:item, field:"talent"},
+        {item:item, field:"statModifiers"},
         {item:item.list, field:"targetEnemyData"},
         preview ? {item:item.base??item, field:"preview"} : null,
         item.weapon ? {item:item.weapon, field:"location"} : null,
@@ -586,7 +599,7 @@ export default class CharacterList extends GenshinList
       ],
     });
     */
-    let weaponName = this.display.addField("weaponName", {
+    this.display.addField("weaponName", {
       group: gearGroup,
       label: "",
       dynamic: true,
@@ -729,22 +742,7 @@ export default class CharacterList extends GenshinList
       value: item => item.weapon ? {
         value: [
           {
-            value: item.viewer.settings.preferences.listDisplay=='1' ? {
-              tag: "img",
-              classes: {'character-icon':true},
-              src: item.weapon.image,
-            } : item.weapon.name,
-            classes: {
-              "icon": item.viewer.settings.preferences.listDisplay=='1',
-            },
-            edit: {
-              func: wpn => item.equipItem(wpn),
-              type: "select",
-              list: item.viewer.lists.WeaponList.items(item.weaponType),
-              valueProperty: "uuid",
-              valueFormat: "uuid",
-              displayProperty: "name",
-            },
+            value: `R${item.weapon.refinement} ${item.weapon.name} Lv.${item.weapon.level}`,
           },
           {
             tag: "i",
@@ -755,23 +753,26 @@ export default class CharacterList extends GenshinList
         classes: {
           "user-field": true,
         },
-      } : {
-        value: "-",
-        edit: {
-          func: wpn => item.equipItem(wpn),
-          type: "select",
-          list: item.viewer.lists.WeaponList.items(item.weaponType),
-          valueProperty: "uuid",
-          valueFormat: "uuid",
-          displayProperty: "name",
-        },
-      },
+      } : "-",
+      edit: item => ({
+        func: wpn => wpn ? wpn.update("location", item.key) : item.weapon?.update("location", ""),
+        type: "select",
+        list: item.viewer.lists.WeaponList.items(item.weaponType),
+        valueProperty: "uuid",
+        valueFormat: "uuid",
+        value: item.weapon ? `R${item.weapon.refinement} ${item.weapon.name} Lv.${item.weapon.level}` : "-",
+        displayProperty: wpn => `R${wpn.refinement} ${wpn.name} Lv.${wpn.level}`,
+      }),
       dependencies: item => [
         {item:item.list.viewer.lists.WeaponList, field:"list"},
+        item.weapon ? {item:item.weapon, field:"location"} : undefined,
+        item.weapon ? {item:item.weapon, field:"refinement"} : undefined,
+        item.weapon ? {item:item.weapon, field:"level"} : undefined,
+        {type:"weapon"},
       ],
     });
     
-    let activeTeam = this.display.addField("activeTeam", {
+    this.display.addField("activeTeam", {
       label: "Active Team",
       title: "If you have a team set up with this character, you can select it here to see the team-wide modifiers provided by other members of the team.",
       tags: ["detailsOnly"],
@@ -791,7 +792,7 @@ export default class CharacterList extends GenshinList
       ],
     });
     
-    let teammate = this.display.addField("teammate", {
+    this.display.addField("teammate", {
       label: "Teammate",
       tags: ["detailsOnly"],
       dynamic: true,
@@ -867,7 +868,7 @@ export default class CharacterList extends GenshinList
     
     this.display.addField("previewWeaponLevel", {
       dynamic: true,
-      value: item => item.previews.weaponLevel ?? item.weapon.level,
+      value: item => item.previews.weaponLevel ?? item.weapon?.level ?? 1,
       edit: item => ({target: {item, field:"previews.weaponLevel"}, alwaysShow:true}),
       dependencies: item => [
         {item:item, field:"previews"},
@@ -876,7 +877,7 @@ export default class CharacterList extends GenshinList
     
     this.display.addField("previewWeaponAscension", {
       dynamic: true,
-      value: item => item.previews.weaponAscension ?? item.weapon.ascension,
+      value: item => item.previews.weaponAscension ?? item.weapon?.ascension ?? 0,
       edit: item => ({target: {item, field:"previews.weaponAscension"}, alwaysShow:true}),
       dependencies: item => [
         {item:item, field:"previews"},
@@ -885,7 +886,7 @@ export default class CharacterList extends GenshinList
     
     this.display.addField("previewWeaponRefinement", {
       dynamic: true,
-      value: item => item.previews.weaponRefinement ?? item.weapon.refinement,
+      value: item => item.previews.weaponRefinement ?? item.weapon?.refinement ?? 1,
       edit: item => ({target: {item, field:"previews.weaponRefinement"}, alwaysShow:true}),
       dependencies: item => [
         {item:item, field:"previews"},
@@ -942,15 +943,73 @@ export default class CharacterList extends GenshinList
         {item:item, field:"previews"},
       ],
     });
+    
+    this.display.addField("planLevel", {
+      dynamic: true,
+      value: item => item.wishlist.level ?? "-",
+      edit: item => ({target: {item, field:"wishlist.level"}}),
+      dependencies: item => [
+        {item:item, field:"wishlist"},
+        {item:item, field:"level"},
+      ],
+    });
+    
+    this.display.addField("planAscension", {
+      dynamic: true,
+      value: item => item.wishlist.ascension ?? "-",
+      edit: item => ({target: {item, field:"wishlist.ascension"}}),
+      dependencies: item => [
+        {item:item, field:"wishlist"},
+        {item:item, field:"ascension"},
+      ],
+    });
+    
+    this.display.addField("planTalent", {
+      dynamic: true,
+      value: (item,talent) => item.wishlist.talent?.[talent] ?? "-",
+      edit: (item,talent) => ({target: {item, field:"wishlist.talent."+talent}}),
+      dependencies: (item,talent) => [
+        {item:item, field:"wishlist"},
+        {item:item, field:"talent."+talent},
+      ],
+    });
+    
+    this.display.addField("planMaterials", {
+      dynamic: true,
+      value: (item,attr) => {
+        let value = [];
+        let materials = item.getPlanMaterials();
+        for(let matKey in materials)
+          value.push({classes:{'plan-material':true}, value:this.viewer.lists.MaterialList.get(matKey).getFieldValue(materials[matKey], this.viewer.settings.preferences.characterList=='1')});
+        return value;
+      },
+      dependencies: (item,attr) => [
+        {item:item, field:"wishlist"},
+        {item:item, field:"level"},
+        {item:item, field:"ascension"},
+        {item:item, field:"talent"},
+      ],
+    });
   }
   
   afterUpdate(field, value, action, options)
   {
     if(!super.afterUpdate(field, value, action, options))
       return false;
-    if(field.string == "list" && (field.value.length != value.length || options.force))
+    if(field.string == "list")
     {
       document.getElementById("addCharacterSelect").needsUpdate = true;
+      if(action == "notify" && options?.type?.toggleOwned)
+      {
+        this.forceNextRender = true;
+        for(let subset in this.constructor.subsetDefinitions)
+        {
+          if(subset in this.subsets && this.constructor.subsetDefinitions[subset](value))
+            this.subsets[subset].push(value);
+          else
+            this.subsets[subset] = this.subsets[subset].filter(item => item != value);
+        }
+      }
     }
   }
   
@@ -1017,10 +1076,18 @@ export default class CharacterList extends GenshinList
     base.variants = [anemo,geo,electro,dendro,hydro/*,pyro,cyro*/];
   }
   
+  addRemaining()
+  {
+    for(let key in GenshinCharacterData)
+      if(!this.get(key))
+        this.createItem({key}).update("owned", false);
+  }
+  
   fromGOOD(goodData)
   {
     let result = super.fromGOOD(goodData);
     this.addTraveler();
+    this.items().forEach(item => item.update("owned", true));
     return result;
   }
   
@@ -1039,8 +1106,9 @@ export default class CharacterList extends GenshinList
   
   clear()
   {
-    this.items("nottraveler").forEach(item => item.unlink());
-    this.update("list", this.items("traveler"), "replace");
+    this.items("nottraveler").forEach(item => item.update("owned", false));
+    this.subsets = {};
+    this.forceNextRender = true;
   }
   
   prepareRender(element, data, options)
@@ -1112,33 +1180,10 @@ export default class CharacterList extends GenshinList
         let selectAdd = document.getElementById("addCharacterSelect");
         if(selectAdd.value)
         {
-          let item = this.addGOOD({
-            key: selectAdd.value,
-            level: 1,
-            constellation: 0,
-            ascension: 0,
-            talent: {
-              auto: 1,
-              skill: 1,
-              burst: 1,
-            },
-          });
+          this.get(selectAdd.value)?.update("owned", true);
           selectAdd.needsUpdate = true;
           selectAdd.removeChild(selectAdd.selectedOptions.item(0));
           selectAdd.value = "";
-          /*
-          let listElement = this.viewer.elements[this.constructor.name].querySelector(`.list[data-uuid="${this.uuid}"]`);
-          let listTargetElement = listElement.querySelector(".list-target");
-          if(!listTargetElement)
-            listTargetElement = listElement;
-          let renderData = this.prepareRender(listElement, {}, {});
-          Renderer.rerender(null, {
-            item,
-            groups: renderData.data.groups,
-            fields: renderData.data.fields,
-            wrapper: "tr",
-            fieldWrapper: "td",
-          }, {template:"renderItem", parentElement:listTargetElement});*/
         }
       });
       
@@ -1194,16 +1239,13 @@ export default class CharacterList extends GenshinList
     {
       selectAdd.replaceChildren();
       selectAdd.appendChild(document.createElement("option"))
-      for(let chara in GenshinCharacterData)
+      for(let chara of this.items('unowned'))
       {
-        if(!this.get(chara))
-        {
-          if(!this.viewer.settings.preferences.showLeaks && Date.parse(GenshinCharacterData[chara].release) > Date.now())
-            continue;
-          let option = selectAdd.appendChild(document.createElement("option"));
-          option.value = chara;
-          option.innerHTML = GenshinCharacterData[chara].name;
-        }
+        if(chara.isLeakHidden)
+          continue;
+        let option = selectAdd.appendChild(document.createElement("option"));
+        option.value = chara.key;
+        option.innerHTML = chara.name;
       }
     }
   }

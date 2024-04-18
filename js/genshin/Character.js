@@ -8,6 +8,7 @@ import GenshinBuilds from "./gamedata/GenshinBuilds.js";
 
 import { handlebars, Renderer } from "../Renderer.js";
 import GenshinItem from "./GenshinItem.js";
+import Ascendable from "./Ascendable.js";
 import Artifact from "./Artifact.js";
 import Weapon from "./Weapon.js";
 import Material from "./Material.js";
@@ -45,7 +46,7 @@ handlebars.registerHelper("isPreviewing", function(character, item, options) {
 
 handlebars.registerHelper("buildName", (character, buildId, options) => character?.getBuild(buildId)?.name);
 
-export default class Character extends GenshinItem
+export default class Character extends Ascendable(GenshinItem)
 {
   static dontSerialize = GenshinItem.dontSerialize.concat(["MaterialList","loaded","_weapon","_flower","_plume","_sands","_goblet","_circlet","_previewGear","preview","statModifiers","activeTeam"]);
   static goodProperties = ["key","level","constellation","ascension","talent"];
@@ -74,6 +75,7 @@ export default class Character extends GenshinItem
     burst: 1,
   };
 
+  owned;
   favorite = false;
   selectedBuild = 0;
   wishlist = {};
@@ -276,6 +278,10 @@ export default class Character extends GenshinItem
       this.clearMemory("stats");
       this.clearMemory("motionValues");
       this.update("statModifiers", null, "notify", {listChange:true, mvChange:"*", mainChange:true, rxnChange:false});
+    }
+    else if(field.string == "owned")
+    {
+      this.list.update("list", this, "notify", {toggleOwned:true});
     }
     return true;
   }
@@ -636,6 +642,67 @@ export default class Character extends GenshinItem
         this.MaterialList.trounce?.count >= this.getTalent(talent).matTrounceCount &&
         this.MaterialList.crown?.count >= this.getTalent(talent).matCrownCount &&
         this.MaterialList.mora?.count >= this.getTalent(talent).matMoraCount;
+  }
+  
+  getPlanMaterials()
+  {
+    let result = {};
+    
+    // EXP
+    let exp = (GenshinCharacterStats.totalExpCost[this.wishlist.level] ?? 0) - GenshinCharacterStats.totalExpCost[this.level];
+    if(exp > 0)
+    {
+      result["Mora"] = Math.ceil(exp/5);
+      result["HerosWit"] = Math.floor(exp/20000);
+      exp -= result["HerosWit"];
+      result["AdventurersExperience"] = Math.floor(exp/5000);
+      exp -= result["AdventurersExperience"];
+      result["WanderersAdvice"] = Math.ceil(exp/1000);
+      exp -= result["WanderersAdvice"];
+    }
+    
+    // Ascension
+    if((this.wishlist.ascension??0) - this.ascension > 0)
+    {
+      for(let asc=this.ascension; asc<this.wishlist.ascension; asc++)
+      {
+        for(let type of ["gem","boss","flower","enemy","mora"])
+        {
+          let cost = this.getMatCost(type, asc);
+          if(cost > 0)
+          {
+            let mat = this.getMat(type, asc);
+            if(!result[mat.key])
+              result[mat.key] = 0;
+            result[mat.key] += cost;
+          }
+        }
+      }
+    }
+    
+    // Talents
+    for(let talent of ["auto","skill","burst"])
+    {
+      if((this.wishlist.talent?.[talent]??0) - this.talent[talent] > 0)
+      {
+        for(let lvl=this.talent[talent]; lvl<this.wishlist.talent[talent]; lvl++)
+        {
+          for(let type of ["mastery","enemy","trounce","crown","mora"])
+          {
+            let cost = this.getTalent(lvl)['mat'+type.charAt(0).toUpperCase()+type.slice(1)+'Count'];
+            if(cost > 0)
+            {
+              let mat = this.getTalentMat(type, lvl);
+              if(!result[mat.key])
+                result[mat.key] = 0;
+              result[mat.key] += cost;
+            }
+          }
+        }
+      }
+    }
+    
+    return result;
   }
   
   get teams()
@@ -1764,6 +1831,10 @@ export default class Character extends GenshinItem
     {
       this._addArtifactListsEventHandlers(element)
     }
+    else if(element.dataset.template == "renderItem")
+    {
+      // A row in the character list; probably don't ever need to do anything here.
+    }
     else
     {
       console.warn(`Character.onRender called for an unrecognized element template.`, element);
@@ -1857,7 +1928,7 @@ export default class Character extends GenshinItem
       previewResetBtn.onclick = event => {
         event.stopPropagation();
         event.preventDefault();
-        this.list.list.forEach(chara => chara.update("previews", {}, "replace"));
+        this.list.items().forEach(chara => chara.update("previews", {}, "replace"));
       };
     }
   }

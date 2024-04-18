@@ -6,9 +6,9 @@ export default class FurnitureSet extends GenshinItem
 {
   static dontSerialize = GenshinItem.dontSerialize.concat(["furniture"]);
   
-  key = "";
+  key;
   furniture;
-  learned = false;
+  learned;
   settled = [];
   
   afterLoad()

@@ -15,12 +15,10 @@ export default class UIList extends UIController {
     list.startImport("GenshinManager");
     for(let prop in addProperties)
       list[prop] = addProperties[prop];
-    //if(this.name == "CharacterList") console.log(`Constructed CharacterList:`, list, list.list.length);
     for(let prop in list)
     {
       if(this.dontSerialize.indexOf(prop) == -1 && data[prop] !== undefined)
       {
-        //console.log(`Handling property ${prop}...`);
         if(prop == "list")
         {
           for(let elem of data[prop])
@@ -29,17 +27,14 @@ export default class UIList extends UIController {
             if(itemClass)
             {
               let item = itemClass.fromJSON(elem, {addProperties:{list}, postLoad:false});
-              //if(this.name == "CharacterList" && item.constructor.name == "Traveler") console.log(`Constructed Traveler:`, item);
               if(this.unique)
               {
                 let existing = list.get(item.getUnique());
                 if(existing)
                 {
-                  //if(this.name == "CharacterList" && item.constructor.name == "Traveler") console.log(`Existing Traveler:`, existing);
                   for(let itemProp in item)
                     if(item.constructor.dontSerialize.indexOf(itemProp) == -1 && item[itemProp] !== undefined)
                       existing.update(itemProp, item[itemProp], "replace");
-                  //if(this.name == "CharacterList" && item.constructor.name == "Traveler") console.log(`Updated Traveler:`, existing);
                   item.unlink();
                 }
                 else

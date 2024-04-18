@@ -648,6 +648,15 @@ body.dark-mode img.element-icon.element-Physical {
   background-color: rgba(200,200,200,0.5);
 }
 
+.plan-materials .sub-0 {
+  display: block;
+}
+
+.plan-material {
+  margin: 0.1em 1ex;
+  display: inline-block;
+}
+
 .character-build {
   border: 1px solid gray;
   border-radius: 1em;

@@ -11,20 +11,31 @@
             </div>
             <div class="col">
                 <div class="row">
+                    <h5 class="col-2">Cons</h5>
                     <h5 class="col-2">Level</h5>
                     <h5 class="col-2">Phase</h5>
-                    <h5 class="col-2">Cons</h5>
-                    <h5 class="col-2">Stat</h5>
-                    <h5 class="col-2">Weapon</h5>
+                    <h5 class="col-2">Talents</h5>
+                    <h5 class="col-1">Stat</h5>
+                    <h5 class="col-3">Weapon</h5>
                 </div>
                 <div class="row">
+                    <div class="col-2">{{> renderItemField item=item field="constellation" wrapper="div"}}</div>
                     <div class="col-2">{{> renderItemField item=item field="level" wrapper="div"}}</div>
                     <div class="col-2">{{> renderItemField item=item field="ascension" wrapper="div"}}</div>
-                    <div class="col-2">{{> renderItemField item=item field="constellation" wrapper="div"}}</div>
-                    <div class="col-2">{{> renderItemField item=item field="ascendStat" wrapper="div"}}</div>
-                    <div class="col-2">{{> renderItemField item=item field="equipWeapon" wrapper="div"}}</div>
+                    <div class="col-2">{{> renderItemField item=item field="autoTalent" wrapper="span"}} / {{> renderItemField item=item field="skillTalent" wrapper="span"}} / {{> renderItemField item=item field="burstTalent" wrapper="span"}}</div>
+                    <div class="col-1">{{> renderItemField item=item field="ascendStat" wrapper="div"}}</div>
+                    <div class="col-3">{{> renderItemField item=item field="equipWeapon" wrapper="div"}}</div>
+                </div>
+                <div class="row">
+                    <b class="col-2" title="Enter your desired stats on this line, and the app will use that to calculate the total mats and resin that you need to farm.">Desired Stats:</b>
+                    <div class="col-2">{{> renderItemField item=item field="planLevel" wrapper="div"}}</div>
+                    <div class="col-2">{{> renderItemField item=item field="planAscension" wrapper="div"}}</div>
+                    <div class="col-2">{{> renderItemField item=item field="planTalent" params=(array 'auto') wrapper="span"}} / {{> renderItemField item=item field="planTalent" params=(array 'skill') wrapper="span"}} / {{> renderItemField item=item field="planTalent" params=(array 'burst') wrapper="span"}}</div>
                 </div>
             </div>
+        </div>
+        <div class="plan-materials">
+      {{> renderItemField item=item field="planMaterials" wrapper="div"}}
         </div>
         
       {{#if item.base}}

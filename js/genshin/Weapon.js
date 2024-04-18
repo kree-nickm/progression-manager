@@ -4,8 +4,9 @@ import GenshinLootData from "./gamedata/GenshinLootData.js";
 import GenshinPhaseData from "./gamedata/GenshinPhaseData.js";
 
 import GenshinItem from "./GenshinItem.js";
+import Ascendable from "./Ascendable.js";
 
-export default class Weapon extends GenshinItem
+export default class Weapon extends Ascendable(GenshinItem)
 {
   static dontSerialize = GenshinItem.dontSerialize.concat(["MaterialList","character"]);
   static goodProperties = ["key","level","ascension","refinement","location","lock"];

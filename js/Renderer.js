@@ -268,7 +268,7 @@ class Renderer
         for(let i in content.value)
           if(content.value[i])
             text = text + Renderer.contentToHTML(content.value[i], path.concat([i]));
-        if(window.DEBUGLOG.contentToHTML) console.debug(`Finished handling array.`, text);
+        if(window.DEBUGLOG.contentToHTML) console.debug(`Finished handling array.`, {text});
       }
       else if(typeof(content.value) == "object")
       {
@@ -815,6 +815,7 @@ class Renderer
         fieldElement.onclick = event => {
           if(fieldElement.classList.contains("editing") || event.target.nodeName == "OPTION")
             return;
+          fieldElement.editingStartedAt = event.timeStamp;
           let placeholder = fieldElement.editTarget?.item?.getProperty(fieldElement.editTarget?.field) ?? fieldElement.editValue;
           if(!placeholder && placeholder !== 0)
             placeholder = fieldElement.innerText;
@@ -855,11 +856,12 @@ class Renderer
       if(!editElement.onchange || !editElement.onblur || !editElement.onkeydown)
       {
         let saveEdit = event => {
-          if((event.type == "keydown" && event.which != 13 && event.which != 27) || !fieldElement.classList.contains("editing"))
+          if((event.type == "keydown" && event.which != 13 && event.which != 27) || !fieldElement.classList.contains("editing") || !fieldElement.editingStartedAt)
             return true;
           event.stopPropagation();
           if(!content.edit.alwaysShow)
             fieldElement.classList.remove("editing");
+          delete fieldElement.editingStartedAt;
           if(event.type != "keydown" || event.which != 27)
           {
             let val = (editElement.type == "number" ? parseFloat(editElement.value) : editElement.value);
@@ -878,8 +880,7 @@ class Renderer
         };
         editElement.onkeydown = saveEdit;
         editElement.onchange = saveEdit;
-        if(!content.edit.type == "select" && !content.edit.type == "checkbox")
-          editElement.onblur = saveEdit;
+        editElement.onblur = saveEdit;
       }
     }
     

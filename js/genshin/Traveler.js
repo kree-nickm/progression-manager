@@ -374,6 +374,7 @@ export default class Traveler extends Character
   
   onRender(element)
   {
+    // Only the variants can be inspected, so force it to one of them if this is the base Traveler.
     if(this.base)
       super.onRender(element);
     else

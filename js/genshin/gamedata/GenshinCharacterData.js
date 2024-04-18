@@ -387,7 +387,13 @@ export default {
                 "text": "Active party members within the Solar Isotoma field who are protected by a shield created by Crystallize have their DMG increased by 17%."
             }
         },
-        "hakushinID": 10000038
+        "hakushinID": 10000038,
+        "id": 10000038,
+        "skillIds": [
+            10386,
+            10387,
+            10388
+        ]
     },
     "Alhaitham": {
         "name": "Alhaitham",
@@ -836,7 +842,13 @@ export default {
                 "text": "Alhaitham gains the following effects:<ul><li>2 seconds after Particular Field: Fetters of Phenomena is unleashed, he will generate 3 Chisel-Light Mirrors regardless of the number of mirrors consumed.<\/li><li>If Alhaitham generates Chisel-Light Mirrors when their numbers have already maxed out, his CRIT Rate and CRIT DMG will increase by 10% and 70% respectively for 6s. If this effect is triggered again during its initial duration, the duration remaining will be increased by 6s.<\/li><\/ul>"
             }
         },
-        "hakushinID": 10000078
+        "hakushinID": 10000078,
+        "id": 10000078,
+        "skillIds": [
+            10781,
+            10782,
+            10785
+        ]
     },
     "Aloy": {
         "name": "Aloy",
@@ -1190,7 +1202,13 @@ export default {
                 "text": "The time has not yet come for this person's corner of the night sky to light up."
             }
         },
-        "hakushinID": 10000062
+        "hakushinID": 10000062,
+        "id": 10000062,
+        "skillIds": [
+            10621,
+            10622,
+            10625
+        ]
     },
     "Amber": {
         "name": "Amber",
@@ -1615,7 +1633,13 @@ export default {
                 "text": "Fiery Rain increases all party members' Movement SPD by 15% and ATK by 15% for 10s."
             }
         },
-        "hakushinID": 10000021
+        "hakushinID": 10000021,
+        "id": 10000021,
+        "skillIds": [
+            10041,
+            10032,
+            10017
+        ]
     },
     "AratakiItto": {
         "name": "Arataki Itto",
@@ -2023,7 +2047,13 @@ export default {
                 "text": "Arataki Itto's Charged Attacks deal +70% Crit DMG. Additionally, when he uses Arataki Kesagiri, he has a 50% chance to not consume stacks of Superlative Superstrength."
             }
         },
-        "hakushinID": 10000057
+        "hakushinID": 10000057,
+        "id": 10000057,
+        "skillIds": [
+            10571,
+            10572,
+            10575
+        ]
     },
     "Arlecchino": {
         "name": "Arlecchino",
@@ -2443,7 +2473,8 @@ export default {
                 "text": "The DMG of <color=#FFD780FF>Balemoon Rising<\/color> is increased by Arlecchino's ATK multiplied by 700% of Arlecchino's current Life Bond percentage.\\nFor 20s after Arlecchino uses <color=#FFD780FF>All is Ash<\/color>, both her Normal Attacks and Elemental Burst gain 10% increased CRIT Rate and 70% increased CRIT DMG. This effect can be triggered up to once every 15s."
             }
         },
-        "release": "January 01, 1970"
+        "release": "January 01, 1970",
+        "id": 10000096
     },
     "Baizhu": {
         "name": "Baizhu",
@@ -2818,7 +2849,13 @@ export default {
                 "text": "Increases the DMG dealt by Holistic Revivification's Spiritveins by 8% of Baizhu's Max HP.<br\/>Additionally, when a Gossamer Sprite or Gossamer Sprite: Splice hits opponents, there is a 100% chance of generating one of Holistic Revivification's Seamless Shields. This effect can only be triggered once by each Gossamer Sprite or Gossamer Sprite: Splice."
             }
         },
-        "hakushinID": 10000082
+        "hakushinID": 10000082,
+        "id": 10000082,
+        "skillIds": [
+            10821,
+            10822,
+            10825
+        ]
     },
     "Barbara": {
         "name": "Barbara",
@@ -3197,7 +3234,13 @@ export default {
                 "text": "When Barbara is in the party but not on the field, and one of your own party members falls:<ul><li>Automatically revives the fallen character.<\/li><li>Fully restores the revived character's HP to 100%.<\/li><\/ul>This effect can only occur once every 15 mins."
             }
         },
-        "hakushinID": 10000014
+        "hakushinID": 10000014,
+        "id": 10000014,
+        "skillIds": [
+            10070,
+            10071,
+            10072
+        ]
     },
     "Beidou": {
         "name": "Beidou",
@@ -3673,7 +3716,13 @@ export default {
                 "text": "During the duration of Stormbreaker, the <span class=\"text-electro\"><b>Electro RES<\/b><\/span> of surrounding opponents is decreased by 15%."
             }
         },
-        "hakushinID": 10000024
+        "hakushinID": 10000024,
+        "id": 10000024,
+        "skillIds": [
+            10241,
+            10242,
+            10245
+        ]
     },
     "Bennett": {
         "name": "Bennett",
@@ -4166,7 +4215,13 @@ export default {
                 "text": "Sword, Claymore, or Polearm-wielding characters inside Fantastic Voyage's radius gain a 15% <span class=\"text-pyro\"><b>Pyro DMG Bonus<\/b><\/span> and their weapons are infused with <span class=\"text-pyro\"><b>Pyro<\/b><\/span>."
             }
         },
-        "hakushinID": 10000032
+        "hakushinID": 10000032,
+        "id": 10000032,
+        "skillIds": [
+            10321,
+            10322,
+            10323
+        ]
     },
     "Candace": {
         "name": "Candace",
@@ -4594,7 +4649,13 @@ export default {
                 "text": "When characters (excluding Candace herself) affected by the Prayer of the Crimson Crown caused by Sacred Rite: Wagtail's Tide deal Elemental DMG to opponents using Normal Attacks, an attack wave will be unleashed that deals <span class=\"text-hydro\"><b>AoE Hydro DMG<\/b><\/span> equal to 15% of Candace's Max HP.<br\/>This effect can trigger once every 2.3s and is considered Elemental Burst DMG."
             }
         },
-        "hakushinID": 10000072
+        "hakushinID": 10000072,
+        "id": 10000072,
+        "skillIds": [
+            10721,
+            10722,
+            10725
+        ]
     },
     "Charlotte": {
         "name": "Charlotte",
@@ -5099,7 +5160,13 @@ export default {
                 "text": "When the active character's Normal and Charged Attacks hit an opponent marked by Framing: Freezing Point Composition's Focused Impression, Monsieur Verite will initiate a coordinated attack that deals 180% of Charlotte's ATK as <span class=\"text-cryo\"><b>AoE Cryo DMG<\/b><\/span> and heals active character(s) within the AoE for 42% of Charlotte's ATK. This effect can be triggered once every 6s and both DMG and healing dealt in this way will be considered as having been done by Charlotte's Elemental Burst."
             }
         },
-        "hakushinID": 10000088
+        "hakushinID": 10000088,
+        "id": 10000088,
+        "skillIds": [
+            10881,
+            10882,
+            10885
+        ]
     },
     "Chevreuse": {
         "name": "Chevreuse",
@@ -5557,7 +5624,13 @@ export default {
                 "text": "After 12s of the healing effect from Short-Range Rapid Interdiction Fire, all nearby party members recover HP equivalent to 10% of Chevreuse's Max HP once.<br\/>After a party member is healed by Short-Range Rapid Interdiction Fire, they gain a 20% <span class=\"text-pyro\"><b>Pyro DMG Bonus<\/b><\/span> and <span class=\"text-electro\"><b>Electro DMG Bonus<\/b><\/span> for 8s. Max 3 stacks. Each stack's duration is counted independently."
             }
         },
-        "hakushinID": 10000090
+        "hakushinID": 10000090,
+        "id": 10000090,
+        "skillIds": [
+            10901,
+            10902,
+            10905
+        ]
     },
     "Chiori": {
         "name": "Chiori",
@@ -5888,7 +5961,13 @@ export default {
                 "text": "After triggering a follow-up effect of the Passive Talent \"Tailor-Made,\" Chiori's own Fluttering Hasode's CD is decreased by 12s. Must unlock the Passive \"Tailor-Made\" first.<br\/>In addition, the DMG dealt by Chiori's own Normal Attacks is increased by an amount equal to 235% of her own DEF."
             }
         },
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Chiori"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Chiori",
+        "id": 10000094,
+        "skillIds": [
+            10941,
+            10942,
+            10945
+        ]
     },
     "Chongyun": {
         "name": "Chongyun",
@@ -6247,7 +6326,13 @@ export default {
                 "text": "Spirit Blade: Cloud-Parting Star deals 15% more DMG to opponents with a lower percentage of their Max HP remaining than Chongyun.<br\/>This skill will also summon 1 additional spirit blade."
             }
         },
-        "hakushinID": 10000036
+        "hakushinID": 10000036,
+        "id": 10000036,
+        "skillIds": [
+            10401,
+            10402,
+            10403
+        ]
     },
     "Collei": {
         "name": "Collei",
@@ -6577,7 +6662,13 @@ export default {
                 "text": "When the Floral Ring hits, it will create a miniature Cuilein-Anbar that will deal 200% of Collei's ATK as <span class=\"text-dendro\"><b>Dendro DMG<\/b><\/span>.<br\/>Each Floral Brush can only create one such miniature Cuilein-Anbar."
             }
         },
-        "hakushinID": 10000067
+        "hakushinID": 10000067,
+        "id": 10000067,
+        "skillIds": [
+            10671,
+            10672,
+            10675
+        ]
     },
     "Cyno": {
         "name": "Cyno",
@@ -7087,7 +7178,13 @@ export default {
                 "text": "After using Sacred Rite: Wolf's Swiftness or triggering the Judication effect of the Passive Talent \"Featherfall Judgment,\" Cyno will gain 4 stacks of the \"Day of the Jackal\" effect. When he hits opponents with Normal Attacks, he will consume 1 stack of \"Day of the Jackal\" to fire off one Duststalker Bolt.<br\/>\"Day of the Jackal\" lasts for 8s. Max 8 stacks. It will be canceled once Pactsworn Pathclearer ends.<br\/>A maximum of 1 Duststalker Bolt can be unleashed this way every 0.4s.<br\/>You must first unlock the Passive Talent \"Featherfall Judgment.\""
             }
         },
-        "hakushinID": 10000071
+        "hakushinID": 10000071,
+        "id": 10000071,
+        "skillIds": [
+            10711,
+            10712,
+            10715
+        ]
     },
     "Dehya": {
         "name": "Dehya",
@@ -7518,7 +7615,13 @@ export default {
                 "text": "The CRIT Rate of Leonine Bite is increased by 10%.<br\/>Additionally, after a Flame-Mane's Fist attack hits an opponent and deals CRIT Hits during a single Blazing Lioness state, it will cause the CRIT DMG of Leonine Bite to increase by 15% for the rest of Blazing Lioness's duration and extend that duration by 0.5s. This effect can be triggered every 0.2s. The duration can be extended for a maximum of 2s and CRIT DMG can be increased by a maximum of 60% this way."
             }
         },
-        "hakushinID": 10000079
+        "hakushinID": 10000079,
+        "id": 10000079,
+        "skillIds": [
+            10791,
+            10792,
+            10795
+        ]
     },
     "Diluc": {
         "name": "Diluc",
@@ -7929,7 +8032,13 @@ export default {
                 "text": "After casting Searing Onslaught, the next 2 Normal Attacks within the next 6s will have their DMG and ATK SPD increased by 30%.<br\/>Additionally, Searing Onslaught will not interrupt the Normal Attack combo."
             }
         },
-        "hakushinID": 10000016
+        "hakushinID": 10000016,
+        "id": 10000016,
+        "skillIds": [
+            10160,
+            10161,
+            10165
+        ]
     },
     "Diona": {
         "name": "Diona",
@@ -8407,7 +8516,13 @@ export default {
                 "text": "Characters within Signature Mix's radius will gain the following effects based on their HP amounts:\n<ul><li>Increases Incoming Healing Bonus by 30% when HP falls below or is equal to 50%.<\/li>\n<li>Elemental Mastery increased by 200 when HP is above 50%.<\/li><\/ul>"
             }
         },
-        "hakushinID": 10000039
+        "hakushinID": 10000039,
+        "id": 10000039,
+        "skillIds": [
+            10391,
+            10392,
+            10395
+        ]
     },
     "Dori": {
         "name": "Dori",
@@ -8780,7 +8895,13 @@ export default {
                 "text": "Dori gains the following effects for 3s after using Spirit-Warding Lamp: Troubleshooter Cannon:<ul><li><span class=\"text-electro\"><b>Electro Infusion<\/b><\/span>.<\/li><li>When Normal Attacks hit opponents, all nearby party members will heal HP equivalent to 4% of Dori's Max HP. This type of healing can occur once every 0.1s.<\/li><\/ul>"
             }
         },
-        "hakushinID": 10000068
+        "hakushinID": 10000068,
+        "id": 10000068,
+        "skillIds": [
+            10681,
+            10682,
+            10685
+        ]
     },
     "Eula": {
         "name": "Eula",
@@ -9300,7 +9421,13 @@ export default {
                 "text": "Lightfall Swords created by Glacial Illumination start with 5 stacks of energy. Normal Attacks, Elemental Skills, and Elemental Bursts have a 50% chance to grant the Lightfall Sword an additional stack of energy."
             }
         },
-        "hakushinID": 10000051
+        "hakushinID": 10000051,
+        "id": 10000051,
+        "skillIds": [
+            10511,
+            10512,
+            10515
+        ]
     },
     "Faruzan": {
         "name": "Faruzan",
@@ -9705,7 +9832,13 @@ export default {
                 "text": "Characters affected by The Wind's Secret Ways' Prayerful Wind's Benefit have 40% increased CRIT DMG when they deal <span class=\"text-anemo\"><b>Anemo DMG<\/b><\/span>. When the active character deals DMG while affected by Prayerful Wind's Benefit, they will apply Pressurized Collapse to the opponent damaged. This effect can be triggered once every 3s. This CD is shared between all party members."
             }
         },
-        "hakushinID": 10000076
+        "hakushinID": 10000076,
+        "id": 10000076,
+        "skillIds": [
+            10761,
+            10762,
+            10765
+        ]
     },
     "Fischl": {
         "name": "Fischl",
@@ -10120,7 +10253,13 @@ export default {
                 "text": "Extends the duration of Oz's presence on the field by 2s. Additionally, Oz performs coordinated attacks with your active character when present, dealing 30% of Fischl's ATK as <span class=\"text-electro\"><b>Electro DMG<\/b><\/span>."
             }
         },
-        "hakushinID": 10000031
+        "hakushinID": 10000031,
+        "id": 10000031,
+        "skillIds": [
+            10311,
+            10312,
+            10313
+        ]
     },
     "Freminet": {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Freminet",
@@ -10581,7 +10720,13 @@ export default {
                 "text": "After Freminet triggers Frozen, Shatter, or Superconduct against opponents, his CRIT DMG will be increased by 12% for 6s. Max 3 stacks. This can be triggered once every 0.3s."
             }
         },
-        "hakushinID": 10000085
+        "hakushinID": 10000085,
+        "id": 10000085,
+        "skillIds": [
+            10851,
+            10852,
+            10855
+        ]
     },
     "Furina": {
         "name": "Furina",
@@ -11124,7 +11269,13 @@ export default {
                 "text": "When using Salon Solitaire, Furina gains \"Center of Attention\" for 10s.<br\/>Throughout the duration, Furina's Normal Attacks, Charged Attacks, and Plunging Attacks are converted into <span class=\"text-hydro\"><b>Hydro DMG<\/b><\/span> which cannot be overridden by any other elemental infusion. DMG is also increased by an amount equivalent to 18% of Furina's max HP.<br\/>Throughout the duration, Furina's Normal Attacks (not including Arkhe: Seats Sacred and Secular Attacks), Charged Attacks, and the impact of Plunging Attacks will cause different effects up to every 0.1s after hitting opponents depending on her current Arkhe alignment:<br\/><br\/>Arkhe: Ousia<br\/>Every 1s, all nearby characters in the party will be healed by 4% of Furina's max HP, for a duration of 2.9s. Triggering this effect again will extend its duration.<br\/>Arkhe: Pneuma<br\/>This Normal Attack (not including Arkhe: Seats Sacred and Secular Attacks), Charged Attack, or Plunging Attack ground impact DMG will be further increased by an amount equivalent to 25% of Furina's max HP. When any of the attacks mentioned previously hit an opponent, all nearby characters in the party will consume 1% of their current HP.<br\/><br\/>During the duration of each instance of \"Center of Attention,\" the above effects can be triggered up to 6 times. \"Center of Attention\" will end when its effects have triggered 6 times or when the duration expires."
             }
         },
-        "hakushinID": 10000089
+        "hakushinID": 10000089,
+        "id": 10000089,
+        "skillIds": [
+            10891,
+            10892,
+            10895
+        ]
     },
     "Gaming": {
         "name": "Gaming",
@@ -11481,7 +11632,13 @@ export default {
                 "text": "Bestial Ascent's Plunging Attack: Charmed Cloudstrider CRIT Rate increased by 20% and CRIT DMG increased by 40%, and its attack radius will be increased."
             }
         },
-        "hakushinID": 10000092
+        "hakushinID": 10000092,
+        "id": 10000092,
+        "skillIds": [
+            10921,
+            10922,
+            10925
+        ]
     },
     "Ganyu": {
         "name": "Ganyu",
@@ -11886,7 +12043,13 @@ export default {
                 "text": "Using Trail of the Qilin causes the next Frostflake Arrow shot within 30s to not require charging."
             }
         },
-        "hakushinID": 10000037
+        "hakushinID": 10000037,
+        "id": 10000037,
+        "skillIds": [
+            10371,
+            10372,
+            10373
+        ]
     },
     "Gorou": {
         "name": "Gorou",
@@ -12358,7 +12521,13 @@ export default {
                 "text": "For 12s after using Inuzaka All-Round Defense or Juuga: Forward Unto Victory, increases the CRIT DMG of all nearby party members' <span class=\"text-geo\"><b>Geo DMG<\/b><\/span> based on the buff level of the skill's field at the time of use:<ul><li>\"Standing Firm\": +10%<\/li><li>\"Impregnable\": +20%<\/li><li>\"Crunch\": +40%<\/li><\/ul><br\/>This effect cannot stack and will take reference from the last instance of the effect that is triggered."
             }
         },
-        "hakushinID": 10000055
+        "hakushinID": 10000055,
+        "id": 10000055,
+        "skillIds": [
+            10551,
+            10552,
+            10555
+        ]
     },
     "HuTao": {
         "name": "Hu Tao",
@@ -12801,7 +12970,13 @@ export default {
                 "text": "Triggers when Hu Tao's HP drops below 25%, or when she suffers a lethal strike:<br\/>Hu Tao will not fall as a result of the DMG sustained. Additionally, for the next 10s, all of her Elemental and Physical RES is increased by 200%, her CRIT Rate is increased by 100%, and her resistance to interruption is greatly increased.<br\/>This effect triggers automatically when Hu Tao has 1 HP left.<br\/>Can only occur once every 60s."
             }
         },
-        "hakushinID": 10000046
+        "hakushinID": 10000046,
+        "id": 10000046,
+        "skillIds": [
+            10461,
+            10462,
+            10463
+        ]
     },
     "Jean": {
         "name": "Jean",
@@ -13199,7 +13374,13 @@ export default {
                 "text": "Incoming DMG is decreased by 35% within the Field created by Dandelion Breeze. Upon leaving the Dandelion Field, this effect lasts for 3 attacks or 10s."
             }
         },
-        "hakushinID": 10000003
+        "hakushinID": 10000003,
+        "id": 10000003,
+        "skillIds": [
+            10031,
+            10033,
+            10034
+        ]
     },
     "KaedeharaKazuha": {
         "name": "Kaedehara Kazuha",
@@ -13616,7 +13797,13 @@ export default {
                 "text": "After using Chihayaburu or Kazuha Slash, Kaedehara Kazuha gains an <span class=\"text-anemo\"><b>Anemo Infusion<\/b><\/span> for 5s. Additionally, each point of Elemental Mastery will increase the DMG dealt by Kaedehara Kazuha's Normal, Charged, and Plunging Attacks by 0.2%."
             }
         },
-        "hakushinID": 10000047
+        "hakushinID": 10000047,
+        "id": 10000047,
+        "skillIds": [
+            10471,
+            10472,
+            10475
+        ]
     },
     "Kaeya": {
         "name": "Kaeya",
@@ -13950,7 +14137,13 @@ export default {
                 "text": "Glacial Waltz will generate 1 additional icicle, and will regenerate 15 Energy when cast."
             }
         },
-        "hakushinID": 10000015
+        "hakushinID": 10000015,
+        "id": 10000015,
+        "skillIds": [
+            10073,
+            10074,
+            10075
+        ]
     },
     "KamisatoAyaka": {
         "name": "Kamisato Ayaka",
@@ -14335,7 +14528,13 @@ export default {
                 "text": "Kamisato Ayaka gains Usurahi Butou every 10s, increasing her Charged Attack DMG by 298%. This buff will be cleared 0.5s after Ayaka's Charged ATK hits an opponent, after which the timer for this ability will restart."
             }
         },
-        "hakushinID": 10000002
+        "hakushinID": 10000002,
+        "id": 10000002,
+        "skillIds": [
+            10024,
+            10018,
+            10019
+        ]
     },
     "KamisatoAyato": {
         "name": "Kamisato Ayato",
@@ -14781,7 +14980,13 @@ export default {
                 "text": "After using Kamisato Art: Kyouka, Ayato's next Shunsuiken attack will create 2 extra Shunsuiken strikes when they hit opponents, each one dealing 450% of Ayato's ATK as DMG.<br\/>Both these Shunsuiken attacks will not be affected by Namisen."
             }
         },
-        "hakushinID": 10000066
+        "hakushinID": 10000066,
+        "id": 10000066,
+        "skillIds": [
+            10661,
+            10662,
+            10665
+        ]
     },
     "Kaveh": {
         "name": "Kaveh",
@@ -15137,7 +15342,13 @@ export default {
                 "text": "When Kaveh's Normal, Charged, or Plunging Attacks hit opponents during Painted Dome, they will unleash Pairidaeza's Light upon the opponent's position, dealing 61.8% of Kaveh's ATK as <span class=\"text-dendro\"><b>AoE Dendro DMG<\/b><\/span> and causing all Dendro Cores within that AoE to burst. This effect can be triggered once every 3s."
             }
         },
-        "hakushinID": 10000081
+        "hakushinID": 10000081,
+        "id": 10000081,
+        "skillIds": [
+            10811,
+            10812,
+            10815
+        ]
     },
     "Keqing": {
         "name": "Keqing",
@@ -15568,7 +15779,13 @@ export default {
                 "text": "When initiating a Normal Attack, a Charged Attack, Elemental Skill or Elemental Burst, Keqing gains a 6% <span class=\"text-electro\"><b>Electro DMG Bonus<\/b><\/span> for 8s.<br\/>Effects triggered by Normal Attacks, Charged Attacks, Elemental Skills and Elemental Bursts are considered independent entities."
             }
         },
-        "hakushinID": 10000042
+        "hakushinID": 10000042,
+        "id": 10000042,
+        "skillIds": [
+            10421,
+            10422,
+            10425
+        ]
     },
     "Kirara": {
         "name": "Kirara",
@@ -15988,7 +16205,13 @@ export default {
                 "text": "All nearby party members will gain 12% All Elemental DMG Bonus within 15s after Kirara uses her Elemental Skill or Burst."
             }
         },
-        "hakushinID": 10000061
+        "hakushinID": 10000061,
+        "id": 10000061,
+        "skillIds": [
+            10611,
+            10612,
+            10615
+        ]
     },
     "Klee": {
         "name": "Klee",
@@ -16328,7 +16551,13 @@ export default {
                 "text": "While under the effects of Sparks 'n' Splash, Klee will regenerate 3 Energy for all members of the party (excluding Klee) every 3s.<br\/>When Sparks 'n' Splash is used, all party members will gain a 10% <span class=\"text-pyro\"><b>Pyro DMG Bonus<\/b><\/span> for 25s."
             }
         },
-        "hakushinID": 10000029
+        "hakushinID": 10000029,
+        "id": 10000029,
+        "skillIds": [
+            10291,
+            10292,
+            10295
+        ]
     },
     "KujouSara": {
         "name": "Kujou Sara",
@@ -16724,7 +16953,13 @@ export default {
                 "text": "The <span class=\"text-electro\"><b>Electro DMG<\/b><\/span> of characters who have had their ATK increased by Tengu Juurai has its Crit DMG increased by 60%."
             }
         },
-        "hakushinID": 10000056
+        "hakushinID": 10000056,
+        "id": 10000056,
+        "skillIds": [
+            10561,
+            10562,
+            10565
+        ]
     },
     "KukiShinobu": {
         "name": "Kuki Shinobu",
@@ -17114,7 +17349,13 @@ export default {
                 "text": "When Kuki Shinobu takes lethal DMG, this instance of DMG will not take her down. This effect will automatically trigger when her HP reaches 1 and will trigger once every 60s.<br\/>When Shinobu's HP drops below 25%, she will gain 150 Elemental Mastery for 15s. This effect will trigger once every 60s."
             }
         },
-        "hakushinID": 10000065
+        "hakushinID": 10000065,
+        "id": 10000065,
+        "skillIds": [
+            10651,
+            10652,
+            10655
+        ]
     },
     "Layla": {
         "name": "Layla",
@@ -17461,7 +17702,13 @@ export default {
                 "text": "Shooting Stars from Nights of Formal Focus deal 40% increased DMG, and Starlight Slugs from Dream of the Star-Stream Shaker deal 40% increased DMG.<br\/>Additionally, the interval between the creation of Night Stars via Nights of Formal Focus is decreased by 20%."
             }
         },
-        "hakushinID": 10000074
+        "hakushinID": 10000074,
+        "id": 10000074,
+        "skillIds": [
+            10741,
+            10742,
+            10745
+        ]
     },
     "Lisa": {
         "name": "Lisa",
@@ -17855,7 +18102,13 @@ export default {
                 "text": "When Lisa takes the field, she applies 3 stacks of Violet Arc's Conductive status onto nearby opponents.<br\/>This effect can only occur once every 5s."
             }
         },
-        "hakushinID": 10000006
+        "hakushinID": 10000006,
+        "id": 10000006,
+        "skillIds": [
+            10060,
+            10061,
+            10062
+        ]
     },
     "Lynette": {
         "name": "Lynette",
@@ -18275,7 +18528,13 @@ export default {
                 "text": "When Lynette uses Enigmatic Feint's Enigma Thrust, she will gain an <span class=\"text-anemo\"><b>Anemo Infusion<\/b><\/span> and 20% <span class=\"text-anemo\"><b>Anemo DMG Bonus<\/b><\/span> for 6s."
             }
         },
-        "hakushinID": 10000083
+        "hakushinID": 10000083,
+        "id": 10000083,
+        "skillIds": [
+            10831,
+            10832,
+            10835
+        ]
     },
     "Lyney": {
         "name": "Lyney",
@@ -18762,7 +19021,13 @@ export default {
                 "text": "When Lyney fires a Prop Arrow, he will fire a Pyrotechnic Strike: Reprised that will deal 80% of a Pyrotechnic Strike's DMG. This DMG is considered Charged Attack DMG."
             }
         },
-        "hakushinID": 10000084
+        "hakushinID": 10000084,
+        "id": 10000084,
+        "skillIds": [
+            10841,
+            10842,
+            10845
+        ]
     },
     "Mika": {
         "name": "Mika",
@@ -19180,7 +19445,13 @@ export default {
                 "text": "The maximum number of Detector stacks that Starfrost Swirl's Soulwind can gain is increased by 1. You need to have unlocked the Passive Talent \"Suppressive Barrage\" first.<br\/>Additionally, active characters affected by Soulwind will deal 60% more Physical CRIT DMG."
             }
         },
-        "hakushinID": 10000080
+        "hakushinID": 10000080,
+        "id": 10000080,
+        "skillIds": [
+            10801,
+            10802,
+            10805
+        ]
     },
     "Mona": {
         "name": "Mona",
@@ -19554,7 +19825,13 @@ export default {
                 "text": "Upon entering Illusory Torrent, Mona gains a 60% increase to the DMG of her next Charged Attack per second of movement.<br\/>A maximum DMG Bonus of 180% can be achieved in this manner. The effect lasts for no more than 8s."
             }
         },
-        "hakushinID": 10000041
+        "hakushinID": 10000041,
+        "id": 10000041,
+        "skillIds": [
+            10411,
+            10412,
+            10415
+        ]
     },
     "Nahida": {
         "name": "Nahida",
@@ -20019,7 +20296,13 @@ export default {
                 "text": "When Nahida hits an opponent affected by All Schemes to Know's Seeds of Skandha with Normal or Charged Attacks after unleashing Illusory Heart, she will use Tri-Karma Purification: Karmic Oblivion on this opponent and all connected opponents, dealing <span class=\"text-dendro\"><b>Dendro DMG<\/b><\/span> based on 200% of Nahida's ATK and 400% of her Elemental Mastery.<br\/>DMG dealt by Tri-Karma Purification: Karmic Oblivion is considered Elemental Skill DMG and can be triggered once every 0.2s.<br\/>This effect can last up to 10s and will be removed after Nahida has unleashed 6 instances of Tri-Karma Purification: Karmic Oblivion."
             }
         },
-        "hakushinID": 10000073
+        "hakushinID": 10000073,
+        "id": 10000073,
+        "skillIds": [
+            10731,
+            10732,
+            10735
+        ]
     },
     "Navia": {
         "name": "Navia",
@@ -20406,7 +20689,13 @@ export default {
                 "text": "If more than 3 stacks of Crystal Shrapnel are consumed when using Ceremonial Crystalshot, each stack consumed beyond the first 3 increases the CRIT DMG of that Ceremonial Crystalshot by 45%, and any stacks consumed beyond the first 3 are returned to Navia."
             }
         },
-        "hakushinID": 10000091
+        "hakushinID": 10000091,
+        "id": 10000091,
+        "skillIds": [
+            10911,
+            10912,
+            10915
+        ]
     },
     "Neuvillette": {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Neuvillette",
@@ -20816,7 +21105,13 @@ export default {
                 "text": "When using Charged Attack: Equitable Judgment, Neuvillette can absorb nearby Sourcewater Droplets in an AoE. Each absorbed Droplet will increase the duration of Charged Attack: Equitable Judgment by 1s.<br\/>Additionally, when Equitable Judgment hits opponents, it will fire off 2 additional currents every 2s, each of which will deal 10% of Neuvillette's Max HP as <span class=\"text-hydro\"><b>Hydro DMG<\/b><\/span>. DMG dealt this way will count as DMG dealt by Equitable Judgment."
             }
         },
-        "hakushinID": 10000087
+        "hakushinID": 10000087,
+        "id": 10000087,
+        "skillIds": [
+            10871,
+            10872,
+            10875
+        ]
     },
     "Nilou": {
         "name": "Nilou",
@@ -21208,7 +21503,13 @@ export default {
                 "text": "For every 1,000 points of Max HP, Nilou's CRIT Rate and CRIT DMG will increase by 0.6% and 1.2% respectively.<br\/>The maximum increase in CRIT Rate and CRIT DMG via this method is 30% and 60% respectively."
             }
         },
-        "hakushinID": 10000070
+        "hakushinID": 10000070,
+        "id": 10000070,
+        "skillIds": [
+            10701,
+            10702,
+            10705
+        ]
     },
     "Ningguang": {
         "name": "Ningguang",
@@ -21503,7 +21804,13 @@ export default {
                 "text": "When Starshatter is used, Ningguang gains 7 Star Jades."
             }
         },
-        "hakushinID": 10000027
+        "hakushinID": 10000027,
+        "id": 10000027,
+        "skillIds": [
+            10271,
+            10272,
+            10274
+        ]
     },
     "Noelle": {
         "name": "Noelle",
@@ -22007,7 +22314,13 @@ export default {
                 "text": "Sweeping Time increases Noelle's ATK by an additional 50% of her DEF.<br\/>Additionally, every opponent defeated during the skill's duration adds 1s to the duration, up to 10s."
             }
         },
-        "hakushinID": 10000034
+        "hakushinID": 10000034,
+        "id": 10000034,
+        "skillIds": [
+            10341,
+            10342,
+            10343
+        ]
     },
     "Qiqi": {
         "name": "Qiqi",
@@ -22421,7 +22734,13 @@ export default {
                 "text": "Using Adeptus Art: Preserver of Fortune revives all fallen party members nearby and regenerates 50% of their HP.<br\/>This effect can only occur once every 15 mins."
             }
         },
-        "hakushinID": 10000035
+        "hakushinID": 10000035,
+        "id": 10000035,
+        "skillIds": [
+            10351,
+            10352,
+            10353
+        ]
     },
     "RaidenShogun": {
         "name": "Raiden Shogun",
@@ -23022,7 +23341,13 @@ export default {
                 "text": "While in the <b>Musou Isshin<\/b> state applied by Secret Art: Musou Shinsetsu, attacks by the Raiden Shogun that are considered part of her Elemental Burst will decrease all nearby party members' (but not including the Raiden Shogun herself) Elemental Burst CD by 1s when they hit opponents.<br\/>This effect can trigger once every 1s, and can trigger a total of 5 times during the state's duration."
             }
         },
-        "hakushinID": 10000052
+        "hakushinID": 10000052,
+        "id": 10000052,
+        "skillIds": [
+            10521,
+            10522,
+            10525
+        ]
     },
     "Razor": {
         "name": "Razor",
@@ -23497,7 +23822,13 @@ export default {
                 "text": "Every 10s, Razor's sword charges up, causing the next Normal Attack to release lightning that deals 100% of Razor's ATK as <span class=\"text-electro\"><b>Electro DMG<\/b><\/span>.<br\/>When Razor is not using Lightning Fang, a lightning strike on an opponent will grant Razor an Electro Sigil for Claw and Thunder."
             }
         },
-        "hakushinID": 10000020
+        "hakushinID": 10000020,
+        "id": 10000020,
+        "skillIds": [
+            10201,
+            10202,
+            10203
+        ]
     },
     "Rosaria": {
         "name": "Rosaria",
@@ -23904,7 +24235,13 @@ export default {
                 "text": "Rites of Termination's attack decreases opponents' <span class=\"text-physical\"><b>Physical RES<\/b><\/span> by 20% for 10s."
             }
         },
-        "hakushinID": 10000045
+        "hakushinID": 10000045,
+        "id": 10000045,
+        "skillIds": [
+            10451,
+            10452,
+            10453
+        ]
     },
     "SangonomiyaKokomi": {
         "name": "Sangonomiya Kokomi",
@@ -24317,7 +24654,13 @@ export default {
                 "text": "While donning the Ceremonial Garment created by Nereid's Ascension, Sangonomiya Kokomi gains a 40% <span class=\"text-hydro\"><b>Hydro DMG Bonus<\/b><\/span> for 4s when her Normal and Charged Attacks heal, or would heal, any party member with 80% or more HP."
             }
         },
-        "hakushinID": 10000054
+        "hakushinID": 10000054,
+        "id": 10000054,
+        "skillIds": [
+            10541,
+            10542,
+            10545
+        ]
     },
     "Sayu": {
         "name": "Sayu",
@@ -24778,7 +25121,13 @@ export default {
                 "text": "The Muji-Muji Daruma created by Sayu's Yoohoo Art: Mujina Flurry will now also benefit from her Elemental Mastery. Each point of Sayu's Elemental Mastery will produce the following effects:\n<ul><li>Increases the damage dealt by the Muji-Muji Daruma's attacks by 0.2% ATK. A maximum DMG increase of 400% ATK can be gained via this method.<\/li>\n<li>Increases the HP restored by the Muji-Muji Daruma by 3. A maximum of 6,000 additional HP can be restored in this manner.<\/li><\/ul>"
             }
         },
-        "hakushinID": 10000053
+        "hakushinID": 10000053,
+        "id": 10000053,
+        "skillIds": [
+            10531,
+            10532,
+            10535
+        ]
     },
     "Shenhe": {
         "name": "Shenhe",
@@ -25305,7 +25654,13 @@ export default {
                 "text": "When characters trigger Icy Quill's effects using Normal and Charged Attack DMG, it does not count toward the Trigger Quota."
             }
         },
-        "hakushinID": 10000063
+        "hakushinID": 10000063,
+        "id": 10000063,
+        "skillIds": [
+            10631,
+            10632,
+            10635
+        ]
     },
     "ShikanoinHeizou": {
         "name": "Shikanoin Heizou",
@@ -25678,7 +26033,13 @@ export default {
                 "text": "Each Declension stack will increase the CRIT Rate of the Heartstopper Strike unleashed by 4%. When Heizou possesses Conviction, this Heartstopper Strike's CRIT DMG is increased by 32%."
             }
         },
-        "hakushinID": 10000059
+        "hakushinID": 10000059,
+        "id": 10000059,
+        "skillIds": [
+            10591,
+            10592,
+            10595
+        ]
     },
     "Sucrose": {
         "name": "Sucrose",
@@ -26013,7 +26374,13 @@ export default {
                 "text": "If Forbidden Creation - Isomer 75 \/ Type II triggers an Elemental Absorption, all party members gain a 20% Elemental DMG Bonus for the corresponding absorbed element during its duration."
             }
         },
-        "hakushinID": 10000043
+        "hakushinID": 10000043,
+        "id": 10000043,
+        "skillIds": [
+            10431,
+            10432,
+            10435
+        ]
     },
     "Tartaglia": {
         "name": "Tartaglia",
@@ -26601,7 +26968,13 @@ export default {
                 "text": "When Havoc: Obliteration is cast in Melee Stance, the CD of Foul Legacy: Raging Tide is reset.<br\/>This effect will only take place once Tartaglia returns to his Ranged Stance."
             }
         },
-        "hakushinID": 10000033
+        "hakushinID": 10000033,
+        "id": 10000033,
+        "skillIds": [
+            10331,
+            10332,
+            10333
+        ]
     },
     "Thoma": {
         "name": "Thoma",
@@ -27018,7 +27391,13 @@ export default {
                 "text": "When a Blazing Barrier is obtained or refreshed, the DMG dealt by all party members' Normal, Charged, and Plunging Attacks is increased by 15% for 6s."
             }
         },
-        "hakushinID": 10000050
+        "hakushinID": 10000050,
+        "id": 10000050,
+        "skillIds": [
+            10501,
+            10502,
+            10505
+        ]
     },
     "Tighnari": {
         "name": "Tighnari",
@@ -27389,7 +27768,13 @@ export default {
                 "text": "Wreath Arrow's charging time is decreased by 0.9s, and will produce 1 additional Clusterbloom Arrow upon hit. This arrow deals 150% of Tighnari's ATK as DMG."
             }
         },
-        "hakushinID": 10000069
+        "hakushinID": 10000069,
+        "id": 10000069,
+        "skillIds": [
+            10691,
+            10692,
+            10695
+        ]
     },
     "TravelerAnemo": {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Traveler_Icon.png",
@@ -27825,7 +28210,14 @@ export default {
         "rarity": 5,
         "weapon": "Sword",
         "element": "Anemo",
-        "hakushinID": "10000005-4"
+        "hakushinID": "10000005-4",
+        "id": "10000005-504",
+        "idAlt": "10000007-704",
+        "skillIds": [
+            100543,
+            10067,
+            10068
+        ]
     },
     "TravelerDendro": {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Traveler_Icon.png",
@@ -28193,7 +28585,14 @@ export default {
         "rarity": 5,
         "weapon": "Sword",
         "element": "Dendro",
-        "hakushinID": "10000005-8"
+        "hakushinID": "10000005-8",
+        "id": "10000005-508",
+        "idAlt": "10000007-708",
+        "skillIds": [
+            100547,
+            10117,
+            10118
+        ]
     },
     "TravelerElectro": {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Traveler_Icon.png",
@@ -28650,7 +29049,14 @@ export default {
         "ascendStat": "atk_",
         "matFlower": "Ominous Mask",
         "matMastery": "Light",
-        "matTrounce": "Dragon Lord's Crown"
+        "matTrounce": "Dragon Lord's Crown",
+        "id": "10000005-507",
+        "idAlt": "10000007-707",
+        "skillIds": [
+            100546,
+            10602,
+            10605
+        ]
     },
     "TravelerGeo": {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Traveler_Icon.png",
@@ -29061,7 +29467,14 @@ export default {
         "rarity": 5,
         "weapon": "Sword",
         "element": "Geo",
-        "hakushinID": "10000005-6"
+        "hakushinID": "10000005-6",
+        "id": "10000005-506",
+        "idAlt": "10000007-706",
+        "skillIds": [
+            100545,
+            10077,
+            10078
+        ]
     },
     "TravelerHydro": {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Traveler_Icon.png",
@@ -29514,7 +29927,14 @@ export default {
         "rarity": 5,
         "weapon": "Sword",
         "element": "Hydro",
-        "hakushinID": "10000005-3"
+        "hakushinID": "10000005-3",
+        "id": "10000005-503",
+        "idAlt": "10000007-703",
+        "skillIds": [
+            100542,
+            10087,
+            10088
+        ]
     },
     "Venti": {
         "name": "Venti",
@@ -29905,7 +30325,13 @@ export default {
                 "text": "Targets who take DMG from Wind's Grand Ode have their <span class=\"text-anemo\"><b>Anemo RES<\/b><\/span> decreased by 20%.<br\/>If an Elemental Absorption occurred, then their RES towards the corresponding Element is also decreased by 20%."
             }
         },
-        "hakushinID": 10000022
+        "hakushinID": 10000022,
+        "id": 10000022,
+        "skillIds": [
+            10221,
+            10224,
+            10225
+        ]
     },
     "Wanderer": {
         "name": "Wanderer",
@@ -30237,7 +30663,13 @@ export default {
                 "text": "When the Wanderer actively hits an opponent with Kuugo: Fushoudan while in the Windfavored state, the following effects will occur:\n<ul><li>Deals an additional instance of Kuugo: Fushoudan at the position hit, dealing 40% of the attack's original DMG. This DMG will be considered Normal Attack DMG.<\/li>\n<li>When the Wanderer falls below 40 Kuugoryoku Points, restores 4 Points to him. Kuugoryoku Points can be restored in this manner once every 0.2s. This restoration can occur up to 5 times within one Windfavored duration.<\/li><\/ul>"
             }
         },
-        "hakushinID": 10000075
+        "hakushinID": 10000075,
+        "id": 10000075,
+        "skillIds": [
+            10751,
+            10752,
+            10755
+        ]
     },
     "Wriothesley": {
         "name": "Wriothesley",
@@ -30604,7 +31036,13 @@ export default {
                 "text": "The CRIT Rate of Rebuke: Vaulting Fist will be increased by 10%, and its CRIT DMG by 80%. When unleashed, it will also create an additional icicle that deals 100% of Rebuke: Vaulting Fist's Base DMG as <span class=\"text-cryo\"><b>Cryo DMG<\/b><\/span>. DMG dealt this way is regarded as Charged Attack DMG.<br\/>You must first unlock the Passive Talent \"There Shall Be a Plea for Justice.\""
             }
         },
-        "hakushinID": 10000086
+        "hakushinID": 10000086,
+        "id": 10000086,
+        "skillIds": [
+            10861,
+            10862,
+            10865
+        ]
     },
     "Xiangling": {
         "name": "Xiangling",
@@ -31033,7 +31471,13 @@ export default {
                 "text": "For the duration of Pyronado, all party members receive a 15% <span class=\"text-pyro\"><b>Pyro DMG Bonus<\/b><\/span>."
             }
         },
-        "hakushinID": 10000023
+        "hakushinID": 10000023,
+        "id": 10000023,
+        "skillIds": [
+            10231,
+            10232,
+            10235
+        ]
     },
     "Xianyun": {
         "name": "Xianyun",
@@ -31442,7 +31886,13 @@ export default {
                 "text": "After Xianyun uses 1\/2\/3 Skyladders within one Cloud Transmogrification caused by White Clouds at Dawn, the CRIT DMG of a Driftcloud Wave created in this instance of Cloud Transmogrification will be increased by 15%\/35%\/70%.<br\/>Within 16s after Xianyun has used Stars Gather at Dusk, White Clouds at Dawn will not enter CD. This effect will be canceled once she has used White Clouds at Dawn 8 times."
             }
         },
-        "hakushinID": 10000093
+        "hakushinID": 10000093,
+        "id": 10000093,
+        "skillIds": [
+            10931,
+            10932,
+            10935
+        ]
     },
     "Xiao": {
         "name": "Xiao",
@@ -31803,7 +32253,13 @@ export default {
                 "text": "While under the effects of Bane of All Evil, hitting at least 2 opponents with Xiao's Plunging Attack will immediately grant him 1 charge of Lemniscatic Wind Cycling, and for the next 1s, he may use Lemniscatic Wind Cycling while ignoring its CD."
             }
         },
-        "hakushinID": 10000026
+        "hakushinID": 10000026,
+        "id": 10000026,
+        "skillIds": [
+            10261,
+            10262,
+            10265
+        ]
     },
     "Xingqiu": {
         "name": "Xingqiu",
@@ -32176,7 +32632,13 @@ export default {
                 "text": "Activating 2 of Guhua Sword: Raincutter's sword rain attacks greatly enhances the third sword rain attack. On hit, the third sword rain attack also regenerates 3 Energy for Xingqiu."
             }
         },
-        "hakushinID": 10000025
+        "hakushinID": 10000025,
+        "id": 10000025,
+        "skillIds": [
+            10381,
+            10382,
+            10385
+        ]
     },
     "Xinyan": {
         "name": "Xinyan",
@@ -32619,7 +33081,13 @@ export default {
                 "text": "Decreases the Stamina Consumption of Xinyan's Charged Attacks by 30%. Additionally, Xinyan's Charged Attacks gain an ATK Bonus equal to 50% of her DEF."
             }
         },
-        "hakushinID": 10000044
+        "hakushinID": 10000044,
+        "id": 10000044,
+        "skillIds": [
+            10441,
+            10442,
+            10443
+        ]
     },
     "YaeMiko": {
         "name": "Yae Miko",
@@ -32875,7 +33343,13 @@ export default {
                 "text": "The Sesshou Sakura's attacks will ignore 60% of the opponent's DEF."
             }
         },
-        "hakushinID": 10000058
+        "hakushinID": 10000058,
+        "id": 10000058,
+        "skillIds": [
+            10581,
+            10582,
+            10585
+        ]
     },
     "Yanfei": {
         "name": "Yanfei",
@@ -33241,7 +33715,13 @@ export default {
                 "text": "Increases the maximum number of Scarlet Seals by 1."
             }
         },
-        "hakushinID": 10000048
+        "hakushinID": 10000048,
+        "id": 10000048,
+        "skillIds": [
+            10481,
+            10482,
+            10485
+        ]
     },
     "Yaoyao": {
         "name": "Yaoyao",
@@ -33646,7 +34126,13 @@ export default {
                 "text": "For every 2 White Jade Radishes Yuegui: Throwing Mode throws out, it will also throw a Mega Radish that will have a larger AoE than the standard White Jade Radish and have the following effects upon exploding:<ul><li>Deals <span class=\"text-dendro\"><b>AoE Dendro DMG<\/b><\/span> based on 75% of Yaoyao's ATK.<\/li><li>Restores HP for the active character based on 7.5% of Yaoyao's Max HP.<\/li><\/ul><br\/>Every Yuegui: Throwing Mode can throw out a maximum of 2 Mega Radishes."
             }
         },
-        "hakushinID": 10000077
+        "hakushinID": 10000077,
+        "id": 10000077,
+        "skillIds": [
+            10771,
+            10772,
+            10775
+        ]
     },
     "Yelan": {
         "name": "Yelan",
@@ -34012,7 +34498,13 @@ export default {
                 "text": "After using Depth-Clarion Dice, Yelan will enter the Mastermind state.<br\/>In this state, all of Yelan's Normal Attacks will be special Breakthrough Barbs. These Breakthrough Barbs will have similar abilities to normal ones and the DMG dealt will be considered Charged Attack DMG, dealing 156% of a normal Breakthrough Barb's DMG.<br\/><br\/>The Mastermind state lasts 20s and will be cleared after Yelan fires 5 arrows."
             }
         },
-        "hakushinID": 10000060
+        "hakushinID": 10000060,
+        "id": 10000060,
+        "skillIds": [
+            10606,
+            10607,
+            10610
+        ]
     },
     "Yoimiya": {
         "name": "Yoimiya",
@@ -34383,7 +34875,13 @@ export default {
                 "text": "During Niwabi Fire-Dance, Yoimiya's Normal Attacks have a 50% chance of firing an extra Blazing Arrow that deals 60% of its original DMG. This DMG is considered Normal Attack DMG."
             }
         },
-        "hakushinID": 10000049
+        "hakushinID": 10000049,
+        "id": 10000049,
+        "skillIds": [
+            10491,
+            10492,
+            10495
+        ]
     },
     "YunJin": {
         "name": "Yun Jin",
@@ -34792,7 +35290,13 @@ export default {
                 "text": "Characters under the effects of the Flying Cloud Flag Formation have their Normal ATK SPD increased by 12%."
             }
         },
-        "hakushinID": 10000064
+        "hakushinID": 10000064,
+        "id": 10000064,
+        "skillIds": [
+            10641,
+            10642,
+            10643
+        ]
     },
     "Zhongli": {
         "name": "Zhongli",
@@ -35229,6 +35733,12 @@ export default {
                 "text": "Planet Befall grants nearby characters on the field a Jade Shield when it descends."
             }
         },
-        "hakushinID": 10000030
+        "hakushinID": 10000030,
+        "id": 10000030,
+        "skillIds": [
+            10301,
+            10302,
+            10303
+        ]
     }
 };
