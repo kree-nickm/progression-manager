@@ -10,18 +10,20 @@ Features include:
 * Upload your account data to Pastebin with the click of a button, giving you a code that you can use on other devices or share with other players. Using this code will allow you to easily import your data into a different device, or send it to other players so they can review your account.
 * View a consolidated list of all of your characters, which shows you all of the materials they need for their next ascension as well as talent level-ups. Additionally, you can see their equipped gear in a consolodated format, to quickly see which ones need your resin the most.
 * As above, view a consolidated list of all of your weapons and their ascension materials, and which character is using each.
-* View a list of all of your artifacts with not only their stats, but ratings of their stats, which are based on how much they rolled each specific substat and the probability of rolling each substat further.
+* View a list of all of your artifacts with not only their stats, but an overall desirability rating based on preferences that you specify (explained below).
 * View your quantities of materials, with a list of which characters and weapons require that material for their next ascension or talent level-up.
 * View a list of furniture gift sets, so you can track which gift sets you have learned and which characters you can settle/have settled using them, so you can more easily keep track of the primogems rewards for doing so.
 * For each character, create one or more builds that specify their desired artifact sets and artifact main stat/substat priority, which will be used in calculations to determine their best artifacts.
 * For each character, see lists of all of your artifacts separated by slot, and sorted by how good they are for that character, based on the build(s) explained above. You can also filter by preferred artifact sets.
-* Using the above artifact preferences, run an algorithm that determines how valuable each artifact on your account is based on the number of you characters who might want to use it. Any artifacts that end up with a score of 0 are safe to use as fodder for levels/strongbox.
+* Using the above artifact preferences, run an algorithm that determines a desirability rating for each artifact on your account, based on the number of your characters who might want to use it.
+* For each artifact, view an ordered list of your character builds that desire it the most, based on the above preferences.
 * _(Work-In-Progress)_ See each of your characters' stats based on their equipped weapon, artifacts, unlocked talents and constellations, as well as how much damage they should be doing with various attacks, skills, bursts, reactions, etc. Additionally:
-  * _(Work-In-Progress)_ Factor in triggered effects from those aforementioned sources, and how the damage values will change when such effects are triggered.
-  * Allow you to see all of that information for an alternate gear set (preview) alongside your current one, and use that to decide which one you prefer.
-* _(Work-In-Progress)_ Allow you to set up teams, and see how the buffs provided by each team members' abilities/artifacts/weapons will affect all of the aforementioned statistics.
+  * Factor in triggered effects from those aforementioned sources, and how the damage values will change when such effects are triggered.
+  * Allow you to see all of that information for a "preview": an alternate gear set or upgraded stats alongside your current gear and stats, and use that to decide which gear you prefer and whether certain upgrades are worth it. The alternate gear can be gear that you own, or theoretical pieces that are equal to what you have, but from a different artifact set or with different artifact primary stats.
+  * _(Planned Feature)_ Allow you to import combat simulations that have been exported from [gcsim](#alternatives), and use that to predict changes to your team's DPS when you preview alternate gear and stats, rather than only seeing individual motion value changes.
+* Allow you to set up teams, and see how the buffs provided by each team members' abilities/artifacts/weapons will affect all of the aforementioned statistics.
+* _(Work-In-Progress)_ Set targets for your character/gear progression, so you can quickly see all of the things you need to spend resin on.
 * _(Planned Feature)_ Obtain your character data from Hoyoverse directly using your profile (like Enka), so you can have at least *some* account data imported without having to use screen readers.
-* _(Planned Feature)_ Set targets for your character/gear progression, so you can quickly see all of the things you need to spend resin on.
 
 ## Alternatives
 There are many other Genshin Impact managers that I am aware of, which serve similar purposes. They are all relatively specialized and probably do those things better than mine (for now, smile). However, I made this one because I did not want to have to use 3 different managers to get all the features I want. That said, with the ability to import/export data in GOOD format, you can use them alongside mine if you want to.
