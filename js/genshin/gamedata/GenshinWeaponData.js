@@ -8,7 +8,6 @@ export default {
         "matWeakEnemy": "Fungi",
         "baseATK": 44,
         "stat": "eleMas",
-        "baseStat": 58,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4c\/Weapon_A_Thousand_Floating_Dreams.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e8\/Weapon_A_Thousand_Floating_Dreams_2nd.png"
@@ -37,7 +36,9 @@ export default {
                 "5": 48
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/A_Thousand_Floating_Dreams"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/A_Thousand_Floating_Dreams",
+        "hakushinID": 14511,
+        "id": 14511
     },
     "AmosBow": {
         "name": "Amos' Bow",
@@ -48,7 +49,6 @@ export default {
         "matWeakEnemy": "Slimes",
         "baseATK": 46,
         "stat": "atk_",
-        "baseStat": 10.8,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/de\/Weapon_Amos%27_Bow.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0d\/Weapon_Amos%27_Bow_2nd.png"
@@ -96,7 +96,9 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Amos%27_Bow"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Amos%27_Bow",
+        "hakushinID": 15502,
+        "id": 15502
     },
     "AquaSimulacra": {
         "name": "Aqua Simulacra",
@@ -107,7 +109,6 @@ export default {
         "matWeakEnemy": "Specters",
         "baseATK": 44,
         "stat": "critDMG_",
-        "baseStat": 19.2,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cd\/Weapon_Aqua_Simulacra.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/25\/Weapon_Aqua_Simulacra_2nd.png"
@@ -129,7 +130,9 @@ export default {
                 "5": 40
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Aqua_Simulacra"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Aqua_Simulacra",
+        "hakushinID": 15508,
+        "id": 15508
     },
     "AquilaFavonia": {
         "name": "Aquila Favonia",
@@ -140,7 +143,6 @@ export default {
         "matWeakEnemy": "Hili.Archers",
         "baseATK": 48,
         "stat": "physical_dmg_",
-        "baseStat": 9,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6a\/Weapon_Aquila_Favonia.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c6\/Weapon_Aquila_Favonia_2nd.png"
@@ -169,7 +171,9 @@ export default {
                 "5": 320
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Aquila_Favonia"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Aquila_Favonia",
+        "hakushinID": 11501,
+        "id": 11501
     },
     "BeaconOfTheReedSea": {
         "name": "Beacon of the Reed Sea",
@@ -180,7 +184,6 @@ export default {
         "matWeakEnemy": "Eremites",
         "baseATK": 46,
         "stat": "critRate_",
-        "baseStat": 7.2,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6c\/Weapon_Beacon_of_the_Reed_Sea.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dc\/Weapon_Beacon_of_the_Reed_Sea_2nd.png"
@@ -209,7 +212,9 @@ export default {
                 "5": 64
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Beacon_of_the_Reed_Sea"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Beacon_of_the_Reed_Sea",
+        "hakushinID": 12511,
+        "id": 12511
     },
     "CalamityQueller": {
         "name": "Calamity Queller",
@@ -220,7 +225,6 @@ export default {
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 49,
         "stat": "atk_",
-        "baseStat": 3.6,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8b\/Weapon_Calamity_Queller.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/58\/Weapon_Calamity_Queller_2nd.png"
@@ -242,7 +246,9 @@ export default {
                 "5": 6.4
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Calamity_Queller"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Calamity_Queller",
+        "hakushinID": 13507,
+        "id": 13507
     },
     "CashflowSupervision": {
         "name": "Cashflow Supervision",
@@ -288,7 +294,9 @@ export default {
         ],
         "matForgery": "Chalice",
         "matStrongEnemy": "Fatui Operatives",
-        "matWeakEnemy": "Fontemer"
+        "matWeakEnemy": "Fontemer",
+        "hakushinID": 14513,
+        "id": 14513
     },
     "CranesEchoingCall": {
         "name": "Crane's Echoing Call",
@@ -331,7 +339,9 @@ export default {
         "matForgery": "Elixir",
         "matStrongEnemy": "Xuanwen Beasts",
         "matWeakEnemy": "Samachurl",
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Crane%27s_Echoing_Call"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Crane%27s_Echoing_Call",
+        "hakushinID": 14515,
+        "id": 14515
     },
     "CrimsonMoonsSemblance": {
         "release": "April 24, 2024",
@@ -347,7 +357,11 @@ export default {
                 "stat",
                 [
                     "dmg_",
-                    ["stacks", "@0", "@1"]
+                    [
+                        "stacks",
+                        "@0",
+                        "@1"
+                    ]
                 ]
             ],
             "With Bond of Life (1 if <30%; 2 if >=30%)",
@@ -370,12 +384,14 @@ export default {
             }
         ],
         "imgs": [
-            "https://api.hakush.in/gi/UI/UI_EquipIcon_Pole_BloodMoon.webp",
-            "https://api.hakush.in/gi/UI/UI_EquipIcon_Pole_BloodMoon.webp"
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_BloodMoon.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_BloodMoon.webp"
         ],
         "matForgery": "Chalice",
         "matStrongEnemy": "Praetorians",
-        "matWeakEnemy": "Meka"
+        "matWeakEnemy": "Meka",
+        "hakushinID": 13512,
+        "id": 13512
     },
     "ElegyForTheEnd": {
         "name": "Elegy for the End",
@@ -386,7 +402,6 @@ export default {
         "matWeakEnemy": "Fatui",
         "baseATK": 46,
         "stat": "enerRech_",
-        "baseStat": 12,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a5\/Weapon_Elegy_for_the_End.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/61\/Weapon_Elegy_for_the_End_2nd.png"
@@ -415,7 +430,9 @@ export default {
                 "5": 40
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Elegy_for_the_End"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Elegy_for_the_End",
+        "hakushinID": 15503,
+        "id": 15503
     },
     "EngulfingLightning": {
         "name": "Engulfing Lightning",
@@ -426,7 +443,6 @@ export default {
         "matWeakEnemy": "Nobushi",
         "baseATK": 46,
         "stat": "enerRech_",
-        "baseStat": 12,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/21\/Weapon_Engulfing_Lightning.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/23\/Weapon_Engulfing_Lightning_2nd.png"
@@ -455,7 +471,9 @@ export default {
                 "5": 50
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Engulfing_Lightning"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Engulfing_Lightning",
+        "hakushinID": 13509,
+        "id": 13509
     },
     "EverlastingMoonglow": {
         "name": "Everlasting Moonglow",
@@ -466,7 +484,6 @@ export default {
         "matWeakEnemy": "Specters",
         "baseATK": 46,
         "stat": "hp_",
-        "baseStat": 10.8,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e1\/Weapon_Everlasting_Moonglow.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/66\/Weapon_Everlasting_Moonglow_2nd.png"
@@ -488,7 +505,9 @@ export default {
                 "5": 3
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Everlasting_Moonglow"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Everlasting_Moonglow",
+        "hakushinID": 14506,
+        "id": 14506
     },
     "FreedomSworn": {
         "name": "Freedom-Sworn",
@@ -499,7 +518,6 @@ export default {
         "matWeakEnemy": "Samachurls",
         "baseATK": 46,
         "stat": "eleMas",
-        "baseStat": 43,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/39\/Weapon_Freedom-Sworn.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e9\/Weapon_Freedom-Sworn_2nd.png"
@@ -528,7 +546,9 @@ export default {
                 "5": 40
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Freedom-Sworn"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Freedom-Sworn",
+        "hakushinID": 11503,
+        "id": 11503
     },
     "HaranGeppakuFutsu": {
         "name": "Haran Geppaku Futsu",
@@ -539,7 +559,6 @@ export default {
         "matWeakEnemy": "Nobushi",
         "baseATK": 46,
         "stat": "critRate_",
-        "baseStat": 7.2,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/85\/Weapon_Haran_Geppaku_Futsu.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/51\/Weapon_Haran_Geppaku_Futsu_2nd.png"
@@ -561,7 +580,9 @@ export default {
                 "5": 40
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Haran_Geppaku_Futsu"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Haran_Geppaku_Futsu",
+        "hakushinID": 11510,
+        "id": 11510
     },
     "HuntersPath": {
         "name": "Hunter's Path",
@@ -572,7 +593,6 @@ export default {
         "matWeakEnemy": "Eremites",
         "baseATK": 44,
         "stat": "critRate_",
-        "baseStat": 9.6,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dd\/Weapon_Hunter%27s_Path.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b5\/Weapon_Hunter%27s_Path_2nd.png"
@@ -594,7 +614,9 @@ export default {
                 "5": 320
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Hunter%27s_Path"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Hunter%27s_Path",
+        "hakushinID": 15511,
+        "id": 15511
     },
     "JadefallsSplendor": {
         "name": "Jadefall's Splendor",
@@ -605,7 +627,6 @@ export default {
         "matWeakEnemy": "Fungi",
         "baseATK": 46,
         "stat": "hp_",
-        "baseStat": 10.8,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7a\/Weapon_Jadefall%27s_Splendor.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/83\/Weapon_Jadefall%27s_Splendor_2nd.png"
@@ -634,7 +655,9 @@ export default {
                 "5": 44
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Jadefall%27s_Splendor"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Jadefall%27s_Splendor",
+        "hakushinID": 14505,
+        "id": 14505
     },
     "KagurasVerity": {
         "name": "Kagura's Verity",
@@ -645,7 +668,6 @@ export default {
         "matWeakEnemy": "Specters",
         "baseATK": 46,
         "stat": "critDMG_",
-        "baseStat": 14.4,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b7\/Weapon_Kagura%27s_Verity.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1a\/Weapon_Kagura%27s_Verity_2nd.png"
@@ -667,7 +689,9 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Kagura%27s_Verity"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Kagura%27s_Verity",
+        "hakushinID": 14509,
+        "id": 14509
     },
     "KeyOfKhajNisut": {
         "name": "Key of Khaj-Nisut",
@@ -678,7 +702,6 @@ export default {
         "matWeakEnemy": "Eremites",
         "baseATK": 44,
         "stat": "hp_",
-        "baseStat": 14.4,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/52\/Weapon_Key_of_Khaj-Nisut.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/ce\/Weapon_Key_of_Khaj-Nisut_2nd.png"
@@ -707,7 +730,9 @@ export default {
                 "5": 0.4
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Key_of_Khaj-Nisut"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Key_of_Khaj-Nisut",
+        "hakushinID": 11511,
+        "id": 11511
     },
     "LightOfFoliarIncision": {
         "name": "Light of Foliar Incision",
@@ -718,7 +743,6 @@ export default {
         "matWeakEnemy": "Eremites",
         "baseATK": 44,
         "stat": "critDMG_",
-        "baseStat": 19.2,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/de\/Weapon_Light_of_Foliar_Incision.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/30\/Weapon_Light_of_Foliar_Incision_2nd.png"
@@ -740,7 +764,9 @@ export default {
                 "5": 240
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Light_of_Foliar_Incision"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Light_of_Foliar_Incision",
+        "hakushinID": 11512,
+        "id": 11512
     },
     "LostPrayerToTheSacredWinds": {
         "name": "Lost Prayer to the Sacred Winds",
@@ -751,7 +777,6 @@ export default {
         "matWeakEnemy": "Slimes",
         "baseATK": 46,
         "stat": "critRate_",
-        "baseStat": 7.2,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/98\/Weapon_Lost_Prayer_to_the_Sacred_Winds.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/02\/Weapon_Lost_Prayer_to_the_Sacred_Winds_2nd.png"
@@ -766,7 +791,9 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Lost_Prayer_to_the_Sacred_Winds"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Lost_Prayer_to_the_Sacred_Winds",
+        "hakushinID": 14502,
+        "id": 14502
     },
     "MemoryOfDust": {
         "name": "Memory of Dust",
@@ -777,7 +804,6 @@ export default {
         "matWeakEnemy": "Hilichurls",
         "baseATK": 46,
         "stat": "atk_",
-        "baseStat": 10.8,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/ca\/Weapon_Memory_of_Dust.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fd\/Weapon_Memory_of_Dust_2nd.png"
@@ -799,7 +825,9 @@ export default {
                 "5": 8
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Memory_of_Dust"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Memory_of_Dust",
+        "hakushinID": 14504,
+        "id": 14504
     },
     "MistsplitterReforged": {
         "name": "Mistsplitter Reforged",
@@ -810,7 +838,6 @@ export default {
         "matWeakEnemy": "Nobushi",
         "baseATK": 48,
         "stat": "critDMG_",
-        "baseStat": 9.6,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/09\/Weapon_Mistsplitter_Reforged.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/df\/Weapon_Mistsplitter_Reforged_2nd.png"
@@ -846,7 +873,9 @@ export default {
                 "5": 56
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Mistsplitter_Reforged"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Mistsplitter_Reforged",
+        "hakushinID": 11509,
+        "id": 11509
     },
     "PolarStar": {
         "name": "Polar Star",
@@ -857,7 +886,6 @@ export default {
         "matWeakEnemy": "Specters",
         "baseATK": 46,
         "stat": "critRate_",
-        "baseStat": 7.2,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/44\/Weapon_Polar_Star.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/09\/Weapon_Polar_Star_2nd.png"
@@ -900,7 +928,9 @@ export default {
                 "5": 96
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Polar_Star"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Polar_Star",
+        "hakushinID": 15507,
+        "id": 15507
     },
     "PrimordialJadeCutter": {
         "name": "Primordial Jade Cutter",
@@ -911,7 +941,6 @@ export default {
         "matWeakEnemy": "T.Hoarders",
         "baseATK": 44,
         "stat": "critRate_",
-        "baseStat": 9.6,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2a\/Weapon_Primordial_Jade_Cutter.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b3\/Weapon_Primordial_Jade_Cutter_2nd.png"
@@ -933,7 +962,9 @@ export default {
                 "5": 2.4
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Primordial_Jade_Cutter"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Primordial_Jade_Cutter",
+        "hakushinID": 11505,
+        "id": 11505
     },
     "PrimordialJadeWingedSpear": {
         "name": "Primordial Jade Winged-Spear",
@@ -944,7 +975,6 @@ export default {
         "matWeakEnemy": "Fatui",
         "baseATK": 48,
         "stat": "critRate_",
-        "baseStat": 4.8,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/80\/Weapon_Primordial_Jade_Winged-Spear.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/27\/Weapon_Primordial_Jade_Winged-Spear_2nd.png"
@@ -966,7 +996,9 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Primordial_Jade_Winged-Spear"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Primordial_Jade_Winged-Spear",
+        "hakushinID": 13505,
+        "id": 13505
     },
     "RedhornStonethresher": {
         "name": "Redhorn Stonethresher",
@@ -977,7 +1009,6 @@ export default {
         "matWeakEnemy": "Nobushi",
         "baseATK": 44,
         "stat": "critDMG_",
-        "baseStat": 19.2,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d4\/Weapon_Redhorn_Stonethresher.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/18\/Weapon_Redhorn_Stonethresher_2nd.png"
@@ -999,7 +1030,9 @@ export default {
                 "5": 80
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Redhorn_Stonethresher"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Redhorn_Stonethresher",
+        "hakushinID": 12510,
+        "id": 12510
     },
     "SkywardAtlas": {
         "name": "Skyward Atlas",
@@ -1010,7 +1043,6 @@ export default {
         "matWeakEnemy": "Hili.Archers",
         "baseATK": 48,
         "stat": "atk_",
-        "baseStat": 7.2,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/33\/Weapon_Skyward_Atlas.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b1\/Weapon_Skyward_Atlas_2nd.png"
@@ -1032,7 +1064,9 @@ export default {
                 "5": 320
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyward_Atlas"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyward_Atlas",
+        "hakushinID": 14501,
+        "id": 14501
     },
     "SkywardBlade": {
         "name": "Skyward Blade",
@@ -1043,7 +1077,6 @@ export default {
         "matWeakEnemy": "Slimes",
         "baseATK": 46,
         "stat": "enerRech_",
-        "baseStat": 12,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/03\/Weapon_Skyward_Blade.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5d\/Weapon_Skyward_Blade_2nd.png"
@@ -1065,7 +1098,9 @@ export default {
                 "5": 40
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyward_Blade"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyward_Blade",
+        "hakushinID": 11502,
+        "id": 11502
     },
     "SkywardHarp": {
         "name": "Skyward Harp",
@@ -1076,7 +1111,6 @@ export default {
         "matWeakEnemy": "Hili.Archers",
         "baseATK": 48,
         "stat": "critRate_",
-        "baseStat": 4.8,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/19\/Weapon_Skyward_Harp.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/60\/Weapon_Skyward_Harp_2nd.png"
@@ -1105,7 +1139,9 @@ export default {
                 "5": 2
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyward_Harp"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyward_Harp",
+        "hakushinID": 15501,
+        "id": 15501
     },
     "SkywardPride": {
         "name": "Skyward Pride",
@@ -1116,7 +1152,6 @@ export default {
         "matWeakEnemy": "Slimes",
         "baseATK": 48,
         "stat": "enerRech_",
-        "baseStat": 8,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0b\/Weapon_Skyward_Pride.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8e\/Weapon_Skyward_Pride_2nd.png"
@@ -1155,7 +1190,9 @@ export default {
                 "5": 160
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyward_Pride"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyward_Pride",
+        "hakushinID": 12501,
+        "id": 12501
     },
     "SkywardSpine": {
         "name": "Skyward Spine",
@@ -1166,7 +1203,6 @@ export default {
         "matWeakEnemy": "Samachurls",
         "baseATK": 48,
         "stat": "enerRech_",
-        "baseStat": 8,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/69\/Weapon_Skyward_Spine.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7b\/Weapon_Skyward_Spine_2nd.png"
@@ -1188,7 +1224,9 @@ export default {
                 "5": 100
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyward_Spine"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyward_Spine",
+        "hakushinID": 13502,
+        "id": 13502
     },
     "SongOfBrokenPines": {
         "name": "Song of Broken Pines",
@@ -1199,7 +1237,6 @@ export default {
         "matWeakEnemy": "Hilichurls",
         "baseATK": 49,
         "stat": "physical_dmg_",
-        "baseStat": 4.5,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dd\/Weapon_Song_of_Broken_Pines.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/55\/Weapon_Song_of_Broken_Pines_2nd.png"
@@ -1228,7 +1265,9 @@ export default {
                 "5": 40
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Song_of_Broken_Pines"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Song_of_Broken_Pines",
+        "hakushinID": 12503,
+        "id": 12503
     },
     "SplendorOfTranquilWaters": {
         "name": "Splendor of Tranquil Waters",
@@ -1260,7 +1299,9 @@ export default {
         ],
         "matForgery": "Dewdrop",
         "matStrongEnemy": "Hydro Phantasms",
-        "matWeakEnemy": "Fontemer"
+        "matWeakEnemy": "Fontemer",
+        "hakushinID": 11513,
+        "id": 11513
     },
     "StaffOfHoma": {
         "name": "Staff of Homa",
@@ -1271,7 +1312,6 @@ export default {
         "matWeakEnemy": "Slimes",
         "baseATK": 46,
         "stat": "critDMG_",
-        "baseStat": 14.4,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/17\/Weapon_Staff_of_Homa.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ee\/Weapon_Staff_of_Homa_2nd.png"
@@ -1300,7 +1340,9 @@ export default {
                 "5": 1.8
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Staff_of_Homa"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Staff_of_Homa",
+        "hakushinID": 13501,
+        "id": 13501
     },
     "StaffOfTheScarletSands": {
         "name": "Staff of the Scarlet Sands",
@@ -1311,7 +1353,6 @@ export default {
         "matWeakEnemy": "Fungi",
         "baseATK": 44,
         "stat": "critRate_",
-        "baseStat": 9.6,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/44\/Weapon_Staff_of_the_Scarlet_Sands.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4d\/Weapon_Staff_of_the_Scarlet_Sands_2nd.png"
@@ -1333,7 +1374,9 @@ export default {
                 "5": 56
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Staff_of_the_Scarlet_Sands"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Staff_of_the_Scarlet_Sands",
+        "hakushinID": 13511,
+        "id": 13511
     },
     "SummitShaper": {
         "name": "Summit Shaper",
@@ -1344,7 +1387,6 @@ export default {
         "matWeakEnemy": "Hilichurls",
         "baseATK": 46,
         "stat": "atk_",
-        "baseStat": 10.8,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/ca\/Weapon_Summit_Shaper.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/24\/Weapon_Summit_Shaper_2nd.png"
@@ -1366,7 +1408,9 @@ export default {
                 "5": 8
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Summit_Shaper"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Summit_Shaper",
+        "hakushinID": 11504,
+        "id": 11504
     },
     "TheFirstGreatMagic": {
         "name": "The First Great Magic",
@@ -1433,8 +1477,9 @@ export default {
         "matWeakEnemy": "Fontemer",
         "baseATK": 46,
         "stat": "critDMG_",
-        "baseStat": 14.4,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_First_Great_Magic"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_First_Great_Magic",
+        "hakushinID": 15512,
+        "id": 15512
     },
     "TheUnforged": {
         "name": "The Unforged",
@@ -1445,7 +1490,6 @@ export default {
         "matWeakEnemy": "T.Hoarders",
         "baseATK": 46,
         "stat": "atk_",
-        "baseStat": 10.8,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f7\/Weapon_The_Unforged.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/34\/Weapon_The_Unforged_2nd.png"
@@ -1467,7 +1511,9 @@ export default {
                 "5": 8
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Unforged"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Unforged",
+        "hakushinID": 12504,
+        "id": 12504
     },
     "ThunderingPulse": {
         "name": "Thundering Pulse",
@@ -1478,7 +1524,6 @@ export default {
         "matWeakEnemy": "Hili.Archers",
         "baseATK": 46,
         "stat": "critDMG_",
-        "baseStat": 14.4,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/77\/Weapon_Thundering_Pulse.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ee\/Weapon_Thundering_Pulse_2nd.png"
@@ -1514,7 +1559,9 @@ export default {
                 "5": 80
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Thundering_Pulse"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Thundering_Pulse",
+        "hakushinID": 15509,
+        "id": 15509
     },
     "TomeOfTheEternalFlow": {
         "name": "Tome of the Eternal Flow",
@@ -1553,7 +1600,9 @@ export default {
         ],
         "matForgery": "Dewdrop",
         "matStrongEnemy": "Breacher Primus",
-        "matWeakEnemy": "Meka"
+        "matWeakEnemy": "Meka",
+        "hakushinID": 14514,
+        "id": 14514
     },
     "TulaytullahsRemembrance": {
         "name": "Tulaytullah's Remembrance",
@@ -1564,7 +1613,6 @@ export default {
         "matWeakEnemy": "Fungi",
         "baseATK": 48,
         "stat": "critDMG_",
-        "baseStat": 9.6,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fc\/Weapon_Tulaytullah%27s_Remembrance.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0b\/Weapon_Tulaytullah%27s_Remembrance_2nd.png"
@@ -1600,7 +1648,9 @@ export default {
                 "5": 96
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Tulaytullah%27s_Remembrance"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Tulaytullah%27s_Remembrance",
+        "hakushinID": 14512,
+        "id": 14512
     },
     "UrakuMisugiri": {
         "name": "Uraku Misugiri",
@@ -1639,7 +1689,9 @@ export default {
         ],
         "matForgery": "Branch",
         "matStrongEnemy": "Ruin Sentinels",
-        "matWeakEnemy": "Nobushi"
+        "matWeakEnemy": "Nobushi",
+        "hakushinID": 11514,
+        "id": 11514
     },
     "Verdict": {
         "name": "Verdict",
@@ -1650,7 +1702,6 @@ export default {
         "matWeakEnemy": "Meka",
         "baseATK": 48,
         "stat": "critRate_",
-        "baseStat": 4.8,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1d\/Weapon_Verdict.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ef\/Weapon_Verdict_2nd.png"
@@ -1672,7 +1723,9 @@ export default {
                 "5": 36
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Verdict"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Verdict",
+        "hakushinID": 12512,
+        "id": 12512
     },
     "VortexVanquisher": {
         "name": "Vortex Vanquisher",
@@ -1683,7 +1736,6 @@ export default {
         "matWeakEnemy": "T.Hoarders",
         "baseATK": 46,
         "stat": "atk_",
-        "baseStat": 10.8,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d6\/Weapon_Vortex_Vanquisher.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/ca\/Weapon_Vortex_Vanquisher_2nd.png"
@@ -1705,7 +1757,9 @@ export default {
                 "5": 8
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Vortex_Vanquisher"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Vortex_Vanquisher",
+        "hakushinID": 13504,
+        "id": 13504
     },
     "WolfsGravestone": {
         "name": "Wolf's Gravestone",
@@ -1716,7 +1770,6 @@ export default {
         "matWeakEnemy": "Samachurls",
         "baseATK": 46,
         "stat": "atk_",
-        "baseStat": 10.8,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4f\/Weapon_Wolf%27s_Gravestone.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0e\/Weapon_Wolf%27s_Gravestone_2nd.png"
@@ -1738,7 +1791,9 @@ export default {
                 "5": 80
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Wolf%27s_Gravestone"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Wolf%27s_Gravestone",
+        "hakushinID": 12502,
+        "id": 12502
     },
     "TheCatch": {
         "name": "\"The Catch\"",
@@ -1749,7 +1804,6 @@ export default {
         "matWeakEnemy": "Specters",
         "baseATK": 42,
         "stat": "enerRech_",
-        "baseStat": 10,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f5\/Weapon_The_Catch.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/45\/Weapon_The_Catch_2nd.png"
@@ -1788,7 +1842,9 @@ export default {
                 "5": 12
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/%22The_Catch%22"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/%22The_Catch%22",
+        "hakushinID": 13415,
+        "id": 13415
     },
     "UltimateOverlordsMegaMagicSword": {
         "name": "\"Ultimate Overlord's Mega Magic Sword\"",
@@ -1799,7 +1855,6 @@ export default {
         "matWeakEnemy": "Meka",
         "baseATK": 44,
         "stat": "enerRech_",
-        "baseStat": 6.7,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6e\/Weapon_Ultimate_Overlord's_Mega_Magic_Sword.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/48\/Weapon_Ultimate_Overlord's_Mega_Magic_Sword_2nd.png"
@@ -1837,7 +1892,9 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/%22Ultimate_Overlord%27s_Mega_Magic_Sword%22"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/%22Ultimate_Overlord%27s_Mega_Magic_Sword%22",
+        "hakushinID": 12426,
+        "id": 12426
     },
     "Akuoumaru": {
         "name": "Akuoumaru",
@@ -1848,7 +1905,6 @@ export default {
         "matWeakEnemy": "Nobushi",
         "baseATK": 42,
         "stat": "atk_",
-        "baseStat": 9,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c5\/Weapon_Akuoumaru.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/45\/Weapon_Akuoumaru_2nd.png"
@@ -1870,7 +1926,9 @@ export default {
                 "5": 80
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Akuoumaru"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Akuoumaru",
+        "hakushinID": 12416,
+        "id": 12416
     },
     "AlleyHunter": {
         "name": "Alley Hunter",
@@ -1881,7 +1939,6 @@ export default {
         "matWeakEnemy": "Slimes",
         "baseATK": 44,
         "stat": "atk_",
-        "baseStat": 6,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0a\/Weapon_Alley_Hunter.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/16\/Weapon_Alley_Hunter_2nd.png"
@@ -1910,7 +1967,9 @@ export default {
                 "5": 8
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Alley_Hunter"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Alley_Hunter",
+        "hakushinID": 15410,
+        "id": 15410
     },
     "AmenomaKageuchi": {
         "name": "Amenoma Kageuchi",
@@ -1921,7 +1980,6 @@ export default {
         "matWeakEnemy": "Nobushi",
         "baseATK": 41,
         "stat": "atk_",
-        "baseStat": 12,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ea\/Weapon_Amenoma_Kageuchi.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c0\/Weapon_Amenoma_Kageuchi_2nd.png"
@@ -1936,7 +1994,9 @@ export default {
                 "5": 12
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Amenoma_Kageuchi"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Amenoma_Kageuchi",
+        "hakushinID": 11414,
+        "id": 11414
     },
     "BalladOfTheBoundlessBlue": {
         "name": "Ballad of the Boundless Blue",
@@ -1968,7 +2028,9 @@ export default {
         ],
         "matForgery": "Tooth",
         "matStrongEnemy": "Geovishaps",
-        "matWeakEnemy": "T.Hoarders"
+        "matWeakEnemy": "T.Hoarders",
+        "hakushinID": 14426,
+        "id": 14426
     },
     "BalladOfTheFjords": {
         "name": "Ballad of the Fjords",
@@ -2003,8 +2065,9 @@ export default {
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 42,
         "stat": "critRate_",
-        "baseStat": 6,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Ballad_of_the_Fjords"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Ballad_of_the_Fjords",
+        "hakushinID": 13424,
+        "id": 13424
     },
     "BlackcliffAgate": {
         "name": "Blackcliff Agate",
@@ -2015,7 +2078,6 @@ export default {
         "matWeakEnemy": "Samachurls",
         "baseATK": 42,
         "stat": "critDMG_",
-        "baseStat": 12,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a6\/Weapon_Blackcliff_Agate.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/50\/Weapon_Blackcliff_Agate_2nd.png"
@@ -2030,7 +2092,9 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Blackcliff_Agate"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Blackcliff_Agate",
+        "hakushinID": 14408,
+        "id": 14408
     },
     "BlackcliffLongsword": {
         "name": "Blackcliff Longsword",
@@ -2041,7 +2105,6 @@ export default {
         "matWeakEnemy": "Hili.Archers",
         "baseATK": 44,
         "stat": "critDMG_",
-        "baseStat": 8,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6f\/Weapon_Blackcliff_Longsword.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/15\/Weapon_Blackcliff_Longsword_2nd.png"
@@ -2056,7 +2119,9 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Blackcliff_Longsword"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Blackcliff_Longsword",
+        "hakushinID": 11408,
+        "id": 11408
     },
     "BlackcliffPole": {
         "name": "Blackcliff Pole",
@@ -2067,7 +2132,6 @@ export default {
         "matWeakEnemy": "Fatui",
         "baseATK": 42,
         "stat": "critDMG_",
-        "baseStat": 12,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d5\/Weapon_Blackcliff_Pole.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/45\/Weapon_Blackcliff_Pole_2nd.png"
@@ -2082,7 +2146,9 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Blackcliff_Pole"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Blackcliff_Pole",
+        "hakushinID": 13404,
+        "id": 13404
     },
     "BlackcliffSlasher": {
         "name": "Blackcliff Slasher",
@@ -2093,7 +2159,6 @@ export default {
         "matWeakEnemy": "Fatui",
         "baseATK": 42,
         "stat": "critDMG_",
-        "baseStat": 12,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d7\/Weapon_Blackcliff_Slasher.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/de\/Weapon_Blackcliff_Slasher_2nd.png"
@@ -2108,7 +2173,9 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Blackcliff_Slasher"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Blackcliff_Slasher",
+        "hakushinID": 12408,
+        "id": 12408
     },
     "BlackcliffWarbow": {
         "name": "Blackcliff Warbow",
@@ -2119,7 +2186,6 @@ export default {
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 44,
         "stat": "critDMG_",
-        "baseStat": 8,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b8\/Weapon_Blackcliff_Warbow.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/17\/Weapon_Blackcliff_Warbow_2nd.png"
@@ -2134,7 +2200,9 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Blackcliff_Warbow"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Blackcliff_Warbow",
+        "hakushinID": 15408,
+        "id": 15408
     },
     "CinnabarSpindle": {
         "name": "Cinnabar Spindle",
@@ -2145,7 +2213,6 @@ export default {
         "matWeakEnemy": "Hilichurls",
         "baseATK": 41,
         "stat": "def_",
-        "baseStat": 15,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dc\/Weapon_Cinnabar_Spindle.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4a\/Weapon_Cinnabar_Spindle_2nd.png"
@@ -2160,7 +2227,9 @@ export default {
                 "5": 80
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Cinnabar_Spindle"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Cinnabar_Spindle",
+        "hakushinID": 11415,
+        "id": 11415
     },
     "CompoundBow": {
         "name": "Compound Bow",
@@ -2171,7 +2240,6 @@ export default {
         "matWeakEnemy": "Fatui",
         "baseATK": 41,
         "stat": "physical_dmg_",
-        "baseStat": 15,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/32\/Weapon_Compound_Bow.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3b\/Weapon_Compound_Bow_2nd.png"
@@ -2193,7 +2261,9 @@ export default {
                 "5": 2.4
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Compound_Bow"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Compound_Bow",
+        "hakushinID": 15407,
+        "id": 15407
     },
     "CrescentPike": {
         "name": "Crescent Pike",
@@ -2204,7 +2274,6 @@ export default {
         "matWeakEnemy": "T.Hoarders",
         "baseATK": 44,
         "stat": "physical_dmg_",
-        "baseStat": 7.5,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4c\/Weapon_Crescent_Pike.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/04\/Weapon_Crescent_Pike_2nd.png"
@@ -2219,7 +2288,9 @@ export default {
                 "5": 40
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Crescent_Pike"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Crescent_Pike",
+        "hakushinID": 13403,
+        "id": 13403
     },
     "Deathmatch": {
         "name": "Deathmatch",
@@ -2230,7 +2301,6 @@ export default {
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 41,
         "stat": "critRate_",
-        "baseStat": 8,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/69\/Weapon_Deathmatch.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/df\/Weapon_Deathmatch_2nd.png"
@@ -2290,7 +2360,9 @@ export default {
                 "5": 48
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Deathmatch"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Deathmatch",
+        "hakushinID": 13405,
+        "id": 13405
     },
     "DialoguesOfTheDesertSages": {
         "name": "Dialogues of the Desert Sages",
@@ -2315,7 +2387,9 @@ export default {
         ],
         "matForgery": "Talisman",
         "matStrongEnemy": "Xuanwen Beasts",
-        "matWeakEnemy": "Specters"
+        "matWeakEnemy": "Specters",
+        "hakushinID": 13426,
+        "id": 13426
     },
     "DodocoTales": {
         "name": "Dodoco Tales",
@@ -2326,7 +2400,6 @@ export default {
         "matWeakEnemy": "Hilichurls",
         "baseATK": 41,
         "stat": "atk_",
-        "baseStat": 12,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/51\/Weapon_Dodoco_Tales.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e9\/Weapon_Dodoco_Tales_2nd.png"
@@ -2348,7 +2421,9 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Dodoco_Tales"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Dodoco_Tales",
+        "hakushinID": 14413,
+        "id": 14413
     },
     "DragonsBane": {
         "name": "Dragon's Bane",
@@ -2359,7 +2434,6 @@ export default {
         "matWeakEnemy": "Samachurls",
         "baseATK": 41,
         "stat": "eleMas",
-        "baseStat": 48,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/24\/Weapon_Dragon%27s_Bane.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/04\/Weapon_Dragon%27s_Bane_2nd.png"
@@ -2374,7 +2448,9 @@ export default {
                 "5": 36
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Dragon%27s_Bane"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Dragon%27s_Bane",
+        "hakushinID": 13401,
+        "id": 13401
     },
     "DragonspineSpear": {
         "name": "Dragonspine Spear",
@@ -2385,7 +2461,6 @@ export default {
         "matWeakEnemy": "Fatui",
         "baseATK": 41,
         "stat": "physical_dmg_",
-        "baseStat": 15,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1a\/Weapon_Dragonspine_Spear.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fb\/Weapon_Dragonspine_Spear_2nd.png"
@@ -2414,7 +2489,9 @@ export default {
                 "5": 360
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Dragonspine_Spear"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Dragonspine_Spear",
+        "hakushinID": 13409,
+        "id": 13409
     },
     "EndOfTheLine": {
         "name": "End of the Line",
@@ -2425,7 +2502,6 @@ export default {
         "matWeakEnemy": "Fungi",
         "baseATK": 42,
         "stat": "enerRech_",
-        "baseStat": 10,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/71\/Weapon_End_of_the_Line.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/04\/Weapon_End_of_the_Line_2nd.png"
@@ -2440,7 +2516,9 @@ export default {
                 "5": 160
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/End_of_the_Line"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/End_of_the_Line",
+        "hakushinID": 15418,
+        "id": 15418
     },
     "EyeOfPerception": {
         "name": "Eye of Perception",
@@ -2451,7 +2529,6 @@ export default {
         "matWeakEnemy": "Hilichurls",
         "baseATK": 41,
         "stat": "atk_",
-        "baseStat": 12,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6c\/Weapon_Eye_of_Perception.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f3\/Weapon_Eye_of_Perception_2nd.png"
@@ -2473,7 +2550,9 @@ export default {
                 "5": 8
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Eye_of_Perception"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Eye_of_Perception",
+        "hakushinID": 14409,
+        "id": 14409
     },
     "FadingTwilight": {
         "name": "Fading Twilight",
@@ -2484,7 +2563,6 @@ export default {
         "matWeakEnemy": "Samachurls",
         "baseATK": 44,
         "stat": "enerRech_",
-        "baseStat": 6.7,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2b\/Weapon_Fading_Twilight.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6d\/Weapon_Fading_Twilight_2nd.png"
@@ -2513,7 +2591,9 @@ export default {
                 "5": 28
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Fading_Twilight"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Fading_Twilight",
+        "hakushinID": 15411,
+        "id": 15411
     },
     "FavoniusCodex": {
         "name": "Favonius Codex",
@@ -2524,7 +2604,6 @@ export default {
         "matWeakEnemy": "Samachurls",
         "baseATK": 42,
         "stat": "enerRech_",
-        "baseStat": 10,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/36\/Weapon_Favonius_Codex.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2b\/Weapon_Favonius_Codex_2nd.png"
@@ -2546,7 +2625,9 @@ export default {
                 "5": 6
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Favonius_Codex"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Favonius_Codex",
+        "hakushinID": 14401,
+        "id": 14401
     },
     "FavoniusGreatsword": {
         "name": "Favonius Greatsword",
@@ -2557,7 +2638,6 @@ export default {
         "matWeakEnemy": "Fatui",
         "baseATK": 41,
         "stat": "enerRech_",
-        "baseStat": 13.3,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9c\/Weapon_Favonius_Greatsword.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/01\/Weapon_Favonius_Greatsword_2nd.png"
@@ -2579,7 +2659,9 @@ export default {
                 "5": 6
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Favonius_Greatsword"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Favonius_Greatsword",
+        "hakushinID": 12401,
+        "id": 12401
     },
     "FavoniusLance": {
         "name": "Favonius Lance",
@@ -2590,7 +2672,6 @@ export default {
         "matWeakEnemy": "Slimes",
         "baseATK": 44,
         "stat": "enerRech_",
-        "baseStat": 6.7,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/57\/Weapon_Favonius_Lance.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e3\/Weapon_Favonius_Lance_2nd.png"
@@ -2612,7 +2693,9 @@ export default {
                 "5": 6
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Favonius_Lance"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Favonius_Lance",
+        "hakushinID": 13407,
+        "id": 13407
     },
     "FavoniusSword": {
         "name": "Favonius Sword",
@@ -2623,7 +2706,6 @@ export default {
         "matWeakEnemy": "Hili.Archers",
         "baseATK": 41,
         "stat": "enerRech_",
-        "baseStat": 13.3,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/90\/Weapon_Favonius_Sword.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c6\/Weapon_Favonius_Sword_2nd.png"
@@ -2645,7 +2727,9 @@ export default {
                 "5": 6
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Favonius_Sword"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Favonius_Sword",
+        "hakushinID": 11401,
+        "id": 11401
     },
     "FavoniusWarbow": {
         "name": "Favonius Warbow",
@@ -2656,7 +2740,6 @@ export default {
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 41,
         "stat": "enerRech_",
-        "baseStat": 13.3,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/85\/Weapon_Favonius_Warbow.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/92\/Weapon_Favonius_Warbow_2nd.png"
@@ -2678,7 +2761,9 @@ export default {
                 "5": 6
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Favonius_Warbow"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Favonius_Warbow",
+        "hakushinID": 15401,
+        "id": 15401
     },
     "FesteringDesire": {
         "name": "Festering Desire",
@@ -2689,7 +2774,6 @@ export default {
         "matWeakEnemy": "Fatui",
         "baseATK": 42,
         "stat": "enerRech_",
-        "baseStat": 10,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/70\/Weapon_Festering_Desire.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a8\/Weapon_Festering_Desire_2nd.png"
@@ -2711,7 +2795,9 @@ export default {
                 "5": 12
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Festering_Desire"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Festering_Desire",
+        "hakushinID": 11413,
+        "id": 11413
     },
     "FinaleOfTheDeep": {
         "name": "Finale of the Deep",
@@ -2750,8 +2836,9 @@ export default {
         "matWeakEnemy": "Nobushi",
         "baseATK": 44,
         "stat": "atk_",
-        "baseStat": 6,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Finale_of_the_Deep"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Finale_of_the_Deep",
+        "hakushinID": 11425,
+        "id": 11425
     },
     "FleuveCendreFerryman": {
         "name": "Fleuve Cendre Ferryman",
@@ -2783,8 +2870,9 @@ export default {
         "matWeakEnemy": "Fontemer",
         "baseATK": 42,
         "stat": "enerRech_",
-        "baseStat": 10,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Fleuve_Cendre_Ferryman"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Fleuve_Cendre_Ferryman",
+        "hakushinID": 11426,
+        "id": 11426
     },
     "FlowingPurity": {
         "name": "Flowing Purity",
@@ -2823,8 +2911,9 @@ export default {
         "matWeakEnemy": "Fontemer",
         "baseATK": 44,
         "stat": "atk_",
-        "baseStat": 6,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Flowing_Purity"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Flowing_Purity",
+        "hakushinID": 14425,
+        "id": 14425
     },
     "ForestRegalia": {
         "name": "Forest Regalia",
@@ -2835,7 +2924,6 @@ export default {
         "matWeakEnemy": "Eremites",
         "baseATK": 44,
         "stat": "enerRech_",
-        "baseStat": 6.7,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/51\/Weapon_Forest_Regalia.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b8\/Weapon_Forest_Regalia_2nd.png"
@@ -2850,7 +2938,9 @@ export default {
                 "5": 120
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Forest_Regalia"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Forest_Regalia",
+        "hakushinID": 12417,
+        "id": 12417
     },
     "Frostbearer": {
         "name": "Frostbearer",
@@ -2861,7 +2951,6 @@ export default {
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 42,
         "stat": "atk_",
-        "baseStat": 9,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1c\/Weapon_Frostbearer.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bb\/Weapon_Frostbearer_2nd.png"
@@ -2890,7 +2979,9 @@ export default {
                 "5": 360
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Frostbearer"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Frostbearer",
+        "hakushinID": 14412,
+        "id": 14412
     },
     "FruitOfFulfillment": {
         "name": "Fruit of Fulfillment",
@@ -2901,7 +2992,6 @@ export default {
         "matWeakEnemy": "Fungi",
         "baseATK": 42,
         "stat": "enerRech_",
-        "baseStat": 10,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/98\/Weapon_Fruit_of_Fulfillment.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/10\/Weapon_Fruit_of_Fulfillment_2nd.png"
@@ -2916,7 +3006,9 @@ export default {
                 "5": 36
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Fruit_of_Fulfillment"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Fruit_of_Fulfillment",
+        "hakushinID": 14417,
+        "id": 14417
     },
     "HakushinRing": {
         "name": "Hakushin Ring",
@@ -2927,7 +3019,6 @@ export default {
         "matWeakEnemy": "Samachurls",
         "baseATK": 44,
         "stat": "enerRech_",
-        "baseStat": 6.7,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ee\/Weapon_Hakushin_Ring.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6f\/Weapon_Hakushin_Ring_2nd.png"
@@ -2960,7 +3051,9 @@ export default {
                 "5": 20
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Hakushin_Ring"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Hakushin_Ring",
+        "hakushinID": 14414,
+        "id": 14414
     },
     "Hamayumi": {
         "name": "Hamayumi",
@@ -2971,7 +3064,6 @@ export default {
         "matWeakEnemy": "Hili.Archers",
         "baseATK": 41,
         "stat": "atk_",
-        "baseStat": 12,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d9\/Weapon_Hamayumi.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e0\/Weapon_Hamayumi_2nd.png"
@@ -3028,7 +3120,9 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Hamayumi"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Hamayumi",
+        "hakushinID": 15414,
+        "id": 15414
     },
     "IbisPiercer": {
         "name": "Ibis Piercer",
@@ -3039,7 +3133,6 @@ export default {
         "matWeakEnemy": "Eremites",
         "baseATK": 44,
         "stat": "atk_",
-        "baseStat": 6,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/ce\/Weapon_Ibis_Piercer.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cb\/Weapon_Ibis_Piercer_2nd.png"
@@ -3065,7 +3158,9 @@ export default {
                 "5": 80
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Ibis_Piercer"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Ibis_Piercer",
+        "hakushinID": 15419,
+        "id": 15419
     },
     "IronSting": {
         "name": "Iron Sting",
@@ -3076,7 +3171,6 @@ export default {
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 42,
         "stat": "eleMas",
-        "baseStat": 36,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/35\/Weapon_Iron_Sting.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ac\/Weapon_Iron_Sting_2nd.png"
@@ -3102,7 +3196,9 @@ export default {
                 "5": 12
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Iron_Sting"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Iron_Sting",
+        "hakushinID": 11407,
+        "id": 11407
     },
     "KagotsurubeIsshin": {
         "name": "Kagotsurube Isshin",
@@ -3113,14 +3209,15 @@ export default {
         "matWeakEnemy": "Specters",
         "baseATK": 42,
         "stat": "atk_",
-        "baseStat": 9,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/96\/Weapon_Kagotsurube_Isshin.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/07\/Weapon_Kagotsurube_Isshin_2nd.png"
         ],
         "passive": "When a Normal, Charged, or Plunging Attack hits an opponent, it will whip up a Hewing Gale, dealing AoE DMG equal to 180% of ATK and increasing ATK by 15% for 8s. This effect can be triggered once every 8s.",
         "refinementData": [],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Kagotsurube_Isshin"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Kagotsurube_Isshin",
+        "hakushinID": 11416,
+        "id": 11416
     },
     "KatsuragikiriNagamasa": {
         "name": "Katsuragikiri Nagamasa",
@@ -3131,7 +3228,6 @@ export default {
         "matWeakEnemy": "Nobushi",
         "baseATK": 42,
         "stat": "enerRech_",
-        "baseStat": 10,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2e\/Weapon_Katsuragikiri_Nagamasa.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/27\/Weapon_Katsuragikiri_Nagamasa_2nd.png"
@@ -3153,7 +3249,9 @@ export default {
                 "5": 5
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Katsuragikiri_Nagamasa"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Katsuragikiri_Nagamasa",
+        "hakushinID": 12414,
+        "id": 12414
     },
     "KingsSquire": {
         "name": "King's Squire",
@@ -3164,7 +3262,6 @@ export default {
         "matWeakEnemy": "Hili.Archers",
         "baseATK": 41,
         "stat": "atk_",
-        "baseStat": 12,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a2\/Weapon_King%27s_Squire.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b8\/Weapon_King%27s_Squire_2nd.png"
@@ -3186,7 +3283,9 @@ export default {
                 "5": 180
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/King%27s_Squire"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/King%27s_Squire",
+        "hakushinID": 15417,
+        "id": 15417
     },
     "KitainCrossSpear": {
         "name": "Kitain Cross Spear",
@@ -3197,7 +3296,6 @@ export default {
         "matWeakEnemy": "T.Hoarders",
         "baseATK": 44,
         "stat": "eleMas",
-        "baseStat": 24,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/13\/Weapon_Kitain_Cross_Spear.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5d\/Weapon_Kitain_Cross_Spear_2nd.png"
@@ -3226,7 +3324,9 @@ export default {
                 "5": 5
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Kitain_Cross_Spear"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Kitain_Cross_Spear",
+        "hakushinID": 13414,
+        "id": 13414
     },
     "LionsRoar": {
         "name": "Lion's Roar",
@@ -3237,7 +3337,6 @@ export default {
         "matWeakEnemy": "T.Hoarders",
         "baseATK": 42,
         "stat": "atk_",
-        "baseStat": 9,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e6\/Weapon_Lion%27s_Roar.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/09\/Weapon_Lion%27s_Roar_2nd.png"
@@ -3252,7 +3351,9 @@ export default {
                 "5": 36
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Lion%27s_Roar"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Lion%27s_Roar",
+        "hakushinID": 11405,
+        "id": 11405
     },
     "LithicBlade": {
         "name": "Lithic Blade",
@@ -3263,7 +3364,6 @@ export default {
         "matWeakEnemy": "Hili.Archers",
         "baseATK": 42,
         "stat": "atk_",
-        "baseStat": 9,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3a\/Weapon_Lithic_Blade.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d7\/Weapon_Lithic_Blade_2nd.png"
@@ -3285,7 +3385,9 @@ export default {
                 "5": 7
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Lithic_Blade"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Lithic_Blade",
+        "hakushinID": 12410,
+        "id": 12410
     },
     "LithicSpear": {
         "name": "Lithic Spear",
@@ -3296,7 +3398,6 @@ export default {
         "matWeakEnemy": "Hili.Archers",
         "baseATK": 44,
         "stat": "atk_",
-        "baseStat": 6,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2a\/Weapon_Lithic_Spear.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c6\/Weapon_Lithic_Spear_2nd.png"
@@ -3318,7 +3419,9 @@ export default {
                 "5": 7
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Lithic_Spear"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Lithic_Spear",
+        "hakushinID": 13406,
+        "id": 13406
     },
     "LuxuriousSeaLord": {
         "name": "Luxurious Sea-Lord",
@@ -3329,7 +3432,6 @@ export default {
         "matWeakEnemy": "Slimes",
         "baseATK": 41,
         "stat": "atk_",
-        "baseStat": 12,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ab\/Weapon_Luxurious_Sea-Lord.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9f\/Weapon_Luxurious_Sea-Lord_2nd.png"
@@ -3351,7 +3453,9 @@ export default {
                 "5": 200
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Luxurious_Sea-Lord"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Luxurious_Sea-Lord",
+        "hakushinID": 12412,
+        "id": 12412
     },
     "MailedFlower": {
         "name": "Mailed Flower",
@@ -3362,7 +3466,6 @@ export default {
         "matWeakEnemy": "Specters",
         "baseATK": 44,
         "stat": "eleMas",
-        "baseStat": 24,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c7\/Weapon_Mailed_Flower.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2a\/Weapon_Mailed_Flower_2nd.png"
@@ -3384,7 +3487,9 @@ export default {
                 "5": 96
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Mailed_Flower"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Mailed_Flower",
+        "hakushinID": 12418,
+        "id": 12418
     },
     "MakhairaAquamarine": {
         "name": "Makhaira Aquamarine",
@@ -3395,7 +3500,6 @@ export default {
         "matWeakEnemy": "T.Hoarders",
         "baseATK": 42,
         "stat": "eleMas",
-        "baseStat": 36,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/90\/Weapon_Makhaira_Aquamarine.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ad\/Weapon_Makhaira_Aquamarine_2nd.png"
@@ -3410,7 +3514,9 @@ export default {
                 "5": 48
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Makhaira_Aquamarine"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Makhaira_Aquamarine",
+        "hakushinID": 12415,
+        "id": 12415
     },
     "MappaMare": {
         "name": "Mappa Mare",
@@ -3421,7 +3527,6 @@ export default {
         "matWeakEnemy": "Slimes",
         "baseATK": 44,
         "stat": "eleMas",
-        "baseStat": 24,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4d\/Weapon_Mappa_Mare.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/ce\/Weapon_Mappa_Mare_2nd.png"
@@ -3436,7 +3541,9 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Mappa_Mare"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Mappa_Mare",
+        "hakushinID": 14407,
+        "id": 14407
     },
     "MissiveWindspear": {
         "name": "Missive Windspear",
@@ -3447,7 +3554,6 @@ export default {
         "matWeakEnemy": "Slimes",
         "baseATK": 42,
         "stat": "atk_",
-        "baseStat": 9,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9b\/Weapon_Missive_Windspear.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e9\/Weapon_Missive_Windspear_2nd.png"
@@ -3469,7 +3575,9 @@ export default {
                 "5": 96
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Missive_Windspear"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Missive_Windspear",
+        "hakushinID": 13419,
+        "id": 13419
     },
     "MitternachtsWaltz": {
         "name": "Mitternachts Waltz",
@@ -3480,7 +3588,6 @@ export default {
         "matWeakEnemy": "T.Hoarders",
         "baseATK": 42,
         "stat": "physical_dmg_",
-        "baseStat": 11.3,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/77\/Weapon_Mitternachts_Waltz.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ac\/Weapon_Mitternachts_Waltz_2nd.png"
@@ -3502,7 +3609,9 @@ export default {
                 "5": 40
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Mitternachts_Waltz"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Mitternachts_Waltz",
+        "hakushinID": 15412,
+        "id": 15412
     },
     "Moonpiercer": {
         "name": "Moonpiercer",
@@ -3513,7 +3622,6 @@ export default {
         "matWeakEnemy": "Fatui",
         "baseATK": 44,
         "stat": "eleMas",
-        "baseStat": 24,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a4\/Weapon_Moonpiercer.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ab\/Weapon_Moonpiercer_2nd.png"
@@ -3528,7 +3636,9 @@ export default {
                 "5": 32
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Moonpiercer"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Moonpiercer",
+        "hakushinID": 13417,
+        "id": 13417
     },
     "MouunsMoon": {
         "name": "Mouun's Moon",
@@ -3539,7 +3649,6 @@ export default {
         "matWeakEnemy": "Specters",
         "baseATK": 44,
         "stat": "atk_",
-        "baseStat": 6,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/42\/Weapon_Mouun%27s_Moon.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e6\/Weapon_Mouun%27s_Moon_2nd.png"
@@ -3561,7 +3670,9 @@ export default {
                 "5": 80
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Mouun%27s_Moon"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Mouun%27s_Moon",
+        "hakushinID": 15416,
+        "id": 15416
     },
     "OathswornEye": {
         "name": "Oathsworn Eye",
@@ -3572,7 +3683,6 @@ export default {
         "matWeakEnemy": "Specters",
         "baseATK": 44,
         "stat": "atk_",
-        "baseStat": 6,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/af\/Weapon_Oathsworn_Eye.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0c\/Weapon_Oathsworn_Eye_2nd.png"
@@ -3587,7 +3697,9 @@ export default {
                 "5": 48
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Oathsworn_Eye"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Oathsworn_Eye",
+        "hakushinID": 14415,
+        "id": 14415
     },
     "PortablePowerSaw": {
         "name": "Portable Power Saw",
@@ -3619,7 +3731,9 @@ export default {
         ],
         "matForgery": "Chalice",
         "matStrongEnemy": "Breacher Primus",
-        "matWeakEnemy": "Meka"
+        "matWeakEnemy": "Meka",
+        "hakushinID": 12427,
+        "id": 12427
     },
     "Predator": {
         "name": "Predator",
@@ -3630,14 +3744,15 @@ export default {
         "matWeakEnemy": "Hili.Archers",
         "baseATK": 42,
         "stat": "atk_",
-        "baseStat": 9,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2e\/Weapon_Predator.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/48\/Weapon_Predator_2nd.png"
         ],
         "passive": "Dealing Cryo DMG to opponents increases this character's Normal and Charged Attack DMG by 10% for 6s. This effect can have a maximum of 2 stacks.\nAdditionally, when Aloy equips Predator, ATK is increased by 66.",
         "refinementData": [],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Predator"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Predator",
+        "hakushinID": 15415,
+        "id": 15415
     },
     "ProspectorsDrill": {
         "name": "Prospector's Drill",
@@ -3669,7 +3784,9 @@ export default {
         ],
         "matForgery": "Chord",
         "matStrongEnemy": "Fatui Operatives",
-        "matWeakEnemy": "Meka"
+        "matWeakEnemy": "Meka",
+        "hakushinID": 13427,
+        "id": 13427
     },
     "PrototypeAmber": {
         "name": "Prototype Amber",
@@ -3680,7 +3797,6 @@ export default {
         "matWeakEnemy": "Hili.Archers",
         "baseATK": 42,
         "stat": "hp_",
-        "baseStat": 9,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2a\/Weapon_Prototype_Amber.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d2\/Weapon_Prototype_Amber_2nd.png"
@@ -3702,7 +3818,9 @@ export default {
                 "5": 6
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Prototype_Amber"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Prototype_Amber",
+        "hakushinID": 14406,
+        "id": 14406
     },
     "PrototypeArchaic": {
         "name": "Prototype Archaic",
@@ -3713,7 +3831,6 @@ export default {
         "matWeakEnemy": "Hilichurls",
         "baseATK": 44,
         "stat": "atk_",
-        "baseStat": 6,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ab\/Weapon_Prototype_Archaic.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/86\/Weapon_Prototype_Archaic_2nd.png"
@@ -3728,7 +3845,9 @@ export default {
                 "5": 480
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Prototype_Archaic"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Prototype_Archaic",
+        "hakushinID": 12406,
+        "id": 12406
     },
     "PrototypeCrescent": {
         "name": "Prototype Crescent",
@@ -3739,7 +3858,6 @@ export default {
         "matWeakEnemy": "T.Hoarders",
         "baseATK": 42,
         "stat": "atk_",
-        "baseStat": 9,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/43\/Weapon_Prototype_Crescent.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7d\/Weapon_Prototype_Crescent_2nd.png"
@@ -3764,7 +3882,9 @@ export default {
                 "5": 72
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Prototype_Crescent"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Prototype_Crescent",
+        "hakushinID": 15406,
+        "id": 15406
     },
     "PrototypeRancour": {
         "name": "Prototype Rancour",
@@ -3775,7 +3895,6 @@ export default {
         "matWeakEnemy": "Fatui",
         "baseATK": 44,
         "stat": "physical_dmg_",
-        "baseStat": 7.5,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ef\/Weapon_Prototype_Rancour.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fa\/Weapon_Prototype_Rancour_2nd.png"
@@ -3790,7 +3909,9 @@ export default {
                 "5": 8
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Prototype_Rancour"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Prototype_Rancour",
+        "hakushinID": 11406,
+        "id": 11406
     },
     "PrototypeStarglitter": {
         "name": "Prototype Starglitter",
@@ -3801,7 +3922,6 @@ export default {
         "matWeakEnemy": "Hilichurls",
         "baseATK": 42,
         "stat": "enerRech_",
-        "baseStat": 10,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7e\/Weapon_Prototype_Starglitter.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/33\/Weapon_Prototype_Starglitter_2nd.png"
@@ -3816,7 +3936,9 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Prototype_Starglitter"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Prototype_Starglitter",
+        "hakushinID": 13402,
+        "id": 13402
     },
     "Rainslasher": {
         "name": "Rainslasher",
@@ -3827,7 +3949,6 @@ export default {
         "matWeakEnemy": "Samachurls",
         "baseATK": 42,
         "stat": "eleMas",
-        "baseStat": 36,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d4\/Weapon_Rainslasher.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0f\/Weapon_Rainslasher_2nd.png"
@@ -3842,7 +3963,9 @@ export default {
                 "5": 36
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Rainslasher"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Rainslasher",
+        "hakushinID": 12405,
+        "id": 12405
     },
     "RangeGauge": {
         "name": "Range Gauge",
@@ -3874,7 +3997,9 @@ export default {
         ],
         "matForgery": "Chord",
         "matStrongEnemy": "Hydro Phantasms",
-        "matWeakEnemy": "Fontemer"
+        "matWeakEnemy": "Fontemer",
+        "hakushinID": 15427,
+        "id": 15427
     },
     "RightfulReward": {
         "name": "Rightful Reward",
@@ -3899,8 +4024,9 @@ export default {
         "matWeakEnemy": "Meka",
         "baseATK": 44,
         "stat": "hp_",
-        "baseStat": 6,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Rightful_Reward"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Rightful_Reward",
+        "hakushinID": 13425,
+        "id": 13425
     },
     "RoyalBow": {
         "name": "Royal Bow",
@@ -3911,7 +4037,6 @@ export default {
         "matWeakEnemy": "Samachurls",
         "baseATK": 42,
         "stat": "atk_",
-        "baseStat": 9,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/99\/Weapon_Royal_Bow.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4e\/Weapon_Royal_Bow_2nd.png"
@@ -3926,7 +4051,9 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Royal_Bow"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Royal_Bow",
+        "hakushinID": 15404,
+        "id": 15404
     },
     "RoyalGreatsword": {
         "name": "Royal Greatsword",
@@ -3937,7 +4064,6 @@ export default {
         "matWeakEnemy": "Slimes",
         "baseATK": 44,
         "stat": "atk_",
-        "baseStat": 6,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bf\/Weapon_Royal_Greatsword.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2b\/Weapon_Royal_Greatsword_2nd.png"
@@ -3952,7 +4078,9 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Royal_Greatsword"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Royal_Greatsword",
+        "hakushinID": 12404,
+        "id": 12404
     },
     "RoyalGrimoire": {
         "name": "Royal Grimoire",
@@ -3963,7 +4091,6 @@ export default {
         "matWeakEnemy": "Fatui",
         "baseATK": 44,
         "stat": "atk_",
-        "baseStat": 6,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/99\/Weapon_Royal_Grimoire.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/69\/Weapon_Royal_Grimoire_2nd.png"
@@ -3978,7 +4105,9 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Royal_Grimoire"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Royal_Grimoire",
+        "hakushinID": 14404,
+        "id": 14404
     },
     "RoyalLongsword": {
         "name": "Royal Longsword",
@@ -3989,7 +4118,6 @@ export default {
         "matWeakEnemy": "Hili.Archers",
         "baseATK": 42,
         "stat": "atk_",
-        "baseStat": 9,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cd\/Weapon_Royal_Longsword.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/84\/Weapon_Royal_Longsword_2nd.png"
@@ -4004,7 +4132,9 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Royal_Longsword"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Royal_Longsword",
+        "hakushinID": 11404,
+        "id": 11404
     },
     "RoyalSpear": {
         "name": "Royal Spear",
@@ -4015,7 +4145,6 @@ export default {
         "matWeakEnemy": "Fatui",
         "baseATK": 44,
         "stat": "atk_",
-        "baseStat": 6,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fd\/Weapon_Royal_Spear.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/92\/Weapon_Royal_Spear_2nd.png"
@@ -4030,7 +4159,9 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Royal_Spear"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Royal_Spear",
+        "hakushinID": 13408,
+        "id": 13408
     },
     "Rust": {
         "name": "Rust",
@@ -4041,7 +4172,6 @@ export default {
         "matWeakEnemy": "Hilichurls",
         "baseATK": 42,
         "stat": "atk_",
-        "baseStat": 9,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1c\/Weapon_Rust.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/66\/Weapon_Rust_2nd.png"
@@ -4056,7 +4186,9 @@ export default {
                 "5": 80
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Rust"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Rust",
+        "hakushinID": 15405,
+        "id": 15405
     },
     "SacrificialBow": {
         "name": "Sacrificial Bow",
@@ -4067,7 +4199,6 @@ export default {
         "matWeakEnemy": "Slimes",
         "baseATK": 44,
         "stat": "enerRech_",
-        "baseStat": 6.7,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ec\/Weapon_Sacrificial_Bow.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b4\/Weapon_Sacrificial_Bow_2nd.png"
@@ -4089,7 +4220,9 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sacrificial_Bow"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sacrificial_Bow",
+        "hakushinID": 15403,
+        "id": 15403
     },
     "SacrificialFragments": {
         "name": "Sacrificial Fragments",
@@ -4100,7 +4233,6 @@ export default {
         "matWeakEnemy": "T.Hoarders",
         "baseATK": 41,
         "stat": "eleMas",
-        "baseStat": 48,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6c\/Weapon_Sacrificial_Fragments.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/94\/Weapon_Sacrificial_Fragments_2nd.png"
@@ -4122,7 +4254,9 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sacrificial_Fragments"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sacrificial_Fragments",
+        "hakushinID": 14403,
+        "id": 14403
     },
     "SacrificialGreatsword": {
         "name": "Sacrificial Greatsword",
@@ -4133,7 +4267,6 @@ export default {
         "matWeakEnemy": "Hili.Archers",
         "baseATK": 44,
         "stat": "enerRech_",
-        "baseStat": 6.7,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/17\/Weapon_Sacrificial_Greatsword.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9f\/Weapon_Sacrificial_Greatsword_2nd.png"
@@ -4155,7 +4288,9 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sacrificial_Greatsword"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sacrificial_Greatsword",
+        "hakushinID": 12403,
+        "id": 12403
     },
     "SacrificialJade": {
         "name": "Sacrificial Jade",
@@ -4207,8 +4342,9 @@ export default {
         "matWeakEnemy": "Samachurls",
         "baseATK": 41,
         "stat": "critRate_",
-        "baseStat": 8,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sacrificial_Jade"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sacrificial_Jade",
+        "hakushinID": 14424,
+        "id": 14424
     },
     "SacrificialSword": {
         "name": "Sacrificial Sword",
@@ -4219,7 +4355,6 @@ export default {
         "matWeakEnemy": "Samachurls",
         "baseATK": 41,
         "stat": "enerRech_",
-        "baseStat": 13.3,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a0\/Weapon_Sacrificial_Sword.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/df\/Weapon_Sacrificial_Sword_2nd.png"
@@ -4241,7 +4376,9 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sacrificial_Sword"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sacrificial_Sword",
+        "hakushinID": 11403,
+        "id": 11403
     },
     "SapwoodBlade": {
         "name": "Sapwood Blade",
@@ -4252,7 +4389,6 @@ export default {
         "matWeakEnemy": "Eremites",
         "baseATK": 44,
         "stat": "enerRech_",
-        "baseStat": 6.7,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/00\/Weapon_Sapwood_Blade.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/29\/Weapon_Sapwood_Blade_2nd.png"
@@ -4277,7 +4413,9 @@ export default {
                 "5": 120
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sapwood_Blade"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sapwood_Blade",
+        "hakushinID": 11417,
+        "id": 11417
     },
     "ScionOfTheBlazingSun": {
         "name": "Scion of the Blazing Sun",
@@ -4309,8 +4447,9 @@ export default {
         "matWeakEnemy": "Fungi",
         "baseATK": 44,
         "stat": "critRate_",
-        "baseStat": 4,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Scion_of_the_Blazing_Sun"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Scion_of_the_Blazing_Sun",
+        "hakushinID": 15424,
+        "id": 15424
     },
     "SerpentSpine": {
         "name": "Serpent Spine",
@@ -4321,7 +4460,6 @@ export default {
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 42,
         "stat": "critRate_",
-        "baseStat": 6,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/88\/Weapon_Serpent_Spine.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/10\/Weapon_Serpent_Spine_2nd.png"
@@ -4363,7 +4501,9 @@ export default {
                 "5": 2
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Serpent_Spine"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Serpent_Spine",
+        "hakushinID": 12409,
+        "id": 12409
     },
     "SnowTombedStarsilver": {
         "name": "Snow-Tombed Starsilver",
@@ -4374,7 +4514,6 @@ export default {
         "matWeakEnemy": "Slimes",
         "baseATK": 44,
         "stat": "physical_dmg_",
-        "baseStat": 7.5,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/49\/Weapon_Snow-Tombed_Starsilver.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a1\/Weapon_Snow-Tombed_Starsilver_2nd.png"
@@ -4403,7 +4542,9 @@ export default {
                 "5": 360
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Snow-Tombed_Starsilver"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Snow-Tombed_Starsilver",
+        "hakushinID": 12411,
+        "id": 12411
     },
     "SolarPearl": {
         "name": "Solar Pearl",
@@ -4414,7 +4555,6 @@ export default {
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 42,
         "stat": "critRate_",
-        "baseStat": 6,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fc\/Weapon_Solar_Pearl.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a2\/Weapon_Solar_Pearl_2nd.png"
@@ -4436,7 +4576,9 @@ export default {
                 "5": 40
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Solar_Pearl"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Solar_Pearl",
+        "hakushinID": 14405,
+        "id": 14405
     },
     "SongOfStillness": {
         "name": "Song of Stillness",
@@ -4461,8 +4603,9 @@ export default {
         "matWeakEnemy": "Hili.Archers",
         "baseATK": 42,
         "stat": "atk_",
-        "baseStat": 9,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Song_of_Stillness"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Song_of_Stillness",
+        "hakushinID": 15425,
+        "id": 15425
     },
     "SwordOfDescension": {
         "name": "Sword of Descension",
@@ -4473,14 +4616,15 @@ export default {
         "matWeakEnemy": "T.Hoarders",
         "baseATK": 39,
         "stat": "atk_",
-        "baseStat": 7.7,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/17\/Weapon_Sword_of_Descension.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a8\/Weapon_Sword_of_Descension_2nd.png"
         ],
         "passive": "Hitting enemies with Normal or Charged Attacks grants a 50% chance to deal 200% ATK as DMG in a small AoE. This effect can only occur once every 10s.\nAdditionally, if the Traveler equips the Sword of Descension, their ATK is increased by 66.",
         "refinementData": [],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sword_of_Descension"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sword_of_Descension",
+        "hakushinID": 11412,
+        "id": 11412
     },
     "SwordOfNarzissenkreuz": {
         "name": "Sword of Narzissenkreuz",
@@ -4505,7 +4649,9 @@ export default {
         ],
         "matForgery": "Chord",
         "matStrongEnemy": "Fatui Operatives",
-        "matWeakEnemy": "Fontemer"
+        "matWeakEnemy": "Fontemer",
+        "hakushinID": 11428,
+        "id": 11428
     },
     "TalkingStick": {
         "name": "Talking Stick",
@@ -4537,8 +4683,9 @@ export default {
         "matWeakEnemy": "Slimes",
         "baseATK": 44,
         "stat": "critRate_",
-        "baseStat": 4,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Talking_Stick"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Talking_Stick",
+        "hakushinID": 12424,
+        "id": 12424
     },
     "TheAlleyFlash": {
         "name": "The Alley Flash",
@@ -4549,7 +4696,6 @@ export default {
         "matWeakEnemy": "Samachurls",
         "baseATK": 45,
         "stat": "eleMas",
-        "baseStat": 12,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/83\/Weapon_The_Alley_Flash.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ac\/Weapon_The_Alley_Flash_2nd.png"
@@ -4564,7 +4710,9 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Alley_Flash"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Alley_Flash",
+        "hakushinID": 11410,
+        "id": 11410
     },
     "TheBell": {
         "name": "The Bell",
@@ -4575,7 +4723,6 @@ export default {
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 42,
         "stat": "hp_",
-        "baseStat": 9,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6e\/Weapon_The_Bell.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3d\/Weapon_The_Bell_2nd.png"
@@ -4597,7 +4744,9 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Bell"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Bell",
+        "hakushinID": 12402,
+        "id": 12402
     },
     "TheBlackSword": {
         "name": "The Black Sword",
@@ -4608,7 +4757,6 @@ export default {
         "matWeakEnemy": "Slimes",
         "baseATK": 42,
         "stat": "critRate_",
-        "baseStat": 6,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cf\/Weapon_The_Black_Sword.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/47\/Weapon_The_Black_Sword_2nd.png"
@@ -4640,7 +4788,9 @@ export default {
                 "5": 100
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Black_Sword"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Black_Sword",
+        "hakushinID": 11409,
+        "id": 11409
     },
     "TheDockhandsAssistant": {
         "name": "The Dockhand's Assistant",
@@ -4672,7 +4822,9 @@ export default {
         ],
         "matForgery": "Dewdrop",
         "matStrongEnemy": "Fatui Operatives",
-        "matWeakEnemy": "Fontemer"
+        "matWeakEnemy": "Fontemer",
+        "hakushinID": 11427,
+        "id": 11427
     },
     "TheFlute": {
         "name": "The Flute",
@@ -4683,7 +4835,6 @@ export default {
         "matWeakEnemy": "Slimes",
         "baseATK": 42,
         "stat": "atk_",
-        "baseStat": 9,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/63\/Weapon_The_Flute.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/37\/Weapon_The_Flute_2nd.png"
@@ -4698,7 +4849,9 @@ export default {
                 "5": 200
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Flute"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Flute",
+        "hakushinID": 11402,
+        "id": 11402
     },
     "TheStringless": {
         "name": "The Stringless",
@@ -4709,7 +4862,6 @@ export default {
         "matWeakEnemy": "Hili.Archers",
         "baseATK": 42,
         "stat": "eleMas",
-        "baseStat": 36,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/71\/Weapon_The_Stringless.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f0\/Weapon_The_Stringless_2nd.png"
@@ -4734,7 +4886,9 @@ export default {
                 "5": 48
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Stringless"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Stringless",
+        "hakushinID": 15402,
+        "id": 15402
     },
     "TheViridescentHunt": {
         "name": "The Viridescent Hunt",
@@ -4745,7 +4899,6 @@ export default {
         "matWeakEnemy": "Hili.Archers",
         "baseATK": 42,
         "stat": "critRate_",
-        "baseStat": 6,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/ff\/Weapon_The_Viridescent_Hunt.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/be\/Weapon_The_Viridescent_Hunt_2nd.png"
@@ -4767,7 +4920,9 @@ export default {
                 "5": 10
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Viridescent_Hunt"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Viridescent_Hunt",
+        "hakushinID": 15409,
+        "id": 15409
     },
     "TheWidsith": {
         "name": "The Widsith",
@@ -4778,7 +4933,6 @@ export default {
         "matWeakEnemy": "Hilichurls",
         "baseATK": 42,
         "stat": "critDMG_",
-        "baseStat": 12,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f0\/Weapon_The_Widsith.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d1\/Weapon_The_Widsith_2nd.png"
@@ -4807,7 +4961,9 @@ export default {
                 "5": 480
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Widsith"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Widsith",
+        "hakushinID": 14402,
+        "id": 14402
     },
     "TidalShadow": {
         "name": "Tidal Shadow",
@@ -4832,8 +4988,9 @@ export default {
         "matWeakEnemy": "Meka",
         "baseATK": 42,
         "stat": "atk_",
-        "baseStat": 9,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Tidal_Shadow"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Tidal_Shadow",
+        "hakushinID": 12425,
+        "id": 12425
     },
     "ToukabouShigure": {
         "name": "Toukabou Shigure",
@@ -4844,7 +5001,6 @@ export default {
         "matWeakEnemy": "Nobushi",
         "baseATK": 42,
         "stat": "eleMas",
-        "baseStat": 36,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b5\/Weapon_Toukabou_Shigure.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/88\/Weapon_Toukabou_Shigure_2nd.png"
@@ -4859,7 +5015,9 @@ export default {
                 "5": 32
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Toukabou_Shigure"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Toukabou_Shigure",
+        "hakushinID": 11422,
+        "id": 11422
     },
     "WanderingEvenstar": {
         "name": "Wandering Evenstar",
@@ -4870,7 +5028,6 @@ export default {
         "matWeakEnemy": "Fungi",
         "baseATK": 42,
         "stat": "eleMas",
-        "baseStat": 36,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/44\/Weapon_Wandering_Evenstar.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/76\/Weapon_Wandering_Evenstar_2nd.png"
@@ -4885,7 +5042,9 @@ export default {
                 "5": 48
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Wandering_Evenstar"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Wandering_Evenstar",
+        "hakushinID": 14416,
+        "id": 14416
     },
     "WavebreakersFin": {
         "name": "Wavebreaker's Fin",
@@ -4896,7 +5055,6 @@ export default {
         "matWeakEnemy": "Nobushi",
         "baseATK": 45,
         "stat": "atk_",
-        "baseStat": 3,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/66\/Weapon_Wavebreaker%27s_Fin.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e4\/Weapon_Wavebreaker%27s_Fin_2nd.png"
@@ -4918,7 +5076,9 @@ export default {
                 "5": 80
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Wavebreaker%27s_Fin"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Wavebreaker%27s_Fin",
+        "hakushinID": 13416,
+        "id": 13416
     },
     "Whiteblind": {
         "name": "Whiteblind",
@@ -4929,7 +5089,6 @@ export default {
         "matWeakEnemy": "T.Hoarders",
         "baseATK": 42,
         "stat": "def_",
-        "baseStat": 11.3,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/04\/Weapon_Whiteblind.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e9\/Weapon_Whiteblind_2nd.png"
@@ -4951,7 +5110,9 @@ export default {
                 "5": 48
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Whiteblind"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Whiteblind",
+        "hakushinID": 12407,
+        "id": 12407
     },
     "WindblumeOde": {
         "name": "Windblume Ode",
@@ -4962,7 +5123,6 @@ export default {
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 42,
         "stat": "eleMas",
-        "baseStat": 36,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/38\/Weapon_Windblume_Ode.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6c\/Weapon_Windblume_Ode_2nd.png"
@@ -4977,7 +5137,9 @@ export default {
                 "5": 32
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Windblume_Ode"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Windblume_Ode",
+        "hakushinID": 15413,
+        "id": 15413
     },
     "WineAndSong": {
         "name": "Wine and Song",
@@ -4988,7 +5150,6 @@ export default {
         "matWeakEnemy": "T.Hoarders",
         "baseATK": 44,
         "stat": "enerRech_",
-        "baseStat": 6.7,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c6\/Weapon_Wine_and_Song.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/57\/Weapon_Wine_and_Song_2nd.png"
@@ -5010,7 +5171,9 @@ export default {
                 "5": 40
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Wine_and_Song"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Wine_and_Song",
+        "hakushinID": 14410,
+        "id": 14410
     },
     "WolfFang": {
         "name": "Wolf-Fang",
@@ -5087,8 +5250,9 @@ export default {
         "matWeakEnemy": "Hilichurls",
         "baseATK": 42,
         "stat": "critRate_",
-        "baseStat": 6,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Wolf-Fang"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Wolf-Fang",
+        "hakushinID": 11424,
+        "id": 11424
     },
     "XiphosMoonlight": {
         "name": "Xiphos' Moonlight",
@@ -5099,7 +5263,6 @@ export default {
         "matWeakEnemy": "Eremites",
         "baseATK": 42,
         "stat": "eleMas",
-        "baseStat": 36,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8a\/Weapon_Xiphos%27_Moonlight.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/40\/Weapon_Xiphos%27_Moonlight_2nd.png"
@@ -5114,7 +5277,9 @@ export default {
                 "5": 0.072
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Xiphos%27_Moonlight"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Xiphos%27_Moonlight",
+        "hakushinID": 11418,
+        "id": 11418
     },
     "BlackTassel": {
         "name": "Black Tassel",
@@ -5125,7 +5290,6 @@ export default {
         "matWeakEnemy": "Hili.Archers",
         "baseATK": 38,
         "stat": "hp_",
-        "baseStat": 10.2,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/43\/Weapon_Black_Tassel.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d8\/Weapon_Black_Tassel_2nd.png"
@@ -5140,7 +5304,9 @@ export default {
                 "5": 80
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Black_Tassel"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Black_Tassel",
+        "hakushinID": 13303,
+        "id": 13303
     },
     "BloodtaintedGreatsword": {
         "name": "Bloodtainted Greatsword",
@@ -5151,7 +5317,6 @@ export default {
         "matWeakEnemy": "Hili.Archers",
         "baseATK": 38,
         "stat": "eleMas",
-        "baseStat": 41,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4a\/Weapon_Bloodtainted_Greatsword.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/10\/Weapon_Bloodtainted_Greatsword_2nd.png"
@@ -5166,7 +5331,9 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Bloodtainted_Greatsword"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Bloodtainted_Greatsword",
+        "hakushinID": 12302,
+        "id": 12302
     },
     "CoolSteel": {
         "name": "Cool Steel",
@@ -5177,7 +5344,6 @@ export default {
         "matWeakEnemy": "Hili.Archers",
         "baseATK": 39,
         "stat": "atk_",
-        "baseStat": 7.7,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9c\/Weapon_Cool_Steel.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/20\/Weapon_Cool_Steel_2nd.png"
@@ -5192,7 +5358,9 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Cool_Steel"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Cool_Steel",
+        "hakushinID": 11301,
+        "id": 11301
     },
     "DarkIronSword": {
         "name": "Dark Iron Sword",
@@ -5203,7 +5371,6 @@ export default {
         "matWeakEnemy": "Hilichurls",
         "baseATK": 39,
         "stat": "eleMas",
-        "baseStat": 31,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3a\/Weapon_Dark_Iron_Sword.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/11\/Weapon_Dark_Iron_Sword_2nd.png"
@@ -5218,7 +5385,9 @@ export default {
                 "5": 40
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Dark_Iron_Sword"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Dark_Iron_Sword",
+        "hakushinID": 11304,
+        "id": 11304
     },
     "DebateClub": {
         "name": "Debate Club",
@@ -5229,7 +5398,6 @@ export default {
         "matWeakEnemy": "Hilichurls",
         "baseATK": 39,
         "stat": "atk_",
-        "baseStat": 7.7,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/74\/Weapon_Debate_Club.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3d\/Weapon_Debate_Club_2nd.png"
@@ -5244,7 +5412,9 @@ export default {
                 "5": 120
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Debate_Club"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Debate_Club",
+        "hakushinID": 12305,
+        "id": 12305
     },
     "EmeraldOrb": {
         "name": "Emerald Orb",
@@ -5255,7 +5425,6 @@ export default {
         "matWeakEnemy": "T.Hoarders",
         "baseATK": 40,
         "stat": "eleMas",
-        "baseStat": 20,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7c\/Weapon_Emerald_Orb.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/18\/Weapon_Emerald_Orb_2nd.png"
@@ -5270,7 +5439,9 @@ export default {
                 "5": 40
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Emerald_Orb"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Emerald_Orb",
+        "hakushinID": 14304,
+        "id": 14304
     },
     "FerrousShadow": {
         "name": "Ferrous Shadow",
@@ -5281,7 +5452,6 @@ export default {
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 39,
         "stat": "hp_",
-        "baseStat": 7.7,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e9\/Weapon_Ferrous_Shadow.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0b\/Weapon_Ferrous_Shadow_2nd.png"
@@ -5303,7 +5473,9 @@ export default {
                 "5": 50
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Ferrous_Shadow"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Ferrous_Shadow",
+        "hakushinID": 12301,
+        "id": 12301
     },
     "FilletBlade": {
         "name": "Fillet Blade",
@@ -5314,7 +5486,6 @@ export default {
         "matWeakEnemy": "T.Hoarders",
         "baseATK": 39,
         "stat": "atk_",
-        "baseStat": 7.7,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f7\/Weapon_Fillet_Blade.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/14\/Weapon_Fillet_Blade_2nd.png"
@@ -5336,7 +5507,9 @@ export default {
                 "5": 11
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Fillet_Blade"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Fillet_Blade",
+        "hakushinID": 11305,
+        "id": 11305
     },
     "Halberd": {
         "name": "Halberd",
@@ -5347,7 +5520,6 @@ export default {
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 40,
         "stat": "atk_",
-        "baseStat": 5.1,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/41\/Weapon_Halberd.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a6\/Weapon_Halberd_2nd.png"
@@ -5362,7 +5534,9 @@ export default {
                 "5": 320
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Halberd"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Halberd",
+        "hakushinID": 13302,
+        "id": 13302
     },
     "HarbingerOfDawn": {
         "name": "Harbinger of Dawn",
@@ -5373,7 +5547,6 @@ export default {
         "matWeakEnemy": "Slimes",
         "baseATK": 39,
         "stat": "critDMG_",
-        "baseStat": 10.2,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/23\/Weapon_Harbinger_of_Dawn.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fd\/Weapon_Harbinger_of_Dawn_2nd.png"
@@ -5398,7 +5571,9 @@ export default {
                 "5": 28
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Harbinger_of_Dawn"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Harbinger_of_Dawn",
+        "hakushinID": 11302,
+        "id": 11302
     },
     "MagicGuide": {
         "name": "Magic Guide",
@@ -5409,7 +5584,6 @@ export default {
         "matWeakEnemy": "Slimes",
         "baseATK": 38,
         "stat": "eleMas",
-        "baseStat": 41,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/39\/Weapon_Magic_Guide.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4c\/Weapon_Magic_Guide_2nd.png"
@@ -5424,7 +5598,9 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Magic_Guide"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Magic_Guide",
+        "hakushinID": 14301,
+        "id": 14301
     },
     "Messenger": {
         "name": "Messenger",
@@ -5435,7 +5611,6 @@ export default {
         "matWeakEnemy": "T.Hoarders",
         "baseATK": 40,
         "stat": "critDMG_",
-        "baseStat": 6.8,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/38\/Weapon_Messenger.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/db\/Weapon_Messenger_2nd.png"
@@ -5450,7 +5625,9 @@ export default {
                 "5": 200
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Messenger"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Messenger",
+        "hakushinID": 15305,
+        "id": 15305
     },
     "OtherworldlyStory": {
         "name": "Otherworldly Story",
@@ -5461,7 +5638,6 @@ export default {
         "matWeakEnemy": "Hilichurls",
         "baseATK": 39,
         "stat": "enerRech_",
-        "baseStat": 8.5,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/11\/Weapon_Otherworldly_Story.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a8\/Weapon_Otherworldly_Story_2nd.png"
@@ -5476,7 +5652,9 @@ export default {
                 "5": 2
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Otherworldly_Story"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Otherworldly_Story",
+        "hakushinID": 14303,
+        "id": 14303
     },
     "RavenBow": {
         "name": "Raven Bow",
@@ -5487,7 +5665,6 @@ export default {
         "matWeakEnemy": "Hili.Archers",
         "baseATK": 40,
         "stat": "eleMas",
-        "baseStat": 20,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d0\/Weapon_Raven_Bow.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/15\/Weapon_Raven_Bow_2nd.png"
@@ -5502,7 +5679,9 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Raven_Bow"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Raven_Bow",
+        "hakushinID": 15301,
+        "id": 15301
     },
     "RecurveBow": {
         "name": "Recurve Bow",
@@ -5513,7 +5692,6 @@ export default {
         "matWeakEnemy": "Samachurls",
         "baseATK": 38,
         "stat": "hp_",
-        "baseStat": 10.2,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b5\/Weapon_Recurve_Bow.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/82\/Weapon_Recurve_Bow_2nd.png"
@@ -5528,7 +5706,9 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Recurve_Bow"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Recurve_Bow",
+        "hakushinID": 15303,
+        "id": 15303
     },
     "SharpshootersOath": {
         "name": "Sharpshooter's Oath",
@@ -5539,7 +5719,6 @@ export default {
         "matWeakEnemy": "Slimes",
         "baseATK": 39,
         "stat": "critDMG_",
-        "baseStat": 10.2,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/52\/Weapon_Sharpshooter%27s_Oath.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/19\/Weapon_Sharpshooter%27s_Oath_2nd.png"
@@ -5554,7 +5733,9 @@ export default {
                 "5": 48
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sharpshooter%27s_Oath"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sharpshooter%27s_Oath",
+        "hakushinID": 15302,
+        "id": 15302
     },
     "SkyriderGreatsword": {
         "name": "Skyrider Greatsword",
@@ -5565,7 +5746,6 @@ export default {
         "matWeakEnemy": "T.Hoarders",
         "baseATK": 39,
         "stat": "physical_dmg_",
-        "baseStat": 9.6,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6e\/Weapon_Skyrider_Greatsword.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9f\/Weapon_Skyrider_Greatsword_2nd.png"
@@ -5580,7 +5760,9 @@ export default {
                 "5": 10
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyrider_Greatsword"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyrider_Greatsword",
+        "hakushinID": 12306,
+        "id": 12306
     },
     "SkyriderSword": {
         "name": "Skyrider Sword",
@@ -5591,7 +5773,6 @@ export default {
         "matWeakEnemy": "Fatui",
         "baseATK": 38,
         "stat": "enerRech_",
-        "baseStat": 11.3,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/34\/Weapon_Skyrider_Sword.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0a\/Weapon_Skyrider_Sword_2nd.png"
@@ -5606,7 +5787,9 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyrider_Sword"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyrider_Sword",
+        "hakushinID": 11306,
+        "id": 11306
     },
     "Slingshot": {
         "name": "Slingshot",
@@ -5617,7 +5800,6 @@ export default {
         "matWeakEnemy": "Hilichurls",
         "baseATK": 38,
         "stat": "critRate_",
-        "baseStat": 6.8,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/ca\/Weapon_Slingshot.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/60\/Weapon_Slingshot_2nd.png"
@@ -5632,7 +5814,9 @@ export default {
                 "5": 60
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Slingshot"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Slingshot",
+        "hakushinID": 15304,
+        "id": 15304
     },
     "ThrillingTalesOfDragonSlayers": {
         "name": "Thrilling Tales of Dragon Slayers",
@@ -5643,7 +5827,6 @@ export default {
         "matWeakEnemy": "Samachurls",
         "baseATK": 39,
         "stat": "hp_",
-        "baseStat": 7.7,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/19\/Weapon_Thrilling_Tales_of_Dragon_Slayers.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9e\/Weapon_Thrilling_Tales_of_Dragon_Slayers_2nd.png"
@@ -5658,7 +5841,9 @@ export default {
                 "5": 48
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Thrilling_Tales_of_Dragon_Slayers"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Thrilling_Tales_of_Dragon_Slayers",
+        "hakushinID": 14302,
+        "id": 14302
     },
     "TravelersHandySword": {
         "name": "Traveler's Handy Sword",
@@ -5669,7 +5854,6 @@ export default {
         "matWeakEnemy": "Samachurls",
         "baseATK": 40,
         "stat": "def_",
-        "baseStat": 6.4,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c9\/Weapon_Traveler%27s_Handy_Sword.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/df\/Weapon_Traveler%27s_Handy_Sword_2nd.png"
@@ -5684,7 +5868,9 @@ export default {
                 "5": 2
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Traveler%27s_Handy_Sword"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Traveler%27s_Handy_Sword",
+        "hakushinID": 11303,
+        "id": 11303
     },
     "TwinNephrite": {
         "name": "Twin Nephrite",
@@ -5695,7 +5881,6 @@ export default {
         "matWeakEnemy": "Fatui",
         "baseATK": 40,
         "stat": "critRate_",
-        "baseStat": 3.4,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e3\/Weapon_Twin_Nephrite.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c4\/Weapon_Twin_Nephrite_2nd.png"
@@ -5710,7 +5895,9 @@ export default {
                 "5": 20
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Twin_Nephrite"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Twin_Nephrite",
+        "hakushinID": 14305,
+        "id": 14305
     },
     "WhiteIronGreatsword": {
         "name": "White Iron Greatsword",
@@ -5721,7 +5908,6 @@ export default {
         "matWeakEnemy": "Slimes",
         "baseATK": 39,
         "stat": "def_",
-        "baseStat": 9.6,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/56\/Weapon_White_Iron_Greatsword.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/eb\/Weapon_White_Iron_Greatsword_2nd.png"
@@ -5736,7 +5922,9 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/White_Iron_Greatsword"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/White_Iron_Greatsword",
+        "hakushinID": 12303,
+        "id": 12303
     },
     "WhiteTassel": {
         "name": "White Tassel",
@@ -5747,7 +5935,6 @@ export default {
         "matWeakEnemy": "Fatui",
         "baseATK": 39,
         "stat": "critRate_",
-        "baseStat": 5.1,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1f\/Weapon_White_Tassel.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/05\/Weapon_White_Tassel_2nd.png"
@@ -5762,7 +5949,9 @@ export default {
                 "5": 48
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/White_Tassel"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/White_Tassel",
+        "hakushinID": 13301,
+        "id": 13301
     },
     "IronPoint": {
         "name": "Iron Point",
@@ -5773,14 +5962,15 @@ export default {
         "matWeakEnemy": "Samachurls",
         "baseATK": 33,
         "stat": "",
-        "baseStat": 0,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/25\/Weapon_Iron_Point.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/64\/Weapon_Iron_Point_2nd.png"
         ],
         "passive": "None",
         "refinementData": [],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Iron_Point"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Iron_Point",
+        "hakushinID": 13201,
+        "id": 13201
     },
     "OldMercsPal": {
         "name": "Old Merc's Pal",
@@ -5791,14 +5981,15 @@ export default {
         "matWeakEnemy": "Slimes",
         "baseATK": 33,
         "stat": "",
-        "baseStat": 0,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0b\/Weapon_Old_Merc%27s_Pal.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/80\/Weapon_Old_Merc%27s_Pal_2nd.png"
         ],
         "passive": "None",
         "refinementData": [],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Old_Merc%27s_Pal"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Old_Merc%27s_Pal",
+        "hakushinID": 12201,
+        "id": 12201
     },
     "PocketGrimoire": {
         "name": "Pocket Grimoire",
@@ -5809,14 +6000,15 @@ export default {
         "matWeakEnemy": "Hilichurls",
         "baseATK": 33,
         "stat": "",
-        "baseStat": 0,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/16\/Weapon_Pocket_Grimoire.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fa\/Weapon_Pocket_Grimoire_2nd.png"
         ],
         "passive": "None",
         "refinementData": [],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Pocket_Grimoire"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Pocket_Grimoire",
+        "hakushinID": 14201,
+        "id": 14201
     },
     "SeasonedHuntersBow": {
         "name": "Seasoned Hunter's Bow",
@@ -5827,14 +6019,15 @@ export default {
         "matWeakEnemy": "T.Hoarders",
         "baseATK": 33,
         "stat": "",
-        "baseStat": 0,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/82\/Weapon_Seasoned_Hunter%27s_Bow.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8b\/Weapon_Seasoned_Hunter%27s_Bow_2nd.png"
         ],
         "passive": "None",
         "refinementData": [],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Seasoned_Hunter%27s_Bow"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Seasoned_Hunter%27s_Bow",
+        "hakushinID": 15201,
+        "id": 15201
     },
     "SilverSword": {
         "name": "Silver Sword",
@@ -5845,14 +6038,15 @@ export default {
         "matWeakEnemy": "Hili.Archers",
         "baseATK": 33,
         "stat": "",
-        "baseStat": 0,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/32\/Weapon_Silver_Sword.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bd\/Weapon_Silver_Sword_2nd.png"
         ],
         "passive": "None",
         "refinementData": [],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Silver_Sword"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Silver_Sword",
+        "hakushinID": 11201,
+        "id": 11201
     },
     "ApprenticesNotes": {
         "name": "Apprentice's Notes",
@@ -5863,14 +6057,15 @@ export default {
         "matWeakEnemy": "Hilichurls",
         "baseATK": 23,
         "stat": "",
-        "baseStat": 0,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cf\/Weapon_Apprentice%27s_Notes.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bc\/Weapon_Apprentice%27s_Notes_2nd.png"
         ],
         "passive": "None",
         "refinementData": [],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Apprentice%27s_Notes"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Apprentice%27s_Notes",
+        "hakushinID": 14101,
+        "id": 14101
     },
     "BeginnersProtector": {
         "name": "Beginner's Protector",
@@ -5881,14 +6076,15 @@ export default {
         "matWeakEnemy": "Samachurls",
         "baseATK": 23,
         "stat": "",
-        "baseStat": 0,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fc\/Weapon_Beginner%27s_Protector.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Weapon_Beginner%27s_Protector_2nd.png"
         ],
         "passive": "None",
         "refinementData": [],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Beginner%27s_Protector"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Beginner%27s_Protector",
+        "hakushinID": 13101,
+        "id": 13101
     },
     "DullBlade": {
         "name": "Dull Blade",
@@ -5899,14 +6095,15 @@ export default {
         "matWeakEnemy": "Hili.Archers",
         "baseATK": 23,
         "stat": "",
-        "baseStat": 0,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2f\/Weapon_Dull_Blade.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/ba\/Weapon_Dull_Blade_2nd.png"
         ],
         "passive": "None",
         "refinementData": [],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Dull_Blade"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Dull_Blade",
+        "hakushinID": 11101,
+        "id": 11101
     },
     "HuntersBow": {
         "name": "Hunter's Bow",
@@ -5917,14 +6114,15 @@ export default {
         "matWeakEnemy": "T.Hoarders",
         "baseATK": 23,
         "stat": "",
-        "baseStat": 0,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/44\/Weapon_Hunter%27s_Bow.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/31\/Weapon_Hunter%27s_Bow_2nd.png"
         ],
         "passive": "None",
         "refinementData": [],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Hunter%27s_Bow"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Hunter%27s_Bow",
+        "hakushinID": 15101,
+        "id": 15101
     },
     "WasterGreatsword": {
         "name": "Waster Greatsword",
@@ -5935,13 +6133,14 @@ export default {
         "matWeakEnemy": "Slimes",
         "baseATK": 23,
         "stat": "",
-        "baseStat": 0,
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4c\/Weapon_Waster_Greatsword.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bd\/Weapon_Waster_Greatsword_2nd.png"
         ],
         "passive": "None",
         "refinementData": [],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Waster_Greatsword"
+        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Waster_Greatsword",
+        "hakushinID": 12101,
+        "id": 12101
     }
 };

@@ -1,11 +1,30 @@
 export default {
+    "GlacierAndSnowfield": {
+        "name": "Glacier and Snowfield",
+        "maxRarity": 0,
+        "bonus2": "Cryo DMG Bonus +15%",
+        "bonus4": "Increases Superconduct DMG by 100%. Increases Melt DMG by 15%. Using an Elemental Burst increases Cryo DMG Bonus by 30% for 10s.",
+        "hakushinID": 15004,
+        "id": 15004,
+        "deletedContent": true
+    },
+    "PrayersToTheFirmament": {
+        "name": "Prayers to the Firmament",
+        "maxRarity": 0,
+        "bonus1": "Affected by Anemo for 40% less time.",
+        "hakushinID": 15012,
+        "id": 15012,
+        "deletedContent": true
+    },
     "Initiate": {
         "maxRarity": 1,
         "name": "Initiate",
         "flower": "Initiate's Flower",
         "plume": "Initiate's Feather",
-        "flowerImg": "",
-        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a0\/Item_Initiate%27s_Feather.png"
+        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/27\/Item_Initiate%27s_Flower.png",
+        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a0\/Item_Initiate%27s_Feather.png",
+        "hakushinId": 0,
+        "id": 10000
     },
     "Adventurer": {
         "maxRarity": 3,
@@ -15,7 +34,7 @@ export default {
         "sands": "Adventurer's Pocket Watch",
         "goblet": "Adventurer's Golden Goblet",
         "circlet": "Adventurer's Bandana",
-        "bonus2": "Max HP increased by 1,000.",
+        "bonus2": "Max HP increased by 1000.",
         "bonus2code": [
             "stat",
             [
@@ -28,7 +47,9 @@ export default {
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/30\/Item_Adventurer%27s_Tail_Feather.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f6\/Item_Adventurer%27s_Pocket_Watch.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ae\/Item_Adventurer%27s_Golden_Goblet.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/43\/Item_Adventurer%27s_Bandana.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/43\/Item_Adventurer%27s_Bandana.png",
+        "hakushinID": 10010,
+        "id": 10010
     },
     "LuckyDog": {
         "maxRarity": 3,
@@ -51,7 +72,9 @@ export default {
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ac\/Item_Lucky_Dog%27s_Eagle_Feather.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/50\/Item_Lucky_Dog%27s_Hourglass.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c1\/Item_Lucky_Dog%27s_Goblet.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6a\/Item_Lucky_Dog%27s_Silver_Circlet.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6a\/Item_Lucky_Dog%27s_Silver_Circlet.png",
+        "hakushinID": 10011,
+        "id": 10011
     },
     "TravelingDoctor": {
         "maxRarity": 3,
@@ -74,7 +97,9 @@ export default {
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/01\/Item_Traveling_Doctor%27s_Owl_Feather.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b7\/Item_Traveling_Doctor%27s_Pocket_Watch.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/25\/Item_Traveling_Doctor%27s_Medicine_Pot.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/18\/Item_Traveling_Doctor%27s_Handkerchief.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/18\/Item_Traveling_Doctor%27s_Handkerchief.png",
+        "hakushinID": 10013,
+        "id": 10013
     },
     "ResolutionOfSojourner": {
         "maxRarity": 4,
@@ -84,7 +109,7 @@ export default {
         "sands": "Sundial of the Sojourner",
         "goblet": "Goblet of the Sojourner",
         "circlet": "Crown of Parting",
-        "bonus2": "ATK +18%",
+        "bonus2": "ATK +18%.",
         "bonus2code": [
             "stat",
             [
@@ -105,155 +130,9 @@ export default {
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f0\/Item_Feather_of_Homecoming.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/93\/Item_Sundial_of_the_Sojourner.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/06\/Item_Goblet_of_the_Sojourner.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/25\/Item_Crown_of_Parting.png"
-    },
-    "TinyMiracle": {
-        "maxRarity": 4,
-        "name": "Tiny Miracle",
-        "flower": "Tiny Miracle's Flower",
-        "plume": "Tiny Miracle's Feather",
-        "sands": "Tiny Miracle's Hourglass",
-        "goblet": "Tiny Miracle's Goblet",
-        "circlet": "Tiny Miracle's Earrings",
-        "bonus2": "All Elemental RES increased by 20%.",
-        "bonus2code": [
-            "stat",
-            [
-                ["anemo_res_","cryo_res_","dendro_res_","electro_res_","hydro_res_","geo_res_","pyro_res_"],
-                20
-            ]
-        ],
-        "bonus4": "Incoming Elemental DMG increases corresponding Elemental RES by 30% for 10s. Can only occur once every 10s.",
-        "bonus4code": [
-            "proc",
-            [
-                "stat",
-                [
-                    ["anemo_res_","cryo_res_","dendro_res_","electro_res_","hydro_res_","geo_res_","pyro_res_"],
-                    30
-                ]
-            ],"After taking Elemental DMG (10s)"
-        ],
-        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/68\/Item_Tiny_Miracle%27s_Flower.png",
-        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/89\/Item_Tiny_Miracle%27s_Feather.png",
-        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/14\/Item_Tiny_Miracle%27s_Hourglass.png",
-        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/52\/Item_Tiny_Miracle%27s_Goblet.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/73\/Item_Tiny_Miracle%27s_Earrings.png"
-    },
-    "Berserker": {
-        "maxRarity": 4,
-        "name": "Berserker",
-        "flower": "Berserker's Rose",
-        "plume": "Berserker's Indigo Feather",
-        "sands": "Berserker's Timepiece",
-        "goblet": "Berserker's Bone Goblet",
-        "circlet": "Berserker's Battle Mask",
-        "bonus2": "CRIT Rate +12%",
-        "bonus2code": [
-            "stat",
-            [
-                "critRate_",
-                12
-            ]
-        ],
-        "bonus4": "When HP is below 70%, CRIT Rate increases by an additional 24%.",
-        "bonus4code": [
-            "proc",
-            [
-                "stat",
-                [
-                    "critRate_",
-                    24
-                ]
-            ],"While HP < 70%"
-        ],
-        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c1\/Item_Berserker%27s_Rose.png",
-        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/10\/Item_Berserker%27s_Indigo_Feather.png",
-        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5c\/Item_Berserker%27s_Timepiece.png",
-        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/da\/Item_Berserker%27s_Bone_Goblet.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5e\/Item_Berserker%27s_Battle_Mask.png"
-    },
-    "Instructor": {
-        "maxRarity": 4,
-        "name": "Instructor",
-        "flower": "Instructor's Brooch",
-        "plume": "Instructor's Feather Accessory",
-        "sands": "Instructor's Pocket Watch",
-        "goblet": "Instructor's Tea Cup",
-        "circlet": "Instructor's Cap",
-        "bonus2": "Increases Elemental Mastery by 80.",
-        "bonus2code": [
-            "stat",
-            [
-                "eleMas",
-                80
-            ]
-        ],
-        "bonus4": "Upon triggering an Elemental Reaction, increases all party members' Elemental Mastery by 120 for 8s.",
-        "bonus4code": [
-            "proc",
-            [
-                "pstat",
-                [
-                    "eleMas",
-                    120
-                ]
-            ],"After triggering Elemental Reaction (8s)"
-        ],
-        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/35\/Item_Instructor%27s_Brooch.png",
-        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/af\/Item_Instructor%27s_Feather_Accessory.png",
-        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/41\/Item_Instructor%27s_Pocket_Watch.png",
-        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ad\/Item_Instructor%27s_Tea_Cup.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/da\/Item_Instructor%27s_Cap.png"
-    },
-    "TheExile": {
-        "maxRarity": 4,
-        "name": "The Exile",
-        "flower": "Exile's Flower",
-        "plume": "Exile's Feather",
-        "sands": "Exile's Pocket Watch",
-        "goblet": "Exile's Goblet",
-        "circlet": "Exile's Circlet",
-        "bonus2": "Energy Recharge +20%",
-        "bonus2code": [
-            "stat",
-            [
-                "enerRech_",
-                20
-            ]
-        ],
-        "bonus4": "Using an Elemental Burst regenerates 2 Energy for all party members (excluding the wearer) every 2s for 6s. This effect cannot stack.",
-        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f9\/Item_Exile%27s_Flower.png",
-        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4d\/Item_Exile%27s_Feather.png",
-        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e4\/Item_Exile%27s_Pocket_Watch.png",
-        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6a\/Item_Exile%27s_Goblet.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b3\/Item_Exile%27s_Circlet.png"
-    },
-    "DefendersWill": {
-        "maxRarity": 4,
-        "name": "Defender's Will",
-        "flower": "Guardian's Flower",
-        "plume": "Guardian's Sigil",
-        "sands": "Guardian's Clock",
-        "goblet": "Guardian's Vessel",
-        "circlet": "Guardian's Band",
-        "bonus2": "DEF +30%",
-        "bonus2code": [
-            "stat",
-            [
-                "def_",
-                30
-            ]
-        ],
-        "bonus4": "For each different element present in your own party, the wearer's Elemental RES to that corresponding element is increased by 30%.",
-        "bonus4code": [
-            "custom"
-        ],
-        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/63\/Item_Guardian%27s_Flower.png",
-        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/ff\/Item_Guardian%27s_Sigil.png",
-        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/51\/Item_Guardian%27s_Clock.png",
-        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2b\/Item_Guardian%27s_Vessel.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c4\/Item_Guardian%27s_Band.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/25\/Item_Crown_of_Parting.png",
+        "hakushinID": 10001,
+        "id": 10001
     },
     "BraveHeart": {
         "maxRarity": 4,
@@ -280,13 +159,132 @@ export default {
                     "dmg_",
                     30
                 ]
-            ],"Enemy HP > 50%"
+            ],
+            "Enemy HP > 50%"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9e\/Item_Medal_of_the_Brave.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2f\/Item_Prospect_of_the_Brave.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ed\/Item_Fortitude_of_the_Brave.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/49\/Item_Outset_of_the_Brave.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b3\/Item_Crown_of_the_Brave.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b3\/Item_Crown_of_the_Brave.png",
+        "hakushinID": 10002,
+        "id": 10002
+    },
+    "DefendersWill": {
+        "maxRarity": 4,
+        "name": "Defender's Will",
+        "flower": "Guardian's Flower",
+        "plume": "Guardian's Sigil",
+        "sands": "Guardian's Clock",
+        "goblet": "Guardian's Vessel",
+        "circlet": "Guardian's Band",
+        "bonus2": "DEF +30%",
+        "bonus2code": [
+            "stat",
+            [
+                "def_",
+                30
+            ]
+        ],
+        "bonus4": "For each different element present in your own party, the wearer's Elemental RES to that corresponding element is increased by 30%.",
+        "bonus4code": [
+            "custom"
+        ],
+        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/63\/Item_Guardian%27s_Flower.png",
+        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/ff\/Item_Guardian%27s_Sigil.png",
+        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/51\/Item_Guardian%27s_Clock.png",
+        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2b\/Item_Guardian%27s_Vessel.png",
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c4\/Item_Guardian%27s_Band.png",
+        "hakushinID": 10003,
+        "id": 10003
+    },
+    "TinyMiracle": {
+        "maxRarity": 4,
+        "name": "Tiny Miracle",
+        "flower": "Tiny Miracle's Flower",
+        "plume": "Tiny Miracle's Feather",
+        "sands": "Tiny Miracle's Hourglass",
+        "goblet": "Tiny Miracle's Goblet",
+        "circlet": "Tiny Miracle's Earrings",
+        "bonus2": "All Elemental RES increased by 20%.",
+        "bonus2code": [
+            "stat",
+            [
+                [
+                    "anemo_res_",
+                    "cryo_res_",
+                    "dendro_res_",
+                    "electro_res_",
+                    "hydro_res_",
+                    "geo_res_",
+                    "pyro_res_"
+                ],
+                20
+            ]
+        ],
+        "bonus4": "Incoming elemental DMG increases corresponding Elemental RES by 30% for 10s. Can only occur once every 10s.",
+        "bonus4code": [
+            "proc",
+            [
+                "stat",
+                [
+                    [
+                        "anemo_res_",
+                        "cryo_res_",
+                        "dendro_res_",
+                        "electro_res_",
+                        "hydro_res_",
+                        "geo_res_",
+                        "pyro_res_"
+                    ],
+                    30
+                ]
+            ],
+            "After taking Elemental DMG (10s)"
+        ],
+        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/68\/Item_Tiny_Miracle%27s_Flower.png",
+        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/89\/Item_Tiny_Miracle%27s_Feather.png",
+        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/14\/Item_Tiny_Miracle%27s_Hourglass.png",
+        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/52\/Item_Tiny_Miracle%27s_Goblet.png",
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/73\/Item_Tiny_Miracle%27s_Earrings.png",
+        "hakushinID": 10004,
+        "id": 10004
+    },
+    "Berserker": {
+        "maxRarity": 4,
+        "name": "Berserker",
+        "flower": "Berserker's Rose",
+        "plume": "Berserker's Indigo Feather",
+        "sands": "Berserker's Timepiece",
+        "goblet": "Berserker's Bone Goblet",
+        "circlet": "Berserker's Battle Mask",
+        "bonus2": "CRIT Rate +12%",
+        "bonus2code": [
+            "stat",
+            [
+                "critRate_",
+                12
+            ]
+        ],
+        "bonus4": "When HP is below 70%, CRIT Rate increases by an additional 24%.",
+        "bonus4code": [
+            "proc",
+            [
+                "stat",
+                [
+                    "critRate_",
+                    24
+                ]
+            ],
+            "While HP < 70%"
+        ],
+        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c1\/Item_Berserker%27s_Rose.png",
+        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/10\/Item_Berserker%27s_Indigo_Feather.png",
+        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5c\/Item_Berserker%27s_Timepiece.png",
+        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/da\/Item_Berserker%27s_Bone_Goblet.png",
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5e\/Item_Berserker%27s_Battle_Mask.png",
+        "hakushinID": 10005,
+        "id": 10005
     },
     "MartialArtist": {
         "maxRarity": 4,
@@ -319,13 +317,52 @@ export default {
                     ],
                     25
                 ]
-            ],"After Elemental Skill (8s)"
+            ],
+            "After Elemental Skill (8s)"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a7\/Item_Martial_Artist%27s_Red_Flower.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6e\/Item_Martial_Artist%27s_Feather_Accessory.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/06\/Item_Martial_Artist%27s_Water_Hourglass.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8d\/Item_Martial_Artist%27s_Wine_Cup.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4c\/Item_Martial_Artist%27s_Bandana.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4c\/Item_Martial_Artist%27s_Bandana.png",
+        "hakushinID": 10006,
+        "id": 10006
+    },
+    "Instructor": {
+        "maxRarity": 4,
+        "name": "Instructor",
+        "flower": "Instructor's Brooch",
+        "plume": "Instructor's Feather Accessory",
+        "sands": "Instructor's Pocket Watch",
+        "goblet": "Instructor's Tea Cup",
+        "circlet": "Instructor's Cap",
+        "bonus2": "Increases Elemental Mastery by 80.",
+        "bonus2code": [
+            "stat",
+            [
+                "eleMas",
+                80
+            ]
+        ],
+        "bonus4": "Upon triggering an Elemental Reaction, increases all party members' Elemental Mastery by 120 for 8s.",
+        "bonus4code": [
+            "proc",
+            [
+                "pstat",
+                [
+                    "eleMas",
+                    120
+                ]
+            ],
+            "After triggering Elemental Reaction (8s)"
+        ],
+        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/35\/Item_Instructor%27s_Brooch.png",
+        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/af\/Item_Instructor%27s_Feather_Accessory.png",
+        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/41\/Item_Instructor%27s_Pocket_Watch.png",
+        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ad\/Item_Instructor%27s_Tea_Cup.png",
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/da\/Item_Instructor%27s_Cap.png",
+        "hakushinID": 10007,
+        "id": 10007
     },
     "Gambler": {
         "maxRarity": 4,
@@ -343,12 +380,39 @@ export default {
                 20
             ]
         ],
-        "bonus4": "Defeating an opponent has 100% chance to remove Elemental Skill CD. Can only occur once every 15s.",
+        "bonus4": "Defeating an opponent has a 100% chance to remove Elemental Skill CD. Can only occur once every 15s.",
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/39\/Item_Gambler%27s_Brooch.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bf\/Item_Gambler%27s_Feather_Accessory.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f7\/Item_Gambler%27s_Pocket_Watch.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fd\/Item_Gambler%27s_Dice_Cup.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/43\/Item_Gambler%27s_Earrings.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/43\/Item_Gambler%27s_Earrings.png",
+        "hakushinID": 10008,
+        "id": 10008
+    },
+    "TheExile": {
+        "maxRarity": 4,
+        "name": "The Exile",
+        "flower": "Exile's Flower",
+        "plume": "Exile's Feather",
+        "sands": "Exile's Pocket Watch",
+        "goblet": "Exile's Goblet",
+        "circlet": "Exile's Circlet",
+        "bonus2": "Energy Recharge +20%",
+        "bonus2code": [
+            "stat",
+            [
+                "enerRech_",
+                20
+            ]
+        ],
+        "bonus4": "Using an Elemental Burst regenerates 2 Energy for all party members (excluding the wearer) every 2s for 6s. This effect cannot stack.",
+        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f9\/Item_Exile%27s_Flower.png",
+        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4d\/Item_Exile%27s_Feather.png",
+        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e4\/Item_Exile%27s_Pocket_Watch.png",
+        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6a\/Item_Exile%27s_Goblet.png",
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b3\/Item_Exile%27s_Circlet.png",
+        "hakushinID": 10009,
+        "id": 10009
     },
     "Scholar": {
         "maxRarity": 4,
@@ -371,198 +435,45 @@ export default {
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/52\/Item_Scholar%27s_Quill_Pen.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/01\/Item_Scholar%27s_Clock.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/66\/Item_Scholar%27s_Ink_Cup.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/93\/Item_Scholar%27s_Lens.png"
-    },
-    "PrayersForWisdom": {
-        "maxRarity": 4,
-        "name": "Prayers for Wisdom",
-        "circlet": "Tiara of Thunder",
-        "bonus1": "Affected by Electro for 40% less time.",
-        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f6\/Item_Tiara_of_Thunder.png"
-    },
-    "PrayersForDestiny": {
-        "maxRarity": 4,
-        "name": "Prayers for Destiny",
-        "circlet": "Tiara of Torrents",
-        "bonus1": "Affected by Hydro for 40% less time.",
-        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0a\/Item_Tiara_of_Torrents.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/93\/Item_Scholar%27s_Lens.png",
+        "hakushinID": 10012,
+        "id": 10012
     },
     "PrayersForIllumination": {
         "maxRarity": 4,
         "name": "Prayers for Illumination",
         "circlet": "Tiara of Flame",
         "bonus1": "Affected by Pyro for 40% less time.",
-        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/18\/Item_Tiara_of_Flame.png"
+        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/18\/Item_Tiara_of_Flame.png",
+        "hakushinID": 15009,
+        "id": 15009
+    },
+    "PrayersForDestiny": {
+        "maxRarity": 4,
+        "name": "Prayers for Destiny",
+        "circlet": "Tiara of Torrents",
+        "bonus1": "Affected by Hydro for 40% less time.",
+        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0a\/Item_Tiara_of_Torrents.png",
+        "hakushinID": 15010,
+        "id": 15010
+    },
+    "PrayersForWisdom": {
+        "maxRarity": 4,
+        "name": "Prayers for Wisdom",
+        "circlet": "Tiara of Thunder",
+        "bonus1": "Affected by Electro for 40% less time.",
+        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f6\/Item_Tiara_of_Thunder.png",
+        "hakushinID": 15011,
+        "id": 15011
     },
     "PrayersToSpringtime": {
         "maxRarity": 4,
         "name": "Prayers to Springtime",
         "circlet": "Tiara of Frost",
         "bonus1": "Affected by Cryo for 40% less time.",
-        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/14\/Item_Tiara_of_Frost.png"
-    },
-    "ArchaicPetra": {
-        "maxRarity": 5,
-        "name": "Archaic Petra",
-        "flower": "Flower of Creviced Cliff",
-        "plume": "Feather of Jagged Peaks",
-        "sands": "Sundial of Enduring Jade",
-        "goblet": "Goblet of Chiseled Crag",
-        "circlet": "Mask of Solitude Basalt",
-        "bonus2": "Geo DMG Bonus +15%",
-        "bonus2code": [
-            "stat",
-            [
-                "geo_dmg_",
-                15
-            ]
-        ],
-        "bonus4": "Upon obtaining an Elemental Shard created through a Crystallize Reaction, all party members gain 35% DMG Bonus for that particular element for 10s. Only one form of Elemental DMG Bonus can be gained in this manner at any one time.",
-        "bonus4code": [
-            "proc",
-            [
-                "stat",
-                [
-                    [
-                        "cryo_dmg_",
-                        "hydro_dmg_",
-                        "electro_dmg_",
-                        "pyro_dmg_"
-                    ],
-                    35
-                ]
-            ],"After obtaining Elemental Shard (10s)"
-        ],
-        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9f\/Item_Flower_of_Creviced_Cliff.png",
-        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a5\/Item_Feather_of_Jagged_Peaks.png",
-        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1d\/Item_Sundial_of_Enduring_Jade.png",
-        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/02\/Item_Goblet_of_Chiseled_Crag.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/09\/Item_Mask_of_Solitude_Basalt.png"
-    },
-    "RetracingBolide": {
-        "maxRarity": 5,
-        "name": "Retracing Bolide",
-        "flower": "Summer Night's Bloom",
-        "plume": "Summer Night's Finale",
-        "sands": "Summer Night's Moment",
-        "goblet": "Summer Night's Waterballoon",
-        "circlet": "Summer Night's Mask",
-        "bonus2": "Increases Shield Strength by 35%.",
-        "bonus2code": [
-            "stat",
-            [
-                "shield_",
-                35
-            ]
-        ],
-        "bonus4": "While protected by a shield, gain an additional 40% Normal and Charged Attack DMG.",
-        "bonus4code": [
-            "proc",
-            [
-                "stat",
-                [
-                    [
-                        "normal_dmg_",
-                        "charged_dmg_"
-                    ],
-                    40
-                ]
-            ],"While shielded"
-        ],
-        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a6\/Item_Summer_Night%27s_Bloom.png",
-        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ec\/Item_Summer_Night%27s_Finale.png",
-        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/34\/Item_Summer_Night%27s_Moment.png",
-        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/10\/Item_Summer_Night%27s_Waterballoon.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8a\/Item_Summer_Night%27s_Mask.png"
-    },
-    "Lavawalker": {
-        "maxRarity": 5,
-        "name": "Lavawalker",
-        "flower": "Lavawalker's Resolution",
-        "plume": "Lavawalker's Salvation",
-        "sands": "Lavawalker's Torment",
-        "goblet": "Lavawalker's Epiphany",
-        "circlet": "Lavawalker's Wisdom",
-        "bonus2": "Pyro RES increased by 40%.",
-        "bonus2code": [
-            "stat",
-            [
-                "pyro_res_",
-                40
-            ]
-        ],
-        "bonus4": "Increases DMG against opponents affected by Pyro by 35%.",
-        "bonus4code": [
-            "proc",
-            [
-                "stat",
-                [
-                    "dmg_",
-                    35
-                ]
-            ],"Against Pyro-affected enemy"
-        ],
-        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b5\/Item_Lavawalker%27s_Resolution.png",
-        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0a\/Item_Lavawalker%27s_Salvation.png",
-        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3f\/Item_Lavawalker%27s_Torment.png",
-        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1b\/Item_Lavawalker%27s_Epiphany.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/63\/Item_Lavawalker%27s_Wisdom.png"
-    },
-    "CrimsonWitchOfFlames": {
-        "maxRarity": 5,
-        "name": "Crimson Witch of Flames",
-        "flower": "Witch's Flower of Blaze",
-        "plume": "Witch's Ever-Burning Plume",
-        "sands": "Witch's End Time",
-        "goblet": "Witch's Heart Flames",
-        "circlet": "Witch's Scorching Hat",
-        "bonus2": "Pyro DMG Bonus +15%",
-        "bonus2code": [
-            "stat",
-            [
-                "pyro_dmg_",
-                15
-            ]
-        ],
-        "bonus4": "Increases Overloaded and Burning, and Burgeon DMG by 40%. Increases Vaporize and Melt DMG by 15%. Using Elemental Skill increases the 2-Piece Set Bonus by 50% of its starting value for 10s. Max 3 stacks.",
-        "bonus4code": [
-            [
-                "stat",
-                [
-                    [
-                        "overloaded_dmg_",
-                        "burning_dmg_"
-                    ],
-                    40
-                ]
-            ],
-            [
-                "stat",
-                [
-                    [
-                        "vaporize_dmg_",
-                        "melt_dmg_"
-                    ],
-                    15
-                ]
-            ],
-            [
-                "proc",
-                [
-                  "stat",
-                  [
-                      "pyro_dmg_",
-                      7.5
-                  ]
-                ],"After Elemental Skill (10s)",
-                3
-            ]
-        ],
-        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0f\/Item_Witch%27s_Flower_of_Blaze.png",
-        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b3\/Item_Witch%27s_Ever-Burning_Plume.png",
-        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/14\/Item_Witch%27s_End_Time.png",
-        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/ba\/Item_Witch%27s_Heart_Flames.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ea\/Item_Witch%27s_Scorching_Hat.png"
+        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/14\/Item_Tiara_of_Frost.png",
+        "hakushinID": 15013,
+        "id": 15013
     },
     "BlizzardStrayer": {
         "maxRarity": 5,
@@ -589,14 +500,17 @@ export default {
                     "critRate_",
                     20
                 ]
-            ],"Against Cryo-affected (1) or Frozen (2) enemy",
+            ],
+            "Against Cryo-affected (1) or Frozen (2) enemy",
             2
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/69\/Item_Snowswept_Memory.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d6\/Item_Icebreaker%27s_Resolve.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/58\/Item_Frozen_Homeland%27s_Demise.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6a\/Item_Frost-Weaved_Dignity.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/df\/Item_Broken_Rime%27s_Echo.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/df\/Item_Broken_Rime%27s_Echo.png",
+        "hakushinID": 14001,
+        "id": 14001
     },
     "Thundersoother": {
         "maxRarity": 5,
@@ -623,13 +537,52 @@ export default {
                     "dmg_",
                     35
                 ]
-            ],"Against Electro-affected enemy"
+            ],
+            "Against Electro-affected enemy"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ef\/Item_Thundersoother%27s_Heart.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cb\/Item_Thundersoother%27s_Plume.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b7\/Item_Hour_of_Soothing_Thunder.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/87\/Item_Thundersoother%27s_Goblet.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/14\/Item_Thundersoother%27s_Diadem.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/14\/Item_Thundersoother%27s_Diadem.png",
+        "hakushinID": 14002,
+        "id": 14002
+    },
+    "Lavawalker": {
+        "maxRarity": 5,
+        "name": "Lavawalker",
+        "flower": "Lavawalker's Resolution",
+        "plume": "Lavawalker's Salvation",
+        "sands": "Lavawalker's Torment",
+        "goblet": "Lavawalker's Epiphany",
+        "circlet": "Lavawalker's Wisdom",
+        "bonus2": "Pyro RES increased by 40%.",
+        "bonus2code": [
+            "stat",
+            [
+                "pyro_res_",
+                40
+            ]
+        ],
+        "bonus4": "Increases DMG against opponents affected by Pyro by 35%.",
+        "bonus4code": [
+            "proc",
+            [
+                "stat",
+                [
+                    "dmg_",
+                    35
+                ]
+            ],
+            "Against Pyro-affected enemy"
+        ],
+        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b5\/Item_Lavawalker%27s_Resolution.png",
+        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0a\/Item_Lavawalker%27s_Salvation.png",
+        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3f\/Item_Lavawalker%27s_Torment.png",
+        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1b\/Item_Lavawalker%27s_Epiphany.png",
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/63\/Item_Lavawalker%27s_Wisdom.png",
+        "hakushinID": 14003,
+        "id": 14003
     },
     "MaidenBeloved": {
         "maxRarity": 5,
@@ -656,13 +609,16 @@ export default {
                     "inHeal_",
                     20
                 ]
-            ],"After Elemental Skill or Burst (10s)"
+            ],
+            "After Elemental Skill or Burst (10s)"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dc\/Item_Maiden%27s_Distant_Love.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7b\/Item_Maiden%27s_Heart-Stricken_Infatuation.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/93\/Item_Maiden%27s_Passing_Youth.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/23\/Item_Maiden%27s_Fleeting_Leisure.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/82\/Item_Maiden%27s_Fading_Beauty.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/82\/Item_Maiden%27s_Fading_Beauty.png",
+        "hakushinID": 14004,
+        "id": 14004
     },
     "GladiatorsFinale": {
         "maxRarity": 5,
@@ -689,13 +645,16 @@ export default {
                     "normal_dmg_",
                     35
                 ]
-            ],"While wielding Sword, Claymore, or Polearm"
+            ],
+            "While wielding Sword, Claymore, or Polearm"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b1\/Item_Gladiator%27s_Nostalgia.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/94\/Item_Gladiator%27s_Destiny.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0c\/Item_Gladiator%27s_Longing.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6d\/Item_Gladiator%27s_Intoxication.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9b\/Item_Gladiator%27s_Triumphus.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9b\/Item_Gladiator%27s_Triumphus.png",
+        "hakushinID": 15001,
+        "id": 15001
     },
     "ViridescentVenerer": {
         "maxRarity": 5,
@@ -735,14 +694,17 @@ export default {
                         ],
                         -40
                     ]
-                ],"After Swirl (10s)"
+                ],
+                "After Swirl (10s)"
             ]
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/90\/Item_In_Remembrance_of_Viridescent_Fields.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/41\/Item_Viridescent_Arrow_Feather.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8f\/Item_Viridescent_Venerer%27s_Determination.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/ff\/Item_Viridescent_Venerer%27s_Vessel.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8b\/Item_Viridescent_Venerer%27s_Diadem.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8b\/Item_Viridescent_Venerer%27s_Diadem.png",
+        "hakushinID": 15002,
+        "id": 15002
     },
     "WanderersTroupe": {
         "maxRarity": 5,
@@ -760,7 +722,7 @@ export default {
                 80
             ]
         ],
-        "bonus4": "Increases Charged Attack DMG by 35% if the character uses a Catalyst or Bow.",
+        "bonus4": "Increases Charged Attack DMG by 35% if the character uses a Catalyst or a Bow.",
         "bonus4code": [
             "proc",
             [
@@ -769,13 +731,16 @@ export default {
                     "charged_dmg_",
                     35
                 ]
-            ],"While wielding Catalyst or Bow"
+            ],
+            "While wielding Catalyst or Bow"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ad\/Item_Troupe%27s_Dawnlight.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4e\/Item_Bard%27s_Arrow_Feather.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9e\/Item_Concert%27s_Final_Hour.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/06\/Item_Wanderer%27s_String-Kettle.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/81\/Item_Conductor%27s_Top_Hat.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/81\/Item_Conductor%27s_Top_Hat.png",
+        "hakushinID": 15003,
+        "id": 15003
     },
     "ThunderingFury": {
         "maxRarity": 5,
@@ -819,7 +784,68 @@ export default {
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e9\/Item_Survivor_of_Catastrophe.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/94\/Item_Hourglass_of_Thunder.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cd\/Item_Omen_of_Thunderstorm.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a5\/Item_Thunder_Summoner%27s_Crown.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a5\/Item_Thunder_Summoner%27s_Crown.png",
+        "hakushinID": 15005,
+        "id": 15005
+    },
+    "CrimsonWitchOfFlames": {
+        "maxRarity": 5,
+        "name": "Crimson Witch of Flames",
+        "flower": "Witch's Flower of Blaze",
+        "plume": "Witch's Ever-Burning Plume",
+        "sands": "Witch's End Time",
+        "goblet": "Witch's Heart Flames",
+        "circlet": "Witch's Scorching Hat",
+        "bonus2": "Pyro DMG Bonus +15%",
+        "bonus2code": [
+            "stat",
+            [
+                "pyro_dmg_",
+                15
+            ]
+        ],
+        "bonus4": "Increases Overloaded, Burning, and Burgeon DMG by 40%. Increases Vaporize and Melt DMG by 15%. Using Elemental Skill increases the 2-Piece Set Bonus by 50% of its starting value for 10s. Max 3 stacks.",
+        "bonus4code": [
+            [
+                "stat",
+                [
+                    [
+                        "overloaded_dmg_",
+                        "burning_dmg_"
+                    ],
+                    40
+                ]
+            ],
+            [
+                "stat",
+                [
+                    [
+                        "vaporize_dmg_",
+                        "melt_dmg_"
+                    ],
+                    15
+                ]
+            ],
+            [
+                "proc",
+                [
+                    "stat",
+                    [
+                        "pyro_dmg_",
+                        7.5
+                    ]
+                ],
+                "After Elemental Skill (10s)",
+                3
+            ]
+        ],
+        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0f\/Item_Witch%27s_Flower_of_Blaze.png",
+        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b3\/Item_Witch%27s_Ever-Burning_Plume.png",
+        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/14\/Item_Witch%27s_End_Time.png",
+        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/ba\/Item_Witch%27s_Heart_Flames.png",
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ea\/Item_Witch%27s_Scorching_Hat.png",
+        "hakushinID": 15006,
+        "id": 15006
     },
     "NoblesseOblige": {
         "maxRarity": 5,
@@ -846,13 +872,16 @@ export default {
                     "atk_",
                     20
                 ]
-            ],"After Elemental Burst (12s)"
+            ],
+            "After Elemental Burst (12s)"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/71\/Item_Royal_Flora.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ee\/Item_Royal_Plume.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1a\/Item_Royal_Pocket_Watch.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9c\/Item_Royal_Silver_Urn.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/eb\/Item_Royal_Masque.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/eb\/Item_Royal_Masque.png",
+        "hakushinID": 15007,
+        "id": 15007
     },
     "BloodstainedChivalry": {
         "maxRarity": 5,
@@ -862,7 +891,7 @@ export default {
         "sands": "Bloodstained Final Hour",
         "goblet": "Bloodstained Chevalier's Goblet",
         "circlet": "Bloodstained Iron Mask",
-        "bonus2": "Physical DMG Bonus +25%",
+        "bonus2": "Physical DMG +25%",
         "bonus2code": [
             "stat",
             [
@@ -870,32 +899,115 @@ export default {
                 25
             ]
         ],
-        "bonus4": "After defeating an opponent, increases Charged Attack DMG by 50%, and reduces its Stamina cost to 0 for 10s. Also triggers with wild animals such as boars, squirrels and frogs.",
+        "bonus4": "After defeating an opponent, increases Charged Attack DMG by 50%, and reduces its Stamina cost to 0 for 10s.",
         "bonus4code": [
             "proc",
             [
-              [
-                "stat",
                 [
-                    "charged_dmg_",
-                    50
-                ]
-              ],
-              [
-                "sstat",
+                    "stat",
+                    [
+                        "charged_dmg_",
+                        50
+                    ]
+                ],
                 [
-                    "stamina_cost_",
-                    -100,
-                    "Charged Attack"
+                    "sstat",
+                    [
+                        "stamina_cost_",
+                        -100,
+                        "Charged Attack"
+                    ]
                 ]
-              ]
-            ],"After enemy defeated (10s)"
+            ],
+            "After enemy defeated (10s)"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5b\/Item_Bloodstained_Flower_of_Iron.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5c\/Item_Bloodstained_Black_Plume.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8c\/Item_Bloodstained_Final_Hour.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4f\/Item_Bloodstained_Chevalier%27s_Goblet.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0c\/Item_Bloodstained_Iron_Mask.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0c\/Item_Bloodstained_Iron_Mask.png",
+        "hakushinID": 15008,
+        "id": 15008
+    },
+    "ArchaicPetra": {
+        "maxRarity": 5,
+        "name": "Archaic Petra",
+        "flower": "Flower of Creviced Cliff",
+        "plume": "Feather of Jagged Peaks",
+        "sands": "Sundial of Enduring Jade",
+        "goblet": "Goblet of Chiseled Crag",
+        "circlet": "Mask of Solitude Basalt",
+        "bonus2": "Gain a 15% Geo DMG Bonus.",
+        "bonus2code": [
+            "stat",
+            [
+                "geo_dmg_",
+                15
+            ]
+        ],
+        "bonus4": "Upon obtaining an Elemental Shard created through a Crystallize Reaction, all party members gain a 35% DMG Bonus for that particular element for 10s. Only one form of Elemental DMG Bonus can be gained in this manner at any one time.",
+        "bonus4code": [
+            "proc",
+            [
+                "stat",
+                [
+                    [
+                        "cryo_dmg_",
+                        "hydro_dmg_",
+                        "electro_dmg_",
+                        "pyro_dmg_"
+                    ],
+                    35
+                ]
+            ],
+            "After obtaining Elemental Shard (10s)"
+        ],
+        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9f\/Item_Flower_of_Creviced_Cliff.png",
+        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a5\/Item_Feather_of_Jagged_Peaks.png",
+        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1d\/Item_Sundial_of_Enduring_Jade.png",
+        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/02\/Item_Goblet_of_Chiseled_Crag.png",
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/09\/Item_Mask_of_Solitude_Basalt.png",
+        "hakushinID": 15014,
+        "id": 15014
+    },
+    "RetracingBolide": {
+        "maxRarity": 5,
+        "name": "Retracing Bolide",
+        "flower": "Summer Night's Bloom",
+        "plume": "Summer Night's Finale",
+        "sands": "Summer Night's Moment",
+        "goblet": "Summer Night's Waterballoon",
+        "circlet": "Summer Night's Mask",
+        "bonus2": "Increases Shield Strength by 35%.",
+        "bonus2code": [
+            "stat",
+            [
+                "shield_",
+                35
+            ]
+        ],
+        "bonus4": "While protected by a shield, gain an additional 40% Normal and Charged Attack DMG.",
+        "bonus4code": [
+            "proc",
+            [
+                "stat",
+                [
+                    [
+                        "normal_dmg_",
+                        "charged_dmg_"
+                    ],
+                    40
+                ]
+            ],
+            "While shielded"
+        ],
+        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a6\/Item_Summer_Night%27s_Bloom.png",
+        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ec\/Item_Summer_Night%27s_Finale.png",
+        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/34\/Item_Summer_Night%27s_Moment.png",
+        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/10\/Item_Summer_Night%27s_Waterballoon.png",
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8a\/Item_Summer_Night%27s_Mask.png",
+        "hakushinID": 15015,
+        "id": 15015
     },
     "HeartOfDepth": {
         "maxRarity": 5,
@@ -913,7 +1025,7 @@ export default {
                 15
             ]
         ],
-        "bonus4": "After using an Elemental Skill, increases Normal Attack and Charged Attack DMG by 30% for 15s.",
+        "bonus4": "After using Elemental Skill, increases Normal Attack and Charged Attack DMG by 30% for 15s.",
         "bonus4code": [
             "proc",
             [
@@ -925,13 +1037,16 @@ export default {
                     ],
                     30
                 ]
-            ],"After Elemental Skill (15s)"
+            ],
+            "After Elemental Skill (15s)"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/40\/Item_Gilded_Corsage.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/92\/Item_Gust_of_Nostalgia.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/83\/Item_Copper_Compass.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9c\/Item_Goblet_of_Thundering_Deep.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a6\/Item_Wine-Stained_Tricorne.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a6\/Item_Wine-Stained_Tricorne.png",
+        "hakushinID": 15016,
+        "id": 15016
     },
     "TenacityOfTheMillelith": {
         "maxRarity": 5,
@@ -953,20 +1068,20 @@ export default {
         "bonus4code": [
             "proc",
             [
-              [
-                  "pstat",
-                  [
-                      "atk_",
-                      20
-                  ]
-              ],
-              [
-                  "pstat",
-                  [
-                      "shield_",
-                      30
-                  ]
-              ]
+                [
+                    "pstat",
+                    [
+                        "atk_",
+                        20
+                    ]
+                ],
+                [
+                    "pstat",
+                    [
+                        "shield_",
+                        30
+                    ]
+                ]
             ],
             "After Elemental Skill Hit (3s)"
         ],
@@ -974,7 +1089,9 @@ export default {
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/86\/Item_Ceremonial_War-Plume.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/92\/Item_Orichalceous_Time-Dial.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f4\/Item_Noble%27s_Pledging_Vessel.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b9\/Item_General%27s_Ancient_Helm.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b9\/Item_General%27s_Ancient_Helm.png",
+        "hakushinID": 15017,
+        "id": 15017
     },
     "PaleFlame": {
         "maxRarity": 5,
@@ -984,7 +1101,7 @@ export default {
         "sands": "Moment of Cessation",
         "goblet": "Surpassing Cup",
         "circlet": "Mocking Mask",
-        "bonus2": "Physical DMG Bonus +25%",
+        "bonus2": "Physical DMG is increased by 25%.",
         "bonus2code": [
             "stat",
             [
@@ -995,20 +1112,38 @@ export default {
         "bonus4": "When an Elemental Skill hits an opponent, ATK is increased by 9% for 7s. This effect stacks up to 2 times and can be triggered once every 0.3s. Once 2 stacks are reached, the 2-set effect is increased by 100%.",
         "bonus4code": [
             [
-              "proc",
-              [
-                ["stat",["atk_",9]],
-                ["stat",["physical_dmg_",["stacks",0,25]]]
-              ],
-              "After Elemental Skill hit (7s)",
-              2
+                "proc",
+                [
+                    [
+                        "stat",
+                        [
+                            "atk_",
+                            9
+                        ]
+                    ],
+                    [
+                        "stat",
+                        [
+                            "physical_dmg_",
+                            [
+                                "stacks",
+                                0,
+                                25
+                            ]
+                        ]
+                    ]
+                ],
+                "After Elemental Skill hit (7s)",
+                2
             ]
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e7\/Item_Stainless_Bloom.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e8\/Item_Wise_Doctor%27s_Pinion.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/85\/Item_Moment_of_Cessation.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4b\/Item_Surpassing_Cup.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/23\/Item_Mocking_Mask.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/23\/Item_Mocking_Mask.png",
+        "hakushinID": 15018,
+        "id": 15018
     },
     "ShimenawasReminiscence": {
         "maxRarity": 5,
@@ -1018,7 +1153,7 @@ export default {
         "sands": "Morning Dew's Moment",
         "goblet": "Hopeful Heart",
         "circlet": "Capricious Visage",
-        "bonus2": "ATK +18%",
+        "bonus2": "ATK +18%.",
         "bonus2code": [
             "stat",
             [
@@ -1039,13 +1174,16 @@ export default {
                     ],
                     50
                 ]
-            ],"After Elemental Skill (10s)"
+            ],
+            "After Elemental Skill (10s)"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c2\/Item_Entangling_Bloom.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/41\/Item_Shaft_of_Remembrance.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/92\/Item_Morning_Dew%27s_Moment.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/86\/Item_Hopeful_Heart.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8f\/Item_Capricious_Visage.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8f\/Item_Capricious_Visage.png",
+        "hakushinID": 15019,
+        "id": 15019
     },
     "EmblemOfSeveredFate": {
         "maxRarity": 5,
@@ -1068,14 +1206,21 @@ export default {
             "stat",
             [
                 "burst_dmg_",
-                ["stat%", 0.25, "enerRech_", 75]
+                [
+                    "stat%",
+                    0.25,
+                    "enerRech_",
+                    75
+                ]
             ]
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/53\/Item_Magnificent_Tsuba.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d6\/Item_Sundered_Feather.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e5\/Item_Storm_Cage.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/00\/Item_Scarlet_Vessel.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/04\/Item_Ornate_Kabuto.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/04\/Item_Ornate_Kabuto.png",
+        "hakushinID": 15020,
+        "id": 15020
     },
     "HuskOfOpulentDreams": {
         "maxRarity": 5,
@@ -1105,14 +1250,17 @@ export default {
                     ],
                     6
                 ]
-            ],"While off-field for 3s, or after Geo hit (6s): \"Curiosity\"",
+            ],
+            "While off-field for 3s, or after Geo hit (6s): \"Curiosity\"",
             4
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2b\/Item_Bloom_Times.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2d\/Item_Plume_of_Luxury.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4f\/Item_Song_of_Life.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/63\/Item_Calabash_of_Awakening.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/84\/Item_Skeletal_Hat.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/84\/Item_Skeletal_Hat.png",
+        "hakushinID": 15021,
+        "id": 15021
     },
     "OceanHuedClam": {
         "maxRarity": 5,
@@ -1130,12 +1278,14 @@ export default {
                 15
             ]
         ],
-        "bonus4": "When the character equipping this artifact set heals a character in the party, a Sea-Dyed Foam will appear for 3 seconds, accumulating the amount of HP recovered from healing (including overflow healing).At the end of the duration, the Sea-Dyed Foam will explode, dealing DMG to nearby opponents based on 90% of the accumulated healing.(This DMG is calculated similarly to Reactions such as Electro-Charged, and Superconduct, but it is not affected by Elemental Mastery, Character Levels, or Reaction DMG Bonuses).Only one Sea-Dyed Foam can be produced every 3.5 seconds.Each Sea-Dyed Foam can accumulate up to 30,000 HP (including overflow healing).There can be no more than one Sea-Dyed Foam active at any given time.This effect can still be triggered even when the character who is using this artifact set is not on the field.",
+        "bonus4": "When the character equipping this artifact set heals a character in the party, a Sea-Dyed Foam will appear for 3 seconds, accumulating the amount of HP recovered from healing (including overflow healing). At the end of the duration, the Sea-Dyed Foam will explode, dealing DMG to nearby opponents based on 90% of the accumulated healing. (This DMG is calculated similarly to Reactions such as Electro-Charged, and Superconduct, but is not affected by Elemental Mastery, Character Levels, or Reaction DMG Bonuses). Only one Sea-Dyed Foam can be produced every 3.5 seconds. Each Sea-Dyed Foam can accumulate up to 30,000 HP (including overflow healing). There can be no more than one Sea-Dyed Foam active at any given time. This effect can still be triggered even when the character who is using this artifact set is not on the field.",
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/58\/Item_Sea-Dyed_Blossom.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/33\/Item_Deep_Palace%27s_Plume.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ed\/Item_Cowry_of_Parting.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fc\/Item_Pearl_Cage.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/60\/Item_Crown_of_Watatsumi.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/60\/Item_Crown_of_Watatsumi.png",
+        "hakushinID": 15022,
+        "id": 15022
     },
     "VermillionHereafter": {
         "maxRarity": 5,
@@ -1153,7 +1303,7 @@ export default {
                 18
             ]
         ],
-        "bonus4": "After using an Elemental Burst, this character will gain the Nascent Light effect, increasing their ATK by 8% for 16s. When the character's HP decreases, their ATK will further increase by 10%. This increase can occur this way maximum of 4 times. This effect can be triggered once every 0.8s. Nascent Light will be dispelled when the character leaves the field. If an Elemental Burst is used again during the duration of Nascent Light, the original Nascent Light will be dispelled.",
+        "bonus4": "After using an Elemental Burst, this character will gain the Nascent Light effect, increasing their ATK by 8% for 16s. When the character's HP decreases, their ATK will further increase by 10%. This further increase can occur this way a maximum of 4 times. This effect can be triggered once every 0.8s. Nascent Light will be dispelled when the character leaves the field. If an Elemental Burst is used again during the duration of Nascent Light, the original Nascent Light will be dispelled.",
         "bonus4code": [
             [
                 "proc",
@@ -1163,7 +1313,8 @@ export default {
                         "atk_",
                         8
                     ]
-                ],"After Elemental Burst (16s): \"Nascent Light\""
+                ],
+                "After Elemental Burst (16s): \"Nascent Light\""
             ],
             [
                 "proc",
@@ -1173,7 +1324,8 @@ export default {
                         "atk_",
                         10
                     ]
-                ],"When HP decreases during \"Nascent Light\"",
+                ],
+                "When HP decreases during \"Nascent Light\"",
                 4
             ]
         ],
@@ -1181,7 +1333,9 @@ export default {
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a7\/Item_Feather_of_Nascent_Light.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/12\/Item_Solar_Relic.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/77\/Item_Moment_of_the_Pact.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0e\/Item_Thundering_Poise.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0e\/Item_Thundering_Poise.png",
+        "hakushinID": 15023,
+        "id": 15023
     },
     "EchoesOfAnOffering": {
         "maxRarity": 5,
@@ -1203,21 +1357,33 @@ export default {
         "bonus4code": [
             "proc",
             [
-                "editmv",["Normal Attack",
-                            [
-                                "1-Hit DMG (%)",
-                                "2-Hit DMG (%)",
-                                "3-Hit DMG (%)",
-                                "4-Hit DMG (%)",
-                                "5-Hit DMG (%)"
-                            ],"+base",["stat%",0.7,"atk"]]
-            ],"After Normal Attack hit (36% chance): \"Valley Rite\""
+                "editmv",
+                [
+                    "Normal Attack",
+                    [
+                        "1-Hit DMG (%)",
+                        "2-Hit DMG (%)",
+                        "3-Hit DMG (%)",
+                        "4-Hit DMG (%)",
+                        "5-Hit DMG (%)"
+                    ],
+                    "+base",
+                    [
+                        "stat%",
+                        0.7,
+                        "atk"
+                    ]
+                ]
+            ],
+            "After Normal Attack hit (36% chance): \"Valley Rite\""
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/64\/Item_Soulscent_Bloom.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/97\/Item_Jade_Leaf.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/03\/Item_Symbol_of_Felicitation.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/89\/Item_Chalice_of_the_Font.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/53\/Item_Flowing_Rings.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/53\/Item_Flowing_Rings.png",
+        "hakushinID": 15024,
+        "id": 15024
     },
     "DeepwoodMemories": {
         "maxRarity": 5,
@@ -1227,7 +1393,7 @@ export default {
         "sands": "A Time of Insight",
         "goblet": "Lamp of the Lost",
         "circlet": "Laurel Coronet",
-        "bonus2": "Dendro DMG Bonus +15%",
+        "bonus2": "Dendro DMG Bonus +15%.",
         "bonus2code": [
             "stat",
             [
@@ -1244,13 +1410,16 @@ export default {
                     "dendro_res_",
                     -30
                 ]
-            ],"After Elemental Skill or Burst hit (8s)"
+            ],
+            "After Elemental Skill or Burst hit (8s)"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ab\/Item_Labyrinth_Wayfarer.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0f\/Item_Scholar_of_Vines.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7c\/Item_A_Time_of_Insight.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cd\/Item_Lamp_of_the_Lost.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b8\/Item_Laurel_Coronet.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b8\/Item_Laurel_Coronet.png",
+        "hakushinID": 15025,
+        "id": 15025
     },
     "GildedDreams": {
         "maxRarity": 5,
@@ -1278,7 +1447,8 @@ export default {
                         "atk_",
                         14
                     ]
-                ],"After Elemental Reaction (8s): Per same-element teammate",
+                ],
+                "After Elemental Reaction (8s): Per same-element teammate",
                 3
             ],
             [
@@ -1289,7 +1459,8 @@ export default {
                         "eleMas",
                         50
                     ]
-                ],"After Elemental Reaction (8s): Per different-element teammate",
+                ],
+                "After Elemental Reaction (8s): Per different-element teammate",
                 3
             ]
         ],
@@ -1297,7 +1468,9 @@ export default {
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1b\/Item_Feather_of_Judgment.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/92\/Item_The_Sunken_Years.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fa\/Item_Honeyed_Final_Feast.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2b\/Item_Shadow_of_the_Sand_King.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2b\/Item_Shadow_of_the_Sand_King.png",
+        "hakushinID": 15026,
+        "id": 15026
     },
     "DesertPavilionChronicle": {
         "maxRarity": 5,
@@ -1307,7 +1480,7 @@ export default {
         "sands": "Timepiece of the Lost Path",
         "goblet": "Defender of the Enchanting Dream",
         "circlet": "Legacy of the Desert High-Born",
-        "bonus2": "Anemo DMG Bonus +15%.",
+        "bonus2": "Anemo DMG Bonus +15%",
         "bonus2code": [
             "stat",
             [
@@ -1328,13 +1501,16 @@ export default {
                     ],
                     40
                 ]
-            ],"After Charged Attack hit (15s)"
+            ],
+            "After Charged Attack hit (15s)"
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/01\/Item_The_First_Days_of_the_City_of_Kings.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/49\/Item_End_of_the_Golden_Realm.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/45\/Item_Timepiece_of_the_Lost_Path.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/57\/Item_Defender_of_the_Enchanting_Dream.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0c\/Item_Legacy_of_the_Desert_High-Born.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0c\/Item_Legacy_of_the_Desert_High-Born.png",
+        "hakushinID": 15027,
+        "id": 15027
     },
     "FlowerOfParadiseLost": {
         "maxRarity": 5,
@@ -1377,7 +1553,8 @@ export default {
                         ],
                         10
                     ]
-                ],"After Bloom, Hyperbloom, or Burgeon (10s)",
+                ],
+                "After Bloom, Hyperbloom, or Burgeon (10s)",
                 4
             ]
         ],
@@ -1385,7 +1562,9 @@ export default {
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f1\/Item_Wilting_Feast.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/33\/Item_A_Moment_Congealed.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6f\/Item_Secret-Keeper%27s_Magic_Bottle.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/09\/Item_Amethyst_Crown.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/09\/Item_Amethyst_Crown.png",
+        "hakushinID": 15028,
+        "id": 15028
     },
     "NymphsDream": {
         "maxRarity": 5,
@@ -1403,7 +1582,7 @@ export default {
                 15
             ]
         ],
-        "bonus4": "After Normal, Charged, and Plunging Attacks, Elemental Skills, and Elemental Bursts hit opponents. 1 stack of Mirrored Nymph will triggered, lasting 8s. When under the effect of 1, 2, or 3 or more Mirrored Nymph stacks, ATK will be increased by 7%\/16%\/25%, and Hydro DMG will be increased by 4%\/9%\/15% Mirrored Nymph created by Normal, Charged, and Plunging Attacks, Elemental Skills, and Elemental Bursts exist independently.",
+        "bonus4": "After Normal, Charged, and Plunging Attacks, Elemental Skills, and Elemental Bursts hit opponents, 1 stack of Mirrored Nymph will be triggered, lasting 8s. When under the effect of 1, 2, or 3 or more Mirrored Nymph stacks, ATK will be increased by 7%\/16%\/25%, and Hydro DMG Bonus will be increased by 4%\/9%\/15%. Mirrored Nymph stacks created by Normal, Charged, and Plunging Attacks, Elemental Skills, and Elemental Bursts exist independently.",
         "bonus4code": [
             "proc",
             [
@@ -1411,24 +1590,37 @@ export default {
                     "stat",
                     [
                         "atk_",
-                        ["stacks",7,16,25]
+                        [
+                            "stacks",
+                            7,
+                            16,
+                            25
+                        ]
                     ]
                 ],
                 [
                     "stat",
                     [
                         "hydro_dmg_",
-                        ["stacks",4,9,15]
+                        [
+                            "stacks",
+                            4,
+                            9,
+                            15
+                        ]
                     ]
                 ]
-            ],"After Normal, Charged, or Plunging Attack, Elemental Skill, or Elemental Burst hit (8s): \"Mirrored Nymph\"",
+            ],
+            "After Normal, Charged, or Plunging Attack, Elemental Skill, or Elemental Burst hit (8s): \"Mirrored Nymph\"",
             3
         ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7b\/Item_Odyssean_Flower.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ea\/Item_Wicked_Mage%27s_Plumule.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/66\/Item_Nymph%27s_Constancy.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e7\/Item_Heroes%27_Tea_Party.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/ff\/Item_Fell_Dragon%27s_Monocle.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/ff\/Item_Fell_Dragon%27s_Monocle.png",
+        "hakushinID": 15029,
+        "id": 15029
     },
     "VourukashasGlow": {
         "maxRarity": 5,
@@ -1469,7 +1661,8 @@ export default {
                         ],
                         8
                     ]
-                ],"After taking DMG (5s)",
+                ],
+                "After taking DMG (5s)",
                 5
             ]
         ],
@@ -1477,7 +1670,9 @@ export default {
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/09\/Item_Vibrant_Pinion.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d4\/Item_Ancient_Abscission.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/99\/Item_Feast_of_Boundless_Joy.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fa\/Item_Heart_of_Khvarena%27s_Brilliance.png"
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fa\/Item_Heart_of_Khvarena%27s_Brilliance.png",
+        "hakushinID": 15030,
+        "id": 15030
     },
     "MarechausseeHunter": {
         "maxRarity": 5,
@@ -1487,7 +1682,7 @@ export default {
         "sands": "Moment of Judgment",
         "goblet": "Forgotten Vessel",
         "circlet": "Veteran's Visage",
-        "bonus2": "Normal and Charged Attack DMG +15%.",
+        "bonus2": "Normal and Charged Attack DMG +15%",
         "bonus2code": [
             "stat",
             [
@@ -1507,14 +1702,17 @@ export default {
                     "critRate_",
                     12
                 ]
-            ],"After HP increases or decreases (5s)",
+            ],
+            "After HP increases or decreases (5s)",
             3
         ],
-        "flowerImg": "https://static.wikia.nocookie.net/gensin-impact/images/8/8d/Item_Hunter's_Brooch.png",
-        "plumeImg": "https://static.wikia.nocookie.net/gensin-impact/images/1/1b/Item_Masterpiece's_Overture.png",
-        "sandsImg": "https://static.wikia.nocookie.net/gensin-impact/images/2/25/Item_Moment_of_Judgment.png",
-        "gobletImg": "https://static.wikia.nocookie.net/gensin-impact/images/3/3b/Item_Forgotten_Vessel.png",
-        "circletImg": "https://static.wikia.nocookie.net/gensin-impact/images/c/c3/Item_Veteran's_Visage.png"
+        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8d\/Item_Hunter's_Brooch.png",
+        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1b\/Item_Masterpiece's_Overture.png",
+        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/25\/Item_Moment_of_Judgment.png",
+        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3b\/Item_Forgotten_Vessel.png",
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c3\/Item_Veteran's_Visage.png",
+        "hakushinID": 15031,
+        "id": 15031
     },
     "GoldenTroupe": {
         "maxRarity": 5,
@@ -1532,7 +1730,7 @@ export default {
                 20
             ]
         ],
-        "bonus4": "Increases Elemental Skill DMG by 25%. Additionally, when not on the field, Elemental Skill DMG will be further increased by 25%. This effect will be cleared 2s after taking the field. ",
+        "bonus4": "Increases Elemental Skill DMG by 25%. Additionally, when not on the field, Elemental Skill DMG will be further increased by 25%. This effect will be cleared 2s after taking the field.",
         "bonus4code": [
             [
                 "stat",
@@ -1549,32 +1747,17 @@ export default {
                         "skill_dmg_",
                         25
                     ]
-                ],"While off-field"
+                ],
+                "While off-field"
             ]
         ],
-        "flowerImg": "https://static.wikia.nocookie.net/gensin-impact/images/4/4d/Item_Golden_Song's_Variation.png",
-        "plumeImg": "https://static.wikia.nocookie.net/gensin-impact/images/8/83/Item_Golden_Bird's_Shedding.png",
-        "sandsImg": "https://static.wikia.nocookie.net/gensin-impact/images/b/b3/Item_Golden_Era's_Prelude.png",
-        "gobletImg": "https://static.wikia.nocookie.net/gensin-impact/images/0/0b/Item_Golden_Night's_Bustle.png",
-        "circletImg": "https://static.wikia.nocookie.net/gensin-impact/images/f/f6/Item_Golden_Troupe's_Reward.png"
-    },
-    "NighttimeWhispersInTheEchoingWoods": {
-        "maxRarity": 5,
-        "name": "Nighttime Whispers in the Echoing Woods",
-        "flower": "Selfless Floral Accessory",
-        "plume": "Honest Quill",
-        "sands": "Faithful Hourglass",
-        "goblet": "Magnanimous Ink Bottle",
-        "circlet": "Compassionate Ladies' Hat",
-        "bonus2": "ATK +18%",
-        "bonus2code": ["stat",["atk_",18]],
-        "bonus4": "After using an Elemental Skill, gain a 20% Geo DMG Bonus for 10s. While under a shield granted by the Crystallize reaction, the above effect will be increased by 150%, and this additional increase disappears 1s after that shield is lost.",
-        "bonus4code": [["proc",["stat",["geo_dmg_",20]],"After Elemental Skill (10s)"],["proc",["stat",["geo_dmg_",25]],"With Crystallize Shield"]],
-        "flowerImg": "https://static.wikia.nocookie.net/gensin-impact/images/9/9f/Item_Selfless_Floral_Accessory.png",
-        "plumeImg": "https://static.wikia.nocookie.net/gensin-impact/images/4/4e/Item_Honest_Quill.png",
-        "sandsImg": "https://static.wikia.nocookie.net/gensin-impact/images/a/a8/Item_Faithful_Hourglass.png",
-        "gobletImg": "https://static.wikia.nocookie.net/gensin-impact/images/2/24/Item_Magnanimous_Ink_Bottle.png",
-        "circletImg": "https://static.wikia.nocookie.net/gensin-impact/images/d/d3/Item_Compassionate_Ladies'_Hat.png"
+        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4d\/Item_Golden_Song's_Variation.png",
+        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/83\/Item_Golden_Bird's_Shedding.png",
+        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b3\/Item_Golden_Era's_Prelude.png",
+        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0b\/Item_Golden_Night's_Bustle.png",
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f6\/Item_Golden_Troupe's_Reward.png",
+        "hakushinID": 15032,
+        "id": 15032
     },
     "SongOfDaysPast": {
         "maxRarity": 5,
@@ -1584,15 +1767,72 @@ export default {
         "sands": "Echoing Sound From Days Past",
         "goblet": "Promised Dream of Days Past",
         "circlet": "Poetry of Days Past",
-        "bonus2": "Healing Bonus +15%",
-        "bonus2code": ["stat",["heal_",15]],
+        "bonus2": "Healing Bonus +15%.",
+        "bonus2code": [
+            "stat",
+            [
+                "heal_",
+                15
+            ]
+        ],
         "bonus4": "When the equipping character heals a party member, the Yearning effect will be created for 6s, which records the total amount of healing provided (including overflow healing). When the duration expires, the Yearning effect will be transformed into the \"Waves of Days Past\" effect: When your active party member hits an opponent with a Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, or Elemental Burst, the DMG dealt will be increased by 8% of the total healing amount recorded by the Yearning effect. The \"Waves of Days Past\" effect is removed after it has taken effect 5 times or after 10s. A single instance of the Yearning effect can record up to 15,000 healing, and only a single instance can exist at once, but it can record the healing from multiple equipping characters. Equipping characters on standby can still trigger this effect.",
         "bonus4code": [],
-        "flowerImg": "https://static.wikia.nocookie.net/gensin-impact/images/4/4b/Item_Forgotten_Oath_of_Days_Past.png",
-        "plumeImg": "https://static.wikia.nocookie.net/gensin-impact/images/f/fc/Item_Recollection_of_Days_Past.png",
-        "sandsImg": "https://static.wikia.nocookie.net/gensin-impact/images/6/62/Item_Echoing_Sound_From_Days_Past.png",
-        "gobletImg": "https://static.wikia.nocookie.net/gensin-impact/images/1/16/Item_Promised_Dream_of_Days_Past.png",
-        "circletImg": "https://static.wikia.nocookie.net/gensin-impact/images/d/db/Item_Poetry_of_Days_Past.png"
+        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4b\/Item_Forgotten_Oath_of_Days_Past.png",
+        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fc\/Item_Recollection_of_Days_Past.png",
+        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/62\/Item_Echoing_Sound_From_Days_Past.png",
+        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/16\/Item_Promised_Dream_of_Days_Past.png",
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/db\/Item_Poetry_of_Days_Past.png",
+        "hakushinID": 15033,
+        "id": 15033
+    },
+    "NighttimeWhispersInTheEchoingWoods": {
+        "maxRarity": 5,
+        "name": "Nighttime Whispers in the Echoing Woods",
+        "flower": "Selfless Floral Accessory",
+        "plume": "Honest Quill",
+        "sands": "Faithful Hourglass",
+        "goblet": "Magnanimous Ink Bottle",
+        "circlet": "Compassionate Ladies' Hat",
+        "bonus2": "ATK +18%.",
+        "bonus2code": [
+            "stat",
+            [
+                "atk_",
+                18
+            ]
+        ],
+        "bonus4": "After using an Elemental Skill, gain a 20% Geo DMG Bonus for 10s. While under a shield granted by the Crystallize reaction, the above effect will be increased by 150%, and this additional increase disappears 1s after that shield is lost.",
+        "bonus4code": [
+            [
+                "proc",
+                [
+                    "stat",
+                    [
+                        "geo_dmg_",
+                        20
+                    ]
+                ],
+                "After Elemental Skill (10s)"
+            ],
+            [
+                "proc",
+                [
+                    "stat",
+                    [
+                        "geo_dmg_",
+                        25
+                    ]
+                ],
+                "With Crystallize Shield"
+            ]
+        ],
+        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9f\/Item_Selfless_Floral_Accessory.png",
+        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4e\/Item_Honest_Quill.png",
+        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a8\/Item_Faithful_Hourglass.png",
+        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/24\/Item_Magnanimous_Ink_Bottle.png",
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d3\/Item_Compassionate_Ladies'_Hat.png",
+        "hakushinID": 15034,
+        "id": 15034
     },
     "FragmentOfHarmonicWhimsy": {
         "maxRarity": 5,
@@ -1602,17 +1842,36 @@ export default {
         "sands": "Fragment of Harmonic Whimsy",
         "goblet": "Fragment of Harmonic Whimsy",
         "circlet": "Fragment of Harmonic Whimsy",
-        "bonus2": "ATK +18%",
-        "bonus2code": ["stat",["atk_",18]],
+        "bonus2": "ATK +18%.",
+        "bonus2code": [
+            "stat",
+            [
+                "atk_",
+                18
+            ]
+        ],
         "bonus4": "When the value of a Bond of Life increases or decreases, this character deals 18% increased DMG for 6s. Max 3 stacks.",
-        "bonus4code": ["proc", ["stat", ["dmg_", 18]], "After Bond of Life changes (6s)", 3],
-        "flowerImg": "https://api.hakush.in/gi/UI/UI_RelicIcon_15035_4.webp",
-        "plumeImg": "https://api.hakush.in/gi/UI/UI_RelicIcon_15035_2.webp",
-        "sandsImg": "https://api.hakush.in/gi/UI/UI_RelicIcon_15035_5.webp",
-        "gobletImg": "https://api.hakush.in/gi/UI/UI_RelicIcon_15035_1.webp",
-        "circletImg": "https://api.hakush.in/gi/UI/UI_RelicIcon_15035_3.webp"
+        "bonus4code": [
+            "proc",
+            [
+                "stat",
+                [
+                    "dmg_",
+                    18
+                ]
+            ],
+            "After Bond of Life changes (6s)",
+            3
+        ],
+        "flowerImg": "https:\/\/api.hakush.in\/gi\/UI\/UI_RelicIcon_15035_4.webp",
+        "plumeImg": "https:\/\/api.hakush.in\/gi\/UI\/UI_RelicIcon_15035_2.webp",
+        "sandsImg": "https:\/\/api.hakush.in\/gi\/UI\/UI_RelicIcon_15035_5.webp",
+        "gobletImg": "https:\/\/api.hakush.in\/gi\/UI\/UI_RelicIcon_15035_1.webp",
+        "circletImg": "https:\/\/api.hakush.in\/gi\/UI\/UI_RelicIcon_15035_3.webp",
+        "hakushinID": 15035,
+        "id": 15035
     },
-    "Unfinished Reverie": {
+    "UnfinishedReverie": {
         "maxRarity": 5,
         "name": "Unfinished Reverie",
         "flower": "Unfinished Reverie",
@@ -1620,14 +1879,32 @@ export default {
         "sands": "Unfinished Reverie",
         "goblet": "Unfinished Reverie",
         "circlet": "Unfinished Reverie",
-        "bonus2": "ATK +18%",
-        "bonus2code": ["stat",["atk_",18]],
+        "bonus2": "ATK +18%.",
+        "bonus2code": [
+            "stat",
+            [
+                "atk_",
+                18
+            ]
+        ],
         "bonus4": "After leaving combat for 3s, DMG dealt increased by 50%. In combat, if no Burning opponents are nearby for more than 6s, this DMG Bonus will decrease by 10% per second until it reaches 0%. When a Burning opponent exists, it will increase by 10% instead until it reaches 50%. This effect still triggers if the equipping character is off-field.",
-        "bonus4code": ["proc", ["stat", ["dmg_", 10]], 5],
-        "flowerImg": "https://api.hakush.in/gi/UI/UI_RelicIcon_15036_4.webp",
-        "plumeImg": "https://api.hakush.in/gi/UI/UI_RelicIcon_15036_2.webp",
-        "sandsImg": "https://api.hakush.in/gi/UI/UI_RelicIcon_15036_5.webp",
-        "gobletImg": "https://api.hakush.in/gi/UI/UI_RelicIcon_15036_1.webp",
-        "circletImg": "https://api.hakush.in/gi/UI/UI_RelicIcon_15036_3.webp"
+        "bonus4code": [
+            "proc",
+            [
+                "stat",
+                [
+                    "dmg_",
+                    10
+                ]
+            ],
+            5
+        ],
+        "flowerImg": "https:\/\/api.hakush.in\/gi\/UI\/UI_RelicIcon_15036_4.webp",
+        "plumeImg": "https:\/\/api.hakush.in\/gi\/UI\/UI_RelicIcon_15036_2.webp",
+        "sandsImg": "https:\/\/api.hakush.in\/gi\/UI\/UI_RelicIcon_15036_5.webp",
+        "gobletImg": "https:\/\/api.hakush.in\/gi\/UI\/UI_RelicIcon_15036_1.webp",
+        "circletImg": "https:\/\/api.hakush.in\/gi\/UI\/UI_RelicIcon_15036_3.webp",
+        "hakushinID": 15036,
+        "id": 15036
     }
 };

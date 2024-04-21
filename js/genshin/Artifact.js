@@ -59,7 +59,6 @@ export default class Artifact extends GenshinItem
   wanters = [];
   substatRolls = {};
   
-  
   afterLoad()
   {
     if(GenshinArtifactData[this.setKey])
@@ -259,7 +258,7 @@ export default class Artifact extends GenshinItem
           return this.substatRolls;
         }
       }
-      console.warn(`[Ignore if you are still editing artifact] Artifact substats do not have values that can be divided into any number of valid rolls (Rarity:${this.rarity}) (Level:${this.level}) (${minRolls}<=rollCount<=${maxRolls}).`, this.substats, rollTotals, possibles, notpossibles);
+      console.warn(`[Ignore if you are still editing artifact] Artifact substats do not have values that can be divided into any number of valid rolls (Rarity:${this.rarity}) (Level:${this.level}) (${minRolls}<=rollCount<=${maxRolls}).`, {substats:this.substats, rollTotals, possibles, notpossibles});
       return null;
     }
   }

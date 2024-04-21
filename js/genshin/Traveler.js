@@ -342,7 +342,7 @@ export default class Traveler extends Character
   getTalentMat(type, talent)
   {
     if(type == "mastery")
-      return this.MaterialList.mastery?.[((isNaN(talent)?this.talent[talent]:talent)-1)%3][this.getTalent(talent).matMasteryQuality] ?? null;
+      return this.MaterialList.mastery?.[((isNaN(talent)?this.talent[talent]:talent)-1)%3]?.[this.getTalent(talent).matMasteryQuality] ?? null;
     else if(type == "enemy")
       return this.MaterialList.talentEnemy?.[this.getTalent(talent).matEnemyQuality] ?? null;
     else if(type == "trounce")

@@ -660,7 +660,7 @@ class Renderer
           if(subContent.value[i])
             handleSubEdit(subContent.value[i], path.concat([i]));
       }
-      else if(typeof(subContent.value) == "object")
+      else if(subContent.value && typeof(subContent.value) == "object")
         handleSubEdit(subContent.value, path.concat([0]));
       
       let subElement = element.querySelector(".sub-"+ path.join("-"));

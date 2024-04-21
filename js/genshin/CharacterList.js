@@ -272,8 +272,8 @@ export default class CharacterList extends GenshinList
             {item:item.getTalentMat('mastery',i), field:"count"},
             {item:item.getTalentMat('enemy',i), field:"count"},
             {item:item.base??item, field:"ascension"},
-            item.getTalentMat('mastery',i).days ? {item:this.viewer, field:"today"} : {},
-          ].concat(item.getTalentMat('mastery',i).getCraftDependencies()).concat(item.getTalentMat('enemy',i).getCraftDependencies()),
+            item.getTalentMat('mastery',i)?.days ? {item:this.viewer, field:"today"} : {},
+          ].concat(item.getTalentMat('mastery',i)?.getCraftDependencies()).concat(item.getTalentMat('enemy',i)?.getCraftDependencies()),
       });
     }
     

@@ -27,14 +27,17 @@ document.addEventListener("scroll", event => window.viewer.onScroll(event));
 document.addEventListener("scrollend", event => window.viewer.saveScrollY(window.scrollY));
 
 // Set up JSON loader.
-document.getElementById("loadModal").addEventListener("show.bs.modal", showEvent => {
+document.getElementById("loadModal")?.addEventListener("show.bs.modal", showEvent => {
   document.getElementById("loadGOODTab").dispatchEvent(new Event("click"));
+  document.getElementById("loadHoyos").classList.add("d-none");
+  document.getElementById("loadError").classList.add("d-none");
   
   let selectElem = document.getElementById("loadAccount");
   selectElem.replaceChildren();
   selectElem.add((()=>{let e=document.createElement("option");e.value="";e.text="Create New...";return e;})());
-  for(let what in window.viewer.data)
-    selectElem.add((()=>{let e=document.createElement("option");e.value=what;e.text=what;return e;})());
+  for(let acc in window.viewer.data)
+    if(acc)
+      selectElem.add((()=>{let e=document.createElement("option");e.value=acc;e.text=acc;return e;})());
   selectElem.selectedIndex = Array.from(selectElem.options).findIndex(elem => elem.value == window.viewer.settings.account);
   selectElem.dispatchEvent(new Event("change"));
   
@@ -46,14 +49,25 @@ document.getElementById("loadModal").addEventListener("show.bs.modal", showEvent
   selectElem2.dispatchEvent(new Event("change"));
 });
 
-document.getElementById("loadAccount").addEventListener("change", changeEvent => {
+document.getElementById("loadAccount")?.addEventListener("change", changeEvent => {
   if(changeEvent.target.value)
+  {
     document.getElementById("loadAccountNew").classList.add("d-none");
+    document.getElementById("loadAccountNote").classList.remove("d-none");
+  }
   else
+  {
     document.getElementById("loadAccountNew").classList.remove("d-none");
+    document.getElementById("loadAccountNote").classList.add("d-none");
+  }
+  if(changeEvent.target.options.length > 1)
+    changeEvent.target.classList.remove("d-none");
+  else
+    changeEvent.target.classList.add("d-none");
 });
 
-document.getElementById("loadGOODFile").addEventListener("change", changeEvent => {
+document.getElementById("loadGOODFile")?.addEventListener("change", changeEvent => {
+  document.getElementById("loadError").classList.add("d-none");
   let reader = new FileReader();
   // TODO: This doesn't seem to be working here even though it works in loadAllFile...
   let msg = document.getElementById("loadMessage");
@@ -78,7 +92,8 @@ document.getElementById("loadGOODFile").addEventListener("change", changeEvent =
   reader.readAsText(changeEvent.target.files[0]);
 });
 
-document.getElementById("loadAllFile").addEventListener("change", changeEvent => {
+document.getElementById("loadAllFile")?.addEventListener("change", changeEvent => {
+  document.getElementById("loadError").classList.add("d-none");
   let reader = new FileReader();
   let msg = document.getElementById("loadMessage");
   msg.classList.remove("d-none");
@@ -91,7 +106,8 @@ document.getElementById("loadAllFile").addEventListener("change", changeEvent =>
   reader.readAsText(changeEvent.target.files[0]);
 });
 
-document.getElementById("loadPastebinBtn").addEventListener("click", async clickEvent => {
+document.getElementById("loadPastebinBtn")?.addEventListener("click", async clickEvent => {
+  document.getElementById("loadError").classList.add("d-none");
   let input = document.getElementById("loadPastebinCode");
   if(input.value)
   {
@@ -133,7 +149,117 @@ document.getElementById("loadPastebinBtn").addEventListener("click", async click
   }
 });
 
-/*document.getElementById("loadGOODBtn").addEventListener("click", event => {
+document.getElementById("loadEnkaBtn")?.addEventListener("click", async clickEvent => {
+  document.getElementById("loadError").classList.add("d-none");
+  let selectedAccount = document.getElementById("loadAccount").value;
+  if(!selectedAccount)
+    selectedAccount = document.getElementById("loadAccountNew").value;
+  if(!selectedAccount)
+  {
+    document.getElementById("loadError").innerHTML = "Account field cannot be blank.";
+    document.getElementById("loadError").classList.remove("d-none");
+    return;
+  }
+  
+  let input = document.getElementById("loadEnka");
+  if(!input.value)
+  {
+    document.getElementById("loadError").innerHTML = "Enka field cannot be blank.";
+    document.getElementById("loadError").classList.remove("d-none");
+    return;
+  }
+  
+  let msg = document.getElementById("loadMessage");
+  msg.classList.remove("d-none");
+  msg.innerHTML = `<i class="fa-solid fa-arrows-rotate fa-spin"></i> Importing...`;
+  const {default:EnkaQuery} = await import("./genshin/EnkaQuery.js");
+  let query = new EnkaQuery(input.value);
+  let type = await query.request();
+  if(type == "builds" || type == "showcase")
+  {
+    window.viewer.load({
+      format: "GOOD",
+      source: "Genshin Manager/EnkaQuery",
+      version: 2,
+      characters: query.characterData,
+      artifacts: query.artifactData,
+      weapons: query.weaponData,
+    }, {account: selectedAccount, server: document.getElementById("loadServer").value});
+    input.value = "";
+  }
+  else if(type == "hoyos")
+  {
+    let hoyosElement = document.getElementById("loadHoyos");
+    hoyosElement.classList.remove("d-none");
+    hoyosElement.replaceChildren();
+    if(query.hoyos.length)
+    {
+      let hoyoCaption = hoyosElement.appendChild(document.createElement("b"));
+      //hoyoCaption.classList.add("");
+      hoyoCaption.innerHTML = `Select account from Enka (${input.value}):`;
+      for(let hoyo of query.hoyos)
+      {
+        let hoyoElem = hoyosElement.appendChild(document.createElement("div"));
+        hoyoElem.classList.add("row", "choose-hoyo");
+        let hoyoRegion = hoyoElem.appendChild(document.createElement("div"));
+        hoyoRegion.classList.add("col-1");
+        hoyoRegion.innerHTML = hoyo.region ?? "";
+        let hoyoUID = hoyoElem.appendChild(document.createElement("div"));
+        hoyoUID.classList.add("col-3");
+        hoyoUID.innerHTML = hoyo.uid ?? "UID hidden";
+        let hoyoNick = hoyoElem.appendChild(document.createElement("div"));
+        hoyoNick.classList.add("col-4");
+        hoyoNick.innerHTML = hoyo.nickname ?? "Nickname hidden";
+        let hoyoAR = hoyoElem.appendChild(document.createElement("div"));
+        hoyoAR.classList.add("col-2");
+        hoyoAR.innerHTML = "AR"+hoyo.ar;
+        let hoyoWL = hoyoElem.appendChild(document.createElement("div"));
+        hoyoWL.classList.add("col-2");
+        hoyoWL.innerHTML = "WL"+hoyo.worldLevel;
+        let hoyoSig = hoyoElem.appendChild(document.createElement("div"));
+        hoyoSig.classList.add("col-12");
+        hoyoSig.innerHTML = hoyo.signature;
+        hoyoElem.addEventListener("click", async event => {
+          let msg = document.getElementById("loadMessage");
+          msg.classList.remove("d-none");
+          msg.innerHTML = `<i class="fa-solid fa-arrows-rotate fa-spin"></i> Importing...`;
+          query.selectHoyo(hoyo.hash);
+          let type = await query.request();
+          if(type == "builds")
+          {
+            window.viewer.load({
+              format: "GOOD",
+              source: "Genshin Manager/EnkaQuery",
+              version: 2,
+              characters: query.characterData,
+              artifacts: query.artifactData,
+              weapons: query.weaponData,
+            }, {account: selectedAccount, server: document.getElementById("loadServer").value});
+            input.value = "";
+          }
+          msg.classList.add("d-none");
+        });
+      }
+    }
+    else
+    {
+      let hoyoCaption = hoyosElement.appendChild(document.createElement("b"));
+      //hoyoCaption.classList.add("");
+      hoyoCaption.innerHTML = `That username has no valid, public, Genshin Impact accounts listed on Enka.network.`;
+    }
+    input.value = "";
+  }
+  else
+  {
+    document.getElementById("loadError").innerHTML = "Failed to fetch data from Enka.network. Ensure that your characters are loaded into <a href='https://enka.network/' target='_blank'>Enka.network</a> when you search for your UID.";
+    document.getElementById("loadError").classList.remove("d-none");
+    console.error(`Failed to fetch data from Enka.network.`, {input:input.value});
+  }
+  msg.classList.add("d-none");
+});
+
+/*document.getElementById("loadGOODBtn")?.addEventListener("click", event => {
+  document.getElementById("loadError").classList.add("d-none");
   let selectedAccount = document.getElementById("loadAccount").value;
   if(!selectedAccount)
     selectedAccount = document.getElementById("loadAccountNew").value;
@@ -147,8 +273,9 @@ document.getElementById("editModal").addEventListener("show.bs.modal", showEvent
   let selectElem = document.getElementById("editAccount");
   selectElem.replaceChildren();
   selectElem.add((()=>{let e=document.createElement("option");e.value="";e.text="Create New...";return e;})());
-  for(let what in window.viewer.data)
-    selectElem.add((()=>{let e=document.createElement("option");e.value=what;e.text=what;return e;})());
+  for(let acc in window.viewer.data)
+    if(acc)
+      selectElem.add((()=>{let e=document.createElement("option");e.value=acc;e.text=acc;return e;})());
   selectElem.selectedIndex = Array.from(selectElem.options).findIndex(elem => elem.value == window.viewer.settings.account);
   selectElem.dispatchEvent(new Event("change"));
   
@@ -165,6 +292,10 @@ document.getElementById("editAccount").addEventListener("change", changeEvent =>
     document.getElementById("editAccountNew").classList.add("d-none");
   else
     document.getElementById("editAccountNew").classList.remove("d-none");
+  if(changeEvent.target.options.length > 1)
+    changeEvent.target.classList.remove("d-none");
+  else
+    changeEvent.target.classList.add("d-none");
 });
 
 document.getElementById("editDoneBtn").addEventListener("click", clickEvent => {

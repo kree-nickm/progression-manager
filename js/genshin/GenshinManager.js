@@ -295,7 +295,7 @@ export default class GenshinManager extends DataManager
         this.errors = true;
       }
     }
-    
+    console.log("Loaded GOOD data.", {goodData});
     return hasData;
   }
   

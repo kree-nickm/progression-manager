@@ -105,6 +105,16 @@ i.edit-element {
   padding: 0.25em 0.2em;
 }
 
+.choose-hoyo {
+  margin: 0.5em 0px;
+  border-left: 1px solid black;
+  cursor: pointer;
+}
+
+.choose-hoyo:hover {
+  background-color: rgba(127,127,127,0.3);
+}
+
 /* Utilities */
 
 .breadcrumb-item:not(.active) span {

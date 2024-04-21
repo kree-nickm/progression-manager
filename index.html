@@ -96,6 +96,7 @@
                     </select>
                   </div>
                 </div>
+                <p id="loadAccountNote" class="form-text">Note: This will replace the data in the specified account/server with the imported data. However, only lists that are present in the imported data will be replaced. For example, if the imported data only contains artifacts and materials, then only artifacts and materials will be replaced; your characters, weapons, etc. will be unaffected.</p>
                 <hr/>
                 <div class="row mb-2">
                   <b class="col-1">2.</b>
@@ -111,12 +112,21 @@
                   <input id="loadPastebinCode" class="form-control" name="Pastebin" type="text" placeholder="8-letter code"/>
                   <button id="loadPastebinBtn" class="btn btn-success">Load Data</button>
                 </div>
-                <hr/>
-                <p class="form-text">Note: This will replace the data in the specified account/server with the imported data. However, only lists that are present in the imported data will be replaced. For example, if the imported data only contains artifacts and materials, then only artifacts and materials will be replaced; your characters, weapons, etc. will be unaffected.</p>
-                <!--<hr/>
-                <label>Or Paste JSON Data:</label>
+                <div class="text-center"><i class="form-text">- or -</i></div>
+                <div class="input-group" title="If your in-game profile has been loaded with Enka.network, or even if it's just public, you can load the data within it using this opton.">
+                  <label class="input-group-text" for="loadEnka">Enka.network:</label>
+                  <input id="loadEnka" class="form-control" name="Enka" type="text" placeholder="UID, Enka username, or URL"/>
+                  <button id="loadEnkaBtn" class="btn btn-success">Load Data</button>
+                </div>
+                <div id="loadHoyos" class="d-none mt-3 mx-4"></div>
+                <!--
+                <div class="text-center"><i class="form-text">- or -</i></div>
+                <label>Paste JSON Data:</label>
                 <textarea id="loadGOODJSON" name="GOODJSON" style="width:100%;"></textarea>
-                <button id="loadGOODBtn" type="button" class="btn btn-primary">Load</button>-->
+                <button id="loadGOODBtn" type="button" class="btn btn-primary">Load Pasted JSON Data</button>
+                -->
+                <hr/>
+                <p class="form-text">* GOOD format refers to a type of JSON file containing your account data. Programs such as <a href="https://github.com/daydreaming666/Amenoma" target="_blank">Amenoma</a> and <a href="https://github.com/Andrewthe13th/Inventory_Kamera" target="_blank">Inventory Kamera</a> can scan your game and create this file from your account. GOOD format is understood by many other Genshin Impact applications, such as <a href="https://frzyc.github.io/genshin-optimizer" target="_blank">Genshin Optimizer</a>, <a href="https://seelie.me/" target="_blank">SEELIE.me</a>, etc., and can be used to easily transfer your data between applications.</p>
               </div>
               
               <!-- Genshin Manager Format Pane -->
@@ -125,19 +135,11 @@
                   <label class="input-group-text" for="loadAllFile">Load From File:</label>
                   <input id="loadAllFile" class="form-control" name="AllFile" type="file" accept="*.json,application/json"/>
                 </div>
-                <!--<div class="text-center"><i class="form-text">- or -</i></div>
-                <div class="input-group">
-                  <label class="input-group-text" for="loadPastebinCode">Pastebin Code:</label>
-                  <input id="loadPastebinCode" class="form-control" name="Pastebin" type="text" placeholder="8-letter code"/>
-                  <button id="loadPastebinBtn" class="btn btn-success">Load Data</button>
-                </div>-->
-                <hr/>
-                <p class="form-text">Note: This will replace <b>all</b> of your data with the imported data. Make sure you save your current data first if you want to keep it.</p>
+                <p class="form-text">Note: This will replace <b>all</b> of your data with the imported data. Make sure you export your current data first if you want to keep it.</p>
               </div>
             </div>
             <div id="loadMessage" class="alert alert-primary d-none"></div>
             <div id="loadError" class="alert alert-danger d-none">Error</div>
-            <p class="form-text">* GOOD format refers to a type of JSON file containing your account data. Programs such as <a href="https://github.com/daydreaming666/Amenoma" target="_blank">Amenoma</a> and <a href="https://github.com/Andrewthe13th/Inventory_Kamera" target="_blank">Inventory Kamera</a> can scan your game and create this file from your account. GOOD format is understood by many other Genshin Impact applications, such as <a href="https://frzyc.github.io/genshin-optimizer" target="_blank">Genshin Optimizer</a>, <a href="https://seelie.me/" target="_blank">SEELIE.me</a>, etc., and can be used to easily transfer your data between applications.</p>
           </div>
         </div>
       </div>
@@ -157,8 +159,7 @@
             </div>
             <div class="row">
               <div class="col-6">
-                <select class="form-select" id="editAccount">
-                </select>
+                <select class="form-select" id="editAccount"></select>
                 <input class="form-control" id="editAccountNew" placeholder="New account name..." title="Can be anything you want that helps you identify this account."/>
               </div>
               <div class="col-6">
