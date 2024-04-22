@@ -998,16 +998,20 @@ export default class CharacterList extends GenshinList
       return false;
     if(field.string == "list")
     {
-      document.getElementById("addCharacterSelect").needsUpdate = true;
-      if(action == "notify" && options?.type?.toggleOwned)
+      let select = document.getElementById("addCharacterSelect");
+      if(select)
+        select.needsUpdate = true;
+      if(action == "notify" && options?.toggleOwned)
       {
-        this.forceNextRender = true;
-        for(let subset in this.constructor.subsetDefinitions)
+        if(options.toggleOwned.owned)
         {
-          if(subset in this.subsets && this.constructor.subsetDefinitions[subset](value))
-            this.subsets[subset].push(value);
-          else
-            this.subsets[subset] = this.subsets[subset].filter(item => item != value);
+          this.subsets = {};
+          super.afterUpdate(field, options.toggleOwned, "push", {force:true});
+        }
+        else
+        {
+          this.subsets = {};
+          Renderer.removeElementsOf(options.toggleOwned);
         }
       }
     }

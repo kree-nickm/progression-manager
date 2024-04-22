@@ -254,9 +254,9 @@ export default {
       "boss": "The Knave",
       "release": "April 24, 2024",
       "loot": [
-        "The Knave Mat 1",
-        "The Knave Mat 2",
-        "The Knave Mat 3"
+        "Fading Candle",
+        "Silken Feather",
+        "Denial and Judgment"
       ]
     }
   ],

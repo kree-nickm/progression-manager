@@ -831,7 +831,8 @@ class Renderer
             editElement.placeholder = placeholder;
             editElement.value = "";
           }
-          editElement.focus();
+          if(!content.edit.alwaysShow)
+            editElement.focus();
         };
         fieldElement.classList.add("editable");
         if(window.DEBUGLOG.addFieldEventListeners) console.debug(`Added onclick method to field element.`, fieldElement.onclick);

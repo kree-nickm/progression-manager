@@ -369,18 +369,18 @@ export default {
         ],
         "refinementData": [
             {
-                "1": 12,
-                "2": 16,
-                "3": 20,
-                "4": 24,
-                "5": 28
+                "1": 25,
+                "2": 25,
+                "3": 25,
+                "4": 25,
+                "5": 25
             },
             {
-                "1": 24,
-                "2": 32,
-                "3": 40,
-                "4": 48,
-                "5": 56
+                "1": 1400,
+                "2": 1400,
+                "3": 1400,
+                "4": 1400,
+                "5": 1400
             }
         ],
         "imgs": [
@@ -391,7 +391,8 @@ export default {
         "matStrongEnemy": "Praetorians",
         "matWeakEnemy": "Meka",
         "hakushinID": 13512,
-        "id": 13512
+        "id": 13512,
+        "version": "4.5.54"
     },
     "ElegyForTheEnd": {
         "name": "Elegy for the End",

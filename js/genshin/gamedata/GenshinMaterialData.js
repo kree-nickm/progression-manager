@@ -797,20 +797,20 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ae\/Item_Lightless_Mass.png",
         "rarity": 5
     },
-    "TheKnaveMat1": {
-        "name": "The Knave Mat 1",
+    "FadingCandle": {
+        "name": "Fading Candle",
         "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_113060.webp",
         "release": "April 24, 2024",
         "rarity": 5
     },
-    "TheKnaveMat2": {
-        "name": "The Knave Mat 2",
+    "SilkenFeather": {
+        "name": "Silken Feather",
         "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_113061.webp",
         "release": "April 24, 2024",
         "rarity": 5
     },
-    "TheKnaveMat3": {
-        "name": "The Knave Mat 3",
+    "DenialAndJudgment": {
+        "name": "Denial and Judgment",
         "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_113062.web",
         "release": "April 24, 2024",
         "rarity": 5

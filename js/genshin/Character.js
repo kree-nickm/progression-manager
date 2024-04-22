@@ -281,7 +281,7 @@ export default class Character extends Ascendable(GenshinItem)
     }
     else if(field.string == "owned")
     {
-      this.list.update("list", this, "notify", {toggleOwned:true});
+      this.list.update("list", null, "notify", {toggleOwned:this});
     }
     return true;
   }
@@ -654,11 +654,11 @@ export default class Character extends Ascendable(GenshinItem)
     {
       result["Mora"] = Math.ceil(exp/5);
       result["HerosWit"] = Math.floor(exp/20000);
-      exp -= result["HerosWit"];
+      exp -= result["HerosWit"] * 20000;
       result["AdventurersExperience"] = Math.floor(exp/5000);
-      exp -= result["AdventurersExperience"];
+      exp -= result["AdventurersExperience"] * 5000;
       result["WanderersAdvice"] = Math.ceil(exp/1000);
-      exp -= result["WanderersAdvice"];
+      exp -= result["WanderersAdvice"] * 1000;
     }
     
     // Ascension
@@ -693,9 +693,12 @@ export default class Character extends Ascendable(GenshinItem)
             if(cost > 0)
             {
               let mat = this.getTalentMat(type, lvl);
-              if(!result[mat.key])
-                result[mat.key] = 0;
-              result[mat.key] += cost;
+              if(mat)
+              {
+                if(!result[mat.key])
+                  result[mat.key] = 0;
+                result[mat.key] += cost;
+              }
             }
           }
         }
@@ -919,8 +922,8 @@ export default class Character extends Ascendable(GenshinItem)
       
       let bonusEM = 16 * this.getStat("eleMas",alternates) / (this.getStat("eleMas",alternates) + 2000);
       let RES = (this.list.targetEnemyData[`enemy${dmgType.at(0).toUpperCase()+dmgType.slice(1)}RES`]??10) + this.getStat("enemy_"+dmgType+"_res_",alternates);
-      let reduction = RES>=75 ? 1/(4*RES+1) : RES>=0 ? 1-RES/100 : 1-RES/200;
-      return rxnMult * GenshinCharacterStats.levelReactionMultiplier[level].pc * (1 + bonusEM + this.getStat(baseType+"_dmg_",alternates) / 100) * reduction;
+      let reductionRES = RES>=75 ? 1/(4*RES/100+1) : RES>=0 ? 1-RES/100 : 1-RES/200;
+      return rxnMult * GenshinCharacterStats.levelReactionMultiplier[level].pc * (1 + bonusEM + this.getStat(baseType+"_dmg_",alternates) / 100) * reductionRES;
     }
     else if(["aggravate","spread"].indexOf(baseType) > -1)
     {
@@ -1038,6 +1041,13 @@ export default class Character extends Ascendable(GenshinItem)
       let allKeys = Object.keys(scaling);
       for(let k=0; k<allKeys.length; k++)
       {
+        // Special handling for plunge motion values, because these should always have been split in the first place.
+        if(allKeys[k] == "Low/High Plunge DMG")
+        {
+          allKeys[k] = "Low Plunge DMG";
+          allKeys.splice(k+1, 0, "High Plunge DMG");
+        }
+          
         if(onlyKey && allKeys[k] != onlyKey)
           continue;
         
@@ -1046,6 +1056,30 @@ export default class Character extends Ascendable(GenshinItem)
           rawKey: allKeys[k],
           key: allKeys[k],
         };
+        /*
+        The final form of the motionValue object will be this: {
+          talent: either "auto" "skill" "burst" for which ability this motion value is part of
+          rawKey: the label of the motion value as-is straight from the character data, or with dynamically-added notes as with added reaction data
+          key: same as above, but without any dynamically-added notes
+          newKey: the final cleaned-up label that will be shown on the app
+          reaction: the type of reaction involved with this motion value ("melt-reverse","melt-forward","vaporize-reverse","vaporize-forward","aggravate","spread"), or undefined if it's n/a
+          fromModifier: true if this motion value was added by a modifier
+          rawValue: the value of the motion value as-is straight from the character data
+          rawValues: an array where the rawValue has been split by "+"
+          values: an array of objects with various components of the calculated motion values, as follows: {
+            value: the original value
+            hits: the number of times this motion value hits the enemy, usually 1
+            dmgType: normally the damage type of the motion value but can also be:
+              "healing" or "shielding" for one of those
+              "bonus" if it's just a numeric increase to another motion value, like Bennett's buff
+              "percent" if it only makes sense as a percentage, like RES changes
+              "hp" if it's for summoned objects with HP, like Ganyu's flower
+              "self" if it's HP loss on your own character, like Furina's murderhobos
+              null if it's none of the above
+            stat: which stat this motion value scales with (atk, def, hp, eleMas, etc.), or "flat" if the value doesn't scale at all and is treated as-is, or blank if other reason
+          }
+        }
+        */
         
         // If this is a dynamically-added key for the purpose of additional reaction data, figure that out now.
         ["melt-reverse","melt-forward","vaporize-reverse","vaporize-forward","aggravate","spread"].forEach(rxn => {
@@ -1062,11 +1096,16 @@ export default class Character extends Ascendable(GenshinItem)
           motionValue.fromModifier = true;
         
         // Determine current raw value based on talent level.
-        let talentLvl = (alternates?.[talent+'Talent']??(alternates?.preview?(this.previews.talent?.[talent]??this.talent[talent]):this.talent[talent])) + this.getStat(talent+"Level", alternates);
-        motionValue.rawValue = scaling[motionValue.key]?.[talentLvl];
+        let talentLvl = (alternates?.[talent+'Talent'] ?? (alternates?.preview ? (this.previews.talent?.[talent] ?? this.talent[talent]) : this.talent[talent])) + this.getStat(talent+"Level", alternates);
+        if(motionValue.key == "Low Plunge DMG")
+          motionValue.rawValue = scaling["Low/High Plunge DMG"]?.[talentLvl].split("/")[0];
+        else if(motionValue.key == "High Plunge DMG")
+          motionValue.rawValue = scaling["Low/High Plunge DMG"]?.[talentLvl].split("/")[1];
+        else
+          motionValue.rawValue = scaling[motionValue.key]?.[talentLvl];
         if(!motionValue.rawValue)
         {
-          console.error(`Character ${this.key} has potentially invalid ${talent} talent at key '${motionValue.key}' talent lvl '${talentLvl}':`, GenshinCharacterData[this.key].talents);
+          console.error(`Character ${this.key} has potentially invalid ${talent} talent at key '${motionValue.key}' talent lvl '${talentLvl}':`, {talentData:GenshinCharacterData[this.key].talents});
           return null;
         }
         
@@ -1094,8 +1133,15 @@ export default class Character extends Ascendable(GenshinItem)
           motionValue.values[v].value = String(motionValue.rawValues[v]).trim();
           motionValue.values[v].hits = 1;
           for(let modifier of mvModifiers)
-            if((modifier.method == "infuse") && (this.weaponType == "Claymore" || this.weaponType == "Sword" || this.weaponType == "Polearm"))
+          {
+            if((modifier.method == "infuse" && !modifier.label) && (this.weaponType == "Claymore" || this.weaponType == "Sword" || this.weaponType == "Polearm"))
               motionValue.values[v].dmgType = modifier.value;
+            else if(Array.isArray(modifier.label) ? modifier.label.indexOf(motionValue.key) > -1 : modifier.label == motionValue.key)
+            {
+              if(modifier.method == "infuse")
+                motionValue.values[v].dmgType = modifier.value;
+            }
+          }
           
           // Parse out some data based on the value.
           if(motionValue.values[v].value.includes("×") || motionValue.values[v].value.includes("*"))
@@ -1408,7 +1454,7 @@ export default class Character extends Ascendable(GenshinItem)
         // Calculate the text to output.
         motionValue.string = motionValue.values.reduce((out, elem) => {
           return (out!==null ? `${out} + ` : ``)
-            + (["anemo","cryo","dendro","electro","hydro","geo","pyro","physical"].indexOf(elem.dmgType)>-1 ? `{{element:${elem.dmgType.slice(0,1).toUpperCase()+elem.dmgType.slice(1).toLowerCase()}}}` : "")
+            + (["anemo","cryo","dendro","electro","hydro","geo","pyro","physical","absorb"].indexOf(elem.dmgType)>-1 ? `{{element:${elem.dmgType.slice(0,1).toUpperCase()+elem.dmgType.slice(1).toLowerCase()}}}` : "")
             + (isAllNumeric&&elem.dmgType!="percent"&&elem.dmgType!="self" ? elem.value.toFixed(0) + (canCrit ? ` (${elem.critical.toFixed(0)})` : ``) : elem.value)
             + (elem.dmgType=="percent"||elem.dmgType=="self" ? "%" : "")
             + (elem.hits>1 ? ` × ${elem.hits}` : ``);
@@ -1550,7 +1596,7 @@ export default class Character extends Ascendable(GenshinItem)
     
     // Resistances
     let RES = (this.list.targetEnemyData[`enemy${partialValue.dmgType.at(0).toUpperCase()+partialValue.dmgType.slice(1)}RES`]??10) + this.getStat("enemy_"+partialValue.dmgType+"_res_",alternates);
-    let reductionRES = RES>=75 ? 1/(4*RES+1) : RES>=0 ? 1-RES/100 : 1-RES/200;
+    let reductionRES = RES>=75 ? 1/(4*RES/100+1) : RES>=0 ? 1-RES/100 : 1-RES/200;
     
     // Vape/Melt
     let rxnMult = 1;

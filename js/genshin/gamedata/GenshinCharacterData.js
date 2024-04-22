@@ -2288,7 +2288,7 @@ export default {
         "ascendStat": "critDMG_",
         "matFlower": "Rainbow Rose",
         "matMastery": "Order",
-        "matTrounce": "???",
+        "matTrounce": "Fading Candle",
         "matBoss": "Legatus",
         "matEnemy": "Fatui",
         "talents": {
@@ -2652,7 +2652,7 @@ export default {
             },
             "1st Ascension Passive": {
                 "name": "Agony Alone May Be Repaid",
-                "text": "<color=#FFD780FF>Blood-Debt Directives<\/color> have the following characteristics:\\n\u00b7 When defeating an opponent with a Directive, Arlecchino will be granted a Life Bond worth 70% of her Max HP.\\n\u00b7 5s after a Directive is applied, it will be upgraded to a Blood-Debt Due. When absorbed, it will instead grant Arlecchino a Bond of Life worth 70%.\\nA Bond of Life created in the aforementioned ways cannot exceed the original limit on the value of Bonds of Life obtained through <color=#FFD780FF>All is Ash<\/color>."
+                "text": "<color=#FFD780FF>Blood-Debt Directives<\/color> have the following characteristics:\\n\u00b7 When defeating an opponent with a Directive, Arlecchino will be granted a Life Bond worth 130% of her Max HP.\\n\u00b7 5s after a Directive is applied, it will be upgraded to a Blood-Debt Due. When absorbed, it will instead grant Arlecchino a Bond of Life worth 130%.\\nA Bond of Life created in the aforementioned ways cannot exceed the original limit on the value of Bonds of Life obtained through <color=#FFD780FF>All Is Ash<\/color>."
             },
             "4th Ascension Passive": {
                 "name": "Strength Alone Can Defend",
@@ -2689,8 +2689,9 @@ export default {
                 "text": "The DMG of <color=#FFD780FF>Balemoon Rising<\/color> is increased by Arlecchino's ATK multiplied by 700% of Arlecchino's current Life Bond percentage.\\nFor 20s after Arlecchino uses <color=#FFD780FF>All Is Ash<\/color>, both her Normal Attacks and Elemental Burst gain 10% increased CRIT Rate and 70% increased CRIT DMG. This effect can be triggered up to once every 15s."
             }
         },
-        "release": "January 01, 1970",
-        "id": 10000096
+        "release": "April 24, 2024",
+        "id": 10000096,
+        "version": "4.5.54"
     },
     "Baizhu": {
         "name": "Baizhu",
@@ -11086,8 +11087,8 @@ export default {
                     "addmv",
                     [
                         "Elemental Skill",
-                        "A4 Oz DMG (%)",
-                        "80"
+                        "A4 Oz DMG",
+                        "80%"
                     ]
                 ],
                 "text": "If your active character triggers an <span class=\"text-electro\"><b>Electro-related Elemental Reaction<\/b><\/span> when Oz is on the field, the opponent shall be stricken with Thundering Retribution that deals <span class=\"text-electro\"><b>Electro DMG<\/b><\/span> equal to 80% of Fischl's ATK."
@@ -11107,14 +11108,14 @@ export default {
                     [
                         "Normal Attack",
                         [
-                            "1-Hit DMG (%)",
-                            "2-Hit DMG (%)",
-                            "3-Hit DMG (%)",
-                            "4-Hit DMG (%)",
-                            "5-Hit DMG (%)"
+                            "1-Hit DMG",
+                            "2-Hit DMG",
+                            "3-Hit DMG",
+                            "4-Hit DMG",
+                            "5-Hit DMG"
                         ],
                         "+hit",
-                        "22"
+                        "22%"
                     ]
                 ],
                 "text": "Even when Oz is not present in combat, he can still watch over Fischl through his raven eyes. When Fischl performs a Normal Attack against an opponent, Oz fires a coordinated attack, dealing DMG equal to 22% of Fischl's ATK."
@@ -11126,9 +11127,9 @@ export default {
                     "editmv",
                     [
                         "Elemental Skill",
-                        "Summoning DMG (%)",
+                        "Summoning DMG",
                         "+hit",
-                        "200"
+                        "200%"
                     ]
                 ],
                 "text": "When <color=#FFD780FF>Nightrider<\/color> is used, it deals an additional 200% ATK as DMG, and its AoE is increased by 50%."
@@ -11152,8 +11153,8 @@ export default {
                     "addmv",
                     [
                         "Elemental Burst",
-                        "C4 DMG (%)",
-                        "222"
+                        "C4 DMG",
+                        "222%"
                     ]
                 ],
                 "text": "When <color=#FFD780FF>Midnight Phantasmagoria<\/color> is used, it deals 222% of ATK as <color=#FFACFFFF>Electro DMG<\/color> to surrounding opponents.\\nWhen the skill duration ends, Fischl regenerates 20% of her HP."
@@ -11185,8 +11186,8 @@ export default {
                         "addmv",
                         [
                             "Elemental Skill",
-                            "C6 DMG (%)",
-                            "30"
+                            "C6 DMG",
+                            "30%"
                         ]
                     ]
                 ],
@@ -14818,7 +14819,7 @@ export default {
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/22\/Talent_Chihayaburu.png",
                 "text": "#Unleashes a secret technique as fierce as the rushing wind that pulls objects and opponents towards Kazuha's current position before launching opponents within the AoE, dealing <color=#80FFD7FF>Anemo DMG<\/color> and lifting Kazuha into the air on a rushing gust of wind.\\nWithin 10s of remaining airborne after casting Chihayaburu, Kazuha can unleash a powerful Plunging Attack known as Midare Ranzan.\\n\\n<color=#FFD780FF>{LAYOUT_MOBILE#Tap}{LAYOUT_PC#Press}{LAYOUT_PS#Press}<\/color>\\nCan be used in mid-air.\\n\\n<color=#FFD780FF>Hold<\/color>\\nCharges up before unleashing greater <color=#80FFD7FF>Anemo DMG<\/color> over a larger AoE than {LAYOUT_MOBILE#Tap}{LAYOUT_PC#Press}{LAYOUT_PS#Press} Mode.\\n\\n<color=#FFD780FF>Plunging Attack: Midare Ranzan<\/color>\\nWhen a Plunging Attack is performed using the effects of the Elemental Skill Chihayaburu, Plunging Attack DMG is converted to <color=#80FFD7FF>Anemo DMG<\/color>. On landing, Kazuha creates a small wind tunnel via a secret blade technique that pulls in nearby objects and opponents.\\nMidare Ranzan's DMG is considered Plunging Attack DMG.\\n\\n<i>\"Wind in branches grieves\\nBygone ages, gods of old\\nWithered autumn leaves\"<\/i>",
                 "scaling": {
-                    "#{LAYOUT_MOBILE#Tap}{LAYOUT_PC#Press}{LAYOUT_PS#Press} Skill DMG": {
+                    "Press Skill DMG": {
                         "1": "191.99999570847%",
                         "2": "206.39998912811%",
                         "3": "220.79999446869%",
@@ -14835,7 +14836,7 @@ export default {
                         "14": "432.00001716614%",
                         "15": "455.99999427795%"
                     },
-                    "#{LAYOUT_MOBILE#Tap}{LAYOUT_PC#Press}{LAYOUT_PS#Press} CD": {
+                    "Press CD": {
                         "1": "6s",
                         "2": "6s",
                         "3": "6s",
@@ -14886,7 +14887,8 @@ export default {
                         "14": "9s",
                         "15": "9s"
                     }
-                }
+                },
+                "code": ["proc", ["editmv", ["Normal Attack", ["Plunge DMG","Low/High Plunge DMG"], "infuse", "anemo"]], "After Elemental Skill (10s)"]
             },
             "Elemental Burst": {
                 "name": "Kazuha Slash",
@@ -15000,7 +15002,8 @@ export default {
             "1st Ascension Passive": {
                 "name": "Soumon Swordsmanship",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/16\/Talent_Soumon_Swordsmanship.png",
-                "text": "If <b>Chihayaburu<\/b> comes into contact with <span class=\"text-hydro\"><b>Hydro<\/b><\/span>\/<span class=\"text-pyro\"><b>Pyro<\/b><\/span>\/<span class=\"text-cryo\"><b>Cryo<\/b><\/span>\/<span class=\"text-electro\"><b>Electro<\/b><\/span> when cast, <b>Chihayaburu<\/b> will absorb that element and if Plunging Attack: Midare Ranzan is used before the effect expires, it will deal an additional 200% ATK of the absorbed elemental type as DMG. This will be considered Plunging Attack DMG.<br\/>Elemental Absorption may only occur once per use of <b>Chihayaburu<\/b>."
+                "text": "If <b>Chihayaburu<\/b> comes into contact with <span class=\"text-hydro\"><b>Hydro<\/b><\/span>\/<span class=\"text-pyro\"><b>Pyro<\/b><\/span>\/<span class=\"text-cryo\"><b>Cryo<\/b><\/span>\/<span class=\"text-electro\"><b>Electro<\/b><\/span> when cast, <b>Chihayaburu<\/b> will absorb that element and if Plunging Attack: Midare Ranzan is used before the effect expires, it will deal an additional 200% ATK of the absorbed elemental type as DMG. This will be considered Plunging Attack DMG.<br\/>Elemental Absorption may only occur once per use of <b>Chihayaburu<\/b>.",
+                "code": ["proc", ["editmv", ["Normal Attack", ["Low/High Plunge DMG"], "+hit", "200%@absorb"]], "After Elemental Skill (10s)"]
             },
             "4th Ascension Passive": {
                 "name": "Poetics of Fuubutsu",
@@ -15023,7 +15026,7 @@ export default {
                                 "eleMas"
                             ]
                         ]
-                    ]
+                    ],"After Swirl (8s)"
                 ]
             },
             "Utility Passive": {

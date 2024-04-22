@@ -90,7 +90,7 @@ export default class UIList extends UIController {
   {
     if(!super.afterUpdate(field, value, action, options))
       return false;
-    if(field.string == "list" && (field.value.length != value.length || options.force))
+    if(field.string == "list")
     {
       if(action == "push")
       {
@@ -125,6 +125,7 @@ export default class UIList extends UIController {
         this.forceNextRender = true;
       }
     }
+    return true;
   }
   
   getUnique(item)

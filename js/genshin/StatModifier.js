@@ -267,6 +267,23 @@ export default class StatModifier {
       let labels = parameters[1];
       if(!Array.isArray(labels))
         labels = [labels];
+      for(let i in labels)
+      {
+        if(labels[i] == "Low/High Plunge DMG")
+        {
+          labels.push("Low Plunge DMG");
+          labels.push("High Plunge DMG");
+        }
+        else if(labels[i] == "autos")
+        {
+          labels[i] = "1-Hit DMG";
+          labels.push("2-Hit DMG");
+          labels.push("3-Hit DMG");
+          labels.push("4-Hit DMG");
+          labels.push("5-Hit DMG");
+          labels.push("6-Hit DMG");
+        }
+      }
       for(let label of labels)
       {
         collection.push({
@@ -459,8 +476,10 @@ export default class StatModifier {
         result += `, increasing the base DMG multiplier by ${valuePercent}.`;
       else if(parameters[2] == "+base")
         result += `, increasing the base DMG by ${valueNumber}.`;
+      else if(parameters[2] == "infuse")
+        result += `, infusing it with ${valueNumber}.`;
       else
-        result += `, affecting it in some way (TBA) by ${valueNumber}.`;
+        result += `, affecting it in some way (${parameters[2]}) by ${valueNumber}.`;
       return result;
     }
     else if(command == "addmv" || command == "paddmv")
