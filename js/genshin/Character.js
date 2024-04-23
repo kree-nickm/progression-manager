@@ -1068,6 +1068,8 @@ export default class Character extends Ascendable(GenshinItem)
           rawValues: an array where the rawValue has been split by "+"
           values: an array of objects with various components of the calculated motion values, as follows: {
             value: the original value
+            critical: the value if it is a critical hit; or for values that can't crit, it's just 'value' again; or undefined if the value is not a number
+            average: the average value beween a normal and critical hit, factoring in the crit rate; or for values that can't crit, it's just 'value' again; or undefined if the value is not a number
             hits: the number of times this motion value hits the enemy, usually 1
             dmgType: normally the damage type of the motion value but can also be:
               "healing" or "shielding" for one of those
@@ -1076,8 +1078,10 @@ export default class Character extends Ascendable(GenshinItem)
               "hp" if it's for summoned objects with HP, like Ganyu's flower
               "self" if it's HP loss on your own character, like Furina's murderhobos
               null if it's none of the above
-            stat: which stat this motion value scales with (atk, def, hp, eleMas, etc.), or "flat" if the value doesn't scale at all and is treated as-is, or blank if other reason
+            stat: which stat this motion value scales with (atk, def, hp, eleMas, etc.), or "flat" if the value doesn't scale with a stat and goes in formulas as-is, or falsy if it shouldn't be used in any formulas in the first place
           }
+          string: a string that displays all of the above values in a human-readable format
+          final: a single number that represents all of the above values combined into a single average result for this motion value; or "" if the value is not a number
         }
         */
         
@@ -1089,6 +1093,7 @@ export default class Character extends Ascendable(GenshinItem)
             motionValue.key = motionValue.key.slice(0, -1*(rxn.length+3));
           }
         });
+        
         motionValue.newKey = motionValue.key;
         
         // Note if this motion value was added by a stat modifier.
@@ -1143,12 +1148,12 @@ export default class Character extends Ascendable(GenshinItem)
             }
           }
           
-          // Parse out some data based on the value.
-          if(motionValue.values[v].value.includes("×") || motionValue.values[v].value.includes("*"))
-            [motionValue.values[v].value, motionValue.values[v].hits] = motionValue.values[v].value.split(/[×*]/);
-          if(motionValue.values[v].value.includes("@"))
+          // Parse out any special characters that designate that this value should be handled differently
+          if(motionValue.values[v].value.includes("×") || motionValue.values[v].value.includes("*")) // Multi-hit
+            [motionValue.values[v].value, motionValue.values[v].hits] = motionValue.values[v].value.split(/ ?[×*] ?/);
+          if(motionValue.values[v].value.includes("@")) // Explicit alternate damage type
             [motionValue.values[v].value, motionValue.values[v].dmgType] = motionValue.values[v].value.split("@");
-          if(motionValue.values[v].value.includes("%:"))
+          if(motionValue.values[v].value.includes("%:")) // Value is a percentage of another value
           {
             let other, idx;
             [motionValue.values[v].value, other] = motionValue.values[v].value.split("%:");
@@ -1174,37 +1179,50 @@ export default class Character extends Ascendable(GenshinItem)
             motionValue.values[v].value = motionValue.values[v].value.slice(0, -1);
             motionValue.values[v].stat = "atk";
           }
-          else if(motionValue.values[v].value.endsWith(" Max HP"))
+          else if(motionValue.values[v].value.endsWith("% ATK"))
           {
-            motionValue.values[v].value = motionValue.values[v].value.slice(0, -7);
-            if(motionValue.values[v].value.endsWith("%"))
-              motionValue.values[v].value = motionValue.values[v].value.slice(0, -1);
-            motionValue.values[v].stat = "hp";
-          }
-          else if(motionValue.values[v].value.endsWith(" ATK"))
-          {
-            motionValue.values[v].value = motionValue.values[v].value.slice(0, -4);
-            if(motionValue.values[v].value.endsWith("%"))
-              motionValue.values[v].value = motionValue.values[v].value.slice(0, -1);
+            motionValue.values[v].value = motionValue.values[v].value.slice(0, -5);
             motionValue.values[v].stat = "atk";
           }
-          else if(motionValue.values[v].value.endsWith(" DEF"))
+          else if(motionValue.values[v].value.endsWith("% per Paw")) // Specifically for Diona
           {
-            motionValue.values[v].value = motionValue.values[v].value.slice(0, -4);
-            if(motionValue.values[v].value.endsWith("%"))
-              motionValue.values[v].value = motionValue.values[v].value.slice(0, -1);
+            motionValue.values[v].value = motionValue.values[v].value.slice(0, -9);
+            motionValue.values[v].stat = "atk";
+          }
+          else if(motionValue.values[v].value.endsWith("% Max HP"))
+          {
+            motionValue.values[v].value = motionValue.values[v].value.slice(0, -8);
+            motionValue.values[v].stat = "hp";
+          }
+          else if(motionValue.values[v].value.endsWith("% DEF"))
+          {
+            motionValue.values[v].value = motionValue.values[v].value.slice(0, -5);
             motionValue.values[v].stat = "def";
           }
-          else if(motionValue.values[v].value.endsWith(" Elemental Mastery"))
+          else if(motionValue.values[v].value.endsWith("% Elemental Mastery"))
           {
-            motionValue.values[v].value = motionValue.values[v].value.slice(0, -18);
-            if(motionValue.values[v].value.endsWith("%"))
-              motionValue.values[v].value = motionValue.values[v].value.slice(0, -1);
+            motionValue.values[v].value = motionValue.values[v].value.slice(0, -19);
             motionValue.values[v].stat = "eleMas";
           }
+          else if(motionValue.values[v].value.endsWith("% Current HP") ||
+                  motionValue.values[v].value.endsWith("% Per Energy") ||
+                  motionValue.values[v].value.endsWith("% per Electro Sigil") ||
+                  motionValue.values[v].value.endsWith("% Max HP/Droplet") ||
+                  motionValue.values[v].value.endsWith("% Max HP/0.5s") ||
+                  motionValue.values[v].value.endsWith("% Normal Attack DMG"))
+          {
+            // TODO: These scale with something whose value can't be known, so will need to be displayed as-is, but rounded. Used by Kuki Shinobu, Raiden, Razor, Neuvillette, Yoimiya.
+          }
+          // TODO: Raiden Burst has some weird values that will need custom handling.
+          // TODO: Razor Skill and Burst have some weird values that will need custom handling.
+          // TODO: These should be implemented in the future, and probably also moved up.
           else if(motionValue.values[v].value.endsWith("/s"))
           {
-            // per second, as with many charged attacks
+            // Used by most claymore charged attacks, along with: Jean Burst, Lynette Skill
+          }
+          else if(motionValue.values[v].value.includes("/"))
+          {
+            // Motion values that vary. Most are non-DMG-related, but (TODO) Kuki Shinobu's Burst, Xianyun's Skill do this and will need to be handled.
           }
           else if(motionValue.values[v].value.endsWith("s"))
           {
@@ -1216,84 +1234,47 @@ export default class Character extends Ascendable(GenshinItem)
           if(!isNaN(motionValue.values[v].value))
           {
             // Determine any special dmgType
-            if(motionValue.key.includes("RES") || motionValue.key.includes("Ratio") || motionValue.key.includes("Chance"))
+            if(motionValue.key == "ATK Bonus Ratio") // Specifically for Bennett and Kujou Sara
+            {
+              motionValue.values[v].dmgType = "bonus";
+              motionValue.values[v].stat = "atk-base";
+            }
+            else if(motionValue.key.endsWith("HP Consumption")) // Specifically for Furina
             {
               motionValue.values[v].dmgType = "percent";
               motionValue.values[v].stat = "";
             }
-            else if(motionValue.key.includes("Bonus Ratio") || motionValue.key.includes("ATK Bonus"))
+            else if(motionValue.key.endsWith("DEF Increase")) // Specifically for Gorou
+            {
               motionValue.values[v].dmgType = "bonus";
+              motionValue.values[v].stat = "";
+            }
+            else if(motionValue.key.endsWith("DMG Bonus"))
+            {
+              if(this.key == "Shenhe" || this.key == "Xianyun")
+              {
+                motionValue.values[v].dmgType = "bonus";
+                motionValue.values[v].stat = "atk";
+              }
+              else
+              {
+                motionValue.values[v].dmgType = "percent";
+                motionValue.values[v].stat = "";
+              }
+            }
+            else if(motionValue.key.includes("RES") || motionValue.key.includes("Ratio") || motionValue.key.includes("Chance"))
+            {
+              motionValue.values[v].dmgType = "percent";
+              motionValue.values[v].stat = "";
+            }
             else if(motionValue.key.includes("Regeneration") || motionValue.key.includes("Healing"))
               motionValue.values[v].dmgType = "healing";
             else if(motionValue.key.includes("Absorption"))
               motionValue.values[v].dmgType = "shielding";
             else if(motionValue.key.startsWith("Inherited HP"))
+            {
               motionValue.values[v].dmgType = "hp";
-            
-            // Determine stat scaling for poorly-labeled talents that can't be handled with general rules.
-            if(this.key == "KujouSara" && motionValue.key == "ATK Bonus Ratio (%)" || this.key == "Bennett" && motionValue.key == "ATK Bonus Ratio (% Base ATK)")
-            {
-              if(motionValue.key == motionValue.newKey)
-                motionValue.newKey = motionValue.key.slice(0, motionValue.key.indexOf("(")-1);
-              motionValue.values[v].stat = "atk-base";
-              motionValue.values[v].dmgType = "bonus";
-            }
-            else if(this.key == "Furina" && motionValue.key.endsWith("HP Consumption (% Max HP)"))
-            {
-              if(motionValue.key == motionValue.newKey)
-                motionValue.newKey = motionValue.key.slice(0, -11);
-              motionValue.values[v].dmgType = "self";
-            }
-            else if(this.key == "Gorou" && motionValue.key == "DEF Increase")
-            {
-              motionValue.values[v].stat = null;
-              motionValue.values[v].dmgType = "bonus";
-            }
-            else if(this.key == "Gorou" && motionValue.key == "Geo DMG Bonus")
-            {
-              motionValue.values[v].stat = null;
-              motionValue.values[v].dmgType = "percent";
-            }
-            // Determine stat scaling.
-            else if(motionValue.key.endsWith(" (%)"))
-            {
-              if(motionValue.key == motionValue.newKey)
-                motionValue.newKey = motionValue.key.slice(0, -4);
-              motionValue.values[v].stat = motionValue.values[v].stat ?? "atk";
-            }
-            else if(motionValue.key.endsWith(" (% Max HP)"))
-            {
-              if(motionValue.key == motionValue.newKey)
-                motionValue.newKey = motionValue.key.slice(0, -11);
-              motionValue.values[v].stat = motionValue.values[v].stat ?? "hp";
-            }
-            else if(motionValue.key.endsWith(" (%Max HP)"))
-            {
-              if(motionValue.key == motionValue.newKey)
-                motionValue.newKey = motionValue.key.slice(0, -10);
-              motionValue.values[v].stat = motionValue.values[v].stat ?? "hp";
-            }
-            else if(motionValue.key.endsWith(" (% DEF)"))
-            {
-              if(motionValue.key == motionValue.newKey)
-                motionValue.newKey = motionValue.key.slice(0, -8);
-              motionValue.values[v].stat = motionValue.values[v].stat ?? "def";
-            }
-            else if(motionValue.key.endsWith(" (% Base ATK)"))
-            {
-              if(motionValue.key == motionValue.newKey)
-                motionValue.newKey = motionValue.key.slice(0, -13);
-              motionValue.values[v].stat = motionValue.values[v].stat ?? "atk-base";
-            }
-            else if(motionValue.key.endsWith(" (% ATK + % Elemental Mastery)"))
-            {
-              if(motionValue.key == motionValue.newKey)
-                motionValue.newKey = motionValue.key.slice(0, -30);
-              motionValue.values[v].stat = motionValue.values[v].stat ?? (v ? "eleMas" : "atk");
-            }
-            else if(talent == "auto" && motionValue.key.includes("DMG"))
-            {
-              motionValue.values[v].stat = motionValue.values[v].stat ?? "atk";
+              motionValue.values[v].stat = "hp";
             }
             
             // Do the calculation.
@@ -1307,13 +1288,9 @@ export default class Character extends Ascendable(GenshinItem)
                 if(Array.isArray(modifier.label) ? modifier.label.indexOf(motionValue.key) > -1 : modifier.label == motionValue.key)
                 {
                   if(modifier.method == "+base")
-                  {
                     baseAdd += modifier.value;
-                  }
                   else if(modifier.method == "*base")
-                  {
                     baseMult += modifier.value;
-                  }
                 }
               }
               this.applyFormulas(motionValue, v, alternates, {baseAdd, baseMult});
@@ -1339,23 +1316,6 @@ export default class Character extends Ascendable(GenshinItem)
                 motionValue.values[v].value = motionValue.values[v].value * (1 + this.getStat("shield_", alternates)/100);
             }
             // Specific hard-coded formulas that are too hard to handle automatically.
-            else if(this.key == "Shenhe" && motionValue.key == "DMG Bonus (% ATK)")
-            {
-              motionValue.newKey = "DMG Bonus";
-              motionValue.values[v].value = motionValue.values[v].value/100 * this.getStat("atk", alternates);
-              motionValue.values[v].dmgType = "bonus";
-            }
-            else if(this.key == "Xianyun" && motionValue.key == "Plunging Attack Shockwave DMG Bonus (% ATK)")
-            {
-              motionValue.newKey = "Plunging Attack Shockwave DMG Bonus";
-              motionValue.values[v].value = motionValue.values[v].value/100 * this.getStat("atk", alternates);
-              motionValue.values[v].dmgType = "bonus";
-            }
-            else if(this.key == "Nahida" && motionValue.key.startsWith("Pyro: DMG Bonus"))
-            {
-              motionValue.newKey = motionValue.key.replace("% - ", "");
-              motionValue.values[v].dmgType = "percent";
-            }
             else if(motionValue.key == "Wave Instances" || motionValue.key == "Maximum Fanfare" || motionValue.key.endsWith("Trigger Quota"))
             {
               motionValue.values[v].dmgType = null;
@@ -1363,7 +1323,7 @@ export default class Character extends Ascendable(GenshinItem)
             // Everything else.
             else if(motionValue.values[v].dmgType == "percent" || motionValue.values[v].dmgType == "self" || motionValue.values[v].dmgType == "bonus")
             {
-              motionValue.newKey = motionValue.key.replace(" (%)", "");
+              // It's been handled and we don't need to do anything.
             }
             else
             {
@@ -1372,13 +1332,25 @@ export default class Character extends Ascendable(GenshinItem)
               motionValue.values[v].dmgType = null;
             }
           }
+          // Non-numeric motion values
           else if(motionValue.key.endsWith("CD"))
           {
             let tiers = motionValue.rawValues[v].split("/");
-            tiers.forEach((cd,i) => tiers[i] = (parseFloat(cd.endsWith("s")?cd.slice(0,-1):cd) * (1 - (this.getStat("cd_", alternates) + this.getStat(talent+"_cd_", alternates))/100)).toFixed(1));
+            tiers.forEach((cd,i) => {
+              tiers[i] = parseFloat(cd.endsWith("s") ? cd.slice(0,-1) : cd);
+              for(let modifier of mvModifiers)
+                if(Array.isArray(modifier.label) ? modifier.label.indexOf(motionValue.key) > -1 : modifier.label == motionValue.key)
+                  if(modifier.method == "-")
+                    tiers[i] -= modifier.value;
+              tiers[i] *= 1 - (this.getStat("cd_", alternates))/100;
+              for(let modifier of mvModifiers)
+                if(Array.isArray(modifier.label) ? modifier.label.indexOf(motionValue.key) > -1 : modifier.label == motionValue.key)
+                  if(modifier.method == "*")
+                    tiers[i] *= modifier.value;
+              tiers[i] = tiers[i].toFixed(1);
+            });
             motionValue.values[v].value = tiers.join("/") + "s";
             motionValue.values[v].dmgType = null;
-            // TODO: Some modifiers reduce cooldowns by a flat number of seconds. Will need to see if that applied before or after % reductions.
           }
           else if(motionValue.key.endsWith("Duration"))
           {
@@ -1432,9 +1404,9 @@ export default class Character extends Ascendable(GenshinItem)
             else if(isAllNumeric && modifier.method == "*")
             {
               motionValue.values.forEach(hit => {
-                hit.value *= 1+modifier.value;
-                hit.critical *= 1+modifier.value;
-                hit.average *= 1+modifier.value;
+                hit.value *= modifier.value;
+                hit.critical *= modifier.value;
+                hit.average *= modifier.value;
               });
             }
           }

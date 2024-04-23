@@ -1170,8 +1170,8 @@ export default {
                 "addmv",
                 [
                     "Normal Attack",
-                    "Skyward Pride Vaccuum Blade (%)",
-                    "@1"
+                    "Skyward Pride Vaccuum Blade",
+                    "@1%@physical"
                 ]
             ]
         ],

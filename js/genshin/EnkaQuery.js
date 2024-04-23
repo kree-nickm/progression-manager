@@ -34,13 +34,21 @@ export default class EnkaQuery
       console.warn(`Unknown character ID '${data.avatarId+"-"+data.skillDepotId}' in EnkaQuery.`);
       return null;
     }
+    
+    // Weird code because Travelers make things weird.
+    let talentAuto;
+    if(Array.isArray[GenshinCharacterData[key].skillIds[0]])
+      talentAuto = data.skillLevelMap[GenshinCharacterData[key].skillIds[0][0]] ?? data.skillLevelMap[GenshinCharacterData[key].skillIds[0][1]];
+    else
+      talentAuto = data.skillLevelMap[GenshinCharacterData[key].skillIds[0]];
+    
     return {
       key,
       ascension: parseInt(data.propMap[1002].val??0),
       level: parseInt(data.propMap[4001].val??0),
       constellation: Object.keys(data.talentIdList??[]).length,
       talent: {
-        auto: parseInt(data.skillLevelMap[GenshinCharacterData[key].skillIds[0]]),
+        auto: parseInt(talentAuto),
         skill: parseInt(data.skillLevelMap[GenshinCharacterData[key].skillIds[1]]),
         burst: parseInt(data.skillLevelMap[GenshinCharacterData[key].skillIds[2]]),
       },

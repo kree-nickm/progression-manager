@@ -102,6 +102,8 @@ export default class StatModifier {
   
   constructor(code, characterSource, type, properties={})
   {
+    if(!characterSource) console.error(`Empty character source`, {code, characterSource, type, properties});
+      
     this.code = code;
     this.characterSource = characterSource;
     this.type = type;
@@ -233,13 +235,14 @@ export default class StatModifier {
           this.teamwide = true;
           codeStat = codeStat + ":" + situation + "!";
         }
+        
         if(Array.isArray(amount))
         {
           const [func, ...args] = amount;
           stats.__calculations__[codeStat] = {func, args};
         }
         else
-          stats[codeStat] = (stats[codeStat] ?? 0) + amount;
+          stats[codeStat] = (stats[codeStat] ?? 0) + parseFloat(amount);
       }
     }
     else if(command == "pinfuse" || command == "oinfuse" || command == "infuse")
@@ -432,23 +435,8 @@ export default class StatModifier {
       let result = `${command=="pstat"||command=="spstat"?"all characters' ":""}${command=="estat"?"enemy's ":""}${command=="opstat"||command=="sopstat"?"other team members' ":""}${situation?situation+" ":""}${statStr}`;
       if(Array.isArray(amount))
       {
-        const [func, ...args] = amount;
-        if(func == "mv")
-        {
-          result = `Change ${result} by the motion value of "${args[0]}".`;
-        }
-        else if(func == "stat%")
-        {
-          result = `${args[0]>0?"Increase":"Decrease"} ${result} by ${Math.abs(args[0])}${GenshinItem.isStatPercent(args[1])?"":"%"} of ${GenshinItem.getStatFull(args[1])}${args[2]?", to a max of "+args[2]+"%":""}.`;
-        }
-        else if(func == "stacks")
-        {
-          result = `Change ${result} by ${args.join('/')} depending on stacks.`;
-        }
-        else
-        {
-          result = `Change ${result} by some function "${func}"; ${args.join(", ")}.`;
-        }
+        let value = StatModifier.funcToStr(amount);
+        result = `Change ${result} by ${value}.`;
       }
       else
       {
@@ -459,27 +447,24 @@ export default class StatModifier {
     else if(command == "editmv" || command == "peditmv")
     {
       let mvStr = Array.isArray(parameters[1]) ? parameters[1].reduce((acc,mv,i) => (acc ? acc + (i==parameters[1].length-1?'" and "':'", "') : '') + mv, '') : parameters[1];
-      let valueNumber = Array.isArray(parameters[3]) ? parameters[3].slice(1).join(' / ')+" (based on stacks)" : parameters[3];
-      let valuePercent = Array.isArray(parameters[3]) ? parameters[3].slice(1).map(v=>(v*100)+"%").join(' / ')+" (based on stacks)" : (parameters[3]*100)+"%";
-      let result = `Edit ${parameters[0]} motion value "${mvStr}"`;
+      let value = Array.isArray(parameters[3]) ? StatModifier.funcToStr(parameters[3]) : parameters[3];
+      let result = `Change "${mvStr}" (${parameters[0]})`;
       if(command == "peditmv")
         result += ` of the whole party`;
       if(parameters[2] == "+hit")
-        result += `, adding an additional hit of ${valueNumber}.`;
+        result += `, adding an additional hit of ${StatModifier.damageDefToStr(value)}.`;
       else if(parameters[2] == "+hit*")
-        result += `, adding an additional hit equal to ${valuePercent} of the existing value.`;
+        result += `, adding an additional hit equal to ${value} times the existing value.`;
       else if(parameters[2] == "*")
-        result += `, increasing it by ${valuePercent}.`;
-      else if(parameters[2] == "s")
-        result += `, reducing the time by ${valuePercent}.`;
+        result += `, multiplying by ${value}.`;
       else if(parameters[2] == "*base")
-        result += `, increasing the base DMG multiplier by ${valuePercent}.`;
+        result += `, increasing the base DMG multiplier by ${value}.`;
       else if(parameters[2] == "+base")
-        result += `, increasing the base DMG by ${valueNumber}.`;
+        result += `, increasing the base DMG by ${value}.`;
       else if(parameters[2] == "infuse")
-        result += `, infusing it with ${valueNumber}.`;
+        result += `, adding ${value.charAt(0).toUpperCase()+value.slice(1)} infusion.`;
       else
-        result += `, affecting it in some way (${parameters[2]}) by ${valueNumber}.`;
+        result += `, affecting it in some way (${parameters[2]}) by ${value}.`;
       return result;
     }
     else if(command == "addmv" || command == "paddmv")
@@ -505,6 +490,33 @@ export default class StatModifier {
       return `Custom code.`;
     else
       return `Unknown code.`;
+  }
+  
+  static funcToStr(definition)
+  {
+    const [func, ...args] = definition;
+    if(func == "mv")
+      return `the value of "${args[0]}"`;
+    else if(func == "stat%")
+      return `${args[0]}${GenshinItem.isStatPercent(args[1])?"":"%"} of ${GenshinItem.getStatFull(args[1])}${args[2]?", to a max of "+args[2]+(GenshinItem.isStatPercent(args[1])?"":"%"):""}`;
+    else if(func == "stacks")
+      return `${args.join('/')} (depending on stacks)`;
+    else
+      return `some function "${func}" (${args.join(", ")})`;
+  }
+  
+  static damageDefToStr(definition)
+  {
+    if(definition.includes("@"))
+    {
+      const [value, damage] = definition.split("@");
+      if(damage == "absorb")
+        return `${value} (DMG of the absorbed type)`;
+      else
+        return `${value} (${damage.charAt(0).toUpperCase()+damage.slice(1)} DMG)`;
+    }
+    else
+      return definition;
   }
   
   getAddedMotionValues(talent, asker, alternates={})

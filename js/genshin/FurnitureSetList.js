@@ -84,7 +84,7 @@ export default class FurnitureSetList extends GenshinList
       dynamic: true,
       value: item => item.characters.map(c => {
         let character = this.viewer.lists.CharacterList.get(c);
-        if(character)
+        if(character?.owned)
           return {
             tag: "div",
             value: character.name,

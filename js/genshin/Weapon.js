@@ -149,7 +149,7 @@ export default class Weapon extends Ascendable(GenshinItem)
   
   getPassive(ref=this.refinement)
   {
-    return GenshinWeaponData[this.key]?.passive?.replaceAll(/@(\d+)/g, (x, id, d) => `<b title="${Object.values(GenshinWeaponData[this.key]?.refinementData?.[id]??[]).join(' / ')}">${GenshinWeaponData[this.key]?.refinementData?.[id]?.[ref]}</b>`).replaceAll(`\n`,"<br/>");
+    return GenshinWeaponData[this.key]?.passive?.replaceAll(/@(\d+)/g, (m, id) => `<b title="${Object.values(GenshinWeaponData[this.key]?.refinementData?.[id]??[]).join(' / ')}">${GenshinWeaponData[this.key]?.refinementData?.[id]?.[ref]}</b>`).replaceAll(`\n`,"<br/>");
   }
   
   getPhase(phase=this.ascension) { return GenshinPhaseData[phase] ?? GenshinPhaseData[6]; }
@@ -240,8 +240,8 @@ export default class Weapon extends Ascendable(GenshinItem)
         clone.push(this.cloneCode(elem, alternates));
       else
       {
-        if(typeof(elem) == "string" && elem.charAt(0) == "@")
-          elem = GenshinWeaponData[this.key]?.refinementData?.[elem.slice(1)]?.[tempRefine];
+        if(typeof(elem) == "string")
+          elem = elem.replace(/@(\d+)/g, (m, id) => GenshinWeaponData[this.key]?.refinementData?.[id]?.[tempRefine] ?? `@${id}`);
         clone.push(elem);
       }
     }
