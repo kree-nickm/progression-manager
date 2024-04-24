@@ -392,7 +392,7 @@ export default {
         "matWeakEnemy": "Meka",
         "hakushinID": 13512,
         "id": 13512,
-        "version": "4.5.54"
+        "version": "4.6"
     },
     "ElegyForTheEnd": {
         "name": "Elegy for the End",
