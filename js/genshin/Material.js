@@ -7,7 +7,7 @@ import Weapon from "./Weapon.js";
 
 export default class Material extends GenshinItem
 {
-  static dontSerialize = GenshinItem.dontSerialize.concat(["_shorthand","_type","source","days","usedBy","prevTier","nextTier"]);
+  static dontSerialize = GenshinItem.dontSerialize.concat(["_shorthand","_type","source","days","usedBy","prevTier","nextTier","converts"]);
   
   static gemQualities = {
     '5': " Gemstone",
@@ -65,6 +65,7 @@ export default class Material extends GenshinItem
   usedBy = [];
   prevTier = null;
   nextTier = null;
+  converts = null;
   
   fromGOOD(goodData)
   {
@@ -217,12 +218,17 @@ export default class Material extends GenshinItem
   
   getCraftCount()
   {
-    return this.count + (this.prevTier ? Math.floor(this.prevTier.getCraftCount()/3) : 0);
+    if(this.converts)
+      return this.count + this.converts.reduce((total, mat) => total+mat.count, 0);
+    else
+      return this.count + (this.prevTier ? Math.floor(this.prevTier.getCraftCount()/3) : 0);
   }
   
   getCraftDependencies()
   {
-    if(this.prevTier)
+    if(this.converts)
+      return this.converts.map(mat => ({item:mat, field:"count"}));
+    else if(this.prevTier)
       return this.prevTier.getCraftDependencies().concat([{item:this.prevTier, field:"count"}]);
     else
       return [];
@@ -286,7 +292,7 @@ export default class Material extends GenshinItem
         ? `Requires `+ (bosskills2!=bosskills3?`${bosskills3}-${bosskills2}`:bosskills2) +` more boss kill`+ (bosskills2!=1||bosskills3!=1?"s":"") +`.`
         : this.type == "flora"
           ? `` // TODO: Compile data for number of each flora that exists on the map and display the relevant number here.
-          : this.prevTier
+          : this.prevTier || this.converts
             ? `Up to ${this.getCraftCount()} if you craft.`
             : ``,
       classes: {
@@ -294,7 +300,7 @@ export default class Material extends GenshinItem
         "pending": this.count < cost,
         "insufficient": this.getCraftCount() < cost,
       },
-      edit: {target: {item:this, field:"count"}},
+      edit: {target: {item:this, field:"count"}, min:0, max:99999},
     };
     
     let namePart = {

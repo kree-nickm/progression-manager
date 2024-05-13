@@ -124,6 +124,7 @@ export default class Artifact extends GenshinItem
     return GenshinArtifactStats[this.rarity].mainstats[key][this.level];
   }
   get releaseTimestamp(){ return GenshinArtifactData[this.key]?.release ? Date.parse(GenshinArtifactData[this.key]?.release) : 0; }
+  get isCutContent(){ return GenshinArtifactData[this.key]?.deletedContent; }
   get isFodder()
   {
     let minRating = this.maxRarity==4 ? parseFloat(this.viewer.settings.preferences.artifactMinRating4 ?? 0.6) : parseFloat(this.viewer.settings.preferences.artifactMinRating ?? 1);

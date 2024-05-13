@@ -190,7 +190,7 @@ export default class CharacterList extends GenshinList
       dynamic: true,
       title: item => "Click to change." + (item.canUpPhase(true) ? "\r\nNote: You have enough materials to ascend. Open character details to use the ascension feature." : ""),
       value: item => item.ascension,
-      edit: item => ({target: {item:item.base??item, field:"ascension"}}),
+      edit: item => ({target: {item:item.base??item, field:"ascension"}, min:0, max:6}),
       classes: item => ({
         'can-inc': item.canUpPhase(true),
         "at-max": item.ascension >= 6,
@@ -211,7 +211,7 @@ export default class CharacterList extends GenshinList
       dynamic: true,
       title: item => "Click to change.",
       value: item => item.level,
-      edit: item => ({target: {item:item.base??item, field:"level"}}),
+      edit: item => ({target: {item:item.base??item, field:"level"}, min:1, max:90}),
       classes: item => ({
         "at-max": item.level >= item.levelCap,
       }),
@@ -235,7 +235,7 @@ export default class CharacterList extends GenshinList
       classes: item => ({
         "at-max": item.constellation >= 6,
       }),
-      edit: item => ({target: {item, field:"constellation"}}),
+      edit: item => ({target: {item, field:"constellation"}, min:0, max:6}),
     });
     
     let iconLookup = {
@@ -261,7 +261,7 @@ export default class CharacterList extends GenshinList
         dynamic: true,
         value: item => item.talent[i],
         title: item => (item.getTalent(i).matTrounceCount ? `Also requires ${item.getTalent(i).matTrounceCount} ${item.MaterialList.trounce.name}, dropped by ${item.MaterialList.trounce.source} (you have ${item.MaterialList.trounce.getCraftCount()})` : ""),
-        edit: item => ({target: {item, field:["talent", i]}}),
+        edit: item => ({target: {item, field:["talent", i]}, min:1, max:10}),
         classes: item => ({
           "can-inc": item.canUpTalent(i, true),
           "at-max": item.talent[i] >= item.talentCap,

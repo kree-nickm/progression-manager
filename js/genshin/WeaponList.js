@@ -102,7 +102,7 @@ export default class WeaponList extends GenshinList
       sort: {generic: {type:"number", property:"refinement"}},
       dynamic: true,
       value: item => item.refinement,
-      edit: item => ({target: {item, field:"refinement"}}),
+      edit: item => ({target: {item, field:"refinement"}, min:1, max:5}),
       classes: item => ({
         'at-max': item.refinement >= 5,
       }),
@@ -127,7 +127,7 @@ export default class WeaponList extends GenshinList
       sort: {generic: {type:"number", property:"ascension"}},
       dynamic: true,
       value: item => item.ascension,
-      edit: item => ({target: {item, field:"ascension"}}),
+      edit: item => ({target: {item, field:"ascension"}, min:0, max:6}),
       dependencies: item => [
         {item:item.getMat('forgery'), field:"count"},
         {item:item.getMat('strong'), field:"count"},
@@ -143,7 +143,7 @@ export default class WeaponList extends GenshinList
       sort: {generic: {type:"number", property:"level"}},
       dynamic: true,
       value: item => item.level,
-      edit: item => ({target: {item, field:"level"}}),
+      edit: item => ({target: {item, field:"level"}, min:1, max:90}),
       classes: item => ({
         "at-max": item.level >= item.levelCap,
       }),

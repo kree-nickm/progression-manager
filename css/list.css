@@ -1,0 +1,46 @@
+.list td {
+  white-space: nowrap;
+}
+
+td.list-item-field {
+	vertical-align: middle;
+}
+
+.list th {
+  text-align: center;
+}
+
+.group-collapsed *
+{
+  display: none !important;
+}
+
+.group-row, .group-row th {
+  border: 0px;
+  padding: 0px;
+}
+
+.group-header {
+  cursor: pointer;
+  text-align: center;
+}
+
+.group-header div {
+  background-color: rgba(120,120,120,0.5);
+  margin: 1px;
+  padding: 1px 3px;
+}
+
+.sortable {
+  cursor: pointer;
+}
+
+.sortable.sorted::after {
+  content: "\1f823";
+  position: absolute;
+}
+
+.sortable.sorted-r::after {
+  content: "\1f821";
+  position: absolute;
+}

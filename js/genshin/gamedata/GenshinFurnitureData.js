@@ -1658,17 +1658,17 @@ export default {
     "MallowWoodViewingRitesChair": {
         "name": "Mallow Wood \"Viewing Rites\" Chair",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4f\/Item_Mallow_Wood_%22Viewing_Rites%22_Chair.png",
-        "type": "purchasable"
+        "type": "craftable"
     },
     "CelebrationOfAnAdHocPerformance": {
         "name": "\"Celebration Of An Ad-Hoc Performance\"",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ab\/Item_%22Celebration_of_an_Ad-Hoc_Performance%22.png",
-        "type": "purchasable"
+        "type": "craftable"
     },
     "StandardMusicStandAccurateTuning": {
         "name": "Standard Music Stand: Accurate Tuning",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/53\/Item_Standard_Music_Stand_Accurate_Tuning.png",
-        "type": "purchasable"
+        "type": "craftable"
     },
     "MaisonCardinalicesWingedShelf": {
         "name": "\"Maison Cardinalice's Winged Shelf\"",
@@ -1902,7 +1902,7 @@ export default {
     },
     "ASistersDuty": {
         "name": "\"A Sister's Duty\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c5\/Item_%22A_Sister%27s_Duty%22.png",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/77\/Item_A_Sister%27s_Duty.png",
         "type": "craftable"
     },
     "HelloWelcome": {

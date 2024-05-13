@@ -1,0 +1,687 @@
+.choose-hoyo {
+  margin: 0.5em 0px;
+  border-left: 1px solid black;
+  cursor: pointer;
+}
+
+.choose-hoyo:hover {
+  background-color: rgba(127,127,127,0.3);
+}
+
+.list-item-field.can-inc .value::after {
+  content: "🡅";
+  position: absolute;
+  color: green;
+  font-size: 0.6em;
+}
+
+.list-item-field.can-farm .value::after {
+  content: "🡅";
+  position: absolute;
+  color: orange;
+  font-size: 0.6em;
+}
+
+.list-item-field.cant-inc .value::after {
+  content: "🡅";
+  position: absolute;
+  color: red;
+  font-size: 0.6em;
+  opacity: 0.1;
+}
+
+.list-item-field.at-max .value {
+  opacity: 0.5;
+}
+
+.list table .ascension-materials {
+  background-color: var(--colgroup-alt-background) !important;
+}
+
+.list table .skill-mastery, .list table .skill-enemy {
+  background-color: var(--column-alt-background) !important;
+}
+
+.list table .character-weapon {
+  background-color: var(--colgroup-alt-background) !important;
+}
+
+.list table .stat-critRate_, .list table .stat-atk_, .list table .stat-eleMas, .list table .stat-def_, .list table .stat-hp,
+.list table .stat-rating-critRate_, .list table .stat-rating-atk_, .list table .stat-rating-eleMas, .list table .stat-rating-def_, .list table .stat-rating-hp, .list table .stat-character-rating {
+  background-color: var(--column-alt-background) !important;
+}
+
+.list table .stat-def, .list table .stat-rating-def {
+  border-right: 1px solid black;
+}
+
+.list table .stat-critRate_, .list table .stat-rating-critRate_, .list table .artifact-wanters {
+  border-left: 1px solid black;
+}
+
+tr:hover .list-item-field[data-group-name="Substat Values"] > span::before {
+  position: absolute;
+  height: 1em;
+  width: 1em;
+  filter: opacity(0.2);
+}
+
+tr:hover .list-item-field.stat-critRate_ > span::before {
+  content: url(../img/stat.critRate_.svg);
+}
+
+tr:hover .list-item-field.stat-atk_ > span::before {
+  content: url(../img/stat.atk_.svg);
+}
+
+tr:hover .list-item-field.stat-eleMas > span::before {
+  content: url(../img/stat.eleMas.svg);
+}
+
+tr:hover .list-item-field.stat-def_ > span::before {
+  content: url(../img/stat.def_.svg);
+}
+
+tr:hover .list-item-field.stat-hp > span::before {
+  content: url(../img/stat.hp.svg);
+}
+
+tr:hover .list-item-field.stat-hp_ > span::before {
+  content: url(../img/stat.hp_.svg);
+}
+
+tr:hover .list-item-field.stat-atk > span::before {
+  content: url(../img/stat.atk.svg);
+}
+
+tr:hover .list-item-field.stat-def > span::before {
+  content: url(../img/stat.def.svg);
+}
+
+tr:hover .list-item-field.stat-critDMG_ > span::before {
+  content: url(../img/stat.critDMG_.svg);
+}
+
+tr:hover .list-item-field.stat-enerRech_ > span::before {
+  content: url(../img/stat.enerRech_.svg);
+}
+
+.not-owned {
+  opacity: 0.5;
+}
+
+td.list-item-field[name="users"] {
+  white-space: normal;
+}
+
+.label[name="weaponName"] span::after {
+  content: "\1F52A";
+}
+
+.label[name="ascension"] span::after {
+  content: "\2726";
+}
+
+th.label[data-group-name="Gear"] {
+  padding: 0px;
+}
+
+.label[data-group-name="Gear"] img {
+  height: 2em;
+}
+
+[data-group-name="Gear"] .sub-0-1 {
+  margin: 0px 0.2em;
+  min-width: 1.8em;
+  display: inline-block;
+}
+
+.user-field {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.material-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1em;
+  justify-content: center;
+}
+
+.material-row .list-item {
+  margin: 0.5em;
+  flex: 0 0 7.2%;
+}
+.material-row .list-item.material-mastery {
+  flex-basis: 9.1%;
+}
+
+img.artifact-icon-inline {
+  height: 1em;
+  transform: scale(2.3);
+  vertical-align: baseline;
+  margin-left: 0.75ex;
+  margin-right: 0.75ex;
+}
+
+img.element-icon {
+	filter: saturate(1.5);
+	transform: scale(1.1);
+}
+
+img.element-icon.element-Anemo {
+  filter: saturate(1.5) brightness(0.5) drop-shadow(0px 0px 2px rgba(0,200,200,0.5));
+}
+
+img.element-icon.element-Cryo {
+  filter: saturate(1.5) brightness(0.5) drop-shadow(0px 0px 2px rgba(50,50,200,0.5));
+}
+
+img.element-icon.element-Dendro {
+  filter: saturate(1.5) brightness(0.5) drop-shadow(0px 0px 2px rgba(0,200,0,0.5));
+}
+
+img.element-icon.element-Electro {
+  filter: saturate(1.5) brightness(0.5) drop-shadow(0px 0px 2px rgba(200,0,200,0.5));
+}
+
+img.element-icon.element-Geo {
+  filter: saturate(1.5) brightness(0.5) drop-shadow(0px 0px 2px rgba(200,200,0,0.5));
+}
+
+img.element-icon.element-Hydro {
+  filter: saturate(1.5) brightness(0.5) drop-shadow(0px 0px 2px rgba(0,0,200,0.5));
+}
+
+img.element-icon.element-Pyro {
+  filter: saturate(1.5) brightness(0.5) drop-shadow(0px 0px 2px rgba(200,100,0,0.5));
+}
+
+img.element-icon.element-Physical {
+  filter: drop-shadow(0px 0px 0.5px rgba(0,0,0,0.3));
+}
+
+body.dark-mode img.element-icon.element-Anemo {
+  filter: saturate(1.5) brightness(1.5) drop-shadow(0px 0px 2px rgba(0,200,200,0.5));
+}
+
+body.dark-mode img.element-icon.element-Cryo {
+  filter: saturate(1.5) brightness(1.5) drop-shadow(0px 0px 2px rgba(50,50,200,0.5));
+}
+
+body.dark-mode img.element-icon.element-Dendro {
+  filter: saturate(1.5) brightness(1.5) drop-shadow(0px 0px 2px rgba(0,200,0,0.5));
+}
+
+body.dark-mode img.element-icon.element-Electro {
+  filter: saturate(1.5) brightness(1.5) drop-shadow(0px 0px 2px rgba(200,0,200,0.5));
+}
+
+body.dark-mode img.element-icon.element-Geo {
+  filter: saturate(1.5) brightness(1.5) drop-shadow(0px 0px 2px rgba(200,200,0,0.5));
+}
+
+body.dark-mode img.element-icon.element-Hydro {
+  filter: saturate(1.5) brightness(1.5) drop-shadow(0px 0px 2px rgba(0,0,200,0.5));
+}
+
+body.dark-mode img.element-icon.element-Pyro {
+  filter: saturate(1.5) brightness(1.5) drop-shadow(0px 0px 2px rgba(200,100,0,0.5));
+}
+
+body.dark-mode img.element-icon.element-Physical {
+  filter: drop-shadow(0px 0px 0.5px rgba(0,0,0,0.3));
+}
+
+.item-display {
+	border-radius: 5%;
+  box-shadow: 0px 0px 2px 1px black;
+  display: inline-block;
+  max-width: min-content;
+  text-align: center;
+	position: relative;
+}
+
+.item-display .display-img,
+.item-display .display-img img {
+  border-radius: 5%;
+  border-bottom-right-radius: 25%;
+  display: inline-block;
+}
+.item-display.display-no-caption .display-img,
+.item-display.display-no-caption .display-img img {
+  border-bottom-right-radius: 5%;
+}
+
+.item-display.display-xxs {
+	border-radius: unset;
+  box-shadow: unset;
+}
+.item-display.display-xxs .display-img img {
+  height: 1em;
+}
+
+.item-display.display-xs {
+	border-radius: unset;
+  box-shadow: unset;
+}
+.item-display.display-xs .display-img img {
+  height: 2.4em;
+}
+
+.item-display.display-sm .display-img {
+  filter: saturate(1.25);
+}
+.item-display.display-sm .display-img img {
+  filter: saturate(0.8);
+  height: 4rem;
+}
+.item-display.display-sm.display-no-caption .display-img img {
+  height: 5.3rem;
+}
+
+.item-display.display-md .display-img img {
+  height: 5rem;
+}
+.item-display.display-md.display-no-caption .display-img img {
+  height: 6.3rem;
+}
+
+.item-display .display-img.rarity-5 {
+  background-image: url(../img/Background_Item_5_Star.webp);
+  background-position: center;
+  background-size: cover;
+}
+
+.item-display .display-img.rarity-4 {
+  background-image: url(../img/Background_Item_4_Star.webp);
+  background-position: center;
+  background-size: cover;
+}
+
+.item-display .display-img.rarity-3 {
+  background-image: url(../img/Background_Item_3_Star.webp);
+  background-position: center;
+  background-size: cover;
+}
+
+.item-display .display-img.rarity-2 {
+  background-image: url(../img/Background_Item_2_Star.webp);
+  background-position: center;
+  background-size: cover;
+}
+
+.item-display .display-img.rarity-1 {
+  background-image: url(../img/Background_Item_1_Star.webp);
+  background-position: center;
+  background-size: cover;
+}
+
+.item-display .display-caption {
+  line-height: 1.3em;
+  padding: 0em 0.1em 0.1em 0.1em;
+  display: block;
+  font-size: 0.9em;
+}
+
+.item-display .display-badge {
+	position: absolute;
+	top: 0.1rem;
+	left: 0.1rem;
+	color: rgba(255,255,255,0.9);
+	background: rgba(0,0,0,0.5);
+	padding: 2px;
+	line-height: 1em;
+	border-radius: 0.2em;
+	z-index: 2;
+}
+
+.item-display .display-badge.badge-right {
+	left: unset;
+	right: 0.1rem;
+}
+
+.item-display .display-badge.badge-gold {
+  background: rgba(150,120,70,0.8);
+}
+
+.item-display .display-img .display-badge.element-icon {
+  height: 2.1em;
+  background: none;
+  filter: drop-shadow(0px 0px 1px black) saturate(1.5);
+}
+
+.stat-list[data-template="genshin/renderCharacterStatModifiers"] img.element-icon {
+  height: 2.4em;
+}
+
+.stat-list .row {
+  align-items: center;
+}
+
+.stat-list.collapse > *:nth-child(even) {
+  background-color: rgba(200,200,200,0.5);
+}
+
+.plan-materials .sub-0 {
+  display: block;
+}
+
+.plan-material {
+  margin: 0.1em 1ex;
+  display: inline-block;
+}
+
+.character-build {
+  border: 1px solid gray;
+  border-radius: 1em;
+  padding: 1ex;
+}
+
+.form-range::-moz-range-track {
+  background-color: #ddd;
+}
+
+.favorites-only .list-item:not(.favorite),
+.available-only .list-item.taken {
+  display: none;
+}
+
+.character-artifacts .list-item
+{
+  border-radius: 1ex;
+  margin-bottom: 1ex;
+  padding: 4px;
+  position: relative;
+}
+
+.character-artifacts .list-item.equipped {
+	border: 2px outset #eee;
+	padding: 2px;
+	box-shadow: 1px 1px 2px 3px rgba(0,0,0,0.9);
+}
+
+.character-artifacts .rarity {
+	position: absolute;
+	top: 0px;
+	/*! right: 0px; */
+	left: 0px;
+	/*! bottom: 0px; */
+	border-radius: 1ex;
+	text-align: center;
+	overflow: hidden;
+	/*! z-index: 1; */
+	opacity: 0.7;
+	filter: contrast(0.6) saturate(1.7) blur(1px);
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.character-artifacts .artifact-content {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.character-artifacts .images {
+  flex: 0 1 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  text-align: center;
+  z-index: 1;
+  width: 4.6em;
+}
+
+.character-artifacts .artifact-icon {
+  opacity: 0.5;
+  filter: grayscale(0.5) blur(0.5px);
+}
+
+.character-artifacts .list-item.favorite .artifact-icon {
+  opacity: 1;
+  filter: drop-shadow(1px 1px 2px black);
+}
+
+.character-artifacts [name="level"],
+.character-artifacts [name="substat"],
+.character-artifacts [name="mainStat"] {
+	font-weight: bold;
+	filter: drop-shadow(0px 0px 3px white);
+}
+
+.character-artifacts [name="characterScore"] {
+	filter: drop-shadow(0px 0px 2px black);
+}
+
+.character-artifacts .rolls-display {
+  position: absolute;
+  bottom: 0rem;
+  right: 0px;
+  border-bottom: 2px solid rgba(0,0,0,0.5);
+  left: 0px;
+}
+
+.character-artifacts .rolls-display > span {
+  display: inline-block;
+  text-align: center;
+  margin-right: 1px;
+  border-bottom: 1px solid white;
+  margin-left: 1px;
+  top: 0.25rem;
+  position: relative;
+  line-height: 1rem;
+  color: white;
+  filter: drop-shadow(0px 0px 2px black);
+}
+
+.character-artifacts .artifact-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 0.2em;
+}
+
+.character-artifacts .stat-key img {
+  height: 2em;
+}
+
+.character-artifacts .stat-key img.dark-highlight {
+	filter: drop-shadow(0px 0px 2px black);
+}
+
+.character-artifacts .stat-key img.light-highlight {
+	filter: drop-shadow(0px 0px 2px white);
+}
+
+.artifact-user img {
+	height: 3em;
+	width: 3em;
+}
+
+.character-artifacts .equipped button {
+  display: none;
+}
+
+.character-artifacts .substats,
+.artifact-mini-stats {
+	flex: 1 0 auto;
+	display: flex;
+	flex-flow: column nowrap;
+  justify-content: space-evenly;
+}
+
+.character-artifacts .substats .list-item-field[name="substat"] {
+	padding: 0.2rem 0.2rem 0.4rem 0.2rem;
+	margin: 0.2rem;
+	border-radius: 0.4rem 0.4rem 0rem 0rem;
+	display: flex;
+	align-items: center;
+	gap: 0.1em;
+	background: rgba(255,255,255,0.2);
+}
+
+.character-artifacts .substats img,
+.artifact-mini-stats img {
+	height: 1.2em;
+	flex: 0 1 auto;
+}
+
+.artifact-mini {
+  display: flex;
+}
+
+.artifact-mini-stats {
+  font-size: 0.8em;
+  margin-left: 0.2em;
+}
+
+.artifact-mini-stats .substat {
+  display: flex;
+  align-items: center;
+  gap: 0.1em;
+  position: relative;
+  margin-bottom: 0.15em;
+}
+
+.artifact-mini-stats .rolls-display {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+}
+
+.artifact-mini-stats .rolls-display > span {
+  display: inline-block;
+  text-align: center;
+  margin-right: 1px;
+  margin-left: 1px;
+  position: relative;
+  top: 4px;
+  line-height: 11px;
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+  color: rgba(0,0,0,0.5);
+}
+
+.btn.preview-artifact {
+  border-width: 0px;
+}
+
+/* Showcase */
+
+.showcase {
+}
+
+.showcase-row {
+  display: flex;
+  margin-bottom: 0.5rem;
+  gap: 0.7em;
+}
+
+.showcase-talents {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.showcase-talent {
+  position: relative;
+  height: 1em;
+  font-size: 2em;
+  width: 1em;
+  line-height: 1em;
+}
+
+.showcase-talent > span {
+  position: absolute;
+  top: -0.07em;
+  display: block;
+  width: 100%;
+  z-index: 1;
+  font-weight: bold;
+  font-size: 0.6em;
+  text-align: center;
+  text-shadow: 0px 0px 3px black;
+  color: white;
+  filter: drop-shadow(0px 0px 1px black);
+}
+
+.showcase-talent > img {
+  height: 100%;
+  filter: grayscale(0.4) opacity(0.8) brightness(0.8);
+  vertical-align: unset;
+}
+
+.showcase-talent > span.increased {
+  color: #99ff99;
+}
+
+.showcase-stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.showcase-stats-a {
+  flex: 0 0 9ex;
+}
+
+.showcase-stats-b {
+  flex: 0 0 10.5ex;
+}
+
+.showcase-substats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 0.8em;
+}
+
+.showcase-substats-a {
+  flex: 0 0 7ex;
+}
+
+.showcase-substats-b {
+  flex: 0 0 7.5ex;
+}
+
+.showcase-stats img,
+.showcase-substats img {
+  height: 1.2em;
+}
+
+.showcase-artifacts {
+  display: flex;
+  flex-direction: row;
+  flex: 1 0 auto;
+  gap: 0.5em;
+  justify-content: space-around;
+}
+
+.showcase-artifacts > div {
+  flex: 1 0;
+}
+
+.highlighted {
+  /*background: linear-gradient(to right, rgb(50,200,255), transparent 2em);*/
+  transform: scale(1.1);
+  /*border-radius: 1ex;*/
+}
+
+.unhighlighted {
+  opacity: 0.4;
+}
+
+/*
+Furniture List
+*/
+
+img.furniture-set-picture {
+  display: block;
+}
+
+img.set-unlearned {
+  opacity: 0.6;
+  filter: saturate(0.3);
+}

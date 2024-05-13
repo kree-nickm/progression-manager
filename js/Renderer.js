@@ -437,7 +437,12 @@ class Renderer
       if(item)
       {
         popupTrigger.onclick = event => {
-          Renderer.rerender(item.viewer.elements.popup.querySelector(".modal-content"), {item}, {template: item.constructor.templateName, partials: item.constructor.templatePartials, showPopup: true});
+          event.stopPropagation();
+          Renderer.rerender(item.viewer.elements.popup.querySelector(".modal-content"), {item}, {
+            template: item.constructor.templateName,
+            partials: item.constructor.templatePartials,
+            showPopup: true,
+          });
         };
       }
     });
@@ -683,9 +688,11 @@ class Renderer
         {
           if(window.DEBUGLOG.renderItemField) console.debug(`Adding popup event listener to subelement (field:${fieldName}, item:${item.name??item.uuid}).`, subElement, subContent);
           subElement.onclick = event => {
+            event.stopPropagation();
             Renderer.rerender(subContent.popup.viewer.elements.popup.querySelector(".modal-content"), {item: subContent.popup}, {template: subContent.popup.constructor.templateName, partials: subContent.popup.constructor.templatePartials, showPopup: true, parentElement: subContent.popup.viewer.elements.popup});
           };
           subElement.classList.add("popup");
+          subElement.dataset.uuid = subContent.popup.uuid;
         }
       }
     };
@@ -708,11 +715,8 @@ class Renderer
   static addFieldEventListeners(fieldElement, content)
   {
     if(window.DEBUGLOG.addFieldEventListeners) console.debug(`Renderer.addFieldEventListeners(2): Adding event listeners:`, fieldElement, content);
-    fieldElement.editValue = content.edit.value ?? content.value ?? "";
-    fieldElement.editTarget = content.edit.target;
-    fieldElement.editFunc = content.edit.func;
-    fieldElement.editValueFormat = content.edit.valueFormat;
     fieldElement.editingData = content.edit;
+    fieldElement.editValue = content.edit.value ?? content.value ?? "";
     let editElement = fieldElement.querySelector(".edit-element");
     // TODO: Move this to contentToHTML
     if(!editElement)
@@ -769,7 +773,15 @@ class Renderer
         // Add input element.
         editElement = fieldElement.appendChild(document.createElement("input"));
         editElement.type = content.edit.type ?? "number";
-        editElement.classList.add("edit-box", "size-to-content");
+        if(content.edit.min !== undefined)
+        {
+          editElement.min = parseFloat(content.edit.min);
+        }
+        if(content.edit.max !== undefined)
+        {
+          editElement.max = parseFloat(content.edit.max);
+          editElement.size = String(editElement.max).length;
+        }
       }
       editElement.classList.add("edit-element");
     }
@@ -779,21 +791,21 @@ class Renderer
     {
       if(!fieldElement.onclick)
       {
-        if(fieldElement.editTarget)
+        if(fieldElement.editingData.target)
         {
           fieldElement.onclick = event => {
-            let fieldData = fieldElement.editTarget.item.parseProperty(fieldElement.editTarget.field);
+            let fieldData = fieldElement.editingData.target.item.parseProperty(fieldElement.editingData.target.field);
             if(Array.isArray(fieldData.value))
-              fieldElement.editTarget.item.update(fieldElement.editTarget.field, fieldElement.editValue, fieldElement.editChecked ? "remove" : "push");
+              fieldElement.editingData.target.item.update(fieldElement.editingData.target.field, fieldElement.editValue, fieldElement.editChecked ? "remove" : "push");
             else
-              fieldElement.editTarget.item.update(fieldElement.editTarget.field, !fieldElement.editChecked);
+              fieldElement.editingData.target.item.update(fieldElement.editingData.target.field, !fieldElement.editChecked);
           };
           fieldElement.classList.add("editable");
           if(window.DEBUGLOG.addFieldEventListeners) console.debug(`Added onclick method to field element.`, fieldElement.onclick);
         }
-        else if(fieldElement.editFunc)
+        else if(fieldElement.editingData.func)
         {
-          fieldElement.onclick = fieldElement.editFunc;
+          fieldElement.onclick = fieldElement.editingData.func;
           fieldElement.classList.add("editable");
           if(window.DEBUGLOG.addFieldEventListeners) console.debug(`Added onclick method to field element.`, fieldElement.onclick);
         }
@@ -816,7 +828,7 @@ class Renderer
           if(fieldElement.classList.contains("editing") || event.target.nodeName == "OPTION")
             return;
           fieldElement.editingStartedAt = event.timeStamp;
-          let placeholder = fieldElement.editTarget?.item?.getProperty(fieldElement.editTarget?.field) ?? fieldElement.editValue;
+          let placeholder = fieldElement.editingData.target?.item?.getProperty(fieldElement.editingData.target?.field) ?? fieldElement.editValue;
           if(!placeholder && placeholder !== 0)
             placeholder = fieldElement.innerText;
           fieldElement.classList.add("editing");
@@ -841,7 +853,6 @@ class Renderer
           fieldElement.dispatchEvent(new Event("click"));
           if(content.edit.type != "select")
             editElement.value = editElement.placeholder;
-          editElement.classList.remove("edit-box");
           if(content.edit.type == "select")
             editElement.classList.add("form-select");
           else
@@ -865,18 +876,39 @@ class Renderer
           delete fieldElement.editingStartedAt;
           if(event.type != "keydown" || event.which != 27)
           {
-            let val = (editElement.type == "number" ? parseFloat(editElement.value) : editElement.value);
-            if(fieldElement.editValueFormat == "uuid")
-              val = Renderer.controllers.get(val);
-            if(!isNaN(val) || editElement.type != "number")
+            let val = editElement.value;
+            if(editElement.type == "number")
             {
-              if(fieldElement.editTarget)
-                fieldElement.editTarget.item.update(fieldElement.editTarget.field, val, "replace");
-              else if(fieldElement.editFunc)
-                fieldElement.editFunc(val);
-              else
-                throw new Error(`Neither fieldElement.editTarget nor fieldElement.editFunc were specifed.`);
+              val = parseFloat(val);
+              if(isNaN(val) && fieldElement.editingData.ignoreBlank !== false)
+              {
+                console.warn(`Can't set field to a non-numerical value.`);
+                return false;
+              }
             }
+            else if(fieldElement.editingData.valueFormat == "uuid")
+            {
+              val = Renderer.controllers.get(val);
+              if(!val && fieldElement.editingData.ignoreBlank)
+              {
+                console.warn(`Can't set field to an invalid uuid.`);
+                return false;
+              }
+            }
+            else
+            {
+              if(val == "" && fieldElement.editingData.ignoreBlank)
+              {
+                console.warn(`Can't set field to empty string.`);
+                return false;
+              }
+            }
+            if(fieldElement.editingData.target)
+              fieldElement.editingData.target.item.update(fieldElement.editingData.target.field, val, "replace");
+            else if(fieldElement.editingData.func)
+              fieldElement.editingData.func(val);
+            else
+              throw new Error(`Neither fieldElement.editingData.target nor fieldElement.editingData.func were specifed.`, {fieldElement, editingData:fieldElement.editingData});
           }
         };
         editElement.onkeydown = saveEdit;

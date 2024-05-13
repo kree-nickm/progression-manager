@@ -39,9 +39,9 @@ export default class MaterialList extends GenshinList
     let countField = this.display.addField("count", {
       label: "Count",
       dynamic: true,
-      value: item => item.count + (item.prevTier ? " (+"+ (item.getCraftCount()-item.count) +")" : ""),
+      value: item => item.count + (item.prevTier || item.converts ? " (+"+ (item.getCraftCount()-item.count) +")" : ""),
       edit: item => {return{
-        target: {item:item, field:"count"},
+        target: {item:item, field:"count"}, min:0, max:99999,
       };},
       dependencies: item => item.getCraftDependencies(),
     });
@@ -107,8 +107,13 @@ export default class MaterialList extends GenshinList
     
     // Trounce mats
     for(let domain of GenshinLootData.trounce)
+    {
+      let weeklyMats = [];
       for(let itemName of domain.loot)
-        this.addGOOD({goodKey:itemName, goodValue:0}).update("source", domain.boss);
+        weeklyMats.push(this.addGOOD({goodKey:itemName, goodValue:0}).update("source", domain.boss));
+      for(let mat of weeklyMats)
+        mat.update("converts", weeklyMats.filter(m => m != mat), "replace");
+    }
       
     // Boss mats
     for(let b in GenshinLootData.boss)

@@ -102,6 +102,12 @@ export default class Character extends Ascendable(GenshinItem)
     };
     if(GenshinCharacterData[this.key])
     {
+      for(let prop of ["element","rarity","ascendStat","matBoss","matFlower","matEnemy"])
+        if(!GenshinCharacterData[this.key][prop])
+        {
+          console.warn(`Character ${this.key} has no ${prop}.`);
+          return false;
+        }
       this.loaded = true;
       
       // Retrieve the materials used by this character.
@@ -1249,6 +1255,11 @@ export default class Character extends Ascendable(GenshinItem)
               motionValue.values[v].dmgType = "bonus";
               motionValue.values[v].stat = "";
             }
+            else if(motionValue.key.endsWith("Masque of the Red Death Increase")) // Specifically for Gorou
+            {
+              motionValue.values[v].dmgType = "percent";
+              motionValue.values[v].stat = "";
+            }
             else if(motionValue.key.endsWith("DMG Bonus"))
             {
               if(this.key == "Shenhe" || this.key == "Xianyun")
@@ -1352,7 +1363,7 @@ export default class Character extends Ascendable(GenshinItem)
             motionValue.values[v].value = tiers.join("/") + "s";
             motionValue.values[v].dmgType = null;
           }
-          else if(motionValue.key.endsWith("Duration"))
+          else if(motionValue.key.endsWith("Duration") || motionValue.key.endsWith("Duration (Hold)"))
           {
             let tiers = motionValue.rawValues[v].split("/");
             tiers.forEach((cd,i) => tiers[i] = (parseFloat(cd.endsWith("s")?cd.slice(0,-1):cd) + this.getStat(talent+"_duration", alternates)).toFixed(1));

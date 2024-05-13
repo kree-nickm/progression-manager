@@ -2500,7 +2500,32 @@ export default {
                         "14": "324.0537%\/404.7606%",
                         "15": "341.8915%\/427.041%"
                     }
-                }
+                },
+                "code": [
+                    [
+                        "proc",
+                        [
+                            "oinfuse",
+                            "pyro"
+                        ],
+                        "Bond of Life >= 30% Max HP: \"Masque of the Red Death\""
+                    ],
+                    [
+                        "proc",
+                        [
+                            "stat",
+                            [
+                                "normal_dmg",
+                                [
+                                    "unique",
+                                    "Masque of the Red Death Increase"
+                                ]
+                            ]
+                        ],
+                        "Bond of Life % of Max HP",
+                        200
+                    ]
+                ]
             },
             "Elemental Skill": {
                 "name": "All Is Ash",
@@ -2656,11 +2681,40 @@ export default {
             },
             "4th Ascension Passive": {
                 "name": "Strength Alone Can Defend",
-                "text": "Arlecchino gains 1% All Elemental and Physical RES for every 100 ATK she has in excess of 1,000. The maximum RES increase she can gain this way for each is 20%."
+                "text": "Arlecchino gains 1% All Elemental and Physical RES for every 100 ATK she has in excess of 1,000. The maximum RES increase she can gain this way for each is 20%.",
+                "code": [
+                    "stat",
+                    [
+                        [
+                            "anemo_res_",
+                            "cryo_res_",
+                            "dendro_res_",
+                            "electro_res_",
+                            "geo_res_",
+                            "hydro_res_",
+                            "pyro_res_",
+                            "physical_res_"
+                        ],
+                        [
+                            "stat%",
+                            0.01,
+                            "atk",
+                            20,
+                            1000
+                        ]
+                    ]
+                ]
             },
             "Utility Passive": {
                 "name": "The Balemoon Alone May Know",
-                "text": "While in combat, Arlecchino gains a 40% <color=#FF9999FF>Pyro DMG Bonus<\/color> and can only be healed through <color=#FFD780FF>Balemoon Rising<\/color>."
+                "text": "While in combat, Arlecchino gains a 40% <color=#FF9999FF>Pyro DMG Bonus<\/color> and can only be healed through <color=#FFD780FF>Balemoon Rising<\/color>.",
+                "code": [
+                    "stat",
+                    [
+                        "pyro_dmg_",
+                        40
+                    ]
+                ]
             }
         },
         "constellations": {
@@ -2674,7 +2728,14 @@ export default {
             },
             "3": {
                 "name": "\"You Shall Become a New Member of Our Family...\"",
-                "text": "Increases the Level of <color=#FFD780FF>Normal Attack: Invitation to a Beheading<\/color> by 3.\\nMaximum upgrade level is 15."
+                "text": "Increases the Level of <color=#FFD780FF>Normal Attack: Invitation to a Beheading<\/color> by 3.\\nMaximum upgrade level is 15.",
+                "code": [
+                    "stat",
+                    [
+                        "autoLevel",
+                        3
+                    ]
+                ]
             },
             "4": {
                 "name": "\"You Shall Love and Protect Each Other Henceforth...\"",
@@ -2682,7 +2743,14 @@ export default {
             },
             "5": {
                 "name": "\"For Alone, We Are as Good as Dead...\"",
-                "text": "Increases the Level of <color=#FFD780FF>Balemoon Rising<\/color> by 3.\\nMaximum upgrade level is 15."
+                "text": "Increases the Level of <color=#FFD780FF>Balemoon Rising<\/color> by 3.\\nMaximum upgrade level is 15.",
+                "code": [
+                    "stat",
+                    [
+                        "burstLevel",
+                        3
+                    ]
+                ]
             },
             "6": {
                 "name": "\"From This Day On, We Shall Delight in New Life Together.\"",
@@ -5612,7 +5680,14 @@ export default {
             "3": {
                 "name": "An Imperative to Independence",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/19\/Constellation_An_Imperative_to_Independence.png",
-                "text": "Increases the Level of <color=#FFD780FF>Still Photo: Comprehensive Confirmation<\/color> by 3.\\nMaximum upgrade level is 15."
+                "text": "Increases the Level of <color=#FFD780FF>Still Photo: Comprehensive Confirmation<\/color> by 3.\\nMaximum upgrade level is 15.",
+                "code": [
+                    "stat",
+                    [
+                        "burstLevel",
+                        3
+                    ]
+                ]
             },
             "4": {
                 "name": "A Responsibility to Oversee",
@@ -5622,7 +5697,14 @@ export default {
             "5": {
                 "name": "A Principle of Conscience",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/46\/Constellation_A_Principle_of_Conscience.png",
-                "text": "Increases the Level of <color=#FFD780FF>Framing: Freezing Point Composition<\/color> by 3.\\nMaximum upgrade level is 15."
+                "text": "Increases the Level of <color=#FFD780FF>Framing: Freezing Point Composition<\/color> by 3.\\nMaximum upgrade level is 15.",
+                "code": [
+                    "stat",
+                    [
+                        "skillLevel",
+                        3
+                    ]
+                ]
             },
             "6": {
                 "name": "A Summation of Interest",
@@ -6491,7 +6573,14 @@ export default {
             "3": {
                 "name": "Four Brocade Embellishments",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/96\/Constellation_Four_Brocade_Embellishments.png",
-                "text": "Increases the Level of <color=#FFD780FF>Fluttering Hasode<\/color> by 3.\\nMaximum upgrade level is 15."
+                "text": "Increases the Level of <color=#FFD780FF>Fluttering Hasode<\/color> by 3.\\nMaximum upgrade level is 15.",
+                "code": [
+                    "stat",
+                    [
+                        "skillLevel",
+                        3
+                    ]
+                ]
             },
             "4": {
                 "name": "A Tailor's Three Courtesies",
@@ -6501,7 +6590,14 @@ export default {
             "5": {
                 "name": "Two Silken Plumules",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/41\/Constellation_Two_Silken_Plumules.png",
-                "text": "Increases the Level of <color=#FFD780FF>Hiyoku: Twin Blades<\/color> by 3.\\nMaximum upgrade level is 15."
+                "text": "Increases the Level of <color=#FFD780FF>Hiyoku: Twin Blades<\/color> by 3.\\nMaximum upgrade level is 15.",
+                "code": [
+                    "stat",
+                    [
+                        "burstLevel",
+                        3
+                    ]
+                ]
             },
             "6": {
                 "name": "Sole Principle Pursuit",
@@ -6919,6 +7015,462 @@ export default {
             10402,
             10403
         ]
+    },
+    "Clorinde": {
+        "name": "Clorinde",
+        "rarity": 5,
+        "weapon": "Sword",
+        "element": "Electro",
+        "hakushinID": 10000098,
+        "id": 10000098,
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Clorinde.webp",
+        "release": "June 4, 2024",
+        "region": "Fontaine",
+        "matEnemy": "Fontemer",
+        "matBoss": "Seahorse",
+        "matFlower": "Lumitoile",
+        "matMastery": "Justice",
+        "matTrounce": "Everamber",
+        "ascendStat": "critRate_",
+        "hpBase": 1008.612548828125,
+        "atkBase": 26.2541999816895,
+        "defBase": 61.0265998840332,
+        "hpMaxAsc": 4141.908203125,
+        "atkMaxAsc": 107.8060607910156,
+        "defMaxAsc": 250.6139984130859,
+        "talents": {
+            "Normal Attack": {
+                "name": "Normal Attack: Oath of Hunting Shadows",
+                "text": "<color=#FFD780FF>Normal Attack<\/color>\\nPerforms up to 5 rapid strikes.\\n\\n<color=#FFD780FF>Charged Attack<\/color>\\nConsumes a certain amount of Stamina and fires Suppressing Shots in a fan pattern with her pistolet.\\n\\n<color=#FFD780FF>Plunging Attack<\/color>\\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+                "scaling": {
+                    "1-Hit DMG": {
+                        "1": "54.05960083008%",
+                        "2": "58.4598004818%",
+                        "3": "62.86000013351%",
+                        "4": "69.14600133896%",
+                        "5": "73.54620099068%",
+                        "6": "78.57499718666%",
+                        "7": "85.48960089684%",
+                        "8": "92.40419864655%",
+                        "9": "99.31880235672%",
+                        "10": "106.8619966507%",
+                        "11": "114.4052028656%",
+                        "12": "121.94839715958%",
+                        "13": "129.49160337448%",
+                        "14": "137.03479766846%",
+                        "15": "144.57800388336%"
+                    },
+                    "2-Hit DMG": {
+                        "1": "51.62839889526%",
+                        "2": "55.8306992054%",
+                        "3": "60.03299951553%",
+                        "4": "66.03630185127%",
+                        "5": "70.23860216141%",
+                        "6": "75.04130005836%",
+                        "7": "81.64489865303%",
+                        "8": "88.2484972477%",
+                        "9": "94.85210180283%",
+                        "10": "102.05609798431%",
+                        "11": "109.2600941658%",
+                        "12": "116.46399497986%",
+                        "13": "123.66800308228%",
+                        "14": "130.87190389633%",
+                        "15": "138.07590007782%"
+                    },
+                    "3-Hit DMG": {
+                        "1": "34.18500125408%+34.18500125408%",
+                        "2": "36.96750104427%+36.96750104427%",
+                        "3": "39.75000083447%+39.75000083447%",
+                        "4": "43.72499883175%+43.72499883175%",
+                        "5": "46.50749862194%+46.50749862194%",
+                        "6": "49.68749880791%+49.68749880791%",
+                        "7": "54.0600001812%+54.0600001812%",
+                        "8": "58.43250155449%+58.43250155449%",
+                        "9": "62.80500292778%+62.80500292778%",
+                        "10": "67.57500171661%+67.57500171661%",
+                        "11": "72.34500050545%+72.34500050545%",
+                        "12": "77.11499929428%+77.11499929428%",
+                        "13": "81.88499808311%+81.88499808311%",
+                        "14": "86.65500283241%+86.65500283241%",
+                        "15": "91.42500162125%+91.42500162125%"
+                    },
+                    "4-Hit DMG": {
+                        "1": "23.13400059938%+23.13400059938%+23.13400059938%",
+                        "2": "25.01699924469%+25.01699924469%+25.01699924469%",
+                        "3": "26.89999938011%+26.89999938011%+26.89999938011%",
+                        "4": "29.58999872208%+29.58999872208%+29.58999872208%",
+                        "5": "31.4729988575%+31.4729988575%+31.4729988575%",
+                        "6": "33.62500071526%+33.62500071526%+33.62500071526%",
+                        "7": "36.58399879932%+36.58399879932%+36.58399879932%",
+                        "8": "39.54299986362%+39.54299986362%+39.54299986362%",
+                        "9": "42.50200092793%+42.50200092793%+42.50200092793%",
+                        "10": "45.73000073433%+45.73000073433%+45.73000073433%",
+                        "11": "48.95800054073%+48.95800054073%+48.95800054073%",
+                        "12": "52.18600034714%+52.18600034714%+52.18600034714%",
+                        "13": "55.41399717331%+55.41399717331%+55.41399717331%",
+                        "14": "58.64199995995%+58.64199995995%+58.64199995995%",
+                        "15": "61.87000274658%+61.87000274658%+61.87000274658%"
+                    },
+                    "5-Hit DMG": {
+                        "1": "90.010201931%",
+                        "2": "97.336602211%",
+                        "3": "104.663002491%",
+                        "4": "115.12930393219%",
+                        "5": "122.45570421219%",
+                        "6": "130.82879781723%",
+                        "7": "142.34169721603%",
+                        "8": "153.85459661484%",
+                        "9": "165.36749601364%",
+                        "10": "177.92710065842%",
+                        "11": "190.48670530319%",
+                        "12": "203.04620265961%",
+                        "13": "215.60580730438%",
+                        "14": "228.16529273987%",
+                        "15": "240.72489738464%"
+                    },
+                    "Charged Attack DMG": {
+                        "1": "128.13999652863%",
+                        "2": "138.56999874115%",
+                        "3": "149.00000095367%",
+                        "4": "163.90000581741%",
+                        "5": "174.32999610901%",
+                        "6": "186.24999523163%",
+                        "7": "202.64000892639%",
+                        "8": "219.0299987793%",
+                        "9": "235.4199886322%",
+                        "10": "253.29999923706%",
+                        "11": "271.18000984192%",
+                        "12": "289.05999660492%",
+                        "13": "306.94000720978%",
+                        "14": "324.81999397278%",
+                        "15": "342.70000457764%"
+                    },
+                    "Charged Attack Stamina Cost": {
+                        "1": "20",
+                        "2": "20",
+                        "3": "20",
+                        "4": "20",
+                        "5": "20",
+                        "6": "20",
+                        "7": "20",
+                        "8": "20",
+                        "9": "20",
+                        "10": "20",
+                        "11": "20",
+                        "12": "20",
+                        "13": "20",
+                        "14": "20",
+                        "15": "20"
+                    },
+                    "Plunge DMG": {
+                        "1": "63.93240094185%",
+                        "2": "69.13620233536%",
+                        "3": "74.3399977684%",
+                        "4": "81.77400231361%",
+                        "5": "86.97779774666%",
+                        "6": "92.92500019073%",
+                        "7": "101.10239982605%",
+                        "8": "109.27979946136%",
+                        "9": "117.45719909668%",
+                        "10": "126.37799978256%",
+                        "11": "135.29880046844%",
+                        "12": "144.21960115433%",
+                        "13": "153.14040184021%",
+                        "14": "162.06120252609%",
+                        "15": "170.98200321198%"
+                    },
+                    "Low\/High Plunge DMG": {
+                        "1": "127.83770561218%\/159.67619419098%",
+                        "2": "138.24310302734%\/172.67309427261%",
+                        "3": "148.6485004425%\/185.66999435425%",
+                        "4": "163.51339817047%\/204.23700809479%",
+                        "5": "173.9187002182%\/217.23389625549%",
+                        "6": "185.81060171127%\/232.08749294281%",
+                        "7": "202.16200351715%\/252.5111913681%",
+                        "8": "218.51329803467%\/272.9348897934%",
+                        "9": "234.86459255219%\/293.35858821869%",
+                        "10": "252.70249843597%\/315.63899517059%",
+                        "11": "270.54030895233%\/337.9194021225%",
+                        "12": "288.37809562683%\/360.1998090744%",
+                        "13": "306.21590614319%\/382.48019218445%",
+                        "14": "324.05369281769%\/404.76059913635%",
+                        "15": "341.89150333405%\/427.04100608826%"
+                    }
+                }
+            },
+            "Elemental Skill": {
+                "name": "Hunter's Vigil",
+                "text": "Preparing her pistolet, she enters the \"Night Vigil\" state, using steel and shot together. In this state, Clorinde's Normal Attacks will be transformed into \"Swift Hunt\" pistolet attacks, and the DMG dealt is converted into <color=#FFACFFFF>Electro DMG<\/color> that cannot be overridden by infusions. Using her Elemental Skill will transform it into \"Impale the Night\": Perform a lunging attack, dealing <color=#FFACFFFF>Electro DMG<\/color>. The DMG done through the aforementioned method is considered Normal Attack DMG.\\n\\n<color=#FFD780FF>Swift Hunt<\/color>\\n\u00b7 When her Bond of Life is equal to or greater than 100% of her max HP: Performs a pistolet shot.\\n\u00b7 When her Bond of Life is less than 100%, firing her pistolet will grant her Bond of Life, with the amount gained based on her max HP. The shots she fires can pierce opponents, and DMG dealt to opponents in their path is increased.\\n\\n<color=#FFD780FF>Impale the Night<\/color>\\nThe current percentage value of Clorinde's Bond of Life determines its effect:\\n\u00b7 When the Bond of Life value is 0%, perform a normal lunging strike;\\n\u00b7 When the Bond of Life value is less than 100% of her max HP, Clorinde is healed based on the Bond of Life Value, and the AoE of the lunging attack and the DMG dealt is increased;\\n\u00b7 When the value of the Bond of Life is equal to or greater than 100% of her max HP, use Impale the Night: Pact. The healing multiplier is increased, and the AoE and DMG dealt by the lunge is increased even further.\\n\\nIn addition, when Clorinde is in the Night Vigil state, healing effects other than Impale the Night will not take effect and will instead be converted into a Bond of Life that is a percentage of the healing that would have been received.\\n\\nClorinde will exit the \"Night Vigil\" state when she leaves the field.\\n\\n<color=#FFD780FF>Arkhe: Ousia<\/color>\\nPeriodically, when Clorinde's Swift Hunt shots strike opponents, a Surging Blade will fall on their position, dealing Ousia-aligned <color=#FFACFFFF>Electro DMG<\/color>.\\n\\n<i>Though the evil that lurked in the shadows of the night had been purged across thousands of years, a shadow that the light could not reach clouded human hearts.\\nEven now, the warning left by the Golden Hunter is etched into her memory: Those of the Night Vigil, carrying aloft lit candles against the blackness, have greater need still to remain vigilant. Be not corrupted by the cold dark.<\/i>",
+                "scaling": {
+                    "Swift Hunt DMG": {
+                        "1": "26.76320075989%\/38.78600001335%",
+                        "2": "28.94159853458%\/41.9429987669%",
+                        "3": "31.11999928951%\/45.10000050068%",
+                        "4": "34.23199951649%\/49.61000084877%",
+                        "5": "36.41040027142%\/52.76700258255%",
+                        "6": "38.89999985695%\/56.37500286102%",
+                        "7": "42.32319891453%\/61.33599877357%",
+                        "8": "45.74640095234%\/66.29700064659%",
+                        "9": "49.16960000992%\/71.25800251961%",
+                        "10": "52.9039978981%\/76.67000293732%",
+                        "11": "56.63840174675%\/82.08199739456%",
+                        "12": "60.37279963493%\/87.49399781227%",
+                        "13": "64.10719752312%\/92.90599822998%",
+                        "14": "67.84160137177%\/98.31799864769%",
+                        "15": "71.57599925995%\/103.7299990654%"
+                    },
+                    "Swift Hunt Bond of Life Gain": {
+                        "1": "34.99999940395% Max HP",
+                        "2": "34.99999940395% Max HP",
+                        "3": "34.99999940395% Max HP",
+                        "4": "34.99999940395% Max HP",
+                        "5": "34.99999940395% Max HP",
+                        "6": "34.99999940395% Max HP",
+                        "7": "34.99999940395% Max HP",
+                        "8": "34.99999940395% Max HP",
+                        "9": "34.99999940395% Max HP",
+                        "10": "34.99999940395% Max HP",
+                        "11": "34.99999940395% Max HP",
+                        "12": "34.99999940395% Max HP",
+                        "13": "34.99999940395% Max HP",
+                        "14": "34.99999940395% Max HP",
+                        "15": "34.99999940395% Max HP"
+                    },
+                    "Impale the Night DMG": {
+                        "1": "32.97240138054%\/43.9631998539%\/23.39199930429%\u00d73",
+                        "2": "35.65619885921%\/47.54160046577%\/25.29599964619%\u00d73",
+                        "3": "38.33999931812%\/51.12000107765%\/27.2000014782%\u00d73",
+                        "4": "42.17399954796%\/56.23199939728%\/29.91999983788%\u00d73",
+                        "5": "44.85780000687%\/59.81040000916%\/31.82399868965%\u00d73",
+                        "6": "47.92500138283%\/63.89999985695%\/34.00000035763%\u00d73",
+                        "7": "52.14239954948%\/69.52319741249%\/36.99199855328%\u00d73",
+                        "8": "56.35979771614%\/75.1464009285%\/39.98399972916%\u00d73",
+                        "9": "60.57720184326%\/80.76959848404%\/42.97600090504%\u00d73",
+                        "10": "65.17800092697%\/86.90400123596%\/46.23999893665%\u00d73",
+                        "11": "69.77880001068%\/93.03839802742%\/49.5039999485%\u00d73",
+                        "12": "74.37959909439%\/99.17280077934%\/52.76799798012%\u00d73",
+                        "13": "78.9803981781%\/105.3071975708%\/56.0320019722%\u00d73",
+                        "14": "83.58119726181%\/111.44160032272%\/59.29600000381%\u00d73",
+                        "15": "88.18200230598%\/117.57600307465%\/62.55999803543%\u00d73"
+                    },
+                    "Impale the Night Healing": {
+                        "1": "0%\/103.9999961853%\/110.00000238419% Bond of Life",
+                        "2": "0%\/103.9999961853%\/110.00000238419% Bond of Life",
+                        "3": "0%\/103.9999961853%\/110.00000238419% Bond of Life",
+                        "4": "0%\/103.9999961853%\/110.00000238419% Bond of Life",
+                        "5": "0%\/103.9999961853%\/110.00000238419% Bond of Life",
+                        "6": "0%\/103.9999961853%\/110.00000238419% Bond of Life",
+                        "7": "0%\/103.9999961853%\/110.00000238419% Bond of Life",
+                        "8": "0%\/103.9999961853%\/110.00000238419% Bond of Life",
+                        "9": "0%\/103.9999961853%\/110.00000238419% Bond of Life",
+                        "10": "0%\/103.9999961853%\/110.00000238419% Bond of Life",
+                        "11": "0%\/103.9999961853%\/110.00000238419% Bond of Life",
+                        "12": "0%\/103.9999961853%\/110.00000238419% Bond of Life",
+                        "13": "0%\/103.9999961853%\/110.00000238419% Bond of Life",
+                        "14": "0%\/103.9999961853%\/110.00000238419% Bond of Life",
+                        "15": "0%\/103.9999961853%\/110.00000238419% Bond of Life"
+                    },
+                    "Bond of Life Conversion": {
+                        "1": "80.00000119209% Healing",
+                        "2": "80.00000119209% Healing",
+                        "3": "80.00000119209% Healing",
+                        "4": "80.00000119209% Healing",
+                        "5": "80.00000119209% Healing",
+                        "6": "80.00000119209% Healing",
+                        "7": "80.00000119209% Healing",
+                        "8": "80.00000119209% Healing",
+                        "9": "80.00000119209% Healing",
+                        "10": "80.00000119209% Healing",
+                        "11": "80.00000119209% Healing",
+                        "12": "80.00000119209% Healing",
+                        "13": "80.00000119209% Healing",
+                        "14": "80.00000119209% Healing",
+                        "15": "80.00000119209% Healing"
+                    },
+                    "Surging Blade DMG": {
+                        "1": "43.20000112057%",
+                        "2": "46.43999934196%",
+                        "3": "49.68000054359%",
+                        "4": "54.00000214577%",
+                        "5": "57.23999738693%",
+                        "6": "60.47999858856%",
+                        "7": "64.80000019073%",
+                        "8": "69.12000179291%",
+                        "9": "73.43999743462%",
+                        "10": "77.75999903679%",
+                        "11": "82.08000063896%",
+                        "12": "86.40000224113%",
+                        "13": "91.79999828339%",
+                        "14": "97.2000002861%",
+                        "15": "102.60000228882%"
+                    },
+                    "Surging Blade Interval": {
+                        "1": "10s",
+                        "2": "10s",
+                        "3": "10s",
+                        "4": "10s",
+                        "5": "10s",
+                        "6": "10s",
+                        "7": "10s",
+                        "8": "10s",
+                        "9": "10s",
+                        "10": "10s",
+                        "11": "10s",
+                        "12": "10s",
+                        "13": "10s",
+                        "14": "10s",
+                        "15": "10s"
+                    },
+                    "Night Vigil Duration": {
+                        "1": "9s",
+                        "2": "9s",
+                        "3": "9s",
+                        "4": "9s",
+                        "5": "9s",
+                        "6": "9s",
+                        "7": "9s",
+                        "8": "9s",
+                        "9": "9s",
+                        "10": "9s",
+                        "11": "9s",
+                        "12": "9s",
+                        "13": "9s",
+                        "14": "9s",
+                        "15": "9s"
+                    },
+                    "CD": {
+                        "1": "16s",
+                        "2": "16s",
+                        "3": "16s",
+                        "4": "16s",
+                        "5": "16s",
+                        "6": "16s",
+                        "7": "16s",
+                        "8": "16s",
+                        "9": "16s",
+                        "10": "16s",
+                        "11": "16s",
+                        "12": "16s",
+                        "13": "16s",
+                        "14": "16s",
+                        "15": "16s"
+                    }
+                }
+            },
+            "Elemental Burst": {
+                "name": "Last Lightfall",
+                "text": "Grants herself a Bond of Life based upon her own max HP before swiftly evading and striking with saber and sidearm as one, dealing <color=#FFACFFFF>AoE Electro DMG<\/color>.\\n\\n<i>It is said the legacy of the ancient art of resisting non-human beings with but a mortal body can be traced back to the Lochknights who resisted the Remurian Empire.\\nBe that as it may, so long as one can find a way to control the level of force used, it's not as if it cannot be used in duels against ordinary opponents.<\/i>",
+                "scaling": {
+                    "Skill DMG": {
+                        "1": "126.88000202179%\u00d75",
+                        "2": "136.39600276947%\u00d75",
+                        "3": "145.91200351715%\u00d75",
+                        "4": "158.59999656677%\u00d75",
+                        "5": "168.11599731445%\u00d75",
+                        "6": "177.63199806213%\u00d75",
+                        "7": "190.32000303268%\u00d75",
+                        "8": "203.00800800323%\u00d75",
+                        "9": "215.69600105286%\u00d75",
+                        "10": "228.38399410248%\u00d75",
+                        "11": "241.07201099396%\u00d75",
+                        "12": "253.76000404358%\u00d75",
+                        "13": "269.61998939514%\u00d75",
+                        "14": "285.47999858856%\u00d75",
+                        "15": "301.34000778198%\u00d75"
+                    },
+                    "Bond of Life Gain": {
+                        "1": "66.0000026226% Max HP",
+                        "2": "72.00000286102% Max HP",
+                        "3": "77.99999713898% Max HP",
+                        "4": "83.9999973774% Max HP",
+                        "5": "89.99999761581% Max HP",
+                        "6": "95.99999785423% Max HP",
+                        "7": "101.99999809265% Max HP",
+                        "8": "108.00000429153% Max HP",
+                        "9": "113.99999856949% Max HP",
+                        "10": "120.00000476837% Max HP",
+                        "11": "125.99999904633% Max HP",
+                        "12": "132.00000524521% Max HP",
+                        "13": "137.99999952316% Max HP",
+                        "14": "144.00000572205% Max HP",
+                        "15": "150% Max HP"
+                    },
+                    "CD": {
+                        "1": "15s",
+                        "2": "15s",
+                        "3": "15s",
+                        "4": "15s",
+                        "5": "15s",
+                        "6": "15s",
+                        "7": "15s",
+                        "8": "15s",
+                        "9": "15s",
+                        "10": "15s",
+                        "11": "15s",
+                        "12": "15s",
+                        "13": "15s",
+                        "14": "15s",
+                        "15": "15s"
+                    },
+                    "Energy Cost": {
+                        "1": "60",
+                        "2": "60",
+                        "3": "60",
+                        "4": "60",
+                        "5": "60",
+                        "6": "60",
+                        "7": "60",
+                        "8": "60",
+                        "9": "60",
+                        "10": "60",
+                        "11": "60",
+                        "12": "60",
+                        "13": "60",
+                        "14": "60",
+                        "15": "60"
+                    }
+                }
+            },
+            "1st Ascension Passive": {
+                "name": "Dark-Shattering Flame",
+                "text": "After a nearby party member triggers a <color=#FFACFFFF>Electro-related reaction<\/color> against an opponent, <color=#FFACFFFF>Electro DMG<\/color> dealt by Clorinde's Normal Attacks and <color=#FFD780FF>Last Lightfall<\/color> will be increased by 20% of Clorinde's ATK for 15s. Max 3 stacks. Each stack is counted independently. The Maximum DMG increase achievable this way for the above attacks is 1,800."
+            },
+            "4th Ascension Passive": {
+                "name": "Lawful Remuneration",
+                "text": "If Clorinde's Bond of Life is equal to or greater than 100% of her Max HP, her CRIT Rate will increase by 10% for 15s whenever her Bond of Life value increases or decreases. Max 2 stacks. Each stack is counted independently.\\nAdditionally, <color=#FFD780FF>Hunter's Vigil<\/color>'s Night Vigil state is buffed: While it is active, the percent of healing converted to Bond of Life increases to 100%."
+            },
+            "Utility Passive": {
+                "name": "Night Vigil's Harvest",
+                "text": "Displays the location of nearby <color=#FFD780FF>resources unique to Fontaine<\/color> on the mini-map."
+            }
+        },
+        "constellations": {
+            "1": {
+                "name": "\"From This Day, I Pass the Candle's Shadow-Veil\"",
+                "text": "While <color=#FFD780FF>Hunter's Vigil<\/color>'s Night Vigil state is active, when <color=#FFACFFFF>Electro DMG<\/color> from Clorinde's Normal Attacks hit opponents, they will trigger 2 coordinated attacks from a Nightvigil Shade summoned near the hit opponent, each dealing 30% of Clorinde's ATK as <color=#FFACFFFF>Electro DMG<\/color>.\\nThis effect can occur once every 1.2s. DMG dealt this way is considered Normal Attack DMG."
+            },
+            "2": {
+                "name": "\"Now, As We Face the Perils of the Long Night\"",
+                "text": "Enhance the Passive Talent \"Dark-Shattering Flame\": After a nearby party member triggers a <color=#FFACFFFF>Electro-related reaction<\/color> against an opponent, <color=#FFACFFFF>Electro DMG<\/color> dealt by Normal Attacks and <color=#FFD780FF>Last Lightfall<\/color> will be increased by 30% of Clorinde's ATK for 15s. Max 3 stacks. Each stack is counted independently. When you have 3 stacks, Clorinde's interruption resistance will be increased. The Maximum DMG increase achievable this way for the above attacks is 2,700.\\nYou must first unlock the Passive Talent \"Dark-Shattering Flame.\""
+            },
+            "3": {
+                "name": "\"I Pledge to Remember the Oath of Daylight\"",
+                "text": "Increases the Level of <color=#FFD780FF>Hunter's Vigil<\/color> by 3.\\nMaximum upgrade level is 15."
+            },
+            "4": {
+                "name": "\"To Enshrine Tears, Life, and Love\"",
+                "text": "When <color=#FFD780FF>Last Lightfall<\/color> deals DMG to opponent(s), DMG dealt is increased based on Clorinde's Bond of Life percentage. Every 1% of her current Bond of Life will increase <color=#FFD780FF>Last Lightfall<\/color> DMG by 2%. The maximum <color=#FFD780FF>Last Lightfall<\/color> DMG increase achievable this way is 200%."
+            },
+            "5": {
+                "name": "\"Holding Dawn's Coming as My Votive\"",
+                "text": "Increases the Level of <color=#FFD780FF>Last Lightfall<\/color> by 3.\\nMaximum upgrade level is 15."
+            },
+            "6": {
+                "name": "\"And So Shall I Never Despair\"",
+                "text": "For 12s after <color=#FFD780FF>Hunter's Vigil<\/color> is used, Clorinde's CRIT Rate will be increased by 10%, and her CRIT DMG by 70%.\\nAdditionally, while Night Vigil is active, a Glimbright Shade will appear under specific circumstances, attacking opponents and dealing 200% of Clorinde's ATK as <color=#FFACFFFF>Electro DMG<\/color>. DMG dealt this way is considered Normal Attack DMG.\\nThe Glimbright Shade will appear under the following circumstances:\\n\u00b7 When Clorinde is about to be attacked by an opponent.\\n\u00b7 When Clorinde uses Impale the Night: Pact.\\n1 Glimbright Shade can be summoned in the aforementioned ways every 1s. 6 Shades can be summoned per single Night Vigil duration.\\nIn addition, while Night Vigil is active, the DMG Clorinde receives is decreased by 80% and her interruption resistance is increased. This effect will disappear after the Night Vigil state ends or 1s after she summons 6 Glimbright Shades."
+            }
+        },
+        "version": "4.6.52"
     },
     "Collei": {
         "name": "Collei",
@@ -12133,7 +12685,7 @@ export default {
                                 "dmg_",
                                 [
                                     "mv",
-                                    "Fanfare to DMG Increase Conversion Ratio (%)"
+                                    "Fanfare to DMG Increase Conversion Ratio"
                                 ]
                             ]
                         ],
@@ -12143,7 +12695,7 @@ export default {
                                 "inHeal_",
                                 [
                                     "mv",
-                                    "Fanfare to Incoming Healing Bonus Conversion Ratio (%)"
+                                    "Fanfare to Incoming Healing Bonus Conversion Ratio"
                                 ]
                             ]
                         ]
@@ -12303,7 +12855,14 @@ export default {
             "3": {
                 "name": "\"My Secret Is Hidden Within Me, No One Will Know My Name\"",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/75\/Constellation_My_Secret_Is_Hidden_Within_Me%2C_No_One_Will_Know_My_Name.png",
-                "text": "Increases the Level of <color=#FFD780FF>Let the People Rejoice<\/color> by 3.\\nMaximum upgrade level is 15."
+                "text": "Increases the Level of <color=#FFD780FF>Let the People Rejoice<\/color> by 3.\\nMaximum upgrade level is 15.",
+                "code": [
+                    "stat",
+                    [
+                        "burstLevel",
+                        3
+                    ]
+                ]
             },
             "4": {
                 "name": "\"They Know Not Life, Who Dwelt in the Netherworld Not!\"",
@@ -12313,7 +12872,14 @@ export default {
             "5": {
                 "name": "\"His Name I Now Know, It Is...!\"",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/55\/Constellation_His_Name_I_Now_Know%2C_It_Is...%21.png",
-                "text": "Increases the Level of <color=#FFD780FF>Salon Solitaire<\/color> by 3.\\nMaximum upgrade level is 15."
+                "text": "Increases the Level of <color=#FFD780FF>Salon Solitaire<\/color> by 3.\\nMaximum upgrade level is 15.",
+                "code": [
+                    "stat",
+                    [
+                        "skillLevel",
+                        3
+                    ]
+                ]
             },
             "6": {
                 "name": "\"Hear Me \u2014 Let Us Raise the Chalice of Love!\"",
@@ -12709,7 +13275,14 @@ export default {
             "3": {
                 "name": "Awakening Spirit",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fd\/Constellation_Awakening_Spirit.png",
-                "text": "Increases the Level of <color=#FFD780FF>Bestial Ascent<\/color> by 3.\\nMaximum upgrade level is 15."
+                "text": "Increases the Level of <color=#FFD780FF>Bestial Ascent<\/color> by 3.\\nMaximum upgrade level is 15.",
+                "code": [
+                    "stat",
+                    [
+                        "skillLevel",
+                        3
+                    ]
+                ]
             },
             "4": {
                 "name": "Soar Across Mountains",
@@ -12719,7 +13292,14 @@ export default {
             "5": {
                 "name": "Evil-Daunting Roar",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/da\/Constellation_Evil-Daunting_Roar.png",
-                "text": "Increases the Level of <color=#FFD780FF>Suanni's Gilded Dance<\/color> by 3.\\nMaximum upgrade level is 15."
+                "text": "Increases the Level of <color=#FFD780FF>Suanni's Gilded Dance<\/color> by 3.\\nMaximum upgrade level is 15.",
+                "code": [
+                    "stat",
+                    [
+                        "burstLevel",
+                        3
+                    ]
+                ]
             },
             "6": {
                 "name": "To Tame All Beasts",
@@ -18361,7 +18941,7 @@ export default {
                             "atk",
                             [
                                 "mv",
-                                "ATK Bonus Ratio (%)"
+                                "ATK Bonus Ratio"
                             ]
                         ]
                     ],
@@ -22199,12 +22779,57 @@ export default {
             "1st Ascension Passive": {
                 "name": "Compassion Illuminated",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/63\/Talent_Compassion_Illuminated.png",
-                "text": "When unleashing Illusory Heart, the Shrine of Maya will gain the following effects:<br\/>The Elemental Mastery of the active character within the field will be increased by 25% of the Elemental Mastery of the party member with the highest Elemental Mastery.<br\/>You can gain a maximum of 250 Elemental Mastery in this manner."
+                "text": "When unleashing Illusory Heart, the Shrine of Maya will gain the following effects:<br\/>The Elemental Mastery of the active character within the field will be increased by 25% of the Elemental Mastery of the party member with the highest Elemental Mastery.<br\/>You can gain a maximum of 250 Elemental Mastery in this manner.",
+                "code": [
+                    "proc",
+                    [
+                        "pstat",
+                        [
+                            "eleMas",
+                            [
+                                "pmstat%",
+                                0.25,
+                                "eleMas",
+                                250
+                            ]
+                        ]
+                    ],
+                    "During Elemental Burst"
+                ]
             },
             "4th Ascension Passive": {
                 "name": "Awakening Elucidated",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1a\/Talent_Awakening_Elucidated.png",
-                "text": "Each point of Nahida's Elemental Mastery beyond 200 will grant 0.1% Bonus DMG and 0.03% CRIT Rate to Tri-Karma Purification from All Schemes to Know.<br\/>A maximum of 80% Bonus DMG and 24% CRIT Rate can be granted to Tri-Karma Purification in this manner."
+                "text": "Each point of Nahida's Elemental Mastery beyond 200 will grant 0.1% Bonus DMG and 0.03% CRIT Rate to Tri-Karma Purification from All Schemes to Know.<br\/>A maximum of 80% Bonus DMG and 24% CRIT Rate can be granted to Tri-Karma Purification in this manner.",
+                "code": [
+                    [
+                        "stat",
+                        [
+                            "skill_dmg_",
+                            [
+                                "stat%",
+                                0.1,
+                                "eleMas",
+                                80,
+                                200
+                            ]
+                        ]
+                    ],
+                    [
+                        "sstat",
+                        [
+                            "critRate_",
+                            [
+                                "stat%",
+                                0.03,
+                                "eleMas",
+                                24,
+                                200
+                            ],
+                            "Elemental Skill"
+                        ]
+                    ]
+                ]
             },
             "Utility Passive": {
                 "name": "On All Things Meditated",
@@ -22680,7 +23305,14 @@ export default {
             "3": {
                 "name": "Businesswoman's Broad Vision",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b2\/Constellation_Businesswoman%27s_Broad_Vision.png",
-                "text": "Increases the Level of <color=#FFD780FF>Ceremonial Crystalshot<\/color> by 3.\\nMaximum upgrade level is 15."
+                "text": "Increases the Level of <color=#FFD780FF>Ceremonial Crystalshot<\/color> by 3.\\nMaximum upgrade level is 15.",
+                "code": [
+                    "stat",
+                    [
+                        "skillLevel",
+                        3
+                    ]
+                ]
             },
             "4": {
                 "name": "The Oathsworn Never Capitulate",
@@ -22690,7 +23322,14 @@ export default {
             "5": {
                 "name": "Negotiator's Resolute Negotiations",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dc\/Constellation_Negotiator%27s_Resolute_Negotiations.png",
-                "text": "Increases the Level of <color=#FFD780FF>As the Sunlit Sky's Singing Salute<\/color> by 3.\\nMaximum upgrade level is 15."
+                "text": "Increases the Level of <color=#FFD780FF>As the Sunlit Sky's Singing Salute<\/color> by 3.\\nMaximum upgrade level is 15.",
+                "code": [
+                    "stat",
+                    [
+                        "burstLevel",
+                        3
+                    ]
+                ]
             },
             "6": {
                 "name": "The Flexible Finesse of the Spina's President",
@@ -23134,7 +23773,14 @@ export default {
             "3": {
                 "name": "Ancient Postulation",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e1\/Constellation_Ancient_Postulation.png",
-                "text": "Increases the Level of <color=#FFD780FF>Normal Attack: As Water Seeks Equilibrium<\/color> by 3.\\nMaximum upgrade level is 15."
+                "text": "Increases the Level of <color=#FFD780FF>Normal Attack: As Water Seeks Equilibrium<\/color> by 3.\\nMaximum upgrade level is 15.",
+                "code": [
+                    "stat",
+                    [
+                        "autoLevel",
+                        3
+                    ]
+                ]
             },
             "4": {
                 "name": "Crown of Commiseration",
@@ -23144,7 +23790,14 @@ export default {
             "5": {
                 "name": "Axiomatic Judgment",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3c\/Constellation_Axiomatic_Judgment.png",
-                "text": "Increases the Level of <color=#FFD780FF>O Tides, I Have Returned<\/color> by 3.\\nMaximum upgrade level is 15."
+                "text": "Increases the Level of <color=#FFD780FF>O Tides, I Have Returned<\/color> by 3.\\nMaximum upgrade level is 15.",
+                "code": [
+                    "stat",
+                    [
+                        "burstLevel",
+                        3
+                    ]
+                ]
             },
             "6": {
                 "name": "Wrathful Recompense",
@@ -24241,7 +24894,7 @@ export default {
                                 "atk",
                                 [
                                     "mv",
-                                    "ATK Bonus (% DEF)"
+                                    "ATK Bonus"
                                 ]
                             ]
                         ]
@@ -27504,6 +28157,343 @@ export default {
             10535
         ]
     },
+    "Sethos": {
+        "name": "Sethos",
+        "rarity": 4,
+        "weapon": "Bow",
+        "element": "Electro",
+        "hakushinID": 10000097,
+        "id": 10000097,
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Sethos.webp",
+        "release": "June 4, 2024",
+        "region": "Sumeru",
+        "matEnemy": "Eremites",
+        "matBoss": "Hidden Beast",
+        "matFlower": "Trishiraite",
+        "matMastery": "Praxis",
+        "matTrounce": "Daka's Bell",
+        "ascendStat": "eleMas",
+        "hpBase": 820.6118774414062,
+        "atkBase": 19.0545597076416,
+        "defBase": 46.9244995117188,
+        "hpMaxAsc": 2936.134765625,
+        "atkMaxAsc": 68.1784744262695,
+        "defMaxAsc": 167.8950042724609,
+        "talents": {
+            "Normal Attack": {
+                "name": "Normal Attack: Royal Reed Archery",
+                "text": "<color=#FFD780FF>Normal Attack<\/color>\\nPerforms up to 3 consecutive shots with a bow.\\n\\n<color=#FFD780FF>Charged Attack<\/color>\\nPerforms a more precise <color=#FFD780FF>Aimed Shot<\/color> with increased DMG.\\nWhile aiming, the power of Electro will accumulate on the arrowhead before the arrow is fired. Has different effects based on how long the energy has been charged:\\n\u00b7Charge Level 1: Fires off an arrow carrying the power of lightning that deals <color=#FFACFFFF>Electro DMG<\/color>.\\n\u00b7Charge Level 2: Fires off a <color=#FFD780FF>Shadowpiercing Shot<\/color> which can pierce enemies, dealing <color=#FFACFFFF>Electro DMG<\/color> to enemies along its path. After the Shadowpiercing Shot is fully charged, Sethos cannot move around.\\n\\n<color=#FFD780FF>Plunging Attack<\/color>\\nFires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+                "scaling": {
+                    "1-Hit DMG": {
+                        "1": "52.61390209198%",
+                        "2": "56.89650177956%",
+                        "3": "61.17900013924%",
+                        "4": "67.29689836502%",
+                        "5": "71.57940268517%",
+                        "6": "76.47370100021%",
+                        "7": "83.20339918137%",
+                        "8": "89.93309736252%",
+                        "9": "96.66280150414%",
+                        "10": "104.00429964066%",
+                        "11": "111.34580373764%",
+                        "12": "118.6872959137%",
+                        "13": "126.02870464325%",
+                        "14": "133.37019681931%",
+                        "15": "140.71170091629%"
+                    },
+                    "2-Hit DMG": {
+                        "1": "23.79619926214%+26.60839855671%",
+                        "2": "25.73310136795%+28.77419888973%",
+                        "3": "27.66999900341%+30.93999922276%",
+                        "4": "30.43699860573%+34.03399884701%",
+                        "5": "32.37389922142%+36.19979918003%",
+                        "6": "34.58749949932%+38.67500126362%",
+                        "7": "37.63119876385%+42.0783996582%",
+                        "8": "40.67490100861%+45.48180103302%",
+                        "9": "43.71860027313%+48.8851994276%",
+                        "10": "47.03899919987%+52.59799957275%",
+                        "11": "50.3593981266%+56.31080269814%",
+                        "12": "53.67980003357%+60.02359986305%",
+                        "13": "57.00020194054%+63.73639702797%",
+                        "14": "60.32059788704%+67.44920015335%",
+                        "15": "63.64099979401%+71.16199731827%"
+                    },
+                    "3-Hit DMG": {
+                        "1": "73.98669719696%",
+                        "2": "80.00879883766%",
+                        "3": "86.03100180626%",
+                        "4": "94.63409781456%",
+                        "5": "100.65629482269%",
+                        "6": "107.53870010376%",
+                        "7": "117.00220108032%",
+                        "8": "126.46559476852%",
+                        "9": "135.92900037766%",
+                        "10": "146.25270366669%",
+                        "11": "156.57639503479%",
+                        "12": "166.90009832382%",
+                        "13": "177.22389698029%",
+                        "14": "187.54760026932%",
+                        "15": "197.87130355835%"
+                    },
+                    "Aimed Shot": {
+                        "1": "43.86000037193%",
+                        "2": "47.42999970913%",
+                        "3": "50.99999904633%",
+                        "4": "56.09999895096%",
+                        "5": "59.67000126839%",
+                        "6": "63.74999880791%",
+                        "7": "69.3599998951%",
+                        "8": "74.97000098228%",
+                        "9": "80.58000206947%",
+                        "10": "86.69999837875%",
+                        "11": "92.8200006485%",
+                        "12": "98.94000291824%",
+                        "13": "105.06000518799%",
+                        "14": "111.1799955368%",
+                        "15": "117.29999780655%"
+                    },
+                    "Aimed Shot Charge Level 1": {
+                        "1": "124.00000095367%",
+                        "2": "133.29999446869%",
+                        "3": "142.59999990463%",
+                        "4": "154.99999523163%",
+                        "5": "164.30000066757%",
+                        "6": "173.59999418259%",
+                        "7": "186.00000143051%",
+                        "8": "198.39999675751%",
+                        "9": "210.80000400543%",
+                        "10": "223.20001125336%",
+                        "11": "235.59999465942%",
+                        "12": "248.00000190735%",
+                        "13": "263.49999904633%",
+                        "14": "278.9999961853%",
+                        "15": "294.49999332428%"
+                    },
+                    "Shadowpiercing Shot DMG": {
+                        "1": "139.99999761581% ATK+134.56000089645% Elemental Mastery",
+                        "2": "150.49999952316% ATK+144.65199708939% Elemental Mastery",
+                        "3": "161.00000143051% ATK+154.74400520325% Elemental Mastery",
+                        "4": "175% ATK+168.2000041008% Elemental Mastery",
+                        "5": "185.50000190735% ATK+178.29200029373% Elemental Mastery",
+                        "6": "196.0000038147% ATK+188.38399648666% Elemental Mastery",
+                        "7": "209.99999046326% ATK+201.83999538422% Elemental Mastery",
+                        "8": "224.00000095367% ATK+215.2960062027% Elemental Mastery",
+                        "9": "238.00001144409% ATK+228.75199317932% Elemental Mastery",
+                        "10": "251.99999809265% ATK+242.2080039978% Elemental Mastery",
+                        "11": "266.00000858307% ATK+255.66399097443% Elemental Mastery",
+                        "12": "279.99999523163% ATK+269.12000179291% Elemental Mastery",
+                        "13": "297.49999046326% ATK+285.94000339508% Elemental Mastery",
+                        "14": "315.00000953674% ATK+302.76000499725% Elemental Mastery",
+                        "15": "332.50000476837% ATK+319.58000659943% Elemental Mastery"
+                    },
+                    "Plunge DMG": {
+                        "1": "56.82880282402%",
+                        "2": "61.45439743996%",
+                        "3": "66.07999801636%",
+                        "4": "72.68800139427%",
+                        "5": "77.31360197067%",
+                        "6": "82.59999752045%",
+                        "7": "89.8688018322%",
+                        "8": "97.13760018349%",
+                        "9": "104.40640449524%",
+                        "10": "112.33600378036%",
+                        "11": "120.26560306549%",
+                        "12": "128.19520235062%",
+                        "13": "136.12480163574%",
+                        "14": "144.05440092087%",
+                        "15": "151.98400020599%"
+                    },
+                    "Low\/High Plunge DMG": {
+                        "1": "113.63350152969%\/141.93439483643%",
+                        "2": "122.88279533386%\/153.48720550537%",
+                        "3": "132.13200569153%\/165.04000425339%",
+                        "4": "145.34519910812%\/181.54400587082%",
+                        "5": "154.59439754486%\/193.09680461884%",
+                        "6": "165.16499519348%\/206.29999637604%",
+                        "7": "179.69950437546%\/224.45440292358%",
+                        "8": "194.23400163651%\/242.60880947113%",
+                        "9": "208.76860618591%\/260.76319217682%",
+                        "10": "224.62439537048%\/280.56800365448%",
+                        "11": "240.48020839691%\/300.37279129028%",
+                        "12": "256.33609294891%\/320.17760276794%",
+                        "13": "272.19190597534%\/339.98239040375%",
+                        "14": "288.04779052734%\/359.78720188141%",
+                        "15": "303.90360355377%\/379.59198951721%"
+                    }
+                }
+            },
+            "Elemental Skill": {
+                "name": "Ancient Rite: The Thundering Sands",
+                "text": "Gathers the might of thunder, dealing <color=#FFACFFFF>AoE Electro DMG<\/color> and quickly retreating. If this attack triggers Electro-Charged, Superconduct, Overloaded, Quicken, Aggravate, Hyperbloom, or Electro Swirl reactions, Sethos recovers a certain amount of Elemental Energy.\\n\\n<i>\"The God indwelt Priest, the Magi who turned pits to springs, the singers of the sea of sand still spread their stories... But I know those are not legends, for they are our ancestors.\"<\/i>",
+                "scaling": {
+                    "Skill DMG": {
+                        "1": "115.60000181198%",
+                        "2": "124.26999807358%",
+                        "3": "132.93999433517%",
+                        "4": "144.50000524521%",
+                        "5": "153.17000150681%",
+                        "6": "161.8399977684%",
+                        "7": "173.39999675751%",
+                        "8": "184.95999574661%",
+                        "9": "196.51999473572%",
+                        "10": "208.08000564575%",
+                        "11": "219.63999271393%",
+                        "12": "231.20000362396%",
+                        "13": "245.65000534058%",
+                        "14": "260.10000705719%",
+                        "15": "274.5500087738%"
+                    },
+                    "Energy Regeneration": {
+                        "1": "12",
+                        "2": "12",
+                        "3": "12",
+                        "4": "12",
+                        "5": "12",
+                        "6": "12",
+                        "7": "12",
+                        "8": "12",
+                        "9": "12",
+                        "10": "12",
+                        "11": "12",
+                        "12": "12",
+                        "13": "12",
+                        "14": "12",
+                        "15": "12"
+                    },
+                    "CD": {
+                        "1": "8s",
+                        "2": "8s",
+                        "3": "8s",
+                        "4": "8s",
+                        "5": "8s",
+                        "6": "8s",
+                        "7": "8s",
+                        "8": "8s",
+                        "9": "8s",
+                        "10": "8s",
+                        "11": "8s",
+                        "12": "8s",
+                        "13": "8s",
+                        "14": "8s",
+                        "15": "8s"
+                    }
+                }
+            },
+            "Elemental Burst": {
+                "name": "Secret Rite: Twilight Shadowpiercer",
+                "text": "Perform a secret rite, entering the \"Twilight Meditation\" state, during which Sethos's Normal Attacks will be converted into enemy-piercing <color=#FFD780FF>Dusk Bolts<\/color>: Deal <color=#FFACFFFF>Electro DMG<\/color> to opponents in its path, with DMG increased based on Sethos's Elemental Mastery.\\nDMG dealt by Dusk Bolts is considered Charged Attack DMG.\\nThis effect will be canceled when Sethos leaves the field.\\n\\n<i>The archives of the Temple of Silence preserve many tomes left behind by Akhtamun, from the era of King Deshret. Many secret rituals of great power are recorded within, but even among the Temple of Silence, very few could master them.<\/i>",
+                "scaling": {
+                    "Dusk Bolt DMG Increase": {
+                        "1": "196.1599946022% Elemental Mastery",
+                        "2": "210.87200641632% Elemental Mastery",
+                        "3": "225.58400630951% Elemental Mastery",
+                        "4": "245.19999027252% Elemental Mastery",
+                        "5": "259.91199016571% Elemental Mastery",
+                        "6": "274.6239900589% Elemental Mastery",
+                        "7": "294.23999786377% Elemental Mastery",
+                        "8": "313.85600566864% Elemental Mastery",
+                        "9": "333.47198963165% Elemental Mastery",
+                        "10": "353.08799743652% Elemental Mastery",
+                        "11": "372.70400524139% Elemental Mastery",
+                        "12": "392.31998920441% Elemental Mastery",
+                        "13": "416.8399810791% Elemental Mastery",
+                        "14": "441.35999679565% Elemental Mastery",
+                        "15": "465.88001251221% Elemental Mastery"
+                    },
+                    "Twilight Meditation Duration": {
+                        "1": "8s",
+                        "2": "8s",
+                        "3": "8s",
+                        "4": "8s",
+                        "5": "8s",
+                        "6": "8s",
+                        "7": "8s",
+                        "8": "8s",
+                        "9": "8s",
+                        "10": "8s",
+                        "11": "8s",
+                        "12": "8s",
+                        "13": "8s",
+                        "14": "8s",
+                        "15": "8s"
+                    },
+                    "CD": {
+                        "1": "15s",
+                        "2": "15s",
+                        "3": "15s",
+                        "4": "15s",
+                        "5": "15s",
+                        "6": "15s",
+                        "7": "15s",
+                        "8": "15s",
+                        "9": "15s",
+                        "10": "15s",
+                        "11": "15s",
+                        "12": "15s",
+                        "13": "15s",
+                        "14": "15s",
+                        "15": "15s"
+                    },
+                    "Energy Cost": {
+                        "1": "60",
+                        "2": "60",
+                        "3": "60",
+                        "4": "60",
+                        "5": "60",
+                        "6": "60",
+                        "7": "60",
+                        "8": "60",
+                        "9": "60",
+                        "10": "60",
+                        "11": "60",
+                        "12": "60",
+                        "13": "60",
+                        "14": "60",
+                        "15": "60"
+                    }
+                }
+            },
+            "1st Ascension Passive": {
+                "name": "Black Kite's Enigma",
+                "text": "When Aiming, the charging time is decreased by 0.285s based on each point of Sethos's current Elemental Energy. Charging time can be reduced to a minimum of 0.3s through this method and a maximum of 20 Energy can be tallied. If a <color=#FFD780FF>Shadowpiercing Shot<\/color> is fired, consume the tallied amount of Elemental Energy; if it is a Charge Level 1 shot, then consume 50% of the tallied amount of Elemental Energy."
+            },
+            "4th Ascension Passive": {
+                "name": "The Sand King's Boon",
+                "text": "Sethos gains the \"Scorching Sandshade\" effect, increasing the DMG dealt by <color=#FFD780FF>Shadowpiercing Shots<\/color> by 600% of Sethos's Elemental Mastery.\\nThe Scorching Sandshade effect will be canceled when any of the following conditions are met:\\n\u00b7 5s after a Shadowpiercing Shot first hits an opponent.\\n\u00b7 After 4 Shadowpiercing Shots strike opponents.\\n\\n When a Shadowpiercing Shot affected by Scorching Sandshade first hits an opponent, Sethos will regain Scorching Sandshade after 15s."
+            },
+            "Utility Passive": {
+                "name": "Thoth's Revelation",
+                "text": "Displays the location of nearby <color=#FFD780FF>resources unique to Sumeru<\/color> on the mini-map."
+            }
+        },
+        "constellations": {
+            "1": {
+                "name": "Sealed Shrine's Spiritsong",
+                "text": "The CRIT Rate of <color=#FFD780FF>Shadowpiercing Shot<\/color> is increased by 15%."
+            },
+            "2": {
+                "name": "Papyrus Scripture of Silent Secrets",
+                "text": "When Sethos uses <color=#FFD780FF>Secret Rite: Twilight Shadowpiercer<\/color> or meets any of the following conditions, he gains a 15% <color=#FFACFFFF>Electro DMG Bonus<\/color> for 10s:\\n\u00b7 Consuming Elemental Energy through the Passive Talent \"Black Kite's Enigma.\" You must first unlock \"Black Kite's Enigma.\"\\n\u00b7 Regaining Elemental Energy via <color=#FFD780FF>Ancient Rite: The Thundering Sands<\/color>.\\nWhen triggered multiple times, this <color=#FFACFFFF>Electro DMG Bonus<\/color> effect can stack twice. Each stack duration is counted independently."
+            },
+            "3": {
+                "name": "Ode to the Moonrise Sage",
+                "text": "Increases the Level of <color=#FFD780FF>Normal Attack: Royal Reed Archery<\/color> by 3.\\nMaximum upgrade level is 15."
+            },
+            "4": {
+                "name": "Beneficent Plumage",
+                "text": "When <color=#FFD780FF>Shadowpiercing Shot<\/color> or <color=#FFD780FF>Dusk Bolt<\/color> strike 2 or more opponents, all nearby party members gain 80 Elemental Mastery for 10s."
+            },
+            "5": {
+                "name": "Record of the Desolate God's Burning Sands",
+                "text": "Increases the Level of <color=#FFD780FF>Secret Rite: Twilight Shadowpiercer<\/color> by 3.\\nMaximum upgrade level is 15."
+            },
+            "6": {
+                "name": "Pylon of the Sojourning Sun Temple",
+                "text": "After <color=#FFD780FF>Shadowpiercing Shot<\/color> strikes an opponent, the Elemental Energy consumed by the Passive Talent \"Black Kite's Enigma\" will be returned. This effect can be triggered up to once every 15s. You must first unlock the Passive Talent \"Black Kite's Enigma.\""
+            }
+        },
+        "version": "4.6.52"
+    },
     "Shenhe": {
         "name": "Shenhe",
         "weapon": "Polearm",
@@ -27706,7 +28696,7 @@ export default {
                                 ],
                                 [
                                     "mv",
-                                    "DMG Bonus (% ATK)"
+                                    "DMG Bonus"
                                 ]
                             ]
                         ],
@@ -27850,7 +28840,7 @@ export default {
                             ],
                             [
                                 "mv",
-                                "RES Decrease (%)"
+                                "RES Decrease"
                             ]
                         ]
                     ],
@@ -28492,6 +29482,394 @@ export default {
             10592,
             10595
         ]
+    },
+    "Sigewinne": {
+        "name": "Sigewinne",
+        "rarity": 5,
+        "weapon": "Bow",
+        "element": "Hydro",
+        "hakushinID": 10000095,
+        "id": 10000095,
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Sigewinne.webp",
+        "release": "June 4, 2024",
+        "region": "Fontaine",
+        "matEnemy": "Fontemer",
+        "matBoss": "Tulpa",
+        "matFlower": "Romaritime Flower",
+        "matMastery": "Equity",
+        "matTrounce": "Lightless Eye of the Maelstrom",
+        "ascendStat": "hp_",
+        "hpBase": 1039.1187744140625,
+        "atkBase": 14.9891004562378,
+        "defBase": 38.8894996643066,
+        "hpMaxAsc": 4267.18359375,
+        "atkMaxAsc": 61.5488510131836,
+        "defMaxAsc": 159.7050018310547,
+        "talents": {
+            "Normal Attack": {
+                "name": "Normal Attack: Targeted Treatment",
+                "text": "<color=#FFD780FF>Normal Attack<\/color>\\nPerforms up to 3 consecutive attacks.\\n\\n<color=#FFD780FF>Charged Attack<\/color>\\nPerforms a more precise <color=#FFD780FF>Aimed Shot<\/color> with increased DMG.\\nWhile aiming, the power of Hydro will continually accumulate on the arrow. After fully charging, Sigewinne will periodically fire slow-moving Mini-Stration Bubbles toward the target, dealing <color=#80C0FFFF>Hydro DMG<\/color>. When released, an arrow imbued with torrential energy will deal <color=#80C0FFFF>Hydro DMG<\/color> to the opponent hit.\\n\\n<color=#FFD780FF>Plunging Attack<\/color>\\nFires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG upon impact.",
+                "scaling": {
+                    "1-Hit DMG": {
+                        "1": "52.61390209198%",
+                        "2": "56.89650177956%",
+                        "3": "61.17900013924%",
+                        "4": "67.29689836502%",
+                        "5": "71.57940268517%",
+                        "6": "76.47370100021%",
+                        "7": "83.20339918137%",
+                        "8": "89.93309736252%",
+                        "9": "96.66280150414%",
+                        "10": "104.00429964066%",
+                        "11": "111.34580373764%",
+                        "12": "118.6872959137%",
+                        "13": "126.02870464325%",
+                        "14": "133.37019681931%",
+                        "15": "140.71170091629%"
+                    },
+                    "2-Hit DMG": {
+                        "1": "51.07110142708%",
+                        "2": "55.22810220718%",
+                        "3": "59.38500165939%",
+                        "4": "65.32350182533%",
+                        "5": "69.48040127754%",
+                        "6": "74.23120141029%",
+                        "7": "80.76360225677%",
+                        "8": "87.29590177536%",
+                        "9": "93.82830262184%",
+                        "10": "100.9544968605%",
+                        "11": "108.08069705963%",
+                        "12": "115.20689725876%",
+                        "13": "122.33309745789%",
+                        "14": "129.45929765701%",
+                        "15": "136.58549785614%"
+                    },
+                    "3-Hit DMG": {
+                        "1": "78.2909989357%",
+                        "2": "84.66349840164%",
+                        "3": "91.03599786758%",
+                        "4": "100.13959407806%",
+                        "5": "106.51210546494%",
+                        "6": "113.79499435425%",
+                        "7": "123.80900382996%",
+                        "8": "133.82289409637%",
+                        "9": "143.83690357208%",
+                        "10": "154.7611951828%",
+                        "11": "165.68549871445%",
+                        "12": "176.60980224609%",
+                        "13": "187.53420114517%",
+                        "14": "198.45850467682%",
+                        "15": "209.38279628754%"
+                    },
+                    "Aimed Shot": {
+                        "1": "43.86000037193%",
+                        "2": "47.42999970913%",
+                        "3": "50.99999904633%",
+                        "4": "56.09999895096%",
+                        "5": "59.67000126839%",
+                        "6": "63.74999880791%",
+                        "7": "69.3599998951%",
+                        "8": "74.97000098228%",
+                        "9": "80.58000206947%",
+                        "10": "86.69999837875%",
+                        "11": "92.8200006485%",
+                        "12": "98.94000291824%",
+                        "13": "105.06000518799%",
+                        "14": "111.1799955368%",
+                        "15": "117.29999780655%"
+                    },
+                    "Fully-Charged Aimed Shot": {
+                        "1": "114.07999992371%",
+                        "2": "122.63599634171%",
+                        "3": "142.59999990463%",
+                        "4": "154.99999523163%",
+                        "5": "151.15599632263%",
+                        "6": "159.71200466156%",
+                        "7": "171.11999988556%",
+                        "8": "182.52799510956%",
+                        "9": "193.93600225449%",
+                        "10": "205.34400939941%",
+                        "11": "216.75200462341%",
+                        "12": "228.15999984741%",
+                        "13": "242.42000579834%",
+                        "14": "256.68001174927%",
+                        "15": "270.93999385834%"
+                    },
+                    "Mini-Stration Bubble DMG": {
+                        "1": "22.81599938869%",
+                        "2": "24.52719956636%",
+                        "3": "28.51999998093%",
+                        "4": "31.00000023842%",
+                        "5": "30.23119866848%",
+                        "6": "31.94240033627%",
+                        "7": "34.22400057316%",
+                        "8": "36.50560081005%",
+                        "9": "38.78720104694%",
+                        "10": "41.06880128384%",
+                        "11": "43.3503985405%",
+                        "12": "45.63199877739%",
+                        "13": "48.48400056362%",
+                        "14": "51.33600234985%",
+                        "15": "54.18800115585%"
+                    },
+                    "Plunge DMG": {
+                        "1": "56.82880282402%",
+                        "2": "61.45439743996%",
+                        "3": "66.07999801636%",
+                        "4": "72.68800139427%",
+                        "5": "77.31360197067%",
+                        "6": "82.59999752045%",
+                        "7": "89.8688018322%",
+                        "8": "97.13760018349%",
+                        "9": "104.40640449524%",
+                        "10": "112.33600378036%",
+                        "11": "120.26560306549%",
+                        "12": "128.19520235062%",
+                        "13": "136.12480163574%",
+                        "14": "144.05440092087%",
+                        "15": "151.98400020599%"
+                    },
+                    "Low\/High Plunge DMG": {
+                        "1": "113.63350152969%\/141.93439483643%",
+                        "2": "122.88279533386%\/153.48720550537%",
+                        "3": "132.13200569153%\/165.04000425339%",
+                        "4": "145.34519910812%\/181.54400587082%",
+                        "5": "154.59439754486%\/193.09680461884%",
+                        "6": "165.16499519348%\/206.29999637604%",
+                        "7": "179.69950437546%\/224.45440292358%",
+                        "8": "194.23400163651%\/242.60880947113%",
+                        "9": "208.76860618591%\/260.76319217682%",
+                        "10": "224.62439537048%\/280.56800365448%",
+                        "11": "240.48020839691%\/300.37279129028%",
+                        "12": "256.33609294891%\/320.17760276794%",
+                        "13": "272.19190597534%\/339.98239040375%",
+                        "14": "288.04779052734%\/359.78720188141%",
+                        "15": "303.90360355377%\/379.59198951721%"
+                    }
+                }
+            },
+            "Elemental Skill": {
+                "name": "Rebound Hydrotherapy",
+                "text": "Blows a <color=#FFD780FF>Bolstering Bubblebalm<\/color> that can stimulate blood flow and help patients drift off to sleep using a bubblegun specially made in the Fortress of Meropide.\\nBolstering Bubblebalms will bounce between nearby opponents, dealing <color=#80C0FFFF>Hydro DMG<\/color> based on Sigewinne's max HP to opponents it hits. When it hits an opponent, it will restore HP to all nearby party members except Sigewinne herself. The amount healed is based on Sigewinne's max HP.\\nAfter bouncing 5 times, the Bolstering Bubblebalm will disappear and restore HP to Sigewinne based on her max HP value.\\nWhen no opponents are present, the Bolstering Bubblebalm will bounce nearby. Only one Bolstering Bubblebalm created by a Sigewinne may exist at once.\\nWhen Held, the Bolstering Bubblebalm can be boosted to an even bigger size.\\n\\n<color=#FFD780FF>Hold<\/color>\\nEnter Aiming Mode to begin blowing an even bigger, even more breathtaking Bolstering Bubblebalm!\\nThe Bolstering Bubblebalm will grow bigger the longer the skill is Held, until it grows up to two tiers in size. Each tier it grows increases its DMG by 5% and healing by 5%. When a Bolstering Bubblebalm bounces, it will drop down a tier in size, until it returns to being a normal Bolstering Bubblebalm.\\nAfter weaker opponents are hit by big Bolstering Bubblebalms, they will be imprisoned and will be unable to move.\\n\\nIn addition, 2 Sourcewater Droplets will be created near Sigewinne when she uses this Skill. Each Sourcewater Droplet Sigewinne collects will grant her a Bond of Life worth 10% of her Max HP.\\nWhen Sigewinne's Bond of Life is cleared, she regains 1 Elemental Energy for every 2,000 HP worth of the Bond of Life that was cleared. Sigewinne can regain up to 5 Elemental Energy in this way.\\n\\n<color=#FFD780FF>Arkhe: Ousia<\/color>\\nBolstering Bubblebalms periodically call down a Surging Blade on the position they hit an opponent, dealing Ousia-aligned <color=#80C0FFFF>Hydro DMG<\/color> based on Sigewinne's max HP.\\n\\n<i>\"What do you think? Not only can this kind of hydrotherapy stimulate the circulatory system, but it can also cheer patients up, ooh, and that's not all, it can even help patients who ought to get some rest have a nice nap...\"<\/i>",
+                "scaling": {
+                    "Bolstering Bubblebalm DMG": {
+                        "1": "2.28000003844% Max HP",
+                        "2": "2.45099999011% Max HP",
+                        "3": "2.62199994177% Max HP",
+                        "4": "2.85000000149% Max HP",
+                        "5": "3.02099995315% Max HP",
+                        "6": "3.19200009108% Max HP",
+                        "7": "3.4200001508% Max HP",
+                        "8": "3.64799983799% Max HP",
+                        "9": "3.87599989772% Max HP",
+                        "10": "4.10399995744% Max HP",
+                        "11": "4.33200001717% Max HP",
+                        "12": "4.56000007689% Max HP",
+                        "13": "4.84500005841% Max HP",
+                        "14": "5.13000003994% Max HP",
+                        "15": "5.41500002146% Max HP"
+                    },
+                    "Bolstering Bubblebalm Healing": {
+                        "1": "2.80000008643% Max HP+269.63140869141",
+                        "2": "3.00999991596% Max HP+296.59829711914",
+                        "3": "3.22000011802% Max HP+325.81243896484",
+                        "4": "3.5000000149% Max HP+357.27380371094",
+                        "5": "3.70999984443% Max HP+390.982421875",
+                        "6": "3.92000004649% Max HP+426.93826293945",
+                        "7": "4.19999994338% Max HP+465.14135742188",
+                        "8": "4.47999984026% Max HP+505.59167480469",
+                        "9": "4.76000010967% Max HP+548.28924560547",
+                        "10": "5.04000000656% Max HP+593.23406982422",
+                        "11": "5.31999990344% Max HP+640.42614746094",
+                        "12": "5.60000017285% Max HP+689.86541748047",
+                        "13": "5.95000013709% Max HP+741.55194091797",
+                        "14": "6.30000010133% Max HP+795.48571777344",
+                        "15": "6.65000006557% Max HP+851.66674804688"
+                    },
+                    "Final Bounce Healing": {
+                        "1": "50% Max HP",
+                        "2": "50% Max HP",
+                        "3": "50% Max HP",
+                        "4": "50% Max HP",
+                        "5": "50% Max HP",
+                        "6": "50% Max HP",
+                        "7": "50% Max HP",
+                        "8": "50% Max HP",
+                        "9": "50% Max HP",
+                        "10": "50% Max HP",
+                        "11": "50% Max HP",
+                        "12": "50% Max HP",
+                        "13": "50% Max HP",
+                        "14": "50% Max HP",
+                        "15": "50% Max HP"
+                    },
+                    "Surging Blade DMG": {
+                        "1": "0.68399999291% Max HP",
+                        "2": "0.73529998772% Max HP",
+                        "3": "0.78659998253% Max HP",
+                        "4": "0.8550000377% Max HP",
+                        "5": "0.90629998595% Max HP",
+                        "6": "0.95760002732% Max HP",
+                        "7": "1.02599998936% Max HP",
+                        "8": "1.09440004453% Max HP",
+                        "9": "1.16280000657% Max HP",
+                        "10": "1.23119996861% Max HP",
+                        "11": "1.29960002378% Max HP",
+                        "12": "1.36799998581% Max HP",
+                        "13": "1.45349996164% Max HP",
+                        "14": "1.53900003061% Max HP",
+                        "15": "1.62450000644% Max HP"
+                    },
+                    "Surging Blade Interval": {
+                        "1": "10s",
+                        "2": "10s",
+                        "3": "10s",
+                        "4": "10s",
+                        "5": "10s",
+                        "6": "10s",
+                        "7": "10s",
+                        "8": "10s",
+                        "9": "10s",
+                        "10": "10s",
+                        "11": "10s",
+                        "12": "10s",
+                        "13": "10s",
+                        "14": "10s",
+                        "15": "10s"
+                    },
+                    "CD": {
+                        "1": "18s",
+                        "2": "18s",
+                        "3": "18s",
+                        "4": "18s",
+                        "5": "18s",
+                        "6": "18s",
+                        "7": "18s",
+                        "8": "18s",
+                        "9": "18s",
+                        "10": "18s",
+                        "11": "18s",
+                        "12": "18s",
+                        "13": "18s",
+                        "14": "18s",
+                        "15": "18s"
+                    }
+                }
+            },
+            "Elemental Burst": {
+                "name": "Super Saturated Syringing",
+                "text": "Take out a special Fortress of Meropide-made syringe and assault the area in front with waves of kindness and medicine, dealing <color=#80C0FFFF>AoE Hydro DMG.<\/color>\\nIn addition, Sigewinne absorbs up to 2 nearby Sourcewater Droplets within a certain range right before using the skill.\\n\\n<i>\"Hey, overdosing on medicine is no different from poison, you know, it's real dangerous! But patients need care and concern, and nobody can overdose on that!\"<\/i>",
+                "scaling": {
+                    "Skill DMG": {
+                        "1": "11.77079975605% Max HP",
+                        "2": "12.65359967947% Max HP",
+                        "3": "13.53639960289% Max HP",
+                        "4": "14.71350044012% Max HP",
+                        "5": "15.59630036354% Max HP",
+                        "6": "16.47910028696% Max HP",
+                        "7": "17.65619963408% Max HP",
+                        "8": "18.83330047131% Max HP",
+                        "9": "20.01039981842% Max HP",
+                        "10": "21.18739932775% Max HP",
+                        "11": "22.36450016499% Max HP",
+                        "12": "23.5415995121% Max HP",
+                        "13": "25.01290142536% Max HP",
+                        "14": "26.48429870605% Max HP",
+                        "15": "27.95560061932% Max HP"
+                    },
+                    "Duration": {
+                        "1": "2.5s",
+                        "2": "2.5s",
+                        "3": "2.5s",
+                        "4": "2.5s",
+                        "5": "2.5s",
+                        "6": "2.5s",
+                        "7": "2.5s",
+                        "8": "2.5s",
+                        "9": "2.5s",
+                        "10": "2.5s",
+                        "11": "2.5s",
+                        "12": "2.5s",
+                        "13": "2.5s",
+                        "14": "2.5s",
+                        "15": "2.5s"
+                    },
+                    "CD": {
+                        "1": "18s",
+                        "2": "18s",
+                        "3": "18s",
+                        "4": "18s",
+                        "5": "18s",
+                        "6": "18s",
+                        "7": "18s",
+                        "8": "18s",
+                        "9": "18s",
+                        "10": "18s",
+                        "11": "18s",
+                        "12": "18s",
+                        "13": "18s",
+                        "14": "18s",
+                        "15": "18s"
+                    },
+                    "Energy Cost": {
+                        "1": "70",
+                        "2": "70",
+                        "3": "70",
+                        "4": "70",
+                        "5": "70",
+                        "6": "70",
+                        "7": "70",
+                        "8": "70",
+                        "9": "70",
+                        "10": "70",
+                        "11": "70",
+                        "12": "70",
+                        "13": "70",
+                        "14": "70",
+                        "15": "70"
+                    }
+                }
+            },
+            "1st Ascension Passive": {
+                "name": "Requires Appropriate Rest",
+                "text": "Sigewinne grants herself the \"Semi-Strict Bedrest\" effect for 18s after using <color=#FFD780FF>Rebound Hydrotherapy<\/color>: Sigewinne gains an 8% <color=#80C0FFFF>Hydro DMG Bonus<\/color> and 10 stacks of Convalescence. When the Elemental Skills of your own characters on standby other than Sigewinne deal DMG, consume 1 stack of Convalescence, and increase the DMG dealt by this instance of Elemental Skill DMG. Every 1,000 HP Sigewinne has above 30,000 increases the DMG by 80. The maximum DMG increase for Elemental Skills that can be gained in this way is 2,800."
+            },
+            "4th Ascension Passive": {
+                "name": "Detailed Diagnosis, Thorough Treatment",
+                "text": "When Sigewinne performs healing, the amount healed is increased based on the total current value of the Bonds of Life on all party members: For each 1,000 HP worth of Bonds of Life, the outgoing healing is increased by 3%. The amount of healing provided can be increased by up to 30% in this way."
+            },
+            "Utility Passive": {
+                "name": "Emergency Dose",
+                "text": "While underwater, heal your active character over 2.5s when their HP falls under 50%. The amount healed is equal to 50% of their Max HP, and their All Elemental RES and Physical RES will be decreased by 10% for 10s. This effect can be triggered up to once every 20s."
+            }
+        },
+        "constellations": {
+            "1": {
+                "name": "\"Can the Happiest of Spirits Understand Anxiety?\"",
+                "text": "<color=#FFD780FF>Rebound Hydrotherapy<\/color>'s Bolstering Bubblebalm can bounce 3 extra times, and the first 3 bounces will not cause big Bubblebalms to become smaller.\\nThe Passive Talent \"Requires Appropriate Rest\" is enhanced: Each Bubblebalm bounce adds 1 stack to her Convalescence tally, and the values for the Convalesence stacks' DMG bonus will be modified to: Every 1,000 max HP Sigewinne has above 30,000 increases the DMG by 100. The maximum DMG increase for Elemental Skills that can be gained in this way is 3,500. You must first unlock the Passive Talent \"Requires Appropriate Rest.\""
+            },
+            "2": {
+                "name": "\"Can the Most Merciful of Spirits Defeat Its Foes?\"",
+                "text": "When using <color=#FFD780FF>Rebound Hydrotherapy<\/color> and <color=#FFD780FF>Super Saturated Syringing<\/color>, Sigewinne can create a Bubbly Shield worth 30% of her Max HP that absorbs <color=#80C0FFFF>Hydro DMG<\/color> with 250% efficiency.\\nAdditionally, after Rebound Hydrotherapy's Bolstering Bubblebalm or Super Saturated Syringing hits an opponent, that opponent's <color=#80C0FFFF>Hydro RES<\/color> will be decreased by 35% for 8s."
+            },
+            "3": {
+                "name": "\"Can the Healthiest of Spirits Cure Fevers?\"",
+                "text": "Increases the Level of <color=#FFD780FF>Rebound Hydrotherapy<\/color> by 3.\\nMaximum upgrade level is 15."
+            },
+            "4": {
+                "name": "\"Can the Loveliest of Spirits Keep Decay at Bay?\"",
+                "text": "The duration of <color=#FFD780FF>Super Saturated Syringing<\/color> is extended by 3s."
+            },
+            "5": {
+                "name": "\"Can the Most Joyful of Spirits Alleviate Agony?\"",
+                "text": "Increases the Level of <color=#FFD780FF>Super Saturated Syringing<\/color> by 3.\\nMaximum upgrade level is 15."
+            },
+            "6": {
+                "name": "\"Can the Most Radiant of Spirits Pray For Me?\"",
+                "text": "When Sigewinne performs healing, she will increase the CRIT Rate and CRIT DMG of her <color=#FFD780FF>Super Saturated Syringing<\/color> based on her Max HP. Every 1,000 Max HP she has will increase CRIT Rate by 0.4% and CRIT DMG by 2.2% for 15s. The maximum increase achievable this way is 20% CRIT Rate and 110% CRIT DMG."
+            }
+        },
+        "version": "4.6.52"
     },
     "Sucrose": {
         "name": "Sucrose",
@@ -33741,7 +35119,14 @@ export default {
             "3": {
                 "name": "Punishment for the Frauds",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/58\/Constellation_Punishment_for_the_Frauds.png",
-                "text": "Increases the Level of <color=#FFD780FF>Normal Attack: Forceful Fists of Frost<\/color> by 3.\\nMaximum upgrade level is 15."
+                "text": "Increases the Level of <color=#FFD780FF>Normal Attack: Forceful Fists of Frost<\/color> by 3.\\nMaximum upgrade level is 15.",
+                "code": [
+                    "stat",
+                    [
+                        "autoLevel",
+                        3
+                    ]
+                ]
             },
             "4": {
                 "name": "Redemption for the Suffering",
@@ -33751,7 +35136,14 @@ export default {
             "5": {
                 "name": "Mercy for the Wronged",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f4\/Constellation_Mercy_for_the_Wronged.png",
-                "text": "Increases the Level of <color=#FFD780FF>Darkgold Wolfbite<\/color> by 3.\\nMaximum upgrade level is 15."
+                "text": "Increases the Level of <color=#FFD780FF>Darkgold Wolfbite<\/color> by 3.\\nMaximum upgrade level is 15.",
+                "code": [
+                    "stat",
+                    [
+                        "burstLevel",
+                        3
+                    ]
+                ]
             },
             "6": {
                 "name": "Esteem for the Innocent",
@@ -34661,7 +36053,14 @@ export default {
             "3": {
                 "name": "Creations of Star and Moon",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/45\/Constellation_Creations_of_Star_and_Moon.png",
-                "text": "Increases the Level of <color=#FFD780FF>Stars Gather at Dusk<\/color> by 3.\\nMaximum upgrade level is 15."
+                "text": "Increases the Level of <color=#FFD780FF>Stars Gather at Dusk<\/color> by 3.\\nMaximum upgrade level is 15.",
+                "code": [
+                    "stat",
+                    [
+                        "burstLevel",
+                        3
+                    ]
+                ]
             },
             "4": {
                 "name": "Mystery Millet Gourmet",
@@ -34671,7 +36070,14 @@ export default {
             "5": {
                 "name": "Astride Rose-Colored Clouds",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/92\/Constellation_Astride_Rose-Colored_Clouds.png",
-                "text": "Increases the Level of <color=#FFD780FF>White Clouds at Dawn<\/color> by 3.\\nMaximum upgrade level is 15."
+                "text": "Increases the Level of <color=#FFD780FF>White Clouds at Dawn<\/color> by 3.\\nMaximum upgrade level is 15.",
+                "code": [
+                    "stat",
+                    [
+                        "skillLevel",
+                        3
+                    ]
+                ]
             },
             "6": {
                 "name": "They Call Her Cloud Retainer",
@@ -37584,12 +38990,55 @@ export default {
             "1st Ascension Passive": {
                 "name": "Turn Control",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/42\/Talent_Turn_Control.png",
-                "text": "When the party has 1\/2\/3\/4 Elemental Types, Yelan's Max HP is increased by 6%\/12%\/18%\/30%."
+                "text": "When the party has 1\/2\/3\/4 Elemental Types, Yelan's Max HP is increased by 6%\/12%\/18%\/30%.",
+                "code": [
+                    "proc",
+                    [
+                        "stat",
+                        [
+                            "hp_",
+                            [
+                                "stacks",
+                                6,
+                                12,
+                                18,
+                                30
+                            ]
+                        ]
+                    ],
+                    "Number of elements in party",
+                    4
+                ]
             },
             "4th Ascension Passive": {
                 "name": "Adapt With Ease",
                 "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9d\/Talent_Adapt_With_Ease.png",
-                "text": "So long as an Exquisite Throw is in play, your own active character deals 1% more DMG. This increases by a further 3.5% DMG every second. The maximum increase to DMG dealt is 50%.<br\/>The pre-existing effect will be dispelled if Depth-Clarion Dice is recast during its duration."
+                "text": "So long as an Exquisite Throw is in play, your own active character deals 1% more DMG. This increases by a further 3.5% DMG every second. The maximum increase to DMG dealt is 50%.<br\/>The pre-existing effect will be dispelled if Depth-Clarion Dice is recast during its duration.",
+                "code": [
+                    [
+                        "proc",
+                        [
+                            "pstat",
+                            [
+                                "dmg_",
+                                1
+                            ]
+                        ],
+                        "During Elemental Burst"
+                    ],
+                    [
+                        "proc",
+                        [
+                            "pstat",
+                            [
+                                "dmg_",
+                                3.5
+                            ]
+                        ],
+                        "Seconds into Elemental Burst",
+                        14
+                    ]
+                ]
             },
             "Utility Passive": {
                 "name": "Necessary Calculation",

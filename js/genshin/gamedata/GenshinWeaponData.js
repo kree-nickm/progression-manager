@@ -40,6 +40,40 @@ export default {
         "hakushinID": 14511,
         "id": 14511
     },
+    "Absolution": {
+        "name": "Absolution",
+        "rarity": 5,
+        "type": "Sword",
+        "hakushinID": 11515,
+        "id": 11515,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_Estoc.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_Estoc.webp"
+        ],
+        "baseATK": 48,
+        "stat": "critDMG_",
+        "matForgery": "Chord",
+        "matWeakEnemy": "Meka",
+        "matStrongEnemy": "Fatui Operatives",
+        "passive": "CRIT DMG increased by @0%. Increasing the value of a Bond of Life increases the DMG the equipping character deals by @1% for 6s. Max 3 stacks.",
+        "refinementData": [
+            {
+                "1": 20.000000298019998,
+                "2": 25,
+                "3": 30.000001192089996,
+                "4": 34.99999940395,
+                "5": 40.00000059605
+            },
+            {
+                "1": 15.99999964237,
+                "2": 20.000000298019998,
+                "3": 23.999999463560002,
+                "4": 28.00000011921,
+                "5": 31.99999928474
+            }
+        ],
+        "version": "4.6.52"
+    },
     "AmosBow": {
         "name": "Amos' Bow",
         "rarity": 5,
@@ -785,11 +819,11 @@ export default {
         "passive": "Increases Movement SPD by 10%. When in battle, gain an @0% Elemental DMG Bonus every 4s. Max 4 stacks. Lasts until the character falls or leaves combat.",
         "refinementData": [
             {
-                "1": 8,
-                "2": 10,
-                "3": 12,
-                "4": 14,
-                "5": 16
+                "1": 10.000000149009999,
+                "2": 10.000000149009999,
+                "3": 10.000000149009999,
+                "4": 10.000000149009999,
+                "5": 10.000000149009999
             }
         ],
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Lost_Prayer_to_the_Sacred_Winds",
@@ -1035,6 +1069,54 @@ export default {
         "hakushinID": 12510,
         "id": 12510
     },
+    "SilvershowerHeartstrings": {
+        "name": "Silvershower Heartstrings",
+        "rarity": 5,
+        "type": "Bow",
+        "hakushinID": 15513,
+        "id": 15513,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_Arcdange.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_Arcdange.webp"
+        ],
+        "baseATK": 44,
+        "stat": "hp_",
+        "matForgery": "Dewdrop",
+        "matWeakEnemy": "Fontemer",
+        "matStrongEnemy": "Xuanwen Beasts",
+        "passive": "The equipping character can gain the Remedy effect. When they possess 1\/2\/3 Remedy stacks, Max HP will increase by @0%\/@1%\/@2%. 1 stack may be gained when the following conditions are met: 1 stack for 25s when using an Elemental Skill; 1 stack for 25s when the value of a Bond of Life value increased; 1 stack for 20s for performing healing. Stacks can still be triggered when the equipping character is not on the field. Each stack's duration is counted independently. In addition, when 3 stacks are active, Elemental Burst CRIT Rate will be increased by @3%. This effect will be canceled 4s after falling under 3 stacks.",
+        "refinementData": [
+            {
+                "1": 11.999999731780001,
+                "2": 15.00000059605,
+                "3": 18.00000071526,
+                "4": 20.99999934435,
+                "5": 23.999999463560002
+            },
+            {
+                "1": 23.999999463560002,
+                "2": 30.000001192089996,
+                "3": 36.00000143051,
+                "4": 41.9999986887,
+                "5": 47.999998927120004
+            },
+            {
+                "1": 40.00000059605,
+                "2": 50,
+                "3": 60.00000238419,
+                "4": 69.99999880791,
+                "5": 80.00000119209
+            },
+            {
+                "1": 2500,
+                "2": 2500,
+                "3": 2500,
+                "4": 2500,
+                "5": 2500
+            }
+        ],
+        "version": "4.6.52"
+    },
     "SkywardAtlas": {
         "name": "Skyward Atlas",
         "rarity": 5,
@@ -1048,21 +1130,21 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/33\/Weapon_Skyward_Atlas.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b1\/Weapon_Skyward_Atlas_2nd.png"
         ],
-        "passive": "Increases Elemental DMG Bonus by @0%. Normal Attack hits have a 50% chance to earn the favor of the clouds. which actively seek out nearby opponents to attack for 15s, dealing @1% ATK DMG. Can only occur once every 30s.",
+        "passive": "Increases Elemental DMG Bonus by @0%. Normal Attack hits have a 50% chance to earn the favor of the clouds, which actively seek out nearby opponents to attack for 15s, dealing @1% ATK DMG. Can only occur once every 30s.",
         "refinementData": [
             {
-                "1": 12,
-                "2": 15,
-                "3": 18,
-                "4": 21,
-                "5": 24
+                "1": 11.999999731780001,
+                "2": 15.00000059605,
+                "3": 18.00000071526,
+                "4": 20.99999934435,
+                "5": 23.999999463560002
             },
             {
-                "1": 160,
-                "2": 200,
-                "3": 240,
-                "4": 280,
-                "5": 320
+                "1": 50,
+                "2": 50,
+                "3": 50,
+                "4": 50,
+                "5": 50
             }
         ],
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyward_Atlas",
@@ -1082,21 +1164,35 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/03\/Weapon_Skyward_Blade.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5d\/Weapon_Skyward_Blade_2nd.png"
         ],
-        "passive": "CRIT Rate increased by @0%. Gains Skypiercing Might upon using an Elemental Burst: Increases Movement SPD by 10%, increases ATK SPD by 10%, and Normal and Charged hits deal additional DMG equal to @1% of ATK. Skypiercing Might lasts for 12s.",
+        "passive": "CRIT Rate increased by @0%. Gains Skypiercing Might upon using an Elemental Burst: Increases Movement SPD by @1%, increases ATK SPD by @2%, and Normal and Charged hits deal additional DMG equal to @3% of ATK. Skypiercing Might lasts for 12s.",
         "refinementData": [
             {
-                "1": 4,
-                "2": 5,
-                "3": 6,
-                "4": 7,
-                "5": 8
+                "1": 3.9999999105899997,
+                "2": 5.00000007451,
+                "3": 5.9999998658900005,
+                "4": 7.000000029800001,
+                "5": 7.99999982119
             },
             {
-                "1": 20,
+                "1": 10.000000149009999,
+                "2": 10.000000149009999,
+                "3": 10.000000149009999,
+                "4": 10.000000149009999,
+                "5": 10.000000149009999
+            },
+            {
+                "1": 10.000000149009999,
+                "2": 10.000000149009999,
+                "3": 10.000000149009999,
+                "4": 10.000000149009999,
+                "5": 10.000000149009999
+            },
+            {
+                "1": 20.000000298019998,
                 "2": 25,
-                "3": 30,
-                "4": 35,
-                "5": 40
+                "3": 30.000001192089996,
+                "4": 34.99999940395,
+                "5": 40.00000059605
             }
         ],
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyward_Blade",
@@ -1119,25 +1215,25 @@ export default {
         "passive": "Increases CRIT DMG by @0%. Hits have a @1% chance to inflict a small AoE attack, dealing 125% Physical ATK DMG. Can only occur once every @2s.",
         "refinementData": [
             {
-                "1": 20,
+                "1": 20.000000298019998,
                 "2": 25,
-                "3": 30,
-                "4": 35,
-                "5": 40
+                "3": 30.000001192089996,
+                "4": 34.99999940395,
+                "5": 40.00000059605
             },
             {
-                "1": 60,
-                "2": 70,
-                "3": 80,
-                "4": 90,
+                "1": 60.00000238419,
+                "2": 69.99999880791,
+                "3": 80.00000119209,
+                "4": 89.99999761581,
                 "5": 100
             },
             {
-                "1": 4,
-                "2": 3.5,
-                "3": 3,
-                "4": 2.5,
-                "5": 2
+                "1": 1.25,
+                "2": 1.25,
+                "3": 1.25,
+                "4": 1.25,
+                "5": 1.25
             }
         ],
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyward_Harp",
@@ -2231,6 +2327,33 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Cinnabar_Spindle",
         "hakushinID": 11415,
         "id": 11415
+    },
+    "Cloudforged": {
+        "name": "Cloudforged",
+        "rarity": 4,
+        "type": "Bow",
+        "hakushinID": 15426,
+        "id": 15426,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_Ultimatum.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_Ultimatum.webp"
+        ],
+        "baseATK": 42,
+        "stat": "eleMas",
+        "matForgery": "Aeros",
+        "matWeakEnemy": "Fatui",
+        "matStrongEnemy": "Praetorians",
+        "passive": "After Elemental Energy is decreased, the equipping character's Elemental Mastery will increase by @0 for 18s. Max 2 stacks.",
+        "refinementData": [
+            {
+                "1": 40,
+                "2": 50,
+                "3": 60,
+                "4": 70,
+                "5": 80
+            }
+        ],
+        "version": "4.6.52"
     },
     "CompoundBow": {
         "name": "Compound Bow",

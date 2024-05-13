@@ -205,7 +205,7 @@ export default class ArtifactList extends GenshinList
       sort: {generic: {type:"number",property:"level"}},
       dynamic: true,
       value: item => "+"+item.level,
-      edit: item => ({target: {item:item , field:"level"}}),
+      edit: item => ({target: {item:item , field:"level"}, min:0, max:20}),
     });
     
     let lockField = this.display.addField("lock", {
@@ -252,6 +252,8 @@ export default class ArtifactList extends GenshinList
           func: item.setSubstat.bind(item, statId),
           type: "number",
           value: item.getSubstatSum(statId),
+          min:0,
+          max:9999,
         }),
         dependencies: item => [
           {item:item, field:"substats"},
@@ -487,6 +489,8 @@ export default class ArtifactList extends GenshinList
         func: item.setSubstat.bind(item, item.substats[i].key),
         type: "number",
         value: item.getSubstatSum(item.substats[i].key).toFixed(["eleMas","hp","atk","def"].indexOf(item.substats[i].key)>-1?0:1),
+        min:0,
+        max:9999,
       } : {
         func: statId => {
           item.setSubstat(statId, GenshinArtifactStats[item.rarity].substats[statId][0]);
@@ -553,7 +557,7 @@ export default class ArtifactList extends GenshinList
       this.elements.selectSetAdd.appendChild(document.createElement("option"))
       for(let itm in GenshinArtifactData)
       {
-        if(!this.viewer.settings.preferences.showLeaks && Date.parse(GenshinArtifactData[itm].release) > Date.now())
+        if(!this.viewer.settings.preferences.showLeaks && Date.parse(GenshinArtifactData[itm].release) > Date.now() || GenshinArtifactData[itm].deletedContent)
           continue;
         let option = this.elements.selectSetAdd.appendChild(document.createElement("option"));
         option.value = itm;

@@ -62,9 +62,14 @@ export default class StatModifier {
     }
   }
   
-  // Convert a code of arbitrary nested arrays into an array where each element needs to be converted into a StatModifier.
+  // Convert a code of "arbitrary" nested arrays (really it's 1 of 2 formats) into an array where each element needs to be converted into a StatModifier.
   static normalizeCode(code)
   {
+    /* Code could be:
+    A basic modifier definition: ["<type>", ["<target>", <value>]]
+    Multiple modifier definitions: [["<type>", ["<target>", <value>]], ["<type>", ["<target>", <value>]]]
+    Proc modifier definition: ["proc", <one of the above>, "<trigger description>", <max stacks>]
+    */
     if(Array.isArray(code[0]))
     {
       let result = [];
@@ -498,7 +503,9 @@ export default class StatModifier {
     if(func == "mv")
       return `the value of "${args[0]}"`;
     else if(func == "stat%")
-      return `${args[0]}${GenshinItem.isStatPercent(args[1])?"":"%"} of ${GenshinItem.getStatFull(args[1])}${args[2]?", to a max of "+args[2]+(GenshinItem.isStatPercent(args[1])?"":"%"):""}`;
+      return `${args[0]}${GenshinItem.isStatPercent(args[1])?"":"%"} of ${GenshinItem.getStatFull(args[1])}${args[3]?" above "+args[3]:""}${args[2]?", to a max of "+args[2]+(GenshinItem.isStatPercent(args[1])?"":"%"):""}`;
+    else if(func == "pmstat%")
+      return `${args[0]}${GenshinItem.isStatPercent(args[1])?"":"%"} of the highest ${GenshinItem.getStatFull(args[1])} on the team${args[3]?" above "+args[3]:""}${args[2]?", to a max of "+args[2]+(GenshinItem.isStatPercent(args[1])?"":"%"):""}`;
     else if(func == "stacks")
       return `${args.join('/')} (depending on stacks)`;
     else
@@ -615,30 +622,49 @@ export default class StatModifier {
       return 0;
     else
       calc = this.stats.__calculations__[stat];
+    
     switch(calc.func)
     {
       case "mv":
         const [ mvKey ] = calc.args;
-        let motionValue = this.characterSource.getMotionValues(null, alternates, {onlyKey:mvKey}).find(mv => mv.rawKey == mvKey);
+        let motionValue = this.characterSource?.getMotionValues(null, alternates, {onlyKey:mvKey})?.find(mv => mv.rawKey == mvKey);
         if(typeof(motionValue?.final) == "number")
           return motionValue.final;
         else
-          console.warn(`Function 'mv': "${mvKey}" is not a usable motion value:`, motionValue);
+          console.warn(`Function 'mv': "${mvKey}" is not a usable motion value:`, {statModifer:this, motionValue, stat, asker, alternates});
         break;
+        
       case "stat%":
-        const [ amount, otherStat, cap ] = calc.args;
-        if(stat == otherStat && this.characterSource == asker)
-        {
-          console.warn(`Infinite recursion prevented. ${this.name}'s ${stat} is using itself in its own calculation because of:`, calc);
-        }
+      case "pmstat%":
+        // Prevent infinite recursion.
+        if(alternates.ignoreMods?.indexOf(this) > -1)
+          return 0;
         else
         {
-          if(cap)
-            return Math.min(cap, this.characterSource.getStat(otherStat, alternates) * amount);
-          else
-            return this.characterSource.getStat(otherStat, alternates) * amount;
+          alternates = Object.assign({ignoreMods:alternates.ignoreMods?.slice()??[]}, alternates);
+          alternates.ignoreMods.push(this);
         }
+        
+        const [ amount, otherStat, cap, ignore ] = calc.args;
+        
+        let value;
+        if(calc.func == "stat%" || !this.characterSource.activeTeam)
+          value = this.characterSource.getStat(otherStat, alternates);
+        else if(calc.func == "pmstat%")
+        {
+          value = Math.max(...this.characterSource.activeTeam.characters.map(character => character.getStat(otherStat, alternates)));
+        }
+        
+        if(ignore)
+          value = Math.max(0, value-ignore);
+        
+        value *= amount;
+        if(cap)
+          return Math.min(cap, value);
+        else
+          return value;
         break;
+        
       case "stacks":
         if(this.active)
           // Dividing out this.active here is cringe, but it's the easiest way to deal with this.active being a multiplier in this.getStat()
@@ -646,8 +672,25 @@ export default class StatModifier {
         else
           return 0;
         break;
+        
+      case "unique":
+        const [ instruction ] = calc.args;
+        if(instruction == "Masque of the Red Death Increase")
+        {
+          // TODO: Need to include both buffed and unbuffed hits, because it doesn't buff every hit
+          let motionValue = this.characterSource?.getMotionValues(null, alternates, {onlyKey:instruction})?.find(mv => mv.rawKey == instruction);
+          motionValue.values[0].value /= 100;
+          motionValue.values[0].dmgType = "bonus";
+          motionValue.values[0].stat = "atk";
+          this.characterSource.applyFormulas(motionValue, 0, alternates);
+          return motionValue.values[0].value;
+        }
+        else
+          console.error(`Unhandled function "${calc.func}" in stat calculation for "${stat}":`, {calc});
+        break;
+        
       default:
-        console.warn(`Unhandled function "${calc.func}" in stat calculation for "${stat}":`, calc);
+        console.error(`Unhandled function "${calc.func}" in stat calculation for "${stat}":`, {calc});
     }
     return 0;
   }

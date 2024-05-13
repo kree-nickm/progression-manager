@@ -8,9 +8,13 @@ export default class Team extends GenshinItem {
   static templateName = "genshin/renderTeamAsPopup";
   static statModifiers = [];
   
-  _characters;
+  _name;
   memberKeys = [];
-  name = "New Team";
+  
+  _characters;
+  
+  get name() { return this._name ? this._name : this.memberKeys.length ? this.memberKeys.join("/") : "New Team"; }
+  set name(name) { this._name = name; }
   
   afterUpdate(field, value, action, options)
   {

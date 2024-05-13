@@ -466,39 +466,33 @@ export default {
     },
     "FeatheryFin": {
         "name": "Feathery Fin",
-        "img": "https://api.ambr.top/assets/UI/UI_ItemIcon_112095.png",
-        "rarity": 2,
-        "release": "January 31, 2024"
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a4\/Item_Feathery_Fin.png",
+        "rarity": 2
     },
     "LunarFin": {
         "name": "Lunar Fin",
-        "img": "https://api.ambr.top/assets/UI/UI_ItemIcon_112096.png",
-        "rarity": 3,
-        "release": "January 31, 2024"
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/16\/Item_Lunar_Fin.png",
+        "rarity": 3
     },
     "ChasmlightFin": {
         "name": "Chasmlight Fin",
-        "img": "https://api.ambr.top/assets/UI/UI_ItemIcon_112097.png",
-        "rarity": 4,
-        "release": "January 31, 2024"
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8e\/Item_Chasmlight_Fin.png",
+        "rarity": 4
     },
     "RuinedHilt": {
         "name": "Ruined Hilt",
-        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_112098.webp",
-        "rarity": 2,
-        "release": "April 24, 2024"
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/51\/Item_Ruined_Hilt.png",
+        "rarity": 2
     },
     "SplinteredHilt": {
         "name": "Splintered Hilt",
-        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_112099.webp",
-        "rarity": 3,
-        "release": "April 24, 2024"
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4d\/Item_Splintered_Hilt.png",
+        "rarity": 3
     },
     "StillSmolderingHilt": {
         "name": "Still-Smoldering Hilt",
-        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_112100.webp",
-        "rarity": 4,
-        "release": "April 24, 2024"
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/57\/Item_Still-Smoldering_Hilt.png",
+        "rarity": 4
     },
     "MaintenanceMekSalvagedParts": {
         "name": "\"Maintenance Mek\" Salvaged Parts",
@@ -652,15 +646,13 @@ export default {
     },
     "CloudseamScale": {
         "name": "Cloudseam Scale",
-        "img": "https://api.ambr.top/assets/UI/UI_ItemIcon_113058.png",
-        "rarity": 4,
-        "release": "January 31, 2024"
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6f\/Item_Cloudseam_Scale.png",
+        "rarity": 4
     },
     "FragmentOfAGoldenMelody": {
         "name": "Fragment of a Golden Melody",
-        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_113059.webp",
-        "rarity": 4,
-        "release": "April 24, 2024"
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e3\/Item_Fragment_of_a_Golden_Melody.png",
+        "rarity": 4
     },
     "DvalinsPlume": {
         "name": "Dvalin's Plume",
@@ -799,20 +791,17 @@ export default {
     },
     "FadingCandle": {
         "name": "Fading Candle",
-        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_113060.webp",
-        "release": "April 24, 2024",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e4\/Item_Fading_Candle.png",
         "rarity": 5
     },
     "SilkenFeather": {
         "name": "Silken Feather",
-        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_113061.webp",
-        "release": "April 24, 2024",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/46\/Item_Silken_Feather.png",
         "rarity": 5
     },
     "DenialAndJudgment": {
         "name": "Denial and Judgment",
-        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_113062.web",
-        "release": "April 24, 2024",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/43\/Item_Denial_and_Judgment.png",
         "rarity": 5
     },
     "BrilliantDiamondSliver": {
@@ -1580,6 +1569,21 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fe\/Item_Dandelion_Bookmark.png",
         "rarity": 4
     },
+    "SurgingSacredChalice": {
+        "name": "Surging Sacred Chalice",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2c\/Item_Surging_Sacred_Chalice.png",
+        "rarity": 4
+    },
+    "SuperDuperInvincibleShiningSparklyMagicCrystal": {
+        "name": "Super-Duper Invincible Shining Sparkly Magic Crystal",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f1\/Item_Super-Duper_Invincible_Shining_Sparkly_Magic_Crystal.png",
+        "rarity": 4
+    },
+    "ExaltedEarth": {
+        "name": "\"Exalted Earth\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/02\/Item_Exalted_Earth.png",
+        "rarity": 4
+    },
     "Wolfhook": {
         "name": "Wolfhook",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/57\/Item_Wolfhook.png",
@@ -1658,6 +1662,11 @@ export default {
     "CorLapis": {
         "name": "Cor Lapis",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/aa\/Item_Cor_Lapis.png",
+        "rarity": 1
+    },
+    "ClearwaterJade": {
+        "name": "Clearwater Jade",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d9\/Item_Clearwater_Jade.png",
         "rarity": 1
     },
     "Onikabuto": {
@@ -1789,12 +1798,6 @@ export default {
         "name": "Spring of the First Dewdrop",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/08\/Item_Spring_of_the_First_Dewdrop.png",
         "rarity": 1
-    },
-    "ClearwaterJade": {
-        "name": "Clearwater Jade",
-        "img": "https://api.ambr.top/assets/UI/UI_ItemIcon_101241.png",
-        "rarity": 1,
-        "release": "January 31, 2024"
     },
     "SweetFlowerSeed": {
         "name": "Sweet Flower Seed",
@@ -2101,14 +2104,9 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/25\/Item_Formalo_Ray.png",
         "rarity": 3
     },
-    "HalcyonJadeAxeMarlin": {
-        "name": "Halcyon Jade Axe Marlin",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/69\/Item_Halcyon_Jade_Axe_Marlin.png",
-        "rarity": 3
-    },
-    "LazuriteAxeMarlin": {
-        "name": "Lazurite Axe Marlin",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/12\/Item_Lazurite_Axe_Marlin.png",
+    "TrueFruitAngler": {
+        "name": "True Fruit Angler",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9f\/Item_True_Fruit_Angler.png",
         "rarity": 3
     },
     "PeachOfTheDeepWaves": {
@@ -2126,9 +2124,14 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/49\/Item_Sunset_Cloud_Angler.png",
         "rarity": 3
     },
-    "TrueFruitAngler": {
-        "name": "True Fruit Angler",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9f\/Item_True_Fruit_Angler.png",
+    "LazuriteAxeMarlin": {
+        "name": "Lazurite Axe Marlin",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/12\/Item_Lazurite_Axe_Marlin.png",
+        "rarity": 3
+    },
+    "HalcyonJadeAxeMarlin": {
+        "name": "Halcyon Jade Axe Marlin",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/69\/Item_Halcyon_Jade_Axe_Marlin.png",
         "rarity": 3
     },
     "StreamingAxeMarlin": {
@@ -2164,6 +2167,16 @@ export default {
     "MaintenanceMekPlatinumCollection": {
         "name": "Maintenance Mek: Platinum Collection",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/be\/Item_Maintenance_Mek_Platinum_Collection.png",
+        "rarity": 3
+    },
+    "MaintenanceMekGoldLeader": {
+        "name": "Maintenance Mek: Gold Leader",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7a\/Item_Maintenance_Mek_Gold_Leader.png",
+        "rarity": 3
+    },
+    "JadeHeartfeatherBass": {
+        "name": "Jade Heartfeather Bass",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cb\/Item_Jade_Heartfeather_Bass.png",
         "rarity": 3
     },
     "Mushroom": {
@@ -2214,11 +2227,6 @@ export default {
     "LotusHead": {
         "name": "Lotus Head",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/05\/Item_Lotus_Head.png",
-        "rarity": 1
-    },
-    "Horsetail": {
-        "name": "Horsetail",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7b\/Item_Horsetail.png",
         "rarity": 1
     },
     "Berry": {
@@ -2384,6 +2392,11 @@ export default {
     "Tidalga": {
         "name": "Tidalga",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/90\/Item_Tidalga.png",
+        "rarity": 1
+    },
+    "ChenyuAdeptea": {
+        "name": "Chenyu Adeptea",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0c\/Item_Chenyu_Adeptea.png",
         "rarity": 1
     },
     "MysteriousMeatProduct": {
@@ -2656,6 +2669,11 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7d\/Item_Midlander_Polearm_Billet.png",
         "rarity": 4
     },
+    "Horsetail": {
+        "name": "Horsetail",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7b\/Item_Horsetail.png",
+        "rarity": 1
+    },
     "MistFlowerCorolla": {
         "name": "Mist Flower Corolla",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b4\/Item_Mist_Flower_Corolla.png",
@@ -2841,6 +2859,11 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/91\/Item_Lumenspar.png",
         "rarity": 1
     },
+    "SpiritCarp": {
+        "name": "Spirit Carp",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c4\/Item_Spirit_Carp.png",
+        "rarity": 1
+    },
     "IntertwinedFate": {
         "name": "Intertwined Fate",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1f\/Item_Intertwined_Fate.png",
@@ -2941,6 +2964,11 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/be\/Item_Nature%27s_True_Fruit.png",
         "rarity": 4
     },
+    "SwirlingSceneInABottle": {
+        "name": "\"Swirling Scene in a Bottle\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8c\/Item_Swirling_Scene_in_a_Bottle.png",
+        "rarity": 4
+    },
     "CakeForTraveler20202021": {
         "name": "Cake for Traveler (2020 - 2021)",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cb\/Item_Cake_for_Traveler.png",
@@ -2974,7 +3002,7 @@ export default {
     "RadiantSpincrystal": {
         "name": "Radiant Spincrystal",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b1\/Item_Radiant_Spincrystal.png",
-        "rarity": 1
+        "rarity": 4
     },
     "Recipe": {
         "name": "Recipe",
@@ -3499,6 +3527,16 @@ export default {
     "EnigmaticCopperMainspring": {
         "name": "Enigmatic Copper Mainspring",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/27\/Item_Enigmatic_Copper_Mainspring.png",
+        "rarity": 3
+    },
+    "FilmForFun": {
+        "name": "Film for Fun",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6b\/Item_Film_for_Fun.png",
+        "rarity": 3
+    },
+    "Funds": {
+        "name": "Funds",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/35\/Item_Funds.png",
         "rarity": 3
     },
     "LightRealmSigil": {

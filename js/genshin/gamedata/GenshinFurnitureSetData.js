@@ -824,10 +824,10 @@ export default {
             }
         ],
         "characters": [
+            "Noelle",
             "Bennett",
             "Diluc",
-            "Diona",
-            "Noelle"
+            "Diona"
         ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3e\/Furnishing_Set_Weapon_Forging_Station_Display.png"
     },
@@ -888,8 +888,8 @@ export default {
             }
         ],
         "characters": [
-            "Amber",
             "Diona",
+            "Amber",
             "Razor"
         ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e8\/Furnishing_Set_Idyllic_Town_Display.png"
@@ -935,11 +935,11 @@ export default {
             }
         ],
         "characters": [
+            "Venti",
+            "Rosaria",
             "Barbara",
             "Jean",
-            "Kaeya",
-            "Rosaria",
-            "Venti"
+            "Kaeya"
         ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/51\/Furnishing_Set_Bird_and_Blossom_Park_Display.png"
     },
@@ -1080,13 +1080,13 @@ export default {
             }
         ],
         "characters": [
-            "Keqing",
             "Ningguang",
-            "Shenhe",
-            "Xingqiu",
+            "Keqing",
             "Yanfei",
-            "YunJin",
-            "Zhongli"
+            "Xingqiu",
+            "Zhongli",
+            "Shenhe",
+            "YunJin"
         ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/57\/Furnishing_Set_Glittering_Street_Display.png"
     },
@@ -1247,11 +1247,11 @@ export default {
             }
         ],
         "characters": [
-            "Aloy",
             "Amber",
-            "Beidou",
+            "Sucrose",
             "Klee",
-            "Sucrose"
+            "Beidou",
+            "Aloy"
         ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4b\/Furnishing_Set_Of_Hunting_and_Dancing_Display.png"
     },
@@ -1300,13 +1300,13 @@ export default {
             }
         ],
         "characters": [
-            "Albedo",
-            "Aloy",
             "Bennett",
+            "Qiqi",
             "Chongyun",
             "Fischl",
-            "Mika",
-            "Qiqi"
+            "Albedo",
+            "Aloy",
+            "Mika"
         ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/90\/Furnishing_Set_Iter_Ad_Astra_Abyssosque_Display.png"
     },
@@ -1357,8 +1357,8 @@ export default {
         "characters": [
             "Diluc",
             "Kaeya",
-            "Rosaria",
-            "Venti"
+            "Venti",
+            "Rosaria"
         ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ee\/Furnishing_Set_Dawn_Orchard_Display.png"
     },
@@ -1460,7 +1460,8 @@ export default {
             "Yoimiya",
             "YaeMiko",
             "Gorou",
-            "ShikanoinHeizou"
+            "ShikanoinHeizou",
+            "Chiori"
         ],
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dc\/Furnishing_Set_Wakeful_Spring_Display.png"
     },
@@ -2357,7 +2358,8 @@ export default {
         ],
         "characters": [
             "Lynette",
-            "Lyney"
+            "Lyney",
+            "Arlecchino"
         ]
     },
     "ContinuousClockworkInspiration": {
@@ -2520,7 +2522,8 @@ export default {
             }
         ],
         "characters": [
-            "Charlotte"
+            "Charlotte",
+            "Arlecchino"
         ]
     },
     "CourtOfJusticesBoomingCommerce": {
@@ -2574,7 +2577,8 @@ export default {
         ],
         "characters": [
             "Lynette",
-            "Lyney"
+            "Lyney",
+            "Chiori"
         ]
     },
     "CourtOfJusticesFreshMist": {
