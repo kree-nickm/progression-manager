@@ -72,7 +72,7 @@ export default {
                 "5": 31.99999928474
             }
         ],
-        "version": "4.6.52"
+        "version": "4.6.53"
     },
     "AmosBow": {
         "name": "Amos' Bow",
@@ -1115,7 +1115,7 @@ export default {
                 "5": 2500
             }
         ],
-        "version": "4.6.52"
+        "version": "4.6.53"
     },
     "SkywardAtlas": {
         "name": "Skyward Atlas",
@@ -2353,7 +2353,7 @@ export default {
                 "5": 80
             }
         ],
-        "version": "4.6.52"
+        "version": "4.6.53"
     },
     "CompoundBow": {
         "name": "Compound Bow",

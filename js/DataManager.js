@@ -20,6 +20,7 @@ export default class DataManager extends UIController
   {
     super();
     this.elements['nav'] = document.getElementById("navigation");
+    this.elements['nav'].replaceChildren();
     this.elements['content'] = document.getElementById("content");
     this.elements['popup'] = document.getElementById("popup");
     this.elements['popup'].addEventListener('hidden.bs.modal', event => UIController.clearDependencies(event.target, true));
@@ -92,9 +93,13 @@ export default class DataManager extends UIController
   async view({hash,pane}={})
   {
     pane = pane ?? this.paneFromHash(hash);
-    await this.lists[pane].render();
-    this.stickyElements = document.querySelectorAll(".sticky-js");
-    window.scrollTo({left:0, top:this.settings.paneMemory[pane]?.scrollY ?? 0, behavior:"instant"});
+    if(this.lists[pane])
+    {
+      await this.lists[pane].render();
+      this.stickyElements = document.querySelectorAll(".sticky-js");
+      window.scrollTo({left:0, top:this.settings.paneMemory[pane]?.scrollY ?? 0, behavior:"instant"});
+      this.currentView = pane;
+    }
     for(let l in this.lists)
     {
       if(l == pane)
@@ -102,7 +107,6 @@ export default class DataManager extends UIController
       else
         this.elements[l].classList.remove("current-view");
     }
-    this.currentView = pane;
   }
   
   onScroll(event)

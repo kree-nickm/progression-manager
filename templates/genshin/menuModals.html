@@ -1,0 +1,265 @@
+<div id="loadModal" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div id="loadForm" class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Import Account Data</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+      
+        <!-- 'Format Select' Tabbed List -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button id="loadGOODTab" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#loadGOODPane">GOOD Format*</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button id="loadAllTab" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#loadAllPane">Genshin Manager Format</button>
+          </li>
+        </ul>
+        
+        <!-- GOOD Format Pane -->
+        <div class="tab-content my-3">
+          <div class="tab-pane" id="loadGOODPane" role="tabpanel">
+            <div class="row">
+              <b class="col-1">1.</b>
+              <b class="col-11">Select the account and server to load your data into.</b>
+            </div>
+            <div class="row mb-1">
+              <label class="col-6 form-label" for="loadAccount">Account</label>
+              <label class="col-6 form-label" for="loadServer">Server</label>
+            </div>
+            <div class="row mb-1">
+              <div class="col-6">
+                <select class="form-select" id="loadAccount">
+                </select>
+                <input class="form-control" id="loadAccountNew" placeholder="New account name..." title="Can be anything you want that helps you identify this account."/>
+              </div>
+              <div class="col-6">
+                <select class="form-select" id="loadServer">
+                  <option value="na">America</option>
+                  <option value="eu">Europe</option>
+                  <option value="as">Asia</option>
+                  <option value="tw">TW, HK, MO</option>
+                </select>
+              </div>
+            </div>
+            <p id="loadAccountNote" class="form-text">Note: This will replace the data in the specified account/server with the imported data. However, only lists that are present in the imported data will be replaced. For example, if the imported data only contains artifacts and materials, then only artifacts and materials will be replaced; your characters, weapons, etc. will be unaffected.</p>
+            <hr/>
+            <div class="row mb-2">
+              <b class="col-1">2.</b>
+              <b class="col-11">Import your data using an option below.</b>
+            </div>
+            <div class="input-group" title="Use this if you have a JSON file containing GOOD-formatted data.">
+              <label class="input-group-text" for="loadGOODFile">Load From File:</label>
+              <input id="loadGOODFile" class="form-control" name="GOODFile" type="file" accept="*.json,application/json"/>
+            </div>
+            <div class="text-center"><i class="form-text">- or -</i></div>
+            <div class="input-group" title="When you or someone else uploads account data from Genshin Manager to Pastebin, an 8-letter/number code will be provided (corresponds to a Pastebin URL). Enter that code here to import that account. Note that these codes only last for 24 hours.">
+              <label class="input-group-text" for="loadPastebinCode">Pastebin Code:</label>
+              <input id="loadPastebinCode" class="form-control" name="Pastebin" type="text" placeholder="8-letter code"/>
+              <button id="loadPastebinBtn" class="btn btn-success">Load Data</button>
+            </div>
+            <div class="text-center"><i class="form-text">- or -</i></div>
+            <div class="input-group" title="If your in-game profile has been loaded with Enka.network, or even if it's just public, you can load the data within it using this opton.">
+              <label class="input-group-text" for="loadEnka">Enka.network:</label>
+              <input id="loadEnka" class="form-control" name="Enka" type="text" placeholder="UID, Enka username, or URL"/>
+              <button id="loadEnkaBtn" class="btn btn-success">Load Data</button>
+            </div>
+            <div id="loadHoyos" class="d-none mt-3 mx-4"></div>
+            <!--
+            <div class="text-center"><i class="form-text">- or -</i></div>
+            <label>Paste JSON Data:</label>
+            <textarea id="loadGOODJSON" name="GOODJSON" style="width:100%;"></textarea>
+            <button id="loadGOODBtn" type="button" class="btn btn-primary">Load Pasted JSON Data</button>
+            -->
+            <hr/>
+            <p class="form-text">* GOOD format refers to a type of JSON file containing your account data. Programs such as <a href="https://github.com/daydreaming666/Amenoma" target="_blank">Amenoma</a> and <a href="https://github.com/Andrewthe13th/Inventory_Kamera" target="_blank">Inventory Kamera</a> can scan your game and create this file from your account. GOOD format is understood by many other Genshin Impact applications, such as <a href="https://frzyc.github.io/genshin-optimizer" target="_blank">Genshin Optimizer</a>, <a href="https://seelie.me/" target="_blank">SEELIE.me</a>, etc., and can be used to easily transfer your data between applications.</p>
+          </div>
+          
+          <!-- Genshin Manager Format Pane -->
+          <div class="tab-pane" id="loadAllPane" role="tabpanel">
+            <div class="input-group" title="Use this if you have a JSON file that was exported by Genshin Manager.">
+              <label class="input-group-text" for="loadAllFile">Load From File:</label>
+              <input id="loadAllFile" class="form-control" name="AllFile" type="file" accept="*.json,application/json"/>
+            </div>
+            <p class="form-text">Note: This will replace <b>all</b> of your data with the imported data. Make sure you export your current data first if you want to keep it.</p>
+          </div>
+        </div>
+        <div id="loadMessage" class="alert alert-primary d-none"></div>
+        <div id="loadError" class="alert alert-danger d-none">Error</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="saveModal" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Export Account Data</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body d-grid gap-2">
+        <button id="saveGOODBtn" class="btn btn-success" title="Use this to transfer your data to other Genshin Impact apps that use GOOD format.">Download current account (GOOD Format)</button>
+        <button id="saveAllBtn" class="btn btn-success" title="Use this to save all of your data for use on this app.">Download all accounts (Genshin Manager Format)</button>
+        <hr/>
+        <button id="savePastebinBtn" class="btn btn-success" title="Use this to upload your current account data to Pastebin in GOOD format so others can access it.">Upload current account to Pastebin (GOOD Format)</button>
+        <!--<button id="saveAllPastebinBtn" class="btn btn-success" title="Use this to upload all of your data to Pastebin so you can transfer all of it to another device.">Upload all accounts to Pastebin (Genshin Manager Format)</button>-->
+        <div id="saveMessage" class="alert alert-primary d-none"></div>
+        <hr/>
+        <p class="form-text">Note: Any changes you make are saved to your browser automatically. This popup is for backing up your data so that you can access it outside of Genshin Manager and this browser.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="editModal" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Manage Account(s)</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <label class="col-6 form-label">Account</label>
+          <label class="col-6 form-label">Server</label>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <select class="form-select" id="editAccount"></select>
+            <input class="form-control" id="editAccountNew" placeholder="New account name..." title="Can be anything you want that helps you identify this account."/>
+          </div>
+          <div class="col-6">
+            <select class="form-select" id="editServer">
+              <option value="na">America</option>
+              <option value="eu">Europe</option>
+              <option value="as">Asia</option>
+              <option value="tw">TW, HK, MO</option>
+            </select>
+          </div>
+        </div>
+        <p class="form-text">Select an account to switch to, or create a new one.</p>
+        <div id="editError" class="alert alert-danger d-none">Error</div>
+      </div>
+      <div class="modal-footer">
+        <button id="editDoneBtn" type="button" class="btn btn-success">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="prefsModal" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Preferences</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+      
+        <div class="row">
+          <div class="col-6">
+            <!--<div class="input-group">
+              <div class="input-group-text bg-secondary-subtle">
+                <input id="pref9" class="form-check-input preference-select" type="checkbox" name="darkMode" value="1">
+              </div>
+              <label class="input-group-text" for="pref9">Dark Mode</label>
+            </div>-->
+          </div>
+          <div class="col-6">
+            <div class="input-group">
+              <div class="input-group-text bg-secondary-subtle">
+                <input id="pref8" class="form-check-input preference-select" type="checkbox" name="showLeaks" value="1">
+              </div>
+              <label class="input-group-text" for="pref8">Show Leaks</label>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row mt-3">
+          <div class="col-6">
+            <div class="form-label">Character List</div>
+            <div class="btn-group" role="group">
+              <input type="radio" class="preference-select btn-check" id="pref3a" name="characterList" value="0" checked="checked">
+              <label class="btn btn-outline-primary" for="pref3a">Text Only</label>
+
+              <input type="radio" class="preference-select btn-check" id="pref3b"  name="characterList" value="1">
+              <label class="btn btn-outline-primary" for="pref3b">Icons</label>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-label">Materials List</div>
+            <div class="btn-group" role="group">
+              <input type="radio" class="preference-select btn-check" id="pref4a" name="materialList" value="0" checked="checked">
+              <label class="btn btn-outline-primary" for="pref4a">Text Only</label>
+
+              <input type="radio" class="preference-select btn-check" id="pref4b"  name="materialList" value="1">
+              <label class="btn btn-outline-primary" for="pref4b">Icons</label>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row mt-3">
+          <div class="col-6">
+            <div class="form-label">Other Lists</div>
+            <div class="btn-group" role="group">
+              <input type="radio" class="preference-select btn-check" id="pref1a" name="listDisplay" value="0" checked="checked">
+              <label class="btn btn-outline-primary" for="pref1a">Text Only</label>
+
+              <input type="radio" class="preference-select btn-check" id="pref1b"  name="listDisplay" value="1">
+              <label class="btn btn-outline-primary" for="pref1b">Icons</label>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-label">Character Popup</div>
+            <div class="btn-group" role="group">
+              <input type="radio" class="preference-select btn-check" id="pref2a"  name="characterArtifacts" value="0" disabled="disabled">
+              <label class="btn btn-outline-primary" for="pref2a">Text Only</label>
+
+              <input type="radio" class="preference-select btn-check" id="pref2b"  name="characterArtifacts" value="1" checked="checked" disabled="disabled">
+              <label class="btn btn-outline-primary" for="pref2b">Icons</label>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row mt-3">
+          <div class="col-6">
+            <div class="form-label">Minimum Artifact Rating<i class="fa-solid fa-circle-question" title="Artifacts with a desirability rating below this number will have a red mark on the artifact list. The desirability rating is calculated based on your build stat priorities that you've set up for your characters, and scaled based on how many other artifacts you have that fulfill those priorities even better."></i></div>
+            <input type="number" class="preference-select form-control" id="pref5"  name="artifactMinRating" value="1" min="0" max="10" step="0.01">
+          </div>
+          <div class="col-6">
+            <div class="form-label">Min Artifact Rating (4-star)<i class="fa-solid fa-circle-question" title="4-star artifacts with a desirability rating below this number will have a red mark on the artifact list. Note that this only applies to artifact sets that are maximum 4-stars, such as Instructor etc., because those will have drastically lower ratings than any 5-star set due to having much lower stats, but are still desirable due to the set bonus."></i></div>
+            <input type="number" class="preference-select form-control" id="pref7"  name="artifactMinRating4" value="1" min="0" max="10" step="0.01">
+          </div>
+        </div>
+        
+        <div class="row mt-3">
+          <div class="col-6">
+            <div class="form-label">Assume Artifact Level <i class="fa-solid fa-circle-question" title="When calculating artifact stats and ratings, this is the maximum level that will be used to determine their current/potential stats. Long-time players should leave this at 20, but newer players who don't yet have artifacts at level 20 should set this to whatever the highest level is that they are comfortable leveling their artifacts to."></i></div>
+            <input type="number" class="preference-select form-control" id="pref6"  name="artifactMaxLevel" value="20" min="0" max="20" step="1">
+          </div>
+          <div class="col-6">
+          </div>
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button id="prefsDoneBtn" type="button" class="btn btn-success" data-bs-dismiss="modal">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="newModal" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-6"><button id="newLoadBtn" class="btn btn-success" title="Click this if you have a JSON file or Pastebin code with either GOOD data or Genshin Manager data.">Import Genshin Impact data.</button></div>
+          <div class="col-6"><button id="newFreshBtn" class="btn btn-success" title="Click this if you have no data to import and just want to use the application from scratch.">Begin without importing.</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -14,7 +14,7 @@ export default class PalworldManager extends DataManager
     this.elements['loadModal'] = document.getElementById("loadModal");
     this.elements['loadError'] = document.getElementById("loadError");
     this.settings.server = "";
-    this.listClasses.PalList = PalList;
+    /*this.listClasses.PalList = PalList;
     
     for(let list in this.listClasses)
     {
@@ -22,20 +22,16 @@ export default class PalworldManager extends DataManager
       this.elements[this.listClasses[list].name].id = this.listClasses[list].name;
       this.elements[this.listClasses[list].name].classList.add("viewer-pane");
       this.settings.paneMemory[this.listClasses[list].name] = this.settings.paneMemory[this.listClasses[list].name] ?? {};
-    }
+    }*/
+    
+    this.registerList(PalList);
+    
+    this.registerNavItem("Pals", "pals", {list:"PalList", isDefault:true});
   }
   
   get lists()
   {
     return this.data?.[this.settings.server] ?? {};
-  }
-  
-  paneFromHash()
-  {
-    //if(location.hash == "#materials")
-    //  return "MaterialList";
-    //else
-      return "PalList";
   }
   
   activateAccount(server)
