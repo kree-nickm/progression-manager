@@ -1,0 +1,39 @@
+.list-item-field.can-inc .value::after {
+  content: "🡅";
+  position: absolute;
+  color: green;
+  font-size: 0.6em;
+}
+
+.list-item-field.cant-inc .value::after {
+  content: "🡅";
+  position: absolute;
+  color: red;
+  font-size: 0.6em;
+  opacity: 0.1;
+}
+
+.list-item-field.at-max .value {
+  opacity: 0.5;
+}
+
+.list table .ascension-materials {
+  background-color: var(--colgroup-alt-background) !important;
+}
+
+.list table .character-weapon {
+  background-color: var(--colgroup-alt-background) !important;
+}
+
+.list table .enemy-S-materials,
+.list table .forgery-S-materials,
+.list table .enemy-L-materials,
+.list table .forgery-L-materials {
+  background-color: var(--column-alt-background) !important;
+}
+
+.user-field {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}

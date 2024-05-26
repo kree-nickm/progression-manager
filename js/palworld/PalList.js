@@ -257,7 +257,7 @@ export default class PalList extends PalworldList
     return result;
   }
   
-  getRelatedItems()
+  async getRelatedItems()
   {
     return {
       palsData: PalsData,

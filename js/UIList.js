@@ -191,15 +191,32 @@ export default class UIList extends UIController {
       return this.list.slice();
   }
   
-  createItem(data={})
+  createItem(data={}, {itemClass,skipLoad}={})
   {
-    // TODO: itemClass can be an array if the UIList supports multiple UIItem subclasses. At the moment, those are handled by custom code within the UIList subclass, but it could probably be done here.
-    let item = new this.constructor.itemClass();
-    item.list = this;
-    this.update("list", item, "push");
+    let item;
+    if(!this.constructor.unique || !this.get(this.getUnique(data)))
+    {
+      if(itemClass && Array.isArray(this.constructor.itemClass) && !this.constructor.itemClass.includes(itemClass))
+      {
+        console.warn(`${itemClass} is not a valid item class for ${this.constructor.name}, must be one of ${this.constructor.itemClass}`);
+        itemClass = this.constructor.itemClass[0];
+      }
+      else
+        itemClass = Array.isArray(this.constructor.itemClass) ? this.constructor.itemClass[0] : this.constructor.itemClass;
+      item = new itemClass();
+      item.list = this;
+      this.update("list", item, "push");
+    }
+    else
+    {
+      item = this.get(this.getUnique(data));
+      console.warn(`Creating item in a unique list when the item is already in it; updating existing item instead.`);
+    }
     // TODO: It might be useful to set a flag on the object here that it is being initialized. Some of the updates below might trigger things that are redundant when the object is mass-setting all of its properties during initialization.
     for(let property in data)
       item.update(property, data[property], "replace");
+    if(!skipLoad)
+      item.afterLoad();
     return item;
   }
   

@@ -1,0 +1,115 @@
+<div id="loadModal" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div id="loadForm" class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Import Account Data</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+      
+        <!-- 'Format Select' Tabbed List -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button id="loadAllTab" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#loadAllPane">Manager Format</button>
+          </li>
+        </ul>
+        
+        <div class="tab-content my-3">
+          <!-- Manager Format Pane -->
+          <div class="tab-pane" id="loadAllPane" role="tabpanel">
+            <div class="input-group" title="Use this if you have a JSON file that was exported by this app.">
+              <label class="input-group-text" for="loadAllFile">Load From File:</label>
+              <input id="loadAllFile" class="form-control" name="AllFile" type="file" accept="*.json,application/json"/>
+            </div>
+            <!--<div class="text-center"><i class="form-text">- or -</i></div>
+            <div class="input-group">
+              <label class="input-group-text" for="loadPastebinCode">Pastebin Code:</label>
+              <input id="loadPastebinCode" class="form-control" name="Pastebin" type="text" placeholder="8-letter code"/>
+              <button id="loadPastebinBtn" class="btn btn-success">Load Data</button>
+            </div>-->
+            <hr/>
+            <p class="form-text">Note: This will replace <b>all</b> of your data with the imported data. Make sure you export your current data first if you want to keep it.</p>
+          </div>
+        </div>
+        <div id="loadMessage" class="alert alert-primary d-none"></div>
+        <div id="loadError" class="alert alert-danger d-none">Error</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="saveModal" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Export Account Data</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body d-grid gap-2">
+        <button id="saveAllBtn" class="btn btn-success" title="Use this to save all of your data for use on this app.">Download all accounts (Manager Format)</button>
+        <!--<hr/>
+        <button id="saveAllPastebinBtn" class="btn btn-success" title="Use this to upload all of your data to Pastebin so you can transfer all of it to another device.">Upload all accounts to Pastebin (Manager Format)</button>-->
+        <div id="saveMessage" class="alert alert-primary d-none"></div>
+        <hr/>
+        <p class="form-text">Note: Any changes you make are saved to your browser automatically. This popup is for backing up your data so that you can access it outside of this browser/app.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="editModal" class="modal" tabindex="-1">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Manage Account(s)</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <label class="col-12 form-label">Account</label>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <select class="form-select" id="editAccount"></select>
+            <input class="form-control" id="editAccountNew" placeholder="New account name..." title="Can be anything you want that helps you identify this account."/>
+          </div>
+        </div>
+        <p class="form-text">Select an account to switch to, or create a new one.</p>
+        <div id="editError" class="alert alert-danger d-none">Error</div>
+      </div>
+      <div class="modal-footer">
+        <button id="editDoneBtn" type="button" class="btn btn-success">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="prefsModal" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Preferences</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        This is a placeholder for now.
+      </div>
+      <div class="modal-footer">
+        <button id="prefsDoneBtn" type="button" class="btn btn-success" data-bs-dismiss="modal">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="newModal" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-6"><button id="newLoadBtn" class="btn btn-success" title="Click this if you have a JSON file or Pastebin code.">Import game data.</button></div>
+          <div class="col-6"><button id="newFreshBtn" class="btn btn-success" title="Click this if you have no data to import and just want to use the application from scratch.">Begin without importing.</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

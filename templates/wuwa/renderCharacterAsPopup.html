@@ -1,0 +1,85 @@
+<div class="modal-content list-item" data-template="wuwa/renderCharacterAsPopup" data-uuid="{{uuid item}}">
+    <div class="modal-body">
+        <button type="button" class="btn-close float-end" data-bs-dismiss="modal"></button>
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <h5 class="col-2">Seq</h5>
+                    <h5 class="col-2">Level</h5>
+                    <h5 class="col-2">Asc Rank</h5>
+                    <h5 class="col-2">Forte Lvls</h5>
+                    <h5 class="col-3">Weapon</h5>
+                </div>
+                <div class="row">
+                    <div class="col-2">{{> renderItemField item=item field="sequence" wrapper="div"}}</div>
+                    <div class="col-2">{{> renderItemField item=item field="level" wrapper="div"}}</div>
+                    <div class="col-2">{{> renderItemField item=item field="ascension" wrapper="div"}}</div>
+                    <div class="col-2">
+                      {{> renderItemField item=item field="forte" params=(array "Basic Attack") wrapper="span"}} /
+                      {{> renderItemField item=item field="forte" params=(array "Resonance Skill") wrapper="span"}} /
+                      {{> renderItemField item=item field="forte" params=(array "Forte Circuit") wrapper="span"}} /
+                      {{> renderItemField item=item field="forte" params=(array "Resonance Liberation") wrapper="span"}} /
+                      {{> renderItemField item=item field="forte" params=(array "Intro Skill") wrapper="span"}}
+                    </div>
+                    <div class="col-3">{{> renderItemField item=item field="equipWeapon" wrapper="div"}}</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="popup-section">
+          <h3 class="popup-section-header collapsed" data-bs-toggle="collapse" href="#ascensionMaterials">Ascension Materials</h3>
+          <div id="ascensionMaterials" class="table-responsive collapse popup-section-content">
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th>Rank</th>
+                          <th>Boss</th>
+                          <th>Flora</th>
+                          <th>Enemy</th>
+                          <th>Credits</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    {{#times 6}}
+                      <tr>
+                        {{> renderItemField item=item field="ascensionMaterial" params=(array "label" @index) wrapper="td"}}
+                        {{> renderItemField item=item field="ascensionMaterial" params=(array "boss" @index) wrapper="td"}}
+                        {{> renderItemField item=item field="ascensionMaterial" params=(array "flora" @index) wrapper="td"}}
+                        {{> renderItemField item=item field="ascensionMaterial" params=(array "enemy" @index) wrapper="td"}}
+                        {{> renderItemField item=item field="ascensionMaterial" params=(array "credit" @index) wrapper="td"}}
+                      </tr>
+                    {{/times}}
+                  </tbody>
+              </table>
+          </div>
+        </div>
+        
+        <div class="popup-section">
+          <h3 class="popup-section-header collapsed" data-bs-toggle="collapse" href="#forteMaterials">Forte Materials</h3>
+          <div id="forteMaterials" class="table-responsive collapse popup-section-content">
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th>Rank</th>
+                          <th>Forgery</th>
+                          <th>Enemy</th>
+                          <th>Weekly</th>
+                          <th>Credits</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    {{#times 9 start=1}}
+                      <tr>
+                        {{> renderItemField item=item field="forteMaterial" params=(array "label" @index) wrapper="td"}}
+                        {{> renderItemField item=item field="forteMaterial" params=(array "forgery" @index) wrapper="td"}}
+                        {{> renderItemField item=item field="forteMaterial" params=(array "enemy" @index) wrapper="td"}}
+                        {{> renderItemField item=item field="forteMaterial" params=(array "weekly" @index) wrapper="td"}}
+                        {{> renderItemField item=item field="forteMaterial" params=(array "credit" @index) wrapper="td"}}
+                      </tr>
+                    {{/times}}
+                  </tbody>
+              </table>
+          </div>
+        </div>
+    </div>
+</div>

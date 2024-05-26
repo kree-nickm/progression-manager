@@ -1,5 +1,7 @@
 import { handlebars, Renderer } from "./Renderer.js";
 
+window.productionMode = location.hostname.includes("github.io");
+
 window.DEBUGLOG = {
   queueUpdate: false,
   renderItemField: false,
@@ -41,6 +43,11 @@ if(typeof(Storage) !== "undefined")
         let buttonsHTML = await buttonsResp.text();
         let buttonsTemplate = handlebars.compile(buttonsHTML);
         document.getElementById("menuButtonContainer").innerHTML = buttonsTemplate();
+        
+        let css = document.head.appendChild(document.createElement("link"));
+        css.type = "text/css";
+        css.rel = "stylesheet";
+        css.href = `css/${selectBtn.dataset.game}.css`;
         
         await addEventListeners();
         await init();

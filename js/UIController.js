@@ -345,7 +345,7 @@ export default class UIController {
   
   /* Methods with code specifically related to the HTML rendering of this UIController. */
   
-  getRelatedItems()
+  async getRelatedItems()
   {
     return {};
   }

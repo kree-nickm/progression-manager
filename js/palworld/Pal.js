@@ -129,7 +129,7 @@ export default class Pal extends PalworldItem
     return this.passivesKeys.map(key => PalworldPassives[key]).filter(passive => passive);
   }
   
-  getRelatedItems()
+  async getRelatedItems()
   {
     return {
       children: this.getPossibleChildren(),

@@ -14,7 +14,6 @@ import FurnitureSetList from "./FurnitureSetList.js";
 
 export default class GenshinManager extends DataManager
 {
-  static Renderer = Renderer; // Only here so the browser console can access it.
   static dontSerialize = DataManager.dontSerialize.concat(["lastDay"]);
   static timezones = {
     'na': "UTC-9",

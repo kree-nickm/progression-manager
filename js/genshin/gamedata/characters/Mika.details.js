@@ -1,0 +1,443 @@
+export default {
+    "talents": {
+        "Normal Attack": {
+            "name": "Normal Attack: Spear of Favonius - Arrow's Passage",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/91\/Polearm_Cryo.png",
+            "text": "<color=#FFD780FF>Normal Attack<\/color>\\nPerforms up to 5 consecutive strikes using his crossbow and spear.\\n\\n<color=#FFD780FF>Charged Attack<\/color>\\nConsumes a certain amount of Stamina to lunge forward, dealing damage to opponents along the way.\\n\\n<color=#FFD780FF>Plunging Attack<\/color>\\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "scaling": {
+                "1-Hit DMG": {
+                    "1": "43.26319992542%",
+                    "2": "46.7846006155%",
+                    "3": "50.30599832535%",
+                    "4": "55.33660054207%",
+                    "5": "58.85800123215%",
+                    "6": "62.88250088692%",
+                    "7": "68.41620206833%",
+                    "8": "73.94980192184%",
+                    "9": "79.48349714279%",
+                    "10": "85.52020192146%",
+                    "11": "91.55690073967%",
+                    "12": "97.59359955788%",
+                    "13": "103.63039970398%",
+                    "14": "109.66709852219%",
+                    "15": "115.70379734039%"
+                },
+                "2-Hit DMG": {
+                    "1": "41.5019005537%",
+                    "2": "44.87990140915%",
+                    "3": "48.25800061226%",
+                    "4": "53.08380126953%",
+                    "5": "56.46190047264%",
+                    "6": "60.32249927521%",
+                    "7": "65.63090085983%",
+                    "8": "70.93930244446%",
+                    "9": "76.24760270119%",
+                    "10": "82.0385992527%",
+                    "11": "87.82960176468%",
+                    "12": "93.62050294876%",
+                    "13": "99.41149950027%",
+                    "14": "105.20240068436%",
+                    "15": "110.99339723587%"
+                },
+                "3-Hit DMG": {
+                    "1": "54.50339913368%",
+                    "2": "58.93970131874%",
+                    "3": "63.37599754333%",
+                    "4": "69.71359848976%",
+                    "5": "74.14990067482%",
+                    "6": "79.22000288963%",
+                    "7": "86.19139790535%",
+                    "8": "93.16269755363%",
+                    "9": "100.13409852982%",
+                    "10": "107.73919820786%",
+                    "11": "115.34429788589%",
+                    "12": "122.94939756393%",
+                    "13": "130.55460453033%",
+                    "14": "138.15970420837%",
+                    "15": "145.76480388641%"
+                },
+                "4-Hit DMG": {
+                    "1": "27.61459946632%+27.61459946632%",
+                    "2": "29.8622995615%+29.8622995615%",
+                    "3": "32.10999965668%+32.10999965668%",
+                    "4": "35.32100021839%+35.32100021839%",
+                    "5": "37.56870031357%+37.56870031357%",
+                    "6": "40.13749957085%+40.13749957085%",
+                    "7": "43.66959929466%+43.66959929466%",
+                    "8": "47.20169901848%+47.20169901848%",
+                    "9": "50.73379874229%+50.73379874229%",
+                    "10": "54.58700060844%+54.58700060844%",
+                    "11": "58.44020247459%+58.44020247459%",
+                    "12": "62.29339838028%+62.29339838028%",
+                    "13": "66.14660024643%+66.14660024643%",
+                    "14": "69.99980211258%+69.99980211258%",
+                    "15": "73.85299801826%+73.85299801826%"
+                },
+                "5-Hit DMG": {
+                    "1": "70.87429761887%",
+                    "2": "76.64319872856%",
+                    "3": "82.41199851036%",
+                    "4": "90.65319895744%",
+                    "5": "96.42199873924%",
+                    "6": "103.01500558853%",
+                    "7": "112.08029985428%",
+                    "8": "121.14559412003%",
+                    "9": "130.21099567413%",
+                    "10": "140.10039567947%",
+                    "11": "149.98979568481%",
+                    "12": "159.87930297852%",
+                    "13": "169.76870298386%",
+                    "14": "179.65819835663%",
+                    "15": "189.54759836197%"
+                },
+                "Charged Attack DMG": {
+                    "1": "112.74600028992%",
+                    "2": "121.9230055809%",
+                    "3": "131.09999895096%",
+                    "4": "144.21000480652%",
+                    "5": "153.38699817657%",
+                    "6": "163.87499570847%",
+                    "7": "178.29600572586%",
+                    "8": "192.71700382233%",
+                    "9": "207.13798999786%",
+                    "10": "222.86999225616%",
+                    "11": "238.60199451447%",
+                    "12": "254.33399677277%",
+                    "13": "270.06599903107%",
+                    "14": "285.79800128937%",
+                    "15": "301.53000354767%"
+                },
+                "Charged Attack Stamina Cost": {
+                    "1": "25",
+                    "2": "25",
+                    "3": "25",
+                    "4": "25",
+                    "5": "25",
+                    "6": "25",
+                    "7": "25",
+                    "8": "25",
+                    "9": "25",
+                    "10": "25",
+                    "11": "25",
+                    "12": "25",
+                    "13": "25",
+                    "14": "25",
+                    "15": "25"
+                },
+                "Plunge DMG": {
+                    "1": "63.93240094185%",
+                    "2": "69.13620233536%",
+                    "3": "74.3399977684%",
+                    "4": "81.77400231361%",
+                    "5": "86.97779774666%",
+                    "6": "92.92500019073%",
+                    "7": "101.10239982605%",
+                    "8": "109.27979946136%",
+                    "9": "117.45719909668%",
+                    "10": "126.37799978256%",
+                    "11": "135.29880046844%",
+                    "12": "144.21960115433%",
+                    "13": "153.14040184021%",
+                    "14": "162.06120252609%",
+                    "15": "170.98200321198%"
+                },
+                "Low\/High Plunge DMG": {
+                    "1": "127.83770561218%\/159.67619419098%",
+                    "2": "138.24310302734%\/172.67309427261%",
+                    "3": "148.6485004425%\/185.66999435425%",
+                    "4": "163.51339817047%\/204.23700809479%",
+                    "5": "173.9187002182%\/217.23389625549%",
+                    "6": "185.81060171127%\/232.08749294281%",
+                    "7": "202.16200351715%\/252.5111913681%",
+                    "8": "218.51329803467%\/272.9348897934%",
+                    "9": "234.86459255219%\/293.35858821869%",
+                    "10": "252.70249843597%\/315.63899517059%",
+                    "11": "270.54030895233%\/337.9194021225%",
+                    "12": "288.37809562683%\/360.1998090744%",
+                    "13": "306.21590614319%\/382.48019218445%",
+                    "14": "324.05369281769%\/404.76059913635%",
+                    "15": "341.89150333405%\/427.04100608826%"
+                }
+            }
+        },
+        "Elemental Skill": {
+            "name": "Starfrost Swirl",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c1\/Talent_Starfrost_Swirl.png",
+            "text": "Mika uses his crossbow to attack, granting all nearby characters in your party Soulwind. When characters in the Soulwind state are on the field, their ATK SPD will be increased.\\nWill take effect in different ways if Tapped or Held.\\n\\n<color=#FFD780FF>Tap<\/color>\\nFires a Flowfrost Arrow that can pierce through opponents, dealing <color=#99FFFFFF>Cryo DMG<\/color> to enemies it comes into contact with.\\n\\n<color=#FFD780FF>Hold<\/color>\\nGoes into Aiming Mode, locking on to an opponent and firing a Rimestar Flare at them, dealing <color=#99FFFFFF>Cryo DMG<\/color>. When the Rimestar Flare hits, it will rise before exploding, launching Rimestar Shards into a maximum of 3 other opponents, dealing <color=#99FFFFFF>Cryo DMG<\/color>.\\n\\n<i>Stars burst 'neath the frosted skies.<\/i>",
+            "scaling": {
+                "Flowfrost Arrow DMG": {
+                    "1": "67.19999909401%",
+                    "2": "72.24000096321%",
+                    "3": "77.28000283241%",
+                    "4": "83.9999973774%",
+                    "5": "89.0399992466%",
+                    "6": "94.0800011158%",
+                    "7": "100.80000162125%",
+                    "8": "107.51999616623%",
+                    "9": "114.24000263214%",
+                    "10": "120.95999717712%",
+                    "11": "127.68000364304%",
+                    "12": "134.39999818802%",
+                    "13": "142.79999732971%",
+                    "14": "151.19999647141%",
+                    "15": "159.5999956131%"
+                },
+                "Rimestar Flare DMG": {
+                    "1": "83.9999973774%",
+                    "2": "90.2999997139%",
+                    "3": "96.6000020504%",
+                    "4": "104.99999523163%",
+                    "5": "111.30000352859%",
+                    "6": "117.59999990463%",
+                    "7": "125.99999904633%",
+                    "8": "134.39999818802%",
+                    "9": "142.79999732971%",
+                    "10": "151.19999647141%",
+                    "11": "159.5999956131%",
+                    "12": "167.99999475479%",
+                    "13": "178.49999666214%",
+                    "14": "188.99999856949%",
+                    "15": "199.50000047684%"
+                },
+                "Rimestar Shard DMG": {
+                    "1": "25.20000040531%",
+                    "2": "27.09000110626%",
+                    "3": "28.97999882698%",
+                    "4": "31.49999976158%",
+                    "5": "33.39000046253%",
+                    "6": "35.28000116348%",
+                    "7": "37.79999911785%",
+                    "8": "40.32000005245%",
+                    "9": "42.84000098705%",
+                    "10": "45.35999894142%",
+                    "11": "47.87999987602%",
+                    "12": "50.40000081062%",
+                    "13": "53.54999899864%",
+                    "14": "56.69999718666%",
+                    "15": "59.85000133514%"
+                },
+                "ATK SPD Bonus": {
+                    "1": "12.99999952316%",
+                    "2": "14.0000000596%",
+                    "3": "15.00000059605%",
+                    "4": "15.99999964237%",
+                    "5": "17.00000017881%",
+                    "6": "18.00000071526%",
+                    "7": "18.99999976158%",
+                    "8": "20.00000029802%",
+                    "9": "20.99999934435%",
+                    "10": "21.99999988079%",
+                    "11": "23.00000041723%",
+                    "12": "23.99999946356%",
+                    "13": "25%",
+                    "14": "25%",
+                    "15": "25%"
+                },
+                "Soulwind Duration": {
+                    "1": "12s",
+                    "2": "12s",
+                    "3": "12s",
+                    "4": "12s",
+                    "5": "12s",
+                    "6": "12s",
+                    "7": "12s",
+                    "8": "12s",
+                    "9": "12s",
+                    "10": "12s",
+                    "11": "12s",
+                    "12": "12s",
+                    "13": "12s",
+                    "14": "12s",
+                    "15": "12s"
+                },
+                "CD": {
+                    "1": "15s",
+                    "2": "15s",
+                    "3": "15s",
+                    "4": "15s",
+                    "5": "15s",
+                    "6": "15s",
+                    "7": "15s",
+                    "8": "15s",
+                    "9": "15s",
+                    "10": "15s",
+                    "11": "15s",
+                    "12": "15s",
+                    "13": "15s",
+                    "14": "15s",
+                    "15": "15s"
+                }
+            }
+        },
+        "Elemental Burst": {
+            "name": "Skyfeather Song",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7a\/Talent_Skyfeather_Song.png",
+            "text": "Derives the ability to spur his teammates on from the recited prayers of the knightly order, regenerating HP for all nearby party members. This healing is based on Mika's Max HP and will grant them the Eagleplume state.\\n\\n<color=#FFD780FF>Eagleplume<\/color>\\nWhen the Normal Attacks of active characters affected by Eagleplume hit an opponent, Mika will help them regenerate HP based on his Max HP.\\nCharacters affected by this state can only regenerate HP in this way once per short interval of time.\\n\\n<i>\"Carry hope when in dire straits, and keep vigil when all is well... For that pure white plume shall at last guide the lost wayfarers.\"<\/i>",
+            "scaling": {
+                "Cast Healing": {
+                    "1": "12.16799989343% Max HP+1172.0355224609",
+                    "2": "13.08059990406% Max HP+1289.2553710938",
+                    "3": "13.99320065975% Max HP+1416.2435302734",
+                    "4": "15.20999968052% Max HP+1553",
+                    "5": "16.12260043621% Max HP+1699.5247802734",
+                    "6": "17.03519970179% Max HP+1855.8178710938",
+                    "7": "18.25200021267% Max HP+2021.8793945312",
+                    "8": "19.46880072355% Max HP+2197.7092285156",
+                    "9": "20.68559974432% Max HP+2383.3071289062",
+                    "10": "21.9024002552% Max HP+2578.6735839844",
+                    "11": "23.11919927597% Max HP+2783.8083496094",
+                    "12": "24.33599978685% Max HP+2998.7114257812",
+                    "13": "25.85699856281% Max HP+3223.3828125",
+                    "14": "27.37799882889% Max HP+3457.8225097656",
+                    "15": "28.89899909496% Max HP+3702.0305175781"
+                },
+                "Eagleplume Healing": {
+                    "1": "2.43200007826% Max HP+233.95428466797",
+                    "2": "2.61439997703% Max HP+257.35296630859",
+                    "3": "2.79680006206% Max HP+282.70153808594",
+                    "4": "3.04000005126% Max HP+310",
+                    "5": "3.22239995003% Max HP+339.24835205078",
+                    "6": "3.40479984879% Max HP+370.44659423828",
+                    "7": "3.64799983799% Max HP+403.5947265625",
+                    "8": "3.89119982719% Max HP+438.69274902344",
+                    "9": "4.13439981639% Max HP+475.74066162109",
+                    "10": "4.37760017812% Max HP+514.73846435547",
+                    "11": "4.62080016732% Max HP+555.68615722656",
+                    "12": "4.86400015652% Max HP+598.58374023438",
+                    "13": "5.16799986362% Max HP+643.43121337891",
+                    "14": "5.47199994326% Max HP+690.22857666016",
+                    "15": "5.77600002289% Max HP+738.97583007812"
+                },
+                "Eagleplume Healing Interval": {
+                    "1": "2.5s",
+                    "2": "2.5s",
+                    "3": "2.5s",
+                    "4": "2.5s",
+                    "5": "2.5s",
+                    "6": "2.5s",
+                    "7": "2.5s",
+                    "8": "2.5s",
+                    "9": "2.5s",
+                    "10": "2.5s",
+                    "11": "2.5s",
+                    "12": "2.5s",
+                    "13": "2.5s",
+                    "14": "2.5s",
+                    "15": "2.5s"
+                },
+                "Eagleplume Duration": {
+                    "1": "15s",
+                    "2": "15s",
+                    "3": "15s",
+                    "4": "15s",
+                    "5": "15s",
+                    "6": "15s",
+                    "7": "15s",
+                    "8": "15s",
+                    "9": "15s",
+                    "10": "15s",
+                    "11": "15s",
+                    "12": "15s",
+                    "13": "15s",
+                    "14": "15s",
+                    "15": "15s"
+                },
+                "CD": {
+                    "1": "18s",
+                    "2": "18s",
+                    "3": "18s",
+                    "4": "18s",
+                    "5": "18s",
+                    "6": "18s",
+                    "7": "18s",
+                    "8": "18s",
+                    "9": "18s",
+                    "10": "18s",
+                    "11": "18s",
+                    "12": "18s",
+                    "13": "18s",
+                    "14": "18s",
+                    "15": "18s"
+                },
+                "Energy Cost": {
+                    "1": "70",
+                    "2": "70",
+                    "3": "70",
+                    "4": "70",
+                    "5": "70",
+                    "6": "70",
+                    "7": "70",
+                    "8": "70",
+                    "9": "70",
+                    "10": "70",
+                    "11": "70",
+                    "12": "70",
+                    "13": "70",
+                    "14": "70",
+                    "15": "70"
+                }
+            }
+        },
+        "1st Ascension Passive": {
+            "name": "Suppressive Barrage",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b4\/Talent_Suppressive_Barrage.png",
+            "text": "Per the following circumstances, the Soulwind state caused by Starfrost Swirl will grant characters the Detector effect, increasing their Physical DMG by 10% when they are on the field.<ul><li>If the Flowfrost Arrow hits more than one opponent, each additional opponent hit will generate 1 Detector stack.<\/li><li>When a Rimestar Shard hits an opponent, it will generate 1 Detector stack. Each Rimestar Shard can trigger the effect 1 time.<\/li><\/ul>The Soulwind state can have a maximum of 3 Detector stacks, and if Starfrost Swirl is cast again during this duration, the pre-existing Soulwind state and all its Detector stacks will be cleared."
+        },
+        "4th Ascension Passive": {
+            "name": "Topographical Mapping",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/73\/Talent_Topographical_Mapping.png",
+            "text": "When an active character affected by both Skyfeather Song's Eagleplume and Starfrost Swirl's Soulwind at once scores a CRIT Hit with their attacks, Soulwind will grant them 1 stack of Detector from Suppressive Barrage. During a single instance of Soulwind, 1 Detector stack can be gained in this manner.<br\/>Additionally, the maximum number of stacks that can be gained through Soulwind alone is increased by 1.<br\/>Requires Suppressive Barrage to be unlocked first."
+        },
+        "Utility Passive": {
+            "name": "Demarcation",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bf\/Talent_Demarcation.png",
+            "text": "Displays the location of nearby resources unique to Mondstadt on the mini-map."
+        }
+    },
+    "constellations": {
+        "1": {
+            "name": "Factor Confluence",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f3\/Constellation_Factor_Confluence.png",
+            "text": "The Soulwind state of <color=#FFD780FF>Starfrost Swirl<\/color> can decrease the healing interval between instances caused by <color=#FFD780FF>Skyfeather Song<\/color>'s Eagleplume state. This decrease percentage is equal to the ATK SPD increase provided by Soulwind."
+        },
+        "2": {
+            "name": "Companion's Ingress",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/65\/Constellation_Companion%27s_Ingress.png",
+            "text": "When <color=#FFD780FF>Starfrost Swirl<\/color>'s Flowfrost Arrow first hits an opponent, or its Rimestar Flare hits an opponent, 1 Detector stack from Passive Talent \"Suppressive Barrage\" will be generated.\\nYou must have unlocked the Passive Talent \"Suppressive Barrage\" first."
+        },
+        "3": {
+            "name": "Reconnaissance Experience",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f1\/Constellation_Reconnaissance_Experience.png",
+            "code": [
+                "stat",
+                [
+                    "burstLevel",
+                    3
+                ]
+            ],
+            "text": "Increases the Level of <color=#FFD780FF>Skyfeather Song<\/color> by 3.\\nMaximum upgrade level is 15."
+        },
+        "4": {
+            "name": "Sunfrost Encomium",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6f\/Constellation_Sunfrost_Encomium.png",
+            "text": "When Mika's own <color=#FFD780FF>Skyfeather Song<\/color>'s Eagleplume state heals party members, this will restore 3 Energy to Mika. This form of Energy restoration can occur 5 times during the Eagleplume state created by 1 use of Skyfeather Song."
+        },
+        "5": {
+            "name": "Signal Arrow",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/af\/Constellation_Signal_Arrow.png",
+            "code": [
+                "stat",
+                [
+                    "skillLevel",
+                    3
+                ]
+            ],
+            "text": "Increases the Level of <color=#FFD780FF>Starfrost Swirl<\/color> by 3.\\nMaximum upgrade level is 15."
+        },
+        "6": {
+            "name": "Companion's Counsel",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e0\/Constellation_Companion%27s_Counsel.png",
+            "text": "The maximum number of Detector stacks that <color=#FFD780FF>Starfrost Swirl<\/color>'s Soulwind can gain is increased by 1. You need to have unlocked the Passive Talent \"Suppressive Barrage\" first.\\nAdditionally, active characters affected by Soulwind will deal 60% more Physical CRIT DMG."
+        }
+    }
+};

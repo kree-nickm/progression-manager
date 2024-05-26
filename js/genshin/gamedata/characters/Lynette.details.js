@@ -1,0 +1,443 @@
+export default {
+    "talents": {
+        "Normal Attack": {
+            "name": "Normal Attack: Rapid Ritesword",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/04\/Sword_Anemo.png",
+            "text": "<color=#FFD780FF>Normal Attack<\/color>\\nPerforms up to 4 rapid strikes.\\n\\n<color=#FFD780FF>Charged Attack<\/color>\\nConsumes a certain amount of Stamina to unleash 2 rapid sword strikes.\\n\\n<color=#FFD780FF>Plunging Attack<\/color>\\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "scaling": {
+                "1-Hit DMG": {
+                    "1": "43.08170080185%",
+                    "2": "46.58840000629%",
+                    "3": "50.09499788284%",
+                    "4": "55.10450005531%",
+                    "5": "58.61120223999%",
+                    "6": "62.6187980175%",
+                    "7": "68.12919974327%",
+                    "8": "73.63970279694%",
+                    "9": "79.15009856224%",
+                    "10": "85.1615011692%",
+                    "11": "91.1728978157%",
+                    "12": "97.18430042267%",
+                    "13": "103.19570302963%",
+                    "14": "109.2071056366%",
+                    "15": "115.21849632263%"
+                },
+                "2-Hit DMG": {
+                    "1": "37.61210143566%",
+                    "2": "40.67359864712%",
+                    "3": "43.73500049114%",
+                    "4": "48.10850024223%",
+                    "5": "51.16990208626%",
+                    "6": "54.66870069504%",
+                    "7": "59.47960019112%",
+                    "8": "64.2903983593%",
+                    "9": "69.10129785538%",
+                    "10": "74.34949874878%",
+                    "11": "79.59769964218%",
+                    "12": "84.84590053558%",
+                    "13": "90.09410142899%",
+                    "14": "95.34230232239%",
+                    "15": "100.59050321579%"
+                },
+                "3-Hit DMG": {
+                    "1": "27.86400020123%+21.59290015697%",
+                    "2": "30.13199865818%+23.35039973259%",
+                    "3": "32.40000009537%+25.1080006361%",
+                    "4": "35.640001297%+27.61879861355%",
+                    "5": "37.90799975395%+29.37639951706%",
+                    "6": "40.50000011921%+31.38499855995%",
+                    "7": "44.06400024891%+34.14689898491%",
+                    "8": "47.62800037861%+36.90879940987%",
+                    "9": "51.19199752808%+39.67060148716%",
+                    "10": "55.08000254631%+42.68360137939%",
+                    "11": "58.96800160408%+45.69660127163%",
+                    "12": "62.85600066185%+48.70949983597%",
+                    "13": "66.74399971962%+51.72250270844%",
+                    "14": "70.63199877739%+54.73539829254%",
+                    "15": "74.51999783516%+57.74840116501%"
+                },
+                "4-Hit DMG": {
+                    "1": "63.15410137177%",
+                    "2": "68.29450130463%",
+                    "3": "73.43500256538%",
+                    "4": "80.7784974575%",
+                    "5": "85.91889739037%",
+                    "6": "91.79369807243%",
+                    "7": "99.87159967422%",
+                    "8": "107.94939994812%",
+                    "9": "116.02729558945%",
+                    "10": "124.83949661255%",
+                    "11": "133.65169763565%",
+                    "12": "142.46389865875%",
+                    "13": "151.27609968185%",
+                    "14": "160.08830070496%",
+                    "15": "168.90050172806%"
+                },
+                "Charged Attack DMG": {
+                    "1": "44.20399963856%+61.4040017128%",
+                    "2": "47.80200123787%+66.40200018883%",
+                    "3": "51.39999985695%+71.39999866486%",
+                    "4": "56.54000043869%+78.53999733925%",
+                    "5": "60.13799905777%+83.53800177574%",
+                    "6": "64.24999833107%+89.24999833107%",
+                    "7": "69.90399956703%+97.10400104523%",
+                    "8": "75.55800080299%+104.95799779892%",
+                    "9": "81.21200203896%+112.81199455261%",
+                    "10": "87.37999796867%+121.37999534607%",
+                    "11": "93.54799985886%+129.94799613953%",
+                    "12": "99.71600174904%+138.51599693298%",
+                    "13": "105.88400363922%+147.08399772644%",
+                    "14": "112.05199956894%+155.6519985199%",
+                    "15": "118.21999549866%+164.21999931335%"
+                },
+                "Charged Attack Stamina Cost": {
+                    "1": "20",
+                    "2": "20",
+                    "3": "20",
+                    "4": "20",
+                    "5": "20",
+                    "6": "20",
+                    "7": "20",
+                    "8": "20",
+                    "9": "20",
+                    "10": "20",
+                    "11": "20",
+                    "12": "20",
+                    "13": "20",
+                    "14": "20",
+                    "15": "20"
+                },
+                "Plunge DMG": {
+                    "1": "63.93240094185%",
+                    "2": "69.13620233536%",
+                    "3": "74.3399977684%",
+                    "4": "81.77400231361%",
+                    "5": "86.97779774666%",
+                    "6": "92.92500019073%",
+                    "7": "101.10239982605%",
+                    "8": "109.27979946136%",
+                    "9": "117.45719909668%",
+                    "10": "126.37799978256%",
+                    "11": "135.29880046844%",
+                    "12": "144.21960115433%",
+                    "13": "153.14040184021%",
+                    "14": "162.06120252609%",
+                    "15": "170.98200321198%"
+                },
+                "Low\/High Plunge DMG": {
+                    "1": "127.83770561218%\/159.67619419098%",
+                    "2": "138.24310302734%\/172.67309427261%",
+                    "3": "148.6485004425%\/185.66999435425%",
+                    "4": "163.51339817047%\/204.23700809479%",
+                    "5": "173.9187002182%\/217.23389625549%",
+                    "6": "185.81060171127%\/232.08749294281%",
+                    "7": "202.16200351715%\/252.5111913681%",
+                    "8": "218.51329803467%\/272.9348897934%",
+                    "9": "234.86459255219%\/293.35858821869%",
+                    "10": "252.70249843597%\/315.63899517059%",
+                    "11": "270.54030895233%\/337.9194021225%",
+                    "12": "288.37809562683%\/360.1998090744%",
+                    "13": "306.21590614319%\/382.48019218445%",
+                    "14": "324.05369281769%\/404.76059913635%",
+                    "15": "341.89150333405%\/427.04100608826%"
+                }
+            }
+        },
+        "Elemental Skill": {
+            "name": "Enigmatic Feint",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4e\/Talent_Enigmatic_Feint.png",
+            "text": "#Flicks her mantle and executes an Enigma Thrust, dealing <color=#80FFD7FF>Anemo DMG<\/color>.\\nWhen the Enigma Thrust hits an opponent, it will restore Lynette's HP based on her Max HP, and in the 4s afterward, she will lose a certain amount of HP per second.\\nBased on whether you {LAYOUT_MOBILE#tap}{LAYOUT_PC#press}{LAYOUT_PS#press} or hold this ability, she will use Enigma Thrust differently.\\n\\n<color=#FFD780FF>{LAYOUT_MOBILE#Tap}{LAYOUT_PC#Press}{LAYOUT_PS#Press}<\/color>\\nShe swiftly uses an Enigma Thrust.\\n\\n<color=#FFD780FF>Hold<\/color>\\nLynette will enter a high-speed Pilfering Shadow state and apply Shadowsign to a nearby opponent. You can control her movement direction during this state, and you can end it prematurely by using this skill again.\\nWhen this high-speed state ends, Lynette will unleash her Enigma Thrust. If there is an opponent with Shadowsign applied to them nearby, Lynette will approach them in a flash before using Enigma Thrust.\\n\\nA maximum of 1 opponent can have Shadowsign at any one time. When this opponent gets too far from Lynette, the Shadowsign will be canceled.\\n\\n<color=#FFD780FF>Arkhe: Ousia<\/color>\\nAt specific intervals, Lynette will unleash a Surging Blade when she uses Enigma Thrust, dealing Ousia-aligned <color=#80FFD7FF>Anemo DMG<\/color>.\\n\\n<i>\"Now then, turn your eyes to the stage and continue to enjoy the performance. When I next appear, I'll be where you least expect.\"<\/i>",
+            "scaling": {
+                "Enigma Thrust DMG": {
+                    "1": "268.00000667572%",
+                    "2": "288.10000419617%",
+                    "3": "308.20000171661%",
+                    "4": "334.99999046326%",
+                    "5": "355.10001182556%",
+                    "6": "375.20000934601%",
+                    "7": "401.99999809265%",
+                    "8": "428.80001068115%",
+                    "9": "455.60002326965%",
+                    "10": "482.39998817444%",
+                    "11": "509.20000076294%",
+                    "12": "536.00001335144%",
+                    "13": "569.50001716614%",
+                    "14": "603.00002098083%",
+                    "15": "636.49997711182%"
+                },
+                "Surging Blade DMG": {
+                    "1": "31.20000064373%",
+                    "2": "33.53999853134%",
+                    "3": "35.87999939919%",
+                    "4": "38.99999856949%",
+                    "5": "41.33999943733%",
+                    "6": "43.68000030518%",
+                    "7": "46.79999947548%",
+                    "8": "49.91999864578%",
+                    "9": "53.03999781609%",
+                    "10": "56.16000294685%",
+                    "11": "59.28000211716%",
+                    "12": "62.40000128746%",
+                    "13": "66.29999876022%",
+                    "14": "70.20000219345%",
+                    "15": "74.09999966621%"
+                },
+                "Surging Blade Interval": {
+                    "1": "10s",
+                    "2": "10s",
+                    "3": "10s",
+                    "4": "10s",
+                    "5": "10s",
+                    "6": "10s",
+                    "7": "10s",
+                    "8": "10s",
+                    "9": "10s",
+                    "10": "10s",
+                    "11": "10s",
+                    "12": "10s",
+                    "13": "10s",
+                    "14": "10s",
+                    "15": "10s"
+                },
+                "HP Regeneration": {
+                    "1": "25% Max HP",
+                    "2": "25% Max HP",
+                    "3": "25% Max HP",
+                    "4": "25% Max HP",
+                    "5": "25% Max HP",
+                    "6": "25% Max HP",
+                    "7": "25% Max HP",
+                    "8": "25% Max HP",
+                    "9": "25% Max HP",
+                    "10": "25% Max HP",
+                    "11": "25% Max HP",
+                    "12": "25% Max HP",
+                    "13": "25% Max HP",
+                    "14": "25% Max HP",
+                    "15": "25% Max HP"
+                },
+                "HP Cost": {
+                    "1": "5.99999986589% Current HP\/s",
+                    "2": "5.99999986589% Current HP\/s",
+                    "3": "5.99999986589% Current HP\/s",
+                    "4": "5.99999986589% Current HP\/s",
+                    "5": "5.99999986589% Current HP\/s",
+                    "6": "5.99999986589% Current HP\/s",
+                    "7": "5.99999986589% Current HP\/s",
+                    "8": "5.99999986589% Current HP\/s",
+                    "9": "5.99999986589% Current HP\/s",
+                    "10": "5.99999986589% Current HP\/s",
+                    "11": "5.99999986589% Current HP\/s",
+                    "12": "5.99999986589% Current HP\/s",
+                    "13": "5.99999986589% Current HP\/s",
+                    "14": "5.99999986589% Current HP\/s",
+                    "15": "5.99999986589% Current HP\/s"
+                },
+                "Hold Max Duration": {
+                    "1": "2.5s",
+                    "2": "2.5s",
+                    "3": "2.5s",
+                    "4": "2.5s",
+                    "5": "2.5s",
+                    "6": "2.5s",
+                    "7": "2.5s",
+                    "8": "2.5s",
+                    "9": "2.5s",
+                    "10": "2.5s",
+                    "11": "2.5s",
+                    "12": "2.5s",
+                    "13": "2.5s",
+                    "14": "2.5s",
+                    "15": "2.5s"
+                },
+                "CD": {
+                    "1": "12s",
+                    "2": "12s",
+                    "3": "12s",
+                    "4": "12s",
+                    "5": "12s",
+                    "6": "12s",
+                    "7": "12s",
+                    "8": "12s",
+                    "9": "12s",
+                    "10": "12s",
+                    "11": "12s",
+                    "12": "12s",
+                    "13": "12s",
+                    "14": "12s",
+                    "15": "12s"
+                }
+            }
+        },
+        "Elemental Burst": {
+            "name": "Magic Trick: Astonishing Shift",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cf\/Talent_Magic_Trick_Astonishing_Shift.png",
+            "text": "Lynette raises her mantle high, dealing <color=#80FFD7FF>AoE Anemo DMG<\/color>, using skillful sleight of hand to make a giant Bogglecat Box appear!\\n\\n<color=#FFD780FF>Bogglecat Box<\/color>\\n\u00b7Taunts nearby opponents, attracting their attacks.\\n\u00b7Deals <color=#80FFD7FF>Anemo DMG<\/color> to nearby opponents at intervals.\\n\u00b7When the Bogglecat Box comes into contact with <color=#80C0FFFF>Hydro<\/color>\/<color=#FF9999FF>Pyro<\/color>\/<color=#99FFFFFF>Cryo<\/color>\/<color=#FFACFFFF>Electro<\/color>, it will gain the corresponding element and additionally fire Vivid Shots that will deal DMG from that element at intervals.\\nElemental Absorption of this kind will only occur once during this ability's duration.\\n\\n<i>\"Look this way, and look closely. This is a time for miracles, just for us.\"<\/i>",
+            "scaling": {
+                "Skill DMG": {
+                    "1": "83.20000171661%",
+                    "2": "89.44000005722%",
+                    "3": "95.67999839783%",
+                    "4": "103.9999961853%",
+                    "5": "110.23999452591%",
+                    "6": "116.48000478745%",
+                    "7": "124.80000257492%",
+                    "8": "133.1200003624%",
+                    "9": "141.43999814987%",
+                    "10": "149.75999593735%",
+                    "11": "158.08000564575%",
+                    "12": "166.40000343323%",
+                    "13": "176.80000066757%",
+                    "14": "187.19999790192%",
+                    "15": "197.59999513626%"
+                },
+                "Bogglecat Box DMG": {
+                    "1": "51.20000243187%",
+                    "2": "55.0400018692%",
+                    "3": "58.88000130653%",
+                    "4": "63.99999856949%",
+                    "5": "67.83999800682%",
+                    "6": "71.67999744415%",
+                    "7": "76.80000066757%",
+                    "8": "81.91999793053%",
+                    "9": "87.04000115395%",
+                    "10": "92.1599984169%",
+                    "11": "97.28000164032%",
+                    "12": "102.40000486374%",
+                    "13": "108.80000591278%",
+                    "14": "115.19999504089%",
+                    "15": "121.59999608994%"
+                },
+                "Vivid Shot DMG": {
+                    "1": "45.60000002384%",
+                    "2": "49.02000129223%",
+                    "3": "52.43999958038%",
+                    "4": "56.99999928474%",
+                    "5": "60.42000055313%",
+                    "6": "63.84000182152%",
+                    "7": "68.40000152588%",
+                    "8": "72.96000123024%",
+                    "9": "77.5200009346%",
+                    "10": "82.08000063896%",
+                    "11": "86.64000034332%",
+                    "12": "91.20000004768%",
+                    "13": "96.89999818802%",
+                    "14": "102.60000228882%",
+                    "15": "108.29999446869%"
+                },
+                "Bogglecat Box Duration": {
+                    "1": "12s",
+                    "2": "12s",
+                    "3": "12s",
+                    "4": "12s",
+                    "5": "12s",
+                    "6": "12s",
+                    "7": "12s",
+                    "8": "12s",
+                    "9": "12s",
+                    "10": "12s",
+                    "11": "12s",
+                    "12": "12s",
+                    "13": "12s",
+                    "14": "12s",
+                    "15": "12s"
+                },
+                "CD": {
+                    "1": "18s",
+                    "2": "18s",
+                    "3": "18s",
+                    "4": "18s",
+                    "5": "18s",
+                    "6": "18s",
+                    "7": "18s",
+                    "8": "18s",
+                    "9": "18s",
+                    "10": "18s",
+                    "11": "18s",
+                    "12": "18s",
+                    "13": "18s",
+                    "14": "18s",
+                    "15": "18s"
+                },
+                "Energy Cost": {
+                    "1": "70",
+                    "2": "70",
+                    "3": "70",
+                    "4": "70",
+                    "5": "70",
+                    "6": "70",
+                    "7": "70",
+                    "8": "70",
+                    "9": "70",
+                    "10": "70",
+                    "11": "70",
+                    "12": "70",
+                    "13": "70",
+                    "14": "70",
+                    "15": "70"
+                }
+            }
+        },
+        "1st Ascension Passive": {
+            "name": "Sophisticated Synergy",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/61\/Talent_Sophisticated_Synergy.png",
+            "text": "Within 10s after using Magic Trick: Astonishing Shift, when there are 1\/2\/3\/4 Elemental Types in the party, all party members' ATK will be increased by 8%\/12%\/16%\/20% respectively."
+        },
+        "4th Ascension Passive": {
+            "name": "Props Positively Prepped",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/20\/Talent_Props_Positively_Prepped.png",
+            "text": "After the Bogglecat Box summoned by Magic Trick: Astonishing Shift performs Elemental Conversion, Lynette's Elemental Burst will deal 15% more DMG. This effect will persist until the Bogglecat Box's duration ends."
+        },
+        "Utility Passive": {
+            "name": "Loci-Based Mnemonics",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c7\/Talent_Loci-Based_Mnemonics.png",
+            "text": "Shows the location of nearby <b>Recovery Orbs<\/b> on the minimap. The Aquatic Stamina and HP gained from touching Orbs will be increased by 25%."
+        }
+    },
+    "constellations": {
+        "1": {
+            "name": "A Cold Blade Like a Shadow",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e9\/Constellation_A_Cold_Blade_Like_a_Shadow.png",
+            "text": "When <color=#FFD780FF>Enigmatic Feint<\/color>'s Enigma Thrust hits an opponent with Shadowsign, a vortex will be created at that opponent's position that will pull nearby opponents in."
+        },
+        "2": {
+            "name": "Endless Mysteries",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2d\/Constellation_Endless_Mysteries.png",
+            "text": "Whenever the Bogglecat Box summoned by <color=#FFD780FF>Magic Trick: Astonishing Shift<\/color> fires a Vivid Shot, it will fire an extra Vivid Shot."
+        },
+        "3": {
+            "name": "Cognition-Inverting Gaze",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2c\/Constellation_Cognition-Inverting_Gaze.png",
+            "code": [
+                "stat",
+                [
+                    "burstLevel",
+                    3
+                ]
+            ],
+            "text": "Increases the Level of <color=#FFD780FF>Magic Trick: Astonishing Shift<\/color> by 3.\\nMaximum upgrade level is 15."
+        },
+        "4": {
+            "name": "Tacit Coordination",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/db\/Constellation_Tacit_Coordination.png",
+            "text": "Increases <color=#FFD780FF>Enigmatic Feint<\/color>'s charges by 1."
+        },
+        "5": {
+            "name": "Obscuring Ambiguity",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e4\/Constellation_Obscuring_Ambiguity.png",
+            "code": [
+                "stat",
+                [
+                    "skillLevel",
+                    3
+                ]
+            ],
+            "text": "Increases the Level of <color=#FFD780FF>Enigmatic Feint<\/color> by 3.\\nMaximum upgrade level is 15."
+        },
+        "6": {
+            "name": "Watchful Eye",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/93\/Constellation_Watchful_Eye.png",
+            "text": "When Lynette uses <color=#FFD780FF>Enigmatic Feint<\/color>'s Enigma Thrust, she will gain an <color=#80FFD7FF>Anemo Infusion<\/color> and 20% <color=#80FFD7FF>Anemo DMG Bonus<\/color> for 6s."
+        }
+    }
+};

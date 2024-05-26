@@ -58,11 +58,12 @@ export default class ArtifactList extends GenshinList
     this.update("setWanterFactor", {}, "replace");
     this.list.forEach(artifact => artifact.update("wanters", [], "replace"));
     // Cycle through every character so we can access their artifact priority lists.
-    this.viewer.lists.CharacterList.items("listable").forEach(character => {
+    for(let character of this.viewer.lists.CharacterList.items("listable"))
+    {
       // Cycle through all their builds.
       for(let buildId in character.getBuilds())
       {
-        let related = character.getRelatedItems({buildId,ignoreTargets:true});
+        let related = await character.getRelatedItems({buildId,ignoreTargets:true});
         // Handle each slot separately.
         for(let slot of ["flower","plume","sands","goblet","circlet"])
         {
@@ -96,7 +97,7 @@ export default class ArtifactList extends GenshinList
         for(let setKey in related.buildData.artifactSets)
           this.setWanterFactor[setKey] = (this.setWanterFactor[setKey] ?? 0) + related.buildData.importance/100;
       }
-    });
+    }
     this.update("setWanterFactor", {}, "notify");
     this.list.forEach(artifact => artifact.wanters.sort((a,b) => b.scaledScore-a.scaledScore));
     document.querySelector("#artifactEvaluateBtn")?.classList.remove("show-notice");

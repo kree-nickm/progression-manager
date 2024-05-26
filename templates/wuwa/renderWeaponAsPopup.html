@@ -1,0 +1,47 @@
+<div class="modal-content list-item" data-template="wuwa/renderWeaponAsPopup" data-uuid="{{uuid item}}">
+    <div class="modal-body">
+        <button type="button" class="btn-close float-end" data-bs-dismiss="modal"></button>
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <h5 class="col-2">Level</h5>
+                    <h5 class="col-2">Asc Rank</h5>
+                    <h5 class="col-2">Syn Rank</h5>
+                    <h5 class="col-2">Equipped By</h5>
+                </div>
+                <div class="row">
+                    <div class="col-2">{{> renderItemField item=item field="level" wrapper="div"}}</div>
+                    <div class="col-2">{{> renderItemField item=item field="ascension" wrapper="div"}}</div>
+                    <div class="col-2">{{> renderItemField item=item field="syntonization" wrapper="div"}}</div>
+                    <div class="col-2">{{> renderItemField item=item field="location" wrapper="div"}}</div>
+                </div>
+              {{> renderItemField item=item field="passive" wrapper="p"}}
+            </div>
+        </div>
+        
+        <hr/>
+        <h3>Ascension Materials</h3>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Forgery</th>
+                        <th>Enemy</th>
+                        <th>Credits</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  {{#times 6}}
+                    <tr>
+                        {{> renderItemField item=item field="ascensionMaterial" params=(array "label" @index) wrapper="td"}}
+                        {{> renderItemField item=item field="ascensionMaterial" params=(array "forgery" @index) wrapper="td"}}
+                        {{> renderItemField item=item field="ascensionMaterial" params=(array "enemy" @index) wrapper="td"}}
+                        {{> renderItemField item=item field="ascensionMaterial" params=(array "credit" @index) wrapper="td"}}
+                    </tr>
+                  {{/times}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

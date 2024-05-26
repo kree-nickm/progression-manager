@@ -180,39 +180,43 @@ export default class Character extends Ascendable(GenshinItem)
     else if(field.path[0] == "statModifiers")
     {
       // TODO: Stuff like this should be handled using dependencies, but at the moment, only item fields are easy to handle using dependencies, which these are not.
-      if(options.mainChange)
-      {
-        let element = document.querySelector(`[data-template="genshin/renderCharacterMainStats"][data-uuid="${this.uuid}"]`);
-        if(element) Renderer.queueUpdate(element);
-      }
-      if(options.rxnChange)
-      {
-        let element = document.querySelector(`[data-template="genshin/renderCharacterReactions"][data-uuid="${this.uuid}"]`);
-        if(element) Renderer.queueUpdate(element);
-      }
-      // listChange should be true when modifiers could have been added or removed from the list.
-      if(options.listChange)
-      {
-        let element = document.querySelector(`[data-template="genshin/renderCharacterStatModifiers"][data-uuid="${this.uuid}"]`);
-        if(element) Renderer.queueUpdate(element);
-      }
-      // mvChange should be true when motion values could have been added or removed from a list or motion values.
-      if(options.mvChange == "*")
-      {
-        document.querySelectorAll(`[data-template="genshin/renderCharacterMotionValues"][data-uuid="${this.uuid}"]`).forEach(elem => Renderer.queueUpdate(elem));
-      }
-      else if(["auto","skill","burst"].indexOf(options.mvChange) > -1)
-      {
-        let element = document.querySelector(`#characterStats\\.${options.mvChange}[data-template="genshin/renderCharacterMotionValues"][data-uuid="${this.uuid}"]`);
-        if(element) Renderer.queueUpdate(element);
-      }
+      Promise.all(Array.isArray(options.waitFor) ? options.waitFor : options.waitFor ? [options.waitFor] : []).then(results => {
+        if(options.mainChange)
+        {
+          let element = document.querySelector(`[data-template="genshin/renderCharacterMainStats"][data-uuid="${this.uuid}"]`);
+          if(element) Renderer.queueUpdate(element);
+        }
+        if(options.rxnChange)
+        {
+          let element = document.querySelector(`[data-template="genshin/renderCharacterReactions"][data-uuid="${this.uuid}"]`);
+          if(element) Renderer.queueUpdate(element);
+        }
+        // listChange should be true when modifiers could have been added or removed from the list.
+        if(options.listChange)
+        {
+          let element = document.querySelector(`[data-template="genshin/renderCharacterStatModifiers"][data-uuid="${this.uuid}"]`);
+          if(element) Renderer.queueUpdate(element);
+        }
+        // mvChange should be true when motion values could have been added or removed from a list or motion values.
+        if(options.mvChange == "*")
+        {
+          document.querySelectorAll(`[data-template="genshin/renderCharacterMotionValues"][data-uuid="${this.uuid}"]`).forEach(elem => Renderer.queueUpdate(elem));
+        }
+        else if(["auto","skill","burst"].indexOf(options.mvChange) > -1)
+        {
+          let element = document.querySelector(`#characterStats\\.${options.mvChange}[data-template="genshin/renderCharacterMotionValues"][data-uuid="${this.uuid}"]`);
+          if(element) Renderer.queueUpdate(element);
+        }
+      });
     }
     else if(field.string == "activeTeam")
     {
+      let importPromises = [];
       this.clearMemory("stats");
       this.clearMemory("motionValues");
       if(!options.teammate)
       {
+        importPromises.push(this.importDetails());
         field.value?.characters.forEach(character => {
           if(character != this)
           {
@@ -223,11 +227,11 @@ export default class Character extends Ascendable(GenshinItem)
           if(character != this)
           {
             character.update("activeTeam", this.activeTeam, "replace", {teammate:true});
-            character.getStat("none", {teammate:true});
+            importPromises.push(character.importDetails().then(result => character.getStat("none", {teammate:true})));
           }
         });
       }
-      this.update("statModifiers", null, "notify", {listChange:true, mvChange:"*"});
+      this.update("statModifiers", null, "notify", {listChange:true, mvChange:"*", waitFor:importPromises});
     }
     else if(field.path[0] == "talent")
     {
@@ -455,10 +459,48 @@ export default class Character extends Ascendable(GenshinItem)
   get atkAscValue(){ return GenshinCharacterData[this.key]?.atkMaxAsc ?? 0; }
   get defAscValue(){ return GenshinCharacterData[this.key]?.defMaxAsc ?? 0; }
   get image(){ return GenshinCharacterData[this.key]?.img ?? ""; }
-  get autoIcon(){ return GenshinCharacterData[this.key]?.talents?.["Normal Attack"]?.img ?? ""; }
-  get skillIcon(){ return GenshinCharacterData[this.key]?.talents?.["Elemental Skill"]?.img ?? ""; }
-  get burstIcon(){ return GenshinCharacterData[this.key]?.talents?.["Elemental Burst"]?.img ?? ""; }
+  get talents() {
+    if(GenshinCharacterData[this.key]?.talents)
+    {
+      console.debug(`${this.key} still has talent data in the main data file.`);
+      return GenshinCharacterData[this.key].talents;
+    }
+    else if(this.detailedData)
+      return this.detailedData.talents;
+    else
+    {
+      console.error(`${this.key} attempted to access talent data when details have not been imported.`);
+      return null;
+    }
+  }
+  get constellations() {
+    if(GenshinCharacterData[this.key]?.constellations)
+    {
+      console.debug(`${this.key} still has constellation data in the main data file.`);
+      return GenshinCharacterData[this.key].constellations;
+    }
+    else if(this.detailedData)
+      return this.detailedData.constellations;
+    else
+    {
+      console.error(`${this.key} attempted to access constellation data when details have not been imported.`);
+      return null;
+    }
+  }
+  get autoIcon(){ return this.talents?.["Normal Attack"]?.img ?? ""; }
+  get skillIcon(){ return this.talents?.["Elemental Skill"]?.img ?? ""; }
+  get burstIcon(){ return this.talents?.["Elemental Burst"]?.img ?? ""; }
   get releaseTimestamp(){ return GenshinCharacterData[this.key]?.release ? Date.parse(GenshinCharacterData[this.key]?.release) : 0; }
+  
+  async importDetails()
+  {
+    if(!this.detailedData)
+    {
+      const {default:details} = await import(`./gamedata/characters/${this.key}.details.js`);
+      this.detailedData = details;
+    }
+    return this.detailedData;
+  }
   
   getPhase(ascension=this.ascension){ return GenshinPhaseData[ascension] ?? GenshinPhaseData[6]; }
   get levelCap() { return this.getPhase().levelCap; }
@@ -805,20 +847,20 @@ export default class Character extends Ascendable(GenshinItem)
         {
           // TODO: StatModifier checks to see if the character meets the requirements of talents/cons, so we probably don't need to here.
           // Collect bonuses from talents
-          for(let talent in GenshinCharacterData[this.key].talents??[])
+          for(let talent in this.talents??[])
           {
             if(talent == "1st Ascension Passive" && ascension < 1)
               continue;
             if(talent == "4th Ascension Passive" && ascension < 4)
               continue;
-            if(GenshinCharacterData[this.key].talents[talent].code)
-              StatModifier.create(GenshinCharacterData[this.key].talents[talent].code, this, "talentPassive", {talent});
+            if(this.talents[talent].code)
+              StatModifier.create(this.talents[talent].code, this, "talentPassive", {talent});
           }
           
           // Collect bonuses from constellations
           for(let c=1; c<=constellation; c++)
-            if(GenshinCharacterData[this.key].constellations?.[c]?.code)
-              StatModifier.create(GenshinCharacterData[this.key].constellations?.[c]?.code, this, "constellation", {constellation:c});
+            if(this.constellations?.[c]?.code)
+              StatModifier.create(this.constellations?.[c]?.code, this, "constellation", {constellation:c});
           
           // Collect bonuses from weapon passive
           let weaponPassive = weapon?.getCode(alternates);
@@ -963,7 +1005,7 @@ export default class Character extends Ascendable(GenshinItem)
   
   getMotionValues(talent, alternates={}, {onlyKey}={})
   {
-    if(!GenshinCharacterData[this.key].talents)
+    if(!this.talents)
       return [];
     
     let result = [];
@@ -980,7 +1022,7 @@ export default class Character extends Ascendable(GenshinItem)
         talent = null;
         for(let t of ["Normal Attack","Elemental Burst","Elemental Skill"])
         {
-          for(let mv in GenshinCharacterData[this.key].talents[t]?.scaling ?? [])
+          for(let mv in this.talents[t]?.scaling ?? [])
             if(mv == onlyKey)
               talent = t
         }
@@ -1003,17 +1045,17 @@ export default class Character extends Ascendable(GenshinItem)
       if(talent == "auto" || talent == "Normal Attack")
       {
         talent = "auto";
-        scaling = GenshinCharacterData[this.key].talents["Normal Attack"].scaling;
+        scaling = this.talents["Normal Attack"].scaling;
       }
       else if(talent == "skill" || talent == "Elemental Skill")
       {
         talent = "skill";
-        scaling = GenshinCharacterData[this.key].talents["Elemental Skill"].scaling;
+        scaling = this.talents["Elemental Skill"].scaling;
       }
       else if(talent == "burst" || talent == "Elemental Burst")
       {
         talent = "burst";
-        scaling = GenshinCharacterData[this.key].talents["Elemental Burst"].scaling;
+        scaling = this.talents["Elemental Burst"].scaling;
       }
       else
       {
@@ -1022,7 +1064,7 @@ export default class Character extends Ascendable(GenshinItem)
       }
       if(!scaling)
       {
-        console.error(`Character ${this.key} has potentially invalid talents:`, GenshinCharacterData[this.key].talents);
+        console.error(`Character ${this.key} has potentially invalid talents:`, this.talents);
         return null;
       }
       
@@ -1116,7 +1158,7 @@ export default class Character extends Ascendable(GenshinItem)
           motionValue.rawValue = scaling[motionValue.key]?.[talentLvl];
         if(!motionValue.rawValue)
         {
-          console.error(`Character ${this.key} has potentially invalid ${talent} talent at key '${motionValue.key}' talent lvl '${talentLvl}':`, {talentData:GenshinCharacterData[this.key].talents});
+          console.error(`Character ${this.key} has potentially invalid ${talent} talent at key '${motionValue.key}' talent lvl '${talentLvl}':`, {talentData:this.talents});
           return null;
         }
         
@@ -1709,22 +1751,20 @@ export default class Character extends Ascendable(GenshinItem)
     }
   }
   
-  getRelatedItems({buildId=this.selectedBuild, skipSort, forceTargets, ignoreTargets}={})
+  async getRelatedItems({buildId=this.selectedBuild, skipSort, forceTargets, ignoreTargets}={})
   {
     let useTargets = forceTargets || !ignoreTargets;
-    /*let artifacts;
-    if(!skipSort)
-      artifacts = this.list.viewer.lists.ArtifactList.list.toSorted(Character.sortArtifacts.bind(this, buildId, useTargets));
-    else
-      artifacts = this.list.viewer.lists.ArtifactList.list;*/
+    if(useTargets)
+    {
+      if(this.activeTeam)
+        for(let teammate of this.activeTeam.characters)
+          await teammate.importDetails();
+      else
+        await this.importDetails();
+    }
     let related = {
       weapons: this.list.viewer.lists.WeaponList.items(this.weaponType),
       bestArtifacts: {
-        /*flower: artifacts.filter(this.list.viewer.lists.ArtifactList.subsetDefinitions['flower']),
-        plume: artifacts.filter(this.list.viewer.lists.ArtifactList.subsetDefinitions['plume']),
-        sands: artifacts.filter(this.list.viewer.lists.ArtifactList.subsetDefinitions['sands']),
-        goblet: artifacts.filter(this.list.viewer.lists.ArtifactList.subsetDefinitions['goblet']),
-        circlet: artifacts.filter(this.list.viewer.lists.ArtifactList.subsetDefinitions['circlet']),*/
         flower: this.list.viewer.lists.ArtifactList.items('flower'),
         plume: this.list.viewer.lists.ArtifactList.items('plume'),
         sands: this.list.viewer.lists.ArtifactList.items('sands'),
@@ -1975,7 +2015,7 @@ export default class Character extends Ascendable(GenshinItem)
     /** Add Build Button **/
     let addBuild = buildSection.querySelector("#addBuildBtn");
     if(addBuild && !addBuild.onclick)
-      addBuild.onclick = event => {
+      addBuild.onclick = async event => {
         let buildName = buildSection.querySelector("#addBuildFld")?.value;
         if(buildName && this.loaded)
         {
@@ -1983,7 +2023,7 @@ export default class Character extends Ascendable(GenshinItem)
           {
             this.list.viewer.buildData[this.key].push({name:buildName});
             this.update("buildData", null, "notify", {buildId:this.list.viewer.buildData[this.key].length-1});
-            Renderer.rerender(buildSection, {relatedItems:this.getRelatedItems({buildId:this.list.viewer.buildData[this.key].length-1})});
+            Renderer.rerender(buildSection, {relatedItems:await this.getRelatedItems({buildId:this.list.viewer.buildData[this.key].length-1})});
           }
           else
             console.warn(`Cannot add two builds with the same name '${buildName}'.`);
@@ -1997,15 +2037,15 @@ export default class Character extends Ascendable(GenshinItem)
     for(let buildTab of buildSelect)
     {
       if(!buildTab.onclick)
-        buildTab.onclick = event => {
-          Renderer.rerender(buildSection, {relatedItems:this.getRelatedItems({buildId:buildTab.dataset.buildId})});
+        buildTab.onclick = async event => {
+          Renderer.rerender(buildSection, {relatedItems:await this.getRelatedItems({buildId:buildTab.dataset.buildId})});
         };
     }
     
     /** Delete Build Button **/
     let deleteBuild = buildSection.querySelector("#deleteBuildBtn");
     if(deleteBuild && !deleteBuild.onclick)
-      deleteBuild.onclick = event => {
+      deleteBuild.onclick = async event => {
         if(this.list.viewer.buildData[this.key].length <= 1)
         {
           console.warn(`Character must keep at least one build.`);
@@ -2015,7 +2055,7 @@ export default class Character extends Ascendable(GenshinItem)
           this.list.viewer.buildData[this.key].splice(buildId, 1);
           this.update("buildData", null, "notify", {buildId});
           this.update("selectedBuild", 0);
-          Renderer.rerender(buildSection, {relatedItems:this.getRelatedItems()});
+          Renderer.rerender(buildSection, {relatedItems:await this.getRelatedItems()});
         }
         else
           console.warn(`Cannot delete nonexistent build '${buildId}'.`);
@@ -2051,7 +2091,7 @@ export default class Character extends Ascendable(GenshinItem)
     /** Artifact Set Preferences **/
     let artifactSets = buildSection.querySelector("#bestArtifactSets");
     if(artifactSets && !artifactSets.onchange)
-      artifactSets.onchange = event => {
+      artifactSets.onchange = async event => {
         let build = this.getBuild(buildId);
         let sets = [];
         Array.from(artifactSets.selectedOptions).forEach(optionElement => {
@@ -2065,7 +2105,7 @@ export default class Character extends Ascendable(GenshinItem)
             delete build.artifactSets[setKey];
         });
         this.update("buildData", null, "notify", {property:"artifactSets", buildId});
-        Renderer.rerender(buildSection.querySelector(".character-artifacts"), {relatedItems: this.getRelatedItems({buildId, skipSort:true})});
+        Renderer.rerender(buildSection.querySelector(".character-artifacts"), {relatedItems:await this.getRelatedItems({buildId, skipSort:true})});
         // TODO: Don't need to rerender everything, just elements marked .favorite and any artifacts of the selected sets.
       };
     
@@ -2081,14 +2121,14 @@ export default class Character extends Ascendable(GenshinItem)
         slider.oninput = event => {
           label.innerHTML = slider.value;
         };
-        slider.onchange = event => {
+        slider.onchange = async event => {
           label.innerHTML = slider.value;
           let stat = slider.attributes.getNamedItem('name')?.value;
           if(property && stat)
           {
             this.getBuild(buildId)[property][stat] = parseFloat(slider.value);
             this.update("buildData", null, "notify", {property, buildId});
-            Renderer.rerender(buildSection.querySelector(".character-artifacts"), {relatedItems:this.getRelatedItems({buildId})});
+            Renderer.rerender(buildSection.querySelector(".character-artifacts"), {relatedItems:await this.getRelatedItems({buildId})});
           }
         };
       }
@@ -2099,10 +2139,10 @@ export default class Character extends Ascendable(GenshinItem)
     useTargetsChks.forEach(useTargetsChk => {
       if(!useTargetsChk.onchange)
       {
-        useTargetsChk.onchange = event => {
+        useTargetsChk.onchange = async event => {
           this.getBuild(buildId).useTargets[event.target.value] = event.target.checked;
           this.update("buildData", null, "notify", {property:event.target.value,buildId});
-          let relatedItems = this.getRelatedItems({buildId}); // Causes the artifact lists to be re-sorted.
+          let relatedItems = await this.getRelatedItems({buildId}); // Causes the artifact lists to be re-sorted.
           let listElements = buildSection.querySelectorAll(".character-artifacts .list[data-filter]");
           for(let listElement of listElements)
             Renderer.sortItems(listElement, {items:relatedItems.bestArtifacts[listElement.dataset.filter]});
@@ -2122,10 +2162,10 @@ export default class Character extends Ascendable(GenshinItem)
         else if(targetInput.id == "characterRatioCritRate") property = "ratioCritRate";
         else if(targetInput.id == "characterRatioCritDMG") property = "ratioCritDMG";
         else continue;
-        targetInput.onchange = event => {
+        targetInput.onchange = async event => {
           this.getBuild(buildId)[property] = parseFloat(targetInput.value);
           this.update("buildData", null, "notify", {property,buildId});
-          let relatedItems = this.getRelatedItems({buildId}); // Causes the artifact lists to be re-sorted.
+          let relatedItems = await this.getRelatedItems({buildId}); // Causes the artifact lists to be re-sorted.
           let listElements = buildSection.querySelectorAll(".character-artifacts .list[data-filter]");
           for(let listElement of listElements)
             Renderer.sortItems(listElement, {items:relatedItems.bestArtifacts[listElement.dataset.filter]});
@@ -2140,9 +2180,9 @@ export default class Character extends Ascendable(GenshinItem)
       let artifactLists = document.getElementById("characterArtifactLists");
       if(artifactLists && !artifactLists.onexpand)
       {
-        artifactLists.addEventListener("show.bs.collapse", event => {
+        artifactLists.addEventListener("show.bs.collapse", async event => {
           document.getElementById("loadArtifacts")?.dispatchEvent(new Event("click"));
-          //Renderer.rerender(characterArtifacts, {relatedItems:this.getRelatedItems({buildId})});
+          //Renderer.rerender(characterArtifacts, {relatedItems:await this.getRelatedItems({buildId})});
         });
         artifactLists.onexpand = true;
       }
@@ -2203,8 +2243,8 @@ export default class Character extends Ascendable(GenshinItem)
     /** Load Artifacts Button **/
     let loadBtn = document.getElementById("loadArtifacts");
     if(loadBtn && !loadBtn.onclick)
-      loadBtn.onclick = event => {
-        Renderer.rerender(characterArtifacts, {relatedItems:this.getRelatedItems({buildId})});
+      loadBtn.onclick = async event => {
+        Renderer.rerender(characterArtifacts, {relatedItems:await this.getRelatedItems({buildId})});
       };
     
     
@@ -2259,7 +2299,7 @@ export default class Character extends Ascendable(GenshinItem)
           return false;
         }
         
-        equipBtn.onclick = event => {
+        equipBtn.onclick = async event => {
           let prevArtifact = this.preview[artifact.slotKey];
           let prevArtifactElement;
           if(prevArtifact == artifact)
@@ -2272,7 +2312,7 @@ export default class Character extends Ascendable(GenshinItem)
             this.preview[artifact.slotKey] = artifact;
           }
           this.update("preview", null, "notify");
-          let relatedItems = this.getRelatedItems({buildId});
+          let relatedItems = await this.getRelatedItems({buildId});
           // This could be handled by implementing "needsUpdate" on all templated elements, and using an "update()" on an associated item.
           //Renderer.rerender(rootElement.querySelector(".character-stats"), {relatedItems});
           let listElements = characterArtifacts.querySelectorAll(".list[data-filter]");
@@ -2310,11 +2350,11 @@ export default class Character extends Ascendable(GenshinItem)
           return false;
         }
         
-        equipBtn.onclick = event => {
+        equipBtn.onclick = async event => {
           let prevArtifact = this[artifact.slotKey+'Artifact'];
           let prevArtifactElement = prevArtifact ? characterArtifacts.querySelector(`.list-item[data-uuid="${prevArtifact.uuid}"]`) : null;
           artifact.update("location", this.base?.key ?? this.key);
-          let relatedItems = this.getRelatedItems({buildId});
+          let relatedItems = await this.getRelatedItems({buildId});
           // This could be handled by implementing "needsUpdate" on all templated elements, and using an "update()" on an associated item.
           //Renderer.rerender(rootElement.querySelector(".character-stats"), {relatedItems});
           let listElements = characterArtifacts.querySelectorAll(".list[data-filter]");

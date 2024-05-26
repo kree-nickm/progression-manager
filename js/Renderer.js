@@ -383,7 +383,7 @@ class Renderer
         for(let attr in element.dataset)
           if(attr.startsWith("related_") && !(attr.slice(8) in data.relatedParams))
             data.relatedParams[attr.slice(8)] = element.dataset[attr];
-        data.relatedItems = data.item.getRelatedItems(data.relatedParams);
+        data.relatedItems = await data.item.getRelatedItems(data.relatedParams);
       }
       
       if(!data.items && typeof(data.item.items) === "function")

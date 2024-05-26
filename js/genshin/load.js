@@ -247,7 +247,7 @@ async function addEventListeners()
   });*/
 
   // Set up account editor.
-  document.getElementById("editModal").addEventListener("show.bs.modal", showEvent => {
+  document.getElementById("editModal")?.addEventListener("show.bs.modal", showEvent => {
     let selectElem = document.getElementById("editAccount");
     selectElem.replaceChildren();
     selectElem.add((()=>{let e=document.createElement("option");e.value="";e.text="Create New...";return e;})());
@@ -265,7 +265,7 @@ async function addEventListeners()
     selectElem2.dispatchEvent(new Event("change"));
   });
 
-  document.getElementById("editAccount").addEventListener("change", changeEvent => {
+  document.getElementById("editAccount")?.addEventListener("change", changeEvent => {
     if(changeEvent.target.value)
       document.getElementById("editAccountNew").classList.add("d-none");
     else
@@ -276,7 +276,7 @@ async function addEventListeners()
       changeEvent.target.classList.add("d-none");
   });
 
-  document.getElementById("editDoneBtn").addEventListener("click", clickEvent => {
+  document.getElementById("editDoneBtn")?.addEventListener("click", clickEvent => {
     let selectedAccount = document.getElementById("editAccount").value;
     if(!selectedAccount)
       selectedAccount = document.getElementById("editAccountNew").value;
@@ -314,15 +314,15 @@ async function addEventListeners()
     link.remove()
   };
 
-  document.getElementById("saveGOODBtn").addEventListener("click", event => {
+  document.getElementById("saveGOODBtn")?.addEventListener("click", event => {
     saveTemplateAsFile("GenshinData.GOOD.json", window.viewer.toGOOD());
   });
 
-  document.getElementById("saveAllBtn").addEventListener("click", event => {
+  document.getElementById("saveAllBtn")?.addEventListener("click", event => {
     saveTemplateAsFile("GenshinData.json", window.viewer);
   });
 
-  document.getElementById("savePastebinBtn").addEventListener("click", async event => {
+  document.getElementById("savePastebinBtn")?.addEventListener("click", async event => {
     event.target.disabled = true;
     setTimeout(() => event.target.disabled = false, 60000);
     let msg = document.getElementById("saveMessage");
@@ -340,18 +340,18 @@ async function addEventListeners()
   });
 
   // Setup "new user" popup.
-  document.getElementById("newLoadBtn").addEventListener("click", event => {
+  document.getElementById("newLoadBtn")?.addEventListener("click", event => {
     bootstrap.Modal.getOrCreateInstance(document.getElementById("newModal")).hide();
     bootstrap.Modal.getOrCreateInstance(document.getElementById("loadModal")).show();
   });
 
-  document.getElementById("newFreshBtn").addEventListener("click", event => {
+  document.getElementById("newFreshBtn")?.addEventListener("click", event => {
     bootstrap.Modal.getOrCreateInstance(document.getElementById("newModal")).hide();
     bootstrap.Modal.getOrCreateInstance(document.getElementById("editModal")).show();
   });
 
   // Setup prefs popup
-  document.getElementById("prefsDoneBtn").addEventListener("click", clickEvent => {
+  document.getElementById("prefsDoneBtn")?.addEventListener("click", clickEvent => {
     for(let prefElem of document.getElementsByClassName("preference-select"))
     {
       if(prefElem.type == "radio")
@@ -378,7 +378,7 @@ async function addEventListeners()
     window.viewer.queueStore();
   });
 
-  document.getElementById("prefsModal").addEventListener("show.bs.modal", showEvent => {
+  document.getElementById("prefsModal")?.addEventListener("show.bs.modal", showEvent => {
     for(let pref in window.viewer.settings.preferences)
     {
       for(let prefElem of showEvent.target.querySelectorAll(`.preference-select[name="${pref}"]`))

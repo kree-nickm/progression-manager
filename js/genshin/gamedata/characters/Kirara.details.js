@@ -1,0 +1,443 @@
+export default {
+    "talents": {
+        "Normal Attack": {
+            "name": "Normal Attack: Boxcutter",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5e\/Sword_Dendro.png",
+            "text": "<color=#FFD780FF>Normal Attack<\/color>\\nPerforms up to 4 rapid strikes.\\n\\n<color=#FFD780FF>Charged Attack<\/color>\\nConsumes a certain amount of Stamina to unleash 3 rapid claw strikes.\\n\\n<color=#FFD780FF>Plunging Attack<\/color>\\nPlunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+            "scaling": {
+                "1-Hit DMG": {
+                    "1": "47.90199995041%",
+                    "2": "51.8010020256%",
+                    "3": "55.69999814034%",
+                    "4": "61.26999855042%",
+                    "5": "65.16900062561%",
+                    "6": "69.62500214577%",
+                    "7": "75.75200200081%",
+                    "8": "81.87900185585%",
+                    "9": "88.00600171089%",
+                    "10": "94.69000101089%",
+                    "11": "101.37399435043%",
+                    "12": "108.0579996109%",
+                    "13": "114.74200487137%",
+                    "14": "121.42599821091%",
+                    "15": "128.11000347137%"
+                },
+                "2-Hit DMG": {
+                    "1": "46.35399878025%",
+                    "2": "50.12699961662%",
+                    "3": "53.89999747276%",
+                    "4": "59.28999781609%",
+                    "5": "63.06300163269%",
+                    "6": "67.37499833107%",
+                    "7": "73.30399751663%",
+                    "8": "79.23300266266%",
+                    "9": "85.16200184822%",
+                    "10": "91.62999987602%",
+                    "11": "98.09799790382%",
+                    "12": "104.56600189209%",
+                    "13": "111.03399991989%",
+                    "14": "117.50199794769%",
+                    "15": "123.96999597549%"
+                },
+                "3-Hit DMG": {
+                    "1": "25.42159855366%+38.1323993206%",
+                    "2": "27.49080061913%+41.23620092869%",
+                    "3": "29.55999970436%+44.33999955654%",
+                    "4": "32.5159996748%+48.77400100231%",
+                    "5": "34.58519876003%+51.8778026104%",
+                    "6": "36.95000112057%+55.42500019073%",
+                    "7": "40.20160138607%+60.30240058899%",
+                    "8": "43.45319867134%+65.17980098724%",
+                    "9": "46.70479893684%+70.0572013855%",
+                    "10": "50.25200247765%+75.37800073624%",
+                    "11": "53.79920005798%+80.69880008698%",
+                    "12": "57.34639763832%+86.01959943771%",
+                    "13": "60.89360117912%+91.34039878845%",
+                    "14": "64.44079875946%+96.66119813919%",
+                    "15": "67.98800230026%+101.98199748993%"
+                },
+                "4-Hit DMG": {
+                    "1": "73.27200174332%",
+                    "2": "79.23600077629%",
+                    "3": "85.19999980927%",
+                    "4": "93.72000098228%",
+                    "5": "99.68400001526%",
+                    "6": "106.50000572205%",
+                    "7": "115.87200164795%",
+                    "8": "125.24399757385%",
+                    "9": "134.61600542068%",
+                    "10": "144.84000205994%",
+                    "11": "155.06399869919%",
+                    "12": "165.28799533844%",
+                    "13": "175.51200389862%",
+                    "14": "185.73600053787%",
+                    "15": "195.95999717712%"
+                },
+                "Charged Attack DMG": {
+                    "1": "22.37720042467%+44.75440084934%+44.75440084934%",
+                    "2": "24.19860064983%+48.39720129967%+48.39720129967%",
+                    "3": "26.01999938488%+52.03999876976%+52.03999876976%",
+                    "4": "28.62200140953%+57.24400281906%+57.24400281906%",
+                    "5": "30.44340014458%+60.88680028915%+60.88680028915%",
+                    "6": "32.52499997616%+65.04999995232%+65.04999995232%",
+                    "7": "35.38720011711%+70.77440023422%+70.77440023422%",
+                    "8": "38.24940025806%+76.49880051613%+76.49880051613%",
+                    "9": "41.11160039902%+82.22320079803%+82.22320079803%",
+                    "10": "44.23399865627%+88.46799731255%+88.46799731255%",
+                    "11": "47.35639989376%+94.71279978752%+94.71279978752%",
+                    "12": "50.47879815102%+100.95759630203%+100.95759630203%",
+                    "13": "53.6011993885%+107.20239877701%+107.20239877701%",
+                    "14": "56.72360062599%+113.44720125198%+113.44720125198%",
+                    "15": "59.84600186348%+119.69200372696%+119.69200372696%"
+                },
+                "Charged Attack Stamina Cost": {
+                    "1": "20",
+                    "2": "20",
+                    "3": "20",
+                    "4": "20",
+                    "5": "20",
+                    "6": "20",
+                    "7": "20",
+                    "8": "20",
+                    "9": "20",
+                    "10": "20",
+                    "11": "20",
+                    "12": "20",
+                    "13": "20",
+                    "14": "20",
+                    "15": "20"
+                },
+                "Plunge DMG": {
+                    "1": "63.93240094185%",
+                    "2": "69.13620233536%",
+                    "3": "74.3399977684%",
+                    "4": "81.77400231361%",
+                    "5": "86.97779774666%",
+                    "6": "92.92500019073%",
+                    "7": "101.10239982605%",
+                    "8": "109.27979946136%",
+                    "9": "117.45719909668%",
+                    "10": "126.37799978256%",
+                    "11": "135.29880046844%",
+                    "12": "144.21960115433%",
+                    "13": "153.14040184021%",
+                    "14": "162.06120252609%",
+                    "15": "170.98200321198%"
+                },
+                "Low\/High Plunge DMG": {
+                    "1": "127.83770561218%\/159.67619419098%",
+                    "2": "138.24310302734%\/172.67309427261%",
+                    "3": "148.6485004425%\/185.66999435425%",
+                    "4": "163.51339817047%\/204.23700809479%",
+                    "5": "173.9187002182%\/217.23389625549%",
+                    "6": "185.81060171127%\/232.08749294281%",
+                    "7": "202.16200351715%\/252.5111913681%",
+                    "8": "218.51329803467%\/272.9348897934%",
+                    "9": "234.86459255219%\/293.35858821869%",
+                    "10": "252.70249843597%\/315.63899517059%",
+                    "11": "270.54030895233%\/337.9194021225%",
+                    "12": "288.37809562683%\/360.1998090744%",
+                    "13": "306.21590614319%\/382.48019218445%",
+                    "14": "324.05369281769%\/404.76059913635%",
+                    "15": "341.89150333405%\/427.04100608826%"
+                }
+            }
+        },
+        "Elemental Skill": {
+            "name": "Meow-teor Kick",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/79\/Talent_Meow-teor_Kick.png",
+            "text": "#<color=#FFD780FF>{LAYOUT_MOBILE#Tap}{LAYOUT_PC#Press}{LAYOUT_PS#Press}<\/color>\\nLeaps into the air with all the agility of a cat passing through the bushes, and thwacks her foes with a flying kick that deals <color=#99FF88FF>AoE Dendro DMG<\/color> while creating a Shield of Safe Transport. This will also briefly <color=#99FF88FF>apply Dendro<\/color> to Kirara. The shield will absorb <color=#99FF88FF>Dendro DMG<\/color> with 250% effectiveness. The shield's DMG absorption will be based on Kirara's Max HP and will not exceed a certain percentage of that Max HP. The remaining DMG absorption on a Shield of Safe Transport will stack on a new one when it is created, and its duration will reset.\\n\\n<color=#FFD780FF>Hold<\/color>\\nOut of her desire to \"deliver within half a day,\" Kirara deploys a Shield of Safe Transport identical to the one that can be created by {LAYOUT_MOBILE#tapping}{LAYOUT_PC#pressing}{LAYOUT_PS#pressing} the skill. She will also curl up into a special express delivery box, entering the Urgent Neko Parcel state in order to move and fight more swiftly.\\n\\n<color=#FFD780FF>Urgent Neko Parcel<\/color>\\n\u00b7 Deals <color=#99FF88FF>Dendro DMG<\/color> to opponents she crashes into. This effect can be triggered once on each opponent every 0.5s.\\n\u00b7 When in this state, Kirara's movement speed, climbing speed, and jumping power are all increased, and her Stamina Consumption from climbing is increased.\\n\u00b7 When the duration ends or the skill is used again, a Flipclaw Strike more powerful than the attack in the {LAYOUT_MOBILE#Tap}{LAYOUT_PC#Press}{LAYOUT_PS#Press} Mode will be unleashed, dealing <color=#99FF88FF>AoE Dendro DMG<\/color>.\\n\u00b7 The Urgent Neko Parcel state lasts a maximum of 10s. When the state ends, the skill will enter CD. The longer Kirara spends in this state, the longer the CD will be.\\n\u00b7 Sprinting or actively canceling climbing will end this state early.\\n\\n<i>\"So you wanna know the secret to speedy deliveries? Well, it's all in the legs!\"<\/i>",
+            "scaling": {
+                "Tail-Flicking Flying Kick DMG": {
+                    "1": "103.9999961853%",
+                    "2": "111.80000305176%",
+                    "3": "119.59999799728%",
+                    "4": "129.99999523163%",
+                    "5": "137.80000209808%",
+                    "6": "145.59999704361%",
+                    "7": "155.99999427795%",
+                    "8": "166.40000343323%",
+                    "9": "176.80000066757%",
+                    "10": "187.19999790192%",
+                    "11": "197.59999513626%",
+                    "12": "207.99999237061%",
+                    "13": "221.0000038147%",
+                    "14": "233.99999141693%",
+                    "15": "247.00000286102%"
+                },
+                "Shield DMG Absorption": {
+                    "1": "10.00000014901% Max HP+962.23132324219",
+                    "2": "10.75000017881% Max HP+1058.4678955078",
+                    "3": "11.50000020862% Max HP+1162.7241210938",
+                    "4": "12.5% Max HP+1275",
+                    "5": "13.24999928474% Max HP+1395.2956542969",
+                    "6": "14.0000000596% Max HP+1523.6109619141",
+                    "7": "15.00000059605% Max HP+1659.9460449219",
+                    "8": "15.99999964237% Max HP+1804.30078125",
+                    "9": "17.00000017881% Max HP+1956.6752929688",
+                    "10": "18.00000071526% Max HP+2117.0693359375",
+                    "11": "18.99999976158% Max HP+2285.4833984375",
+                    "12": "20.00000029802% Max HP+2461.9169921875",
+                    "13": "21.25000059605% Max HP+2646.3703613281",
+                    "14": "22.49999940395% Max HP+2838.8432617188",
+                    "15": "23.74999970198% Max HP+3039.3359375"
+                },
+                "Max Shield DMG Absorption": {
+                    "1": "15.99999964237% Max HP+1541.0795898438",
+                    "2": "17.20000058413% Max HP+1695.2088623047",
+                    "3": "18.40000003576% Max HP+1862.1823730469",
+                    "4": "20.00000029802% Max HP+2042",
+                    "5": "21.19999974966% Max HP+2234.6616210938",
+                    "6": "22.40000069141% Max HP+2440.1674804688",
+                    "7": "23.99999946356% Max HP+2658.517578125",
+                    "8": "25.60000121593% Max HP+2889.7116699219",
+                    "9": "27.2000014782% Max HP+3133.7497558594",
+                    "10": "28.79999876022% Max HP+3390.6320800781",
+                    "11": "30.39999902248% Max HP+3660.3583984375",
+                    "12": "31.99999928474% Max HP+3942.9289550781",
+                    "13": "34.00000035763% Max HP+4238.34375",
+                    "14": "36.00000143051% Max HP+4546.6025390625",
+                    "15": "37.99999952316% Max HP+4867.705078125"
+                },
+                "Shield Duration": {
+                    "1": "12s",
+                    "2": "12s",
+                    "3": "12s",
+                    "4": "12s",
+                    "5": "12s",
+                    "6": "12s",
+                    "7": "12s",
+                    "8": "12s",
+                    "9": "12s",
+                    "10": "12s",
+                    "11": "12s",
+                    "12": "12s",
+                    "13": "12s",
+                    "14": "12s",
+                    "15": "12s"
+                },
+                "Urgent Neko Parcel Hit DMG": {
+                    "1": "33.599999547%",
+                    "2": "36.12000048161%",
+                    "3": "38.64000141621%",
+                    "4": "41.9999986887%",
+                    "5": "44.5199996233%",
+                    "6": "47.0400005579%",
+                    "7": "50.40000081062%",
+                    "8": "53.75999808311%",
+                    "9": "57.12000131607%",
+                    "10": "60.47999858856%",
+                    "11": "63.84000182152%",
+                    "12": "67.19999909401%",
+                    "13": "71.39999866486%",
+                    "14": "75.5999982357%",
+                    "15": "79.79999780655%"
+                },
+                "Max Urgent Neko Parcel Duration": {
+                    "1": "10s",
+                    "2": "10s",
+                    "3": "10s",
+                    "4": "10s",
+                    "5": "10s",
+                    "6": "10s",
+                    "7": "10s",
+                    "8": "10s",
+                    "9": "10s",
+                    "10": "10s",
+                    "11": "10s",
+                    "12": "10s",
+                    "13": "10s",
+                    "14": "10s",
+                    "15": "10s"
+                },
+                "Flipclaw Strike DMG": {
+                    "1": "144.00000572205%",
+                    "2": "154.79999780655%",
+                    "3": "165.60000181198%",
+                    "4": "179.99999523163%",
+                    "5": "190.79999923706%",
+                    "6": "201.60000324249%",
+                    "7": "216.00000858307%",
+                    "8": "230.39999008179%",
+                    "9": "244.79999542236%",
+                    "10": "259.20000076294%",
+                    "11": "273.60000610352%",
+                    "12": "288.00001144409%",
+                    "13": "305.99999427795%",
+                    "14": "324.00000095367%",
+                    "15": "342.00000762939%"
+                },
+                "CD": {
+                    "1": "8s \u2013 12s",
+                    "2": "8s \u2013 12s",
+                    "3": "8s \u2013 12s",
+                    "4": "8s \u2013 12s",
+                    "5": "8s \u2013 12s",
+                    "6": "8s \u2013 12s",
+                    "7": "8s \u2013 12s",
+                    "8": "8s \u2013 12s",
+                    "9": "8s \u2013 12s",
+                    "10": "8s \u2013 12s",
+                    "11": "8s \u2013 12s",
+                    "12": "8s \u2013 12s",
+                    "13": "8s \u2013 12s",
+                    "14": "8s \u2013 12s",
+                    "15": "8s \u2013 12s"
+                }
+            }
+        },
+        "Elemental Burst": {
+            "name": "Secret Art: Surprise Dispatch",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a1\/Talent_Secret_Art_Surprise_Dispatch.png",
+            "text": "Smash opponents with a Special Delivery Package used for punishing parcel thieves, dealing <color=#99FF88FF>AoE Dendro DMG<\/color>. After the Special Delivery Package explodes, it will split up into many <color=#FFD780FF>Cat Grass Cardamoms<\/color> that will explode either upon contact with opponents or after a period of time, dealing <color=#99FF88FF>AoE Dendro DMG<\/color>.\\n\\n<i>\"Hehe, that's right, this stuff was made to deal with those parcel thieves! Remember to leave a 5-star rating once you've received yours!\"<\/i>",
+            "scaling": {
+                "Skill DMG": {
+                    "1": "570.24002075195%",
+                    "2": "613.00802230835%",
+                    "3": "655.77597618103%",
+                    "4": "712.79997825623%",
+                    "5": "755.56797981262%",
+                    "6": "798.33598136902%",
+                    "7": "855.36003112793%",
+                    "8": "912.38403320313%",
+                    "9": "969.40803527832%",
+                    "10": "1026.4320373535%",
+                    "11": "1083.4560394287%",
+                    "12": "1140.4800415039%",
+                    "13": "1211.7600440979%",
+                    "14": "1283.0400466919%",
+                    "15": "1354.3199539185%"
+                },
+                "Cat Grass Cardamom Explosion DMG": {
+                    "1": "35.640001297%",
+                    "2": "38.31300139427%",
+                    "3": "40.98599851131%",
+                    "4": "44.54999864101%",
+                    "5": "47.22299873829%",
+                    "6": "49.89599883556%",
+                    "7": "53.4600019455%",
+                    "8": "57.0240020752%",
+                    "9": "60.5880022049%",
+                    "10": "64.15200233459%",
+                    "11": "67.71600246429%",
+                    "12": "71.28000259399%",
+                    "13": "75.73500275612%",
+                    "14": "80.19000291824%",
+                    "15": "84.6449971199%"
+                },
+                "Cat Grass Cardamom Duration": {
+                    "1": "12s",
+                    "2": "12s",
+                    "3": "12s",
+                    "4": "12s",
+                    "5": "12s",
+                    "6": "12s",
+                    "7": "12s",
+                    "8": "12s",
+                    "9": "12s",
+                    "10": "12s",
+                    "11": "12s",
+                    "12": "12s",
+                    "13": "12s",
+                    "14": "12s",
+                    "15": "12s"
+                },
+                "CD": {
+                    "1": "15s",
+                    "2": "15s",
+                    "3": "15s",
+                    "4": "15s",
+                    "5": "15s",
+                    "6": "15s",
+                    "7": "15s",
+                    "8": "15s",
+                    "9": "15s",
+                    "10": "15s",
+                    "11": "15s",
+                    "12": "15s",
+                    "13": "15s",
+                    "14": "15s",
+                    "15": "15s"
+                },
+                "Energy Cost": {
+                    "1": "60",
+                    "2": "60",
+                    "3": "60",
+                    "4": "60",
+                    "5": "60",
+                    "6": "60",
+                    "7": "60",
+                    "8": "60",
+                    "9": "60",
+                    "10": "60",
+                    "11": "60",
+                    "12": "60",
+                    "13": "60",
+                    "14": "60",
+                    "15": "60"
+                }
+            }
+        },
+        "1st Ascension Passive": {
+            "name": "Bewitching, Betwitching Tails",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/56\/Talent_Bewitching%2C_Betwitching_Tails.png",
+            "text": "When Kirara is in the Urgent Neko Parcel state of Meow-teor Kick, each impact against an opponent will grant her a stack of Reinforced Packaging. This effect can be triggered once for each opponent hit every 0.5s. Max 3 stacks. When the Urgent Neko Parcel state ends, each stack of Reinforced Packaging will create 1 Shield of Safe Transport for Kirara. The shields that are created this way will have 20% of the DMG absorption that the Shield of Safe Transport produced by Meow-teor Kick would have. If Kirara is already protected by a Shield of Safe Transport created by Meow-teor Kick, its DMG absorption will stack with these shields and its duration will reset."
+        },
+        "4th Ascension Passive": {
+            "name": "Pupillary Variance",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a3\/Talent_Pupillary_Variance.png",
+            "text": "Every 1,000 Max HP Kirara possesses will increase the DMG dealt by Meow-teor Kick by 0.4%, and the DMG dealt by Secret Art: Surprise Dispatch by 0.3%."
+        },
+        "Utility Passive": {
+            "name": "Cat's Creeping Carriage",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/51\/Talent_Cat%27s_Creeping_Carriage.png",
+            "text": "When Kirara is in the party, animals who produce Fowl, Raw Meat, or Chilled Meat will not be startled when party members approach them."
+        }
+    },
+    "constellations": {
+        "1": {
+            "name": "Material Circulation",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/26\/Constellation_Material_Circulation.png",
+            "text": "Every 8,000 Max HP Kirara possesses will cause her to create 1 extra <color=#FFD780FF>Cat Grass Cardamom<\/color> when she uses <color=#FFD780FF>Secret Art: Surprise Dispatch<\/color>. A maximum of 4 extra can be created this way."
+        },
+        "2": {
+            "name": "Perfectly Packaged",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/83\/Constellation_Perfectly_Packaged.png",
+            "text": "When Kirara is in the Urgent Neko Parcel state of <color=#FFD780FF>Meow-teor Kick<\/color>, she will grant other party members she crashes into Critical Transport Shields.\\nThe DMG absorption of Critical Transport Shield is 40% of the maximum absorption <color=#FFD780FF>Meow-teor Kick<\/color>'s normal Shields of Safe Transport are capable of, and will absorb <color=#99FF88FF>Dendro DMG<\/color> with 250% effectiveness.\\nCritical Transport Shields last 12s and can be triggered once on each character every 10s."
+        },
+        "3": {
+            "name": "Universal Recognition",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ea\/Constellation_Universal_Recognition.png",
+            "code": [
+                "stat",
+                [
+                    "skillLevel",
+                    3
+                ]
+            ],
+            "text": "Increases the Level of <color=#FFD780FF>Meow-teor Kick<\/color> by 3.\\nMaximum upgrade level is 15."
+        },
+        "4": {
+            "name": "Steed of Skanda",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/72\/Constellation_Steed_of_Skanda.png",
+            "text": "After active character(s) protected by <color=#FFD780FF>Shields of Safe Transport<\/color> or <color=#FFD780FF>Critical Transport Shields<\/color> hit opponents with Normal, Charged, or Plunging Attacks, Kirara will perform a coordinated attack with them using <color=#FFD780FF>Small Cat Grass Cardamoms<\/color>, dealing 200% of her ATK as <color=#99FF88FF>Dendro DMG<\/color>. DMG dealt this way is considered Elemental Burst DMG. This effect can be triggered once every 3.8s. This CD is shared between all party members."
+        },
+        "5": {
+            "name": "A Thousand Miles in a Day",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e4\/Constellation_A_Thousand_Miles_in_a_Day.png",
+            "code": [
+                "stat",
+                [
+                    "burstLevel",
+                    3
+                ]
+            ],
+            "text": "Increases the Level of <color=#FFD780FF>Secret Art: Surprise Dispatch<\/color> by 3.\\nMaximum upgrade level is 15."
+        },
+        "6": {
+            "name": "Countless Sights to See",
+            "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/95\/Constellation_Countless_Sights_to_See.png",
+            "text": "All nearby party members will gain 12% All Elemental DMG Bonus within 15s after Kirara uses her Elemental Skill or Burst."
+        }
+    }
+};
