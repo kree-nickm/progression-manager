@@ -48,6 +48,7 @@ if(typeof(Storage) !== "undefined")
         css.type = "text/css";
         css.rel = "stylesheet";
         css.href = `css/${selectBtn.dataset.game}.css`;
+        document.title = `${selectBtn.dataset.game.at(0).toUpperCase()+selectBtn.dataset.game.slice(1)} Manager`;
         
         await addEventListeners();
         await init();
