@@ -1,6 +1,6 @@
 A site where you can record all of your characters/items/etc. for a few different games ([Genshin Impact](#genshin-impact), [Wuthering Waves](#wuthering-waves)), and keep track of everything you need to progress, so you have access to all such information at a glance.
 
-https://kree-nickm.github.io/genshin-manager
+https://kree-nickm.github.io/progression-manager
 
 I made this mostly for myself, and my main concern is that it works the way I want it to work. I hope other people find it useful as well, but if people can't figure out how to use it or want it to work differently, I am more likely to make a guide than to make a functionality change that I wouldn't personally use.
 
