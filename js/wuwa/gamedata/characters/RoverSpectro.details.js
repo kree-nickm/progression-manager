@@ -1,0 +1,672 @@
+export default {
+    "forte": {
+        "Basic Attack": {
+            "motionValues": [
+                {
+                    "scaling": [
+                        "29.75%",
+                        "32.19%",
+                        "34.63%",
+                        "38.05%",
+                        "40.49%",
+                        "43.29%",
+                        "47.20%",
+                        "51.10%",
+                        "55.00%",
+                        "59.15%",
+                        "64.03%",
+                        "68.91%",
+                        "73.79%",
+                        "78.67%",
+                        "83.55%",
+                        "88.42%",
+                        "93.30%",
+                        "98.18%",
+                        "103.06%",
+                        "107.94%"
+                    ],
+                    "name": "Part 1 Damage"
+                },
+                {
+                    "scaling": [
+                        "38.25%",
+                        "41.39%",
+                        "44.53%",
+                        "48.92%",
+                        "52.06%",
+                        "55.66%",
+                        "60.68%",
+                        "65.70%",
+                        "70.72%",
+                        "76.05%",
+                        "82.32%",
+                        "88.60%",
+                        "94.87%",
+                        "101.14%",
+                        "107.41%",
+                        "113.69%",
+                        "119.96%",
+                        "126.23%",
+                        "132.51%",
+                        "138.78%"
+                    ],
+                    "name": "Part 2 Damage"
+                },
+                {
+                    "scaling": [
+                        "7.65%*5",
+                        "8.28%*5",
+                        "8.91%*5",
+                        "9.79%*5",
+                        "10.42%*5",
+                        "11.14%*5",
+                        "12.14%*5",
+                        "13.14%*5",
+                        "14.15%*5",
+                        "15.21%*5",
+                        "16.47%*5",
+                        "17.72%*5",
+                        "18.98%*5",
+                        "20.23%*5",
+                        "21.49%*5",
+                        "22.74%*5",
+                        "24.00%*5",
+                        "25.25%*5",
+                        "26.51%*5",
+                        "27.76%*5"
+                    ],
+                    "name": "Part 3 Damage"
+                },
+                {
+                    "scaling": [
+                        "65.45%",
+                        "70.82%",
+                        "76.19%",
+                        "83.70%",
+                        "89.07%",
+                        "95.24%",
+                        "103.83%",
+                        "112.42%",
+                        "121.00%",
+                        "130.13%",
+                        "140.86%",
+                        "151.59%",
+                        "162.33%",
+                        "173.06%",
+                        "183.80%",
+                        "194.53%",
+                        "205.26%",
+                        "216.00%",
+                        "226.73%",
+                        "237.46%"
+                    ],
+                    "name": "Part 4 Damage"
+                },
+                {
+                    "scaling": [
+                        "98.25%",
+                        "106.31%",
+                        "114.37%",
+                        "125.65%",
+                        "133.70%",
+                        "142.97%",
+                        "155.86%",
+                        "168.75%",
+                        "181.64%",
+                        "195.34%",
+                        "211.45%",
+                        "227.56%",
+                        "243.67%",
+                        "259.79%",
+                        "275.90%",
+                        "292.01%",
+                        "308.13%",
+                        "324.24%",
+                        "340.35%",
+                        "356.47%"
+                    ],
+                    "name": "Dodge Counter Damage"
+                },
+                {
+                    "scaling": [
+                        "9.69%*5",
+                        "10.49%*5",
+                        "11.28%*5",
+                        "12.40%*5",
+                        "13.19%*5",
+                        "14.10%*5",
+                        "15.38%*5",
+                        "16.65%*5",
+                        "17.92%*5",
+                        "19.27%*5",
+                        "20.86%*5",
+                        "22.45%*5",
+                        "24.04%*5",
+                        "25.63%*5",
+                        "27.22%*5",
+                        "28.80%*5",
+                        "30.39%*5",
+                        "31.98%*5",
+                        "33.57%*5",
+                        "35.16%*5"
+                    ],
+                    "name": "Heavy Attack Damage"
+                },
+                {
+                    "scaling": [
+                        "38.25%",
+                        "41.39%",
+                        "44.53%",
+                        "48.92%",
+                        "52.06%",
+                        "55.66%",
+                        "60.68%",
+                        "65.70%",
+                        "70.72%",
+                        "76.05%",
+                        "82.32%",
+                        "88.60%",
+                        "94.87%",
+                        "101.14%",
+                        "107.41%",
+                        "113.69%",
+                        "119.96%",
+                        "126.23%",
+                        "132.51%",
+                        "138.78%"
+                    ],
+                    "name": "HA: Resonance Damage"
+                },
+                {
+                    "scaling": [
+                        "63.75%",
+                        "68.98%",
+                        "74.21%",
+                        "81.53%",
+                        "86.76%",
+                        "92.77%",
+                        "101.13%",
+                        "109.50%",
+                        "117.86%",
+                        "126.75%",
+                        "137.20%",
+                        "147.66%",
+                        "158.11%",
+                        "168.57%",
+                        "179.02%",
+                        "189.48%",
+                        "199.93%",
+                        "210.39%",
+                        "220.84%",
+                        "231.30%"
+                    ],
+                    "name": "HA: Aftertune Damage"
+                },
+                {
+                    "scaling": [
+                        "52.70%",
+                        "57.03%",
+                        "61.35%",
+                        "67.40%",
+                        "71.72%",
+                        "76.69%",
+                        "83.60%",
+                        "90.52%",
+                        "97.43%",
+                        "104.78%",
+                        "113.42%",
+                        "122.06%",
+                        "130.71%",
+                        "139.35%",
+                        "147.99%",
+                        "156.63%",
+                        "165.28%",
+                        "173.92%",
+                        "182.56%",
+                        "191.21%"
+                    ],
+                    "name": "Mid-Air Attack Damage"
+                },
+                {
+                    "scaling": [
+                        "25",
+                        "25",
+                        "25",
+                        "25",
+                        "25",
+                        "25",
+                        "25",
+                        "25",
+                        "25",
+                        "25",
+                        "25",
+                        "25",
+                        "25",
+                        "25",
+                        "25",
+                        "25",
+                        "25",
+                        "25"
+                    ],
+                    "name": "Heavy Attack Stamina Consumption"
+                },
+                {
+                    "scaling": [
+                        "30",
+                        "30",
+                        "30",
+                        "30",
+                        "30",
+                        "30",
+                        "30",
+                        "30",
+                        "30",
+                        "30",
+                        "30",
+                        "30",
+                        "30",
+                        "30",
+                        "30",
+                        "30",
+                        "30",
+                        "30"
+                    ],
+                    "name": "Mid-Air Attack Stamina Consumption"
+                }
+            ],
+            "name": "Vibration Manifestation",
+            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnRover performs up to 4 consecutive attacks, dealing <color=Light>Spectro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnRover consumes Stamina, dealing <color=Light>Spectro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack: Resonance<\/color><\/size>rnAfter <color=Highlight>Basic Attack 3<\/color> or <color=Highlight>Heavy Attack<\/color>, press the <color=Highlight>Basic Attack<\/color> button at the right time to perform Heavy Attack <color=Highlight>Resonance<\/color>, dealing <color=Light>Spectro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack: Aftertune<\/color><\/size>rnAfter Heavy Attack <color=Highlight>Resonance<\/color> or <color=Highlight>Dodge Counter<\/color> hits a target, press the <color=Highlight>Basic Attack<\/color> button to perform Heavy Attack <color=Highlight>Aftertune<\/color>, dealing <color=Light>Spectro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnRover consumes Stamina to perform a Mid-Air Plunging Attack, dealing <color=Light>Spectro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Light>Spectro DMG<\/color>."
+        },
+        "Resonance Skill": {
+            "motionValues": [
+                {
+                    "scaling": [
+                        "118.80%",
+                        "128.55%",
+                        "138.29%",
+                        "151.93%",
+                        "161.67%",
+                        "172.87%",
+                        "188.46%",
+                        "204.04%",
+                        "219.63%",
+                        "236.19%",
+                        "255.67%",
+                        "275.16%",
+                        "294.64%",
+                        "314.12%",
+                        "333.61%",
+                        "353.09%",
+                        "372.57%",
+                        "392.06%",
+                        "411.54%",
+                        "431.02%"
+                    ],
+                    "name": "Skill Damage"
+                },
+                {
+                    "scaling": [
+                        "6",
+                        "6",
+                        "6",
+                        "6",
+                        "6",
+                        "6",
+                        "6",
+                        "6",
+                        "6",
+                        "6",
+                        "6",
+                        "6",
+                        "6",
+                        "6",
+                        "6",
+                        "6",
+                        "6",
+                        "6"
+                    ],
+                    "name": "Cooldown"
+                },
+                {
+                    "scaling": [
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10"
+                    ],
+                    "name": "Con. Energy Regen"
+                }
+            ],
+            "name": "Resonating Slashes",
+            "desc": "Rover launches an attack forward, dealing <color=Light>Spectro DMG<\/color>."
+        },
+        "Resonance Liberation": {
+            "motionValues": [
+                {
+                    "scaling": [
+                        "100.00%+340.00%",
+                        "108.20%+367.88%",
+                        "116.40%+395.76%",
+                        "127.88%+434.80%",
+                        "136.08%+462.68%",
+                        "145.51%+494.74%",
+                        "158.63%+539.35%",
+                        "171.75%+583.95%",
+                        "184.87%+628.56%",
+                        "198.81%+675.96%",
+                        "215.21%+731.72%",
+                        "231.61%+787.48%",
+                        "248.01%+843.24%",
+                        "264.41%+899.00%",
+                        "280.81%+954.76%",
+                        "297.21%+1010.52%",
+                        "313.61%+1066.28%",
+                        "330.01%+1122.04%",
+                        "346.41%+1177.80%",
+                        "362.81%+1233.56%"
+                    ],
+                    "name": "Skill Damage"
+                },
+                {
+                    "scaling": [
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20"
+                    ],
+                    "name": "Cooldown"
+                },
+                {
+                    "scaling": [
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125"
+                    ],
+                    "name": "Res. Energy Cost"
+                },
+                {
+                    "scaling": [
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20"
+                    ],
+                    "name": "Con. Energy Regen"
+                }
+            ],
+            "name": "Echoing Orchestra",
+            "desc": "Rover converges Spectro energy to assail the target area, detonating it after a short interval and dealing <color=Light>Spectro DMG<\/color>."
+        },
+        "Inherent Skill": {
+            "name": "Solaris Voyager",
+            "desc": "An error occurred. Please contact our Customer Service for assistance"
+        },
+        "Intro Skill": {
+            "motionValues": [
+                {
+                    "scaling": [
+                        "85.00%",
+                        "91.97%",
+                        "98.94%",
+                        "108.70%",
+                        "115.67%",
+                        "123.69%",
+                        "134.84%",
+                        "145.99%",
+                        "157.14%",
+                        "168.99%",
+                        "182.93%",
+                        "196.87%",
+                        "210.81%",
+                        "224.75%",
+                        "238.69%",
+                        "252.63%",
+                        "266.57%",
+                        "280.51%",
+                        "294.45%",
+                        "308.39%"
+                    ],
+                    "name": "Skill Damage"
+                },
+                {
+                    "scaling": [
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10",
+                        "10"
+                    ],
+                    "name": "Con. Energy Regen"
+                }
+            ],
+            "name": "Waveshock",
+            "desc": "Rover attacks the target, dealing <color=Light>Spectro DMG<\/color>."
+        },
+        "Forte Circuit": {
+            "motionValues": [
+                {
+                    "scaling": [
+                        "64.93%*2",
+                        "70.25%*2",
+                        "75.58%*2",
+                        "83.03%*2",
+                        "88.35%*2",
+                        "94.48%*2",
+                        "103.00%*2",
+                        "111.51%*2",
+                        "120.03%*2",
+                        "129.08%*2",
+                        "139.73%*2",
+                        "150.38%*2",
+                        "161.03%*2",
+                        "171.67%*2",
+                        "182.32%*2",
+                        "192.97%*2",
+                        "203.62%*2",
+                        "214.26%*2",
+                        "224.91%*2",
+                        "235.56%*2"
+                    ],
+                    "name": "Resonating Spin Damage"
+                },
+                {
+                    "scaling": [
+                        "20.00%",
+                        "21.64%",
+                        "23.28%",
+                        "25.58%",
+                        "27.22%",
+                        "29.11%",
+                        "31.73%",
+                        "34.35%",
+                        "36.98%",
+                        "39.77%",
+                        "43.05%",
+                        "46.33%",
+                        "49.61%",
+                        "52.89%",
+                        "56.17%",
+                        "59.45%",
+                        "62.73%",
+                        "66.01%",
+                        "69.29%",
+                        "72.57%"
+                    ],
+                    "name": "Resonating Whirl Damage"
+                },
+                {
+                    "scaling": [
+                        "40.00%",
+                        "43.28%",
+                        "46.56%",
+                        "51.16%",
+                        "54.44%",
+                        "58.21%",
+                        "63.46%",
+                        "68.70%",
+                        "73.95%",
+                        "79.53%",
+                        "86.09%",
+                        "92.65%",
+                        "99.21%",
+                        "105.77%",
+                        "112.33%",
+                        "118.89%",
+                        "125.45%",
+                        "132.01%",
+                        "138.57%",
+                        "145.13%"
+                    ],
+                    "name": "Resonating Echoes Part 1 Damage"
+                },
+                {
+                    "scaling": [
+                        "80.00%",
+                        "86.56%",
+                        "93.12%",
+                        "102.31%",
+                        "108.87%",
+                        "116.41%",
+                        "126.91%",
+                        "137.40%",
+                        "147.90%",
+                        "159.05%",
+                        "172.17%",
+                        "185.29%",
+                        "198.41%",
+                        "211.53%",
+                        "224.65%",
+                        "237.77%",
+                        "250.89%",
+                        "264.01%",
+                        "277.13%",
+                        "290.25%"
+                    ],
+                    "name": "Resonating Echoes Part 2 Damage"
+                },
+                {
+                    "scaling": [
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20",
+                        "20"
+                    ],
+                    "name": "Resonating Spin Con. Energy Regen"
+                },
+                {
+                    "scaling": [
+                        "8",
+                        "8",
+                        "8",
+                        "8",
+                        "8",
+                        "8",
+                        "8",
+                        "8",
+                        "8",
+                        "8",
+                        "8",
+                        "8",
+                        "8",
+                        "8",
+                        "8",
+                        "8",
+                        "8",
+                        "8"
+                    ],
+                    "name": "Resonating Echoes Con. Energy Regen"
+                }
+            ],
+            "name": "World in a Grain of Sand",
+            "desc": "<size=40><color=Title>Resonance Skill: Resonating Spin<\/color><\/size>nIf \"Diminutive Sound\" exceeds 50 when <color=Highlight>Resonance Skill<\/color> is used, Rover consumes 50 \"Diminutive Sound\" to cast <color=Highlight>Resonating Spin<\/color>, dealing <color=Light>Spectro DMG<\/color>, considered as Resonance Skill damage.n<size=10> <\/size>n<size=40><color=Title>Basic Attack: Resonating Echoes<\/color><\/size>nAfter Resonance Skill <color=Highlight>Resonating Spin<\/color> ends, Rover performs Resonance Skill <color=Highlight>Resonating Echoes<\/color> upon pressing the Basic Attack button.nRover performs attacks forward, dealing <color=Light>Spectro DMG<\/color> considered as Resonance Skill DMG.n<size=10> <\/size>n<size=40><color=Title>Diminutive Sound<\/color><\/size>nRover can hold up to 100 \"Diminutive Sounds\".nRover obtains \"Diminutive Sound\" for every Normal Attack <color=Highlight>Vibration Manifestation<\/color> on hit.nRover obtains \"Diminutive Sound\" for every Heavy Attack <color=Highlight> aftertune<\/color> on hit.nRover obtains \"Diminutive Sound\" upon casting Intro Skill <color=Highlight>Waveshock<\/color>."
+        },
+        "Outro Skill": {
+            "name": "Instant",
+            "desc": "Rover generates an area of stasis surrounding the next character (or other characters on a nearby team that activates an Outro Skill) over 3s."
+        }
+    }
+};

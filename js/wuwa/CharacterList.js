@@ -205,15 +205,18 @@ export default class CharacterList extends WuWaList
           {item:item.getForteMat('weekly',forte), field:"count"},
         ] : (item.getForteMat(type,forte)?.getCraftDependencies() ?? [])
       ),
-      button: (item, type, forte) => {
-        if(type == "label" && forte == item.forte[forte])
+      button: (item, type, forte) => Object.keys(forteLabels).map(f => 
+      {
+        if(type == "label" && forte == item.forte[f])
         {
-          if(item.canUpForte(forte, false))
+          if(item.canUpForte(f, false))
           {
             return {
-              title: "Upgrade the forte level. This will spend the resources for you.",
+              title: `Upgrade ${f} level. This will spend the resources for you.`,
               icon: "fa-solid fa-circle-up",
-              action: item.upForte.bind(item, forte),
+              name: forteLabels[f].w,
+              text: forteLabels[f].w,
+              action: item.upForte.bind(item, f),
             };
           }
           else
@@ -221,10 +224,12 @@ export default class CharacterList extends WuWaList
             return {
               title: "Not enough materials to upgrade.",
               icon: "fa-solid fa-circle-up",
+              name: forteLabels[f].w,
+              text: forteLabels[f].w,
             };
           }
         }
-      },
+      }),
     });
     
     let gearGroup = {label:"Equipped Gear", startCollapsed:false};

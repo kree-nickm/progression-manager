@@ -18,9 +18,9 @@ export default class Character extends WuWaItem
   forte = {
     'Basic Attack': 1,
     'Resonance Skill': 1,
+    'Forte Circuit': 1,
     'Resonance Liberation': 1,
     'Intro Skill': 1,
-    'Forte Circuit': 1,
   };
 
   owned;
@@ -84,6 +84,16 @@ export default class Character extends WuWaItem
       this.list.update("list", null, "notify", {toggleOwned:this});
     }
     return true;
+  }
+  
+  async importDetails()
+  {
+    if(!this.detailedData)
+    {
+      const {default:details} = await import(`./gamedata/characters/${this.key}.details.js`);
+      this.detailedData = details;
+    }
+    return this.detailedData;
   }
   
   // Getters/setters that enforce a value range.
@@ -177,6 +187,7 @@ export default class Character extends WuWaItem
   
   upForte(forte, event)
   {
+    console.log(`upForte`, {'this':this, forte, event});
     if(this.forte[forte] == 10)
     {
       console.error(`Tried to upgrade ${this.name} forte ${forte}, but already at max.`);
@@ -187,7 +198,7 @@ export default class Character extends WuWaItem
     this.getForteMat('forgery',forte).update("count", this.getForteMat('forgery',forte).count - this.getForteMatCost('forgery',forte));
     this.getForteMat('weekly',forte).update("count", this.getForteMat('weekly',forte).count - this.getForteMatCost('weekly',forte));
     this.getForteMat('credit',forte).update("count", this.getForteMat('credit',forte).count - this.getForteMatCost('credit',forte));
-    this.update("forte.", this.forte[forte]+1);
+    this.update(`forte.${forte}`, this.forte[forte]+1);
   }
   
   canUpForte(forte, withCrafting=false)
