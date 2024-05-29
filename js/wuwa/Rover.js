@@ -101,7 +101,6 @@ export default class Rover extends Character
       this._ascension = Math.min(Math.max(val, 0), 6);
   }
   
-  get name(){ return this.element ? "Rover: "+ this.element : "Rover"; }
   get weaponType(){ return "Sword"; }
   get element(){ return this._element; }
   get rarity(){ return 5; }

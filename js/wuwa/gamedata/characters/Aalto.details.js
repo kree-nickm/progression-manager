@@ -1,6 +1,8 @@
 export default {
     "forte": {
         "Basic Attack": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconNorGun.SP_IconNorGun",
+            "id": 1001001,
             "motionValues": [
                 {
                     "scaling": [
@@ -257,6 +259,8 @@ export default {
             "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>nAalto fires up to 5 consecutive shots, dealing <color=Wind>Aero DMG<\/color>. Basic Attack 4 will spread the \"Mist\" forward, which lasts for 1.5s.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack<\/color><\/size>nAalto enters the aiming state for a more powerful shot.nThe aimed shot fired after charging finishes deals <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mid-air Attack<\/color><\/size>nAalto consumes Stamina to perform consecutive shots at the target in mid-air, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Dodge Counter<\/color><\/size>nUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Wind>Aero DMG<\/color>."
         },
         "Resonance Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconQiushui\/SP_IconQiushuiB1.SP_IconQiushuiB1",
+            "id": 1001002,
             "motionValues": [
                 {
                     "scaling": [
@@ -388,6 +392,8 @@ export default {
             "desc": "<size=40><color=Title>Mist Avatar<\/color><\/size>rnCasts \"Mist\" and 1 \"Mist Avatar(s)\" to taunt the surrounding targets. The avatars inherit a portion of Aalto's HP and generate 6 <color=Highlight>Mist Bullets<\/color> around them, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mist Missiles<\/color><\/size>rnDeals <color=Wind>Aero DMG<\/color>, considered as Resonance Skill damage."
         },
         "Resonance Liberation": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconQiushui\/SP_IconQiushuiC1.SP_IconQiushuiC1",
+            "id": 1001003,
             "motionValues": [
                 {
                     "scaling": [
@@ -518,11 +524,21 @@ export default {
             "name": "Flower in the Mist",
             "desc": "Generate a \"Gate of Quandary\" in front, dealing <color=Wind>Aero DMG<\/color>. When bullets pass through the \"Gate of Quandary\", ATK is increased. \"Gate of Quandary\" lasts for 10s."
         },
-        "Inherent Skill": {
-            "name": "Skillful Cooking",
-            "desc": "Has a chance to produce special dishes when cooking"
+        "Forte Circuit Passive 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconQiushui\/SP_IconQiushuiD1.SP_IconQiushuiD1",
+            "id": 1001004,
+            "name": "Perfect Performance",
+            "desc": "Aalto's <color=Highlight>Heavy Attack<\/color> will always critically hit, triggered once every 30s."
+        },
+        "Forte Circuit Passive 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconQiushui\/SP_IconQiushuiD2.SP_IconQiushuiD2",
+            "id": 1001005,
+            "name": "Mid-game Break",
+            "desc": "Aalto will continuously recover Stamina when he is in the Forte Circuit <color=Highlight>Miscloak Dash<\/color> state."
         },
         "Intro Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconQiushui\/SP_IconQiushuiQTE.SP_IconQiushuiQTE",
+            "id": 1001006,
             "motionValues": [
                 {
                     "scaling": [
@@ -579,6 +595,8 @@ export default {
             "desc": "Aalto shows up out of thin air to performs rapid continuous shooting, dealing <color=Wind>Aero damage<\/color>."
         },
         "Forte Circuit": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconQiushui\/SP_IconQiushuiY.SP_IconQiushuiY",
+            "id": 1001007,
             "motionValues": [
                 {
                     "scaling": [
@@ -634,9 +652,107 @@ export default {
             "name": "Misty Cover",
             "desc": "When Aalto passes through \"Mist\" or \"Gate of Quandary\", he enters \"Mistcloak Dash\".rn<size=10> <\/size>rn<size=40><color=Title>Mistcloak Dash<\/color><\/size>rnMovement speed increased;rnDuring this period, \"Mist Drops\" are continuously consumed, and for each 1 \"Mist Drop\" consumed, 1 Resonance Skill <color=Highlight>Mist Missile<\/color> is generated.rn<size=10> <\/size>rn<size=40><color=Title>Mist Drops<\/color><\/size>rnAalto can hold up to 6 Mist Drops.rnWhen <color=Highlight>Basic Attack<\/color> or <color=Highlight>Mid-air Attack<\/color> passes through \"Mist\" and hits the target, 1 \"Mist Drop\" is recovered."
         },
+        "Utility Passive": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconWorld4.SP_IconWorld4",
+            "id": 1001008,
+            "name": "Skillful Cooking",
+            "desc": "Has a chance to produce special dishes when cooking"
+        },
         "Outro Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconQiushui\/SP_IconQiushuiT.SP_IconQiushuiT",
+            "id": 1001009,
             "name": "Dissolving Mist",
             "desc": "The next character (or other characters on a nearby team that activates an Outro Skill) gains 23% Aero DMG Deepen for 14s or until they are switched off field."
+        },
+        "Basic Attack Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredwind_UI.T_Iconpropertyredwind_UI",
+            "name": "Aero DMG Bonus+",
+            "desc": "Aero DMG Bonus increased by 1.80%."
+        },
+        "Resonance Skill Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 1.80%."
+        },
+        "Resonance Liberation Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 1.80%."
+        },
+        "Intro Skill Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredwind_UI.T_Iconpropertyredwind_UI",
+            "name": "Aero DMG Bonus+",
+            "desc": "Aero DMG Bonus increased by 1.80%."
+        },
+        "Basic Attack Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredwind_UI.T_Iconpropertyredwind_UI",
+            "name": "Aero DMG Bonus+",
+            "desc": "Aero DMG Bonus increased by 4.20%."
+        },
+        "Resonance Skill Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 4.20%."
+        },
+        "Resonance Liberation Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 4.20%."
+        },
+        "Intro Skill Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredwind_UI.T_Iconpropertyredwind_UI",
+            "name": "Aero DMG Bonus+",
+            "desc": "Aero DMG Bonus increased by 4.20%."
+        }
+    },
+    "chain": {
+        "1": {
+            "buffs": [
+                1403902001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_QiushuiM1_UI.T_IconDevice_QiushuiM2_UI",
+            "name": "Trickster's Opening Show",
+            "desc": "The cooldown of Resonance Skill <color=Highlight>Shift Trick<\/color> is reduced by 4s."
+        },
+        "2": {
+            "buffs": [
+                1403901001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_QiushuiM2_UI.T_IconDevice_QiushuiM1_UI",
+            "name": "Mistweaver\u2019s Debut",
+            "desc": "\"Mist Avatar\" inherits 100% more HP from Aalto. When Aalto attacks targets taunted by the \"Mist Avatar(s)\", his ATK is increased by 15%."
+        },
+        "3": {
+            "buffs": [
+                1403903001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_QiushuiM3_UI.T_IconDevice_QiushuiM3_UI",
+            "name": "Hazey Transition",
+            "desc": "When Aalto's <color=Highlight>Basic Attack<\/color> or <color=Highlight>Mid-Air Attack<\/color> passes through the \"Gate of Quandary\", 2 more bullets will be generated, dealing 50% of the DMG of <color=Highlight>Basic Attack<\/color> or <color=Highlight>Mid-Air Attack<\/color>."
+        },
+        "4": {
+            "buffs": [
+                1403904001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_QiushuiM4_UI.T_IconDevice_QiushuiM4_UI",
+            "name": "Blake Bloom for Finale",
+            "desc": "The damage of Resonance Skill <color=Highlight>Mist Bullets<\/color> is increased by 30%; Aalto receives 30% less damage in his Forte Circuit <color=Highlight>Mistcloak Dash<\/color> state."
+        },
+        "5": {
+            "buffs": [
+                1403905001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_QiushuiM5_UI.T_IconDevice_QiushuiM5_UI",
+            "name": "Applause of the Lost",
+            "desc": "In the Forte Circuit <color=Highlight>Mistcloak Dash<\/color> state, Aalto's Aero DMG Bonus is increased by 25% for 6s."
+        },
+        "6": {
+            "buffs": [
+                1403906001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_QiushuiM6_UI.T_IconDevice_QiushuiM6_UI",
+            "name": "Broker\u2019s Secrets",
+            "desc": "Resonance Liberation <color=Highlight>Flower in the Mist<\/color> now additionally increases Crit. Rate by 8%. When Aalto's Heavy Attack passes through the \"Gate of Quandary\", the damage dealt is additionally increased by 50%."
         }
     }
 };

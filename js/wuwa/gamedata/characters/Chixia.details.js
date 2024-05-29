@@ -1,6 +1,8 @@
 export default {
     "forte": {
         "Basic Attack": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconNorGun.SP_IconNorGun",
+            "id": 1000201,
             "motionValues": [
                 {
                     "scaling": [
@@ -230,6 +232,8 @@ export default {
             "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnChixia fires up to 4 consecutive shots, dealing <color=Fire>Fusion DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnChixia enters the aiming state for a more powerful shot.rnThe aimed shot fired after charging finishes deals <color=Fire>Fusion DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnChixia consumes Stamina to perform consecutive shots at the target in mid-air, dealing <color=Fire>Fusion DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Fire>Fusion DMG<\/color>."
         },
         "Resonance Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconMaxiaofang\/SP_IconMaxiaofangB1.SP_IconMaxiaofangB1",
+            "id": 1000202,
             "motionValues": [
                 {
                     "scaling": [
@@ -307,6 +311,8 @@ export default {
             "desc": "Chixia unleashes a flurry of shots, dealing <color=Fire>Fusion DMG<\/color>.rn<size=10> <\/size>rn<color=Highlight>Whizzing Fight Spirit<\/color> has 2 initial charges."
         },
         "Resonance Liberation": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconMaxiaofang\/SP_IconMaxiaofangC1.SP_IconMaxiaofangC1",
+            "id": 1000203,
             "motionValues": [
                 {
                     "scaling": [
@@ -406,11 +412,21 @@ export default {
             "name": "Blazing Flames",
             "desc": "Chixia fires up fast shots at nearby enemies, dealing <color=Fire>Fusion DMG<\/color>."
         },
-        "Inherent Skill": {
-            "name": "Skillful Cooking",
-            "desc": "Has a chance to produce special dishes when cooking"
+        "Forte Circuit Passive 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconMaxiaofang\/SP_IconMaxiaofangD1.SP_IconMaxiaofangD1",
+            "id": 1000204,
+            "name": "Scorching Magazine",
+            "desc": "Max \"Thermobaric Bullets\" is increased by 10 rounds. The damage of Resonance Skill <color=Highlight>Boom Boom<\/color> is increased by 50%."
+        },
+        "Forte Circuit Passive 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconMaxiaofang\/SP_IconMaxiaofangD2.SP_IconMaxiaofangD2",
+            "id": 1000205,
+            "name": "Numbingly Spicy!",
+            "desc": "Each \"Thermobaric Bullets\" that hits a target during Resonance Skill <color=Highlight>DAKA DAKA!<\/color> increases ATK by 1% for 10s, stacking up to 30 times."
         },
         "Intro Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconMaxiaofang\/SP_IconMaxiaofangQTE.SP_IconMaxiaofangQTE",
+            "id": 1000206,
             "motionValues": [
                 {
                     "scaling": [
@@ -465,6 +481,8 @@ export default {
             "desc": "Chixia makes a heroic entrance and fires rapidly with her dual pistols at the target, dealing <color=Fire>Fusion DMG<\/color>."
         },
         "Forte Circuit": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconMaxiaofang\/SP_IconMaxiaofangY.SP_IconMaxiaofangY",
+            "id": 1000207,
             "motionValues": [
                 {
                     "scaling": [
@@ -566,9 +584,107 @@ export default {
             "name": "Heroic Bullets",
             "desc": "<size=40><color=Title>Resonance Skill: DAKA DAKA!<\/color><\/size>rnHold Resonance Skill <color=Highlight>Whizzing Fight Spirit<\/color> to enter <color=Highlight>DAKA DAKA!<\/color>. In this state:rnChixia continuously consumes \"Thermobaric Bullets\" to attack the target, dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill damage;rnTap <color=Highlight>Basic Attack<\/color> to cast <color=Highlight>Basic Attack 4<\/color>, dealing <color=Fire>Fusion DMG<\/color>, considered as Basic Attack damage. Then she terminates \"DAKA DAKA!\";rn\u00b7If 30 \"Thermobaric Bullets\" have been fired when <color=Highlight>Basic Attack<\/color>is activated, Chixia will cast Resonance Skill <color=Highlight>Boom Boom<\/color> and terminate \"DAKA DAKA!\"rnChixia terminates \"DAKA DAKA!\" when all \"Thermobaric Bullets\" are consumed.rn<size=10> <\/size>rn<size=40><color=Title>Resonance Skill: Boom Boom<\/color><\/size>rnChixia deals <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill damage.rn<size=10> <\/size>rn<size=40><color=Title>Thermobaric Bullets<\/color><\/size>rnChixia can hold up to 60 \"Thermobaric Bullets\".rnInherent Skill <color=Highlight>Scorching Magazine<\/color> increases Max \"Thermobaric Bullets\" by 10.rnChixia obtains \"Thermobaric Bullets\" for every Normal Attack <color=Highlight>POW POW<\/color> on hit.rnChixia obtains \"Thermobaric Bullets\" upon casting Intro Skill <color=Highlight>Grand Entrance<\/color> and Resonance Skill <color=Highlight>Whizzing Fight Spirit<\/color>."
         },
+        "Utility Passive": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconRun.SP_IconRun",
+            "id": 1000208,
+            "name": "Skillful Cooking",
+            "desc": "Has a chance to produce special dishes when cooking"
+        },
         "Outro Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconMaxiaofang\/SP_IconMaxiaofangT.SP_IconMaxiaofangT",
+            "id": 1000209,
             "name": "Leaping Flames",
             "desc": "Chixia releases a shock wave surrounding the target, dealing <color=Fire>Fusion DMG<\/color> equal to 530.00% of Chixia's ATK to enemies within the range."
+        },
+        "Basic Attack Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredhot_UI.T_Iconpropertyredhot_UI",
+            "name": "Fusion DMG Bonus+",
+            "desc": "Fusion DMG Bonus increased by 1.80%."
+        },
+        "Resonance Skill Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 1.80%."
+        },
+        "Resonance Liberation Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 1.80%."
+        },
+        "Intro Skill Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredhot_UI.T_Iconpropertyredhot_UI",
+            "name": "Fusion DMG Bonus+",
+            "desc": "Fusion DMG Bonus increased by 1.80%."
+        },
+        "Basic Attack Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredhot_UI.T_Iconpropertyredhot_UI",
+            "name": "Fusion DMG Bonus+",
+            "desc": "Fusion DMG Bonus increased by 4.20%."
+        },
+        "Resonance Skill Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 4.20%."
+        },
+        "Resonance Liberation Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 4.20%."
+        },
+        "Intro Skill Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredhot_UI.T_Iconpropertyredhot_UI",
+            "name": "Fusion DMG Bonus+",
+            "desc": "Fusion DMG Bonus increased by 4.20%."
+        }
+    },
+    "chain": {
+        "1": {
+            "buffs": [
+                1202951013
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_MaxiaofangM1_UI.T_IconDevice_MaxiaofangM1_UI",
+            "name": "No.1 Hero Play Fan",
+            "desc": "Resonance Skill <color=Highlight>Boom Boom<\/color> hits will always be Critical Hits."
+        },
+        "2": {
+            "buffs": [
+                1202951019
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_MaxiaofangM2_UI.T_IconDevice_MaxiaofangM2_UI",
+            "name": "Leaping Sparkles",
+            "desc": "During Resonance Liberation <color=Highlight>Blazing Flames<\/color>, for every 1 target defeated, Chixia recovers 5 Resonance Energy, up to 20 each time."
+        },
+        "3": {
+            "buffs": [
+                1202951022
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_MaxiaofangM3_UI.T_IconDevice_MaxiaofangM3_UI",
+            "name": "Eternal Flames",
+            "desc": "Resonance Liberation <color=Highlight>Blazing Flames<\/color> deals 40% more damage to targets whose HP is below 50%."
+        },
+        "4": {
+            "buffs": [
+                1202951016
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_MaxiaofangM4_UI.T_IconDevice_MaxiaofangM4_UI",
+            "name": "Hero\u2019s Ultimate Move",
+            "desc": "Resonance Liberation <color=Highlight>Blazing Flames<\/color> grants 60 \u201cThermobaric Bullets\u201d and immediately resets the Cooldown of Resonance Skill <color=Highlight>Whizzing Fight Spirit<\/color>."
+        },
+        "5": {
+            "buffs": [
+                1202951025
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_MaxiaofangM5_UI.T_IconDevice_MaxiaofangM5_UI",
+            "name": "Triumphant Explosions",
+            "desc": "When the Inherent Skill <color=Highlight>Numbingly Spicy!<\/color> reaches max stacks, ATK is additionally increased by 30%."
+        },
+        "6": {
+            "buffs": [
+                1202952001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_MaxiaofangM6_UI.T_IconDevice_MaxiaofangM6_UI",
+            "name": "Easter Egg Performance",
+            "desc": "Resonance Skill <color=Highlight>Boom Boom<\/color> increases the Basic Attack DMG Bonus of all team members by 25% for 15s."
         }
     }
 };

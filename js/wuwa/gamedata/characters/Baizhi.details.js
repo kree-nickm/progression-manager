@@ -1,6 +1,8 @@
 export default {
     "forte": {
         "Basic Attack": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconNorMagic.SP_IconNorMagic",
+            "id": 1000401,
             "motionValues": [
                 {
                     "scaling": [
@@ -232,6 +234,8 @@ export default {
             "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnBaizhi instructs You'tan to perform up to 4 consecutive attacks, dealing <color=Ice>Glacio DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnBaizhi continuously consumes Stamina to command You'tan to attack enemies, dealing <color=Ice>Glacio DMG<\/color>. During Heavy Attack, Baizhi can command You'tan to move.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnBaizhi consumes Stamina and summons You\u2019tan in mid-air to perform a Plunging Attack, dealing <color=Ice>Glacio DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Ice>Glacio DMG<\/color>."
         },
         "Resonance Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconBailian\/SP_IconBailianB1.SP_IconBailianB1",
+            "id": 1000402,
             "motionValues": [
                 {
                     "scaling": [
@@ -336,6 +340,8 @@ export default {
             "desc": "Baizhi calls You'tan to attack the target, dealing <color=Ice>Glacio DMG<\/color> while restoring HP for the entire team."
         },
         "Resonance Liberation": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconBailian\/SP_IconBailianC1.SP_IconBailianC1",
+            "id": 1000403,
             "motionValues": [
                 {
                     "scaling": [
@@ -489,11 +495,21 @@ export default {
             "name": "Momentary Union",
             "desc": "Baizhi summons You'tan to restore HP for the entire team, generating 4 stacks of <color=Highlight>Remnant Entities<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Remnant Entities<\/color><\/size>rnRemnant Entities follow the active team members and automatically consume 1 stacks of <color=Highlight>Remnant Entities<\/color> to attack the targets every 2.5s, dealing <color=Ice>Glacio DMG<\/color> on hit while restoring HP to all team members nearby."
         },
-        "Inherent Skill": {
-            "name": "Skillful Cooking",
-            "desc": "Has a chance to produce special dishes when cooking"
+        "Forte Circuit Passive 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconBailian\/SP_IconBailianD2.SP_IconBailianD2",
+            "id": 1000404,
+            "name": "Harmonic Range",
+            "desc": "When Baizhi casts Resonance Skill <color=Highlight>Emergency Plan<\/color>, You'tan generates a field of <color=Highlight>Euphonia<\/color> that lasts for 15s.rn<size=10> <\/size>rn<size=40><color=Title>Euphonia<\/color><\/size>rnATK of the Resonators who picks up Euphonia is increased by 15% for 20s."
+        },
+        "Forte Circuit Passive 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconBailian\/SP_IconBailianD1.SP_IconBailianD1",
+            "id": 1000405,
+            "name": "Stimulus Feedback",
+            "desc": "Baizhi's <color=Highlight>Heavy Attack<\/color> heals the team member with the lowest HP by 0.25% of her Max HP upon hitting an enemy."
         },
         "Intro Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconBailian\/SP_IconBailianQTE.SP_IconBailianQTE",
+            "id": 1000406,
             "motionValues": [
                 {
                     "scaling": [
@@ -573,6 +589,8 @@ export default {
             "desc": "Baizhi calls You'tan to perform 1 plunging attack, dealing <color=Ice>Glacio DMG<\/color> while restoring HP to all team members nearby."
         },
         "Forte Circuit": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconBailian\/SP_IconBailianY.SP_IconBailianY",
+            "id": 1000407,
             "motionValues": [
                 {
                     "scaling": [
@@ -674,9 +692,107 @@ export default {
             "name": "Cycle of Life",
             "desc": "<size=40><color=Title>You'tan<\/color><\/size>rnA Remnant Creature that answers to Baizhi\u2019s mind and desires while sharing all her attributes. You\u2019tan goes back to Baizhi when Baizhi dodges.rn<size=10> <\/size>rn<size=40><color=Title>Concentration<\/color><\/size>rnBaizhi consumes all \"Concentrations\" when casting <color=Highlight>Heavy Attack<\/color> or Resonance Skill <color=Highlight>Emergency Plan<\/color> to continuously restore HP for Characters nearby. Each 1 \"Concentration\" consumed restores HP for 1 time every 2s.rnWhen Baizhi consumes \"Concentration\" to cast <color=Highlight>Heavy Attack<\/color>, Baizhi additionally restores Concerto Energy and Resonance Energy;rnWhen Baizhi consumes \"Concentration\" to cast Resonance Skill <color=Highlight>Emergency Plan<\/color>, Baizhi additionally restores Concerto Energy.rn<size=10> <\/size>rn<size=40><color=Title>Concentration<\/color><\/size>rnBaizhi can hold up to 4 \"Concentrations\".rnBaizhi obtains 1 \"Concentration\" for every <color=Highlight>Basic Attack<\/color> on hit."
         },
+        "Utility Passive": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconWorld3.SP_IconWorld3",
+            "id": 1000408,
+            "name": "Skillful Cooking",
+            "desc": "Has a chance to produce special dishes when cooking"
+        },
         "Outro Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconBailian\/SP_IconBailianT.SP_IconBailianT",
+            "id": 1000409,
             "name": "Rejuvinating Flow",
             "desc": "Baizhi heals the next character (or other characters on a nearby team that activates an Outro Skill) by 1.54% of her Max HP every 3s for 30s. The healed character(s) also gain a 15% All-Type DMG Deepen for 6s."
+        },
+        "Basic Attack Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertygreencure_UI.T_Iconpropertygreencure_UI",
+            "name": "Healing Bonus+",
+            "desc": "Healing Bonus increased by 1.80%."
+        },
+        "Resonance Skill Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertygreenlife_UI.T_Iconpropertygreenlife_UI",
+            "name": "HP+",
+            "desc": "HP increased by 1.80%."
+        },
+        "Resonance Liberation Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertygreenlife_UI.T_Iconpropertygreenlife_UI",
+            "name": "HP+",
+            "desc": "HP increased by 1.80%."
+        },
+        "Intro Skill Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertygreencure_UI.T_Iconpropertygreencure_UI",
+            "name": "Healing Bonus+",
+            "desc": "Healing Bonus increased by 1.80%."
+        },
+        "Basic Attack Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertygreencure_UI.T_Iconpropertygreencure_UI",
+            "name": "Healing Bonus+",
+            "desc": "Healing Bonus increased by 4.20%."
+        },
+        "Resonance Skill Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertygreenlife_UI.T_Iconpropertygreenlife_UI",
+            "name": "HP+",
+            "desc": "HP increased by 4.20%."
+        },
+        "Resonance Liberation Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertygreenlife_UI.T_Iconpropertygreenlife_UI",
+            "name": "HP+",
+            "desc": "HP increased by 4.20%."
+        },
+        "Intro Skill Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertygreencure_UI.T_Iconpropertygreencure_UI",
+            "name": "Healing Bonus+",
+            "desc": "Healing Bonus increased by 4.20%."
+        }
+    },
+    "chain": {
+        "1": {
+            "buffs": [
+                1103901001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_BailianM1_UI.T_IconDevice_BailianM1_UI",
+            "name": "Complex Simplicity",
+            "desc": "Resonance Skill <color=Highlight>Emergency Plan<\/color> additionally restores 2.5 Resonance Energy for every 1 \"Concentration\" consumed."
+        },
+        "2": {
+            "buffs": [
+                1103902001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_BailianM2_UI.T_IconDevice_BailianM2_UI",
+            "name": "Silent Tundra",
+            "desc": "Resonance Skill <color=Highlight>Emergency Plan<\/color> increases Baizhi's Glacio DMG Bonus by 15% and her Healing by 15% if she has 4 \"Concentration\". These effects last for 12s."
+        },
+        "3": {
+            "buffs": [
+                1103903001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_BailianM3_UI.T_IconDevice_BailianM3_UI",
+            "name": "Veritas Lux Mea",
+            "desc": "Intro Skill <color=Highlight>Overflowing Frost<\/color> increases Baizhi's Max HP by 12% for 10s."
+        },
+        "4": {
+            "buffs": [
+                1103904001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_BailianM4_UI.T_IconDevice_BailianM4_UI",
+            "name": "Eternal Verity",
+            "desc": "Upon casting Resonance Liberation <color=Highlight>Momentary Union<\/color>, Resonance Liberation <color=Highlight>Remnant Entities<\/color> gains the following enhancements:rn-<color=Highlight>Remnant Entities<\/color> can be performed 2 more time(s);rn-Healing multiplier of <color=Highlight>Remnant Entities<\/color> is increased by 20%;rn-<color=Highlight>Remnant Entities<\/color> deals additional Glacio DMG equal to 1.20% of Baizhi's Max HP."
+        },
+        "5": {
+            "buffs": [
+                1103905001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_BailianM5_UI.T_IconDevice_BailianM5_UI",
+            "name": "A Wish Answered",
+            "desc": "If a team member is downed when Baizhi is alive on the team, immediately revive them and restore their HP to 100% of their Max HP. This effect can be triggered once every 10 minute(s)."
+        },
+        "6": {
+            "buffs": [
+                1103906001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_BailianM6_UI.T_IconDevice_BailianM6_UI",
+            "name": "Seeker's Devotion",
+            "desc": "When <color=Highlight>Euphonia<\/color> is picked up, increase the Glacio DMG Bonus of all characters nearby by 12% for 20s."
         }
     }
 };

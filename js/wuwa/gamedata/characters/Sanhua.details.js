@@ -1,6 +1,8 @@
 export default {
     "forte": {
         "Basic Attack": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconNorKnife.SP_IconNorKnife",
+            "id": 1000501,
             "motionValues": [
                 {
                     "scaling": [
@@ -253,6 +255,8 @@ export default {
             "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnSanhua performs up to 5 consecutive attacks, dealing <color=Ice>Glacio DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnSanhua consumes Stamina to launch attacks, dealing <color=Ice>Glacio DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnSanhua consumes Stamina to perform a Mid-Air Plunging Attack, dealing <color=Ice>Glacio DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Ice>Glacio DMG<\/color>."
         },
         "Resonance Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconSanhua\/SP_IconSanhuaB1.SP_IconSanhuaB1",
+            "id": 1000502,
             "motionValues": [
                 {
                     "scaling": [
@@ -330,6 +334,8 @@ export default {
             "desc": "Sanhua sends an air blade to create 1 \"Ice Prism\" cross the ground, dealing <color=Ice>Glacio DMG<\/color>."
         },
         "Resonance Liberation": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconSanhua\/SP_IconSanhuaC1.SP_IconSanhuaC1",
+            "id": 1000503,
             "motionValues": [
                 {
                     "scaling": [
@@ -429,11 +435,21 @@ export default {
             "name": "Glacial Gaze",
             "desc": "Sanhua deals <color=Ice>Glacio DMG<\/color> and creates 1 \"Glacier\"."
         },
-        "Inherent Skill": {
-            "name": "Skillful Cooking",
-            "desc": "Has a chance to produce special dishes when cooking"
+        "Forte Circuit Passive 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconSanhua\/SP_IconSanhuaD1.SP_IconSanhuaD1",
+            "id": 1000504,
+            "name": "Condensation",
+            "desc": "Damage dealt by Sanhua's Resonance Skill increased by 20% for 8s after casting her Intro Skill."
+        },
+        "Forte Circuit Passive 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconSanhua\/SP_IconSanhuaD2.SP_IconSanhuaD2",
+            "id": 1000505,
+            "name": "Avalanche",
+            "desc": "Damage dealt by Sanhua's Forte Circuit <color=Highlight>Ice Burst<\/color> is increased by 20% for 8s after casting <color=Highlight>Basic Attack 5<\/color>."
         },
         "Intro Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconSanhua\/SP_IconSanhuaQTE.SP_IconSanhuaQTE",
+            "id": 1000506,
             "motionValues": [
                 {
                     "scaling": [
@@ -488,6 +504,8 @@ export default {
             "desc": "Sanhua swings her blade downward and creates 1 \"Ice Thorn\", dealing <color=Ice>Glacio DMG<\/color>."
         },
         "Forte Circuit": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconSanhua\/SP_IconSanhuaY.SP_IconSanhuaY",
+            "id": 1000507,
             "motionValues": [
                 {
                     "scaling": [
@@ -754,9 +772,107 @@ export default {
             "name": "Clarity of Mind",
             "desc": "<size=40><color=Title>Heavy Attack: Detonate<\/color><\/size>nWhen holding <color=Highlight>Basic Attack<\/color>, a cursor moves back and forth on the Forte Gauge. Release <color=Highlight>Basic Attack<\/color> while cursor falls in the \"Frostbite\" area, to perform Heavy Attack <color=Highlight>Detonate<\/color>, dealing <color=Ice>Glacio DMG<\/color> considered as Heavy Attack damage.n<size=10> <\/size>n<size=40><color=Title>Ice Burst<\/color><\/size>nSanhua\u2019s Heavy Attack <color=Highlight>Detonate<\/color> detonates all \"Ice Thorns\", \"Ice Prisms\" and \"Glaciers\" within her attack range, dealing <color=Ice>Glacio DMG<\/color>. DMG done by Ice Burst is considered as Resonance Skill damage.n<size=10> <\/size>n<size=40><color=Title>Frostbite Area<\/color><\/size>nThe \"Frostbite\" area expands with every 1 stack of \"Clarity\". \"Clarity\" stacks up to 2 times.nSanhua obtains 1 stack of \"Clarity\" upon performing <color=Highlight>Basic Attack 5<\/color>.nSanhua obtains 1 stack of \"Clarity\" upon casting Intro Skill <color=Highlight>Freezing Thorns<\/color>.nSanhua obtains 1 stack of \"Clarity\" upon casting Resonance Skill <color=Highlight>Eternal Frost<\/color>.nSanhua obtains 2 stack(s) of \"Clarity\" upon casting Resonance Liberation <color=Highlight>Glacial Gaze<\/color>.nUpon casting Heavy Attack <color=Highlight>Detonate<\/color>, all \"Clarity\" is removed."
         },
+        "Utility Passive": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconRun.SP_IconRun",
+            "id": 1000508,
+            "name": "Skillful Cooking",
+            "desc": "Has a chance to produce special dishes when cooking"
+        },
         "Outro Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconSanhua\/SP_IconSanhuaT.SP_IconSanhuaT",
+            "id": 1000509,
             "name": "Silversnow",
             "desc": "The next character (or other characters on a nearby team that activates an Outro Skill) gains 38% Basic Attack DMG Deepen for 14s or until they are switched off field."
+        },
+        "Basic Attack Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredice_UI.T_Iconpropertyredice_UI",
+            "name": "Glacio DMG Bonus+",
+            "desc": "Glacio DMG Bonus increased by 1.80%."
+        },
+        "Resonance Skill Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 1.80%."
+        },
+        "Intro Skill Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredice_UI.T_Iconpropertyredice_UI",
+            "name": "Glacio DMG Bonus+",
+            "desc": "Glacio DMG Bonus increased by 1.80%."
+        },
+        "Basic Attack Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredice_UI.T_Iconpropertyredice_UI",
+            "name": "Glacio DMG Bonus+",
+            "desc": "Glacio DMG Bonus increased by 4.20%."
+        },
+        "Resonance Skill Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 4.20%."
+        },
+        "Resonance Liberation Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 4.20%."
+        },
+        "Intro Skill Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredice_UI.T_Iconpropertyredice_UI",
+            "name": "Glacio DMG Bonus+",
+            "desc": "Glacio DMG Bonus increased by 4.20%."
+        },
+        "Resonance Liberation Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 1.80%."
+        }
+    },
+    "chain": {
+        "1": {
+            "buffs": [
+                1102901001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_SanhuaM1_UI.T_IconDevice_SanhuaM1_UI",
+            "name": "Solitude's Embrace",
+            "desc": "<color=Highlight>Basic Attack V<\/color> increases Sanhua's Crit. Rate by 15% for 10s."
+        },
+        "2": {
+            "buffs": [
+                1102902001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_SanhuaM2_UI.T_IconDevice_SanhuaM2_UI",
+            "name": "Snowy Clarity",
+            "desc": "Stamina cost of Heavy Attack <color=Highlight>Detonate<\/color> is reduced by 10. When Sanhua casts Resonance Skill <color=Highlight>Eternal Frost<\/color>, her Anti-interruption is enhanced for 10s."
+        },
+        "3": {
+            "buffs": [
+                1102903001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_SanhuaM3_UI.T_IconDevice_SanhuaM3_UI",
+            "name": "Anomalous Vision",
+            "desc": "Sanhua's damage dealt is increased by 35% against targets with HP below 70%."
+        },
+        "4": {
+            "buffs": [
+                1102904001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_SanhuaM4_UI.T_IconDevice_SanhuaM4_UI",
+            "name": "Blade Mastery",
+            "desc": "Resonance Liberation <color=Highlight>Glacial Gaze<\/color> restores 10 Resonance Energy. rnDMG of the next Heavy Attack <color=Highlight>Detonate<\/color> within 5s is increased by 120%."
+        },
+        "5": {
+            "buffs": [
+                1102905001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_SanhuaM5_UI.T_IconDevice_SanhuaM5_UI",
+            "name": "Unraveling Fate",
+            "desc": "Crit. DMG of Forte Circuit <color=Highlight>Ice Burst<\/color> is increased by 100%. Ice Creations (Ice Thorn, Ice Prism, and Glacier) will explode even if they are not detonated."
+        },
+        "6": {
+            "buffs": [
+                1102906001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_SanhuaM6_UI.T_IconDevice_SanhuaM6_UI",
+            "name": "Daybreak Radiance",
+            "desc": "After an Ice Prism or a Glacier is detonated, all team members' ATK is increased by 10% for 20s, stacking up to 2 times."
         }
     }
 };

@@ -1,6 +1,8 @@
 export default {
     "forte": {
         "Basic Attack": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconNorFist.SP_IconNorFist",
+            "id": 1001601,
             "motionValues": [
                 {
                     "scaling": [
@@ -255,6 +257,8 @@ export default {
             "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnYuanwu performs up to 5 consecutive attacks, dealing <color=Thunder>Electro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnYuanwu consumes Stamina to attack the target, dealing <color=Thunder>Electro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnYuanwu consumes Stamina to launch a Mid-air Plunging Attack, dealing <color=Thunder>Electro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Thunder>Electro DMG<\/color>."
         },
         "Resonance Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYuanwu\/SP_IconYuanwuB1.SP_IconYuanwuB1",
+            "id": 1001602,
             "motionValues": [
                 {
                     "scaling": [
@@ -455,6 +459,8 @@ export default {
             "desc": "<size=40><color=Title>Thunder Wedge<\/color><\/size>rnYuanwu summons <color=Highlight>Thunder Wedge<\/color>, dealing <color=Thunder>Electro DMG<\/color>, and forms a <color=Highlight>Thunder Field<\/color> centered on the <color=Highlight>Thunder Wedge<\/color>. <color=Highlight>Thunder Wedge<\/color> lasts for 12s.rnForte Circuit <color=Highlight>Rumbling Spark<\/color> and Resonance Liberation <color=Highlight>Blazing Might<\/color> will immediately detonate Resonance Skill <color=Highlight>Thunder Wedge<\/color> on the field, dealing <color=Thunder>Electro DMG<\/color>, considered as Resonance Skill Damage.rn<size=10> <\/size>rn<size=40><color=Title>Thunder Field<\/color><\/size>rnThe on-field character gains the effects below when in the <color=Highlight>Thunder Field<\/color>: a Coordinated Attack from Resonance Skill <color=Highlight>Thunder Wedge<\/color> is triggered when attacks hit a target, dealing <color=Thunder>Electro DMG<\/color>. This can be triggered once every 1.2s. The effect lasts for 1.5s."
         },
         "Resonance Liberation": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYuanwu\/SP_IconYuanwuC1.SP_IconYuanwuC1",
+            "id": 1001603,
             "motionValues": [
                 {
                     "scaling": [
@@ -556,11 +562,21 @@ export default {
             "name": "Blazing Might",
             "desc": "Awaken the power of thunder and provide Forte Circuit <color=Highlight>Lightning Infused<\/color> status for all nearby characters for 10s, granting them increased Anti-interruption, then perform a powerful blow that deals <color=Thunder>Electro DMG<\/color>.n<size=10> <\/size>"
         },
-        "Inherent Skill": {
-            "name": "Skillful Cooking",
-            "desc": "Has a chance to produce special dishes when cooking"
+        "Forte Circuit Passive 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYuanwu\/SP_IconYuanwuD1.SP_IconYuanwuD1",
+            "id": 1001604,
+            "name": "Thunderweaver",
+            "desc": "The damage multiplier of Resonance Skill <color=Highlight>Thunder Uprising<\/color> is increased by 40%, and its depletion of enemy Vibration Strength is enhanced."
+        },
+        "Forte Circuit Passive 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYuanwu\/SP_IconYuanwuD2.SP_IconYuanwuD2",
+            "id": 1001605,
+            "name": "Reserved Confidence",
+            "desc": "The ranges of the Resonance Skill <color=Highlight>Thunder Field<\/color> and <color=Highlight>Thunder Uprising<\/color> are greatly expanded. When exiting during combat, if <color=Highlight>Readiness<\/color> is not full, Yuanwu will automatically leave 1 Resonance Skill <color=Highlight>Thunder Wedge<\/color> in place."
         },
         "Intro Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYuanwu\/SP_IconYuanwuQTE.SP_IconYuanwuQTE",
+            "id": 1001606,
             "motionValues": [
                 {
                     "scaling": [
@@ -615,6 +631,8 @@ export default {
             "desc": "Attack the target, dealing <color=Thunder>Electro DMG<\/color>."
         },
         "Forte Circuit": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYuanwu\/SP_IconYuanwuY.SP_IconYuanwuY",
+            "id": 1001607,
             "motionValues": [
                 {
                     "scaling": [
@@ -892,9 +910,109 @@ export default {
             "name": "Unassuming Blade",
             "desc": "<size=40><color=Title>Rumbling Spark<\/color><\/size>rnWhen \"Readiness\" is full, long press Resonance Skill to consume all \"Readiness\" and cast Rumbling Spark, dealing <color=Thunder>Electro DMG<\/color> and entering the <color=Highlight>Lightning Infused<\/color> state.rn<size=10> <\/size>rn<size=40><color=Title>Thunder Uprising<\/color><\/size>rnWhen you have full \"Readiness\", Resonance Skill <color=Highlight>Thunder Wedge<\/color> will cast <color=Highlight>Thunder Uprising<\/color>, dealing <color=Thunder>Electro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Lightning Infused<\/color><\/size>rnThe character in <color=Highlight>Lightning Infused<\/color> state has a greatly increased anti-interruption.rnWhen Yuanwu is in this state:rn-<color=Highlight>Basic Attacks<\/color>: Hits targets in a larger range, depletes enemy Vibration Strength faster;rn-<color=Highlight>Heavy Attacks<\/color>: Attack speed is increased, deplete enemy Vibration Strength faster;rn-<color=Highlight>Dodge Counters<\/color>: Attack speed is increased, deplete enemy Vibration Strength faster.rn-Use <color=Highlight>Basic Attack<\/color> within 3s after casting a <color=Highlight>Heavy Attack<\/color> or a successful <color=Highlight>Counterattack<\/color> to cast <color=Highlight>Thunderweaver<\/color>, dealing <color=Thunder>Electro DMG<\/color>, considered as Basic Attack damage;rnYuanwu does not recover \"Readiness\" in this state.rn<size=10> <\/size>rn<size=40><color=Title>Readiness<\/color><\/size>rnYuanwu can hold up to 100 \"Readiness\".rnWhen Resonance Skill <color=Highlight>Thunder Wedge<\/color> is on the field, Yuanwu gains 6 \"Readiness\" every second, even when he is not the on-field character;rnWhen Resonance Skill <color=Highlight>Thunder Wedge<\/color> hits a target with a Coordinated Attack, Yuanwu gains 5 \"Readiness\"."
         },
+        "Utility Passive": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconWorld3.SP_IconWorld3",
+            "id": 1001608,
+            "name": "Skillful Cooking",
+            "desc": "Has a chance to produce special dishes when cooking"
+        },
         "Outro Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYuanwu\/SP_IconYuanwuT.SP_IconYuanwuT",
+            "id": 1001609,
             "name": "Lightning Manipulation",
             "desc": "Yuanwu unleashes thunderbolts in an area centered around the skill target, weakening the Vibration Strength of enemies upon impact."
+        },
+        "Basic Attack Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredmine_UI.T_Iconpropertyredmine_UI",
+            "name": "Electro DMG Bonus+",
+            "desc": "Electro DMG Bonus increased by 1.80%."
+        },
+        "Resonance Skill Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertygreendefense_UI.T_Iconpropertygreendefense_UI",
+            "name": "DEF+",
+            "desc": "DEF increased by 2.28%."
+        },
+        "Resonance Liberation Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertygreendefense_UI.T_Iconpropertygreendefense_UI",
+            "name": "DEF+",
+            "desc": "DEF increased by 2.28%."
+        },
+        "Intro Skill Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredmine_UI.T_Iconpropertyredmine_UI",
+            "name": "Electro DMG Bonus+",
+            "desc": "Electro DMG Bonus increased by 1.80%."
+        },
+        "Basic Attack Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredmine_UI.T_Iconpropertyredmine_UI",
+            "name": "Electro DMG Bonus+",
+            "desc": "Electro DMG Bonus increased by 4.20%."
+        },
+        "Resonance Skill Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertygreendefense_UI.T_Iconpropertygreendefense_UI",
+            "name": "DEF+",
+            "desc": "DEF increased by 5.32%."
+        },
+        "Resonance Liberation Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertygreendefense_UI.T_Iconpropertygreendefense_UI",
+            "name": "DEF+",
+            "desc": "DEF increased by 5.32%."
+        },
+        "Intro Skill Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredmine_UI.T_Iconpropertyredmine_UI",
+            "name": "Electro DMG Bonus+",
+            "desc": "Electro DMG Bonus increased by 4.20%."
+        }
+    },
+    "chain": {
+        "1": {
+            "buffs": [
+                1303700001,
+                1303700002,
+                1303700003
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_YuanwuM1_UI.T_IconDevice_YuanwuM1_UI",
+            "name": "Steaming Cup of Justice",
+            "desc": "When Yuanwu is in Forte Circuit's <color=Highlight>Lightning Infused<\/color> state, his Basic Attack Speed is increased by 20%, and his Heavy Attack Speed is increased by 20%."
+        },
+        "2": {
+            "buffs": [
+                1303700702
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_YuanwuM2_UI.T_IconDevice_YuanwuM2_UI",
+            "name": "Fierce Heart, Serene Mind",
+            "desc": "Intro Skill <color=Highlight>Thunder Bombardment<\/color> additionally recovers 15 Resonance Energy for Yuanwu."
+        },
+        "3": {
+            "buffs": [
+                1303700703
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_YuanwuM3_UI.T_IconDevice_YuanwuM3_UI",
+            "name": "Upholder of Integrity",
+            "desc": "When the Coordinated Attacks of Resonance Skill's <color=Highlight>Thunder Wedge<\/color> hits a target, the damage is additionally increased by 20% of Yuanwu's DEF."
+        },
+        "4": {
+            "buffs": [
+                1303700004
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_YuanwuM4_UI.T_IconDevice_YuanwuM4_UI",
+            "name": "Retributive Knuckles",
+            "desc": "When casting Resonance Liberation <color=Highlight>Blazing Might<\/color>, the on-field character will gain a Shield equal to 200% of Yuanwu's DEF for 10s."
+        },
+        "5": {
+            "buffs": [
+                1303700005
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_YuanwuM5_UI.T_IconDevice_YuanwuM5_UI",
+            "name": "Neighborhood Protector",
+            "desc": "When Resonance Skill <color=Highlight>Thunder Wedge<\/color> is on the field, Yuanwu's Resonance Liberation DMG Bonus is increased by 50%."
+        },
+        "6": {
+            "buffs": [
+                1303700006
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_YuanwuM6_UI.T_IconDevice_YuanwuM6_UI",
+            "name": "Defender of All Realms",
+            "desc": "All team members nearby within the range of Resonance Skill <color=Highlight>Thunder Wedge<\/color> will gain a 32% DEF increase, lasting 3s."
         }
     }
 };

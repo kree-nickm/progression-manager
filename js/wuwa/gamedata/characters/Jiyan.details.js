@@ -1,6 +1,8 @@
 export default {
     "forte": {
         "Basic Attack": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconNorSword.SP_IconNorSword",
+            "id": 1001101,
             "motionValues": [
                 {
                     "scaling": [
@@ -345,6 +347,8 @@ export default {
             "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnJiyan performs up to 5 consecutive attacks, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnJiyan consumes Stamina to thrust forward, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack: Windborne Strike<\/color><\/size>rnHold the <color=Highlight>Basic Attack<\/color> during <color=Highlight>Heavy Attack<\/color> to cast <color=Highlight>Windborne Strike<\/color> after the <color=Highlight>Heavy Attack<\/color> ends, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack: Abyssal Slash<\/color><\/size>rnRelease the <color=Highlight>Basic Attack<\/color> during the <color=Highlight>Heavy Attack<\/color> to cast <color=Highlight>Abyssal Slash<\/color> after the <color=Highlight>Heavy Attack<\/color> ends, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnJiyan consumes Stamina to perform a Mid-Air Plunging Attack, dealing <color=Wind>Aero DMG<\/color>.rnAfter the <color=Highlight>Plunging Attack<\/color>, use <color=Highlight>Basic Attack<\/color> to perform a follow-up attack, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack: Banner of Triumph<\/color><\/size>rnAfter casting the Heavy Attack <color=Highlight>Windborne Strike<\/color> or the Resonance Skill <color=Highlight>Windqueller<\/color> in the air, Jiyan can perform a mid-air attack, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color><\/size>rnUse a <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Wind>Aero DMG<\/color>."
         },
         "Resonance Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconJiyan\/SP_IconJiyanB1.SP_IconJiyanB1",
+            "id": 1001102,
             "motionValues": [
                 {
                     "scaling": [
@@ -425,6 +429,8 @@ export default {
             "desc": "Dash forward a certain distance, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rnCan be cast in the air."
         },
         "Resonance Liberation": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconJiyan\/SP_IconJiyanC1.SP_IconJiyanC1",
+            "id": 1001103,
             "motionValues": [
                 {
                     "scaling": [
@@ -600,11 +606,21 @@ export default {
             "name": "Emerald Storm: Prelude",
             "desc": "After releasing Emerald Storm: Prelude, Jiyan enters <color=Highlight>Qingloong Mode<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Qingloong Mode<\/color><\/size>rnJiyan has increased Anti-interruption;rn<color=Highlight>Basic Attack<\/color>, <color=Highlight>Heavy Attack<\/color> and <color=Highlight>Dodge Counter<\/color> are replaced with Heavy Attack <color=Highlight>Lance of Qingloong<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack: Lance of Qingloong<\/color><\/size>rnPerform up to 3 continuous attacks, dealing <color=Wind>Aero DMG<\/color>, considered as Heavy Attack damage."
         },
-        "Inherent Skill": {
-            "name": "Skillful Cooking",
-            "desc": "Has a chance to produce special dishes when cooking"
+        "Forte Circuit Passive 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconJiyan\/SP_IconJiyanD1.SP_IconJiyanD1",
+            "id": 1001104,
+            "name": "Heavenly Balance",
+            "desc": "After casting the Intro Skill <color=Highlight>Tactical Strike<\/color>, Jiyan's ATK is increased by 10% for 15s."
+        },
+        "Forte Circuit Passive 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconJiyan\/SP_IconJiyanD2.SP_IconJiyanD2",
+            "id": 1001105,
+            "name": "Tempest Taming",
+            "desc": "When Jiyan's attacks hit a target, Jiyan's Crit. DMG is increased by 12% for 8s."
         },
         "Intro Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconJiyan\/SP_IconJiyanQTE.SP_IconJiyanQTE",
+            "id": 1001106,
             "motionValues": [
                 {
                     "scaling": [
@@ -660,6 +676,8 @@ export default {
             "desc": "Jiyan pierces the target in mid-air, dealing <color=Wind>Aero DMG<\/color>."
         },
         "Forte Circuit": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconJiyan\/SP_IconJiyanY.SP_IconJiyanY",
+            "id": 1001107,
             "motionValues": [
                 {
                     "scaling": [
@@ -689,9 +707,107 @@ export default {
             "name": "Qingloong at War",
             "desc": "When casting Resonance Skill <color=Highlight>Windqueller<\/color>, if Jiyan has 30 or more \"Resolve\", he consumes 30 \"Resolve\" to increase the damage of this Resonance Skill <color=Highlight>Windqueller<\/color> by 20%.nWhen Jiyan is in <color=Highlight>Qingloong Mode<\/color>, DMG of Resonance Skill <color=Highlight>Windqueller<\/color> is increased by 20% and no longer consumes \"Resolve\".n<size=10> <\/size>n<size=40><color=Title>Resonance Liberation: Emerald Storm: Finale<\/color><\/size>nWhen casting Resonance Liberation <color=Highlight>Emerald Storm: Prelude<\/color>, if Jiyan has 30 \"Resolve\" or more, he will consume 30 \"Resolve\" to cast Emerald Storm: Finale, dealing <color=Wind>Aero DMG<\/color>, considered as Heavy Attack damage.nEmerald Storm: Finale can be cast in mid-air at low altitude.n<size=10> <\/size>n<size=40><color=Title>Resolve<\/color><\/size>nJiyan can hold up to 60 Resolve.nJiyan gains \"Resolve\" when his Normal Attack <color=Highlight>Lone Lance<\/color> hits the target.nJiyan gains \"Resolve\" when the Intro Skill <color=Highlight>Tactical Strike<\/color> hits the target.nIf Jiyan does not hit a target within 15s, his \"Resolve\" will gradually decrease."
         },
+        "Utility Passive": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconWorld4.SP_IconWorld4",
+            "id": 1001108,
+            "name": "Skillful Cooking",
+            "desc": "Has a chance to produce special dishes when cooking"
+        },
         "Outro Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconJiyan\/SP_IconJiyanT.SP_IconJiyanT",
+            "id": 1001109,
             "name": "Discipline",
             "desc": "When the next character's (or other characters on a nearby team that activates an Outro Skill) Heavy Attack hits a target, Jiyan will summon Qingloong to launch a Coordinated Attack, dealing <color=Wind>Aero DMG<\/color> equal to 313.40% of Jiyan's ATK. This attack lasts for 8s, and can be triggered once every 1s, up to 2 times."
+        },
+        "Basic Attack Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredbaoji_UI.T_Iconpropertyredbaoji_UI",
+            "name": "Crit. Rate+",
+            "desc": "Crit. Rate increased by 1.20%."
+        },
+        "Resonance Skill Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 1.80%."
+        },
+        "Resonance Liberation Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 1.80%."
+        },
+        "Intro Skill Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredbaoji_UI.T_Iconpropertyredbaoji_UI",
+            "name": "Crit. Rate+",
+            "desc": "Crit. Rate increased by 1.20%."
+        },
+        "Basic Attack Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredbaoji_UI.T_Iconpropertyredbaoji_UI",
+            "name": "Crit. Rate+",
+            "desc": "Crit. Rate increased by 2.80%."
+        },
+        "Resonance Skill Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 4.20%."
+        },
+        "Resonance Liberation Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 4.20%."
+        },
+        "Intro Skill Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredbaoji_UI.T_Iconpropertyredbaoji_UI",
+            "name": "Crit. Rate+",
+            "desc": "Crit. Rate increased by 2.80%."
+        }
+    },
+    "chain": {
+        "1": {
+            "buffs": [
+                1404901001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_JiyanM1_UI.T_IconDevice_JiyanM1_UI",
+            "name": "Benevolence",
+            "desc": "Resonance Skill <color=Highlight>Windqueller<\/color> can be used 1 more time.rnWhen casting Resonance Skill <color=Highlight>Windqueller<\/color>, the \"Resolve\" cost is decreased by 15."
+        },
+        "2": {
+            "buffs": [
+                1404902001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_JiyanM2_UI.T_IconDevice_JiyanM2_UI",
+            "name": "Versatility",
+            "desc": "After casting Intro Skill <color=Highlight>Tactical Strike<\/color>, Jiyan gains 30 \"Resolve\" and his ATK is increased by 28% for 15s. This can be triggered once every 15s."
+        },
+        "3": {
+            "buffs": [
+                1404903001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_JiyanM3_UI.T_IconDevice_JiyanM3_UI",
+            "name": "Spectation",
+            "desc": "When casting Resonance Skill <color=Highlight>Windqueller<\/color>, Resonance Liberation <color=Highlight>Emerald Storm: Prelude<\/color>, Resonance Skill <color=Highlight>Emerald Storm: Finale<\/color> or Intro Skill <color=Highlight>Tactical Strike<\/color>, Jiyan's Crit. Rate is increased by 16% and Crit. DMG is increased by 32% for 8s."
+        },
+        "4": {
+            "buffs": [
+                1404904001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_JiyanM4_UI.T_IconDevice_JiyanM4_UI",
+            "name": "Prudence",
+            "desc": "When casting Resonance Liberation <color=Highlight>Emerald Storm: Prelude<\/color> or Resonance Liberation <color=Highlight>Emerald Storm: Finale<\/color>, the Heavy Attack DMG Bonus of all team members is increased by 25% for 30s."
+        },
+        "5": {
+            "buffs": [
+                1404905001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_JiyanM5_UI.T_IconDevice_JiyanM5_UI",
+            "name": "Resolution",
+            "desc": "The DMG multiplier of Outro Skill <color=Highlight>Discipline<\/color> is increased by 120%.rnWhen Jiyan's attacks hit a target, his ATK is increased by 3% for 8s, stacking up to 15 times; this effect is immediately maxed after he casts Intro Skill <color=Highlight>Tactical Strike<\/color>."
+        },
+        "6": {
+            "buffs": [
+                1404906001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_JiyanM6_UI.T_IconDevice_JiyanM6_UI",
+            "name": "Fortitude",
+            "desc": "Every time <color=Highlight>Heavy Attack<\/color>, Intro Skill <color=Highlight>Tactical Strike<\/color> or Resonance Skill <color=Highlight>Windqueller<\/color> is used, Jiyan gains 1 stack(s) of \"Momentum\", stacking up to 2 times.rnResonance Liberation <color=Highlight>Emerald Storm: Finale<\/color> will consume all \"Momentum\", and each stack consumed increases the DMG multiplier of Resonance Liberation <color=Highlight>Emerald Storm: Finale<\/color> by 120%."
         }
     }
 };

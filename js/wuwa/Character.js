@@ -21,6 +21,16 @@ export default class Character extends WuWaItem
     'Forte Circuit': 1,
     'Resonance Liberation': 1,
     'Intro Skill': 1,
+    'Basic Attack Bonus 1': false,
+    'Basic Attack Bonus 2': false,
+    'Resonance Skill Bonus 1': false,
+    'Resonance Skill Bonus 2': false,
+    'Forte Circuit Passive 1': false,
+    'Forte Circuit Passive 2': false,
+    'Resonance Liberation Bonus 1': false,
+    'Resonance Liberation Bonus 2': false,
+    'Intro Skill Bonus 1': false,
+    'Intro Skill Bonus 2': false,
   };
 
   owned;
@@ -168,7 +178,19 @@ export default class Character extends WuWaItem
   
   getForteRankData(forte)
   {
-    return ForteData[this.forte[forte]] ?? ForteData[forte] ?? ForteData[10];
+    let str = String(forte);
+    if(str.endsWith("Bonus 1") || str.endsWith("Bonus") && !this.forte[str+" 1"])
+      return ForteData.bonus1;
+    else if(str.endsWith("Bonus 2") || str.endsWith("Bonus") && !this.forte[str+" 2"])
+      return ForteData.bonus2;
+    else if(str.endsWith("Passive 1") || str.endsWith("Passive") && !this.forte[str+" 1"])
+      return ForteData.circuit1;
+    else if(str.endsWith("Passive 2") || str.endsWith("Passive") && !this.forte[str+" 2"])
+      return ForteData.circuit2;
+    else if(str.endsWith("Bonus") || str.endsWith("Passive"))
+      return ForteData[10];
+    else
+      return ForteData[this.forte[forte]] ?? ForteData[forte] ?? ForteData[10];
   }
   
   getForteMat(type, forte)

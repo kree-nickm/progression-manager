@@ -1,6 +1,8 @@
 export default {
     "forte": {
         "Basic Attack": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconNorMagic.SP_IconNorMagic",
+            "id": 1001501,
             "motionValues": [
                 {
                     "scaling": [
@@ -232,6 +234,8 @@ export default {
             "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnYinlin controls the puppet \"Zapstring\" to perform up to 4 attacks, dealing <color=Thunder>Electro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnYinlin consumes Stamina to control \"Zapstring\", dealing <color=Thunder>Electro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnYinlin consumes Stamina to control \"Zapstring\" and perform a Mid-air Plunging Attack, dealing <color=Thunder>Electro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Thunder>Electro DMG<\/color>."
         },
         "Resonance Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYinlin\/SP_IconYinlinB1.SP_IconYinlinB1",
+            "id": 1001502,
             "motionValues": [
                 {
                     "scaling": [
@@ -430,6 +434,8 @@ export default {
             "desc": "<size=40><color=Title>Magnetic Roar<\/color><\/size>rnThe puppet \"Zapstring\" deals <color=Thunder>Electro DMG<\/color> to the target, and puts Yinlin into the <color=Highlight>Execution Mode<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Execution Mode<\/color><\/size>rn<color=Highlight>Basic Attack<\/color> and <color=Highlight>Dodge Counter<\/color> will trigger 1 <color=Highlight>Electromagnetic Blast<\/color> when hitting a target.rnEach stage of <color=Highlight>Basic Attack<\/color> or <color=Highlight>Dodge Counter<\/color> can only trigger 1 <color=Highlight>Electromagnetic Blast<\/color>, up to 4 times.rn<size=10> <\/size>rn<size=40><color=Title>Electromagnetic Blast<\/color><\/size>rnAttack all targets marked with Resonance Circuit <color=Highlight>Sinner's Mark<\/color>, dealing <color=Thunder>Electro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Lightning Execution<\/color><\/size>rnUse Resonance Skill after casting Resonance Skill <color=Highlight>Magnetic Roar<\/color> to cast <color=Highlight>Lightning Execution<\/color> to attack the target, dealing <color=Thunder>Electro DMG<\/color>.rnIf Resonance Skill <color=Highlight>Lightning Execution<\/color> is not activated in a while or this Character is switched, this Skill will be put on Cooldown."
         },
         "Resonance Liberation": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYinlin\/SP_IconYinlinC1.SP_IconYinlinC1",
+            "id": 1001503,
             "motionValues": [
                 {
                     "scaling": [
@@ -531,11 +537,21 @@ export default {
             "name": "Thundering Wrath",
             "desc": "Command \"Zapstring\" to call for thunder to fall upon a large range, dealing <color=Thunder>Electro DMG<\/color>."
         },
-        "Inherent Skill": {
-            "name": "Skillful Cooking",
-            "desc": "Has a chance to produce special dishes when cooking"
+        "Forte Circuit Passive 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYinlin\/SP_IconYinlinD1.SP_IconYinlinD1",
+            "id": 1001504,
+            "name": "Pain Immersion",
+            "desc": "After using Resonance Skill <color=Highlight>Magnetic Roar<\/color>, Yinlin's Crit. Rate is increased by 15% for 5s."
+        },
+        "Forte Circuit Passive 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYinlin\/SP_IconYinlinD2.SP_IconYinlinD2",
+            "id": 1001505,
+            "name": "Deadly Focus",
+            "desc": "The damage of Resonance Skill <color=Highlight>Lightning Execution<\/color> is increased by 10% when hitting targets marked with \"Sinner's Mark\", and Yinlin's ATK is increased by 10% for 4s when this is triggered."
         },
         "Intro Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYinlin\/SP_IconYinlinQTE.SP_IconYinlinQTE",
+            "id": 1001506,
             "motionValues": [
                 {
                     "scaling": [
@@ -590,6 +606,8 @@ export default {
             "desc": "Command puppet \"Zapstring\" to attack, dealing <color=Thunder>Electro DMG<\/color> in a large range."
         },
         "Forte Circuit": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYinlin\/SP_IconYinlinY.SP_IconYinlinY",
+            "id": 1001507,
             "motionValues": [
                 {
                     "scaling": [
@@ -645,9 +663,107 @@ export default {
             "name": "Chameleon Cipher",
             "desc": "<size=40><color=Title>Chameleon Cipher<\/color><\/size>nWhen Yinlin's \"Judgment Points\" is full, her <color=Highlight>Heavy Attack<\/color> is replaced with <color=Highlight>Chameleon Cipher<\/color>, which consumes all \"Judgment Points\" to attack the target, dealing <color=Thunder>Electro DMG<\/color>. When it hits a target marked with <color=Highlight>Sinner's Mark<\/color>, the <color=Highlight>Sinner's Mark<\/color> is replaced with <color=Highlight>Punishment Mark<\/color>, lasting for 18s.n<size=10> <\/size>n<size=40><color=Title>Sinner's Mark<\/color><\/size>nNormal Attack <color=Highlight>Zapstring's Dance<\/color>, Resonance Liberation <color=Highlight>Thundering Wrath<\/color>, and Intro Skill <color=Highlight>Roaring Storm<\/color> will apply <color=Highlight>Sinner's Mark<\/color> on hit.n<color=Highlight>Sinner's Mark<\/color> is removed when Yinlin exits.n<size=10> <\/size>n<size=40><color=Title>\"Punishment Mark\"<\/color><\/size>nWhen a target marked with <color=Highlight>Punishment Mark<\/color> is damaged, <color=Highlight>Judgement Strike<\/color> will fall, dealing <color=Thunder>Electro DMG<\/color> to all targets marked with <color=Highlight>Punishment Mark<\/color>. This can be triggered up to once per second.n<size=10> <\/size>n<size=40><color=Title>Judgment Points<\/color><\/size>nYinlin can hold up to 100 Judgement Points.nWhen Normal Attack <color=Highlight>Zapstring's Dance<\/color> hits a target, it restores \"Judgment Points\".nWhen Resonance Skill <color=Highlight>Magnetic Roar<\/color> hits a target, it restores \"Judgment Points\".nWhen Resonance Skill <color=Highlight>Electromagnetic Blast<\/color> hits a target, it restores \"Judgment Points\".nWhen Resonance Skill <color=Highlight>Lightning Execution<\/color> hits a target, it restores \"Judgment Points\"."
         },
+        "Utility Passive": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconWorld4.SP_IconWorld4",
+            "id": 1001508,
+            "name": "Skillful Cooking",
+            "desc": "Has a chance to produce special dishes when cooking"
+        },
         "Outro Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYinlin\/SP_IconYinlinT.SP_IconYinlinT",
+            "id": 1001509,
             "name": "Strategist",
             "desc": "The next character (or other characters on a nearby team that activates an Outro Skill) gains 20% Electro DMG Deepen and 25% Resonance Liberation DMG Deepen for 14s or until they are switched off field."
+        },
+        "Basic Attack Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredbaoji_UI.T_Iconpropertyredbaoji_UI",
+            "name": "Crit. Rate+",
+            "desc": "Crit. increased by 1.20%."
+        },
+        "Resonance Skill Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 1.80%."
+        },
+        "Resonance Liberation Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 1.80%."
+        },
+        "Intro Skill Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredbaoji_UI.T_Iconpropertyredbaoji_UI",
+            "name": "Crit. Rate+",
+            "desc": "Crit. increased by 1.20%."
+        },
+        "Basic Attack Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredbaoji_UI.T_Iconpropertyredbaoji_UI",
+            "name": "Crit. Rate+",
+            "desc": "Crit. increased by 2.80%."
+        },
+        "Resonance Skill Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 4.20%."
+        },
+        "Resonance Liberation Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 4.20%."
+        },
+        "Intro Skill Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredbaoji_UI.T_Iconpropertyredbaoji_UI",
+            "name": "Crit. Rate+",
+            "desc": "Crit. Rate increased by 2.80%."
+        }
+    },
+    "chain": {
+        "1": {
+            "buffs": [
+                1302901001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_YinlinM1_UI.T_IconDevice_YinlinM1_UI",
+            "name": "Morality's Crossroads",
+            "desc": "Resonance Skill <color=Highlight>Magnetic Roar<\/color> and <color=Highlight>Lightning Execution<\/color> deal 70% more damage."
+        },
+        "2": {
+            "buffs": [
+                1302902001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_YinlinM2_UI.T_IconDevice_YinlinM2_UI",
+            "name": "Ensnarled by Rapport",
+            "desc": "Resonance Skill <color=Highlight>Electromagnetic Blast<\/color> recovers an additional 5 \"Judgement Point(s)\" and 5 Resonance Energy on hit."
+        },
+        "3": {
+            "buffs": [
+                1302903001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_YinlinM3_UI.T_IconDevice_YinlinM3_UI",
+            "name": "Unyielding Verdict",
+            "desc": "Forte Circuit <color=Highlight>Judgment Strike<\/color>'s DMG multiplier is increased by 55%."
+        },
+        "4": {
+            "buffs": [
+                1302904001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_YinlinM4_UI.T_IconDevice_YinlinM4_UI",
+            "name": "Steadfast Conviction",
+            "desc": "When Forte Circuit <color=Highlight>Judgment Strike<\/color> hits a target, the ATK of all team members is increased by 20% for 12s."
+        },
+        "5": {
+            "buffs": [
+                1302905001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_YinlinM5_UI.T_IconDevice_YinlinM5_UI",
+            "name": "Resounding Will",
+            "desc": "Resonance Liberation <color=Highlight>Thundering Wrath<\/color> deals 100% extra damage to targets with Forte Circuit's <color=Highlight>Sinner's Mark<\/color> or <color=Highlight>Punishment Mark<\/color>."
+        },
+        "6": {
+            "buffs": [
+                1302906001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_YinlinM6_UI.T_IconDevice_YinlinM6_UI",
+            "name": "Pursuit of Justice",
+            "desc": "In the first 30s after casting Resonance Liberation <color=Highlight>Thundering Wrath<\/color>, when Yinlin's <color=Highlight>Basic Attack<\/color> hits a target, <color=Highlight>Furious Thunder<\/color> will be triggered, dealing <color=Thunder>Electro DMG<\/color> equal to 419.59% of Yinlin's ATK. Every <color=Highlight>Basic Attack<\/color> hit can trigger <color=Highlight>Furious Thunder<\/color> 1 time, up to 4 times. This is considered Resonance Skill DMG."
         }
     }
 };

@@ -1,6 +1,8 @@
 export default {
     "forte": {
         "Basic Attack": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconNorKnife.SP_IconNorKnife",
+            "id": 1000601,
             "motionValues": [
                 {
                     "scaling": [
@@ -278,6 +280,8 @@ export default {
             "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnRover performs up to 4 consecutive attacks, dealing <color=Light>Spectro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnRover consumes Stamina, dealing <color=Light>Spectro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack: Resonance<\/color><\/size>rnAfter <color=Highlight>Basic Attack 3<\/color> or <color=Highlight>Heavy Attack<\/color>, press the <color=Highlight>Basic Attack<\/color> button at the right time to perform Heavy Attack <color=Highlight>Resonance<\/color>, dealing <color=Light>Spectro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack: Aftertune<\/color><\/size>rnAfter Heavy Attack <color=Highlight>Resonance<\/color> or <color=Highlight>Dodge Counter<\/color> hits a target, press the <color=Highlight>Basic Attack<\/color> button to perform Heavy Attack <color=Highlight>Aftertune<\/color>, dealing <color=Light>Spectro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnRover consumes Stamina to perform a Mid-Air Plunging Attack, dealing <color=Light>Spectro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Light>Spectro DMG<\/color>."
         },
         "Resonance Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconZhujue\/SP_IconZhujueB1.SP_IconZhujueB1",
+            "id": 1000602,
             "motionValues": [
                 {
                     "scaling": [
@@ -355,6 +359,8 @@ export default {
             "desc": "Rover launches an attack forward, dealing <color=Light>Spectro DMG<\/color>."
         },
         "Resonance Liberation": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconZhujue\/SP_IconZhujueC1.SP_IconZhujueC1",
+            "id": 1000603,
             "motionValues": [
                 {
                     "scaling": [
@@ -454,11 +460,21 @@ export default {
             "name": "Echoing Orchestra",
             "desc": "Rover converges Spectro energy to assail the target area, detonating it after a short interval and dealing <color=Light>Spectro DMG<\/color>."
         },
-        "Inherent Skill": {
-            "name": "Solaris Voyager",
-            "desc": "An error occurred. Please contact our Customer Service for assistance"
+        "Forte Circuit Passive 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconZhujue\/SP_IconZhujueD1.SP_IconZhujueD1",
+            "id": 1000604,
+            "name": "Reticence",
+            "desc": "Damage dealt by Rover's Basic Attack <color=Highlight>Resonating Echoes<\/color> is increased by 60%."
+        },
+        "Forte Circuit Passive 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconZhujue\/SP_IconZhujueD2.SP_IconZhujueD2",
+            "id": 1000605,
+            "name": "Silent Listener",
+            "desc": "Rover gains 15% ATK increase for 5s upon casting Heavy Attack <color=Highlight>Resonance<\/color>."
         },
         "Intro Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconZhujue\/SP_IconZhujueQTE.SP_IconZhujueQTE",
+            "id": 1000606,
             "motionValues": [
                 {
                     "scaling": [
@@ -513,6 +529,8 @@ export default {
             "desc": "Rover attacks the target, dealing <color=Light>Spectro DMG<\/color>."
         },
         "Forte Circuit": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconZhujue\/SP_IconZhujueY.SP_IconZhujueY",
+            "id": 1000607,
             "motionValues": [
                 {
                     "scaling": [
@@ -664,9 +682,107 @@ export default {
             "name": "World in a Grain of Sand",
             "desc": "<size=40><color=Title>Resonance Skill: Resonating Spin<\/color><\/size>nIf \"Diminutive Sound\" exceeds 50 when <color=Highlight>Resonance Skill<\/color> is used, Rover consumes 50 \"Diminutive Sound\" to cast <color=Highlight>Resonating Spin<\/color>, dealing <color=Light>Spectro DMG<\/color>, considered as Resonance Skill damage.n<size=10> <\/size>n<size=40><color=Title>Basic Attack: Resonating Echoes<\/color><\/size>nAfter Resonance Skill <color=Highlight>Resonating Spin<\/color> ends, Rover performs Resonance Skill <color=Highlight>Resonating Echoes<\/color> upon pressing the Basic Attack button.nRover performs attacks forward, dealing <color=Light>Spectro DMG<\/color> considered as Resonance Skill DMG.n<size=10> <\/size>n<size=40><color=Title>Diminutive Sound<\/color><\/size>nRover can hold up to 100 \"Diminutive Sounds\".nRover obtains \"Diminutive Sound\" for every Normal Attack <color=Highlight>Vibration Manifestation<\/color> on hit.nRover obtains \"Diminutive Sound\" for every Heavy Attack <color=Highlight> aftertune<\/color> on hit.nRover obtains \"Diminutive Sound\" upon casting Intro Skill <color=Highlight>Waveshock<\/color>."
         },
+        "Rover Passive": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconRun.SP_IconRun",
+            "id": 1000608,
+            "name": "Solaris Voyager",
+            "desc": "An error occurred. Please contact our Customer Service for assistance"
+        },
         "Outro Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconZhujue\/SP_IconZhujueT.SP_IconZhujueT",
+            "id": 1000609,
             "name": "Instant",
             "desc": "Rover generates an area of stasis surrounding the next character (or other characters on a nearby team that activates an Outro Skill) over 3s."
+        },
+        "Basic Attack Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredlight_UI.T_Iconpropertyredlight_UI",
+            "name": "Spectro DMG Bonus+",
+            "desc": "Spectro DMG Bonus increased by 1.80%."
+        },
+        "Resonance Skill Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 1.80%."
+        },
+        "Resonance Liberation Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 1.80%."
+        },
+        "Intro Skill Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredlight_UI.T_Iconpropertyredlight_UI",
+            "name": "Spectro DMG Bonus+",
+            "desc": "Spectro DMG Bonus increased by 1.80%."
+        },
+        "Basic Attack Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredlight_UI.T_Iconpropertyredlight_UI",
+            "name": "Spectro DMG Bonus+",
+            "desc": "Spectro DMG Bonus increased by 4.20%."
+        },
+        "Resonance Skill Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 4.20%."
+        },
+        "Resonance Liberation Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 4.20%."
+        },
+        "Intro Skill Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredlight_UI.T_Iconpropertyredlight_UI",
+            "name": "Spectro DMG Bonus+",
+            "desc": "Spectro DMG Bonus increased by 4.20%."
+        }
+    },
+    "chain": {
+        "1": {
+            "buffs": [
+                1502901001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_nannvzhuM1_UI.T_IconDevice_nannvzhuM1_UI",
+            "name": "Odyssey of Beginnings",
+            "desc": "Rover's Crit. Rate is increased by 15% for 7s when casting Resonance Skill <color=Highlight>Resonating Slashes<\/color> or Resonance Skill <color=Highlight>Resonating Spin<\/color>."
+        },
+        "2": {
+            "buffs": [
+                1502902001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_nannvzhuM2_UI.T_IconDevice_nannvzhuM2_UI",
+            "name": "Microcosmic Murmurs",
+            "desc": "Rover's Spectro DMG Bonus is increased by 20%."
+        },
+        "3": {
+            "buffs": [
+                1502903001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_nannvzhuM3_UI.T_IconDevice_nannvzhuM3_UI",
+            "name": "Visages of Dust",
+            "desc": "Rover's Energy Regen is increased by 20%."
+        },
+        "4": {
+            "buffs": [
+                1502904001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_nannvzhuM4_UI.T_IconDevice_nannvzhuM4_UI",
+            "name": "Resonating Lamella",
+            "desc": "When casting Resonance Liberation <color=Highlight>Echoing Resonance<\/color>, Rover continuously restores HP for all team members: HP equal to 20% of Rover's ATK will be restored every second for 5s."
+        },
+        "5": {
+            "buffs": [
+                1502905001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_nannvzhuM5_UI.T_IconDevice_nannvzhuM5_UI",
+            "name": "Temporal Virtuoso",
+            "desc": "Rover's Resonance Liberation DMG Bonus is increased by 40%."
+        },
+        "6": {
+            "buffs": [
+                1502906001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_nannvzhuM6_UI.T_IconDevice_nannvzhuM6_UI",
+            "name": "Echoes of Wanderlust",
+            "desc": "Resonance Skill <color=Highlight>Resonating Slashes<\/color> and Resonance Skill <color=Highlight>Resonating Spin<\/color> reduces the target's Spectro DMG RES by 10% on hit for 20s."
         }
     }
 };

@@ -1,6 +1,8 @@
 export default {
     "forte": {
         "Basic Attack": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconNorKnife.SP_IconNorKnife",
+            "id": 1000101,
             "motionValues": [
                 {
                     "scaling": [
@@ -249,6 +251,8 @@ export default {
             "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnYangayang performs up to 4 consecutive attacks, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnYangyang consumes Stamina to lunge forward, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack: Zephyr Song<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after <color=Highlight>Heavy Attack<\/color> or <color=Highlight>Dodge Counter<\/color> to perform Heavy Attack <color=Highlight>Zephyr Song<\/color>, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnYangyang consumes Stamina to perform a Plunging Attack from mid-air, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to thrust forward, dealing <color=Wind>Aero DMG<\/color>."
         },
         "Resonance Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYangyang\/SP_IconYangyangB1.SP_IconYangyangB1",
+            "id": 1000102,
             "motionValues": [
                 {
                     "scaling": [
@@ -329,6 +333,8 @@ export default {
             "desc": "Yangyang wields her sword to create a whirling vortex of winds that gathers nearby enemies to the center, dealing <color=Wind>Aero DMG<\/color>."
         },
         "Resonance Liberation": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYangyang\/SP_IconYangyangC1.SP_IconYangyangC1",
+            "id": 1000103,
             "motionValues": [
                 {
                     "scaling": [
@@ -433,11 +439,21 @@ export default {
             "name": "Wind Spirals",
             "desc": "Yangyang conjures a mighty Cyclone that gathers nearby enemies, dealing <color=Wind>Aero DMG<\/color>."
         },
-        "Inherent Skill": {
-            "name": "Skillful Cooking",
-            "desc": "Has a chance to produce special dishes when cooking"
+        "Forte Circuit Passive 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYangyang\/SP_IconYangyangD1.SP_IconYangyangD1",
+            "id": 1000104,
+            "name": "Compassion",
+            "desc": "Yangyang recovers 30 Stamina after she casts a Mid-air Attack <color=Highlight>Feather Release<\/color>."
+        },
+        "Forte Circuit Passive 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYangyang\/SP_IconYangyangD2.SP_IconYangyangD2",
+            "id": 1000105,
+            "name": "Lazuline Mercy",
+            "desc": "Yangyang's Aero DMG Bonus is increased by 8% for 8s after casting Intro Skill <color=Highlight>Cerulean Song<\/color>."
         },
         "Intro Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYangyang\/SP_IconYangyangQTE.SP_IconYangyangQTE",
+            "id": 1000106,
             "motionValues": [
                 {
                     "scaling": [
@@ -469,6 +485,8 @@ export default {
             "desc": "Yangyang sends the target into the air, dealing <color=Wind>Aero DMG<\/color>."
         },
         "Forte Circuit": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYangyang\/SP_IconYangyangY.SP_IconYangyangY",
+            "id": 1000107,
             "motionValues": [
                 {
                     "scaling": [
@@ -547,9 +565,107 @@ export default {
             "name": "Echoing Feathers",
             "desc": "<size=40><color=Title>Heavy Attack: Stormy Strike<\/color><\/size>rnWhen Yangyang has 3 Melodies, she can cast <color=Highlight>Stormy Strike<\/color> after <color=Highlight>Heavy Attack<\/color>, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack: Feather Release<\/color><\/size>rnWhen Yangyang has 3 Melodies, casting <color=Highlight>Basic Attacks<\/color> in mid-air will cause her to consume all Melodies, perform consecutive strikes, and dive from mid-air, dealing <color=Wind>Aero DMG<\/color>. As Yangyang lands, she sheathes her sword with an attack, dealing <color=Wind>Aero DMG<\/color>. This attack is considered as Basic Attack.rn<size=10> <\/size>rn<size=40><color=Title>Melody<\/color><\/size>rnYangyang can hold up to 3 MelodiesrnYangyang obtains 1 Melody with every <color=Highlight>Basic Attack 4<\/color> on hit.rnYangyang obtains 1 Melody for every <color=Highlight>Zephyr Song<\/color> on hit.rnYangyang obtains 1 Melody for every Resonance Skill <color=Highlight>Zephyr Domain<\/color> on hit.rnYangyang obtains 1 Melody upon casting Intro Skill <color=Highlight>Cerulean Song<\/color>."
         },
+        "Utility Passive": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconRun.SP_IconRun",
+            "id": 1000108,
+            "name": "Skillful Cooking",
+            "desc": "Has a chance to produce special dishes when cooking"
+        },
         "Outro Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYangyang\/SP_IconYangyangT.SP_IconYangyangT",
+            "id": 1000109,
             "name": "Whispering Breeze",
             "desc": "Yangyang recovers 4 Resonance Energy per second over 5s for the next character (or other characters on a nearby team that activates an Outro Skill)."
+        },
+        "Resonance Liberation Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 1.80%."
+        },
+        "Intro Skill Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredwind_UI.T_Iconpropertyredwind_UI",
+            "name": "Aero DMG Bonus+",
+            "desc": "Aero DMG Bonus increased by 1.80%."
+        },
+        "Basic Attack Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredwind_UI.T_Iconpropertyredwind_UI",
+            "name": "Aero DMG Bonus+",
+            "desc": "Aero DMG Bonus increased by 4.20%."
+        },
+        "Resonance Skill Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 4.20%."
+        },
+        "Resonance Liberation Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 4.20%."
+        },
+        "Intro Skill Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredwind_UI.T_Iconpropertyredwind_UI",
+            "name": "Aero DMG Bonus+",
+            "desc": "Aero DMG Bonus increased by 4.20%."
+        },
+        "Basic Attack Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredwind_UI.T_Iconpropertyredwind_UI",
+            "name": "Aero DMG Bonus+",
+            "desc": "Aero DMG Bonus increased by 1.80%."
+        },
+        "Resonance Skill Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 1.80%."
+        }
+    },
+    "chain": {
+        "1": {
+            "buffs": [
+                1402901001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_YangyangM1_UI.T_IconDevice_YangyangM1_UI",
+            "name": "Sapphire Skies, nSoaring Sparrows",
+            "desc": "Intro Skill <color=Highlight>Cerulean Song<\/color> increases Yangyang's Aero DMG Bonus by an additional 15% for 8s."
+        },
+        "2": {
+            "buffs": [
+                1402902001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_YangyangM2_UI.T_IconDevice_YangyangM2_UI",
+            "name": "Nesting Twigs, nin Beaks They Harrow",
+            "desc": "<color=Highlight>Heavy Attack<\/color> recovers an additional 10 Resonance Energy for Yangyang when it hits a target, which can be triggered 1 time every 20s."
+        },
+        "3": {
+            "buffs": [
+                1402903001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_YangyangM3_UI.T_IconDevice_YangyangM3_UI",
+            "name": "Nature Sings in Symphony",
+            "desc": "Resonance Skill DMG Bonus is increased by 40%. The Wind Field's pulling effect on surrounding targets is enhanced, and the pulling range is expanded by 33%."
+        },
+        "4": {
+            "buffs": [
+                1402904001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_YangyangM4_UI.T_IconDevice_YangyangM4_UI",
+            "name": "Close Your Eyes and Listen in",
+            "desc": "Mid-Air Attack <color=Highlight>Feather Release<\/color>'s damage is increased by 95%."
+        },
+        "5": {
+            "buffs": [
+                1402905001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_YangyangM5_UI.T_IconDevice_YangyangM5_UI",
+            "name": "Winds Whisper in Harmony",
+            "desc": "Resonance Liberation <color=Highlight>Wind Spirals<\/color>'s damage is increased by 85%."
+        },
+        "6": {
+            "buffs": [
+                1402906001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_YangyangM6_UI.T_IconDevice_YangyangM6_UI",
+            "name": "A Tribute to Life's Sweet Hymn",
+            "desc": "After casting Mid-Air Attack <color=Highlight>Feather Release<\/color>, the ATK of all team members is increased by 20% for 20s."
         }
     }
 };

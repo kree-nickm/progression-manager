@@ -1,6 +1,8 @@
 export default {
     "forte": {
         "Basic Attack": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconNorMagic.SP_IconNorMagic",
+            "id": 1000701,
             "motionValues": [
                 {
                     "scaling": [
@@ -249,6 +251,8 @@ export default {
             "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnEncore performs up to 4 consecutive attacks, dealing <color=Fire>Fusion DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Basic Attack: Wooly Strike<\/color><\/size>rnAfter <color=Highlight>Basic Attack 4<\/color>, press the Basic Attack button to attack the target, dealing <color=Fire>Fusion DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnEncore consumes Stamina to attack the target, dealing <color=Fire>Fusion DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnEncore consumes Stamina to perform a Mid-Air Plunging Attack, dealing <color=Fire>Fusion DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Fire>Fusion DMG<\/color>."
         },
         "Resonance Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconAnke\/SP_IconAnkeB1.SP_IconAnkeB1",
+            "id": 1000702,
             "motionValues": [
                 {
                     "scaling": [
@@ -378,6 +382,8 @@ export default {
             "desc": "<size=40><color=Title>Flaming Woolies<\/color><\/size>rnEncore summons Cloudy and Cosmos to attack with burning rays, dealing <color=Fire>Fusion DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Energetic Welcome<\/color><\/size>rnAfter casting <color=Highlight>Flaming Woolies<\/color>, use <color=Highlight>Resonance Skill<\/color> to perform <color=Highlight>Energetic Welcome<\/color>, dealing <color=Fire>Fusion DMG<\/color>."
         },
         "Resonance Liberation": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconAnke\/SP_IconAnkeC1.SP_IconAnkeC1",
+            "id": 1000703,
             "motionValues": [
                 {
                     "scaling": [
@@ -676,11 +682,21 @@ export default {
             "name": "Cosmos Rave",
             "desc": "As Encore loses control, Cosmos breaks free and wreaks havoc on its surroundings.rn<size=10> <\/size>rn<size=40><color=Title>Basic Attack: Cosmos: Frolicking<\/color><\/size>rnDuring Cosmos Rave, the <color=Highlight>Basic Attack<\/color> is replaced with <color=Highlight>Cosmos: Frolicking<\/color>, which performs up to 4 consecutive attacks, dealing <color=Fire>Fusion DMG<\/color>, considered as Basic Attack damage.rn<size=10> <\/size>rn<size=40><color=Title>Cosmos: Heavy Attack<\/color><\/size>rnDuring Cosmos Rave, the <color=Highlight>Heavy Attack<\/color> is replaced with <color=Highlight>Cosmos: Heavy Attack<\/color>, consuming Stamina to attack the target, dealing <color=Fire>Fusion DMG<\/color>, considered as Heavy Attack damage.rn<size=10> <\/size>rn<size=40><color=Title>Resonance Skill: Cosmos: Rampage<\/color><\/size>rnDuring Cosmos Rave, <color=Highlight>Flaming Woolies<\/color> is replaced with <color=Highlight>Cosmos: Rampage<\/color>, dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill damage.rn<size=10> <\/size>rn<size=40><color=Title>Cosmos: Dodge Counter<\/color><\/size>rnDuring Cosmos Rave, use <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Fire>Fusion DMG<\/color>, considered as Basic Attack damage."
         },
-        "Inherent Skill": {
-            "name": "Skillful Cooking",
-            "desc": "Has a chance to produce special dishes when cooking"
+        "Forte Circuit Passive 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconAnke\/SP_IconAnkeD1.SP_IconAnkeD1",
+            "id": 1000704,
+            "name": "Angry Cosmos",
+            "desc": "During the Resonance Liberation <color=Highlight>Cosmos Rave<\/color>, when Encore's HP is above 70%, DMG dealt is increased by 10%."
+        },
+        "Forte Circuit Passive 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconAnke\/SP_IconAnkeD2.SP_IconAnkeD2",
+            "id": 1000705,
+            "name": "Woolies Cheer Dance",
+            "desc": "When Resonance Skill <color=Highlight>Flaming Woolies<\/color> or Resonance Skill <color=Highlight>Cosmos: Rampage<\/color> is cast, Encore's Fusion DMG Bonus is increased by 10% for 10s."
         },
         "Intro Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconAnke\/SP_IconAnkeQTE.SP_IconAnkeQTE",
+            "id": 1000706,
             "motionValues": [
                 {
                     "scaling": [
@@ -736,6 +752,8 @@ export default {
             "desc": "Encore pounces at the enemies with Cosmos, dealing <color=Fire>Fusion DMG<\/color>."
         },
         "Forte Circuit": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconAnke\/SP_IconAnkeY.SP_IconAnkeY",
+            "id": 1000707,
             "motionValues": [
                 {
                     "scaling": [
@@ -837,11 +855,109 @@ export default {
                 }
             ],
             "name": "Black & White Woolies",
-            "desc": "<size=40><color=Title>Heavy Attack: Cloudy Frenzy<\/color><\/size>nWhen Encore's \"Dissonance\" is full, after casting a <color=Highlight>Heavy Attack<\/color>, Encore will consume all \"Dissonance\" to enter the Dissonance state, reducing damage taken by 70%. Switching Characters does not interrupt \"Dissonance\".nAfter the Dissonance state ends, Encore will cast <color=Highlight>Cloudy Frenzy<\/color>, dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Liberation damage.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack: Cosmos Rupture<\/color><\/size>nDuring Cosmos Rampage, when casting <color=Highlight>Heavy Attack<\/color>, if \"Dissonance\" is full, Encore will consume all \"Dissonance\" to enter Cosmos' Dissonance state, reducing damage taken by 70%. Switching Characters does not interrupt \"Dissonance\".nAfter Cosmos' Dissonance state ends, Encore will cast <color=Highlight>Cosmos Rupture<\/color>, dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Liberation damage.n<size=10> <\/size>n<size=40><color=Title>Dissonance<\/color><\/size>nEncore can hold up to 100 \"Dissonance\".nWhen Normal Attack <color=Highlight>Wooly Attack<\/color> hits the target, Encore restores \"Dissonance\".nWhen Resonance Skill <color=Highlight>Flaming Woolies<\/color> hits the target, Encore restores \"Dissonance\".nWhen Resonance Skill <color=Highlight>Energetic Welcome<\/color> hits the target, Encore restores \"Dissonance\".nWhen Intro Skill <color=Highlight>Woolies Helpers<\/color> hits the target, Encore restores \"Dissonance\".nDuring the duration of Resonance Liberation <color=Highlight>Cosmos Rave<\/color>, hitting targets will restore \"Dissonance\" to Encore."
+            "desc": "<size=40><color=Title>Heavy Attack: Cloudy Frenzy<\/color><\/size>nWhen Encore's [Mayhem] is full, after casting a <color=Highlight>Heavy Attack<\/color>, Encore will consume all [Mayhem] to enter the Mayhem state, reducing damage taken by 70%. Switching Characters does not interrupt the Mayhem state.nAfter the Mayhem state ends, Encore will cast <color=Highlight>Cloudy Frenzy<\/color>, dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Liberation damage.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack: Cosmos Rupture<\/color><\/size>nDuring Cosmos Rampage, when casting <color=Highlight>Heavy Attack<\/color>, if [Mayhem] is full, Encore will consume all [Mayhem] to enter Cosmos' Mayhem state, reducing damage taken by 70%. Switching Characters does not interrupt the Mayhem state.nAfter Cosmos' Mayhem state ends, Encore will cast <color=Highlight>Cosmos Rupture<\/color>, dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Liberation damage.<size=10> <\/size>n<size=40><color=Title>Mayhem<\/color><\/size>nEncore can hold up to 100 point(s) of [Mayhem].nWhen Normal Attack <color=Highlight>Wooly Attack<\/color> hits a target, Encore restores [Mayhem].nWhen Resonance Skill <color=Highlight>Flaming Woolies<\/color> hits a target, Encore restores [Mayhem].nWhen Resonance Skill <color=Highlight>Energetic Welcome<\/color> hits a target, Encore restores [Mayhem].nWhen Intro Skill <color=Highlight>Woolies Helpers<\/color> hits a target, Encore restores [Mayhem].nDuring the duration of Resonance Liberation <color=Highlight>Cosmos Rave<\/color>, Encore restores [Mayhem] when hitting a target."
+        },
+        "Utility Passive": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconWorld3.SP_IconWorld3",
+            "id": 1000708,
+            "name": "Skillful Cooking",
+            "desc": "Has a chance to produce special dishes when cooking"
         },
         "Outro Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconAnke\/SP_IconAnkeT.SP_IconAnkeT",
+            "id": 1000709,
             "name": "Thermal Field",
             "desc": "Encore generates a Thermal Field centered around skill target, with a radius of 3m. Targets inside the Thermal Field are continuously burned, suffering <color=Fire>Fusion DMG<\/color> equal to 176.76% of Encore's ATK every 1.5s for 6s."
+        },
+        "Basic Attack Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredhot_UI.T_Iconpropertyredhot_UI",
+            "name": "Fusion DMG Bonus+",
+            "desc": "Fusion DMG Bonus increased by 1.80%."
+        },
+        "Resonance Skill Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 1.80%."
+        },
+        "Intro Skill Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredhot_UI.T_Iconpropertyredhot_UI",
+            "name": "Fusion DMG Bonus+",
+            "desc": "Fusion DMG Bonus increased by 1.80%."
+        },
+        "Basic Attack Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredhot_UI.T_Iconpropertyredhot_UI",
+            "name": "Fusion DMG Bonus+",
+            "desc": "Fusion DMG Bonus increased by 4.20%."
+        },
+        "Resonance Skill Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 4.20%."
+        },
+        "Resonance Liberation Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 4.20%."
+        },
+        "Intro Skill Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredhot_UI.T_Iconpropertyredhot_UI",
+            "name": "Fusion DMG Bonus+",
+            "desc": "Fusion DMG Bonus increased by 4.20%."
+        },
+        "Resonance Liberation Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 1.80%."
+        }
+    },
+    "chain": {
+        "1": {
+            "buffs": [
+                1203901001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_AnkeM1_UI.T_IconDevice_AnkeM1_UI",
+            "name": "Wooly's Fairy Tale",
+            "desc": "When <color=Highlight>Basic Attack<\/color> hits a target, Encore's Fusion DMG Bonus is increased by 3%, stacking up to 4 times for 6s."
+        },
+        "2": {
+            "buffs": [
+                1203902001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_AnkeM2_UI.T_IconDevice_AnkeM2_UI",
+            "name": "Sheep-counting Lullaby",
+            "desc": "Encore additionally restores 10 Resonance Energy when casting Basic Attack <color=Highlight>Woolies Attack<\/color> or Resonance Skill <color=Highlight>Energetic Welcome<\/color>. This can be triggered once every 10s."
+        },
+        "3": {
+            "buffs": [
+                1203903001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_AnkeM3_UI.T_IconDevice_AnkeM3_UI",
+            "name": "Fog? The Black Shores!",
+            "desc": "The DMG multiplier of Heavy Attack <color=Highlight>Cloudy: Frenzy<\/color> and Heavy Attack <color=Highlight>Cosmos: Rupture<\/color> is increased by 40%."
+        },
+        "4": {
+            "buffs": [
+                1203904001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_AnkeM4_UI.T_IconDevice_AnkeM4_UI",
+            "name": "Adventure? Let\u2019s go!",
+            "desc": "Heavy Attack <color=Highlight>Cosmos: Rupture<\/color> increases the Fusion DMG Bonus of all team members by 20% for 30s."
+        },
+        "5": {
+            "buffs": [
+                1203905001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_AnkeM5_UI.T_IconDevice_AnkeM5_UI",
+            "name": "Hero Takes the Stage!",
+            "desc": "Resonance Skill DMG Bonus is increased by 35%."
+        },
+        "6": {
+            "buffs": [
+                1203906001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_AnkeM6_UI.T_IconDevice_AnkeM6_UI",
+            "name": "Woolies Save the World!",
+            "desc": "During Resonance Liberation <color=Highlight>Cosmos Rave<\/color>, Encore gains 1 stack(s) of \"Lost Lamb\" every time she deals damage, each stack increasing her ATK by 5% for 10s, stacking up to 5 time(s)."
         }
     }
 };

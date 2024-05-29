@@ -1,6 +1,8 @@
 export default {
     "forte": {
         "Basic Attack": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconNorKnife.SP_IconNorKnife",
+            "id": 1001701,
             "motionValues": [
                 {
                     "scaling": [
@@ -253,6 +255,8 @@ export default {
             "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnRover-Havoc performs up to 5 consecutive attacks, dealing <color=Dark>Havoc DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnRover-Havoc consumes Stamina to attack, dealing <color=Dark>Havoc DMG<\/color>.rnUse <color=Highlight>Basic Attack<\/color> after casting Heavy Attack to cast Basic Attack 4.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnRover-Havoc consumes Stamina to cast a Mid-Air Plunging Attack, dealing <color=Dark>Havoc DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after a successful Dodge to attack the target, dealing <color=Dark>Havoc DMG<\/color>."
         },
         "Resonance Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconZhujueDark\/SP_IconZhujueDarkB1.SP_IconZhujueDarkB1",
+            "id": 1001702,
             "motionValues": [
                 {
                     "scaling": [
@@ -330,6 +334,8 @@ export default {
             "desc": "Transforms sound into feathers, dealing <color=Dark>Havoc DMG<\/color>."
         },
         "Resonance Liberation": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconZhujueDark\/SP_IconZhujueDarkC1.SP_IconZhujueDarkC1",
+            "id": 1001703,
             "motionValues": [
                 {
                     "scaling": [
@@ -429,11 +435,21 @@ export default {
             "name": "Deadening Abyss",
             "desc": "Rover gathers resonating sounds to attack a target, dealing <color=Dark>Havoc DMG<\/color>."
         },
-        "Inherent Skill": {
-            "name": "An error occurred. Please contact our Customer Service for assistance",
-            "desc": "An error occurred. Please contact our Customer Service for assistance"
+        "Forte Circuit Passive 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconZhujueDark\/SP_IconZhujueDarkD1.SP_IconZhujueDarkD1",
+            "id": 1001704,
+            "name": "Metamorph",
+            "desc": "In the <color=Highlight>Dark Surge<\/color> state, Havoc DMG Bonus is increased by 20%."
+        },
+        "Forte Circuit Passive 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconZhujueDark\/SP_IconZhujueDarkD2.SP_IconZhujueDarkD2",
+            "id": 1001705,
+            "name": "Bleak Crescendo",
+            "desc": "While in the <color=Highlight>Dark Surge<\/color> state, <color=Highlight>Basic Attack<\/color> recovers 1 Resonance Energy when it hits a target, and this effect can be triggered once per second."
         },
         "Intro Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconZhujueDark\/SP_IconZhujueDarkQTE.SP_IconZhujueDarkQTE",
+            "id": 1001706,
             "motionValues": [
                 {
                     "scaling": [
@@ -488,6 +504,8 @@ export default {
             "desc": "Attack the target, dealing <color=Dark>Havoc DMG<\/color>."
         },
         "Forte Circuit": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconZhujueDark\/SP_IconZhujueDarkY.SP_IconZhujueDarkY",
+            "id": 1001707,
             "motionValues": [
                 {
                     "scaling": [
@@ -860,9 +878,107 @@ export default {
             "name": "Umbra Eclipse",
             "desc": "<size=40><color=Title>Devastation<\/color><\/size>rnWhen \"Umbra\" is full, hold <color=Highlight>Basic Attack<\/color> to cast <color=Highlight>Devastation<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>, considered as Heavy Attack damage.rn<size=10> <\/size>rn<size=40><color=Title>Dark Surge<\/color><\/size>rnAfter casting <color=Highlight>Devastation<\/color>, Rover enters the <color=Highlight>Dark Surge<\/color> state. In this state:rn<color=Highlight>Basic Attack<\/color> is replaced with <color=Highlight>Enhanced Basic Attack<\/color>, which performs up to 5 consecutive attacks, dealing <color=Dark>Havoc DMG<\/color>;rn<color=Highlight>Heavy Attack<\/color> is replaced with <color=Highlight>Enhanced Heavy Attack<\/color>;rnUse <color=Highlight>Basic Attack<\/color> after casting <color=Highlight>Enhanced Heavy Attack<\/color> to cast Heavy Attack <color=Highlight>Thwackblade<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>, considered as Heavy Attack damage;rnUse <color=Highlight>Basic Attack<\/color> after casting Heavy Attack <color=Highlight>Thwackblade<\/color> to cast <color=Highlight> Enhanced Basic Attack 3<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>;rnResonance Skill <color=Highlight>Wingblade<\/color> is replaced with Resonance Skill <color=Highlight>Lifetaker<\/color>, transforming sounds into blades to attack the target, dealing <color=Dark>Havoc DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Umbra<\/color><\/size>rnRover can hold up to 100 points of Umbra.rnNormal Attack <color=Highlight>Tuneslayer<\/color> recovers Umbra on hit.rnResonance Skill <color=Highlight>Wingblade<\/color> recovers Umbra when cast.rnResonance Skill <color=Highlight>Lifetaker<\/color> recovers Umbra when cast.rnIntro Skill <color=Highlight>Instant of Annihilation<\/color> recovers Umbra when cast."
         },
+        "Rover Passive": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconWorld3.SP_IconWorld3",
+            "id": 1001708,
+            "name": "An error occurred. Please contact our Customer Service for assistance",
+            "desc": "An error occurred. Please contact our Customer Service for assistance"
+        },
         "Outro Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconZhujueDark\/SP_IconZhujueDarkT.SP_IconZhujueDarkT",
+            "id": 1001709,
             "name": "Soundweaver",
             "desc": "Rover summons a Havoc Field, dealing 143.3% <color=Dark>Havoc DMG<\/color> to all targets within range every 2s for 6s."
+        },
+        "Resonance Liberation Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 4.20%."
+        },
+        "Intro Skill Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyreddark_UI.T_Iconpropertyreddark_UI",
+            "name": "Havoc DMG Bonus+",
+            "desc": "Havoc DMG Bonus increased by 4.20%."
+        },
+        "Basic Attack Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyreddark_UI.T_Iconpropertyreddark_UI",
+            "name": "Havoc DMG Bonus+",
+            "desc": "Havoc DMG Bonus increased by 1.80%."
+        },
+        "Resonance Skill Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 1.80%."
+        },
+        "Resonance Liberation Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 1.80%."
+        },
+        "Intro Skill Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyreddark_UI.T_Iconpropertyreddark_UI",
+            "name": "Havoc DMG Bonus+",
+            "desc": "Havoc DMG Bonus increased by 1.80%."
+        },
+        "Basic Attack Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyreddark_UI.T_Iconpropertyreddark_UI",
+            "name": "Havoc DMG Bonus+",
+            "desc": "Havoc DMG Bonus increased by 4.20%."
+        },
+        "Resonance Skill Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 4.20%."
+        }
+    },
+    "chain": {
+        "1": {
+            "buffs": [
+                1604004000
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_ZhujueDarkM1_UI.T_IconDevice_ZhujueDarkM1_UI",
+            "name": "Cryptic Insight",
+            "desc": "Resonance Skill DMG Bonus is increased by 30%."
+        },
+        "2": {
+            "buffs": [
+                1604005000
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_ZhujueDarkM2_UI.T_IconDevice_ZhujueDarkM2_UI",
+            "name": "Waning Crescent",
+            "desc": "Reset Resonance Skill's Cooldown when Rover enters the <color=Highlight>Dark Surge<\/color> state by casting Heavy Attack <color=Highlight>Devastation<\/color>."
+        },
+        "3": {
+            "buffs": [
+                1604006000
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_ZhujueDarkM3_UI.T_IconDevice_ZhujueDarkM3_UI",
+            "name": "Surging Resonance",
+            "desc": "In the <color=Highlight>Dark Surge<\/color> state, Basic Attack V restores HP equal to 10% of total HP lost on hit."
+        },
+        "4": {
+            "buffs": [
+                1604007000
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_ZhujueDarkM4_UI.T_IconDevice_ZhujueDarkM4_UI",
+            "name": "Annihilated Silence",
+            "desc": "Heavy Attack <color=Highlight>Devastation<\/color> and Resonance Liberation <color=Highlight>Deadening Abyss<\/color> reduces enemy Havoc RES by 10% for 20s on hit."
+        },
+        "5": {
+            "buffs": [
+                1604008000
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_ZhujueDarkM5_UI.T_IconDevice_ZhujueDarkM5_UI",
+            "name": "Aeon Symphony",
+            "desc": "In the <color=Highlight>Dark Surge<\/color> state, <color=Highlight>Basic Attack V<\/color> deals an additional <color=Highlight>Havoc damage<\/color> equal to 50% of <color=Highlight>Basic Attack V<\/color> damage."
+        },
+        "6": {
+            "buffs": [
+                1604009000
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_ZhujueDarkM6_UI.T_IconDevice_ZhujueDarkM6_UI",
+            "name": "Ebbing Undercurrent",
+            "desc": "In the <color=Highlight>Dark Surge<\/color> state, Rover's Crit. Rate is increased by 25%."
         }
     }
 };

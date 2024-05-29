@@ -1,6 +1,8 @@
 export default {
     "forte": {
         "Basic Attack": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconNorSword.SP_IconNorSword",
+            "id": 1001401,
             "motionValues": [
                 {
                     "scaling": [
@@ -228,6 +230,8 @@ export default {
             "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnCalcharo performs up to 4 consecutive attacks, dealing <color=Thunder>Electro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnConsumes Stamina to attack the target, dealing <color=Thunder>Electro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnConsumes Stamina to perform a Mid-Air Plunging Attack, dealing <color=Thunder>Electro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Thunder>Electro DMG<\/color>."
         },
         "Resonance Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconKakaluo\/SP_IconKakaluoB1.SP_IconKakaluoB1",
+            "id": 1001402,
             "motionValues": [
                 {
                     "scaling": [
@@ -355,6 +359,8 @@ export default {
             "desc": "Calcharo performs up to 3 consecutive attacks, dealing <color=Thunder>Electro DMG<\/color>.nIf Calcharo is switched off field, or if Resonance Skill <color=Highlight>Extermination Order<\/color> is not performed again in a while, this skill will enter Cooldown.nResonance Skill <color=Highlight>Extermination Order<\/color> does not interrupt Calcharo's Basic Attack combo."
         },
         "Resonance Liberation": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconKakaluo\/SP_IconKakaluoC1.SP_IconKakaluoC1",
+            "id": 1001403,
             "motionValues": [
                 {
                     "scaling": [
@@ -700,11 +706,21 @@ export default {
             "name": "Phantom Etching",
             "desc": "Calcharo attacks the target, dealing <color=Thunder>Electro DMG<\/color> and enters <color=Highlight>Deathblade Gear<\/color> state. After Resonance Liberation <color=Highlight>Deathblade Gear<\/color> state ends, Calcharo's next Intro Skill is replaced with Intro Skill <color=Highlight>\"Necessary Means\"<\/color>, which deals <color=Thunder>Electro DMG<\/color>, considered as Intro Skill damage.rn<size=10> <\/size>rn<size=40><color=Title>Deathblade Gear<\/color><\/size>rn-<color=Highlight>Basic Attack<\/color> is replaced with Basic Attack <color=Highlight>Hounds Roar<\/color>.rn-<color=Highlight>Dodge Counter<\/color> deals increased damage, considered as Resonance Liberation damage.rn<size=10> <\/size>rn<size=40><color=Title>Hounds Roar<\/color><\/size>rnCalcharo performs up to 5 consecutive attacks, dealing <color=Thunder>Electro DMG<\/color>, considered as Basic Attack Damage."
         },
-        "Inherent Skill": {
-            "name": "Skillful Cooking",
-            "desc": "Has a chance to produce special dishes when cooking"
+        "Forte Circuit Passive 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconKakaluo\/SP_IconKakaluoD1.SP_IconKakaluoD1",
+            "id": 1001404,
+            "name": "Bloodshed Awaken",
+            "desc": "When casting Heavy Attack <color=Highlight>\"Mercy\"<\/color>, Calcharo's Resonance Liberation DMG Bonus is increased by 10% for 15s."
+        },
+        "Forte Circuit Passive 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconKakaluo\/SP_IconKakaluoD2.SP_IconKakaluoD2",
+            "id": 1001405,
+            "name": "Revenant Rush",
+            "desc": "When Heavy Attack <color=Highlight>\"Death Messenger\"<\/color> hits the target, the damage taken by Calcharo is reduced by 15% for 5s."
         },
         "Intro Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconKakaluo\/SP_IconKakaluoQTE.SP_IconKakaluoQTE",
+            "id": 1001406,
             "motionValues": [
                 {
                     "scaling": [
@@ -759,6 +775,8 @@ export default {
             "desc": "Attack the target, dealing <color=Thunder>Electro DMG<\/color>."
         },
         "Forte Circuit": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconKakaluo\/SP_IconKakaluoY.SP_IconKakaluoY",
+            "id": 1001407,
             "motionValues": [
                 {
                     "scaling": [
@@ -906,9 +924,107 @@ export default {
             "name": "Hunting Mission",
             "desc": "<size=40><color=Title>Heavy Attack: \"Mercy\"<\/color><\/size>rnWhen Calcharo has 3 \"Cruelty\", his <color=Highlight>Heavy Attack<\/color> is replaced with Heavy Attack <color=Highlight>\"Mercy\"<\/color>.rnWhen casting Heavy Attack <color=Highlight>\"Mercy\"<\/color>, Calcharo consumes 3 \"Cruelty\" to deal <color=Thunder>Electro DMG<\/color>, considered as Heavy Attack damage, and recovers Resonance Energy and Concerto Energy.rn<size=10> <\/size>rn<size=40><color=Title>\"Cruelty\"<\/color><\/size>rnCalcharo can hold up to 3 \"Cruelty\".rnUnder Resonance Liberation <color=Highlight>Deathblade Gear<\/color> state, \"Cruelty\" cannot be acquired.rnWhen Resonance Skill <color=Highlight>Extermination Order<\/color> hits the target, gain 1 \"Cruelty\".rn<size=10> <\/size>rn<color=Title>Heavy Attack: \"Death Messenger\"<\/color>rnWhen Calcharo has 5 \"Killing Intent\", his <color=Highlight>Basic Attack<\/color> is replaced with Heavy Attack <color=Highlight>\"Death Messenger\"<\/color>.rnWhen casting Heavy Attack <color=Highlight>\"Death Messenger\"<\/color>, Calcharo consumes 5 \"Killing Intent\" to deal <color=Thunder>Electro DMG<\/color>, considered as Resonance Liberation damage, and recovers Resonance Energy and Concerto Energy.rn<size=10> <\/size>rn<size=40><color=Title>\"Killing Intent\"<\/color><\/size>rnUnder Resonance Liberation <color=Highlight>Deathblade Gear<\/color> state, Calcharo's Forte Gauge is replaced with \"Killing Intent\", stacking up to 5.rnWhen Basic Attack <color=Highlight>Hounds Roar<\/color> hits the target, Calcharo gains 1 \"Killing Intent\"."
         },
+        "Utility Passive": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconWorld3.SP_IconWorld3",
+            "id": 1001408,
+            "name": "Skillful Cooking",
+            "desc": "Has a chance to produce special dishes when cooking"
+        },
         "Outro Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconKakaluo\/SP_IconKakaluoT.SP_IconKakaluoT",
+            "id": 1001409,
             "name": "Shadowy Raid",
             "desc": "Calcharo summons <color=Highlight>Phantom<\/color> to support the on-field Resonator, clearing the targets in front with a slash. The <color=Highlight>Phantom's<\/color> attack deals <color=Thunder>Electro DMG<\/color> equal to 195.98%+391.96% of Calcharo's ATK."
+        },
+        "Resonance Liberation Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 4.20%."
+        },
+        "Intro Skill Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredcrit_UI.T_Iconpropertyredcrit_UI",
+            "name": "Crit. DMG+",
+            "desc": "Crit. DMG increased by 5.60%."
+        },
+        "Basic Attack Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredcrit_UI.T_Iconpropertyredcrit_UI",
+            "name": "Crit. DMG+",
+            "desc": "Crit. DMG increased by 2.40%."
+        },
+        "Resonance Skill Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 1.80%."
+        },
+        "Resonance Liberation Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 1.80%."
+        },
+        "Intro Skill Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredcrit_UI.T_Iconpropertyredcrit_UI",
+            "name": "Crit. DMG+",
+            "desc": "Crit. DMG increased by 2.40%."
+        },
+        "Basic Attack Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredcrit_UI.T_Iconpropertyredcrit_UI",
+            "name": "Crit. DMG+",
+            "desc": "Crit. DMG increased by 5.60%."
+        },
+        "Resonance Skill Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 4.20%."
+        }
+    },
+    "chain": {
+        "1": {
+            "buffs": [
+                1301600001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_KakaluoM1_UI.T_IconDevice_KakaluoM1_UI",
+            "name": "Covert Negotiation",
+            "desc": "When Resonance Skill <color=Highlight>Extermination Order<\/color> hits a target, it additionally recovers 10 Resonance Energy. This can be triggered once every 20s."
+        },
+        "2": {
+            "buffs": [
+                1301600003
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_KakaluoM2_UI.T_IconDevice_KakaluoM2_UI",
+            "name": "Zero-Sum Game",
+            "desc": "After Calcharo casts Intro Skill <color=Highlight>Wanted Criminal<\/color> or Intro Skill <color=Highlight>\"Necessary Means\"<\/color>, his Resonance Skill DMG Bonus is increased by 30% for 15s."
+        },
+        "3": {
+            "buffs": [
+                1301600004
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_KakaluoM3_UI.T_IconDevice_KakaluoM3_UI",
+            "name": "Iron Fist Diplomacy",
+            "desc": "During the Resonance Liberation <color=Highlight>Deathblade Gear<\/color> state, Calcharo's Electro DMG Bonus is increased by 25%."
+        },
+        "4": {
+            "buffs": [
+                1301600006
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_KakaluoM4_UI.T_IconDevice_KakaluoM4_UI",
+            "name": "Dark Alliance",
+            "desc": "After casting Outro Skill <color=Highlight>Shadowy Raid<\/color>, Electro DMG Bonus of all team members is increased by 20% for 30s."
+        },
+        "5": {
+            "buffs": [
+                1301600008
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_KakaluoM5_UI.T_IconDevice_KakaluoM5_UI",
+            "name": "Unconventional Compact",
+            "desc": "Intro Skill <color=Highlight>Wanted Criminal<\/color> and Intro Skill <color=Highlight>\"Necessary Means:<\/color> deal 50% more damage."
+        },
+        "6": {
+            "buffs": [
+                1301600010
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_KakaluoM6_UI.T_IconDevice_KakaluoM6_UI",
+            "name": "The Ultimatum",
+            "desc": "When casting Resonance Liberation <color=Highlight>\"Death Messenger\"<\/color>, Calcharo will summon 2 <color=Highlight>Phantoms<\/color> to perform Coordinated Attacks. Each <color=Highlight>Phantom<\/color> deals <color=Thunder>Electro DMG<\/color> equal to 100.00% of Calcharo's ATK, which is considered Resonance Liberation damage."
         }
     }
 };

@@ -1,6 +1,8 @@
 export default {
     "forte": {
         "Basic Attack": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconNorFist.SP_IconNorFist",
+            "id": 1001801,
             "motionValues": [
                 {
                     "scaling": [
@@ -282,6 +284,8 @@ export default {
             "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnLingyang performs up to 5 consecutive attacks, dealing <color=Ice>Glacio DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Basic Attack: Feral Roars<\/color><\/size>rnAfter Resonance Skill <color=Highlight>Furious Punches<\/color> is cast, <color=Highlight>Basic Attack 5<\/color> is replaced with <color=Highlight>Feral Roars<\/color>, dealing <color=Ice>Glacio DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnLingyang consumes Stamina to attack the target, dealing <color=Ice>Glacio DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnLingyang consumes Stamina to perform a Mid-air Plunging Attack, dealing <color=Ice>Glacio DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Ice>Glacio DMG<\/color>."
         },
         "Resonance Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconLingyang\/SP_IconLingyangB1.SP_IconLingyangB1",
+            "id": 1001802,
             "motionValues": [
                 {
                     "scaling": [
@@ -363,6 +367,8 @@ export default {
             "desc": "<size=40><color=Title>Ancient Arts<\/color><\/size>rnAttack the target, dealing <color=Ice>Glacio DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Furious Punches<\/color><\/size>rnWhen <color=Highlight>Basic Attacks 3, 4, or 5<\/color> or Basic Attack <color=Highlight>Feral Roars<\/color> hits the target, Resonance Skill <color=Highlight>Ancient Arts<\/color> is replaced with Resonance Skill <color=Highlight>Swift Punches<\/color>.rnIf Lingyang uses <color=Highlight>Basic Attack<\/color> after casting Basic Attack <color=Highlight>Feral Roars<\/color> and Resonance Skill <color=Highlight>Swift Punches<\/color>, he will start from <color=Highlight>Basic Attack 3<\/color>.rn<size=10> <\/size>rnLingyang's Resonance Skill will not reset his Basic Attack stage."
         },
         "Resonance Liberation": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconLingyang\/SP_IconLingyangC1.SP_IconLingyangC1",
+            "id": 1001803,
             "motionValues": [
                 {
                     "scaling": [
@@ -491,11 +497,21 @@ export default {
             "name": "Strive: Lion's Vigor",
             "desc": "Attack the target, dealing <color=Ice>Glacio DMG<\/color>, and receive the blessing of <color=Highlight>Lion's Vigor<\/color>, which lasts for 50%s.n<size=10> <\/size>n<size=40><color=Title>Lion's Vigor<\/color><\/size>nLingyang's <color=Ice>Glacio DMG Bonus<\/color> is increased by 50%;"
         },
-        "Inherent Skill": {
-            "name": "Skillful Cooking",
-            "desc": "Has a chance to produce special dishes when cooking"
+        "Forte Circuit Passive 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconLingyang\/SP_IconLingyangD1.SP_IconLingyangD1",
+            "id": 1001804,
+            "name": "Lion's Pride",
+            "desc": "Damage of the Intro Skill <color=Highlight>Lion Awakens<\/color> is increased by 50%."
+        },
+        "Forte Circuit Passive 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconLingyang\/SP_IconLingyangD2.SP_IconLingyangD2",
+            "id": 1001805,
+            "name": "Diligent Practice",
+            "desc": "Under the <color=Highlight>Striding Lion<\/color> state, within 3s after each <color=Highlight>Basic Attack<\/color>, the next <color=Highlight>Mountain Roamer<\/color> will deal an additional <color=Ice>Glacio DMG<\/color>, equal to 150% of <color=Highlight>Mountain Roamer<\/color> damage, considered as Resonance Skill damage."
         },
         "Intro Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconLingyang\/SP_IconLingyangQTE.SP_IconLingyangQTE",
+            "id": 1001806,
             "motionValues": [
                 {
                     "scaling": [
@@ -550,6 +566,8 @@ export default {
             "desc": "Lingyang enters the battlefield, dealing <color=Ice>Glacio DMG<\/color>."
         },
         "Forte Circuit": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconLingyang\/SP_IconLingyangY.SP_IconLingyangY",
+            "id": 1001807,
             "motionValues": [
                 {
                     "scaling": [
@@ -728,9 +746,108 @@ export default {
             "name": "Unification of Spirits",
             "desc": "<size=40><color=Title>Heavy Attack: Glorious Plunge<\/color><\/size>rnWhen Lion's Spirit is full, use <color=Highlight>Heavy Attack<\/color> to perform <color=Highlight>Glorious Plunge<\/color>, dealing <color=Ice>Glacio DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack: Tail Strike<\/color><\/size>rnWhen Lion's Spirit is not full, use <color=Highlight>Basic Attack<\/color> after <color=Highlight>Heavy Attack<\/color> to perform <color=Highlight>Tail Strike<\/color>, dealing <color=Ice>Glacio DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Striding Lion<\/color><\/size>rnAfter casting Heavy Attack <color=Highlight>Glorious Plunge<\/color>, enter <color=Highlight>Striding Lion<\/color> state;rnAfter casting Intro Skill <color=Highlight>Lion Awakens<\/color> or Resonance Liberation <color=Highlight>Strive: Lion's Vigor<\/color>, if Lion's Spirit is full, use <color=Highlight>Basic Attack<\/color> to enter <color=Highlight>Striding Lion<\/color> state.rnIn the <color=Highlight>Striding Lion<\/color> state:rnAttacks can be launched in mid-air. If Lingyang is on the ground, use Heavy Attack <color=Highlight>Glorious Plunge<\/color> to get back in the air.rnLion's Spirit is continuously consumed, and the <color=Highlight>Striding Lion<\/color> state ends in 5s after Lion's Spirit runs out;rnIn the Resonance Liberation <color=Highlight>Lion's Vigor<\/color> state, the consumption speed of Lion's Spirit is reduced by 50%, extending <color=Highlight>Striding Lion<\/color> state by up to 10s.rnLingyang's <color=Highlight>Basic Attack<\/color> is replaced with Basic Attack <color=Highlight>Feral Gyrate<\/color>, which performs up to 2 consecutive attacks, dealing <color=Ice>Glacio DMG<\/color>.rnLingyang's <color=Highlight>Resonance Skill<\/color> is replaced with <color=Highlight>Mountain Roamer<\/color>, dealing <color=Ice>Glacio DMG<\/color>.rnWhen Lion's Spirit is less than 10, use <color=Highlight>Basic Attack<\/color> to perform <color=Highlight>Stormy Kicks<\/color>, dealing <color=Ice>Glacio DMG<\/color>; after performing Basic Attack <color=Highlight>Stormy Kicks<\/color>, the Mid-air Attack <color=Highlight>Radiant Plunge<\/color> becomes available.rnConcerto Energy is restored when Lion's Spirit is consumed.rn<size=10> <\/size>rn<size=40><color=Title>Lion's Spirit<\/color><\/size>rnLingyang can hold up to 100 Lion's Spirit.rnWhen casting Resonance Skill <color=Highlight>Furious Punches<\/color>, Lion's Spirit is restored.rnWhen casting Intro Skill <color=Highlight>Lion Awakens<\/color>, Lion's Spirit is restored.rnWhen casting Resonance Liberation <color=Highlight>Strive: Lion's Vigor<\/color>, Lion's Spirit is restored."
         },
+        "Utility Passive": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconWorld3.SP_IconWorld3",
+            "id": 1001808,
+            "name": "Skillful Cooking",
+            "desc": "Has a chance to produce special dishes when cooking"
+        },
         "Outro Skill": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconLingyang\/SP_IconLingyangT.SP_IconLingyangT",
+            "id": 1001809,
             "name": "Frosty Marks",
             "desc": "Lingyang releases a shock wave centered on the skill target, dealing <color=Ice>Glacio DMG<\/color> equal to 587.94% of Lingyang's ATK to targets within the range."
+        },
+        "Basic Attack Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredice_UI.T_Iconpropertyredice_UI",
+            "name": "Glacio DMG Bonus+",
+            "desc": "Glacio DMG Bonus increased by 4.20%."
+        },
+        "Resonance Skill Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 4.20%."
+        },
+        "Resonance Liberation Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 4.20%."
+        },
+        "Intro Skill Bonus 2": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredice_UI.T_Iconpropertyredice_UI",
+            "name": "Glacio DMG Bonus+",
+            "desc": "Glacio DMG Bonus increased by 4.20%."
+        },
+        "Basic Attack Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredice_UI.T_Iconpropertyredice_UI",
+            "name": "Glacio DMG Bonus+",
+            "desc": "Glacio DMG Bonus increased by 1.80%."
+        },
+        "Resonance Skill Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 1.80%."
+        },
+        "Resonance Liberation Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
+            "name": "ATK+",
+            "desc": "ATK increased by 1.80%."
+        },
+        "Intro Skill Bonus 1": {
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredice_UI.T_Iconpropertyredice_UI",
+            "name": "Glacio DMG Bonus+",
+            "desc": "Glacio DMG Bonus increased by 1.80%."
+        }
+    },
+    "chain": {
+        "1": {
+            "buffs": [
+                1104001001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_LingyangM1_UI.T_IconDevice_LingyangM1_UI",
+            "name": "Lion of Light, Blessings Abound",
+            "desc": "During Resonance Liberation <color=Highlight>Lion's Vigor<\/color>, Lingyang's Anti-Interruption is enhanced."
+        },
+        "2": {
+            "buffs": [
+                1104002001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_LingyangM2_UI.T_IconDevice_LingyangM2_UI",
+            "name": "Dominant and Fierce, nPower Unbound",
+            "desc": "Intro Skill <color=Highlight>Lion Awakens<\/color> additionally recovers 10 Resonance Energy for Lingyang, triggered once every 20s."
+        },
+        "3": {
+            "buffs": [
+                1104003001,
+                1104003002
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_LingyangM3_UI.T_IconDevice_LingyangM3_UI",
+            "name": "Jaw-Dropping Feats, nLoud and Wide",
+            "desc": "During Resonance Liberation <color=Highlight>Lion's Vigor<\/color>, Lingyang's Basic Attack DMG Bonus is increased by 20%, and Resonance Skill DMG Bonus increased by 10%."
+        },
+        "4": {
+            "buffs": [
+                1104004001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_LingyangM4_UI.T_IconDevice_LingyangM4_UI",
+            "name": "Immortals Bow, nin Reverence Flawed",
+            "desc": "Outro Skill <color=Highlight>Frosty Marks<\/color> increases the Glacio DMG Bonus of all team members by 20% for 30s."
+        },
+        "5": {
+            "buffs": [
+                1104005001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_LingyangM5_UI.T_IconDevice_LingyangM5_UI",
+            "name": "Seven Stars Shine, nStepped upon High",
+            "desc": "Resonance Liberation <color=Highlight>Strive: Lion's Vigor<\/color> additionally deals <color=Ice>Glacio DMG<\/color> equal to 200% of Lingyang's ATK."
+        },
+        "6": {
+            "buffs": [
+                1104006001
+            ],
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_LingyangM6_UI.T_IconDevice_LingyangM6_UI",
+            "name": "Demons Tremble, nDivine Power Nigh",
+            "desc": "In the Forte Circuit <color=Highlight>Striding Lion<\/color> state, during the first 3s after every Resonance Skill <color=Highlight>Mountain Roamer<\/color>, the Basic Attack DMG Bonus for Lingyang's next Basic Attack is increased by 100%."
         }
     }
 };

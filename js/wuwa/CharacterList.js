@@ -191,7 +191,7 @@ export default class CharacterList extends WuWaList
     let forteMatGroup = {label:"Forte Materials", startCollapsed:false};
     this.display.addField("forteMaterial", {
       group: forteMatGroup,
-      label: (item, type, forte) => (forteLabels[forte]?.w??"?") + " " + type.at(0).toUpperCase()+type.substr(1).toLowerCase(),
+      label: (item, type, forte) => (forteLabels[forte]?.w??forte) + " " + type.at(0).toUpperCase()+type.substr(1).toLowerCase(),
       columnClasses: (item, type, forte) => forteLabels[forte] ? ["forte-materials", `${type}-${forteLabels[forte]?.c}-materials`] : [],
       dynamic: true,
       value: (item, type, forte) => type == "label" ? `${forte} ➤ ${parseInt(forte)+1}` : (item.getForteMat(type,forte) && item.getForteMatCost(type,forte) ? item.getForteMat(type,forte).getFieldValue(item.getForteMatCost(type,forte)) : ""),
@@ -300,8 +300,8 @@ export default class CharacterList extends WuWaList
   addRover()
   {
     let base = this.get("Rover");
-    let spectro = this.get("Rover-Spectro");
-    let havoc = this.get("Rover-Havoc");
+    let spectro = this.get("RoverSpectro");
+    let havoc = this.get("RoverHavoc");
     
     if(!base)
     {
@@ -310,12 +310,12 @@ export default class CharacterList extends WuWaList
     }
     if(!spectro)
     {
-      spectro = Rover.fromJSON({__class__:"Rover",key:"Rover-Spectro"}, {addProperties:{list:this}});
+      spectro = Rover.fromJSON({__class__:"Rover",key:"RoverSpectro"}, {addProperties:{list:this}});
       this.update("list", spectro, "push");
     }
     if(!havoc)
     {
-      havoc = Rover.fromJSON({__class__:"Rover",key:"Rover-Havoc"}, {addProperties:{list:this}});
+      havoc = Rover.fromJSON({__class__:"Rover",key:"RoverHavoc"}, {addProperties:{list:this}});
       this.update("list", havoc, "push");
     }
     
