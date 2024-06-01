@@ -1,7 +1,7 @@
 export default {
     "forte": {
         "Basic Attack": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconNorGun.SP_IconNorGun",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconQiushuiC1_UI.T_IconQiushuiC1_UI",
             "id": 1001001,
             "motionValues": [
                 {
@@ -259,7 +259,7 @@ export default {
             "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>nAalto fires up to 5 consecutive shots, dealing <color=Wind>Aero DMG<\/color>. Basic Attack 4 will spread the \"Mist\" forward, which lasts for 1.5s.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack<\/color><\/size>nAalto enters the aiming state for a more powerful shot.nThe aimed shot fired after charging finishes deals <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mid-air Attack<\/color><\/size>nAalto consumes Stamina to perform consecutive shots at the target in mid-air, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Dodge Counter<\/color><\/size>nUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Wind>Aero DMG<\/color>."
         },
         "Resonance Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconQiushui\/SP_IconQiushuiB1.SP_IconQiushuiB1",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconQiushuiB1_UI.T_IconQiushuiB1_UI",
             "id": 1001002,
             "motionValues": [
                 {
@@ -392,7 +392,7 @@ export default {
             "desc": "<size=40><color=Title>Mist Avatar<\/color><\/size>rnCasts \"Mist\" and 1 \"Mist Avatar(s)\" to taunt the surrounding targets. The avatars inherit a portion of Aalto's HP and generate 6 <color=Highlight>Mist Bullets<\/color> around them, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mist Missiles<\/color><\/size>rnDeals <color=Wind>Aero DMG<\/color>, considered as Resonance Skill damage."
         },
         "Resonance Liberation": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconQiushui\/SP_IconQiushuiC1.SP_IconQiushuiC1",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconQiushuiA1_UI.T_IconQiushuiA1_UI",
             "id": 1001003,
             "motionValues": [
                 {
@@ -525,19 +525,19 @@ export default {
             "desc": "Generate a \"Gate of Quandary\" in front, dealing <color=Wind>Aero DMG<\/color>. When bullets pass through the \"Gate of Quandary\", ATK is increased. \"Gate of Quandary\" lasts for 10s."
         },
         "Forte Circuit Passive 1": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconQiushui\/SP_IconQiushuiD1.SP_IconQiushuiD1",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconQiushuiQTE_UI.T_IconQiushuiQTE_UI",
             "id": 1001004,
             "name": "Perfect Performance",
             "desc": "Aalto's <color=Highlight>Heavy Attack<\/color> will always critically hit, triggered once every 30s."
         },
         "Forte Circuit Passive 2": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconQiushui\/SP_IconQiushuiD2.SP_IconQiushuiD2",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconQiushuiQTE_UI.T_IconQiushuiQTE_UI",
             "id": 1001005,
             "name": "Mid-game Break",
             "desc": "Aalto will continuously recover Stamina when he is in the Forte Circuit <color=Highlight>Miscloak Dash<\/color> state."
         },
         "Intro Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconQiushui\/SP_IconQiushuiQTE.SP_IconQiushuiQTE",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconQiushuiQTE_UI.T_IconQiushuiQTE_UI",
             "id": 1001006,
             "motionValues": [
                 {
@@ -595,7 +595,7 @@ export default {
             "desc": "Aalto shows up out of thin air to performs rapid continuous shooting, dealing <color=Wind>Aero damage<\/color>."
         },
         "Forte Circuit": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconQiushui\/SP_IconQiushuiY.SP_IconQiushuiY",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconQiushuiD1_UI.T_IconQiushuiD1_UI",
             "id": 1001007,
             "motionValues": [
                 {
@@ -653,13 +653,13 @@ export default {
             "desc": "When Aalto passes through \"Mist\" or \"Gate of Quandary\", he enters \"Mistcloak Dash\".rn<size=10> <\/size>rn<size=40><color=Title>Mistcloak Dash<\/color><\/size>rnMovement speed increased;rnDuring this period, \"Mist Drops\" are continuously consumed, and for each 1 \"Mist Drop\" consumed, 1 Resonance Skill <color=Highlight>Mist Missile<\/color> is generated.rn<size=10> <\/size>rn<size=40><color=Title>Mist Drops<\/color><\/size>rnAalto can hold up to 6 Mist Drops.rnWhen <color=Highlight>Basic Attack<\/color> or <color=Highlight>Mid-air Attack<\/color> passes through \"Mist\" and hits the target, 1 \"Mist Drop\" is recovered."
         },
         "Utility Passive": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconWorld4.SP_IconWorld4",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconQiushuiQTE_UI.T_IconQiushuiQTE_UI",
             "id": 1001008,
             "name": "Skillful Cooking",
             "desc": "Has a chance to produce special dishes when cooking"
         },
         "Outro Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconQiushui\/SP_IconQiushuiT.SP_IconQiushuiT",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconQiushuiQTE_UI.T_IconQiushuiQTE_UI",
             "id": 1001009,
             "name": "Dissolving Mist",
             "desc": "The next character (or other characters on a nearby team that activates an Outro Skill) gains 23% Aero DMG Deepen for 14s or until they are switched off field."

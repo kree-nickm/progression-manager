@@ -1,7 +1,7 @@
 export default {
     "forte": {
         "Basic Attack": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconNorKnife.SP_IconNorKnife",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconSanhuaC1_UI.T_IconSanhuaC1_UI",
             "id": 1000501,
             "motionValues": [
                 {
@@ -255,7 +255,7 @@ export default {
             "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnSanhua performs up to 5 consecutive attacks, dealing <color=Ice>Glacio DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnSanhua consumes Stamina to launch attacks, dealing <color=Ice>Glacio DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnSanhua consumes Stamina to perform a Mid-Air Plunging Attack, dealing <color=Ice>Glacio DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Ice>Glacio DMG<\/color>."
         },
         "Resonance Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconSanhua\/SP_IconSanhuaB1.SP_IconSanhuaB1",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconSanhuaB1_UI.T_IconSanhuaB1_UI",
             "id": 1000502,
             "motionValues": [
                 {
@@ -334,7 +334,7 @@ export default {
             "desc": "Sanhua sends an air blade to create 1 \"Ice Prism\" cross the ground, dealing <color=Ice>Glacio DMG<\/color>."
         },
         "Resonance Liberation": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconSanhua\/SP_IconSanhuaC1.SP_IconSanhuaC1",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconSanhuaA1_UI.T_IconSanhuaA1_UI",
             "id": 1000503,
             "motionValues": [
                 {
@@ -436,19 +436,19 @@ export default {
             "desc": "Sanhua deals <color=Ice>Glacio DMG<\/color> and creates 1 \"Glacier\"."
         },
         "Forte Circuit Passive 1": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconSanhua\/SP_IconSanhuaD1.SP_IconSanhuaD1",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
             "id": 1000504,
             "name": "Condensation",
             "desc": "Damage dealt by Sanhua's Resonance Skill increased by 20% for 8s after casting her Intro Skill."
         },
         "Forte Circuit Passive 2": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconSanhua\/SP_IconSanhuaD2.SP_IconSanhuaD2",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconSanhuaD2_UI.T_IconSanhuaD2_UI",
             "id": 1000505,
             "name": "Avalanche",
             "desc": "Damage dealt by Sanhua's Forte Circuit <color=Highlight>Ice Burst<\/color> is increased by 20% for 8s after casting <color=Highlight>Basic Attack 5<\/color>."
         },
         "Intro Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconSanhua\/SP_IconSanhuaQTE.SP_IconSanhuaQTE",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconSanhuaQTE_UI.T_IconSanhuaQTE_UI",
             "id": 1000506,
             "motionValues": [
                 {
@@ -504,7 +504,7 @@ export default {
             "desc": "Sanhua swings her blade downward and creates 1 \"Ice Thorn\", dealing <color=Ice>Glacio DMG<\/color>."
         },
         "Forte Circuit": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconSanhua\/SP_IconSanhuaY.SP_IconSanhuaY",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconSanhuaD1_UI.T_IconSanhuaD1_UI",
             "id": 1000507,
             "motionValues": [
                 {
@@ -773,13 +773,13 @@ export default {
             "desc": "<size=40><color=Title>Heavy Attack: Detonate<\/color><\/size>nWhen holding <color=Highlight>Basic Attack<\/color>, a cursor moves back and forth on the Forte Gauge. Release <color=Highlight>Basic Attack<\/color> while cursor falls in the \"Frostbite\" area, to perform Heavy Attack <color=Highlight>Detonate<\/color>, dealing <color=Ice>Glacio DMG<\/color> considered as Heavy Attack damage.n<size=10> <\/size>n<size=40><color=Title>Ice Burst<\/color><\/size>nSanhua\u2019s Heavy Attack <color=Highlight>Detonate<\/color> detonates all \"Ice Thorns\", \"Ice Prisms\" and \"Glaciers\" within her attack range, dealing <color=Ice>Glacio DMG<\/color>. DMG done by Ice Burst is considered as Resonance Skill damage.n<size=10> <\/size>n<size=40><color=Title>Frostbite Area<\/color><\/size>nThe \"Frostbite\" area expands with every 1 stack of \"Clarity\". \"Clarity\" stacks up to 2 times.nSanhua obtains 1 stack of \"Clarity\" upon performing <color=Highlight>Basic Attack 5<\/color>.nSanhua obtains 1 stack of \"Clarity\" upon casting Intro Skill <color=Highlight>Freezing Thorns<\/color>.nSanhua obtains 1 stack of \"Clarity\" upon casting Resonance Skill <color=Highlight>Eternal Frost<\/color>.nSanhua obtains 2 stack(s) of \"Clarity\" upon casting Resonance Liberation <color=Highlight>Glacial Gaze<\/color>.nUpon casting Heavy Attack <color=Highlight>Detonate<\/color>, all \"Clarity\" is removed."
         },
         "Utility Passive": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconRun.SP_IconRun",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
             "id": 1000508,
             "name": "Skillful Cooking",
             "desc": "Has a chance to produce special dishes when cooking"
         },
         "Outro Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconSanhua\/SP_IconSanhuaT.SP_IconSanhuaT",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconSanhuaQTE_UI.T_IconSanhuaQTE_UI",
             "id": 1000509,
             "name": "Silversnow",
             "desc": "The next character (or other characters on a nearby team that activates an Outro Skill) gains 38% Basic Attack DMG Deepen for 14s or until they are switched off field."

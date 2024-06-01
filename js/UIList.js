@@ -226,6 +226,11 @@ export default class UIList extends UIController {
     this.update("list", [], "replace");
   }
   
+  getFooterParams()
+  {
+    return null;
+  }
+  
   prepareRender(element, data, options)
   {
     data.groups = this.display.getGroups({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1});
@@ -250,19 +255,86 @@ export default class UIList extends UIController {
     let footer = document.getElementById("footer");
     let updateFooter = false;
     let ul;
-    /*footer.classList.add("d-none");
-    if(footer.dataset.list != this.uuid)
+    let footerParams = this.getFooterParams();
+    if(footerParams)
     {
-      updateFooter = true;
-      footer.replaceChildren();
-      footer.dataset.list = this.uuid;
-      
-      let container = footer.appendChild(document.createElement("div"));
-      container.classList.add("container-fluid", "navbar-expand");
-      
-      ul = container.appendChild(document.createElement("ul"));
-      ul.classList.add("navbar-nav");
-    }*/
+      footer.classList.remove("d-none");
+      if(footer.dataset.list != this.uuid)
+      {
+        updateFooter = true;
+        footer.replaceChildren();
+        footer.dataset.list = this.uuid;
+        
+        let container = footer.appendChild(document.createElement("div"));
+        container.classList.add("container-fluid", "navbar-expand");
+        
+        ul = container.appendChild(document.createElement("ul"));
+        ul.classList.add("navbar-nav");
+        
+        if(footerParams.add)
+        {
+          let itemType = Array.isArray(this.constructor.itemClass) ? this.constructor.itemClass[0].name : this.constructor.itemClass.name;
+          let li = ul.appendChild(document.createElement("li"));
+          li.classList.add("nav-item", "me-2");
+          
+          let divAdd = li.appendChild(document.createElement("div"));
+          divAdd.classList.add("input-group", "mt-2");
+          
+          for(let field of footerParams.add)
+          {
+            let selectAdd = divAdd.appendChild(document.createElement("select"));
+            selectAdd.id = `${field.property}${itemType}Select`;
+            selectAdd.classList.add("form-select", "size-to-content");
+            selectAdd.appendChild(document.createElement("option"))
+            for(let opt of field.options)
+            {
+              let option = selectAdd.appendChild(document.createElement("option"));
+              if(typeof(opt) == "object")
+              {
+                option.value = opt.value;
+                option.innerHTML = opt.label;
+              }
+              else
+              {
+                option.value = opt;
+                option.innerHTML = opt;
+              }
+            }
+          }
+          let btnAdd = divAdd.appendChild(document.createElement("button"));
+          btnAdd.innerHTML = `Add ${itemType}`;
+          btnAdd.classList.add("btn", "btn-primary");
+          btnAdd.addEventListener("click", event => {
+            let data = {};
+            for(let field of footerParams.add)
+            {
+              let selectAdd = document.getElementById(`${field.property}${itemType}Select`);
+              if(selectAdd?.value)
+                data[field.property] = selectAdd.value;
+              else
+              {
+                console.warn(`Can't add item, ${field.property} is blank.`);
+                data = null;
+                break;
+              }
+            }
+            if(data)
+            {
+              let item = this.createItem(data);
+              for(let field of footerParams.add)
+                document.getElementById(`${field.property}Select`).value = "";
+            }
+            else
+            {
+            }
+          });
+        }
+      }
+    }
+    else
+    {
+      footer.classList.add("d-none");
+    }
     
     return {render, footer, updateFooter, ul};
   }

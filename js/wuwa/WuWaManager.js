@@ -3,6 +3,7 @@ import { Renderer } from "../Renderer.js";
 import DataManager from "../DataManager.js";
 import CharacterList from "./CharacterList.js";
 import WeaponList from "./WeaponList.js";
+import EchoList from "./EchoList.js";
 import MaterialList from "./MaterialList.js";
 
 export default class WuWaManager extends DataManager
@@ -19,9 +20,11 @@ export default class WuWaManager extends DataManager
     this.registerList(MaterialList);
     this.registerList(CharacterList);
     this.registerList(WeaponList);
+    this.registerList(EchoList);
     
     this.registerNavItem("Characters", "characters", {list:"CharacterList", isDefault:true});
     this.registerNavItem("Weapons", "weapons", {list:"WeaponList"});
+    this.registerNavItem("Echoes", "echoes", {list:"EchoList"});
     this.registerNavItem("Materials", "materials", {list:"MaterialList"});
   }
   

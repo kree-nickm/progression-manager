@@ -1,7 +1,7 @@
 export default {
     "forte": {
         "Basic Attack": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconNorSword.SP_IconNorSword",
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiA_UI.T_IconMotefeiA_UI",
             "id": 1001401,
             "motionValues": [
                 {
@@ -230,7 +230,7 @@ export default {
             "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnCalcharo performs up to 4 consecutive attacks, dealing <color=Thunder>Electro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnConsumes Stamina to attack the target, dealing <color=Thunder>Electro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnConsumes Stamina to perform a Mid-Air Plunging Attack, dealing <color=Thunder>Electro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Thunder>Electro DMG<\/color>."
         },
         "Resonance Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconKakaluo\/SP_IconKakaluoB1.SP_IconKakaluoB1",
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiB_UI.T_IconMotefeiB_UI",
             "id": 1001402,
             "motionValues": [
                 {
@@ -359,7 +359,7 @@ export default {
             "desc": "Calcharo performs up to 3 consecutive attacks, dealing <color=Thunder>Electro DMG<\/color>.nIf Calcharo is switched off field, or if Resonance Skill <color=Highlight>Extermination Order<\/color> is not performed again in a while, this skill will enter Cooldown.nResonance Skill <color=Highlight>Extermination Order<\/color> does not interrupt Calcharo's Basic Attack combo."
         },
         "Resonance Liberation": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconKakaluo\/SP_IconKakaluoC1.SP_IconKakaluoC1",
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiY_UI.T_IconMotefeiY_UI",
             "id": 1001403,
             "motionValues": [
                 {
@@ -707,19 +707,19 @@ export default {
             "desc": "Calcharo attacks the target, dealing <color=Thunder>Electro DMG<\/color> and enters <color=Highlight>Deathblade Gear<\/color> state. After Resonance Liberation <color=Highlight>Deathblade Gear<\/color> state ends, Calcharo's next Intro Skill is replaced with Intro Skill <color=Highlight>\"Necessary Means\"<\/color>, which deals <color=Thunder>Electro DMG<\/color>, considered as Intro Skill damage.rn<size=10> <\/size>rn<size=40><color=Title>Deathblade Gear<\/color><\/size>rn-<color=Highlight>Basic Attack<\/color> is replaced with Basic Attack <color=Highlight>Hounds Roar<\/color>.rn-<color=Highlight>Dodge Counter<\/color> deals increased damage, considered as Resonance Liberation damage.rn<size=10> <\/size>rn<size=40><color=Title>Hounds Roar<\/color><\/size>rnCalcharo performs up to 5 consecutive attacks, dealing <color=Thunder>Electro DMG<\/color>, considered as Basic Attack Damage."
         },
         "Forte Circuit Passive 1": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconKakaluo\/SP_IconKakaluoD1.SP_IconKakaluoD1",
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiD1_UI.T_IconMotefeiD1_UI",
             "id": 1001404,
             "name": "Bloodshed Awaken",
             "desc": "When casting Heavy Attack <color=Highlight>\"Mercy\"<\/color>, Calcharo's Resonance Liberation DMG Bonus is increased by 10% for 15s."
         },
         "Forte Circuit Passive 2": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconKakaluo\/SP_IconKakaluoD2.SP_IconKakaluoD2",
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiD2_UI.T_IconMotefeiD2_UI",
             "id": 1001405,
             "name": "Revenant Rush",
             "desc": "When Heavy Attack <color=Highlight>\"Death Messenger\"<\/color> hits the target, the damage taken by Calcharo is reduced by 15% for 5s."
         },
         "Intro Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconKakaluo\/SP_IconKakaluoQTE.SP_IconKakaluoQTE",
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiQTE_UI.T_IconMotefeiQTE_UI",
             "id": 1001406,
             "motionValues": [
                 {
@@ -775,7 +775,7 @@ export default {
             "desc": "Attack the target, dealing <color=Thunder>Electro DMG<\/color>."
         },
         "Forte Circuit": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconKakaluo\/SP_IconKakaluoY.SP_IconKakaluoY",
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiC_UI.T_IconMotefeiC_UI",
             "id": 1001407,
             "motionValues": [
                 {
@@ -925,13 +925,13 @@ export default {
             "desc": "<size=40><color=Title>Heavy Attack: \"Mercy\"<\/color><\/size>rnWhen Calcharo has 3 \"Cruelty\", his <color=Highlight>Heavy Attack<\/color> is replaced with Heavy Attack <color=Highlight>\"Mercy\"<\/color>.rnWhen casting Heavy Attack <color=Highlight>\"Mercy\"<\/color>, Calcharo consumes 3 \"Cruelty\" to deal <color=Thunder>Electro DMG<\/color>, considered as Heavy Attack damage, and recovers Resonance Energy and Concerto Energy.rn<size=10> <\/size>rn<size=40><color=Title>\"Cruelty\"<\/color><\/size>rnCalcharo can hold up to 3 \"Cruelty\".rnUnder Resonance Liberation <color=Highlight>Deathblade Gear<\/color> state, \"Cruelty\" cannot be acquired.rnWhen Resonance Skill <color=Highlight>Extermination Order<\/color> hits the target, gain 1 \"Cruelty\".rn<size=10> <\/size>rn<color=Title>Heavy Attack: \"Death Messenger\"<\/color>rnWhen Calcharo has 5 \"Killing Intent\", his <color=Highlight>Basic Attack<\/color> is replaced with Heavy Attack <color=Highlight>\"Death Messenger\"<\/color>.rnWhen casting Heavy Attack <color=Highlight>\"Death Messenger\"<\/color>, Calcharo consumes 5 \"Killing Intent\" to deal <color=Thunder>Electro DMG<\/color>, considered as Resonance Liberation damage, and recovers Resonance Energy and Concerto Energy.rn<size=10> <\/size>rn<size=40><color=Title>\"Killing Intent\"<\/color><\/size>rnUnder Resonance Liberation <color=Highlight>Deathblade Gear<\/color> state, Calcharo's Forte Gauge is replaced with \"Killing Intent\", stacking up to 5.rnWhen Basic Attack <color=Highlight>Hounds Roar<\/color> hits the target, Calcharo gains 1 \"Killing Intent\"."
         },
         "Utility Passive": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconWorld3.SP_IconWorld3",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
             "id": 1001408,
             "name": "Skillful Cooking",
             "desc": "Has a chance to produce special dishes when cooking"
         },
         "Outro Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconKakaluo\/SP_IconKakaluoT.SP_IconKakaluoT",
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiQTE_UI.T_IconMotefeiQTE_UI",
             "id": 1001409,
             "name": "Shadowy Raid",
             "desc": "Calcharo summons <color=Highlight>Phantom<\/color> to support the on-field Resonator, clearing the targets in front with a slash. The <color=Highlight>Phantom's<\/color> attack deals <color=Thunder>Electro DMG<\/color> equal to 195.98%+391.96% of Calcharo's ATK."

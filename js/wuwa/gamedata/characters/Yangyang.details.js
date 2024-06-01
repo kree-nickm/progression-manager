@@ -1,7 +1,7 @@
 export default {
     "forte": {
         "Basic Attack": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconNorKnife.SP_IconNorKnife",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangC1_UI.T_IconYangyangC1_UI",
             "id": 1000101,
             "motionValues": [
                 {
@@ -251,7 +251,7 @@ export default {
             "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnYangayang performs up to 4 consecutive attacks, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnYangyang consumes Stamina to lunge forward, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack: Zephyr Song<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after <color=Highlight>Heavy Attack<\/color> or <color=Highlight>Dodge Counter<\/color> to perform Heavy Attack <color=Highlight>Zephyr Song<\/color>, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnYangyang consumes Stamina to perform a Plunging Attack from mid-air, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to thrust forward, dealing <color=Wind>Aero DMG<\/color>."
         },
         "Resonance Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYangyang\/SP_IconYangyangB1.SP_IconYangyangB1",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangB1_UI.T_IconYangyangB1_UI",
             "id": 1000102,
             "motionValues": [
                 {
@@ -333,7 +333,7 @@ export default {
             "desc": "Yangyang wields her sword to create a whirling vortex of winds that gathers nearby enemies to the center, dealing <color=Wind>Aero DMG<\/color>."
         },
         "Resonance Liberation": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYangyang\/SP_IconYangyangC1.SP_IconYangyangC1",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangA1_UI.T_IconYangyangA1_UI",
             "id": 1000103,
             "motionValues": [
                 {
@@ -440,19 +440,19 @@ export default {
             "desc": "Yangyang conjures a mighty Cyclone that gathers nearby enemies, dealing <color=Wind>Aero DMG<\/color>."
         },
         "Forte Circuit Passive 1": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYangyang\/SP_IconYangyangD1.SP_IconYangyangD1",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangD2_UI.T_IconYangyangD2_UI",
             "id": 1000104,
             "name": "Compassion",
             "desc": "Yangyang recovers 30 Stamina after she casts a Mid-air Attack <color=Highlight>Feather Release<\/color>."
         },
         "Forte Circuit Passive 2": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYangyang\/SP_IconYangyangD2.SP_IconYangyangD2",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangD2_UI.T_IconYangyangD2_UI",
             "id": 1000105,
             "name": "Lazuline Mercy",
             "desc": "Yangyang's Aero DMG Bonus is increased by 8% for 8s after casting Intro Skill <color=Highlight>Cerulean Song<\/color>."
         },
         "Intro Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYangyang\/SP_IconYangyangQTE.SP_IconYangyangQTE",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
             "id": 1000106,
             "motionValues": [
                 {
@@ -485,7 +485,7 @@ export default {
             "desc": "Yangyang sends the target into the air, dealing <color=Wind>Aero DMG<\/color>."
         },
         "Forte Circuit": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYangyang\/SP_IconYangyangY.SP_IconYangyangY",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangD1_UI.T_IconYangyangD1_UI",
             "id": 1000107,
             "motionValues": [
                 {
@@ -566,13 +566,13 @@ export default {
             "desc": "<size=40><color=Title>Heavy Attack: Stormy Strike<\/color><\/size>rnWhen Yangyang has 3 Melodies, she can cast <color=Highlight>Stormy Strike<\/color> after <color=Highlight>Heavy Attack<\/color>, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack: Feather Release<\/color><\/size>rnWhen Yangyang has 3 Melodies, casting <color=Highlight>Basic Attacks<\/color> in mid-air will cause her to consume all Melodies, perform consecutive strikes, and dive from mid-air, dealing <color=Wind>Aero DMG<\/color>. As Yangyang lands, she sheathes her sword with an attack, dealing <color=Wind>Aero DMG<\/color>. This attack is considered as Basic Attack.rn<size=10> <\/size>rn<size=40><color=Title>Melody<\/color><\/size>rnYangyang can hold up to 3 MelodiesrnYangyang obtains 1 Melody with every <color=Highlight>Basic Attack 4<\/color> on hit.rnYangyang obtains 1 Melody for every <color=Highlight>Zephyr Song<\/color> on hit.rnYangyang obtains 1 Melody for every Resonance Skill <color=Highlight>Zephyr Domain<\/color> on hit.rnYangyang obtains 1 Melody upon casting Intro Skill <color=Highlight>Cerulean Song<\/color>."
         },
         "Utility Passive": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconRun.SP_IconRun",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangD2_UI.T_IconYangyangD2_UI",
             "id": 1000108,
             "name": "Skillful Cooking",
             "desc": "Has a chance to produce special dishes when cooking"
         },
         "Outro Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYangyang\/SP_IconYangyangT.SP_IconYangyangT",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
             "id": 1000109,
             "name": "Whispering Breeze",
             "desc": "Yangyang recovers 4 Resonance Energy per second over 5s for the next character (or other characters on a nearby team that activates an Outro Skill)."

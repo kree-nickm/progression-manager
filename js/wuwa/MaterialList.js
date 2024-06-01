@@ -1,5 +1,5 @@
 import LootData from "./gamedata/LootData.js";
-import CharacterData from "./gamedata/CharacterData.js";
+import MaterialData from "./gamedata/MaterialData.js";
 
 import { Renderer } from "../Renderer.js";
 import WuWaList from "./WuWaList.js";
@@ -41,6 +41,14 @@ export default class MaterialList extends WuWaList
   
   initialize()
   {
+    for(let matKey in MaterialData)
+    {
+      this.createItem({
+        key: matKey,
+        count: 0,
+      });
+    }
+    
     // Primary mats
     for(let shorthand in LootData.primary)
     {
@@ -48,57 +56,17 @@ export default class MaterialList extends WuWaList
       for(let rarity of [5,4,3,2])
       {
         if(LootData.primary[shorthand][rarity])
-          tiers.push(this.createItem({
-            key: LootData.primary[shorthand][rarity],
-            count: 0,
-            source: LootData.primary[shorthand].source ?? shorthand,
-            shorthand: shorthand,
-            rarity: rarity,
-          }));
+        {
+          let key = this.constructor.toKey(LootData.primary[shorthand][rarity]);
+          let mat = this.get(key);
+          if(mat)
+            tiers.push(mat.update("shorthand", shorthand));
+          else
+            console.error(`Can't find ${key}`);
+        }
       }
       Material.setupTiers(tiers);
     }
-    
-    // Character mats
-    for(let key in CharacterData)
-    {
-      if(CharacterData[key].bossMat)
-        this.createItem({
-          key: CharacterData[key].bossMat,
-          count: 0,
-          rarity: 4,
-        });
-    }
-    for(let key in CharacterData)
-    {
-      if(CharacterData[key].weeklyMat)
-        this.createItem({
-          key: CharacterData[key].weeklyMat,
-          count: 0,
-          rarity: 4,
-        });
-    }
-    for(let key in CharacterData)
-    {
-      if(CharacterData[key].floraMat)
-        this.createItem({
-          key: CharacterData[key].floraMat,
-          count: 0,
-          rarity: 1,
-        });
-    }
-    
-    this.createItem({
-      key: "Shell Credit",
-      count: 0,
-      shorthand: "Credit",
-      rarity: 3,
-    });
-  }
-  
-  getUnique(item)
-  {
-    return item.key;
   }
   
   clear()
@@ -107,13 +75,5 @@ export default class MaterialList extends WuWaList
     {
       item.update("count", 0);
     }
-  }
-  
-  async render(force=false)
-  {
-    await super.render(force);
-    
-    let footer = document.getElementById("footer");
-    footer.classList.add("d-none");
   }
 }

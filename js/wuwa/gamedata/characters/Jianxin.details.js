@@ -1,7 +1,7 @@
 export default {
     "forte": {
         "Basic Attack": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconNorFist.SP_IconNorFist",
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiA_UI.T_IconMotefeiA_UI",
             "id": 1001901,
             "motionValues": [
                 {
@@ -227,7 +227,7 @@ export default {
             "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnJianxin performs up to 4 consecutive attacks, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnJianxin consumes Stamina to attack the target, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnJianxin consumes Stamina to plunge and unleash a powerful kick, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Wind>Aero DMG<\/color>."
         },
         "Resonance Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconJianxin\/SP_IconJianxinB1.SP_IconJianxinB1",
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiB_UI.T_IconMotefeiB_UI",
             "id": 1001902,
             "motionValues": [
                 {
@@ -376,7 +376,7 @@ export default {
             "desc": "Hold <color=Highlight>Resonance Skill<\/color> to enter <color=Highlight>Parry Stance<\/color>.n<size=10> <\/size>n<size=40><color=Title>Chi Counter<\/color><\/size>nWhen Jianxin is attacked in the <color=Highlight>Parry Stance<\/color>, she does not take damage and immediately performs <color=Highlight>Chi Counter<\/color>, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Chi Parry<\/color><\/size>nRelease the <color=Highlight>Resonance Skill<\/color> button during <color=Highlight>Parry Stance<\/color> to interrupt <color=Highlight>Parry Stance<\/color> and perform <color=Highlight>Chi Parry<\/color>, dealing <color=Wind>Aero DMG<\/color>."
         },
         "Resonance Liberation": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconJianxin\/SP_IconJianxinC1.SP_IconJianxinC1",
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiY_UI.T_IconMotefeiY_UI",
             "id": 1001903,
             "motionValues": [
                 {
@@ -524,19 +524,19 @@ export default {
             "desc": "Creates a strong wind field, continuously pulling targets within the wind field to the center and causing <color=Wind>Aero DMG<\/color>. When the wind field disappears, it will cause <color=Wind>Aero DMG<\/color> to all targets within the range again."
         },
         "Forte Circuit Passive 1": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconJianxin\/SP_IconJianxinD1.SP_IconJianxinD1",
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiD1_UI.T_IconMotefeiD1_UI",
             "id": 1001904,
             "name": "Formless Release",
             "desc": "Damage of Resonance Liberation <color=Highlight>Purification Force Field<\/color> is increased by 20%."
         },
         "Forte Circuit Passive 2": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconJianxin\/SP_IconJianxinD2.SP_IconJianxinD2",
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiD2_UI.T_IconMotefeiD2_UI",
             "id": 1001905,
             "name": "Reflection",
             "desc": "The Shield obtained with Heavy Attack <color=Highlight>Primordial Chi Spiral<\/color> is increased by 20%."
         },
         "Intro Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconJianxin\/SP_IconJianxinQTE.SP_IconJianxinQTE",
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiQTE_UI.T_IconMotefeiQTE_UI",
             "id": 1001906,
             "motionValues": [
                 {
@@ -591,7 +591,7 @@ export default {
             "desc": "Pull in targets within the range, dealing <color=Wind>Aero DMG<\/color>."
         },
         "Forte Circuit": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconJianxin\/SP_IconJianxinY.SP_IconJianxinY",
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiC_UI.T_IconMotefeiC_UI",
             "id": 1001907,
             "motionValues": [
                 {
@@ -1006,13 +1006,13 @@ export default {
             "desc": "<size=40><color=Title>Heavy Attack: Primordial Chi Spiral<\/color><\/size>rnWhen \"Chi\" reaches max stacks, hold <color=Highlight>Heavy Attack<\/color> to cast <color=Highlight>Primordial Chi Spiral<\/color> and start <color=Highlight>Zhoutian Progress<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Zhoutian Progress<\/color><\/size>rnJianxin's anti-interruption is increased, and her the damage taken is reduced by 50%:rnJianxin continuously consumes \"Chi\" and casts <color=Highlight>Chi Strike<\/color> to attack targets nearby, dealing <color=Wind>Aero DMG<\/color>.rnAs <color=Highlight>Zhoutian Progress<\/color> accumulates, Jianxin reaches different Zhoutian and gain effects accordingly.rnBefore Minor Zhoutian: Gain Zhoutian Progress 1 shield. When Zhoutian Progress is interrupted, cast <color=Highlight>Pushing Punch<\/color> to attack the target, dealing <color=Wind>Aero DMG<\/color>.rnMinor Zhoutian: Gain Zhoutian Progress 2 shield and cast <color=Highlight>Shock<\/color> to attack the target, dealing <color=Wind>Aero DMG<\/color>.  When <color=Highlight>Zhoutian Progress<\/color> is interrupted, cast <color=Highlight>Yielding Pull<\/color> to attack the target, dealing <color=Wind>Aero DMG<\/color>.rnMajor Zhoutian: Inner: Gain Zhoutian Progress 3 shield and cast <color=Highlight>Shock<\/color> to attack the target, dealing <color=Wind>Aero DMG<\/color>. When Zhoutian Progress is interrupted, cast <color=Highlight>Yielding Pull<\/color> to attack the target, dealing <color=Wind>Aero DMG<\/color>.rnMajor Zhoutian: Outer: Gain Zhoutian Progress 3 shield and cast <color=Highlight>Shock<\/color> to attack the target, dealing <color=Wind>Aero DMG<\/color>.rnWhen you release <color=Highlight>Basic Attack<\/color> button, interrupt <color=Highlight>Zhoutian Progress<\/color> and lose all \"Chi\";rnWhen all \"Chi\" is consumed, end <color=Highlight>Zhoutian Progress<\/color>.rn<size=10> <\/size>rnWhen <color=Highlight>Zhoutian Progress<\/color> ends, regain a shield according to the Zhoutian Progress you reached;rnAs the shield provided by <color=Highlight>Heavy Attack: Primordial Chi Spiral<\/color> persists, restore HP for the on-field character once every 6s.rn<size=10> <\/size>rn<size=40><color=Title>Chi<\/color><\/size>rnJianxin can hold up to 120 Chi.rnChi is obtained when a Normal Attack <color=Highlight>Fengyiquan<\/color> hits the target.rnChi is obtained when the Resonance Skill <color=Highlight>Calming Air<\/color> is cast.rnChi is obtained when the Resonance Skill <color=Highlight>Chi Counter<\/color> or Resonance Skill <color=Highlight>Chi Parry<\/color> hits the target.rnChi is obtained when the Intro Skill <color=Highlight>Essence of Tao<\/color> hits the target."
         },
         "Utility Passive": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconWorld3.SP_IconWorld3",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
             "id": 1001908,
             "name": "An error occurred. Please contact our Customer Service for assistance",
             "desc": "Has a chance to produce special dishes when cooking"
         },
         "Outro Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconJianxin\/SP_IconJianxinT.SP_IconJianxinT",
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiQTE_UI.T_IconMotefeiQTE_UI",
             "id": 1001909,
             "name": "Transcendence",
             "desc": "The next character (or other characters on a nearby team that activates an Outro Skill) gains 38% Resonance Liberation DMG Deepen for 14s or until they are switched off field."

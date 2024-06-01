@@ -1,7 +1,7 @@
 export default {
     "forte": {
         "Basic Attack": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconNorKnife.SP_IconNorKnife",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconNvzhuC1_UI.T_IconNvzhuC1_UI",
             "id": 1000601,
             "motionValues": [
                 {
@@ -280,7 +280,7 @@ export default {
             "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnRover performs up to 4 consecutive attacks, dealing <color=Light>Spectro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnRover consumes Stamina, dealing <color=Light>Spectro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack: Resonance<\/color><\/size>rnAfter <color=Highlight>Basic Attack 3<\/color> or <color=Highlight>Heavy Attack<\/color>, press the <color=Highlight>Basic Attack<\/color> button at the right time to perform Heavy Attack <color=Highlight>Resonance<\/color>, dealing <color=Light>Spectro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack: Aftertune<\/color><\/size>rnAfter Heavy Attack <color=Highlight>Resonance<\/color> or <color=Highlight>Dodge Counter<\/color> hits a target, press the <color=Highlight>Basic Attack<\/color> button to perform Heavy Attack <color=Highlight>Aftertune<\/color>, dealing <color=Light>Spectro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnRover consumes Stamina to perform a Mid-Air Plunging Attack, dealing <color=Light>Spectro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Light>Spectro DMG<\/color>."
         },
         "Resonance Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconZhujue\/SP_IconZhujueB1.SP_IconZhujueB1",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconNvzhuB1_UI.T_IconNvzhuB1_UI",
             "id": 1000602,
             "motionValues": [
                 {
@@ -359,7 +359,7 @@ export default {
             "desc": "Rover launches an attack forward, dealing <color=Light>Spectro DMG<\/color>."
         },
         "Resonance Liberation": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconZhujue\/SP_IconZhujueC1.SP_IconZhujueC1",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconNvzhuA1_UI.T_IconNvzhuA1_UI",
             "id": 1000603,
             "motionValues": [
                 {
@@ -461,19 +461,19 @@ export default {
             "desc": "Rover converges Spectro energy to assail the target area, detonating it after a short interval and dealing <color=Light>Spectro DMG<\/color>."
         },
         "Forte Circuit Passive 1": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconZhujue\/SP_IconZhujueD1.SP_IconZhujueD1",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconNvzhuD2_UI.T_IconnvzhuD2_UI",
             "id": 1000604,
             "name": "Reticence",
             "desc": "Damage dealt by Rover's Basic Attack <color=Highlight>Resonating Echoes<\/color> is increased by 60%."
         },
         "Forte Circuit Passive 2": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconZhujue\/SP_IconZhujueD2.SP_IconZhujueD2",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
             "id": 1000605,
             "name": "Silent Listener",
             "desc": "Rover gains 15% ATK increase for 5s upon casting Heavy Attack <color=Highlight>Resonance<\/color>."
         },
         "Intro Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconZhujue\/SP_IconZhujueQTE.SP_IconZhujueQTE",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconNvzhuQTE_UI.T_IconnvzhuQTE_UI",
             "id": 1000606,
             "motionValues": [
                 {
@@ -529,7 +529,7 @@ export default {
             "desc": "Rover attacks the target, dealing <color=Light>Spectro DMG<\/color>."
         },
         "Forte Circuit": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconZhujue\/SP_IconZhujueY.SP_IconZhujueY",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconNvzhuD1_UI.T_IconnvzhuD1_UI",
             "id": 1000607,
             "motionValues": [
                 {
@@ -683,13 +683,13 @@ export default {
             "desc": "<size=40><color=Title>Resonance Skill: Resonating Spin<\/color><\/size>nIf \"Diminutive Sound\" exceeds 50 when <color=Highlight>Resonance Skill<\/color> is used, Rover consumes 50 \"Diminutive Sound\" to cast <color=Highlight>Resonating Spin<\/color>, dealing <color=Light>Spectro DMG<\/color>, considered as Resonance Skill damage.n<size=10> <\/size>n<size=40><color=Title>Basic Attack: Resonating Echoes<\/color><\/size>nAfter Resonance Skill <color=Highlight>Resonating Spin<\/color> ends, Rover performs Resonance Skill <color=Highlight>Resonating Echoes<\/color> upon pressing the Basic Attack button.nRover performs attacks forward, dealing <color=Light>Spectro DMG<\/color> considered as Resonance Skill DMG.n<size=10> <\/size>n<size=40><color=Title>Diminutive Sound<\/color><\/size>nRover can hold up to 100 \"Diminutive Sounds\".nRover obtains \"Diminutive Sound\" for every Normal Attack <color=Highlight>Vibration Manifestation<\/color> on hit.nRover obtains \"Diminutive Sound\" for every Heavy Attack <color=Highlight> aftertune<\/color> on hit.nRover obtains \"Diminutive Sound\" upon casting Intro Skill <color=Highlight>Waveshock<\/color>."
         },
         "Rover Passive": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconRun.SP_IconRun",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
             "id": 1000608,
             "name": "Solaris Voyager",
             "desc": "An error occurred. Please contact our Customer Service for assistance"
         },
         "Outro Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconZhujue\/SP_IconZhujueT.SP_IconZhujueT",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconNvzhuQTE_UI.T_IconnvzhuQTE_UI",
             "id": 1000609,
             "name": "Instant",
             "desc": "Rover generates an area of stasis surrounding the next character (or other characters on a nearby team that activates an Outro Skill) over 3s."

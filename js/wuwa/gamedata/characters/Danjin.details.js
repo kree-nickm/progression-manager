@@ -1,7 +1,7 @@
 export default {
     "forte": {
         "Basic Attack": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconNorKnife.SP_IconNorKnife",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconmicaiC1_UI.T_IconmicaiC1_UI",
             "id": 1000801,
             "motionValues": [
                 {
@@ -205,7 +205,7 @@ export default {
             "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnDanjin performs up to 3 consecutive attacks, dealing <color=Dark>Havoc DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnDanjin combines her Forte with the blade in her hand and consumes Stamina to launch consecutive attacks, dealing <color=Dark>Havoc DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnConsume Stamina to perform a Mid-air Plunging Attack, dealing <color=Dark>Havoc DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to launch an attack, dealing <color=Dark>Havoc DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter: Ruby Shades<\/color><\/size>rnAfter a successful Dodge Counter, Danjin can use the Resonance Skill <color=Highlight>Crimson Fragment<\/color> to perform Resonance Skill: <color=Highlight>Crimson Erosion<\/color>."
         },
         "Resonance Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconMicai\/SP_IconMicaiB1.SP_IconMicaiB1",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconMicaiB1_UI.T_IconMicaiB1_UI",
             "id": 1000802,
             "motionValues": [
                 {
@@ -411,7 +411,7 @@ export default {
             "desc": "When casting <color=Highlight>Incinerating Will<\/color>, each attack consumes 3% of Danjin's max HP. When Danjin's HP is less than 1%, this no longer consumes HP.rn<size=10> <\/size>rn<size=40><color=Title>Carmine Gleam<\/color><\/size>rnDanjin attacks the target, dealing <color=Dark>Havoc DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Crimson Erosion<\/color><\/size>rnAfter <color=Highlight>Basic Attack 2<\/color>, <color=Highlight>Dodge Counter<\/color> or Intro Skill <color=Highlight>Vindication<\/color>, use <color=Highlight>Resonance Skill<\/color> to perform up to 2 consecutive strikes, dealing <color=Dark>Havoc DMG<\/color>.rnWhen <color=Highlight>Crimson Erosion II<\/color> hits a target, apply <color=Highlight>Incinerating Will<\/color> to it.rn<size=10> <\/size>rn<size=40><color=Title>Incinerating Will<\/color><\/size>rnDanjin's damage dealt to targets marked with <color=Highlight>Incinerating Will<\/color> is increased by 20%.rn<size=10> <\/size>rn<size=40><color=Title>Sanguine Pulse<\/color><\/size>rnUse <color=Highlight>Resonance Skill<\/color> after <color=Highlight>Basic Attack 3<\/color> to perform up to 3 consecutive attacks, dealing <color=Dark>Havoc DMG<\/color>."
         },
         "Resonance Liberation": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconMicai\/SP_IconMicaiC1.SP_IconMicaiC1",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconMicaiA1_UI.T_IconMicaiA1_UI",
             "id": 1000803,
             "motionValues": [
                 {
@@ -538,19 +538,19 @@ export default {
             "desc": "Danjin's anger intensifies as she frantically swings her dual blades, performing multiple rapid consecutive attacks, and 1 Scarlet Burst attack(s), dealing <color=Dark>Havoc DMG<\/color>."
         },
         "Forte Circuit Passive 1": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconMicai\/SP_IconMicaiD1.SP_IconMicaiD1",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconmicaiD2_UI.T_IconmicaiD2_UI",
             "id": 1000804,
             "name": "Crimson Light",
             "desc": "Damage of Resonance Skill <color=Highlight>Crimson Erosion<\/color> triggered by <color=Highlight>Dodge Counter: Ruby Shades<\/color> is increased by 20%. The HP cost and stacks of \"Ruby Blossom\" recovered are doubled."
         },
         "Forte Circuit Passive 2": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconMicai\/SP_IconMicaiD2.SP_IconMicaiD2",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
             "id": 1000805,
             "name": "Overflow",
             "desc": "After casting the Resonance Skill <color=Highlight>Sanguine Pulse<\/color>, Danjin's Heavy Attack damage is increased by 30% for 5s."
         },
         "Intro Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconMicai\/SP_IconMicaiQTE.SP_IconMicaiQTE",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconmicaiQTE_UI.T_IconmicaiQTE_UI",
             "id": 1000806,
             "motionValues": [
                 {
@@ -606,7 +606,7 @@ export default {
             "desc": "With unwavering determination, Danjin unleashes a strike, dealing <color=Dark>Havoc DMG<\/color>."
         },
         "Forte Circuit": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconMicai\/SP_IconMicaiY.SP_IconMicaiY",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconmicaiD1_UI.T_IconmicaiD1_UI",
             "id": 1000807,
             "motionValues": [
                 {
@@ -760,13 +760,13 @@ export default {
             "desc": "<size=40><color=Title>Heavy Attack: Chaoscleave<\/color><\/size>rnAfter accumulating 60 \"Ruby Blossom\", long press <color=Highlight>Basic Attack<\/color> to consume all \"Ruby Blossom\" to cast <color=Highlight>Chaoscleave<\/color>, dealing <color=Dark>Havoc DMG<\/color> considered as Heavy Attack damage, and restore HP for Danjin.rnIf current \"Ruby Blossom\" reaches over 120, this skill consumes 120 \"Ruby Blossom\" to increase the damage multiplier of <color=Highlight>Chaoscleave<\/color> and <color=Highlight>Scatterbloom<\/color> performed this time.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack: Scatterbloom<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after Heavy Attack <color=Highlight>Chaoscleave<\/color> to cast <color=Highlight>Shatter<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>, considered as Heavy Attack damage.rn<size=10> <\/size>rn<size=40><color=Title>Ruby Blossom<\/color><\/size>rnDanjin obtains \"Ruby Blossom\" when using Resonance Skill <color=Highlight>Crimson Fragment<\/color>."
         },
         "Utility Passive": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconWorld3.SP_IconWorld3",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
             "id": 1000808,
             "name": "Skillful Cooking",
             "desc": "Has a chance to produce special dishes when cooking"
         },
         "Outro Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconMicai\/SP_IconMicaiT.SP_IconMicaiT",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconmicaiQTE_UI.T_IconmicaiQTE_UI",
             "id": 1000809,
             "name": "Duality",
             "desc": "The next character (or other characters on a nearby team that activates an Outro Skill) gains 23% Havoc DMG Deepen for 14s or until they are switched off field."

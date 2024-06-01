@@ -1,10 +1,11 @@
 import LootData from "./gamedata/LootData.js";
+import MaterialData from "./gamedata/MaterialData.js";
 
 import WuWaItem from "./WuWaItem.js";
 
 export default class Material extends WuWaItem
 {
-  static dontSerialize = WuWaItem.dontSerialize.concat(["_shorthand","_type","rarity","source","days","usedBy","prevTier","nextTier","converts"]);
+  static dontSerialize = WuWaItem.dontSerialize.concat(["_name","_shorthand","_type","rarity","source","days","usedBy","prevTier","nextTier","converts"]);
   
   static setupTiers(matList)
   {
@@ -27,26 +28,11 @@ export default class Material extends WuWaItem
     }
   }
   
-  static toKey(string)
-  {
-    return string
-      .replaceAll(/[-— (][a-z]/g, (match, offset, str) => match.toUpperCase())
-      .replaceAll(/[^a-zA-Z0-9_]/g, "");
-  }
-  
-  static fromKey(string)
-  {
-    return string
-      .replaceAll(/[A-Z]/g, " $&").trim()
-      .replaceAll(/ (a|an|the|and|but|or|for|nor|of|for|at|in|by|from|to|as) /gi, (match, p1, offset, str) => match.toLowerCase());
-  }
-  
   key = "";
   _count = 0;
   
   _shorthand;
   _type;
-  rarity = 0;
   source = "";
   days = [];
   usedBy = [];
@@ -62,7 +48,15 @@ export default class Material extends WuWaItem
   }
   get shorthand(){ return this._shorthand ?? this.name; }
   set shorthand(val){ this._shorthand = val; }
-  get name() { return this.key; }
+  get name() { return MaterialData[this.key]?.name ?? "!unknown!"; }
+  get rarity() { return MaterialData[this.key]?.rarity ?? 1; }
+  
+  afterLoad()
+  {
+    if(!MaterialData[this.key])
+      this.key = this.list.constructor.toKey(this.key);
+    return true;
+  }
   
   /*getFullSource()
   {

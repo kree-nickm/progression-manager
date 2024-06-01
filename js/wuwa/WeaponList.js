@@ -216,6 +216,20 @@ export default class WeaponList extends WuWaList
     this.viewer.lists.CharacterList.list.forEach(character => character.weapon = null);
   }
   
+  getFooterParams()
+  {
+    return {
+      add: [
+        {
+          property: "key",
+          options: Object.keys(WeaponData)
+            .filter(key => !WeaponData[key].release || Date.parse(WeaponData[key].release) <= Date.now())
+            .map(key => ({value:key, label:WeaponData[key].name})),
+        },
+      ],
+    };
+  }
+  
   prepareRender(element, data, options)
   {
     data.fields = [];
@@ -232,50 +246,5 @@ export default class WeaponList extends WuWaList
     data.fields.push({field:this.display.getField("deleteBtn"), params:[]});
     data.groups = this.display.getGroups({fields: data.fields.map(fieldTuple => fieldTuple.field)});
     return {element, data, options};
-  }
-  
-  async render(force=false)
-  {
-    await super.render(force);
-    
-    let footer = document.getElementById("footer");
-    footer.classList.remove("d-none");
-    if(footer.dataset.list != this.uuid)
-    {
-      footer.replaceChildren();
-      footer.dataset.list = this.uuid;
-      
-      let divAdd = footer.appendChild(document.createElement("div"));
-      divAdd.classList.add("input-group", "mt-2");
-      let selectAdd = divAdd.appendChild(document.createElement("select"));
-      selectAdd.id = "addWeaponSelect";
-      selectAdd.classList.add("form-select", "size-to-content");
-      let btnAdd = divAdd.appendChild(document.createElement("button"));
-      btnAdd.innerHTML = "Add Weapon";
-      btnAdd.classList.add("btn", "btn-primary");
-      btnAdd.addEventListener("click", event => {
-        let selectAdd = document.getElementById("addWeaponSelect");
-        if(selectAdd.value)
-        {
-          let item = this.createItem({
-            key: selectAdd.value,
-            level: 1,
-            location: "",
-            lock: true,
-          });
-          selectAdd.value = "";
-        }
-      });
-      
-      selectAdd.appendChild(document.createElement("option"))
-      for(let itm in WeaponData)
-      {
-        if(WeaponData[itm].release && Date.parse(WeaponData[itm].release) > Date.now())
-          continue;
-        let option = selectAdd.appendChild(document.createElement("option"));
-        option.value = itm;
-        option.innerHTML = WeaponData[itm].name;
-      }
-    }
   }
 }

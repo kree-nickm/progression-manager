@@ -1,7 +1,7 @@
 export default {
     "forte": {
         "Basic Attack": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconNorMagic.SP_IconNorMagic",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYinlinC1_UI.T_IconYinlinC1_UI",
             "id": 1001501,
             "motionValues": [
                 {
@@ -234,7 +234,7 @@ export default {
             "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnYinlin controls the puppet \"Zapstring\" to perform up to 4 attacks, dealing <color=Thunder>Electro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnYinlin consumes Stamina to control \"Zapstring\", dealing <color=Thunder>Electro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnYinlin consumes Stamina to control \"Zapstring\" and perform a Mid-air Plunging Attack, dealing <color=Thunder>Electro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Thunder>Electro DMG<\/color>."
         },
         "Resonance Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYinlin\/SP_IconYinlinB1.SP_IconYinlinB1",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYinlinB1_UI.T_IconYinlinB1_UI",
             "id": 1001502,
             "motionValues": [
                 {
@@ -434,7 +434,7 @@ export default {
             "desc": "<size=40><color=Title>Magnetic Roar<\/color><\/size>rnThe puppet \"Zapstring\" deals <color=Thunder>Electro DMG<\/color> to the target, and puts Yinlin into the <color=Highlight>Execution Mode<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Execution Mode<\/color><\/size>rn<color=Highlight>Basic Attack<\/color> and <color=Highlight>Dodge Counter<\/color> will trigger 1 <color=Highlight>Electromagnetic Blast<\/color> when hitting a target.rnEach stage of <color=Highlight>Basic Attack<\/color> or <color=Highlight>Dodge Counter<\/color> can only trigger 1 <color=Highlight>Electromagnetic Blast<\/color>, up to 4 times.rn<size=10> <\/size>rn<size=40><color=Title>Electromagnetic Blast<\/color><\/size>rnAttack all targets marked with Resonance Circuit <color=Highlight>Sinner's Mark<\/color>, dealing <color=Thunder>Electro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Lightning Execution<\/color><\/size>rnUse Resonance Skill after casting Resonance Skill <color=Highlight>Magnetic Roar<\/color> to cast <color=Highlight>Lightning Execution<\/color> to attack the target, dealing <color=Thunder>Electro DMG<\/color>.rnIf Resonance Skill <color=Highlight>Lightning Execution<\/color> is not activated in a while or this Character is switched, this Skill will be put on Cooldown."
         },
         "Resonance Liberation": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYinlin\/SP_IconYinlinC1.SP_IconYinlinC1",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYinlinA1_UI.T_IconYinlinA1_UI",
             "id": 1001503,
             "motionValues": [
                 {
@@ -538,19 +538,19 @@ export default {
             "desc": "Command \"Zapstring\" to call for thunder to fall upon a large range, dealing <color=Thunder>Electro DMG<\/color>."
         },
         "Forte Circuit Passive 1": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYinlin\/SP_IconYinlinD1.SP_IconYinlinD1",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYinlinD2_UI.T_IconYinlinD2_UI",
             "id": 1001504,
             "name": "Pain Immersion",
             "desc": "After using Resonance Skill <color=Highlight>Magnetic Roar<\/color>, Yinlin's Crit. Rate is increased by 15% for 5s."
         },
         "Forte Circuit Passive 2": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYinlin\/SP_IconYinlinD2.SP_IconYinlinD2",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYinlinD2_UI.T_IconYinlinD2_UI",
             "id": 1001505,
             "name": "Deadly Focus",
             "desc": "The damage of Resonance Skill <color=Highlight>Lightning Execution<\/color> is increased by 10% when hitting targets marked with \"Sinner's Mark\", and Yinlin's ATK is increased by 10% for 4s when this is triggered."
         },
         "Intro Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYinlin\/SP_IconYinlinQTE.SP_IconYinlinQTE",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYinlinQTE_UI.T_IconYinlinQTE_UI",
             "id": 1001506,
             "motionValues": [
                 {
@@ -606,7 +606,7 @@ export default {
             "desc": "Command puppet \"Zapstring\" to attack, dealing <color=Thunder>Electro DMG<\/color> in a large range."
         },
         "Forte Circuit": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYinlin\/SP_IconYinlinY.SP_IconYinlinY",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYinlinD1_UI.T_IconYinlinD1_UI",
             "id": 1001507,
             "motionValues": [
                 {
@@ -664,13 +664,13 @@ export default {
             "desc": "<size=40><color=Title>Chameleon Cipher<\/color><\/size>nWhen Yinlin's \"Judgment Points\" is full, her <color=Highlight>Heavy Attack<\/color> is replaced with <color=Highlight>Chameleon Cipher<\/color>, which consumes all \"Judgment Points\" to attack the target, dealing <color=Thunder>Electro DMG<\/color>. When it hits a target marked with <color=Highlight>Sinner's Mark<\/color>, the <color=Highlight>Sinner's Mark<\/color> is replaced with <color=Highlight>Punishment Mark<\/color>, lasting for 18s.n<size=10> <\/size>n<size=40><color=Title>Sinner's Mark<\/color><\/size>nNormal Attack <color=Highlight>Zapstring's Dance<\/color>, Resonance Liberation <color=Highlight>Thundering Wrath<\/color>, and Intro Skill <color=Highlight>Roaring Storm<\/color> will apply <color=Highlight>Sinner's Mark<\/color> on hit.n<color=Highlight>Sinner's Mark<\/color> is removed when Yinlin exits.n<size=10> <\/size>n<size=40><color=Title>\"Punishment Mark\"<\/color><\/size>nWhen a target marked with <color=Highlight>Punishment Mark<\/color> is damaged, <color=Highlight>Judgement Strike<\/color> will fall, dealing <color=Thunder>Electro DMG<\/color> to all targets marked with <color=Highlight>Punishment Mark<\/color>. This can be triggered up to once per second.n<size=10> <\/size>n<size=40><color=Title>Judgment Points<\/color><\/size>nYinlin can hold up to 100 Judgement Points.nWhen Normal Attack <color=Highlight>Zapstring's Dance<\/color> hits a target, it restores \"Judgment Points\".nWhen Resonance Skill <color=Highlight>Magnetic Roar<\/color> hits a target, it restores \"Judgment Points\".nWhen Resonance Skill <color=Highlight>Electromagnetic Blast<\/color> hits a target, it restores \"Judgment Points\".nWhen Resonance Skill <color=Highlight>Lightning Execution<\/color> hits a target, it restores \"Judgment Points\"."
         },
         "Utility Passive": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconWorld4.SP_IconWorld4",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYinlinD2_UI.T_IconYinlinD2_UI",
             "id": 1001508,
             "name": "Skillful Cooking",
             "desc": "Has a chance to produce special dishes when cooking"
         },
         "Outro Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconYinlin\/SP_IconYinlinT.SP_IconYinlinT",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYinlinQTE_UI.T_IconYinlinQTE_UI",
             "id": 1001509,
             "name": "Strategist",
             "desc": "The next character (or other characters on a nearby team that activates an Outro Skill) gains 20% Electro DMG Deepen and 25% Resonance Liberation DMG Deepen for 14s or until they are switched off field."

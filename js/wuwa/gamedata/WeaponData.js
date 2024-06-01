@@ -46,7 +46,8 @@ export default {
         "passive": "Increases Energy Regen by {0}. When hitting a target with Resonance Skill, increases Basic Attack DMG Bonus by {1}, lasting for {2}s. When hitting a target with Basic Attacks, increases Resonance Skill DMG Bonus by {3}, lasting for {4}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Cadence",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21040015_UI.T_IconWeapon21040015_UI"
     },
     "CosmicRipples": {
         "name": "Cosmic Ripples",
@@ -102,7 +103,8 @@ export default {
         "passive": "Increases Energy Regen by {0}. When hitting a target with Basic Attacks, increases Basic Attack DMG Bonus by {1}, stacking up to {2} time(s). This effect lasts for {3}s and can be triggered {5} time(s) every {4}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050015_UI.T_IconWeapon21050015_UI"
     },
     "EmeraldOfGenesis": {
         "name": "Emerald of Genesis",
@@ -144,7 +146,8 @@ export default {
         "passive": "Increases Energy Regen by {0}. When Resonance Skill is released, increases ATK by {1}, stacking up to {2} time(s). This effect lasts for {3}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip",
-        "stat": "Crit"
+        "stat": "Crit",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21020015_UI.T_IconWeapon21020015_UI"
     },
     "LustrousRazor": {
         "name": "Lustrous Razor",
@@ -186,7 +189,8 @@ export default {
         "passive": "Increases Energy Regen by {0}. When Resonance Skill is released, increases Resonance Liberation DMG by {1}, stacking up to 2 times. This effect lasts for {3}s.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21010015_UI.T_IconWeapon21010015_UI"
     },
     "StaticMist": {
         "name": "Static Mist",
@@ -228,7 +232,8 @@ export default {
         "passive": "Increases Energy Regen by {0}. When Outro Skill is released, increases the switched-in Resonator's ATK by {1}, stacking up to {2} time(s). This effect lasts for {3}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Phlogiston",
-        "stat": "Crit"
+        "stat": "Crit",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21030015_UI.T_IconWeapon21030015_UI"
     },
     "Stringmaster": {
         "name": "Stringmaster",
@@ -277,7 +282,8 @@ export default {
         "passive": "Increases the DMG Bonus of all Resonance Attributes by {0}. When Resonance Skill hits a target, increases ATK by {1}, stacking up to {2}. When the equipped character is not on the field, increases their ATK by an additional {4}.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
-        "stat": "Crit"
+        "stat": "Crit",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050016_UI.T_IconWeapon21050016_UI"
     },
     "VerdantSummit": {
         "name": "Verdant Summit",
@@ -319,7 +325,8 @@ export default {
         "passive": "Increases the DMG Bonus of all Resonance Attributes by {0}. Every time Intro Skill or Resonance Liberation is cast, increases Heavy Attack DMG Bonus by {1}, stacking up to {2} time(s). This effect lasts for {3}s.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
-        "stat": "CritDamage"
+        "stat": "CritDamage",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21010016_UI.T_IconWeapon21010016_UI"
     },
     "AmityAccord": {
         "name": "Amity Accord",
@@ -347,7 +354,8 @@ export default {
         "passive": "When Intro Skill is released, increases Resonance Liberation DMG Bonus by {0}, lasting for {1}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Cadence",
-        "stat": "GreenDef"
+        "stat": "GreenDef",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21040044_UI.T_IconWeapon21040044_UI"
     },
     "Augment": {
         "name": "Augment",
@@ -375,7 +383,8 @@ export default {
         "passive": "When Resonance Liberation is released, increases the caster's ATK by {0}, lasting for {1}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
-        "stat": "Crit"
+        "stat": "Crit",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050074_UI.T_IconWeapon21050074_UI"
     },
     "Autumntrace": {
         "name": "Autumntrace",
@@ -424,7 +433,8 @@ export default {
         "passive": "Increases ATK by {0} upon dealing Basic Attack DMG or Heavy Attack DMG, stacking up to {1} time(s). This effect lasts for {2}s and can be triggered {4} time(s) every {3}s.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
-        "stat": "Crit"
+        "stat": "Crit",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21010074_UI.T_IconWeapon21010074_UI"
     },
     "Broadblade41": {
         "name": "Broadblade#41",
@@ -480,7 +490,8 @@ export default {
         "passive": "When the Resonator's HP is above {0}, increases ATK by {1}. When the Resonator's HP is below {2}, restores their HP by {3} for dealing Basic Attack DMG or Heavy Attack DMG. This effect can be triggered {5} time(s) every {4}s.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
-        "stat": "EnergyEfficiency"
+        "stat": "EnergyEfficiency",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21010034_UI.T_IconWeapon21010034_UI"
     },
     "Cadenza": {
         "name": "Cadenza",
@@ -515,7 +526,8 @@ export default {
         "passive": "When Resonance Skill is released, restores Concerto Energy by {0}. This effect can be triggered 1 time every {1}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Phlogiston",
-        "stat": "EnergyEfficiency"
+        "stat": "EnergyEfficiency",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21030024_UI.T_IconWeapon21030024_UI"
     },
     "CometFlare": {
         "name": "Comet Flare",
@@ -564,7 +576,8 @@ export default {
         "passive": "When hitting a target with Basic Attacks or Heavy Attacks, increases Healing Bonus by {0}, stacking up to {2} time(s). This effect lasts for {1}s and can be triggered {4} time(s) every {3}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
-        "stat": "GreenLifeMax"
+        "stat": "GreenLifeMax",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050064_UI.T_IconWeapon21050064_UI"
     },
     "CommandoOfConviction": {
         "name": "Commando of Conviction",
@@ -592,7 +605,8 @@ export default {
         "passive": "When Intro Skill is released, increases ATK by {0}, lasting for {1}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21020044_UI.T_IconWeapon21020044_UI"
     },
     "DauntlessEvernight": {
         "name": "Dauntless Evernight",
@@ -627,7 +641,8 @@ export default {
         "passive": "When Intro Skill is released, increases ATK by {0} and DEF by {1}, lasting for {2}s.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
-        "stat": "GreenDef"
+        "stat": "GreenDef",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21010044_UI.T_IconWeapon21010044_UI"
     },
     "Discord": {
         "name": "Discord",
@@ -662,7 +677,8 @@ export default {
         "passive": "When Resonance Skill is released, restores Concerto Energy by {0}. This effect can be triggered 1 time every {1}s.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
-        "stat": "EnergyEfficiency"
+        "stat": "EnergyEfficiency",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21010024_UI.T_IconWeapon21010024_UI"
     },
     "Gauntlets21D": {
         "name": "Gauntlets#21D",
@@ -718,7 +734,8 @@ export default {
         "passive": "When the Resonator dashes or dodges, increases ATK by {0}. Increases Counter Attack DMG by {1}, lasting for {2}s. When Counter Attack is performed, restores the Resonator's HP by {3}. This effect can be triggered {5} time(s) every {4}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Cadence",
-        "stat": "EnergyEfficiency"
+        "stat": "EnergyEfficiency",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21040034_UI.T_IconWeapon21040034_UI"
     },
     "HeliosCleaver": {
         "name": "Helios Cleaver",
@@ -788,7 +805,8 @@ export default {
         "passive": "Within {0}s after Resonance Skill is released, increases ATK by {2} every {1}s, stacking up to {3} time(s). When the number of stacks reaches {4}, all stacks will be reset within {5}s.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21010064_UI.T_IconWeapon21010064_UI"
     },
     "HollowMirage": {
         "name": "Hollow Mirage",
@@ -830,7 +848,8 @@ export default {
         "passive": "When Resonance Liberation is released, grants {0} stack(s) of Iron Armor. Each stack increases ATK and DEF by {1}, stacking up to {2} time(s). When the Resonator takes damage, reduces the number of stacks by {3}.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Cadence",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21040064_UI.T_IconWeapon21040064_UI"
     },
     "JinzhouKeeper": {
         "name": "Jinzhou Keeper",
@@ -865,7 +884,8 @@ export default {
         "passive": "When Intro Skill is released, increases the caster's ATK by {0} and HP by {1}, lasting for {2}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050044_UI.T_IconWeapon21050044_UI"
     },
     "Lumingloss": {
         "name": "Lumingloss",
@@ -914,7 +934,8 @@ export default {
         "passive": "When Resonance Skill is released, increases Basic Attack DMG and Heavy Attack DMG by {0}, stacking up to {1} time(s). This effect lasts for {2}s and can be triggered {4} time(s) every {3}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21020074_UI.T_IconWeapon21020074_UI"
     },
     "LunarCutter": {
         "name": "Lunar Cutter",
@@ -984,7 +1005,8 @@ export default {
         "passive": "Equipped Resonator gains {0} stack(s) of Oath upon entering the battlefield. Each stack increases ATK by {1}, up to {2} stacks. This effect can be triggered {4} time(s) every {3}s.  Oath reduces by {6} stack(s) every {5}s. Equipped Resonator gains an additional {7} stack(s) of Oath upon defeating an enemy.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21020064_UI.T_IconWeapon21020064_UI"
     },
     "Marcato": {
         "name": "Marcato",
@@ -1019,7 +1041,8 @@ export default {
         "passive": "When Resonance Skill is released, restores Concerto Energy by {0}. This effect can be triggered 1 time every {1}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Cadence",
-        "stat": "EnergyEfficiency"
+        "stat": "EnergyEfficiency",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21040024_UI.T_IconWeapon21040024_UI"
     },
     "Novaburst": {
         "name": "Novaburst",
@@ -1054,7 +1077,8 @@ export default {
         "passive": "When the Resonator dashes or dodges, increases ATK by {0}, stacking up to {2} time(s). This effect lasts for {1}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Phlogiston",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21030064_UI.T_IconWeapon21030064_UI"
     },
     "Pistols26": {
         "name": "Pistols#26",
@@ -1110,7 +1134,8 @@ export default {
         "passive": "When the Resonator takes no damage, increases ATK by {1} every {0}s, stacking up to {2} time(s). This effect lasts for {3}s. When the Resonator takes damage, reduces the number of stacks by {4} and restores their HP by {5}.",
         "enemyMat": "Ring",
         "forgeryMat": "Phlogiston",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21030034_UI.T_IconWeapon21030034_UI"
     },
     "Rectifier25": {
         "name": "Rectifier#25",
@@ -1173,7 +1198,8 @@ export default {
         "passive": "When Resonance Skill is released, if the Resonator's HP is below {0}, restores their HP by {1}. This effect can be triggered {3} time(s) every {2}s; if the Resonator's HP is above {4}, increases ATK by {5}, lasting for {6}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
-        "stat": "EnergyEfficiency"
+        "stat": "EnergyEfficiency",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050034_UI.T_IconWeapon21050034_UI"
     },
     "ScaleSlasher": {
         "name": "Scale: Slasher",
@@ -1208,7 +1234,8 @@ export default {
         "passive": "When Resonance Skill is released, restores Concerto Energy by {0}. This effect can be triggered 1 time every {1}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip",
-        "stat": "EnergyEfficiency"
+        "stat": "EnergyEfficiency",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21020024_UI.T_IconWeapon21020024_UI"
     },
     "Stonard": {
         "name": "Stonard",
@@ -1236,7 +1263,8 @@ export default {
         "passive": "When Resonance Skill is released, increases the caster's Resonance Liberation DMG Bonus by {0}, lasting for {1}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Cadence",
-        "stat": "Crit"
+        "stat": "Crit",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21040074_UI.T_IconWeapon21040074_UI"
     },
     "Sword18": {
         "name": "Sword#18",
@@ -1285,7 +1313,8 @@ export default {
         "passive": "When Equipped Resonator's HP drops below {0}, increases Heavy Attack DMG by {1} and restores HP by {2} upon dealing Heavy Attack DMG. This effect can be triggered {4} time(s) every {3}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21020034_UI.T_IconWeapon21020034_UI"
     },
     "Thunderbolt": {
         "name": "Thunderbolt",
@@ -1334,7 +1363,8 @@ export default {
         "passive": "When hitting a target with Basic Attacks or Heavy Attacks, increases Resonance Skill DMG Bonus by {0}, stacking up to {1} time(s). This effect lasts for {2}s and can be triggered {4} time(s) every {3}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Phlogiston",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21030074_UI.T_IconWeapon21030074_UI"
     },
     "UndyingFlame": {
         "name": "Undying Flame",
@@ -1362,7 +1392,8 @@ export default {
         "passive": "When Intro Skill is released, increases Resonance Skill DMG Bonus by {0} for {1}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Phlogiston",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21030044_UI.T_IconWeapon21030044_UI"
     },
     "Variation": {
         "name": "Variation",
@@ -1397,7 +1428,8 @@ export default {
         "passive": "When Resonance Skill is released, restores Concerto Energy by {0}. This effect can be triggered 1 time every {1}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
-        "stat": "EnergyEfficiency"
+        "stat": "EnergyEfficiency",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050024_UI.T_IconWeapon21050024_UI"
     },
     "BroadbladeOfNight": {
         "name": "Broadblade of Night",
@@ -1425,7 +1457,8 @@ export default {
         "passive": "When Intro Skill is released, increases ATK by {0}, lasting for {1}s.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21010013_UI.T_IconWeapon21010013_UI"
     },
     "BroadbladeOfVoyager": {
         "name": "Broadblade of Voyager",
@@ -1460,7 +1493,8 @@ export default {
         "passive": "When Resonance Skill is released, restores Resonance Energy by {0}. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
-        "stat": "EnergyEfficiency"
+        "stat": "EnergyEfficiency",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21010043_UI.T_IconWeapon21010043_UI"
     },
     "GauntletsOfNight": {
         "name": "Gauntlets of Night",
@@ -1488,7 +1522,8 @@ export default {
         "passive": "When Intro Skill is released, increases ATK by {0}, lasting for {1}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Cadence",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21040013_UI.T_IconWeapon21040013_UI"
     },
     "GauntletsOfVoyager": {
         "name": "Gauntlets of Voyager",
@@ -1523,7 +1558,8 @@ export default {
         "passive": "When Resonance Skill is released, restores Resonance Energy by {0}. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Cadence",
-        "stat": "GreenDef"
+        "stat": "GreenDef",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21040043_UI.T_IconWeapon21040043_UI"
     },
     "GuardianBroadblade": {
         "name": "Guardian Broadblade",
@@ -1544,7 +1580,8 @@ export default {
         "passive": "Increases Basic Attack DMG and Heavy Attack DMG by {0}.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21010053_UI.T_IconWeapon21010053_UI"
     },
     "GuardianGauntlets": {
         "name": "Guardian Gauntlets",
@@ -1565,7 +1602,8 @@ export default {
         "passive": "Increases Resonance Liberation DMG Bonus by {0}.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Cadence",
-        "stat": "GreenDef"
+        "stat": "GreenDef",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21040053_UI.T_IconWeapon21040053_UI"
     },
     "GuardianPistols": {
         "name": "Guardian Pistols",
@@ -1586,7 +1624,8 @@ export default {
         "passive": "Increases Resonance Skill DMG Bonus by {0}.",
         "enemyMat": "Ring",
         "forgeryMat": "Phlogiston",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21030053_UI.T_IconWeapon21030053_UI"
     },
     "GuardianRectifier": {
         "name": "Guardian Rectifier",
@@ -1607,7 +1646,8 @@ export default {
         "passive": "Increases Basic Attack and Heavy Attack DMG Bonus by {0}.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050053_UI.T_IconWeapon21050053_UI"
     },
     "GuardianSword": {
         "name": "Guardian Sword",
@@ -1628,7 +1668,8 @@ export default {
         "passive": "Increases Resonance Skill DMG by {0}.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip",
-        "stat": "GreenLifeMax"
+        "stat": "GreenLifeMax",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21020053_UI.T_IconWeapon21020053_UI"
     },
     "OriginiteTypeI": {
         "name": "Originite: Type I",
@@ -1663,7 +1704,8 @@ export default {
         "passive": "When Resonance Skill is released, restores HP by {0}. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
-        "stat": "GreenDef"
+        "stat": "GreenDef",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21010023_UI.T_IconWeapon21010023_UI"
     },
     "OriginiteTypeII": {
         "name": "Originite: Type II",
@@ -1698,7 +1740,8 @@ export default {
         "passive": "When Resonance Liberation is released, restores HP by {0}. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21020023_UI.T_IconWeapon21020023_UI"
     },
     "OriginiteTypeIII": {
         "name": "Originite: Type III",
@@ -1733,7 +1776,8 @@ export default {
         "passive": "When Counter Attack is released, restores HP by {0}. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Phlogiston",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21030023_UI.T_IconWeapon21030023_UI"
     },
     "OriginiteTypeIV": {
         "name": "Originite: Type IV",
@@ -1768,7 +1812,8 @@ export default {
         "passive": "When hitting a target with Basic Attacks, restores HP by {0}. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Cadence",
-        "stat": "CritDamage"
+        "stat": "CritDamage",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21040023_UI.T_IconWeapon21040023_UI"
     },
     "OriginiteTypeV": {
         "name": "Originite: Type V",
@@ -1803,7 +1848,8 @@ export default {
         "passive": "When Intro Skill is released, restores HP by {0}. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
-        "stat": "GreenLifeMax"
+        "stat": "GreenLifeMax",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050023_UI.T_IconWeapon21050023_UI"
     },
     "PistolsOfNight": {
         "name": "Pistols of Night",
@@ -1831,7 +1877,8 @@ export default {
         "passive": "When Intro Skill is released, increases ATK by {0}, lasting for {1}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Phlogiston",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21030013_UI.T_IconWeapon21030013_UI"
     },
     "PistolsOfVoyager": {
         "name": "Pistols of Voyager",
@@ -1866,7 +1913,8 @@ export default {
         "passive": "When Resonance Skill is released, restores Resonance Energy by {0}. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Phlogiston",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21030043_UI.T_IconWeapon21030043_UI"
     },
     "RectifierOfNight": {
         "name": "Rectifier of Night",
@@ -1894,7 +1942,8 @@ export default {
         "passive": "When Intro Skill is released, increases ATK by {0}, lasting for {1}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050013_UI.T_IconWeapon21050013_UI"
     },
     "RectifierOfVoyager": {
         "name": "Rectifier of Voyager",
@@ -1929,7 +1978,8 @@ export default {
         "passive": "When Resonance Skill is released, restores Resonance Energy by {0}. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
-        "stat": "EnergyEfficiency"
+        "stat": "EnergyEfficiency",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050043_UI.T_IconWeapon21050043_UI"
     },
     "SwordOfNight": {
         "name": "Sword of Night",
@@ -1957,7 +2007,8 @@ export default {
         "passive": "When Intro Skill is released, increases ATK by {0}, lasting for {1}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21020013_UI.T_IconWeapon21020013_UI"
     },
     "SwordOfVoyager": {
         "name": "Sword of Voyager",
@@ -1992,7 +2043,8 @@ export default {
         "passive": "When Resonance Skill is released, restores Resonance Energy by {0}. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip",
-        "stat": "EnergyEfficiency"
+        "stat": "EnergyEfficiency",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21020043_UI.T_IconWeapon21020043_UI"
     },
     "TyroBroadblade": {
         "name": "Tyro Broadblade",
@@ -2013,7 +2065,8 @@ export default {
         "passive": "Increases ATK by {0}.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21010012_UI.T_IconWeapon21010012_UI"
     },
     "TyroGauntlets": {
         "name": "Tyro Gauntlets",
@@ -2034,7 +2087,8 @@ export default {
         "passive": "Increases ATK by {0}.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Cadence",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21040012_UI.T_IconWeapon21040012_UI"
     },
     "TyroPistols": {
         "name": "Tyro Pistols",
@@ -2055,7 +2109,8 @@ export default {
         "passive": "Increases ATK by {0}.",
         "enemyMat": "Ring",
         "forgeryMat": "Phlogiston",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21030012_UI.T_IconWeapon21030012_UI"
     },
     "TyroRectifier": {
         "name": "Tyro Rectifier",
@@ -2076,7 +2131,8 @@ export default {
         "passive": "Increases ATK by {0}.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050012_UI.T_IconWeapon21050012_UI"
     },
     "TyroSword": {
         "name": "Tyro Sword",
@@ -2097,7 +2153,8 @@ export default {
         "passive": "Increases ATK by {0}.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21020012_UI.T_IconWeapon21020012_UI"
     },
     "TrainingBroadblade": {
         "name": "Training Broadblade",
@@ -2118,7 +2175,8 @@ export default {
         "passive": "Increases ATK by {0}.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21010011_UI.T_IconWeapon21010011_UI"
     },
     "TrainingGauntlets": {
         "name": "Training Gauntlets",
@@ -2139,7 +2197,8 @@ export default {
         "passive": "Increases ATK by {0}.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Cadence",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21040011_UI.T_IconWeapon21040011_UI"
     },
     "TrainingPistols": {
         "name": "Training Pistols",
@@ -2160,7 +2219,8 @@ export default {
         "passive": "Increases ATK by {0}.",
         "enemyMat": "Ring",
         "forgeryMat": "Phlogiston",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21030011_UI.T_IconWeapon21030011_UI"
     },
     "TrainingRectifier": {
         "name": "Training Rectifier",
@@ -2181,7 +2241,8 @@ export default {
         "passive": "Increases ATK by {0}.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050011_UI.T_IconWeapon21050011_UI"
     },
     "TrainingSword": {
         "name": "Training Sword",
@@ -2202,6 +2263,7 @@ export default {
         "passive": "Increases ATK by {0}.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip",
-        "stat": "GreenAtk"
+        "stat": "GreenAtk",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21020011_UI.T_IconWeapon21020011_UI"
     }
 };

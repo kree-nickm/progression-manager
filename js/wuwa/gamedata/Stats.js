@@ -372,13 +372,13 @@ export default {
         "id": 10002,
         "descHash": "",
         "isPercent": false,
-        "name": "HP"
+        "name": "HP%"
     },
     "GreenLife": {
         "id": 10003,
         "descHash": "",
         "isPercent": false,
-        "name": "HP"
+        "name": "HP%"
     },
     "GreenSheild": {
         "id": 10004,
@@ -390,7 +390,7 @@ export default {
         "id": 10007,
         "descHash": "",
         "isPercent": false,
-        "name": "ATK"
+        "name": "ATK%"
     },
     "GreenCrit": {
         "id": 10008,
@@ -408,7 +408,7 @@ export default {
         "id": 10010,
         "descHash": "",
         "isPercent": false,
-        "name": "DEF"
+        "name": "DEF%"
     },
     "GreenEnergyEfficiency": {
         "id": 10011,

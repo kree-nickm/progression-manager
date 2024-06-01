@@ -342,6 +342,18 @@ export default class CharacterList extends WuWaList
     this.forceNextRender = true;
   }
   
+  /*getFooterParams()
+  {
+    return {
+      add: [
+        {
+          property: "key",
+          options: [],
+        },
+      ],
+    };
+  }*/
+  
   prepareRender(element, data, options)
   {
     data.filter = "listable";

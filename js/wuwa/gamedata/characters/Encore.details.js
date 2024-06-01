@@ -1,7 +1,7 @@
 export default {
     "forte": {
         "Basic Attack": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconNorMagic.SP_IconNorMagic",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconAnkeC1_UI.T_IconAnkeC1_UI",
             "id": 1000701,
             "motionValues": [
                 {
@@ -251,7 +251,7 @@ export default {
             "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnEncore performs up to 4 consecutive attacks, dealing <color=Fire>Fusion DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Basic Attack: Wooly Strike<\/color><\/size>rnAfter <color=Highlight>Basic Attack 4<\/color>, press the Basic Attack button to attack the target, dealing <color=Fire>Fusion DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnEncore consumes Stamina to attack the target, dealing <color=Fire>Fusion DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnEncore consumes Stamina to perform a Mid-Air Plunging Attack, dealing <color=Fire>Fusion DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Fire>Fusion DMG<\/color>."
         },
         "Resonance Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconAnke\/SP_IconAnkeB1.SP_IconAnkeB1",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconAnkeB1_UI.T_IconAnkeB1_UI",
             "id": 1000702,
             "motionValues": [
                 {
@@ -382,7 +382,7 @@ export default {
             "desc": "<size=40><color=Title>Flaming Woolies<\/color><\/size>rnEncore summons Cloudy and Cosmos to attack with burning rays, dealing <color=Fire>Fusion DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Energetic Welcome<\/color><\/size>rnAfter casting <color=Highlight>Flaming Woolies<\/color>, use <color=Highlight>Resonance Skill<\/color> to perform <color=Highlight>Energetic Welcome<\/color>, dealing <color=Fire>Fusion DMG<\/color>."
         },
         "Resonance Liberation": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconAnke\/SP_IconAnkeC1.SP_IconAnkeC1",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconAnkeA1_UI.T_IconAnkeA1_UI",
             "id": 1000703,
             "motionValues": [
                 {
@@ -683,19 +683,19 @@ export default {
             "desc": "As Encore loses control, Cosmos breaks free and wreaks havoc on its surroundings.rn<size=10> <\/size>rn<size=40><color=Title>Basic Attack: Cosmos: Frolicking<\/color><\/size>rnDuring Cosmos Rave, the <color=Highlight>Basic Attack<\/color> is replaced with <color=Highlight>Cosmos: Frolicking<\/color>, which performs up to 4 consecutive attacks, dealing <color=Fire>Fusion DMG<\/color>, considered as Basic Attack damage.rn<size=10> <\/size>rn<size=40><color=Title>Cosmos: Heavy Attack<\/color><\/size>rnDuring Cosmos Rave, the <color=Highlight>Heavy Attack<\/color> is replaced with <color=Highlight>Cosmos: Heavy Attack<\/color>, consuming Stamina to attack the target, dealing <color=Fire>Fusion DMG<\/color>, considered as Heavy Attack damage.rn<size=10> <\/size>rn<size=40><color=Title>Resonance Skill: Cosmos: Rampage<\/color><\/size>rnDuring Cosmos Rave, <color=Highlight>Flaming Woolies<\/color> is replaced with <color=Highlight>Cosmos: Rampage<\/color>, dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill damage.rn<size=10> <\/size>rn<size=40><color=Title>Cosmos: Dodge Counter<\/color><\/size>rnDuring Cosmos Rave, use <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Fire>Fusion DMG<\/color>, considered as Basic Attack damage."
         },
         "Forte Circuit Passive 1": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconAnke\/SP_IconAnkeD1.SP_IconAnkeD1",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconAnkeD2_UI.T_IconAnkeD2_UI",
             "id": 1000704,
             "name": "Angry Cosmos",
             "desc": "During the Resonance Liberation <color=Highlight>Cosmos Rave<\/color>, when Encore's HP is above 70%, DMG dealt is increased by 10%."
         },
         "Forte Circuit Passive 2": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconAnke\/SP_IconAnkeD2.SP_IconAnkeD2",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
             "id": 1000705,
             "name": "Woolies Cheer Dance",
             "desc": "When Resonance Skill <color=Highlight>Flaming Woolies<\/color> or Resonance Skill <color=Highlight>Cosmos: Rampage<\/color> is cast, Encore's Fusion DMG Bonus is increased by 10% for 10s."
         },
         "Intro Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconAnke\/SP_IconAnkeQTE.SP_IconAnkeQTE",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconAnkeQTE_UI.T_IconAnkeQTE_UI",
             "id": 1000706,
             "motionValues": [
                 {
@@ -752,7 +752,7 @@ export default {
             "desc": "Encore pounces at the enemies with Cosmos, dealing <color=Fire>Fusion DMG<\/color>."
         },
         "Forte Circuit": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconAnke\/SP_IconAnkeY.SP_IconAnkeY",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconAnkeD1_UI.T_IconAnkeD1_UI",
             "id": 1000707,
             "motionValues": [
                 {
@@ -858,13 +858,13 @@ export default {
             "desc": "<size=40><color=Title>Heavy Attack: Cloudy Frenzy<\/color><\/size>nWhen Encore's [Mayhem] is full, after casting a <color=Highlight>Heavy Attack<\/color>, Encore will consume all [Mayhem] to enter the Mayhem state, reducing damage taken by 70%. Switching Characters does not interrupt the Mayhem state.nAfter the Mayhem state ends, Encore will cast <color=Highlight>Cloudy Frenzy<\/color>, dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Liberation damage.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack: Cosmos Rupture<\/color><\/size>nDuring Cosmos Rampage, when casting <color=Highlight>Heavy Attack<\/color>, if [Mayhem] is full, Encore will consume all [Mayhem] to enter Cosmos' Mayhem state, reducing damage taken by 70%. Switching Characters does not interrupt the Mayhem state.nAfter Cosmos' Mayhem state ends, Encore will cast <color=Highlight>Cosmos Rupture<\/color>, dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Liberation damage.<size=10> <\/size>n<size=40><color=Title>Mayhem<\/color><\/size>nEncore can hold up to 100 point(s) of [Mayhem].nWhen Normal Attack <color=Highlight>Wooly Attack<\/color> hits a target, Encore restores [Mayhem].nWhen Resonance Skill <color=Highlight>Flaming Woolies<\/color> hits a target, Encore restores [Mayhem].nWhen Resonance Skill <color=Highlight>Energetic Welcome<\/color> hits a target, Encore restores [Mayhem].nWhen Intro Skill <color=Highlight>Woolies Helpers<\/color> hits a target, Encore restores [Mayhem].nDuring the duration of Resonance Liberation <color=Highlight>Cosmos Rave<\/color>, Encore restores [Mayhem] when hitting a target."
         },
         "Utility Passive": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconWorld3.SP_IconWorld3",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
             "id": 1000708,
             "name": "Skillful Cooking",
             "desc": "Has a chance to produce special dishes when cooking"
         },
         "Outro Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconAnke\/SP_IconAnkeT.SP_IconAnkeT",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconAnkeQTE_UI.T_IconAnkeQTE_UI",
             "id": 1000709,
             "name": "Thermal Field",
             "desc": "Encore generates a Thermal Field centered around skill target, with a radius of 3m. Targets inside the Thermal Field are continuously burned, suffering <color=Fire>Fusion DMG<\/color> equal to 176.76% of Encore's ATK every 1.5s for 6s."

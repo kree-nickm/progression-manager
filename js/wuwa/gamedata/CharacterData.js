@@ -10,7 +10,9 @@ export default {
         "bossMat": "Roaring Rock Fist",
         "floraMat": "Wintry Bell",
         "enemyMat": "Howler Core",
-        "forgeryMat": "Phlogiston"
+        "forgeryMat": "Phlogiston",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_12_UI.T_IconRoleHead256_12_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_qiushui_UI.T_IconRole_Pile_qiushui_UI"
     },
     "Baizhi": {
         "id": 1103,
@@ -23,7 +25,9 @@ export default {
         "bossMat": "Sound-Keeping Tacet Core",
         "floraMat": "Lanternberry",
         "enemyMat": "Howler Core",
-        "forgeryMat": "Helix"
+        "forgeryMat": "Helix",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_6_UI.T_IconRoleHead256_6_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_bailian_UI.T_IconRole_Pile_bailian_UI"
     },
     "Calcharo": {
         "id": 1301,
@@ -35,7 +39,9 @@ export default {
         "bossMat": "Thundering Tacet Core",
         "floraMat": "Iris",
         "enemyMat": "Ring",
-        "forgeryMat": "Waveworn Residue"
+        "forgeryMat": "Waveworn Residue",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_18_UI.T_IconRoleHead256_18_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_kakaluo_UI.T_IconRole_Pile_kakaluo_UI"
     },
     "Chixia": {
         "id": 1202,
@@ -48,7 +54,9 @@ export default {
         "bossMat": "Rage Tacet Core",
         "floraMat": "Belle Poppy",
         "enemyMat": "Whisperin Core",
-        "forgeryMat": "Phlogiston"
+        "forgeryMat": "Phlogiston",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_2_UI.T_IconRoleHead256_2_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_maxiaofang_UI.T_IconRole_Pile_maxiaofang_UI"
     },
     "Danjin": {
         "id": 1602,
@@ -61,7 +69,9 @@ export default {
         "bossMat": "Strife Tacet Core",
         "floraMat": "Belle Poppy",
         "enemyMat": "Ring",
-        "forgeryMat": "Metallic Drip"
+        "forgeryMat": "Metallic Drip",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_10_UI.T_IconRoleHead256_10_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_micai_UI.T_IconRole_Pile_micai_UI"
     },
     "Encore": {
         "id": 1203,
@@ -74,7 +84,9 @@ export default {
         "bossMat": "Rage Tacet Core",
         "floraMat": "Pecok Flower",
         "enemyMat": "Whisperin Core",
-        "forgeryMat": "Helix"
+        "forgeryMat": "Helix",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_8_UI.T_IconRoleHead256_8_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_anke_UI.T_IconRole_Pile_anke_UI"
     },
     "Jianxin": {
         "id": 1405,
@@ -86,7 +98,9 @@ export default {
         "bossMat": "Roaring Rock Fist",
         "floraMat": "Lanternberry",
         "enemyMat": "Whisperin Core",
-        "forgeryMat": "Cadence"
+        "forgeryMat": "Cadence",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_23_UI.T_IconRoleHead256_23_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_jiexin_UI.T_IconRole_Pile_jiexin_UI"
     },
     "Jiyan": {
         "id": 1404,
@@ -99,7 +113,9 @@ export default {
         "bossMat": "Roaring Rock Fist",
         "floraMat": "Pecok Flower",
         "enemyMat": "Howler Core",
-        "forgeryMat": "Waveworn Residue"
+        "forgeryMat": "Waveworn Residue",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_11_UI.T_IconRoleHead256_11_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_jiyan_UI.T_IconRole_Pile_jiyan_UI"
     },
     "Lingyang": {
         "id": 1104,
@@ -111,7 +127,9 @@ export default {
         "bossMat": "Sound-Keeping Tacet Core",
         "floraMat": "Coriolus",
         "enemyMat": "Whisperin Core",
-        "forgeryMat": "Cadence"
+        "forgeryMat": "Cadence",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_14_UI.T_IconRoleHead256_14_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_lingyang_UI.T_IconRole_Pile_lingyang_UI"
     },
     "Mortefi": {
         "id": 1204,
@@ -124,7 +142,9 @@ export default {
         "bossMat": "Rage Tacet Core",
         "floraMat": "Coriolus",
         "enemyMat": "Whisperin Core",
-        "forgeryMat": "Phlogiston"
+        "forgeryMat": "Phlogiston",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_13_UI.T_IconRoleHead256_13_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_baer_UI.T_IconRole_Pile_baer_UI"
     },
     "RoverHavoc": {
         "id": 1605,
@@ -136,7 +156,9 @@ export default {
         "bossMat": "Mysterious Code",
         "floraMat": "Pecok Flower",
         "enemyMat": "Whisperin Core",
-        "forgeryMat": "Metallic Drip"
+        "forgeryMat": "Metallic Drip",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_4_UI.T_IconRoleHead256_4_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_zhujuenan_UI.T_IconRole_Pile_zhujuenan_UI"
     },
     "RoverSpectro": {
         "id": 1502,
@@ -149,7 +171,9 @@ export default {
         "bossMat": "Mysterious Code",
         "floraMat": "Pecok Flower",
         "enemyMat": "Whisperin Core",
-        "forgeryMat": "Metallic Drip"
+        "forgeryMat": "Metallic Drip",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_5_UI.T_IconRoleHead256_5_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_zhujue_UI.T_IconRole_Pile_zhujue_UI"
     },
     "Sanhua": {
         "id": 1102,
@@ -162,7 +186,9 @@ export default {
         "bossMat": "Sound-Keeping Tacet Core",
         "floraMat": "Wintry Bell",
         "enemyMat": "Whisperin Core",
-        "forgeryMat": "Metallic Drip"
+        "forgeryMat": "Metallic Drip",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_7_UI.T_IconRoleHead256_7_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_shanhua_UI.T_IconRole_Pile_shanhua_UI"
     },
     "Taoqi": {
         "id": 1601,
@@ -175,7 +201,9 @@ export default {
         "bossMat": "Gold-Dissolving Feather",
         "floraMat": "Iris",
         "enemyMat": "Howler Core",
-        "forgeryMat": "Waveworn Residue"
+        "forgeryMat": "Waveworn Residue",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_9_UI.T_IconRoleHead256_9_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_taohua_UI.T_IconRole_Pile_taohua_UI"
     },
     "Verina": {
         "id": 1503,
@@ -188,7 +216,9 @@ export default {
         "bossMat": "Elegy Tacet Core",
         "floraMat": "Belle Poppy",
         "enemyMat": "Howler Core",
-        "forgeryMat": "Helix"
+        "forgeryMat": "Helix",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_3_UI.T_IconRoleHead256_3_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_jueyuan_UI.T_IconRole_Pile_jueyuan_UI"
     },
     "Yangyang": {
         "id": 1402,
@@ -201,7 +231,9 @@ export default {
         "bossMat": "Roaring Rock Fist",
         "floraMat": "Wintry Bell",
         "enemyMat": "Ring",
-        "forgeryMat": "Metallic Drip"
+        "forgeryMat": "Metallic Drip",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_1_UI.T_IconRoleHead256_1_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_yangyang_UI.T_IconRole_Pile_yangyang_UI"
     },
     "Yinlin": {
         "id": 1302,
@@ -214,7 +246,9 @@ export default {
         "bossMat": "Group Abomination Tacet Core",
         "floraMat": "Coriolus",
         "enemyMat": "Whisperin Core",
-        "forgeryMat": "Helix"
+        "forgeryMat": "Helix",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_17_UI.T_IconRoleHead256_17_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_yinlin_UI.T_IconRole_Pile_yinlin_UI"
     },
     "Yuanwu": {
         "id": 1303,
@@ -227,6 +261,8 @@ export default {
         "bossMat": "Hidden Thunder Tacet Core",
         "floraMat": "Terraspawn Fungus",
         "enemyMat": "Ring",
-        "forgeryMat": "Cadence"
+        "forgeryMat": "Cadence",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_15_UI.T_IconRoleHead256_15_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_yuanwu_UI.T_IconRole_Pile_yuanwu_UI"
     }
 };

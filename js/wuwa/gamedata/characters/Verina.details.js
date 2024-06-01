@@ -1,7 +1,7 @@
 export default {
     "forte": {
         "Basic Attack": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconNorMagic.SP_IconNorMagic",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconJueyuanC1_UI.T_IconJueyuanC1_UI",
             "id": 1000301,
             "motionValues": [
                 {
@@ -359,7 +359,7 @@ export default {
             "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnVerina performs up to 5 consecutive attacks with vines, dealing <color=Light>Spectro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnVerina consumes Stamina to charge forward, dealing <color=Light>Spectro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnVerina consumes Stamina to perform up to 3 consecutive attacks in mid-air, dealing <color=Light>Spectro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Heavy Attack<\/color><\/size>rnHold <color=Highlight>Basic Attack<\/color> to consume Stamina and perform an Mid-air Plunging Attack, dealing <color=Light>Spectro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Light>Spectro DMG<\/color>."
         },
         "Resonance Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconJueyuan\/SP_IconJueyuanB1.SP_IconJueyuanB1",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconJueyuanB1_UI.T_IconJueyuanB1_UI",
             "id": 1000302,
             "motionValues": [
                 {
@@ -440,7 +440,7 @@ export default {
             "desc": "Verina converges an energy field in front to grow foliage, dealing <color=Light>Spectro DMG<\/color> within the range."
         },
         "Resonance Liberation": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconJueyuan\/SP_IconJueyuanC1.SP_IconJueyuanC1",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconJueyuanA1_UI.T_IconJueyuanA1_UI",
             "id": 1000303,
             "motionValues": [
                 {
@@ -646,19 +646,19 @@ export default {
             "desc": "Verina nourishes nearby foliage at rapid speed, dealing <color=Light>Spectro DMG<\/color> while restoring HP to all Characters on teams nearby. A <color=Highlight>Photosynthesis Mark<\/color> is applied to the target on hit.n<size=10> <\/size>n<size=40><color=Title>Photosynthesis Mark<\/color><\/size>nWhenever a Character on a team nearby performs an attack on targets with a Photosynthesis Mark, Verina performs a Coordinated Attack, dealing <color=Light>Spectro DMG<\/color> while restoring HP to the active Character dealing damage on a team nearby, triggered once per second."
         },
         "Forte Circuit Passive 1": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconJueyuan\/SP_IconJueyuanD1.SP_IconJueyuanD1",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconWeilinaiD1_UI.T_IconWeilinaiD1_UI",
             "id": 1000304,
             "name": "Grace of Life",
             "desc": "Verina protects a party member from fatal damage and grants a shield with strength equal to 120% of Verina's ATK, lasting for 10s. This can be triggered once every 10 minutes."
         },
         "Forte Circuit Passive 2": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconJueyuan\/SP_IconJueyuanD2.SP_IconJueyuanD2",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconWeilinaiD2_UI.T_IconWeilinaiD2_UI",
             "id": 1000305,
             "name": "Gift of Nature",
             "desc": "When Verina casts Heavy Attack <color=Highlight>Starflower Blooms<\/color>, Mid-air Attack <color=Highlight>Starflower Blooms<\/color>, Resonance Liberation <color=Highlight>Arboreal Flourish<\/color> or Outro Skill <color=Highlight>Blossom<\/color>, ATK for all party members is increased by 20% for 20s."
         },
         "Intro Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconJueyuan\/SP_IconJueyuanQTE.SP_IconJueyuanQTE",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconWeilinaiQTE_UI.T_IconWeilinaiQTE_UI",
             "id": 1000306,
             "motionValues": [
                 {
@@ -714,7 +714,7 @@ export default {
             "desc": "Verina attacks the target, dealing <color=Light>Spectro DMG<\/color>."
         },
         "Forte Circuit": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconJueyuan\/SP_IconJueyuanY.SP_IconJueyuanY",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
             "id": 1000307,
             "motionValues": [
                 {
@@ -870,13 +870,13 @@ export default {
             "desc": "<size=40><color=Title>Heavy Attack: Starflower Blooms<\/color><\/size>rnWhen casting <color=Highlight>Heavy Attack<\/color>, if Verina carries \"Photosynthesis Energy\", Verina consumes 1 stack of \"Photosynthesis Energy\" to recover Concerto Energy and restore HP for all party members nearby;rn<color=Highlight>Heavy Attack: Starflower Blooms<\/color> deals <color=Light>Spectro DMG<\/color>, considered as Heavy Attack damage.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack: Starflower Blooms<\/color><\/size>rnWhen casting <color=Highlight>Mid-air Attack<\/color>, if Verina carries \"Photosynthesis Energy\", Verina consumes 1 stack of \"Photosynthesis Energy\" to recover Concerto Energy and restore HP for all party members nearby;rn<color=Highlight>Mid-air Attack: Starflower Blooms<\/color> deals <color=Light>Spectro DMG<\/color>, considered as Basic Attack damage.rnVerina can cast <color=Highlight>Mid-air Attack: Starflower Blooms<\/color> by using <color=Highlight>Basic Attack<\/color> after casting <color=Highlight>Heavy Attack: Starflower Blooms<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Photosynthesis Energy<\/color><\/size>rnVerina can hold up to 4 \"Photosynthesis Energy\".rnVerina obtains 1 stack of \"Photosynthesis Energy\" for every Basic Attack 5 on hit;rnVerina obtains 1 stack of \"Photosynthesis Energy\" for every Resonance Skill <color=Highlight>Botany Experiment<\/color> on hit;rnVerina obtains 1 stack of \"Photosynthesis Energy\" for every Intro Skill <color=Highlight>Verdant Growth<\/color> on hit."
         },
         "Utility Passive": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconWorld3.SP_IconWorld3",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
             "id": 1000308,
             "name": "Skillful Cooking",
             "desc": "Has a chance to produce special dishes when cooking"
         },
         "Outro Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconJueyuan\/SP_IconJueyuanT.SP_IconJueyuanT",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconWeilinaiQTE_UI.T_IconWeilinaiQTE_UI",
             "id": 1000309,
             "name": "Blossom",
             "desc": "Verina heals the next character (or other characters on a nearby team that activates an Outro Skill) by 19% of her ATK per second for 6s. All characters on nearby teams gain 15% All-Type DMG Deepen for 30s."

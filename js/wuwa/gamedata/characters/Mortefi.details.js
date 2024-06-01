@@ -1,7 +1,7 @@
 export default {
     "forte": {
         "Basic Attack": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconNorGun.SP_IconNorGun",
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiA_UI.T_IconMotefeiA_UI",
             "id": 1001201,
             "motionValues": [
                 {
@@ -259,7 +259,7 @@ export default {
             "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnMortefi uses his dual pistols and flames to perform up to 4 consecutive shots, dealing <color=Fire>Fusion DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnMortefi enters the aiming state for a more powerful shot.rnThe aimed shot fired after charging finishes deals <color=Fire>Fusion DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnMortefi consumes Stamina to perform consecutive shots at the target in mid-air, dealing <color=Fire>Fusion DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Fire>Fusion DMG<\/color>."
         },
         "Resonance Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconMotefei\/SP_IconMotefeiB1.SP_IconMotefeiB1",
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiB_UI.T_IconMotefeiB_UI",
             "id": 1001202,
             "motionValues": [
                 {
@@ -340,7 +340,7 @@ export default {
             "desc": "Launch a flashing lightning of flames forward, dealing <color=Fire>Fusion DMG<\/color>."
         },
         "Resonance Liberation": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconMotefei\/SP_IconMotefeiC1.SP_IconMotefeiC1",
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiY_UI.T_IconMotefeiY_UI",
             "id": 1001203,
             "motionValues": [
                 {
@@ -496,19 +496,19 @@ export default {
             "desc": "Deal <color=Fire>Fusion DMG<\/color>, and apply <color=Highlight>Burning Rhapsody<\/color> to all characters in the team.rn<size=10> <\/size>rn<size=40><color=Title>Burning Rhapsody<\/color><\/size>rnWhen the on-field character's <color=Highlight>Basic Attack<\/color> hits the target, Mortefi launches a Coordinated Attack, firing 1 <color=Highlight>Marcato<\/color>.rnWhen the on-field character's <color=Highlight>Heavy Attack<\/color> hits the target, Mortefi launches a Coordinated Attack, firing 2 <color=Highlight>Marcato<\/color>.rnMortefi can launch one Coordinated Attack every 0.35s.rn<size=10> <\/size>rn<size=40><color=Title>Marcato<\/color><\/size>rnDeals <color=Fire>Fusion DMG<\/color>."
         },
         "Forte Circuit Passive 1": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconMotefei\/SP_IconMotefeiD1.SP_IconMotefeiD1",
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiD1_UI.T_IconMotefeiD1_UI",
             "id": 1001204,
             "name": "Harmonic Control",
             "desc": "After casting Resonance Skill <color=Highlight>Passionate Variation<\/color>, the damage of Resonance Skill <color=Highlight>Fury Fugue<\/color> is increased by 25% for 8s."
         },
         "Forte Circuit Passive 2": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconMotefei\/SP_IconMotefeiD2.SP_IconMotefeiD2",
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiD2_UI.T_IconMotefeiD2_UI",
             "id": 1001205,
             "name": "Rhythmic Vibrato",
             "desc": "During Resonance Liberation <color=Highlight>Burning Rhapsody<\/color>, each hit of Resonance Liberation <color=Highlight>Marcato<\/color> will increase the damage of the next Resonance Liberation <color=Highlight>Marcato<\/color> by 1.5%, which can be triggered once every 0.35s, stacking up to 50 times.rnThe effect will be reset after Resonance Liberation <color=Highlight>Burning Rhapsody<\/color> ends."
         },
         "Intro Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconMotefei\/SP_IconMotefeiQTE.SP_IconMotefeiQTE",
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiQTE_UI.T_IconMotefeiQTE_UI",
             "id": 1001206,
             "motionValues": [
                 {
@@ -564,7 +564,7 @@ export default {
             "desc": "Attack the target, dealing <color=Fire>Fusion DMG<\/color>."
         },
         "Forte Circuit": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconMotefei\/SP_IconMotefeiY.SP_IconMotefeiY",
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiC_UI.T_IconMotefeiC_UI",
             "id": 1001207,
             "motionValues": [
                 {
@@ -620,13 +620,13 @@ export default {
             "desc": "<size=40><color=Title>Resonance Skill: Fury Fugue<\/color><\/size>nWhen Mortefi's \"Annoyance\" reaches 100, his <color=Highlight>Resonance Skill<\/color> is replaced with <color=Highlight>Fury Fudge<\/color>.nWhen casting Fury Fudge, Mortefi consumes all \"Annoyance\" to unleash high-speed flame lightning, dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill damage.n<size=10> <\/size>n<size=40><color=Title>Annoyance<\/color><\/size>nMortefi can hold up to 100 Annoyance.nWhen Normal Attack <color=Highlight>Impromptu Show<\/color> hits the target, \u201cAnnoyance\u201d is restored.nWhen Intro Skill <color=Highlight>Dissonance<\/color> hits the target, \u201cAnnoyance\u201d is restored.nWhen Resonance Skill <color=Highlight>Passionate Variation<\/color> hits the target, \u201cAnnoyance\u201d is restored.nWithin 5s after casting <color=Highlight>Passionate Variation<\/color>, Basic Attack <color=Highlight>Impromptu<\/color> that hits the target additionally restores \u201cAnnoyance\u201d."
         },
         "Utility Passive": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconNor\/SP_IconWorld4.SP_IconWorld4",
+            "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
             "id": 1001208,
             "name": "Skillful Cooking",
             "desc": "Has a chance to produce special dishes when cooking"
         },
         "Outro Skill": {
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Atlas\/SkillIcon\/SkillIconMotefei\/SP_IconMotefeiT.SP_IconMotefeiT",
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiQTE_UI.T_IconMotefeiQTE_UI",
             "id": 1001209,
             "name": "Rage Transposition",
             "desc": "The next character (or other characters on a nearby team that activates an Outro Skill) gains 38% Heavy Attack DMG Deepen for 14s or until they are switched off field."
