@@ -75,10 +75,52 @@ export default class Echo extends WuWaItem
   
   // Getters/setters for item data that is not stored on each instance of this class.
   get monster(){ return EchoData[this.monsterKey]?.monster ?? this.monsterKey; }
+  get cost(){ return EchoData[this.monsterKey]?.cost ?? 0; }
   get set(){ return EchoSetData[this.setKey]?.name ?? this.setKey; }
   get skill(){ return EchoData[this.monsterKey]?.skillDesc.replace(/\{(\d+)\}/g, (m,p1) => EchoData[this.monsterKey].descParams[this.rarity-1][p1]) ?? ""; }
+  get image(){ return EchoData[this.monsterKey]?.icon?.slice(EchoData[this.monsterKey]?.icon?.lastIndexOf(".")+1) ?? ""; }
+  get bonusImage(){ return EchoSetData[this.setKey]?.icon?.slice(EchoSetData[this.setKey]?.icon?.lastIndexOf(".")+1) ?? ""; }
   get releaseTimestamp(){
     return Math.max(EchoData[this.monsterKey]?.release ? Date.parse(EchoData[this.monsterKey].release) : 0, EchoSetData[this.setKey]?.release ? Date.parse(EchoSetData[this.setKey].release) : 0);
+  }
+  
+  setSubstat(statKey, value)
+  {
+    if(!EchoMetadata.subStats.includes(statKey))
+    {
+      console.warn(`Invalid echo substat ${statKey}, can't set value to ${value}`);
+      return this;
+    }
+    for(let substat of this.substats)
+      if(substat.key == statKey)
+      {
+        substat.value = value;
+        this.update("substats", substat, "notify");
+        return this;
+      }
+    this.substats.push({key:statKey, value});
+    this.update("substats", this.substats[this.substats.length-1], "notify");
+    return this;
+  }
+  
+  getSubstat(statKey)
+  {
+    if(parseInt(statKey) == statKey)
+    {
+      return this.substats[statKey]?.value ?? 0;
+    }
+    else
+    {
+      if(!EchoMetadata.subStats.includes(statKey))
+      {
+        console.warn(`Invalid echo substat ${statKey}`);
+        return 0;
+      }
+      for(let substat of this.substats)
+        if(substat.key == statKey)
+          return substat.value;
+      return 0;
+    }
   }
   
   unlink(options)

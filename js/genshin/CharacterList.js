@@ -980,7 +980,7 @@ export default class CharacterList extends GenshinList
         let value = [];
         let materials = item.getPlanMaterials();
         for(let matKey in materials)
-          value.push({classes:{'plan-material':true}, value:this.viewer.lists.MaterialList.get(matKey).getFieldValue(materials[matKey], this.viewer.settings.preferences.characterList=='1')});
+          value.push({classes:{'plan-material':true}, value:this.viewer.lists.MaterialList.get(matKey).getFieldValue(materials[matKey], this.viewer.settings.preferences.characterList=='1', {plan:materials})});
         return value;
       },
       dependencies: (item,attr) => [

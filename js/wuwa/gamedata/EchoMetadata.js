@@ -154,35 +154,38 @@ export default {
         }
     ],
     "primaryStats": [
-        "GreenAtk",
-        "GreenLifeMax",
         "Crit",
         "CritDamage",
-        "GreenDef",
-        "HealChange",
         "DamageChangeElement1",
         "DamageChangeElement2",
         "DamageChangeElement3",
         "DamageChangeElement4",
         "DamageChangeElement5",
         "DamageChangeElement6",
-        "EnergyEfficiency"
+        "EnergyEfficiency",
+        "HealChange",
+        "GreenAtk",
+        "GreenLifeMax",
+        "GreenDef"
     ],
     "secondaryStats": [
         "Atk",
-        "Def",
-        "LifeMax"
+        "LifeMax",
+        "Def"
     ],
     "subStats": [
-        "GreenLifeMax",
-        "GreenAtk",
-        "GreenDef",
+        "Crit",
+        "CritDamage",
         "DamageChangeNormalSkill",
         "DamageChangeAuto",
         "DamageChangeCast",
         "DamageChangeUltra",
-        "Crit",
-        "CritDamage",
-        "EnergyEfficiency"
+        "EnergyEfficiency",
+        "GreenAtk",
+        "GreenLifeMax",
+        "GreenDef",
+        "Atk",
+        "LifeMax",
+        "Def"
     ]
 };

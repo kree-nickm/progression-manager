@@ -216,12 +216,12 @@ export default class Material extends GenshinItem
     return results.map(user => `${user.name}` + (user.note.length ? ` (${user.note.join(', ')})` : ``)).join("; ");
   }
   
-  getCraftCount()
+  getCraftCount({plan}={})
   {
     if(this.converts)
-      return this.count + this.converts.reduce((total, mat) => total+mat.count, 0);
+      return this.count + this.converts.reduce((total, mat) => total+Math.max(0,mat.count-(plan?.[mat.key]??0)), 0);
     else
-      return this.count + (this.prevTier ? Math.floor(this.prevTier.getCraftCount()/3) : 0);
+      return this.count + (this.prevTier ? Math.floor(Math.max(0,this.prevTier.getCraftCount()-(plan?.[this.prevTier.key]??0))/3) : 0);
   }
   
   getCraftDependencies()
@@ -234,7 +234,7 @@ export default class Material extends GenshinItem
       return [];
   }
   
-  getFieldValue(cost, useImage=false, {noName=false}={})
+  getFieldValue(cost, useImage=false, {noName=false, plan}={})
   {
     let bosskills3 = Math.ceil((cost-this.count)/3);
     let bosskills2 = Math.ceil((cost-this.count)/2);
@@ -270,7 +270,7 @@ export default class Material extends GenshinItem
             : this.type == "flora"
               ? `` // TODO: Compile data for number of each flora that exists on the map and display the relevant number here.
               : this.prevTier
-                ? `Up to ${this.getCraftCount()} if you craft.`
+                ? `Up to ${this.getCraftCount({plan})} if you craft.`
                 : ``,
           classes: {"display-caption": true},
           edit: {target: {item:this, field:"count"}},
@@ -281,7 +281,7 @@ export default class Material extends GenshinItem
         "item-material": true,
         "display-sm": true,
         "pending": this.count < cost,
-        "insufficient": this.getCraftCount() < cost,
+        "insufficient": this.getCraftCount({plan}) < cost,
       },
       title: this.getFullSource(),
     };
@@ -293,12 +293,12 @@ export default class Material extends GenshinItem
         : this.type == "flora"
           ? `` // TODO: Compile data for number of each flora that exists on the map and display the relevant number here.
           : this.prevTier || this.converts
-            ? `Up to ${this.getCraftCount()} if you craft.`
+            ? `Up to ${this.getCraftCount({plan})} if you craft.`
             : ``,
       classes: {
         "quantity": true,
         "pending": this.count < cost,
-        "insufficient": this.getCraftCount() < cost,
+        "insufficient": this.getCraftCount({plan}) < cost,
       },
       edit: {target: {item:this, field:"count"}, min:0, max:99999},
     };

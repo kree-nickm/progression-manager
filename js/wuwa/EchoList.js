@@ -36,6 +36,83 @@ export default class EchoList extends WuWaList
       value: item => item.rarity,
     });
     
+    this.display.addField("icon", {
+      label: "Echo",
+      sort: {generic: {type:"string", property:"monster"}},
+      dynamic: true,
+      value: (item,size) => ({
+        tag: "div",
+        value: [
+          {
+            tag: "div",
+            value: [
+              {
+                tag: "img",
+                src: "img/wuwa/small/"+item.image+".png",
+                classes: {"item-image":true},
+                title: item.monster,
+              },
+              {
+                tag: "div",
+                value: item.cost,
+                classes: {"item-detail":true},
+                title: `Cost ${item.cost}`,
+              },
+            ],
+            classes: {"item-image-container":true, ["item-rarity-"+item.rarity]:true},
+          },
+          {
+            tag: "div",
+            value: [
+              {
+                tag: "img",
+                src: "img/wuwa/icons/"+item.bonusImage+".png",
+                classes: {"item-set":true},
+                title: item.set,
+              },
+              {
+                value: "+"+item.level,
+                classes: {"item-level":true},
+                edit: {item:item, field:"level"},
+                title: `Click to change echo level.`,
+              },
+            ],
+            classes: {"item-props":true},
+          },
+        ],
+        classes: {"echo-icon":true},
+      }),
+    });
+    
+    this.display.addField("primaryStat", {
+      label: "Stat 1",
+      sort: {generic: {type:"string", property:"primaryStat"}},
+      dynamic: false,
+      value: item => Stats[item.primaryStat]?.name??item.primaryStat,
+    });
+    
+    this.display.addField("secondaryStat", {
+      label: "Stat 2",
+      sort: {generic: {type:"string", property:"secondaryStat"}},
+      dynamic: false,
+      value: item => Stats[item.secondaryStat]?.name??item.secondaryStat,
+    });
+    
+    let substatGroup = {label:"Substats"};
+    this.display.addField("substat", {
+      group: substatGroup,
+      label: (item,statKey) => parseInt(statKey)==statKey?`Substat ${statKey}`:Stats[statKey]?.name??statKey,
+      dynamic: true,
+      value: (item,statKey) => item.getSubstat(statKey),
+      edit: (item,statKey) => ({
+        func: value => {console.log(`saving`, {item, statKey, value}); return item.setSubstat(statKey, value);},
+        type: "number",
+      }),
+      dependencies: item => [
+        {item:item, field:"substats"},
+      ],
+    });
+    
     this.display.addField("lock", {
       label: "L",
       title: item => "Is Locked?",
@@ -153,10 +230,21 @@ export default class EchoList extends WuWaList
   prepareRender(element, data, options)
   {
     data.fields = [];
-    data.fields.push({field:this.display.getField("monster"), params:[]});
-    data.fields.push({field:this.display.getField("set"), params:[]});
-    data.fields.push({field:this.display.getField("rarity"), params:[]});
+    if(true)
+    {
+      data.fields.push({field:this.display.getField("icon"), params:[]});
+    }
+    else
+    {
+      data.fields.push({field:this.display.getField("monster"), params:[]});
+      data.fields.push({field:this.display.getField("set"), params:[]});
+      data.fields.push({field:this.display.getField("rarity"), params:[]});
+    }
+    data.fields.push({field:this.display.getField("primaryStat"), params:[]});
+    data.fields.push({field:this.display.getField("secondaryStat"), params:[]});
     data.fields.push({field:this.display.getField("lock"), params:[]});
+    for(let statKey of EchoMetadata.subStats)
+      data.fields.push({field:this.display.getField("substat"), params:[statKey]});
     data.fields.push({field:this.display.getField("location"), params:[]});
     data.fields.push({field:this.display.getField("delete"), params:[]});
     data.groups = this.display.getGroups({fields: data.fields.map(fieldTuple => fieldTuple.field)});
