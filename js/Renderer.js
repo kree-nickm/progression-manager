@@ -754,6 +754,8 @@ class Renderer
             option.value = content.edit.valueProperty.call(option, opt);
           else if(content.edit.valueProperty)
             option.value = opt[content.edit.valueProperty];
+          else if(typeof(opt) == "object" && opt.value && opt.display)
+            option.value = opt.value;
           else
             option.value = opt;
           
@@ -761,6 +763,8 @@ class Renderer
             option.innerHTML = content.edit.displayProperty.call(option, opt);
           else if(content.edit.displayProperty)
             option.innerHTML = opt[content.edit.displayProperty];
+          else if(typeof(opt) == "object" && opt.value && opt.display)
+            option.innerHTML = opt.display;
           else
             option.innerHTML = option.value;
         }

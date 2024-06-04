@@ -105,6 +105,14 @@ export default class Rover extends Character
   get element(){ return this._element; }
   get rarity(){ return 5; }
   
+  getMatCost(type, ascension=this.ascension)
+  {
+    if(type == "boss")
+      return [0,1,1,1,1,1][ascension];
+    else
+      return super.getMatCost(type, ascension);
+  }
+  
   onRender(element)
   {
     // Only the variants can be inspected, so force it to one of them if this is the base Rover.

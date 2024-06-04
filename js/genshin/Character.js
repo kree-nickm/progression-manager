@@ -405,7 +405,10 @@ export default class Character extends Ascendable(GenshinItem)
     
     // If we had an item equipped, and the new item was equipped to another character, give that character our old item.
     if(previousItem && previousCharacter)
+    {
+      previousItem.character = null; // Prevents unnecessary recursion;
       previousItem.update("location", previousCharacter.key);
+    }
     // If we had an item equipped, let it know it is now unequipped.
     else if(previousItem)
       previousItem.update("location", "");

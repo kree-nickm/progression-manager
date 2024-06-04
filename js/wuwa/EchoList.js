@@ -50,7 +50,6 @@ export default class EchoList extends WuWaList
                 tag: "img",
                 src: "img/wuwa/small/"+item.image+".png",
                 classes: {"item-image":true},
-                title: item.monster,
               },
               {
                 tag: "div",
@@ -60,20 +59,21 @@ export default class EchoList extends WuWaList
               },
             ],
             classes: {"item-image-container":true, ["item-rarity-"+item.rarity]:true},
+            title: item.monster,
           },
           {
             tag: "div",
             value: [
               {
                 tag: "img",
-                src: "img/wuwa/icons/"+item.bonusImage+".png",
+                src: item.bonusImage,
                 classes: {"item-set":true},
                 title: item.set,
               },
               {
                 value: "+"+item.level,
                 classes: {"item-level":true},
-                edit: {item:item, field:"level"},
+                edit: {target:{item:item, field:"level"}},
                 title: `Click to change echo level.`,
               },
             ],
@@ -131,36 +131,40 @@ export default class EchoList extends WuWaList
       label: "User",
       sort: {generic: {type:"string",property:"location"}},
       dynamic: true,
-      value: item => item.character ? {
-        value: [
-          {
-            value: item.character.name,
-            edit: {
-              target: {item:item, field:"location"},
-              type: "select",
-              list: item.list.viewer.lists.CharacterList.items("owned"),
-              valueProperty: "key",
-              displayProperty: "name",
+      value: item => {
+        let list = [];
+        for(let character of item.list.viewer.lists.CharacterList.items("owned"))
+        {
+          list.push({value:character.key, display:character.name});
+          list.push({value:character.key+":0", display:character.name+" (Skill)"});
+        }
+        return item.character ? {
+          value: [
+            {
+              value: item.character.name + (item.character.echoes[0] == item ? " (Skill)" : ""),
+              edit: {
+                target: {item:item, field:"location"},
+                type: "select",
+                list: list,
+              },
             },
+            {
+              tag: "i",
+              classes: {'fa-solid':true, 'fa-eye':true},
+              popup: item.character.variants?.length ? item.character.variants[0] : item.character,
+            },
+          ],
+          classes: {
+            "user-field": true,
           },
-          {
-            tag: "i",
-            classes: {'fa-solid':true, 'fa-eye':true},
-            popup: item.character.variants?.length ? item.character.variants[0] : item.character,
+        } : {
+          value: "-",
+          edit: {
+            target: {item:item, field:"location"},
+            type: "select",
+            list: list,
           },
-        ],
-        classes: {
-          "user-field": true,
-        },
-      } : {
-        value: "-",
-        edit: {
-          target: {item:item, field:"location"},
-          type: "select",
-          list: item.list.viewer.lists.CharacterList.items("owned"),
-          valueProperty: "key",
-          displayProperty: "name",
-        },
+        };
       },
       dependencies: item => [
         {item:item.list.viewer.lists.CharacterList, field:"list"},

@@ -8,7 +8,7 @@ import WuWaItem from "./WuWaItem.js";
 
 export default class Character extends WuWaItem
 {
-  static dontSerialize = WuWaItem.dontSerialize.concat(["MaterialList","_weapon"]);
+  static dontSerialize = WuWaItem.dontSerialize.concat(["MaterialList","_weapon","echoes"]);
   static templateName = "wuwa/renderCharacterAsPopup";
   
   key = "";
@@ -38,6 +38,13 @@ export default class Character extends WuWaItem
 
   MaterialList;
   _weapon = null;
+  echoes = {
+    '0': null,
+    '1': null,
+    '2': null,
+    '3': null,
+    '4': null,
+  };
   
   afterLoad()
   {
@@ -240,41 +247,83 @@ export default class Character extends WuWaItem
   }
   
   // This method should only be called by the item that is being equipped, when its "location" property is updated.
-  equipItem(item)
+  equipItem(item, {slot}={})
   {
-    // Determine the name of the property on this character that stores items of this type.
-    let property;
     if(item.constructor.name == "Weapon")
-      property = 'weapon';
+    {
+      //console.debug(`Equipping weapon:`, {character:this.key, weapon:item.key});
+      // Make note of existing equips.
+      let previousCharacter = item.character;
+      let previousItem = this.weapon;
+      
+      // Unequip the previous equips that we noted above.
+      item.character = null;
+      this.weapon = null;
+      
+      // If we had an item equipped, and the new item was equipped to another character, give that character our old item.
+      if(previousItem && previousCharacter)
+      {
+        previousItem.character = null; // Prevents unnecessary recursion;
+        previousItem.update("location", previousCharacter.key);
+      }
+      // If we had an item equipped, let it know it is now unequipped.
+      else if(previousItem)
+        previousItem.update("location", "");
+      // If the new item was equipped to another character, delete the reference to the item.
+      else if(previousCharacter)
+        previousCharacter.update("weapon", null, "replace");
+      
+      // Finally, set the references on this character and the item to each other.
+      this.update("weapon", item, "replace");
+      item.character = this;
+      return this;
+    }
     else if(item.constructor.name == "Echo")
-      property = item.slotKey;
+    {
+      if(isNaN(slot))
+      {
+        console.error(`Aborting echo equip; echo slot must be specified.`);
+        return this;
+      }
+      //console.debug(`Equipping echo:`, {character:this.key, echo:item.monsterKey, slot});
+      
+      // Make note of existing equips.
+      let previousCharacter = item.character;
+      let oldSlot;
+      if(previousCharacter)
+      {
+        oldSlot = Object.values(previousCharacter.echoes).indexOf(item);
+        if(oldSlot == -1)
+          console.error(`Couldn't find echo on its current character when trying to unequip it from them.`, {character:previousCharacter.key, echo:item.monsterKey});
+      }
+      let previousItem = this.echoes[slot];
+      
+      // Unequip the previous equips that we noted above.
+      item.character = null;
+      this.echoes[slot] = null;
+      
+      // If we had an item equipped, and the new item was equipped to another character, give that character our old item.
+      if(previousItem && previousCharacter)
+      {
+        previousItem.character = null; // Prevents unnecessary recursion;
+        previousItem.update("location", `${previousCharacter.key}:${oldSlot}`);
+      }
+      // If we had an item equipped, let it know it is now unequipped.
+      else if(previousItem)
+        previousItem.update("location", "");
+      // If the new item was equipped to another character, delete the reference to the item.
+      else if(previousCharacter)
+        previousCharacter.update(`echoes.${oldSlot}`, null, "replace");
+      
+      // Finally, set the references on this character and the item to each other.
+      this.update(`echoes.${slot}`, item, "replace");
+      item.character = this;
+      return this;
+    }
     else
     {
       console.error(`${this.name} cannot equip unknown item type '${item.constructor.name}'.`);
       return this;
     }
-    
-    // Make note of existing equips.
-    let previousCharacter = item.character;
-    let previousItem = this[property];
-    
-    // Unequip the previous equips that we noted above.
-    item.character = null;
-    this[property] = null;
-    
-    // If we had an item equipped, and the new item was equipped to another character, give that character our old item.
-    if(previousItem && previousCharacter)
-      previousItem.update("location", previousCharacter.key);
-    // If we had an item equipped, let it know it is now unequipped.
-    else if(previousItem)
-      previousItem.update("location", "");
-    // If the new item was equipped to another character, delete the reference to the item.
-    else if(previousCharacter)
-      previousCharacter.update(property, null, "replace");
-    
-    // Finally, set the references on this character and the item to each other.
-    this.update(property, item, "replace");
-    item.character = this;
-    return this;
   }
 }
