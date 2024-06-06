@@ -201,7 +201,7 @@ export default {
         },
         "Elemental Burst": {
             "name": "Secret Rite: Twilight Shadowpiercer",
-            "text": "Perform a secret rite, entering the \"Twilight Meditation\" state, during which Sethos's Normal Attacks will be converted into enemy-piercing <color=#FFD780FF>Dusk Bolts<\/color>: Deal <color=#FFACFFFF>Electro DMG<\/color> to opponents in its path, with DMG increased based on Sethos's Elemental Mastery.\\nDMG dealt by Dusk Bolts is considered Charged Attack DMG.\\nThis effect will be canceled when Sethos leaves the field.\\n\\n<i>The archives of the Temple of Silence preserve many tomes left behind by Akhtamun, from the era of King Deshret. Many secret rituals of great power are recorded within, but even among the Temple of Silence, very few could master them.<\/i>",
+            "text": "Perform a secret rite, entering the \"Twilight Meditation\" state, during which Sethos's Normal Attacks will be converted into enemy-piercing <color=#FFD780FF>Dusk Bolts<\/color>: Deal <color=#FFACFFFF>Electro DMG<\/color> to opponents in its path, with DMG increased based on Sethos's Elemental Mastery.\\nSethos cannot perform Aimed Shots while in this state.\\nDMG dealt by Dusk Bolts is considered Charged Attack DMG.\\nThis effect will be canceled when Sethos leaves the field.\\n\\n<i>The archives of the Temple of Silence preserve many tomes left behind by Akhtamun, from the era of King Deshret. Many secret rituals of great power are recorded within, but even among the Temple of Silence, very few could master them.<\/i>",
             "scaling": {
                 "Dusk Bolt DMG Increase": {
                     "1": "196.1599946022% Elemental Mastery",
@@ -293,7 +293,7 @@ export default {
         },
         "2": {
             "name": "Papyrus Scripture of Silent Secrets",
-            "text": "When any of the following conditions are met, Sethos gains a 15% <color=#FFACFFFF>Electro DMG Bonus<\/color> for 10s that may stack twice, with each stack duration counted independently:\\n\u00b7 Consuming Elemental Energy through Aimed Shots; you must first unlock \"Black Kite's Enigma\" to trigger this condition.\\n\u00b7 Regaining Elemental Energy by triggering Elemental Reactions using <color=#FFD780FF>Ancient Rite: The Thundering Sands<\/color>.\\n\u00b7 Using <color=#FFD780FF>Secret Rite: Twilight Shadowpiercer<\/color>."
+            "text": "When any of the following conditions are met, Sethos gains a 15% <color=#FFACFFFF>Electro DMG Bonus<\/color> for 10s that may stack twice, with each stack duration counted independently:\\n\u00b7 Consuming Elemental Energy through Aimed Shots; you must first unlock the Passive Talent \"Black Kite's Enigma\" to trigger this condition.\\n\u00b7 Regaining Elemental Energy by triggering Elemental Reactions using <color=#FFD780FF>Ancient Rite: The Thundering Sands<\/color>.\\n\u00b7 Using <color=#FFD780FF>Secret Rite: Twilight Shadowpiercer<\/color>."
         },
         "3": {
             "name": "Ode to the Moonrise Sage",

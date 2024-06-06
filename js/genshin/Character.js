@@ -1098,7 +1098,7 @@ export default class Character extends Ascendable(GenshinItem)
           allKeys[k] = "Low Plunge DMG";
           allKeys.splice(k+1, 0, "High Plunge DMG");
         }
-          
+        
         if(onlyKey && allKeys[k] != onlyKey)
           continue;
         
@@ -1109,12 +1109,13 @@ export default class Character extends Ascendable(GenshinItem)
         };
         /*
         The final form of the motionValue object will be this: {
-          talent: either "auto" "skill" "burst" for which ability this motion value is part of
+          talent: either "auto" "skill" "burst" for which talent this motion value is part of
           rawKey: the label of the motion value as-is straight from the character data, or with dynamically-added notes as with added reaction data
           key: same as above, but without any dynamically-added notes
           newKey: the final cleaned-up label that will be shown on the app
           reaction: the type of reaction involved with this motion value ("melt-reverse","melt-forward","vaporize-reverse","vaporize-forward","aggravate","spread"), or undefined if it's n/a
           fromModifier: true if this motion value was added by a modifier
+          compound: true if this motion value was added because a default motion value was compund and required adding more motion values to the list
           rawValue: the value of the motion value as-is straight from the character data
           rawValues: an array where the rawValue has been split by "+"
           values: an array of objects with various components of the calculated motion values, as follows: {
@@ -1136,16 +1137,30 @@ export default class Character extends Ascendable(GenshinItem)
         }
         */
         
-        // If this is a dynamically-added key for the purpose of additional reaction data, figure that out now.
-        ["melt-reverse","melt-forward","vaporize-reverse","vaporize-forward","aggravate","spread"].forEach(rxn => {
-          if(motionValue.key.endsWith(` [${rxn}]`))
+        // If this is a dynamically-added key, such as for the purpose of additional reaction data, figure that out now.
+        let suffixMatch;
+        while((suffixMatch = motionValue.key.match(/ \[([^\]]+)\]$/i))?.[1])
+        {
+          console.debug({rawKey:allKeys[k], key:motionValue.key, newKey:motionValue.newKey});
+          if(["melt-reverse","melt-forward","vaporize-reverse","vaporize-forward","aggravate","spread"].includes(suffixMatch[1]))
           {
-            motionValue.reaction = rxn;
-            motionValue.key = motionValue.key.slice(0, -1*(rxn.length+3));
+            motionValue.reaction = suffixMatch[1];
+            motionValue.key = motionValue.key.slice(0, suffixMatch.index);
+            motionValue.newKey = motionValue.key;
+            console.debug("reaction", {key:motionValue.key, newKey:motionValue.newKey});
           }
-        });
+          else
+          {
+            motionValue.compound = true;
+            motionValue.newKey = motionValue.key;
+            motionValue.key = motionValue.key.slice(0, suffixMatch.index);
+            console.debug("compound", {key:motionValue.key, newKey:motionValue.newKey});
+          }
+        }
         
-        motionValue.newKey = motionValue.key;
+        if(!motionValue.newKey)
+          motionValue.newKey = motionValue.key;
+        
         
         // Note if this motion value was added by a stat modifier.
         if(addedMVs.includes(motionValue.key))
@@ -1224,6 +1239,43 @@ export default class Character extends Ascendable(GenshinItem)
             motionValue.values[v].stat = "flat";
           }
           
+          // Motion values that vary. Most are non-DMG-related, but (TODO) Kuki Shinobu's Burst, Xianyun's Skill, Clorinde's skill do this and will need to be handled.
+          if(motionValue.values[v].value.includes("/") && !motionValue.values[v].value.endsWith("/s"))
+          {
+            if(!motionValue.compound && motionValue.newKey == "Swift Hunt DMG")
+            {
+              motionValue.compound = true;
+              motionValue.newKey = "Swift Hunt DMG [>=100% BoL]";
+              motionValue.values[v].value = motionValue.values[v].value.split("/")[0];
+              allKeys.splice(k+1, 0, "Swift Hunt DMG [<100% BoL]");
+            }
+            else if(motionValue.newKey == "Swift Hunt DMG [>=100% BoL]")
+              motionValue.values[v].value = motionValue.values[v].value.split("/")[0];
+            else if(motionValue.newKey == "Swift Hunt DMG [<100% BoL]")
+              motionValue.values[v].value = motionValue.values[v].value.split("/")[1];
+            
+            if(!motionValue.compound && motionValue.newKey == "Impale the Night DMG")
+            {
+              motionValue.compound = true;
+              motionValue.newKey = "Impale the Night DMG [0% BoL]";
+              motionValue.values[v].value = motionValue.values[v].value.split("/")[0];
+              motionValue.values[v].hits = 1;
+              allKeys.splice(k+1, 0, "Impale the Night DMG [<100% BoL]", "Impale the Night DMG [>=100% BoL]");
+            }
+            else if(motionValue.newKey == "Impale the Night DMG [0% BoL]")
+            {
+              motionValue.values[v].value = motionValue.values[v].value.split("/")[0];
+              motionValue.values[v].hits = 1;
+            }
+            else if(motionValue.newKey == "Impale the Night DMG [<100% BoL]")
+            {
+              motionValue.values[v].value = motionValue.values[v].value.split("/")[1];
+              motionValue.values[v].hits = 1;
+            }
+            else if(motionValue.newKey == "Impale the Night DMG [>=100% BoL]")
+              motionValue.values[v].value = motionValue.values[v].value.split("/")[2];
+          }
+          
           // Try to turn motionValue.values[v].value into a number, parsing out any non-numeric components where possible
           if(motionValue.values[v].value.endsWith("%"))
           {
@@ -1271,10 +1323,6 @@ export default class Character extends Ascendable(GenshinItem)
           {
             // Used by most claymore charged attacks, along with: Jean Burst, Lynette Skill
           }
-          else if(motionValue.values[v].value.includes("/"))
-          {
-            // Motion values that vary. Most are non-DMG-related, but (TODO) Kuki Shinobu's Burst, Xianyun's Skill do this and will need to be handled.
-          }
           else if(motionValue.values[v].value.endsWith("s"))
           {
             // duration, for CDs etc.
@@ -1300,7 +1348,12 @@ export default class Character extends Ascendable(GenshinItem)
               motionValue.values[v].dmgType = "bonus";
               motionValue.values[v].stat = "";
             }
-            else if(motionValue.key.endsWith("Masque of the Red Death Increase")) // Specifically for Gorou
+            else if(motionValue.key.endsWith("Masque of the Red Death Increase")) // Specifically for Arlecchino
+            {
+              motionValue.values[v].dmgType = "percent";
+              motionValue.values[v].stat = "";
+            }
+            else if(motionValue.key.includes("Bond of Life")) // Specifically for Clorinde and potentially other BoL characters
             {
               motionValue.values[v].dmgType = "percent";
               motionValue.values[v].stat = "";
@@ -1338,6 +1391,7 @@ export default class Character extends Ascendable(GenshinItem)
             {
               let baseAdd = 0;
               let baseMult = 1;
+              let attackType;
               // Motion value modifications that need to be passed to this.applyFormulas()
               for(let modifier of mvModifiers)
               {
@@ -1347,9 +1401,15 @@ export default class Character extends Ascendable(GenshinItem)
                     baseAdd += modifier.value;
                   else if(modifier.method == "*base")
                     baseMult += modifier.value;
+                  else if(modifier.method == "attackType")
+                  {
+                    if(attackType)
+                      console.warn(`Talent type being edited multiple times, overwriting current value (${attackType})`, {modifier});
+                    attackType = modifier.value;
+                  }
                 }
               }
-              this.applyFormulas(motionValue, v, alternates, {baseAdd, baseMult});
+              this.applyFormulas(motionValue, v, alternates, {baseAdd, baseMult, attackType});
               if(motionValue.reaction && !motionValue.newKey.startsWith(`{{reaction:${motionValue.reaction}}} `))
                 motionValue.newKey = `{{reaction:${motionValue.reaction}}} ` + motionValue.newKey;
             }
@@ -1493,17 +1553,17 @@ export default class Character extends Ascendable(GenshinItem)
         if(!motionValue.reaction)
         {
           if(motionValue.values.some(elem => elem.dmgType == "electro"))
-            allKeys.push(motionValue.key+" [aggravate]");
+            allKeys.push((motionValue.compound?motionValue.newKey:motionValue.key)+" [aggravate]");
           if(motionValue.values.some(elem => elem.dmgType == "dendro"))
-            allKeys.push(motionValue.key+" [spread]");
+            allKeys.push((motionValue.compound?motionValue.newKey:motionValue.key)+" [spread]");
           if(motionValue.values.some(elem => elem.dmgType == "cryo"))
-            allKeys.push(motionValue.key+" [melt-reverse]");
+            allKeys.push((motionValue.compound?motionValue.newKey:motionValue.key)+" [melt-reverse]");
           if(motionValue.values.some(elem => elem.dmgType == "hydro"))
-            allKeys.push(motionValue.key+" [vaporize-forward]");
+            allKeys.push((motionValue.compound?motionValue.newKey:motionValue.key)+" [vaporize-forward]");
           if(motionValue.values.some(elem => elem.dmgType == "pyro"))
           {
-            allKeys.push(motionValue.key+" [melt-forward]");
-            allKeys.push(motionValue.key+" [vaporize-reverse]");
+            allKeys.push((motionValue.compound?motionValue.newKey:motionValue.key)+" [melt-forward]");
+            allKeys.push((motionValue.compound?motionValue.newKey:motionValue.key)+" [vaporize-reverse]");
           }
           // TODO: If an infusion is toggled-on, these values will not be added, because new motion values are not added on normal value updates, only full statblock updates.
         }
@@ -1514,7 +1574,7 @@ export default class Character extends Ascendable(GenshinItem)
     return result;
   }
   
-  applyFormulas(motionValue, iValue, rawAlternates, {ignoreRES, ignoreDEF, baseAdd=0, baseMult=1}={})
+  applyFormulas(motionValue, iValue, rawAlternates, {ignoreRES, ignoreDEF, baseAdd=0, baseMult=1, attackType}={})
   {
     let partialValue = motionValue?.values?.[iValue];
     if(isNaN(partialValue.value))
@@ -1546,9 +1606,9 @@ export default class Character extends Ascendable(GenshinItem)
     let critRate;
     let critDMG;
     let dmgMult = 100;
-    if(motionValue.talent == "auto")
+    if(attackType == "normal" || motionValue.talent == "auto")
     {
-      if(this.weaponType == "Catalyst")
+      if(this.weaponType == "Catalyst" || motionValue.talent != "auto")
         partialValue.dmgType = partialValue.dmgType ?? this.element.toLowerCase();
       
       if(motionValue.key.includes("Plunge DMG"))
@@ -1558,7 +1618,7 @@ export default class Character extends Ascendable(GenshinItem)
         baseAdd += this.getStat("plunging_dmg", alternates);
         dmgMult = this.getStat("plunging_dmg_", alternates);
       }
-      else if(motionValue.key.includes("-Hit DMG") || motionValue.key.includes("Aimed Shot") && !motionValue.key.includes("Charge"))
+      else if(attackType == "normal" || motionValue.key.includes("-Hit DMG") || motionValue.key.includes("Aimed Shot") && !motionValue.key.includes("Charge"))
       {
         partialValue.dmgType = partialValue.dmgType ?? "physical";
         alternates.situation = "Normal Attack";

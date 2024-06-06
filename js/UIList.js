@@ -243,7 +243,7 @@ export default class UIList extends UIController {
     let {element, data, options} = this.prepareRender(this.viewer.elements[this.constructor.name].querySelector(`.list[data-uuid="${this.uuid}"]`), {
       item: this,
     }, {
-      template: "renderListAsTable",
+      template: this.constructor.templateName ?? "renderListAsTable",
       force: force || this.forceNextRender,
       parentElement: this.viewer.elements[this.constructor.name],
     });

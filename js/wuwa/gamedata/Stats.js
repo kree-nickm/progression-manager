@@ -10,6 +10,7 @@ export default {
         "descHash": "",
         "isPercent": false,
         "name": "HP",
+        "abbr": "HP",
         "nameAlt": "Base HP"
     },
     "Life": {
@@ -29,18 +30,21 @@ export default {
         "descHash": "",
         "isPercent": false,
         "name": "ATK",
+        "abbr": "ATK",
         "nameAlt": "Base ATK"
     },
     "Crit": {
         "id": 8,
         "isPercent": true,
         "name": "Crit. Rate",
+        "abbr": "Crit. Rate",
         "desc": "The chance of triggering a Critical Hit when dealing damage."
     },
     "CritDamage": {
         "id": 9,
         "isPercent": true,
         "name": "Crit. DMG",
+        "abbr": "Crit. DMG",
         "desc": "The DMG Multiplier when triggering a Critical Hit."
     },
     "Def": {
@@ -48,12 +52,14 @@ export default {
         "descHash": "",
         "isPercent": false,
         "name": "DEF",
+        "abbr": "DEF",
         "nameAlt": "Base DEF"
     },
     "EnergyEfficiency": {
         "id": 11,
         "isPercent": true,
         "name": "Energy Regen",
+        "abbr": "ER%",
         "desc": "Increases the amount of Resonance Energy gained when using Basic Attacks, Resonance Skills, Combat Forte, and Resonance Energy."
     },
     "CDReduse": {
@@ -66,7 +72,8 @@ export default {
         "id": 14,
         "descHash": "",
         "isPercent": true,
-        "name": "Resonance Skill DMG Bonus"
+        "name": "Resonance Skill DMG Bonus",
+        "abbr": "Skill DMG%"
     },
     "DamageChange": {
         "id": 15,
@@ -84,19 +91,22 @@ export default {
         "id": 17,
         "descHash": "",
         "isPercent": true,
-        "name": "Basic Attack DMG Bonus"
+        "name": "Basic Attack DMG Bonus",
+        "abbr": "Basic DMG%"
     },
     "DamageChangeCast": {
         "id": 18,
         "descHash": "",
         "isPercent": true,
-        "name": "Heavy Attack DMG Bonus"
+        "name": "Heavy Attack DMG Bonus",
+        "abbr": "Heavy DMG%"
     },
     "DamageChangeUltra": {
         "id": 19,
         "descHash": "",
         "isPercent": true,
-        "name": "Resonance Liberation DMG Bonus"
+        "name": "Resonance Liberation DMG Bonus",
+        "abbr": "Ult DMG%"
     },
     "DamageChangeQTE": {
         "id": 20,
@@ -114,37 +124,43 @@ export default {
         "id": 22,
         "descHash": "",
         "isPercent": true,
-        "name": "Glacio DMG Bonus"
+        "name": "Glacio DMG Bonus",
+        "abbr": "Glacio DMG%"
     },
     "DamageChangeElement2": {
         "id": 23,
         "descHash": "",
         "isPercent": true,
-        "name": "Fusion DMG Bonus"
+        "name": "Fusion DMG Bonus",
+        "abbr": "Fusion DMG%"
     },
     "DamageChangeElement3": {
         "id": 24,
         "descHash": "",
         "isPercent": true,
-        "name": "Electro DMG Bonus"
+        "name": "Electro DMG Bonus",
+        "abbr": "Electro DMG%"
     },
     "DamageChangeElement4": {
         "id": 25,
         "descHash": "",
         "isPercent": true,
-        "name": "Aero DMG Bonus"
+        "name": "Aero DMG Bonus",
+        "abbr": "Aero DMG%"
     },
     "DamageChangeElement5": {
         "id": 26,
         "descHash": "",
         "isPercent": true,
-        "name": "Spectro DMG Bonus"
+        "name": "Spectro DMG Bonus",
+        "abbr": "Spectro DMG%"
     },
     "DamageChangeElement6": {
         "id": 27,
         "descHash": "",
         "isPercent": true,
-        "name": "Havoc DMG Bonus"
+        "name": "Havoc DMG Bonus",
+        "abbr": "Havoc DMG%"
     },
     "DamageResistancePhys": {
         "id": 28,
@@ -192,7 +208,8 @@ export default {
         "id": 35,
         "descHash": "",
         "isPercent": true,
-        "name": "Healing Bonus"
+        "name": "Healing Bonus",
+        "abbr": "Heal%"
     },
     "HealedChange": {
         "id": 36,
@@ -372,7 +389,8 @@ export default {
         "id": 10002,
         "descHash": "",
         "isPercent": false,
-        "name": "HP%"
+        "name": "HP%",
+        "abbr": "HP%"
     },
     "GreenLife": {
         "id": 10003,
@@ -390,7 +408,8 @@ export default {
         "id": 10007,
         "descHash": "",
         "isPercent": false,
-        "name": "ATK%"
+        "name": "ATK%",
+        "abbr": "ATK%"
     },
     "GreenCrit": {
         "id": 10008,
@@ -408,7 +427,8 @@ export default {
         "id": 10010,
         "descHash": "",
         "isPercent": false,
-        "name": "DEF%"
+        "name": "DEF%",
+        "abbr": "DEF%"
     },
     "GreenEnergyEfficiency": {
         "id": 10011,

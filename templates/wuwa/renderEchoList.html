@@ -1,0 +1,17 @@
+<div class="list row" data-template="renderEchoList" {{#if filter}}data-filter="{{filter}}"{{/if}} data-uuid="{{uuid item}}">
+  {{#each items}}
+    <div class="list-item col-auto" name="{{unique this}}" data-uuid="{{uuid this}}">
+        <div class="row" name="{{unique this}}" data-uuid="{{uuid this}}">
+          {{> renderItemField item=this field="icon" wrapper="div" class="col-auto"}}
+            <div class="echo-stats col-auto">
+              {{> renderItemField item=this field="primaryStat" wrapper="div"}}
+              {{> renderItemField item=this field="secondaryStat" wrapper="div"}}
+              {{> renderItemField item=this field="substat" params=(array 0) wrapper="div"}}
+              {{> renderItemField item=this field="substat" params=(array 1) wrapper="div"}}
+              {{> renderItemField item=this field="substat" params=(array 2) wrapper="div"}}
+              {{> renderItemField item=this field="substat" params=(array 3) wrapper="div"}}
+            </div>
+        </div>
+    </div>
+  {{/each}}
+</div>

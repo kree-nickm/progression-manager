@@ -6,7 +6,7 @@ handlebars.registerHelper('toParam', (item, options) => item instanceof UIContro
 
 export default class UIController {
   static dontSerialize = ["uuid","importing","delayedUpdates","dependents","memory"];
-  static templateName = "renderItemAsPopup";
+  static templateName;
   static templatePartials = [];
   
   static fromJSON(data, {addProperties={}}={})

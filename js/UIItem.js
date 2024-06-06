@@ -5,6 +5,7 @@ handlebars.registerHelper("unique", (item, options) => item.getUnique());
 
 export default class UIItem extends UIController {
   static dontSerialize = UIController.dontSerialize.concat(["list"]);
+  static templateName = "renderItemAsPopup";
   
   static fromJSON(data, {addProperties={}, postLoad=true}={})
   {

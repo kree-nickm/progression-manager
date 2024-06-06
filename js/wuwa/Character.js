@@ -129,6 +129,8 @@ export default class Character extends WuWaItem
   get weaponType(){ return CharacterData[this.key]?.weapon ?? ""; }
   get element(){ return CharacterData[this.key]?.element ?? ""; }
   get rarity(){ return CharacterData[this.key].rarity ?? 0; }
+  get icon(){ return "img/wuwa/small/"+ (CharacterData[this.key].icon.slice(CharacterData[this.key].icon.lastIndexOf('.')+1) ?? "blank") +".webp"; }
+  get portrait(){ return "img/wuwa/full/"+ (CharacterData[this.key].portrait.slice(CharacterData[this.key].portrait.lastIndexOf('.')+1) ?? "blank") +".webp"; }
   get releaseTimestamp(){ return CharacterData[this.key]?.release ? Date.parse(CharacterData[this.key]?.release) : 0; }
   
   getRankData(ascension=this.ascension)

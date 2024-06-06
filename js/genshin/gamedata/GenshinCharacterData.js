@@ -14,12 +14,12 @@ export default {
         "region": "Mondstadt",
         "release": "December 23, 2020",
         "patch": "1.2",
-        "hpBase": 1029.5856,
-        "atkBase": 19.551,
-        "defBase": 68.2062,
-        "hpMaxAsc": 4228.035,
-        "atkMaxAsc": 80.28111,
-        "defMaxAsc": 280.098,
+        "hpBase": 1029.5855712890625,
+        "atkBase": 19.5510005950928,
+        "defBase": 68.2061996459961,
+        "hpMaxAsc": 4228.03515625,
+        "atkMaxAsc": 80.2811126708984,
+        "defMaxAsc": 280.0979919433594,
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Albedo",
         "hakushinID": 10000038,
         "id": 10000038,
@@ -470,7 +470,12 @@ export default {
         "hpMaxAsc": 4141.908203125,
         "atkMaxAsc": 107.8060607910156,
         "defMaxAsc": 250.6139984130859,
-        "version": "4.6.53"
+        "version": "4.7",
+        "skillIds": [
+            10981,
+            10982,
+            10985
+        ]
     },
     "Collei": {
         "name": "Collei",
@@ -1814,7 +1819,12 @@ export default {
         "hpMaxAsc": 2936.134765625,
         "atkMaxAsc": 68.1784744262695,
         "defMaxAsc": 167.8950042724609,
-        "version": "4.6.53"
+        "version": "4.7",
+        "skillIds": [
+            10971,
+            10972,
+            10975
+        ]
     },
     "Shenhe": {
         "name": "Shenhe",
@@ -1898,7 +1908,12 @@ export default {
         "hpMaxAsc": 4267.18359375,
         "atkMaxAsc": 61.5488510131836,
         "defMaxAsc": 159.7050018310547,
-        "version": "4.6.53"
+        "version": "4.7",
+        "skillIds": [
+            10951,
+            10952,
+            10955
+        ]
     },
     "Sucrose": {
         "name": "Sucrose",

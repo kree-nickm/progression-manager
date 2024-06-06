@@ -42,7 +42,7 @@
   border: 2px solid #777;
   border-radius: 5px;
   background: #222;
-  width: 89px;
+  width: 104px;
 }
 
 .echo-icon .item-set {
@@ -60,24 +60,9 @@
   font-weight: bold;
 }
 
-.echo-icon .item-detail {
-  position: absolute;
-  bottom: 2px;
-  right: 2px;
-  height: 1.2em;
-  width: 1.2em;
-  background: #000;
-  border: 1px solid #ddc;
-  border-radius: 5px;
-  color: #dd9;
-  line-height: 1em;
-  text-align: center;
-  z-index: 20;
-}
-
 .echo-icon .item-image {
-  height: 85px;
-  width: 85px;
+  height: 100px;
+  width: 100px;
 }
 
 .echo-icon .item-image-container {
@@ -91,6 +76,69 @@
   height: 100%;
   display: block;
   position: absolute;
+}
+
+.echo-icon .item-detail {
+  position: absolute;
+  color: #dd9;
+  bottom: 2px;
+  right: 2px;
+  height: 17px;
+  width: 17px;
+  background: #000;
+  border: 1px solid #ddc;
+  border-radius: 5px;
+  line-height: 12px;
+  font-size: 16px;
+  text-align: center;
+  z-index: 20;
+}
+
+.echo-icon .item-lock {
+  position: absolute;
+  color: #fff;
+  bottom: 22px;
+  right: 2px;
+  height: 17px;
+  width: 17px;
+  background: #000;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  line-height: 12px;
+  font-size: 12px;
+  text-align: center;
+  z-index: 20;
+}
+
+.echo-icon .item-lock.item-unlocked {
+  display: none;
+}
+
+.echo-icon:hover .item-lock.item-unlocked {
+  display: block;
+}
+
+.echo-icon .item-lock i {
+  margin: 1px 0px;
+}
+
+.echo-icon .item-character {
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  background: rgba(0,0,0,0.8);
+  z-index: 20;
+}
+
+.echo-icon .item-character.item-character-special {
+  border: 2px solid #fca;
+  background: rgba(180,150,0,0.8);
+}
+
+.echo-icon .item-character img {
+  width: 25px;
 }
 
 .echo-icon .item-image-container.item-rarity-5 {
