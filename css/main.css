@@ -1,6 +1,39 @@
 @import "list.css";
 @import "popup.css";
 
+:root {
+  --rarity-grey: 0 0 50;
+  --rarity-green: 120 100 40;
+  --rarity-blue: 220 100 50;
+  --rarity-purple: 280 100 50;
+  --rarity-gold: 50 100 40;
+  --rarity-bg-alpha: 0.3;
+  --rarity-border-alpha: 0.6;
+}
+
+/* Specific Elements */
+
+#footer {
+  background-color: var(--footer-bg);
+  border-top: 1px solid rgba(127,127,127,0.25);
+}
+
+#darkModeToggle {
+  width: 3em;
+  height: 2em;
+  background-image: url(../img/sun.svg);
+  background-size: 55%;
+  background-position: 0.2em center;
+  border-color: #999;
+  box-shadow: none;
+}
+
+#darkModeToggle:checked {
+  background-image: url(../img/moon.svg);
+  background-position: 1.1em center;
+  background-color: black;
+}
+
 .navbar-brand {
   padding: 0px;
 }
@@ -9,6 +42,8 @@
   border-radius: 1em;
   height: 2em;
 }
+
+/* Global Generic Elements */
 
 .dropdown-menu {
   z-index: 1020;
@@ -71,6 +106,15 @@ input.edit-element:not(.form-control) {
   border-radius: 1ex;
   margin-left: 1ex;
   font-size: 0.8em;
+  background-color: var(--bs-secondary-bg);
+  color: var(--bs-emphasis-color);
+  border-color: rgba(var(--button-border-rgb),0.9);
+}
+
+.field-button:disabled {
+  background-color: var(--bs-tertiary-bg);
+  color: var(--bs-tertiary-color);
+  border-color: rgba(var(--button-border-rgb),0.4);
 }
 
 span.quantity, .quantity > span:not(.value) {
@@ -91,28 +135,28 @@ span.material, .material > span:not(.value) {
 }
 
 span.q1, .q1 > span:not(.value) {
-  background-color: rgba(127, 127, 127, 0.4);
-  border-color: rgba(127, 127, 127, 0.9);
+  background-color: hsla(var(--rarity-grey) / var(--rarity-bg-alpha));
+  border-color: hsla(var(--rarity-grey) / var(--rarity-border-alpha));
 }
 
 span.q2, .q2 > span:not(.value) {
-  background-color: rgba(80, 255, 40, 0.4);
-  border-color: rgba(80, 255, 40, 0.9);
+  background-color: hsla(var(--rarity-green) / var(--rarity-bg-alpha));
+  border-color: hsla(var(--rarity-green) / var(--rarity-border-alpha));
 }
 
 span.q3, .q3 > span:not(.value) {
-  background-color: rgba(50, 60, 255, 0.4);
-  border-color: rgba(50, 60, 255, 0.9);
+  background-color: hsla(var(--rarity-blue) / var(--rarity-bg-alpha));
+  border-color: hsla(var(--rarity-blue) / var(--rarity-border-alpha));
 }
 
 span.q4, .q4 > span:not(.value) {
-  background-color: rgba(200, 20, 200, 0.4);
-  border-color: rgba(200, 20, 200, 0.9);
+  background-color: hsla(var(--rarity-purple) / var(--rarity-bg-alpha));
+  border-color: hsla(var(--rarity-purple) / var(--rarity-border-alpha));
 }
 
 span.q5, .q5 > span:not(.value) {
-  background-color: rgba(205, 183, 20, 0.4);
-  border-color: rgba(205, 183, 20, 0.9);
+  background-color: hsla(var(--rarity-gold) / var(--rarity-bg-alpha));
+  border-color: hsla(var(--rarity-gold) / var(--rarity-border-alpha));
 }
 
 .today > span {
@@ -145,6 +189,10 @@ span.q5, .q5 > span:not(.value) {
 .shrink {
 	visibility: hidden;
 	width: 0px;
+}
+
+.list-item-field {
+  position: relative;
 }
 
 .editable {
@@ -195,8 +243,4 @@ option:disabled {
 
 .show-notice .notice {
   display: block !important;
-}
-
-.list-item-field {
-  position: relative;
 }

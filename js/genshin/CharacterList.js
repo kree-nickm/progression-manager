@@ -1145,7 +1145,7 @@ export default class CharacterList extends GenshinList
     data.fields.push({field:this.display.getField("sands"), params:[this.viewer.settings.preferences.characterList, "sm"]});
     data.fields.push({field:this.display.getField("goblet"), params:[this.viewer.settings.preferences.characterList, "sm"]});
     data.fields.push({field:this.display.getField("circlet"), params:[this.viewer.settings.preferences.characterList, "sm"]});
-    data.groups = this.display.getGroups({fields: data.fields.map(fieldTuple => fieldTuple.field)});
+    data.groups = this.display.getGroups({fieldDefs: data.fields});
     return {element, data, options};
   }
   

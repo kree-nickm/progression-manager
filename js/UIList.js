@@ -8,6 +8,8 @@ export default class UIList extends UIController {
   static unique = false;
   static itemClass = UIItem;
   static subsetDefinitions = {};
+  static templateName = "renderListAsTable";
+  static templatePartials = ["renderItem"];
   
   static fromJSON(data, {viewer, addProperties={}}={})
   {
@@ -233,8 +235,8 @@ export default class UIList extends UIController {
   
   prepareRender(element, data, options)
   {
-    data.groups = this.display.getGroups({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1});
     data.fields = this.display.getFields({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}).map(field => ({field, params:[]}));
+    data.groups = this.display.getGroups({fieldDefs: data.fields});
     return {element, data, options};
   }
   
@@ -243,7 +245,8 @@ export default class UIList extends UIController {
     let {element, data, options} = this.prepareRender(this.viewer.elements[this.constructor.name].querySelector(`.list[data-uuid="${this.uuid}"]`), {
       item: this,
     }, {
-      template: this.constructor.templateName ?? "renderListAsTable",
+      template: this.constructor.templateName,
+      partials: this.constructor.templatePartials,
       force: force || this.forceNextRender,
       parentElement: this.viewer.elements[this.constructor.name],
     });

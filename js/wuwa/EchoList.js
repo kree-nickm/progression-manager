@@ -283,7 +283,7 @@ export default class EchoList extends WuWaList
       data.fields.push({field:this.display.getField("substat"), params:[statKey]});
     data.fields.push({field:this.display.getField("location"), params:[]});
     data.fields.push({field:this.display.getField("delete"), params:[]});
-    data.groups = this.display.getGroups({fields: data.fields.map(fieldTuple => fieldTuple.field)});
+    data.groups = this.display.getGroups({fieldDefs: data.fields});
     return {element, data, options};
   }
 }

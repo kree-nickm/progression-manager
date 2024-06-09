@@ -1,10 +1,10 @@
 <div class="table-responsive scroller list" data-template="renderListAsTable" {{#if filter}}data-filter="{{filter}}"{{/if}} data-uuid="{{uuid item}}">
-    <table class="table table-sm table-striped">
-        <thead class="bg-light sticky-js">
+    <table class="table-list">
+        <thead class="sticky-js">
             <tr class="group-row">
               {{#each groups}}
               {{#if label}}
-                <th class="group-header" colspan="{{size}}" name="{{label}}" title="{{title}}" scope="colgroup">
+                <th class="group-header group-starter group-ender" colspan="{{size}}" name="{{label}}" title="{{title}}" scope="colgroup">
                     <div>+ {{label}} +</div>
                 </th>
               {{else}}
@@ -14,11 +14,18 @@
             </tr>
             <tr>
               {{#each fields}}
-                <th class="label {{fieldClasses field params=params}} {{#if (itemField '' field 'sort' params=params)}}sortable{{/if}}" name="{{field.id}}" title="{{itemField '' field 'labelTitle' params=params}}" scope="col" {{#if (itemField '' field 'group' params=params)}}data-group-name="{{lookup (itemField '' field 'group' params=params) 'label'}}"{{/if}}><span>{{{itemField "" field "label" params=params}}}</span></th>
+                <th
+                  class="label {{fieldClasses field params=params}} {{#if (itemField '' field 'sort' params=params)}}sortable{{/if}} {{#if groupStarter}}group-starter{{/if}} {{#if groupEnder}}group-ender{{/if}}"
+                  name="{{field.id}}"
+                  title="{{itemField '' field 'labelTitle' params=params}}"
+                  scope="col"
+                  {{#if (itemField '' field 'group' params=params)}}data-group-name="{{lookup (itemField '' field 'group' params=params) 'label'}}"{{/if}}>
+                    <span>{{{itemField "" field "label" params=params}}}</span>
+                </th>
               {{/each}}
             </tr>
         </thead>
-        <tbody class="list-target" data-uuid="{{uuid item}}">
+        <tbody class="list-target alt-bgs" data-uuid="{{uuid item}}">
           {{#each items}}
               {{> renderItem item=. fields=../fields wrapper="tr" fieldWrapper="td"}}
           {{/each}}

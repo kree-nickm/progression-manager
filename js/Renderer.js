@@ -163,7 +163,6 @@ class Renderer
   };
   
   static partialsUsed = {
-    'renderListAsTable': ["renderItem"],
     'genshin/renderCharacterAsPopup': ["genshin/renderCharacterBuild","genshin/renderCharacterStats"],
     'genshin/renderCharacterBuild': ["genshin/renderCharacterBuildSlider","genshin/renderCharacterArtifactLists"],
     'genshin/renderCharacterArtifactLists': ["genshin/renderListAsColumn"],
@@ -375,7 +374,7 @@ class Renderer
         data.fields = data.item.display.getFields().map(field => ({field, params:[]}));
       
       if(!data.groups && data.item.display)
-        data.groups = data.item.display.getGroups({fields: data.fields.map(fieldTuple => fieldTuple.field)});
+        data.groups = data.item.display.getGroups({fieldDefs: data.fields});
       
       if(!data.relatedItems && typeof(data.item.getRelatedItems) === "function")
       {
@@ -528,9 +527,11 @@ class Renderer
     {
       // Note: If the element list differs from the list of items, the extra elements will remain at the top.
       // TODO: Do we want to use UUID here instead of getUnique? This is the only thing keeping the "name='{{unique item}}'" attribute relavent in templates.
-      let itemElement = listTargetElement.children.namedItem(item.getUnique());
+      let itemElement = listTargetElement.children.namedItem(item.getUnique()) ?? listTargetElement.children.find(elem => elem.dataset.uuid == item.uuid);
       if(itemElement)
         listTargetElement.appendChild(itemElement);
+      else
+        if(!window.productionMode) console.warn(`Item does not appear to be on the list.`, {item, listTargetElement});
     }
   }
   

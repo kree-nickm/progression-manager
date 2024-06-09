@@ -256,6 +256,12 @@ export default {
             "name": "Gyoei Narukami Kariyama Rite",
             "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/47\/Talent_Gyoei_Narukami_Kariyama_Rite.png",
             "text": "Stabs an evil-excoriating blade into the ground, creating a field that cleanses the area of all that is foul, dealing continuous <color=#FFACFFFF>Electro DMG<\/color> to opponents within its AoE based on Shinobu's Max HP.\\nIf Shinobu's HP is less than or equal to 50% when this skill is used, the field will last longer.\\n\\n<i>This was originally a technique used in weeding and in ritual prayers for the yearly harvest, but Shinobu has not forgotten it, though her career as a shrine maiden may have ended.<\/i>",
+            "specialMVs": {
+              "Total DMG": {
+                "compoundLabels": ["HP>50%", "HP<=50%"],
+                "compoundAppend": [" Max HP", ""]
+              }
+            },
             "scaling": {
                 "Single Instance DMG": {
                     "1": "3.60479988158% Max HP",

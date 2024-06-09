@@ -24,28 +24,47 @@ export default class ListDisplayManager
     return this.fields[id];
   }
   
-  getGroups({fields, include=[], exclude=[]}={})
+  getGroups({fields, fieldDefs}={})
   {
-    if(!fields)
+    if(!fields && !fieldDefs)
       fields = this.getFields({include, exclude});
+    if(!fieldDefs)
+      fieldDefs = fields.map(fld => ({field:fld, params:[]}));
     let result = [];
     let lastGroup;
-    for(let field in fields)
+    let idx = 0;
+    for(let iFd in fieldDefs)
     {
-      if(!fields[field].group)
+      let field = fieldDefs[iFd].field;
+      fieldDefs[iFd].groupStarter = false;
+      fieldDefs[iFd].groupEnder = false;
+      if(!field.group)
       {
         result.push({label:"",size:1});
+        if(lastGroup?.ender)
+        {
+          fieldDefs[lastGroup.ender].groupEnder = true;
+          delete lastGroup.ender;
+        }
       }
-      else if(fields[field].group === lastGroup)
+      else if(field.group === lastGroup)
       {
-        fields[field].group.size++;
+        field.group.size++;
+        field.group.ender = iFd;
       }
       else
       {
-        fields[field].group.size = 1;
-        result.push(fields[field].group);
+        if(lastGroup?.ender)
+        {
+          fieldDefs[lastGroup.ender].groupEnder = true;
+          delete lastGroup.ender;
+        }
+        fieldDefs[iFd].groupStarter = true;
+        field.group.size = 1;
+        field.group.index = idx++;
+        result.push(field.group);
       }
-      lastGroup = fields[field].group;
+      lastGroup = field.group;
     }
     return result;
   }

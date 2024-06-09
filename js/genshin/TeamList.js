@@ -129,18 +129,6 @@ export default class TeamList extends GenshinList {
       btnAdd.classList.add("btn", "btn-primary");
       btnAdd.addEventListener("click", async event => {
         let item = this.addGOOD({});
-        /*
-        let listElement = this.viewer.elements[this.constructor.name].querySelector(`.list[data-uuid="${this.uuid}"]`);
-        let listTargetElement = listElement.querySelector(".list-target");
-        if(!listTargetElement)
-          listTargetElement = listElement;
-        Renderer.rerender(null, {
-          item,
-          groups: this.display.getGroups({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}),
-          fields: this.prepareRender(null, {}, {}).data.fields,
-          wrapper: "tr",
-          fieldWrapper: "td",
-        }, {template:"renderItem", parentElement:listTargetElement});*/
       });
     }
   }

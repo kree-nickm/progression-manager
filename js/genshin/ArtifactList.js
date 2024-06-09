@@ -644,19 +644,6 @@ export default class ArtifactList extends GenshinList
           });
           this.elements.selectSlotAdd.value = "";
           this.elements.selectStatAdd.value = "";
-          /*
-          let listElement = this.viewer.elements[this.constructor.name].querySelector(`.list[data-uuid="${this.uuid}"]`);
-          let listTargetElement = listElement.querySelector(".list-target");
-          if(!listTargetElement)
-            listTargetElement = listElement;
-          
-          Renderer.rerender(null, {
-            item,
-            groups: this.display.getGroups({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}),
-            fields: this.display.getFields({exclude:field => (field.tags??[]).indexOf("detailsOnly") > -1}).map(field => ({field, params:[]})),
-            wrapper: "tr",
-            fieldWrapper: "td",
-          }, {template:"renderItem", parentElement:listTargetElement});*/
         }
       });
       

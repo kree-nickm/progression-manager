@@ -2,6 +2,16 @@
   cursor: help;
 }
 
+/*#popup table.table {
+  --bs-table-bg: var(--body-bg);
+  --bs-table-color: var(--body-text);
+}
+
+.breadcrumb {
+  --bs-breadcrumb-divider-color: var(--body-text);
+  --bs-breadcrumb-item-active-color: var(--body-text);
+}*/
+
 .breadcrumb-item:not(.active) span {
   cursor: pointer;
 }

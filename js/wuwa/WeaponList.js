@@ -244,7 +244,7 @@ export default class WeaponList extends WuWaList
     data.fields.push({field:this.display.getField("ascensionMaterial"), params:['enemy']});
     data.fields.push({field:this.display.getField("location"), params:[]});
     data.fields.push({field:this.display.getField("deleteBtn"), params:[]});
-    data.groups = this.display.getGroups({fields: data.fields.map(fieldTuple => fieldTuple.field)});
+    data.groups = this.display.getGroups({fieldDefs: data.fields});
     return {element, data, options};
   }
 }

@@ -1019,7 +1019,7 @@ export default class Character extends Ascendable(GenshinItem)
     else
     {
       // Determine which talent to use the scaling properties of.
-      let scaling;
+      let talentData;
       if(onlyKey)
       {
         talent = null;
@@ -1048,24 +1048,24 @@ export default class Character extends Ascendable(GenshinItem)
       if(talent == "auto" || talent == "Normal Attack")
       {
         talent = "auto";
-        scaling = this.talents["Normal Attack"].scaling;
+        talentData = this.talents["Normal Attack"];
       }
       else if(talent == "skill" || talent == "Elemental Skill")
       {
         talent = "skill";
-        scaling = this.talents["Elemental Skill"].scaling;
+        talentData = this.talents["Elemental Skill"];
       }
       else if(talent == "burst" || talent == "Elemental Burst")
       {
         talent = "burst";
-        scaling = this.talents["Elemental Burst"].scaling;
+        talentData = this.talents["Elemental Burst"];
       }
       else
       {
         console.error(`Invalid talent in getMotionValues: ${talent}`);
         return null;
       }
-      if(!scaling)
+      if(!talentData.scaling)
       {
         console.error(`Character ${this.key} has potentially invalid talents:`, this.talents);
         return null;
@@ -1073,7 +1073,7 @@ export default class Character extends Ascendable(GenshinItem)
       
       
       // We clone the scaling object so this function doesn't modify the default character data when we dynamically add motion values.
-      scaling = Object.assign({}, scaling);
+      let scaling = Object.assign({}, talentData.scaling);
       let addedMVs = [];
       let mvModifiers = [];
       this.teamStatModifiers.forEach(mod => {
@@ -1110,12 +1110,13 @@ export default class Character extends Ascendable(GenshinItem)
         /*
         The final form of the motionValue object will be this: {
           talent: either "auto" "skill" "burst" for which talent this motion value is part of
-          rawKey: the label of the motion value as-is straight from the character data, or with dynamically-added notes as with added reaction data
-          key: same as above, but without any dynamically-added notes
-          newKey: the final cleaned-up label that will be shown on the app
+          rawKey: the label of the motion value as-is straight from the character data, or with dynamically-added suffixes as with added reaction data
+          key: same as above, but without any dynamically-added suffixes
+          newKey: the final cleaned-up label that will be shown on the app, which may or may not include suffixes
           reaction: the type of reaction involved with this motion value ("melt-reverse","melt-forward","vaporize-reverse","vaporize-forward","aggravate","spread"), or undefined if it's n/a
           fromModifier: true if this motion value was added by a modifier
-          compound: true if this motion value was added because a default motion value was compund and required adding more motion values to the list
+          suffixes: an array of all terms included at the end of the motion value key, within "[...]"
+          compound: if this is a compound motion value, this will be the label/suffix associated with this part of it, otherwise undefined
           rawValue: the value of the motion value as-is straight from the character data
           rawValues: an array where the rawValue has been split by "+"
           values: an array of objects with various components of the calculated motion values, as follows: {
@@ -1131,36 +1132,64 @@ export default class Character extends Ascendable(GenshinItem)
               "self" if it's HP loss on your own character, like Furina's murderhobos
               null if it's none of the above
             stat: which stat this motion value scales with (atk, def, hp, eleMas, etc.), or "flat" if the value doesn't scale with a stat and goes in formulas as-is, or falsy if it shouldn't be used in any formulas in the first place
+            statString: if the motion value scales with something other than a stat, this will be set to that thing, otherwise undefined
           }
           string: a string that displays all of the above values in a human-readable format
           final: a single number that represents all of the above values combined into a single average result for this motion value; or "" if the value is not a number
         }
         */
         
-        // If this is a dynamically-added key, such as for the purpose of additional reaction data, figure that out now.
+        // If this is a dynamically-added key, such as for the purpose of additional reaction data, or a compound motion value, figure that out now.
         let suffixMatch;
         while((suffixMatch = motionValue.key.match(/ \[([^\]]+)\]$/i))?.[1])
         {
-          console.debug({rawKey:allKeys[k], key:motionValue.key, newKey:motionValue.newKey});
           if(["melt-reverse","melt-forward","vaporize-reverse","vaporize-forward","aggravate","spread"].includes(suffixMatch[1]))
           {
             motionValue.reaction = suffixMatch[1];
             motionValue.key = motionValue.key.slice(0, suffixMatch.index);
             motionValue.newKey = motionValue.key;
-            console.debug("reaction", {key:motionValue.key, newKey:motionValue.newKey});
           }
           else
           {
-            motionValue.compound = true;
-            motionValue.newKey = motionValue.key;
+            if(!motionValue.suffixes)
+              motionValue.suffixes = [];
+            motionValue.suffixes.push(suffixMatch[1]);
+            if(!motionValue.newKey) // This would help for multiple non-reaction suffixes, but (TODO) we'd need more than just this to handle that.
+              motionValue.newKey = motionValue.key;
             motionValue.key = motionValue.key.slice(0, suffixMatch.index);
-            console.debug("compound", {key:motionValue.key, newKey:motionValue.newKey});
           }
         }
         
         if(!motionValue.newKey)
           motionValue.newKey = motionValue.key;
         
+        let specialMVs = talentData.specialMVs?.[motionValue.key];
+        
+        // Determine if this is a compound motion value.
+        if(specialMVs?.compoundLabels)
+        {
+          if(motionValue.suffixes)
+          {
+            for(let suffix of motionValue.suffixes)
+            {
+              for(let label of specialMVs.compoundLabels)
+              {
+                if(suffix == label)
+                {
+                  motionValue.compound = label;
+                  break;
+                }
+              }
+              if(motionValue.compound)
+                break;
+            }
+          }
+          if(!motionValue.compound)
+          {
+            motionValue.compound = specialMVs.compoundLabels[0];
+            motionValue.newKey = `${motionValue.newKey} [${motionValue.compound}]`;
+          }
+        }
         
         // Note if this motion value was added by a stat modifier.
         if(addedMVs.includes(motionValue.key))
@@ -1239,87 +1268,71 @@ export default class Character extends Ascendable(GenshinItem)
             motionValue.values[v].stat = "flat";
           }
           
-          // Motion values that vary. Most are non-DMG-related, but (TODO) Kuki Shinobu's Burst, Xianyun's Skill, Clorinde's skill do this and will need to be handled.
-          if(motionValue.values[v].value.includes("/") && !motionValue.values[v].value.endsWith("/s"))
+          // Compound motion values: motion values that vary and have multiple values accordingly.
+          if(motionValue.compound)
           {
-            if(!motionValue.compound && motionValue.newKey == "Swift Hunt DMG")
+            let idx = specialMVs.compoundLabels.indexOf(motionValue.compound);
+            let split = motionValue.values[v].value.split(specialMVs.compoundSeparator??"/");
+            motionValue.values[v].value = split[idx];
+            if(specialMVs.compoundHits?.[idx])
+              motionValue.values[v].hits = specialMVs.compoundHits[idx];
+            if(specialMVs.compoundAppend?.[idx])
+              motionValue.values[v].value = motionValue.values[v].value + specialMVs.compoundAppend[idx];
+            console.debug(`Compound "${motionValue.key}" "${motionValue.compound}"`, {idx, split, value:motionValue.values[v].value});
+            if(idx == 0)
             {
-              motionValue.compound = true;
-              motionValue.newKey = "Swift Hunt DMG [>=100% BoL]";
-              motionValue.values[v].value = motionValue.values[v].value.split("/")[0];
-              allKeys.splice(k+1, 0, "Swift Hunt DMG [<100% BoL]");
+              motionValue.newKey = `${motionValue.key} [${motionValue.compound}]`;
+              allKeys.splice(k+1, 0, ...specialMVs.compoundLabels.slice(1).map(cLabel => `${motionValue.key} [${cLabel}]`));
             }
-            else if(motionValue.newKey == "Swift Hunt DMG [>=100% BoL]")
-              motionValue.values[v].value = motionValue.values[v].value.split("/")[0];
-            else if(motionValue.newKey == "Swift Hunt DMG [<100% BoL]")
-              motionValue.values[v].value = motionValue.values[v].value.split("/")[1];
-            
-            if(!motionValue.compound && motionValue.newKey == "Impale the Night DMG")
-            {
-              motionValue.compound = true;
-              motionValue.newKey = "Impale the Night DMG [0% BoL]";
-              motionValue.values[v].value = motionValue.values[v].value.split("/")[0];
-              motionValue.values[v].hits = 1;
-              allKeys.splice(k+1, 0, "Impale the Night DMG [<100% BoL]", "Impale the Night DMG [>=100% BoL]");
-            }
-            else if(motionValue.newKey == "Impale the Night DMG [0% BoL]")
-            {
-              motionValue.values[v].value = motionValue.values[v].value.split("/")[0];
-              motionValue.values[v].hits = 1;
-            }
-            else if(motionValue.newKey == "Impale the Night DMG [<100% BoL]")
-            {
-              motionValue.values[v].value = motionValue.values[v].value.split("/")[1];
-              motionValue.values[v].hits = 1;
-            }
-            else if(motionValue.newKey == "Impale the Night DMG [>=100% BoL]")
-              motionValue.values[v].value = motionValue.values[v].value.split("/")[2];
           }
           
           // Try to turn motionValue.values[v].value into a number, parsing out any non-numeric components where possible
-          if(motionValue.values[v].value.endsWith("%"))
+          let statAssoc = {
+            "%": "atk",
+            "% ATK": "atk",
+            "% per Paw": "atk",
+            "% Max HP": "hp",
+            "% DEF": "def",
+            "% Elemental Mastery": "eleMas",
+          };
+          for(let def in statAssoc)
           {
-            motionValue.values[v].value = motionValue.values[v].value.slice(0, -1);
-            motionValue.values[v].stat = "atk";
+            if(motionValue.values[v].value.endsWith(def))
+            {
+              motionValue.values[v].value = motionValue.values[v].value.slice(0, -1*def.length);
+              motionValue.values[v].stat = statAssoc[def];
+              break;
+            }
           }
-          else if(motionValue.values[v].value.endsWith("% ATK"))
+          
+          // These scale with something whose value can't be known, so will need to be displayed as-is, but rounded.
+          let unknownStats = [
+            "% Current HP",
+            "% Per Energy",
+            "% per Electro Sigil",
+            " per Electro Sigil Absorbed",
+            "% Max HP/Droplet",
+            "% Max HP/0.5s",
+            "% Healing",
+            "% Bond of Life",
+            "% Normal Attack DMG",
+            " Per Energy Consumed",
+          ];
+          for(let stat of unknownStats)
           {
-            motionValue.values[v].value = motionValue.values[v].value.slice(0, -5);
-            motionValue.values[v].stat = "atk";
-          }
-          else if(motionValue.values[v].value.endsWith("% per Paw")) // Specifically for Diona
-          {
-            motionValue.values[v].value = motionValue.values[v].value.slice(0, -9);
-            motionValue.values[v].stat = "atk";
-          }
-          else if(motionValue.values[v].value.endsWith("% Max HP"))
-          {
-            motionValue.values[v].value = motionValue.values[v].value.slice(0, -8);
-            motionValue.values[v].stat = "hp";
-          }
-          else if(motionValue.values[v].value.endsWith("% DEF"))
-          {
-            motionValue.values[v].value = motionValue.values[v].value.slice(0, -5);
-            motionValue.values[v].stat = "def";
-          }
-          else if(motionValue.values[v].value.endsWith("% Elemental Mastery"))
-          {
-            motionValue.values[v].value = motionValue.values[v].value.slice(0, -19);
-            motionValue.values[v].stat = "eleMas";
-          }
-          else if(motionValue.values[v].value.endsWith("% Current HP") ||
-                  motionValue.values[v].value.endsWith("% Per Energy") ||
-                  motionValue.values[v].value.endsWith("% per Electro Sigil") ||
-                  motionValue.values[v].value.endsWith("% Max HP/Droplet") ||
-                  motionValue.values[v].value.endsWith("% Max HP/0.5s") ||
-                  motionValue.values[v].value.endsWith("% Normal Attack DMG"))
-          {
-            // TODO: These scale with something whose value can't be known, so will need to be displayed as-is, but rounded. Used by Kuki Shinobu, Raiden, Razor, Neuvillette, Yoimiya.
+            if(motionValue.values[v].value.endsWith(stat))
+            {
+              motionValue.values[v].value = motionValue.values[v].value.slice(0, -1*stat.length);
+              motionValue.values[v].dmgType = "percent";
+              motionValue.values[v].statString = stat;
+              break;
+            }
           }
           // TODO: Raiden Burst has some weird values that will need custom handling.
-          // TODO: Razor Skill and Burst have some weird values that will need custom handling.
-          // TODO: These should be implemented in the future, and probably also moved up.
-          else if(motionValue.values[v].value.endsWith("/s"))
+          // TODO: Razor Burst has some weird values that will need custom handling.
+          
+          // TODO: These time-based ones should be implemented in the future, and probably also moved up. Right now they are handled beneath all of this.
+          if(motionValue.values[v].value.endsWith("/s"))
           {
             // Used by most claymore charged attacks, along with: Jean Burst, Lynette Skill
           }
@@ -1327,18 +1340,28 @@ export default class Character extends Ascendable(GenshinItem)
           {
             // duration, for CDs etc.
           }
+          
           if(!isNaN(motionValue.values[v].value.replaceAll(",","")))
             motionValue.values[v].value = motionValue.values[v].value.replaceAll(",","");
           
           if(!isNaN(motionValue.values[v].value))
           {
             // Determine any special dmgType
-            if(motionValue.key == "ATK Bonus Ratio") // Specifically for Bennett and Kujou Sara
+            if(motionValue.values[v].statString)
+            {
+              // Already handled.
+            }
+            else if(motionValue.key == "ATK Bonus Ratio") // Specifically for Bennett and Kujou Sara
             {
               motionValue.values[v].dmgType = "bonus";
               motionValue.values[v].stat = "atk-base";
             }
             else if(motionValue.key.endsWith("HP Consumption")) // Specifically for Furina
+            {
+              motionValue.values[v].dmgType = "percent";
+              motionValue.values[v].stat = "";
+            }
+            else if(motionValue.key.endsWith("SPD Bonus")) // Specifically for Razor
             {
               motionValue.values[v].dmgType = "percent";
               motionValue.values[v].stat = "";
@@ -1544,7 +1567,7 @@ export default class Character extends Ascendable(GenshinItem)
           return (out!==null ? `${out} + ` : ``)
             + (["anemo","cryo","dendro","electro","hydro","geo","pyro","physical","absorb"].indexOf(elem.dmgType)>-1 ? `{{element:${elem.dmgType.slice(0,1).toUpperCase()+elem.dmgType.slice(1).toLowerCase()}}}` : "")
             + (isAllNumeric&&elem.dmgType!="percent"&&elem.dmgType!="self" ? elem.value.toFixed(0) + (canCrit ? ` (${elem.critical.toFixed(0)})` : ``) : elem.value)
-            + (elem.dmgType=="percent"||elem.dmgType=="self" ? "%" : "")
+            + (elem.statString ? elem.statString : elem.dmgType=="percent"||elem.dmgType=="self" ? "%" : "")
             + (elem.hits>1 ? ` × ${elem.hits}` : ``);
         }, null);
         
@@ -1606,12 +1629,12 @@ export default class Character extends Ascendable(GenshinItem)
     let critRate;
     let critDMG;
     let dmgMult = 100;
-    if(attackType == "normal" || motionValue.talent == "auto")
+    if(attackType == "normal" || attackType == "plunge" || motionValue.talent == "auto")
     {
       if(this.weaponType == "Catalyst" || motionValue.talent != "auto")
         partialValue.dmgType = partialValue.dmgType ?? this.element.toLowerCase();
       
-      if(motionValue.key.includes("Plunge DMG"))
+      if(attackType == "plunge" || motionValue.key.includes("Plunge DMG"))
       {
         partialValue.dmgType = partialValue.dmgType ?? "physical";
         alternates.situation = "Plunging Attack";

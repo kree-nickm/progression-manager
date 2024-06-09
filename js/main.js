@@ -14,6 +14,14 @@ window.DEBUGLOG = {
   enableAll: () => { for(let method in window.DEBUGLOG) window.DEBUGLOG[method] = true; },
 };
 
+document.getElementById("darkModeToggle")?.addEventListener("change", event => {
+  let link = document.getElementById("lightDark");
+  if(event.target.checked)
+    link.href = "css/dark.css";
+  else
+    link.href = "css/light.css";
+});
+
 // Initialize.
 if(typeof(Storage) !== "undefined")
 {

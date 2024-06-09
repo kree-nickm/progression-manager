@@ -181,6 +181,7 @@ export default {
             "name": "Claw and Thunder",
             "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/06\/Talent_Claw_and_Thunder.png",
             "text": "#Hunts his prey using the techniques taught to him by his master and his lupical.\\n\\n<color=#FFD780FF>{LAYOUT_MOBILE#Tap}{LAYOUT_PC#Press}{LAYOUT_PS#Press}<\/color>\\nSwings the Thunder Wolf Claw, dealing <color=#FFACFFFF>Electro DMG<\/color> to opponents in front of Razor.\\nUpon striking an opponent, Razor will gain an Electro Sigil, which increases his Energy Recharge rate.\\nRazor can have up to 3 Electro Sigils simultaneously, and gaining a new Electro Sigil refreshes their duration.\\n\\n<color=#FFD780FF>Hold<\/color>\\nGathers Electro energy to unleash a lightning storm over a small AoE, causing massive <color=#FFACFFFF>Electro DMG<\/color>, and clears all of Razor's Electro Sigils.\\nEach Electro Sigil cleared in this manner will be converted into Energy for Razor.\\n\\n<i>In the moment when lightning strikes, you can sometimes glimpse the look of a predator sizing up his prey deep within Razor's eyes.<\/i>",
+            "code": ["proc", ["stat", ["enerRech_", ["mv", "Energy Recharge Bonus"]]], "Per Electro Sigil", 3],
             "scaling": {
                 "Press Skill DMG": {
                     "1": "199.19999837875%",
@@ -250,7 +251,7 @@ export default {
                     "14": "5 per Electro Sigil Absorbed",
                     "15": "5 per Electro Sigil Absorbed"
                 },
-                "Electro Sigil duration": {
+                "Electro Sigil Duration": {
                     "1": "18s",
                     "2": "18s",
                     "3": "18s",

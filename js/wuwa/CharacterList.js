@@ -241,7 +241,7 @@ export default class CharacterList extends WuWaList
       value: item => item.weapon ? {
         value: [
           {
-            value: `S${item.weapon.syntonization} ${item.weapon.name} Lv.${item.weapon.level}`,
+            value: `Lv.${item.weapon.level} S${item.weapon.syntonization} ${item.weapon.name}`,
           },
           {
             tag: "i",
@@ -259,8 +259,8 @@ export default class CharacterList extends WuWaList
         list: item.viewer.lists.WeaponList.items(item.weaponType),
         valueProperty: "uuid",
         valueFormat: "uuid",
-        value: item.weapon ? `S${item.weapon.syntonization} ${item.weapon.name} Lv.${item.weapon.level}` : "-",
-        displayProperty: wpn => `S${wpn.syntonization} ${wpn.name} Lv.${wpn.level}`,
+        value: item.weapon ? `Lv.${item.weapon.level} S${item.weapon.syntonization} ${item.weapon.name}` : "-",
+        displayProperty: wpn => `Lv.${wpn.level} S${wpn.syntonization} ${wpn.name}`,
       }),
       dependencies: item => [
         {item:item.list.viewer.lists.WeaponList, field:"list"},
@@ -384,7 +384,7 @@ export default class CharacterList extends WuWaList
     data.fields.push({field:this.display.getField("forteMaterial"), params:['forgery','Intro Skill']});
     data.fields.push({field:this.display.getField("forteMaterial"), params:['enemy','Intro Skill']});
     data.fields.push({field:this.display.getField("equipWeapon"), params:[]});
-    data.groups = this.display.getGroups({fields: data.fields.map(fieldTuple => fieldTuple.field)});
+    data.groups = this.display.getGroups({fieldDefs: data.fields});
     return {element, data, options};
   }
   

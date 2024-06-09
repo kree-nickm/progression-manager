@@ -1,23 +1,21 @@
 :root {
-  --group-background: #ccc;
+  --bs-body-color: #212529;
+  --bs-body-color-rgb: 33,37,41;
+  --bs-body-bg: #fff;
+  --bs-body-bg-rgb: 255,255,255;
+  --bs-emphasis-color: #000;
+  --bs-emphasis-color-rgb: 0,0,0;
+  --bs-secondary-color: rgba(33, 37, 41, 0.75);
+  --bs-secondary-color-rgb: 33,37,41;
+  --bs-secondary-bg: #e9ecef;
+  --bs-secondary-bg-rgb: 233,236,239;
+  --bs-tertiary-color: rgba(33, 37, 41, 0.5);
+  --bs-tertiary-color-rgb: 33,37,41;
+  --bs-tertiary-bg: #f8f9fa;
+  --bs-tertiary-bg-rgb: 248,249,250;
+  --bs-border-color: #dee2e6;
+  --bs-border-color-translucent: rgba(0, 0, 0, 0.175);
   
-  --quality-1-background: #eeeeee;
-  --quality-1-border: #aaaaaa;
-  --quality-2-background: #d0ffd0;
-  --quality-2-border: #40B040;
-  --quality-3-background: #c0d1ff;
-  --quality-3-border: #6060ff;
-  --quality-4-background: #dcb6ff;
-  --quality-4-border: #7040ff;
-  --quality-5-background: #fff3d0;
-  --quality-5-border: #db972a;
-  
-  --pending-background: #ffed8b;
-  --sufficient-background: #aeffae;
-  --insufficient-background: #ffaaaa;
-  
-  --today-background: #e9ffbf;
-  
-  --colgroup-alt-background: #dddddd;
-  --column-alt-background: #eaeaea;
+  --footer-bg: rgb(var(--bs-light-rgb));
+  --button-border-rgb: 255,255,255;
 }
