@@ -1,7 +1,5 @@
 import { handlebars, Renderer } from "./Renderer.js";
 
-window.productionMode = location.hostname.includes("github.io");
-
 window.DEBUGLOG = {
   queueUpdate: false,
   renderItemField: false,
@@ -13,6 +11,8 @@ window.DEBUGLOG = {
   
   enableAll: () => { for(let method in window.DEBUGLOG) window.DEBUGLOG[method] = true; },
 };
+
+String.prototype.capitalize = function() { return this.at(0).toUpperCase()+this.substr(1).toLowerCase(); };
 
 document.getElementById("darkModeToggle")?.addEventListener("change", event => {
   let link = document.getElementById("lightDark");

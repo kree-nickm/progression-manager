@@ -657,6 +657,30 @@ export default {
             10685
         ]
     },
+    "Emilie": {
+        "name": "Emilie",
+        "rarity": 5,
+        "weapon": "Polearm",
+        "element": "Dendro",
+        "release": "July 16, 2024",
+        "hakushinID": 10000099,
+        "id": 10000099,
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Emilie.webp",
+        "region": "Fontaine",
+        "matEnemy": "Meka",
+        "matBoss": "Legatus",
+        "matFlower": "Lakelight Lily",
+        "matMastery": "Order",
+        "matTrounce": "Silken Feather",
+        "ascendStat": "critDMG_",
+        "hpBase": 1056.278564453125,
+        "atkBase": 26.068000793457,
+        "defBase": 56.8385009765625,
+        "hpMaxAsc": 4337.65087890625,
+        "atkMaxAsc": 107.0414810180664,
+        "defMaxAsc": 233.4149932861328,
+        "version": "4.7.52"
+    },
     "Eula": {
         "name": "Eula",
         "weapon": "Claymore",

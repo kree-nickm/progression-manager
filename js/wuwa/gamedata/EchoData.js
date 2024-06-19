@@ -28,7 +28,7 @@ export default {
             "SierraGale"
         ],
         "monster": "Aero Predator",
-        "skillDesc": "Summon an Aero Predator that throws a dart forward. The dart will bounce between enemies up to three times, dealing {0} Aero DMG each time it hits.rnrnCD: {1}s",
+        "skillDesc": "Summon an Aero Predator that throws a dart forward. The dart will bounce between enemies up to three times, dealing {0} Aero DMG each time it hits.nnCD: {1}s",
         "cost": 1
     },
     "AutopuppetScout": {
@@ -391,7 +391,7 @@ export default {
             "LingeringTunes"
         ],
         "monster": "Diamondclaw",
-        "skillDesc": "Transform into Crystal Scorpion and enter a Parry State. Counterattack when the  Parry State is over, dealing {0} Physical DMG.nCD: {1}s",
+        "skillDesc": "Transform into Crystal Scorpion and enter a Parry State. Counterattack when the Parry State is over, dealing {0} Physical DMG.nCD: {1}s",
         "cost": 1
     },
     "Dreamless": {
@@ -437,7 +437,7 @@ export default {
             "SunSinkingEclipse"
         ],
         "monster": "Dreamless",
-        "skillDesc": "Transform into Dreamless and perform 6 consecutive attacks. The first 5 attacks deal {0} Havoc DMG each, and the last attack deal {1} Havoc DMG.nThe DMG of this Echo Skill is increased by {2} during the first {3}s after Rover-Havoc casts Resonance Liberation.nnCD: {4}s",
+        "skillDesc": "Transform into Dreamless and perform 6 consecutive strikes. The first 5 strikes deal {0} Havoc DMG each, and the last strike deal {1} Havoc DMG.nThe DMG of this Echo Skill is increased by {3} during the first {2}s after Rover: Havoc casts Resonance Liberation: Deadening Abyss.nnCD: {4}s",
         "cost": 4
     },
     "ElectroPredator": {
@@ -501,7 +501,7 @@ export default {
             "SunSinkingEclipse"
         ],
         "monster": "Excarat",
-        "skillDesc": "Transform into an Excarat and tunnel underground to advance. In this state, you have the ability to change your direction and are immune to damage.rnrnCD: {2}s",
+        "skillDesc": "Transform into an Excarat and tunnel underground to advance. In this state, you have the ability to change your direction and are immune to damage.nnCD: {0}s",
         "cost": 1
     },
     "FeilianBeringal": {
@@ -998,7 +998,7 @@ export default {
             "FreezingFrost"
         ],
         "monster": "Hoartoise",
-        "skillDesc": "Transform into Hoartoise and slowly restore HP. Use the Echo skill again to exit the transformation state.rnrnCD: {2}s",
+        "skillDesc": "Transform into Hoartoise and slowly restore HP. Use the Echo skill again to exit the transformation state.nnCD: {0}s",
         "cost": 1
     },
     "Hoochief": {
@@ -1154,7 +1154,7 @@ export default {
             "MoltenRift"
         ],
         "monster": "Inferno Rider",
-        "skillDesc": "Transform into Inferno Rider to launch up to 3 consecutive slashes in a row, each slash dealing {0}, {1}, and {2} Fusion DMG respectively.rnrnAfter the final hit, increase the current character\u2019s Fusion DMG by {3} and Basic Attack DMG by {4} for {5}s.rnrnLong press the Echo Skill to transform into Inferno Rider and enter the Riding Mode. When exiting the Riding Mode, deal {3} Fusion DMG to enemies in front.rnrnCD: {6}s",
+        "skillDesc": "Transform into Inferno Rider to launch up to 3 consecutive slashes in a row, each slash dealing {0}, {1}, and {2} Fusion DMG respectively.nnAfter the final hit, increase the current character\u2019s Fusion DMG by {3} and Basic Attack DMG by {4} for {5}s.nnLong press the Echo Skill to transform into Inferno Rider and enter the Riding Mode. When exiting the Riding Mode, deal {2} Fusion DMG to enemies in front.nnCD: {6}s",
         "cost": 4
     },
     "LampylumenMyriad": {
@@ -1210,7 +1210,7 @@ export default {
             "FreezingFrost"
         ],
         "monster": "Lampylumen Myriad",
-        "skillDesc": "Transform into Lampylumen Myriad. Perform up to 3 consecutive attacks.rnrnUnleash a freezing shock by performing consecutive forward strikes, with the initial two strikes inflicting {0} and {1} Glacio DMG respectively, and the final strike dealing {2} Glacio DMG. Enemies will be frozen on hit.rnrnEach shock increases the current character\u2019s Glacio DMG by {3} and Resonance Skill DMG dealt by {4} for {5}s, stacking up to 3 timesrnrnCD: {6}s",
+        "skillDesc": "Transform into Lampylumen Myriad. Perform up to 3 consecutive attacks.nnUnleash a freezing shock by performing consecutive forward strikes, with the initial two strikes inflicting {0} and {1} Glacio DMG respectively, and the final strike dealing {2} Glacio DMG. Enemies will be frozen on hit.nnEach shock increases the current character\u2019s Glacio DMG by {3} and Resonance Skill DMG dealt by {4} for {5}s, stacking up to 3 timesnnCD: {6}s",
         "cost": 4
     },
     "MechAbomination": {
@@ -1261,7 +1261,7 @@ export default {
             "LingeringTunes"
         ],
         "monster": "Mech Abomination",
-        "skillDesc": "Strike the enemies in front, dealing {0} Electro DMG. Summon Mech Waste to attack enemies. Mech Waste deals {1} Electro DMG on-hit and explode after a while to deal {2} Electro DMG.nnAfter casting this Echo Skill, increase current character's ATK by {3} for {4}s. nDamage dealt by Mech Waste is considered Outro Skill DMG. nnCD: {4}s",
+        "skillDesc": "\"Strike the enemies in front, dealing {0} Electro DMG. Summon Mech Waste to attack enemies. Mech Waste deals {1} Electro DMG on-hit and explode after a while to deal {2} Electro DMG.nnAfter casting this Echo Skill, increase current character's ATK by {3} for {4}s. nDamage dealt by Mech Waste is considered Outro Skill DMG. nnCD: {5}s",
         "cost": 4
     },
     "MourningAix": {
@@ -1390,7 +1390,7 @@ export default {
             "FreezingFrost"
         ],
         "monster": "Phantom: Hoartoise",
-        "skillDesc": "Transform into Hoartoise and slowly restore HP. Use the Echo skill again to exit the transformation state.rnrnCD: {2}s",
+        "skillDesc": "Transform into Hoartoise and slowly restore HP. Use the Echo skill again to exit the transformation state.nnCD: {0}s",
         "cost": 1
     },
     "PhantomImpermanenceHeron": {
@@ -1842,7 +1842,7 @@ export default {
             "MoonlitClouds"
         ],
         "monster": "Stonewall Bracer",
-        "skillDesc": "Transform into Stonewall Bracer and charge forward, dealing {0} Physical DMG on-hit, then smash to deal {1} Physical DMG, and gain a shield of {2} of current character's Max HP. Use the Echo skill again to exit the transformation state.rnrnCD: {4}s",
+        "skillDesc": "Transform into Stonewall Bracer and charge forward, dealing {0} Physical DMG on-hit, then smash to deal {1} Physical DMG, and gain a shield of {2} of current character's Max HP that lasts {3}s. Use the Echo skill again to exit the transformation state.nnCD: {4}s",
         "cost": 3
     },
     "Tambourinist": {
@@ -2203,7 +2203,7 @@ export default {
             "MoltenRift"
         ],
         "monster": "Young Geohide Saurian",
-        "skillDesc": "Transform into Baby Viridblaze Saurian to rest in place, and slowly restore HP.rnrnCD: {2}s",
+        "skillDesc": "Transform into Baby Viridblaze Saurian to rest in place, and slowly restore HP.nnCD: {0}s",
         "cost": 1
     },
     "YoungRoseshroom": {

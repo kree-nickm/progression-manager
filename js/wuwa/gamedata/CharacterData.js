@@ -79,7 +79,7 @@ export default {
         "weapon": "Rectifier",
         "element": "Fusion",
         "name": "Encore",
-        "alias": "Wooly-counting Game",
+        "alias": "Wooly-Counting Game",
         "weeklyMat": "Unending Destruction",
         "bossMat": "Rage Tacet Core",
         "floraMat": "Pecok Flower",

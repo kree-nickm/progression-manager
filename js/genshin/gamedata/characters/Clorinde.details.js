@@ -162,19 +162,57 @@ export default {
         "Elemental Skill": {
             "name": "Hunter's Vigil",
             "text": "Preparing her pistolet, she enters the \"Night Vigil\" state, using steel and shot together. In this state, Clorinde's Normal Attacks will be transformed into \"Swift Hunt\" pistolet attacks, and the DMG dealt is converted into <color=#FFACFFFF>Electro DMG<\/color> that cannot be overridden by infusions, and she will be unable to use Charged Attacks. Using her Elemental Skill will transform it into \"Impale the Night\": Perform a lunging attack, dealing <color=#FFACFFFF>Electro DMG<\/color>. The DMG done through the aforementioned method is considered Normal Attack DMG.\\n\\n<color=#FFD780FF>Swift Hunt<\/color>\\n\u00b7 When her Bond of Life is equal to or greater than 100% of her max HP: Performs a pistolet shot.\\n\u00b7 When her Bond of Life is less than 100%, firing her pistolet will grant her Bond of Life, with the amount gained based on her max HP. The shots she fires can pierce opponents, and DMG dealt to opponents in their path is increased.\\n\\n<color=#FFD780FF>Impale the Night<\/color>\\nThe current percentage value of Clorinde's Bond of Life determines its effect:\\n\u00b7 When the Bond of Life value is 0%, perform a normal lunging strike;\\n\u00b7 When the Bond of Life value is less than 100% of her max HP, Clorinde is healed based on the Bond of Life value, and the AoE of the lunging attack and the DMG dealt is increased;\\n\u00b7 When the value of the Bond of Life is equal to or greater than 100% of her max HP, use Impale the Night: Pact. The healing multiplier is increased, and the AoE and DMG dealt by the lunge is increased even further.\\n\\nIn addition, when Clorinde is in the Night Vigil state, healing effects other than Impale the Night will not take effect and will instead be converted into a Bond of Life that is a percentage of the healing that would have been received.\\n\\nClorinde will exit the \"Night Vigil\" state when she leaves the field.\\n\\n<color=#FFD780FF>Arkhe: Ousia<\/color>\\nPeriodically, when Clorinde's Swift Hunt shots strike opponents, she will summon a Surging Blade at the position hit that deals Ousia-aligned <color=#FFACFFFF>Electro DMG<\/color>.\\n\\n<i>Though the evil that lurked in the shadows of the night had been purged across thousands of years, a shadow that the light could not reach clouded human hearts.\\nEven now, the warning left by the Golden Hunter is etched into her memory: Those of the Night Vigil, carrying aloft lit candles against the blackness, have greater need still to remain vigilant. Be not corrupted by the cold dark.<\/i>",
-            "code": [["editmv", ["Elemental Skill", "Swift Hunt DMG", "attackType", "normal"]], ["editmv", ["Elemental Skill", "Impale the Night DMG", "attackType", "normal"]]],
+            "code": [
+                [
+                    "editmv",
+                    [
+                        "Elemental Skill",
+                        "Swift Hunt DMG",
+                        "attackType",
+                        "normal"
+                    ]
+                ],
+                [
+                    "editmv",
+                    [
+                        "Elemental Skill",
+                        "Impale the Night DMG",
+                        "attackType",
+                        "normal"
+                    ]
+                ]
+            ],
             "specialMVs": {
-              "Swift Hunt DMG": {
-                "compoundLabels": ["≥100% BoL", "<100% BoL"]
-              },
-              "Impale the Night DMG": {
-                "compoundLabels": ["0% BoL", "<100% BoL", "≥100% BoL"],
-                "compoundHits": [1, 1, 3]
-              },
-              "Impale the Night Healing": {
-                "compoundLabels": ["0% BoL", "<100% BoL", "≥100% BoL"],
-                "compoundAppend": [" Bond of Life", " Bond of Life", ""]
-              }
+                "Swift Hunt DMG": {
+                    "compoundLabels": [
+                        "\u2265100% BoL",
+                        "<100% BoL"
+                    ]
+                },
+                "Impale the Night DMG": {
+                    "compoundLabels": [
+                        "0% BoL",
+                        "<100% BoL",
+                        "\u2265100% BoL"
+                    ],
+                    "compoundHits": [
+                        1,
+                        1,
+                        3
+                    ]
+                },
+                "Impale the Night Healing": {
+                    "compoundLabels": [
+                        "0% BoL",
+                        "<100% BoL",
+                        "\u2265100% BoL"
+                    ],
+                    "compoundAppend": [
+                        " Bond of Life",
+                        " Bond of Life",
+                        ""
+                    ]
+                }
             },
             "scaling": {
                 "Swift Hunt DMG": {
@@ -409,12 +447,41 @@ export default {
         "1st Ascension Passive": {
             "name": "Dark-Shattering Flame",
             "text": "After a nearby party member triggers an <color=#FFACFFFF>Electro-related reaction<\/color> against an opponent, <color=#FFACFFFF>Electro DMG<\/color> dealt by Clorinde's Normal Attacks and <color=#FFD780FF>Last Lightfall<\/color> will be increased by 20% of Clorinde's ATK for 15s. Max 3 stacks. Each stack is counted independently. The Maximum DMG increase achievable this way for the above attacks is 1,800.",
-            "code": ["proc", ["stat", [["normal_dmg","burst_dmg"], ["stat%",0.2,"atk"]]], "After Electro-related reaction (15s)", 3]
+            "code": [
+                "proc",
+                [
+                    "stat",
+                    [
+                        [
+                            "normal_dmg",
+                            "burst_dmg"
+                        ],
+                        [
+                            "stat%",
+                            0.2,
+                            "atk"
+                        ]
+                    ]
+                ],
+                "After Electro-related reaction (15s)",
+                3
+            ]
         },
         "4th Ascension Passive": {
             "name": "Lawful Remuneration",
             "text": "If Clorinde's Bond of Life is equal to or greater than 100% of her Max HP, her CRIT Rate will increase by 10% for 15s whenever her Bond of Life value increases or decreases. Max 2 stacks. Each stack is counted independently.\\nAdditionally, <color=#FFD780FF>Hunter's Vigil<\/color>'s Night Vigil state is buffed: While it is active, the percent of healing converted to Bond of Life increases to 100%.",
-            "code": ["proc", ["stat", ["critRate_", 10]], "Bond of Life increases or decreases above 100% (15s)", 2]
+            "code": [
+                "proc",
+                [
+                    "stat",
+                    [
+                        "critRate_",
+                        10
+                    ]
+                ],
+                "Bond of Life increases or decreases above 100% (15s)",
+                2
+            ]
         },
         "Utility Passive": {
             "name": "Night Vigil's Harvest",

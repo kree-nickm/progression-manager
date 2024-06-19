@@ -4,9 +4,10 @@ import LootData from "./gamedata/LootData.js";
 import CharacterData from "./gamedata/CharacterData.js";
 
 import { handlebars, Renderer } from "../Renderer.js";
+import Plannable from "./Plannable.js";
 import WuWaItem from "./WuWaItem.js";
 
-export default class Character extends WuWaItem
+export default class Character extends Plannable(WuWaItem)
 {
   static dontSerialize = WuWaItem.dontSerialize.concat(["MaterialList","_weapon","echoes"]);
   static templateName = "wuwa/renderCharacterAsPopup";
@@ -21,16 +22,11 @@ export default class Character extends WuWaItem
     'Forte Circuit': 1,
     'Resonance Liberation': 1,
     'Intro Skill': 1,
-    'Basic Attack Bonus 1': false,
-    'Basic Attack Bonus 2': false,
-    'Resonance Skill Bonus 1': false,
-    'Resonance Skill Bonus 2': false,
-    'Forte Circuit Passive 1': false,
-    'Forte Circuit Passive 2': false,
-    'Resonance Liberation Bonus 1': false,
-    'Resonance Liberation Bonus 2': false,
-    'Intro Skill Bonus 1': false,
-    'Intro Skill Bonus 2': false,
+    'Basic Attack Bonus': 0,
+    'Resonance Skill Bonus': 0,
+    'Forte Circuit Passive': 0,
+    'Resonance Liberation Bonus': 0,
+    'Intro Skill Bonus': 0,
   };
 
   owned;
@@ -185,67 +181,62 @@ export default class Character extends WuWaItem
         this.getMat('credit')?.count >= this.getMatCost('credit');
   }
   
-  getForteRankData(forte)
+  getForteRankData(forte, alt)
   {
-    let str = String(forte);
-    if(str.endsWith("Bonus 1") || str.endsWith("Bonus") && !this.forte[str+" 1"])
-      return ForteData.bonus1;
-    else if(str.endsWith("Bonus 2") || str.endsWith("Bonus") && !this.forte[str+" 2"])
-      return ForteData.bonus2;
-    else if(str.endsWith("Passive 1") || str.endsWith("Passive") && !this.forte[str+" 1"])
-      return ForteData.circuit1;
-    else if(str.endsWith("Passive 2") || str.endsWith("Passive") && !this.forte[str+" 2"])
-      return ForteData.circuit2;
-    else if(str.endsWith("Bonus") || str.endsWith("Passive"))
-      return ForteData[10];
+    if(alt)
+      return ForteData[alt+this.forte[forte+(alt=="circuit"?" Passive":" Bonus")]] ?? ForteData[alt+forte] ?? ForteData[10];
     else
       return ForteData[this.forte[forte]] ?? ForteData[forte] ?? ForteData[10];
   }
   
-  getForteMat(type, forte)
+  getForteMat(type, forte, alt)
   {
-    let rarity = this.getForteRankData(forte)[`${type}Rarity`];
+    let rarity = this.getForteRankData(forte, alt)[`${type}Rarity`];
     if(rarity)
       return this.MaterialList[type]?.[rarity];
     else
       return this.MaterialList[type];
   }
   
-  getForteMatCost(type, forte)
+  getForteMatCost(type, forte, alt)
   {
-    return this.getForteRankData(forte)[`${type}Cost`];
+    return this.getForteRankData(forte, alt)[`${type}Cost`];
   }
   
-  upForte(forte, event)
+  upForte(forte, alt, event)
   {
-    console.log(`upForte`, {'this':this, forte, event});
-    if(this.forte[forte] == 10)
+    if(!event)
+      event = alt;
+    if(!window.productionMode) console.debug(`upForte`, {'this':this, forte, event, alt});
+    let forteKey = forte+(alt=="circuit"?" Passive":alt=="bonus"?" Bonus":"");
+    if(this.forte[forteKey] == (alt?2:10))
     {
-      console.error(`Tried to upgrade ${this.name} forte ${forte}, but already at max.`);
+      console.error(`Tried to upgrade ${this.name} forte ${forteKey}, but already at max.`);
       return false;
     }
     event.stopPropagation();
-    this.getForteMat('enemy',forte).update("count", this.getForteMat('enemy',forte).count - this.getForteMatCost('enemy',forte));
-    this.getForteMat('forgery',forte).update("count", this.getForteMat('forgery',forte).count - this.getForteMatCost('forgery',forte));
-    this.getForteMat('weekly',forte).update("count", this.getForteMat('weekly',forte).count - this.getForteMatCost('weekly',forte));
-    this.getForteMat('credit',forte).update("count", this.getForteMat('credit',forte).count - this.getForteMatCost('credit',forte));
-    this.update(`forte.${forte}`, this.forte[forte]+1);
+    this.getForteMat('enemy',forte, alt).update("count", this.getForteMat('enemy',forte, alt).count - this.getForteMatCost('enemy',forte, alt));
+    this.getForteMat('forgery',forte, alt).update("count", this.getForteMat('forgery',forte, alt).count - this.getForteMatCost('forgery',forte, alt));
+    this.getForteMat('weekly',forte, alt).update("count", this.getForteMat('weekly',forte, alt).count - this.getForteMatCost('weekly',forte, alt));
+    this.getForteMat('credit',forte, alt).update("count", this.getForteMat('credit',forte, alt).count - this.getForteMatCost('credit',forte, alt));
+    this.update(`forte.${forteKey}`, this.forte[forteKey]+1);
   }
   
-  canUpForte(forte, withCrafting=false)
+  canUpForte(forte, withCrafting, alt)
   {
-    if(this.forte[forte] == 10)
+    let forteKey = forte+(alt=="circuit"?" Passive":alt=="bonus"?" Bonus":"");
+    if(this.forte[forteKey] == (alt?2:10))
       return false;
     else if(withCrafting)
-      return this.getForteMat('enemy',forte)?.getCraftCount() >= this.getForteMatCost('enemy',forte) &&
-        this.getForteMat('forgery',forte)?.getCraftCount() >= this.getForteMatCost('forgery',forte) &&
-        this.getForteMat('weekly',forte)?.getCraftCount() >= this.getForteMatCost('weekly',forte) &&
-        this.getForteMat('credit',forte)?.getCraftCount() >= this.getForteMatCost('credit',forte);
+      return this.getForteMat('enemy',forte,alt)?.getCraftCount() >= this.getForteMatCost('enemy',forte,alt) &&
+        this.getForteMat('forgery',forte,alt)?.getCraftCount() >= this.getForteMatCost('forgery',forte,alt) &&
+        this.getForteMat('weekly',forte,alt)?.getCraftCount() >= this.getForteMatCost('weekly',forte,alt) &&
+        this.getForteMat('credit',forte,alt)?.getCraftCount() >= this.getForteMatCost('credit',forte,alt);
     else
-      return this.getForteMat('enemy',forte)?.count >= this.getForteMatCost('enemy',forte) &&
-        this.getForteMat('forgery',forte)?.count >= this.getForteMatCost('forgery',forte) &&
-        this.getForteMat('weekly',forte)?.count >= this.getForteMatCost('weekly',forte) &&
-        this.getForteMat('credit',forte)?.count >= this.getForteMatCost('credit',forte);
+      return this.getForteMat('enemy',forte,alt)?.count >= this.getForteMatCost('enemy',forte,alt) &&
+        this.getForteMat('forgery',forte,alt)?.count >= this.getForteMatCost('forgery',forte,alt) &&
+        this.getForteMat('weekly',forte,alt)?.count >= this.getForteMatCost('weekly',forte,alt) &&
+        this.getForteMat('credit',forte,alt)?.count >= this.getForteMatCost('credit',forte,alt);
   }
   
   // This method should only be called by the item that is being equipped, when its "location" property is updated.

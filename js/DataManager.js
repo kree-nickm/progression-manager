@@ -35,22 +35,32 @@ export default class DataManager extends UIController
     this.listClasses[listName ?? listClass.name] = listClass;
   }
   
-  registerNavItem(label, hash, {list, isDefault}={})
+  registerNavItem(label, hash, {self, listName, isDefault}={})
   {
     let tempNav = Object.values(this.navigation);
-    if(list)
+    if(self)
     {
-      this.elements[this.listClasses[list].name] = document.getElementById(this.listClasses[list].name) ?? this.elements.content.appendChild(document.createElement("div"));
-      this.elements[this.listClasses[list].name].id = this.listClasses[list].name;
-      this.elements[this.listClasses[list].name].classList.add("viewer-pane");
-      this.settings.paneMemory[this.listClasses[list].name] = this.settings.paneMemory[this.listClasses[list].name] ?? {};
+      this.elements[this.constructor.name] = document.getElementById(this.constructor.name) ?? this.elements.content.appendChild(document.createElement("div"));
+      this.elements[this.constructor.name].id = this.constructor.name;
+      this.elements[this.constructor.name].classList.add("viewer-pane");
+      this.settings.paneMemory[this.constructor.name] = this.settings.paneMemory[this.constructor.name] ?? {};
       if(this.navigation[`#${hash}`])
         console.warn(`#${hash} is already used as a navigation link, overwriting this data:`, this.navigation[`#${hash}`]);
-      this.navigation[`#${hash}`] = {list};
+      this.navigation[`#${hash}`] = {type:"controller", pane:this.constructor.name};
+    }
+    else if(listName)
+    {
+      this.elements[listName] = document.getElementById(listName) ?? this.elements.content.appendChild(document.createElement("div"));
+      this.elements[listName].id = listName;
+      this.elements[listName].classList.add("viewer-pane");
+      this.settings.paneMemory[listName] = this.settings.paneMemory[listName] ?? {};
+      if(this.navigation[`#${hash}`])
+        console.warn(`#${hash} is already used as a navigation link, overwriting this data:`, this.navigation[`#${hash}`]);
+      this.navigation[`#${hash}`] = {type:"list", pane:listName};
     }
     else
     {
-      console.error(`Navigation link (${label}, ${hash}) must specify list.`);
+      console.error(`Navigation link (${label}, ${hash}) must specify listName.`);
       return false;
     }
     if(isDefault)
@@ -83,12 +93,12 @@ export default class DataManager extends UIController
       this.data = {};
     if(!this.data[this.settings.server])
       this.data[this.settings.server] = {};
-    for(let list in this.listClasses)
-      if(!this.lists[list])
-        this.lists[list] = new this.listClasses[list](this);
+    for(let listName in this.listClasses)
+      if(!this.lists[listName])
+        this.lists[listName] = new this.listClasses[listName](this);
     if(changed)
-      for(let list in this.listClasses)
-        this.lists[list].forceNextRender = true;
+      for(let listName in this.listClasses)
+        this.lists[listName].forceNextRender = true;
     return true;
   }
   
@@ -108,9 +118,9 @@ export default class DataManager extends UIController
   paneFromHash(hash)
   {
     if(this.navigation[hash ?? location.hash])
-      return this.navigation[hash ?? location.hash].list;
+      return this.navigation[hash ?? location.hash].pane;
     else if(this.navigation[''])
-      return this.navigation[''].list;
+      return this.navigation[''].pane;
     else
     {
       console.error(`Navigation has not been set up.`);
@@ -124,16 +134,25 @@ export default class DataManager extends UIController
     if(this.lists[pane])
     {
       await this.lists[pane].render();
-      this.stickyElements = document.querySelectorAll(".sticky-js");
-      window.scrollTo({left:0, top:this.settings.paneMemory[pane]?.scrollY ?? 0, behavior:"instant"});
-      this.currentView = pane;
     }
-    for(let l in this.lists)
+    else if(pane == this.constructor.name)
     {
-      if(l == pane)
-        this.elements[l].classList.add("current-view");
+      await this.render();
+    }
+    else
+    {
+      console.error(`Unknown pane`, {hash, pane});
+      return false;
+    }
+    this.stickyElements = document.querySelectorAll(".sticky-js");
+    window.scrollTo({left:0, top:this.settings.paneMemory[pane]?.scrollY ?? 0, behavior:"instant"});
+    this.currentView = pane;
+    for(let hash in this.navigation)
+    {
+      if(this.navigation[hash].pane == pane)
+        this.elements[this.navigation[hash].pane].classList.add("current-view");
       else
-        this.elements[l].classList.remove("current-view");
+        this.elements[this.navigation[hash].pane].classList.remove("current-view");
     }
   }
   
@@ -266,17 +285,37 @@ export default class DataManager extends UIController
   
   store()
   {
-    if(this.errors)
-    {
-      console.warn(`Prevented saving of local data due to errors being detected during load, in order to prevent saved data corruption. You must reload the page to clear this. If the problem persist, you may have to report a bug to the developer here: https://github.com/kree-nickm/genshin-manager/issues`);
-      return false;
-    }
-    
     this.settings.server = this.settings.server ?? Object.keys(this.data ?? {})[0] ?? "";
     if(!this.data)
       this.data = {};
     this.data[this.settings.server] = this.lists;
-    window.localStorage.setItem(`${this.constructor.name}Data`, JSON.stringify(this.data));
+    //window.localStorage.setItem(`${this.constructor.name}Data`, JSON.stringify(this.data));
+    let serversArray = [];
+    for(let server in this.data)
+    {
+      let listsArray = [];
+      for(let list in this.data[server])
+      {
+        try
+        {
+          listsArray.push(`"${list}":` + JSON.stringify(this.data[server][list]));
+        }
+        catch(exception)
+        {
+          console.error(`Exception when serializing`, {server, list, exception});
+          this.errors = true;
+        }
+      }
+      serversArray.push(`"${server}":{${listsArray.join(',')}}`);
+    }
+    
+    if(this.errors)
+    {
+      console.warn(`Corruption detected in your progression data. Save aborted in order to prevent your saved data from being corrupted too. You must reload the page to clear this. If the problem persist, you may have to report a bug to the developer here: https://github.com/kree-nickm/progression-manager/issues`);
+      return false;
+    }
+    
+    window.localStorage.setItem(`${this.constructor.name}Data`, `{${serversArray.join(',')}}`);
     window.localStorage.setItem(`${this.constructor.name}Settings`, JSON.stringify(this.settings));
     console.log(`Local data saved.`);
   }

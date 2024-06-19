@@ -4,7 +4,7 @@ import UIItem from "./UIItem.js";
 import ListDisplayManager from "./ListDisplayManager.js";
 
 export default class UIList extends UIController {
-  static dontSerialize = UIController.dontSerialize.concat(["viewer","display","subsets","forceNextRender"]);
+  static dontSerialize = UIController.dontSerialize.concat(["display","subsets","forceNextRender"]);
   static unique = false;
   static itemClass = UIItem;
   static subsetDefinitions = {};
@@ -66,8 +66,8 @@ export default class UIList extends UIController {
   }
   
   list;
+  listName = this.constructor.name;
   
-  viewer;
   display;
   subsets;
   forceNextRender;
@@ -102,7 +102,7 @@ export default class UIList extends UIController {
             this.subsets[subset].push(value);
         }
       
-        let listElements = this.viewer.elements[this.constructor.name].querySelectorAll(`.list[data-uuid="${this.uuid}"]`);
+        let listElements = this.viewer.elements[this.listName].querySelectorAll(`.list[data-uuid="${this.uuid}"]`);
         for(let listElement of listElements)
         {
           if(listElement.dataset.filter)
@@ -230,6 +230,25 @@ export default class UIList extends UIController {
   
   getFooterParams()
   {
+    /*
+    {
+      add: {
+        fields: [
+          {
+            property: "<<property of the UIItem that this input is determining>>",
+            options: <<array of objects, each with format {value, label}, which determines the attributes of the HTMLOption elements>>,
+            onChange: (elements, event) => {
+              // code to run when this HTMLSelect is changed
+            }
+          },
+        ],
+        onAdd: (event, elements, data) => { // elements 
+          // code to create item
+          return <<the added item>>;
+        },
+      },
+    }
+    */
     return null;
   }
   
@@ -242,15 +261,15 @@ export default class UIList extends UIController {
   
   async render(force=false)
   {
-    let {element, data, options} = this.prepareRender(this.viewer.elements[this.constructor.name].querySelector(`.list[data-uuid="${this.uuid}"]`), {
+    let {element, data, options} = this.prepareRender(this.viewer.elements[this.listName].querySelector(`.list[data-uuid="${this.uuid}"]`), {
       item: this,
     }, {
       template: this.constructor.templateName,
       partials: this.constructor.templatePartials,
       force: force || this.forceNextRender,
-      parentElement: this.viewer.elements[this.constructor.name],
+      parentElement: this.viewer.elements[this.listName],
     });
-    Array.from(this.viewer.elements[this.constructor.name].querySelectorAll(`.list`)).forEach(elem => elem.classList.add("d-none"));
+    Array.from(this.viewer.elements[this.listName].querySelectorAll(`.list`)).forEach(elem => elem.classList.add("d-none"));
     element?.classList.remove("d-none");
     let render = await Renderer.rerender(element, data, options);
     this.forceNextRender = false;
@@ -276,6 +295,8 @@ export default class UIList extends UIController {
         
         if(footerParams.add)
         {
+          if(Array.isArray(footerParams.add))
+            footerParams.add = {fields:footerParams.add};
           let itemType = Array.isArray(this.constructor.itemClass) ? this.constructor.itemClass[0].name : this.constructor.itemClass.name;
           let li = ul.appendChild(document.createElement("li"));
           li.classList.add("nav-item", "me-2");
@@ -283,15 +304,16 @@ export default class UIList extends UIController {
           let divAdd = li.appendChild(document.createElement("div"));
           divAdd.classList.add("input-group", "mt-2");
           
-          for(let field of footerParams.add)
+          let elements = {};
+          for(let field of footerParams.add.fields)
           {
-            let selectAdd = divAdd.appendChild(document.createElement("select"));
-            selectAdd.id = `${field.property}${itemType}Select`;
-            selectAdd.classList.add("form-select", "size-to-content");
-            selectAdd.appendChild(document.createElement("option"))
+            elements[field.property] = divAdd.appendChild(document.createElement("select"));
+            elements[field.property].id = `${field.property}${itemType}Select`;
+            elements[field.property].classList.add("form-select", "size-to-content");
+            elements[field.property].appendChild(document.createElement("option"))
             for(let opt of field.options)
             {
-              let option = selectAdd.appendChild(document.createElement("option"));
+              let option = elements[field.property].appendChild(document.createElement("option"));
               if(typeof(opt) == "object")
               {
                 option.value = opt.value;
@@ -303,17 +325,20 @@ export default class UIList extends UIController {
                 option.innerHTML = opt;
               }
             }
+            if(field.onChange)
+              elements[field.property].addEventListener("change", field.onChange.bind(this, elements));
           }
           let btnAdd = divAdd.appendChild(document.createElement("button"));
           btnAdd.innerHTML = `Add ${itemType}`;
           btnAdd.classList.add("btn", "btn-primary");
-          btnAdd.addEventListener("click", event => {
+          btnAdd.addEventListener("click", async event => {
             let data = {};
-            for(let field of footerParams.add)
+            let elements = {};
+            for(let field of footerParams.add.fields)
             {
-              let selectAdd = document.getElementById(`${field.property}${itemType}Select`);
-              if(selectAdd?.value)
-                data[field.property] = selectAdd.value;
+              elements[field.property] = document.getElementById(`${field.property}${itemType}Select`);
+              if(elements[field.property]?.value)
+                data[field.property] = elements[field.property].value;
               else
               {
                 console.warn(`Can't add item, ${field.property} is blank.`);
@@ -323,12 +348,29 @@ export default class UIList extends UIController {
             }
             if(data)
             {
-              let item = this.createItem(data);
-              for(let field of footerParams.add)
-                document.getElementById(`${field.property}Select`).value = "";
+              let item;
+              if(footerParams.add.onAdd)
+              {
+                item = footerParams.add.onAdd(event, elements, data);
+                if(item?.constructor.name == "Promise")
+                  item = await item;
+              }
+              else
+                item = this.createItem(data);
+              if(item)
+              {
+                for(let e in elements)
+                  elements[e].value = "";
+                console.log(`Item added.`, {item});
+              }
+              else
+              {
+                console.log(`Item was not added.`);
+              }
             }
             else
             {
+              console.log(`Item was not added.`);
             }
           });
         }

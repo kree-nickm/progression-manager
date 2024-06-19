@@ -200,7 +200,7 @@ export default {
                         "30",
                         "30"
                     ],
-                    "name": "Heavy Attack Stamina Consumption"
+                    "name": "Heavy Attack STA Cost"
                 },
                 {
                     "scaling": [
@@ -227,7 +227,7 @@ export default {
                 }
             ],
             "name": "Gnawing Fangs",
-            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnCalcharo performs up to 4 consecutive attacks, dealing <color=Thunder>Electro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnConsumes Stamina to attack the target, dealing <color=Thunder>Electro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnConsumes Stamina to perform a Mid-Air Plunging Attack, dealing <color=Thunder>Electro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Thunder>Electro DMG<\/color>."
+            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>nCalcharo performs up to 4 consecutive attacks, dealing <color=Thunder>Electro DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack<\/color><\/size>nConsumes STA to attack the target, dealing <color=Thunder>Electro DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mid-air Attack<\/color><\/size>nConsumes STA to perform a Mid-Air Plunging Attack, dealing <color=Thunder>Electro DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Dodge Counter<\/color><\/size>nUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Thunder>Electro DMG<\/color>."
         },
         "Resonance Skill": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiB_UI.T_IconMotefeiB_UI",
@@ -356,7 +356,7 @@ export default {
                 }
             ],
             "name": "Extermination Order",
-            "desc": "Calcharo performs up to 3 consecutive attacks, dealing <color=Thunder>Electro DMG<\/color>.nIf Calcharo is switched off field, or if Resonance Skill <color=Highlight>Extermination Order<\/color> is not performed again in a while, this skill will enter Cooldown.nResonance Skill <color=Highlight>Extermination Order<\/color> does not interrupt Calcharo's Basic Attack combo."
+            "desc": "Calcharo performs up to 3 consecutive attacks, dealing <color=Thunder>Electro DMG<\/color>.nIf Calcharo is switched off field, or if Resonance Skill <color=Highlight>Extermination Order<\/color> is not activated again in a while, this skill will enter Cooldown.nResonance Skill <color=Highlight>Extermination Order<\/color> does not interrupt Calcharo's Basic Attack cycle."
         },
         "Resonance Liberation": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiY_UI.T_IconMotefeiY_UI",
@@ -608,7 +608,7 @@ export default {
                         "30",
                         "30"
                     ],
-                    "name": "Heavy Attack Stamina Consumption"
+                    "name": "Heavy Attack STA Cost"
                 },
                 {
                     "scaling": [
@@ -704,7 +704,7 @@ export default {
                 }
             ],
             "name": "Phantom Etching",
-            "desc": "Calcharo attacks the target, dealing <color=Thunder>Electro DMG<\/color> and enters <color=Highlight>Deathblade Gear<\/color> state. After Resonance Liberation <color=Highlight>Deathblade Gear<\/color> state ends, Calcharo's next Intro Skill is replaced with Intro Skill <color=Highlight>\"Necessary Means\"<\/color>, which deals <color=Thunder>Electro DMG<\/color>, considered as Intro Skill damage.rn<size=10> <\/size>rn<size=40><color=Title>Deathblade Gear<\/color><\/size>rn-<color=Highlight>Basic Attack<\/color> is replaced with Basic Attack <color=Highlight>Hounds Roar<\/color>.rn-<color=Highlight>Dodge Counter<\/color> deals increased damage, considered as Resonance Liberation damage.rn<size=10> <\/size>rn<size=40><color=Title>Hounds Roar<\/color><\/size>rnCalcharo performs up to 5 consecutive attacks, dealing <color=Thunder>Electro DMG<\/color>, considered as Basic Attack Damage."
+            "desc": "Calcharo attacks the target, dealing <color=Thunder>Electro DMG<\/color> and enters <color=Highlight>Deathblade Gear<\/color> state. After <color=Highlight>Deathblade Gear<\/color> state ends, Calcharo's next Intro Skill is replaced with Intro Skill <color=Highlight>\"Necessary Means\"<\/color>, which deals <color=Thunder>Electro DMG<\/color>, considered as Intro Skill damage.n<size=10> <\/size>n<size=40><color=Title>Deathblade Gear<\/color><\/size>n-<color=Highlight>Basic Attack<\/color> is replaced with Basic Attack <color=Highlight>Hounds Roar<\/color>;n-<color=Highlight>Heavy Attack<\/color> deals increased DMG, considered as Resonance Liberation DMG;n-<color=Highlight>Dodge Counter<\/color> deals increased DMG, considered as Resonance Liberation DMG.n<size=10> <\/size>n<size=40><color=Title>Basic Attack: Hounds Roar<\/color><\/size>nCalcharo performs up to 5 consecutive attacks, dealing <color=Thunder>Electro DMG<\/color>, considered as Basic Attack Damage."
         },
         "Forte Circuit Passive 1": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiD1_UI.T_IconMotefeiD1_UI",
@@ -895,7 +895,7 @@ export default {
                         "6",
                         "6"
                     ],
-                    "name": "\"Mercy\" Con. Energy Regen"
+                    "name": "\"Mercy\" Resonance Regen"
                 },
                 {
                     "scaling": [
@@ -918,11 +918,11 @@ export default {
                         "5",
                         "5"
                     ],
-                    "name": "\"Death Messenger\" Con. Energy Regen"
+                    "name": "\"Death Messenger\" Resonance Regen"
                 }
             ],
             "name": "Hunting Mission",
-            "desc": "<size=40><color=Title>Heavy Attack: \"Mercy\"<\/color><\/size>rnWhen Calcharo has 3 \"Cruelty\", his <color=Highlight>Heavy Attack<\/color> is replaced with Heavy Attack <color=Highlight>\"Mercy\"<\/color>.rnWhen casting Heavy Attack <color=Highlight>\"Mercy\"<\/color>, Calcharo consumes 3 \"Cruelty\" to deal <color=Thunder>Electro DMG<\/color>, considered as Heavy Attack damage, and recovers Resonance Energy and Concerto Energy.rn<size=10> <\/size>rn<size=40><color=Title>\"Cruelty\"<\/color><\/size>rnCalcharo can hold up to 3 \"Cruelty\".rnUnder Resonance Liberation <color=Highlight>Deathblade Gear<\/color> state, \"Cruelty\" cannot be acquired.rnWhen Resonance Skill <color=Highlight>Extermination Order<\/color> hits the target, gain 1 \"Cruelty\".rn<size=10> <\/size>rn<color=Title>Heavy Attack: \"Death Messenger\"<\/color>rnWhen Calcharo has 5 \"Killing Intent\", his <color=Highlight>Basic Attack<\/color> is replaced with Heavy Attack <color=Highlight>\"Death Messenger\"<\/color>.rnWhen casting Heavy Attack <color=Highlight>\"Death Messenger\"<\/color>, Calcharo consumes 5 \"Killing Intent\" to deal <color=Thunder>Electro DMG<\/color>, considered as Resonance Liberation damage, and recovers Resonance Energy and Concerto Energy.rn<size=10> <\/size>rn<size=40><color=Title>\"Killing Intent\"<\/color><\/size>rnUnder Resonance Liberation <color=Highlight>Deathblade Gear<\/color> state, Calcharo's Forte Gauge is replaced with \"Killing Intent\", stacking up to 5.rnWhen Basic Attack <color=Highlight>Hounds Roar<\/color> hits the target, Calcharo gains 1 \"Killing Intent\"."
+            "desc": "<size=40><color=Title>Heavy Attack: \"Mercy\"<\/color><\/size>nWhen Calcharo has 3 \"Cruelty\", his <color=Highlight>Heavy Attack<\/color> is replaced with Heavy Attack <color=Highlight>\"Mercy\"<\/color>.nWhen casting Heavy Attack <color=Highlight>\"Mercy\"<\/color>, Calcharo consumes 3 \"Cruelty\" to deal <color=Thunder>Electro DMG<\/color>, considered as Heavy Attack damage, and recovers Resonance Energy and Concerto Energy.n<size=10> <\/size>n<size=40><color=Title>\"Cruelty\"<\/color><\/size>nCalcharo can hold up to 3 \"Cruelty\".nUnder Resonance Liberation <color=Highlight>Deathblade Gear<\/color> state, \"Cruelty\" cannot be acquired.nWhen Resonance Skill <color=Highlight>Extermination Order<\/color> hits the target, gain 1 \"Cruelty\".n<size=10> <\/size>n<color=Title>Heavy Attack: \"Death Messenger\"<\/color>nWhen Calcharo has 5 \"Killing Intent\", his <color=Highlight>Basic Attack<\/color> is replaced with Heavy Attack <color=Highlight>\"Death Messenger\"<\/color>.nWhen casting Heavy Attack <color=Highlight>\"Death Messenger\"<\/color>, Calcharo consumes 5 \"Killing Intent\" to deal <color=Thunder>Electro DMG<\/color>, considered as Resonance Liberation damage, and recovers Resonance Energy and Concerto Energy.n<size=10> <\/size>n<size=40><color=Title>\"Killing Intent\"<\/color><\/size>nUnder Resonance Liberation <color=Highlight>Deathblade Gear<\/color> state, Calcharo's Forte Gauge is replaced with \"Killing Intent\", stacking up to 5.nWhen Basic Attack <color=Highlight>Hounds Roar<\/color> hits the target, Calcharo gains 1 \"Killing Intent\"."
         },
         "Utility Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
@@ -934,7 +934,7 @@ export default {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiQTE_UI.T_IconMotefeiQTE_UI",
             "id": 1001409,
             "name": "Shadowy Raid",
-            "desc": "Calcharo summons <color=Highlight>Phantom<\/color> to support the on-field Resonator, clearing the targets in front with a slash. The <color=Highlight>Phantom's<\/color> attack deals <color=Thunder>Electro DMG<\/color> equal to 195.98%+391.96% of Calcharo's ATK."
+            "desc": "Calcharo summons <color=Highlight>Phantom<\/color> to support the active Resonator, clearing the targets in front with a slash. The <color=Highlight>Phantom's<\/color> attack deals <color=Thunder>Electro DMG<\/color> equal to 195.98%+391.96% of Calcharo's ATK."
         },
         "Resonance Liberation Bonus 2": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",

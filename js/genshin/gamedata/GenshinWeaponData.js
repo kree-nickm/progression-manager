@@ -830,6 +830,47 @@ export default {
         "hakushinID": 14502,
         "id": 14502
     },
+    "LumidouceElegy": {
+        "name": "Lumidouce Elegy",
+        "rarity": 5,
+        "type": "Polearm",
+        "hakushinID": 13513,
+        "id": 13513,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_Muguet.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_Muguet.webp"
+        ],
+        "baseATK": 46,
+        "stat": "critRate_",
+        "matForgery": "Chalice",
+        "matWeakEnemy": "Whopperflowers",
+        "matStrongEnemy": "Praetorians",
+        "passive": "ATK increased by @0%. When the equipping character triggers Burning on an opponent or deals Dendro DMG to Burning opponents, the DMG dealt is increased by @1%. This effect lasts for 8s, max 2 stacks. When 2 stacks are reached or when the duration of the 2nd stack is refreshed, restore @2 Energy. Energy can be restored this way once every 12s. The 2 aforementioned effects can be triggered even when the character is off-field.",
+        "refinementData": [
+            {
+                "1": 15.00000059605,
+                "2": 18.99999976158,
+                "3": 23.000000417229998,
+                "4": 27.000001072879996,
+                "5": 31.00000023842
+            },
+            {
+                "1": 18.00000071526,
+                "2": 23.000000417229998,
+                "3": 28.00000011921,
+                "4": 33.0000013113,
+                "5": 37.99999952316
+            },
+            {
+                "1": 8,
+                "2": 8,
+                "3": 8,
+                "4": 8,
+                "5": 8
+            }
+        ],
+        "version": "4.7.52"
+    },
     "MemoryOfDust": {
         "name": "Memory of Dust",
         "rarity": 5,

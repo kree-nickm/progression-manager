@@ -1,11 +1,15 @@
 import { handlebars, Renderer } from "./Renderer.js";
 
-handlebars.registerHelper("getProperty", (item, property, options) => item instanceof UIController ? item.getProperty(property) : null);
+//handlebars.registerHelper("getProperty", (item, property, options) => item instanceof UIController ? item.getProperty(property) : null);
+handlebars.registerHelper("getProperty", function(item, property, options) {
+  console.log(`handlebars getProperty`, {self:this, item, property, options});
+  return item instanceof UIController ? item.getProperty(property) : null;
+});
 handlebars.registerHelper("uuid", (item, options) => item instanceof UIController ? item.uuid : null);
 handlebars.registerHelper('toParam', (item, options) => item instanceof UIController ? item.uuid : typeof(item) == "object" ? item?.toString()??"" : item);
 
 export default class UIController {
-  static dontSerialize = ["uuid","importing","delayedUpdates","dependents","memory"];
+  static dontSerialize = ["uuid","importing","delayedUpdates","dependents","memory","_viewer"];
   static templateName;
   static templatePartials = [];
   
@@ -27,6 +31,10 @@ export default class UIController {
   delayedUpdates;
   dependents;
   memory;
+  _viewer;
+  
+  get viewer() { return this._viewer; }
+  set viewer(val) { this._viewer = val; }
   
   constructor()
   {
@@ -50,9 +58,7 @@ export default class UIController {
         let func = path[i][0];
         if(typeof(obj[func]) == "function")
         {
-          obj = obj[func](...path[i].slice(1));
-          if(!obj)
-            break;
+          obj = obj[func].apply(obj, path[i].slice(1));
         }
         else
         {
@@ -63,7 +69,10 @@ export default class UIController {
       else if(obj[path[i]] == undefined)
       {
         if(create)
+        {
           obj[path[i]] = {};
+          obj = obj[path[i]];
+        }
         else
         {
           obj = undefined;
@@ -75,7 +84,10 @@ export default class UIController {
         console.error(`[${this.constructor.name} object].${string} encountered a non-object at '${path[i]}'.`);
         return {string, path};
       }
-      obj = obj[path[i]];
+      else
+      {
+        obj = obj[path[i]];
+      }
       if(!obj)
         break;
       if(obj instanceof UIController)
@@ -343,6 +355,14 @@ export default class UIController {
     return result;
   }
   
+  exampleMemoryFunc(arg1, arg2)
+  {
+    return this.memoryFunction(() => {
+      // Actual code.
+      return [arg1, arg2];
+    }, "storage", "path");
+  }
+  
   /* Methods with code specifically related to the HTML rendering of this UIController. */
   
   async getRelatedItems()
@@ -356,6 +376,10 @@ export default class UIController {
   }
   
   preRender(element, options)
+  {
+  }
+  
+  async render(force=false)
   {
   }
   

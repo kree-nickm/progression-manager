@@ -1115,6 +1115,27 @@ export default class CharacterList extends GenshinList
     this.forceNextRender = true;
   }
   
+  getFooterParams()
+  {
+    return {
+      add: {
+        fields: [
+          {
+            property: "key",
+            options: this.items('unowned')
+              .filter(character => !character.isLeakHidden)
+              .map(character => ({value:character.key, label:character.name})),
+          },
+        ],
+        onAdd: async (event, elements, data) => {
+          elements.key.needsUpdate = true;
+          elements.key.removeChild(elements.key.selectedOptions.item(0));
+          return this.get(data.key)?.update("owned", true);
+        },
+      },
+    };
+  }
+  
   prepareRender(element, data, options)
   {
     data.filter = "listable";
@@ -1151,53 +1172,17 @@ export default class CharacterList extends GenshinList
   
   async render(force=false)
   {
-    await super.render(force);
+    const {render, footer, updateFooter, ul} = await super.render(force);
     
-    let selectAdd;
-    let footer = document.getElementById("footer");
-    footer.classList.remove("d-none");
-    if(footer.dataset.list != this.uuid)
+    if(updateFooter)
     {
-      footer.replaceChildren();
-      footer.dataset.list = this.uuid;
-      
-      let container = footer.appendChild(document.createElement("div"));
-      container.classList.add("container-fluid", "navbar-expand");
-      
-      let ul = container.appendChild(document.createElement("ul"));
-      ul.classList.add("navbar-nav");
-      
-      // Add Character
-      let li1 = ul.appendChild(document.createElement("li"));
-      li1.classList.add("nav-item", "me-2");
-      
-      let divAdd = li1.appendChild(document.createElement("div"));
-      divAdd.classList.add("input-group");
-      
-      selectAdd = divAdd.appendChild(document.createElement("select"));
-      selectAdd.id = "addCharacterSelect";
-      selectAdd.classList.add("form-select", "size-to-content");
-      let btnAdd = divAdd.appendChild(document.createElement("button"));
-      btnAdd.innerHTML = "Add Character";
-      btnAdd.classList.add("btn", "btn-primary");
-      btnAdd.addEventListener("click", async event => {
-        let selectAdd = document.getElementById("addCharacterSelect");
-        if(selectAdd.value)
-        {
-          this.get(selectAdd.value)?.update("owned", true);
-          selectAdd.needsUpdate = true;
-          selectAdd.removeChild(selectAdd.selectedOptions.item(0));
-          selectAdd.value = "";
-        }
-      });
-      
       // Display Showcase
       let li2 = ul.appendChild(document.createElement("li"));
       li2.classList.add("nav-item", "me-2");
       
       let showcaseBtn = li2.appendChild(document.createElement("button"));
       showcaseBtn.id = "characterShowcaseBtn";
-      showcaseBtn.classList.add("btn", "btn-primary");
+      showcaseBtn.classList.add("btn", "btn-primary", "mt-2");
       showcaseBtn.title = "Display your characters' stats and gear in a nice window that you can screenshot and show to others.";
       let showcaseIcon = showcaseBtn.appendChild(document.createElement("i"));
       showcaseIcon.classList.add("fa-solid", "fa-camera");
@@ -1236,20 +1221,6 @@ export default class CharacterList extends GenshinList
             modalElement.remove();
           });
         };
-      }
-    }
-    selectAdd = document.getElementById("addCharacterSelect");
-    if(!selectAdd.children.length || selectAdd.needsUpdate)
-    {
-      selectAdd.replaceChildren();
-      selectAdd.appendChild(document.createElement("option"))
-      for(let chara of this.items('unowned'))
-      {
-        if(chara.isLeakHidden)
-          continue;
-        let option = selectAdd.appendChild(document.createElement("option"));
-        option.value = chara.key;
-        option.innerHTML = chara.name;
       }
     }
   }

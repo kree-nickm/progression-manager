@@ -1,4 +1,3 @@
-
 const Ascendable = (SuperClass) => class extends SuperClass {
 };
 

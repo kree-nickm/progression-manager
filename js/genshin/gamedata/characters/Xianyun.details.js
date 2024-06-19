@@ -147,11 +147,23 @@ export default {
             "name": "White Clouds at Dawn",
             "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/89\/Talent_White_Clouds_at_Dawn.png",
             "text": "Xianyun enters the Cloud Transmogrification state, in which she will not take Fall DMG, and uses Skyladder once.\\nIn this state, her Plunging Attack will be converted into Driftcloud Wave instead, which deals <color=#80FFD7FF>AoE Anemo DMG<\/color> and ends the Cloud Transmogrification state. This DMG is considered Plunging Attack DMG.\\nEach use of Skyladder while in this state increases the DMG and AoE of the next Driftcloud Wave used.\\n\\n<color=#FFD780FF>Skyladder<\/color>\\nCan be used while in mid-air. Xianyun leaps forward, dealing <color=#80FFD7FF>Anemo DMG<\/color> to targets along her path.\\nDuring each Cloud Transmogrification state Xianyun enters, Skyladder may be used up to 3 times and only 1 instance of Skyladder DMG can be dealt to any one opponent.\\nIf Skyladder is not used again in a short period, the Cloud Transmogrification state will be canceled.\\n\\nIf Xianyun does not use Driftcloud Wave while in this state, the next CD of White Clouds at Dawn will be decreased by 3s.\\n\\n<i>Do not shake Cloud Retainer's hand too tightly; cranes are quite adept at gripping.<\/i>",
-            "code": ["editmv", ["Elemental Skill", "Driftcloud Wave DMG", "attackType", "plunge"]],
+            "code": [
+                "editmv",
+                [
+                    "Elemental Skill",
+                    "Driftcloud Wave DMG",
+                    "attackType",
+                    "plunge"
+                ]
+            ],
             "specialMVs": {
-              "Driftcloud Wave DMG": {
-                "compoundLabels": ["1 Jump", "2 Jumps", "3 Jumps"]
-              }
+                "Driftcloud Wave DMG": {
+                    "compoundLabels": [
+                        "1 Jump",
+                        "2 Jumps",
+                        "3 Jumps"
+                    ]
+                }
             },
             "scaling": {
                 "Skill DMG": {

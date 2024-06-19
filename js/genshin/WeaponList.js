@@ -345,50 +345,25 @@ export default class WeaponList extends GenshinList
     this.viewer.lists.CharacterList.list.forEach(character => character.weapon = null);
   }
   
-  async render(force=false)
+  getFooterParams()
   {
-    await super.render(force);
-    
-    let footer = document.getElementById("footer");
-    footer.classList.remove("d-none");
-    if(footer.dataset.list != this.uuid)
-    {
-      footer.replaceChildren();
-      footer.dataset.list = this.uuid;
-      
-      let divAdd = footer.appendChild(document.createElement("div"));
-      divAdd.classList.add("input-group", "mt-2");
-      let selectAdd = divAdd.appendChild(document.createElement("select"));
-      selectAdd.id = "addWeaponSelect";
-      selectAdd.classList.add("form-select", "size-to-content");
-      let btnAdd = divAdd.appendChild(document.createElement("button"));
-      btnAdd.innerHTML = "Add Weapon";
-      btnAdd.classList.add("btn", "btn-primary");
-      btnAdd.addEventListener("click", event => {
-        let selectAdd = document.getElementById("addWeaponSelect");
-        if(selectAdd.value)
-        {
-          let item = this.addGOOD({
-            key: selectAdd.value,
-            level: 1,
-            refinement: 1,
-            ascension: 0,
-            location: "",
-            lock: false,
-          });
-          selectAdd.value = "";
-        }
-      });
-      
-      selectAdd.appendChild(document.createElement("option"))
-      for(let itm in GenshinWeaponData)
-      {
-        if(!this.viewer.settings.preferences.showLeaks && Date.parse(GenshinWeaponData[itm].release) > Date.now())
-          continue;
-        let option = selectAdd.appendChild(document.createElement("option"));
-        option.value = itm;
-        option.innerHTML = GenshinWeaponData[itm].name;
-      }
-    }
+    return {
+      add: {
+        fields: [
+          {
+            property: "key",
+            options: Object.keys(GenshinWeaponData).filter(key => this.viewer.settings.preferences.showLeaks || !GenshinWeaponData[key].release || Date.parse(GenshinWeaponData[key].release) <= Date.now()).map(key => ({value:key, label:GenshinWeaponData[key].name})),
+          },
+        ],
+        onAdd: (event, elements, data) => this.addGOOD({
+          key: data.key,
+          level: 1,
+          refinement: 1,
+          ascension: 0,
+          location: "",
+          lock: true,
+        }),
+      },
+    };
   }
 }

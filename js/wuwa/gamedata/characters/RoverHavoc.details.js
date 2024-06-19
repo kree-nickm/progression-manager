@@ -225,7 +225,7 @@ export default {
                         "25",
                         "25"
                     ],
-                    "name": "Heavy Attack Stamina Cost"
+                    "name": "Heavy Attack STA Cost"
                 },
                 {
                     "scaling": [
@@ -252,7 +252,7 @@ export default {
                 }
             ],
             "name": "Tuneslayer",
-            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnRover-Havoc performs up to 5 consecutive attacks, dealing <color=Dark>Havoc DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnRover-Havoc consumes Stamina to attack, dealing <color=Dark>Havoc DMG<\/color>.rnUse <color=Highlight>Basic Attack<\/color> after casting Heavy Attack to cast Basic Attack 4.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnRover-Havoc consumes Stamina to cast a Mid-Air Plunging Attack, dealing <color=Dark>Havoc DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after a successful Dodge to attack the target, dealing <color=Dark>Havoc DMG<\/color>."
+            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>nRover-Havoc performs up to 5 consecutive attacks, dealing <color=Dark>Havoc DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack<\/color><\/size>nRover-Havoc consumes STA to attack, dealing <color=Dark>Havoc DMG<\/color>.nUse <color=Highlight>Basic Attack<\/color> after casting Heavy Attack to cast Basic Attack 4.n<size=10> <\/size>n<size=40><color=Title>Mid-air Attack<\/color><\/size>nRover-Havoc consumes STA to cast a Mid-Air Plunging Attack, dealing <color=Dark>Havoc DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Dodge Counter<\/color><\/size>nUse <color=Highlight>Basic Attack<\/color> after a successful Dodge to attack the target, dealing <color=Dark>Havoc DMG<\/color>."
         },
         "Resonance Skill": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconNvzhuB1_UI.T_IconNvzhuB1_UI",
@@ -331,7 +331,7 @@ export default {
                 }
             ],
             "name": "Wingblade",
-            "desc": "Transforms sound into feathers, dealing <color=Dark>Havoc DMG<\/color>."
+            "desc": "Transform sound into feathers, dealing <color=Dark>Havoc DMG<\/color>."
         },
         "Resonance Liberation": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconNvzhuA1_UI.T_IconNvzhuA1_UI",
@@ -445,7 +445,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
             "id": 1001705,
             "name": "Bleak Crescendo",
-            "desc": "While in the <color=Highlight>Dark Surge<\/color> state, <color=Highlight>Basic Attack<\/color> recovers 1 Resonance Energy when it hits a target, and this effect can be triggered once per second."
+            "desc": "While in the <color=Highlight>Dark Surge<\/color> state, <color=Highlight>Basic Attack<\/color> recovers 1 extra Resonance Energy when it hits a target, and this effect can be triggered 1 time per second."
         },
         "Intro Skill": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconNvzhuQTE_UI.T_IconnvzhuQTE_UI",
@@ -778,7 +778,7 @@ export default {
                         "25",
                         "25"
                     ],
-                    "name": "Umbra: Heavy Attack Stamina Cost"
+                    "name": "Umbra: Heavy Attack STA Cost"
                 },
                 {
                     "scaling": [
@@ -876,7 +876,7 @@ export default {
                 }
             ],
             "name": "Umbra Eclipse",
-            "desc": "<size=40><color=Title>Devastation<\/color><\/size>rnWhen \"Umbra\" is full, hold <color=Highlight>Basic Attack<\/color> to cast <color=Highlight>Devastation<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>, considered as Heavy Attack damage.rn<size=10> <\/size>rn<size=40><color=Title>Dark Surge<\/color><\/size>rnAfter casting <color=Highlight>Devastation<\/color>, Rover enters the <color=Highlight>Dark Surge<\/color> state. In this state:rn<color=Highlight>Basic Attack<\/color> is replaced with <color=Highlight>Enhanced Basic Attack<\/color>, which performs up to 5 consecutive attacks, dealing <color=Dark>Havoc DMG<\/color>;rn<color=Highlight>Heavy Attack<\/color> is replaced with <color=Highlight>Enhanced Heavy Attack<\/color>;rnUse <color=Highlight>Basic Attack<\/color> after casting <color=Highlight>Enhanced Heavy Attack<\/color> to cast Heavy Attack <color=Highlight>Thwackblade<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>, considered as Heavy Attack damage;rnUse <color=Highlight>Basic Attack<\/color> after casting Heavy Attack <color=Highlight>Thwackblade<\/color> to cast <color=Highlight> Enhanced Basic Attack 3<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>;rnResonance Skill <color=Highlight>Wingblade<\/color> is replaced with Resonance Skill <color=Highlight>Lifetaker<\/color>, transforming sounds into blades to attack the target, dealing <color=Dark>Havoc DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Umbra<\/color><\/size>rnRover can hold up to 100 points of Umbra.rnNormal Attack <color=Highlight>Tuneslayer<\/color> recovers Umbra on hit.rnResonance Skill <color=Highlight>Wingblade<\/color> recovers Umbra when cast.rnResonance Skill <color=Highlight>Lifetaker<\/color> recovers Umbra when cast.rnIntro Skill <color=Highlight>Instant of Annihilation<\/color> recovers Umbra when cast."
+            "desc": "<size=40><color=Title>Devastation<\/color><\/size>nWhen \"Umbra\" is full, hold <color=Highlight>Basic Attack<\/color> to cast <color=Highlight>Devastation<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>, considered as Heavy Attack damage.n<size=10> <\/size>n<size=40><color=Title>Dark Surge<\/color><\/size>nAfter casting <color=Highlight>Devastation<\/color>, Rover enters the <color=Highlight>Dark Surge<\/color> state. In this state:n<color=Highlight>Basic Attack<\/color> is replaced with <color=Highlight>Enhanced Basic Attack<\/color>, which performs up to 5 consecutive attacks, dealing <color=Dark>Havoc DMG<\/color>;n<color=Highlight>Heavy Attack<\/color> is replaced with <color=Highlight>Enhanced Heavy Attack<\/color>;nUse <color=Highlight>Basic Attack<\/color> after casting <color=Highlight>Enhanced Heavy Attack<\/color> to cast Heavy Attack <color=Highlight>Thwackblade<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>, considered as Heavy Attack damage;nUse <color=Highlight>Basic Attack<\/color> after casting Heavy Attack <color=Highlight>Thwackblade<\/color> to cast <color=Highlight> Enhanced Basic Attack 3<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>;nResonance Skill <color=Highlight>Wingblade<\/color> is replaced with Resonance Skill <color=Highlight>Lifetaker<\/color>, transforming sounds into blades to attack the target, dealing <color=Dark>Havoc DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Umbra<\/color><\/size>nRover can hold up to 100 points of Umbra.nNormal Attack <color=Highlight>Tuneslayer<\/color> recovers Umbra on hit.nResonance Skill <color=Highlight>Wingblade<\/color> recovers Umbra when cast.nResonance Skill <color=Highlight>Lifetaker<\/color> recovers Umbra when cast.nIntro Skill <color=Highlight>Instant of Annihilation<\/color> recovers Umbra when cast."
         },
         "Rover Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
@@ -888,7 +888,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconNvzhuQTE_UI.T_IconnvzhuQTE_UI",
             "id": 1001709,
             "name": "Soundweaver",
-            "desc": "Rover summons a Havoc Field, dealing 143.3% <color=Dark>Havoc DMG<\/color> to all targets within range every 2s for 6s."
+            "desc": "Rover summons a Havoc Field, dealing <color=Dark>Havoc DMG<\/color> of 143.3% of Rover's ATK to all targets within the range every 2s for 6s."
         },
         "Resonance Liberation Bonus 2": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",

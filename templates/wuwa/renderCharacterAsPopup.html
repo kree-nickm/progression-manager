@@ -4,16 +4,17 @@
         <div class="row">
             <div class="col">
                 <div class="row">
-                    <h5 class="col-2">Seq</h5>
-                    <h5 class="col-2">Level</h5>
-                    <h5 class="col-2">Asc Rank</h5>
-                    <h5 class="col-2">Forte Lvls</h5>
-                    <h5 class="col-3">Weapon</h5>
+                    <h5 class="col-1">Seq</h5>
+                    <h5 class="col-1">Level</h5>
+                    <h5 class="col-1">Asc</h5>
+                    <h5 class="col-2">Forte Levels</h5>
+                    <h5 class="col-2">Forte Bonuses</h5>
+                    <h5 class="col-2">Weapon</h5>
                 </div>
                 <div class="row">
-                    <div class="col-2">{{> renderItemField item=item field="sequence" wrapper="div"}}</div>
-                    <div class="col-2">{{> renderItemField item=item field="level" wrapper="div"}}</div>
-                    <div class="col-2">{{> renderItemField item=item field="ascension" wrapper="div"}}</div>
+                    <div class="col-1">{{> renderItemField item=item field="sequence" wrapper="div"}}</div>
+                    <div class="col-1">{{> renderItemField item=item field="level" wrapper="div"}}</div>
+                    <div class="col-1">{{> renderItemField item=item field="ascension" wrapper="div"}}</div>
                     <div class="col-2">
                       {{> renderItemField item=item field="forte" params=(array "Basic Attack") wrapper="span"}} /
                       {{> renderItemField item=item field="forte" params=(array "Resonance Skill") wrapper="span"}} /
@@ -21,7 +22,14 @@
                       {{> renderItemField item=item field="forte" params=(array "Resonance Liberation") wrapper="span"}} /
                       {{> renderItemField item=item field="forte" params=(array "Intro Skill") wrapper="span"}}
                     </div>
-                    <div class="col-3">{{> renderItemField item=item field="equipWeapon" wrapper="div"}}</div>
+                    <div class="col-2">
+                      {{> renderItemField item=item field="forte" params=(array "Basic Attack" "bonus") wrapper="span"}} /
+                      {{> renderItemField item=item field="forte" params=(array "Resonance Skill" "bonus") wrapper="span"}} /
+                      {{> renderItemField item=item field="forte" params=(array "Forte Circuit" "circuit") wrapper="span"}} /
+                      {{> renderItemField item=item field="forte" params=(array "Resonance Liberation" "bonus") wrapper="span"}} /
+                      {{> renderItemField item=item field="forte" params=(array "Intro Skill" "bonus") wrapper="span"}}
+                    </div>
+                    <div class="col-2">{{> renderItemField item=item field="equipWeapon" wrapper="div"}}</div>
                 </div>
             </div>
         </div>
@@ -79,107 +87,50 @@
                     {{/times}}
                   </tbody>
               </table>
-              <div class="row g-1">
-                  <div class="col">
-                    <h4>Stat Bonus</h4>
-                    {{> renderItemField item=item field="forteMaterial" params=(array "forgery" "Basic Attack Bonus") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "enemy" "Basic Attack Bonus") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "weekly" "Basic Attack Bonus") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "credit" "Basic Attack Bonus") wrapper="div"}}
-                  </div>
-                  <div class="col">
-                    <h4>Stat Bonus</h4>
-                    {{> renderItemField item=item field="forteMaterial" params=(array "forgery" "Resonance Skill Bonus") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "enemy" "Resonance Skill Bonus") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "weekly" "Resonance Skill Bonus") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "credit" "Resonance Skill Bonus") wrapper="div"}}
-                  </div>
-                  <div class="col">
-                    <h4>Inherent Skill</h4>
-                    {{> renderItemField item=item field="forteMaterial" params=(array "forgery" "Forte Circuit Passive") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "enemy" "Forte Circuit Passive") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "weekly" "Forte Circuit Passive") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "credit" "Forte Circuit Passive") wrapper="div"}}
-                  </div>
-                  <div class="col">
-                    <h4>Stat Bonus</h4>
-                    {{> renderItemField item=item field="forteMaterial" params=(array "forgery" "Resonance Liberation Bonus") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "enemy" "Resonance Liberation Bonus") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "weekly" "Resonance Liberation Bonus") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "credit" "Resonance Liberation Bonus") wrapper="div"}}
-                  </div>
-                  <div class="col">
-                    <h4>Stat Bonus</h4>
-                    {{> renderItemField item=item field="forteMaterial" params=(array "forgery" "Intro Skill Bonus") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "enemy" "Intro Skill Bonus") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "weekly" "Intro Skill Bonus") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "credit" "Intro Skill Bonus") wrapper="div"}}
-                  </div>
-              </div>
-              <div class="row g-1">
-                  <div class="col">
-                    {{> renderItemField item=item field="forteMaterial" params=(array "forgery" "Basic Attack Bonus 1") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "enemy" "Basic Attack Bonus 1") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "weekly" "Basic Attack Bonus 1") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "credit" "Basic Attack Bonus 1") wrapper="div"}}
-                  </div>
-                  <div class="col">
-                    {{> renderItemField item=item field="forteMaterial" params=(array "forgery" "Resonance Skill Bonus 1") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "enemy" "Resonance Skill Bonus 1") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "weekly" "Resonance Skill Bonus 1") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "credit" "Resonance Skill Bonus 1") wrapper="div"}}
-                  </div>
-                  <div class="col">
-                    {{> renderItemField item=item field="forteMaterial" params=(array "forgery" "Forte Circuit Passive 1") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "enemy" "Forte Circuit Passive 1") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "weekly" "Forte Circuit Passive 1") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "credit" "Forte Circuit Passive 1") wrapper="div"}}
-                  </div>
-                  <div class="col">
-                    {{> renderItemField item=item field="forteMaterial" params=(array "forgery" "Resonance Liberation Bonus 1") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "enemy" "Resonance Liberation Bonus 1") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "weekly" "Resonance Liberation Bonus 1") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "credit" "Resonance Liberation Bonus 1") wrapper="div"}}
-                  </div>
-                  <div class="col">
-                    {{> renderItemField item=item field="forteMaterial" params=(array "forgery" "Intro Skill Bonus 1") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "enemy" "Intro Skill Bonus 1") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "weekly" "Intro Skill Bonus 1") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "credit" "Intro Skill Bonus 1") wrapper="div"}}
-                  </div>
-              </div>
-              <div class="row g-1">
-                  <div class="col">
-                    {{> renderItemField item=item field="forteMaterial" params=(array "forgery" "Basic Attack Bonus 2") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "enemy" "Basic Attack Bonus 2") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "weekly" "Basic Attack Bonus 2") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "credit" "Basic Attack Bonus 2") wrapper="div"}}
-                  </div>
-                  <div class="col">
-                    {{> renderItemField item=item field="forteMaterial" params=(array "forgery" "Resonance Skill Bonus 2") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "enemy" "Resonance Skill Bonus 2") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "weekly" "Resonance Skill Bonus 2") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "credit" "Resonance Skill Bonus 2") wrapper="div"}}
-                  </div>
-                  <div class="col">
-                    {{> renderItemField item=item field="forteMaterial" params=(array "forgery" "Forte Circuit Passive 2") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "enemy" "Forte Circuit Passive 2") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "weekly" "Forte Circuit Passive 2") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "credit" "Forte Circuit Passive 2") wrapper="div"}}
-                  </div>
-                  <div class="col">
-                    {{> renderItemField item=item field="forteMaterial" params=(array "forgery" "Resonance Liberation Bonus 2") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "enemy" "Resonance Liberation Bonus 2") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "weekly" "Resonance Liberation Bonus 2") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "credit" "Resonance Liberation Bonus 2") wrapper="div"}}
-                  </div>
-                  <div class="col">
-                    {{> renderItemField item=item field="forteMaterial" params=(array "forgery" "Intro Skill Bonus 2") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "enemy" "Intro Skill Bonus 2") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "weekly" "Intro Skill Bonus 2") wrapper="div"}}
-                    {{> renderItemField item=item field="forteMaterial" params=(array "credit" "Intro Skill Bonus 2") wrapper="div"}}
-                  </div>
-              </div>
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th>Stat Bonus</th>
+                          <th>Forgery</th>
+                          <th>Enemy</th>
+                          <th>Weekly</th>
+                          <th>Credits</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    {{#times 2}}
+                      <tr>
+                        {{> renderItemField item=item field="forteMaterial" params=(array "label" @index "bonus") wrapper="td"}}
+                        {{> renderItemField item=item field="forteMaterial" params=(array "forgery" @index "bonus") wrapper="td"}}
+                        {{> renderItemField item=item field="forteMaterial" params=(array "enemy" @index "bonus") wrapper="td"}}
+                        {{> renderItemField item=item field="forteMaterial" params=(array "weekly" @index "bonus") wrapper="td"}}
+                        {{> renderItemField item=item field="forteMaterial" params=(array "credit" @index "bonus") wrapper="td"}}
+                      </tr>
+                    {{/times}}
+                  </tbody>
+              </table>
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th>Passive</th>
+                          <th>Forgery</th>
+                          <th>Enemy</th>
+                          <th>Weekly</th>
+                          <th>Credits</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    {{#times 2}}
+                      <tr>
+                        {{> renderItemField item=item field="forteMaterial" params=(array "label" @index "circuit") wrapper="td"}}
+                        {{> renderItemField item=item field="forteMaterial" params=(array "forgery" @index "circuit") wrapper="td"}}
+                        {{> renderItemField item=item field="forteMaterial" params=(array "enemy" @index "circuit") wrapper="td"}}
+                        {{> renderItemField item=item field="forteMaterial" params=(array "weekly" @index "circuit") wrapper="td"}}
+                        {{> renderItemField item=item field="forteMaterial" params=(array "credit" @index "circuit") wrapper="td"}}
+                      </tr>
+                    {{/times}}
+                  </tbody>
+              </table>
           </div>
         </div>
     </div>

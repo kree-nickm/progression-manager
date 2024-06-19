@@ -1,0 +1,5 @@
+<div class="" data-template="genshin/renderManager" data-uuid="{{uuid item}}">
+  {{#each (getProperty item (array (array "getPlanMaterials"))) as |material key|}}
+    <p>{{key}}</p>
+  {{/each}}
+</div>

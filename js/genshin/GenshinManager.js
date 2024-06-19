@@ -1,5 +1,6 @@
 import { DateTime } from 'https://cdn.jsdelivr.net/npm/luxon@3.3.0/+esm';
 import { Renderer } from "../Renderer.js";
+import { mergeObjects } from "../Util.js";
 
 //import GenshinBuilds from "./gamedata/GenshinBuilds.js";
 
@@ -41,18 +42,14 @@ export default class GenshinManager extends DataManager
     this.registerList(FurnitureList);
     this.registerList(FurnitureSetList);
     
-    this.registerNavItem("Characters", "characters", {list:"CharacterList", isDefault:true});
-    this.registerNavItem("Weapons", "weapons", {list:"WeaponList"});
-    this.registerNavItem("Artifacts", "artifacts", {list:"ArtifactList"});
-    this.registerNavItem("Teams", "teams", {list:"TeamList"});
-    this.registerNavItem("Materials", "materials", {list:"MaterialList"});
-    this.registerNavItem("Furniture Sets", "furnitureSets", {list:"FurnitureSetList"});
-    this.registerNavItem("Furniture", "furniture", {list:"FurnitureList"});
-  }
-  
-  get lists()
-  {
-    return this.data?.[this.settings.account]?.[this.settings.server] ?? {};
+    //this.registerNavItem("Home", "home", {self:true, isDefault:true});
+    this.registerNavItem("Characters", "characters", {listName:"CharacterList"});
+    this.registerNavItem("Weapons", "weapons", {listName:"WeaponList"});
+    this.registerNavItem("Artifacts", "artifacts", {listName:"ArtifactList"});
+    this.registerNavItem("Teams", "teams", {listName:"TeamList"});
+    this.registerNavItem("Materials", "materials", {listName:"MaterialList"});
+    this.registerNavItem("Furniture Sets", "furnitureSets", {listName:"FurnitureSetList"});
+    this.registerNavItem("Furniture", "furniture", {listName:"FurnitureList"});
   }
   
   today()
@@ -64,6 +61,173 @@ export default class GenshinManager extends DataManager
     }
     this.lastDay = today;
     return today;
+  }
+  
+  fromGOOD(goodData)
+  {
+    if(!goodData)
+    {
+      console.error(`No data provided to [object ${this.constructor.name}].fromGOOD(1)`);
+      this.errors = true;
+      return false;
+    }
+    if(goodData.format != "GOOD")
+    {
+      console.error(`Data provided to [object ${this.constructor.name}].fromGOOD(1) does not appear to be in GOOD format:`, goodData);
+      this.errors = true;
+      return false;
+    }
+    
+    let hasData = false;
+    if(goodData.materials)
+    {
+      try
+      {
+        hasData |= this.lists.MaterialList.fromGOOD(goodData.materials);
+      }
+      catch(x)
+      {
+        console.error("Error when loading materials from GOOD data.", x);
+        this.errors = true;
+      }
+    }
+    if(goodData.characters)
+    {
+      try
+      {
+        hasData |= this.lists.CharacterList.fromGOOD(goodData.characters);
+      }
+      catch(x)
+      {
+        console.error("Error when loading characters from GOOD data.", x);
+        this.errors = true;
+      }
+    }
+    if(goodData.weapons)
+    {
+      try
+      {
+        hasData |= this.lists.WeaponList.fromGOOD(goodData.weapons);
+      }
+      catch(x)
+      {
+        console.error("Error when loading weapons from GOOD data.", x);
+        this.errors = true;
+      }
+    }
+    if(goodData.artifacts)
+    {
+      try
+      {
+        hasData |= this.lists.ArtifactList.fromGOOD(goodData.artifacts);
+        //this.lists.ArtifactList.evaluate(); // Re-add this somewhere so that it can be done sometime other than when the user manually clicks it.
+      }
+      catch(x)
+      {
+        console.error("Error when loading artifacts from GOOD data.", x);
+        this.errors = true;
+      }
+    }
+    if(goodData.teams)
+    {
+      try
+      {
+        hasData |= this.lists.TeamList.fromGOOD(goodData.teams);
+      }
+      catch(x)
+      {
+        console.error("Error when loading teams from GOOD data.", x);
+        this.errors = true;
+      }
+    }
+    if(goodData.furniture)
+    {
+      try
+      {
+        hasData |= this.lists.FurnitureList.fromGOOD(goodData.furniture);
+      }
+      catch(x)
+      {
+        console.error("Error when loading furniture from GOOD data.", x);
+        this.errors = true;
+      }
+    }
+    if(goodData.furnitureSets)
+    {
+      try
+      {
+        hasData |= this.lists.FurnitureSetList.fromGOOD(goodData.furnitureSets);
+      }
+      catch(x)
+      {
+        console.error("Error when loading furnitureSets from GOOD data.", x);
+        this.errors = true;
+      }
+    }
+    console.log("Loaded GOOD data.", {goodData});
+    return hasData;
+  }
+  
+  toGOOD()
+  {
+    return {
+      format: "GOOD",
+      source: "Genshin Manager",
+      version: 2,
+      materials: this.lists.MaterialList.toGOOD(),
+      characters: this.lists.CharacterList.toGOOD(),
+      weapons: this.lists.WeaponList.toGOOD(),
+      artifacts: this.lists.ArtifactList.toGOOD(),
+    };
+  }
+  
+  async saveToPastebin()
+  {
+    let response = await fetch("https://themellin.com/genshin/saveToPastebin.php", {
+      method: "POST",
+      headers: {
+        'Content-Type': "application/json",
+      },
+      body: JSON.stringify(this.toGOOD()),
+    });
+    let json = await response.json();
+    if(json.success)
+    {
+      return json.code;
+    }
+    else
+    {
+      console.warn("Error when trying to save to Pastebin:", json);
+      return false;
+    }
+  }
+  
+  getPlanMaterials()
+  {
+    console.log(`GenshinManager.getPlanMaterials`, {self:this, lists:this.lists});
+    let plan = mergeObjects(...this.lists?.CharacterList.items().map(character => character.getPlanMaterials())??[]);
+    for(let key in plan)
+    {
+      plan[key] = {item:null, amount:plan[key]};
+    }
+    return plan;
+  }
+  
+  async render(force=false)
+  {
+    let render = await Renderer.rerender(
+      this.elements[this.constructor.name].querySelector(`[data-uuid="${this.uuid}"]`),
+      { item: this },
+      {
+        template: "genshin/renderManager",
+        parentElement: this.elements[this.constructor.name],
+      }
+    );
+    
+    let footer = document.getElementById("footer");
+    footer.classList.add("d-none");
+    
+    return {render, footer};
   }
   
   activateAccount(account, server)
@@ -193,124 +357,6 @@ export default class GenshinManager extends DataManager
     return hasData;
   }
   
-  fromGOOD(goodData)
-  {
-    if(!goodData)
-    {
-      console.error(`No data provided to [object ${this.constructor.name}].fromGOOD(1)`);
-      this.errors = true;
-      return false;
-    }
-    if(goodData.format != "GOOD")
-    {
-      console.error(`Data provided to [object ${this.constructor.name}].fromGOOD(1) does not appear to be in GOOD format:`, goodData);
-      this.errors = true;
-      return false;
-    }
-    
-    let hasData = false;
-    if(goodData.materials)
-    {
-      try
-      {
-        hasData |= this.lists.MaterialList.fromGOOD(goodData.materials);
-      }
-      catch(x)
-      {
-        console.error("Error when loading materials from GOOD data.", x);
-        this.errors = true;
-      }
-    }
-    if(goodData.characters)
-    {
-      try
-      {
-        hasData |= this.lists.CharacterList.fromGOOD(goodData.characters);
-      }
-      catch(x)
-      {
-        console.error("Error when loading characters from GOOD data.", x);
-        this.errors = true;
-      }
-    }
-    if(goodData.weapons)
-    {
-      try
-      {
-        hasData |= this.lists.WeaponList.fromGOOD(goodData.weapons);
-      }
-      catch(x)
-      {
-        console.error("Error when loading weapons from GOOD data.", x);
-        this.errors = true;
-      }
-    }
-    if(goodData.artifacts)
-    {
-      try
-      {
-        hasData |= this.lists.ArtifactList.fromGOOD(goodData.artifacts);
-        //this.lists.ArtifactList.evaluate(); // Re-add this somewhere so that it can be done sometime other than when the user manually clicks it.
-      }
-      catch(x)
-      {
-        console.error("Error when loading artifacts from GOOD data.", x);
-        this.errors = true;
-      }
-    }
-    if(goodData.teams)
-    {
-      try
-      {
-        hasData |= this.lists.TeamList.fromGOOD(goodData.teams);
-      }
-      catch(x)
-      {
-        console.error("Error when loading teams from GOOD data.", x);
-        this.errors = true;
-      }
-    }
-    if(goodData.furniture)
-    {
-      try
-      {
-        hasData |= this.lists.FurnitureList.fromGOOD(goodData.furniture);
-      }
-      catch(x)
-      {
-        console.error("Error when loading furniture from GOOD data.", x);
-        this.errors = true;
-      }
-    }
-    if(goodData.furnitureSets)
-    {
-      try
-      {
-        hasData |= this.lists.FurnitureSetList.fromGOOD(goodData.furnitureSets);
-      }
-      catch(x)
-      {
-        console.error("Error when loading furnitureSets from GOOD data.", x);
-        this.errors = true;
-      }
-    }
-    console.log("Loaded GOOD data.", {goodData});
-    return hasData;
-  }
-  
-  toGOOD()
-  {
-    return {
-      format: "GOOD",
-      source: "Genshin Manager",
-      version: 2,
-      materials: this.lists.MaterialList.toGOOD(),
-      characters: this.lists.CharacterList.toGOOD(),
-      weapons: this.lists.WeaponList.toGOOD(),
-      artifacts: this.lists.ArtifactList.toGOOD(),
-    };
-  }
-  
   store()
   {
     if(this.errors)
@@ -407,24 +453,8 @@ export default class GenshinManager extends DataManager
       this.view({pane:this.currentView});
   }
   
-  async saveToPastebin()
+  get lists()
   {
-    let response = await fetch("https://themellin.com/genshin/saveToPastebin.php", {
-      method: "POST",
-      headers: {
-        'Content-Type': "application/json",
-      },
-      body: JSON.stringify(this.toGOOD()),
-    });
-    let json = await response.json();
-    if(json.success)
-    {
-      return json.code;
-    }
-    else
-    {
-      console.warn("Error when trying to save to Pastebin:", json);
-      return false;
-    }
+    return this.data?.[this.settings.account]?.[this.settings.server] ?? {};
   }
 }

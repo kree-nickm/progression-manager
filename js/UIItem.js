@@ -18,15 +18,11 @@ export default class UIItem extends UIController {
   
   list;
   
-  get viewer()
-  {
-    return this.list.viewer;
-  }
+  get viewer() { return this.list.viewer; }
+  set viewer(val) { console.warn(`UIItem cannot change viewer.`); }
   
-  get display()
-  {
-    return this.list.display;
-  }
+  get display() { return this.list.display; }
+  set display(val) { console.warn(`UIItem cannot change display.`); }
   
   // Note: While the uuid property is meant to be completely unique for every UIController no matter what, this is meant to be derived from the UIItem's data, in order to determine if two UIItems are duplicates.
   // Note: Currently, this calls the UIList's method, because that can be used on generic objects with all of the UIItem's properties, to see if they are potential duplicates, before creating new UIItems from such objects.

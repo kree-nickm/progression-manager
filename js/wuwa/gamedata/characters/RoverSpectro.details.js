@@ -250,7 +250,7 @@ export default {
                         "25",
                         "25"
                     ],
-                    "name": "Heavy Attack Stamina Consumption"
+                    "name": "Heavy Attack STA Cost"
                 },
                 {
                     "scaling": [
@@ -277,7 +277,7 @@ export default {
                 }
             ],
             "name": "Vibration Manifestation",
-            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnRover performs up to 4 consecutive attacks, dealing <color=Light>Spectro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnRover consumes Stamina, dealing <color=Light>Spectro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack: Resonance<\/color><\/size>rnAfter <color=Highlight>Basic Attack 3<\/color> or <color=Highlight>Heavy Attack<\/color>, press the <color=Highlight>Basic Attack<\/color> button at the right time to perform Heavy Attack <color=Highlight>Resonance<\/color>, dealing <color=Light>Spectro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack: Aftertune<\/color><\/size>rnAfter Heavy Attack <color=Highlight>Resonance<\/color> or <color=Highlight>Dodge Counter<\/color> hits a target, press the <color=Highlight>Basic Attack<\/color> button to perform Heavy Attack <color=Highlight>Aftertune<\/color>, dealing <color=Light>Spectro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnRover consumes Stamina to perform a Mid-Air Plunging Attack, dealing <color=Light>Spectro DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Light>Spectro DMG<\/color>."
+            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>nRover performs up to 4 consecutive attacks, dealing <color=Light>Spectro DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack<\/color><\/size>nRover consumes STA to attack the target, dealing <color=Light>Spectro DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack: Resonance<\/color><\/size>nAfter <color=Highlight>Basic Attack 3<\/color> or <color=Highlight>Heavy Attack<\/color>, press the <color=Highlight>Basic Attack<\/color> button at the right time to perform Heavy Attack <color=Highlight>Resonance<\/color>, dealing <color=Light>Spectro DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack: Aftertune<\/color><\/size>nAfter Heavy Attack <color=Highlight>Resonance<\/color> or <color=Highlight>Dodge Counter<\/color> hits a target, press the <color=Highlight>Basic Attack<\/color> button to perform Heavy Attack <color=Highlight>Aftertune<\/color>, dealing <color=Light>Spectro DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mid-air Attack<\/color><\/size>nRover consumes STA to perform a Mid-Air Plunging Attack, dealing <color=Light>Spectro DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Dodge Counter<\/color>nUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Light>Spectro DMG<\/color>."
         },
         "Resonance Skill": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconNvzhuB1_UI.T_IconNvzhuB1_UI",
@@ -458,7 +458,7 @@ export default {
                 }
             ],
             "name": "Echoing Orchestra",
-            "desc": "Rover converges Spectro energy to assail the target area, detonating it after a short interval and dealing <color=Light>Spectro DMG<\/color>."
+            "desc": "Rover converges Spectro energy to assail the target area, detonating it after a short delay and dealing <color=Light>Spectro DMG<\/color>."
         },
         "Forte Circuit Passive 1": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconNvzhuD2_UI.T_IconnvzhuD2_UI",
@@ -680,7 +680,7 @@ export default {
                 }
             ],
             "name": "World in a Grain of Sand",
-            "desc": "<size=40><color=Title>Resonance Skill: Resonating Spin<\/color><\/size>nIf \"Diminutive Sound\" exceeds 50 when <color=Highlight>Resonance Skill<\/color> is used, Rover consumes 50 \"Diminutive Sound\" to cast <color=Highlight>Resonating Spin<\/color>, dealing <color=Light>Spectro DMG<\/color>, considered as Resonance Skill damage.n<size=10> <\/size>n<size=40><color=Title>Basic Attack: Resonating Echoes<\/color><\/size>nAfter Resonance Skill <color=Highlight>Resonating Spin<\/color> ends, Rover performs Resonance Skill <color=Highlight>Resonating Echoes<\/color> upon pressing the Basic Attack button.nRover performs attacks forward, dealing <color=Light>Spectro DMG<\/color> considered as Resonance Skill DMG.n<size=10> <\/size>n<size=40><color=Title>Diminutive Sound<\/color><\/size>nRover can hold up to 100 \"Diminutive Sounds\".nRover obtains \"Diminutive Sound\" for every Normal Attack <color=Highlight>Vibration Manifestation<\/color> on hit.nRover obtains \"Diminutive Sound\" for every Heavy Attack <color=Highlight> aftertune<\/color> on hit.nRover obtains \"Diminutive Sound\" upon casting Intro Skill <color=Highlight>Waveshock<\/color>."
+            "desc": "<size=40><color=Title>Resonance Skill: Resonating Spin<\/color><\/size>nIf \"Diminutive Sound\" exceeds 50 when <color=Highlight>Resonance Skill<\/color> is used, Rover consumes 50 \"Diminutive Sound\" to cast <color=Highlight>Resonating Spin<\/color>, dealing <color=Light>Spectro DMG<\/color>, considered as Resonance Skill damage.n<size=10> <\/size>n<size=40><color=Title>Basic Attack: Resonating Echoes<\/color><\/size>nAfter Resonance Skill <color=Highlight>Resonating Spin<\/color> ends, Rover performs <color=Highlight>Resonating Echoes<\/color> upon pressing the Basic Attack button.nLaunch attacks forward, dealing <color=Light>Spectro DMG<\/color>, considered as Resonance Skill DMG.n<size=10> <\/size>n<size=40><color=Title>Diminutive Sound<\/color><\/size>nRover can hold up to 100 \"Diminutive Sounds\".nRover obtains \"Diminutive Sound\" for every Normal Attack <color=Highlight>Vibration Manifestation<\/color> on hit.nRover obtains \"Diminutive Sound\" for every Heavy Attack <color=Highlight> Aftertune<\/color> on hit.nRover obtains \"Diminutive Sound\" upon casting Intro Skill <color=Highlight>Waveshock<\/color>."
         },
         "Rover Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
@@ -692,7 +692,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconNvzhuQTE_UI.T_IconnvzhuQTE_UI",
             "id": 1000609,
             "name": "Instant",
-            "desc": "Rover generates an area of stasis surrounding the next character (or other characters on a nearby team that activates an Outro Skill) over 3s."
+            "desc": "Generate an area of stasis surrounding the next character (or a character on a nearby team that activates an Outro Skill), lasting for 3s."
         },
         "Basic Attack Bonus 1": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredlight_UI.T_Iconpropertyredlight_UI",

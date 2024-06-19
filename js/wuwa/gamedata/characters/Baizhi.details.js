@@ -202,7 +202,7 @@ export default {
                         "12.5",
                         "12.5"
                     ],
-                    "name": "Heavy Attack Stamina Consumption (per second)"
+                    "name": "Heavy Attack STA Cost (per sec)"
                 },
                 {
                     "scaling": [
@@ -231,7 +231,7 @@ export default {
                 }
             ],
             "name": "Destined Promise",
-            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnBaizhi instructs You'tan to perform up to 4 consecutive attacks, dealing <color=Ice>Glacio DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnBaizhi continuously consumes Stamina to command You'tan to attack enemies, dealing <color=Ice>Glacio DMG<\/color>. During Heavy Attack, Baizhi can command You'tan to move.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnBaizhi consumes Stamina and summons You\u2019tan in mid-air to perform a Plunging Attack, dealing <color=Ice>Glacio DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Ice>Glacio DMG<\/color>."
+            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>nBaizhi instructs You'tan to perform up to 4 consecutive attacks, dealing <color=Ice>Glacio DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack<\/color><\/size>nBaizhi continuously consumes STA to command You'tan to attack enemies, dealing <color=Ice>Glacio DMG<\/color>. During Heavy Attack, Baizhi can command You'tan to move.n<size=10> <\/size>n<size=40><color=Title>Mid-air Attack<\/color><\/size>nBaizhi consumes STA and summons You\u2019tan in mid-air to perform a Plunging Attack, dealing <color=Ice>Glacio DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Dodge Counter<\/color><\/size>nUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Ice>Glacio DMG<\/color>."
         },
         "Resonance Skill": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconBailianB1_UI.T_IconBailianB1_UI",
@@ -337,7 +337,7 @@ export default {
                 }
             ],
             "name": "Emergency Plan",
-            "desc": "Baizhi calls You'tan to attack the target, dealing <color=Ice>Glacio DMG<\/color> while restoring HP for the entire team."
+            "desc": "Baizhi calls You'tan to attack the target, dealing <color=Ice>Glacio DMG<\/color> while immediately healing all characters on nearby teams."
         },
         "Resonance Liberation": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconBailianA1_UI.T_IconBailianA1_UI",
@@ -493,19 +493,19 @@ export default {
                 }
             ],
             "name": "Momentary Union",
-            "desc": "Baizhi summons You'tan to restore HP for the entire team, generating 4 stacks of <color=Highlight>Remnant Entities<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Remnant Entities<\/color><\/size>rnRemnant Entities follow the active team members and automatically consume 1 stacks of <color=Highlight>Remnant Entities<\/color> to attack the targets every 2.5s, dealing <color=Ice>Glacio DMG<\/color> on hit while restoring HP to all team members nearby."
+            "desc": "Baizhi summons You'tan to heal all characters on nearby teams, generating 4 stacks of <color=Highlight>Remnant Entities<\/color>.n<size=10> <\/size>n<size=40><color=Title>Remnant Entities<\/color><\/size>nRemnant Entities follow the active team members. 1 stacks of <color=Highlight>Remnant Entities<\/color> are automatically consumed to attack the targets every 2.5s, dealing <color=Ice>Glacio DMG<\/color> on hit while healing the active character on a nearby team."
         },
         "Forte Circuit Passive 1": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconBailianD1_UI.T_IconBailianD1_UI",
             "id": 1000404,
             "name": "Harmonic Range",
-            "desc": "When Baizhi casts Resonance Skill <color=Highlight>Emergency Plan<\/color>, You'tan generates a field of <color=Highlight>Euphonia<\/color> that lasts for 15s.rn<size=10> <\/size>rn<size=40><color=Title>Euphonia<\/color><\/size>rnATK of the Resonators who picks up Euphonia is increased by 15% for 20s."
+            "desc": "When Baizhi casts Resonance Skill <color=Highlight>Emergency Plan<\/color>, You'tan generates a field of <color=Highlight>Euphonia<\/color> that lasts for 15s.n<size=10> <\/size>n<size=40><color=Title>Euphonia<\/color><\/size>nATK of the Resonators who picks up Euphonia is increased by 15% for 20s."
         },
         "Forte Circuit Passive 2": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconBailianD2_UI.T_IconBailianD2_UI",
             "id": 1000405,
             "name": "Stimulus Feedback",
-            "desc": "Baizhi's <color=Highlight>Heavy Attack<\/color> heals the team member with the lowest HP by 0.25% of her Max HP upon hitting an enemy."
+            "desc": "Baizhi's <color=Highlight>Heavy Attack<\/color> on hit heals the character with the lowest HP on a nearby team by 0.25% of her Max HP."
         },
         "Intro Skill": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconBailianQTE_UI.T_IconBailianQTE_UI",
@@ -586,7 +586,7 @@ export default {
                 }
             ],
             "name": "Overflowing Frost",
-            "desc": "Baizhi calls You'tan to perform 1 plunging attack, dealing <color=Ice>Glacio DMG<\/color> while restoring HP to all team members nearby."
+            "desc": "Baizhi calls You'tan to perform 1 plunging attack, dealing <color=Ice>Glacio DMG<\/color> while healing all characters on a nearby team."
         },
         "Forte Circuit": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
@@ -686,11 +686,11 @@ export default {
                         "2.5",
                         "2.5"
                     ],
-                    "name": "Heavy Attack \"Concentration\" Con. Energy Regen"
+                    "name": "Heavy Attack \"Concentration\" Resonance Regen"
                 }
             ],
             "name": "Cycle of Life",
-            "desc": "<size=40><color=Title>You'tan<\/color><\/size>rnA Remnant Creature that answers to Baizhi\u2019s mind and desires while sharing all her attributes. You\u2019tan goes back to Baizhi when Baizhi dodges.rn<size=10> <\/size>rn<size=40><color=Title>Concentration<\/color><\/size>rnBaizhi consumes all \"Concentrations\" when casting <color=Highlight>Heavy Attack<\/color> or Resonance Skill <color=Highlight>Emergency Plan<\/color> to continuously restore HP for Characters nearby. Each 1 \"Concentration\" consumed restores HP for 1 time every 2s.rnWhen Baizhi consumes \"Concentration\" to cast <color=Highlight>Heavy Attack<\/color>, Baizhi additionally restores Concerto Energy and Resonance Energy;rnWhen Baizhi consumes \"Concentration\" to cast Resonance Skill <color=Highlight>Emergency Plan<\/color>, Baizhi additionally restores Concerto Energy.rn<size=10> <\/size>rn<size=40><color=Title>Concentration<\/color><\/size>rnBaizhi can hold up to 4 \"Concentrations\".rnBaizhi obtains 1 \"Concentration\" for every <color=Highlight>Basic Attack<\/color> on hit."
+            "desc": "<size=40><color=Title>You'tan<\/color><\/size>nA Remnant Creature that answers to Baizhi\u2019s mind and desires while sharing all her stats. You\u2019tan goes back to Baizhi when Baizhi dodges.n<size=10> <\/size>n<size=40><color=Title>Concentration<\/color><\/size>nBaizhi consumes all \"Concentrations\" when casting <color=Highlight>Heavy Attack<\/color> or Resonance Skill <color=Highlight>Emergency Plan<\/color> to continuously heal all characters on nearby teams. Each 1 \"Concentration\" consumed provides 1 healing. The healings happen every 2s.nWhen Baizhi consumes \"Concentration\" to cast <color=Highlight>Heavy Attack<\/color>, Baizhi additionally restores Concerto Energy and Resonance Energy;nWhen Baizhi consumes \"Concentration\" to cast Resonance Skill <color=Highlight>Emergency Plan<\/color>, Baizhi additionally restores Concerto Energy.n<size=10> <\/size>n<size=40><color=Title>Forte Gauge: Concentration<\/color><\/size>nBaizhi can hold up to 4 \"Concentrations\".nBaizhi obtains 1 \"Concentration\" for every <color=Highlight>Basic Attack<\/color> on hit."
         },
         "Utility Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
@@ -702,7 +702,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconBailianQTE_UI.T_IconBailianQTE_UI",
             "id": 1000409,
             "name": "Rejuvinating Flow",
-            "desc": "Baizhi heals the next character (or other characters on a nearby team that activates an Outro Skill) by 1.54% of her Max HP every 3s for 30s. The healed character(s) also gain a 15% All-Type DMG Deepen for 6s."
+            "desc": "Baizhi heals the incoming character (or a character on a nearby team that activates an Outro Skill) by 1.54% of her Max HP every 3s for 30s. The healed character(s) also have their All-Type DMG Amplified by 15% for 6s."
         },
         "Basic Attack Bonus 1": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertygreencure_UI.T_Iconpropertygreencure_UI",

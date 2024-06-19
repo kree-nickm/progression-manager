@@ -650,6 +650,13 @@ export default {
         "name": "Climbing Fig",
         "type": "Resources"
     },
+    "CookingOil": {
+        "rarity": 1,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconCook\/T_IconCook_A06_UI.T_IconCook_A06_UI",
+        "name": "Cooking oil",
+        "type": "Resources"
+    },
     "Coriolus": {
         "rarity": 1,
         "sort": 0,

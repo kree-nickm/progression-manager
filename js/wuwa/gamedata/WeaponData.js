@@ -100,7 +100,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "Increases Energy Regen by {0}. When hitting a target with Basic Attacks, increases Basic Attack DMG Bonus by {1}, stacking up to {2} time(s). This effect lasts for {3}s and can be triggered {5} time(s) every {4}s.",
+        "passive": "Increases Energy Regen by {0}. When dealing Basic Attack DMG, increases Basic Attack DMG Bonus by {1}, stacking up to {2} time(s). This effect lasts for {3}s and can be triggered {5} time(s) every {4}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
         "stat": "GreenAtk",
@@ -143,7 +143,7 @@ export default {
                 "10"
             ]
         ],
-        "passive": "Increases Energy Regen by {0}. When Resonance Skill is released, increases ATK by {1}, stacking up to {2} time(s). This effect lasts for {3}s.",
+        "passive": "Increases Energy Regen by {0}. When Resonance Skill is cast, increases ATK by {1}, stacking up to {2} time(s). This effect lasts for {3}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip",
         "stat": "Crit",
@@ -186,7 +186,7 @@ export default {
                 "12"
             ]
         ],
-        "passive": "Increases Energy Regen by {0}. When Resonance Skill is released, increases Resonance Liberation DMG by {1}, stacking up to 2 times. This effect lasts for {3}s.",
+        "passive": "Increases Energy Regen by {0}. When Resonance Skill is cast, Resonance Liberation DMG Bonus is increased by {1}, stacking up to {2} times. This effect lasts for {3}s.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
         "stat": "GreenAtk",
@@ -229,7 +229,7 @@ export default {
                 "14"
             ]
         ],
-        "passive": "Increases Energy Regen by {0}. When Outro Skill is released, increases the switched-in Resonator's ATK by {1}, stacking up to {2} time(s). This effect lasts for {3}s.",
+        "passive": "Increases Energy Regen by {0}. When Outro Skill is cast, increases the incoming Resonator's ATK by {1}, stacking up to {2} time(s). This effect lasts for {3}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Phlogiston",
         "stat": "Crit",
@@ -279,7 +279,7 @@ export default {
                 "24%"
             ]
         ],
-        "passive": "Increases the DMG Bonus of all Resonance Attributes by {0}. When Resonance Skill hits a target, increases ATK by {1}, stacking up to {2}. When the equipped character is not on the field, increases their ATK by an additional {4}.",
+        "passive": "Increases the DMG Bonus by {0}. When dealing Resonance Skill DMG, increases ATK by {1}, stacking up to {2}. This effect lasts for {3}s. When the equipped Resonator is not on the field, increases their ATK by an additional {4}.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
         "stat": "Crit",
@@ -322,7 +322,7 @@ export default {
                 "14"
             ]
         ],
-        "passive": "Increases the DMG Bonus of all Resonance Attributes by {0}. Every time Intro Skill or Resonance Liberation is cast, increases Heavy Attack DMG Bonus by {1}, stacking up to {2} time(s). This effect lasts for {3}s.",
+        "passive": "Increases DMG Bonus by {0}. Every time Intro Skill or Resonance Liberation is cast, increases Heavy Attack DMG Bonus by {1}, stacking up to {2} time(s). This effect lasts for {3}s.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
         "stat": "CritDamage",
@@ -351,7 +351,7 @@ export default {
                 "15"
             ]
         ],
-        "passive": "When Intro Skill is released, increases Resonance Liberation DMG Bonus by {0}, lasting for {1}s.",
+        "passive": "When Intro Skill is cast, increases Resonance Liberation DMG Bonus by {0}, lasting for {1}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Cadence",
         "stat": "GreenDef",
@@ -380,7 +380,7 @@ export default {
                 "15"
             ]
         ],
-        "passive": "When Resonance Liberation is released, increases the caster's ATK by {0}, lasting for {1}s.",
+        "passive": "When Resonance Liberation is cast, increases the caster's ATK by {0}, lasting for {1}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
         "stat": "Crit",
@@ -487,7 +487,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When the Resonator's HP is above {0}, increases ATK by {1}. When the Resonator's HP is below {2}, restores their HP by {3} for dealing Basic Attack DMG or Heavy Attack DMG. This effect can be triggered {5} time(s) every {4}s.",
+        "passive": "When the Resonator's HP is above {0}, increases ATK by {1}. When the Resonator's HP is below {2}, heals them by {3} for dealing Basic Attack DMG or Heavy Attack DMG. This effect can be triggered {5} time(s) every {4}s.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
         "stat": "EnergyEfficiency",
@@ -523,7 +523,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When Resonance Skill is released, restores Concerto Energy by {0}. This effect can be triggered 1 time every {1}s.",
+        "passive": "When Resonance Skill is cast, restores {0} Concerto Energy. This effect can be triggered {2} times every {1}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Phlogiston",
         "stat": "EnergyEfficiency",
@@ -573,7 +573,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When hitting a target with Basic Attacks or Heavy Attacks, increases Healing Bonus by {0}, stacking up to {2} time(s). This effect lasts for {1}s and can be triggered {4} time(s) every {3}s.",
+        "passive": "When dealing Basic Attack DMG or Heavy Attack DMG, increases Healing Bonus by {0}, stacking up to {2} time(s). This effect lasts for {1}s and can be triggered {4} time(s) every {3}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
         "stat": "GreenLifeMax",
@@ -602,7 +602,7 @@ export default {
                 "15"
             ]
         ],
-        "passive": "When Intro Skill is released, increases ATK by {0}, lasting for {1}s.",
+        "passive": "When Intro Skill is cast, increases ATK by {0}, lasting for {1}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip",
         "stat": "GreenAtk",
@@ -638,7 +638,7 @@ export default {
                 "15"
             ]
         ],
-        "passive": "When Intro Skill is released, increases ATK by {0} and DEF by {1}, lasting for {2}s.",
+        "passive": "When Intro Skill is cast, increases ATK by {0} and DEF by {1}, lasting for {2}s.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
         "stat": "GreenDef",
@@ -674,7 +674,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When Resonance Skill is released, restores Concerto Energy by {0}. This effect can be triggered 1 time every {1}s.",
+        "passive": "When Resonance Skill is cast, restores {0} Concerto Energy. This effect can be triggered {2} times every {1}s.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
         "stat": "EnergyEfficiency",
@@ -731,7 +731,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When the Resonator dashes or dodges, increases ATK by {0}. Increases Counter Attack DMG by {1}, lasting for {2}s. When Counter Attack is performed, restores the Resonator's HP by {3}. This effect can be triggered {5} time(s) every {4}s.",
+        "passive": "When the Resonator dashes or dodges, increases ATK by {0}. Increases Dodge Counter DMG by {1}, lasting for {2}s. When Dodge Counter is performed, heals the Resonator's by {3} of their Max HP. This effect can be triggered {5} time(s) every {4}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Cadence",
         "stat": "EnergyEfficiency",
@@ -802,7 +802,7 @@ export default {
                 "6"
             ]
         ],
-        "passive": "Within {0}s after Resonance Skill is released, increases ATK by {2} every {1}s, stacking up to {3} time(s). When the number of stacks reaches {4}, all stacks will be reset within {5}s.",
+        "passive": "Within {0}s after Resonance Skill is cast, increases ATK by {2} every {1}s, stacking up to {3} time(s). This effect can be triggered {5} time(s) every {4}s. When the number of stacks reaches {6}, all stacks will be reset within {7}s.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
         "stat": "GreenAtk",
@@ -845,7 +845,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When Resonance Liberation is released, grants {0} stack(s) of Iron Armor. Each stack increases ATK and DEF by {1}, stacking up to {2} time(s). When the Resonator takes damage, reduces the number of stacks by {3}.",
+        "passive": "When Resonance Liberation is cast, grants {0} stack(s) of Iron Armor. Each stack increases ATK and DEF by {1}, stacking up to {2} time(s). When the Resonator takes damage, reduces the number of stacks by {3}.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Cadence",
         "stat": "GreenAtk",
@@ -881,7 +881,7 @@ export default {
                 "15"
             ]
         ],
-        "passive": "When Intro Skill is released, increases the caster's ATK by {0} and HP by {1}, lasting for {2}s.",
+        "passive": "When Intro Skill is cast, increases the caster's ATK by {0} and HP by {1}, lasting for {2}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
         "stat": "GreenAtk",
@@ -931,7 +931,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When Resonance Skill is released, increases Basic Attack DMG and Heavy Attack DMG by {0}, stacking up to {1} time(s). This effect lasts for {2}s and can be triggered {4} time(s) every {3}s.",
+        "passive": "When Resonance Skill is cast, increases Basic Attack DMG Bonus and Heavy Attack DMG Bonus by {0}, stacking up to {1} time(s). This effect lasts for {2}s and can be triggered {4} time(s) every {3}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip",
         "stat": "GreenAtk",
@@ -1002,7 +1002,7 @@ export default {
                 "6"
             ]
         ],
-        "passive": "Equipped Resonator gains {0} stack(s) of Oath upon entering the battlefield. Each stack increases ATK by {1}, up to {2} stacks. This effect can be triggered {4} time(s) every {3}s.  Oath reduces by {6} stack(s) every {5}s. Equipped Resonator gains an additional {7} stack(s) of Oath upon defeating an enemy.",
+        "passive": "Equipped Resonator gains {0} stack(s) of Oath upon entering the battlefield. Each stack increases ATK by {1}, up to {2} stacks. This effect can be triggered {4} time(s) every {3}s. The equipped Resonator loses {6} stack(s) of Oath every {5}s, and gains {7} stack(s) upon defeating an enemy.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip",
         "stat": "GreenAtk",
@@ -1038,7 +1038,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When Resonance Skill is released, restores Concerto Energy by {0}. This effect can be triggered 1 time every {1}s.",
+        "passive": "When Resonance Skill is cast, restores {0} Concerto Energy. This effect can be triggered {2} times every {1}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Cadence",
         "stat": "EnergyEfficiency",
@@ -1131,7 +1131,7 @@ export default {
                 "10%"
             ]
         ],
-        "passive": "When the Resonator takes no damage, increases ATK by {1} every {0}s, stacking up to {2} time(s). This effect lasts for {3}s. When the Resonator takes damage, reduces the number of stacks by {4} and restores their HP by {5}.",
+        "passive": "When the Resonator takes no damage, increases ATK by {1} every {0}s, stacking up to {2} time(s). This effect lasts for {3}s. When the Resonator takes damage, loses {4} stacks and heals them by {5} of Max HP.",
         "enemyMat": "Ring",
         "forgeryMat": "Phlogiston",
         "stat": "GreenAtk",
@@ -1195,7 +1195,7 @@ export default {
                 "10"
             ]
         ],
-        "passive": "When Resonance Skill is released, if the Resonator's HP is below {0}, restores their HP by {1}. This effect can be triggered {3} time(s) every {2}s; if the Resonator's HP is above {4}, increases ATK by {5}, lasting for {6}s.",
+        "passive": "When Resonance Skill is cast, if the Resonator's HP is below {0}, heals them by {1} of their Max HP. This effect can be triggered {3} time(s) every {2}s; if the Resonator's HP is above {4}, increases ATK by {5}, lasting for {6}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
         "stat": "EnergyEfficiency",
@@ -1231,7 +1231,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When Resonance Skill is released, restores Concerto Energy by {0}. This effect can be triggered 1 time every {1}s.",
+        "passive": "When Resonance Skill is cast, restores {0} Concerto Energy. This effect can be triggered {2} times every {1}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip",
         "stat": "EnergyEfficiency",
@@ -1260,7 +1260,7 @@ export default {
                 "15"
             ]
         ],
-        "passive": "When Resonance Skill is released, increases the caster's Resonance Liberation DMG Bonus by {0}, lasting for {1}s.",
+        "passive": "When Resonance Skill is cast, increases the caster's Resonance Liberation DMG Bonus by {0}, lasting for {1}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Cadence",
         "stat": "Crit",
@@ -1310,7 +1310,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When Equipped Resonator's HP drops below {0}, increases Heavy Attack DMG by {1} and restores HP by {2} upon dealing Heavy Attack DMG. This effect can be triggered {4} time(s) every {3}s.",
+        "passive": "When the Resonator's HP drops below {0}, increases Heavy Attack DMG Bonus by {1} and heals them by {2} upon dealing Heavy Attack DMG. This effect can be triggered {4} time(s) every {3}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip",
         "stat": "GreenAtk",
@@ -1389,7 +1389,7 @@ export default {
                 "15"
             ]
         ],
-        "passive": "When Intro Skill is released, increases Resonance Skill DMG Bonus by {0} for {1}s.",
+        "passive": "When Intro Skill is cast, increases Resonance Skill DMG Bonus by {0} for {1}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Phlogiston",
         "stat": "GreenAtk",
@@ -1425,7 +1425,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When Resonance Skill is released, restores Concerto Energy by {0}. This effect can be triggered 1 time every {1}s.",
+        "passive": "When Resonance Skill is cast, restores {0} Concerto Energy. This effect can be triggered {2} times every {1}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
         "stat": "EnergyEfficiency",
@@ -1454,7 +1454,7 @@ export default {
                 "10"
             ]
         ],
-        "passive": "When Intro Skill is released, increases ATK by {0}, lasting for {1}s.",
+        "passive": "When Intro Skill is cast, increases ATK by {0}, lasting for {1}s.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
         "stat": "GreenAtk",
@@ -1490,7 +1490,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When Resonance Skill is released, restores Resonance Energy by {0}. This effect can be triggered {2} time(s) every {1}s.",
+        "passive": "When Resonance Skill is cast, restores {0} Resonance Energy. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
         "stat": "EnergyEfficiency",
@@ -1519,7 +1519,7 @@ export default {
                 "10"
             ]
         ],
-        "passive": "When Intro Skill is released, increases ATK by {0}, lasting for {1}s.",
+        "passive": "When Intro Skill is cast, increases ATK by {0}, lasting for {1}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Cadence",
         "stat": "GreenAtk",
@@ -1555,7 +1555,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When Resonance Skill is released, restores Resonance Energy by {0}. This effect can be triggered {2} time(s) every {1}s.",
+        "passive": "When Resonance Skill is cast, restores {0} Resonance Energy. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Cadence",
         "stat": "GreenDef",
@@ -1577,7 +1577,7 @@ export default {
                 "24%"
             ]
         ],
-        "passive": "Increases Basic Attack DMG and Heavy Attack DMG by {0}.",
+        "passive": "Increases Basic Attack DMG Bonus and Heavy Attack DMG Bonus by {0}.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
         "stat": "GreenAtk",
@@ -1621,7 +1621,7 @@ export default {
                 "24%"
             ]
         ],
-        "passive": "Increases Resonance Skill DMG Bonus by {0}.",
+        "passive": "Resonance Skill DMG Bonus is increased by {0}.",
         "enemyMat": "Ring",
         "forgeryMat": "Phlogiston",
         "stat": "GreenAtk",
@@ -1665,7 +1665,7 @@ export default {
                 "24%"
             ]
         ],
-        "passive": "Increases Resonance Skill DMG by {0}.",
+        "passive": "Resonance Skill DMG Bonus is increased by {0}.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip",
         "stat": "GreenLifeMax",
@@ -1701,7 +1701,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When Resonance Skill is released, restores HP by {0}. This effect can be triggered {2} time(s) every {1}s.",
+        "passive": "When Resonance Skill is cast, heals the Resonator by {0} of their Max HP. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
         "stat": "GreenDef",
@@ -1737,7 +1737,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When Resonance Liberation is released, restores HP by {0}. This effect can be triggered {2} time(s) every {1}s.",
+        "passive": "When Resonance Liberation is cast, heals the Resonator by {0} of their Max HP. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip",
         "stat": "GreenAtk",
@@ -1773,7 +1773,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When Counter Attack is released, restores HP by {0}. This effect can be triggered {2} time(s) every {1}s.",
+        "passive": "When Dodge Counter is cast, heals the Resonator by {0} of their Max HP. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Phlogiston",
         "stat": "GreenAtk",
@@ -1809,7 +1809,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When hitting a target with Basic Attacks, restores HP by {0}. This effect can be triggered {2} time(s) every {1}s.",
+        "passive": "When dealing Basic Attack DMG, heals the Resonator by {0} of their Max HP. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Cadence",
         "stat": "CritDamage",
@@ -1845,7 +1845,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When Intro Skill is released, restores HP by {0}. This effect can be triggered {2} time(s) every {1}s.",
+        "passive": "When Intro Skill is cast, heals the Resonator by {0} of Max HP. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
         "stat": "GreenLifeMax",
@@ -1874,7 +1874,7 @@ export default {
                 "10"
             ]
         ],
-        "passive": "When Intro Skill is released, increases ATK by {0}, lasting for {1}s.",
+        "passive": "When Intro Skill is cast, increases ATK by {0}, lasting for {1}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Phlogiston",
         "stat": "GreenAtk",
@@ -1910,7 +1910,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When Resonance Skill is released, restores Resonance Energy by {0}. This effect can be triggered {2} time(s) every {1}s.",
+        "passive": "When Resonance Skill is cast, restores {0} Resonance Energy. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Phlogiston",
         "stat": "GreenAtk",
@@ -1939,7 +1939,7 @@ export default {
                 "10"
             ]
         ],
-        "passive": "When Intro Skill is released, increases ATK by {0}, lasting for {1}s.",
+        "passive": "When Intro Skill is cast, increases ATK by {0}, lasting for {1}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
         "stat": "GreenAtk",
@@ -1975,7 +1975,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When Resonance Skill is released, restores Resonance Energy by {0}. This effect can be triggered {2} time(s) every {1}s.",
+        "passive": "When Resonance Skill is cast, restores {0} Resonance Energy. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
         "stat": "EnergyEfficiency",
@@ -2004,7 +2004,7 @@ export default {
                 "10"
             ]
         ],
-        "passive": "When Intro Skill is released, increases ATK by {0}, lasting for {1}s.",
+        "passive": "When Intro Skill is cast, increases ATK by {0}, lasting for {1}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip",
         "stat": "GreenAtk",
@@ -2040,7 +2040,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When Resonance Skill is released, restores Resonance Energy by {0}. This effect can be triggered {2} time(s) every {1}s.",
+        "passive": "When Resonance Skill is cast, restores {0} Resonance Energy. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip",
         "stat": "EnergyEfficiency",

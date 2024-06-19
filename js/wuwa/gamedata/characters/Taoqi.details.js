@@ -240,7 +240,7 @@ export default {
                         "30",
                         "30"
                     ],
-                    "name": "Heavy Attack Stamina Cost"
+                    "name": "Heavy Attack STA Cost"
                 },
                 {
                     "scaling": [
@@ -267,7 +267,7 @@ export default {
                 }
             ],
             "name": "Concealed Edge",
-            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnTaoqi performs up to 4 continuous attacks, dealing <color=Dark>Havoc DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnTaoqi consumes Stamina and enters <color=Highlight>Rocksteady Defense<\/color> state.rn<size=10> <\/size>rn<size=40><color=Title>Rocksteady Defense<\/color><\/size>rnTaoqi's damage taken is reduced by 35%;rn-When Taoqi is attacked during <color=Highlight>Rocksteady Defense<\/color>, she will cat <color=Highlight>Strategic Parry<\/color>;rn-<color=Highlight>Strategic Parry<\/color> is automatically cast after <color=Highlight>Rocksteady Defense<\/color> lasts for 3s;rn-If Taoqi is attacked when casting Resonance Skill <color=Highlight>Rocksteady Shield<\/color>, <color=Highlight>Strategic Parry<\/color> is automatically cast.rn<size=10> <\/size>rn<size=40><color=Title>Strategic Parry<\/color><\/size>rnTaoqi attacks the target, dealing <color=Dark>Havoc DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnTaoqi consumes Stamina to perform a Mid-Air Plunging Attack, dealing <color=Dark>Havoc DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>."
+            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>nTaoqi performs up to 4 continuous attacks, dealing <color=Dark>Havoc DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack<\/color><\/size>nTaoqi consumes STA to deal <color=Dark>Havoc DMG<\/color>.nIf Basic Attack button is held, Taoqi enters <color=Highlight>Rocksteady Defense<\/color> state.n<size=10> <\/size>n<size=40><color=Title>Rocksteady Defense<\/color><\/size>nTaoqi's DMG taken is reduced by 35%;n-When Taoqi is attacked during <color=Highlight>Rocksteady Defense<\/color>, she will cast <color=Highlight>Strategic Parry<\/color>;n-<color=Highlight>Strategic Parry<\/color> is automatically cast after <color=Highlight>Rocksteady Defense<\/color> lasts for 3s;nIf Taoqi is attacked when casting Resonance Skill <color=Highlight>Rocksteady Shield<\/color>, <color=Highlight>Strategic Parry<\/color> is automatically cast.n<size=10> <\/size>n<size=40><color=Title>Strategic Parry<\/color><\/size>nTaoqi attacks the target, dealing <color=Dark>Havoc DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mid-air Attack<\/color><\/size>nTaoqi consumes STA to perform a Mid-Air Plunging Attack, dealing <color=Dark>Havoc DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Dodge Counter<\/color><\/size>nUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>."
         },
         "Resonance Skill": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconTaoHuaB1_UI.T_IconTaoHuaB1_UI",
@@ -386,7 +386,7 @@ export default {
                 }
             ],
             "name": "Fortified Defense",
-            "desc": "Taoqi deals <color=Dark>Havoc DMG<\/color> to surrounding targets, generating 3 Rocksteady Shield and restoring HP to Taoqi.nIf attacked when casting <color=Highlight>Fortified Defense<\/color>, <color=Highlight>Strategic Parry<\/color> will be automatically cast.n<size=10> <\/size>n<size=40><color=Title>Rocksteady Shield<\/color><\/size>nWhen the active character is attacked, 1 <color=Highlight>Rocksteady Shield<\/color> is consumed to reduce the damage taken."
+            "desc": "Taoqi deals <color=Dark>Havoc DMG<\/color> to surrounding targets, generating 3 Rocksteady Shield and healing herself.nIf attacked when casting <color=Highlight>Fortified Defense<\/color>, <color=Highlight>Strategic Parry<\/color> will be automatically cast.n<size=10> <\/size>n<size=40><color=Title>Rocksteady Shield<\/color><\/size>nWhen the active character on the team is attacked, 1 <color=Highlight>Rocksteady Shield<\/color> is consumed to reduce the damage taken."
         },
         "Resonance Liberation": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconTaoHuaA1_UI.T_IconTaoHuaA1_UI",
@@ -488,19 +488,19 @@ export default {
                 }
             ],
             "name": "Unmovable",
-            "desc": "Launch an attack based on Taoqi's DEF on the target, dealing <color=Dark>Havoc DMG<\/color>."
+            "desc": "Launch an attack based on Taoqi's DEF to the target, dealing <color=Dark>Havoc DMG<\/color>."
         },
         "Forte Circuit Passive 1": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconTaoHuaD2_UI.T_IconTaoHuaD2_UI",
             "id": 1000904,
             "name": "Steadfast Protection",
-            "desc": "During the duration of the Resonance Skill <color=Highlight>Rocksteady Shield<\/color>, the Character's DEF is increased by 15%."
+            "desc": "While Resonance Skill <color=Highlight>Rocksteady Shield<\/color> lasts, the Character's DEF is increased by 15%."
         },
         "Forte Circuit Passive 2": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconTaoHuaD2_UI.T_IconTaoHuaD2_UI",
             "id": 1000905,
             "name": "Unyielding",
-            "desc": "After <color=Highlight>Heavy Attack: Strategic Parry<\/color> is successfully triggered, 25 Stamina is recovered."
+            "desc": "After Heavy Attack <color=Highlight>Strategic Parry<\/color> is successfully triggered, 25 Stamina is recovered."
         },
         "Intro Skill": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconTaoHuaQTE_UI.T_IconTaoHuaQTE_UI",
@@ -737,7 +737,7 @@ export default {
                 }
             ],
             "name": "Power Shift",
-            "desc": "<size=40><color=Title>Timed Counters<\/color><\/size>rnWhen carrying \"Resolving Caliber\", use <color=Highlight>Basic Attack<\/color> after <color=Highlight>Heavy Attack: Strategic Parry<\/color> or <color=Highlight>Intro Skill: Defense Formation<\/color> to cast <color=Highlight>Timed Counters<\/color>, performing up to 3 consecutive attacks, dealing <color=Dark>Havoc DMG<\/color>, considered as Basic Attack damage.rn<color=Highlight>Timed Counters<\/color> consume 1 \"Resolving Caliber\" upon hitting an enemy to grant a shield.rnAfter casting the Intro Skill <color=Highlight>Defense Formation<\/color>, using <color=Highlight>Basic Attack<\/color> can directly cast <color=Highlight>Timed Counters<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Resolving Caliber<\/color><\/size>rnTaoqi can hold up to 3 Resolving Caliber.rn<color=Highlight>Basic Attack 4<\/color> will consume all of Taoqi's <color=Highlight>Rocksteady Shields<\/color> to obtain that many \"Resolving Caliber\".rnWhile <color=Highlight>Rocksteady Shield<\/color> exists, when the on-field character is attacked, 1 <color=Highlight>Rocksteady Shield<\/color> will be consumed, and \"Resolving Caliber\" is recovered.rnAfter <color=Highlight>Rocksteady Shield<\/color> ends, all remaining <color=Highlight>Rocksteady Shield<\/color> will be consumed to grant that many \"Resolving Caliber\"."
+            "desc": "<size=40><color=Title>Timed Counters<\/color><\/size>nWhen carrying \"Resolving Caliber\", use <color=Highlight>Basic Attack<\/color> after Heavy Attack <color=Highlight>Strategic Parry<\/color> or Intro Skill <color=Highlight>Defense Formation<\/color> to cast <color=Highlight>Timed Counters<\/color>, performing up to 3 consecutive attacks, dealing <color=Dark>Havoc DMG<\/color>, considered as Basic Attack damage.n<color=Highlight>Timed Counters<\/color> consume 1 \"Resolving Caliber\" upon hitting an enemy to grant a shield.nAfter casting the Intro Skill <color=Highlight>Defense Formation<\/color>, use <color=Highlight>Basic Attack<\/color> to directly cast <color=Highlight>Timed Counters<\/color>.n<size=10> <\/size>n<size=40><color=Title>Resolving Caliber<\/color><\/size>nTaoqi can hold up to 3 Resolving Caliber.n<color=Highlight>Basic Attack 4<\/color> will consume all of Taoqi's \"Rocksteady Shields\" to grant that many \"Resolving Caliber\".nWhile <color=Highlight>Rocksteady Shield<\/color> exists, when the active character is attacked, 1 \"Rocksteady Shield\" will be consumed to recover \"Resolving Caliber\".nAfter <color=Highlight>Rocksteady Shield<\/color> ends, all remaining \"Rocksteady Shield\" will be consumed to grant that many \"Resolving Caliber\"."
         },
         "Utility Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
@@ -749,7 +749,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconTaoHuaQTE_UI.T_IconTaoHuaQTE_UI",
             "id": 1000909,
             "name": "Iron Will",
-            "desc": "The next character (or other characters on a nearby team that activates an Outro Skill) gains 38% Resonance Skill DMG Deepen for 14s or until they are switched off field."
+            "desc": "The incoming character (or a character on a nearby team that activates an Outro Skill) has their Resonance Skill DMG Amplified by 38% for 14s or until they are switched off field."
         },
         "Basic Attack Bonus 1": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyreddark_UI.T_Iconpropertyreddark_UI",

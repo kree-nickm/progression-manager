@@ -22,10 +22,10 @@ export default class WuWaManager extends DataManager
     this.registerList(WeaponList);
     this.registerList(EchoList);
     
-    this.registerNavItem("Characters", "characters", {list:"CharacterList", isDefault:true});
-    this.registerNavItem("Weapons", "weapons", {list:"WeaponList"});
-    this.registerNavItem("Echoes", "echoes", {list:"EchoList"});
-    this.registerNavItem("Materials", "materials", {list:"MaterialList"});
+    this.registerNavItem("Characters", "characters", {listName:"CharacterList", isDefault:true});
+    this.registerNavItem("Weapons", "weapons", {listName:"WeaponList"});
+    this.registerNavItem("Echoes", "echoes", {listName:"EchoList"});
+    this.registerNavItem("Materials", "materials", {listName:"MaterialList"});
   }
   
   postLoad(data, options)

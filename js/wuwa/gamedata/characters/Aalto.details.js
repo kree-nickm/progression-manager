@@ -256,7 +256,7 @@ export default {
                 }
             ],
             "name": "Half Truths",
-            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>nAalto fires up to 5 consecutive shots, dealing <color=Wind>Aero DMG<\/color>. Basic Attack 4 will spread the \"Mist\" forward, which lasts for 1.5s.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack<\/color><\/size>nAalto enters the aiming state for a more powerful shot.nThe aimed shot fired after charging finishes deals <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mid-air Attack<\/color><\/size>nAalto consumes Stamina to perform consecutive shots at the target in mid-air, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Dodge Counter<\/color><\/size>nUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Wind>Aero DMG<\/color>."
+            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>nAalto fires up to 5 consecutive shots, dealing <color=Wind>Aero DMG<\/color>. Basic Attack 4 will spread the \"Mist\" forward, which lasts for 1.5s.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack<\/color><\/size>nAalto enters the aiming state for a more powerful shot.nThe aimed shot fired after charging finishes deals <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mid-air Attack<\/color><\/size>nAalto consumes STA to perform consecutive shots at the target in mid-air, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Dodge Counter<\/color><\/size>nUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Wind>Aero DMG<\/color>."
         },
         "Resonance Skill": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconQiushuiB1_UI.T_IconQiushuiB1_UI",
@@ -285,7 +285,7 @@ export default {
                         "103.93%",
                         "108.85%"
                     ],
-                    "name": "Mist Missile Damage"
+                    "name": "Mist Bullet Damage"
                 },
                 {
                     "scaling": [
@@ -389,7 +389,7 @@ export default {
                 }
             ],
             "name": "Shift Trick",
-            "desc": "<size=40><color=Title>Mist Avatar<\/color><\/size>rnCasts \"Mist\" and 1 \"Mist Avatar(s)\" to taunt the surrounding targets. The avatars inherit a portion of Aalto's HP and generate 6 <color=Highlight>Mist Bullets<\/color> around them, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mist Missiles<\/color><\/size>rnDeals <color=Wind>Aero DMG<\/color>, considered as Resonance Skill damage."
+            "desc": "<size=40><color=Title>Mist Avatar<\/color><\/size>nCasts \"Mist\" and 1 \"Mist Avatar(s)\" to taunt the surrounding targets. The avatars inherit a portion of Aalto's HP and generate 6 <color=Highlight>Mist Missiles<\/color> around them, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mist Missiles<\/color><\/size>nDeals <color=Wind>Aero DMG<\/color>, considered as Resonance Skill damage."
         },
         "Resonance Liberation": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconQiushuiA1_UI.T_IconQiushuiA1_UI",
@@ -522,7 +522,7 @@ export default {
                 }
             ],
             "name": "Flower in the Mist",
-            "desc": "Generate a \"Gate of Quandary\" in front, dealing <color=Wind>Aero DMG<\/color>. When bullets pass through the \"Gate of Quandary\", ATK is increased. \"Gate of Quandary\" lasts for 10s."
+            "desc": "Generate a \"Gate of Quandary\" in front, dealing <color=Wind>Aero DMG<\/color>. When bullets pass through the \"Gate of Quandary\", they deal increased DMG. \"Gate of Quandary\" lasts for 10s."
         },
         "Forte Circuit Passive 1": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconQiushuiQTE_UI.T_IconQiushuiQTE_UI",
@@ -592,7 +592,7 @@ export default {
                 }
             ],
             "name": "Feint Shot",
-            "desc": "Aalto shows up out of thin air to performs rapid continuous shooting, dealing <color=Wind>Aero damage<\/color>."
+            "desc": "Aalto shows up out of thin air to perform rapid continuous shooting, dealing <color=Wind>Aero damage<\/color>."
         },
         "Forte Circuit": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconQiushuiD1_UI.T_IconQiushuiD1_UI",
@@ -650,7 +650,7 @@ export default {
                 }
             ],
             "name": "Misty Cover",
-            "desc": "When Aalto passes through \"Mist\" or \"Gate of Quandary\", he enters \"Mistcloak Dash\".rn<size=10> <\/size>rn<size=40><color=Title>Mistcloak Dash<\/color><\/size>rnMovement speed increased;rnDuring this period, \"Mist Drops\" are continuously consumed, and for each 1 \"Mist Drop\" consumed, 1 Resonance Skill <color=Highlight>Mist Missile<\/color> is generated.rn<size=10> <\/size>rn<size=40><color=Title>Mist Drops<\/color><\/size>rnAalto can hold up to 6 Mist Drops.rnWhen <color=Highlight>Basic Attack<\/color> or <color=Highlight>Mid-air Attack<\/color> passes through \"Mist\" and hits the target, 1 \"Mist Drop\" is recovered."
+            "desc": "When Aalto passes through \"Mist\" or \"Gate of Quandary\", he enters the <color=Highlight>Mistcloak Dash<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mistcloak Dash<\/color><\/size>n-Movement speed increased;n-During this period, \"Mist Drops\" are continuously consumed, and for each 1 \"Mist Drop\" consumed, 1 Resonance Skill <color=Highlight>Mist Missile<\/color> is generated.n<size=10> <\/size>n<size=40><color=Title>Mist Drops<\/color><\/size>nAalto can hold up to 6 \"Mist Drops\".nWhen <color=Highlight>Basic Attack<\/color> or <color=Highlight>Mid-air Attack<\/color> passes through \"Mist\" and hits the target, 1 \"Mist Drop\" is recovered."
         },
         "Utility Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconQiushuiQTE_UI.T_IconQiushuiQTE_UI",
@@ -662,7 +662,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconQiushuiQTE_UI.T_IconQiushuiQTE_UI",
             "id": 1001009,
             "name": "Dissolving Mist",
-            "desc": "The next character (or other characters on a nearby team that activates an Outro Skill) gains 23% Aero DMG Deepen for 14s or until they are switched off field."
+            "desc": "The incoming character (or a character on a nearby team that activates an Outro Skill) has their Aero DMG Amplified by 23% for 14s or until they are switched off field."
         },
         "Basic Attack Bonus 1": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredwind_UI.T_Iconpropertyredwind_UI",
@@ -728,7 +728,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_QiushuiM3_UI.T_IconDevice_QiushuiM3_UI",
             "name": "Hazey Transition",
-            "desc": "When Aalto's <color=Highlight>Basic Attack<\/color> or <color=Highlight>Mid-Air Attack<\/color> passes through the \"Gate of Quandary\", 2 more bullets will be generated, dealing 50% of the DMG of <color=Highlight>Basic Attack<\/color> or <color=Highlight>Mid-Air Attack<\/color>."
+            "desc": "When Aalto's <color=Highlight>Basic Attack<\/color> or <color=Highlight>Mid-Air Attack<\/color> passes through the Mist, 2 more bullets will be generated, dealing 50% of the DMG of <color=Highlight>Basic Attack<\/color> or <color=Highlight>Mid-Air Attack<\/color>."
         },
         "4": {
             "buffs": [

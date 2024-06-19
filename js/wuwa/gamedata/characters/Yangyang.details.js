@@ -219,7 +219,7 @@ export default {
                         "25",
                         "25"
                     ],
-                    "name": "Heavy Attack Stamina Consumption"
+                    "name": "Heavy Attack STA Cost"
                 },
                 {
                     "scaling": [
@@ -248,7 +248,7 @@ export default {
                 }
             ],
             "name": "Feather as Blade",
-            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnYangayang performs up to 4 consecutive attacks, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnYangyang consumes Stamina to lunge forward, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack: Zephyr Song<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after <color=Highlight>Heavy Attack<\/color> or <color=Highlight>Dodge Counter<\/color> to perform Heavy Attack <color=Highlight>Zephyr Song<\/color>, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnYangyang consumes Stamina to perform a Plunging Attack from mid-air, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to thrust forward, dealing <color=Wind>Aero DMG<\/color>."
+            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>nYangayang performs up to 4 consecutive attacks, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack<\/color><\/size>nYangyang consumes STA to lunge forward, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack: Zephyr Song<\/color><\/size>nUse <color=Highlight>Basic Attack<\/color> after <color=Highlight>Heavy Attack<\/color> or <color=Highlight>Dodge Counter<\/color> to perform Heavy Attack <color=Highlight>Zephyr Song<\/color>, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mid-air Attack<\/color><\/size>nYangyang consumes STA to perform a Plunging Attack from mid-air, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Dodge Counter<\/color><\/size>nUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to thrust forward, dealing <color=Wind>Aero DMG<\/color>."
         },
         "Resonance Skill": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangB1_UI.T_IconYangyangB1_UI",
@@ -443,7 +443,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangD2_UI.T_IconYangyangD2_UI",
             "id": 1000104,
             "name": "Compassion",
-            "desc": "Yangyang recovers 30 Stamina after she casts a Mid-air Attack <color=Highlight>Feather Release<\/color>."
+            "desc": "Yangyang recovers 30 STA after she casts a Mid-air Attack <color=Highlight>Feather Release<\/color>."
         },
         "Forte Circuit Passive 2": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangD2_UI.T_IconYangyangD2_UI",
@@ -563,7 +563,7 @@ export default {
                 }
             ],
             "name": "Echoing Feathers",
-            "desc": "<size=40><color=Title>Heavy Attack: Stormy Strike<\/color><\/size>rnWhen Yangyang has 3 Melodies, she can cast <color=Highlight>Stormy Strike<\/color> after <color=Highlight>Heavy Attack<\/color>, dealing <color=Wind>Aero DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack: Feather Release<\/color><\/size>rnWhen Yangyang has 3 Melodies, casting <color=Highlight>Basic Attacks<\/color> in mid-air will cause her to consume all Melodies, perform consecutive strikes, and dive from mid-air, dealing <color=Wind>Aero DMG<\/color>. As Yangyang lands, she sheathes her sword with an attack, dealing <color=Wind>Aero DMG<\/color>. This attack is considered as Basic Attack.rn<size=10> <\/size>rn<size=40><color=Title>Melody<\/color><\/size>rnYangyang can hold up to 3 MelodiesrnYangyang obtains 1 Melody with every <color=Highlight>Basic Attack 4<\/color> on hit.rnYangyang obtains 1 Melody for every <color=Highlight>Zephyr Song<\/color> on hit.rnYangyang obtains 1 Melody for every Resonance Skill <color=Highlight>Zephyr Domain<\/color> on hit.rnYangyang obtains 1 Melody upon casting Intro Skill <color=Highlight>Cerulean Song<\/color>."
+            "desc": "<size=40><color=Title>Heavy Attack: Stormy Strike<\/color><\/size>nWhen Yangyang has 3 Melodies, she can cast <color=Highlight>Stormy Strike<\/color> after <color=Highlight>Heavy Attack<\/color> or <color=Highlight>Dodge Counter<\/color>, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mid-air Attack: Feather Release<\/color><\/size>nWhen Yangyang has 3 Melodies, cast <color=Highlight>Basic Attack<\/color> in mid-air to consume all Melodies and perform consecutive strikes, diving from mid-air, dealing <color=Wind>Aero DMG<\/color>. As Yangyang lands, she sheathes her sword with an attack, dealing <color=Wind>Aero DMG<\/color>, considered as Basic Attack DMG.n<size=10> <\/size>n<size=40><color=Title>Melody<\/color><\/size>nYangyang can hold up to 3 MelodiesnYangyang obtains 1 Melody with every <color=Highlight>Basic Attack 4<\/color> on hit.nYangyang obtains 1 Melody for every Heavy Attack <color=Highlight>Zephyr Song<\/color> on hit.nYangyang obtains 1 Melody for every Resonance Skill <color=Highlight>Zephyr Domain<\/color> on hit.nYangyang obtains 1 Melody upon casting Intro Skill <color=Highlight>Cerulean Song<\/color>."
         },
         "Utility Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangD2_UI.T_IconYangyangD2_UI",
@@ -575,7 +575,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
             "id": 1000109,
             "name": "Whispering Breeze",
-            "desc": "Yangyang recovers 4 Resonance Energy per second over 5s for the next character (or other characters on a nearby team that activates an Outro Skill)."
+            "desc": "Yangyang recovers 4 Resonance Energy per second over 5s for the incoming character (or a character on a nearby team that activates an Outro Skill)."
         },
         "Resonance Liberation Bonus 1": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",

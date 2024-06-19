@@ -225,7 +225,7 @@ export default {
                         "25",
                         "25"
                     ],
-                    "name": "Heavy Attack Stamina Cost"
+                    "name": "Heavy Attack STA Cost"
                 },
                 {
                     "scaling": [
@@ -252,7 +252,7 @@ export default {
                 }
             ],
             "name": "Frigid Light",
-            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>rnSanhua performs up to 5 consecutive attacks, dealing <color=Ice>Glacio DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Heavy Attack<\/color><\/size>rnSanhua consumes Stamina to launch attacks, dealing <color=Ice>Glacio DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Mid-air Attack<\/color><\/size>rnSanhua consumes Stamina to perform a Mid-Air Plunging Attack, dealing <color=Ice>Glacio DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Dodge Counter<\/color><\/size>rnUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Ice>Glacio DMG<\/color>."
+            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>nSanhua performs up to 5 consecutive attacks, dealing <color=Ice>Glacio DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack<\/color><\/size>nSanhua consumes STA to launch attacks, dealing <color=Ice>Glacio DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mid-air Attack<\/color><\/size>nSanhua consumes STA to perform a Mid-Air Plunging Attack, dealing <color=Ice>Glacio DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Dodge Counter<\/color><\/size>nUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Ice>Glacio DMG<\/color>."
         },
         "Resonance Skill": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconSanhuaB1_UI.T_IconSanhuaB1_UI",
@@ -331,7 +331,7 @@ export default {
                 }
             ],
             "name": "Eternal Frost",
-            "desc": "Sanhua sends an air blade to create 1 \"Ice Prism\" cross the ground, dealing <color=Ice>Glacio DMG<\/color>."
+            "desc": "Sanhua sends an air blade to create 1 \"Ice Prism\" on the ground, dealing <color=Ice>Glacio DMG<\/color>."
         },
         "Resonance Liberation": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconSanhuaA1_UI.T_IconSanhuaA1_UI",
@@ -743,7 +743,7 @@ export default {
                         "15",
                         "15"
                     ],
-                    "name": "Glacier Burst Con. Damage Regen"
+                    "name": "Glacier Burst Con. Energy Regen"
                 },
                 {
                     "scaling": [
@@ -766,7 +766,7 @@ export default {
                         "15",
                         "15"
                     ],
-                    "name": "Ice Prism Burst Con. Damage Regen"
+                    "name": "Ice Prism Burst Con. Energy Regen"
                 }
             ],
             "name": "Clarity of Mind",
@@ -782,7 +782,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconSanhuaQTE_UI.T_IconSanhuaQTE_UI",
             "id": 1000509,
             "name": "Silversnow",
-            "desc": "The next character (or other characters on a nearby team that activates an Outro Skill) gains 38% Basic Attack DMG Deepen for 14s or until they are switched off field."
+            "desc": "The incoming character (or a character on a nearby team that activates an Outro Skill) has their Basic Attack DMG Amplified by 38% for 14s or until they are switched off field."
         },
         "Basic Attack Bonus 1": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredice_UI.T_Iconpropertyredice_UI",

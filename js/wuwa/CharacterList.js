@@ -134,18 +134,19 @@ export default class CharacterList extends WuWaList
       'Intro Skill': {c:"I",w:"Intro"},
     };
     this.display.addField("forte", {
-      label: (item, forte) => forteLabels[forte].c,
-      labelTitle: (item, forte) => forte,
+      label: (item, forte, alt) => forteLabels[forte].c,
+      labelTitle: (item, forte, alt) => forte+(alt=="circuit"?" Passive":alt=="bonus"?" Bonus":""),
       dynamic: true,
-      title: (item, forte) => `Click to change ${forte}.`,
-      value: (item, forte) => item.forte[forte],
-      edit: (item, forte) => ({target: {item:item, field:`forte.${forte}`}}),
-      dependencies: (item, forte) => [
+      title: (item, forte, alt) => `Click to change ${forte+(alt=="circuit"?" Passive":alt=="bonus"?" Bonus":"")}.`,
+      value: (item, forte, alt) => item.forte[forte+(alt=="circuit"?" Passive":alt=="bonus"?" Bonus":"")],
+      edit: (item, forte, alt) => ({target: {item:item, field:`forte.${forte+(alt=="circuit"?" Passive":alt=="bonus"?" Bonus":"")}`}}),
+      dependencies: (item, forte, alt) => [
         {item:item, field:`forte.${forte}`},
+        alt ? {item:item, field:`forte.${forte+(alt=="circuit"?" Passive":alt=="bonus"?" Bonus":"")}`} : undefined,
         {item:item.viewer.lists.MaterialList.get("Shell Credit"), field:"count"},
-        {item:item.getForteMat("enemy",forte), field:"count"},
-        {item:item.getForteMat("forgery",forte), field:"count"},
-        {item:item.getForteMat("weekly",forte), field:"count"},
+        {item:item.getForteMat("enemy",forte,alt), field:"count"},
+        {item:item.getForteMat("forgery",forte,alt), field:"count"},
+        {item:item.getForteMat("weekly",forte,alt), field:"count"},
       ],
     });
     
@@ -191,32 +192,42 @@ export default class CharacterList extends WuWaList
     let forteMatGroup = {label:"Forte Materials", startCollapsed:false};
     this.display.addField("forteMaterial", {
       group: forteMatGroup,
-      label: (item, type, forte) => (forteLabels[forte]?.w??forte) + " " + type.at(0).toUpperCase()+type.substr(1).toLowerCase(),
-      columnClasses: (item, type, forte) => forteLabels[forte] ? ["forte-materials", `${type}-${forteLabels[forte]?.c}-materials`] : [],
+      label: (item, type, forte, alt) => (forteLabels[forte]?.w??forte) + " " + type.capitalize(),
+      columnClasses: (item, type, forte, alt) => forteLabels[forte] ? ["forte-materials", `${type}-${forteLabels[forte]?.c}-materials`] : [],
       dynamic: true,
-      value: (item, type, forte) => type == "label" ? `${forte} ➤ ${parseInt(forte)+1}` : (item.getForteMat(type,forte) && item.getForteMatCost(type,forte) ? item.getForteMat(type,forte).getFieldValue(item.getForteMatCost(type,forte)) : ""),
-      dependencies: (item, type, forte) => [
+      value: (item, type, forte, alt) => type == "label" ? `${forte} ➤ ${parseInt(forte)+1}` : (item.getForteMat(type,forte,alt) && item.getForteMatCost(type,forte,alt) ? item.getForteMat(type,forte,alt).getFieldValue(item.getForteMatCost(type,forte,alt)) : ""),
+      dependencies: (item, type, forte, alt) => [
         {item:item, field:`forte.${forte}`},
+        alt ? {item:item, field:`forte.${forte+(alt=="circuit"?" Passive":alt=="bonus"?" Bonus":"")}`} : undefined,
         {item:item.viewer.lists.MaterialList.get("Shell Credit"), field:"count"},
       ].concat(type == "label" ?
         [
-          {item:item.getForteMat('enemy',forte), field:"count"},
-          {item:item.getForteMat('forgery',forte), field:"count"},
-          {item:item.getForteMat('weekly',forte), field:"count"},
-        ] : (item.getForteMat(type,forte)?.getCraftDependencies() ?? [])
+          {item:item.getForteMat('enemy',forte,alt), field:"count"},
+          {item:item.getForteMat('forgery',forte,alt), field:"count"},
+          {item:item.getForteMat('weekly',forte,alt), field:"count"},
+        ] : (item.getForteMat(type,forte,alt)?.getCraftDependencies() ?? [])
       ),
-      button: (item, type, forte) => Object.keys(forteLabels).map(f => 
+      button: (item, type, forte, alt) => Object.keys(forteLabels).map(f => 
       {
-        if(type == "label" && forte == item.forte[f])
+        let forteKey = f;
+        if(alt)
         {
-          if(item.canUpForte(f, false))
+          if(alt == "bonus" && f == "Forte Circuit")
+            return undefined;
+          if(alt == "circuit" && f != "Forte Circuit")
+            return undefined;
+          forteKey = f+(alt=="circuit"?" Passive":alt=="bonus"?" Bonus":"");
+        }
+        if(type == "label" && forte == item.forte[forteKey])
+        {
+          if(item.canUpForte(f, false, alt))
           {
             return {
               title: `Upgrade ${f} level. This will spend the resources for you.`,
               icon: "fa-solid fa-circle-up",
               name: forteLabels[f].w,
               text: forteLabels[f].w,
-              action: item.upForte.bind(item, f),
+              action: item.upForte.bind(item, f, alt),
             };
           }
           else

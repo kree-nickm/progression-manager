@@ -3,7 +3,7 @@
   --column-alt-background: rgba(127,127,127,0.3);
 }
 
-.list td {
+.list td, .list th {
   white-space: nowrap;
 }
 
