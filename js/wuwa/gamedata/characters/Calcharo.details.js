@@ -152,7 +152,7 @@ export default {
                         "214.78%",
                         "224.95%"
                     ],
-                    "name": "Mid-Air Attack Damage"
+                    "name": "Mid-air Attack Damage"
                 },
                 {
                     "scaling": [
@@ -223,7 +223,7 @@ export default {
                         "30",
                         "30"
                     ],
-                    "name": "Mid-Air Attack Stamina Consumption"
+                    "name": "Mid-air Attack STA Cost"
                 }
             ],
             "name": "Gnawing Fangs",
@@ -1016,7 +1016,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_KakaluoM5_UI.T_IconDevice_KakaluoM5_UI",
             "name": "Unconventional Compact",
-            "desc": "Intro Skill <color=Highlight>Wanted Criminal<\/color> and Intro Skill <color=Highlight>\"Necessary Means:<\/color> deal 50% more damage."
+            "desc": "Intro Skill <color=Highlight>Wanted Criminal<\/color> and Intro Skill <color=Highlight>\"Necessary Means\"<\/color> deal 50% more damage."
         },
         "6": {
             "buffs": [

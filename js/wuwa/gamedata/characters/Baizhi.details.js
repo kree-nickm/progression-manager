@@ -227,7 +227,7 @@ export default {
                         "30",
                         "30"
                     ],
-                    "name": "Mid-Air Attack Stamina Cost"
+                    "name": "Mid-air Attack STA Cost"
                 }
             ],
             "name": "Destined Promise",
@@ -493,7 +493,7 @@ export default {
                 }
             ],
             "name": "Momentary Union",
-            "desc": "Baizhi summons You'tan to heal all characters on nearby teams, generating 4 stacks of <color=Highlight>Remnant Entities<\/color>.n<size=10> <\/size>n<size=40><color=Title>Remnant Entities<\/color><\/size>nRemnant Entities follow the active team members. 1 stacks of <color=Highlight>Remnant Entities<\/color> are automatically consumed to attack the targets every 2.5s, dealing <color=Ice>Glacio DMG<\/color> on hit while healing the active character on a nearby team."
+            "desc": "Baizhi summons You'tan to heal all characters on nearby teams, generating 4 stacks of <color=Highlight>Remnant Entities<\/color>.n<size=10> <\/size>n<size=40><color=Title>Remnant Entities<\/color><\/size>nRemnant Entities follow the active team members. 1 stack(s) of <color=Highlight>Remnant Entities<\/color> are automatically consumed to perform Coordinated Attacks every 2.5s, dealing <color=Ice>Glacio DMG<\/color> on hit while healing all characters of the team when the active character is within the range."
         },
         "Forte Circuit Passive 1": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconBailianD1_UI.T_IconBailianD1_UI",
@@ -702,7 +702,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconBailianQTE_UI.T_IconBailianQTE_UI",
             "id": 1000409,
             "name": "Rejuvinating Flow",
-            "desc": "Baizhi heals the incoming character (or a character on a nearby team that activates an Outro Skill) by 1.54% of her Max HP every 3s for 30s. The healed character(s) also have their All-Type DMG Amplified by 15% for 6s."
+            "desc": "Heal the incoming Resonator by 1.54% of Baizhi's max HP every 3s for 30s. The healed Resonator has their DMG Amplified by 15% for 6s."
         },
         "Basic Attack Bonus 1": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertygreencure_UI.T_Iconpropertygreencure_UI",
@@ -776,7 +776,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_BailianM4_UI.T_IconDevice_BailianM4_UI",
             "name": "Eternal Verity",
-            "desc": "Upon casting Resonance Liberation <color=Highlight>Momentary Union<\/color>, Resonance Liberation <color=Highlight>Remnant Entities<\/color> gains the following enhancements:rn-<color=Highlight>Remnant Entities<\/color> can be performed 2 more time(s);rn-Healing multiplier of <color=Highlight>Remnant Entities<\/color> is increased by 20%;rn-<color=Highlight>Remnant Entities<\/color> deals additional Glacio DMG equal to 1.20% of Baizhi's Max HP."
+            "desc": "Upon casting Resonance Liberation <color=Highlight>Momentary Union<\/color>, Resonance Liberation <color=Highlight>Remnant Entities<\/color> gains the following enhancements:nn-<color=Highlight>Remnant Entities<\/color> can be performed 2 more time(s);nn-Healing multiplier of <color=Highlight>Remnant Entities<\/color> is increased by 20%;nn-<color=Highlight>Remnant Entities<\/color> deals additional <color=Ice>Glacio DMG<\/color> equal to 1.20% of Baizhi's Max HP."
         },
         "5": {
             "buffs": [

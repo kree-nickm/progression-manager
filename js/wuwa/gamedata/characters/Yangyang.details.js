@@ -24,7 +24,8 @@ export default {
                         "66.87%",
                         "70.56%",
                         "74.25%",
-                        "77.94%"
+                        "77.94%",
+                        "81.63%"
                     ],
                     "name": "Part 1 Damage"
                 },
@@ -48,7 +49,8 @@ export default {
                         "89.16%",
                         "94.08%",
                         "99.00%",
-                        "103.92%"
+                        "103.92%",
+                        "108.84%"
                     ],
                     "name": "Part 2 Damage"
                 },
@@ -72,31 +74,33 @@ export default {
                         "69.99%*2",
                         "73.85%*2",
                         "77.71%*2",
-                        "81.57%*2"
+                        "81.57%*2",
+                        "85.44%*2"
                     ],
                     "name": "Part 3 Damage"
                 },
                 {
                     "scaling": [
                         "29.86%*2+39.81%",
-                        "32.31%*2+43.08%",
-                        "34.76%*2+46.34%",
-                        "38.19%*2+50.91%",
-                        "40.64%*2+54.18%",
-                        "43.45%*2+57.93%",
-                        "47.37%*2+63.16%",
-                        "51.29%*2+68.38%",
-                        "55.20%*2+73.60%",
-                        "59.36%*2+79.15%",
-                        "64.26%*2+85.68%",
-                        "69.16%*2+92.21%",
-                        "74.05%*2+98.74%",
-                        "78.95%*2+105.27%",
-                        "83.85%*2+111.80%",
-                        "88.74%*2+118.32%",
-                        "93.64%*2+124.85%",
-                        "98.54%*2+131.38%",
-                        "103.43%*2+137.91%"
+                        "32.31%*2+43.07%",
+                        "34.76%*2+46.33%",
+                        "38.19%*2+50.90%",
+                        "40.64%*2+54.17%",
+                        "43.45%*2+57.92%",
+                        "47.37%*2+63.15%",
+                        "51.29%*2+68.37%",
+                        "55.20%*2+73.59%",
+                        "59.36%*2+79.14%",
+                        "64.26%*2+85.67%",
+                        "69.16%*2+92.20%",
+                        "74.05%*2+98.73%",
+                        "78.95%*2+105.26%",
+                        "83.85%*2+111.79%",
+                        "88.74%*2+118.31%",
+                        "93.64%*2+124.84%",
+                        "98.54%*2+131.37%",
+                        "103.43%*2+137.90%",
+                        "108.33%*2+144.43%"
                     ],
                     "name": "Part 4 Damage"
                 },
@@ -120,7 +124,8 @@ export default {
                         "29.72%*3",
                         "31.36%*3",
                         "33.00%*3",
-                        "34.64%*3"
+                        "34.64%*3",
+                        "36.28%*3"
                     ],
                     "name": "Heavy Attack Damage"
                 },
@@ -144,9 +149,10 @@ export default {
                         "138.20%",
                         "145.82%",
                         "153.45%",
-                        "161.08%"
+                        "161.08%",
+                        "168.70%"
                     ],
-                    "name": "Mid-Air Attack Damage"
+                    "name": "Mid-air Attack Damage"
                 },
                 {
                     "scaling": [
@@ -168,7 +174,8 @@ export default {
                         "159.37%",
                         "168.17%",
                         "176.96%",
-                        "185.76%"
+                        "185.76%",
+                        "194.53%"
                     ],
                     "name": "Zephyr Song Damage"
                 },
@@ -192,7 +199,8 @@ export default {
                         "130.17%*2",
                         "137.36%*2",
                         "144.54%*2",
-                        "151.72%*2"
+                        "151.72%*2",
+                        "158.91%*2"
                     ],
                     "name": "Dodge Counter Damage"
                 },
@@ -244,7 +252,7 @@ export default {
                         "30",
                         "30"
                     ],
-                    "name": "Mid-Air Attack Stamina Consumption"
+                    "name": "Mid-air Attack STA Cost"
                 }
             ],
             "name": "Feather as Blade",
@@ -356,7 +364,8 @@ export default {
                         "69.64%*12+557.16%",
                         "73.48%*12+587.91%",
                         "77.33%*12+618.65%",
-                        "81.17%*12+649.40%"
+                        "81.17%*12+649.40%",
+                        "85.00%*12+680.12%"
                     ],
                     "name": "Skill Damage"
                 },
@@ -508,7 +517,8 @@ export default {
                         "56.84%*2",
                         "59.97%*2",
                         "63.11%*2",
-                        "66.25%*2"
+                        "66.25%*2",
+                        "69.36%*2"
                     ],
                     "name": "Stormy Strike Damage"
                 },
@@ -532,7 +542,8 @@ export default {
                         "32.49%*5+189.58%*2",
                         "34.29%*5+200.04%*2",
                         "36.08%*5+210.50%*2",
-                        "37.87%*5+220.96%*2"
+                        "37.87%*5+220.96%*2",
+                        "39.65%*5+231.40%*2"
                     ],
                     "name": "Feather Release Damage"
                 },
@@ -575,7 +586,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
             "id": 1000109,
             "name": "Whispering Breeze",
-            "desc": "Yangyang recovers 4 Resonance Energy per second over 5s for the incoming character (or a character on a nearby team that activates an Outro Skill)."
+            "desc": "Restore 4 Resonance Energy per second for 5s for the incoming Resonator."
         },
         "Resonance Liberation Bonus 1": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
@@ -649,7 +660,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_YangyangM4_UI.T_IconDevice_YangyangM4_UI",
             "name": "Close Your Eyes and Listen in",
-            "desc": "Mid-Air Attack <color=Highlight>Feather Release<\/color>'s damage is increased by 95%."
+            "desc": "Mid-air Attack <color=Highlight>Feather Release<\/color>'s damage is increased by 95%."
         },
         "5": {
             "buffs": [
@@ -665,7 +676,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_YangyangM6_UI.T_IconDevice_YangyangM6_UI",
             "name": "A Tribute to Life's Sweet Hymn",
-            "desc": "After casting Mid-Air Attack <color=Highlight>Feather Release<\/color>, the ATK of all team members is increased by 20% for 20s."
+            "desc": "After casting Mid-air Attack <color=Highlight>Feather Release<\/color>, the ATK of all team members is increased by 20% for 20s."
         }
     }
 };

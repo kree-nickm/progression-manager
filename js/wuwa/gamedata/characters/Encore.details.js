@@ -24,7 +24,8 @@ export default {
                         "83.21%",
                         "87.81%",
                         "92.40%",
-                        "96.99%"
+                        "96.99%",
+                        "101.58%"
                     ],
                     "name": "Part 1 Damage"
                 },
@@ -48,7 +49,8 @@ export default {
                         "98.97%",
                         "104.43%",
                         "109.89%",
-                        "115.35%"
+                        "115.35%",
+                        "120.81%"
                     ],
                     "name": "Part 2 Damage"
                 },
@@ -72,7 +74,8 @@ export default {
                         "99.11%*2",
                         "104.58%*2",
                         "110.05%*2",
-                        "115.52%*2"
+                        "115.52%*2",
+                        "120.99%*2"
                     ],
                     "name": "Part 3 Damage"
                 },
@@ -96,7 +99,8 @@ export default {
                         "57.21%*4",
                         "60.36%*4",
                         "63.52%*4",
-                        "66.68%*4"
+                        "66.68%*4",
+                        "69.84%*4"
                     ],
                     "name": "Part 4 Damage"
                 },
@@ -120,7 +124,8 @@ export default {
                         "356.65%",
                         "376.33%",
                         "396.01%",
-                        "415.69%"
+                        "415.69%",
+                        "435.37%"
                     ],
                     "name": "Woolies Damage"
                 },
@@ -144,7 +149,8 @@ export default {
                         "279.67%",
                         "295.10%",
                         "310.53%",
-                        "325.97%"
+                        "325.97%",
+                        "341.40%"
                     ],
                     "name": "Heavy Attack Damage"
                 },
@@ -168,9 +174,10 @@ export default {
                         "184.27%",
                         "194.43%",
                         "204.60%",
-                        "214.77%"
+                        "214.77%",
+                        "224.94%"
                     ],
-                    "name": "Mid-Air Attack"
+                    "name": "Mid-air Attack"
                 },
                 {
                     "scaling": [
@@ -192,7 +199,8 @@ export default {
                         "188.28%*2",
                         "198.67%*2",
                         "209.06%*2",
-                        "219.45%*2"
+                        "219.45%*2",
+                        "229.80%*2"
                     ],
                     "name": "Dodge Counter Damage"
                 },
@@ -244,7 +252,7 @@ export default {
                         "30",
                         "30"
                     ],
-                    "name": "Mid-Air Attack Stamina Consumption"
+                    "name": "Mid-air Attack STA Cost"
                 }
             ],
             "name": "Wooly Attack",
@@ -274,7 +282,8 @@ export default {
                         "114.53%*8",
                         "120.85%*8",
                         "127.17%*8",
-                        "133.49%*8"
+                        "133.49%*8",
+                        "139.79%*8"
                     ],
                     "name": "Flaming Woolies Damage"
                 },
@@ -298,7 +307,8 @@ export default {
                         "507.04%",
                         "535.01%",
                         "562.99%",
-                        "590.97%"
+                        "590.97%",
+                        "618.95%"
                     ],
                     "name": "Energetic Welcome Damage"
                 },
@@ -405,7 +415,8 @@ export default {
                         "134.81%*2",
                         "142.25%*2",
                         "149.69%*2",
-                        "157.13%*2"
+                        "157.13%*2",
+                        "164.57%*2"
                     ],
                     "name": "Cosmos: Frolicking Part 1 Damage"
                 },
@@ -429,7 +440,8 @@ export default {
                         "84.31%*3",
                         "88.97%*3",
                         "93.62%*3",
-                        "98.27%*3"
+                        "98.27%*3",
+                        "102.92%*3"
                     ],
                     "name": "Cosmos: Frolicking Part 2 Damage"
                 },
@@ -453,7 +465,8 @@ export default {
                         "98.65%*4",
                         "104.09%*4",
                         "109.53%*4",
-                        "114.98%*4"
+                        "114.98%*4",
+                        "120.42%*4"
                     ],
                     "name": "Cosmos: Frolicking Part 3 Damage"
                 },
@@ -477,7 +490,8 @@ export default {
                         "290.03%*3",
                         "306.03%*3",
                         "322.03%*3",
-                        "338.04%*3"
+                        "338.04%*3",
+                        "354.04%*3"
                     ],
                     "name": "Cosmos: Frolicking Part 4 Damage"
                 },
@@ -501,7 +515,8 @@ export default {
                         "325.27%",
                         "343.22%",
                         "361.16%",
-                        "379.11%"
+                        "379.11%",
+                        "397.06%"
                     ],
                     "name": "Cosmos: Heavy Attack Damage"
                 },
@@ -525,7 +540,8 @@ export default {
                         "94.66%*4",
                         "99.88%*4",
                         "105.10%*4",
-                        "110.33%*4"
+                        "110.33%*4",
+                        "115.55%*4"
                     ],
                     "name": "Cosmos Rampage Damage"
                 },
@@ -549,7 +565,8 @@ export default {
                         "98.65%*4",
                         "104.09%*4",
                         "109.53%*4",
-                        "114.98%*4"
+                        "114.98%*4",
+                        "120.42%*4"
                     ],
                     "name": "Cosmos: Dodge Counter Damage"
                 },
@@ -718,7 +735,8 @@ export default {
                         "297.21%",
                         "313.61%",
                         "330.01%",
-                        "346.41%"
+                        "346.41%",
+                        "362.81%"
                     ],
                     "name": "Skill Damage"
                 },
@@ -748,7 +766,7 @@ export default {
                     "name": "Con. Energy Regen"
                 }
             ],
-            "name": "Woolies Can Help!",
+            "name": "Woolies Helpers",
             "desc": "Encore pounces at the enemies with Cosmos, dealing <color=Fire>Fusion DMG<\/color>."
         },
         "Forte Circuit": {
@@ -775,9 +793,10 @@ export default {
                         "499.31%",
                         "526.86%",
                         "554.41%",
-                        "581.96%"
+                        "581.96%",
+                        "609.52%"
                     ],
-                    "name": "Cloudy: Frenzy Damage"
+                    "name": "Cloudy Frenzy Damage"
                 },
                 {
                     "scaling": [
@@ -799,9 +818,10 @@ export default {
                         "69.40%*6+740.31%",
                         "73.23%*6+781.16%",
                         "77.06%*6+822.01%",
-                        "80.89%*6+862.86%"
+                        "80.89%*6+862.86%",
+                        "84.71%*6+903.68%"
                     ],
-                    "name": "Cosmos: Rupture Damage"
+                    "name": "Cosmos Rupture Damage"
                 },
                 {
                     "scaling": [
@@ -826,7 +846,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Cloudy: Frenzy Con. Energy Regen"
+                    "name": "Cloudy Frenzy Con. Energy Regen"
                 },
                 {
                     "scaling": [
@@ -851,7 +871,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Cosmos: Rupture Con. Energy Regen"
+                    "name": "Cosmos Rupture Con. Energy Regen"
                 }
             ],
             "name": "Black & White Woolies",
@@ -917,7 +937,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_AnkeM1_UI.T_IconDevice_AnkeM1_UI",
             "name": "Wooly's Fairy Tale",
-            "desc": "When <color=Highlight>Basic Attack<\/color> hits a target, Encore's Fusion DMG Bonus is increased by 3%, stacking up to 4 times for 6s."
+            "desc": "When <color=Highlight>Basic Attack<\/color> hits a target, Encore's Fusion DMG Bonus is increased by 3%, stacking up to 4 time(s) for 6s."
         },
         "2": {
             "buffs": [
@@ -933,7 +953,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_AnkeM3_UI.T_IconDevice_AnkeM3_UI",
             "name": "Fog? The Black Shores!",
-            "desc": "The DMG multiplier of Heavy Attack <color=Highlight>Cloudy: Frenzy<\/color> and Heavy Attack <color=Highlight>Cosmos: Rupture<\/color> is increased by 40%."
+            "desc": "The DMG multiplier of Heavy Attack <color=Highlight>Cloudy Frenzy<\/color> and Heavy Attack <color=Highlight>Cosmos Rupture<\/color> is increased by 40%."
         },
         "4": {
             "buffs": [
@@ -941,7 +961,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_AnkeM4_UI.T_IconDevice_AnkeM4_UI",
             "name": "Adventure? Let\u2019s go!",
-            "desc": "Heavy Attack <color=Highlight>Cosmos: Rupture<\/color> increases the Fusion DMG Bonus of all team members by 20% for 30s."
+            "desc": "Heavy Attack <color=Highlight>Cosmos Rupture<\/color> increases the Fusion DMG Bonus of all team members by 20% for 30s."
         },
         "5": {
             "buffs": [

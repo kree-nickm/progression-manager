@@ -41,7 +41,23 @@ export default {
         "enemyMat": "Ring",
         "forgeryMat": "Waveworn Residue",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_18_UI.T_IconRoleHead256_18_UI",
-        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_kakaluo_UI.T_IconRole_Pile_kakaluo_UI"
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_kakaluo_UI.T_IconRole_Pile_kakaluo_UI",
+        "alias": "Calcharo"
+    },
+    "Changli": {
+        "id": 1205,
+        "rarity": 5,
+        "weapon": "Sword",
+        "element": "Fusion",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_26_UI.T_IconRoleHead256_26_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_changli_UI.T_IconRole_Pile_changli_UI",
+        "name": "Changli",
+        "alias": "",
+        "weeklyMat": "Sentinel's Dagger",
+        "bossMat": "Rage Tacet Core",
+        "floraMat": "Pavo Plum",
+        "enemyMat": "Ring",
+        "forgeryMat": "Metallic Drip"
     },
     "Chixia": {
         "id": 1202,
@@ -100,7 +116,23 @@ export default {
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Cadence",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_23_UI.T_IconRoleHead256_23_UI",
-        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_jiexin_UI.T_IconRole_Pile_jiexin_UI"
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_jiexin_UI.T_IconRole_Pile_jiexin_UI",
+        "alias": "Jianxin's Nickname"
+    },
+    "Jinhsi": {
+        "id": 1304,
+        "rarity": 5,
+        "weapon": "Broadblade",
+        "element": "Spectro",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_24_UI.T_IconRoleHead256_24_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_jinxi_UI.T_IconRole_Pile_jinxi_UI",
+        "name": "Jinhsi",
+        "alias": "Jinhsi's Title",
+        "weeklyMat": "Sentinel's Dagger",
+        "bossMat": "Elegy Tacet Core",
+        "floraMat": "Loong's Pearl",
+        "enemyMat": "Howler Core",
+        "forgeryMat": "Waveworn Residue"
     },
     "Jiyan": {
         "id": 1404,
@@ -129,7 +161,8 @@ export default {
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Cadence",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_14_UI.T_IconRoleHead256_14_UI",
-        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_lingyang_UI.T_IconRole_Pile_lingyang_UI"
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_lingyang_UI.T_IconRole_Pile_lingyang_UI",
+        "alias": "White Tiger"
     },
     "Mortefi": {
         "id": 1204,
@@ -158,7 +191,8 @@ export default {
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Metallic Drip",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_4_UI.T_IconRoleHead256_4_UI",
-        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_zhujuenan_UI.T_IconRole_Pile_zhujuenan_UI"
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_zhujuenan_UI.T_IconRole_Pile_zhujuenan_UI",
+        "alias": "Vessel of Sounds"
     },
     "RoverSpectro": {
         "id": 1502,

@@ -20,9 +20,9 @@ export default {
     "LingeringTunes": {
         "name": "Lingering Tunes",
         "bonus2Name": "Lingering Tunes",
-        "bonus2Desc": "ATK + 10%.",
+        "bonus2Desc": "ATK +10%",
         "bonus5Name": "Lingering Tunes",
-        "bonus5Desc": "While on the field, ATK increases by 5% every 1.5s. This effect stacks up to 4 stacks. Outro Skill DMG + 60%.",
+        "bonus5Desc": "While on the field, ATK increases by 5% every 1.5s. This effect stacks up to 4 times. Outro Skill DMG + 60%.",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyattacktag_UI.T_Iconpropertyattacktag_UI",
         "color": "C72C25FF"
     },
@@ -40,7 +40,7 @@ export default {
         "bonus2Name": "Moonlit Clouds",
         "bonus2Desc": "Energy Regen + 10%.",
         "bonus5Name": "Moonlit Clouds",
-        "bonus5Desc": "After using Outro Skill, increases the ATK of the next Resonator by 22.5% for 15s.",
+        "bonus5Desc": "Upon using Outro Skill, increases the ATK of the next Resonator by 22.5% for 15s.",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyswitchtag_UI.T_Iconpropertyswitchtag_UI",
         "color": "FFFFFFFF"
     },

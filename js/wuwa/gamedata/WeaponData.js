@@ -49,6 +49,85 @@ export default {
         "stat": "GreenAtk",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21040015_UI.T_IconWeapon21040015_UI"
     },
+    "AgesOfHarvest": {
+        "id": 21010026,
+        "rarity": 5,
+        "type": "Broadblade",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21010026_UI.T_IconWeapon21010026_UI",
+        "baseATK": 47,
+        "stat": "Crit",
+        "baseStat": 540,
+        "rankData": [
+            [
+                "12%",
+                "15%",
+                "18%",
+                "21%",
+                "24%"
+            ],
+            [
+                "24%",
+                "30%",
+                "36%",
+                "42%",
+                "48%"
+            ],
+            [
+                "12",
+                "12",
+                "12",
+                "12",
+                "12"
+            ],
+            [
+                "24%",
+                "30%",
+                "36%",
+                "42%",
+                "48%"
+            ],
+            [
+                "12",
+                "12",
+                "12",
+                "12",
+                "12"
+            ]
+        ],
+        "name": "Ages of Harvest",
+        "passive": "Grants {0} Attribute DMG Bonus. Casting Intro Skill gives the equipper Ageless Marking, which grants {1} Resonance Skill DMG Bonus for {2}s. Casting Resonance Skill gives the equipper Ethereal Endowment, which grants {3} Resonance Skill DMG Bonus for {4}s.",
+        "enemyMat": "Whisperin Core",
+        "forgeryMat": "Waveworn Residue"
+    },
+    "BlazingBrilliance": {
+        "id": 21020016,
+        "rarity": 5,
+        "type": "Sword",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21020016_UI.T_IconWeapon21020016_UI",
+        "baseATK": 47,
+        "stat": "CritDamage",
+        "baseStat": 1080,
+        "rankData": [
+            [
+                "12%",
+                "15%",
+                "18%",
+                "21%",
+                "24%"
+            ],
+            [
+                "4%",
+                "5%",
+                "6%",
+                "7%",
+                "8%"
+            ]
+        ],
+        "name": "Blazing Brilliance",
+        "passive": "ATK increased by {0}. The equipper gains 1 stack of Searing Feather upon dealing damage, which can be triggered once every 0.5s, and gains 5 stacks of the same effect upon casting Resonance Skill. Each stack of Searing Feather gives {1} additional Resonance Skill DMG Bonus for up to 14 stacks. All stacks will be removed within 10s after reaching the max stack.",
+        "enemyMat": "Howler Core",
+        "forgeryMat": "Metallic Drip"
+    },
     "CosmicRipples": {
         "name": "Cosmic Ripples",
         "type": "Rectifier",
@@ -279,7 +358,7 @@ export default {
                 "24%"
             ]
         ],
-        "passive": "Increases the DMG Bonus by {0}. When dealing Resonance Skill DMG, increases ATK by {1}, stacking up to {2}. This effect lasts for {3}s. When the equipped Resonator is not on the field, increases their ATK by an additional {4}.",
+        "passive": "Increases Attribute DMG Bonus by {0}. When dealing Resonance Skill DMG, increases ATK by {1}, stacking up to {2}. This effect lasts for {3}s. When the equipped Resonator is not on the field, increases their ATK by an additional {4}.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
         "stat": "Crit",
@@ -322,7 +401,7 @@ export default {
                 "14"
             ]
         ],
-        "passive": "Increases DMG Bonus by {0}. Every time Intro Skill or Resonance Liberation is cast, increases Heavy Attack DMG Bonus by {1}, stacking up to {2} time(s). This effect lasts for {3}s.",
+        "passive": "Increases Attribute DMG Bonus by {0}. Every time Intro Skill or Resonance Liberation is cast, increases Heavy Attack DMG Bonus by {1}, stacking up to {2} time(s). This effect lasts for {3}s.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
         "stat": "CritDamage",
@@ -487,7 +566,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When the Resonator's HP is above {0}, increases ATK by {1}. When the Resonator's HP is below {2}, heals them by {3} for dealing Basic Attack DMG or Heavy Attack DMG. This effect can be triggered {5} time(s) every {4}s.",
+        "passive": "When the Resonator's HP is above {0}, increases ATK by {1}. When the Resonator's HP is below {2}, gives {3} healing when dealing Basic Attack DMG or Heavy Attack DMG. This effect can be triggered {5} time(s) every {4}s.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
         "stat": "EnergyEfficiency",
@@ -674,7 +753,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When Resonance Skill is cast, restores {0} Concerto Energy. This effect can be triggered {2} times every {1}s.",
+        "passive": "When Resonance Skill is cast, restores {0} Concerto Energy. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
         "stat": "EnergyEfficiency",
@@ -731,7 +810,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When the Resonator dashes or dodges, increases ATK by {0}. Increases Dodge Counter DMG by {1}, lasting for {2}s. When Dodge Counter is performed, heals the Resonator's by {3} of their Max HP. This effect can be triggered {5} time(s) every {4}s.",
+        "passive": "When the Resonator dashes or dodges, increases ATK by {0}. Increases Dodge Counter DMG by {1}, lasting for {2}s. When Dodge Counter is performed, heals {3} of the Resonator's Max HP. This effect can be triggered {5} time(s) every {4}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Cadence",
         "stat": "EnergyEfficiency",
@@ -1080,6 +1159,42 @@ export default {
         "stat": "GreenAtk",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21030064_UI.T_IconWeapon21030064_UI"
     },
+    "Overture": {
+        "id": 21020024,
+        "rarity": 4,
+        "type": "Sword",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21020024_UI.T_IconWeapon21020024_UI",
+        "baseATK": 27,
+        "stat": "EnergyEfficiency",
+        "baseStat": 1152,
+        "rankData": [
+            [
+                "8",
+                "10",
+                "12",
+                "14",
+                "16"
+            ],
+            [
+                "20",
+                "20",
+                "20",
+                "20",
+                "20"
+            ],
+            [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1"
+            ]
+        ],
+        "name": "Overture",
+        "passive": "When Resonance Skill is cast, restores {0} Concerto Energy. This effect can be triggered {2} time(s) every {1}s.",
+        "enemyMat": "Howler Core",
+        "forgeryMat": "Metallic Drip"
+    },
     "Pistols26": {
         "name": "Pistols#26",
         "type": "Pistols",
@@ -1131,7 +1246,7 @@ export default {
                 "10%"
             ]
         ],
-        "passive": "When the Resonator takes no damage, increases ATK by {1} every {0}s, stacking up to {2} time(s). This effect lasts for {3}s. When the Resonator takes damage, loses {4} stacks and heals them by {5} of Max HP.",
+        "passive": "When the Resonator takes no damage, increases ATK by {1} every {0}s, stacking up to {2} time(s). This effect lasts for {3}s. When the Resonator takes damage, loses {4} stacks and heals {5} of their Max HP.",
         "enemyMat": "Ring",
         "forgeryMat": "Phlogiston",
         "stat": "GreenAtk",
@@ -1195,7 +1310,7 @@ export default {
                 "10"
             ]
         ],
-        "passive": "When Resonance Skill is cast, if the Resonator's HP is below {0}, heals them by {1} of their Max HP. This effect can be triggered {3} time(s) every {2}s; if the Resonator's HP is above {4}, increases ATK by {5}, lasting for {6}s.",
+        "passive": "When Resonance Skill is cast, if the Resonator's HP is below {0}, heals {1} of their Max HP.  This effect can be triggered {3} time(s) every {2}s. If the Resonator's HP is above {4}, increases ATK by {5}, lasting for {6}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
         "stat": "EnergyEfficiency",
@@ -1231,7 +1346,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When Resonance Skill is cast, restores {0} Concerto Energy. This effect can be triggered {2} times every {1}s.",
+        "passive": "When Resonance Skill is cast, restores {0} Concerto Energy. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip",
         "stat": "EnergyEfficiency",
@@ -1310,7 +1425,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When the Resonator's HP drops below {0}, increases Heavy Attack DMG Bonus by {1} and heals them by {2} upon dealing Heavy Attack DMG. This effect can be triggered {4} time(s) every {3}s.",
+        "passive": "When the Resonator's HP drops below {0}, increases Heavy Attack DMG Bonus by {1} and gives {2} healing when dealing Heavy Attack DMG. This effect can be triggered {4} time(s) every {3}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip",
         "stat": "GreenAtk",
@@ -1430,6 +1545,35 @@ export default {
         "forgeryMat": "Helix",
         "stat": "EnergyEfficiency",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050024_UI.T_IconWeapon21050024_UI"
+    },
+    "BeguilingMelody": {
+        "id": 21010063,
+        "rarity": 3,
+        "type": "Broadblade",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21010063_UI.T_IconWeapon21010063_UI",
+        "baseATK": 24,
+        "stat": "GreenAtk",
+        "baseStat": 0.06750000268220901,
+        "rankData": [
+            [
+                "4",
+                "5",
+                "6",
+                "7",
+                "8"
+            ],
+            [
+                "4",
+                "5",
+                "6",
+                "7",
+                "8"
+            ]
+        ],
+        "name": "Beguiling Melody",
+        "passive": "When Intro Skill is cast, restores {0} Concerto Energy. When Outro Skill is cast, restores {1} Resonance Energy.",
+        "enemyMat": "Whisperin Core",
+        "forgeryMat": "Waveworn Residue"
     },
     "BroadbladeOfNight": {
         "name": "Broadblade of Night",
@@ -1701,7 +1845,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When Resonance Skill is cast, heals the Resonator by {0} of their Max HP. This effect can be triggered {2} time(s) every {1}s.",
+        "passive": "When Resonance Skill is cast, heals {0} of the Resonator's Max HP. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Waveworn Residue",
         "stat": "GreenDef",
@@ -1737,7 +1881,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When Resonance Liberation is cast, heals the Resonator by {0} of their Max HP. This effect can be triggered {2} time(s) every {1}s.",
+        "passive": "When Resonance Liberation is cast, heals {0} of the Resonator's Max HP. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip",
         "stat": "GreenAtk",
@@ -1773,7 +1917,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When Dodge Counter is cast, heals the Resonator by {0} of their Max HP. This effect can be triggered {2} time(s) every {1}s.",
+        "passive": "When Dodge Counter is cast, heals {0} of the Resonator's Max HP. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Phlogiston",
         "stat": "GreenAtk",
@@ -1809,7 +1953,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When dealing Basic Attack DMG, heals the Resonator by {0} of their Max HP. This effect can be triggered {2} time(s) every {1}s.",
+        "passive": "When dealing Basic Attack DMG, heals {0} of the Resonator's Max HP. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Cadence",
         "stat": "CritDamage",
@@ -1845,7 +1989,7 @@ export default {
                 "1"
             ]
         ],
-        "passive": "When Intro Skill is cast, heals the Resonator by {0} of Max HP. This effect can be triggered {2} time(s) every {1}s.",
+        "passive": "When Intro Skill is cast, heals {0} of the Resonator's Max HP. This effect can be triggered {2} time(s) every {1}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
         "stat": "GreenLifeMax",

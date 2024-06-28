@@ -13,6 +13,13 @@ export default {
         "name": "Phantom: Impermanence Heron",
         "type": "Development Materials"
     },
+    "testGoldenUniversalEcho": {
+        "rarity": 5,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconA\/T_IconA_currency_6_UI.T_IconA_currency_6_UI",
+        "name": "test\/Golden Universal Echo",
+        "type": "Development Materials"
+    },
     "PremiumSealedTube": {
         "rarity": 5,
         "sort": 3,
@@ -102,6 +109,13 @@ export default {
         "sort": 5,
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWup\/T_IconWup_012_UI.T_IconWup_012_UI",
         "name": "Waveworn Residue 239",
+        "type": "Development Materials"
+    },
+    "testUniversalEcho": {
+        "rarity": 4,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconA\/T_IconA_currency_6_UI.T_IconA_currency_6_UI",
+        "name": "test\/Universal Echo",
         "type": "Development Materials"
     },
     "AdvancedSealedTube": {
@@ -235,6 +249,13 @@ export default {
         "sort": 5,
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_L_011_UI.T_IconMout_L_011_UI",
         "name": "Roaring Rock Fist",
+        "type": "Development Materials"
+    },
+    "SentinelsDagger": {
+        "rarity": 4,
+        "sort": 5,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_005_UI.T_IconMout_005_UI",
+        "name": "Sentinel's Dagger",
         "type": "Development Materials"
     },
     "SoundKeepingTacetCore": {
@@ -461,6 +482,13 @@ export default {
         "name": "Sonance Casket",
         "type": "Resources"
     },
+    "Windchimer": {
+        "rarity": 5,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMst\/T_IconMst_007_UI.T_IconMst_007_UI",
+        "name": "Windchimer",
+        "type": "Resources"
+    },
     "GildedGinkgo": {
         "rarity": 4,
         "sort": 0,
@@ -486,7 +514,7 @@ export default {
         "rarity": 4,
         "sort": 0,
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconCook\/T_IconCook_YJ_040_UI.T_IconCook_YJ_040_UI",
-        "name": "Standard weapon mold",
+        "name": "Standard Weapon Mold",
         "type": "Resources"
     },
     "StrongFluidCatalyst": {
@@ -668,7 +696,7 @@ export default {
         "rarity": 1,
         "sort": 0,
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_SM_Gat_30A_UI.T_IconC_SM_Gat_30A_UI",
-        "name": "Crane feathers",
+        "name": "Crane Feathers",
         "type": "Resources"
     },
     "Dewvetch": {
@@ -732,6 +760,13 @@ export default {
         "sort": 0,
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconCook\/T_IconCook_A05_UI.T_IconCook_A05_UI",
         "name": "Flour",
+        "type": "Resources"
+    },
+    "Fluorite": {
+        "rarity": 1,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_032_UI.T_IconC_032_UI",
+        "name": "Fluorite",
         "type": "Resources"
     },
     "FowlMeat": {
@@ -801,7 +836,7 @@ export default {
         "rarity": 1,
         "sort": 0,
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconCook\/T_IconCook_A12_UI.T_IconCook_A12_UI",
-        "name": "Kudzu root",
+        "name": "Kudzu Root",
         "type": "Resources"
     },
     "Lampylumen": {
@@ -823,6 +858,13 @@ export default {
         "sort": 0,
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_SM_Gat_25A_UI.T_IconC_SM_Gat_25A_UI",
         "name": "Lemongrass",
+        "type": "Resources"
+    },
+    "LoongsPearl": {
+        "rarity": 1,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_030_UI.T_IconC_030_UI",
+        "name": "Loong's Pearl",
         "type": "Resources"
     },
     "LotusSeeds": {
@@ -849,7 +891,7 @@ export default {
     "PavoPlum": {
         "rarity": 1,
         "sort": 0,
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_028_UI.T_IconC_028_UI",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_029_UI.T_IconC_029_UI",
         "name": "Pavo Plum",
         "type": "Resources"
     },
@@ -914,6 +956,13 @@ export default {
         "sort": 0,
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_SM_Gat_22A_UI.T_IconC_SM_Gat_22A_UI",
         "name": "Scarletthorn",
+        "type": "Resources"
+    },
+    "SilverLotus": {
+        "rarity": 1,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_031_UI.T_IconC_031_UI",
+        "name": "Silver Lotus",
         "type": "Resources"
     },
     "SilverBandedLizard": {

@@ -248,7 +248,7 @@ export default {
                         "30",
                         "30"
                     ],
-                    "name": "Mid-Air Attack Stamina Cost"
+                    "name": "Mid-air Attack STA Cost"
                 }
             ],
             "name": "Tuneslayer",
@@ -879,10 +879,10 @@ export default {
             "desc": "<size=40><color=Title>Devastation<\/color><\/size>nWhen \"Umbra\" is full, hold <color=Highlight>Basic Attack<\/color> to cast <color=Highlight>Devastation<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>, considered as Heavy Attack damage.n<size=10> <\/size>n<size=40><color=Title>Dark Surge<\/color><\/size>nAfter casting <color=Highlight>Devastation<\/color>, Rover enters the <color=Highlight>Dark Surge<\/color> state. In this state:n<color=Highlight>Basic Attack<\/color> is replaced with <color=Highlight>Enhanced Basic Attack<\/color>, which performs up to 5 consecutive attacks, dealing <color=Dark>Havoc DMG<\/color>;n<color=Highlight>Heavy Attack<\/color> is replaced with <color=Highlight>Enhanced Heavy Attack<\/color>;nUse <color=Highlight>Basic Attack<\/color> after casting <color=Highlight>Enhanced Heavy Attack<\/color> to cast Heavy Attack <color=Highlight>Thwackblade<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>, considered as Heavy Attack damage;nUse <color=Highlight>Basic Attack<\/color> after casting Heavy Attack <color=Highlight>Thwackblade<\/color> to cast <color=Highlight> Enhanced Basic Attack 3<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>;nResonance Skill <color=Highlight>Wingblade<\/color> is replaced with Resonance Skill <color=Highlight>Lifetaker<\/color>, transforming sounds into blades to attack the target, dealing <color=Dark>Havoc DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Umbra<\/color><\/size>nRover can hold up to 100 points of Umbra.nNormal Attack <color=Highlight>Tuneslayer<\/color> recovers Umbra on hit.nResonance Skill <color=Highlight>Wingblade<\/color> recovers Umbra when cast.nResonance Skill <color=Highlight>Lifetaker<\/color> recovers Umbra when cast.nIntro Skill <color=Highlight>Instant of Annihilation<\/color> recovers Umbra when cast."
         },
         "Rover Passive": {
+            "nameHash": "Skill_1001708_SkillName",
+            "descHash": "Skill_1001708_SkillDescribe",
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
-            "id": 1001708,
-            "name": "An error occurred. Please contact our Customer Service for assistance",
-            "desc": "An error occurred. Please contact our Customer Service for assistance"
+            "id": 1001708
         },
         "Outro Skill": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconNvzhuQTE_UI.T_IconnvzhuQTE_UI",
@@ -954,7 +954,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_ZhujueDarkM3_UI.T_IconDevice_ZhujueDarkM3_UI",
             "name": "Surging Resonance",
-            "desc": "In the <color=Highlight>Dark Surge<\/color> state, Basic Attack V restores HP equal to 10% of total HP lost on hit."
+            "desc": "In the <color=Highlight>Dark Surge<\/color> state, <color=Highlight>Basic Attack 5<\/color> restores HP equal to 10% of total HP lost on hit."
         },
         "4": {
             "buffs": [
@@ -970,7 +970,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_ZhujueDarkM5_UI.T_IconDevice_ZhujueDarkM5_UI",
             "name": "Aeon Symphony",
-            "desc": "In the <color=Highlight>Dark Surge<\/color> state, <color=Highlight>Basic Attack V<\/color> deals an additional <color=Highlight>Havoc damage<\/color> equal to 50% of <color=Highlight>Basic Attack V<\/color> damage."
+            "desc": "In the <color=Highlight>Dark Surge<\/color> state, <color=Highlight>Basic Attack 5<\/color> deals an additional <color=Dark>Havoc damage<\/color> equal to 50% of <color=Highlight>Basic Attack 5<\/color> damage."
         },
         "6": {
             "buffs": [

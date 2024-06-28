@@ -192,7 +192,7 @@ export default {
                         "214.78%",
                         "224.95%"
                     ],
-                    "name": "Mid-Air Attack Damage"
+                    "name": "Mid-air Attack Damage"
                 },
                 {
                     "scaling": [
@@ -263,11 +263,11 @@ export default {
                         "30",
                         "30"
                     ],
-                    "name": "Mid-Air Attack Stamina Cost"
+                    "name": "Mid-air Attack STA Cost"
                 }
             ],
             "name": "Concealed Edge",
-            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>nTaoqi performs up to 4 continuous attacks, dealing <color=Dark>Havoc DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack<\/color><\/size>nTaoqi consumes STA to deal <color=Dark>Havoc DMG<\/color>.nIf Basic Attack button is held, Taoqi enters <color=Highlight>Rocksteady Defense<\/color> state.n<size=10> <\/size>n<size=40><color=Title>Rocksteady Defense<\/color><\/size>nTaoqi's DMG taken is reduced by 35%;n-When Taoqi is attacked during <color=Highlight>Rocksteady Defense<\/color>, she will cast <color=Highlight>Strategic Parry<\/color>;n-<color=Highlight>Strategic Parry<\/color> is automatically cast after <color=Highlight>Rocksteady Defense<\/color> lasts for 3s;nIf Taoqi is attacked when casting Resonance Skill <color=Highlight>Rocksteady Shield<\/color>, <color=Highlight>Strategic Parry<\/color> is automatically cast.n<size=10> <\/size>n<size=40><color=Title>Strategic Parry<\/color><\/size>nTaoqi attacks the target, dealing <color=Dark>Havoc DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mid-air Attack<\/color><\/size>nTaoqi consumes STA to perform a Mid-Air Plunging Attack, dealing <color=Dark>Havoc DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Dodge Counter<\/color><\/size>nUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>."
+            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>nPerform up to 4 consecutive attacks, dealing <color=Dark>Havoc DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack<\/color><\/size>nConsume Stamina to deal <color=Dark>Havoc DMG<\/color>.nHold Basic Attack to enter <color=Highlight>Rocksteady Defense<\/color>.n<size=10> <\/size>n<size=40><color=Title>Rocksteady Defense<\/color><\/size>n- Taoqi's damage taken is reduced by 35%;n- When Taoqi is attacked during <color=Highlight>Rocksteady Defense<\/color>, she will cast <color=Highlight>Strategic Parry<\/color>;n- <color=Highlight>Strategic Parry<\/color> is automatically cast after <color=Highlight>Rocksteady Defense<\/color> lasts for 3s;nIf Taoqi is attacked when casting Resonance Skill <color=Highlight>Fortified Defense<\/color>, <color=Highlight>Strategic Parry<\/color> is automatically cast.n<size=10> <\/size>n<size=40><color=Title>Strategic Parry<\/color><\/size>nAttack the target, dealing <color=Dark>Havoc DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mid-Air Attack<\/color><\/size>nConsume Stamina to perform a Plunging Attack while in mid-air, dealing <color=Dark>Havoc DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Dodge Counter<\/color><\/size>nUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>."
         },
         "Resonance Skill": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconTaoHuaB1_UI.T_IconTaoHuaB1_UI",
@@ -382,7 +382,7 @@ export default {
                         "15",
                         "15"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Fortified Defense",
@@ -484,7 +484,7 @@ export default {
                         "20",
                         "20"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Unmovable",
@@ -552,7 +552,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Defense Formation",
@@ -749,7 +749,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconTaoHuaQTE_UI.T_IconTaoHuaQTE_UI",
             "id": 1000909,
             "name": "Iron Will",
-            "desc": "The incoming character (or a character on a nearby team that activates an Outro Skill) has their Resonance Skill DMG Amplified by 38% for 14s or until they are switched off field."
+            "desc": "The incoming Resonator has their Resonance Skill DMG Amplified by 38% for 14s or until they are switched out."
         },
         "Basic Attack Bonus 1": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyreddark_UI.T_Iconpropertyreddark_UI",

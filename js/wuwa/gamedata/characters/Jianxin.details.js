@@ -174,7 +174,7 @@ export default {
                         "67.77%*2+271.05%",
                         "71.13%*2+284.52%"
                     ],
-                    "name": "Dodge Counter Damage"
+                    "name": null
                 },
                 {
                     "scaling": [
@@ -220,7 +220,7 @@ export default {
                         "30",
                         "30"
                     ],
-                    "name": "Mid-Air Attack Stamina Consumption"
+                    "name": "Mid-air Attack STA Cost"
                 }
             ],
             "name": "Fengyiquan",
@@ -1003,19 +1003,19 @@ export default {
                 }
             ],
             "name": "Primordial Chi Spiral",
-            "desc": "<size=40><color=Title>Heavy Attack: Primordial Chi Spiral<\/color><\/size>nWhen \"Chi\" reaches max stacks, hold <color=Highlight>Heavy Attack<\/color> to cast <color=Highlight>Primordial Chi Spiral<\/color> and start <color=Highlight>Zhoutian Progress<\/color>.n<size=10> <\/size>n<size=40><color=Title>Zhoutian Progress<\/color><\/size>nJianxin's resistance to interruption is increased, and her the damage taken is reduced by 50%:nJianxin continuously consumes \"Chi\" and casts <color=Highlight>Chi Strike<\/color> to attack targets nearby, dealing <color=Wind>Aero DMG<\/color>.nAs <color=Highlight>Zhoutian Progress<\/color> accumulates, Jianxin reaches different Zhoutian and gain effects accordingly.n-Before Minor Zhoutian: Gain Zhoutian Progress 1 shield. When <color=Highlight>Zhoutian Progress<\/color> is interrupted, cast <color=Highlight>Pushing Punch<\/color> to attack the target, dealing <color=Wind>Aero DMG<\/color>.n-Minor Zhoutian: Gain Zhoutian Progress 2 shield and cast <color=Highlight>Shock<\/color> to attack the target, dealing <color=Wind>Aero DMG<\/color>.  When <color=Highlight>Zhoutian Progress<\/color> is interrupted, cast <color=Highlight>Yielding Pull<\/color> to attack the target, dealing <color=Wind>Aero DMG<\/color>.n-Major Zhoutian - Inner: Gain Zhoutian Progress 3 shield and cast <color=Highlight>Shock<\/color> to attack the target, dealing <color=Wind>Aero DMG<\/color>. When <color=Highlight>Zhoutian Progress<\/color> is interrupted, cast <color=Highlight>Yielding Pull<\/color> to attack the target, dealing <color=Wind>Aero DMG<\/color>.n-Major Zhoutian - Outer: Gain Zhoutian Progress 3 shield and cast <color=Highlight>Shock<\/color> to attack the target, dealing <color=Wind>Aero DMG<\/color>.n-When <color=Highlight>Basic Attack<\/color> button is released, interrupt <color=Highlight>Zhoutian Progress<\/color> and lose all \"Chi\";n-When all \"Chi\" is consumed, end <color=Highlight>Zhoutian Progress<\/color>.n<size=10> <\/size>nWhen <color=Highlight>Zhoutian Progress<\/color> ends, regain a shield according to the Zhoutian Progress reached;nAs the shield provided by <color=Highlight>Heavy Attack: Primordial Chi Spiral<\/color> persists, the active character is healed once every 6s.n<size=10> <\/size>n<size=40><color=Title>Chi<\/color><\/size>nJianxin can hold up to 120 Chi.nChi is obtained when a Normal Attack <color=Highlight>Fengyiquan<\/color> hits the target.nChi is obtained when the Resonance Skill <color=Highlight>Calming Air<\/color> is cast.nChi is obtained when the Resonance Skills <color=Highlight>Chi Counter<\/color> or <color=Highlight>Chi Parry<\/color> hits the target.nChi is obtained when the Intro Skill <color=Highlight>Essence of Tao<\/color> hits the target."
+            "desc": "<size=40><color=Title>Heavy Attack: Primordial Chi Spiral<\/color><\/size>nWhen \"Chi\" reaches max stacks, hold <color=Highlight>Heavy Attack<\/color> to cast <color=Highlight>Primordial Chi Spiral<\/color> and start <color=Highlight>Zhoutian Progress<\/color>.n<size=10> <\/size>n<size=40><color=Title>Zhoutian Progress<\/color><\/size>nJianxin's resistance to interruption is increased, and her the damage taken is reduced by 50%:nJianxin continuously consumes \"Chi\" and casts <color=Highlight>Chi Strike<\/color> to attack targets nearby, dealing <color=Wind>Aero DMG<\/color>.nAs <color=Highlight>Zhoutian Progress<\/color> accumulates, Jianxin reaches different Zhoutian and gain effects accordingly.n-Before Minor Zhoutian: Gain Zhoutian Progress 1 shield. When <color=Highlight>Zhoutian Progress<\/color> is interrupted, cast <color=Highlight>Pushing Punch<\/color> to attack the target, dealing <color=Wind>Aero DMG<\/color>.n-Minor Zhoutian: Gain Zhoutian Progress 2 shield and cast <color=Highlight>Shock<\/color> to attack the target, dealing <color=Wind>Aero DMG<\/color>.  When <color=Highlight>Zhoutian Progress<\/color> is interrupted, cast <color=Highlight>Yielding Pull<\/color> to attack the target, dealing <color=Wind>Aero DMG<\/color>.n-Major Zhoutian - Inner: Gain Zhoutian Progress 3 shield and cast <color=Highlight>Shock<\/color> to attack the target, dealing <color=Wind>Aero DMG<\/color>. When <color=Highlight>Zhoutian Progress<\/color> is interrupted, cast <color=Highlight>Yielding Pull<\/color> to attack the target, dealing <color=Wind>Aero DMG<\/color>.n-Major Zhoutian - Outer: Gain Zhoutian Progress 3 shield and cast <color=Highlight>Shock<\/color> to attack the target, dealing <color=Wind>Aero DMG<\/color>.n-When <color=Highlight>Basic Attack<\/color> button is released, interrupt <color=Highlight>Zhoutian Progress<\/color> and lose all \"Chi\";n-When all \"Chi\" is consumed, end <color=Highlight>Zhoutian Progress<\/color>.n<size=10> <\/size>nWhen <color=Highlight>Zhoutian Progress<\/color> ends, regain a shield according to the Zhoutian Progress reached;nAs the shield provided by <color=Highlight>Heavy Attack: Primordial Chi Spiral<\/color> persists, the active character is healed once every 6s.n<size=10> <\/size>n<size=40><color=Title>Chi<\/color><\/size>nJianxin can hold up to 120 Chi.nChi is obtained when Normal Attack <color=Highlight>Fengyiquan<\/color> hits the target.nChi is obtained when the Resonance Skill <color=Highlight>Calming Air<\/color> is cast.nChi is obtained when the Resonance Skills <color=Highlight>Chi Counter<\/color> or <color=Highlight>Chi Parry<\/color> hits the target.nChi is obtained when the Intro Skill <color=Highlight>Essence of Tao<\/color> hits the target."
         },
         "Utility Passive": {
+            "nameHash": "Skill_1001908_SkillName",
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
             "id": 1001908,
-            "name": "An error occurred. Please contact our Customer Service for assistance",
             "desc": "Has a chance to produce special dishes when cooking"
         },
         "Outro Skill": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiQTE_UI.T_IconMotefeiQTE_UI",
             "id": 1001909,
             "name": "Transcendence",
-            "desc": "The incoming character (or a character on a nearby team that activates an Outro Skill) has their Resonance Liberation DMG Amplified by 38% for 14s or until they are switched off field."
+            "desc": "The incoming Resonator has their Resonance Liberation DMG Amplified by 38% for 14s or until they are switched out."
         },
         "Basic Attack Bonus 1": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredbaoji_UI.T_Iconpropertyredbaoji_UI",

@@ -152,7 +152,7 @@ export default {
                         "103.93%",
                         "108.85%"
                     ],
-                    "name": "Mid-Air Attack"
+                    "name": "Mid-air Attack"
                 },
                 {
                     "scaling": [
@@ -252,7 +252,7 @@ export default {
                         "5",
                         "5"
                     ],
-                    "name": "Mid-Air Attack Stamina Consumption"
+                    "name": "Mid-air Attack STA Cost"
                 }
             ],
             "name": "Half Truths",
@@ -385,11 +385,11 @@ export default {
                         "15",
                         "15"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Shift Trick",
-            "desc": "<size=40><color=Title>Mist Avatar<\/color><\/size>nCasts \"Mist\" and 1 \"Mist Avatar(s)\" to taunt the surrounding targets. The avatars inherit a portion of Aalto's HP and generate 6 <color=Highlight>Mist Missiles<\/color> around them, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mist Missiles<\/color><\/size>nDeals <color=Wind>Aero DMG<\/color>, considered as Resonance Skill damage."
+            "desc": "<size=40><color=Title>Mist Avatar<\/color><\/size>nCasts \"Mist\" and 1 \"Mist Avatar(s)\" to taunt the surrounding targets. The avatars inherit a portion of Aalto's HP and generate 6 Mist Bullets around them, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mist Bullets<\/color><\/size>nDeals <color=Wind>Aero DMG<\/color>, considered as Resonance Skill damage."
         },
         "Resonance Liberation": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconQiushuiA1_UI.T_IconQiushuiA1_UI",
@@ -518,7 +518,7 @@ export default {
                         "20",
                         "20"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Flower in the Mist",
@@ -588,11 +588,11 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Feint Shot",
-            "desc": "Aalto shows up out of thin air to perform rapid continuous shooting, dealing <color=Wind>Aero damage<\/color>."
+            "desc": "Aalto shows up out of thin air to perform rapid continuous shooting, dealing <color=Wind>Aero DMG<\/color>."
         },
         "Forte Circuit": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconQiushuiD1_UI.T_IconQiushuiD1_UI",
@@ -621,7 +621,7 @@ export default {
                         "103.93%",
                         "108.85%"
                     ],
-                    "name": "Mist Missile DMG"
+                    "name": "Mist Bullet DMG"
                 },
                 {
                     "scaling": [
@@ -650,7 +650,7 @@ export default {
                 }
             ],
             "name": "Misty Cover",
-            "desc": "When Aalto passes through \"Mist\" or \"Gate of Quandary\", he enters the <color=Highlight>Mistcloak Dash<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mistcloak Dash<\/color><\/size>n-Movement speed increased;n-During this period, \"Mist Drops\" are continuously consumed, and for each 1 \"Mist Drop\" consumed, 1 Resonance Skill <color=Highlight>Mist Missile<\/color> is generated.n<size=10> <\/size>n<size=40><color=Title>Mist Drops<\/color><\/size>nAalto can hold up to 6 \"Mist Drops\".nWhen <color=Highlight>Basic Attack<\/color> or <color=Highlight>Mid-air Attack<\/color> passes through \"Mist\" and hits the target, 1 \"Mist Drop\" is recovered."
+            "desc": "When Aalto passes through \"Mist\" or \"Gate of Quandary\", he enters the <color=Highlight>Mistcloak Dash<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mistcloak Dash<\/color><\/size>n-Movement speed increased;n-During this period, \"Mist Drops\" are continuously consumed, and for each 1 \"Mist Drop\" consumed, 1 Mist Bullet(s) is generated.n<size=10> <\/size>n<size=40><color=Title>Mist Drops<\/color><\/size>nAalto can hold up to 6 \"Mist Drops\".nWhen <color=Highlight>Basic Attack<\/color> or <color=Highlight>Mid-air Attack<\/color> passes through \"Mist\" and hits the target, 1 \"Mist Drop\" is recovered."
         },
         "Utility Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconQiushuiQTE_UI.T_IconQiushuiQTE_UI",
@@ -662,7 +662,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconQiushuiQTE_UI.T_IconQiushuiQTE_UI",
             "id": 1001009,
             "name": "Dissolving Mist",
-            "desc": "The incoming character (or a character on a nearby team that activates an Outro Skill) has their Aero DMG Amplified by 23% for 14s or until they are switched off field."
+            "desc": "The incoming Resonator has their Aero DMG Amplified by 23% for 14s or until they are switched out."
         },
         "Basic Attack Bonus 1": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredwind_UI.T_Iconpropertyredwind_UI",
@@ -710,7 +710,7 @@ export default {
             "buffs": [
                 1403902001
             ],
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_QiushuiM1_UI.T_IconDevice_QiushuiM2_UI",
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_QiushuiM1_UI.T_IconDevice_QiushuiM1_UI",
             "name": "Trickster's Opening Show",
             "desc": "The cooldown of Resonance Skill <color=Highlight>Shift Trick<\/color> is reduced by 4s."
         },
@@ -718,7 +718,7 @@ export default {
             "buffs": [
                 1403901001
             ],
-            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_QiushuiM2_UI.T_IconDevice_QiushuiM1_UI",
+            "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_QiushuiM2_UI.T_IconDevice_QiushuiM2_UI",
             "name": "Mistweaver\u2019s Debut",
             "desc": "\"Mist Avatar\" inherits 100% more HP from Aalto. When Aalto attacks targets taunted by the \"Mist Avatar(s)\", his ATK is increased by 15%."
         },
@@ -728,7 +728,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_QiushuiM3_UI.T_IconDevice_QiushuiM3_UI",
             "name": "Hazey Transition",
-            "desc": "When Aalto's <color=Highlight>Basic Attack<\/color> or <color=Highlight>Mid-Air Attack<\/color> passes through the Mist, 2 more bullets will be generated, dealing 50% of the DMG of <color=Highlight>Basic Attack<\/color> or <color=Highlight>Mid-Air Attack<\/color>."
+            "desc": "When Aalto's <color=Highlight>Basic Attack<\/color> or <color=Highlight>Mid-air Attack<\/color> passes through the Mist, 2 more bullets will be generated, dealing 50% of the DMG of <color=Highlight>Basic Attack<\/color> or <color=Highlight>Mid-air Attack<\/color>."
         },
         "4": {
             "buffs": [

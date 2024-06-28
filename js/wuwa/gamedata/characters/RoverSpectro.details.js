@@ -27,7 +27,7 @@ export default {
                         "103.06%",
                         "107.94%"
                     ],
-                    "name": "Part 1 Damage"
+                    "name": "Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -52,7 +52,7 @@ export default {
                         "132.51%",
                         "138.78%"
                     ],
-                    "name": "Part 2 Damage"
+                    "name": "Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -77,7 +77,7 @@ export default {
                         "26.51%*5",
                         "27.76%*5"
                     ],
-                    "name": "Part 3 Damage"
+                    "name": "Stage 3 DMG"
                 },
                 {
                     "scaling": [
@@ -102,7 +102,7 @@ export default {
                         "226.73%",
                         "237.46%"
                     ],
-                    "name": "Part 4 Damage"
+                    "name": "Stage 4 DMG"
                 },
                 {
                     "scaling": [
@@ -127,7 +127,7 @@ export default {
                         "340.35%",
                         "356.47%"
                     ],
-                    "name": "Dodge Counter Damage"
+                    "name": "Dodge Counter DMG"
                 },
                 {
                     "scaling": [
@@ -152,7 +152,7 @@ export default {
                         "33.57%*5",
                         "35.16%*5"
                     ],
-                    "name": "Heavy Attack Damage"
+                    "name": "Heavy Attack DMG"
                 },
                 {
                     "scaling": [
@@ -177,7 +177,7 @@ export default {
                         "132.51%",
                         "138.78%"
                     ],
-                    "name": "HA: Resonance Damage"
+                    "name": "Heavy Attack - Resonance DMG"
                 },
                 {
                     "scaling": [
@@ -202,7 +202,7 @@ export default {
                         "220.84%",
                         "231.30%"
                     ],
-                    "name": "HA: Aftertune Damage"
+                    "name": "Heavy Attack - Aftertune DMG"
                 },
                 {
                     "scaling": [
@@ -227,7 +227,7 @@ export default {
                         "182.56%",
                         "191.21%"
                     ],
-                    "name": "Mid-Air Attack Damage"
+                    "name": "Mid-air Attack DMG"
                 },
                 {
                     "scaling": [
@@ -273,11 +273,11 @@ export default {
                         "30",
                         "30"
                     ],
-                    "name": "Mid-Air Attack Stamina Consumption"
+                    "name": "Mid-air Attack STA Cost"
                 }
             ],
             "name": "Vibration Manifestation",
-            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>nRover performs up to 4 consecutive attacks, dealing <color=Light>Spectro DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack<\/color><\/size>nRover consumes STA to attack the target, dealing <color=Light>Spectro DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack: Resonance<\/color><\/size>nAfter <color=Highlight>Basic Attack 3<\/color> or <color=Highlight>Heavy Attack<\/color>, press the <color=Highlight>Basic Attack<\/color> button at the right time to perform Heavy Attack <color=Highlight>Resonance<\/color>, dealing <color=Light>Spectro DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack: Aftertune<\/color><\/size>nAfter Heavy Attack <color=Highlight>Resonance<\/color> or <color=Highlight>Dodge Counter<\/color> hits a target, press the <color=Highlight>Basic Attack<\/color> button to perform Heavy Attack <color=Highlight>Aftertune<\/color>, dealing <color=Light>Spectro DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mid-air Attack<\/color><\/size>nRover consumes STA to perform a Mid-Air Plunging Attack, dealing <color=Light>Spectro DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Dodge Counter<\/color>nUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Light>Spectro DMG<\/color>."
+            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>nRover performs up to 4 consecutive attacks, dealing <color=Light>Spectro DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack<\/color><\/size>nRover consumes STA to attack the target, dealing <color=Light>Spectro DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack: Resonance<\/color><\/size>nAfter <color=Highlight>Basic Attack 3<\/color> or <color=Highlight>Heavy Attack<\/color>, press the <color=Highlight>Basic Attack<\/color> button at the right time to perform Heavy Attack <color=Highlight>Resonance<\/color>, dealing <color=Light>Spectro DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack: Aftertune<\/color><\/size>nAfter Heavy Attack <color=Highlight>Resonance<\/color> or <color=Highlight>Dodge Counter<\/color> hits a target, press the <color=Highlight>Basic Attack<\/color> button to perform Heavy Attack <color=Highlight>Aftertune<\/color>, dealing <color=Light>Spectro DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mid-air Attack<\/color><\/size>nRover consumes STA to perform a Mid-Air Plunging Attack, dealing <color=Light>Spectro DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Dodge Counter<\/color><\/size>nUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Light>Spectro DMG<\/color>."
         },
         "Resonance Skill": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconNvzhuB1_UI.T_IconNvzhuB1_UI",
@@ -306,7 +306,7 @@ export default {
                         "411.54%",
                         "431.02%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -352,7 +352,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Resonating Slashes",
@@ -385,7 +385,7 @@ export default {
                         "346.41%+1177.80%",
                         "362.81%+1233.56%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -431,7 +431,7 @@ export default {
                         "125",
                         "125"
                     ],
-                    "name": "Res. Energy Cost"
+                    "name": "Resonance Cost"
                 },
                 {
                     "scaling": [
@@ -454,7 +454,7 @@ export default {
                         "20",
                         "20"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto  Regen"
                 }
             ],
             "name": "Echoing Orchestra",
@@ -464,7 +464,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconNvzhuD2_UI.T_IconnvzhuD2_UI",
             "id": 1000604,
             "name": "Reticence",
-            "desc": "Damage dealt by Rover's Basic Attack <color=Highlight>Resonating Echoes<\/color> is increased by 60%."
+            "desc": "DMG dealt by Rover's Basic Attack <color=Highlight>Resonating Echoes<\/color> is increased by 60%."
         },
         "Forte Circuit Passive 2": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
@@ -499,7 +499,7 @@ export default {
                         "294.45%",
                         "308.39%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -522,7 +522,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Waveshock",
@@ -555,7 +555,7 @@ export default {
                         "224.91%*2",
                         "235.56%*2"
                     ],
-                    "name": "Resonating Spin Damage"
+                    "name": "Resonating Spin DMG"
                 },
                 {
                     "scaling": [
@@ -580,7 +580,7 @@ export default {
                         "69.29%",
                         "72.57%"
                     ],
-                    "name": "Resonating Whirl Damage"
+                    "name": "Resonating Whirl DMG"
                 },
                 {
                     "scaling": [
@@ -605,7 +605,7 @@ export default {
                         "138.57%",
                         "145.13%"
                     ],
-                    "name": "Resonating Echoes Part 1 Damage"
+                    "name": "Resonating Echoes Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -630,7 +630,7 @@ export default {
                         "277.13%",
                         "290.25%"
                     ],
-                    "name": "Resonating Echoes Part 2 Damage"
+                    "name": "Resonating Echoes Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -653,7 +653,7 @@ export default {
                         "20",
                         "20"
                     ],
-                    "name": "Resonating Spin Con. Energy Regen"
+                    "name": "Resonating Spin Concerto Regen"
                 },
                 {
                     "scaling": [
@@ -676,23 +676,23 @@ export default {
                         "8",
                         "8"
                     ],
-                    "name": "Resonating Echoes Con. Energy Regen"
+                    "name": "Resonating Echoes Concerto Regen"
                 }
             ],
             "name": "World in a Grain of Sand",
-            "desc": "<size=40><color=Title>Resonance Skill: Resonating Spin<\/color><\/size>nIf \"Diminutive Sound\" exceeds 50 when <color=Highlight>Resonance Skill<\/color> is used, Rover consumes 50 \"Diminutive Sound\" to cast <color=Highlight>Resonating Spin<\/color>, dealing <color=Light>Spectro DMG<\/color>, considered as Resonance Skill damage.n<size=10> <\/size>n<size=40><color=Title>Basic Attack: Resonating Echoes<\/color><\/size>nAfter Resonance Skill <color=Highlight>Resonating Spin<\/color> ends, Rover performs <color=Highlight>Resonating Echoes<\/color> upon pressing the Basic Attack button.nLaunch attacks forward, dealing <color=Light>Spectro DMG<\/color>, considered as Resonance Skill DMG.n<size=10> <\/size>n<size=40><color=Title>Diminutive Sound<\/color><\/size>nRover can hold up to 100 \"Diminutive Sounds\".nRover obtains \"Diminutive Sound\" for every Normal Attack <color=Highlight>Vibration Manifestation<\/color> on hit.nRover obtains \"Diminutive Sound\" for every Heavy Attack <color=Highlight> Aftertune<\/color> on hit.nRover obtains \"Diminutive Sound\" upon casting Intro Skill <color=Highlight>Waveshock<\/color>."
+            "desc": "<size=40><color=Title>Resonance Skill: Resonating Spin<\/color><\/size>nIf \"Diminutive Sound\" exceeds 50 when <color=Highlight>Resonance Skill<\/color> is used, Rover consumes 50 \"Diminutive Sound\" to cast <color=Highlight>Resonating Spin<\/color>, dealing <color=Light>Spectro DMG<\/color>, considered as Resonance Skill damage.n<size=10> <\/size>n<size=40><color=Title>Basic Attack: Resonating Echoes<\/color><\/size>nAfter Resonance Skill <color=Highlight>Resonating Spin<\/color> ends, Rover performs <color=Highlight>Resonating Echoes<\/color> upon using <color=Highlight>Basic Attack<\/color> button.nLaunch attacks forward, dealing <color=Light>Spectro DMG<\/color>, considered as Resonance Skill DMG.n<size=10> <\/size>n<size=40><color=Title>Diminutive Sound<\/color><\/size>nRover can hold up to 100 \"Diminutive Sounds\".nRover obtains \"Diminutive Sound\" for every Normal Attack <color=Highlight>Vibration Manifestation<\/color> on hit.nRover obtains \"Diminutive Sound\" for every Heavy Attack <color=Highlight> Aftertune<\/color> on hit.nRover obtains \"Diminutive Sound\" upon casting Intro Skill <color=Highlight>Waveshock<\/color>."
         },
         "Rover Passive": {
+            "descHash": "Skill_1000608_SkillDescribe",
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
             "id": 1000608,
-            "name": "Solaris Voyager",
-            "desc": "An error occurred. Please contact our Customer Service for assistance"
+            "name": "Solaris Voyager"
         },
         "Outro Skill": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconNvzhuQTE_UI.T_IconnvzhuQTE_UI",
             "id": 1000609,
             "name": "Instant",
-            "desc": "Generate an area of stasis surrounding the next character (or a character on a nearby team that activates an Outro Skill), lasting for 3s."
+            "desc": "Generate an area of stasis centered around the incoming Resonator, lasting for 3s."
         },
         "Basic Attack Bonus 1": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredlight_UI.T_Iconpropertyredlight_UI",

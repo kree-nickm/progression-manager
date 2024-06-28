@@ -177,7 +177,7 @@ export default {
                         "40.50%",
                         "42.42%"
                     ],
-                    "name": "Mid-Air Attack Part 1 Damage"
+                    "name": "Mid-air Attack Part 1 Damage"
                 },
                 {
                     "scaling": [
@@ -202,7 +202,7 @@ export default {
                         "40.50%",
                         "42.42%"
                     ],
-                    "name": "Mid-Air Attack Part 2 Damage"
+                    "name": "Mid-air Attack Part 2 Damage"
                 },
                 {
                     "scaling": [
@@ -252,7 +252,7 @@ export default {
                         "5",
                         "5"
                     ],
-                    "name": "Mid-Air Attack Stamina Cost"
+                    "name": "Mid-air Attack STA Cost"
                 }
             ],
             "name": "Impromptu Show",
@@ -617,7 +617,7 @@ export default {
                 }
             ],
             "name": "Fury Fugue",
-            "desc": "<size=40><color=Title>Resonance Skill: Fury Fugue<\/color><\/size>nWhen Mortefi's \"Annoyance\" reaches 100, his <color=Highlight>Resonance Skill<\/color> is replaced with <color=Highlight>Fury Fudge<\/color>.nWhen casting Fury Fudge, Mortefi consumes all \"Annoyance\" to unleash high-speed flame lightning, dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill damage.n<size=10> <\/size>n<size=40><color=Title>Annoyance<\/color><\/size>nMortefi can hold up to 100 Annoyance.nWhen Normal Attack <color=Highlight>Impromptu Show<\/color> hits the target, \u201cAnnoyance\u201d is restored.nWhen Intro Skill <color=Highlight>Dissonance<\/color> hits the target, \u201cAnnoyance\u201d is restored.nWhen Resonance Skill <color=Highlight>Passionate Variation<\/color> hits the target, \u201cAnnoyance\u201d is restored.nWithin 5s after casting <color=Highlight>Passionate Variation<\/color>, Normal Attack <color=Highlight>Impromptu Show<\/color> that hits the target additionally restores \u201cAnnoyance\u201d."
+            "desc": "<size=40><color=Title>Resonance Skill: Fury Fugue<\/color><\/size>nWhen Mortefi's \"Annoyance\" reaches 100, his <color=Highlight>Resonance Skill<\/color> is replaced with <color=Highlight>Fury Fudge<\/color>.nWhen casting Fury Fudge, Mortefi consumes all \"Annoyance\" to unleash high-speed flame lightning, dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill damage.n<size=10> <\/size>n<size=40><color=Title>Annoyance<\/color><\/size>nMortefi can hold up to 100 Annoyance.nWhen Normal Attack <color=Highlight>Impromptu Show<\/color> hits the target, \u201cAnnoyance\u201d is restored.nWhen Intro Skill <color=Highlight>Dissonance<\/color> hits the target, \u201cAnnoyance\u201d is restored.nWhen Resonance Skill <color=Highlight>Passionate Variation<\/color> hits the target, \u201cAnnoyance\u201d is restored.nWithin 5s after casting <color=Highlight>Passionate Variation<\/color>, Basic Attack <color=Highlight>Impromptu Show<\/color> that hits the target additionally restores \u201cAnnoyance\u201d."
         },
         "Utility Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
@@ -629,7 +629,7 @@ export default {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiQTE_UI.T_IconMotefeiQTE_UI",
             "id": 1001209,
             "name": "Rage Transposition",
-            "desc": "The incoming character (or a character on a nearby team that activates an Outro Skill) has their Heavy Attack DMG Amplified by 38% for 14s or until they are switched off field."
+            "desc": "The incoming Resonator gains 38% Heavy Attack DMG Amplification for 14s or until they are switched out."
         },
         "Basic Attack Bonus 1": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredhot_UI.T_Iconpropertyredhot_UI",
@@ -713,7 +713,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_MotefeiM5_UI.T_IconDevice_MotefeiM5_UI",
             "name": "Funerary Quartet",
-            "desc": "When Resonance Skill <color=Highlight>Passionate Variation<\/color> or Resonance Skill <color=Highlight>Fury Fugue<\/color> hits a target, 4 Resonance Liberation's <color=Highlight>Marcato<\/color> hits will be fired, dealing <color=Fire>Fusion Damage<\/color>. DMG of Resonance Liberation's <color=Highlight>Marcato<\/color> fired in this way is reduced by 50%."
+            "desc": "When Resonance Skill <color=Highlight>Passionate Variation<\/color> or Resonance Skill <color=Highlight>Fury Fugue<\/color> hits a target, Coordinated Attacks will be triggered to fire 4 Resonance Liberation's <color=Highlight>Marcato<\/color> hit(s), dealing <color=Fire>Fusion Damage<\/color>. DMG of Resonance Liberation's <color=Highlight>Marcato<\/color> fired in this way is reduced by 50%."
         },
         "6": {
             "buffs": [

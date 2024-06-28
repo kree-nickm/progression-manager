@@ -198,7 +198,7 @@ export default {
                         "30",
                         "30"
                     ],
-                    "name": "Mid-Air Attack Stamina Consumption"
+                    "name": "Mid-air Attack STA Cost"
                 }
             ],
             "name": "Execution",
@@ -437,7 +437,7 @@ export default {
                         "85.52%*8",
                         "89.57%*8"
                     ],
-                    "name": "Continuous Attack Damage"
+                    "name": "Consecutive Attack Damage"
                 },
                 {
                     "scaling": [
@@ -541,7 +541,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconmicaiD2_UI.T_IconmicaiD2_UI",
             "id": 1000804,
             "name": "Crimson Light",
-            "desc": "Damage of Resonance Skill <color=Highlight>Crimson Erosion<\/color> triggered by <color=Highlight>Dodge Counter - Ruby Shades<\/color> is increased by 20%. The HP cost and stacks of \"Ruby Blossom\" recovered are doubled."
+            "desc": "Damage of Resonance Skill <color=Highlight>Crimson Erosion<\/color> triggered by <color=Highlight>Dodge Counter: Ruby Shades<\/color> is increased by 20%. The HP cost and stacks of \"Ruby Blossom\" recovered are doubled."
         },
         "Forte Circuit Passive 2": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
@@ -602,7 +602,7 @@ export default {
                     "name": "Con. Energy Regen"
                 }
             ],
-            "name": "Vindiction",
+            "name": "Vindication",
             "desc": "With unwavering determination, Danjin unleashes a strike, dealing <color=Dark>Havoc DMG<\/color>."
         },
         "Forte Circuit": {
@@ -769,7 +769,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconmicaiQTE_UI.T_IconmicaiQTE_UI",
             "id": 1000809,
             "name": "Duality",
-            "desc": "The incoming character (or a character on a nearby team that activates an Outro Skill) has their Havoc DMG Amplified by 23% for 14s or until they are switched off field."
+            "desc": "The incoming Resonator has their Havoc DMG Amplified by 23% for 14s or until they are switched out."
         },
         "Basic Attack Bonus 1": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyreddark_UI.T_Iconpropertyreddark_UI",

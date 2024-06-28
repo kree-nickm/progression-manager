@@ -327,7 +327,7 @@ export default {
                         "5",
                         "5"
                     ],
-                    "name": "Mid-Air Attack Stamina Cost"
+                    "name": "Mid-air Attack STA Cost"
                 },
                 {
                     "scaling": [
@@ -643,7 +643,7 @@ export default {
                 }
             ],
             "name": "Arboreal Flourish",
-            "desc": "Verina nourishes nearby foliage at rapid speed, dealing <color=Light>Spectro DMG<\/color> while healing all Characters on teams nearby. A <color=Highlight>Photosynthesis Mark<\/color> is applied to the target on hit.n<size=10> <\/size>n<size=40><color=Title>Photosynthesis Mark<\/color><\/size>nWhenever a Character on a team nearby performs an attack on targets with a Photosynthesis Mark, Verina performs a Coordinated Attack, dealing <color=Light>Spectro DMG<\/color> while healing the active Character dealing damage on a team nearby, triggered 1 time per second."
+            "desc": "Verina nourishes nearby foliage at rapid speed, dealing <color=Light>Spectro DMG<\/color> while healing all Characters on teams nearby. A <color=Highlight>Photosynthesis Mark<\/color> is applied to the target on hit.n<size=10> <\/size>n<size=40><color=Title>Photosynthesis Mark<\/color><\/size>nWhenever a Character on a team nearby performs an attack on targets with a <color=Highlight>Photosynthesis Mark<\/color>, Verina performs a Coordinated Attack, dealing <color=Light>Spectro DMG<\/color> while healing the active Character dealing damage on a team nearby, triggered 1 time per second."
         },
         "Forte Circuit Passive 1": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconWeilinaiD1_UI.T_IconWeilinaiD1_UI",
@@ -765,7 +765,7 @@ export default {
                         "117.85%",
                         "123.43%"
                     ],
-                    "name": "Mid-Air Attack: Starflower Bloom Part 1 Damage"
+                    "name": "Mid-Air Attack: Starflower Blooms Part 1 Damage"
                 },
                 {
                     "scaling": [
@@ -790,7 +790,7 @@ export default {
                         "111.20%",
                         "116.47%"
                     ],
-                    "name": "Mid-Air Attack: Starflower Bloom Part 2 Damage"
+                    "name": "Mid-Air Attack: Starflower Blooms Part 2 Damage"
                 },
                 {
                     "scaling": [
@@ -815,7 +815,7 @@ export default {
                         "53.14%*3",
                         "55.66%*3"
                     ],
-                    "name": "Mid-Air Attack: Starflower Bloom Part 3 Damage"
+                    "name": "Mid-Air Attack: Starflower Blooms Part 3 Damage"
                 },
                 {
                     "scaling": [
@@ -867,7 +867,7 @@ export default {
                 }
             ],
             "name": "Starflower Blooms",
-            "desc": "<size=40><color=Title>Heavy Attack: Starflower Blooms<\/color><\/size>nWhen casting <color=Highlight>Heavy Attack<\/color>, if Verina carries \"Photosynthesis Energy\", Verina consumes 1 stack of \"Photosynthesis Energy\" to recover Concerto Energy and heal all characters on a nearby team;n<color=Highlight>Heavy Attack: Starflower Blooms<\/color> deals <color=Light>Spectro DMG<\/color>, considered as Heavy Attack damage.n<size=10> <\/size>n<size=40><color=Title>Mid-air Attack: Starflower Blooms<\/color><\/size>nWhen casting <color=Highlight>Mid-air Attack<\/color>, if Verina carries \"Photosynthesis Energy\", Verina consumes 1 stack of \"Photosynthesis Energy\" to recover Concerto Energy and heal all characters on a nearby team;n<color=Highlight>Mid-air Attack: Starflower Blooms<\/color> deals <color=Light>Spectro DMG<\/color>, considered as Basic Attack damage.nVerina can cast <color=Highlight>Mid-air Attack: Starflower Blooms<\/color> by using <color=Highlight>Basic Attack<\/color> after casting <color=Highlight>Heavy Attack: Starflower Blooms<\/color>.n<size=10> <\/size>n<size=40><color=Title>Photosynthesis Energy<\/color><\/size>nVerina can hold up to 4 \"Photosynthesis Energy\".nVerina obtains 1 stack of \"Photosynthesis Energy\" for every Basic Attack 5 on hit;nVerina obtains 1 stack of \"Photosynthesis Energy\" for every Resonance Skill <color=Highlight>Botany Experiment<\/color> on hit;nVerina obtains 1 stack of \"Photosynthesis Energy\" for every Intro Skill <color=Highlight>Verdant Growth<\/color> on hit."
+            "desc": "<size=40><color=Title>Heavy Attack: Starflower Blooms<\/color><\/size>nWhen casting <color=Highlight>Heavy Attack<\/color>, if Verina carries \"Photosynthesis Energy\", Verina consumes 1 stack of \"Photosynthesis Energy\" to recover Concerto Energy and heal all characters on a nearby team;n<color=Highlight>Heavy Attack: Starflower Blooms<\/color> deals <color=Light>Spectro DMG<\/color>, considered as Heavy Attack damage.n<size=10> <\/size>n<size=40><color=Title>Mid-air Attack: Starflower Blooms<\/color><\/size>nWhen casting <color=Highlight>Mid-air Attack<\/color>, if Verina carries \"Photosynthesis Energy\", Verina consumes 1 stack of \"Photosynthesis Energy\" to recover Concerto Energy and heal all characters on a nearby team;n<color=Highlight>Mid-air Attack: Starflower Blooms<\/color> deals <color=Light>Spectro DMG<\/color>, considered as Basic Attack damage.nVerina can cast <color=Highlight>Mid-air Attack: Starflower Blooms<\/color> by using <color=Highlight>Basic Attack<\/color> after casting <color=Highlight>Heavy Attack: Starflower Blooms<\/color>.n<size=10> <\/size>n<size=40><color=Title>Photosynthesis Energy<\/color><\/size>nVerina can hold up to 4 \"Photosynthesis Energy\".nVerina obtains 1 stack of \"Photosynthesis Energy\" for every <color=Highlight>Basic Attack 5<\/color> on hit;nVerina obtains 1 stack of \"Photosynthesis Energy\" for every Resonance Skill <color=Highlight>Botany Experiment<\/color> on hit;nVerina obtains 1 stack of \"Photosynthesis Energy\" for every Intro Skill <color=Highlight>Verdant Growth<\/color> on hit."
         },
         "Utility Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
@@ -879,7 +879,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconWeilinaiQTE_UI.T_IconWeilinaiQTE_UI",
             "id": 1000309,
             "name": "Blossom",
-            "desc": "Verina heals the next character (or a character on a nearby team that activates an Outro Skill) by 19% of her ATK per second for 6s. All characters on nearby teams gain 15% All-Type DMG Deepen for 30s."
+            "desc": "Heal the incoming Resonator by 19% of Verina's ATK per second for 6s. All Resonators on nearby teams have their DMG Amplified by 15% for 30s."
         },
         "Basic Attack Bonus 2": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertygreencure_UI.T_Iconpropertygreencure_UI",

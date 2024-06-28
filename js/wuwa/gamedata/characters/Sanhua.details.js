@@ -248,7 +248,7 @@ export default {
                         "30",
                         "30"
                     ],
-                    "name": "Mid-air Attack Stamina Cost"
+                    "name": "Mid-air Attack STA Cost"
                 }
             ],
             "name": "Frigid Light",
@@ -530,7 +530,7 @@ export default {
                         "324.59%*2",
                         "339.96%*2"
                     ],
-                    "name": "Burst Damage"
+                    "name": "Detonate Damage"
                 },
                 {
                     "scaling": [
@@ -720,7 +720,7 @@ export default {
                         "15",
                         "15"
                     ],
-                    "name": "Burst Con. Energy Regen"
+                    "name": "Detonate Con. Energy Regen"
                 },
                 {
                     "scaling": [
@@ -770,7 +770,7 @@ export default {
                 }
             ],
             "name": "Clarity of Mind",
-            "desc": "<size=40><color=Title>Heavy Attack: Detonate<\/color><\/size>nWhen holding <color=Highlight>Basic Attack<\/color>, a cursor moves back and forth on the Forte Gauge. Release <color=Highlight>Basic Attack<\/color> while cursor falls in the \"Frostbite\" area, to perform Heavy Attack <color=Highlight>Detonate<\/color>, dealing <color=Ice>Glacio DMG<\/color> considered as Heavy Attack damage.n<size=10> <\/size>n<size=40><color=Title>Ice Burst<\/color><\/size>nSanhua\u2019s Heavy Attack <color=Highlight>Detonate<\/color> detonates all \"Ice Thorns\", \"Ice Prisms\" and \"Glaciers\" within her attack range, dealing <color=Ice>Glacio DMG<\/color>. DMG done by Ice Burst is considered as Resonance Skill damage.n<size=10> <\/size>n<size=40><color=Title>Frostbite Area<\/color><\/size>nThe \"Frostbite\" area expands with every 1 stack of \"Clarity\". \"Clarity\" stacks up to 2 times.nSanhua obtains 1 stack of \"Clarity\" upon performing <color=Highlight>Basic Attack 5<\/color>.nSanhua obtains 1 stack of \"Clarity\" upon casting Intro Skill <color=Highlight>Freezing Thorns<\/color>.nSanhua obtains 1 stack of \"Clarity\" upon casting Resonance Skill <color=Highlight>Eternal Frost<\/color>.nSanhua obtains 2 stack(s) of \"Clarity\" upon casting Resonance Liberation <color=Highlight>Glacial Gaze<\/color>.nUpon casting Heavy Attack <color=Highlight>Detonate<\/color>, all \"Clarity\" is removed."
+            "desc": "<size=40><color=Title>Heavy Attack: Detonate<\/color><\/size>nWhen holding <color=Highlight>Basic Attack<\/color>, a cursor moves back and forth on the Forte Gauge. Release <color=Highlight>Basic Attack<\/color> while cursor falls in the \"Frostbite\" area, to perform Heavy Attack <color=Highlight>Detonate<\/color>, dealing <color=Ice>Glacio DMG<\/color> considered as Heavy Attack damage.n<size=10> <\/size>n<size=40><color=Title>Ice Burst<\/color><\/size>nSanhua\u2019s Heavy Attack <color=Highlight>Detonate<\/color> detonates all \"Ice Thorns\", \"Ice Prisms\" and \"Glaciers\" within her attack range, dealing <color=Ice>Glacio DMG<\/color>. <color=Highlight>Ice Burst<\/color> deals Resonance Skill DMG.n<size=10> <\/size>n<size=40><color=Title>Frostbite Area<\/color><\/size>nThe \"Frostbite\" area expands with every 1 stack of \"Clarity\". \"Clarity\" stacks up to 2 times.nSanhua obtains 1 stack of \"Clarity\" upon performing <color=Highlight>Basic Attack 5<\/color>.nSanhua obtains 1 stack of \"Clarity\" upon casting Intro Skill <color=Highlight>Freezing Thorns<\/color>.nSanhua obtains 1 stack of \"Clarity\" upon casting Resonance Skill <color=Highlight>Eternal Frost<\/color>.nSanhua obtains 2 stack(s) of \"Clarity\" upon casting Resonance Liberation <color=Highlight>Glacial Gaze<\/color>.nUpon casting Heavy Attack <color=Highlight>Detonate<\/color>, all \"Clarity\" is removed."
         },
         "Utility Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
@@ -782,7 +782,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconSanhuaQTE_UI.T_IconSanhuaQTE_UI",
             "id": 1000509,
             "name": "Silversnow",
-            "desc": "The incoming character (or a character on a nearby team that activates an Outro Skill) has their Basic Attack DMG Amplified by 38% for 14s or until they are switched off field."
+            "desc": "The incoming Resonator has their Basic Attack DMG Amplified by 38% for 14s or until they are switched out."
         },
         "Basic Attack Bonus 1": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredice_UI.T_Iconpropertyredice_UI",

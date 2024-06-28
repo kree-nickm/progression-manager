@@ -177,7 +177,7 @@ export default {
                         "56.12%",
                         "58.78%"
                     ],
-                    "name": "Mid-Air Attack Damage"
+                    "name": "Mid-air Attack Damage"
                 },
                 {
                     "scaling": [
@@ -225,7 +225,7 @@ export default {
                         "5",
                         "5"
                     ],
-                    "name": "Mid-Air Attack Stamina Consumption"
+                    "name": "Mid-air Attack STA Cost"
                 }
             ],
             "name": "POW POW",
@@ -532,7 +532,7 @@ export default {
                         "762.11%",
                         "798.19%"
                     ],
-                    "name": "POW POW Damage"
+                    "name": "Boom Boom Damage"
                 },
                 {
                     "scaling": [
@@ -582,7 +582,7 @@ export default {
                 }
             ],
             "name": "Heroic Bullets",
-            "desc": "<size=40><color=Title>Resonance Skill: DAKA DAKA!<\/color><\/size>nHold Resonance Skill <color=Highlight>Whizzing Fight Spirit<\/color> to enter <color=Highlight>DAKA DAKA!<\/color>. In this state:nChixia continuously consumes \"Thermobaric Bullets\" to attack the target, dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill damage;nTap <color=Highlight>Basic Attack<\/color> to cast <color=Highlight>Basic Attack 4<\/color>, dealing <color=Fire>Fusion DMG<\/color>, considered as Basic Attack damage. Then she terminates \"DAKA DAKA!\";n\u00b7If 30 \"Thermobaric Bullets\" have been fired when <color=Highlight>Basic Attack<\/color> is activated, Chixia will cast Resonance Skill <color=Highlight>Boom Boom<\/color> and terminate \"DAKA DAKA!\"nChixia terminates \"DAKA DAKA!\" when all \"Thermobaric Bullets\" are consumed.n<size=10> <\/size>n<size=40><color=Title>Resonance Skill: Boom Boom<\/color><\/size>nDeal <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill damage.n<size=10> <\/size>n<size=40><color=Title>Thermobaric Bullets<\/color><\/size>nChixia can hold up to 60 \"Thermobaric Bullets\".nInherent Skill <color=Highlight>Scorching Magazine<\/color> increases Max \"Thermobaric Bullets\" by 10.nChixia obtains \"Thermobaric Bullets\" for every Normal Attack <color=Highlight>POW POW<\/color> on hit.nChixia obtains \"Thermobaric Bullets\" upon casting Intro Skill <color=Highlight>Grand Entrance<\/color> and Resonance Skill <color=Highlight>Whizzing Fight Spirit<\/color>."
+            "desc": "<size=40><color=Title>Resonance Skill: DAKA DAKA!<\/color><\/size>nHold Resonance Skill <color=Highlight>Whizzing Fight Spirit<\/color> to enter <color=Highlight>DAKA DAKA!<\/color>. In this state:n- Chixia continuously consumes \"Thermobaric Bullets\" to attack the target, dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill damage;nTap <color=Highlight>Basic Attack<\/color> to cast <color=Highlight>Basic Attack 4<\/color>, dealing <color=Fire>Fusion DMG<\/color>, considered as Basic Attack damage. Then she exits the \"DAKA DAKA!\" state;n- If 30 \"Thermobaric Bullets\" have been fired when <color=Highlight>Basic Attack<\/color> is activated, Chixia will cast Resonance Skill <color=Highlight>Boom Boom<\/color> and terminate \"DAKA DAKA!\"n- Chixia exits the \"DAKA DAKA!\" state when all \"Thermobaric Bullets\" are consumed.n<size=10> <\/size>n<size=40><color=Title>Resonance Skill: Boom Boom<\/color><\/size>nDeal <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill damage.n<size=10> <\/size>n<size=40><color=Title>Thermobaric Bullets<\/color><\/size>nChixia can hold up to 60 \"Thermobaric Bullets\".nInherent Skill <color=Highlight>Scorching Magazine<\/color> increases Max \"Thermobaric Bullets\" by 10.nChixia obtains \"Thermobaric Bullets\" for every Normal Attack <color=Highlight>POW POW<\/color> on hit.nChixia obtains \"Thermobaric Bullets\" upon casting Intro Skill <color=Highlight>Grand Entrance<\/color> and Resonance Skill <color=Highlight>Whizzing Fight Spirit<\/color>."
         },
         "Utility Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",

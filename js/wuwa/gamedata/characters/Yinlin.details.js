@@ -152,7 +152,7 @@ export default {
                         "214.78%",
                         "224.95%"
                     ],
-                    "name": "Mid-Air Attack Damage"
+                    "name": "Mid-air Attack Damage"
                 },
                 {
                     "scaling": [
@@ -227,7 +227,7 @@ export default {
                         "30",
                         "30"
                     ],
-                    "name": "Mid-Air Attack Stamina Consumption"
+                    "name": "Mid-air Attack STA Cost"
                 }
             ],
             "name": "Zapstring's Dance",
@@ -381,7 +381,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Magnetic Roar Con. Energy Regen"
+                    "name": "Magnetic Roar Concerto Regen"
                 },
                 {
                     "scaling": [
@@ -404,7 +404,7 @@ export default {
                         "15",
                         "15"
                     ],
-                    "name": "Lightning Execution Con. Energy Regen"
+                    "name": "Lightning Execution Concerto Regen"
                 },
                 {
                     "scaling": [
@@ -427,7 +427,7 @@ export default {
                         "5",
                         "5"
                     ],
-                    "name": "Electromagnetic Blast Con. Energy Regen"
+                    "name": "Electromagnetic Blast Concerto Regen"
                 }
             ],
             "name": "Magnetic Roar",
@@ -531,7 +531,7 @@ export default {
                         "20",
                         "20"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Thundering Wrath",
@@ -599,7 +599,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Raging Storm",
@@ -661,7 +661,7 @@ export default {
                 }
             ],
             "name": "Chameleon Cipher",
-            "desc": "<size=40><color=Title>Chameleon Cipher<\/color><\/size>nWhen Yinlin's \"Judgment Points\" is full, her <color=Highlight>Heavy Attack<\/color> is replaced with <color=Highlight>Chameleon Cipher<\/color>, which consumes all \"Judgment Points\" to attack the target, dealing <color=Thunder>Electro DMG<\/color>. When it hits a target marked with <color=Highlight>Sinner's Mark<\/color>, the <color=Highlight>Sinner's Mark<\/color> is replaced with <color=Highlight>Punishment Mark<\/color>, lasting for 18s.n<size=10> <\/size>n<size=40><color=Title>Sinner's Mark<\/color><\/size>nNormal Attack <color=Highlight>Zapstring's Dance<\/color>, Resonance Liberation <color=Highlight>Thundering Wrath<\/color>, and Intro Skill <color=Highlight>Roaring Storm<\/color> will apply <color=Highlight>Sinner's Mark<\/color> on hit.n<color=Highlight>Sinner's Mark<\/color> is removed when Yinlin exits.n<size=10> <\/size>n<size=40><color=Title>\"Punishment Mark\"<\/color><\/size>nWhen a target marked with <color=Highlight>Punishment Mark<\/color> is damaged, <color=Highlight>Judgement Strike<\/color> will fall, dealing <color=Thunder>Electro DMG<\/color> to all targets marked with <color=Highlight>Punishment Mark<\/color>. This can be triggered up to once per second.n<size=10> <\/size>n<size=40><color=Title>Judgment Points<\/color><\/size>nYinlin can hold up to 100 Judgement Points.nWhen Normal Attack <color=Highlight>Zapstring's Dance<\/color> hits a target, restore \"Judgment Points\".nWhen casting Resonance Skill <color=Highlight>Magnetic Roar<\/color> hits a target, restore \"Judgment Points\".nWhen Resonance Skill <color=Highlight>Electromagnetic Blast<\/color> hits a target, restores \"Judgment Points\".nWhen casting Resonance Skill <color=Highlight>Magnetic Roar<\/color> hits a target, restore \"Judgment Points\"."
+            "desc": "<size=40><color=Title>Chameleon Cipher<\/color><\/size>nWhen Yinlin's Judgment Points are full, her <color=Highlight>Heavy Attack<\/color> is replaced with <color=Highlight>Chameleon Cipher<\/color>, which consumes all Judgment Points to attack the target, dealing <color=Thunder>Electro DMG<\/color>. When it hits a target marked with <color=Highlight>Sinner's Mark<\/color>, the <color=Highlight>Sinner's Mark<\/color> is replaced with <color=Highlight>Punishment Mark<\/color>, lasting for 18s.n<size=10> <\/size>n<size=40><color=Title>Sinner's Mark<\/color><\/size>nBasic Attack <color=Highlight>Zapstring's Dance<\/color>, Resonance Liberation <color=Highlight>Thundering Wrath<\/color>, and Intro Skill <color=Highlight>Roaring Storm<\/color> apply <color=Highlight>Sinner's Mark<\/color> to the target on hit.n<color=Highlight>Sinner's Mark<\/color> is removed when Yinlin is switched out.n<size=10> <\/size>n<size=40><color=Title>Punishment Mark<\/color><\/size>nWhen a target marked with <color=Highlight>Punishment Mark<\/color> takes damage, <color=Highlight>Judgement Strike<\/color> will fall, triggering Coordinated Attacks to all targets marked with <color=Highlight>Punishment Mark<\/color>, dealing <color=Thunder>Electro DMG<\/color>. This can be triggered up to 1 time per second.n<size=10> <\/size>n<size=40><color=Title>Judgment Points<\/color><\/size>nYinlin can hold up to 100 Judgement Points. Yinlin gains Judgement Points through the following ways:nUpon casting Intro Skill <color=Highlight>Raging Storm<\/color>nWhen Basic Attack <color=Highlight>Zapstring's Dance<\/color> hits a targetnUpon casting Resonance Skill <color=Highlight>Magnetic Roar<\/color>;nWhen Resonance Skill <color=Highlight>Electromagnetic Blast<\/color> hits a target;nUpon casting Resonance Skill <color=Highlight>Lightning Execution<\/color>."
         },
         "Utility Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYinlinD2_UI.T_IconYinlinD2_UI",
@@ -673,7 +673,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYinlinQTE_UI.T_IconYinlinQTE_UI",
             "id": 1001509,
             "name": "Strategist",
-            "desc": "The incoming character (or a character on a nearby team that activates an Outro Skill) has their Electro DMG Amplified by 20% and Resonance Liberation DMG Amplified by 25% for 14s or until they are switched off field."
+            "desc": "The incoming Resonator has their Electro DMG Amplified by 20% and Resonance Liberation DMG Amplified by 25% for 14s or until they are switched out."
         },
         "Basic Attack Bonus 1": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredbaoji_UI.T_Iconpropertyredbaoji_UI",

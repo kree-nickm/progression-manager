@@ -24,7 +24,8 @@ export default {
                         "109.37%",
                         "115.40%",
                         "121.44%",
-                        "127.47%"
+                        "127.47%",
+                        "133.51%"
                     ],
                     "name": "Part 1 Damage"
                 },
@@ -48,7 +49,8 @@ export default {
                         "65.38%",
                         "68.99%",
                         "72.60%",
-                        "76.21%"
+                        "76.21%",
+                        "79.81%"
                     ],
                     "name": "Part 2 Damage"
                 },
@@ -72,7 +74,8 @@ export default {
                         "54.38%*5",
                         "57.39%*5",
                         "60.39%*5",
-                        "63.39%*5"
+                        "63.39%*5",
+                        "66.39%*5"
                     ],
                     "name": "Part 3 Damage"
                 },
@@ -96,7 +99,8 @@ export default {
                         "98.97%*2",
                         "104.43%*2",
                         "109.89%*2",
-                        "115.35%*2"
+                        "115.35%*2",
+                        "120.81%*2"
                     ],
                     "name": "Part 4 Damage"
                 },
@@ -120,7 +124,8 @@ export default {
                         "35.29%*7+229.40%*2",
                         "37.24%*7+242.06%*2",
                         "39.18%*7+254.72%*2",
-                        "41.13%*7+267.38%*2"
+                        "41.13%*7+267.38%*2",
+                        "43.06%*7+280.01%*2"
                     ],
                     "name": "Part 5 Damage"
                 },
@@ -144,7 +149,8 @@ export default {
                         "33.18%*6",
                         "35.01%*6",
                         "36.85%*6",
-                        "38.68%*6"
+                        "38.68%*6",
+                        "40.48%*6"
                     ],
                     "name": "Heavy Attack Damage"
                 },
@@ -168,7 +174,8 @@ export default {
                         "158.41%",
                         "167.15%",
                         "175.89%",
-                        "184.63%"
+                        "184.63%",
+                        "193.37%"
                     ],
                     "name": "Windborne Strike Damage"
                 },
@@ -192,7 +199,8 @@ export default {
                         "122.15%",
                         "128.89%",
                         "135.63%",
-                        "142.37%"
+                        "142.37%",
+                        "149.11%"
                     ],
                     "name": "Abyssal Slash Damage"
                 },
@@ -216,7 +224,8 @@ export default {
                         "184.27%",
                         "194.43%",
                         "204.60%",
-                        "214.77%"
+                        "214.77%",
+                        "224.94%"
                     ],
                     "name": "Mid-Air Attack Damage"
                 },
@@ -240,7 +249,8 @@ export default {
                         "118.88%",
                         "125.44%",
                         "132.00%",
-                        "138.56%"
+                        "138.56%",
+                        "145.12%"
                     ],
                     "name": "Banner Of Triumph Damage"
                 },
@@ -264,31 +274,33 @@ export default {
                         "232.71%",
                         "245.55%",
                         "258.39%",
-                        "271.23%"
+                        "271.23%",
+                        "284.08%"
                     ],
-                    "name": "Mid-Air Attack Follow-Up Damage"
+                    "name": "Mid-Air Attack Follow-Up DMG"
                 },
                 {
                     "scaling": [
                         "63.30%*2",
                         "68.49%*2",
                         "73.68%*2",
-                        "80.95%*2",
-                        "86.14%*2",
-                        "92.11%*2",
+                        "80.94%*2",
+                        "86.13%*2",
+                        "92.10%*2",
                         "100.41%*2",
-                        "108.72%*2",
+                        "108.71%*2",
                         "117.02%*2",
-                        "125.85%*2",
-                        "136.23%*2",
-                        "146.61%*2",
+                        "125.84%*2",
+                        "136.22%*2",
+                        "146.60%*2",
                         "156.99%*2",
                         "167.37%*2",
                         "177.75%*2",
                         "188.13%*2",
-                        "198.52%*2",
-                        "208.90%*2",
-                        "219.28%*2"
+                        "198.51%*2",
+                        "208.89%*2",
+                        "219.27%*2",
+                        "229.65%*2"
                     ],
                     "name": "Dodge Counter Damage"
                 },
@@ -340,11 +352,11 @@ export default {
                         "30",
                         "30"
                     ],
-                    "name": "Mid-Air Attack Stamina Consumption"
+                    "name": "Mid-air Attack STA Cost"
                 }
             ],
             "name": "Lone Lance",
-            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>nJiyan performs up to 5 consecutive attacks, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack<\/color><\/size>nJiyan consumes STA to thrust forward, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack: Windborne Strike<\/color><\/size>nHold the <color=Highlight>Basic Attack<\/color> during <color=Highlight>Heavy Attack<\/color> to cast <color=Highlight>Windborne Strike<\/color> after the <color=Highlight>Heavy Attack<\/color> ends, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack: Abyssal Slash<\/color><\/size>nRelease the <color=Highlight>Basic Attack<\/color> during the <color=Highlight>Heavy Attack<\/color> to cast <color=Highlight>Abyssal Slash<\/color> after the <color=Highlight>Heavy Attack<\/color> ends, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mid-air Attack<\/color><\/size>nJiyan consumes STA to perform a Mid-Air Plunging Attack, dealing <color=Wind>Aero DMG<\/color>.nAfter the <color=Highlight>Plunging Attack<\/color>, use <color=Highlight>Basic Attack<\/color> to perform a follow-up attack, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mid-air Attack: Banner of Triumph<\/color><\/size>nAfter casting the Heavy Attack <color=Highlight>Windborne Strike<\/color> or the Resonance Skill <color=Highlight>Windqueller<\/color> in the air, Jiyan can perform a mid-air attack, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Dodge Counter<\/color><\/size>nUse a <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Wind>Aero DMG<\/color>."
+            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>nPerform up to 5 consecutive attacks, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack<\/color><\/size>nConsume Stamina to thrust forward, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack: Windborne Strike<\/color><\/size>nHold <color=Highlight>Basic Attack<\/color> during <color=Highlight>Heavy Attack<\/color> to cast <color=Highlight>Windborne Strike<\/color> after <color=Highlight>Heavy Attack<\/color> ends, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack: Abyssal Slash<\/color><\/size>nRelease <color=Highlight>Basic Attack<\/color> during <color=Highlight>Heavy Attack<\/color> to cast <color=Highlight>Abyssal Slash<\/color> after <color=Highlight>Heavy Attack<\/color> ends, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mid-Air Attack<\/color><\/size>nConsume Stamina to perform a Plunging Attack while in mid-air, dealing <color=Wind>Aero DMG<\/color>.nAfter performing the <color=Highlight>Plunging Attack<\/color>, use <color=Highlight>Basic Attack<\/color> to perform a follow-up attack, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mid-Air Attack: Banner of Triumph<\/color><\/size>nAfter casting Heavy Attack <color=Highlight>Windborne Strike<\/color> or Resonance Skill <color=Highlight>Windqueller<\/color> in mid-air, Jiyan can perform a mid-air attack, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Dodge Counter<\/color><\/size>nUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Wind>Aero DMG<\/color>."
         },
         "Resonance Skill": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangB1_UI.T_IconYangyangB1_UI",
@@ -370,7 +382,8 @@ export default {
                         "159.00%*4",
                         "167.78%*4",
                         "176.55%*4",
-                        "185.32%*4"
+                        "185.32%*4",
+                        "194.10%*4"
                     ],
                     "name": "Skill Damage"
                 },
@@ -452,7 +465,8 @@ export default {
                         "97.95%*8",
                         "103.36%*8",
                         "108.76%*8",
-                        "114.17%*8"
+                        "114.17%*8",
+                        "119.54%*8"
                     ],
                     "name": "Lance Of Qingloong Part 1 Damage"
                 },
@@ -476,7 +490,8 @@ export default {
                         "92.01%*8",
                         "97.09%*8",
                         "102.17%*8",
-                        "107.24%*8"
+                        "107.24%*8",
+                        "112.32%*8"
                     ],
                     "name": "Lance Of Qingloong Part 2 Damage"
                 },
@@ -500,7 +515,8 @@ export default {
                         "99.80%*8",
                         "105.31%*8",
                         "110.82%*8",
-                        "116.33%*8"
+                        "116.33%*8",
+                        "121.83%*8"
                     ],
                     "name": "Lance Of Qingloong Part 3 Damage"
                 },
@@ -604,7 +620,7 @@ export default {
                 }
             ],
             "name": "Emerald Storm - Prelude",
-            "desc": "After releasing Emerald Storm - Prelude, Jiyan enters <color=Highlight>Qingloong Mode<\/color>.n<size=10> <\/size>n<size=40><color=Title>Qingloong Mode<\/color><\/size>nJiyan has increased resistance to interruption;n<color=Highlight>Basic Attack<\/color>, <color=Highlight>Heavy Attack<\/color> and <color=Highlight>Dodge Counter<\/color> are replaced with Heavy Attack <color=Highlight>Lance of Qingloong<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack: Lance of Qingloong<\/color><\/size>nPerform up to 3 continuous attacks, dealing <color=Wind>Aero DMG<\/color>, considered as Heavy Attack damage."
+            "desc": "After releasing Emerald Storm - Prelude, Jiyan enters <color=Highlight>Qingloong Mode<\/color>.n<size=10> <\/size>n<size=40><color=Title>Qingloong Mode<\/color><\/size>nJiyan has increased resistance to interruption;n<color=Highlight>Basic Attack<\/color>, <color=Highlight>Heavy Attack<\/color> and <color=Highlight>Dodge Counter<\/color> are replaced with Heavy Attack <color=Highlight>Lance of Qingloong<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack: Lance of Qingloong<\/color><\/size>nPerform up to 3 consecutive attacks, dealing <color=Wind>Aero DMG<\/color>, considered as Heavy Attack damage."
         },
         "Forte Circuit Passive 1": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangD2_UI.T_IconYangyangD2_UI",
@@ -642,7 +658,8 @@ export default {
                         "297.21%",
                         "313.61%",
                         "330.01%",
-                        "346.41%"
+                        "346.41%",
+                        "362.81%"
                     ],
                     "name": "Skill Damage"
                 },
@@ -681,25 +698,26 @@ export default {
             "motionValues": [
                 {
                     "scaling": [
-                        "71.88%*2+215.65%",
-                        "77.78%*2+233.33%",
+                        "71.88%*2+215.64%",
+                        "77.77%*2+233.33%",
                         "83.67%*2+251.01%",
                         "91.92%*2+275.77%",
-                        "97.82%*2+293.45%",
-                        "104.60%*2+313.79%",
-                        "114.03%*2+342.08%",
-                        "123.46%*2+370.38%",
-                        "132.89%*2+398.67%",
+                        "97.81%*2+293.45%",
+                        "104.59%*2+313.78%",
+                        "114.02%*2+342.08%",
+                        "123.45%*2+370.37%",
+                        "132.88%*2+398.66%",
                         "142.91%*2+428.73%",
-                        "154.70%*2+464.10%",
-                        "166.49%*2+499.46%",
-                        "178.28%*2+534.83%",
-                        "190.07%*2+570.20%",
+                        "154.69%*2+464.09%",
+                        "166.48%*2+499.46%",
+                        "178.27%*2+534.82%",
+                        "190.06%*2+570.19%",
                         "201.85%*2+605.56%",
-                        "213.64%*2+640.93%",
+                        "213.64%*2+640.92%",
                         "225.43%*2+676.29%",
                         "237.22%*2+711.66%",
-                        "249.01%*2+747.03%"
+                        "249.00%*2+747.02%",
+                        "260.78%*2+782.36%"
                     ],
                     "name": "Emerald Storm: Finale Damage"
                 }
@@ -717,7 +735,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
             "id": 1001109,
             "name": "Discipline",
-            "desc": "When the incoming character's (or a character on a nearby team that activates an Outro Skill) Heavy Attack hits a target, Jiyan will summon Qingloong to launch a Coordinated Attack, dealing <color=Wind>Aero DMG<\/color> equal to 313.40% of Jiyan's ATK. This attack lasts for 8s and can be triggered once every 1s, up to 2 times."
+            "desc": "When the incoming Resonator's Heavy Attack hits a target, Jiyan will summon a lance to launch a coordinated attack, dealing <color=Wind>Aero DMG<\/color> equal to 313.40% of Jiyan's ATK. This attack lasts for 8s and can be triggered once every 1s, up to 2 times."
         },
         "Basic Attack Bonus 1": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredbaoji_UI.T_Iconpropertyredbaoji_UI",
