@@ -1,12 +1,12 @@
 import { handlebars, Renderer } from "./Renderer.js";
 import UIController from "./UIController.js";
 
-handlebars.registerHelper("unique", (item, options) => item.getUnique());
+handlebars.registerHelper("unique", (item, options) => item instanceof UIItem ? item.getUnique() : console.error(`Helper 'unique' must be called on a UIItem.`, {item, options}));
 
 export default class UIItem extends UIController {
   static dontSerialize = UIController.dontSerialize.concat(["list"]);
   static templateName = "renderItemAsPopup";
-  static listTemplateName = "renderItem";
+  static listTemplateName = "renderItemAsRow";
   
   static fromJSON(data, {addProperties={}, postLoad=true}={})
   {

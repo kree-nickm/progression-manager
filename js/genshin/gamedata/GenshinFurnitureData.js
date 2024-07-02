@@ -1385,7 +1385,8 @@ export default {
     },
     "ReplicaOfTheTheatersGlory": {
         "name": "Replica Of The Theater's Glory",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/41\/Item_Replica_of_the_Theater%27s_Glory.png"
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/41\/Item_Replica_of_the_Theater%27s_Glory.png",
+        "type": "purchasable"
     },
     "ATheatersDreamOfFlowers": {
         "name": "A Theater's Dream Of Flowers",

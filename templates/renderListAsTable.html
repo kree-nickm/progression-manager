@@ -27,7 +27,7 @@
         </thead>
         <tbody class="list-target alt-bgs" data-uuid="{{uuid item}}">
           {{#each items}}
-              {{> renderItem item=. fields=../fields wrapper="tr" fieldWrapper="td"}}
+              {{> renderItemAsRow fields=../fields item=.}}
           {{/each}}
         </tbody>
     </table>

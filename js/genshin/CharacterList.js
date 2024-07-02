@@ -302,7 +302,7 @@ export default class CharacterList extends GenshinList
       }} : undefined,*/
       columnClasses: ["ascension-materials"],
       dynamic: true,
-      value: (item, type, phase) => type == "label" ? `${phase} ➤ ${phase+1}` : (item.getMat(type,phase) && item.getMatCost(type,phase) ? item.getMat(type,phase).getFieldValue(item.getMatCost(type,phase), this.viewer.settings.preferences.characterList=='1') : ""),
+      value: (item, type, phase) => type == "label" ? `${phase} ➤ ${parseInt(phase)+1}` : (item.getMat(type,phase) && item.getMatCost(type,phase) ? item.getMat(type,phase).getFieldValue(item.getMatCost(type,phase), (isNaN(phase)?this.viewer.settings.preferences.characterList=='1':this.viewer.settings.preferences.materialList=='1')) : ""),
       dependencies: (item, type, phase) => [
         {item:item.base??item, field:"ascension"},
         {item:item.viewer.lists.MaterialList.get("Mora"), field:"count"},
@@ -343,7 +343,7 @@ export default class CharacterList extends GenshinList
       labelTitle: (item, type, level) => type + (isNaN(level) ? ` (${level})` : ""),
       columnClasses: (item, type, level) => [(isNaN(level)?level:"talent")+'-'+type?.toLowerCase()],
       dynamic: true,
-      value: (item, type, level) => item.getTalentMat(type?.toLowerCase(),level) && item.getTalent(level)['mat'+type+'Count'] ? (item.getTalentMat(type?.toLowerCase(),level)?.getFieldValue(item.getTalent(level)['mat'+type+'Count'], this.viewer.settings.preferences.characterList=='1')??"!ERROR!") : "",
+      value: (item, type, level) => item.getTalentMat(type?.toLowerCase(),level) && item.getTalent(level)['mat'+type+'Count'] ? (item.getTalentMat(type?.toLowerCase(),level)?.getFieldValue(item.getTalent(level)['mat'+type+'Count'], (isNaN(level)?this.viewer.settings.preferences.characterList=='1':this.viewer.settings.preferences.materialList=='1'))??"!ERROR!") : "",
       title: (item, type, level) => item.getTalentMat(type?.toLowerCase(),level)?.getFullSource()??"!ERROR!",
       dependencies: (item, type, level) => [
         {item, field:["talent", level]},
@@ -374,7 +374,7 @@ export default class CharacterList extends GenshinList
           columnClasses: [(isNaN(i)?i:"talent")+'-'+m.toLowerCase()],
           tags: isNaN(i) & m != "Trounce" && m != "Crown" && m != "Mora" ? undefined : ["detailsOnly"],
           dynamic: true,
-          value: item => item.getTalentMat(m.toLowerCase(),i) && item.getTalent(i)['mat'+m+'Count'] ? (item.getTalentMat(m.toLowerCase(),i)?.getFieldValue(item.getTalent(i)['mat'+m+'Count'], this.viewer.settings.preferences.characterList=='1')??"!ERROR!") : "",
+          value: item => item.getTalentMat(m.toLowerCase(),i) && item.getTalent(i)['mat'+m+'Count'] ? (item.getTalentMat(m.toLowerCase(),i)?.getFieldValue(item.getTalent(i)['mat'+m+'Count'], (isNaN(i)?this.viewer.settings.preferences.characterList=='1':this.viewer.settings.preferences.materialList=='1'))??"!ERROR!") : "",
           title: item => item.getTalentMat(m.toLowerCase(),i)?.getFullSource()??"!ERROR!",
           dependencies: item => [
             {item, field:["talent", i]},
@@ -389,7 +389,7 @@ export default class CharacterList extends GenshinList
           label: "TLvl"+i,
           tags: ["detailsOnly"],
           dynamic: true,
-          value: item => `${i} ➤ ${i+1}`,
+          value: item => `${i} ➤ ${parseInt(i)+1}`,
           dependencies: item => [
             {item:item.viewer.lists.MaterialList.get("Mora"), field:"count"},
             {item:item.getTalentMat('mastery','auto'), field:"count"},
@@ -978,9 +978,10 @@ export default class CharacterList extends GenshinList
       dynamic: true,
       value: (item,attr) => {
         let value = [];
-        let materials = item.getPlanMaterials();
+        item.viewer.account.plan.addSubPlan(item, item.getPlanMaterials());
+        let materials = item.viewer.account.plan.getSubPlan(item);
         for(let matKey in materials)
-          value.push({classes:{'plan-material':true}, value:this.viewer.lists.MaterialList.get(matKey).getFieldValue(materials[matKey], this.viewer.settings.preferences.characterList=='1', {plan:materials})});
+          value.push({classes:{'plan-material':true}, value:this.viewer.lists.MaterialList.get(matKey).getFieldValue(materials[matKey], this.viewer.settings.preferences.materialList=='1', {plan:materials})});
         return value;
       },
       dependencies: (item,attr) => [

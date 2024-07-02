@@ -9,14 +9,14 @@ export default class UIList extends UIController {
   static itemClass = UIItem;
   static subsetDefinitions = {};
   static templateName = "renderListAsTable";
-  static templatePartials = ["renderItem"];
+  static templatePartials = ["renderItemAsRow"];
   
   static fromJSON(data, {viewer, addProperties={}}={})
   {
     let list = new this(viewer);
-    list.startImport("GenshinManager");
     for(let prop in addProperties)
       list[prop] = addProperties[prop];
+    list.startImport();
     for(let prop in list)
     {
       if(this.dontSerialize.indexOf(prop) == -1 && data[prop] !== undefined)
@@ -75,6 +75,7 @@ export default class UIList extends UIController {
   constructor(viewer)
   {
     super();
+    //if(!window.productionMode) console.debug(`new ${this.constructor.name}`);
     this.list = [];
     this.viewer = viewer;
     this.display = new ListDisplayManager(this);
@@ -84,7 +85,10 @@ export default class UIList extends UIController {
     this.setupDisplay();
   }
   
-  initialize(){}
+  initialize()
+  {
+    //if(!window.productionMode) console.debug(`${this.constructor.name}.initialize()`);
+  }
   
   setupDisplay(){}
   
@@ -118,7 +122,7 @@ export default class UIList extends UIController {
             fields: renderData.data.fields,
             wrapper: "tr", // TODO: Not all lists use tr/td
             fieldWrapper: "td",
-          }, {template:"renderItem", parentElement:listTargetElement});
+          }, {template:value.constructor.listTemplateName, parentElement:listTargetElement});
         }
       }
       else if(action == "replace")

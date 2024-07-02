@@ -5,6 +5,7 @@ import { mergeObjects } from "../Util.js";
 //import GenshinBuilds from "./gamedata/GenshinBuilds.js";
 
 import DataManager from "../DataManager.js";
+import ListDisplayManager from "../ListDisplayManager.js";
 import MaterialList from "./MaterialList.js";
 import CharacterList from "./CharacterList.js";
 import WeaponList from "./WeaponList.js";
@@ -16,13 +17,16 @@ import FurnitureSetList from "./FurnitureSetList.js";
 export default class GenshinManager extends DataManager
 {
   static dontSerialize = DataManager.dontSerialize.concat(["lastDay"]);
+  static templateName = "genshin/renderManager";
   static timezones = {
     'na': "UTC-9",
     'eu': "UTC-3",
     'as': "UTC+4",
     'tw': "UTC+4",
   };
+  static display;
   
+  get display(){ return GenshinManager.display; }
   lastDay = DateTime.now().setZone("UTC-9").weekdayLong;
   buildData = {};//GenshinBuilds;
   
@@ -31,8 +35,6 @@ export default class GenshinManager extends DataManager
     super();
     this.elements['loadModal'] = document.getElementById("loadModal");
     this.elements['loadError'] = document.getElementById("loadError");
-    this.settings.account = "";
-    this.settings.server = "";
     
     this.registerList(MaterialList);
     this.registerList(CharacterList);
@@ -42,7 +44,7 @@ export default class GenshinManager extends DataManager
     this.registerList(FurnitureList);
     this.registerList(FurnitureSetList);
     
-    //this.registerNavItem("Home", "home", {self:true, isDefault:true});
+    this.registerNavItem("Home", "home", {self:true, isDefault:true});
     this.registerNavItem("Characters", "characters", {listName:"CharacterList"});
     this.registerNavItem("Weapons", "weapons", {listName:"WeaponList"});
     this.registerNavItem("Artifacts", "artifacts", {listName:"ArtifactList"});
@@ -50,6 +52,24 @@ export default class GenshinManager extends DataManager
     this.registerNavItem("Materials", "materials", {listName:"MaterialList"});
     this.registerNavItem("Furniture Sets", "furnitureSets", {listName:"FurnitureSetList"});
     this.registerNavItem("Furniture", "furniture", {listName:"FurnitureList"});
+    
+    GenshinManager.display = new ListDisplayManager();
+    GenshinManager.display.addField("planMaterials", {
+      dynamic: true,
+      value: item => {
+        let value = [];
+        let planMaterials = item.getPlanMaterials();
+        for(let matDef of planMaterials.resolved)
+          value.push({classes:{'plan-material':true}, value:matDef.item.getFieldValue(matDef.amount, item.settings.preferences.materialList=='1', {plan:planMaterials.original})});
+        return value;
+      },
+      dependencies: item => [].concat(...item.lists.CharacterList.items().map(character => [
+        {item:character, field:"wishlist"},
+        {item:character, field:"level"},
+        {item:character, field:"ascension"},
+        {item:character, field:"talent"},
+      ])),
+    });
   }
   
   today()
@@ -204,69 +224,47 @@ export default class GenshinManager extends DataManager
   
   getPlanMaterials()
   {
-    console.log(`GenshinManager.getPlanMaterials`, {self:this, lists:this.lists});
-    let plan = mergeObjects(...this.lists?.CharacterList.items().map(character => character.getPlanMaterials())??[]);
-    for(let key in plan)
+    let original = mergeObjects(...this.lists.CharacterList.items().map(character => character.getPlanMaterials())??[]);
+    let resolved = [];
+    for(let key in original)
     {
-      plan[key] = {item:null, amount:plan[key]};
+      let material = this.lists.MaterialList.get(key);
+      let idx = this.lists.MaterialList.list.indexOf(material);
+      resolved.push({sort:idx, item:material, amount:original[key]});
     }
-    return plan;
-  }
-  
-  async render(force=false)
-  {
-    let render = await Renderer.rerender(
-      this.elements[this.constructor.name].querySelector(`[data-uuid="${this.uuid}"]`),
-      { item: this },
-      {
-        template: "genshin/renderManager",
-        parentElement: this.elements[this.constructor.name],
-      }
-    );
-    
-    let footer = document.getElementById("footer");
-    footer.classList.add("d-none");
-    
-    return {render, footer};
+    resolved.sort((a,b) => a.sort - b.sort);
+    return {resolved, original};
   }
   
   activateAccount(account, server)
   {
-    let changed = false;
-    if(this.settings.account != account || this.settings.server != server)
-      changed = true;
-    this.settings.account = account;
-    this.settings.server = server;
+    if(server)
+      account = account + "@" + server;
     this.today();
-    if(!this.data)
-      this.data = {};
-    if(!this.data[this.settings.account])
-      this.data[this.settings.account] = {};
-    if(!this.data[this.settings.account][this.settings.server])
-      this.data[this.settings.account][this.settings.server] = {};
-    for(let list in this.listClasses)
-      if(!this.lists[list])
-        this.lists[list] = new this.listClasses[list](this);
-    if(changed)
-      for(let list in this.listClasses)
-        this.lists[list].forceNextRender = true;
-    return true;
+    return super.activateAccount(account);
   }
   
   switchAccount(account, server)
   {
-    this.activateAccount(account, server);
+    if(server)
+      account = account + "@" + server;
+    this.activateAccount(account);
     this.lists[CharacterList.name].addTraveler();
     this.view({pane:this.currentView});
-    console.log(`Switching to account '${this.settings.account}' on server '${this.settings.server}'.`);
+    console.log(`Switching to account '${this.settings.server}'.`);
     return true;
   }
   
   postLoad(data, options)
   {
-    if("account" in options && "server" in options)
+    if("account" in options || "server" in options)
     {
-      this.activateAccount(options.account, options.server);
+      if("account" in options && "server" in options)
+        this.activateAccount(options.account +"@"+ options.server);
+      else if("account" in options)
+        this.activateAccount(options.account);
+      else if("server" in options)
+        this.activateAccount(options.server);
       if(!this.fromGOOD(data))
       {
         this.elements.loadError.classList.remove("d-none");
@@ -289,7 +287,7 @@ export default class GenshinManager extends DataManager
   fromJSON(data, {merge=false}={})
   {
     let hasData = false;
-    if(data.__class__ != "GenshinManager")
+    if(data.__class__ != this.constructor.name)
     {
       return hasData;
     }
@@ -317,65 +315,15 @@ export default class GenshinManager extends DataManager
       console.log("Loaded build data from file.", this.buildData);
     }
     
-    // Load the user data.
-    if(data.data)
-    {
-      hasData = true;
-      if(!merge)
-        this.data = {};
-      for(let acc in data.data)
-      {
-        if(!this.data[acc])
-          this.data[acc] = {};
-        this.settings.account = acc;
-        for(let srv in data.data[acc])
-        {
-          if(!this.data[acc][srv])
-            this.data[acc][srv] = {};
-          this.settings.server = srv;
-          for(let list in data.data[acc][srv])
-          {
-            this.data[acc][srv][this.listClasses[data.data[acc][srv][list].__class__].name] = this.listClasses[data.data[acc][srv][list].__class__].fromJSON(data.data[acc][srv][list], {viewer:this});
-          }
-        }
-      }
-      console.log("Loaded account data from file.", this.data);
-    }
-    
-    // Load site-specific preferences.
-    if(data.settings)
-    {
-      hasData = true;
-      this.settings = data.settings;
-      console.log("Loaded settings from file.", this.settings);
-    }
-    
-    this.settings.account = this.settings.account ?? Object.keys(this.data ?? {})[0] ?? "";
-    this.settings.server = this.settings.server ?? Object.keys(this.data?.[this.settings.account] ?? {})[0] ?? "";
     this.today();
     
-    return hasData;
+    return super.fromJSON(data, {merge}) || hasData;
   }
   
   store()
   {
-    if(this.errors)
-    {
-      console.warn(`Prevented saving of local data due to errors being detected during load, in order to prevent saved data corruption. You must reload the page to clear this. If the problem persist, you may have to report a bug to the developer here: https://github.com/kree-nickm/genshin-manager/issues`);
-      return false;
-    }
-    
-    this.settings.account = this.settings.account ?? Object.keys(this.data ?? {})[0] ?? "";
-    this.settings.server = this.settings.server ?? Object.keys(this.data?.[this.settings.account] ?? {})[0] ?? "";
-    if(!this.data)
-      this.data = {};
-    if(!this.data[this.settings.account])
-      this.data[this.settings.account] = {};
-    this.data[this.settings.account][this.settings.server] = this.lists;
-    window.localStorage.setItem("goodViewerSettings", JSON.stringify(this.settings));
-    window.localStorage.setItem("genshinAccount", JSON.stringify(this.data));
-    window.localStorage.setItem("genshinBuilds", JSON.stringify(this.buildData));
-    console.log(`Local data saved.`);
+    if(super.store())
+      window.localStorage.setItem("genshinBuilds", JSON.stringify(this.buildData));
     this.today();
   }
   
@@ -406,55 +354,37 @@ export default class GenshinManager extends DataManager
       this.errors = true;
     }
     
-    // Load the user data from the new way it's stored.
-    let data;
+    // Load the user data from the old way it's stored.
+    let retrievedData;
     try
     {
-      data = JSON.parse(window.localStorage.getItem("genshinAccount") ?? "null");
-      if(data)
+      retrievedData = JSON.parse(window.localStorage.getItem("genshinAccount") ?? "null");
+      if(retrievedData)
       {
-        for(let acc in data)
+        for(let acc in retrievedData)
         {
-          if(!this.data[acc])
-            this.data[acc] = {};
-          for(let srv in data[acc])
+          for(let srv in retrievedData[acc])
           {
-            if(!this.data[acc][srv])
-              this.data[acc][srv] = {};
-            this.settings.account = acc;
-            this.settings.server = srv;
-            for(let list in data[acc][srv])
-            {
-              this.data[acc][srv][this.listClasses[data[acc][srv][list].__class__].name] = this.listClasses[data[acc][srv][list].__class__].fromJSON(data[acc][srv][list], {viewer:this});
-            }
+            let realAcc = acc+"@"+srv;
+            if(!this.accounts[realAcc])
+              this.accounts[realAcc] = new Account(realAcc, {viewer:this});
+            this.accounts[realAcc].loadLists(retrievedData[acc][srv]);
+            this.errors = this.errors || this.accounts[realAcc].errors;
           }
         }
-        console.log("Loaded account data from local storage.", data);
+        console.log("Loaded account data from local storage (old method). This should be converted ot the new method automatically.", {retrievedData, storedData:this.accounts});
       }
       else
       {
-        console.log("No account data to load.");
+        console.log("No account data to load via the old method (this is good).");
       }
     }
     catch(x)
     {
-      console.error("Could not load stored local account data.", x);
+      console.error("Could not load stored local account data (old method).", x);
       this.errors = true;
     }
     
-    // Load site-specific preferences.
-    this.settingsFromJSON(window.localStorage.getItem("goodViewerSettings"));
-    this.settings.account = this.settings.account ?? Object.keys(this.data ?? {})[0] ?? "";
-    this.settings.server = this.settings.server ?? Object.keys(this.data?.[this.settings.account] ?? {})[0] ?? "";
-    
-    this.activateAccount(this.settings.account, this.settings.server)
-    
-    if(this.currentView)
-      this.view({pane:this.currentView});
-  }
-  
-  get lists()
-  {
-    return this.data?.[this.settings.account]?.[this.settings.server] ?? {};
+    return super.retrieve();
   }
 }

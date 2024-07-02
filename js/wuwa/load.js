@@ -27,7 +27,7 @@ async function addEventListeners()
     let selectElem = document.getElementById("editAccount");
     selectElem.replaceChildren();
     selectElem.add((()=>{let e=document.createElement("option");e.value="";e.text="Create New...";return e;})());
-    for(let acc in window.viewer.data)
+    for(let acc in window.viewer.accounts)
       if(acc)
         selectElem.add((()=>{let e=document.createElement("option");e.value=acc;e.text=acc;return e;})());
     selectElem.selectedIndex = Array.from(selectElem.options).findIndex(elem => elem.value == window.viewer.settings.server);

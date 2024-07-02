@@ -5,6 +5,7 @@
 
 .list td, .list th {
   white-space: nowrap;
+  padding: 0px 1px;
 }
 
 td.list-item-field {
@@ -74,6 +75,7 @@ thead {
 
 .sortable {
   cursor: pointer;
+  padding-right: 0.4em;
 }
 
 .sortable.sorted::after {

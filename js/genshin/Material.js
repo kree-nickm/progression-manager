@@ -115,6 +115,12 @@ export default class Material extends GenshinItem
         let words = this.shorthand.split(" ");
         if(words.length == 2 && (words[0] == "Diamond" || Object.keys(GenshinLootData.gemstone).indexOf(words[0]) > -1 && (words[0] + Material.gemQualities[this.rarity]) == this.shorthand))
           this._type = "gemstone";
+        else if(words[words.length-1] == "Billet")
+          this._type = "billet";
+        else if(words[words.length-1] == "Bait")
+          this._type = "bait";
+        else if(words[words.length-1] == "Wood")
+          this._type = "wood";
       }
     }
     return this._type ?? "unknown";
@@ -282,6 +288,8 @@ export default class Material extends GenshinItem
         "display-sm": true,
         "pending": this.count < cost,
         "insufficient": this.getCraftCount({plan}) < cost,
+        "long-text": this.count>999 || cost>999,
+        "longer-text": this.count>9999 || cost>9999,
       },
       title: this.getFullSource(),
     };
@@ -299,6 +307,7 @@ export default class Material extends GenshinItem
         "quantity": true,
         "pending": this.count < cost,
         "insufficient": this.getCraftCount({plan}) < cost,
+        "small": this.count>999 || cost>999,
       },
       edit: {target: {item:this, field:"count"}, min:0, max:99999},
     };

@@ -17,6 +17,11 @@ export default class MaterialList extends GenshinList
     'mastery': item => item.type == "mastery",
     'crown': item => item.type == "crown",
     'forgery': item => item.type == "forgery",
+    'leyline': item => item.type == "leyline",
+    'billet': item => item.type == "billet",
+    'flora': item => item.type == "flora",
+    'bait': item => item.type == "bait",
+    'wood': item => item.type == "wood",
     'unknown': item => item.type == "unknown",
   };
   
@@ -46,6 +51,25 @@ export default class MaterialList extends GenshinList
       dependencies: item => item.getCraftDependencies(),
     });
     
+    /*this.display.addField("countPlan", {
+      label: "Count",
+      dynamic: true,
+      value: item => item.count + (item.prevTier || item.converts ? " (+"+ (item.getCraftCount()-item.count) +")" : ""),
+      
+      value: item => {
+        let value = [];
+        let planMaterials = item.getPlanMaterials();
+        for(let matDef of planMaterials.resolved)
+          value.push({classes:{'plan-material':true}, value:matDef.item.getFieldValue(matDef.amount, item.settings.preferences.materialList=='1', {plan:planMaterials.original})});
+        return value;
+      },
+      
+      edit: item => {return{
+        target: {item:item, field:"count"}, min:0, max:99999,
+      };},
+      dependencies: item => item.getCraftDependencies(),
+    });
+    */
     let sourceField = this.display.addField("source", {
       label: "Source",
       dynamic: true,
@@ -101,6 +125,7 @@ export default class MaterialList extends GenshinList
   
   initialize()
   {
+    super.initialize();
     // Enemy mats
     for(let e in GenshinLootData.enemy)
       Material.setupTiers([4,3,2,1].map(q => GenshinLootData.enemy[e][q] ? this.addGOOD({goodKey:GenshinLootData.enemy[e][q], goodValue:0}).update("source", GenshinLootData.enemy[e].source ?? e).update("shorthand", e) : null));
@@ -133,12 +158,15 @@ export default class MaterialList extends GenshinList
     for(let suffix in GenshinLootData.forgery)
       Material.setupTiers([5,4,3,2].map(q => this.addGOOD({goodKey:GenshinLootData.forgery[suffix][q], goodValue:0}).update("source", GenshinLootData.forgery[suffix].source).update("days", GenshinLootData.forgery[suffix].days, "replace").update("shorthand", suffix)));
     
+    this.addGOOD({goodKey:"Mora", goodValue:0}).update("type", "mora").update("type", "leyline");
+    this.addGOOD({goodKey:"HerosWit", goodValue:0}).update("type", "mora").update("type", "leyline");
+    this.addGOOD({goodKey:"AdventurersExperience", goodValue:0}).update("type", "mora").update("type", "leyline");
+    this.addGOOD({goodKey:"WanderersAdvice", goodValue:0}).update("type", "mora").update("type", "leyline");
+    
     // Flora mats
     for(let c in GenshinCharacterData)
       if(GenshinCharacterData[c].matFlower)
         this.addGOOD({goodKey:GenshinCharacterData[c].matFlower, goodValue:0}).update("type", "flora");
-    
-    this.addGOOD({goodKey:"Mora", goodValue:0}).update("type", "mora");
   }
   
   getUnique(item)
@@ -182,6 +210,11 @@ export default class MaterialList extends GenshinList
         'mastery': this.items('mastery'),
         'crown': this.items('crown'),
         'forgery': this.items('forgery'),
+        'leyline': this.items('leyline'),
+        'billet': this.items('billet'),
+        'flora': this.items('flora'),
+        'bait': this.items('bait'),
+        'wood': this.items('wood'),
         'unknown': this.items('unknown'),
       };
       data.fields = this.display.getFields().map(field => ({field, params:[]}));

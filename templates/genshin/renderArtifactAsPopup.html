@@ -67,7 +67,7 @@
                     <td>{{> renderItemField item=character field="name" wrapper="u"}}</td>
                       {{#if (lookup character (concat (lookup ../item 'slotKey') 'Artifact'))}}
                       {{#with (lookup character (concat (lookup ../item 'slotKey') 'Artifact'))}}
-                    <td class="list-item" data-uuid="{{uuid .}}">
+                    <td class="list-item d-flex" data-uuid="{{uuid .}}">
                         <img class="artifact-icon-inline" src="{{lookup . 'image'}}"/>
                         <span style="text-shadow:0px 0px 3px black;">{{> renderItemField item=. field="characterScore" wrapper="span" params=(array ../character ../buildId)}}</span>
                         +{{lookup . 'level'}}

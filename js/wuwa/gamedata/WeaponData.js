@@ -1317,40 +1317,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050034_UI.T_IconWeapon21050034_UI"
     },
     "ScaleSlasher": {
-        "name": "Scale: Slasher",
-        "type": "Sword",
-        "rarity": 4,
-        "id": 21020024,
-        "baseATK": 27,
-        "baseStat": 1152,
-        "rankData": [
-            [
-                "8",
-                "10",
-                "12",
-                "14",
-                "16"
-            ],
-            [
-                "20",
-                "20",
-                "20",
-                "20",
-                "20"
-            ],
-            [
-                "1",
-                "1",
-                "1",
-                "1",
-                "1"
-            ]
-        ],
-        "passive": "When Resonance Skill is cast, restores {0} Concerto Energy. This effect can be triggered {2} time(s) every {1}s.",
-        "enemyMat": "Howler Core",
-        "forgeryMat": "Metallic Drip",
-        "stat": "EnergyEfficiency",
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21020024_UI.T_IconWeapon21020024_UI"
+        "renamed": "Overture"
     },
     "Stonard": {
         "name": "Stonard",

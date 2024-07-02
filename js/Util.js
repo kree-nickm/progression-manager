@@ -6,7 +6,7 @@ function mergeObjects(...objects)
     for(let key in object)
     {
       if(typeof(object[key]) == "number" && (!(key in result) || typeof(result[key]) == "number"))
-        result[key] = object[key] + result[key]??0;
+        result[key] = object[key] + (result[key]??0);
       else
         result[key] = object[key];
     }

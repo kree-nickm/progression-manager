@@ -22,7 +22,12 @@
                     <div class="col-2">{{> renderItemField item=item field="constellation" wrapper="div"}}</div>
                     <div class="col-2">{{> renderItemField item=item field="level" wrapper="div"}}</div>
                     <div class="col-2">{{> renderItemField item=item field="ascension" wrapper="div"}}</div>
-                    <div class="col-2">{{> renderItemField item=item field="autoTalent" wrapper="span"}} / {{> renderItemField item=item field="skillTalent" wrapper="span"}} / {{> renderItemField item=item field="burstTalent" wrapper="span"}}</div>
+                    <div class="col-2 d-flex">
+                      {{> renderItemField item=item field="autoTalent" wrapper="span"}}
+                      <span> / </span>
+                      {{> renderItemField item=item field="skillTalent" wrapper="span"}}<span> / </span>
+                      {{> renderItemField item=item field="burstTalent" wrapper="span"}}
+                    </div>
                     <div class="col-1">{{> renderItemField item=item field="ascendStat" wrapper="div"}}</div>
                     <div class="col-3">{{> renderItemField item=item field="equipWeapon" wrapper="div"}}</div>
                 </div>
@@ -30,7 +35,13 @@
                     <b class="col-2" title="Enter your desired stats on this line, and the app will use that to calculate the total mats and resin that you need to farm.">Desired Stats:</b>
                     <div class="col-2">{{> renderItemField item=item field="planLevel" wrapper="div"}}</div>
                     <div class="col-2">{{> renderItemField item=item field="planAscension" wrapper="div"}}</div>
-                    <div class="col-2">{{> renderItemField item=item field="planTalent" params=(array 'auto') wrapper="span"}} / {{> renderItemField item=item field="planTalent" params=(array 'skill') wrapper="span"}} / {{> renderItemField item=item field="planTalent" params=(array 'burst') wrapper="span"}}</div>
+                    <div class="col-2 d-flex">
+                      {{> renderItemField item=item field="planTalent" params=(array 'auto') wrapper="span"}}
+                      <span> / </span>
+                      {{> renderItemField item=item field="planTalent" params=(array 'skill') wrapper="span"}}
+                      <span> / </span>
+                      {{> renderItemField item=item field="planTalent" params=(array 'burst') wrapper="span"}}
+                    </div>
                 </div>
             </div>
         </div>
@@ -64,12 +75,12 @@
                   <tbody>
                     {{#times 6}}
                       <tr>
-                        {{> renderItemField item=item field="ascensionMaterial" params=(array "label" @index) wrapper="td"}}
-                        {{> renderItemField item=item field="ascensionMaterial" params=(array "gem" @index) wrapper="td"}}
-                        {{> renderItemField item=item field="ascensionMaterial" params=(array "boss" @index) wrapper="td"}}
-                        {{> renderItemField item=item field="ascensionMaterial" params=(array "flower" @index) wrapper="td"}}
-                        {{> renderItemField item=item field="ascensionMaterial" params=(array "enemy" @index) wrapper="td"}}
-                        {{> renderItemField item=item field="ascensionMaterial" params=(array "mora" @index) wrapper="td"}}
+                        <td>{{> renderItemField item=item field="ascensionMaterial" params=(array "label" @index) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="ascensionMaterial" params=(array "gem" @index) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="ascensionMaterial" params=(array "boss" @index) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="ascensionMaterial" params=(array "flower" @index) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="ascensionMaterial" params=(array "enemy" @index) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="ascensionMaterial" params=(array "mora" @index) wrapper="div"}}</td>
                       </tr>
                     {{/times}}
                   </tbody>
@@ -94,12 +105,12 @@
                   <tbody>
                     {{#times 9 start=1}}
                       <tr>
-                        {{> renderItemField item=item field=(concat "talentLvl" @index) wrapper="td"}}
-                        {{> renderItemField item=item field=(concat "talentMasteryMat" @index) wrapper="td"}}
-                        {{> renderItemField item=item field=(concat "talentEnemyMat" @index) wrapper="td"}}
-                        {{> renderItemField item=item field=(concat "talentTrounceMat" @index) wrapper="td"}}
-                        {{> renderItemField item=item field=(concat "talentCrownMat" @index) wrapper="td"}}
-                        {{> renderItemField item=item field=(concat "talentMoraMat" @index) wrapper="td"}}
+                        <td>{{> renderItemField item=item field=(concat "talentLvl" @index) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field=(concat "talentMasteryMat" @index) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field=(concat "talentEnemyMat" @index) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field=(concat "talentTrounceMat" @index) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field=(concat "talentCrownMat" @index) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field=(concat "talentMoraMat" @index) wrapper="div"}}</td>
                       </tr>
                     {{/times}}
                   </tbody>

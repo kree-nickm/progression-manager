@@ -39,6 +39,8 @@ export default class Weapon extends WuWaItem
     }
     else
     {
+      if(WeaponData[this.key].renamed)
+        this.key = WeaponData[this.key].renamed;
       this.MaterialList = {
         credit: this.viewer.lists.MaterialList.get("Shell Credit"),
       };

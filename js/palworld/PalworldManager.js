@@ -16,7 +16,7 @@ export default class PalworldManager extends DataManager
     
     this.registerList(PalList);
     
-    this.registerNavItem("Pals", "pals", {list:"PalList", isDefault:true});
+    this.registerNavItem("Pals", "pals", {listName:"PalList", isDefault:true});
   }
   
   postLoad(data, options)

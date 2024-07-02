@@ -22,28 +22,14 @@
           <div class="tab-pane" id="loadGOODPane" role="tabpanel">
             <div class="row">
               <b class="col-1">1.</b>
-              <b class="col-11">Select the account and server to load your data into.</b>
+              <b class="col-11">Select the account to load your data into.</b>
             </div>
-            <div class="row mb-1">
-              <label class="col-6 form-label" for="loadAccount">Account</label>
-              <label class="col-6 form-label" for="loadServer">Server</label>
+            <div class="">
+              <select class="form-select" id="loadAccount">
+              </select>
+              <input class="form-control" id="loadAccountNew" placeholder="New account name..." title="Can be anything you want that helps you identify this account."/>
             </div>
-            <div class="row mb-1">
-              <div class="col-6">
-                <select class="form-select" id="loadAccount">
-                </select>
-                <input class="form-control" id="loadAccountNew" placeholder="New account name..." title="Can be anything you want that helps you identify this account."/>
-              </div>
-              <div class="col-6">
-                <select class="form-select" id="loadServer">
-                  <option value="na">America</option>
-                  <option value="eu">Europe</option>
-                  <option value="as">Asia</option>
-                  <option value="tw">TW, HK, MO</option>
-                </select>
-              </div>
-            </div>
-            <p id="loadAccountNote" class="form-text">Note: This will replace the data in the specified account/server with the imported data. However, only lists that are present in the imported data will be replaced. For example, if the imported data only contains artifacts and materials, then only artifacts and materials will be replaced; your characters, weapons, etc. will be unaffected.</p>
+            <p id="loadAccountNote" class="form-text">Note: This will replace the data in the specified account with the imported data. However, only lists that are present in the imported data will be replaced. For example, if the imported data only contains artifacts and materials, then only artifacts and materials will be replaced; your characters, weapons, etc. will be unaffected.</p>
             <hr/>
             <div class="row mb-2">
               <b class="col-1">2.</b>
@@ -114,7 +100,7 @@
 </div>
 
 <div id="editModal" class="modal" tabindex="-1">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Manage Account(s)</h5>
@@ -122,21 +108,12 @@
       </div>
       <div class="modal-body">
         <div class="row">
-          <label class="col-6 form-label">Account</label>
-          <label class="col-6 form-label">Server</label>
+          <label class="col-12 form-label">Account</label>
         </div>
         <div class="row">
-          <div class="col-6">
+          <div class="col-12">
             <select class="form-select" id="editAccount"></select>
             <input class="form-control" id="editAccountNew" placeholder="New account name..." title="Can be anything you want that helps you identify this account."/>
-          </div>
-          <div class="col-6">
-            <select class="form-select" id="editServer">
-              <option value="na">America</option>
-              <option value="eu">Europe</option>
-              <option value="as">Asia</option>
-              <option value="tw">TW, HK, MO</option>
-            </select>
           </div>
         </div>
         <p class="form-text">Select an account to switch to, or create a new one.</p>

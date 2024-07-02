@@ -223,7 +223,7 @@ export default class WeaponList extends WuWaList
         {
           property: "key",
           options: Object.keys(WeaponData)
-            .filter(key => !WeaponData[key].release || Date.parse(WeaponData[key].release) <= Date.now())
+            .filter(key => !WeaponData[key].renamed && (!WeaponData[key].release || Date.parse(WeaponData[key].release) <= Date.now()))
             .map(key => ({value:key, label:WeaponData[key].name})),
         },
       ],

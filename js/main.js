@@ -1,5 +1,7 @@
 import { handlebars, Renderer } from "./Renderer.js";
 
+String.prototype.capitalize = function() { return this.at(0).toUpperCase()+this.substr(1).toLowerCase(); };
+
 window.DEBUGLOG = {
   queueUpdate: false,
   renderItemField: false,
@@ -12,15 +14,59 @@ window.DEBUGLOG = {
   enableAll: () => { for(let method in window.DEBUGLOG) window.DEBUGLOG[method] = true; },
 };
 
-String.prototype.capitalize = function() { return this.at(0).toUpperCase()+this.substr(1).toLowerCase(); };
+if(!window.productionMode)
+{
+  window.DEBUG = {
+    called: function(func, object, args)
+    {
+      if(!window.DEBUG.began)
+        return;
+      console.log({func, object, args});
+      window.DEBUG.lastOp.trace.push({func, object, args});
+      let key = object.constructor.name != "Function" ? `[object ${object.constructor.name}].${func.name}` : `${object.name}.${func.name}`;
+      if(!window.DEBUG.lastOp.tally[key])
+        window.DEBUG.lastOp.tally[key] = 1;
+      else
+        window.DEBUG.lastOp.tally[key]++;
+    },
+    begin: function()
+    {
+      window.DEBUG.began = true;
+      window.DEBUG.lastOp.trace = [];
+      window.DEBUG.lastOp.tally = {};
+    },
+    lastOp: {trace:[], tally:{}},
+    began: false,
+    log: function(...args)
+    {
+      console.debug(...args);
+    },
+  };
+}
+
+window.generalSettings = JSON.parse(window.localStorage.getItem("generalSettings") ?? "{}") ?? {};
 
 document.getElementById("darkModeToggle")?.addEventListener("change", event => {
   let link = document.getElementById("lightDark");
   if(event.target.checked)
+  {
     link.href = "css/dark.css";
+    window.generalSettings.darkMode = true;
+    window.localStorage.setItem("generalSettings", JSON.stringify(window.generalSettings));
+  }
   else
+  {
     link.href = "css/light.css";
+    window.generalSettings.darkMode = false;
+    window.localStorage.setItem("generalSettings", JSON.stringify(window.generalSettings));
+  }
 });
+if(window.generalSettings.darkMode)
+{
+  let link = document.getElementById("lightDark");
+  link.href = "css/dark.css";
+}
+  
 
 // Initialize.
 if(typeof(Storage) !== "undefined")
@@ -31,7 +77,8 @@ if(typeof(Storage) !== "undefined")
   {
     selectBtn.addEventListener("click", async (event) => {
       console.log(`Loading game '${selectBtn.dataset.game}'.`);
-      window.localStorage.setItem("game", selectBtn.dataset.game);
+      window.generalSettings.game = selectBtn.dataset.game;
+      window.localStorage.setItem("generalSettings", JSON.stringify(window.generalSettings));
       if(window.viewer)
       {
         console.log(`A manager is already loaded. Reloading the page into the new manager to conserve memory.`);
@@ -62,7 +109,7 @@ if(typeof(Storage) !== "undefined")
         await init();
       }
     });
-    if(window.localStorage.getItem("game") == selectBtn.dataset.game)
+    if(window.generalSettings.game == selectBtn.dataset.game)
     {
       game = selectBtn.dataset.game;
       setTimeout(()=>selectBtn.dispatchEvent(new Event("click")), 1);

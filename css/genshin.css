@@ -30,34 +30,36 @@
   opacity: 0.1;
 }
 
-.list-item-field.at-max .value {
-  opacity: 0.5;
-}
+/* Background alternations for tables. */
 
-.list table .ascension-materials {
+.list table tr > .ascension-materials {
   background-color: var(--colgroup-alt-background) !important;
 }
 
-.list table .skill-mastery, .list table .skill-enemy {
+.list table tr > .skill-mastery,
+.list table tr > .skill-enemy {
   background-color: var(--column-alt-background) !important;
 }
 
-.list table .character-weapon {
+.list table tr > .character-weapon {
   background-color: var(--colgroup-alt-background) !important;
 }
 
-.list table .stat-critRate_, .list table .stat-atk_, .list table .stat-eleMas, .list table .stat-def_, .list table .stat-hp,
-.list table .stat-rating-critRate_, .list table .stat-rating-atk_, .list table .stat-rating-eleMas, .list table .stat-rating-def_, .list table .stat-rating-hp, .list table .stat-character-rating {
+.list table tr > .stat-critRate_,
+.list table tr > .stat-atk_,
+.list table tr > .stat-eleMas,
+.list table tr > .stat-def_,
+.list table tr > .stat-hp,
+.list table tr > .stat-rating-critRate_,
+.list table tr > .stat-rating-atk_,
+.list table tr > .stat-rating-eleMas,
+.list table tr > .stat-rating-def_,
+.list table tr > .stat-rating-hp,
+.list table tr > .stat-character-rating {
   background-color: var(--column-alt-background) !important;
 }
 
-.list table .stat-def, .list table .stat-rating-def {
-  border-right: 1px solid black;
-}
-
-.list table .stat-critRate_, .list table .stat-rating-critRate_, .list table .artifact-wanters {
-  border-left: 1px solid black;
-}
+/* Icons for substats in the background when mousing over artifacts. */
 
 tr:hover .list-item-field[data-group-name="Substat Values"] > span::before {
   position: absolute;
@@ -202,37 +204,9 @@ img.element-icon.element-Physical {
   filter: drop-shadow(0px 0px 0.5px rgba(0,0,0,0.3));
 }
 
-body.dark-mode img.element-icon.element-Anemo {
-  filter: saturate(1.5) brightness(1.5) drop-shadow(0px 0px 2px rgba(0,200,200,0.5));
-}
-
-body.dark-mode img.element-icon.element-Cryo {
-  filter: saturate(1.5) brightness(1.5) drop-shadow(0px 0px 2px rgba(50,50,200,0.5));
-}
-
-body.dark-mode img.element-icon.element-Dendro {
-  filter: saturate(1.5) brightness(1.5) drop-shadow(0px 0px 2px rgba(0,200,0,0.5));
-}
-
-body.dark-mode img.element-icon.element-Electro {
-  filter: saturate(1.5) brightness(1.5) drop-shadow(0px 0px 2px rgba(200,0,200,0.5));
-}
-
-body.dark-mode img.element-icon.element-Geo {
-  filter: saturate(1.5) brightness(1.5) drop-shadow(0px 0px 2px rgba(200,200,0,0.5));
-}
-
-body.dark-mode img.element-icon.element-Hydro {
-  filter: saturate(1.5) brightness(1.5) drop-shadow(0px 0px 2px rgba(0,0,200,0.5));
-}
-
-body.dark-mode img.element-icon.element-Pyro {
-  filter: saturate(1.5) brightness(1.5) drop-shadow(0px 0px 2px rgba(200,100,0,0.5));
-}
-
-body.dark-mode img.element-icon.element-Physical {
-  filter: drop-shadow(0px 0px 0.5px rgba(0,0,0,0.3));
-}
+/*********************************************
+Character/weapon/artifact/material icons, etc.
+*********************************************/
 
 .item-display {
 	border-radius: 5%;
@@ -254,6 +228,45 @@ body.dark-mode img.element-icon.element-Physical {
   border-bottom-right-radius: 5%;
 }
 
+.item-display .display-caption {
+  line-height: 1.3em;
+  padding: 0em 0.1em 0.1em 0.1em;
+  display: block;
+  font-size: 0.9em;
+}
+.item-display.long-text .display-caption {
+  font-size: 0.8em;
+}
+.item-display:not(.longer-text) .display-caption {
+  text-wrap: nowrap;
+}
+
+.item-display .display-badge {
+	position: absolute;
+	top: 0.1rem;
+	left: 0.1rem;
+	color: rgba(255,255,255,0.9);
+	background: rgba(0,0,0,0.5);
+	padding: 2px;
+	line-height: 1em;
+	border-radius: 0.2em;
+	z-index: 2;
+}
+.item-display .display-badge.badge-right {
+	left: unset;
+	right: 0.1rem;
+}
+.item-display .display-badge.badge-gold {
+  background: rgba(150,120,70,0.8);
+}
+.item-display .display-img .display-badge.element-icon {
+  height: 2.1em;
+  background: none;
+  filter: drop-shadow(0px 0px 1px black) saturate(1.5);
+}
+
+/* Image sizing. */
+
 .item-display.display-xxs {
 	border-radius: unset;
   box-shadow: unset;
@@ -270,6 +283,9 @@ body.dark-mode img.element-icon.element-Physical {
   height: 2.4em;
 }
 
+.item-display.display-sm:not(.display-no-caption) * {
+  max-width: 4rem;
+}
 .item-display.display-sm .display-img {
   filter: saturate(1.25);
 }
@@ -280,13 +296,28 @@ body.dark-mode img.element-icon.element-Physical {
 .item-display.display-sm.display-no-caption .display-img img {
   height: 5.3rem;
 }
+.item-display.display-sm.longer-text:not(.display-no-caption) .display-img img {
+  height: 3rem;
+  width: 4rem;
+  transform: scaleY(calc(4/3));
+}
 
+.item-display.display-md:not(.display-no-caption) * {
+  max-width: 5rem;
+}
 .item-display.display-md .display-img img {
   height: 5rem;
 }
 .item-display.display-md.display-no-caption .display-img img {
   height: 6.3rem;
 }
+.item-display.display-md.longer-text:not(.display-no-caption) .display-img img {
+  height: 4rem;
+  width: 5rem;
+  transform: scaleY(calc(5/4));
+}
+
+/* Image background. */
 
 .item-display .display-img.rarity-5 {
   background-image: url(../img/Background_Item_5_Star.webp);
@@ -318,40 +349,6 @@ body.dark-mode img.element-icon.element-Physical {
   background-size: cover;
 }
 
-.item-display .display-caption {
-  line-height: 1.3em;
-  padding: 0em 0.1em 0.1em 0.1em;
-  display: block;
-  font-size: 0.9em;
-}
-
-.item-display .display-badge {
-	position: absolute;
-	top: 0.1rem;
-	left: 0.1rem;
-	color: rgba(255,255,255,0.9);
-	background: rgba(0,0,0,0.5);
-	padding: 2px;
-	line-height: 1em;
-	border-radius: 0.2em;
-	z-index: 2;
-}
-
-.item-display .display-badge.badge-right {
-	left: unset;
-	right: 0.1rem;
-}
-
-.item-display .display-badge.badge-gold {
-  background: rgba(150,120,70,0.8);
-}
-
-.item-display .display-img .display-badge.element-icon {
-  height: 2.1em;
-  background: none;
-  filter: drop-shadow(0px 0px 1px black) saturate(1.5);
-}
-
 .stat-list[data-template="genshin/renderCharacterStatModifiers"] img.element-icon {
   height: 2.4em;
 }
@@ -361,7 +358,11 @@ body.dark-mode img.element-icon.element-Physical {
 }
 
 .stat-list.collapse > *:nth-child(even) {
-  background-color: rgba(200,200,200,0.5);
+  background-color: rgba(127,127,127,0.2);
+}
+
+.plan-materials {
+  margin-top: 0.5em;
 }
 
 .plan-materials .sub-0 {
@@ -377,10 +378,6 @@ body.dark-mode img.element-icon.element-Physical {
   border: 1px solid gray;
   border-radius: 1em;
   padding: 1ex;
-}
-
-.form-range::-moz-range-track {
-  background-color: #ddd;
 }
 
 .favorites-only .list-item:not(.favorite),
@@ -458,7 +455,7 @@ body.dark-mode img.element-icon.element-Physical {
 
 .character-artifacts .rolls-display {
   position: absolute;
-  bottom: 0rem;
+  bottom: -0.5rem;
   right: 0px;
   border-bottom: 2px solid rgba(0,0,0,0.5);
   left: 0px;

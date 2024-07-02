@@ -59,7 +59,7 @@
 }
 
 .icon img {
-  height: 2.2em;
+  height: 2em;
 }
 
 .icon-inline {
@@ -93,13 +93,17 @@ input[type=number]:not(.form-control) {
 }
 
 input.edit-element:not(.form-control) {
-  min-width: 4ex;
   margin: 0px;
   border: 0px;
   padding: 0px;
   outline: 1px inset black;
   background-color: rgba(127,127,127,0.2);
   border-radius: 2px;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
 }
 
 .field-button {
@@ -193,12 +197,19 @@ span.q5, .q5 > span:not(.value) {
 
 .list-item-field {
   position: relative;
+  display: flex;
+  justify-content: space-around;
+}
+
+.list-item-field .sub-0 {
+  flex: 1 1 max-content;
 }
 
 .editable {
   cursor: pointer;
   min-width: 1ex;
   min-height: 1em;
+  position: relative;
 }
 
 i.editable,
@@ -217,12 +228,16 @@ span.editable {
   display: none;
 }
 
+.list-item-field.at-max .value {
+  opacity: 0.5;
+}
+
 *:not(.editing) > .edit-element:not(i,.apply-self) {
   display: none;
 }
 
 .editing > *:not(.edit-element) {
-  display: none;
+  visibility: hidden;
 }
 
 option:disabled {
@@ -243,4 +258,8 @@ option:disabled {
 
 .show-notice .notice {
   display: block !important;
+}
+
+.form-range::-moz-range-track {
+  background-color: #ddd;
 }

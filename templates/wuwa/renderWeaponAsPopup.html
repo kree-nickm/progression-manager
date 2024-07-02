@@ -34,10 +34,10 @@
                 <tbody>
                   {{#times 6}}
                     <tr>
-                        {{> renderItemField item=item field="ascensionMaterial" params=(array "label" @index) wrapper="td"}}
-                        {{> renderItemField item=item field="ascensionMaterial" params=(array "forgery" @index) wrapper="td"}}
-                        {{> renderItemField item=item field="ascensionMaterial" params=(array "enemy" @index) wrapper="td"}}
-                        {{> renderItemField item=item field="ascensionMaterial" params=(array "credit" @index) wrapper="td"}}
+                        <td>{{> renderItemField item=item field="ascensionMaterial" params=(array "label" @index) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="ascensionMaterial" params=(array "forgery" @index) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="ascensionMaterial" params=(array "enemy" @index) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="ascensionMaterial" params=(array "credit" @index) wrapper="div"}}</td>
                     </tr>
                   {{/times}}
                 </tbody>

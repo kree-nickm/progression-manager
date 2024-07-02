@@ -11,6 +11,7 @@ export default class FurnitureSetList extends GenshinList
   
   initialize()
   {
+    super.initialize();
     for(let s in GenshinFurnitureSetData)
     {
       this.addGOOD({key:s, learned:false, settled:[]});

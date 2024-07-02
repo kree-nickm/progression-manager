@@ -1,4 +1,5 @@
 import { Renderer } from "./Renderer.js";
+import Account from "./Account.js";
 import UIController from "./UIController.js";
 
 export default class DataManager extends UIController
@@ -6,12 +7,13 @@ export default class DataManager extends UIController
   static Renderer = Renderer; // Only here so the browser console can access it.
   static dontSerialize = UIController.dontSerialize.concat(["listClasses","navigation","elements","stickyElements","errors","storeTimeout"]);
   
-  dataVersion = 1;
+  dataVersion = 2;
   currentView;
-  navigation = {};
   settings = {};
+  accounts = {};
+  
   listClasses = {};
-  data = {};
+  navigation = {};
   elements = {};
   stickyElements = [];
   errors;
@@ -27,7 +29,7 @@ export default class DataManager extends UIController
     this.elements['popup'].addEventListener('hidden.bs.modal', event => UIController.clearDependencies(event.target, true));
     this.settings.paneMemory = {};
     this.settings.preferences = {};
-    this.settings.server = null;
+    this.settings.server = "";
   }
   
   registerList(listClass, {listName}={})
@@ -80,37 +82,40 @@ export default class DataManager extends UIController
   
   get lists()
   {
-    return this.data?.[this.settings.server] ?? {};
+    return this.accounts?.[this.settings.server]?.lists ?? {};
   }
   
-  activateAccount(server)
+  get account()
+  {
+    return this.accounts?.[this.settings.server];
+  }
+  
+  activateAccount(account)
   {
     let changed = false;
-    if(this.settings.server != server)
+    if(this.settings.server != account)
       changed = true;
-    this.settings.server = server;
-    if(!this.data)
-      this.data = {};
-    if(!this.data[this.settings.server])
-      this.data[this.settings.server] = {};
-    for(let listName in this.listClasses)
-      if(!this.lists[listName])
-        this.lists[listName] = new this.listClasses[listName](this);
+    this.settings.server = account;
+    if(!this.accounts)
+      this.accounts = {};
+    if(!this.accounts[this.settings.server])
+      this.accounts[this.settings.server] = new Account(this.settings.server, {viewer:this});
+    this.accounts[this.settings.server].loadLists();
     if(changed)
       for(let listName in this.listClasses)
         this.lists[listName].forceNextRender = true;
     return true;
   }
   
-  switchAccount(server)
+  switchAccount(account)
   {
-    this.activateAccount(server);
+    this.activateAccount(account);
     this.view({pane:this.currentView});
     console.log(`Switching to account '${this.settings.server}'.`);
     return true;
   }
   
-  get controllers()
+  get controllerMap()
   {
     return Renderer.controllers;
   }
@@ -156,6 +161,23 @@ export default class DataManager extends UIController
     }
   }
   
+  async render(force=false)
+  {
+    let render = await Renderer.rerender(
+      this.elements[this.constructor.name].querySelector(`[data-uuid="${this.uuid}"]`),
+      { item: this },
+      {
+        template: this.constructor.templateName,
+        parentElement: this.elements[this.constructor.name],
+      }
+    );
+    
+    let footer = document.getElementById("footer");
+    footer.classList.add("d-none");
+    
+    return {render, footer};
+  }
+  
   onScroll(event)
   {
     for(let element of this.stickyElements)
@@ -186,7 +208,7 @@ export default class DataManager extends UIController
       try
       {
         data = JSON.parse(data);
-        console.log(`Loaded JSON data:`, data);
+        console.log(`Loaded JSON data.`, {data});
       }
       catch
       {
@@ -208,70 +230,25 @@ export default class DataManager extends UIController
     return true;
   }
   
-  fromJSON(data, {merge=false}={})
+  fromJSON(fileData, {merge=false}={})
   {
     let hasData = false;
-    if(data.__class__ != this.constructor.name)
+    if(fileData.__class__ != this.constructor.name)
     {
+      if("__class__" in fileData)
+        console.error(`Invalid class "${fileData.__class__}" specified in data. Class must be "${this.constructor.name}".`, {fileData});
       return hasData;
     }
     
-    // Load the user data.
-    if(data.data)
-    {
-      hasData = true;
-      if(!merge)
-        this.data = {};
-      for(let srv in data.data)
-      {
-        if(!this.data[srv])
-          this.data[srv] = {};
-        this.settings.server = srv;
-        for(let list in data.data[srv])
-        {
-          this.data[srv][this.listClasses[data.data[srv][list].__class__].name] = this.listClasses[data.data[srv][list].__class__].fromJSON(data.data[srv][list], {viewer:this});
-        }
-      }
-      console.log("Loaded account data from file.", this.data);
-    }
+    console.log("Importing account data from file.", {fileData});
+    hasData = hasData || this.importData({data:fileData.accounts, merge, settings:fileData.settings});
     
-    // Load site-specific preferences.
-    if(data.settings)
-    {
-      hasData = true;
-      this.settings = data.settings;
-      console.log("Loaded settings from file.", this.settings);
-    }
-    
-    this.settings.server = this.settings.server ?? Object.keys(this.data ?? {})[0] ?? "";
+    // Determine the account to activate.
+    if(!this.accounts?.[this.settings.server])
+      this.settings.server = Object.keys(this.accounts ?? {})[0] ?? "";
+    this.activateAccount(this.settings.server)
     
     return hasData;
-  }
-  
-  settingsFromJSON(json)
-  {
-    try
-    {
-      let settings = JSON.parse(json);
-      if(settings)
-      {
-        for(let s in this.settings)
-          if(s in settings)
-            this.settings[s] = settings[s];
-        for(let s in settings)
-          this.settings[s] = settings[s];
-        console.log("Loaded settings from local storage.", this.settings);
-      }
-      else
-      {
-        console.log("No settings to load.");
-      }
-    }
-    catch(x)
-    {
-      console.error("Could not load stored settings.", x);
-      this.errors = true;
-    }
   }
   
   queueStore()
@@ -285,20 +262,20 @@ export default class DataManager extends UIController
   
   store()
   {
-    this.settings.server = this.settings.server ?? Object.keys(this.data ?? {})[0] ?? "";
-    if(!this.data)
-      this.data = {};
-    this.data[this.settings.server] = this.lists;
-    //window.localStorage.setItem(`${this.constructor.name}Data`, JSON.stringify(this.data));
-    let serversArray = [];
-    for(let server in this.data)
+    if(!this.accounts?.[this.settings.server])
+      this.settings.server = Object.keys(this.accounts ?? {})[0] ?? "";
+    if(!this.accounts)
+      this.accounts = {};
+    
+    /*let serversArray = [];
+    for(let server in this.accounts)
     {
       let listsArray = [];
-      for(let list in this.data[server])
+      for(let list in this.accounts[server])
       {
         try
         {
-          listsArray.push(`"${list}":` + JSON.stringify(this.data[server][list]));
+          listsArray.push(`"${list}":` + JSON.stringify(this.accounts[server][list]));
         }
         catch(exception)
         {
@@ -307,7 +284,7 @@ export default class DataManager extends UIController
         }
       }
       serversArray.push(`"${server}":{${listsArray.join(',')}}`);
-    }
+    }*/
     
     if(this.errors)
     {
@@ -315,50 +292,97 @@ export default class DataManager extends UIController
       return false;
     }
     
-    window.localStorage.setItem(`${this.constructor.name}Data`, `{${serversArray.join(',')}}`);
-    window.localStorage.setItem(`${this.constructor.name}Settings`, JSON.stringify(this.settings));
+    //window.localStorage.setItem(`${this.constructor.name}Data`, `{${serversArray.join(',')}}`);
+    //window.localStorage.setItem(`${this.constructor.name}Data`, JSON.stringify(this.accounts));
+    //window.localStorage.setItem(`${this.constructor.name}Settings`, JSON.stringify(this.settings));
+    window.localStorage.setItem(`${this.constructor.name}`, JSON.stringify(this));
     console.log(`Local data saved.`);
+    return true;
   }
   
   retrieve()
   {
-    let data;
-    try
+    console.log("Importing account data from local storage.");
+    
+    // Load entire manager if possible.
+    let json = window.localStorage.getItem(`${this.constructor.name}`);
+    if(json)
     {
-      data = JSON.parse(window.localStorage.getItem(`${this.constructor.name}Data`) ?? "null");
-      if(data)
-      {
-        for(let srv in data)
-        {
-          if(!this.data[srv])
-            this.data[srv] = {};
-          this.settings.server = srv;
-          for(let list in this.listClasses)
-            this.data[srv][list] = this.listClasses[list].fromJSON(data[srv][list] ?? {}, {viewer:this});
-          for(let list in data[srv])
-            if(!this.listClasses[list])
-              console.warn(`Stored data contained unregistered list class: ${list}`, {registeredLists: this.listClasses});
-        }
-        console.log("Loaded account data from local storage.", data);
-      }
-      else
-      {
-        console.log("No account data to load.");
-      }
+      this.fromJSON(JSON.parse(json));
     }
-    catch(x)
+    else
     {
-      console.error("Could not load stored local account data.", x);
-      this.errors = true;
+      // Load stored accounts for the game.
+      let data;
+      try
+      {
+        data = JSON.parse(window.localStorage.getItem(`${this.constructor.name}Data`) ?? "null");
+      }
+      catch(x)
+      {
+        console.error("Could not load stored local account data.", x);
+        this.errors = true;
+      }
+      
+      // Load stored, game-specific settings.
+      let settings;
+      try
+      {
+        settings = JSON.parse(window.localStorage.getItem(`${this.constructor.name}Settings`) ?? "null");
+      }
+      catch(x)
+      {
+        console.error("Could not load stored settings.", x);
+        this.errors = true;
+      }
+      
+      // Import the data loaded above.
+      this.importData({data, settings});
+    
+      // Determine the account to activate.
+      if(!this.accounts?.[this.settings.server])
+        this.settings.server = Object.keys(this.accounts ?? {})[0] ?? "";
+      this.activateAccount(this.settings.server)
     }
     
-    // Load site-specific preferences.
-    this.settingsFromJSON(window.localStorage.getItem(`${this.constructor.name}Settings`));
-    this.settings.server = this.settings.server ?? Object.keys(this.data ?? {})[0] ?? "";
-    
-    this.activateAccount(this.settings.server)
-    
+    // Load the page indicated by the settings, if any.
     if(this.currentView)
       this.view({pane:this.currentView});
+  }
+  
+  importData({data, merge, settings}) // note: merge currently does nothing
+  {
+    let hasData = false;
+    
+    if(data)
+    {
+      hasData = true;
+      for(let acc in data)
+      {
+        if(!this.accounts[acc])
+          this.accounts[acc] = new Account(acc, {viewer:this});
+        this.accounts[acc].loadLists(data[acc]);
+        this.errors = this.errors || this.accounts[acc].errors;
+      }
+      console.log("Imported account data.", {importedAccounts:data, currentAccounts:this.accounts});
+    }
+    else
+    {
+      console.log("No account data to import.");
+    }
+    
+    if(settings)
+    {
+      hasData = true;
+      for(let s in settings)
+        this.settings[s] = settings[s];
+      console.log("Imported settings.", {importedSettings:settings, currentSettings:this.settings});
+    }
+    else
+    {
+      console.log("No settings to import.");
+    }
+    
+    return hasData;
   }
 }

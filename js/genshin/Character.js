@@ -301,6 +301,7 @@ export default class Character extends Ascendable(GenshinItem)
   */
   equipItem(item)
   {
+    window.DEBUG?.called(Character.prototype.equipItem, this, ...arguments);
     // Determine the name of the property on this character that stores items of this type.
     let property;
     if(item.constructor.name == "Weapon")
@@ -406,15 +407,23 @@ export default class Character extends Ascendable(GenshinItem)
     // If we had an item equipped, and the new item was equipped to another character, give that character our old item.
     if(previousItem && previousCharacter)
     {
-      previousItem.character = null; // Prevents unnecessary recursion;
+      //window.DEBUG?.log(`Setting previous item's (${previousItem.name}) location to the previous character (${previousCharacter.name}).`, {previousItem, previousCharacter});
+      previousItem.character = null;
+      previousCharacter[property] = null;
       previousItem.update("location", previousCharacter.key);
     }
     // If we had an item equipped, let it know it is now unequipped.
     else if(previousItem)
+    {
+      //window.DEBUG?.log(`Unsetting previous item's (${previousItem.name}) location.`, {previousItem});
       previousItem.update("location", "");
+    }
     // If the new item was equipped to another character, delete the reference to the item.
     else if(previousCharacter)
+    {
+      //window.DEBUG?.log(`Unsetting previous character's (${previousCharacter.name}) reference to this item.`, {previousCharacter});
       previousCharacter.update(property, null, "replace");
+    }
     
     // Finally, set the references on this character and the item to each other.
     this.update(property, item, "replace");
@@ -559,15 +568,15 @@ export default class Character extends Ascendable(GenshinItem)
   getMat(type, ascension=this.ascension)
   {
     if(type == "gem")
-      return this.MaterialList.gem[this.getPhase(ascension).ascendMatGemQuality];
+      return this.MaterialList?.gem[this.getPhase(ascension).ascendMatGemQuality];
     else if(type == "boss")
-      return this.MaterialList.boss;
+      return this.MaterialList?.boss;
     else if(type == "flower")
-      return this.MaterialList.flower;
+      return this.MaterialList?.flower;
     else if(type == "enemy")
-      return this.MaterialList.enemy[this.getPhase(ascension).ascendMatEnemyQuality];
+      return this.MaterialList?.enemy[this.getPhase(ascension).ascendMatEnemyQuality];
     else if(type == "mora")
-      return this.MaterialList.mora;
+      return this.MaterialList?.mora;
     else
       return null;
   }
@@ -592,15 +601,15 @@ export default class Character extends Ascendable(GenshinItem)
   getTalentMat(type, talent)
   {
     if(type == "mastery")
-      return this.MaterialList.mastery[this.getTalent(talent).matMasteryQuality];
+      return this.MaterialList?.mastery[this.getTalent(talent).matMasteryQuality];
     else if(type == "enemy")
-      return this.MaterialList.enemy[this.getTalent(talent).matEnemyQuality];
+      return this.MaterialList?.enemy[this.getTalent(talent).matEnemyQuality];
     else if(type == "trounce")
-      return this.MaterialList.trounce;
+      return this.MaterialList?.trounce;
     else if(type == "crown")
-      return this.MaterialList.crown;
+      return this.MaterialList?.crown;
     else if(type == "mora")
-      return this.MaterialList.mora;
+      return this.MaterialList?.mora;
     else
     {
       console.warn(`Invalid talent mat type '${type}'.`);
@@ -671,9 +680,9 @@ export default class Character extends Ascendable(GenshinItem)
     event.stopPropagation();
     this.getTalentMat('mastery',talent).update("count", this.getTalentMat('mastery',talent).count - this.getTalent(talent).matMasteryCount);
     this.getTalentMat('enemy',talent).update("count", this.getTalentMat('enemy',talent).count - this.getTalent(talent).matEnemyCount);
-    this.MaterialList.trounce.update("count", this.MaterialList.trounce.count - this.getTalent(talent).matTrounceCount);
-    this.MaterialList.crown.update("count", this.MaterialList.crown.count - this.getTalent(talent).matCrownCount);
-    this.MaterialList.mora.update("count", this.MaterialList.mora.count - this.getTalent(talent).matMoraCount);
+    this.MaterialList?.trounce.update("count", this.MaterialList?.trounce.count - this.getTalent(talent).matTrounceCount);
+    this.MaterialList?.crown.update("count", this.MaterialList?.crown.count - this.getTalent(talent).matCrownCount);
+    this.MaterialList?.mora.update("count", this.MaterialList?.mora.count - this.getTalent(talent).matMoraCount);
     this.update(["talent", talent], this.talent[talent]+1);
   }
   
@@ -684,15 +693,15 @@ export default class Character extends Ascendable(GenshinItem)
     else if(withCrafting)
       return this.getTalentMat('mastery',talent)?.getCraftCount() >= this.getTalent(talent).matMasteryCount &&
         this.getTalentMat('enemy',talent)?.getCraftCount() >= this.getTalent(talent).matEnemyCount &&
-        this.MaterialList.trounce?.getCraftCount() >= this.getTalent(talent).matTrounceCount &&
-        this.MaterialList.crown?.getCraftCount() >= this.getTalent(talent).matCrownCount &&
-        this.MaterialList.mora?.getCraftCount() >= this.getTalent(talent).matMoraCount;
+        this.MaterialList?.trounce?.getCraftCount() >= this.getTalent(talent).matTrounceCount &&
+        this.MaterialList?.crown?.getCraftCount() >= this.getTalent(talent).matCrownCount &&
+        this.MaterialList?.mora?.getCraftCount() >= this.getTalent(talent).matMoraCount;
     else
       return this.getTalentMat('mastery',talent)?.count >= this.getTalent(talent).matMasteryCount &&
         this.getTalentMat('enemy',talent)?.count >= this.getTalent(talent).matEnemyCount &&
-        this.MaterialList.trounce?.count >= this.getTalent(talent).matTrounceCount &&
-        this.MaterialList.crown?.count >= this.getTalent(talent).matCrownCount &&
-        this.MaterialList.mora?.count >= this.getTalent(talent).matMoraCount;
+        this.MaterialList?.trounce?.count >= this.getTalent(talent).matTrounceCount &&
+        this.MaterialList?.crown?.count >= this.getTalent(talent).matCrownCount &&
+        this.MaterialList?.mora?.count >= this.getTalent(talent).matMoraCount;
   }
   
   getPlanMaterials()
@@ -723,9 +732,12 @@ export default class Character extends Ascendable(GenshinItem)
           if(cost > 0)
           {
             let mat = this.getMat(type, asc);
-            if(!result[mat.key])
-              result[mat.key] = 0;
-            result[mat.key] += cost;
+            if(mat)
+            {
+              if(!result[mat.key])
+                result[mat.key] = 0;
+              result[mat.key] += cost;
+            }
           }
         }
       }
@@ -1986,7 +1998,7 @@ export default class Character extends Ascendable(GenshinItem)
     {
       this._addArtifactListsEventHandlers(element)
     }
-    else if(element.dataset.template == "renderItem")
+    else if(element.dataset.template == "renderItemAsRow")
     {
       // A row in the character list; probably don't ever need to do anything here.
     }
@@ -2437,6 +2449,7 @@ export default class Character extends Ascendable(GenshinItem)
         }
         
         equipBtn.onclick = async event => {
+          window.DEBUG?.begin();
           let prevArtifact = this[artifact.slotKey+'Artifact'];
           let prevArtifactElement = prevArtifact ? characterArtifacts.querySelector(`.list-item[data-uuid="${prevArtifact.uuid}"]`) : null;
           artifact.update("location", this.base?.key ?? this.key);

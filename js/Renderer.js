@@ -549,6 +549,7 @@ class Renderer
     }
     
     // Determine the item for the field.
+    /*
     let itemElement = element.parentElement;
     if(element.classList.contains("list-item-field"))
     {
@@ -573,9 +574,11 @@ class Renderer
     }
     
     let item = Renderer.controllers.get(itemElement.dataset.uuid);
+    */
+    let item = Renderer.controllers.get(element.dataset.uuid);
     if(!item)
     {
-      console.error(`Unable to find item for element`, itemElement);
+      console.error(`Unable to find item for element.`, {element});
       return false;
     }
     
@@ -873,6 +876,7 @@ class Renderer
       if(!editElement.onchange || !editElement.onblur || !editElement.onkeydown)
       {
         let saveEdit = event => {
+          window.DEBUG?.begin();
           if((event.type == "keydown" && event.which != 13 && event.which != 27) || !fieldElement.classList.contains("editing") || !fieldElement.editingStartedAt)
             return true;
           event.stopPropagation();

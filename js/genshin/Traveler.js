@@ -328,13 +328,13 @@ export default class Traveler extends Character
   getMat(type, ascension=this.ascension)
   {
     if(type == "gem")
-      return this.base ? this.base.MaterialList.gem[this.getPhase(ascension).ascendMatGemQuality] : this.MaterialList.gem[this.getPhase(ascension).ascendMatGemQuality];
+      return this.base ? this.base.MaterialList?.gem[this.getPhase(ascension).ascendMatGemQuality] : this.MaterialList?.gem[this.getPhase(ascension).ascendMatGemQuality];
     else if(type == "boss")
       return null;
     else if(type == "flower")
-      return this.base ? this.base.MaterialList.flower : this.MaterialList.flower;
+      return this.base ? this.base.MaterialList?.flower : this.MaterialList?.flower;
     else if(type == "enemy")
-      return this.base ? this.base.MaterialList.enemy[this.getPhase(ascension).ascendMatEnemyQuality] : this.MaterialList.enemy[this.getPhase(ascension).ascendMatEnemyQuality];
+      return this.base ? this.base.MaterialList?.enemy[this.getPhase(ascension).ascendMatEnemyQuality] : this.MaterialList?.enemy[this.getPhase(ascension).ascendMatEnemyQuality];
     else
       return null;
   }
@@ -342,13 +342,13 @@ export default class Traveler extends Character
   getTalentMat(type, talent)
   {
     if(type == "mastery")
-      return this.MaterialList.mastery?.[((isNaN(talent)?this.talent[talent]:talent)-1)%3]?.[this.getTalent(talent).matMasteryQuality] ?? null;
+      return this.MaterialList?.mastery?.[((isNaN(talent)?this.talent[talent]:talent)-1)%3]?.[this.getTalent(talent).matMasteryQuality] ?? null;
     else if(type == "enemy")
-      return this.MaterialList.talentEnemy?.[this.getTalent(talent).matEnemyQuality] ?? null;
+      return this.MaterialList?.talentEnemy?.[this.getTalent(talent).matEnemyQuality] ?? null;
     else if(type == "trounce")
-      return this.MaterialList.trounce;
+      return this.MaterialList?.trounce;
     else if(type == "crown")
-      return this.MaterialList.crown;
+      return this.MaterialList?.crown;
     else
       return null;
   }
@@ -365,7 +365,7 @@ export default class Traveler extends Character
     else if(type == "enemy")
       return this.base ? this._talentEnemyMatType : "";
     else if(type == "trounce")
-      return this.base ? this.MaterialList.trounce.name : "";
+      return this.base ? this.MaterialList?.trounce.name : "";
     else if(type == "crown")
       return "Crown";
     else

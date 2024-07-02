@@ -13,18 +13,11 @@ async function addEventListeners()
     let selectElem = document.getElementById("loadAccount");
     selectElem.replaceChildren();
     selectElem.add((()=>{let e=document.createElement("option");e.value="";e.text="Create New...";return e;})());
-    for(let acc in window.viewer.data)
+    for(let acc in window.viewer.accounts)
       if(acc)
         selectElem.add((()=>{let e=document.createElement("option");e.value=acc;e.text=acc;return e;})());
-    selectElem.selectedIndex = Array.from(selectElem.options).findIndex(elem => elem.value == window.viewer.settings.account);
+    selectElem.selectedIndex = Array.from(selectElem.options).findIndex(elem => elem.value == window.viewer.settings.server);
     selectElem.dispatchEvent(new Event("change"));
-    
-    let selectElem2 = document.getElementById("loadServer");
-    if(window.viewer.settings.server)
-      selectElem2.selectedIndex = Array.from(selectElem2.options).findIndex(elem => elem.value == window.viewer.settings.server);
-    else
-      selectElem2.selectedIndex = 0;
-    selectElem2.dispatchEvent(new Event("change"));
   });
 
   document.getElementById("loadAccount")?.addEventListener("change", changeEvent => {
@@ -57,7 +50,7 @@ async function addEventListeners()
         selectedAccount = document.getElementById("loadAccountNew").value;
       if(selectedAccount)
       {
-        window.viewer.load(loadEvent.target.result, {account: selectedAccount, server: document.getElementById("loadServer").value});
+        window.viewer.load(loadEvent.target.result, {account: selectedAccount});
         changeEvent.target.value = "";
       }
       else
@@ -103,7 +96,7 @@ async function addEventListeners()
           selectedAccount = document.getElementById("loadAccountNew").value;
         if(selectedAccount)
         {
-          window.viewer.load(json, {account: selectedAccount, server: document.getElementById("loadServer").value});
+          window.viewer.load(json, {account: selectedAccount});
           input.value = "";
         }
         else
@@ -162,7 +155,7 @@ async function addEventListeners()
         characters: query.characterData,
         artifacts: query.artifactData,
         weapons: query.weaponData,
-      }, {account: selectedAccount, server: document.getElementById("loadServer").value});
+      }, {account: selectedAccount});
       input.value = "";
     }
     else if(type == "hoyos")
@@ -212,7 +205,7 @@ async function addEventListeners()
                 characters: query.characterData,
                 artifacts: query.artifactData,
                 weapons: query.weaponData,
-              }, {account: selectedAccount, server: document.getElementById("loadServer").value});
+              }, {account: selectedAccount});
               input.value = "";
             }
             msg.classList.add("d-none");
@@ -242,7 +235,7 @@ async function addEventListeners()
     if(!selectedAccount)
       selectedAccount = document.getElementById("loadAccountNew").value;
     let textArea = document.getElementById("loadGOODJSON");
-    window.viewer.load(textArea.value, {account: selectedAccount, server: document.getElementById("loadServer").value});
+    window.viewer.load(textArea.value, {account: selectedAccount});
     textArea.value = "";
   });*/
 
@@ -251,18 +244,11 @@ async function addEventListeners()
     let selectElem = document.getElementById("editAccount");
     selectElem.replaceChildren();
     selectElem.add((()=>{let e=document.createElement("option");e.value="";e.text="Create New...";return e;})());
-    for(let acc in window.viewer.data)
+    for(let acc in window.viewer.accounts)
       if(acc)
         selectElem.add((()=>{let e=document.createElement("option");e.value=acc;e.text=acc;return e;})());
-    selectElem.selectedIndex = Array.from(selectElem.options).findIndex(elem => elem.value == window.viewer.settings.account);
+    selectElem.selectedIndex = Array.from(selectElem.options).findIndex(elem => elem.value == window.viewer.settings.server);
     selectElem.dispatchEvent(new Event("change"));
-    
-    let selectElem2 = document.getElementById("editServer");
-    if(window.viewer.settings.server)
-      selectElem2.selectedIndex = Array.from(selectElem2.options).findIndex(elem => elem.value == window.viewer.settings.server);
-    else
-      selectElem2.selectedIndex = 0;
-    selectElem2.dispatchEvent(new Event("change"));
   });
 
   document.getElementById("editAccount")?.addEventListener("change", changeEvent => {
@@ -282,7 +268,7 @@ async function addEventListeners()
       selectedAccount = document.getElementById("editAccountNew").value;
     if(selectedAccount)
     {
-      if(window.viewer.switchAccount(selectedAccount, document.getElementById("editServer").value))
+      if(window.viewer.switchAccount(selectedAccount))
       {
         bootstrap.Modal.getOrCreateInstance(document.getElementById("editModal")).hide();
         document.getElementById("editError").classList.add("d-none");
@@ -420,7 +406,7 @@ async function init()
           navLinks[k].classList.remove("active");
       }
       // Do a check to see if this is the user's first visit.
-      if(window.viewer.settings.account && window.viewer.settings.server)
+      if(window.viewer.settings.server)
         window.viewer.view({hash:navLinks[i].hash});
       else
         bootstrap.Modal.getOrCreateInstance(document.getElementById("newModal")).show();

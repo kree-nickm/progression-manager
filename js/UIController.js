@@ -1,11 +1,7 @@
 import { handlebars, Renderer } from "./Renderer.js";
 
-//handlebars.registerHelper("getProperty", (item, property, options) => item instanceof UIController ? item.getProperty(property) : null);
-handlebars.registerHelper("getProperty", function(item, property, options) {
-  console.log(`handlebars getProperty`, {self:this, item, property, options});
-  return item instanceof UIController ? item.getProperty(property) : null;
-});
-handlebars.registerHelper("uuid", (item, options) => item instanceof UIController ? item.uuid : null);
+handlebars.registerHelper("getProperty", (item, property, options) => item instanceof UIController ? item.getProperty(property) : console.error(`Helper 'getProperty' must be called on a UIController.`, {item, property, options}));
+handlebars.registerHelper("uuid", (item, options) => item instanceof UIController ? item.uuid : console.error(`Helper 'uuid' must be called on a UIController.`, {item, options}));
 handlebars.registerHelper('toParam', (item, options) => item instanceof UIController ? item.uuid : typeof(item) == "object" ? item?.toString()??"" : item);
 
 export default class UIController {
@@ -16,9 +12,9 @@ export default class UIController {
   static fromJSON(data, {addProperties={}}={})
   {
     let obj = new this();
-    obj.startImport("GenshinManager");
     for(let prop in addProperties)
       obj[prop] = addProperties[prop];
+    obj.startImport();
     for(let prop in obj)
       if(this.dontSerialize.indexOf(prop) == -1 && data[prop] !== undefined)
         obj.update(prop, data[prop], "replace");
@@ -39,7 +35,7 @@ export default class UIController {
   constructor()
   {
     this.uuid = crypto.randomUUID();
-    this.delayedUpdates = [];
+    this.delayedUpdates = {};
     this.dependents = {};
     this.memory = {};
     Renderer.controllers.set(this.uuid, this);
@@ -93,7 +89,25 @@ export default class UIController {
       if(obj instanceof UIController)
         console.warn(`[UIController].parseProperty is traversing a different UIController from the one that called this method. Generally you should not do this, and should call parseProperty on that other UIController directly.`, {path, i, obj});
     }
-    return {string, path, object:obj, property:path[path.length-1], value:obj?.[path[path.length-1]]};
+    let property = path[path.length-1];
+    let value;
+    if(Array.isArray(property))
+    {
+      let func = property[0];
+      if(typeof(obj[func]) == "function")
+      {
+        value = obj[func].apply(obj, property.slice(1));
+      }
+      else
+      {
+        console.error(`Array given in path expression "${string}" in [${this.constructor.name} object].parseProperty, but [${obj.constructor.name} object].${func} is not a function. Arrays must correspond to functions and their arguments.`);
+        return {string, path};
+      }
+    }
+    else
+      value = obj?.[property];
+    
+    return {string, path, object:obj, property, value};
   }
   
   getProperty(prop, {create=true}={})
@@ -204,17 +218,17 @@ export default class UIController {
   
   afterUpdate(field, value, action, options)
   {
-    /*if(this.importing)
+    if(this.importing)
     {
-      this.delayedUpdates.push(this.afterUpdate.bind(this, field, value, action, options));
+      this.delayedUpdates[field.path] = this.afterUpdate.bind(this, field, value, action, options);
       return false;
     }
-    else*/
+    else
       return true;
     // Any code to run after a value is changed.
   }
   
-  startImport(source="GenshinManager")
+  startImport(source=this.viewer?.constructor.name??"unknown")
   {
     this.importing = source;
   }
@@ -222,9 +236,9 @@ export default class UIController {
   finishImport()
   {
     this.importing = null;
-    for(let update of this.delayedUpdates)
-      update.call();
-    this.delayedUpdates = [];
+    for(let update in this.delayedUpdates)
+      this.delayedUpdates[update].call();
+    this.delayedUpdates = {};
   }
   
   notifyAll()

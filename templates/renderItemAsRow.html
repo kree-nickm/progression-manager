@@ -1,0 +1,5 @@
+<tr class="list-item" name="{{unique item}}" data-template="renderItemAsRow" data-uuid="{{uuid item}}">
+  {{#each fields}}
+    <td class="{{fieldClasses (findField ../item field) params=params}} {{#if groupStarter}}group-starter{{/if}} {{#if groupEnder}}group-ender{{/if}}">{{> renderItemField item=../item field=field params=params wrapper="div"}}</td>
+  {{/each}}
+</tr>

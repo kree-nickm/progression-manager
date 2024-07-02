@@ -73,14 +73,28 @@ export default class Artifact extends GenshinItem
       return false;
     if(field.string == "location")
     {
+      //window.DEBUG?.log(`Setting "${this.name}" location to "${value}".`);
       if(value)
       {
-        let newCharacter = this.list.viewer.lists.CharacterList.get(value);
-        if(newCharacter)
-          newCharacter.equipItem(this);
+        if(this.list?.viewer?.lists?.CharacterList)
+        {
+          let newCharacter = this.list.viewer.lists.CharacterList.get(value);
+          if(newCharacter)
+          {
+            //window.DEBUG?.log({location:this.location, value});
+            newCharacter.equipItem(this);
+            //window.DEBUG?.log({locationSupposed:newCharacter.key, locationActual:this.location});
+          }
+          else
+          {
+            console.warn(`Cannot equip ${this.name} (${this.setName} ${this.slotKey}) to non-existent character "${this.location}".` + (this.list.importing ? ` GOOD data may have been exported incorrectly; consider reporting a bug to the developer of the export tool.` : ""));
+            field.object[field.property] = "";
+            this.character = null;
+          }
+        }
         else
         {
-          console.warn(`Cannot equip ${this.name} (${this.setName} ${this.slotKey}) to non-existent character "${this.location}".` + (this.list.importing ? ` GOOD data may have been exported incorrectly; consider reporting a bug to the developer of the export tool.` : ""));
+          console.warn(`Cannot equip ${this.name} to character "${this.location}" because character list is inaccessible.`);
           field.object[field.property] = "";
           this.character = null;
         }

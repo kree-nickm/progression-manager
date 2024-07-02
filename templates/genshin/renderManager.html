@@ -1,5 +1,5 @@
 <div class="" data-template="genshin/renderManager" data-uuid="{{uuid item}}">
-  {{#each (getProperty item (array (array "getPlanMaterials"))) as |material key|}}
-    <p>{{key}}</p>
-  {{/each}}
+    <div class="list" data-filter="plan" data-uuid="{{lookup item 'lists' 'MaterialList' 'uuid'}}">
+      {{> renderItemField item=item field="planMaterials" wrapper="div"}}
+    </div>
 </div>

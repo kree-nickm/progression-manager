@@ -12,7 +12,7 @@
       {{else}}
         <div class="col-1">Passive</div>
       {{/if}}
-        <div class="col-3"><label class="form-label m-0" for="{{id}}">{{#ifeq type "resonance"}}<img class="element-icon element-{{resonance}}" src="img/Element_{{resonance}}.svg">{{else}}{{> renderItemField item=characterSource field="icon" params=(array "xs" 0 0) wrapper="span"}}{{/ifeq}}{{{label}}}</label></div>
+        <div class="col-3"><label class="form-label m-0 d-flex" for="{{id}}">{{#ifeq type "resonance"}}<img class="element-icon element-{{resonance}}" src="img/Element_{{resonance}}.svg">{{else}}{{> renderItemField item=characterSource field="icon" params=(array "xs" 0 0) wrapper="span"}}{{/ifeq}}{{{label}}}</label></div>
         <div class="col-8"><label class="form-label m-0" for="{{id}}" title="In case the description is bugged, here's the code: {{code}}">{{{lookup . "description"}}}{{#if (lookup . "isPreview")}}{{#if (lookup . "isCurrent")}}{{else}}<span class="badge text-bg-secondary ms-2">Preview</span>
 {{/if}}{{else}}{{#if (lookup . "isCurrent")}}<span class="badge text-bg-dark ms-2">Current</span>{{else}}{{/if}}{{/if}}</label></div>
     </div>

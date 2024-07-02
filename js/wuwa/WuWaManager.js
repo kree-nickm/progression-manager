@@ -15,7 +15,6 @@ export default class WuWaManager extends DataManager
     super();
     this.elements['loadModal'] = document.getElementById("loadModal");
     this.elements['loadError'] = document.getElementById("loadError");
-    this.settings.server = "";
     
     this.registerList(MaterialList);
     this.registerList(CharacterList);
