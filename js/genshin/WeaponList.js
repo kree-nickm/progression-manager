@@ -337,6 +337,34 @@ export default class WeaponList extends GenshinList
         {item, field:"ascension"},
       ],
     });
+    
+    this.display.addField("planAscension", {
+      tags: ["detailsOnly"],
+      dynamic: true,
+      value: item => item.wishlist.ascension ?? "-",
+      edit: item => ({target: {item, field:"wishlist.ascension"}}),
+      dependencies: item => [
+        {item:item, field:"wishlist"},
+        {item:item, field:"ascension"},
+      ],
+    });
+    
+    this.display.addField("planMaterials", {
+      tags: ["detailsOnly"],
+      dynamic: true,
+      value: (item,attr) => {
+        let value = [];
+        item.viewer.account.plan.addSubPlan(item, item.getPlanMaterials());
+        let materials = item.viewer.account.plan.getSubPlan(item);
+        for(let matKey in materials)
+          value.push({classes:{'plan-material':true}, value:this.viewer.lists.MaterialList.get(matKey).getFieldValue(materials[matKey], this.viewer.settings.preferences.materialList=='1', {plan:materials})});
+        return value;
+      },
+      dependencies: (item,attr) => [
+        {item:item, field:"wishlist"},
+        {item:item, field:"ascension"},
+      ],
+    });
   }
   
   clear()

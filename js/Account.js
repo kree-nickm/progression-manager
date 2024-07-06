@@ -21,6 +21,7 @@ export default class Account
     {
       this.viewer = viewer;
       this.plan = new Plan();
+      this.plan.viewer = viewer;
     }
   }
   

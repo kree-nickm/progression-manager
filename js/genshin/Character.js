@@ -8,7 +8,7 @@ import GenshinBuilds from "./gamedata/GenshinBuilds.js";
 
 import { handlebars, Renderer } from "../Renderer.js";
 import GenshinItem from "./GenshinItem.js";
-import Ascendable from "./Ascendable.js";
+import Ascendable from "../Ascendable.js";
 import Artifact from "./Artifact.js";
 import Weapon from "./Weapon.js";
 import Material from "./Material.js";
@@ -148,6 +148,8 @@ export default class Character extends Ascendable(GenshinItem)
       
       this.MaterialList.trounce?.addUser(this);
       this.MaterialList.crown?.addUser(this);
+      
+      this.viewer.account.plan.addSubPlan(this, this.getPlanMaterials());
     }
     else
     {

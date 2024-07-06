@@ -4,7 +4,7 @@ import GenshinLootData from "./gamedata/GenshinLootData.js";
 import GenshinPhaseData from "./gamedata/GenshinPhaseData.js";
 
 import GenshinItem from "./GenshinItem.js";
-import Ascendable from "./Ascendable.js";
+import Ascendable from "../Ascendable.js";
 
 export default class Weapon extends Ascendable(GenshinItem)
 {
@@ -21,6 +21,7 @@ export default class Weapon extends Ascendable(GenshinItem)
   
   isPreview = false;
   favorite = false;
+  wishlist = {};
   
   character = null;
   MaterialList;
@@ -84,6 +85,8 @@ export default class Weapon extends Ascendable(GenshinItem)
         else
           console.error(`${this.name} has an invalid weak enemy material at rarity ${i}.`);
       }
+      
+      this.viewer.account.plan.addSubPlan(this, this.getPlanMaterials());
     }
   }
   
@@ -215,6 +218,48 @@ export default class Weapon extends Ascendable(GenshinItem)
         this.getMat('strong')?.count >= this.getMatCost('strong') &&
         this.getMat('weak')?.count >= this.getMatCost('weak') &&
         this.getMat('mora')?.count >= this.getMatCost('mora');
+  }
+  
+  getPlanMaterials()
+  {
+    let result = {};
+    
+    // EXP
+    /*let exp = (GenshinCharacterStats.totalExpCost[this.wishlist.level] ?? 0) - GenshinCharacterStats.totalExpCost[this.level];
+    if(exp > 0)
+    {
+      result["Mora"] = Math.ceil(exp/5);
+      result["HerosWit"] = Math.floor(exp/20000);
+      exp -= result["HerosWit"] * 20000;
+      result["AdventurersExperience"] = Math.floor(exp/5000);
+      exp -= result["AdventurersExperience"] * 5000;
+      result["WanderersAdvice"] = Math.ceil(exp/1000);
+      exp -= result["WanderersAdvice"] * 1000;
+    }*/
+    
+    // Ascension
+    if((this.wishlist.ascension??0) - this.ascension > 0)
+    {
+      for(let asc=this.ascension; asc<this.wishlist.ascension; asc++)
+      {
+        for(let type of ["forgery","strong","weak","mora"])
+        {
+          let cost = this.getMatCost(type, asc);
+          if(cost > 0)
+          {
+            let mat = this.getMat(type, asc);
+            if(mat)
+            {
+              if(!result[mat.key])
+                result[mat.key] = 0;
+              result[mat.key] += cost;
+            }
+          }
+        }
+      }
+    }
+    
+    return result;
   }
   
   getATK(alternates={})

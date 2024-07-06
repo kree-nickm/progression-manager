@@ -58,7 +58,7 @@ export default class GenshinManager extends DataManager
       dynamic: true,
       value: item => {
         let value = [];
-        let planMaterials = item.getPlanMaterials();
+        let planMaterials = item.account.plan.getFullPlan();
         for(let matDef of planMaterials.resolved)
           value.push({classes:{'plan-material':true}, value:matDef.item.getFieldValue(matDef.amount, item.settings.preferences.materialList=='1', {plan:planMaterials.original})});
         return value;
@@ -220,20 +220,6 @@ export default class GenshinManager extends DataManager
       console.warn("Error when trying to save to Pastebin:", json);
       return false;
     }
-  }
-  
-  getPlanMaterials()
-  {
-    let original = mergeObjects(...this.lists.CharacterList.items().map(character => character.getPlanMaterials())??[]);
-    let resolved = [];
-    for(let key in original)
-    {
-      let material = this.lists.MaterialList.get(key);
-      let idx = this.lists.MaterialList.list.indexOf(material);
-      resolved.push({sort:idx, item:material, amount:original[key]});
-    }
-    resolved.sort((a,b) => a.sort - b.sort);
-    return {resolved, original};
   }
   
   activateAccount(account, server)

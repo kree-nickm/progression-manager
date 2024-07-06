@@ -4,7 +4,7 @@ import LootData from "./gamedata/LootData.js";
 import CharacterData from "./gamedata/CharacterData.js";
 
 import { handlebars, Renderer } from "../Renderer.js";
-import Plannable from "./Plannable.js";
+import Plannable from "../Plannable.js";
 import WuWaItem from "./WuWaItem.js";
 
 export default class Character extends Plannable(WuWaItem)

@@ -673,13 +673,13 @@ export default {
         "matMastery": "Order",
         "matTrounce": "Silken Feather",
         "ascendStat": "critDMG_",
-        "hpBase": 1056.2786,
-        "atkBase": 26.068,
-        "defBase": 56.8385,
-        "hpMaxAsc": 4337.651,
-        "atkMaxAsc": 107.04148,
-        "defMaxAsc": 233.415,
-        "version": "4.7.53"
+        "hpBase": 1056.278564453125,
+        "atkBase": 26.068000793457,
+        "defBase": 56.8385009765625,
+        "hpMaxAsc": 4337.65087890625,
+        "atkMaxAsc": 107.0414810180664,
+        "defMaxAsc": 233.4149932861328,
+        "version": "4.7.54"
     },
     "Eula": {
         "name": "Eula",

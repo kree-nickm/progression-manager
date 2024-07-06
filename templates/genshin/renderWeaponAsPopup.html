@@ -11,23 +11,35 @@
             </div>
             <div class="col">
                 <div class="row">
+                    <h5 class="col-2">Refinement</h5>
                     <h5 class="col-2">Level</h5>
                     <h5 class="col-2">Phase</h5>
-                    <h5 class="col-2">Refinement</h5>
                     <h5 class="col-2">ATK</h5>
                     <h5 class="col-2">{{> renderItemField item=item field="stat" wrapper="div"}}</h5>
                     <h5 class="col-2">Equipped By</h5>
                 </div>
                 <div class="row">
+                    <div class="col-2">{{> renderItemField item=item field="refinement" wrapper="div"}}</div>
                     <div class="col-2">{{> renderItemField item=item field="level" wrapper="div"}}</div>
                     <div class="col-2">{{> renderItemField item=item field="ascension" wrapper="div"}}</div>
-                    <div class="col-2">{{> renderItemField item=item field="refinement" wrapper="div"}}</div>
                     <div class="col-2">{{> renderItemField item=item field="atk" wrapper="div"}}</div>
                     <div class="col-2">{{> renderItemField item=item field="statVal" wrapper="div"}}</div>
                     <div class="col-2">{{> renderItemField item=item field="location" wrapper="div"}}</div>
                 </div>
+                <div class="row">
+                    <b class="col-2" title="Enter your desired stats on this line, and the app will use that to calculate the total mats and resin that you need to farm.">Desired Stats:</b>
+                    <div class="col-2"></div>
+                    <div class="col-2">{{> renderItemField item=item field="planAscension" wrapper="div"}}</div>
+                    <div class="col-2"></div>
+                    <div class="col-2"></div>
+                    <div class="col-2"></div>
+                </div>
               {{> renderItemField item=item field="passive" wrapper="p"}}
             </div>
+        </div>
+        
+        <div class="plan-materials">
+      {{> renderItemField item=item field="planMaterials" wrapper="div"}}
         </div>
         
         <hr/>
