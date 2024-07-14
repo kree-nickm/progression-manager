@@ -16,7 +16,7 @@ import FurnitureSetList from "./FurnitureSetList.js";
 
 export default class GenshinManager extends DataManager
 {
-  static dontSerialize = DataManager.dontSerialize.concat(["lastDay"]);
+  static dontSerialize = super.dontSerialize.concat(["lastDay"]);
   static templateName = "genshin/renderManager";
   static timezones = {
     'na': "UTC-9",
@@ -59,8 +59,11 @@ export default class GenshinManager extends DataManager
       value: item => {
         let value = [];
         let planMaterials = item.account.plan.getFullPlan();
-        for(let matDef of planMaterials.resolved)
+        for(let matKey in planMaterials.resolved)
+        {
+          let matDef = planMaterials.resolved[matKey];
           value.push({classes:{'plan-material':true}, value:matDef.item.getFieldValue(matDef.amount, item.settings.preferences.materialList=='1', {plan:planMaterials.original})});
+        }
         return value;
       },
       dependencies: item => [].concat(...item.lists.CharacterList.items().map(character => [

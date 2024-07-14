@@ -154,7 +154,7 @@ async function init()
   window.viewer.retrieve();
 
   // Set up nav.
-  let navClicked = false;
+  let toClick = 0;
   let navLinks = document.querySelectorAll(".pane-select");
   for(let i=0; i<navLinks.length; i++)
   {
@@ -173,13 +173,9 @@ async function init()
         bootstrap.Modal.getOrCreateInstance(document.getElementById("newModal")).show();
     });
     if(navLinks[i].hash == location.hash)
-    {
-      navLinks[i].click();
-      navClicked = true;
-    }
+      toClick = i;
   }
-  if(!navClicked)
-    navLinks[0].click();
+  setTimeout(()=>navLinks[toClick].dispatchEvent(new Event("click")), 1);
 
   if(location.search.at(0) == "?")
   {

@@ -36,6 +36,11 @@ export default class ListDisplayManager
     for(let iFd in fieldDefs)
     {
       let field = fieldDefs[iFd].field;
+      if(!field)
+      {
+        console.error(`Invalid field.`, {fieldDefs, field:iFd});
+        continue;
+      }
       fieldDefs[iFd].groupStarter = false;
       fieldDefs[iFd].groupEnder = false;
       if(!field.group)

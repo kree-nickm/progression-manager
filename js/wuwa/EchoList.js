@@ -216,7 +216,7 @@ export default class EchoList extends WuWaList
         action: event => {
           event.stopPropagation();
           item.unlink();
-          item.list.viewer.store();
+          item.list.viewer.queueStore();
         },
       },
     });

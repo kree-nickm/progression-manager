@@ -4,7 +4,7 @@ import Character from "./Character.js";
 import StatModifier from "./StatModifier.js";
 
 export default class Team extends GenshinItem {
-  static dontSerialize = GenshinItem.dontSerialize.concat(["_characters"]);
+  static dontSerialize = super.dontSerialize.concat(["_characters"]);
   static templateName = "genshin/renderTeamAsPopup";
   static statModifiers = [];
   

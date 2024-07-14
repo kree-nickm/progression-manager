@@ -37,21 +37,6 @@ export default class CharacterList extends WuWaList
   
   setupDisplay()
   {
-    this.display.addField("favorite", {
-      label: "F",
-      labelTitle: "Mark certain characters as favorites, then click to sort them higher than others.",
-      sort: {generic: {type:"boolean",property:"favorite"}},
-      dynamic: true,
-      title: item => `${item.favorite?"Unmark":"Mark"} Favorite`,
-      edit: item => ({
-        target: {item, field:"favorite"},
-        type: "checkbox",
-        value: item.favorite,
-        trueClasses: ["fa-solid","fa-circle-check"],
-        falseClasses: [],
-      }),
-    });
-    
     this.display.addField("name", {
       label: "Name",
       labelTitle: "Sort by name.",
@@ -106,16 +91,6 @@ export default class CharacterList extends WuWaList
       edit: item => ({target: {item:item.base??item, field:"level"}}),
     });
     
-    this.display.addField("ascension", {
-      label: "Asc",
-      labelTitle: "Sort by ascension.",
-      sort: {generic: {type:"number",property:"ascension"}},
-      dynamic: true,
-      title: item => "Click to change.",
-      value: item => item.ascension,
-      edit: item => ({target: {item:item.base??item, field:"ascension"}}),
-    });
-    
     this.display.addField("sequence", {
       label: "Seq",
       labelTitle: "Sort by sequence.",
@@ -124,123 +99,6 @@ export default class CharacterList extends WuWaList
       title: item => "Click to change.",
       value: item => item.sequence,
       edit: item => ({target: {item:item, field:"sequence"}}),
-    });
-    
-    let forteLabels = {
-      'Basic Attack': {c:"A",w:"Attack"},
-      'Resonance Skill': {c:"S",w:"Skill"},
-      'Forte Circuit': {c:"C",w:"Circuit"},
-      'Resonance Liberation': {c:"L",w:"Liberation"},
-      'Intro Skill': {c:"I",w:"Intro"},
-    };
-    this.display.addField("forte", {
-      label: (item, forte, alt) => forteLabels[forte].c,
-      labelTitle: (item, forte, alt) => forte+(alt=="circuit"?" Passive":alt=="bonus"?" Bonus":""),
-      dynamic: true,
-      title: (item, forte, alt) => `Click to change ${forte+(alt=="circuit"?" Passive":alt=="bonus"?" Bonus":"")}.`,
-      value: (item, forte, alt) => item.forte[forte+(alt=="circuit"?" Passive":alt=="bonus"?" Bonus":"")],
-      edit: (item, forte, alt) => ({target: {item:item, field:`forte.${forte+(alt=="circuit"?" Passive":alt=="bonus"?" Bonus":"")}`}}),
-      dependencies: (item, forte, alt) => [
-        {item:item, field:`forte.${forte}`},
-        alt ? {item:item, field:`forte.${forte+(alt=="circuit"?" Passive":alt=="bonus"?" Bonus":"")}`} : undefined,
-        {item:item.viewer.lists.MaterialList.get("Shell Credit"), field:"count"},
-        {item:item.getForteMat("enemy",forte,alt), field:"count"},
-        {item:item.getForteMat("forgery",forte,alt), field:"count"},
-        {item:item.getForteMat("weekly",forte,alt), field:"count"},
-      ],
-    });
-    
-    let ascMatGroup = {label:"Ascension Materials", startCollapsed:false};
-    this.display.addField("ascensionMaterial", {
-      group: ascMatGroup,
-      label: (item, type, phase) => type.at(0).toUpperCase()+type.substr(1).toLowerCase(),
-      columnClasses: ["ascension-materials"],
-      dynamic: true,
-      value: (item, type, phase) => type == "label" ? `${phase} ➤ ${parseInt(phase)+1}` : (item.getMat(type,phase) && item.getMatCost(type,phase) ? item.getMat(type,phase).getFieldValue(item.getMatCost(type,phase)) : ""),
-      dependencies: (item, type, phase) => [
-        {item:item.base??item, field:"ascension"},
-        {item:item.viewer.lists.MaterialList.get("Shell Credit"), field:"count"},
-      ].concat(type == "label" ?
-        [
-          {item:item.getMat('enemy',phase), field:"count"},
-          {item:item.getMat('flora',phase), field:"count"},
-          {item:item.getMat('boss',phase), field:"count"},
-        ] : (item.getMat(type,phase)?.getCraftDependencies() ?? [])
-      ),
-      button: (item, type, phase) => {
-        if(type == "label" && phase == item.ascension)
-        {
-          if(item.canUpPhase(false))
-          {
-            return {
-              title: "Ascend the character. This will spend the resources for you and increase their level if necessary.",
-              icon: "fa-solid fa-circle-up",
-              action: item.upPhase.bind(item),
-            };
-          }
-          else
-          {
-            return {
-              title: "Not enough materials to ascend.",
-              icon: "fa-solid fa-circle-up",
-            };
-          }
-        }
-      },
-    });
-    
-    let forteMatGroup = {label:"Forte Materials", startCollapsed:false};
-    this.display.addField("forteMaterial", {
-      group: forteMatGroup,
-      label: (item, type, forte, alt) => (forteLabels[forte]?.w??forte) + " " + type.capitalize(),
-      columnClasses: (item, type, forte, alt) => forteLabels[forte] ? ["forte-materials", `${type}-${forteLabels[forte]?.c}-materials`] : [],
-      dynamic: true,
-      value: (item, type, forte, alt) => type == "label" ? `${forte} ➤ ${parseInt(forte)+1}` : (item.getForteMat(type,forte,alt) && item.getForteMatCost(type,forte,alt) ? item.getForteMat(type,forte,alt).getFieldValue(item.getForteMatCost(type,forte,alt)) : ""),
-      dependencies: (item, type, forte, alt) => [
-        {item:item, field:`forte.${forte}`},
-        alt ? {item:item, field:`forte.${forte+(alt=="circuit"?" Passive":alt=="bonus"?" Bonus":"")}`} : undefined,
-        {item:item.viewer.lists.MaterialList.get("Shell Credit"), field:"count"},
-      ].concat(type == "label" ?
-        [
-          {item:item.getForteMat('enemy',forte,alt), field:"count"},
-          {item:item.getForteMat('forgery',forte,alt), field:"count"},
-          {item:item.getForteMat('weekly',forte,alt), field:"count"},
-        ] : (item.getForteMat(type,forte,alt)?.getCraftDependencies() ?? [])
-      ),
-      button: (item, type, forte, alt) => Object.keys(forteLabels).map(f => 
-      {
-        let forteKey = f;
-        if(alt)
-        {
-          if(alt == "bonus" && f == "Forte Circuit")
-            return undefined;
-          if(alt == "circuit" && f != "Forte Circuit")
-            return undefined;
-          forteKey = f+(alt=="circuit"?" Passive":alt=="bonus"?" Bonus":"");
-        }
-        if(type == "label" && forte == item.forte[forteKey])
-        {
-          if(item.canUpForte(f, false, alt))
-          {
-            return {
-              title: `Upgrade ${f} level. This will spend the resources for you.`,
-              icon: "fa-solid fa-circle-up",
-              name: forteLabels[f].w,
-              text: forteLabels[f].w,
-              action: item.upForte.bind(item, f, alt),
-            };
-          }
-          else
-          {
-            return {
-              title: "Not enough materials to upgrade.",
-              icon: "fa-solid fa-circle-up",
-              name: forteLabels[f].w,
-              text: forteLabels[f].w,
-            };
-          }
-        }
-      }),
     });
     
     let gearGroup = {label:"Equipped Gear", startCollapsed:false};
@@ -281,31 +139,8 @@ export default class CharacterList extends WuWaList
         {type:"weapon"},
       ],
     });
-  }
-  
-  afterUpdate(field, value, action, options)
-  {
-    if(!super.afterUpdate(field, value, action, options))
-      return false;
-    if(field.string == "list")
-    {
-      let select = document.getElementById("addCharacterSelect");
-      if(select)
-        select.needsUpdate = true;
-      if(action == "notify" && options?.toggleOwned)
-      {
-        if(options.toggleOwned.owned)
-        {
-          this.subsets = {};
-          super.afterUpdate(field, options.toggleOwned, "push", {force:true});
-        }
-        else
-        {
-          this.subsets = {};
-          Renderer.removeElementsOf(options.toggleOwned);
-        }
-      }
-    }
+    
+    Character.setupDisplay(this.display);
   }
   
   addRover()
@@ -346,13 +181,6 @@ export default class CharacterList extends WuWaList
         this.createItem({key}).update("owned", false);
   }
   
-  clear()
-  {
-    this.items().forEach(item => item.update("owned", false));
-    this.subsets = {};
-    this.forceNextRender = true;
-  }
-  
   /*getFooterParams()
   {
     return {
@@ -376,24 +204,24 @@ export default class CharacterList extends WuWaList
     data.fields.push({field:this.display.getField("level"), params:[]});
     data.fields.push({field:this.display.getField("ascension"), params:[]});
     data.fields.push({field:this.display.getField("sequence"), params:[]});
-    data.fields.push({field:this.display.getField("forte"), params:['Basic Attack']});
-    data.fields.push({field:this.display.getField("forte"), params:['Resonance Skill']});
-    data.fields.push({field:this.display.getField("forte"), params:['Forte Circuit']});
-    data.fields.push({field:this.display.getField("forte"), params:['Resonance Liberation']});
-    data.fields.push({field:this.display.getField("forte"), params:['Intro Skill']});
+    data.fields.push({field:this.display.getField("talent"), params:['Basic Attack']});
+    data.fields.push({field:this.display.getField("talent"), params:['Resonance Skill']});
+    data.fields.push({field:this.display.getField("talent"), params:['Forte Circuit']});
+    data.fields.push({field:this.display.getField("talent"), params:['Resonance Liberation']});
+    data.fields.push({field:this.display.getField("talent"), params:['Intro Skill']});
     data.fields.push({field:this.display.getField("ascensionMaterial"), params:['boss']});
     data.fields.push({field:this.display.getField("ascensionMaterial"), params:['flora']});
     data.fields.push({field:this.display.getField("ascensionMaterial"), params:['enemy']});
-    data.fields.push({field:this.display.getField("forteMaterial"), params:['forgery','Basic Attack']});
-    data.fields.push({field:this.display.getField("forteMaterial"), params:['enemy','Basic Attack']});
-    data.fields.push({field:this.display.getField("forteMaterial"), params:['forgery','Resonance Skill']});
-    data.fields.push({field:this.display.getField("forteMaterial"), params:['enemy','Resonance Skill']});
-    data.fields.push({field:this.display.getField("forteMaterial"), params:['forgery','Forte Circuit']});
-    data.fields.push({field:this.display.getField("forteMaterial"), params:['enemy','Forte Circuit']});
-    data.fields.push({field:this.display.getField("forteMaterial"), params:['forgery','Resonance Liberation']});
-    data.fields.push({field:this.display.getField("forteMaterial"), params:['enemy','Resonance Liberation']});
-    data.fields.push({field:this.display.getField("forteMaterial"), params:['forgery','Intro Skill']});
-    data.fields.push({field:this.display.getField("forteMaterial"), params:['enemy','Intro Skill']});
+    data.fields.push({field:this.display.getField("talentMaterial"), params:['forgery','Basic Attack']});
+    data.fields.push({field:this.display.getField("talentMaterial"), params:['enemy','Basic Attack']});
+    data.fields.push({field:this.display.getField("talentMaterial"), params:['forgery','Resonance Skill']});
+    data.fields.push({field:this.display.getField("talentMaterial"), params:['enemy','Resonance Skill']});
+    data.fields.push({field:this.display.getField("talentMaterial"), params:['forgery','Forte Circuit']});
+    data.fields.push({field:this.display.getField("talentMaterial"), params:['enemy','Forte Circuit']});
+    data.fields.push({field:this.display.getField("talentMaterial"), params:['forgery','Resonance Liberation']});
+    data.fields.push({field:this.display.getField("talentMaterial"), params:['enemy','Resonance Liberation']});
+    data.fields.push({field:this.display.getField("talentMaterial"), params:['forgery','Intro Skill']});
+    data.fields.push({field:this.display.getField("talentMaterial"), params:['enemy','Intro Skill']});
     data.fields.push({field:this.display.getField("equipWeapon"), params:[]});
     data.groups = this.display.getGroups({fieldDefs: data.fields});
     return {element, data, options};

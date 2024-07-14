@@ -2,6 +2,17 @@ import { handlebars, Renderer } from "./Renderer.js";
 
 String.prototype.capitalize = function() { return this.at(0).toUpperCase()+this.substr(1).toLowerCase(); };
 
+window.stringInstanceOf = function(object, className) {
+  while(object?.constructor)
+  {
+    if(object.constructor.name == className)
+      return true;
+    else
+      object = object.__proto__;
+  }
+  return false;
+};
+
 window.DEBUGLOG = {
   queueUpdate: false,
   renderItemField: false,

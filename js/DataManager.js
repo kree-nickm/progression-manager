@@ -5,7 +5,7 @@ import UIController from "./UIController.js";
 export default class DataManager extends UIController
 {
   static Renderer = Renderer; // Only here so the browser console can access it.
-  static dontSerialize = UIController.dontSerialize.concat(["listClasses","navigation","elements","stickyElements","errors","storeTimeout"]);
+  static dontSerialize = super.dontSerialize.concat(["listClasses","navigation","elements","stickyElements","errors","storeTimeout"]);
   
   dataVersion = 2;
   currentView;

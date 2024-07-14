@@ -3,7 +3,7 @@ import Material from "./Material.js";
 
 export default class Traveler extends Character
 {
-  static dontSerialize = Character.dontSerialize.concat(["_element","_talentEnemyMatType","_talentMasteryMatTypes","base","variants"]);
+  static dontSerialize = super.dontSerialize.concat(["_element","_talentEnemyMatType","_talentMasteryMatTypes","base","variants"]);
   
   _element = "";
   _talentEnemyMatType = "";

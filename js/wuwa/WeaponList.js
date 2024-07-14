@@ -17,20 +17,6 @@ export default class WeaponList extends WuWaList
   
   setupDisplay()
   {
-    this.display.addField("favorite", {
-      label: "F",
-      sort: {generic: {type:"boolean",property:"favorite"}},
-      dynamic: true,
-      title: item => "Mark as Favorite",
-      edit: item => ({
-        target: {item, field:"favorite"},
-        type: "checkbox",
-        value: item.favorite,
-        trueClasses: ["fa-solid","fa-circle-check"],
-        falseClasses: [],
-      }),
-    });
-    
     this.display.addField("name", {
       label: "Name",
       popup: item => item,
@@ -87,58 +73,12 @@ export default class WeaponList extends WuWaList
       }),*/
     });
     
-    this.display.addField("ascension", {
-      label: "Asc",
-      sort: {generic: {type:"number", property:"ascension"}},
-      dynamic: true,
-      value: item => item.ascension,
-      edit: item => ({target: {item, field:"ascension"}}),
-    });
-    
     this.display.addField("syntonization", {
       label: "Syn",
       sort: {generic: {type:"number", property:"syntonization"}},
       dynamic: true,
       value: item => item.syntonization,
       edit: item => ({target: {item, field:"syntonization"}}),
-    });
-    
-    let ascMatGroup = {label:"Ascension Materials", startCollapsed:false};
-    this.display.addField("ascensionMaterial", {
-      group: ascMatGroup,
-      label: (item, type, phase) => type.at(0).toUpperCase()+type.substr(1).toLowerCase(),
-      columnClasses: ["ascension-materials"],
-      dynamic: true,
-      value: (item, type, phase) => type == "label" ? `${phase} ➤ ${parseInt(phase)+1}` : (item.getMat(type,phase) && item.getMatCost(type,phase) ? item.getMat(type,phase).getFieldValue(item.getMatCost(type,phase)) : ""),
-      dependencies: (item, type, phase) => [
-        {item:item, field:"ascension"},
-        {item:item.viewer.lists.MaterialList.get("Shell Credit"), field:"count"},
-      ].concat(type == "label" ?
-        [
-          {item:item.getMat('enemy',phase), field:"count"},
-          {item:item.getMat('forgery',phase), field:"count"},
-        ] : (item.getMat(type,phase)?.getCraftDependencies() ?? [])
-      ),
-      button: (item, type, phase) => {
-        if(type == "label" && phase == item.ascension)
-        {
-          if(item.canUpPhase(false))
-          {
-            return {
-              title: "Ascend the weapon. This will spend the resources for you and increase their level if necessary.",
-              icon: "fa-solid fa-circle-up",
-              action: item.upPhase.bind(item),
-            };
-          }
-          else
-          {
-            return {
-              title: "Not enough materials to ascend.",
-              icon: "fa-solid fa-circle-up",
-            };
-          }
-        }
-      },
     });
     
     this.display.addField("location", {
@@ -181,24 +121,6 @@ export default class WeaponList extends WuWaList
       ],
     });
     
-    this.display.addField("deleteBtn", {
-      label: "D",
-      dynamic: true,
-      dependencies: item => [
-        {item, field:"lock"},
-        {item, field:"location"},
-      ],
-      title: item => (item.lock || item.location) ? "Unlock/unequip the weapon before deleting it." : "Delete this weapon from the list.",
-      button: item => (item.lock || item.location) ? {icon: "fa-solid fa-trash-can"} : {
-        icon: "fa-solid fa-trash-can",
-        action: event => {
-          event.stopPropagation();
-          item.unlink();
-          item.list.viewer.store();
-        },
-      },
-    });
-    
     this.display.addField("passive", {
       label: "Passive",
       dynamic: true,
@@ -208,6 +130,8 @@ export default class WeaponList extends WuWaList
         {item, field:"syntonization"},
       ],
     });
+    
+    Weapon.setupDisplay(this.display);
   }
   
   clear()

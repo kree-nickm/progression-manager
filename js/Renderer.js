@@ -480,9 +480,14 @@ class Renderer
     }
   }
   
-  static removeElementsOf(item)
+  static removeElementsOf(item, list)
   {
-    Array.from(document.querySelectorAll(`*[data-uuid="${item.uuid}"]:not(.modal-content)`)).forEach(element => {
+    let selector;
+    if(list)
+      selector = `*[data-uuid="${list.uuid}"] *[data-uuid="${item.uuid}"]:not(.modal-content)`;
+    else
+      selector = `*[data-uuid="${item.uuid}"]:not(.modal-content)`;
+    Array.from(document.querySelectorAll(selector)).forEach(element => {
       //if(element == modal) continue;
       item.constructor.clearDependencies(element, true);
       Renderer._needsUpdate.forEach(elemToUpdate => element.contains(elemToUpdate) ? Renderer._needsUpdate.delete(elemToUpdate) : null);
@@ -709,7 +714,12 @@ class Renderer
       for(let dep of element.dependencies)
       {
         if(dep?.item && dep?.field)
-          dep.item.addDependent(dep.field, element);
+        {
+          if(window.stringInstanceOf(dep.item, "UIController"))
+            dep.item.addDependent(dep.field, element);
+          else
+            console.error(`Cannot add dependency to a non-UIController.`, {item:dep.item, field:dep.field, fieldData});
+        }
         else if(dep?.type)
           element.classList.add("type-dependent");
       }

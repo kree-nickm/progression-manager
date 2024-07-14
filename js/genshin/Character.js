@@ -46,9 +46,9 @@ handlebars.registerHelper("isPreviewing", function(character, item, options) {
 
 handlebars.registerHelper("buildName", (character, buildId, options) => character?.getBuild(buildId)?.name);
 
-export default class Character extends Ascendable(GenshinItem)
+export default class Character extends GenshinItem
 {
-  static dontSerialize = GenshinItem.dontSerialize.concat(["MaterialList","loaded","_weapon","_flower","_plume","_sands","_goblet","_circlet","_previewGear","preview","statModifiers","activeTeam"]);
+  static dontSerialize = super.dontSerialize.concat(["MaterialList","loaded","_weapon","_flower","_plume","_sands","_goblet","_circlet","_previewGear","preview","statModifiers","activeTeam"]);
   static goodProperties = ["key","level","constellation","ascension","talent"];
   static templateName = "genshin/renderCharacterAsPopup";
 
@@ -635,7 +635,7 @@ export default class Character extends Ascendable(GenshinItem)
       return "";
   }
   
-  upPhase(event)
+  ascend(event)
   {
     if(this.ascension == 6)
     {
@@ -654,7 +654,7 @@ export default class Character extends Ascendable(GenshinItem)
     this.update("ascension", this.ascension+1);
   }
   
-  canUpPhase(withCrafting=false)
+  canAscend(withCrafting=false)
   {
     if(this.ascension == 6)
       return false;

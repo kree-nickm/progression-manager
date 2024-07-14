@@ -4,7 +4,7 @@ import UIItem from "./UIItem.js";
 import ListDisplayManager from "./ListDisplayManager.js";
 
 export default class UIList extends UIController {
-  static dontSerialize = UIController.dontSerialize.concat(["display","subsets","forceNextRender"]);
+  static dontSerialize = super.dontSerialize.concat(["display","subsets","forceNextRender"]);
   static unique = false;
   static itemClass = UIItem;
   static subsetDefinitions = {};
@@ -98,31 +98,55 @@ export default class UIList extends UIController {
       return false;
     if(field.string == "list")
     {
-      if(action == "push")
+      if(this.constructor.unique)
+      {
+        let footerParams = this.getFooterParams();
+        if(footerParams?.add)
+        {
+          if(Array.isArray(footerParams.add))
+            footerParams.add = {fields:footerParams.add};
+          let itemType = Array.isArray(this.constructor.itemClass) ? this.constructor.itemClass[0].name : this.constructor.itemClass.name;
+          for(let fld of footerParams.add.fields)
+          {
+            // TODO: Doesn't actually update the element until pane is changed.
+            let select = document.getElementById(`${fld.property}${itemType}Select`);
+            if(select)
+              select.needsUpdate = true;
+          }
+        }
+      }
+      if(action == "remove" || action == "notify" && options?.toggleOwned && !options.toggleOwned.owned)
+      {
+        // TODO: Only remove this item from subsets that it's in.
+        this.subsets = {};
+        if(!options.skipHTML)
+          Renderer.removeElementsOf(options?.toggleOwned??value, this);
+      }
+      else if(action == "push" || action == "notify" && options?.toggleOwned && options?.toggleOwned.owned)
       {
         for(let subset in this.constructor.subsetDefinitions)
         {
-          if(subset in this.subsets && this.constructor.subsetDefinitions[subset](value))
-            this.subsets[subset].push(value);
+          if(subset in this.subsets && this.constructor.subsetDefinitions[subset](options?.toggleOwned??value))
+            this.subsets[subset].push(options?.toggleOwned??value);
         }
       
         let listElements = this.viewer.elements[this.listName].querySelectorAll(`.list[data-uuid="${this.uuid}"]`);
         for(let listElement of listElements)
         {
           if(listElement.dataset.filter)
-            if(!this.constructor.subsetDefinitions[listElement.dataset.filter](value))
+            if(!this.constructor.subsetDefinitions[listElement.dataset.filter](options?.toggleOwned??value))
               continue;
           let listTargetElement = listElement.querySelector(`.list-target[data-uuid="${this.uuid}"]`); // TODO: Nested lists of the same UIList object could make this incorrect, but that's weird, so let's just pretend no one is gonna do that for now.
           if(!listTargetElement)
             listTargetElement = listElement;
           let renderData = this.prepareRender(listElement, {}, {});
           Renderer.rerender(null, {
-            item: value,
+            item: options?.toggleOwned??value,
             groups: renderData.data.groups,
             fields: renderData.data.fields,
             wrapper: "tr", // TODO: Not all lists use tr/td
             fieldWrapper: "td",
-          }, {template:value.constructor.listTemplateName, parentElement:listTargetElement});
+          }, {template:(options?.toggleOwned??value).constructor.listTemplateName, parentElement:listTargetElement});
         }
       }
       else if(action == "replace")
@@ -228,8 +252,17 @@ export default class UIList extends UIController {
   
   clear()
   {
-    this.list.forEach(item => item.unlink({skipList:true}));
-    this.update("list", [], "replace");
+    if(this.constructor.unique)
+    {
+      this.items().forEach(item => item.update("owned", false));
+    }
+    else
+    {
+      this.items().forEach(item => item.unlink({skipList:true}));
+      this.update("list", [], "replace");
+    }
+    this.subsets = {};
+    this.forceNextRender = true;
   }
   
   getFooterParams()

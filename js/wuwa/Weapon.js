@@ -4,12 +4,15 @@ import WeaponData from "./gamedata/WeaponData.js";
 import WeaponMetadata from "./gamedata/WeaponMetadata.js";
 
 import { handlebars, Renderer } from "../Renderer.js";
+import Ascendable from "../Ascendable.js";
 import WuWaItem from "./WuWaItem.js";
 
-export default class Weapon extends WuWaItem
+export default class Weapon extends Ascendable(WuWaItem)
 {
-  static dontSerialize = WuWaItem.dontSerialize.concat(["MaterialList","character"]);
+  static dontSerialize = super.dontSerialize.concat(["character"]);
   static templateName = "wuwa/renderWeaponAsPopup";
+  
+  static AscensionData = AscensionData;
   
   key = "";
   _level = 1;
@@ -19,51 +22,48 @@ export default class Weapon extends WuWaItem
   lock = false;
   
   isPreview = false;
-  favorite = false;
   
-  MaterialList;
   character = null;
   
   afterLoad()
   {
     if(this.isPreview)
     {
+      return true;
     }
     else if(!WeaponData[this.key])
     {
       console.warn(`Unknown weapon "${this.key}".`);
-    }
-    else if(!this.list?.viewer?.lists?.MaterialList)
-    {
-      console.warn(`Weapon cannot access the material list.`);
+      return false;
     }
     else
     {
       if(WeaponData[this.key].renamed)
         this.key = WeaponData[this.key].renamed;
-      this.MaterialList = {
-        credit: this.viewer.lists.MaterialList.get("Shell Credit"),
-      };
-      // Retrieve the materials used by this character.
-      this.MaterialList.enemy = {
-        '2': this.viewer.lists.MaterialList.get(LootData.primary[WeaponData[this.key].enemyMat][2]),
-        '3': this.viewer.lists.MaterialList.get(LootData.primary[WeaponData[this.key].enemyMat][3]),
-        '4': this.viewer.lists.MaterialList.get(LootData.primary[WeaponData[this.key].enemyMat][4]),
-        '5': this.viewer.lists.MaterialList.get(LootData.primary[WeaponData[this.key].enemyMat][5]),
-      };
-      this.MaterialList.forgery = {
-        '2': this.viewer.lists.MaterialList.get(LootData.primary[WeaponData[this.key].forgeryMat][2]),
-        '3': this.viewer.lists.MaterialList.get(LootData.primary[WeaponData[this.key].forgeryMat][3]),
-        '4': this.viewer.lists.MaterialList.get(LootData.primary[WeaponData[this.key].forgeryMat][4]),
-        '5': this.viewer.lists.MaterialList.get(LootData.primary[WeaponData[this.key].forgeryMat][5]),
-      };
       
-      // Inform those materials that this character uses them.
-      for(let i in this.MaterialList.enemy)
-        this.MaterialList.enemy[i]?.addUser(this);
-      for(let i in this.MaterialList.forgery)
-        this.MaterialList.forgery[i]?.addUser(this);
-      
+      this.materialDefs = {
+        raritySuffix: "RarityWeapon",
+        costSuffix: "CostWeapon",
+        materials: [
+          {
+            property: "credit",
+            key: "Shell Credit",
+            skipUser: true,
+          },
+          {
+            property: "enemy",
+            group: LootData.primary[WeaponData[this.key].enemyMat],
+            tiers: [2,3,4,5],
+          },
+          {
+            property: "forgery",
+            group: LootData.primary[WeaponData[this.key].forgeryMat],
+            tiers: [2,3,4,5],
+          },
+        ],
+        list: this.viewer.lists.MaterialList,
+      };
+      super.afterLoad();
       return true;
     }
   }
@@ -121,55 +121,6 @@ export default class Weapon extends WuWaItem
   getPassive(syntonization=this.syntonization)
   {
     return WeaponData[this.key]?.passive?.replaceAll(/\{(\d+)\}/g, (m, id) => `<b title="${Object.values(WeaponData[this.key]?.rankData?.[id]??[]).join(' / ')}">${WeaponData[this.key]?.rankData?.[id]?.[parseInt(syntonization)-1]}</b>`).replaceAll(`\n`,"<br/>");
-  }
-  
-  getRankData(ascension=this.ascension)
-  {
-    return AscensionData[ascension] ?? AscensionData[6];
-  }
-  
-  getMat(type, ascension=this.ascension)
-  {
-    let rarity = this.getRankData(ascension)[`${type}RarityWeapon`];
-    if(rarity)
-      return this.MaterialList[type]?.[rarity];
-    else
-      return this.MaterialList[type];
-  }
-  
-  getMatCost(type, ascension=this.ascension)
-  {
-    return this.getRankData(ascension)[`${type}CostWeapon`][this.rarity];
-  }
-  
-  upPhase(event)
-  {
-    if(this.ascension == 6)
-    {
-      console.error(`Tried to ascend ${this.name}, but already at max.`);
-      return false;
-    }
-    event.stopPropagation();
-    this.getMat('enemy').update("count", this.getMat('enemy').count - this.getMatCost('enemy'));
-    this.getMat('forgery').update("count", this.getMat('forgery').count - this.getMatCost('forgery'));
-    this.getMat('credit').update("count", this.getMat('credit').count - this.getMatCost('credit'));
-    if(this.level < this.getRankData().levelCap)
-      this.update("level", this.getRankData().levelCap);
-    this.update("ascension", this.ascension+1);
-  }
-  
-  canUpPhase(withCrafting=false)
-  {
-    if(this.ascension == 6)
-      return false;
-    else if(withCrafting)
-      return this.getMat('enemy')?.getCraftCount() >= this.getMatCost('enemy') &&
-        this.getMat('forgery')?.getCraftCount() >= this.getMatCost('forgery') &&
-        this.getMat('credit')?.getCraftCount() >= this.getMatCost('credit');
-    else
-      return this.getMat('enemy')?.count >= this.getMatCost('enemy') &&
-        this.getMat('forgery')?.count >= this.getMatCost('forgery') &&
-        this.getMat('credit')?.count >= this.getMatCost('credit');
   }
   
   unlink(options)

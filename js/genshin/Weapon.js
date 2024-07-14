@@ -6,9 +6,9 @@ import GenshinPhaseData from "./gamedata/GenshinPhaseData.js";
 import GenshinItem from "./GenshinItem.js";
 import Ascendable from "../Ascendable.js";
 
-export default class Weapon extends Ascendable(GenshinItem)
+export default class Weapon extends GenshinItem
 {
-  static dontSerialize = GenshinItem.dontSerialize.concat(["MaterialList","character"]);
+  static dontSerialize = super.dontSerialize.concat(["MaterialList","character"]);
   static goodProperties = ["key","level","ascension","refinement","location","lock"];
   static templateName = "genshin/renderWeaponAsPopup";
   
@@ -186,7 +186,7 @@ export default class Weapon extends Ascendable(GenshinItem)
       return 0;
   }
   
-  upPhase(event)
+  ascend(event)
   {
     if(this.ascension == 6)
     {
@@ -204,7 +204,7 @@ export default class Weapon extends Ascendable(GenshinItem)
     return true;
   }
   
-  canUpPhase(withCrafting=false)
+  canAscend(withCrafting=false)
   {
     if(this.ascension == 6)
       return false;

@@ -206,11 +206,11 @@ export default class WeaponList extends GenshinList
           button: item => {
             if(phase == item.ascension)
             {
-              if(item.canUpPhase(false))
+              if(item.canAscend(false))
               {
                 return {
                   icon: "fa-solid fa-circle-up",
-                  action: item.upPhase.bind(item),
+                  action: item.ascend.bind(item),
                 };
               }
               else
@@ -285,7 +285,7 @@ export default class WeaponList extends GenshinList
         action: event => {
           event.stopPropagation();
           item.unlink();
-          item.list.viewer.store();
+          item.list.viewer.queueStore();
         },
       },
     });

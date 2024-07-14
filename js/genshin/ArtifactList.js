@@ -40,7 +40,7 @@ handlebars.registerHelper("getArtifactSetData", (set, context) => GenshinArtifac
 
 export default class ArtifactList extends GenshinList
 {
-  static dontSerialize = GenshinList.dontSerialize.concat(["elements"]);
+  static dontSerialize = super.dontSerialize.concat(["elements"]);
   static itemClass = Artifact;
   static subsetDefinitions = {
     'flower': item => item.slotKey == "flower",
@@ -385,7 +385,7 @@ export default class ArtifactList extends GenshinList
         action: event => {
           event.stopPropagation();
           item.unlink();
-          item.list.viewer.store();
+          item.list.viewer.queueStore();
         },
       },
     });

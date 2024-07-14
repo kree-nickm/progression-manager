@@ -4,35 +4,39 @@ import LootData from "./gamedata/LootData.js";
 import CharacterData from "./gamedata/CharacterData.js";
 
 import { handlebars, Renderer } from "../Renderer.js";
+import Ascendable from "../Ascendable.js";
 import Plannable from "../Plannable.js";
 import WuWaItem from "./WuWaItem.js";
 
-export default class Character extends Plannable(WuWaItem)
+export default class Character extends Ascendable(WuWaItem)
 {
-  static dontSerialize = WuWaItem.dontSerialize.concat(["MaterialList","_weapon","echoes"]);
+  static dontSerialize = super.dontSerialize.concat(["_weapon","echoes"]);
   static templateName = "wuwa/renderCharacterAsPopup";
   
+  static AscensionData = AscensionData;
+  static TalentData = ForteData;
+  static talentProperty = "forte";
+  static talentTypes = {
+    'Basic Attack': {word:"Attack", char:"A", min:1, max:10, dataType:""},
+    'Resonance Skill': {word:"Skill", char:"S", min:1, max:10, dataType:""},
+    'Forte Circuit': {word:"Circuit", char:"C", min:1, max:10, dataType:""},
+    'Resonance Liberation': {word:"Liberation", char:"L", min:1, max:10, dataType:""},
+    'Intro Skill': {word:"Intro", char:"I", min:1, max:10, dataType:""},
+    'Basic Attack Bonus': {word:"Attack", char:"PA", min:0, max:2, dataType:"bonus"},
+    'Resonance Skill Bonus': {word:"Skill", char:"PS", min:0, max:2, dataType:"bonus"},
+    'Forte Circuit Passive': {word:"Circuit", char:"PC", min:0, max:2, dataType:"circuit"},
+    'Resonance Liberation Bonus': {word:"Liberation", char:"PL", min:0, max:2, dataType:"bonus"},
+    'Intro Skill Bonus': {word:"Intro", char:"PI", min:0, max:2, dataType:"bonus"},
+  };
+  
+  // Properties determined in-game.
   key = "";
   _level = 1;
   _ascension = 0;
   _sequence = 0;
-  forte = {
-    'Basic Attack': 1,
-    'Resonance Skill': 1,
-    'Forte Circuit': 1,
-    'Resonance Liberation': 1,
-    'Intro Skill': 1,
-    'Basic Attack Bonus': 0,
-    'Resonance Skill Bonus': 0,
-    'Forte Circuit Passive': 0,
-    'Resonance Liberation Bonus': 0,
-    'Intro Skill Bonus': 0,
-  };
+  forte;
 
-  owned;
-  favorite = false;
-
-  MaterialList;
+  // Properties that are not serialized.
   _weapon = null;
   echoes = {
     '0': null,
@@ -44,37 +48,48 @@ export default class Character extends Plannable(WuWaItem)
   
   afterLoad()
   {
-    this.MaterialList = {
-      credit: this.viewer.lists.MaterialList.get("Shell Credit"),
-    };
-    if(CharacterData[this.key])
+    if(CharacterData[this.key] || this.key.startsWith("Rover"))
     {
-      // Retrieve the materials used by this character.
-      this.MaterialList.enemy = {
-        '2': this.viewer.lists.MaterialList.get(LootData.primary[CharacterData[this.key].enemyMat][2]),
-        '3': this.viewer.lists.MaterialList.get(LootData.primary[CharacterData[this.key].enemyMat][3]),
-        '4': this.viewer.lists.MaterialList.get(LootData.primary[CharacterData[this.key].enemyMat][4]),
-        '5': this.viewer.lists.MaterialList.get(LootData.primary[CharacterData[this.key].enemyMat][5]),
-      };
-      this.MaterialList.forgery = {
-        '2': this.viewer.lists.MaterialList.get(LootData.primary[CharacterData[this.key].forgeryMat][2]),
-        '3': this.viewer.lists.MaterialList.get(LootData.primary[CharacterData[this.key].forgeryMat][3]),
-        '4': this.viewer.lists.MaterialList.get(LootData.primary[CharacterData[this.key].forgeryMat][4]),
-        '5': this.viewer.lists.MaterialList.get(LootData.primary[CharacterData[this.key].forgeryMat][5]),
-      };
-      this.MaterialList.boss = this.viewer.lists.MaterialList.get(CharacterData[this.key].bossMat);
-      this.MaterialList.flora = this.viewer.lists.MaterialList.get(CharacterData[this.key].floraMat);
-      this.MaterialList.weekly = this.viewer.lists.MaterialList.get(CharacterData[this.key].weeklyMat);
-      
-      // Inform those materials that this character uses them.
-      for(let i in this.MaterialList.enemy)
-        this.MaterialList.enemy[i]?.addUser(this);
-      for(let i in this.MaterialList.forgery)
-        this.MaterialList.forgery[i]?.addUser(this);
-      this.MaterialList.boss?.addUser(this);
-      this.MaterialList.flora?.addUser(this);
-      this.MaterialList.weekly?.addUser(this);
-      
+      if(!this.materialDefs)
+      {
+        this.materialDefs = {
+          raritySuffix: "RarityCharacter",
+          costSuffix: "CostCharacter",
+          talentRaritySuffix: "Rarity",
+          talentCostSuffix: "Cost",
+          materials: [
+            {
+              property: "credit",
+              key: "Shell Credit",
+              skipUser: true,
+            },
+            {
+              property: "boss",
+              key: CharacterData[this.key].bossMat,
+            },
+            {
+              property: "flora",
+              key: CharacterData[this.key].floraMat,
+            },
+            {
+              property: "weekly",
+              key: CharacterData[this.key].weeklyMat,
+            },
+            {
+              property: "enemy",
+              group: LootData.primary[CharacterData[this.key].enemyMat],
+              tiers: [2,3,4,5],
+            },
+            {
+              property: "forgery",
+              group: LootData.primary[CharacterData[this.key].forgeryMat],
+              tiers: [2,3,4,5],
+            },
+          ],
+          list: this.viewer.lists.MaterialList,
+        };
+      }
+      super.afterLoad();
       return true;
     }
     else
@@ -89,13 +104,7 @@ export default class Character extends Plannable(WuWaItem)
     if(!super.afterUpdate(field, value, action, options))
       return false;
     if(["weapon"].includes(field.path[0]))
-    {
       this.notifyType(field.string);
-    }
-    else if(field.string == "owned")
-    {
-      this.list.update("list", null, "notify", {toggleOwned:this});
-    }
     return true;
   }
   
@@ -119,7 +128,7 @@ export default class Character extends Plannable(WuWaItem)
   get weapon(){ return this._weapon; }
   set weapon(val){ this._weapon = val; }
   
-  // Getters for genshin item data that is not stored on each instance of this class.
+  // Getters for data that is not stored on each instance of this class.
   get data(){ return CharacterData[this.key]; }
   get name(){ return CharacterData[this.key]?.name ?? this.key; }
   get weaponType(){ return CharacterData[this.key]?.weapon ?? ""; }
@@ -128,116 +137,6 @@ export default class Character extends Plannable(WuWaItem)
   get icon(){ return "img/wuwa/small/"+ (CharacterData[this.key].icon.slice(CharacterData[this.key].icon.lastIndexOf('.')+1) ?? "blank") +".webp"; }
   get portrait(){ return "img/wuwa/full/"+ (CharacterData[this.key].portrait.slice(CharacterData[this.key].portrait.lastIndexOf('.')+1) ?? "blank") +".webp"; }
   get releaseTimestamp(){ return CharacterData[this.key]?.release ? Date.parse(CharacterData[this.key]?.release) : 0; }
-  
-  getRankData(ascension=this.ascension)
-  {
-    return AscensionData[ascension] ?? AscensionData[6];
-  }
-  
-  getMat(type, ascension=this.ascension)
-  {
-    let rarity = this.getRankData(ascension)[`${type}RarityCharacter`];
-    if(rarity)
-      return this.MaterialList[type]?.[rarity];
-    else
-      return this.MaterialList[type];
-  }
-  
-  getMatCost(type, ascension=this.ascension)
-  {
-    return this.getRankData(ascension)[`${type}CostCharacter`];
-  }
-  
-  upPhase(event)
-  {
-    if(this.ascension == 6)
-    {
-      console.error(`Tried to ascend ${this.name}, but already at max.`);
-      return false;
-    }
-    event.stopPropagation();
-    this.getMat('enemy').update("count", this.getMat('enemy').count - this.getMatCost('enemy'));
-    this.getMat('flora').update("count", this.getMat('flora').count - this.getMatCost('flora'));
-    this.getMat('boss').update("count", this.getMat('boss').count - this.getMatCost('boss'));
-    this.getMat('credit').update("count", this.getMat('credit').count - this.getMatCost('credit'));
-    if(this.level < this.getRankData().levelCap)
-      this.update("level", this.getRankData().levelCap);
-    this.update("ascension", this.ascension+1);
-  }
-  
-  canUpPhase(withCrafting=false)
-  {
-    if(this.ascension == 6)
-      return false;
-    else if(withCrafting)
-      return this.getMat('enemy')?.getCraftCount() >= this.getMatCost('enemy') &&
-        this.getMat('flora')?.getCraftCount() >= this.getMatCost('flora') &&
-        this.getMat('boss')?.getCraftCount() >= this.getMatCost('boss') &&
-        this.getMat('credit')?.getCraftCount() >= this.getMatCost('credit');
-    else
-      return this.getMat('enemy')?.count >= this.getMatCost('enemy') &&
-        this.getMat('flora')?.count >= this.getMatCost('flora') &&
-        this.getMat('boss')?.count >= this.getMatCost('boss') &&
-        this.getMat('credit')?.count >= this.getMatCost('credit');
-  }
-  
-  getForteRankData(forte, alt)
-  {
-    if(alt)
-      return ForteData[alt+this.forte[forte+(alt=="circuit"?" Passive":" Bonus")]] ?? ForteData[alt+forte] ?? ForteData[10];
-    else
-      return ForteData[this.forte[forte]] ?? ForteData[forte] ?? ForteData[10];
-  }
-  
-  getForteMat(type, forte, alt)
-  {
-    let rarity = this.getForteRankData(forte, alt)[`${type}Rarity`];
-    if(rarity)
-      return this.MaterialList[type]?.[rarity];
-    else
-      return this.MaterialList[type];
-  }
-  
-  getForteMatCost(type, forte, alt)
-  {
-    return this.getForteRankData(forte, alt)[`${type}Cost`];
-  }
-  
-  upForte(forte, alt, event)
-  {
-    if(!event)
-      event = alt;
-    if(!window.productionMode) console.debug(`upForte`, {'this':this, forte, event, alt});
-    let forteKey = forte+(alt=="circuit"?" Passive":alt=="bonus"?" Bonus":"");
-    if(this.forte[forteKey] == (alt?2:10))
-    {
-      console.error(`Tried to upgrade ${this.name} forte ${forteKey}, but already at max.`);
-      return false;
-    }
-    event.stopPropagation();
-    this.getForteMat('enemy',forte, alt).update("count", this.getForteMat('enemy',forte, alt).count - this.getForteMatCost('enemy',forte, alt));
-    this.getForteMat('forgery',forte, alt).update("count", this.getForteMat('forgery',forte, alt).count - this.getForteMatCost('forgery',forte, alt));
-    this.getForteMat('weekly',forte, alt).update("count", this.getForteMat('weekly',forte, alt).count - this.getForteMatCost('weekly',forte, alt));
-    this.getForteMat('credit',forte, alt).update("count", this.getForteMat('credit',forte, alt).count - this.getForteMatCost('credit',forte, alt));
-    this.update(`forte.${forteKey}`, this.forte[forteKey]+1);
-  }
-  
-  canUpForte(forte, withCrafting, alt)
-  {
-    let forteKey = forte+(alt=="circuit"?" Passive":alt=="bonus"?" Bonus":"");
-    if(this.forte[forteKey] == (alt?2:10))
-      return false;
-    else if(withCrafting)
-      return this.getForteMat('enemy',forte,alt)?.getCraftCount() >= this.getForteMatCost('enemy',forte,alt) &&
-        this.getForteMat('forgery',forte,alt)?.getCraftCount() >= this.getForteMatCost('forgery',forte,alt) &&
-        this.getForteMat('weekly',forte,alt)?.getCraftCount() >= this.getForteMatCost('weekly',forte,alt) &&
-        this.getForteMat('credit',forte,alt)?.getCraftCount() >= this.getForteMatCost('credit',forte,alt);
-    else
-      return this.getForteMat('enemy',forte,alt)?.count >= this.getForteMatCost('enemy',forte,alt) &&
-        this.getForteMat('forgery',forte,alt)?.count >= this.getForteMatCost('forgery',forte,alt) &&
-        this.getForteMat('weekly',forte,alt)?.count >= this.getForteMatCost('weekly',forte,alt) &&
-        this.getForteMat('credit',forte,alt)?.count >= this.getForteMatCost('credit',forte,alt);
-  }
   
   // This method should only be called by the item that is being equipped, when its "location" property is updated.
   equipItem(item, {slot}={})

@@ -188,11 +188,11 @@ export default class CharacterList extends GenshinList
       labelTitle: "Sort by phase/ascension.",
       sort: {generic: {type:"number",property:"ascension"}},
       dynamic: true,
-      title: item => "Click to change." + (item.canUpPhase(true) ? "\r\nNote: You have enough materials to ascend. Open character details to use the ascension feature." : ""),
+      title: item => "Click to change." + (item.canAscend(true) ? "\r\nNote: You have enough materials to ascend. Open character details to use the ascension feature." : ""),
       value: item => item.ascension,
       edit: item => ({target: {item:item.base??item, field:"ascension"}, min:0, max:6}),
       classes: item => ({
-        'can-inc': item.canUpPhase(true),
+        'can-inc': item.canAscend(true),
         "at-max": item.ascension >= 6,
       }),
       dependencies: item => [
@@ -263,8 +263,8 @@ export default class CharacterList extends GenshinList
         title: item => (item.getTalent(i).matTrounceCount ? `Also requires ${item.getTalent(i).matTrounceCount} ${item.MaterialList.trounce.name}, dropped by ${item.MaterialList.trounce.source} (you have ${item.MaterialList.trounce.getCraftCount()})` : ""),
         edit: item => ({target: {item, field:["talent", i]}, min:1, max:10}),
         classes: item => ({
-          "can-inc": item.canUpTalent(i, true),
-          "at-max": item.talent[i] >= item.talentCap,
+          "can-inc": item.wishlist?.talent?.[i] > item.talent[i] && item.canUpTalent(i, true),
+          "at-max": item.wishlist?.talent?.[i] > item.talent[i] && item.talent[i] >= item.talentCap,
         }),
         sort: {generic: {type:"number",property:["talent",i]}},
         dependencies: item => [
@@ -317,12 +317,12 @@ export default class CharacterList extends GenshinList
       button: (item, type, phase) => {
         if(type == "label" && phase == item.ascension)
         {
-          if(item.canUpPhase(false))
+          if(item.canAscend(false))
           {
             return {
               title: "Ascend the character. This will spend the resources for you and increase their level if necessary.",
               icon: "fa-solid fa-circle-up",
-              action: item.upPhase.bind(item),
+              action: item.ascend.bind(item),
             };
           }
           else

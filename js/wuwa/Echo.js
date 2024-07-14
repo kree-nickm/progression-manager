@@ -8,7 +8,7 @@ import WuWaItem from "./WuWaItem.js";
 
 export default class Echo extends WuWaItem
 {
-  static dontSerialize = WuWaItem.dontSerialize.concat(["character"]);
+  static dontSerialize = super.dontSerialize.concat(["character"]);
   //static templateName = "wuwa/renderEchoAsPopup";
   
   _level = 0;

@@ -1,8 +1,10 @@
+import LootData from "./gamedata/LootData.js";
+
 import Character from "./Character.js";
 
 export default class Rover extends Character
 {
-  static dontSerialize = Character.dontSerialize.concat(["_element","base","variants"]);
+  static dontSerialize = super.dontSerialize.concat(["_element","base","variants"]);
   
   _element = "";
   base;
@@ -10,51 +12,58 @@ export default class Rover extends Character
   
   afterLoad()
   {
-    this.MaterialList = {};
-    
+    this.materialDefs = {
+      raritySuffix: "RarityCharacter",
+      costSuffix: "CostCharacter",
+      talentRaritySuffix: "Rarity",
+      talentCostSuffix: "Cost",
+      materials: [
+        {
+          property: "credit",
+          key: "Shell Credit",
+          skipUser: true,
+        },
+        {
+          property: "boss",
+          key: "Mysterious Code",
+        },
+        {
+          property: "flora",
+          key: "Pecok Flower",
+        },
+        {
+          property: "enemy",
+          group: LootData.primary["Whisperin Core"],
+          tiers: [2,3,4,5],
+        },
+        {
+          property: "forgery",
+          group: LootData.primary["Metallic Drip"],
+          tiers: [2,3,4,5],
+        },
+      ],
+      list: this.viewer.lists.MaterialList,
+    };
     if(this.key.endsWith("Spectro"))
     {
       this._element = "Spectro";
-      this.MaterialList.forgery = {
-        '2': this.viewer.lists.MaterialList.get("Inert Metallic Drip"),
-        '3': this.viewer.lists.MaterialList.get("Reactive Metallic Drip"),
-        '4': this.viewer.lists.MaterialList.get("Polarized Metallic Drip"),
-        '5': this.viewer.lists.MaterialList.get("Heterized Metallic Drip"),
-      };
-      this.MaterialList.weekly = this.viewer.lists.MaterialList.get("Unending Destruction");
+      this.materialDefs.materials.push({
+        property: "weekly",
+        key: "Unending Destruction",
+      });
     }
     else if(this.key.endsWith("Havoc"))
     {
       this._element = "Havoc";
-      this.MaterialList.forgery = {
-        '2': this.viewer.lists.MaterialList.get("Inert Metallic Drip"),
-        '3': this.viewer.lists.MaterialList.get("Reactive Metallic Drip"),
-        '4': this.viewer.lists.MaterialList.get("Polarized Metallic Drip"),
-        '5': this.viewer.lists.MaterialList.get("Heterized Metallic Drip"),
-      };
-      this.MaterialList.weekly = this.viewer.lists.MaterialList.get("Dreamless Feather");
+      this.materialDefs.materials.push({
+        property: "weekly",
+        key: "Dreamless Feather",
+      });
     }
     else
     {
     }
-      
-    // Retrieve the materials used by this character.
-    this.MaterialList.credit = this.viewer.lists.MaterialList.get("Shell Credit");
-    this.MaterialList.enemy = {
-      '2': this.viewer.lists.MaterialList.get("LF Whisperin Core"),
-      '3': this.viewer.lists.MaterialList.get("MF Whisperin Core"),
-      '4': this.viewer.lists.MaterialList.get("HF Whisperin Core"),
-      '5': this.viewer.lists.MaterialList.get("FF Whisperin Core"),
-    };
-    this.MaterialList.boss = this.viewer.lists.MaterialList.get("Mysterious Code");
-    this.MaterialList.flora = this.viewer.lists.MaterialList.get("Pecok Flower");
-      
-    // Inform those materials that this character uses them.
-    for(let i in this.MaterialList.enemy)
-      this.MaterialList.enemy[i]?.addUser(this);
-    this.MaterialList.boss?.addUser(this);
-    this.MaterialList.flora?.addUser(this);
-    
+    super.afterLoad();
     return true;
   }
   

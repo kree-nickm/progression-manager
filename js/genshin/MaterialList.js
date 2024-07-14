@@ -44,32 +44,48 @@ export default class MaterialList extends GenshinList
     let countField = this.display.addField("count", {
       label: "Count",
       dynamic: true,
-      value: item => item.count + (item.prevTier || item.converts ? " (+"+ (item.getCraftCount()-item.count) +")" : ""),
-      edit: item => {return{
+      title: item => {
+        let planMaterials = item.viewer.account.plan.getFullPlan();
+        if(planMaterials.original[item.key])
+        {
+          let wanters = planMaterials.resolved[item.key].wanters.map(wanter => `${Renderer.controllers.get(wanter.src).name} wants ${wanter.amount}`).join(`\r\n`);
+          return (item.prevTier || item.converts
+            ? `Up to ${item.getCraftCount({plan:planMaterials.original})} if you craft.`
+            : ``) + (wanters ? `\r\n`+wanters : ``);
+        }
+        else
+        {
+          return (item.prevTier || item.converts
+            ? `Up to ${item.getCraftCount()} if you craft.`
+            : ``);
+        }
+      },
+      value: item => {
+        let planMaterials = item.viewer.account.plan.getFullPlan();
+        if(planMaterials.original[item.key])
+          return `${item.count} / ${planMaterials.original[item.key]}`;
+        else
+          return item.count + (item.prevTier || item.converts ? " (+"+ (item.getCraftCount()-item.count) +")" : "");
+      },
+      edit: item => ({
         target: {item:item, field:"count"}, min:0, max:99999,
-      };},
-      dependencies: item => item.getCraftDependencies(),
+      }),
+      dependencies: item => {
+        let planMaterials = item.viewer.account.plan.getFullPlan();
+        return item.getCraftDependencies();
+      },
+      classes: item => {
+        let planMaterials = item.viewer.account.plan.getFullPlan();
+        if(planMaterials.original[item.key])
+          return {
+            "pending": item.count < planMaterials.original[item.key],
+            "insufficient": item.getCraftCount({plan:planMaterials.original}) < planMaterials.original[item.key],
+          };
+        else
+          return {};
+      },
     });
     
-    /*this.display.addField("countPlan", {
-      label: "Count",
-      dynamic: true,
-      value: item => item.count + (item.prevTier || item.converts ? " (+"+ (item.getCraftCount()-item.count) +")" : ""),
-      
-      value: item => {
-        let value = [];
-        let planMaterials = item.getPlanMaterials();
-        for(let matDef of planMaterials.resolved)
-          value.push({classes:{'plan-material':true}, value:matDef.item.getFieldValue(matDef.amount, item.settings.preferences.materialList=='1', {plan:planMaterials.original})});
-        return value;
-      },
-      
-      edit: item => {return{
-        target: {item:item, field:"count"}, min:0, max:99999,
-      };},
-      dependencies: item => item.getCraftDependencies(),
-    });
-    */
     let sourceField = this.display.addField("source", {
       label: "Source",
       dynamic: true,

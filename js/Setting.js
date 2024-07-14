@@ -1,7 +1,7 @@
 import UIItem from "./UIItem.js";
 
 export default class Setting extends UIItem {
-  static dontSerialize = GenshinItem.dontSerialize.concat([]);
+  static dontSerialize = super.dontSerialize.concat([]);
   static TYPE_BOOLEAN = 1;
   static TYPE_FLOAT = 2;
   static TYPE_INT = 4;

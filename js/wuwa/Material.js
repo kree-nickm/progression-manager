@@ -5,7 +5,7 @@ import WuWaItem from "./WuWaItem.js";
 
 export default class Material extends WuWaItem
 {
-  static dontSerialize = WuWaItem.dontSerialize.concat(["_name","_shorthand","_type","rarity","source","days","usedBy","prevTier","nextTier","converts"]);
+  static dontSerialize = super.dontSerialize.concat(["_name","_shorthand","_type","rarity","source","days","usedBy","prevTier","nextTier","converts"]);
   
   static setupTiers(matList)
   {

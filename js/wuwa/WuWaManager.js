@@ -8,7 +8,7 @@ import MaterialList from "./MaterialList.js";
 
 export default class WuWaManager extends DataManager
 {
-  //static dontSerialize = DataManager.dontSerialize.concat([]);
+  //static dontSerialize = super.dontSerialize.concat([]);
   
   constructor()
   {

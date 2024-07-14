@@ -16,18 +16,18 @@
                     <div class="col-1">{{> renderItemField item=item field="level" wrapper="div"}}</div>
                     <div class="col-1">{{> renderItemField item=item field="ascension" wrapper="div"}}</div>
                     <div class="col-2 d-flex">
-                      {{> renderItemField item=item field="forte" params=(array "Basic Attack") wrapper="span"}} /
-                      {{> renderItemField item=item field="forte" params=(array "Resonance Skill") wrapper="span"}} /
-                      {{> renderItemField item=item field="forte" params=(array "Forte Circuit") wrapper="span"}} /
-                      {{> renderItemField item=item field="forte" params=(array "Resonance Liberation") wrapper="span"}} /
-                      {{> renderItemField item=item field="forte" params=(array "Intro Skill") wrapper="span"}}
+                      {{> renderItemField item=item field="talent" params=(array "Basic Attack") wrapper="span"}} /
+                      {{> renderItemField item=item field="talent" params=(array "Resonance Skill") wrapper="span"}} /
+                      {{> renderItemField item=item field="talent" params=(array "Forte Circuit") wrapper="span"}} /
+                      {{> renderItemField item=item field="talent" params=(array "Resonance Liberation") wrapper="span"}} /
+                      {{> renderItemField item=item field="talent" params=(array "Intro Skill") wrapper="span"}}
                     </div>
                     <div class="col-2 d-flex">
-                      {{> renderItemField item=item field="forte" params=(array "Basic Attack" "bonus") wrapper="span"}} /
-                      {{> renderItemField item=item field="forte" params=(array "Resonance Skill" "bonus") wrapper="span"}} /
-                      {{> renderItemField item=item field="forte" params=(array "Forte Circuit" "circuit") wrapper="span"}} /
-                      {{> renderItemField item=item field="forte" params=(array "Resonance Liberation" "bonus") wrapper="span"}} /
-                      {{> renderItemField item=item field="forte" params=(array "Intro Skill" "bonus") wrapper="span"}}
+                      {{> renderItemField item=item field="talent" params=(array "Basic Attack Bonus") wrapper="span"}} /
+                      {{> renderItemField item=item field="talent" params=(array "Resonance Skill Bonus") wrapper="span"}} /
+                      {{> renderItemField item=item field="talent" params=(array "Forte Circuit Passive") wrapper="span"}} /
+                      {{> renderItemField item=item field="talent" params=(array "Resonance Liberation Bonus") wrapper="span"}} /
+                      {{> renderItemField item=item field="talent" params=(array "Intro Skill Bonus") wrapper="span"}}
                     </div>
                     <div class="col-3">{{> renderItemField item=item field="equipWeapon" wrapper="div"}}</div>
                 </div>
@@ -78,11 +78,11 @@
                   <tbody>
                     {{#times 9 start=1}}
                       <tr>
-                        <td>{{> renderItemField item=item field="forteMaterial" params=(array "label" @index) wrapper="div"}}</td>
-                        <td>{{> renderItemField item=item field="forteMaterial" params=(array "forgery" @index) wrapper="div"}}</td>
-                        <td>{{> renderItemField item=item field="forteMaterial" params=(array "enemy" @index) wrapper="div"}}</td>
-                        <td>{{> renderItemField item=item field="forteMaterial" params=(array "weekly" @index) wrapper="div"}}</td>
-                        <td>{{> renderItemField item=item field="forteMaterial" params=(array "credit" @index) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "label" @index) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "forgery" @index) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "enemy" @index) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "weekly" @index) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "credit" @index) wrapper="div"}}</td>
                       </tr>
                     {{/times}}
                   </tbody>
@@ -100,11 +100,11 @@
                   <tbody>
                     {{#times 2}}
                       <tr>
-                        <td>{{> renderItemField item=item field="forteMaterial" params=(array "label" @index "bonus") wrapper="div"}}</td>
-                        <td>{{> renderItemField item=item field="forteMaterial" params=(array "forgery" @index "bonus") wrapper="div"}}</td>
-                        <td>{{> renderItemField item=item field="forteMaterial" params=(array "enemy" @index "bonus") wrapper="div"}}</td>
-                        <td>{{> renderItemField item=item field="forteMaterial" params=(array "weekly" @index "bonus") wrapper="div"}}</td>
-                        <td>{{> renderItemField item=item field="forteMaterial" params=(array "credit" @index "bonus") wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "label" (concat "bonus" @index)) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "forgery" (concat "bonus" @index)) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "enemy" (concat "bonus" @index)) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "weekly" (concat "bonus" @index)) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "credit" (concat "bonus" @index)) wrapper="div"}}</td>
                       </tr>
                     {{/times}}
                   </tbody>
@@ -122,11 +122,11 @@
                   <tbody>
                     {{#times 2}}
                       <tr>
-                        <td>{{> renderItemField item=item field="forteMaterial" params=(array "label" @index "circuit") wrapper="div"}}</td>
-                        <td>{{> renderItemField item=item field="forteMaterial" params=(array "forgery" @index "circuit") wrapper="div"}}</td>
-                        <td>{{> renderItemField item=item field="forteMaterial" params=(array "enemy" @index "circuit") wrapper="div"}}</td>
-                        <td>{{> renderItemField item=item field="forteMaterial" params=(array "weekly" @index "circuit") wrapper="div"}}</td>
-                        <td>{{> renderItemField item=item field="forteMaterial" params=(array "credit" @index "circuit") wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "label" (concat "circuit" @index)) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "forgery" (concat "circuit" @index)) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "enemy" (concat "circuit" @index)) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "weekly" (concat "circuit" @index)) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "credit" (concat "circuit" @index)) wrapper="div"}}</td>
                       </tr>
                     {{/times}}
                   </tbody>

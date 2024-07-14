@@ -2,9 +2,19 @@ import UIController from "./UIController.js";
 
 export default class Plan extends UIController
 {
-  static dontSerialize = UIController.dontSerialize.concat(["subPlans"]);
+  static dontSerialize = super.dontSerialize.concat(["subPlans"]);
   
   subPlans = {};
+  
+  afterUpdate(field, value, action, options)
+  {
+    super.afterUpdate(field, value, action, options);
+    if(field.path[0] == "subPlans")
+    {
+      this.clearMemory("combinedPlan");
+      this.clearMemory("fullPlan");
+    }
+  }
   
   addSubPlan(source, plan)
   {
@@ -30,26 +40,33 @@ export default class Plan extends UIController
     return this.subPlans[source];
   }
   
-  getPlan()
+  getFullPlan()
   {
-    let result = {};
-    for(let plan of Object.values(this.subPlans))
-      for(let mat in plan)
-        result[mat] = (result[mat]??0) + plan[mat];
-    return result;
-  }
-  
-  getFullPlan(viewer)
-  {
-    let original = this.getPlan();
-    let resolved = [];
-    for(let key in original)
-    {
-      let material = this.viewer.lists.MaterialList.get(key);
-      let idx = this.viewer.lists.MaterialList.list.indexOf(material);
-      resolved.push({sort:idx, item:material, amount:original[key]});
-    }
-    resolved.sort((a,b) => a.sort - b.sort);
-    return {resolved, original};
+    return this.memoryFunction(() => {
+      let original = {};
+      let resolved = {};
+      for(let src in this.subPlans)
+      {
+        let plan = this.subPlans[src];
+        for(let matKey in plan)
+        {
+          original[matKey] = (original[matKey]??0) + plan[matKey];
+          if(!resolved[matKey])
+          {
+            resolved[matKey] = {
+              item: this.viewer.lists.MaterialList.get(matKey),
+              amount: original[matKey],
+              wanters: [{src, amount:plan[matKey]}],
+            };
+          }
+          else
+          {
+            resolved[matKey].amount = original[matKey];
+            resolved[matKey].wanters.push({src, amount:plan[matKey]});
+          }
+        }
+      }
+      return {resolved, original};
+    }, "fullPlan");
   }
 }

@@ -5,7 +5,7 @@ import GenshinItem from "./GenshinItem.js";
 
 export default class Artifact extends GenshinItem
 {
-  static dontSerialize = GenshinItem.dontSerialize.concat(["character","wanters","substatRolls"]);
+  static dontSerialize = super.dontSerialize.concat(["character","wanters","substatRolls"]);
   static goodProperties = ["setKey","slotKey","level","rarity","mainStatKey","location","lock","substats"];
   static templateName = "genshin/renderArtifactAsPopup";
   static shorthandStat = {

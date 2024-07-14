@@ -4,7 +4,7 @@ import Team from "./Team.js";
 import Character from "./Character.js";
 
 export default class TeamList extends GenshinList {
-  //static dontSerialize = GenshinList.dontSerialize.concat([]);
+  //static dontSerialize = super.dontSerialize.concat([]);
   static itemClass = Team;
   //static subsetDefinitions = {};
   
@@ -81,7 +81,7 @@ export default class TeamList extends GenshinList {
         action: event => {
           event.stopPropagation();
           item.unlink();
-          item.list.viewer.store();
+          item.list.viewer.queueStore();
         },
       }),
     });
