@@ -35,12 +35,26 @@ export default class UIItem extends UIController {
     
     if(!this.unique)
     {
+      display.addField("lock", {
+        label: "L",
+        title: item => "Is Locked?",
+        sort: {generic: {type:"boolean", property:"lock"}},
+        dynamic: true,
+        edit: item => ({
+          target: {item, field:"lock"},
+          type: "checkbox",
+          value: item.lock,
+          trueClasses: ["fa-solid","fa-lock"],
+          falseClasses: [],
+        }),
+      });
+    
       display.addField("deleteBtn", {
         label: "D",
         dynamic: true,
         dependencies: item => [
           {item, field:"lock"},
-          {item, field:"location"},
+          {item, field:"location"}, // TODO: Conditionally added based on Equippable, because not everything has a location.
         ],
         title: item => (item.lock || item.location) ? "Unlock/unequip the item before deleting it." : "Delete this item from the list.",
         button: item => (item.lock || item.location) ? {icon: "fa-solid fa-trash-can"} : {
@@ -60,6 +74,7 @@ export default class UIItem extends UIController {
   list;
   owned;
   favorite = false;
+  lock = true;
   
   get viewer() { return this.list.viewer; }
   set viewer(val) { console.warn(`UIItem cannot change viewer.`); }

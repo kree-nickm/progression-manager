@@ -23,10 +23,10 @@
                     <div class="col-2">{{> renderItemField item=item field="level" wrapper="div"}}</div>
                     <div class="col-2">{{> renderItemField item=item field="ascension" wrapper="div"}}</div>
                     <div class="col-2 d-flex">
-                      {{> renderItemField item=item field="autoTalent" wrapper="span"}}
+                      {{> renderItemField item=item field="talent" params=(array "auto") wrapper="span"}}
                       <span> / </span>
-                      {{> renderItemField item=item field="skillTalent" wrapper="span"}}<span> / </span>
-                      {{> renderItemField item=item field="burstTalent" wrapper="span"}}
+                      {{> renderItemField item=item field="talent" params=(array "skill") wrapper="span"}}<span> / </span>
+                      {{> renderItemField item=item field="talent" params=(array "burst") wrapper="span"}}
                     </div>
                     <div class="col-1">{{> renderItemField item=item field="ascendStat" wrapper="div"}}</div>
                     <div class="col-3">{{> renderItemField item=item field="equipWeapon" wrapper="div"}}</div>
@@ -78,7 +78,7 @@
                         <td>{{> renderItemField item=item field="ascensionMaterial" params=(array "label" @index) wrapper="div"}}</td>
                         <td>{{> renderItemField item=item field="ascensionMaterial" params=(array "gem" @index) wrapper="div"}}</td>
                         <td>{{> renderItemField item=item field="ascensionMaterial" params=(array "boss" @index) wrapper="div"}}</td>
-                        <td>{{> renderItemField item=item field="ascensionMaterial" params=(array "flower" @index) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="ascensionMaterial" params=(array "flora" @index) wrapper="div"}}</td>
                         <td>{{> renderItemField item=item field="ascensionMaterial" params=(array "enemy" @index) wrapper="div"}}</td>
                         <td>{{> renderItemField item=item field="ascensionMaterial" params=(array "mora" @index) wrapper="div"}}</td>
                       </tr>
@@ -105,12 +105,12 @@
                   <tbody>
                     {{#times 9 start=1}}
                       <tr>
-                        <td>{{> renderItemField item=item field=(concat "talentLvl" @index) wrapper="div"}}</td>
-                        <td>{{> renderItemField item=item field=(concat "talentMasteryMat" @index) wrapper="div"}}</td>
-                        <td>{{> renderItemField item=item field=(concat "talentEnemyMat" @index) wrapper="div"}}</td>
-                        <td>{{> renderItemField item=item field=(concat "talentTrounceMat" @index) wrapper="div"}}</td>
-                        <td>{{> renderItemField item=item field=(concat "talentCrownMat" @index) wrapper="div"}}</td>
-                        <td>{{> renderItemField item=item field=(concat "talentMoraMat" @index) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "label" @index) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "mastery" @index) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "enemy" @index) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "trounce" @index) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "crown" @index) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "mora" @index) wrapper="div"}}</td>
                       </tr>
                     {{/times}}
                   </tbody>

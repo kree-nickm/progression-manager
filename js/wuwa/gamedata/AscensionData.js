@@ -1,6 +1,10 @@
 export default {
   '0': {
     levelCap: 20,
+    talentCap: 1,
+    bonusAtalentCap: 0,
+    bonusBtalentCap: 0,
+    circuittalentCap: 0,
     
     characterMaxTalent: 1,
     creditCostCharacter: 5000,
@@ -38,6 +42,10 @@ export default {
   },
   '1': {
     levelCap: 40,
+    talentCap: 1,
+    bonusAtalentCap: 0,
+    bonusBtalentCap: 0,
+    circuittalentCap: 0,
     
     characterMaxTalent: 1,
     creditCostCharacter: 10000,
@@ -72,6 +80,10 @@ export default {
   },
   '2': {
     levelCap: 50,
+    talentCap: 3,
+    circuittalentCap: 1,
+    bonusAtalentCap: 1,
+    bonusBtalentCap: 0,
     
     characterMaxTalent: 2,
     creditCostCharacter: 15000,
@@ -106,6 +118,10 @@ export default {
   },
   '3': {
     levelCap: 60,
+    talentCap: 4,
+    circuittalentCap: 1,
+    bonusAtalentCap: 1,
+    bonusBtalentCap: 1,
     
     characterMaxTalent: 4,
     creditCostCharacter: 20000,
@@ -140,6 +156,10 @@ export default {
   },
   '4': {
     levelCap: 70,
+    talentCap: 6,
+    circuittalentCap: 2,
+    bonusAtalentCap: 2,
+    bonusBtalentCap: 1,
     
     characterMaxTalent: 6,
     creditCostCharacter: 40000,
@@ -174,6 +194,10 @@ export default {
   },
   '5': {
     levelCap: 80,
+    talentCap: 8,
+    circuittalentCap: 2,
+    bonusAtalentCap: 2,
+    bonusBtalentCap: 2,
     
     characterMaxTalent: 8,
     creditCostCharacter: 80000,
@@ -208,6 +232,10 @@ export default {
   },
   '6': {
     levelCap: 90,
+    talentCap: 10,
+    circuittalentCap: 2,
+    bonusAtalentCap: 2,
+    bonusBtalentCap: 2,
     
     characterMaxTalent: 10,
     creditCostCharacter: -1,

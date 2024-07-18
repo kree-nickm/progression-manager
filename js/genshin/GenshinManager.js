@@ -44,35 +44,13 @@ export default class GenshinManager extends DataManager
     this.registerList(FurnitureList);
     this.registerList(FurnitureSetList);
     
-    this.registerNavItem("Home", "home", {self:true, isDefault:true});
-    this.registerNavItem("Characters", "characters", {listName:"CharacterList"});
+    this.registerNavItem("Characters", "characters", {listName:"CharacterList", isDefault:true});
     this.registerNavItem("Weapons", "weapons", {listName:"WeaponList"});
     this.registerNavItem("Artifacts", "artifacts", {listName:"ArtifactList"});
     this.registerNavItem("Teams", "teams", {listName:"TeamList"});
     this.registerNavItem("Materials", "materials", {listName:"MaterialList"});
     this.registerNavItem("Furniture Sets", "furnitureSets", {listName:"FurnitureSetList"});
     this.registerNavItem("Furniture", "furniture", {listName:"FurnitureList"});
-    
-    GenshinManager.display = new ListDisplayManager();
-    GenshinManager.display.addField("planMaterials", {
-      dynamic: true,
-      value: item => {
-        let value = [];
-        let planMaterials = item.account.plan.getFullPlan();
-        for(let matKey in planMaterials.resolved)
-        {
-          let matDef = planMaterials.resolved[matKey];
-          value.push({classes:{'plan-material':true}, value:matDef.item.getFieldValue(matDef.amount, item.settings.preferences.materialList=='1', {plan:planMaterials.original})});
-        }
-        return value;
-      },
-      dependencies: item => [].concat(...item.lists.CharacterList.items().map(character => [
-        {item:character, field:"wishlist"},
-        {item:character, field:"level"},
-        {item:character, field:"ascension"},
-        {item:character, field:"talent"},
-      ])),
-    });
   }
   
   today()

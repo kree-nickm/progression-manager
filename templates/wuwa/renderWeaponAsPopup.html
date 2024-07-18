@@ -15,8 +15,16 @@
                     <div class="col-2">{{> renderItemField item=item field="syntonization" wrapper="div"}}</div>
                     <div class="col-2">{{> renderItemField item=item field="location" wrapper="div"}}</div>
                 </div>
+                <div class="row">
+                    <div class="col-2">{{> renderItemField item=item field="planLevel" wrapper="div"}}</div>
+                    <div class="col-2">{{> renderItemField item=item field="planAscension" wrapper="div"}}</div>
+                    <div class="col-4">&lt;-- Desired Stats</div>
+                </div>
               {{> renderItemField item=item field="passive" wrapper="p"}}
             </div>
+        </div>
+        <div class="plan-materials">
+      {{> renderItemField item=item field="planMaterials" wrapper="div"}}
         </div>
         
         <hr/>

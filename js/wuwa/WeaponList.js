@@ -48,77 +48,12 @@ export default class WeaponList extends WuWaList
       }),*/
     });
     
-    this.display.addField("lock", {
-      label: "L",
-      title: item => "Is Locked?",
-      sort: {generic: {type:"boolean", property:"lock"}},
-      dynamic: true,
-      edit: item => ({
-        target: {item, field:"lock"},
-        type: "checkbox",
-        value: item.lock,
-        trueClasses: ["fa-solid","fa-lock"],
-        falseClasses: [],
-      }),
-    });
-    
-    this.display.addField("level", {
-      label: "Lvl",
-      sort: {generic: {type:"number", property:"level"}},
-      dynamic: true,
-      value: item => item.level,
-      edit: item => ({target: {item, field:"level"}}),
-      /*classes: item => ({
-        "at-max": item.level >= item.levelCap,
-      }),*/
-    });
-    
     this.display.addField("syntonization", {
       label: "Syn",
       sort: {generic: {type:"number", property:"syntonization"}},
       dynamic: true,
       value: item => item.syntonization,
       edit: item => ({target: {item, field:"syntonization"}}),
-    });
-    
-    this.display.addField("location", {
-      label: "User",
-      sort: {generic: {type:"string",property:"location"}},
-      dynamic: true,
-      value: item => item.character ? {
-        value: [
-          {
-            value: item.character.name,
-            edit: {
-              target: {item:item, field:"location"},
-              type: "select",
-              list: item.list.viewer.lists.CharacterList.items("owned").filter(cha => item.type == cha.weaponType),
-              valueProperty: "key",
-              displayProperty: "name",
-            },
-          },
-          {
-            tag: "i",
-            classes: {'fa-solid':true, 'fa-eye':true},
-            popup: item.character.variants?.length ? item.character.variants[0] : item.character,
-          },
-        ],
-        classes: {
-          "user-field": true,
-        },
-      } : {
-        value: "-",
-        edit: {
-          target: {item:item, field:"location"},
-          type: "select",
-          list: item.list.viewer.lists.CharacterList.items("owned").filter(cha => item.type == cha.weaponType),
-          valueProperty: "key",
-          displayProperty: "name",
-        },
-      },
-      dependencies: item => [
-        {item:item.list.viewer.lists.CharacterList, field:"list"},
-      ],
     });
     
     this.display.addField("passive", {
@@ -132,12 +67,6 @@ export default class WeaponList extends WuWaList
     });
     
     Weapon.setupDisplay(this.display);
-  }
-  
-  clear()
-  {
-    super.clear();
-    this.viewer.lists.CharacterList.list.forEach(character => character.weapon = null);
   }
   
   getFooterParams()

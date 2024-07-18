@@ -6,87 +6,69 @@ import GenshinPhaseData from "./gamedata/GenshinPhaseData.js";
 import GenshinItem from "./GenshinItem.js";
 import Ascendable from "../Ascendable.js";
 
-export default class Weapon extends GenshinItem
+export default class Weapon extends Ascendable(GenshinItem)
 {
-  static dontSerialize = super.dontSerialize.concat(["MaterialList","character"]);
+  static dontSerialize = super.dontSerialize.concat(["character"]);
   static goodProperties = ["key","level","ascension","refinement","location","lock"];
   static templateName = "genshin/renderWeaponAsPopup";
+  
+  static AscensionData = GenshinPhaseData;
   
   key = "";
   _level = 1;
   _ascension = 0;
   _refinement = 1;
   location = "";
-  lock = false;
   
   isPreview = false;
-  favorite = false;
-  wishlist = {};
   
   character = null;
-  MaterialList;
   
   afterLoad()
   {
     if(this.isPreview)
     {
+      return true;
     }
     else if(!GenshinWeaponData[this.key])
     {
       console.warn(`Unknown weapon "${this.key}".`);
-    }
-    else if(!this.list?.viewer?.lists?.MaterialList)
-    {
-      console.warn(`Weapon cannot access the material list.`);
+      return false;
     }
     else
     {
-      this.MaterialList = {
-        mora: this.list.viewer.lists.MaterialList.get("Mora"),
-      };
+      if(GenshinWeaponData[this.key].renamed)
+        this.key = GenshinWeaponData[this.key].renamed;
       
-      // Retrieve the materials used by this character.
-      this.MaterialList.forgery = {
-        '2': this.list.viewer.lists.MaterialList.get(GenshinLootData.forgery[this.forgeryMatType][2]),
-        '3': this.list.viewer.lists.MaterialList.get(GenshinLootData.forgery[this.forgeryMatType][3]),
-        '4': this.list.viewer.lists.MaterialList.get(GenshinLootData.forgery[this.forgeryMatType][4]),
-        '5': this.list.viewer.lists.MaterialList.get(GenshinLootData.forgery[this.forgeryMatType][5]),
+      this.materialDefs = {
+        raritySuffix: "RarityWeapon",
+        costSuffix: "CostWeapon",
+        materials: [
+          {
+            property: "mora",
+            key: "Mora",
+            skipUser: true,
+          },
+          {
+            property: "forgery",
+            group: GenshinLootData.forgery[GenshinWeaponData[this.key]?.matForgery],
+            tiers: [2,3,4,5],
+          },
+          {
+            property: "strong",
+            group: GenshinLootData.enemy[GenshinWeaponData[this.key]?.matStrongEnemy],
+            tiers: [2,3,4],
+          },
+          {
+            property: "weak",
+            group: GenshinLootData.enemy[GenshinWeaponData[this.key]?.matWeakEnemy],
+            tiers: [1,2,3],
+          },
+        ],
+        list: this.viewer.lists.MaterialList,
       };
-      this.MaterialList.strong = {
-        '2': this.list.viewer.lists.MaterialList.get(GenshinLootData.enemy[this.strongMatType][2]),
-        '3': this.list.viewer.lists.MaterialList.get(GenshinLootData.enemy[this.strongMatType][3]),
-        '4': this.list.viewer.lists.MaterialList.get(GenshinLootData.enemy[this.strongMatType][4]),
-      };
-      this.MaterialList.weak = {
-        '1': this.list.viewer.lists.MaterialList.get(GenshinLootData.enemy[this.weakMatType][1]),
-        '2': this.list.viewer.lists.MaterialList.get(GenshinLootData.enemy[this.weakMatType][2]),
-        '3': this.list.viewer.lists.MaterialList.get(GenshinLootData.enemy[this.weakMatType][3]),
-      };
-      
-      // Inform those materials that this character uses them.
-      for(let i in this.MaterialList.forgery)
-      {
-        if(this.MaterialList.forgery[i])
-          this.MaterialList.forgery[i].addUser(this);
-        else
-          console.error(`${this.name} has an invalid forgery material at rarity ${i}.`);
-      }
-      for(let i in this.MaterialList.strong)
-      {
-        if(this.MaterialList.strong[i])
-          this.MaterialList.strong[i].addUser(this);
-        else
-          console.error(`${this.name} has an invalid strong enemy material at rarity ${i}.`);
-      }
-      for(let i in this.MaterialList.weak)
-      {
-        if(this.MaterialList.weak[i])
-          this.MaterialList.weak[i].addUser(this);
-        else
-          console.error(`${this.name} has an invalid weak enemy material at rarity ${i}.`);
-      }
-      
-      this.viewer.account.plan.addSubPlan(this, this.getPlanMaterials());
+      super.afterLoad();
+      return true;
     }
   }
   
@@ -144,9 +126,6 @@ export default class Weapon extends GenshinItem
   get type(){ return GenshinWeaponData[this.key]?.type; }
   get stat(){ return GenshinWeaponData[this.key]?.stat; }
   get baseATK(){ return GenshinWeaponData[this.key]?.baseATK; }
-  get forgeryMatType(){ return GenshinWeaponData[this.key]?.matForgery; }
-  get strongMatType(){ return GenshinWeaponData[this.key]?.matStrongEnemy; }
-  get weakMatType(){ return GenshinWeaponData[this.key]?.matWeakEnemy; }
   get image(){ return GenshinWeaponData[this.key]?.imgs[this.ascension > 1 ? 1 : 0]; }
   get releaseTimestamp(){ return GenshinWeaponData[this.key]?.release ? Date.parse(GenshinWeaponData[this.key]?.release) : 0; }
   
@@ -155,75 +134,8 @@ export default class Weapon extends GenshinItem
     return GenshinWeaponData[this.key]?.passive?.replaceAll(/@(\d+)/g, (m, id) => `<b title="${Object.values(GenshinWeaponData[this.key]?.refinementData?.[id]??[]).join(' / ')}">${GenshinWeaponData[this.key]?.refinementData?.[id]?.[ref]}</b>`).replaceAll(`\n`,"<br/>");
   }
   
-  getPhase(phase=this.ascension) { return GenshinPhaseData[phase] ?? GenshinPhaseData[6]; }
-  get levelCap(){ return this.getPhase().levelCap; }
-  
-  getMat(type, ascension=this.ascension)
+  getPlanMaterials(result={})
   {
-    if(type == "forgery")
-      return this.MaterialList?.forgery[this.getPhase(ascension).ascendMatForgeQuality];
-    else if(type == "strong")
-      return this.MaterialList?.strong[this.getPhase(ascension).ascendMatStrongQuality];
-    else if(type == "weak")
-      return this.MaterialList?.weak[this.getPhase(ascension).ascendMatWeakQuality];
-    else if(type == "mora")
-      return this.MaterialList?.mora;
-    else
-      return null;
-  }
-  
-  getMatCost(type, ascension=this.ascension)
-  {
-    if(type == "forgery")
-      return this.getPhase(ascension)?.ascendMatForgeCount[this.rarity];
-    else if(type == "strong")
-      return this.getPhase(ascension)?.ascendMatStrongCount[this.rarity];
-    else if(type == "weak")
-      return this.getPhase(ascension)?.ascendMatWeakCount[this.rarity];
-    else if(type == "mora")
-      return this.getPhase(ascension)?.ascendWpnMoraCost[this.rarity];
-    else
-      return 0;
-  }
-  
-  ascend(event)
-  {
-    if(this.ascension == 6)
-    {
-      console.error(`Tried to ascend ${this.name}, but already at max.`);
-      return false;
-    }
-    event.stopPropagation();
-    this.getMat('forgery')?.update("count", this.getMat('forgery')?.count - this.getMatCost('forgery'));
-    this.getMat('strong')?.update("count", this.getMat('strong')?.count - this.getMatCost('strong'));
-    this.getMat('weak')?.update("count", this.getMat('weak')?.count - this.getMatCost('weak'));
-    this.getMat('mora')?.update("count", this.getMat('mora')?.count - this.getMatCost('mora'));
-    if(this.level < this.levelCap)
-      this.update("level", this.levelCap);
-    this.update("ascension", this.ascension+1);
-    return true;
-  }
-  
-  canAscend(withCrafting=false)
-  {
-    if(this.ascension == 6)
-      return false;
-    else if(withCrafting)
-      return this.getMat('forgery')?.getCraftCount() >= this.getMatCost('forgery') &&
-        this.getMat('strong')?.getCraftCount() >= this.getMatCost('strong') &&
-        this.getMat('weak')?.getCraftCount() >= this.getMatCost('weak') &&
-        this.getMat('mora')?.getCraftCount() >= this.getMatCost('mora');
-    else
-      return this.getMat('forgery')?.count >= this.getMatCost('forgery') &&
-        this.getMat('strong')?.count >= this.getMatCost('strong') &&
-        this.getMat('weak')?.count >= this.getMatCost('weak') &&
-        this.getMat('mora')?.count >= this.getMatCost('mora');
-  }
-  
-  getPlanMaterials()
-  {
-    let result = {};
-    
     // EXP
     /*let exp = (GenshinCharacterStats.totalExpCost[this.wishlist.level] ?? 0) - GenshinCharacterStats.totalExpCost[this.level];
     if(exp > 0)
@@ -237,29 +149,7 @@ export default class Weapon extends GenshinItem
       exp -= result["WanderersAdvice"] * 1000;
     }*/
     
-    // Ascension
-    if((this.wishlist.ascension??0) - this.ascension > 0)
-    {
-      for(let asc=this.ascension; asc<this.wishlist.ascension; asc++)
-      {
-        for(let type of ["forgery","strong","weak","mora"])
-        {
-          let cost = this.getMatCost(type, asc);
-          if(cost > 0)
-          {
-            let mat = this.getMat(type, asc);
-            if(mat)
-            {
-              if(!result[mat.key])
-                result[mat.key] = 0;
-              result[mat.key] += cost;
-            }
-          }
-        }
-      }
-    }
-    
-    return result;
+    return super.getPlanMaterials(result);
   }
   
   getATK(alternates={})

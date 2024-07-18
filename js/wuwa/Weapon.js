@@ -5,25 +5,21 @@ import WeaponMetadata from "./gamedata/WeaponMetadata.js";
 
 import { handlebars, Renderer } from "../Renderer.js";
 import Ascendable from "../Ascendable.js";
+import Equipment from "../Equipment.js";
 import WuWaItem from "./WuWaItem.js";
 
-export default class Weapon extends Ascendable(WuWaItem)
+export default class Weapon extends Equipment(Ascendable(WuWaItem))
 {
-  static dontSerialize = super.dontSerialize.concat(["character"]);
   static templateName = "wuwa/renderWeaponAsPopup";
-  
   static AscensionData = AscensionData;
   
   key = "";
   _level = 1;
   _ascension = 0;
   _syntonization = 1;
-  location = "";
-  lock = false;
   
   isPreview = false;
-  
-  character = null;
+  characterList = window.viewer.lists.CharacterList;
   
   afterLoad()
   {
@@ -68,42 +64,6 @@ export default class Weapon extends Ascendable(WuWaItem)
     }
   }
   
-  afterUpdate(field, value, action, options)
-  {
-    if(!super.afterUpdate(field, value, action, options))
-      return false;
-    if(field.string == "location" && !this.isPreview)
-    {
-      if(value)
-      {
-        if(this.list?.viewer?.lists?.CharacterList)
-        {
-          let newCharacter = this.list.viewer.lists.CharacterList.get(value);
-          if(newCharacter)
-            newCharacter.equipItem(this);
-          else
-          {
-            console.warn(`Cannot equip ${this.name} to non-existent character "${this.location}".`);
-            field.object[field.property] = "";
-            this.character = null;
-          }
-        }
-        else
-        {
-          console.warn(`Cannot equip ${this.name} to character "${this.location}" because character list is inaccessible.`);
-          field.object[field.property] = "";
-          this.character = null;
-        }
-      }
-      else
-      {
-        if(this.character)
-          this.character.update("weapon", null, "replace");
-        this.character = null;
-      }
-    }
-  }
-  
   // Getters/setters that enforce a value range.
   get level(){ return this._level; }
   set level(val){ this._level = Math.min(Math.max(val, 1), 90); }
@@ -117,15 +77,15 @@ export default class Weapon extends Ascendable(WuWaItem)
   get rarity(){ return WeaponData[this.key]?.rarity; }
   get type(){ return WeaponData[this.key]?.type; }
   get releaseTimestamp(){ return WeaponData[this.key]?.release ? Date.parse(WeaponData[this.key]?.release) : 0; }
+  get equipProperty() { return "weapon"; }
+  
+  canEquip(character)
+  {
+    return this.type == character.weaponType;
+  }
   
   getPassive(syntonization=this.syntonization)
   {
     return WeaponData[this.key]?.passive?.replaceAll(/\{(\d+)\}/g, (m, id) => `<b title="${Object.values(WeaponData[this.key]?.rankData?.[id]??[]).join(' / ')}">${WeaponData[this.key]?.rankData?.[id]?.[parseInt(syntonization)-1]}</b>`).replaceAll(`\n`,"<br/>");
-  }
-  
-  unlink(options)
-  {
-    this.update("location", "");
-    super.unlink(options);
   }
 }

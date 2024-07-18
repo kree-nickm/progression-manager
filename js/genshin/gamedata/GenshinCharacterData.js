@@ -679,7 +679,7 @@ export default {
         "hpMaxAsc": 4337.65087890625,
         "atkMaxAsc": 107.0414810180664,
         "defMaxAsc": 233.4149932861328,
-        "version": "4.7.54"
+        "version": "4.8"
     },
     "Eula": {
         "name": "Eula",

@@ -43,21 +43,6 @@ export default class CharacterList extends GenshinList
   
   setupDisplay()
   {
-    let favorite = this.display.addField("favorite", {
-      label: "F",
-      labelTitle: "Mark certain characters as favorites, then click to sort them higher than others.",
-      sort: {generic: {type:"boolean",property:"favorite"}},
-      dynamic: true,
-      title: item => `${item.favorite?"Unmark":"Mark"} Favorite`,
-      edit: item => ({
-        target: {item, field:"favorite"},
-        type: "checkbox",
-        value: item.favorite,
-        trueClasses: ["fa-solid","fa-circle-check"],
-        falseClasses: [],
-      }),
-    });
-    
     let name = this.display.addField("name", {
       label: "Name",
       labelTitle: "Sort by name.",
@@ -183,48 +168,6 @@ export default class CharacterList extends GenshinList
       }),
     });
     
-    let ascension = this.display.addField("ascension", {
-      label: "",
-      labelTitle: "Sort by phase/ascension.",
-      sort: {generic: {type:"number",property:"ascension"}},
-      dynamic: true,
-      title: item => "Click to change." + (item.canAscend(true) ? "\r\nNote: You have enough materials to ascend. Open character details to use the ascension feature." : ""),
-      value: item => item.ascension,
-      edit: item => ({target: {item:item.base??item, field:"ascension"}, min:0, max:6}),
-      classes: item => ({
-        'can-inc': item.canAscend(true),
-        "at-max": item.ascension >= 6,
-      }),
-      dependencies: item => [
-        {item:item.base??item, field:"ascension"},
-        {item:item.getMat('gem'), field:"count"},
-        item.getMat('boss') ? {item:item.getMat('boss'), field:"count"} : null,
-        {item:item.getMat('flower'), field:"count"},
-        {item:item.getMat('enemy'), field:"count"},
-      ].concat(item.getMat('gem').getCraftDependencies()).concat(item.getMat('enemy').getCraftDependencies()),
-    });
-    
-    let level = this.display.addField("level", {
-      label: "Lvl",
-      labelTitle: "Sort by character level.",
-      sort: {generic: {type:"number",property:"level"}},
-      dynamic: true,
-      title: item => "Click to change.",
-      value: item => item.level,
-      edit: item => ({target: {item:item.base??item, field:"level"}, min:1, max:90}),
-      classes: item => ({
-        "at-max": item.level >= item.levelCap,
-      }),
-      dependencies: item => [
-          {item:item.base??item, field:"level"},
-          {item:item.getMat('gem'), field:"count"},
-          item.getMat('boss') ? {item:item.getMat('boss'), field:"count"} : null,
-          {item:item.getMat('flower'), field:"count"},
-          {item:item.getMat('enemy'), field:"count"},
-          {item:item.base??item, field:"ascension"},
-        ].concat(item.getMat('gem').getCraftDependencies()).concat(item.getMat('enemy').getCraftDependencies()),
-    });
-    
     let constellation = this.display.addField("constellation", {
       label: "Con",
       labelTitle: "Sort by number of constellations.",
@@ -253,179 +196,6 @@ export default class CharacterList extends GenshinList
       'Mora': `<i class="fa-solid fa-coins"></i>`,
       'mora': `<i class="fa-solid fa-coins"></i>`,
     };
-    for(let i of ["auto","skill","burst"])
-    {
-      let talent = this.display.addField(i+"Talent", {
-        label: iconLookup[i],
-        labelTitle: `Sort by "${i}" talent level.`,
-        dynamic: true,
-        value: item => item.talent[i],
-        title: item => (item.getTalent(i).matTrounceCount ? `Also requires ${item.getTalent(i).matTrounceCount} ${item.MaterialList.trounce.name}, dropped by ${item.MaterialList.trounce.source} (you have ${item.MaterialList.trounce.getCraftCount()})` : ""),
-        edit: item => ({target: {item, field:["talent", i]}, min:1, max:10}),
-        classes: item => ({
-          "can-inc": item.wishlist?.talent?.[i] > item.talent[i] && item.canUpTalent(i, true),
-          "at-max": item.wishlist?.talent?.[i] > item.talent[i] && item.talent[i] >= item.talentCap,
-        }),
-        sort: {generic: {type:"number",property:["talent",i]}},
-        dependencies: item => [
-            {item:item.viewer.lists.MaterialList.get("Mora"), field:"count"},
-            {item:item.getTalentMat('mastery',i), field:"count"},
-            {item:item.getTalentMat('enemy',i), field:"count"},
-            {item:item.base??item, field:"ascension"},
-            item.getTalentMat('mastery',i)?.days ? {item:this.viewer, field:"today"} : {},
-          ].concat(item.getTalentMat('mastery',i)?.getCraftDependencies()).concat(item.getTalentMat('enemy',i)?.getCraftDependencies()),
-      });
-    }
-    
-    let mats = [
-      {t:"gem",l:"Gems"},
-      {t:"boss",l:"World Boss"},
-      {t:"flower",l:"Flora"},
-      {t:"enemy",l:"Enemy Drops"},
-      {t:"mora",l:"Mora"},
-    ];
-    this.display.addField("ascensionMaterial", {
-      group: {label:"Ascension Materials"},
-      label: (item, type, phase) => iconLookup[type] ?? type,
-      labelTitle: (item, type, phase) => mats.find(m=>m.t==type)?.l,
-      /*sort: isNaN(phase) ? {func: (o,a,b) => {
-        let A = a.getMat(mat.t,phase)?.shorthand??"";
-        let B = b.getMat(mat.t,phase)?.shorthand??"";
-        if(!A && B)
-          return 1;
-        else if(A && !B)
-          return -1;
-        else if(!A && !B)
-          return 0;
-        else
-          return o*A.localeCompare(B);
-      }} : undefined,*/
-      columnClasses: ["ascension-materials"],
-      dynamic: true,
-      value: (item, type, phase) => type == "label" ? `${phase} ➤ ${parseInt(phase)+1}` : (item.getMat(type,phase) && item.getMatCost(type,phase) ? item.getMat(type,phase).getFieldValue(item.getMatCost(type,phase), (isNaN(phase)?this.viewer.settings.preferences.characterList=='1':this.viewer.settings.preferences.materialList=='1')) : ""),
-      dependencies: (item, type, phase) => [
-        {item:item.base??item, field:"ascension"},
-        {item:item.viewer.lists.MaterialList.get("Mora"), field:"count"},
-      ].concat(type == "label" ?
-        [
-          {item:item.getMat('gem',phase), field:"count"},
-          item.getMat('boss',phase) ? {item:item.getMat('boss',phase), field:"count"} : null,
-          {item:item.getMat('flower',phase), field:"count"},
-          {item:item.getMat('enemy',phase), field:"count"},
-        ] : (item.getMat(type,phase)?.getCraftDependencies() ?? [])
-      ),
-      button: (item, type, phase) => {
-        if(type == "label" && phase == item.ascension)
-        {
-          if(item.canAscend(false))
-          {
-            return {
-              title: "Ascend the character. This will spend the resources for you and increase their level if necessary.",
-              icon: "fa-solid fa-circle-up",
-              action: item.ascend.bind(item),
-            };
-          }
-          else
-          {
-            return {
-              title: "Not enough materials to ascend.",
-              icon: "fa-solid fa-circle-up",
-            };
-          }
-        }
-      },
-    });
-    
-    let talGroup = {label:"Talent Materials", startCollapsed:true};
-    this.display.addField("talentMaterial", {
-      group: talGroup,
-      label: (item, type, level) => iconLookup[type] + (isNaN(level) ? iconLookup[level] : ""),
-      labelTitle: (item, type, level) => type + (isNaN(level) ? ` (${level})` : ""),
-      columnClasses: (item, type, level) => [(isNaN(level)?level:"talent")+'-'+type?.toLowerCase()],
-      dynamic: true,
-      value: (item, type, level) => item.getTalentMat(type?.toLowerCase(),level) && item.getTalent(level)['mat'+type+'Count'] ? (item.getTalentMat(type?.toLowerCase(),level)?.getFieldValue(item.getTalent(level)['mat'+type+'Count'], (isNaN(level)?this.viewer.settings.preferences.characterList=='1':this.viewer.settings.preferences.materialList=='1'))??"!ERROR!") : "",
-      title: (item, type, level) => item.getTalentMat(type?.toLowerCase(),level)?.getFullSource()??"!ERROR!",
-      dependencies: (item, type, level) => [
-        {item, field:["talent", level]},
-        {item:item.viewer.lists.MaterialList.get("Mora"), field:"count"},
-        item.getTalentMat(type?.toLowerCase(),level)?.days ? {item:this.viewer, field:"today"} : {},
-      ].concat(item.getTalentMat(type?.toLowerCase(),level)?.getCraftDependencies()??[]),
-    });
-    for(let i of ["auto","skill","burst",1,2,3,4,5,6,7,8,9])
-    {
-      for(let m of ["Mastery","Enemy","Trounce","Crown","Mora"])
-      {
-        let talentMat = this.display.addField(isNaN(i) ? i+m+"Mat" : "talent"+m+"Mat"+i, {
-          group: talGroup,
-          label: iconLookup[m] + (isNaN(i) ? iconLookup[i] : ""),
-          labelTitle: m + (isNaN(i) ? ` (${i})` : ""),
-          sort: isNaN(i) ? {func: (o,a,b) => {
-            let A = a.getTalentMatType(m.toLowerCase(),i)??"";
-            let B = b.getTalentMatType(m.toLowerCase(),i)??"";
-            if(!A && B)
-              return 1;
-            else if(A && !B)
-              return -1;
-            else if(!A && !B)
-              return 0;
-            else
-              return o*A.localeCompare(B);
-          }} : undefined,
-          columnClasses: [(isNaN(i)?i:"talent")+'-'+m.toLowerCase()],
-          tags: isNaN(i) & m != "Trounce" && m != "Crown" && m != "Mora" ? undefined : ["detailsOnly"],
-          dynamic: true,
-          value: item => item.getTalentMat(m.toLowerCase(),i) && item.getTalent(i)['mat'+m+'Count'] ? (item.getTalentMat(m.toLowerCase(),i)?.getFieldValue(item.getTalent(i)['mat'+m+'Count'], (isNaN(i)?this.viewer.settings.preferences.characterList=='1':this.viewer.settings.preferences.materialList=='1'))??"!ERROR!") : "",
-          title: item => item.getTalentMat(m.toLowerCase(),i)?.getFullSource()??"!ERROR!",
-          dependencies: item => [
-            {item, field:["talent", i]},
-            {item:item.viewer.lists.MaterialList.get("Mora"), field:"count"},
-            item.getTalentMat(m.toLowerCase(),i)?.days ? {item:this.viewer, field:"today"} : {},
-          ].concat(item.getTalentMat(m.toLowerCase(),i)?.getCraftDependencies()??[]),
-        });
-      }
-      if(!isNaN(i))
-      {
-        let talentLvl = this.display.addField("talentLvl"+i, {
-          label: "TLvl"+i,
-          tags: ["detailsOnly"],
-          dynamic: true,
-          value: item => `${i} ➤ ${parseInt(i)+1}`,
-          dependencies: item => [
-            {item:item.viewer.lists.MaterialList.get("Mora"), field:"count"},
-            {item:item.getTalentMat('mastery','auto'), field:"count"},
-            {item:item.getTalentMat('enemy','auto'), field:"count"},
-            {item:item.getTalentMat('mastery','skill'), field:"count"},
-            {item:item.getTalentMat('enemy','skill'), field:"count"},
-            {item:item.getTalentMat('mastery','burst'), field:"count"},
-            {item:item.getTalentMat('enemy','burst'), field:"count"},
-            {item:item.base??item, field:"ascension"},
-          ],
-          button: item => [
-            (item.talent.auto != i) ? null : {
-              title: item.talent.auto < item.getPhase().maxTalent && item.canUpTalent('auto', false) ? "Level up the talent. This will spend the resources for you." : item.talent.auto < item.getPhase().maxTalent ? "Not enough materials to level up." : "You've reached the maximum talent level for this character's ascension.",
-              name: "auto",
-              text: "auto",
-              icon: item.talent.auto < item.getPhase().maxTalent ? "fa-solid fa-circle-up" : undefined,
-              action: item.talent.auto < item.getPhase().maxTalent && item.canUpTalent('auto', false) ? item.upTalent.bind(item, 'auto') : undefined,
-            },
-            (item.talent.skill != i) ? null : {
-              title: item.talent.skill < item.getPhase().maxTalent && item.canUpTalent('skill', false) ? "Level up the talent. This will spend the resources for you." : item.talent.skill < item.getPhase().maxTalent ? "Not enough materials to level up." : "You've reached the maximum talent level for this character's ascension.",
-              name: "skill",
-              text: "skill",
-              icon: item.talent.skill < item.getPhase().maxTalent ? "fa-solid fa-circle-up" : undefined,
-              action: item.talent.skill < item.getPhase().maxTalent && item.canUpTalent('skill', false) ? item.upTalent.bind(item, 'skill') : undefined,
-            },
-            (item.talent.burst != i) ? null : {
-              title: item.talent.burst < item.getPhase().maxTalent && item.canUpTalent('burst', false) ? "Level up the talent. This will spend the resources for you." : item.talent.burst < item.getPhase().maxTalent ? "Not enough materials to level up." : "You've reached the maximum talent level for this character's ascension.",
-              name: "burst",
-              text: "burst",
-              icon: item.talent.burst < item.getPhase().maxTalent ? "fa-solid fa-circle-up" : undefined,
-              action: item.talent.burst < item.getPhase().maxTalent && item.canUpTalent('burst', false) ? item.upTalent.bind(item, 'burst') : undefined,
-            },
-          ],
-        });
-      }
-    }
     
     let ascendStat = this.display.addField("ascendStat", {
       label: "Stat",
@@ -944,78 +714,7 @@ export default class CharacterList extends GenshinList
       ],
     });
     
-    this.display.addField("planLevel", {
-      dynamic: true,
-      value: item => item.wishlist.level ?? "-",
-      edit: item => ({target: {item, field:"wishlist.level"}}),
-      dependencies: item => [
-        {item:item, field:"wishlist"},
-        {item:item, field:"level"},
-      ],
-    });
-    
-    this.display.addField("planAscension", {
-      dynamic: true,
-      value: item => item.wishlist.ascension ?? "-",
-      edit: item => ({target: {item, field:"wishlist.ascension"}}),
-      dependencies: item => [
-        {item:item, field:"wishlist"},
-        {item:item, field:"ascension"},
-      ],
-    });
-    
-    this.display.addField("planTalent", {
-      dynamic: true,
-      value: (item,talent) => item.wishlist.talent?.[talent] ?? "-",
-      edit: (item,talent) => ({target: {item, field:"wishlist.talent."+talent}}),
-      dependencies: (item,talent) => [
-        {item:item, field:"wishlist"},
-        {item:item, field:"talent."+talent},
-      ],
-    });
-    
-    this.display.addField("planMaterials", {
-      dynamic: true,
-      value: (item,attr) => {
-        let value = [];
-        item.viewer.account.plan.addSubPlan(item, item.getPlanMaterials());
-        let materials = item.viewer.account.plan.getSubPlan(item);
-        for(let matKey in materials)
-          value.push({classes:{'plan-material':true}, value:this.viewer.lists.MaterialList.get(matKey).getFieldValue(materials[matKey], this.viewer.settings.preferences.materialList=='1', {plan:materials})});
-        return value;
-      },
-      dependencies: (item,attr) => [
-        {item:item, field:"wishlist"},
-        {item:item, field:"level"},
-        {item:item, field:"ascension"},
-        {item:item, field:"talent"},
-      ],
-    });
-  }
-  
-  afterUpdate(field, value, action, options)
-  {
-    if(!super.afterUpdate(field, value, action, options))
-      return false;
-    if(field.string == "list")
-    {
-      let select = document.getElementById("addCharacterSelect");
-      if(select)
-        select.needsUpdate = true;
-      if(action == "notify" && options?.toggleOwned)
-      {
-        if(options.toggleOwned.owned)
-        {
-          this.subsets = {};
-          super.afterUpdate(field, options.toggleOwned, "push", {force:true});
-        }
-        else
-        {
-          this.subsets = {};
-          Renderer.removeElementsOf(options.toggleOwned);
-        }
-      }
-    }
+    Character.setupDisplay(this.display);
   }
   
   addTraveler()
@@ -1109,13 +808,6 @@ export default class CharacterList extends GenshinList
     return item;
   }
   
-  clear()
-  {
-    this.items("nottraveler").forEach(item => item.update("owned", false));
-    this.subsets = {};
-    this.forceNextRender = true;
-  }
-  
   getFooterParams()
   {
     return {
@@ -1148,19 +840,19 @@ export default class CharacterList extends GenshinList
     data.fields.push({field:this.display.getField("ascension"), params:[]});
     data.fields.push({field:this.display.getField("level"), params:[]});
     data.fields.push({field:this.display.getField("constellation"), params:[]});
-    data.fields.push({field:this.display.getField("autoTalent"), params:[]});
-    data.fields.push({field:this.display.getField("skillTalent"), params:[]});
-    data.fields.push({field:this.display.getField("burstTalent"), params:[]});
+    data.fields.push({field:this.display.getField("talent"), params:['auto']});
+    data.fields.push({field:this.display.getField("talent"), params:['skill']});
+    data.fields.push({field:this.display.getField("talent"), params:['burst']});
     data.fields.push({field:this.display.getField("ascensionMaterial"), params:['gem']});
     data.fields.push({field:this.display.getField("ascensionMaterial"), params:['boss']});
     data.fields.push({field:this.display.getField("ascensionMaterial"), params:['flower']});
     data.fields.push({field:this.display.getField("ascensionMaterial"), params:['enemy']});
-    data.fields.push({field:this.display.getField("talentMaterial"), params:['Mastery', 'auto']});
-    data.fields.push({field:this.display.getField("talentMaterial"), params:['Enemy', 'auto']});
-    data.fields.push({field:this.display.getField("talentMaterial"), params:['Mastery', 'skill']});
-    data.fields.push({field:this.display.getField("talentMaterial"), params:['Enemy', 'skill']});
-    data.fields.push({field:this.display.getField("talentMaterial"), params:['Mastery', 'burst']});
-    data.fields.push({field:this.display.getField("talentMaterial"), params:['Enemy', 'burst']});
+    data.fields.push({field:this.display.getField("talentMaterial"), params:['mastery', 'auto']});
+    data.fields.push({field:this.display.getField("talentMaterial"), params:['enemy', 'auto']});
+    data.fields.push({field:this.display.getField("talentMaterial"), params:['mastery', 'skill']});
+    data.fields.push({field:this.display.getField("talentMaterial"), params:['enemy', 'skill']});
+    data.fields.push({field:this.display.getField("talentMaterial"), params:['mastery', 'burst']});
+    data.fields.push({field:this.display.getField("talentMaterial"), params:['enemy', 'burst']});
     data.fields.push({field:this.display.getField("weaponName"), params:[this.viewer.settings.preferences.characterList, "sm"]});
     data.fields.push({field:this.display.getField("flower"), params:[this.viewer.settings.preferences.characterList, "sm"]});
     data.fields.push({field:this.display.getField("plume"), params:[this.viewer.settings.preferences.characterList, "sm"]});

@@ -81,16 +81,6 @@ export default class CharacterList extends WuWaList
       }),*/
     });
     
-    this.display.addField("level", {
-      label: "Lvl",
-      labelTitle: "Sort by character level.",
-      sort: {generic: {type:"number",property:"level"}},
-      dynamic: true,
-      title: item => "Click to change.",
-      value: item => item.level,
-      edit: item => ({target: {item:item.base??item, field:"level"}}),
-    });
-    
     this.display.addField("sequence", {
       label: "Seq",
       labelTitle: "Sort by sequence.",

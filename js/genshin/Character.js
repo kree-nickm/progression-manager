@@ -46,11 +46,19 @@ handlebars.registerHelper("isPreviewing", function(character, item, options) {
 
 handlebars.registerHelper("buildName", (character, buildId, options) => character?.getBuild(buildId)?.name);
 
-export default class Character extends GenshinItem
+export default class Character extends Ascendable(GenshinItem)
 {
-  static dontSerialize = super.dontSerialize.concat(["MaterialList","loaded","_weapon","_flower","_plume","_sands","_goblet","_circlet","_previewGear","preview","statModifiers","activeTeam"]);
+  static dontSerialize = super.dontSerialize.concat(["_weapon","_flower","_plume","_sands","_goblet","_circlet","_previewGear","preview","statModifiers","activeTeam"]);
   static goodProperties = ["key","level","constellation","ascension","talent"];
   static templateName = "genshin/renderCharacterAsPopup";
+  
+  static AscensionData = GenshinPhaseData;
+  static TalentData = GenshinTalentData;
+  static talentTypes = {
+    auto: {full:"Basic Attack", word:"Attack", char:"A", min:1, max:10, dataType:""},
+    skill: {full:"Elemental Skill", word:"Skill", char:"S", min:1, max:10, dataType:""},
+    burst: {full:"Elemental Burst", word:"Burst", char:"B", min:1, max:10, dataType:""},
+  };
 
   static sortArtifacts(buildId,useTargets,a,b)
   {
@@ -69,20 +77,11 @@ export default class Character extends GenshinItem
   _level = 1;
   _constellation = 0;
   _ascension = 0;
-  talent = {
-    auto: 1,
-    skill: 1,
-    burst: 1,
-  };
+  talent;
 
-  owned;
-  favorite = false;
   selectedBuild = 0;
-  wishlist = {};
   previews = {};
 
-  MaterialList;
-  loaded = false;
   _weapon = null;
   _flower = null;
   _plume = null;
@@ -96,67 +95,74 @@ export default class Character extends GenshinItem
   
   afterLoad()
   {
-    this.MaterialList = {
-      crown: this.list.viewer.lists.MaterialList.get("CrownOfInsight"),
-      mora: this.list.viewer.lists.MaterialList.get("Mora"),
-    };
-    if(GenshinCharacterData[this.key])
+    if(GenshinCharacterData[this.key] || this.key.startsWith("Traveler"))
     {
-      for(let prop of ["element","rarity","ascendStat","matBoss","matFlower","matEnemy"])
-        if(!GenshinCharacterData[this.key][prop])
-        {
-          console.warn(`Character ${this.key} has no ${prop}.`);
-          return false;
-        }
-      this.loaded = true;
-      
-      // Retrieve the materials used by this character.
-      this.MaterialList.gem = {
-        '2': this.list.viewer.lists.MaterialList.get(GenshinLootData.gemstone[this.element].prefix + Material.gemQualities[2]),
-        '3': this.list.viewer.lists.MaterialList.get(GenshinLootData.gemstone[this.element].prefix + Material.gemQualities[3]),
-        '4': this.list.viewer.lists.MaterialList.get(GenshinLootData.gemstone[this.element].prefix + Material.gemQualities[4]),
-        '5': this.list.viewer.lists.MaterialList.get(GenshinLootData.gemstone[this.element].prefix + Material.gemQualities[5]),
-      };
-      this.MaterialList.boss = this.list.viewer.lists.MaterialList.get(GenshinLootData.boss[this.bossMatType][4]);
-      this.MaterialList.flower = this.list.viewer.lists.MaterialList.get(this.flowerMatType);
-      this.MaterialList.enemy = {
-        '1': this.list.viewer.lists.MaterialList.get(GenshinLootData.enemy[this.enemyMatType][1]),
-        '2': this.list.viewer.lists.MaterialList.get(GenshinLootData.enemy[this.enemyMatType][2]),
-        '3': this.list.viewer.lists.MaterialList.get(GenshinLootData.enemy[this.enemyMatType][3]),
-      };
-      this.MaterialList.mastery = {
-        '2': this.list.viewer.lists.MaterialList.get(Material.masteryQualities[2] + this.getTalentMatType('mastery')),
-        '3': this.list.viewer.lists.MaterialList.get(Material.masteryQualities[3] + this.getTalentMatType('mastery')),
-        '4': this.list.viewer.lists.MaterialList.get(Material.masteryQualities[4] + this.getTalentMatType('mastery')),
-      };
-      this.MaterialList.trounce = this.list.viewer.lists.MaterialList.get(this.getTalentMatType('trounce'));
-      
-      // Inform those materials that this character uses them.
-      for(let i in this.MaterialList.gem)
-        this.MaterialList.gem[i]?.addUser(this);
-      
-      for(let i in this.MaterialList.enemy)
-        this.MaterialList.enemy[i]?.addUser(this);
-      
-      if(this.MaterialList.boss)
-        this.MaterialList.boss?.addUser(this);
-      
-      this.MaterialList.flower?.addUser(this);
+      if(!this.materialDefs)
+      {
+        for(let prop of ["element","rarity","ascendStat","matBoss","matFlower","matEnemy"])
+          if(!GenshinCharacterData[this.key][prop])
+          {
+            console.warn(`Character ${this.key} has no ${prop}.`);
+            return false;
+          }
         
-      for(let i in this.MaterialList.mastery)
-        this.MaterialList.mastery[i]?.addUser(this);
-      
-      this.MaterialList.trounce?.addUser(this);
-      this.MaterialList.crown?.addUser(this);
-      
-      this.viewer.account.plan.addSubPlan(this, this.getPlanMaterials());
+        this.materialDefs = {
+          raritySuffix: "RarityCharacter",
+          costSuffix: "CostCharacter",
+          talentRaritySuffix: "Rarity",
+          talentCostSuffix: "Cost",
+          materials: [
+            {
+              property: "mora",
+              key: "Mora",
+              skipUser: true,
+            },
+            {
+              property: "crown",
+              key: "CrownOfInsight",
+              skipUser: true,
+            },
+            {
+              property: "boss",
+              key: GenshinLootData.boss[GenshinCharacterData[this.key].matBoss][4],
+            },
+            {
+              property: "flora",
+              key: this.flowerMatType,
+            },
+            {
+              property: "enemy",
+              group: GenshinLootData.enemy[this.enemyMatType],
+              tiers: [1,2,3],
+            },
+            {
+              property: "gem",
+              prefix: GenshinLootData.gemstone[this.element].prefix,
+              group: Material.gemQualities,
+              tiers: [2,3,4,5],
+            },
+            {
+              property: "mastery",
+              group: Material.masteryQualities,
+              suffix: GenshinCharacterData[this.key].matMastery,
+              tiers: [2,3,4],
+            },
+            {
+              property: "trounce",
+              key: GenshinCharacterData[this.key].matTrounce,
+            },
+          ],
+          list: this.viewer.lists.MaterialList,
+        };
+      }
+      super.afterLoad();
+      return true;
     }
     else
     {
       console.warn(`Unknown character "${this.key}".`);
-      this.loaded = false;
+      return false;
     }
-    return this.loaded;
   }
   
   afterUpdate(field, value, action, options)
@@ -290,10 +296,6 @@ export default class Character extends GenshinItem
       this.clearMemory("stats");
       this.clearMemory("motionValues");
       this.update("statModifiers", null, "notify", {listChange:true, mvChange:"*", mainChange:true, rxnChange:false});
-    }
-    else if(field.string == "owned")
-    {
-      this.list.update("list", null, "notify", {toggleOwned:this});
     }
     return true;
   }
@@ -461,11 +463,11 @@ export default class Character extends GenshinItem
   get name(){ return GenshinCharacterData[this.key]?.name ?? this.key; }
   get weaponType(){ return GenshinCharacterData[this.key]?.weapon ?? ""; }
   get element(){ return GenshinCharacterData[this.key]?.element ?? ""; }
-  get rarity(){ return this.loaded ? GenshinCharacterData[this.key].rarity : 0; }
-  get ascendStat(){ return this.loaded ? GenshinCharacterData[this.key].ascendStat : ""; }
-  get bossMatType(){ return this.loaded ? GenshinCharacterData[this.key].matBoss : ""; }
-  get flowerMatType(){ return this.loaded ? GenshinCharacterData[this.key].matFlower : ""; }
-  get enemyMatType(){ return this.loaded ? GenshinCharacterData[this.key].matEnemy : ""; }
+  get rarity(){ return GenshinCharacterData[this.key]?.rarity ?? 0; }
+  get ascendStat(){ return GenshinCharacterData[this.key]?.ascendStat ?? ""; }
+  get bossMatType(){ return GenshinCharacterData[this.key]?.matBoss ?? ""; }
+  get flowerMatType(){ return GenshinCharacterData[this.key]?.matFlower ?? ""; }
+  get enemyMatType(){ return GenshinCharacterData[this.key]?.matEnemy ?? ""; }
   get hpBaseValue(){ return GenshinCharacterData[this.key]?.hpBase ?? 0; }
   get atkBaseValue(){ return GenshinCharacterData[this.key]?.atkBase ?? 0; }
   get defBaseValue(){ return GenshinCharacterData[this.key]?.defBase ?? 0; }
@@ -516,10 +518,6 @@ export default class Character extends GenshinItem
     return this.detailedData;
   }
   
-  getPhase(ascension=this.ascension){ return GenshinPhaseData[ascension] ?? GenshinPhaseData[6]; }
-  get levelCap() { return this.getPhase().levelCap; }
-  get talentCap() { return this.getPhase().maxTalent; }
-  
   get previewWeapon()
   {
     if(!this.previews.weaponKey && !this.previews.weaponLevel && !this.previews.weaponAscension && !this.previews.weaponRefinement)
@@ -567,149 +565,8 @@ export default class Character extends GenshinItem
     return this._previewGear[slotKey];
   }
   
-  getMat(type, ascension=this.ascension)
+  getPlanMaterials(result={})
   {
-    if(type == "gem")
-      return this.MaterialList?.gem[this.getPhase(ascension).ascendMatGemQuality];
-    else if(type == "boss")
-      return this.MaterialList?.boss;
-    else if(type == "flower")
-      return this.MaterialList?.flower;
-    else if(type == "enemy")
-      return this.MaterialList?.enemy[this.getPhase(ascension).ascendMatEnemyQuality];
-    else if(type == "mora")
-      return this.MaterialList?.mora;
-    else
-      return null;
-  }
-  
-  getMatCost(type, ascension=this.ascension)
-  {
-    if(type == "gem")
-      return this.getPhase(ascension).ascendMatGemCount;
-    else if(type == "boss")
-      return this.getPhase(ascension).ascendMatBossCount;
-    else if(type == "flower")
-      return this.getPhase(ascension).ascendMatFlowerCount;
-    else if(type == "enemy")
-      return this.getPhase(ascension).ascendMatEnemyCount;
-    else if(type == "mora")
-      return this.getPhase(ascension).ascendMoraCost;
-    else
-      return 0;
-  }
-  
-  getTalent(talent){ return GenshinTalentData[this.talent[talent] ?? talent] ?? GenshinTalentData[10]; }
-  getTalentMat(type, talent)
-  {
-    if(type == "mastery")
-      return this.MaterialList?.mastery[this.getTalent(talent).matMasteryQuality];
-    else if(type == "enemy")
-      return this.MaterialList?.enemy[this.getTalent(talent).matEnemyQuality];
-    else if(type == "trounce")
-      return this.MaterialList?.trounce;
-    else if(type == "crown")
-      return this.MaterialList?.crown;
-    else if(type == "mora")
-      return this.MaterialList?.mora;
-    else
-    {
-      console.warn(`Invalid talent mat type '${type}'.`);
-      return null;
-    }
-  }
-  
-  getTalentMatType(type, talent)
-  {
-    if(type == "mastery")
-      return this.loaded ? GenshinCharacterData[this.key].matMastery : "";
-    else if(type == "enemy")
-      return this.loaded ? GenshinCharacterData[this.key].matEnemy : "";
-    else if(type == "trounce")
-      return this.loaded ? GenshinCharacterData[this.key].matTrounce : "";
-    else if(type == "crown")
-      return "Crown";
-    else if(type == "mora")
-      return "Mora";
-    else
-      return "";
-  }
-  
-  ascend(event)
-  {
-    if(this.ascension == 6)
-    {
-      console.error(`Tried to ascend ${this.name}, but already at max.`);
-      return false;
-    }
-    event.stopPropagation();
-    this.getMat('gem').update("count", this.getMat('gem').count - this.getMatCost('gem'));
-    if(this.getMat('boss'))
-      this.getMat('boss').update("count", this.getMat('boss').count - this.getMatCost('boss'));
-    this.getMat('flower').update("count", this.getMat('flower').count - this.getMatCost('flower'));
-    this.getMat('enemy').update("count", this.getMat('enemy').count - this.getMatCost('enemy'));
-    this.getMat('mora').update("count", this.getMat('mora').count - this.getMatCost('mora'));
-    if(this.level < this.levelCap)
-      this.update("level", this.levelCap);
-    this.update("ascension", this.ascension+1);
-  }
-  
-  canAscend(withCrafting=false)
-  {
-    if(this.ascension == 6)
-      return false;
-    else if(withCrafting)
-      return this.getMat('gem')?.getCraftCount() >= this.getMatCost('gem') &&
-        (!this.getMat('boss') || this.getMat('boss').getCraftCount() >= this.getMatCost('boss')) &&
-        this.getMat('flower')?.getCraftCount() >= this.getMatCost('flower') &&
-        this.getMat('enemy')?.getCraftCount() >= this.getMatCost('enemy') &&
-        this.getMat('mora')?.getCraftCount() >= this.getMatCost('mora');
-    else
-      return this.getMat('gem')?.count >= this.getMatCost('gem') &&
-        (!this.getMat('boss') || this.getMat('boss').count >= this.getMatCost('boss')) &&
-        this.getMat('flower')?.count >= this.getMatCost('flower') &&
-        this.getMat('enemy')?.count >= this.getMatCost('enemy') &&
-        this.getMat('mora')?.count >= this.getMatCost('mora');
-  }
-  
-  upTalent(talent, event)
-  {
-    if(this.talent[talent] >= this.talentCap)
-    {
-      console.error(`Tried to increase ${talent} talent of ${this.name}, but already at max.`);
-      return false;
-    }
-    event.stopPropagation();
-    this.getTalentMat('mastery',talent).update("count", this.getTalentMat('mastery',talent).count - this.getTalent(talent).matMasteryCount);
-    this.getTalentMat('enemy',talent).update("count", this.getTalentMat('enemy',talent).count - this.getTalent(talent).matEnemyCount);
-    this.MaterialList?.trounce.update("count", this.MaterialList?.trounce.count - this.getTalent(talent).matTrounceCount);
-    this.MaterialList?.crown.update("count", this.MaterialList?.crown.count - this.getTalent(talent).matCrownCount);
-    this.MaterialList?.mora.update("count", this.MaterialList?.mora.count - this.getTalent(talent).matMoraCount);
-    this.update(["talent", talent], this.talent[talent]+1);
-  }
-  
-  canUpTalent(talent, withCrafting=false)
-  {
-    if(this.talent[talent] >= this.talentCap)
-      return false;
-    else if(withCrafting)
-      return this.getTalentMat('mastery',talent)?.getCraftCount() >= this.getTalent(talent).matMasteryCount &&
-        this.getTalentMat('enemy',talent)?.getCraftCount() >= this.getTalent(talent).matEnemyCount &&
-        this.MaterialList?.trounce?.getCraftCount() >= this.getTalent(talent).matTrounceCount &&
-        this.MaterialList?.crown?.getCraftCount() >= this.getTalent(talent).matCrownCount &&
-        this.MaterialList?.mora?.getCraftCount() >= this.getTalent(talent).matMoraCount;
-    else
-      return this.getTalentMat('mastery',talent)?.count >= this.getTalent(talent).matMasteryCount &&
-        this.getTalentMat('enemy',talent)?.count >= this.getTalent(talent).matEnemyCount &&
-        this.MaterialList?.trounce?.count >= this.getTalent(talent).matTrounceCount &&
-        this.MaterialList?.crown?.count >= this.getTalent(talent).matCrownCount &&
-        this.MaterialList?.mora?.count >= this.getTalent(talent).matMoraCount;
-  }
-  
-  getPlanMaterials()
-  {
-    let result = {};
-    
     // EXP
     let exp = (GenshinCharacterStats.totalExpCost[this.wishlist.level] ?? 0) - GenshinCharacterStats.totalExpCost[this.level];
     if(exp > 0)
@@ -723,54 +580,7 @@ export default class Character extends GenshinItem
       exp -= result["WanderersAdvice"] * 1000;
     }
     
-    // Ascension
-    if((this.wishlist.ascension??0) - this.ascension > 0)
-    {
-      for(let asc=this.ascension; asc<this.wishlist.ascension; asc++)
-      {
-        for(let type of ["gem","boss","flower","enemy","mora"])
-        {
-          let cost = this.getMatCost(type, asc);
-          if(cost > 0)
-          {
-            let mat = this.getMat(type, asc);
-            if(mat)
-            {
-              if(!result[mat.key])
-                result[mat.key] = 0;
-              result[mat.key] += cost;
-            }
-          }
-        }
-      }
-    }
-    
-    // Talents
-    for(let talent of ["auto","skill","burst"])
-    {
-      if((this.wishlist.talent?.[talent]??0) - this.talent[talent] > 0)
-      {
-        for(let lvl=this.talent[talent]; lvl<this.wishlist.talent[talent]; lvl++)
-        {
-          for(let type of ["mastery","enemy","trounce","crown","mora"])
-          {
-            let cost = this.getTalent(lvl)['mat'+type.charAt(0).toUpperCase()+type.slice(1)+'Count'];
-            if(cost > 0)
-            {
-              let mat = this.getTalentMat(type, lvl);
-              if(mat)
-              {
-                if(!result[mat.key])
-                  result[mat.key] = 0;
-                result[mat.key] += cost;
-              }
-            }
-          }
-        }
-      }
-    }
-    
-    return result;
+    return super.getPlanMaterials(result);
   }
   
   get teams()
@@ -1796,47 +1606,42 @@ export default class Character extends GenshinItem
   
   getBuilds()
   {
-    if(this.loaded)
+    if(!this.list.viewer.buildData[this.key])
+      this.list.viewer.buildData[this.key] = [];
+    let builds = Object.values(this.list.viewer.buildData[this.key]);
+    if(!builds.length)
     {
-      if(!this.list.viewer.buildData[this.key])
-        this.list.viewer.buildData[this.key] = [];
-      let builds = Object.values(this.list.viewer.buildData[this.key]);
-      if(!builds.length)
-      {
-        builds.push({name:"default"});
-        this.list.viewer.buildData[this.key] = builds;
-      }
-      for(let build of builds)
-      {
-        if(!build.name)
-          build.name = "???";
-        if(!build.artifactSets)
-          build.artifactSets = {};
-        if(!build.artifactSubstats)
-          build.artifactSubstats = {};
-        if(!build.sandsStat)
-          build.sandsStat = {};
-        if(!build.gobletStat)
-          build.gobletStat = {};
-        if(!build.circletStat)
-          build.circletStat = {};
-        if(!("minER" in build))
-          build.minER = 100;
-        if(!("maxER" in build))
-          build.maxER = 300;
-        if(!("ratioCritRate" in build))
-          build.ratioCritRate = 1;
-        if(!("ratioCritDMG" in build))
-          build.ratioCritDMG = 2;
-        if(!("useTargets" in build))
-          build.useTargets = {};
-        if(!("importance" in build))
-          build.importance = 100;
-      }
-      return builds;
+      builds.push({name:"default"});
+      this.list.viewer.buildData[this.key] = builds;
     }
-    else
-      return [];
+    for(let build of builds)
+    {
+      if(!build.name)
+        build.name = "???";
+      if(!build.artifactSets)
+        build.artifactSets = {};
+      if(!build.artifactSubstats)
+        build.artifactSubstats = {};
+      if(!build.sandsStat)
+        build.sandsStat = {};
+      if(!build.gobletStat)
+        build.gobletStat = {};
+      if(!build.circletStat)
+        build.circletStat = {};
+      if(!("minER" in build))
+        build.minER = 100;
+      if(!("maxER" in build))
+        build.maxER = 300;
+      if(!("ratioCritRate" in build))
+        build.ratioCritRate = 1;
+      if(!("ratioCritDMG" in build))
+        build.ratioCritDMG = 2;
+      if(!("useTargets" in build))
+        build.useTargets = {};
+      if(!("importance" in build))
+        build.importance = 100;
+    }
+    return builds;
   }
   
   getBuild(buildId=this.selectedBuild)
@@ -2117,7 +1922,7 @@ export default class Character extends GenshinItem
     if(addBuild && !addBuild.onclick)
       addBuild.onclick = async event => {
         let buildName = buildSection.querySelector("#addBuildFld")?.value;
-        if(buildName && this.loaded)
+        if(buildName)
         {
           if(!this.list.viewer.buildData[this.key].some(build => build.name == buildName))
           {

@@ -845,7 +845,7 @@ export default {
         "matForgery": "Chalice",
         "matWeakEnemy": "Whopperflowers",
         "matStrongEnemy": "Praetorians",
-        "passive": "ATK increased by @0%. When the equipping character triggers Burning on an opponent or deals Dendro DMG to Burning opponents, the DMG dealt is increased by @1%. This effect lasts for 8s, max 2 stacks. When 2 stacks are reached or when the duration is refreshed at 2 stacks, restore @2 Energy. Energy can be restored this way once every 12s. The 2 aforementioned effects can be triggered even when the character is off-field.",
+        "passive": "ATK increased by @0%. After the equipping character triggers Burning on an opponent or deals Dendro DMG to Burning opponents, the DMG dealt is increased by @1%. This effect lasts for 8s, max 2 stacks. When 2 stacks are reached or when the duration is refreshed at 2 stacks, restore @2 Energy. Energy can be restored this way once every 12s. The 2 aforementioned effects can be triggered even when the character is off-field.",
         "refinementData": [
             {
                 "1": 15.00000059605,
@@ -869,7 +869,7 @@ export default {
                 "5": 8
             }
         ],
-        "version": "4.7.54"
+        "version": "4.8"
     },
     "MemoryOfDust": {
         "name": "Memory of Dust",

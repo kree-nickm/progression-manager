@@ -14,6 +14,7 @@ export default class UIList extends UIController {
   static fromJSON(data, {viewer, addProperties={}}={})
   {
     let list = new this(viewer);
+    list.initialize();
     for(let prop in addProperties)
       list[prop] = addProperties[prop];
     list.startImport();
@@ -81,13 +82,12 @@ export default class UIList extends UIController {
     this.display = new ListDisplayManager(this);
     this.subsets = {};
     this.forceNextRender = true;
-    this.initialize();
-    this.setupDisplay();
   }
   
   initialize()
   {
     //if(!window.productionMode) console.debug(`${this.constructor.name}.initialize()`);
+    this.setupDisplay();
   }
   
   setupDisplay(){}

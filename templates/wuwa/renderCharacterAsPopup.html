@@ -31,8 +31,40 @@
                     </div>
                     <div class="col-3">{{> renderItemField item=item field="equipWeapon" wrapper="div"}}</div>
                 </div>
+                <div class="row">
+                    <div class="col-1">Desired Stats:</div>
+                    <div class="col-1">{{> renderItemField item=item field="planLevel" wrapper="div"}}</div>
+                    <div class="col-1">{{> renderItemField item=item field="planAscension" wrapper="div"}}</div>
+                    <div class="col-2 d-flex">
+                      {{> renderItemField item=item field="planTalent" params=(array "Basic Attack") wrapper="span"}} /
+                      {{> renderItemField item=item field="planTalent" params=(array "Resonance Skill") wrapper="span"}} /
+                      {{> renderItemField item=item field="planTalent" params=(array "Forte Circuit") wrapper="span"}} /
+                      {{> renderItemField item=item field="planTalent" params=(array "Resonance Liberation") wrapper="span"}} /
+                      {{> renderItemField item=item field="planTalent" params=(array "Intro Skill") wrapper="span"}}
+                    </div>
+                    <div class="col-2 d-flex">
+                      {{> renderItemField item=item field="planTalent" params=(array "Basic Attack Bonus") wrapper="span"}} /
+                      {{> renderItemField item=item field="planTalent" params=(array "Resonance Skill Bonus") wrapper="span"}} /
+                      {{> renderItemField item=item field="planTalent" params=(array "Forte Circuit Passive") wrapper="span"}} /
+                      {{> renderItemField item=item field="planTalent" params=(array "Resonance Liberation Bonus") wrapper="span"}} /
+                      {{> renderItemField item=item field="planTalent" params=(array "Intro Skill Bonus") wrapper="span"}}
+                    </div>
+                    <div class="col-3"></div>
+                </div>
             </div>
         </div>
+        <div class="plan-materials">
+      {{> renderItemField item=item field="planMaterials" wrapper="div"}}
+        </div>
+        
+      {{#if item.base}}
+        <div class="row">
+            <div class="col-auto">Variants:</div>
+          {{#each item.base.variants}}
+            <div class="col-auto list-item" data-uuid="{{uuid .}}">{{> renderItemField item=. field="name" wrapper="span"}}</div>
+          {{/each}}
+        </div>
+      {{/if}}
         
         <div class="popup-section">
           <h3 class="popup-section-header collapsed" data-bs-toggle="collapse" href="#ascensionMaterials">Ascension Materials</h3>
@@ -87,28 +119,7 @@
                     {{/times}}
                   </tbody>
               </table>
-              <table class="table">
-                  <thead>
-                      <tr>
-                          <th>Stat Bonus</th>
-                          <th>Forgery</th>
-                          <th>Enemy</th>
-                          <th>Weekly</th>
-                          <th>Credits</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                    {{#times 2}}
-                      <tr>
-                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "label" (concat "bonus" @index)) wrapper="div"}}</td>
-                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "forgery" (concat "bonus" @index)) wrapper="div"}}</td>
-                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "enemy" (concat "bonus" @index)) wrapper="div"}}</td>
-                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "weekly" (concat "bonus" @index)) wrapper="div"}}</td>
-                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "credit" (concat "bonus" @index)) wrapper="div"}}</td>
-                      </tr>
-                    {{/times}}
-                  </tbody>
-              </table>
+              <h4>Inherent Skill Passives</h4>
               <table class="table">
                   <thead>
                       <tr>
@@ -127,6 +138,52 @@
                         <td>{{> renderItemField item=item field="talentMaterial" params=(array "enemy" (concat "circuit" @index)) wrapper="div"}}</td>
                         <td>{{> renderItemField item=item field="talentMaterial" params=(array "weekly" (concat "circuit" @index)) wrapper="div"}}</td>
                         <td>{{> renderItemField item=item field="talentMaterial" params=(array "credit" (concat "circuit" @index)) wrapper="div"}}</td>
+                      </tr>
+                    {{/times}}
+                  </tbody>
+              </table>
+              <h4>Primary Stat Bonuses</h4>
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th>Stat Bonus</th>
+                          <th>Forgery</th>
+                          <th>Enemy</th>
+                          <th>Weekly</th>
+                          <th>Credits</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    {{#times 2}}
+                      <tr>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "label" (concat "bonusA" @index)) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "forgery" (concat "bonusA" @index)) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "enemy" (concat "bonusA" @index)) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "weekly" (concat "bonusA" @index)) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "credit" (concat "bonusA" @index)) wrapper="div"}}</td>
+                      </tr>
+                    {{/times}}
+                  </tbody>
+              </table>
+              <h4>Secondary Stat Bonuses</h4>
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th>Stat Bonus</th>
+                          <th>Forgery</th>
+                          <th>Enemy</th>
+                          <th>Weekly</th>
+                          <th>Credits</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    {{#times 2}}
+                      <tr>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "label" (concat "bonusB" @index)) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "forgery" (concat "bonusB" @index)) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "enemy" (concat "bonusB" @index)) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "weekly" (concat "bonusB" @index)) wrapper="div"}}</td>
+                        <td>{{> renderItemField item=item field="talentMaterial" params=(array "credit" (concat "bonusB" @index)) wrapper="div"}}</td>
                       </tr>
                     {{/times}}
                   </tbody>

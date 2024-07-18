@@ -109,6 +109,8 @@ export default class FurnitureSetList extends GenshinList
         {item:item.list.viewer.lists.characters, field:"list"},
       ]
     });
+    
+    FurnitureSet.setupDisplay(this.display);
   }
   
   clear()
@@ -126,5 +128,15 @@ export default class FurnitureSetList extends GenshinList
     
     let footer = document.getElementById("footer");
     footer.classList.add("d-none");
+  }
+  
+  prepareRender(element, data, options)
+  {
+    data.fields = [
+      {field:this.display.getField("name"), params:[]},
+      {field:this.display.getField("recipe"), params:[]},
+      {field:this.display.getField("characters"), params:[]},
+    ];
+    return {element, data, options};
   }
 }

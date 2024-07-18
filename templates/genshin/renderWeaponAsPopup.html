@@ -58,11 +58,11 @@
                 <tbody>
                   {{#times 6}}
                     <tr>
-                      <td>{{> renderItemField item=item field=(concat "ascension" @index) wrapper="div"}}</td>
-                      <td>{{> renderItemField item=item field=(concat "forgeryMat" @index) wrapper="div"}}</td>
-                      <td>{{> renderItemField item=item field=(concat "strongMat" @index) wrapper="div"}}</td>
-                      <td>{{> renderItemField item=item field=(concat "weakMat" @index) wrapper="div"}}</td>
-                      <td>{{> renderItemField item=item field=(concat "moraMat" @index) wrapper="div"}}</td>
+                      <td>{{> renderItemField item=item field="ascensionMaterial" params=(array "label" @index) wrapper="div"}}</td>
+                      <td>{{> renderItemField item=item field="ascensionMaterial" params=(array "forgery" @index) wrapper="div"}}</td>
+                      <td>{{> renderItemField item=item field="ascensionMaterial" params=(array "strong" @index) wrapper="div"}}</td>
+                      <td>{{> renderItemField item=item field="ascensionMaterial" params=(array "weak" @index) wrapper="div"}}</td>
+                      <td>{{> renderItemField item=item field="ascensionMaterial" params=(array "mora" @index) wrapper="div"}}</td>
                     </tr>
                   {{/times}}
                 </tbody>

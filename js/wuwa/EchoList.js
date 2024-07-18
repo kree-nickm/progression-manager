@@ -145,20 +145,6 @@ export default class EchoList extends WuWaList
       ],
     });
     
-    this.display.addField("lock", {
-      label: "L",
-      title: item => "Is Locked?",
-      sort: {generic: {type:"boolean", property:"lock"}},
-      dynamic: true,
-      edit: item => ({
-        target: {item, field:"lock"},
-        type: "checkbox",
-        value: item.lock,
-        trueClasses: ["fa-solid","fa-lock"],
-        falseClasses: [],
-      }),
-    });
-    
     this.display.addField("location", {
       label: "User",
       sort: {generic: {type:"string",property:"location"}},
@@ -201,24 +187,6 @@ export default class EchoList extends WuWaList
       dependencies: item => [
         {item:item.list.viewer.lists.CharacterList, field:"list"},
       ],
-    });
-    
-    this.display.addField("delete", {
-      label: "D",
-      dynamic: true,
-      dependencies: item => [
-        {item, field:"lock"},
-        {item, field:"location"},
-      ],
-      title: item => (item.lock || item.location) ? "Unlock/unequip the weapon before deleting it." : "Delete this weapon from the list.",
-      button: item => (item.lock || item.location) ? {icon: "fa-solid fa-trash-can"} : {
-        icon: "fa-solid fa-trash-can",
-        action: event => {
-          event.stopPropagation();
-          item.unlink();
-          item.list.viewer.queueStore();
-        },
-      },
     });
   }
   

@@ -209,28 +209,6 @@ export default class ArtifactList extends GenshinList
       edit: item => ({target: {item:item , field:"level"}, min:0, max:20}),
     });
     
-    let lockField = this.display.addField("lock", {
-      label: "<i class='fa-solid fa-lock'></i>",
-      sort: {generic: {type:"boolean",property:"lock"}},
-      dynamic: true,
-      title: item => "Whether the artifact is locked. Red background indicates the artifact is below your minimum desirability rating, which theoretically means you should unlock it and use it as fodder in-game.",
-      classes: (item,showUnlocked,showRed=1) => {
-        return {
-          "undesirable": parseInt(showRed) && item.isFodder,
-        };
-      },
-      edit: (item,showUnlocked,showRed=1) => ({
-        target: {item:item, field:"lock"},
-        type: "checkbox",
-        value: item.lock,
-        trueClasses: ["fa-solid","fa-lock"],
-        falseClasses: parseInt(showUnlocked) ? ["fa-solid","fa-lock-open"] : [],
-      }),
-      dependencies: item => [
-        {item:item, field:"wanters"},
-      ],
-    });
-    
     let mainStatField = this.display.addField("mainStat", {
       label: "Main",
       sort: {generic: {type:"string",property:"mainStatKey"}},
@@ -372,24 +350,6 @@ export default class ArtifactList extends GenshinList
       ],
     });
     
-    let deleteBtn = this.display.addField("deleteBtn", {
-      label: "<i class='fa-solid fa-trash-can'></i>",
-      dynamic: true,
-      dependencies: item => [
-        {item:item, field:"lock"},
-        {item:item, field:"location"},
-      ],
-      title: item => (item.lock || item.location) ? "Unlock/unequip the artifact before deleting it." : "Delete this artifact from the list.",
-      button: (item,alwaysShow=1) => (item.lock || item.location) ? (alwaysShow ? {icon: "fa-solid fa-trash-can"} : undefined) : {
-        icon: "fa-solid fa-trash-can",
-        action: event => {
-          event.stopPropagation();
-          item.unlink();
-          item.list.viewer.queueStore();
-        },
-      },
-    });
-    
     let characterScoreField = this.display.addField("characterScore", {
       label: "Score",
       tags: ["detailsOnly"],
@@ -514,6 +474,9 @@ export default class ArtifactList extends GenshinList
         {item:artifact, field:"level"},
       ],
     });
+    
+    // TODO: lock was special, but using the UIItem version of it stops that
+    Artifact.setupDisplay(this.display);
   }
   
   clear()
@@ -669,5 +632,32 @@ export default class ArtifactList extends GenshinList
       });
       setTimeout(() => evalBtn.dispatchEvent(new Event("click")), 1);
     }
+  }
+
+  prepareRender(element, data, options)
+  {
+    data.fields = [
+      {field:this.display.getField("id"), params:[]},
+      {field:this.display.getField("set"), params:[]},
+      {field:this.display.getField("slot"), params:[]},
+      {field:this.display.getField("level"), params:[]},
+      {field:this.display.getField("lock"), params:[]},
+      {field:this.display.getField("mainStat"), params:[]},
+      {field:this.display.getField("critRate_Sum"), params:[]},
+      {field:this.display.getField("critDMG_Sum"), params:[]},
+      {field:this.display.getField("atk_Sum"), params:[]},
+      {field:this.display.getField("enerRech_Sum"), params:[]},
+      {field:this.display.getField("eleMasSum"), params:[]},
+      {field:this.display.getField("hp_Sum"), params:[]},
+      {field:this.display.getField("def_Sum"), params:[]},
+      {field:this.display.getField("atkSum"), params:[]},
+      {field:this.display.getField("hpSum"), params:[]},
+      {field:this.display.getField("defSum"), params:[]},
+      {field:this.display.getField("characterCount"), params:[]},
+      {field:this.display.getField("location"), params:[]},
+      {field:this.display.getField("deleteBtn"), params:[]},
+    ];
+    data.groups = this.display.getGroups({fieldDefs: data.fields});
+    return {element, data, options};
   }
 }

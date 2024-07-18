@@ -79,22 +79,6 @@ export default {
         "forgeryRarity": 5,
         "weeklyCost": 0
     },
-    "bonus0": {
-        "creditCost": 50000,
-        "forgeryCost": 3,
-        "enemyRarity": 4,
-        "enemyCost": 3,
-        "forgeryRarity": 4,
-        "weeklyCost": 0
-    },
-    "bonus1": {
-        "creditCost": 100000,
-        "forgeryCost": 3,
-        "enemyRarity": 5,
-        "enemyCost": 3,
-        "forgeryRarity": 5,
-        "weeklyCost": 1
-    },
     "circuit0": {
         "creditCost": 10000,
         "forgeryCost": 3,
@@ -109,6 +93,38 @@ export default {
         "enemyRarity": 4,
         "enemyCost": 3,
         "forgeryRarity": 4,
+        "weeklyCost": 1
+    },
+    "bonusA0": {
+        "creditCost": 50000,
+        "forgeryCost": 3,
+        "enemyRarity": 4,
+        "enemyCost": 3,
+        "forgeryRarity": 4,
+        "weeklyCost": 0
+    },
+    "bonusA1": {
+        "creditCost": 100000,
+        "forgeryCost": 3,
+        "enemyRarity": 5,
+        "enemyCost": 3,
+        "forgeryRarity": 5,
+        "weeklyCost": 1
+    },
+    "bonusB0": {
+        "creditCost": 50000,
+        "forgeryCost": 3,
+        "enemyRarity": 4,
+        "enemyCost": 3,
+        "forgeryRarity": 4,
+        "weeklyCost": 0
+    },
+    "bonusB1": {
+        "creditCost": 100000,
+        "forgeryCost": 3,
+        "enemyRarity": 5,
+        "enemyCost": 3,
+        "forgeryRarity": 5,
         "weeklyCost": 1
     }
 };

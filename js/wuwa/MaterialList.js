@@ -31,16 +31,52 @@ export default class MaterialList extends WuWaList
     let countField = this.display.addField("count", {
       label: "Count",
       dynamic: true,
-      value: item => item.count + (item.prevTier || item.converts ? " (+"+ (item.getCraftCount()-item.count) +")" : ""),
+      title: item => {
+        let planMaterials = item.viewer.account.plan.getFullPlan();
+        if(planMaterials.original[item.key])
+        {
+          let wanters = planMaterials.resolved[item.key].wanters.map(wanter => `${Renderer.controllers.get(wanter.src).name} wants ${wanter.amount}`).join(`\r\n`);
+          return (item.prevTier || item.converts
+            ? `Up to ${item.getCraftCount({plan:planMaterials.original})} if you craft.`
+            : ``) + (wanters ? `\r\n`+wanters : ``);
+        }
+        else
+        {
+          return (item.prevTier || item.converts
+            ? `Up to ${item.getCraftCount()} if you craft.`
+            : ``);
+        }
+      },
+      value: item => {
+        let planMaterials = item.viewer.account.plan.getFullPlan();
+        if(planMaterials.original[item.key])
+          return `${item.count} / ${planMaterials.original[item.key]}`;
+        else
+          return item.count + (item.prevTier || item.converts ? " (+"+ (item.getCraftCount()-item.count) +")" : "");
+      },
       edit: item => ({
         target: {item:item, field:"count"}, min:0, max:99999,
       }),
-      //dependencies: item => item.getCraftDependencies(),
+      dependencies: item => {
+        //let planMaterials = item.viewer.account.plan.getFullPlan();
+        return item.getCraftDependencies();
+      },
+      classes: item => {
+        let planMaterials = item.viewer.account.plan.getFullPlan();
+        if(planMaterials.original[item.key])
+          return {
+            "pending": item.count < planMaterials.original[item.key],
+            "insufficient": item.getCraftCount({plan:planMaterials.original}) < planMaterials.original[item.key],
+          };
+        else
+          return {};
+      },
     });
   }
   
   initialize()
   {
+    super.initialize();
     for(let matKey in MaterialData)
     {
       this.createItem({

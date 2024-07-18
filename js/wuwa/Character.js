@@ -5,7 +5,6 @@ import CharacterData from "./gamedata/CharacterData.js";
 
 import { handlebars, Renderer } from "../Renderer.js";
 import Ascendable from "../Ascendable.js";
-import Plannable from "../Plannable.js";
 import WuWaItem from "./WuWaItem.js";
 
 export default class Character extends Ascendable(WuWaItem)
@@ -17,16 +16,16 @@ export default class Character extends Ascendable(WuWaItem)
   static TalentData = ForteData;
   static talentProperty = "forte";
   static talentTypes = {
-    'Basic Attack': {word:"Attack", char:"A", min:1, max:10, dataType:""},
-    'Resonance Skill': {word:"Skill", char:"S", min:1, max:10, dataType:""},
-    'Forte Circuit': {word:"Circuit", char:"C", min:1, max:10, dataType:""},
-    'Resonance Liberation': {word:"Liberation", char:"L", min:1, max:10, dataType:""},
-    'Intro Skill': {word:"Intro", char:"I", min:1, max:10, dataType:""},
-    'Basic Attack Bonus': {word:"Attack", char:"PA", min:0, max:2, dataType:"bonus"},
-    'Resonance Skill Bonus': {word:"Skill", char:"PS", min:0, max:2, dataType:"bonus"},
-    'Forte Circuit Passive': {word:"Circuit", char:"PC", min:0, max:2, dataType:"circuit"},
-    'Resonance Liberation Bonus': {word:"Liberation", char:"PL", min:0, max:2, dataType:"bonus"},
-    'Intro Skill Bonus': {word:"Intro", char:"PI", min:0, max:2, dataType:"bonus"},
+    'Basic Attack': {full:"Basic Attack", word:"Attack", char:"A", min:1, dataType:""},
+    'Resonance Skill': {full:"Resonance Skill", word:"Skill", char:"S", min:1, dataType:""},
+    'Forte Circuit': {full:"Forte Circuit", word:"Circuit", char:"C", min:1, dataType:""},
+    'Resonance Liberation': {full:"Resonance Liberation", word:"Liberation", char:"L", min:1, dataType:""},
+    'Intro Skill': {full:"Intro Skill", word:"Intro", char:"I", min:1, dataType:""},
+    'Basic Attack Bonus': {full:"Basic Attack Bonus", word:"Attack", char:"PA", min:0, dataType:"bonusB"},
+    'Resonance Skill Bonus': {full:"Resonance Skill Bonus", word:"Skill", char:"PS", min:0, dataType:"bonusA"},
+    'Forte Circuit Passive': {full:"Forte Circuit Passive", word:"Circuit", char:"PC", min:0, dataType:"circuit"},
+    'Resonance Liberation Bonus': {full:"Resonance Liberation Bonus", word:"Liberation", char:"PL", min:0, dataType:"bonusA"},
+    'Intro Skill Bonus': {full:"Intro Skill Bonus", word:"Intro", char:"PI", min:0, dataType:"bonusB"},
   };
   
   // Properties determined in-game.

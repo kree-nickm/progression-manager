@@ -1,205 +1,158 @@
+import GenshinLootData from "./gamedata/GenshinLootData.js";
+
 import Character from "./Character.js";
 import Material from "./Material.js";
 
 export default class Traveler extends Character
 {
-  static dontSerialize = super.dontSerialize.concat(["_element","_talentEnemyMatType","_talentMasteryMatTypes","base","variants"]);
+  static dontSerialize = super.dontSerialize.concat(["_element","base","variants"]);
   
   _element = "";
-  _talentEnemyMatType = "";
-  _talentMasteryMatTypes = ["","",""];
   base;
   variants = [];
   
   afterLoad()
   {
-    this.loaded = true;
-    
-    // Retrieve the materials used by this character.
-    this.MaterialList = {};
-    
+    this.materialDefs = {
+      raritySuffix: "RarityCharacter",
+      costSuffix: "CostCharacter",
+      talentRaritySuffix: "Rarity",
+      talentCostSuffix: "Cost",
+      materials: [
+        {
+          property: "mora",
+          key: "Mora",
+        },
+        {
+          property: "gem",
+          prefix: "Brilliant Diamond",
+          group: Material.gemQualities,
+          tiers: [2,3,4,5],
+        },
+        {
+          property: "flora",
+          key: "Windwheel Aster",
+        },
+        {
+          property: "crown",
+          key: "Crown Of Insight",
+        },
+        {
+          property: "enemy",
+          group: GenshinLootData.enemy["Hilichurls"],
+          tiers: [1,2,3],
+        },
+      ],
+      list: this.viewer.lists.MaterialList,
+    };
     if(this.key.endsWith("Anemo"))
     {
       this._element = "Anemo";
-      this._talentEnemyMatType = "Samachurls";
-      this._talentMasteryMatTypes = ["Freedom","Resistance","Ballad"];
-      this.MaterialList.talentEnemy = {
-        '1': this.list.viewer.lists.MaterialList.get("Divining Scroll"),
-        '2': this.list.viewer.lists.MaterialList.get("Sealed Scroll"),
-        '3': this.list.viewer.lists.MaterialList.get("Forbidden Curse Scroll"),
-      };
-      this.MaterialList.mastery = [
-        {
-          '2': this.list.viewer.lists.MaterialList.get("Teachings Of Freedom"),
-          '3': this.list.viewer.lists.MaterialList.get("Guide To Freedom"),
-          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Freedom"),
-        },
-        {
-          '3': this.list.viewer.lists.MaterialList.get("Guide To Resistance"),
-          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Resistance"),
-        },
-        {
-          '3': this.list.viewer.lists.MaterialList.get("Guide To Ballad"),
-          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Ballad"),
-        },
-      ];
-      this.MaterialList.trounce = this.list.viewer.lists.MaterialList.get("Dvalin's Sigh");
+      this.materialDefs.materials.push({
+        property: "trounce",
+        key: "Dvalin's Sigh",
+      });
+      this.materialDefs.materials.push({
+        property: "enemyTalent",
+        group: GenshinLootData.enemy["Samachurls"],
+        tiers: [1,2,3],
+      });
+      this.materialDefs.materials.push({
+        property: "mastery",
+        cycle: [
+          {group:Material.masteryQualities, suffix:"Freedom", tiers:[2,3,4]},
+          {group:Material.masteryQualities, suffix:"Resistance", tiers:[3,4]},
+          {group:Material.masteryQualities, suffix:"Ballad", tiers:[3,4]},
+        ],
+      });
     }
     else if(this.key.endsWith("Geo"))
     {
       this._element = "Geo";
-      this._talentEnemyMatType = "Hili.Archers";
-      this._talentMasteryMatTypes = ["Prosperity","Diligence","Gold"];
-      this.MaterialList.talentEnemy = {
-        '1': this.list.viewer.lists.MaterialList.get("Firm Arrowhead"),
-        '2': this.list.viewer.lists.MaterialList.get("Sharp Arrowhead"),
-        '3': this.list.viewer.lists.MaterialList.get("Weathered Arrowhead"),
-      };
-      this.MaterialList.mastery = [
-        {
-          '2': this.list.viewer.lists.MaterialList.get("Teachings Of Prosperity"),
-          '3': this.list.viewer.lists.MaterialList.get("Guide To Prosperity"),
-          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Prosperity"),
-        },
-        {
-          '3': this.list.viewer.lists.MaterialList.get("Guide To Diligence"),
-          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Diligence"),
-        },
-        {
-          '3': this.list.viewer.lists.MaterialList.get("Guide To Gold"),
-          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Gold"),
-        },
-      ];
-      this.MaterialList.trounce = this.list.viewer.lists.MaterialList.get("Tail Of Boreas");
+      this.materialDefs.materials.push({
+        property: "trounce",
+        key: "Tail Of Boreas",
+      });
+      this.materialDefs.materials.push({
+        property: "enemyTalent",
+        group: GenshinLootData.enemy["Hili.Archers"],
+        tiers: [1,2,3],
+      });
+      this.materialDefs.materials.push({
+        property: "mastery",
+        cycle: [
+          {group:Material.masteryQualities, suffix:"Prosperity", tiers:[2,3,4]},
+          {group:Material.masteryQualities, suffix:"Diligence", tiers:[3,4]},
+          {group:Material.masteryQualities, suffix:"Gold", tiers:[3,4]},
+        ],
+      });
     }
     else if(this.key.endsWith("Electro"))
     {
       this._element = "Electro";
-      this._talentEnemyMatType = "Nobushi";
-      this._talentMasteryMatTypes = ["Transience","Elegance","Light"];
-      this.MaterialList.talentEnemy = {
-        '1': this.list.viewer.lists.MaterialList.get("Old Handguard"),
-        '2': this.list.viewer.lists.MaterialList.get("Kageuchi Handguard"),
-        '3': this.list.viewer.lists.MaterialList.get("Famed Handguard"),
-      };
-      this.MaterialList.mastery = [
-        {
-          '2': this.list.viewer.lists.MaterialList.get("Teachings Of Transience"),
-          '3': this.list.viewer.lists.MaterialList.get("Guide To Transience"),
-          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Transience"),
-        },
-        {
-          '3': this.list.viewer.lists.MaterialList.get("Guide To Elegance"),
-          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Elegance"),
-        },
-        {
-          '3': this.list.viewer.lists.MaterialList.get("Guide To Light"),
-          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Light"),
-        },
-      ];
-      this.MaterialList.trounce = this.list.viewer.lists.MaterialList.get("Dragon Lord's Crown");
+      this.materialDefs.materials.push({
+        property: "trounce",
+        key: "Dragon Lord's Crown",
+      });
+      this.materialDefs.materials.push({
+        property: "enemyTalent",
+        group: GenshinLootData.enemy["Nobushi"],
+        tiers: [1,2,3],
+      });
+      this.materialDefs.materials.push({
+        property: "mastery",
+        cycle: [
+          {group:Material.masteryQualities, suffix:"Transience", tiers:[2,3,4]},
+          {group:Material.masteryQualities, suffix:"Elegance", tiers:[3,4]},
+          {group:Material.masteryQualities, suffix:"Light", tiers:[3,4]},
+        ],
+      });
     }
     else if(this.key.endsWith("Dendro"))
     {
       this._element = "Dendro";
-      this._talentEnemyMatType = "Fungi";
-      this._talentMasteryMatTypes = ["Admonition","Ingenuity","Praxis"];
-      this.MaterialList.talentEnemy = {
-        '1': this.list.viewer.lists.MaterialList.get("Fungal Spores"),
-        '2': this.list.viewer.lists.MaterialList.get("Luminescent Pollen"),
-        '3': this.list.viewer.lists.MaterialList.get("Crystalline Cyst Dust"),
-      };
-      this.MaterialList.mastery = [
-        {
-          '2': this.list.viewer.lists.MaterialList.get("Teachings Of Admonition"),
-          '3': this.list.viewer.lists.MaterialList.get("Guide To Admonition"),
-          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Admonition"),
-        },
-        {
-          '3': this.list.viewer.lists.MaterialList.get("Guide To Ingenuity"),
-          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Ingenuity"),
-        },
-        {
-          '3': this.list.viewer.lists.MaterialList.get("Guide To Praxis"),
-          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Praxis"),
-        },
-      ];
-      this.MaterialList.trounce = this.list.viewer.lists.MaterialList.get("Mudra Of The Malefic General");
+      this.materialDefs.materials.push({
+        property: "trounce",
+        key: "Mudra Of The Malefic General",
+      });
+      this.materialDefs.materials.push({
+        property: "enemyTalent",
+        group: GenshinLootData.enemy["Fungi"],
+        tiers: [1,2,3],
+      });
+      this.materialDefs.materials.push({
+        property: "mastery",
+        cycle: [
+          {group:Material.masteryQualities, suffix:"Admonition", tiers:[2,3,4]},
+          {group:Material.masteryQualities, suffix:"Ingenuity", tiers:[3,4]},
+          {group:Material.masteryQualities, suffix:"Praxis", tiers:[3,4]},
+        ],
+      });
     }
     else if(this.key.endsWith("Hydro"))
     {
       this._element = "Hydro";
-      this._talentEnemyMatType = "Fontemer";
-      this._talentMasteryMatTypes = ["Equity","Justice","Order"];
-      this.MaterialList.talentEnemy = {
-        '1': this.list.viewer.lists.MaterialList.get("Transoceanic Pearl"),
-        '2': this.list.viewer.lists.MaterialList.get("Transoceanic Chunk"),
-        '3': this.list.viewer.lists.MaterialList.get("Xenochromatic Crystal"),
-      };
-      this.MaterialList.mastery = [
-        {
-          '2': this.list.viewer.lists.MaterialList.get("Teachings Of Equity"),
-          '3': this.list.viewer.lists.MaterialList.get("Guide To Equity"),
-          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Equity"),
-        },
-        {
-          '3': this.list.viewer.lists.MaterialList.get("Guide To Justice"),
-          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Justice"),
-        },
-        {
-          '3': this.list.viewer.lists.MaterialList.get("Guide To Order"),
-          '4': this.list.viewer.lists.MaterialList.get("Philosophies Of Order"),
-        },
-      ];
-      this.MaterialList.trounce = this.list.viewer.lists.MaterialList.get("Worldspan Fern");
-    }
-    else
-    {
-      this.MaterialList.gem = {
-        '2': this.list.viewer.lists.MaterialList.get("Brilliant Diamond" + Material.gemQualities[2]),
-        '3': this.list.viewer.lists.MaterialList.get("Brilliant Diamond" + Material.gemQualities[3]),
-        '4': this.list.viewer.lists.MaterialList.get("Brilliant Diamond" + Material.gemQualities[4]),
-        '5': this.list.viewer.lists.MaterialList.get("Brilliant Diamond" + Material.gemQualities[5]),
-      };
-      this.MaterialList.flower = this.list.viewer.lists.MaterialList.get("Windwheel Aster");
-      this.MaterialList.enemy = {
-        '1': this.list.viewer.lists.MaterialList.get("Damaged Mask"),
-        '2': this.list.viewer.lists.MaterialList.get("Stained Mask"),
-        '3': this.list.viewer.lists.MaterialList.get("Ominous Mask"),
-      };
-      
-      // Inform those materials that this character uses them.
-      for(let i in this.MaterialList.gem)
-        this.MaterialList.gem[i].addUser(this);
-      
-      for(let i in this.MaterialList.enemy)
-        this.MaterialList.enemy[i].addUser(this);
-      
-      this.MaterialList.flower.addUser(this);
+      this.materialDefs.materials.push({
+        property: "trounce",
+        key: "Worldspan Fern",
+      });
+      this.materialDefs.materials.push({
+        property: "enemyTalent",
+        group: GenshinLootData.enemy["Fontemer"],
+        tiers: [1,2,3],
+      });
+      this.materialDefs.materials.push({
+        property: "mastery",
+        cycle: [
+          {group:Material.masteryQualities, suffix:"Equity", tiers:[2,3,4]},
+          {group:Material.masteryQualities, suffix:"Justice", tiers:[3,4]},
+          {group:Material.masteryQualities, suffix:"Order", tiers:[3,4]},
+        ],
+      });
     }
     
-    if(this.element)
-    {
-      this.MaterialList.crown = this.list.viewer.lists.MaterialList.get("Crown Of Insight");
-      this.MaterialList.mora = this.list.viewer.lists.MaterialList.get("Mora");
-      
-      for(let i in this.MaterialList.talentEnemy)
-        this.MaterialList.talentEnemy[i].addUser(this);
-        
-      for(let m of this.MaterialList.mastery)
-        for(let i in m)
-        {
-          if(m[i])
-            m[i].addUser(this);
-          else
-            console.error(`${this.name} has a null key '${i}'`, m);
-        }
-      
-      this.MaterialList.trounce.addUser(this);
-      this.MaterialList.crown.addUser(this);
-    }
-    
-    return this.loaded;
+    super.afterLoad();
+    return true;
   }
   
   get weapon()
@@ -325,51 +278,12 @@ export default class Traveler extends Character
   get enemyMatType(){ return "Hilichurls"; }
   get image(){ return this.variants?.[0]?.image??super.image; }
   
-  getMat(type, ascension=this.ascension)
-  {
-    if(type == "gem")
-      return this.base ? this.base.MaterialList?.gem[this.getPhase(ascension).ascendMatGemQuality] : this.MaterialList?.gem[this.getPhase(ascension).ascendMatGemQuality];
-    else if(type == "boss")
-      return null;
-    else if(type == "flower")
-      return this.base ? this.base.MaterialList?.flower : this.MaterialList?.flower;
-    else if(type == "enemy")
-      return this.base ? this.base.MaterialList?.enemy[this.getPhase(ascension).ascendMatEnemyQuality] : this.MaterialList?.enemy[this.getPhase(ascension).ascendMatEnemyQuality];
-    else
-      return null;
-  }
-  
   getTalentMat(type, talent)
   {
-    if(type == "mastery")
-      return this.MaterialList?.mastery?.[((isNaN(talent)?this.talent[talent]:talent)-1)%3]?.[this.getTalent(talent).matMasteryQuality] ?? null;
-    else if(type == "enemy")
-      return this.MaterialList?.talentEnemy?.[this.getTalent(talent).matEnemyQuality] ?? null;
-    else if(type == "trounce")
-      return this.MaterialList?.trounce;
-    else if(type == "crown")
-      return this.MaterialList?.crown;
+    if(type == "enemy")
+      return super.getTalentMat("enemyTalent", talent);
     else
-      return null;
-  }
-  
-  getTalentMatType(type, talent)
-  {
-    if(type == "mastery")
-    {
-      if(isNaN(talent))
-        return this.base ? this._talentMasteryMatTypes[(this.talent[talent]-1)%3] : "";
-      else
-        return this.base ? this._talentMasteryMatTypes[(talent-1)%3] : "";
-    }
-    else if(type == "enemy")
-      return this.base ? this._talentEnemyMatType : "";
-    else if(type == "trounce")
-      return this.base ? this.MaterialList?.trounce.name : "";
-    else if(type == "crown")
-      return "Crown";
-    else
-      return "";
+      return super.getTalentMat(type, talent);
   }
   
   onRender(element)

@@ -53,11 +53,15 @@ export default class Account
         if(list in source)
           this.lists[list] = this.viewer.listClasses[list].fromJSON(source[list], {viewer:this.viewer});
         else if(!this.lists[list])
+        {
           this.lists[list] = new this.viewer.listClasses[list](this.viewer);
+          this.lists[list].initialize();
+        }
       }
       catch(x)
       {
         console.error(`Unable to load data for account "${this.id}", fatal error trying to load list "${list}".`, {listData:source[list]});
+        console.error(x);
         this.errors = true;
       }
     }

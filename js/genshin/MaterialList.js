@@ -137,6 +137,8 @@ export default class MaterialList extends GenshinList
         classes: {"display-img": true, ["rarity-"+item.rarity]: true},
       }),
     });
+    
+    Material.setupDisplay(this.display);
   }
   
   initialize()
@@ -238,7 +240,15 @@ export default class MaterialList extends GenshinList
       return {element, data, options};
     }
     else
-      return super.prepareRender(element, data, options);
+    {
+      data.fields = [
+        {field:this.display.getField("name"), params:[]},
+        {field:this.display.getField("count"), params:[]},
+        {field:this.display.getField("source"), params:[]},
+        {field:this.display.getField("users"), params:[]},
+      ];
+      return {element, data, options};
+    }
   }
   
   async render(force=false)

@@ -21,20 +21,6 @@ export default class WeaponList extends GenshinList
   
   setupDisplay()
   {
-    let favorite = this.display.addField("favorite", {
-      label: "F",
-      sort: {generic: {type:"boolean",property:"favorite"}},
-      dynamic: true,
-      title: item => "Mark as Favorite",
-      edit: item => ({
-        target: {item, field:"favorite"},
-        type: "checkbox",
-        value: item.favorite,
-        trueClasses: ["fa-solid","fa-circle-check"],
-        falseClasses: [],
-      }),
-    });
-    
     let name = this.display.addField("name", {
       label: "Name",
       popup: item => item,
@@ -108,122 +94,11 @@ export default class WeaponList extends GenshinList
       }),
     });
     
-    let lock = this.display.addField("lock", {
-      label: "L",
-      title: item => "Is Locked?",
-      sort: {generic: {type:"boolean", property:"lock"}},
-      dynamic: true,
-      edit: item => ({
-        target: {item, field:"lock"},
-        type: "checkbox",
-        value: item.lock,
-        trueClasses: ["fa-solid","fa-lock"],
-        falseClasses: [],
-      }),
-    });
-    
-    let ascension = this.display.addField("ascension", {
-      label: "",
-      sort: {generic: {type:"number", property:"ascension"}},
-      dynamic: true,
-      value: item => item.ascension,
-      edit: item => ({target: {item, field:"ascension"}, min:0, max:6}),
-      dependencies: item => [
-        {item:item.getMat('forgery'), field:"count"},
-        {item:item.getMat('strong'), field:"count"},
-        {item:item.getMat('weak'), field:"count"},
-      ].concat(item.getMat('forgery').getCraftDependencies()).concat(item.getMat('strong').getCraftDependencies()).concat(item.getMat('weak').getCraftDependencies()),
-      classes: item => ({
-        'at-max': item.ascension >= 6,
-      }),
-    });
-    
-    let level = this.display.addField("level", {
-      label: "Lvl",
-      sort: {generic: {type:"number", property:"level"}},
-      dynamic: true,
-      value: item => item.level,
-      edit: item => ({target: {item, field:"level"}, min:1, max:90}),
-      classes: item => ({
-        "at-max": item.level >= item.levelCap,
-      }),
-      dependencies: item => [
-        {item:item.getMat('forgery'), field:"count"},
-        {item:item.getMat('strong'), field:"count"},
-        {item:item.getMat('weak'), field:"count"},
-        {item, field:"ascension"},
-        item.getMat('forgery').days ? {item:this.viewer, field:"today"} : {},
-      ].concat(item.getMat('forgery').getCraftDependencies()).concat(item.getMat('strong').getCraftDependencies()).concat(item.getMat('weak').getCraftDependencies()),
-    });
-    
     let iconLookup = {
       'forgery': `<i class="fa-solid fa-dungeon"></i>`,
       'strong': `<i class="fa-solid fa-skull fa-lg"></i>`,
       'weak': `<i class="fa-solid fa-skull fa-sm"></i>`,
     };
-    let mats = [
-      {p:"forgery",l:"Forgery Rewards"},
-      {p:"strong",l:"Strong Drops"},
-      {p:"weak",l:"Weak Drops"},
-      {p:"mora",l:"Mora"},
-    ];
-    let ascGroup = {label:"Ascension Materials"};
-    for(let phase of [undefined,0,1,2,3,4,5])
-    {
-      for(let m of mats)
-      {
-        let ascMat = this.display.addField(m.p+"Mat"+(phase??""), {
-          group: ascGroup,
-          label: iconLookup[m.p],
-          labelTitle: m.l,
-          sort: isNaN(phase) ? {generic: {type:"string", property:m.p+'MatType'}} : undefined,
-          columnClasses: ["ascension-materials"],
-          tags: isNaN(phase) && m.l != "Mora" ? undefined : ["detailsOnly"],
-          dynamic: true,
-          value: item => item.getMat(m.p,phase) && item.getMatCost(m.p,phase) ? item.getMat(m.p,phase).getFieldValue(item.getMatCost(m.p,phase), this.viewer.settings.preferences.listDisplay=='1') : "",
-          title: item => item.getMat(m.p,phase)?.getFullSource() ?? "",
-          dependencies: item => [
-            {item, field:"ascension"},
-            {item:item.viewer.lists.MaterialList.get("Mora"), field:"count"},
-            item.getMat(m.p,phase).days ? {item:this.viewer, field:"today"} : {},
-          ].concat(item.getMat(m.p,phase).getCraftDependencies()),
-        });
-      }
-      if(!isNaN(phase))
-      {
-        let ascPhase = this.display.addField("ascension"+phase, {
-          label: "Phs"+phase,
-          tags: ["detailsOnly"],
-          dynamic: true,
-          value: item => `${phase} ➤ ${phase+1}`,
-          dependencies: item => [
-            {item:item.getMat('forgery',phase), field:"count"},
-            {item:item.getMat('strong',phase), field:"count"},
-            {item:item.getMat('weak',phase), field:"count"},
-            {item:item.getMat('mora',phase), field:"count"},
-            {item, field:"ascension"},
-          ],
-          button: item => {
-            if(phase == item.ascension)
-            {
-              if(item.canAscend(false))
-              {
-                return {
-                  icon: "fa-solid fa-circle-up",
-                  action: item.ascend.bind(item),
-                };
-              }
-              else
-              {
-                return {
-                  icon: "fa-solid fa-circle-up",
-                };
-              }
-            }
-          },
-        });
-      }
-    }
     
     let locationField = this.display.addField("location", {
       label: "User",
@@ -270,24 +145,6 @@ export default class WeaponList extends GenshinList
       dependencies: item => [
         {item:item.list.viewer.lists.CharacterList, field:"list"},
       ],
-    });
-    
-    let deleteBtn = this.display.addField("deleteBtn", {
-      label: "D",
-      dynamic: true,
-      dependencies: item => [
-        {item, field:"lock"},
-        {item, field:"location"},
-      ],
-      title: item => (item.lock || item.location) ? "Unlock/unequip the weapon before deleting it." : "Delete this weapon from the list.",
-      button: item => (item.lock || item.location) ? {icon: "fa-solid fa-trash-can"} : {
-        icon: "fa-solid fa-trash-can",
-        action: event => {
-          event.stopPropagation();
-          item.unlink();
-          item.list.viewer.queueStore();
-        },
-      },
     });
     
     let passiveField = this.display.addField("passive", {
@@ -338,33 +195,7 @@ export default class WeaponList extends GenshinList
       ],
     });
     
-    this.display.addField("planAscension", {
-      tags: ["detailsOnly"],
-      dynamic: true,
-      value: item => item.wishlist.ascension ?? "-",
-      edit: item => ({target: {item, field:"wishlist.ascension"}}),
-      dependencies: item => [
-        {item:item, field:"wishlist"},
-        {item:item, field:"ascension"},
-      ],
-    });
-    
-    this.display.addField("planMaterials", {
-      tags: ["detailsOnly"],
-      dynamic: true,
-      value: (item,attr) => {
-        let value = [];
-        item.viewer.account.plan.addSubPlan(item, item.getPlanMaterials());
-        let materials = item.viewer.account.plan.getSubPlan(item);
-        for(let matKey in materials)
-          value.push({classes:{'plan-material':true}, value:this.viewer.lists.MaterialList.get(matKey).getFieldValue(materials[matKey], this.viewer.settings.preferences.materialList=='1', {plan:materials})});
-        return value;
-      },
-      dependencies: (item,attr) => [
-        {item:item, field:"wishlist"},
-        {item:item, field:"ascension"},
-      ],
-    });
+    Weapon.setupDisplay(this.display);
   }
   
   clear()
@@ -393,5 +224,24 @@ export default class WeaponList extends GenshinList
         }),
       },
     };
+  }
+  
+  prepareRender(element, data, options)
+  {
+    data.fields = [];
+    data.fields.push({field:this.display.getField("favorite"), params:[]});
+    data.fields.push({field:this.display.getField("name"), params:[]});
+    data.fields.push({field:this.display.getField("type"), params:[]});
+    data.fields.push({field:this.display.getField("lock"), params:[]});
+    data.fields.push({field:this.display.getField("level"), params:[]});
+    data.fields.push({field:this.display.getField("ascension"), params:[]});
+    data.fields.push({field:this.display.getField("refinement"), params:[]});
+    data.fields.push({field:this.display.getField("ascensionMaterial"), params:['forgery']});
+    data.fields.push({field:this.display.getField("ascensionMaterial"), params:['strong']});
+    data.fields.push({field:this.display.getField("ascensionMaterial"), params:['weak']});
+    data.fields.push({field:this.display.getField("location"), params:[]});
+    data.fields.push({field:this.display.getField("deleteBtn"), params:[]});
+    data.groups = this.display.getGroups({fieldDefs: data.fields});
+    return {element, data, options};
   }
 }

@@ -81,34 +81,34 @@ export default class Material extends WuWaItem
       let note = [];
       if(item instanceof Character)
       {
-        if(this == item.getMat('gem') && item.getPhase().ascendMatGemCount)
-          amount.push(item.getPhase().ascendMatGemCount);
+        if(this == item.getMat('gem') && item.getPhase().gemCostCharacter)
+          amount.push(item.getPhase().gemCostCharacter);
         
-        if(this == item.getMat('boss') && item.getPhase().ascendMatBossCount)
-          amount.push(item.getPhase().ascendMatBossCount);
+        if(this == item.getMat('boss') && item.getPhase().bossCostCharacter)
+          amount.push(item.getPhase().bossCostCharacter);
         
-        if(this == item.getMat('flower') && item.getPhase().ascendMatFlowerCount)
-          amount.push(item.getPhase().ascendMatFlowerCount);
+        if(this == item.getMat('flower') && item.getPhase().floraCostCharacter)
+          amount.push(item.getPhase().floraCostCharacter);
         
-        if(this == item.getMat('enemy') && item.getPhase().ascendMatEnemyCount)
-          amount.push(item.getPhase().ascendMatEnemyCount);
+        if(this == item.getMat('enemy') && item.getPhase().enemyCostCharacter)
+          amount.push(item.getPhase().enemyCostCharacter);
         
-        if(this == item.getTalentMat('enemy','auto') && item.getTalent('auto').matEnemyCount)
-          amount.push(item.getTalent('auto').matEnemyCount);
-        if(this == item.getTalentMat('enemy','skill') && item.getTalent('skill').matEnemyCount)
-          amount.push(item.getTalent('skill').matEnemyCount);
-        if(this == item.getTalentMat('enemy','burst') && item.getTalent('burst').matEnemyCount)
-          amount.push(item.getTalent('burst').matEnemyCount);
+        if(this == item.getTalentMat('enemy','auto') && item.getTalent('auto').enemyCost)
+          amount.push(item.getTalent('auto').enemyCost);
+        if(this == item.getTalentMat('enemy','skill') && item.getTalent('skill').enemyCost)
+          amount.push(item.getTalent('skill').enemyCost);
+        if(this == item.getTalentMat('enemy','burst') && item.getTalent('burst').enemyCost)
+          amount.push(item.getTalent('burst').enemyCost);
         
-        if(this == item.getTalentMat('mastery','auto') && item.getTalent('auto').matMasteryCount)
-          amount.push(item.getTalent('auto').matMasteryCount);
-        if(this == item.getTalentMat('mastery','skill') && item.getTalent('skill').matMasteryCount)
-          amount.push(item.getTalent('skill').matMasteryCount);
-        if(this == item.getTalentMat('mastery','burst') && item.getTalent('burst').matMasteryCount)
-          amount.push(item.getTalent('burst').matMasteryCount);
+        if(this == item.getTalentMat('mastery','auto') && item.getTalent('auto').masteryCost)
+          amount.push(item.getTalent('auto').masteryCost);
+        if(this == item.getTalentMat('mastery','skill') && item.getTalent('skill').masteryCost)
+          amount.push(item.getTalent('skill').masteryCost);
+        if(this == item.getTalentMat('mastery','burst') && item.getTalent('burst').masteryCost)
+          amount.push(item.getTalent('burst').masteryCost);
         
         if(this == item.MaterialList.trounce)
-          amount.push(item.getTalent('auto').matTrounceCount + item.getTalent('skill').matTrounceCount + item.getTalent('burst').matTrounceCount);
+          amount.push(item.getTalent('auto').trounceCost + item.getTalent('skill').trounceCost + item.getTalent('burst').trounceCost);
         
         if(this.type == "mastery" || this.type == "trounce")
         {

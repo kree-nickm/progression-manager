@@ -73,18 +73,7 @@ export default class TeamList extends GenshinList {
       }),
     });
     
-    this.display.addField("delete", {
-      label: "<i class='fa-solid fa-trash-can'></i>",
-      dynamic: true,
-      button: item => ({
-        icon: "fa-solid fa-trash-can",
-        action: event => {
-          event.stopPropagation();
-          item.unlink();
-          item.list.viewer.queueStore();
-        },
-      }),
-    });
+    Team.setupDisplay(this.display);
   }
   
   prepareRender(element, data, options)
@@ -95,7 +84,7 @@ export default class TeamList extends GenshinList {
       {field:this.display.getField("memberText"), params:[1]},
       {field:this.display.getField("memberText"), params:[2]},
       {field:this.display.getField("memberText"), params:[3]},
-      {field:this.display.getField("delete"), params:[]},
+      {field:this.display.getField("deleteBtn"), params:[]},
     ];
     return {element, data, options};
   }
