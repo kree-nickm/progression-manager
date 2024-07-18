@@ -27,7 +27,7 @@ Features include:
   * Allow you to see all of that information for a "preview": an alternate gear set or upgraded stats alongside your current gear and stats, and use that to decide which gear you prefer and whether certain upgrades are worth it. The alternate gear can be gear that you own, or theoretical pieces that are equal to what you have, but from a different artifact set or with different artifact primary stats.
   * _(Planned Feature)_ Allow you to import combat simulations that have been exported from [gcsim](#alternatives), and use that to predict changes to your team's DPS when you preview alternate gear and stats, rather than only seeing individual motion value changes.
 * Allow you to set up teams, and see how the buffs provided by each team members' abilities/artifacts/weapons will affect all of the aforementioned statistics.
-* _(Work-In-Progress)_ Set targets for your character/gear progression, so you can quickly see all of the things you need to spend resin on.
+* Set targets for your character/gear progression, so you can quickly see all of the things you need to spend resin on.
 * _(Planned Feature)_ Sync your data to Google Drive so it's easier to back up and transfer between devices.
 
 ## Alternatives
@@ -41,7 +41,7 @@ There are many other Genshin Impact managers that I am aware of, which serve sim
 * [Akasha](https://akasha.cv): Uses Enka and has the same features, but also lets you compare your characters to other players' characters who use the site.
 
 # Wuthering Waves
-Support for Wuthing Waves is still a major work-in-progress. My goal is to have all of the same features as the Genshin Impact version, but it will take a while to get there. At the moment it only tracks characters and weapons, along with the materials needed by them.
+Support for Wuthing Waves is still a major work-in-progress. My goal is to have all of the same features as the Genshin Impact version, but it will take a while to get there. At the moment it only tracks characters and weapons, along with the materials needed by them. I fear that unless someone can make a screen-reader for Wuthering Waves similar to Inventory Kamera for Genshin, this app will be too cumbersome to use for anything else.
 
 # Palworld
-The Palworld Manager is mostly just a proof-of-concept for multi-game support, before WuWa came along. Its features are extremely minimal and will likely not be expanded upon. I don't recommend using it, but if you find it useful, then go for it.
+Outdated, and will likely not be updated any time soon, unless my friends want to start our Palworld server back up. The Palworld Manager is mostly just a proof-of-concept for multi-game support, before WuWa came along. Its features are extremely minimal and will likely not be expanded upon. I will probably end up removing it entirely, just because it makes the rest of the app look bad.
