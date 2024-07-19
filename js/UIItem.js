@@ -36,7 +36,7 @@ export default class UIItem extends UIController {
     if(!this.unique)
     {
       display.addField("lock", {
-        label: "L",
+        label: "<i class='fa-solid fa-lock'></i>",
         title: item => "Is Locked?",
         sort: {generic: {type:"boolean", property:"lock"}},
         dynamic: true,

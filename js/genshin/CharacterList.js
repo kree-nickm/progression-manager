@@ -845,7 +845,7 @@ export default class CharacterList extends GenshinList
     data.fields.push({field:this.display.getField("talent"), params:['burst']});
     data.fields.push({field:this.display.getField("ascensionMaterial"), params:['gem']});
     data.fields.push({field:this.display.getField("ascensionMaterial"), params:['boss']});
-    data.fields.push({field:this.display.getField("ascensionMaterial"), params:['flower']});
+    data.fields.push({field:this.display.getField("ascensionMaterial"), params:['flora']});
     data.fields.push({field:this.display.getField("ascensionMaterial"), params:['enemy']});
     data.fields.push({field:this.display.getField("talentMaterial"), params:['mastery', 'auto']});
     data.fields.push({field:this.display.getField("talentMaterial"), params:['enemy', 'auto']});
@@ -895,10 +895,12 @@ export default class CharacterList extends GenshinList
           
           let modal = new bootstrap.Modal(modalElement);
           modal.show();
-          modalElement.addEventListener("hide.bs.modal", event => {
+          modalElement.addEventListener("hide.bs.modal", async event => {
             if(event.explicitOriginalTarget?.classList.contains("popup-ok-btn"))
             {
               let characters = Array.from(modalElement.querySelector("select.character-filter").selectedOptions).map(optionElement => Renderer.controllers.get(optionElement.value));
+              for(let character of characters)
+                await character?.importDetails();
               let showcase = window.open("showcase.html", "_blank");
               showcase.addEventListener("DOMContentLoaded", async event => {
                 document.head.querySelectorAll('link, style').forEach(htmlElement => {

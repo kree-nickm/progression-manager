@@ -95,6 +95,7 @@ const Equipment = (SuperClass) => class extends SuperClass {
         this.character = null;
       }
     }
+    return true;
   }
   
   canEquip(character)

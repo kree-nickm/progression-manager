@@ -2,10 +2,11 @@ import GenshinArtifactData from "./gamedata/GenshinArtifactData.js";
 import GenshinArtifactStats from "./gamedata/GenshinArtifactStats.js";
 
 import GenshinItem from "./GenshinItem.js";
+import Equipment from "../Equipment.js";
 
-export default class Artifact extends GenshinItem
+export default class Artifact extends Equipment(GenshinItem)
 {
-  static dontSerialize = super.dontSerialize.concat(["character","wanters","substatRolls"]);
+  static dontSerialize = super.dontSerialize.concat(["wanters","substatRolls"]);
   static goodProperties = ["setKey","slotKey","level","rarity","mainStatKey","location","lock","substats"];
   static templateName = "genshin/renderArtifactAsPopup";
   static shorthandStat = {
@@ -54,8 +55,8 @@ export default class Artifact extends GenshinItem
   
   id;
   isPreview;
+  characterList = window.viewer.lists.CharacterList;
   
-  character = null;
   wanters = [];
   substatRolls = {};
   
@@ -71,49 +72,10 @@ export default class Artifact extends GenshinItem
   {
     if(!super.afterUpdate(field, value, action, options))
       return false;
-    if(field.string == "location")
-    {
-      //window.DEBUG?.log(`Setting "${this.name}" location to "${value}".`);
-      if(value)
-      {
-        if(this.list?.viewer?.lists?.CharacterList)
-        {
-          let newCharacter = this.list.viewer.lists.CharacterList.get(value);
-          if(newCharacter)
-          {
-            //window.DEBUG?.log({location:this.location, value});
-            newCharacter.equipItem(this);
-            //window.DEBUG?.log({locationSupposed:newCharacter.key, locationActual:this.location});
-          }
-          else
-          {
-            console.warn(`Cannot equip ${this.name} (${this.setName} ${this.slotKey}) to non-existent character "${this.location}".` + (this.list.importing ? ` GOOD data may have been exported incorrectly; consider reporting a bug to the developer of the export tool.` : ""));
-            field.object[field.property] = "";
-            this.character = null;
-          }
-        }
-        else
-        {
-          console.warn(`Cannot equip ${this.name} to character "${this.location}" because character list is inaccessible.`);
-          field.object[field.property] = "";
-          this.character = null;
-        }
-      }
-      else
-      {
-        // Just unequip from current character, if any.
-        if(this.character)
-          this.character.update(this.slotKey+'Artifact', null, "replace");
-        this.character = null;
-      }
-    }
-    else
-    {
-      if(!this.importing && this.substats && (field.string == "substats" || field.string == "level" || field.string == "rarity"))
-        this.determineRolls();
-      this.clearMemory("storedStats", "ratings");
-      this.clearMemory("storedStats", "characters");
-    }
+    if(!this.importing && this.substats && (field.string == "substats" || field.string == "level" || field.string == "rarity"))
+      this.determineRolls();
+    this.clearMemory("storedStats", "ratings");
+    this.clearMemory("storedStats", "characters");
     if(field.string != "lock")
       document.querySelector("#artifactEvaluateBtn")?.classList.add("show-notice");
   }
@@ -138,6 +100,8 @@ export default class Artifact extends GenshinItem
     return GenshinArtifactStats[this.rarity].mainstats[key][this.level];
   }
   get releaseTimestamp(){ return GenshinArtifactData[this.key]?.release ? Date.parse(GenshinArtifactData[this.key]?.release) : 0; }
+  get equipProperty() { return this.slotKey + "Artifact"; }
+  
   get isCutContent(){ return GenshinArtifactData[this.key]?.deletedContent; }
   get isFodder()
   {
@@ -439,11 +403,5 @@ export default class Artifact extends GenshinItem
     if(!max)
       return 0;
     return ((score.mainScore * levelFactor / 8) + score.subScore) / max * score.deficitERFactor;
-  }
-  
-  unlink(options)
-  {
-    this.update("location", "");
-    super.unlink(options);
   }
 }

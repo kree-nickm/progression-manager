@@ -5,24 +5,22 @@ import GenshinPhaseData from "./gamedata/GenshinPhaseData.js";
 
 import GenshinItem from "./GenshinItem.js";
 import Ascendable from "../Ascendable.js";
+import Equipment from "../Equipment.js";
 
-export default class Weapon extends Ascendable(GenshinItem)
+export default class Weapon extends Equipment(Ascendable(GenshinItem))
 {
-  static dontSerialize = super.dontSerialize.concat(["character"]);
+  //static dontSerialize = super.dontSerialize.concat([]);
   static goodProperties = ["key","level","ascension","refinement","location","lock"];
   static templateName = "genshin/renderWeaponAsPopup";
-  
   static AscensionData = GenshinPhaseData;
   
   key = "";
   _level = 1;
   _ascension = 0;
   _refinement = 1;
-  location = "";
   
   isPreview = false;
-  
-  character = null;
+  characterList = window.viewer.lists.CharacterList;
   
   afterLoad()
   {
@@ -76,37 +74,7 @@ export default class Weapon extends Ascendable(GenshinItem)
   {
     if(!super.afterUpdate(field, value, action, options))
       return false;
-    if(field.string == "location" && !this.isPreview)
-    {
-      if(value)
-      {
-        if(this.list?.viewer?.lists?.CharacterList)
-        {
-          let newCharacter = this.list.viewer.lists.CharacterList.get(value);
-          if(newCharacter)
-            newCharacter.equipItem(this);
-          else
-          {
-            console.warn(`Cannot equip ${this.name} to non-existent character "${this.location}".`);
-            field.object[field.property] = "";
-            this.character = null;
-          }
-        }
-        else
-        {
-          console.warn(`Cannot equip ${this.name} to character "${this.location}" because character list is inaccessible.`);
-          field.object[field.property] = "";
-          this.character = null;
-        }
-      }
-      else
-      {
-        if(this.character)
-          this.character.update("weapon", null, "replace");
-        this.character = null;
-      }
-    }
-    else if(field.string == "refinement")
+    if(field.string == "refinement")
     {
       this.clearMemory("code");
     }
@@ -128,6 +96,12 @@ export default class Weapon extends Ascendable(GenshinItem)
   get baseATK(){ return GenshinWeaponData[this.key]?.baseATK; }
   get image(){ return GenshinWeaponData[this.key]?.imgs[this.ascension > 1 ? 1 : 0]; }
   get releaseTimestamp(){ return GenshinWeaponData[this.key]?.release ? Date.parse(GenshinWeaponData[this.key]?.release) : 0; }
+  get equipProperty() { return "weapon"; }
+  
+  canEquip(character)
+  {
+    return this.type == character.weaponType;
+  }
   
   getPassive(ref=this.refinement)
   {
@@ -200,11 +174,5 @@ export default class Weapon extends Ascendable(GenshinItem)
     else
       result = remembered;
     return result;
-  }
-  
-  unlink(options)
-  {
-    this.update("location", "");
-    super.unlink(options);
   }
 }

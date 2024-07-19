@@ -288,53 +288,6 @@ export default class ArtifactList extends GenshinList
       ],
     });
     
-    let locationField = this.display.addField("location", {
-      label: "User",
-      sort: {generic: {type:"string",property:"location"}},
-      dynamic: true,
-      value: item => item.character ? {
-        value: [
-          {
-            value: item.viewer.settings.preferences.listDisplay=='1' ? {
-              tag: "img",
-              classes: {'character-icon':true},
-              src: item.character.image,
-            } : item.character.name,
-            classes: {
-              "icon": item.viewer.settings.preferences.listDisplay=='1',
-            },
-            edit: {
-              target: {item:item, field:"location"},
-              type: "select",
-              list: item.list.viewer.lists.CharacterList.items("equippable"),
-              valueProperty: "key",
-              displayProperty: "name",
-            },
-          },
-          {
-            tag: "i",
-            classes: {'fa-solid':true, 'fa-eye':true},
-            popup: item.character.variants?.length ? item.character.variants[0] : item.character,
-          },
-        ],
-        classes: {
-          "user-field": true,
-        },
-      } : {
-        value: "-",
-        edit: {
-          target: {item:item, field:"location"},
-          type: "select",
-          list: item.list.viewer.lists.CharacterList.items("equippable"),
-          valueProperty: "key",
-          displayProperty: "name",
-        },
-      },
-      dependencies: item => [
-        {item:item.list.viewer.lists.CharacterList, field:"list"},
-      ],
-    });
-    
     let characterIconField = this.display.addField("characterIcon", {
       label: "User",
       tags: ["detailsOnly"],
@@ -475,19 +428,16 @@ export default class ArtifactList extends GenshinList
       ],
     });
     
-    // TODO: lock was special, but using the UIItem version of it stops that
     Artifact.setupDisplay(this.display);
-  }
-  
-  clear()
-  {
-    super.clear();
-    this.viewer.lists.CharacterList.list.forEach(character => {
-      character.flowerArtifact = null;
-      character.plumeArtifact = null;
-      character.sandsArtifact = null;
-      character.gobletArtifact = null;
-      character.circletArtifact = null;
+    
+    this.display.getField("lock").setData({
+      title: item => "Whether the artifact is locked. Red background indicates the artifact is below your minimum desirability rating, which theoretically means you should unlock it and use it as fodder in-game.",
+      classes: item => ({
+          "undesirable": item.isFodder,
+      }),
+      dependencies: item => [
+        {item:item, field:"wanters"},
+      ],
     });
   }
   

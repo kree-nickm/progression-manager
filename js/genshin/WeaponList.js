@@ -100,53 +100,6 @@ export default class WeaponList extends GenshinList
       'weak': `<i class="fa-solid fa-skull fa-sm"></i>`,
     };
     
-    let locationField = this.display.addField("location", {
-      label: "User",
-      sort: {generic: {type:"string",property:"location"}},
-      dynamic: true,
-      value: item => item.character ? {
-        value: [
-          {
-            value: item.viewer.settings.preferences.listDisplay=='1' ? {
-              tag: "img",
-              classes: {'character-icon':true},
-              src: item.character.image,
-            } : item.character.name,
-            classes: {
-              "icon": item.viewer.settings.preferences.listDisplay=='1',
-            },
-            edit: {
-              target: {item:item, field:"location"},
-              type: "select",
-              list: item.list.viewer.lists.CharacterList.items("equippable").filter(cha => item.type == cha.weaponType),
-              valueProperty: "key",
-              displayProperty: "name",
-            },
-          },
-          {
-            tag: "i",
-            classes: {'fa-solid':true, 'fa-eye':true},
-            popup: item.character.variants?.length ? item.character.variants[0] : item.character,
-          },
-        ],
-        classes: {
-          "user-field": true,
-        },
-      } : {
-        value: "-",
-        edit: {
-          target: {item:item, field:"location"},
-          type: "select",
-          list: item.list.viewer.lists.CharacterList.items("equippable").filter(cha => item.type == cha.weaponType),
-          valueProperty: "key",
-          displayProperty: "name",
-        },
-      },
-      dependencies: item => [
-        {item:item.list.viewer.lists.CharacterList, field:"list"},
-      ],
-    });
-    
     let passiveField = this.display.addField("passive", {
       label: "Passive",
       tags: ["detailsOnly"],
@@ -196,12 +149,6 @@ export default class WeaponList extends GenshinList
     });
     
     Weapon.setupDisplay(this.display);
-  }
-  
-  clear()
-  {
-    super.clear();
-    this.viewer.lists.CharacterList.list.forEach(character => character.weapon = null);
   }
   
   getFooterParams()

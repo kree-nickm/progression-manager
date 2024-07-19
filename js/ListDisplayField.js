@@ -57,7 +57,8 @@ export default class ListDisplayField
   setData(properties={})
   {
     for(let prop of ListDisplayField.properties)
-      this[prop] = properties[prop];
+      if(prop in properties)
+        this[prop] = properties[prop];
     if(properties.edit)
       this.editable = true;
   }
