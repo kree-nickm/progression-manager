@@ -16,6 +16,11 @@ export default class Team extends GenshinItem {
   get name() { return this._name ? this._name : this.memberKeys.length ? this.memberKeys.join("/") : "New Team"; }
   set name(name) { this._name = name; }
   
+  afterLoad()
+  {
+    this.update("lock", false);
+  }
+  
   afterUpdate(field, value, action, options)
   {
     if(!super.afterUpdate(field, value, action, options))

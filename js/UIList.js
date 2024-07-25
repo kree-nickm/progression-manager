@@ -1,4 +1,4 @@
-import { Renderer } from "./Renderer.js";
+import { handlebars, Renderer } from "./Renderer.js";
 import UIController from "./UIController.js";
 import UIItem from "./UIItem.js";
 import ListDisplayManager from "./ListDisplayManager.js";
@@ -117,19 +117,13 @@ export default class UIList extends UIController {
       }
       if(action == "remove" || action == "notify" && options?.toggleOwned && !options.toggleOwned.owned)
       {
-        // TODO: Only remove this item from subsets that it's in.
         this.subsets = {};
         if(!options.skipHTML)
           Renderer.removeElementsOf(options?.toggleOwned??value, this);
       }
       else if(action == "push" || action == "notify" && options?.toggleOwned && options?.toggleOwned.owned)
       {
-        for(let subset in this.constructor.subsetDefinitions)
-        {
-          if(subset in this.subsets && this.constructor.subsetDefinitions[subset](options?.toggleOwned??value))
-            this.subsets[subset].push(options?.toggleOwned??value);
-        }
-      
+        this.subsets = {};
         let listElements = this.viewer.elements[this.listName].querySelectorAll(`.list[data-uuid="${this.uuid}"]`);
         for(let listElement of listElements)
         {
@@ -317,6 +311,7 @@ export default class UIList extends UIController {
     let footerParams = this.getFooterParams();
     if(footerParams)
     {
+      let itemType = Array.isArray(this.constructor.itemClass) ? this.constructor.itemClass[0].name : this.constructor.itemClass.name;
       footer.classList.remove("d-none");
       if(footer.dataset.list != this.uuid)
       {
@@ -334,7 +329,6 @@ export default class UIList extends UIController {
         {
           if(Array.isArray(footerParams.add))
             footerParams.add = {fields:footerParams.add};
-          let itemType = Array.isArray(this.constructor.itemClass) ? this.constructor.itemClass[0].name : this.constructor.itemClass.name;
           let li = ul.appendChild(document.createElement("li"));
           li.classList.add("nav-item", "me-2");
           
@@ -410,6 +404,58 @@ export default class UIList extends UIController {
               console.log(`Item was not added.`);
             }
           });
+        }
+        
+        if(footerParams.showcase)
+        {
+          let li = ul.appendChild(document.createElement("li"));
+          li.classList.add("nav-item", "me-2");
+      
+          let showcaseBtn = li.appendChild(document.createElement("button"));
+          showcaseBtn.id = `${this.constructor.name}ShowcaseBtn`;
+          showcaseBtn.classList.add("btn", "btn-primary", "mt-2");
+          //showcaseBtn.title = "Display your characters' stats and gear in a nice window that you can screenshot and show to others.";
+          let showcaseIcon = showcaseBtn.appendChild(document.createElement("i"));
+          showcaseIcon.classList.add("fa-solid", "fa-camera");
+          
+          if(!showcaseBtn.onclick)
+          {
+            showcaseBtn.onclick = async event => {
+              let template = await fetch(footerParams.showcase.configTemplate??`templates/renderShowcaseConfigPopup.html`, {cache:"no-cache"})
+              .then(response => response.text())
+              .then(src => handlebars.compile(src));
+              
+              let modalElement = document.body.appendChild(document.createElement("template"));
+              let index = Array.from(document.body.children).indexOf(modalElement);
+              modalElement.outerHTML = template({items:footerParams.showcase.items??this.items()});
+              modalElement = document.body.children.item(index);
+              $(modalElement).find(".selectpicker").selectpicker('render');
+              
+              let modal = new bootstrap.Modal(modalElement);
+              modal.show();
+              modalElement.addEventListener("hide.bs.modal", async event => {
+                if(event.explicitOriginalTarget?.classList.contains("popup-ok-btn"))
+                {
+                  let items = Array.from(modalElement.querySelector("select.showcase-filter").selectedOptions).map(optionElement => Renderer.controllers.get(optionElement.value));
+                  for(let item of items)
+                    if(typeof(item?.importDetails) == "function")
+                      await item.importDetails();
+                  let showcase = window.open("showcase.html", "_blank");
+                  showcase.addEventListener("DOMContentLoaded", async event => {
+                    document.head.querySelectorAll('link, style').forEach(htmlElement => {
+                      showcase.document.head.appendChild(htmlElement.cloneNode(true));
+                    });
+                    let container = showcase.document.body.appendChild(document.createElement("div"));
+                    await Renderer.rerender(container, {item:this, items}, {template: footerParams.showcase.template??`renderShowcase`});
+                  });
+                  showcase.addEventListener("beforeunload", event => {
+                    this.constructor.clearDependencies(showcase.document.body, true);
+                  });
+                }
+                modalElement.remove();
+              });
+            };
+          }
         }
       }
     }

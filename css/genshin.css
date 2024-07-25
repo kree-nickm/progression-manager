@@ -144,17 +144,6 @@ th.label[data-group-name="Gear"] {
   gap: 0.4em;
 }
 
-.material-row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 1em;
-  justify-content: center;
-}
-
-.material-row .list-item {
-  margin: 0.5em;
-  flex: 0 0 7.2%;
-}
 .material-row .list-item.material-mastery {
   flex-basis: 9.1%;
 }
@@ -204,120 +193,17 @@ img.element-icon.element-Physical {
   filter: drop-shadow(0px 0px 0.5px rgba(0,0,0,0.3));
 }
 
-/*********************************************
-Character/weapon/artifact/material icons, etc.
-*********************************************/
-
-.item-display {
-	border-radius: 5%;
-  box-shadow: 0px 0px 2px 1px black;
-  display: inline-block;
-  max-width: min-content;
-  text-align: center;
-	position: relative;
-}
+/* Item displays. */
 
 .item-display .display-img,
 .item-display .display-img img {
   border-radius: 5%;
   border-bottom-right-radius: 25%;
-  display: inline-block;
 }
 .item-display.display-no-caption .display-img,
 .item-display.display-no-caption .display-img img {
   border-bottom-right-radius: 5%;
 }
-
-.item-display .display-caption {
-  line-height: 1.3em;
-  padding: 0em 0.1em 0.1em 0.1em;
-  display: block;
-  font-size: 0.9em;
-}
-.item-display.long-text .display-caption {
-  font-size: 0.8em;
-}
-.item-display:not(.longer-text) .display-caption {
-  text-wrap: nowrap;
-}
-
-.item-display .display-badge {
-	position: absolute;
-	top: 0.1rem;
-	left: 0.1rem;
-	color: rgba(255,255,255,0.9);
-	background: rgba(0,0,0,0.5);
-	padding: 2px;
-	line-height: 1em;
-	border-radius: 0.2em;
-	z-index: 2;
-}
-.item-display .display-badge.badge-right {
-	left: unset;
-	right: 0.1rem;
-}
-.item-display .display-badge.badge-gold {
-  background: rgba(150,120,70,0.8);
-}
-.item-display .display-img .display-badge.element-icon {
-  height: 2.1em;
-  background: none;
-  filter: drop-shadow(0px 0px 1px black) saturate(1.5);
-}
-
-/* Image sizing. */
-
-.item-display.display-xxs {
-	border-radius: unset;
-  box-shadow: unset;
-}
-.item-display.display-xxs .display-img img {
-  height: 1em;
-}
-
-.item-display.display-xs {
-	border-radius: unset;
-  box-shadow: unset;
-}
-.item-display.display-xs .display-img img {
-  height: 2.4em;
-}
-
-.item-display.display-sm:not(.display-no-caption) * {
-  max-width: 4rem;
-}
-.item-display.display-sm .display-img {
-  filter: saturate(1.25);
-}
-.item-display.display-sm .display-img img {
-  filter: saturate(0.8);
-  height: 4rem;
-}
-.item-display.display-sm.display-no-caption .display-img img {
-  height: 5.3rem;
-}
-.item-display.display-sm.longer-text:not(.display-no-caption) .display-img img {
-  height: 3rem;
-  width: 4rem;
-  transform: scaleY(calc(4/3));
-}
-
-.item-display.display-md:not(.display-no-caption) * {
-  max-width: 5rem;
-}
-.item-display.display-md .display-img img {
-  height: 5rem;
-}
-.item-display.display-md.display-no-caption .display-img img {
-  height: 6.3rem;
-}
-.item-display.display-md.longer-text:not(.display-no-caption) .display-img img {
-  height: 4rem;
-  width: 5rem;
-  transform: scaleY(calc(5/4));
-}
-
-/* Image background. */
 
 .item-display .display-img.rarity-5 {
   background-image: url(../img/Background_Item_5_Star.webp);
@@ -349,6 +235,8 @@ Character/weapon/artifact/material icons, etc.
   background-size: cover;
 }
 
+/* Stat lists. */
+
 .stat-list[data-template="genshin/renderCharacterStatModifiers"] img.element-icon {
   height: 2.4em;
 }
@@ -359,19 +247,6 @@ Character/weapon/artifact/material icons, etc.
 
 .stat-list.collapse > *:nth-child(even) {
   background-color: rgba(127,127,127,0.2);
-}
-
-.plan-materials {
-  margin-top: 0.5em;
-}
-
-.plan-materials .sub-0 {
-  display: block;
-}
-
-.plan-material {
-  margin: 0.1em 1ex;
-  display: inline-block;
 }
 
 .character-build {

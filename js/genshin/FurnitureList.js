@@ -61,14 +61,6 @@ export default class FurnitureList extends GenshinList
     }
   }
   
-  async render(force=false)
-  {
-    await super.render(force);
-    
-    let footer = document.getElementById("footer");
-    footer.classList.add("d-none");
-  }
-  
   prepareRender(element, data, options)
   {
     data.fields = [

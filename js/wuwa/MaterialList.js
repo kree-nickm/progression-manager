@@ -14,7 +14,7 @@ export default class MaterialList extends WuWaList
   
   setupDisplay()
   {
-    let nameField = this.display.addField("name", {
+    this.display.addField("name", {
       label: "Name",
       dynamic: false,
       value: item => item.name,
@@ -28,50 +28,53 @@ export default class MaterialList extends WuWaList
       }),
     });
     
-    let countField = this.display.addField("count", {
-      label: "Count",
+    this.display.addField("icon", {
+      label: "Material",
+      sort: {generic: {type:"string", property:"name"}},
       dynamic: true,
-      title: item => {
-        let planMaterials = item.viewer.account.plan.getFullPlan();
-        if(planMaterials.original[item.key])
-        {
-          let wanters = planMaterials.resolved[item.key].wanters.map(wanter => `${Renderer.controllers.get(wanter.src).name} wants ${wanter.amount}`).join(`\r\n`);
-          return (item.prevTier || item.converts
-            ? `Up to ${item.getCraftCount({plan:planMaterials.original})} if you craft.`
-            : ``) + (wanters ? `\r\n`+wanters : ``);
-        }
-        else
-        {
-          return (item.prevTier || item.converts
-            ? `Up to ${item.getCraftCount()} if you craft.`
-            : ``);
-        }
-      },
-      value: item => {
-        let planMaterials = item.viewer.account.plan.getFullPlan();
-        if(planMaterials.original[item.key])
-          return `${item.count} / ${planMaterials.original[item.key]}`;
-        else
-          return item.count + (item.prevTier || item.converts ? " (+"+ (item.getCraftCount()-item.count) +")" : "");
-      },
-      edit: item => ({
-        target: {item:item, field:"count"}, min:0, max:99999,
+      value: (item,size) => ({
+        tag: "div",
+        value: [
+          {
+            tag: "div",
+            value: {
+              tag: "img",
+              src: item.image,
+              classes: {"item-image":true},
+            },
+            title: item.name,
+            classes: {"item-image-container":true, ["item-rarity-"+item.rarity]:true},
+          },
+          {
+            tag: "div",
+            value: {
+              value: item.count,
+              title: `Click to change.`,
+              edit: {target:{item:item, field:"count"}},
+            },
+            classes: {"item-props":true},
+          },
+        ],
+        classes: {"item-icon":true},
       }),
-      dependencies: item => {
-        //let planMaterials = item.viewer.account.plan.getFullPlan();
-        return item.getCraftDependencies();
-      },
-      classes: item => {
-        let planMaterials = item.viewer.account.plan.getFullPlan();
-        if(planMaterials.original[item.key])
-          return {
-            "pending": item.count < planMaterials.original[item.key],
-            "insufficient": item.getCraftCount({plan:planMaterials.original}) < planMaterials.original[item.key],
-          };
-        else
-          return {};
-      },
     });
+    
+    this.display.addField("image", {
+      label: "Image",
+      dynamic: false,
+      value: item => ({
+        tag: "div",
+        //title: item.getFullSource(),
+        value: {
+          tag: "img",
+          src: item.image,
+          alt: item.name,
+        },
+        classes: {"display-img": true, ["rarity-"+item.rarity]: true},
+      }),
+    });
+    
+    Material.setupDisplay(this.display);
   }
   
   initialize()
@@ -79,10 +82,14 @@ export default class MaterialList extends WuWaList
     super.initialize();
     for(let matKey in MaterialData)
     {
-      this.createItem({
+      let item = this.createItem({
         key: matKey,
         count: 0,
+        type: MaterialData[matKey].type,
+        subtype: MaterialData[matKey].subtype,
       });
+      if(!this.constructor.subsetDefinitions[MaterialData[matKey].subtype])
+        this.constructor.subsetDefinitions[MaterialData[matKey].subtype] = item => item.subtype == MaterialData[matKey].subtype;
     }
     
     // Primary mats
@@ -110,6 +117,29 @@ export default class MaterialList extends WuWaList
     for(let item of this.list)
     {
       item.update("count", 0);
+    }
+  }
+  
+  prepareRender(element, data, options)
+  {
+    if(this.viewer.settings.preferences.materialList == '1')
+    {
+      data.items = {};
+      for(let filter in this.constructor.subsetDefinitions)
+        data.items[filter] = this.items(filter);
+      data.fields = this.display.getFields().map(field => ({field, params:[]}));
+      options.template = "wuwa/renderMaterialList";
+      return {element, data, options};
+    }
+    else
+    {
+      data.fields = [
+        {field:this.display.getField("name"), params:[]},
+        {field:this.display.getField("count"), params:[]},
+        //{field:this.display.getField("source"), params:[]},
+        //{field:this.display.getField("users"), params:[]},
+      ];
+      return {element, data, options};
     }
   }
 }

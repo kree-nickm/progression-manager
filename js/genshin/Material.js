@@ -4,10 +4,11 @@ import GenshinMaterialData from "./gamedata/GenshinMaterialData.js";
 import GenshinItem from "./GenshinItem.js";
 import Character from "./Character.js";
 import Weapon from "./Weapon.js";
+import Ingredient from "../Ingredient.js";
 
-export default class Material extends GenshinItem
+export default class Material extends Ingredient(GenshinItem)
 {
-  static dontSerialize = super.dontSerialize.concat(["_shorthand","_type","source","days","usedBy","prevTier","nextTier","converts"]);
+  static dontSerialize = super.dontSerialize.concat(["_shorthand","_type","source","days"]);
   
   static gemQualities = {
     '5': " Gemstone",
@@ -20,27 +21,6 @@ export default class Material extends GenshinItem
     '3': "Guide to ",
     '2': "Teachings of ",
   };
-  
-  static setupTiers(matList)
-  {
-    for(let m=0; m<matList.length-1; m++)
-    {
-      if(!matList[m])
-        continue;
-      if(!matList[m+1])
-        break;
-      if(matList[m].rarity > matList[m+1].rarity)
-      {
-        matList[m].prevTier = matList[m+1];
-        matList[m+1].nextTier = matList[m];
-      }
-      else
-      {
-        matList[m].nextTier = matList[m+1];
-        matList[m+1].prevTier = matList[m];
-      }
-    }
-  }
   
   static toKey(string)
   {
@@ -57,15 +37,10 @@ export default class Material extends GenshinItem
   }
   
   key = "";
-  _count = 0;
   _shorthand;
   _type;
   source = "";
   days = [];
-  usedBy = [];
-  prevTier = null;
-  nextTier = null;
-  converts = null;
   
   fromGOOD(goodData)
   {
@@ -88,12 +63,6 @@ export default class Material extends GenshinItem
     return this.count;
   }
   
-  get count(){ return this._count; }
-  set count(val){
-    if(val < 0)
-      val = this._count + val;
-    this._count = Math.max(val, 0);
-  }
   get shorthand(){ return this._shorthand ?? this.name; }
   set shorthand(val){ this._shorthand = val; }
   get name() { return GenshinMaterialData[this.key]?.name ?? this.key; }
@@ -133,111 +102,6 @@ export default class Material extends GenshinItem
   getFullSource()
   {
     return `${this.name}` + (this.source?`, dropped by ${this.source}`:"") + (this.days.length?`, on ${this.days.join("/")}`:"");
-  }
-  
-  addUser(item)
-  {
-    if(this.usedBy.indexOf(item) == -1)
-      this.update("usedBy", item, "push");
-    return this;
-  }
-  
-  getUsage()
-  {
-    let results = [];
-    for(let item of this.usedBy)
-    {
-      if(item.favorite === false)
-        continue;
-      let amount = [];
-      let note = [];
-      if(item instanceof Character)
-      {
-        if(this == item.getMat('gem') && item.getAscensionData().gemCostCharacter)
-          amount.push(item.getAscensionData().gemCostCharacter);
-        
-        if(this == item.getMat('boss') && item.getAscensionData().bossCostCharacter)
-          amount.push(item.getAscensionData().bossCostCharacter);
-        
-        if(this == item.getMat('flower') && item.getAscensionData().floraCostCharacter)
-          amount.push(item.getAscensionData().floraCostCharacter);
-        
-        if(this == item.getMat('enemy') && item.getAscensionData().enemyCostCharacter)
-          amount.push(item.getAscensionData().enemyCostCharacter);
-        
-        if(this == item.getTalentMat('enemy','auto') && item.getTalentData('auto').enemyCost)
-          amount.push(item.getTalentData('auto').enemyCost);
-        if(this == item.getTalentMat('enemy','skill') && item.getTalentData('skill').enemyCost)
-          amount.push(item.getTalentData('skill').enemyCost);
-        if(this == item.getTalentMat('enemy','burst') && item.getTalentData('burst').enemyCost)
-          amount.push(item.getTalentData('burst').enemyCost);
-        
-        if(this == item.getTalentMat('mastery','auto') && item.getTalentData('auto').masteryCost)
-          amount.push(item.getTalentData('auto').masteryCost);
-        if(this == item.getTalentMat('mastery','skill') && item.getTalentData('skill').masteryCost)
-          amount.push(item.getTalentData('skill').masteryCost);
-        if(this == item.getTalentMat('mastery','burst') && item.getTalentData('burst').masteryCost)
-          amount.push(item.getTalentData('burst').masteryCost);
-        
-        if(this == item.MaterialList.trounce)
-          amount.push(item.getTalentData('auto').trounceCost + item.getTalentData('skill').trounceCost + item.getTalentData('burst').trounceCost);
-        
-        if(this.type == "mastery" || this.type == "trounce")
-        {
-          if(item.talent.auto < 10 || item.talent.skill < 10 || item.talent.burst < 10)
-            note.push(`${item.talent.auto}/${item.talent.skill}/${item.talent.burst}`);
-        }
-        else if(this.type == "enemy")
-        {
-          if(item.ascension < 6)
-            note.push(`A${item.ascension}`);
-          if(item.talent.auto < 10 || item.talent.skill < 10 || item.talent.burst < 10)
-            note.push(`${item.talent.auto}/${item.talent.skill}/${item.talent.burst}`);
-        }
-        else if(this.type == "gemstone" || this.type == "flora" || this.type == "boss")
-        {
-          if(item.ascension < 6)
-            note.push(`A${item.ascension}`);
-        }
-      }
-      if(item instanceof Weapon)
-      {
-        if(this == item.getMat('forgery') && item.getMatCost('forgery'))
-          amount.push(item.getMatCost('forgery'));
-        if(this == item.getMat('strong') && item.getMatCost('strong'))
-          amount.push(item.getMatCost('strong'));
-        if(this == item.getMat('weak') && item.getMatCost('weak'))
-          amount.push(item.getMatCost('weak'));
-        
-        if(this.type == "enemy" || this.type == "forgery")
-        {
-          if(item.ascension < 6)
-            note.push(`A${item.ascension}`);
-        }
-      }
-      if(amount.length)
-        results.push({name:item.name, amount:amount.join(", "), note});
-    }
-    //return results.map(user => user.name + ` (${user.amount})`).join("; ");
-    return results.map(user => `${user.name}` + (user.note.length ? ` (${user.note.join(', ')})` : ``)).join("; ");
-  }
-  
-  getCraftCount({plan}={})
-  {
-    if(this.converts)
-      return this.count + this.converts.reduce((total, mat) => total+Math.max(0,mat.count-(plan?.[mat.key]??0)), 0);
-    else
-      return this.count + (this.prevTier ? Math.floor(Math.max(0,this.prevTier.getCraftCount()-(plan?.[this.prevTier.key]??0))/3) : 0);
-  }
-  
-  getCraftDependencies()
-  {
-    if(this.converts)
-      return this.converts.map(mat => ({item:mat, field:"count"}));
-    else if(this.prevTier)
-      return this.prevTier.getCraftDependencies().concat([{item:this.prevTier, field:"count"}]);
-    else
-      return [];
   }
   
   getFieldValue(cost, useImage=false, {noName=false, plan}={})

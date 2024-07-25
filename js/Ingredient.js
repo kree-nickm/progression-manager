@@ -1,13 +1,93 @@
+import { Renderer } from "./Renderer.js";
+
 const Ingredient = (SuperClass) => class extends SuperClass {
   static dontSerialize = super.dontSerialize.concat(["usedBy","prevTier","nextTier","converts"]);
   
+  static setupTiers(matList)
+  {
+    for(let m=0; m<matList.length-1; m++)
+    {
+      if(!matList[m])
+        continue;
+      if(!matList[m+1])
+        break;
+      if(matList[m].rarity > matList[m+1].rarity)
+      {
+        matList[m].prevTier = matList[m+1];
+        matList[m+1].nextTier = matList[m];
+      }
+      else
+      {
+        matList[m].nextTier = matList[m+1];
+        matList[m+1].prevTier = matList[m];
+      }
+    }
+  }
+  
   static setupDisplay(display)
   {
+    display.addField("count", {
+      label: "Count",
+      dynamic: true,
+      title: item => {
+        let planMaterials = item.viewer.account.plan.getFullPlan();
+        if(planMaterials.original[item.key])
+        {
+          let wanters = planMaterials.resolved[item.key].wanters.map(wanter => `${Renderer.controllers.get(wanter.src).name} wants ${wanter.amount}`).join(`\r\n`);
+          return (item.prevTier || item.converts
+            ? `Up to ${item.getCraftCount({plan:planMaterials.original})} if you craft.`
+            : ``) + (wanters ? `\r\n`+wanters : ``);
+        }
+        else
+        {
+          return (item.prevTier || item.converts
+            ? `Up to ${item.getCraftCount()} if you craft.`
+            : ``);
+        }
+      },
+      value: item => {
+        let planMaterials = item.viewer.account.plan.getFullPlan();
+        if(planMaterials.original[item.key])
+          return `${item.count} / ${planMaterials.original[item.key]}`;
+        else
+          return item.count + (item.prevTier || item.converts ? " (+"+ (item.getCraftCount()-item.count) +")" : "");
+      },
+      edit: item => ({
+        target: {item:item, field:"count"}, min:0, max:99999,
+      }),
+      dependencies: item => {
+        //let planMaterials = item.viewer.account.plan.getFullPlan();
+        return item.getCraftDependencies();
+      },
+      classes: item => {
+        let planMaterials = item.viewer.account.plan.getFullPlan();
+        if(planMaterials.original[item.key])
+          return {
+            "pending": item.count < planMaterials.original[item.key],
+            "insufficient": item.getCraftCount({plan:planMaterials.original}) < planMaterials.original[item.key],
+          };
+        else
+          return {};
+      },
+    });
+  
+    display.addField("users", {
+      label: "Used By",
+      dynamic: true,
+      value: item => item.getUsage(),
+      dependencies: item => {
+        let dependencies = [{item:item, field:["usedBy"]}];
+        for(let i of item.usedBy)
+          dependencies.push({item:i, field:["favorite"]});
+        return dependencies;
+      },
+    });
+    
     super.setupDisplay(display);
   }
   
-  _count;
-  usedBy;
+  _count = 0;
+  usedBy = [];
   prevTier;
   nextTier;
   converts;
@@ -19,15 +99,9 @@ const Ingredient = (SuperClass) => class extends SuperClass {
     this._count = Math.max(val, 0);
   }
   
-  afterLoad()
+  getFullSource()
   {
-    return super.afterLoad();
-  }
-  
-  afterUpdate(field, value, action, options)
-  {
-    if(!super.afterUpdate(field, value, action, options))
-      return false;
+    return `${this.name}`;
   }
   
   addUser(item)
@@ -46,37 +120,18 @@ const Ingredient = (SuperClass) => class extends SuperClass {
         continue;
       let amount = [];
       let note = [];
-      if(item instanceof Character)
+      for(let matDef of item.materialDefs.material)
       {
-        if(this == item.getMat('gem') && item.getPhase().gemCostCharacter)
-          amount.push(item.getPhase().gemCostCharacter);
-        
-        if(this == item.getMat('boss') && item.getPhase().bossCostCharacter)
-          amount.push(item.getPhase().bossCostCharacter);
-        
-        if(this == item.getMat('flower') && item.getPhase().floraCostCharacter)
-          amount.push(item.getPhase().floraCostCharacter);
-        
-        if(this == item.getMat('enemy') && item.getPhase().enemyCostCharacter)
-          amount.push(item.getPhase().enemyCostCharacter);
-        
-        if(this == item.getTalentMat('enemy','auto') && item.getTalent('auto').enemyCost)
-          amount.push(item.getTalent('auto').enemyCost);
-        if(this == item.getTalentMat('enemy','skill') && item.getTalent('skill').enemyCost)
-          amount.push(item.getTalent('skill').enemyCost);
-        if(this == item.getTalentMat('enemy','burst') && item.getTalent('burst').enemyCost)
-          amount.push(item.getTalent('burst').enemyCost);
-        
-        if(this == item.getTalentMat('mastery','auto') && item.getTalent('auto').masteryCost)
-          amount.push(item.getTalent('auto').masteryCost);
-        if(this == item.getTalentMat('mastery','skill') && item.getTalent('skill').masteryCost)
-          amount.push(item.getTalent('skill').masteryCost);
-        if(this == item.getTalentMat('mastery','burst') && item.getTalent('burst').masteryCost)
-          amount.push(item.getTalent('burst').masteryCost);
-        
-        if(this == item.MaterialList.trounce)
-          amount.push(item.getTalent('auto').trounceCost + item.getTalent('skill').trounceCost + item.getTalent('burst').trounceCost);
-        
+        if(this == item.getMat(matDef.property) && item.getMatCost(matDef.property))
+          amount.push(item.getMatCost(matDef.property));
+        for(let talentType in item.constructor.talentTypes)
+        {
+          if(this == item.getTalentMat(matDef.property, talentType) && item.getTalentMatCost(matDef.property, talentType))
+            amount.push(item.getTalentMatCost(matDef.property, talentType));
+        }
+      }
+      /*if(item instanceof Character)
+      {
         if(this.type == "mastery" || this.type == "trounce")
         {
           if(item.talent.auto < 10 || item.talent.skill < 10 || item.talent.burst < 10)
@@ -97,23 +152,15 @@ const Ingredient = (SuperClass) => class extends SuperClass {
       }
       if(item instanceof Weapon)
       {
-        if(this == item.getMat('forgery') && item.getMatCost('forgery'))
-          amount.push(item.getMatCost('forgery'));
-        if(this == item.getMat('strong') && item.getMatCost('strong'))
-          amount.push(item.getMatCost('strong'));
-        if(this == item.getMat('weak') && item.getMatCost('weak'))
-          amount.push(item.getMatCost('weak'));
-        
         if(this.type == "enemy" || this.type == "forgery")
         {
           if(item.ascension < 6)
             note.push(`A${item.ascension}`);
         }
-      }
+      }*/
       if(amount.length)
         results.push({name:item.name, amount:amount.join(", "), note});
     }
-    //return results.map(user => user.name + ` (${user.amount})`).join("; ");
     return results.map(user => `${user.name}` + (user.note.length ? ` (${user.note.join(', ')})` : ``)).join("; ");
   }
   
@@ -137,93 +184,28 @@ const Ingredient = (SuperClass) => class extends SuperClass {
   
   getFieldValue(cost, useImage=false, {noName=false, plan}={})
   {
-    let bosskills3 = Math.ceil((cost-this.count)/3);
-    let bosskills2 = Math.ceil((cost-this.count)/2);
-    
-    let iconPart = {
-      tag: "div",
-      value: [
-        {
-          tag: "div",
-          value: [
-            {
-              tag: "i",
-              classes: {
-                "display-badge": true,
-                "fa-solid": true,
-                "fa-sun": true,
-                "d-none": this.days.indexOf(this.viewer.today()) == -1,
-              },
-              title: "This drop can be obtained today.",
-            },
-            {
-              tag: "img",
-              src: this.image,
-              alt: this.name,
-            }
-          ],
-          classes: {"display-img": true, ["rarity-"+this.rarity]: true},
-        },
-        {
-          value: `${this.count} / ${cost}`,
-          title: this.type == "boss"
-            ? `Requires `+ (bosskills2!=bosskills3?`${bosskills3}-${bosskills2}`:bosskills2) +` more boss kill`+ (bosskills2!=1||bosskills3!=1?"s":"") +`.`
-            : this.type == "flora"
-              ? `` // TODO: Compile data for number of each flora that exists on the map and display the relevant number here.
-              : this.prevTier
-                ? `Up to ${this.getCraftCount({plan})} if you craft.`
-                : ``,
-          classes: {"display-caption": true},
-          edit: {target: {item:this, field:"count"}},
-        }
-      ],
-      classes: {
-        "item-display": true,
-        "item-material": true,
-        "display-sm": true,
-        "pending": this.count < cost,
-        "insufficient": this.getCraftCount({plan}) < cost,
-        "long-text": this.count>999 || cost>999,
-        "longer-text": this.count>9999 || cost>9999,
-      },
-      title: this.getFullSource(),
-    };
-    
     let numbersPart = {
       value: `${this.count} / ${cost}`,
-      title: this.type == "boss"
-        ? `Requires `+ (bosskills2!=bosskills3?`${bosskills3}-${bosskills2}`:bosskills2) +` more boss kill`+ (bosskills2!=1||bosskills3!=1?"s":"") +`.`
-        : this.type == "flora"
-          ? `` // TODO: Compile data for number of each flora that exists on the map and display the relevant number here.
-          : this.prevTier || this.converts
-            ? `Up to ${this.getCraftCount({plan})} if you craft.`
-            : ``,
+      title: this.prevTier || this.converts
+        ? `Up to ${this.getCraftCount({plan})} if you craft.`
+        : ``,
       classes: {
         "quantity": true,
         "pending": this.count < cost,
         "insufficient": this.getCraftCount({plan}) < cost,
-        "small": this.count>999 || cost>999,
       },
       edit: {target: {item:this, field:"count"}, min:0, max:99999},
     };
     
     let namePart = {
-      value: this.shorthand + (this.days.indexOf(this.viewer.today()) > -1 ? "*" : ""),
+      value: this.name,
       classes: {
         "material": true,
-        "q1": this.rarity == 1,
-        "q2": this.rarity == 2,
-        "q3": this.rarity == 3,
-        "q4": this.rarity == 4,
-        "q5": this.rarity == 5,
       },
       title: this.getFullSource(),
     };
-    if(this.type == "gemstone")
-      for(let element of ["Anemo","Cryo","Dendro","Electro","Geo","Hydro","Pyro"])
-        namePart.value = namePart.value.replace(element, `{{element:${element}}}`);
     
-    return this.image && useImage ? iconPart : noName ? numbersPart : [numbersPart, namePart];
+    return noName ? numbersPart : [numbersPart, namePart];
   }
 };
 

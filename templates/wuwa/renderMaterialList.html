@@ -1,0 +1,18 @@
+<div class="scroller list" data-template="wuwa/renderMaterialList" data-uuid="{{uuid item}}">
+  {{#each items as |materials type|}}
+    <div class="material-row">
+      {{#each materials}}
+        <div class="list-item material-{{type}}" data-uuid="{{uuid .}}">
+            <div class="item-icon">
+                <div class="item-image-container item-rarity-{{getProperty . 'rarity'}}" title="{{getProperty . 'name'}}">
+                    <img class="item-image" src="{{getProperty . 'image'}}"/>
+                </div>
+                <div class="item-caption">
+                  {{> renderItemField item=. field="count" wrapper="div"}}
+                </div>
+            </div>
+        </div>
+      {{/each}}
+    </div>
+  {{/each}}
+</div>

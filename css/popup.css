@@ -62,3 +62,16 @@
 [data-bs-toggle="collapse"]:not(.collapsed)::before {
   content: "\25BE";
 }
+
+.plan-materials {
+  margin-top: 0.5em;
+}
+
+.plan-materials .sub-0 {
+  display: block;
+}
+
+.plan-material {
+  margin: 0.1em 1ex;
+  display: inline-block;
+}

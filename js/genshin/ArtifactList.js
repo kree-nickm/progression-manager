@@ -441,132 +441,74 @@ export default class ArtifactList extends GenshinList
     });
   }
   
+  getFooterParams()
+  {
+    return {
+      add: [
+        {
+          property: "setKey",
+          options: Object.keys(GenshinArtifactData)
+            .filter(key => !(!this.viewer.settings.preferences.showLeaks && Date.parse(GenshinArtifactData[key].release) > Date.now() || GenshinArtifactData[key].deletedContent))
+            .map(key => ({value:key, label:GenshinArtifactData[key].name})),
+        },
+        {
+          property: "rarity",
+          options: [5,4,3,2,1],
+        },
+        {
+          property: "slotKey",
+          options: ['flower','plume','sands','goblet','circlet'],
+          onChange: (elements, event) => {
+            switch(elements.slotKey.value)
+            {
+              case "flower":
+                Array.from(elements.mainStatKey.options).forEach(statOpt => statOpt.disabled = (statOpt.value != "hp"));
+                elements.mainStatKey.value = "hp";
+                break;
+              case "plume":
+                Array.from(elements.mainStatKey.options).forEach(statOpt => statOpt.disabled = (statOpt.value != "atk"));
+                elements.mainStatKey.value = "atk";
+                break;
+              case "sands":
+                Array.from(elements.mainStatKey.options).forEach(statOpt => statOpt.disabled = (["hp_","atk_","def_","eleMas","enerRech_"].indexOf(statOpt.value) == -1));
+                elements.mainStatKey.value = "";
+                break;
+              case "goblet":
+                Array.from(elements.mainStatKey.options).forEach(statOpt => statOpt.disabled = (["hp_","atk_","def_","eleMas"].indexOf(statOpt.value) == -1 && statOpt.value.substr(-5) != "_dmg_"));
+                elements.mainStatKey.value = "";
+                break;
+              case "circlet":
+                Array.from(elements.mainStatKey.options).forEach(statOpt => statOpt.disabled = (["hp_","atk_","def_","eleMas","critRate_","critDMG_","heal_"].indexOf(statOpt.value) == -1));
+                elements.mainStatKey.value = "";
+                break;
+              default:
+                Array.from(elements.mainStatKey.options).forEach(statOpt => statOpt.disabled = false);
+            }
+          },
+        },
+        {
+          property: "mainStatKey",
+          options: Object.keys(Artifact.shorthandStat)
+            .map(itm => ({value:itm, label:Artifact.getStatShorthand(itm)})),
+        },
+        //id: this.list.reduce((c,i) => Math.max(c,i.id), 0)+1,
+      ],
+    };
+  }
+  
   async render(force=false)
   {
-    await super.render(force);
+    const {render, footer, updateFooter, ul} = await super.render(force);
     
-    let footer = document.getElementById("footer");
-    footer.classList.remove("d-none");
-    if(footer.dataset.list != this.uuid)
+    if(updateFooter)
     {
-      footer.replaceChildren();
-      footer.dataset.list = this.uuid;
-      
-      let container = footer.appendChild(document.createElement("div"));
-      container.classList.add("container-fluid", "navbar-expand");
-      
-      let ul = container.appendChild(document.createElement("ul"));
-      ul.classList.add("navbar-nav");
-      
-      // Add Artifact
-      let li1 = ul.appendChild(document.createElement("li"));
-      li1.classList.add("nav-item", "me-2");
-      
-      let inputGroup = li1.appendChild(document.createElement("div"));
-      inputGroup.classList.add("input-group");
-      
-      this.elements.selectSetAdd = inputGroup.appendChild(document.createElement("select"));
-      this.elements.selectSetAdd.classList.add("form-select", "size-to-content");
-      this.elements.selectSetAdd.title = "Artifact Set";
-      this.elements.selectSetAdd.appendChild(document.createElement("option"))
-      for(let itm in GenshinArtifactData)
-      {
-        if(!this.viewer.settings.preferences.showLeaks && Date.parse(GenshinArtifactData[itm].release) > Date.now() || GenshinArtifactData[itm].deletedContent)
-          continue;
-        let option = this.elements.selectSetAdd.appendChild(document.createElement("option"));
-        option.value = itm;
-        option.innerHTML = GenshinArtifactData[itm].name;
-      }
-      
-      this.elements.selectRarityAdd = inputGroup.appendChild(document.createElement("select"));
-      this.elements.selectRarityAdd.classList.add("form-select", "size-to-content");
-      this.elements.selectRarityAdd.title = "Artifact Rarity";
-      this.elements.selectRarityAdd.appendChild(document.createElement("option"))
-      for(let itm of [5,4,3,2,1])
-      {
-        let option = this.elements.selectRarityAdd.appendChild(document.createElement("option"));
-        option.value = itm;
-        option.innerHTML = itm;
-      }
-      
-      this.elements.selectSlotAdd = inputGroup.appendChild(document.createElement("select"));
-      this.elements.selectSlotAdd.classList.add("form-select", "size-to-content");
-      this.elements.selectSlotAdd.title = "Artifact Slot";
-      this.elements.selectSlotAdd.appendChild(document.createElement("option"))
-      for(let itm of ['flower','plume','sands','goblet','circlet'])
-      {
-        let option = this.elements.selectSlotAdd.appendChild(document.createElement("option"));
-        option.value = itm;
-        option.innerHTML = itm;
-      }
-      this.elements.selectSlotAdd.onchange = event => {
-        switch(this.elements.selectSlotAdd.value)
-        {
-          case "flower":
-            Array.from(this.elements.selectStatAdd.options).forEach(statOpt => statOpt.disabled = (statOpt.value != "hp"));
-            this.elements.selectStatAdd.value = "hp";
-            break;
-          case "plume":
-            Array.from(this.elements.selectStatAdd.options).forEach(statOpt => statOpt.disabled = (statOpt.value != "atk"));
-            this.elements.selectStatAdd.value = "atk";
-            break;
-          case "sands":
-            Array.from(this.elements.selectStatAdd.options).forEach(statOpt => statOpt.disabled = (["hp_","atk_","def_","eleMas","enerRech_"].indexOf(statOpt.value) == -1));
-            this.elements.selectStatAdd.value = "";
-            break;
-          case "goblet":
-            Array.from(this.elements.selectStatAdd.options).forEach(statOpt => statOpt.disabled = (["hp_","atk_","def_","eleMas"].indexOf(statOpt.value) == -1 && statOpt.value.substr(-5) != "_dmg_"));
-            this.elements.selectStatAdd.value = "";
-            break;
-          case "circlet":
-            Array.from(this.elements.selectStatAdd.options).forEach(statOpt => statOpt.disabled = (["hp_","atk_","def_","eleMas","critRate_","critDMG_","heal_"].indexOf(statOpt.value) == -1));
-            this.elements.selectStatAdd.value = "";
-            break;
-          default:
-            Array.from(this.elements.selectStatAdd.options).forEach(statOpt => statOpt.disabled = false);
-        }
-      };
-      
-      this.elements.selectStatAdd = inputGroup.appendChild(document.createElement("select"));
-      this.elements.selectStatAdd.classList.add("form-select", "size-to-content");
-      this.elements.selectStatAdd.title = "Artifact Main Stat";
-      this.elements.selectStatAdd.appendChild(document.createElement("option"))
-      for(let itm in Artifact.shorthandStat)
-      {
-        let option = this.elements.selectStatAdd.appendChild(document.createElement("option"));
-        option.value = itm;
-        option.innerHTML = Artifact.getStatShorthand(itm);
-      }
-      
-      this.elements.btnAdd = inputGroup.appendChild(document.createElement("button"));
-      this.elements.btnAdd.innerHTML = "Add Artifact";
-      this.elements.btnAdd.classList.add("btn", "btn-primary");
-      this.elements.btnAdd.addEventListener("click", event => {
-        if(this.elements.selectSetAdd.value && this.elements.selectSlotAdd.value && this.elements.selectStatAdd.value && this.elements.selectRarityAdd.value)
-        {
-          let item = this.addGOOD({
-            id: this.list.reduce((c,i) => Math.max(c,i.id), 0)+1,
-            setKey: this.elements.selectSetAdd.value,
-            slotKey: this.elements.selectSlotAdd.value,
-            mainStatKey: this.elements.selectStatAdd.value,
-            rarity: this.elements.selectRarityAdd.value,
-            level: 0,
-            location: "",
-            substats: [],
-            lock: false,
-          });
-          this.elements.selectSlotAdd.value = "";
-          this.elements.selectStatAdd.value = "";
-        }
-      });
-      
       // Evaluate Artifacts
-      let li2 = ul.appendChild(document.createElement("li"));
-      li2.classList.add("nav-item", "me-2");
+      let li = ul.appendChild(document.createElement("li"));
+      li.classList.add("nav-item", "me-2");
       
-      let evalBtn = li2.appendChild(document.createElement("button"));
+      let evalBtn = li.appendChild(document.createElement("button"));
       evalBtn.id = "artifactEvaluateBtn";
-      evalBtn.classList.add("btn", "btn-primary", "show-notice");
+      evalBtn.classList.add("btn", "btn-primary", "show-notice", "mt-2");
       evalBtn.title = "Recalculate the characters that might desire each artifact.";
       let evalIcon = evalBtn.appendChild(document.createElement("i"));
       evalIcon.classList.add("fa-solid", "fa-arrows-rotate");

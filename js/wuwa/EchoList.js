@@ -10,8 +10,7 @@ import Echo from "./Echo.js";
 export default class EchoList extends WuWaList
 {
   static itemClass = Echo;
-  static subsetDefinitions = {
-  };
+  //static subsetDefinitions = {};
   static templateName = "wuwa/renderEchoList";
   
   setupDisplay()
@@ -88,7 +87,7 @@ export default class EchoList extends WuWaList
             classes: {"item-props":true},
           },
         ],
-        classes: {"echo-icon":true},
+        classes: {"item-icon":true},
       }),
       dependencies: (item,size) => [
         {item:item, field:"location"},
@@ -130,9 +129,8 @@ export default class EchoList extends WuWaList
       value: item => Stats[item.secondaryStat]?.name??item.secondaryStat,
     });
     
-    let substatGroup = {label:"Substats"};
     this.display.addField("substat", {
-      group: substatGroup,
+      group: {label:"Substats"},
       label: (item,statKey) => parseInt(statKey)==statKey?`Substat ${statKey}`:Stats[statKey]?.abbr??Stats[statKey]?.name??statKey,
       dynamic: true,
       value: (item,statKey) => item.getSubstat(statKey),
@@ -145,49 +143,7 @@ export default class EchoList extends WuWaList
       ],
     });
     
-    this.display.addField("location", {
-      label: "User",
-      sort: {generic: {type:"string",property:"location"}},
-      dynamic: true,
-      value: item => {
-        let list = [];
-        for(let character of item.list.viewer.lists.CharacterList.items("owned"))
-        {
-          list.push({value:character.key, display:character.name});
-          list.push({value:character.key+":0", display:character.name+" (Skill)"});
-        }
-        return item.character ? {
-          value: [
-            {
-              value: item.character.name + (item.character.echoes[0] == item ? " (Skill)" : ""),
-              edit: {
-                target: {item:item, field:"location"},
-                type: "select",
-                list: list,
-              },
-            },
-            {
-              tag: "i",
-              classes: {'fa-solid':true, 'fa-eye':true},
-              popup: item.character.variants?.length ? item.character.variants[0] : item.character,
-            },
-          ],
-          classes: {
-            "user-field": true,
-          },
-        } : {
-          value: "-",
-          edit: {
-            target: {item:item, field:"location"},
-            type: "select",
-            list: list,
-          },
-        };
-      },
-      dependencies: item => [
-        {item:item.list.viewer.lists.CharacterList, field:"list"},
-      ],
-    });
+    Echo.setupDisplay(this.display);
   }
   
   getFooterParams()
@@ -222,15 +178,6 @@ export default class EchoList extends WuWaList
     };
   }
   
-  clear()
-  {
-    super.clear();
-    this.viewer.lists.CharacterList.list.forEach(character => {
-      character.skillEcho = null;
-      character.echoes = [];
-    });
-  }
-  
   prepareRender(element, data, options)
   {
     data.fields = [];
@@ -250,7 +197,7 @@ export default class EchoList extends WuWaList
     for(let statKey of EchoMetadata.subStats)
       data.fields.push({field:this.display.getField("substat"), params:[statKey]});
     data.fields.push({field:this.display.getField("location"), params:[]});
-    data.fields.push({field:this.display.getField("delete"), params:[]});
+    data.fields.push({field:this.display.getField("deleteBtn"), params:[]});
     data.groups = this.display.getGroups({fieldDefs: data.fields});
     return {element, data, options};
   }

@@ -6,30 +6,10 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body">
-        <select class="character-filter selectpicker" title="Filter characters in showcase..." data-actions-box="true" multiple="multiple">
-          <!--<optgroup label="Element">
-            <option>Anemo</option>
-            <option>Cryo</option>
-            <option>Dendro</option>
-            <option>Electro</option>
-            <option>Geo</option>
-            <option>Hydro</option>
-            <option>Pyro</option>
-          </optgroup>
-          <optgroup label="Weapon">
-            <option>Bow</option>
-            <option>Catalyst</option>
-            <option>Claymore</option>
-            <option>Polearm</option>
-            <option>Sword</option>
-          </optgroup>
-          <optgroup label="Team">
-          </optgroup>-->
-          <optgroup label="Characters">
-        {{#each characters}}
+        <select class="showcase-filter selectpicker" title="Filter items in showcase..." data-actions-box="true" multiple="multiple">
+          {{#each items}}
             <option value="{{uuid .}}">{{getProperty . "name"}}</option>
-        {{/each}}
-          </optgroup>
+          {{/each}}
         </select>
       </div>
       <div class="modal-footer">

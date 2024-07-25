@@ -1,0 +1,7 @@
+<div class="container showcase list" data-template="renderShowcase" {{#if filter}}data-filter="{{filter}}"{{/if}} data-uuid="{{uuid item}}">
+  {{#each items}}
+    <div class="showcase-row list-item" data-uuid="{{uuid .}}">
+        <div class="showcase-name">{{> renderItemField item=. field="name" wrapper="span"}}</div>
+    </div>
+  {{/each}}
+</div>

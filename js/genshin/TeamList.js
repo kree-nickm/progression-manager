@@ -76,6 +76,16 @@ export default class TeamList extends GenshinList {
     Team.setupDisplay(this.display);
   }
   
+  getFooterParams()
+  {
+    return {
+      add: {
+        fields: [],
+        onAdd: (event, elements, data) => this.addGOOD({}),
+      },
+    };
+  }
+  
   prepareRender(element, data, options)
   {
     data.fields = [
@@ -87,38 +97,5 @@ export default class TeamList extends GenshinList {
       {field:this.display.getField("deleteBtn"), params:[]},
     ];
     return {element, data, options};
-  }
-  
-  async render(force=false)
-  {
-    await super.render(force);
-    
-    let footer = document.getElementById("footer");
-    footer.classList.remove("d-none");
-    if(footer.dataset.list != this.uuid)
-    {
-      footer.replaceChildren();
-      footer.dataset.list = this.uuid;
-      
-      let container = footer.appendChild(document.createElement("div"));
-      container.classList.add("container-fluid", "navbar-expand");
-      
-      let ul = container.appendChild(document.createElement("ul"));
-      ul.classList.add("navbar-nav");
-      
-      // Add
-      let li1 = ul.appendChild(document.createElement("li"));
-      li1.classList.add("nav-item", "me-2");
-      
-      let divAdd = li1.appendChild(document.createElement("div"));
-      divAdd.classList.add("input-group");
-      
-      let btnAdd = divAdd.appendChild(document.createElement("button"));
-      btnAdd.innerHTML = "Add Team";
-      btnAdd.classList.add("btn", "btn-primary");
-      btnAdd.addEventListener("click", async event => {
-        let item = this.addGOOD({});
-      });
-    }
   }
 }

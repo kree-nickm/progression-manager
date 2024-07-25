@@ -826,6 +826,10 @@ export default class CharacterList extends GenshinList
           return this.get(data.key)?.update("owned", true);
         },
       },
+      showcase: {
+        items: this.items("listable"),
+        template: `genshin/renderCharacterListAsShowcase`,
+      },
     };
   }
   
@@ -861,63 +865,6 @@ export default class CharacterList extends GenshinList
     data.fields.push({field:this.display.getField("circlet"), params:[this.viewer.settings.preferences.characterList, "sm"]});
     data.groups = this.display.getGroups({fieldDefs: data.fields});
     return {element, data, options};
-  }
-  
-  async render(force=false)
-  {
-    const {render, footer, updateFooter, ul} = await super.render(force);
-    
-    if(updateFooter)
-    {
-      // Display Showcase
-      let li2 = ul.appendChild(document.createElement("li"));
-      li2.classList.add("nav-item", "me-2");
-      
-      let showcaseBtn = li2.appendChild(document.createElement("button"));
-      showcaseBtn.id = "characterShowcaseBtn";
-      showcaseBtn.classList.add("btn", "btn-primary", "mt-2");
-      showcaseBtn.title = "Display your characters' stats and gear in a nice window that you can screenshot and show to others.";
-      let showcaseIcon = showcaseBtn.appendChild(document.createElement("i"));
-      showcaseIcon.classList.add("fa-solid", "fa-camera");
-      
-      if(!showcaseBtn.onclick)
-      {
-        showcaseBtn.onclick = async event => {
-          let template = await fetch(`templates/renderShowcaseConfigPopup.html`, {cache:"no-cache"})
-          .then(response => response.text())
-          .then(src => handlebars.compile(src));
-          
-          let modalElement = document.body.appendChild(document.createElement("template"));
-          let index = Array.from(document.body.children).indexOf(modalElement);
-          modalElement.outerHTML = template({characters:this.items("listable")});
-          modalElement = document.body.children.item(index);
-          $(modalElement).find(".selectpicker").selectpicker('render');
-          
-          let modal = new bootstrap.Modal(modalElement);
-          modal.show();
-          modalElement.addEventListener("hide.bs.modal", async event => {
-            if(event.explicitOriginalTarget?.classList.contains("popup-ok-btn"))
-            {
-              let characters = Array.from(modalElement.querySelector("select.character-filter").selectedOptions).map(optionElement => Renderer.controllers.get(optionElement.value));
-              for(let character of characters)
-                await character?.importDetails();
-              let showcase = window.open("showcase.html", "_blank");
-              showcase.addEventListener("DOMContentLoaded", async event => {
-                document.head.querySelectorAll('link, style').forEach(htmlElement => {
-                  showcase.document.head.appendChild(htmlElement.cloneNode(true));
-                });
-                let container = showcase.document.body.appendChild(document.createElement("div"));
-                await Renderer.rerender(container, {item:this, items:characters}, {template: "genshin/renderCharacterListAsShowcase"});
-              });
-              showcase.addEventListener("beforeunload", event => {
-                this.constructor.clearDependencies(showcase.document.body, true);
-              });
-            }
-            modalElement.remove();
-          });
-        };
-      }
-    }
   }
   
   onRender(element)

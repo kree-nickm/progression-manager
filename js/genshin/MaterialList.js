@@ -41,51 +41,6 @@ export default class MaterialList extends GenshinList
       };},
     });
     
-    let countField = this.display.addField("count", {
-      label: "Count",
-      dynamic: true,
-      title: item => {
-        let planMaterials = item.viewer.account.plan.getFullPlan();
-        if(planMaterials.original[item.key])
-        {
-          let wanters = planMaterials.resolved[item.key].wanters.map(wanter => `${Renderer.controllers.get(wanter.src).name} wants ${wanter.amount}`).join(`\r\n`);
-          return (item.prevTier || item.converts
-            ? `Up to ${item.getCraftCount({plan:planMaterials.original})} if you craft.`
-            : ``) + (wanters ? `\r\n`+wanters : ``);
-        }
-        else
-        {
-          return (item.prevTier || item.converts
-            ? `Up to ${item.getCraftCount()} if you craft.`
-            : ``);
-        }
-      },
-      value: item => {
-        let planMaterials = item.viewer.account.plan.getFullPlan();
-        if(planMaterials.original[item.key])
-          return `${item.count} / ${planMaterials.original[item.key]}`;
-        else
-          return item.count + (item.prevTier || item.converts ? " (+"+ (item.getCraftCount()-item.count) +")" : "");
-      },
-      edit: item => ({
-        target: {item:item, field:"count"}, min:0, max:99999,
-      }),
-      dependencies: item => {
-        let planMaterials = item.viewer.account.plan.getFullPlan();
-        return item.getCraftDependencies();
-      },
-      classes: item => {
-        let planMaterials = item.viewer.account.plan.getFullPlan();
-        if(planMaterials.original[item.key])
-          return {
-            "pending": item.count < planMaterials.original[item.key],
-            "insufficient": item.getCraftCount({plan:planMaterials.original}) < planMaterials.original[item.key],
-          };
-        else
-          return {};
-      },
-    });
-    
     let sourceField = this.display.addField("source", {
       label: "Source",
       dynamic: true,
@@ -96,18 +51,6 @@ export default class MaterialList extends GenshinList
       dependencies: item => [
         item.days ? {item:this.viewer, field:"today"} : {},
       ],
-    });
-    
-    let usersField = this.display.addField("users", {
-      label: "Used By",
-      dynamic: true,
-      value: item => item.getUsage(),
-      dependencies: item => {
-        let dependencies = [{item:item, field:["usedBy"]}];
-        for(let i of item.usedBy)
-          dependencies.push({item:i, field:["favorite"]});
-        return dependencies;
-      },
     });
     
     let imageField = this.display.addField("image", {
@@ -249,13 +192,5 @@ export default class MaterialList extends GenshinList
       ];
       return {element, data, options};
     }
-  }
-  
-  async render(force=false)
-  {
-    await super.render(force);
-    
-    let footer = document.getElementById("footer");
-    footer.classList.add("d-none");
   }
 }

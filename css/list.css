@@ -200,3 +200,15 @@ thead {
 .unhighlighted {
   opacity: 0.4;
 }
+
+.material-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1em;
+  justify-content: center;
+}
+
+.material-row .list-item {
+  margin: 0.5em;
+  flex: 0 0 7.2%;
+}

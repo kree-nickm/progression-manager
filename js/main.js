@@ -57,7 +57,8 @@ if(!window.productionMode)
 
 window.generalSettings = JSON.parse(window.localStorage.getItem("generalSettings") ?? "{}") ?? {};
 
-document.getElementById("darkModeToggle")?.addEventListener("change", event => {
+let darkModeToggle = document.getElementById("darkModeToggle");
+darkModeToggle?.addEventListener("change", event => {
   let link = document.getElementById("lightDark");
   if(event.target.checked)
   {
@@ -74,6 +75,8 @@ document.getElementById("darkModeToggle")?.addEventListener("change", event => {
 });
 if(window.generalSettings.darkMode)
 {
+  if(darkModeToggle)
+    darkModeToggle.checked = true;
   let link = document.getElementById("lightDark");
   link.href = "css/dark.css";
 }
@@ -97,7 +100,7 @@ if(typeof(Storage) !== "undefined")
       }
       else
       {
-        document.getElementById("gameIcon").innerHTML = `<img src="img/gameIcons/${selectBtn.dataset.game}.png"/>`;
+        document.getElementById("gameIcon").innerHTML = `<img src="img/gameIcons/${selectBtn.dataset.game}.webp"/>`;
         const { addEventListeners, init } = await import(`./${selectBtn.dataset.game}/load.js`);
         
         let modalsResp = await fetch(`templates/${selectBtn.dataset.game}/menuModals.html`, {cache:"no-cache"});

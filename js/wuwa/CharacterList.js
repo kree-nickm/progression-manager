@@ -171,17 +171,26 @@ export default class CharacterList extends WuWaList
         this.createItem({key}).update("owned", false);
   }
   
-  /*getFooterParams()
+  getFooterParams()
   {
     return {
-      add: [
-        {
-          property: "key",
-          options: [],
+      add: {
+        fields: [
+          {
+            property: "key",
+            options: this.items('unowned')
+              .filter(character => !character.isLeakHidden)
+              .map(character => ({value:character.key, label:character.name})),
+          },
+        ],
+        onAdd: async (event, elements, data) => {
+          elements.key.needsUpdate = true;
+          elements.key.removeChild(elements.key.selectedOptions.item(0));
+          return this.get(data.key)?.update("owned", true);
         },
-      ],
+      },
     };
-  }*/
+  }
   
   prepareRender(element, data, options)
   {
@@ -215,111 +224,6 @@ export default class CharacterList extends WuWaList
     data.fields.push({field:this.display.getField("equipWeapon"), params:[]});
     data.groups = this.display.getGroups({fieldDefs: data.fields});
     return {element, data, options};
-  }
-  
-  async render(force=false)
-  {
-    await super.render(force);
-    
-    let selectAdd;
-    let footer = document.getElementById("footer");
-    footer.classList.remove("d-none");
-    if(footer.dataset.list != this.uuid)
-    {
-      footer.replaceChildren();
-      footer.dataset.list = this.uuid;
-      
-      let container = footer.appendChild(document.createElement("div"));
-      container.classList.add("container-fluid", "navbar-expand");
-      
-      let ul = container.appendChild(document.createElement("ul"));
-      ul.classList.add("navbar-nav");
-      
-      // Add Character
-      let li1 = ul.appendChild(document.createElement("li"));
-      li1.classList.add("nav-item", "me-2");
-      
-      let divAdd = li1.appendChild(document.createElement("div"));
-      divAdd.classList.add("input-group");
-      
-      selectAdd = divAdd.appendChild(document.createElement("select"));
-      selectAdd.id = "addCharacterSelect";
-      selectAdd.classList.add("form-select", "size-to-content");
-      let btnAdd = divAdd.appendChild(document.createElement("button"));
-      btnAdd.innerHTML = "Add Character";
-      btnAdd.classList.add("btn", "btn-primary");
-      btnAdd.addEventListener("click", async event => {
-        let selectAdd = document.getElementById("addCharacterSelect");
-        if(selectAdd.value)
-        {
-          this.get(selectAdd.value)?.update("owned", true);
-          selectAdd.needsUpdate = true;
-          selectAdd.removeChild(selectAdd.selectedOptions.item(0));
-          selectAdd.value = "";
-        }
-      });
-      
-      // Display Showcase
-      /*let li2 = ul.appendChild(document.createElement("li"));
-      li2.classList.add("nav-item", "me-2");
-      
-      let showcaseBtn = li2.appendChild(document.createElement("button"));
-      showcaseBtn.id = "characterShowcaseBtn";
-      showcaseBtn.classList.add("btn", "btn-primary");
-      showcaseBtn.title = "Display your characters' stats and gear in a nice window that you can screenshot and show to others.";
-      let showcaseIcon = showcaseBtn.appendChild(document.createElement("i"));
-      showcaseIcon.classList.add("fa-solid", "fa-camera");
-      
-      if(!showcaseBtn.onclick)
-      {
-        showcaseBtn.onclick = async event => {
-          let template = await fetch(`templates/renderShowcaseConfigPopup.html`, {cache:"no-cache"})
-          .then(response => response.text())
-          .then(src => handlebars.compile(src));
-          
-          let modalElement = document.body.appendChild(document.createElement("template"));
-          let index = Array.from(document.body.children).indexOf(modalElement);
-          modalElement.outerHTML = template({characters:this.items("listable")});
-          modalElement = document.body.children.item(index);
-          $(modalElement).find(".selectpicker").selectpicker('render');
-          
-          let modal = new bootstrap.Modal(modalElement);
-          modal.show();
-          modalElement.addEventListener("hide.bs.modal", event => {
-            if(event.explicitOriginalTarget?.classList.contains("popup-ok-btn"))
-            {
-              let characters = Array.from(modalElement.querySelector("select.character-filter").selectedOptions).map(optionElement => Renderer.controllers.get(optionElement.value));
-              let showcase = window.open("showcase.html", "_blank");
-              showcase.addEventListener("DOMContentLoaded", async event => {
-                document.head.querySelectorAll('link, style').forEach(htmlElement => {
-                  showcase.document.head.appendChild(htmlElement.cloneNode(true));
-                });
-                let container = showcase.document.body.appendChild(document.createElement("div"));
-                await Renderer.rerender(container, {item:this, items:characters}, {template: "genshin/renderCharacterListAsShowcase"});
-              });
-              showcase.addEventListener("beforeunload", event => {
-                this.constructor.clearDependencies(showcase.document.body, true);
-              });
-            }
-            modalElement.remove();
-          });
-        };
-      }*/
-    }
-    selectAdd = document.getElementById("addCharacterSelect");
-    if(!selectAdd.children.length || selectAdd.needsUpdate)
-    {
-      selectAdd.replaceChildren();
-      selectAdd.appendChild(document.createElement("option"))
-      for(let chara of this.items('unowned'))
-      {
-        if(chara.isLeakHidden)
-          continue;
-        let option = selectAdd.appendChild(document.createElement("option"));
-        option.value = chara.key;
-        option.innerHTML = chara.name;
-      }
-    }
   }
   
   onRender(element)
