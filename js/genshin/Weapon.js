@@ -111,17 +111,17 @@ export default class Weapon extends Equipment(Ascendable(GenshinItem))
   getPlanMaterials(result={})
   {
     // EXP
-    /*let exp = (GenshinCharacterStats.totalExpCost[this.wishlist.level] ?? 0) - GenshinCharacterStats.totalExpCost[this.level];
+    let exp = (GenshinWeaponStats.levelScaling[this.wishlist?.level]?.[this.rarity] ?? 0) - GenshinWeaponStats.levelScaling[this.level][this.rarity];
     if(exp > 0)
     {
-      result["Mora"] = Math.ceil(exp/5);
-      result["HerosWit"] = Math.floor(exp/20000);
-      exp -= result["HerosWit"] * 20000;
-      result["AdventurersExperience"] = Math.floor(exp/5000);
-      exp -= result["AdventurersExperience"] * 5000;
-      result["WanderersAdvice"] = Math.ceil(exp/1000);
-      exp -= result["WanderersAdvice"] * 1000;
-    }*/
+      result["Mora"] = Math.ceil(exp/10);
+      result["MysticEnhancementOre"] = Math.floor(exp/10000);
+      exp -= result["MysticEnhancementOre"] * 10000;
+      result["FineEnhancementOre"] = Math.floor(exp/2000);
+      exp -= result["FineEnhancementOre"] * 2000;
+      result["EnhancementOre"] = Math.ceil(exp/400);
+      exp -= result["EnhancementOre"] * 400;
+    }
     
     return super.getPlanMaterials(result);
   }

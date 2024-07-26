@@ -119,10 +119,13 @@ export default class MaterialList extends GenshinList
     for(let suffix in GenshinLootData.forgery)
       Material.setupTiers([5,4,3,2].map(q => this.addGOOD({goodKey:GenshinLootData.forgery[suffix][q], goodValue:0}).update("source", GenshinLootData.forgery[suffix].source).update("days", GenshinLootData.forgery[suffix].days, "replace").update("shorthand", suffix)));
     
-    this.addGOOD({goodKey:"Mora", goodValue:0}).update("type", "mora").update("type", "leyline");
-    this.addGOOD({goodKey:"HerosWit", goodValue:0}).update("type", "mora").update("type", "leyline");
-    this.addGOOD({goodKey:"AdventurersExperience", goodValue:0}).update("type", "mora").update("type", "leyline");
-    this.addGOOD({goodKey:"WanderersAdvice", goodValue:0}).update("type", "mora").update("type", "leyline");
+    this.addGOOD({goodKey:"Mora", goodValue:0}).update("type", "leyline");
+    this.addGOOD({goodKey:"HerosWit", goodValue:0}).update("type", "leyline");
+    this.addGOOD({goodKey:"AdventurersExperience", goodValue:0}).update("type", "leyline");
+    this.addGOOD({goodKey:"WanderersAdvice", goodValue:0}).update("type", "leyline");
+    this.addGOOD({goodKey:"MysticEnhancementOre", goodValue:0}).update("type", "leyline");
+    this.addGOOD({goodKey:"FineEnhancementOre", goodValue:0}).update("type", "leyline");
+    this.addGOOD({goodKey:"EnhancementOre", goodValue:0}).update("type", "leyline");
     
     // Flora mats
     for(let c in GenshinCharacterData)

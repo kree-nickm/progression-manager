@@ -2,6 +2,7 @@ import AscensionData from "./gamedata/AscensionData.js";
 import ForteData from "./gamedata/ForteData.js";
 import LootData from "./gamedata/LootData.js";
 import CharacterData from "./gamedata/CharacterData.js";
+import CharacterMetadata from "./gamedata/CharacterMetadata.js";
 
 import { handlebars, Renderer } from "../Renderer.js";
 import Ascendable from "../Ascendable.js";
@@ -136,6 +137,28 @@ export default class Character extends Ascendable(WuWaItem)
   get icon(){ return "img/wuwa/small/"+ (CharacterData[this.key].icon.slice(CharacterData[this.key].icon.lastIndexOf('.')+1) ?? "blank") +".webp"; }
   get portrait(){ return "img/wuwa/full/"+ (CharacterData[this.key].portrait.slice(CharacterData[this.key].portrait.lastIndexOf('.')+1) ?? "blank") +".webp"; }
   get releaseTimestamp(){ return CharacterData[this.key]?.release ? Date.parse(CharacterData[this.key]?.release) : 0; }
+  
+  getPlanMaterials(result={})
+  {
+    // EXP
+    let exp = 0;
+    for(let i=this.level; i<this.wishlist?.level??this.level; i++)
+      exp += CharacterMetadata.levelScaling[i+1][`exp${this.rarity}`];
+    if(exp > 0)
+    {
+      result["ShellCredit"] = Math.ceil(exp*0.35);
+      result["PremiumResonancePotion"] = Math.floor(exp/20000);
+      exp -= result["PremiumResonancePotion"] * 20000;
+      result["AdvancedResonancePotion"] = Math.floor(exp/8000);
+      exp -= result["AdvancedResonancePotion"] * 8000;
+      result["MediumResonancePotion"] = Math.floor(exp/3000);
+      exp -= result["MediumResonancePotion"] * 3000;
+      result["BasicResonancePotion"] = Math.ceil(exp/1000);
+      exp -= result["BasicResonancePotion"] * 1000;
+    }
+    
+    return super.getPlanMaterials(result);
+  }
   
   // This method should only be called by the item that is being equipped, when its "location" property is updated.
   equipItem(item, {slot}={})

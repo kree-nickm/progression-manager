@@ -79,6 +79,28 @@ export default class Weapon extends Equipment(Ascendable(WuWaItem))
   get releaseTimestamp(){ return WeaponData[this.key]?.release ? Date.parse(WeaponData[this.key]?.release) : 0; }
   get equipProperty() { return "weapon"; }
   
+  getPlanMaterials(result={})
+  {
+    // EXP
+    let exp = 0;
+    for(let i=this.level; i<this.wishlist?.level??this.level; i++)
+      exp += WeaponMetadata.levelScaling[i][`exp${this.rarity}`];
+    if(exp > 0)
+    {
+      result["ShellCredit"] = Math.ceil(exp*0.4);
+      result["PremiumEnergyCore"] = Math.floor(exp/20000);
+      exp -= result["PremiumEnergyCore"] * 20000;
+      result["AdvancedEnergyCore"] = Math.floor(exp/8000);
+      exp -= result["AdvancedEnergyCore"] * 8000;
+      result["MediumEnergyCore"] = Math.floor(exp/3000);
+      exp -= result["MediumEnergyCore"] * 3000;
+      result["BasicEnergyCore"] = Math.ceil(exp/1000);
+      exp -= result["BasicEnergyCore"] * 1000;
+    }
+    
+    return super.getPlanMaterials(result);
+  }
+  
   canEquip(character)
   {
     return this.type == character.weaponType;
