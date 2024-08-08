@@ -99,6 +99,29 @@ export default class Material extends Ingredient(GenshinItem)
   get rarity(){ return GenshinMaterialData[this.key]?.rarity ?? 1; }
   get releaseTimestamp(){ return GenshinMaterialData[this.key]?.release ? Date.parse(GenshinMaterialData[this.key]?.release) : 0; }
   
+  async getRelatedItems()
+  {
+    return {
+      topFields: [
+        {
+          fieldDefs: [
+            [
+              { field:this.display.getField("image"), params:[] },
+            ],
+          ],
+        },
+        {
+          header: "Count",
+          fieldDefs: [
+            [
+              { field:this.display.getField("count"), params:[] },
+            ],
+          ],
+        },
+      ],
+    };
+  }
+  
   getFullSource()
   {
     return `${this.name}` + (this.source?`, dropped by ${this.source}`:"") + (this.days.length?`, on ${this.days.join("/")}`:"");

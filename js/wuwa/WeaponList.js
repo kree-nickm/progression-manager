@@ -17,22 +17,6 @@ export default class WeaponList extends WuWaList
   
   setupDisplay()
   {
-    this.display.addField("name", {
-      label: "Name",
-      popup: item => item,
-      sort: {generic: {type:"string",property:"name"}},
-      dynamic: true,
-      value: item => item.name,
-      classes: item => ({
-        "material": true,
-        "q1": item.rarity == 1,
-        "q2": item.rarity == 2,
-        "q3": item.rarity == 3,
-        "q4": item.rarity == 4,
-        "q5": item.rarity == 5,
-      }),
-    });
-    
     this.display.addField("type", {
       label: "Type",
       sort: {generic: {type:"string", property:"type"}},
@@ -87,7 +71,7 @@ export default class WeaponList extends WuWaList
   {
     data.fields = [];
     data.fields.push({field:this.display.getField("favorite"), params:[]});
-    data.fields.push({field:this.display.getField("name"), params:[]});
+    data.fields.push({field:this.display.getField("name"), params:[true,true]});
     data.fields.push({field:this.display.getField("type"), params:[]});
     data.fields.push({field:this.display.getField("lock"), params:[]});
     data.fields.push({field:this.display.getField("level"), params:[]});

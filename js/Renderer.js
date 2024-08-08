@@ -420,7 +420,7 @@ class Renderer
     // Add context-specific event handlers.
     if(!renderedItem)
       renderedItem = data.item;
-    renderedItem.onRender(element);
+    renderedItem.postRender(element);
     
     // Final UI preperation.
     $(element).find(".selectpicker").selectpicker('render');
@@ -433,7 +433,7 @@ class Renderer
           popupParent = popupParent.parentElement;
         item = Renderer.controllers.get(popupParent.dataset.uuid);
       }
-      if(item)
+      if(item && item != data.item)
       {
         popupTrigger.onclick = event => {
           event.stopPropagation();
@@ -693,7 +693,12 @@ class Renderer
       }
       else if(subContent.popup)
       {
-        if(!subElement.onclick)
+        // Make sure this link is not trying to open a popup that is already open.
+        let popup = subContent.popup.viewer.elements.popup.classList.contains("show") ? subElement.parentElement : null;
+        while(popup && !popup.classList.contains("modal-content"))
+          popup = popup.parentElement;
+        let currentPopup = popup ? Renderer.controllers.get(popup.dataset.uuid) : null
+        if(!subElement.onclick && currentPopup != subContent.popup)
         {
           if(window.DEBUGLOG.renderItemField) console.debug(`Adding popup event listener to subelement (field:${fieldName}, item:${item.name??item.uuid}).`, subElement, subContent);
           subElement.onclick = event => {
@@ -887,41 +892,54 @@ class Renderer
       {
         let saveEdit = event => {
           window.DEBUG?.begin();
+          // Do nothing if we're either not editing, or didn't press a 'finish' key (enter, esc)
           if((event.type == "keydown" && event.which != 13 && event.which != 27) || !fieldElement.classList.contains("editing") || !fieldElement.editingStartedAt)
             return true;
+          
           event.stopPropagation();
           if(!content.edit.alwaysShow)
             fieldElement.classList.remove("editing");
           delete fieldElement.editingStartedAt;
+          
+          // Prepare to save, unless Esc pressed.
           if(event.type != "keydown" || event.which != 27)
           {
             let val = editElement.value;
+            if(val === "")
+            {
+              if(typeof(fieldElement.editingData.onBlank) == "function")
+              {
+                val = fieldElement.editingData.onBlank(fieldElement, editElement);
+                if(val === null || val === undefined)
+                  return true;
+              }
+              else if('onBlank' in fieldElement.editingData)
+                val = fieldElement.editingData.onBlank;
+              else if(editElement.type != "select" && editElement.type != "select-one")
+                return false;
+            }
+            
+            // Resolve the value if it is of a specific type.
             if(editElement.type == "number")
             {
               val = parseFloat(val);
-              if(isNaN(val) && fieldElement.editingData.ignoreBlank !== false)
+              if(isNaN(val))
               {
-                console.warn(`Can't set field to a non-numerical value.`);
+                console.warn(`Can't set field to a non-numerical value.`, {value:editElement.value});
                 return false;
               }
             }
             else if(fieldElement.editingData.valueFormat == "uuid")
             {
               val = Renderer.controllers.get(val);
-              if(!val && fieldElement.editingData.ignoreBlank)
+              if(!val)
               {
-                console.warn(`Can't set field to an invalid uuid.`);
+                console.warn(`Can't set field to an invalid uuid.`, {value:editElement.value});
                 return false;
               }
             }
-            else
-            {
-              if(val == "" && fieldElement.editingData.ignoreBlank)
-              {
-                console.warn(`Can't set field to empty string.`);
-                return false;
-              }
-            }
+            
+            // Save the new value.
             if(fieldElement.editingData.target)
               fieldElement.editingData.target.item.update(fieldElement.editingData.target.field, val, "replace");
             else if(fieldElement.editingData.func)

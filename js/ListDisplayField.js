@@ -6,7 +6,8 @@ handlebars.registerHelper("findField", (item, field, options) => {
   let foundField = item?.display?.getField(field);
   if(foundField instanceof ListDisplayField)
     return foundField;
-  console.error(`Error in 'fieldField' helper: cannot find field based on arguments;`, {item, field, options});
+  if(!options.hash.check)
+    console.error(`Error in 'fieldField' helper: cannot find field based on arguments;`, {item, field, options});
   return null;
 });
 

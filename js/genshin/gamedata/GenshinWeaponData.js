@@ -817,13 +817,14 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/02\/Weapon_Lost_Prayer_to_the_Sacred_Winds_2nd.png"
         ],
         "passive": "Increases Movement SPD by 10%. When in battle, gain an @0% Elemental DMG Bonus every 4s. Max 4 stacks. Lasts until the character falls or leaves combat.",
+        "code": ["proc", ["stat", ["elemental_dmg_", 8]], 4, "Every 4 seconds on field"],
         "refinementData": [
             {
-                "1": 10.000000149009999,
-                "2": 10.000000149009999,
-                "3": 10.000000149009999,
-                "4": 10.000000149009999,
-                "5": 10.000000149009999
+                "1": 8,
+                "2": 10,
+                "3": 12,
+                "4": 14,
+                "5": 16
             }
         ],
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Lost_Prayer_to_the_Sacred_Winds",

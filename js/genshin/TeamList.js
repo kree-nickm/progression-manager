@@ -17,7 +17,6 @@ export default class TeamList extends GenshinList {
       value: item => item.name,
       edit: item => ({
         type: "string",
-        ignoreBlank: true,
         target: {item, field:"name"},
       }),
     });

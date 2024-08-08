@@ -37,16 +37,6 @@ export default class CharacterList extends WuWaList
   
   setupDisplay()
   {
-    this.display.addField("name", {
-      label: "Name",
-      labelTitle: "Sort by name.",
-      popup: item => item,
-      sort: {generic: {type:"string",property:"name"}},
-      dynamic: true,
-      value: item => item.name,
-      title: item => `Click to open a popup to examine ${item.name} in-depth.`,
-    });
-    
     this.display.addField("weaponType", {
       label: "Wpn",
       labelTitle: "Sort by weapon type.",
@@ -70,15 +60,15 @@ export default class CharacterList extends WuWaList
       sort: {generic: {type:"string",property:"element"}},
       dynamic: false,
       title: item => item.element,
-      value: item => item.element,
-      /*value: item => ({
+      //value: item => item.element,
+      value: item => ({
         tag: "img",
         classes: {'element-icon':true},
-        src: `img/Element_${item.element}.svg`,
+        src: `img/wuwa/icons/IconElement${item.element}3.webp`,
       }),
       classes: item => ({
         'icon': true,
-      }),*/
+      }),
     });
     
     this.display.addField("sequence", {
@@ -89,6 +79,9 @@ export default class CharacterList extends WuWaList
       title: item => "Click to change.",
       value: item => item.sequence,
       edit: item => ({target: {item:item, field:"sequence"}}),
+      classes: item => ({
+        "at-max": item.sequence >= 6,
+      }),
     });
     
     let gearGroup = {label:"Equipped Gear", startCollapsed:false};
@@ -197,7 +190,7 @@ export default class CharacterList extends WuWaList
     data.filter = "listable";
     data.fields = [];
     data.fields.push({field:this.display.getField("favorite"), params:[]});
-    data.fields.push({field:this.display.getField("name"), params:[]});
+    data.fields.push({field:this.display.getField("name"), params:[true,false]});
     data.fields.push({field:this.display.getField("weaponType"), params:[]});
     data.fields.push({field:this.display.getField("element"), params:[]});
     data.fields.push({field:this.display.getField("level"), params:[]});
@@ -226,9 +219,9 @@ export default class CharacterList extends WuWaList
     return {element, data, options};
   }
   
-  onRender(element)
+  postRender(element)
   {
-    super.onRender(element);
+    super.postRender(element);
     
     element.querySelectorAll(".highlighter").forEach(elem => {
       let stat;

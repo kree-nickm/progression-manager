@@ -1,6 +1,25 @@
 <div class="modal-content list-item" data-template="renderItemAsPopup" data-uuid="{{uuid item}}">
     <div class="modal-body">
         <button type="button" class="btn-close float-end" data-bs-dismiss="modal"></button>
-        <!-- Content here -->
+        <div class="row">
+          {{#each relatedItems.topFields}}
+            <div class="col-auto">
+              {{#if header}}<h5>{{header}}</h5>{{/if}}
+              {{#each fieldDefs as |row rowId|}}
+                <div>
+                  {{#each row as |fieldDef colId|}}
+                      {{> renderItemField item=../../../item field=fieldDef.field params=fieldDef.params wrapper="div"}}
+                  {{/each}}
+                </div>
+              {{/each}}
+            </div>
+          {{/each}}
+        </div>
+        
+      {{#if (findField item "planMaterials" check=1)}}
+        <div class="plan-materials">
+      {{> renderItemField item=item field="planMaterials" wrapper="div"}}
+        </div>
+      {{/if}}
     </div>
 </div>

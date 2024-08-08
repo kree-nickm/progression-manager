@@ -1539,6 +1539,7 @@ export default class Character extends Ascendable(GenshinItem)
       rxnMult = this.getReaction(motionValue.reaction, alternates);
     
     // Final
+    critRate = Math.max(critRate, 1);
     partialValue.value = (partialValue.baseDMG * baseMult + baseAdd) * (1 + dmgMult/100) * (ignoreRES ? 1 : reductionRES) * (ignoreDEF ? 1 : reductionDEF) * rxnMult;
     partialValue.critical = partialValue.value * critDMG;
     partialValue.average = critRate * partialValue.critical + (1-critRate) * partialValue.value;
@@ -1782,9 +1783,9 @@ export default class Character extends Ascendable(GenshinItem)
     this.statModifiers = this.statModifiers.filter(mod => mod.isAvailable);
   }
   
-  onRender(element)
+  postRender(element)
   {
-    super.onRender(element);
+    super.postRender(element);
     if(element.dataset.template == "genshin/renderCharacterAsPopup")
     {
       this._addStatsEventHandlers(element.querySelector(".character-stats"));
@@ -1811,7 +1812,7 @@ export default class Character extends Ascendable(GenshinItem)
     }
     else
     {
-      console.warn(`Character.onRender called for an unrecognized element template.`, element);
+      console.warn(`Character.postRender called for an unrecognized element template.`, element);
     }
   }
   

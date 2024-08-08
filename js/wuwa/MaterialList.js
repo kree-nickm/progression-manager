@@ -14,20 +14,6 @@ export default class MaterialList extends WuWaList
   
   setupDisplay()
   {
-    this.display.addField("name", {
-      label: "Name",
-      dynamic: false,
-      value: item => item.name,
-      classes: item => ({
-        "material": true,
-        "q1": item.rarity == 1,
-        "q2": item.rarity == 2,
-        "q3": item.rarity == 3,
-        "q4": item.rarity == 4,
-        "q5": item.rarity == 5,
-      }),
-    });
-    
     this.display.addField("icon", {
       label: "Material",
       sort: {generic: {type:"string", property:"name"}},
@@ -134,7 +120,7 @@ export default class MaterialList extends WuWaList
     else
     {
       data.fields = [
-        {field:this.display.getField("name"), params:[]},
+        {field:this.display.getField("name"), params:[true,true]},
         {field:this.display.getField("count"), params:[]},
         //{field:this.display.getField("source"), params:[]},
         //{field:this.display.getField("users"), params:[]},

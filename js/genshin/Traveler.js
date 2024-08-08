@@ -286,12 +286,12 @@ export default class Traveler extends Character
       return super.getTalentMat(type, talent);
   }
   
-  onRender(element)
+  postRender(element)
   {
     // Only the variants can be inspected, so force it to one of them if this is the base Traveler.
     if(this.base)
-      super.onRender(element);
+      super.postRender(element);
     else
-      this.variants[0].onRender(element);
+      this.variants[0].postRender(element);
   }
 }

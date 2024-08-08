@@ -13,6 +13,7 @@ const Ascendable = (SuperClass) => class extends SuperClass {
   
   static setupDisplay(display)
   {
+    if(!display.getField("level"))
     display.addField("level", {
       label: "Lvl",
       labelTitle: "Sort by character level.",
@@ -29,6 +30,7 @@ const Ascendable = (SuperClass) => class extends SuperClass {
       ],
     });
     
+    if(!display.getField("planLevel"))
     display.addField("planLevel", {
       tags: ["detailsOnly"],
       dynamic: true,
@@ -42,6 +44,7 @@ const Ascendable = (SuperClass) => class extends SuperClass {
     
     if(this.AscensionData)
     {
+      if(!display.getField("ascension"))
       display.addField("ascension", {
         label: "Asc",
         labelTitle: "Sort by ascension.",
@@ -57,6 +60,7 @@ const Ascendable = (SuperClass) => class extends SuperClass {
         dependencies: item => [].concat(...item.materialDefs.materials.map(mat => [{item:item.getMat(mat.property), field:"count"}].concat(item.getMat(mat.property)?.getCraftDependencies()??[]))),
       });
       
+      if(!display.getField("ascensionMaterial"))
       display.addField("ascensionMaterial", {
         group: {label:"Ascension Materials", startCollapsed:false},
         label: (item, type, ascension) => type.capitalize(),
@@ -89,6 +93,7 @@ const Ascendable = (SuperClass) => class extends SuperClass {
         },
       });
     
+      if(!display.getField("planAscension"))
       display.addField("planAscension", {
         tags: ["detailsOnly"],
         dynamic: true,
@@ -103,6 +108,7 @@ const Ascendable = (SuperClass) => class extends SuperClass {
     
     if(this.TalentData)
     {
+      if(!display.getField("talent"))
       display.addField("talent", {
         label: (item, talent) => this.talentTypes[talent]?.char,
         labelTitle: (item, talent) => this.talentTypes[talent]?.full,
@@ -117,6 +123,7 @@ const Ascendable = (SuperClass) => class extends SuperClass {
         dependencies: (item, talent) => [].concat(...item.materialDefs.materials.map(mat => [{item:item.getTalentMat(mat.property,talent), field:"count"}].concat(item.getTalentMat(mat.property,talent)?.getCraftDependencies()??[]))),
       });
       
+      if(!display.getField("talentMaterial"))
       display.addField("talentMaterial", {
         group: {label:"Talent Materials", startCollapsed:false},
         label: (item, type, talent) => (this.talentTypes[talent]?.word??talent) + " " + type.capitalize(),
@@ -185,6 +192,7 @@ const Ascendable = (SuperClass) => class extends SuperClass {
         }),
       });
     
+      if(!display.getField("planTalent"))
       display.addField("planTalent", {
         tags: ["detailsOnly"],
         dynamic: true,
@@ -197,6 +205,7 @@ const Ascendable = (SuperClass) => class extends SuperClass {
       });
     }
     
+    if(!display.getField("planMaterials"))
     display.addField("planMaterials", {
       tags: ["detailsOnly"],
       dynamic: true,
@@ -238,11 +247,14 @@ const Ascendable = (SuperClass) => class extends SuperClass {
     }
     if(!this.constructor.AscensionData && !this.constructor.TalentData)
     {
+      throw new Error(`AscensionData or TalentData must be set for any class that extends Ascendable.`);
+    }
+    else
+    {
       if(!this.maxAscension && this.constructor.AscensionData)
         this.maxAscension = Math.max(...Object.keys(this.constructor.AscensionData));
       if(!this.maxTalent && this.constructor.TalentData)
         this.maxTalent = Math.max(...Object.keys(this.constructor.TalentData));
-      throw new Error(`AscensionData or TalentData must be set for any class that extends Ascendable.`);
     }
     
     if(!this[this.constructor.talentProperty])

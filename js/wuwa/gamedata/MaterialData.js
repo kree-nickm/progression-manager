@@ -8,12 +8,12 @@ export default {
         "subtype": "Universal Currency"
     },
     "PhantomImpermanenceHeron": {
+        "subtypeHash": "ItemShowType_47_Name",
         "rarity": 5,
         "sort": 0,
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterHead\/T_IconMonsterHead_1014_UI.T_IconMonsterHead_1014_UI",
         "name": "Phantom: Impermanence Heron",
-        "type": "Development Materials",
-        "subtypeHash": "ItemShowType_47_Name"
+        "type": "Development Materials"
     },
     "testGoldenUniversalEcho": {
         "rarity": 5,
@@ -823,13 +823,6 @@ export default {
         "type": "Resources",
         "subtype": "Material"
     },
-    "EdibleOil": {
-        "rarity": 1,
-        "sort": 0,
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconCook\/T_IconCook_A06_UI.T_IconCook_A06_UI",
-        "name": "Edible oil",
-        "type": "Resources"
-    },
     "Edodes": {
         "rarity": 1,
         "sort": 0,
@@ -1197,5 +1190,37 @@ export default {
         "name": "Wintry Bell",
         "type": "Resources",
         "subtype": "Ascension Material"
+    },
+    "PremiumEnergyCore": {
+        "rarity": 5,
+        "sort": 5,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWup\/T_IconWup_Exp_4_UI.T_IconWup_Exp_4_UI",
+        "name": "Premium Energy Core",
+        "type": "Weapons",
+        "subtype": "Weapon EXP Material"
+    },
+    "AdvancedEnergyCore": {
+        "rarity": 4,
+        "sort": 5,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWup\/T_IconWup_Exp_3_UI.T_IconWup_Exp_3_UI",
+        "name": "Advanced Energy Core",
+        "type": "Weapons",
+        "subtype": "Weapon EXP Material"
+    },
+    "MediumEnergyCore": {
+        "rarity": 3,
+        "sort": 5,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWup\/T_IconWup_Exp_2_UI.T_IconWup_Exp_2_UI",
+        "name": "Medium Energy Core",
+        "type": "Weapons",
+        "subtype": "Weapon EXP Material"
+    },
+    "BasicEnergyCore": {
+        "rarity": 2,
+        "sort": 5,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWup\/T_IconWup_Exp_1_UI.T_IconWup_Exp_1_UI",
+        "name": "Basic Energy Core",
+        "type": "Weapons",
+        "subtype": "Weapon EXP Material"
     }
 };

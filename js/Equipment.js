@@ -3,6 +3,7 @@ const Equipment = (SuperClass) => class extends SuperClass {
   
   static setupDisplay(display)
   {
+    if(!display.getField("location"))
     display.addField("location", {
       label: "User",
       sort: {generic: {type:"string",property:"location"}},

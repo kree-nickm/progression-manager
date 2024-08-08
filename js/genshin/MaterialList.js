@@ -31,14 +31,15 @@ export default class MaterialList extends GenshinList
       label: "Name",
       dynamic: false,
       value: item => item.name,
-      classes: item => {return{
+      classes: item => ({
         "material": true,
         "q1": item.rarity == 1,
         "q2": item.rarity == 2,
         "q3": item.rarity == 3,
         "q4": item.rarity == 4,
         "q5": item.rarity == 5,
-      };},
+      }),
+      popup: item => item,
     });
     
     let sourceField = this.display.addField("source", {
@@ -79,6 +80,7 @@ export default class MaterialList extends GenshinList
         ],
         classes: {"display-img": true, ["rarity-"+item.rarity]: true},
       }),
+      popup: item => item,
     });
     
     Material.setupDisplay(this.display);

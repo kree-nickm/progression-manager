@@ -369,14 +369,6 @@ export default class UIController {
     return result;
   }
   
-  exampleMemoryFunc(arg1, arg2)
-  {
-    return this.memoryFunction(() => {
-      // Actual code.
-      return [arg1, arg2];
-    }, "storage", "path");
-  }
-  
   /* Methods with code specifically related to the HTML rendering of this UIController. */
   
   async getRelatedItems()
@@ -397,7 +389,7 @@ export default class UIController {
   {
   }
   
-  onRender(element)
+  postRender(element)
   {
   }
   

@@ -121,6 +121,13 @@ export default {
                 "6%",
                 "7%",
                 "8%"
+            ],
+            [
+                "12",
+                "12",
+                "12",
+                "12",
+                "12"
             ]
         ],
         "name": "Blazing Brilliance",

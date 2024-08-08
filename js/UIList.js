@@ -467,9 +467,9 @@ export default class UIList extends UIController {
     return {render, footer, updateFooter, ul};
   }
   
-  onRender(element)
+  postRender(element)
   {
-    super.onRender(element);
+    super.postRender(element);
     
     // Add event handlers for collapsing groups.
     element.querySelectorAll(".group-header").forEach(groupElem => {

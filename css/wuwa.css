@@ -32,6 +32,12 @@
   background-color: var(--column-alt-background) !important;
 }
 
+.labeled-substat {
+  display: flex;
+  justify-content: space-between;
+  gap: 1ex;
+}
+
 .user-field {
   display: flex;
   align-items: center;

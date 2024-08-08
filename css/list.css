@@ -73,17 +73,17 @@ thead {
   border-top-right-radius: 1em;
 }
 
-.sortable {
+.list th.sortable {
   cursor: pointer;
   padding-right: 0.4em;
 }
 
-.sortable.sorted::after {
+.list th.sortable.sorted::after {
   content: "\1f823";
   position: absolute;
 }
 
-.sortable.sorted-r::after {
+.list th.sortable.sorted-r::after {
   content: "\1f821";
   position: absolute;
 }

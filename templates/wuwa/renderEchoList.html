@@ -2,14 +2,16 @@
   {{#each items}}
     <div class="list-item col-auto" name="{{unique this}}" data-uuid="{{uuid this}}">
         <div class="row">
-          {{> renderItemField item=this field="icon" wrapper="div" class="col-auto"}}
+            <div class="echo-stats col-auto">
+              {{> renderItemField item=this field="icon" wrapper="div"}}
+            </div>
             <div class="echo-stats col-auto">
               {{> renderItemField item=this field="primaryStat" wrapper="div"}}
               {{> renderItemField item=this field="secondaryStat" wrapper="div"}}
-              {{> renderItemField item=this field="substat" params=(array 0) wrapper="div"}}
-              {{> renderItemField item=this field="substat" params=(array 1) wrapper="div"}}
-              {{> renderItemField item=this field="substat" params=(array 2) wrapper="div"}}
-              {{> renderItemField item=this field="substat" params=(array 3) wrapper="div"}}
+              {{> renderItemField item=this field="substat" params=(array 0 1) wrapper="div"}}
+              {{> renderItemField item=this field="substat" params=(array 1 1) wrapper="div"}}
+              {{> renderItemField item=this field="substat" params=(array 2 1) wrapper="div"}}
+              {{> renderItemField item=this field="substat" params=(array 3 1) wrapper="div"}}
             </div>
         </div>
         <div class="row">

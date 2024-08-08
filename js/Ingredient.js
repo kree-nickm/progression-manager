@@ -26,6 +26,7 @@ const Ingredient = (SuperClass) => class extends SuperClass {
   
   static setupDisplay(display)
   {
+    if(!display.getField("count"))
     display.addField("count", {
       label: "Count",
       dynamic: true,
@@ -71,6 +72,7 @@ const Ingredient = (SuperClass) => class extends SuperClass {
       },
     });
   
+    if(!display.getField("users"))
     display.addField("users", {
       label: "Used By",
       dynamic: true,

@@ -29,6 +29,7 @@ export default class Echo extends Equipment(WuWaItem)
   set level(val){ this._level = Math.min(Math.max(parseInt(val), 0), 25); }
   
   // Getters/setters for item data that is not stored on each instance of this class.
+  get name(){ return `${this.monster} ${this.set}`; }
   get monster(){ return EchoData[this.monsterKey]?.monster ?? this.monsterKey; }
   get cost(){ return EchoData[this.monsterKey]?.cost ?? 0; }
   get set(){ return EchoSetData[this.setKey]?.name ?? this.setKey; }
@@ -42,20 +43,22 @@ export default class Echo extends Equipment(WuWaItem)
   
   setSubstat(statKey, value)
   {
-    if(!EchoMetadata.subStats.includes(statKey))
+    if(!EchoMetadata.subStats.includes(statKey) || isNaN(value))
     {
-      console.warn(`Invalid echo substat ${statKey}, can't set value to ${value}`);
+      console.warn(`Invalid echo substat definition.`, {statKey, value});
       return this;
     }
     for(let substat of this.substats)
       if(substat.key == statKey)
       {
         substat.value = value;
+        if(value == 0)
+          this.cleanSubstats();
         this.update("substats", substat, "notify");
         return this;
       }
-    this.substats.push({key:statKey, value});
-    this.update("substats", this.substats[this.substats.length-1], "notify");
+    if(value != 0)
+      this.update("substats", {key:statKey, value}, "push");
     return this;
   }
   
@@ -77,5 +80,10 @@ export default class Echo extends Equipment(WuWaItem)
           return substat.value;
       return 0;
     }
+  }
+  
+  cleanSubstats()
+  {
+    this.substats = this.substats.filter(substat => substat.value != 0 && EchoMetadata.subStats.includes(substat.key));
   }
 }

@@ -383,9 +383,9 @@ export default class ArtifactList extends GenshinList
       value: (item,i) => item.substats[i] ? [
           {
             tag: "div",
-            value: item.substatRolls[item.substats[i].key].map(roll => ({
+            value: (item.substatRolls[item.substats[i].key]??[0]).map(roll => ({
               value: ".".repeat(roll+1),
-              width: `calc(${(1/item.substatRolls[item.substats[i].key].length*(0.7+roll*0.1)*100)}% - 2px)`, // TODO: Doesn't work for rarity 1 and 2
+              width: `calc(${(1/(item.substatRolls[item.substats[i].key]?.length??0)*(0.7+roll*0.1)*100)}% - 2px)`, // TODO: Doesn't work for rarity 1 and 2
             })),
             classes: {
               "rolls-display": true,

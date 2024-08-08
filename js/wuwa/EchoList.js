@@ -133,13 +133,82 @@ export default class EchoList extends WuWaList
       group: {label:"Substats"},
       label: (item,statKey) => parseInt(statKey)==statKey?`Substat ${statKey}`:Stats[statKey]?.abbr??Stats[statKey]?.name??statKey,
       dynamic: true,
-      value: (item,statKey) => item.getSubstat(statKey),
-      edit: (item,statKey) => ({
-        func: value => {console.log(`saving`, {item, statKey, value}); return item.setSubstat(statKey, value);},
-        type: "number",
-      }),
+      value: (item,statKey,labeled) => {
+        if(parseInt(statKey) == statKey)
+        {
+          let substat = item.substats[statKey];
+          if(substat)
+            return labeled ? {classes:{'labeled-substat':true}, value:[{value:Stats[substat.key]?.name??substat.key}, {value:substat.value}]} : substat.value;
+          else
+            return "-";
+        }
+        else
+          return labeled ? {classes:{'labeled-substat':true}, value:[{value:Stats[statKey]?.name??statKey}, {value:item.getSubstat(statKey)}]} : item.getSubstat(statKey);
+      },
+      edit: (item,statKey) => {
+        if(parseInt(statKey) == statKey)
+        {
+          let substat = item.substats[statKey];
+          if(substat)
+            return {
+              func: value => item.setSubstat(substat.key, value),
+              type: "number",
+              value: item.getSubstat(substat.key),
+            };
+          else
+            return {
+              func: value => item.setSubstat(value, 1),
+              type: "select",
+              list: EchoMetadata.subStats.map(sKey => ({value:sKey, display:Stats[sKey]?.name??substat.key})),
+            };
+        }
+        else
+        {
+          return {
+            func: value => item.setSubstat(statKey, value),
+            type: "number",
+            value: item.getSubstat(statKey),
+          };
+        }
+      },
       dependencies: item => [
         {item:item, field:"substats"},
+      ],
+    });
+    
+    this.display.addField("location", {
+      label: "User",
+      sort: {generic: {type:"string",property:"location"}},
+      dynamic: true,
+      value: item => item.character ? {
+        value: [
+          {
+            value: item.character.name + (item.location.endsWith(":0")?" (Main)":""),
+            edit: {
+              target: {item:item, field:"location"},
+              type: "select",
+              list: [].concat(...item.characterList.items("owned").filter(cha => item.canEquip(cha)).map(cha => [{value:`${cha.key}`, display:`${cha.name}`}, {value:`${cha.key}:0`, display:`${cha.name} (Main)`}])),
+            },
+          },
+          {
+            tag: "i",
+            classes: {'fa-solid':true, 'fa-eye':true},
+            popup: item.character.variants?.length ? item.character.variants[0] : item.character,
+          },
+        ],
+        classes: {
+          "user-field": true,
+        },
+      } : {
+        value: "-",
+        edit: {
+          target: {item:item, field:"location"},
+          type: "select",
+          list: [].concat(...item.characterList.items("owned").filter(cha => item.canEquip(cha)).map(cha => [{value:cha.key, display:cha.name}, {value:`${cha.key}:0`, display:`${cha.name} (Main)`}])),
+        },
+      },
+      dependencies: item => [
+        {item:item.characterList, field:"list"},
       ],
     });
     

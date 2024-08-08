@@ -105,6 +105,8 @@ input.edit-element:not(.form-control) {
   bottom: 0px;
   left: 0px;
   right: 0px;
+  color: var(--bs-body-color);
+  text-align: inherit;
 }
 
 .field-button {

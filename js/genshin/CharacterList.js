@@ -867,9 +867,9 @@ export default class CharacterList extends GenshinList
     return {element, data, options};
   }
   
-  onRender(element)
+  postRender(element)
   {
-    super.onRender(element);
+    super.postRender(element);
     
     element.querySelectorAll(".highlighter").forEach(elem => {
       let stat;
