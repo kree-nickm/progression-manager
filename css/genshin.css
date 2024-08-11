@@ -269,9 +269,9 @@ img.element-icon.element-Physical {
 }
 
 .character-artifacts .list-item.equipped {
-	border: 2px outset #eee;
+	border: 2px outset var(--bs-tertiary-bg);
 	padding: 2px;
-	box-shadow: 1px 1px 2px 3px rgba(0,0,0,0.9);
+	box-shadow: 1px 1px 2px 3px var(--bs-body-color);
 }
 
 .character-artifacts .rarity {
@@ -321,7 +321,7 @@ img.element-icon.element-Physical {
 .character-artifacts [name="substat"],
 .character-artifacts [name="mainStat"] {
 	font-weight: bold;
-	filter: drop-shadow(0px 0px 3px white);
+	filter: drop-shadow(0px 0px 3px var(--bs-body-bg));
 }
 
 .character-artifacts [name="characterScore"] {

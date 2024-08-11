@@ -1,0 +1,17 @@
+<div class="list-item col-auto" data-template="wuwa/renderEcho" name="{{unique item}}" data-uuid="{{uuid item}}">
+    <div class="row">
+        <div class="echo-stats col-auto">
+          {{> renderItemField item=item field="icon" wrapper="div"}}
+          {{> renderItemField item=item field="location" wrapper="div"}}
+        </div>
+        <div class="echo-stats col-auto">
+          {{> renderItemField item=item field="primaryStat" wrapper="div"}}
+          {{> renderItemField item=item field="secondaryStat" wrapper="div"}}
+          {{> renderItemField item=item field="substat" params=(array 0 1) wrapper="div"}}
+          {{> renderItemField item=item field="substat" params=(array 1 1) wrapper="div"}}
+          {{> renderItemField item=item field="substat" params=(array 2 1) wrapper="div"}}
+          {{> renderItemField item=item field="substat" params=(array 3 1) wrapper="div"}}
+          {{> renderItemField item=item field="substat" params=(array 4 1) wrapper="div"}}
+        </div>
+    </div>
+</div>

@@ -14,216 +14,216 @@ const Ascendable = (SuperClass) => class extends SuperClass {
   static setupDisplay(display)
   {
     if(!display.getField("level"))
-    display.addField("level", {
-      label: "Lvl",
-      labelTitle: "Sort by character level.",
-      sort: {generic: {type:"number", property:"level"}},
-      dynamic: true,
-      title: item => "Click to change.",
-      value: item => item.level,
-      edit: item => ({target: {item:item.base??item, field:"level"}}),
-      classes: item => ({
-        "at-max": item.level >= item.levelCap,
-      }),
-      dependencies: item => [
-        {item:item.base??item, field:this.ascensionProperty},
-      ],
-    });
+      display.addField("level", {
+        label: "Lvl",
+        labelTitle: "Sort by character level.",
+        sort: {generic: {type:"number", property:"level"}},
+        dynamic: true,
+        title: item => "Click to change.",
+        value: item => item.level,
+        edit: item => ({target: {item:item.base??item, field:"level"}}),
+        classes: item => ({
+          "at-max": item.level >= item.levelCap,
+        }),
+        dependencies: item => [
+          {item:item.base??item, field:this.ascensionProperty},
+        ],
+      });
     
     if(!display.getField("planLevel"))
-    display.addField("planLevel", {
-      tags: ["detailsOnly"],
-      dynamic: true,
-      value: item => item.wishlist?.level ?? "-",
-      edit: item => ({target: {item, field:"wishlist.level"}}),
-      dependencies: item => [
-        {item:item, field:"wishlist"},
-        {item:item, field:"level"},
-      ],
-    });
+      display.addField("planLevel", {
+        tags: ["detailsOnly"],
+        dynamic: true,
+        value: item => item.wishlist?.level ?? "-",
+        edit: item => ({target: {item, field:"wishlist.level"}}),
+        dependencies: item => [
+          {item:item, field:"wishlist"},
+          {item:item, field:"level"},
+        ],
+      });
     
     if(this.AscensionData)
     {
       if(!display.getField("ascension"))
-      display.addField("ascension", {
-        label: "Asc",
-        labelTitle: "Sort by ascension.",
-        sort: {generic: {type:"number",property:this.ascensionProperty}},
-        dynamic: true,
-        title: item => "Click to change." + (item.canAscend(true) ? "\r\nNote: You have enough materials to ascend. Open character details to use the ascension feature." : ""),
-        value: item => item[this.ascensionProperty],
-        edit: item => ({target: {item:item.base??item, field:this.ascensionProperty}, min:0, max:item.maxAscension}),
-        classes: item => ({
-          'can-inc': item.wishlist?.[this.ascensionProperty] > item[this.ascensionProperty] && item.canAscend(true),
-          "at-max": item[this.ascensionProperty] >= item.maxAscension,
-        }),
-        dependencies: item => [].concat(...item.materialDefs.materials.map(mat => [{item:item.getMat(mat.property), field:"count"}].concat(item.getMat(mat.property)?.getCraftDependencies()??[]))),
-      });
+        display.addField("ascension", {
+          label: "Asc",
+          labelTitle: "Sort by ascension.",
+          sort: {generic: {type:"number",property:this.ascensionProperty}},
+          dynamic: true,
+          title: item => "Click to change." + (item.canAscend(true) ? "\r\nNote: You have enough materials to ascend. Open character details to use the ascension feature." : ""),
+          value: item => item[this.ascensionProperty],
+          edit: item => ({target: {item:item.base??item, field:this.ascensionProperty}, min:0, max:item.maxAscension}),
+          classes: item => ({
+            'can-inc': item.wishlist?.[this.ascensionProperty] > item[this.ascensionProperty] && item.canAscend(true),
+            "at-max": item[this.ascensionProperty] >= item.maxAscension,
+          }),
+          dependencies: item => [].concat(...item.materialDefs.materials.map(mat => [{item:item.getMat(mat.property), field:"count"}].concat(item.getMat(mat.property)?.getCraftDependencies()??[]))),
+        });
       
       if(!display.getField("ascensionMaterial"))
-      display.addField("ascensionMaterial", {
-        group: {label:"Ascension Materials", startCollapsed:false},
-        label: (item, type, ascension) => type.capitalize(),
-        labelTitle: (item, type, ascension) => type.capitalize(),
-        columnClasses: ["ascension-materials"],
-        dynamic: true,
-        value: (item, type, ascension) => type == "label" ? `${ascension} ➤ ${parseInt(ascension)+1}` : (item.getMat(type,ascension) && item.getMatCost(type,ascension) ? item.getMat(type,ascension).getFieldValue(item.getMatCost(type,ascension), (isNaN(ascension)?item.viewer.settings.preferences?.characterList=='1':item.viewer.settings.preferences?.materialList=='1')) : ""),
-        dependencies: (item, type, ascension) => [
-          {item:item.base??item, field:this.ascensionProperty},
-        ].concat(type == "label" ? item.materialDefs.materials.map(mat => ({item:item.getMat(mat.property,ascension), field:"count"})) : (item.getMat(type,ascension)?.getCraftDependencies() ?? [])),
-        button: (item, type, ascension) => {
-          if(type == "label" && ascension == item[this.ascensionProperty])
-          {
-            if(item.canAscend(false))
+        display.addField("ascensionMaterial", {
+          group: {label:"Ascension Materials", startCollapsed:false},
+          label: (item, type, ascension) => type.capitalize(),
+          labelTitle: (item, type, ascension) => type.capitalize(),
+          columnClasses: ["ascension-materials"],
+          dynamic: true,
+          value: (item, type, ascension) => type == "label" ? `${ascension} ➤ ${parseInt(ascension)+1}` : (item.getMat(type,ascension) && item.getMatCost(type,ascension)>0 ? item.getMat(type,ascension).getFieldValue(item.getMatCost(type,ascension), (isNaN(ascension)?item.viewer.settings.preferences?.characterList=='1':item.viewer.settings.preferences?.materialList=='1')) : ""),
+          dependencies: (item, type, ascension) => [
+            {item:item.base??item, field:this.ascensionProperty},
+          ].concat(type == "label" ? item.materialDefs.materials.map(mat => ({item:item.getMat(mat.property,ascension), field:"count"})) : (item.getMat(type,ascension)?.getCraftDependencies() ?? [])),
+          button: (item, type, ascension) => {
+            if(type == "label" && ascension == item[this.ascensionProperty])
             {
-              return {
-                title: "Ascend the character. This will spend the resources for you and increase their level if necessary.",
-                icon: "fa-solid fa-circle-up",
-                action: item.ascend.bind(item),
-              };
+              if(item.canAscend(false))
+              {
+                return {
+                  title: "Ascend the character. This will spend the resources for you and increase their level if necessary.",
+                  icon: "fa-solid fa-circle-up",
+                  action: item.ascend.bind(item),
+                };
+              }
+              else
+              {
+                return {
+                  title: "Not enough materials to ascend.",
+                  icon: "fa-solid fa-circle-up",
+                };
+              }
             }
-            else
-            {
-              return {
-                title: "Not enough materials to ascend.",
-                icon: "fa-solid fa-circle-up",
-              };
-            }
-          }
-        },
-      });
+          },
+        });
     
       if(!display.getField("planAscension"))
-      display.addField("planAscension", {
-        tags: ["detailsOnly"],
-        dynamic: true,
-        value: item => item.wishlist?.[this.ascensionProperty] ?? "-",
-        edit: item => ({target: {item, field:`wishlist.${this.ascensionProperty}`}}),
-        dependencies: item => [
-          {item:item, field:"wishlist"},
-          {item:item, field:this.ascensionProperty},
-        ],
-      });
+        display.addField("planAscension", {
+          tags: ["detailsOnly"],
+          dynamic: true,
+          value: item => item.wishlist?.[this.ascensionProperty] ?? "-",
+          edit: item => ({target: {item, field:`wishlist.${this.ascensionProperty}`}}),
+          dependencies: item => [
+            {item:item, field:"wishlist"},
+            {item:item, field:this.ascensionProperty},
+          ],
+        });
     }
     
     if(this.TalentData)
     {
       if(!display.getField("talent"))
-      display.addField("talent", {
-        label: (item, talent) => this.talentTypes[talent]?.char,
-        labelTitle: (item, talent) => this.talentTypes[talent]?.full,
-        dynamic: true,
-        title: (item, talent) => `Click to change ${talent}.`,
-        value: (item, talent) => item[this.talentProperty][talent],
-        edit: (item, talent) => ({target: {item:item, field:`${this.talentProperty}.${talent}`}, min:this.talentTypes[talent]?.min, max:item.getTalentCap(talent)}),
-        classes: (item, talent) => ({
-          "can-inc": item.wishlist?.[this.talentProperty]?.[talent] > item[this.talentProperty][talent] && item.canUpTalent(talent, true),
-          "at-max": item[this.talentProperty][talent] >= item.getTalentCap(talent),
-        }),
-        dependencies: (item, talent) => [].concat(...item.materialDefs.materials.map(mat => [{item:item.getTalentMat(mat.property,talent), field:"count"}].concat(item.getTalentMat(mat.property,talent)?.getCraftDependencies()??[]))),
-      });
+        display.addField("talent", {
+          label: (item, talent) => this.talentTypes[talent]?.char,
+          labelTitle: (item, talent) => this.talentTypes[talent]?.full,
+          dynamic: true,
+          title: (item, talent) => `Click to change ${talent}.`,
+          value: (item, talent) => item[this.talentProperty][talent],
+          edit: (item, talent) => ({target: {item:item, field:`${this.talentProperty}.${talent}`}, min:this.talentTypes[talent]?.min, max:item.getTalentCap(talent)}),
+          classes: (item, talent) => ({
+            "can-inc": item.wishlist?.[this.talentProperty]?.[talent] > item[this.talentProperty][talent] && item.canUpTalent(talent, true),
+            "at-max": item[this.talentProperty][talent] >= item.getTalentCap(talent),
+          }),
+          dependencies: (item, talent) => [].concat(...item.materialDefs.materials.map(mat => [{item:item.getTalentMat(mat.property,talent), field:"count"}].concat(item.getTalentMat(mat.property,talent)?.getCraftDependencies()??[]))),
+        });
       
       if(!display.getField("talentMaterial"))
-      display.addField("talentMaterial", {
-        group: {label:"Talent Materials", startCollapsed:false},
-        label: (item, type, talent) => (this.talentTypes[talent]?.word??talent) + " " + type.capitalize(),
-        columnClasses: (item, type, talent) => this.talentTypes[talent] ? ["talent-materials", `${type}-${this.talentTypes[talent]?.char}-materials`] : [],
-        dynamic: true,
-        value: (item, type, talent) => {
-          if(type == "label")
-          {
-            let talentVal = talent;
-            for(let talentType in this.talentTypes)
+        display.addField("talentMaterial", {
+          group: {label:"Talent Materials", startCollapsed:false},
+          label: (item, type, talent) => (this.talentTypes[talent]?.word??talent) + " " + type.capitalize(),
+          columnClasses: (item, type, talent) => this.talentTypes[talent] ? ["talent-materials", `${type}-${this.talentTypes[talent]?.char}-materials`] : [],
+          dynamic: true,
+          value: (item, type, talent) => {
+            if(type == "label")
             {
-              let dataType = this.talentTypes[talentType].dataType;
-              if(dataType && talent.includes && talent.includes(dataType))
+              let talentVal = talent;
+              for(let talentType in this.talentTypes)
               {
-                talentVal = talent.replace(dataType, "");
-                break;
+                let dataType = this.talentTypes[talentType].dataType;
+                if(dataType && talent.includes && talent.includes(dataType))
+                {
+                  talentVal = talent.replace(dataType, "");
+                  break;
+                }
+              }
+              return `${talentVal} ➤ ${parseInt(talentVal)+1}`;
+            }
+            else
+            {
+              if(item.getTalentMat(type,talent) && item.getTalentMatCost(type,talent)>0)
+                return item.getTalentMat(type,talent).getFieldValue(item.getTalentMatCost(type,talent), (isNaN(talent)?item.viewer.settings.preferences?.characterList=='1':item.viewer.settings.preferences?.materialList=='1'));
+              else
+                return "";
+            }
+          },
+          //title: (item, type, talent) => item.getTalentMat(type?.toLowerCase(),talent)?.getFullSource()??"!ERROR!",
+          dependencies: (item, type, talent) => [
+            {item:item, field:`${this.talentProperty}.${talent}`},
+            item.getTalentMat(type,talent)?.days ? {item:item.viewer, field:"today"} : null,
+          ].concat(type == "label" ? item.materialDefs.materials.map(mat => ({item:item.getTalentMat(mat.property,talent), field:"count"})) : (item.getTalentMat(type,talent)?.getCraftDependencies() ?? [])),
+          button: (item, type, talent) => Object.keys(this.talentTypes).map(t => 
+          {
+            let dataType = this.talentTypes[t].dataType;
+            let talentType = "";
+            let talentVal = talent;
+            if(dataType && talent.includes && talent.includes(dataType))
+            {
+              talentType = dataType;
+              talentVal = talent.replace(dataType, "");
+            }
+            if(type == "label" && talentType == dataType && talentVal == item[this.talentProperty][t])
+            {
+              if(item.canUpTalent(t, false))
+              {
+                return {
+                  title: `Upgrade ${t} level. This will spend the resources for you.`,
+                  icon: "fa-solid fa-circle-up",
+                  name: this.talentTypes[t].word,
+                  text: this.talentTypes[t].word,
+                  action: item.upTalent.bind(item, t),
+                };
+              }
+              else
+              {
+                return {
+                  title: "Not enough materials to upgrade.",
+                  icon: "fa-solid fa-circle-up",
+                  name: this.talentTypes[t].word,
+                  text: this.talentTypes[t].word,
+                };
               }
             }
-            return `${talentVal} ➤ ${parseInt(talentVal)+1}`;
-          }
-          else
-          {
-            if(item.getTalentMat(type,talent) && item.getTalentMatCost(type,talent))
-              return item.getTalentMat(type,talent).getFieldValue(item.getTalentMatCost(type,talent), (isNaN(talent)?item.viewer.settings.preferences?.characterList=='1':item.viewer.settings.preferences?.materialList=='1'));
-            else
-              return "";
-          }
-        },
-        //title: (item, type, talent) => item.getTalentMat(type?.toLowerCase(),talent)?.getFullSource()??"!ERROR!",
-        dependencies: (item, type, talent) => [
-          {item:item, field:`${this.talentProperty}.${talent}`},
-          item.getTalentMat(type,talent)?.days ? {item:item.viewer, field:"today"} : null,
-        ].concat(type == "label" ? item.materialDefs.materials.map(mat => ({item:item.getTalentMat(mat.property,talent), field:"count"})) : (item.getTalentMat(type,talent)?.getCraftDependencies() ?? [])),
-        button: (item, type, talent) => Object.keys(this.talentTypes).map(t => 
-        {
-          let dataType = this.talentTypes[t].dataType;
-          let talentType = "";
-          let talentVal = talent;
-          if(dataType && talent.includes && talent.includes(dataType))
-          {
-            talentType = dataType;
-            talentVal = talent.replace(dataType, "");
-          }
-          if(type == "label" && talentType == dataType && talentVal == item[this.talentProperty][t])
-          {
-            if(item.canUpTalent(t, false))
-            {
-              return {
-                title: `Upgrade ${t} level. This will spend the resources for you.`,
-                icon: "fa-solid fa-circle-up",
-                name: this.talentTypes[t].word,
-                text: this.talentTypes[t].word,
-                action: item.upTalent.bind(item, t),
-              };
-            }
-            else
-            {
-              return {
-                title: "Not enough materials to upgrade.",
-                icon: "fa-solid fa-circle-up",
-                name: this.talentTypes[t].word,
-                text: this.talentTypes[t].word,
-              };
-            }
-          }
-        }),
-      });
+          }),
+        });
     
       if(!display.getField("planTalent"))
-      display.addField("planTalent", {
-        tags: ["detailsOnly"],
-        dynamic: true,
-        value: (item,talent) => item.wishlist?.[this.talentProperty]?.[talent] ?? "-",
-        edit: (item,talent) => ({target: {item, field:`wishlist.${this.talentProperty}.${talent}`}}),
-        dependencies: (item,talent) => [
-          {item:item, field:"wishlist"},
-          {item:item, field:`${this.talentProperty}.${talent}`},
-        ],
-      });
+        display.addField("planTalent", {
+          tags: ["detailsOnly"],
+          dynamic: true,
+          value: (item,talent) => item.wishlist?.[this.talentProperty]?.[talent] ?? "-",
+          edit: (item,talent) => ({target: {item, field:`wishlist.${this.talentProperty}.${talent}`}}),
+          dependencies: (item,talent) => [
+            {item:item, field:"wishlist"},
+            {item:item, field:`${this.talentProperty}.${talent}`},
+          ],
+        });
     }
     
     if(!display.getField("planMaterials"))
-    display.addField("planMaterials", {
-      tags: ["detailsOnly"],
-      dynamic: true,
-      value: (item,attr) => {
-        let value = [];
-        item.viewer.account.plan.addSubPlan(item, item.getPlanMaterials());
-        let materials = item.viewer.account.plan.getSubPlan(item);
-        for(let matKey in materials)
-          value.push({classes:{'plan-material':true}, value:item.materialDefs.list.get(matKey).getFieldValue(materials[matKey], item.viewer.settings.preferences.materialList=='1', {plan:materials})});
-        return value;
-      },
-      dependencies: (item,attr) => [
-        {item:item, field:"wishlist"},
-        {item:item, field:"level"},
-        {item:item, field:this.ascensionProperty},
-        {item:item, field:this.talentProperty},
-      ],
-    });
+      display.addField("planMaterials", {
+        tags: ["detailsOnly"],
+        dynamic: true,
+        value: (item,attr) => {
+          let value = [];
+          item.viewer.account.plan.addSubPlan(item, item.getPlanMaterials());
+          let materials = item.viewer.account.plan.getSubPlan(item);
+          for(let matKey in materials)
+            value.push({classes:{'plan-material':true}, value:item.materialDefs.list.get(matKey).getFieldValue(materials[matKey], item.viewer.settings.preferences.materialList=='1', {plan:materials})});
+          return value;
+        },
+        dependencies: (item,attr) => [
+          {item:item, field:"wishlist"},
+          {item:item, field:"level"},
+          {item:item, field:this.ascensionProperty},
+          {item:item, field:this.talentProperty},
+        ],
+      });
     
     super.setupDisplay(display);
   }

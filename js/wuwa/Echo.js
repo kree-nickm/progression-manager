@@ -11,6 +11,7 @@ export default class Echo extends Equipment(WuWaItem)
 {
   //static dontSerialize = super.dontSerialize.concat([]);
   //static templateName = "wuwa/renderEchoAsPopup";
+  static listTemplateName = "wuwa/renderEcho";
   
   _level = 0;
   rarity = 2;
@@ -34,12 +35,13 @@ export default class Echo extends Equipment(WuWaItem)
   get cost(){ return EchoData[this.monsterKey]?.cost ?? 0; }
   get set(){ return EchoSetData[this.setKey]?.name ?? this.setKey; }
   get skill(){ return EchoData[this.monsterKey]?.skillDesc.replace(/\{(\d+)\}/g, (m,p1) => EchoData[this.monsterKey].descParams[this.rarity-1][p1]) ?? ""; }
-  get image(){ return "img/wuwa/small/" + (EchoData[this.monsterKey]?.icon?.slice(EchoData[this.monsterKey]?.icon?.lastIndexOf(".")+1) ?? "blank") + ".webp"; }
+  get image(){ return "img/wuwa/small/" + (EchoData[this.monsterKey]?.icon ?? "blank") + ".webp"; }
   get bonusImage(){ return "img/wuwa/icons/Icon_" + this.setKey + ".webp"; }
   get releaseTimestamp(){
     return Math.max(EchoData[this.monsterKey]?.release ? Date.parse(EchoData[this.monsterKey].release) : 0, EchoSetData[this.setKey]?.release ? Date.parse(EchoSetData[this.setKey].release) : 0);
   }
   get equipProperty() { return "echoes"; }
+  get slot() { return Object.values(this.character?.echoes??[]).indexOf(this); }
   
   setSubstat(statKey, value)
   {

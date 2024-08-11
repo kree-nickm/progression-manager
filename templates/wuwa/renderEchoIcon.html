@@ -1,0 +1,19 @@
+<div class="list-item-field" name="{{field.id}}" title="{{fieldData.title}}" data-template="{{fieldData.template}}" data-uuid="{{uuid item}}">
+    <div class="item-icon">
+        <div class="item-image-container item-rarity-{{lookup item 'rarity'}}" title="{{lookup item 'monster'}}">
+            <img class="item-image" src="{{lookup item 'image'}}" loading="lazy"/>
+          {{#if (lookup item 'character')}}
+            <div class="item-character {{#ifeq (lookup item 'slot') 0}}item-character-special{{/ifeq}}">
+              <img src="{{lookup item 'character' 'icon'}}" title="Equipped by {{lookup item 'character' 'name'}}{{#ifeq (lookup item 'slot') 0}} in the main slot{{/ifeq}}." loading="lazy"/>
+            </div>
+          {{/if}}
+            {{> renderItemField item=item field="lock" params=(array 1) wrapper="div"}}
+            <div class="item-detail" title="Cost {{lookup item 'cost'}}">{{lookup item 'cost'}}</div>
+            {{> renderItemField item=item field="deleteBtn" wrapper="div"}}
+        </div>
+        <div class="item-props">
+            <img class="item-set" src="{{lookup item 'bonusImage'}}" loading="lazy" title="{{lookup item 'set'}}"/>
+            {{> renderItemField item=item field="level" wrapper="div"}}
+        </div>
+    </div>
+</div>

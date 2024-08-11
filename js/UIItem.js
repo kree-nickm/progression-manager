@@ -58,15 +58,19 @@ export default class UIItem extends UIController {
       if(!display.getField("lock"))
         display.addField("lock", {
           label: "<i class='fa-solid fa-lock'></i>",
-          title: item => "Is Locked?",
+          title: item => item.lock ? "Currently locked. Click to unlock." : "Currently unlocked. Click to lock.",
           sort: {generic: {type:"boolean", property:"lock"}},
           dynamic: true,
-          edit: item => ({
+          edit: (item,showUnlocked) => ({
             target: {item, field:"lock"},
             type: "checkbox",
             value: item.lock,
             trueClasses: ["fa-solid","fa-lock"],
-            falseClasses: [],
+            falseClasses: showUnlocked ? ["fa-solid","fa-lock-open"] : [],
+          }),
+          classes: item => ({
+            'item-locked': item.lock,
+            'item-unlocked': !item.lock,
           }),
         });
     

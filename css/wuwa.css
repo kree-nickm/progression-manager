@@ -61,7 +61,7 @@
   margin: 1px 2px;
 }
 
-.item-icon .item-level {
+.item-icon .list-item-field[name="level"] {
   color: #eee;
   font-weight: bold;
 }
@@ -105,7 +105,24 @@
   z-index: 20;
 }
 
-.item-icon .item-lock {
+.item-icon .list-item-field[name="deleteBtn"] {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  height: 17px;
+  width: 17px;
+  line-height: 12px;
+  font-size: 12px;
+  text-align: center;
+  z-index: 20;
+  display: none;
+}
+
+.item-icon:hover .list-item-field[name="deleteBtn"] {
+  display: block;
+}
+
+.item-icon .list-item-field[name="lock"] {
   position: absolute;
   color: #fff;
   bottom: 22px;
@@ -121,15 +138,15 @@
   z-index: 20;
 }
 
-.item-icon .item-lock.item-unlocked {
+.item-icon .list-item-field[name="lock"].item-unlocked {
   display: none;
 }
 
-.item-icon:hover .item-lock.item-unlocked {
+.item-icon:hover .list-item-field[name="lock"].item-unlocked {
   display: block;
 }
 
-.item-icon .item-lock i {
+.item-icon .list-item-field[name="lock"] i {
   margin: 1px 0px;
 }
 

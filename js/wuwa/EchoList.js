@@ -12,6 +12,7 @@ export default class EchoList extends WuWaList
   static itemClass = Echo;
   //static subsetDefinitions = {};
   static templateName = "wuwa/renderEchoList";
+  static templatePartials = ["wuwa/renderEcho","wuwa/renderEchoIcon"];
   
   setupDisplay()
   {
@@ -19,79 +20,20 @@ export default class EchoList extends WuWaList
       label: "Echo",
       sort: {generic: {type:"string", property:"monster"}},
       dynamic: true,
-      value: (item,size) => ({
-        tag: "div",
-        value: [
-          {
-            tag: "div",
-            value: [
-              {
-                tag: "img",
-                src: item.image,
-                classes: {"item-image":true},
-              },
-              item.character ? {
-                tag: "div",
-                value: {
-                  tag: "img",
-                  src: item.character.icon,
-                },
-                title: `Equipped by ${item.character.name}`+(item.character.echoes[0] == item ? " in the main slot." : "."),
-                classes: {"item-character":true, "item-character-special":item.character.echoes[0]==item},
-              } : undefined,
-              /*{
-                tag: "div",
-                value: [],
-                classes: {"dropdown":true},
-              },*/
-              {
-                tag: "div",
-                value: {
-                  edit: {
-                    target: {item, field:"lock"},
-                    type: "checkbox",
-                    value: item.lock,
-                    trueClasses: ["fa-solid","fa-lock"],
-                    falseClasses: ["fa-solid","fa-lock-open"],
-                  },
-                },
-                title: item.lock ? "Currently locked. Click to unlock." : "Currently unlocked. Click to lock.",
-                classes: {"item-lock":true, "item-unlocked":!item.lock},
-              },
-              {
-                tag: "div",
-                value: item.cost,
-                title: `Cost ${item.cost}`,
-                classes: {"item-detail":true},
-              },
-            ],
-            title: item.monster,
-            classes: {"item-image-container":true, ["item-rarity-"+item.rarity]:true},
-          },
-          {
-            tag: "div",
-            value: [
-              {
-                tag: "img",
-                src: item.bonusImage,
-                title: item.set,
-                classes: {"item-set":true},
-              },
-              {
-                value: "+"+item.level,
-                title: `Click to change echo level.`,
-                classes: {"item-level":true},
-                edit: {target:{item:item, field:"level"}},
-              },
-            ],
-            classes: {"item-props":true},
-          },
-        ],
-        classes: {"item-icon":true},
-      }),
+      template: "wuwa/renderEchoIcon",
       dependencies: (item,size) => [
         {item:item, field:"location"},
       ],
+    });
+    
+    this.display.addField("level", {
+      label: "Lvl",
+      labelTitle: "Sort by level.",
+      sort: {generic: {type:"number", property:"level"}},
+      dynamic: true,
+      title: item => "Click to change.",
+      value: item => item.level,
+      edit: item => ({target: {item, field:"level"}}),
     });
     
     this.display.addField("monster", {
@@ -138,12 +80,12 @@ export default class EchoList extends WuWaList
         {
           let substat = item.substats[statKey];
           if(substat)
-            return labeled ? {classes:{'labeled-substat':true}, value:[{value:Stats[substat.key]?.name??substat.key}, {value:substat.value}]} : substat.value;
+            return labeled ? {classes:{'labeled-substat':true}, value:[{value:Stats[substat.key]?.abbr??substat.key}, {value:substat.value}]} : substat.value;
           else
             return "-";
         }
         else
-          return labeled ? {classes:{'labeled-substat':true}, value:[{value:Stats[statKey]?.name??statKey}, {value:item.getSubstat(statKey)}]} : item.getSubstat(statKey);
+          return labeled ? {classes:{'labeled-substat':true}, value:[{value:Stats[statKey]?.abbr??statKey}, {value:item.getSubstat(statKey)}]} : item.getSubstat(statKey);
       },
       edit: (item,statKey) => {
         if(parseInt(statKey) == statKey)
@@ -159,7 +101,7 @@ export default class EchoList extends WuWaList
             return {
               func: value => item.setSubstat(value, 1),
               type: "select",
-              list: EchoMetadata.subStats.map(sKey => ({value:sKey, display:Stats[sKey]?.name??substat.key})),
+              list: EchoMetadata.subStats.map(sKey => ({value:sKey, display:Stats[sKey]?.abbr??substat.key})),
             };
         }
         else

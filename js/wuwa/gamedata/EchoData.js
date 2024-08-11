@@ -1,6 +1,7 @@
 export default {
     "AeroPredator": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_231_UI.T_IconMonsterGoods160_231_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_231_UI",
         "descParams": [
             [
                 "18.00%",
@@ -28,11 +29,11 @@ export default {
             "SierraGale"
         ],
         "monster": "Aero Predator",
-        "skillDesc": "Summon an Aero Predator that throws a dart forward. The dart will bounce between enemies up to three times, dealing {0} Aero DMG each time it hits.nnCD: {1}s",
-        "cost": 1
+        "skillDesc": "Summon an Aero Predator that throws a dart forward. The dart will bounce between enemies up to three times, dealing {0} Aero DMG each time it hits.nnCD: {1}s"
     },
     "AutopuppetScout": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_9995_UI.T_IconMonsterGoods160_9995_UI",
+        "cost": 3,
+        "icon": "T_IconMonsterGoods160_9995_UI",
         "descParams": [
             [
                 "170.00%",
@@ -60,12 +61,11 @@ export default {
             "FreezingFrost"
         ],
         "monster": "Autopuppet Scout",
-        "skillDesc": "Transform into Autopuppet Scout, dealing {0} Glacio DMG to the surroundings, and generate up to 3 Ice Walls to block off the enemies.rnrnCD: {1}s",
-        "cost": 3
+        "skillDesc": "Transform into Autopuppet Scout, dealing {0} Glacio DMG to the surroundings, and generate up to 3 Ice Walls to block off the enemies.rnrnCD: {1}s"
     },
     "BabyViridblazeSaurian": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_281_UI.T_IconMonsterGoods160_281_UI",
         "cost": 1,
+        "icon": "T_IconMonsterGoods160_281_UI",
         "descParams": [
             [
                 "8"
@@ -92,7 +92,8 @@ export default {
         "skillDesc": "Transform into Baby Viridblaze Saurian to rest in place, and slowly restore HP.nnCD: {0}s"
     },
     "BellBorneGeochelone": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_992_UI.T_IconMonsterGoods160_992_UI",
+        "cost": 4,
+        "icon": "T_IconMonsterGoods160_992_UI",
         "descParams": [
             [
                 "91.20%",
@@ -140,12 +141,11 @@ export default {
             "RejuvenatingGlow"
         ],
         "monster": "Bell-Borne Geochelone",
-        "skillDesc": "Activate the protection of Bell-Borne Geochelone. Deal Glacio DMG based on {0} of the current character's DEF to nearby enemies, and obtain a Bell-Borne Shield that lasts for {1}snnThe Bell-Borne Shield provides {2} DMG Reduction and {3} DMG Boost for the current team members, and disappears after the current character is hit for {4} times.nnCD: {5}s",
-        "cost": 4
+        "skillDesc": "Activate the protection of Bell-Borne Geochelone. Deal Glacio DMG based on {0} of the current character's DEF to nearby enemies, and obtain a Bell-Borne Shield that lasts for {1}snnThe Bell-Borne Shield provides {2} DMG Reduction and {3} DMG Boost for the current team members, and disappears after the current character is hit for {4} times.nnCD: {5}s"
     },
     "Carapace": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_970_UI.T_IconMonsterGoods160_970_UI",
         "cost": 3,
+        "icon": "T_IconMonsterGoods160_970_UI",
         "descParams": [
             [
                 "70.00%",
@@ -180,45 +180,9 @@ export default {
         "monster": "Carapace",
         "skillDesc": "Transform into Carapace to perform a spinning attack that deals {0} Aero DMG, followed by a slash that deals {1} Aero DMG.nnCD: {2}s"
     },
-    "Chaserazor": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_970_UI.T_IconMonsterGoods160_970_UI",
-        "descParams": [
-            [
-                "70.00%",
-                "105.00%",
-                "15"
-            ],
-            [
-                "80.50%",
-                "120.75%",
-                "15"
-            ],
-            [
-                "91.00%",
-                "136.50%",
-                "15"
-            ],
-            [
-                "101.50%",
-                "152.25%",
-                "15"
-            ],
-            [
-                "112.00%",
-                "168.00%",
-                "15"
-            ]
-        ],
-        "validSets": [
-            "MoonlitClouds",
-            "SierraGale"
-        ],
-        "monster": "Chaserazor",
-        "skillDesc": "Transform into Carapace to perform a spinning attack that deals {0} Aero DMG, followed by a slash that deals {1} Aero DMG.nnCD: {2}s",
-        "cost": 3
-    },
     "ChasmGuardian": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_211_UI.T_IconMonsterGoods160_211_UI",
+        "cost": 3,
+        "icon": "T_IconMonsterGoods160_211_UI",
         "descParams": [
             [
                 "171.00%",
@@ -261,11 +225,11 @@ export default {
             "RejuvenatingGlow"
         ],
         "monster": "Chasm Guardian",
-        "skillDesc": "Transform into Chasm Guardian to perform a Leap Strike that deals {0} Havoc DMG on hit. Current character loses {1} HP after the hit lands. Periodically restore current character's HP after {2}s for up to {3} of their Max HP.rnrnCD: {4}s",
-        "cost": 3
+        "skillDesc": "Transform into Chasm Guardian to perform a Leap Strike that deals {0} Havoc DMG on hit. Current character loses {1} HP after the hit lands. Periodically restore current character's HP after {2}s for up to {3} of their Max HP.rnrnCD: {4}s"
     },
     "Chirpuff": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_971_UI.T_IconMonsterGoods160_971_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_971_UI",
         "descParams": [
             [
                 "3",
@@ -298,12 +262,11 @@ export default {
             "SierraGale"
         ],
         "monster": "Chirpuff",
-        "skillDesc": "Summon a Chirpuff that self-inflates and blasts a powerful gust of wind forward {0} times. Each blast inflicts {1} Aero DMG and pushes enemies backwards.rnrnCD: {2}s",
-        "cost": 1
+        "skillDesc": "Summon a Chirpuff that self-inflates and blasts a powerful gust of wind forward {0} times. Each blast inflicts {1} Aero DMG and pushes enemies backwards.rnrnCD: {2}s"
     },
     "ClangBang": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_9993_UI.T_IconMonsterGoods160_9993_UI",
         "cost": 1,
+        "icon": "T_IconMonsterHead_1001_UI",
         "descParams": [
             [
                 "20.00%+40",
@@ -334,7 +297,8 @@ export default {
         "skillDesc": "Summon a Clang Bang that follows the enemy and eventually self-combusts, dealing {0} Glacio DMG.nnCD: {1}s"
     },
     "Crownless": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_9991_UI.T_IconMonsterGoods160_9991_UI",
+        "cost": 4,
+        "icon": "T_IconMonsterGoods160_9991_UI",
         "descParams": [
             [
                 "83.80%",
@@ -386,11 +350,11 @@ export default {
             "SunSinkingEclipse"
         ],
         "monster": "Crownless",
-        "skillDesc": "Transform into Crownless and perform up to 4 consecutive attacks. The first 2 attacks deal {0} Havoc DMG each, the 3rd attack deals {1} Havoc DMG 2 times, and the 4th attack deals {2} Havoc DMG 3 times.nnAfter the transformation, increase current character's Havoc DMG by {3} and Resonance Skill DMG by {4} for {5}s.nnCD: {6}s",
-        "cost": 4
+        "skillDesc": "Transform into Crownless and perform up to 4 consecutive attacks. The first 2 attacks deal {0} Havoc DMG each, the 3rd attack deals {1} Havoc DMG 2 times, and the 4th attack deals {2} Havoc DMG 3 times.nnAfter the transformation, increase current character's Havoc DMG by {3} and Resonance Skill DMG by {4} for {5}s.nnCD: {6}s"
     },
     "Cruisewing": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_251_UI.T_IconMonsterGoods160_251_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_251_UI",
         "descParams": [
             [
                 "1%",
@@ -424,11 +388,11 @@ export default {
             "CelestialLight"
         ],
         "monster": "Cruisewing",
-        "skillDesc": "Summon a Cruisewing that restores HP for all current team characters by {0} of their Max HPs plus an additional {1} points of HP, up to 4 times.rnrnCD: {2}s",
-        "cost": 1
+        "skillDesc": "Summon a Cruisewing that restores HP for all current team characters by {0} of their Max HPs plus an additional {1} points of HP, up to 4 times.rnrnCD: {2}s"
     },
     "CyanFeatheredHeron": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_131_UI.T_IconMonsterGoods160_131_UI",
+        "cost": 3,
+        "icon": "T_IconMonsterGoods160_131_UI",
         "descParams": [
             [
                 "148.00%",
@@ -456,11 +420,11 @@ export default {
             "CelestialLight"
         ],
         "monster": "Cyan-Feathered Heron",
-        "skillDesc": "Transform into Cyan-Feathered Heron and charge at the enemies, dealing {0} Aero DMG; This Echo Skill interrupts enemy <color=Highlight>Special Skills<\/color> upon dealing damage.n nCD: {1}s",
-        "cost": 3
+        "skillDesc": "Transform into Cyan-Feathered Heron and charge at the enemies, dealing {0} Aero DMG; This Echo Skill interrupts enemy <color=Highlight>Special Skills<\/color> upon dealing damage.n nCD: {1}s"
     },
     "Diamondclaw": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_987_UI.T_IconMonsterGoods160_987_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_987_UI",
         "descParams": [
             [
                 "30.00%+60",
@@ -488,11 +452,11 @@ export default {
             "LingeringTunes"
         ],
         "monster": "Diamondclaw",
-        "skillDesc": "Transform into Crystal Scorpion and enter a Parry State. Counterattack when the Parry State is over, dealing {0} Physical DMG.nCD: {1}s",
-        "cost": 1
+        "skillDesc": "Transform into Crystal Scorpion and enter a Parry State. Counterattack when the Parry State is over, dealing {0} Physical DMG.nCD: {1}s"
     },
     "Dreamless": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_998_UI.T_IconMonsterGoods160_998_UI",
+        "cost": 4,
+        "icon": "T_IconMonsterGoods160_998_UI",
         "descParams": [
             [
                 "33.80%",
@@ -534,12 +498,11 @@ export default {
             "SunSinkingEclipse"
         ],
         "monster": "Dreamless",
-        "skillDesc": "Transform into Dreamless and perform 6 consecutive strikes. The first 5 strikes deal {0} Havoc DMG each, and the last strike deal {1} Havoc DMG.nThe DMG of this Echo Skill is increased by {3} during the first {2}s after Rover: Havoc casts Resonance Liberation: Deadening Abyss.nnCD: {4}s",
-        "cost": 4
+        "skillDesc": "Transform into Dreamless and perform 6 consecutive strikes. The first 5 strikes deal {0} Havoc DMG each, and the last strike deal {1} Havoc DMG.nThe DMG of this Echo Skill is increased by {3} during the first {2}s after Rover: Havoc casts Resonance Liberation: Deadening Abyss.nnCD: {4}s"
     },
     "DwarfCassowary": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_326_UI.T_IconMonsterGoods160_326_UI",
         "cost": 1,
+        "icon": "T_IconMonsterHead_330_UI",
         "descParams": [
             [
                 "3",
@@ -580,7 +543,8 @@ export default {
         "skillDesc": "Summon a Dwarf Cassowary that tracks and attacks the enemy, dealing {1} Physical DMG {0} time(s).nnCooldown: {2}s"
     },
     "ElectroPredator": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_031_UI.T_IconMonsterGoods160_031_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_031_UI",
         "descParams": [
             [
                 "10.80%",
@@ -613,11 +577,11 @@ export default {
             "VoidThunder"
         ],
         "monster": "Electro Predator",
-        "skillDesc": "Summon an Electro Predator to shoot the enemy 5 times. The first 4 shots deals {0} Electro DMG, and the last deals {1} Electro DMG.rnrnCD: {2}s",
-        "cost": 1
+        "skillDesc": "Summon an Electro Predator to shoot the enemy 5 times. The first 4 shots deals {0} Electro DMG, and the last deals {1} Electro DMG.rnrnCD: {2}s"
     },
     "Excarat": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_271_UI.T_IconMonsterGoods160_271_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_271_UI",
         "descParams": [
             [
                 "8"
@@ -640,11 +604,11 @@ export default {
             "SunSinkingEclipse"
         ],
         "monster": "Excarat",
-        "skillDesc": "Transform into an Excarat and tunnel underground to advance. In this state, you have the ability to change your direction and are immune to damage.nnCD: {0}s",
-        "cost": 1
+        "skillDesc": "Transform into an Excarat and tunnel underground to advance. In this state, you have the ability to change your direction and are immune to damage.nnCD: {0}s"
     },
     "FeilianBeringal": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_996_UI.T_IconMonsterGoods160_996_UI",
+        "cost": 4,
+        "icon": "T_IconMonsterGoods160_996_UI",
         "descParams": [
             [
                 "144.90%",
@@ -691,11 +655,11 @@ export default {
             "SierraGale"
         ],
         "monster": "Feilian Beringal",
-        "skillDesc": "Transform into Feilian Beringal to perform a powerful kick. If the kick lands on an enemy, immediately perform a follow-up strike. The kick deals {0} Aero DMG, and the follow-up strike deals {1} Aero DMG.rnrnAfter the follow-up strike hits, the current character's Aero DMG increases by {2}, and the Heavy Attack DMG increases by {3} for {4}srnrnCD: {5}s",
-        "cost": 4
+        "skillDesc": "Transform into Feilian Beringal to perform a powerful kick. If the kick lands on an enemy, immediately perform a follow-up strike. The kick deals {0} Aero DMG, and the follow-up strike deals {1} Aero DMG.rnrnAfter the follow-up strike hits, the current character's Aero DMG increases by {2}, and the Heavy Attack DMG increases by {3} for {4}srnrnCD: {5}s"
     },
     "FissionJunrock": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_021_UI.T_IconMonsterGoods160_021_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_021_UI",
         "descParams": [
             [
                 "2%",
@@ -724,11 +688,11 @@ export default {
             "RejuvenatingGlow"
         ],
         "monster": "Fission Junrock",
-        "skillDesc": "Summon a Fission Junrock. Generate a Resonance Effect that restores {0} HP for friendly units each time. If not in combat, you can pick up minerals or plants nearby.nnCD: {1}s",
-        "cost": 1
+        "skillDesc": "Summon a Fission Junrock. Generate a Resonance Effect that restores {0} HP for friendly units each time. If not in combat, you can pick up minerals or plants nearby.nnCD: {1}s"
     },
     "Flautist": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_191_UI.T_IconMonsterGoods160_191_UI",
+        "cost": 3,
+        "icon": "T_IconMonsterGoods160_191_UI",
         "descParams": [
             [
                 "33.30%",
@@ -761,11 +725,11 @@ export default {
             "VoidThunder"
         ],
         "monster": "Flautist",
-        "skillDesc": "Transform into Flautist, continuously emitting Electro lasers, dealing {0} Electro DMG for a total of 10 times. Gain {1} Concerto Energy every time a hit lands.rnrnCD: {2}s",
-        "cost": 3
+        "skillDesc": "Transform into Flautist, continuously emitting Electro lasers, dealing {0} Electro DMG for a total of 10 times. Gain {1} Concerto Energy every time a hit lands.rnrnCD: {2}s"
     },
     "FusionDreadmane": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_980_UI.T_IconMonsterGoods160_980_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_980_UI",
         "descParams": [
             [
                 "20.00%+40",
@@ -793,11 +757,11 @@ export default {
             "MoltenRift"
         ],
         "monster": "Fusion Dreadmane",
-        "skillDesc": "Summon a Fusion Dreadmane that fiercely strikes the enemy, dealing {0} Fusion DMG.rnrnCD: {1}s",
-        "cost": 1
+        "skillDesc": "Summon a Fusion Dreadmane that fiercely strikes the enemy, dealing {0} Fusion DMG.rnrnCD: {1}s"
     },
     "FusionPrism": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_151_UI.T_IconMonsterGoods160_151_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_151_UI",
         "descParams": [
             [
                 "20.00%+40",
@@ -826,11 +790,11 @@ export default {
             "MoltenRift"
         ],
         "monster": "Fusion Prism",
-        "skillDesc": "Summon a Fusion Prism to fire a crystal shard, dealing {0} Fusion DMG.rnrnCD: {1}s",
-        "cost": 1
+        "skillDesc": "Summon a Fusion Prism to fire a crystal shard, dealing {0} Fusion DMG.rnrnCD: {1}s"
     },
     "FusionWarrior": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_041_UI.T_IconMonsterGoods160_041_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_041_UI",
         "descParams": [
             [
                 "70.00%",
@@ -864,44 +828,11 @@ export default {
             "MoltenRift"
         ],
         "monster": "Fusion Warrior",
-        "skillDesc": "Transform into Fusion Warrior to perform a Counterattack. If the Counterattack is successful, the cooldown time of this skill will be reduced by {0}, and {1} Fusion DMG will be dealt.nnCD: {2}s",
-        "cost": 1
-    },
-    "GeohideSaurian": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_291_UI.T_IconMonsterGoods160_291_UI",
-        "descParams": [
-            [
-                "10.70%",
-                "15"
-            ],
-            [
-                "12.31%",
-                "15"
-            ],
-            [
-                "13.91%",
-                "15"
-            ],
-            [
-                "15.52%",
-                "15"
-            ],
-            [
-                "17.12%",
-                "15"
-            ]
-        ],
-        "validSets": [
-            "MoonlitClouds",
-            "MoltenRift"
-        ],
-        "monster": "Geohide Saurian",
-        "skillDesc": "Summon a Viridblaze Saurian to continuously spit fire, dealing {0} Fusion DMG 10 times.rnrnCD: {1}s",
-        "cost": 3
+        "skillDesc": "Transform into Fusion Warrior to perform a Counterattack. If the Counterattack is successful, the cooldown time of this skill will be reduced by {0}, and {1} Fusion DMG will be dealt.nnCD: {2}s"
     },
     "GlacioDreadmane": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_985_UI.T_IconMonsterGoods160_985_UI",
         "cost": 3,
+        "icon": "T_IconMonsterHead_985_UI",
         "descParams": [
             [
                 "134.00%",
@@ -942,7 +873,8 @@ export default {
         "skillDesc": "Lacerate enemies as a Glacio Dreadmane, dealing {0} Glacio DMG on each hit. Equipped with 2 charges and can be cast mid-air. Glacio Dreadmane deals {1} more DMG while in mid-air and generates 6 Icicles upon landing, each dealing {2} Glacio DMG.nnCD: {3}s"
     },
     "GlacioPredator": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_101_UI.T_IconMonsterGoods160_101_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_101_UI",
         "descParams": [
             [
                 "28.80%",
@@ -980,11 +912,11 @@ export default {
             "FreezingFrost"
         ],
         "monster": "Glacio Predator",
-        "skillDesc": "Summon a Glacio Predator that throws an ice spear, dealing {0} Glacio DMG on hit. Deal {1} Glacio DMG up to 10 times during the charging time, and {2} Glacio DMG when the spear explodes.nnCD: {3}s",
-        "cost": 1
+        "skillDesc": "Summon a Glacio Predator that throws an ice spear, dealing {0} Glacio DMG on hit. Deal {1} Glacio DMG up to 10 times during the charging time, and {2} Glacio DMG when the spear explodes.nnCD: {3}s"
     },
     "GlacioPrism": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_141_UI.T_IconMonsterGoods160_141_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_141_UI",
         "descParams": [
             [
                 "24.00%",
@@ -1013,11 +945,11 @@ export default {
             "FreezingFrost"
         ],
         "monster": "Glacio Prism",
-        "skillDesc": "Summon a Glacio Prism that continuously fires three crystal shards, each dealing {0} Glacio DMG.nnCD: {1}s",
-        "cost": 1
+        "skillDesc": "Summon a Glacio Prism that continuously fires three crystal shards, each dealing {0} Glacio DMG.nnCD: {1}s"
     },
     "Gulpuff": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_111_UI.T_IconMonsterGoods160_111_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_111_UI",
         "descParams": [
             [
                 "5",
@@ -1050,11 +982,11 @@ export default {
             "FreezingFrost"
         ],
         "monster": "Gulpuff",
-        "skillDesc": "Summon a Gulpuff that blows bubbles {0} times, each time dealing {1} Glacio DMG.rnrnCD: {2}s",
-        "cost": 1
+        "skillDesc": "Summon a Gulpuff that blows bubbles {0} times, each time dealing {1} Glacio DMG.rnrnCD: {2}s"
     },
     "HavocDreadmane": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_984_UI.T_IconMonsterGoods160_984_UI",
+        "cost": 3,
+        "icon": "T_IconMonsterGoods160_984_UI",
         "descParams": [
             [
                 "72.90%",
@@ -1087,11 +1019,11 @@ export default {
             "SunSinkingEclipse"
         ],
         "monster": "Havoc Dreadmane",
-        "skillDesc": "Transform into a Havoc Dreadmane to perform up to 2 tail strikes. Each strike deals {0} Havoc DMG and inflicts an additional instance of {1} Havoc DMG upon hitting the target.nnCD: {2}s",
-        "cost": 3
+        "skillDesc": "Transform into a Havoc Dreadmane to perform up to 2 tail strikes. Each strike deals {0} Havoc DMG and inflicts an additional instance of {1} Havoc DMG upon hitting the target.nnCD: {2}s"
     },
     "HavocPrism": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_171_UI.T_IconMonsterGoods160_171_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_171_UI",
         "descParams": [
             [
                 "14.40%",
@@ -1120,11 +1052,11 @@ export default {
             "SunSinkingEclipse"
         ],
         "monster": "Havoc Prism",
-        "skillDesc": "Summon a Havoc Prism to fire five crystal shards, each dealing {0} Havoc DMG.rnrnCD: {1}s",
-        "cost": 1
+        "skillDesc": "Summon a Havoc Prism to fire five crystal shards, each dealing {0} Havoc DMG.rnrnCD: {1}s"
     },
     "HavocWarrior": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_051_UI.T_IconMonsterGoods160_051_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_051_UI",
         "descParams": [
             [
                 "107.33%",
@@ -1152,11 +1084,11 @@ export default {
             "SunSinkingEclipse"
         ],
         "monster": "Havoc Warrior",
-        "skillDesc": "Transform into Havoc Warrior to attack up to 3 times, dealing {0} Havoc DMG each time.n nCD: {1}s",
-        "cost": 1
+        "skillDesc": "Transform into Havoc Warrior to attack up to 3 times, dealing {0} Havoc DMG each time.n nCD: {1}s"
     },
     "Hoartoise": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_969_UI.T_IconMonsterGoods160_969_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_969_UI",
         "descParams": [
             [
                 "8"
@@ -1179,11 +1111,11 @@ export default {
             "FreezingFrost"
         ],
         "monster": "Hoartoise",
-        "skillDesc": "Transform into Hoartoise and slowly restore HP. Use the Echo skill again to exit the transformation state.nnCD: {0}s",
-        "cost": 1
+        "skillDesc": "Transform into Hoartoise and slowly restore HP. Use the Echo skill again to exit the transformation state.nnCD: {0}s"
     },
     "Hoochief": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_989_UI.T_IconMonsterGoods160_989_UI",
+        "cost": 3,
+        "icon": "T_IconMonsterGoods160_989_UI",
         "descParams": [
             [
                 "149%",
@@ -1211,11 +1143,11 @@ export default {
             "SierraGale"
         ],
         "monster": "Hoochief",
-        "skillDesc": "Transform into Hoochief Cyclone and smack the enemies, dealing {0} Aero DMG.nnCD: {1}s",
-        "cost": 3
+        "skillDesc": "Transform into Hoochief Cyclone and smack the enemies, dealing {0} Aero DMG.nnCD: {1}s"
     },
     "Hooscamp": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_988_UI.T_IconMonsterGoods160_988_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_988_UI",
         "descParams": [
             [
                 "30.00%+60",
@@ -1243,11 +1175,11 @@ export default {
             "SierraGale"
         ],
         "monster": "Hooscamp",
-        "skillDesc": "Transform into Hooscamp Flinger and pounce at the enemies, dealing {0} Aero DMG.nnCD: {1}s",
-        "cost": 1
+        "skillDesc": "Transform into Hooscamp Flinger and pounce at the enemies, dealing {0} Aero DMG.nnCD: {1}s"
     },
     "ImpermanenceHeron": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_995_UI.T_IconMonsterGoods160_995_UI",
+        "cost": 4,
+        "icon": "T_IconMonsterGoods160_995_UI",
         "descParams": [
             [
                 "194.10%",
@@ -1279,11 +1211,11 @@ export default {
             "MoonlitClouds"
         ],
         "monster": "Impermanence Heron",
-        "skillDesc": "Transform into Impermanence Heron to fly up and smack down, dealing {0} Havoc DMG.nnLong press to stay as Impermanence Heron and continuously spit flames, each attack dealing {1} Havoc DMG.nnOnce the initial attack lands on any enemy, the current character regains 10 Resonance Energy. If the current character uses their Outro Skill within the next 15s, the next character\u2019s damage dealt will be boosted by 12% for 15s.nnCD: {2}s",
-        "cost": 4
+        "skillDesc": "Transform into Impermanence Heron to fly up and smack down, dealing {0} Havoc DMG.nnLong press to stay as Impermanence Heron and continuously spit flames, each attack dealing {1} Havoc DMG.nnOnce the initial attack lands on any enemy, the current character regains 10 Resonance Energy. If the current character uses their Outro Skill within the next 15s, the next character\u2019s damage dealt will be boosted by 12% for 15s.nnCD: {2}s"
     },
     "InfernoRider": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_321_UI.T_IconMonsterGoods160_321_UI",
+        "cost": 4,
+        "icon": "T_IconMonsterGoods160_321_UI",
         "descParams": [
             [
                 "151.50%",
@@ -1335,12 +1267,11 @@ export default {
             "MoltenRift"
         ],
         "monster": "Inferno Rider",
-        "skillDesc": "Transform into Inferno Rider to launch up to 3 consecutive slashes in a row, each slash dealing {0}, {1}, and {2} Fusion DMG respectively.nnAfter the final hit, increase the current character\u2019s Fusion DMG by {3} and Basic Attack DMG by {4} for {5}s.nnLong press the Echo Skill to transform into Inferno Rider and enter the Riding Mode. When exiting the Riding Mode, deal {2} Fusion DMG to enemies in front.nnCD: {6}s",
-        "cost": 4
+        "skillDesc": "Transform into Inferno Rider to launch up to 3 consecutive slashes in a row, each slash dealing {0}, {1}, and {2} Fusion DMG respectively.nnAfter the final hit, increase the current character\u2019s Fusion DMG by {3} and Basic Attack DMG by {4} for {5}s.nnLong press the Echo Skill to transform into Inferno Rider and enter the Riding Mode. When exiting the Riding Mode, deal {2} Fusion DMG to enemies in front.nnCD: {6}s"
     },
     "Ju": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_323_UI.T_IconMonsterGoods160_323_UI",
         "cost": 4,
+        "icon": "T_IconMonsterGoods160_323_UI",
         "descParams": [
             [
                 "30.40%",
@@ -1400,7 +1331,8 @@ export default {
         "skillDesc": "Summon Ju\u00e9 to the aid. Ju\u00e9 soars through the air, dealing {0} Spectro DMG, and summons thunderbolts that strike nearby enemies up to 5 times, each hit dealing {1} Spectro DMG. Ju\u00e9 then spirals downward, attacking surrounding enemies twice, each hit dealing {2} Spectro DMG.nCasting this Echo Skill grants the Resonator a Blessing of Time effect that lasts {3}s, during when:n- The Resonator gains {4} Resonance Skill DMG Bonus.n- When the Resonator's Resonance Skill hits the target, inflict {5} Spectro DMG 1 time per second for {6}s, considered as the Resonator's Resonance Skill DMG.nCD: {7}s"
     },
     "LampylumenMyriad": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_994_UI.T_IconMonsterGoods160_994_UI",
+        "cost": 4,
+        "icon": "T_IconMonsterGoods160_994_UI",
         "descParams": [
             [
                 "125.10%",
@@ -1452,12 +1384,11 @@ export default {
             "FreezingFrost"
         ],
         "monster": "Lampylumen Myriad",
-        "skillDesc": "Transform into Lampylumen Myriad. Perform up to 3 consecutive attacks.nnUnleash a freezing shock by performing consecutive forward strikes, with the initial two strikes inflicting {0} and {1} Glacio DMG respectively, and the final strike dealing {2} Glacio DMG. Enemies will be frozen on hit.nnEach shock increases the current character\u2019s Glacio DMG by {3} and Resonance Skill DMG dealt by {4} for {5}s, stacking up to 3 timesnnCD: {6}s",
-        "cost": 4
+        "skillDesc": "Transform into Lampylumen Myriad. Perform up to 3 consecutive attacks.nnUnleash a freezing shock by performing consecutive forward strikes, with the initial two strikes inflicting {0} and {1} Glacio DMG respectively, and the final strike dealing {2} Glacio DMG. Enemies will be frozen on hit.nnEach shock increases the current character\u2019s Glacio DMG by {3} and Resonance Skill DMG dealt by {4} for {5}s, stacking up to 3 timesnnCD: {6}s"
     },
     "LavaLarva": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_322_UI.T_IconMonsterGoods160_322_UI",
         "cost": 1,
+        "icon": "T_IconMonsterHead_326_UI",
         "descParams": [
             [
                 "24.00%",
@@ -1488,8 +1419,8 @@ export default {
         "skillDesc": "Summon a Lava Larva that continuously attacks enemies, dealing {0} Fusion DMG with each hit. The Lava Larva disappears when the summoner is switched out or moves too far away.nnCD: {1}s"
     },
     "Lightcrusher": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_324_UI.T_IconMonsterGoods160_324_UI",
         "cost": 3,
+        "icon": "T_IconMonsterHead_328_UI",
         "descParams": [
             [
                 "84.60%",
@@ -1529,8 +1460,8 @@ export default {
         "skillDesc": "Lunge forward as a Lightcrusher, dealing {0} Spectro DMG. Generate {1} Ablucence on hit. Each Ablucence explosion deals {2} Spectro DMG.nHold the Echo Skill to stay in the Lightcrusher form, which allows you to leap up and pounce forward in the air for a short distance.nnCooldown: {3}s"
     },
     "LumiscaleConstruct": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_325_UI.T_IconMonsterGoods160_325_UI",
         "cost": 3,
+        "icon": "T_IconMonsterHead_329_UI",
         "descParams": [
             [
                 "346.00%",
@@ -1566,7 +1497,8 @@ export default {
         "skillDesc": "Transform into a Lumiscale Construct and enter a Parry Stance. If you are not attacked during the Parry Stance, slash to deal {0} Glacio DMG when the stance finishes. If attacked, counterattack instantly, dealing {1} Glacio DMG. When hit with a <color=Highlight>Special Skill<\/color> attack while in the Parry Stance, break the <color=Highlight>Special Skill<\/color> and counterattack, dealing {1} Glacio DMG.nnCD: {2}s"
     },
     "MechAbomination": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterHead\/T_IconMonsterHead_993_UI.T_IconMonsterHead_993_UI",
+        "cost": 4,
+        "icon": "T_IconMonsterHead_993_UI",
         "descParams": [
             [
                 "30.40%",
@@ -1613,11 +1545,11 @@ export default {
             "LingeringTunes"
         ],
         "monster": "Mech Abomination",
-        "skillDesc": "Strike enemies in front, dealing {0} Electro DMG, and summon Mech Waste to attack. Mech Waste deals {1} Electro DMG on hit and explodes after a while, dealing {2} Electro DMG.nnAfter casting this Echo Skill, increase the current character's ATK by {3} for {4}s. nDamage dealt by Mech Waste equals to the Resonator's Outro Skill DMG. nnCD: {5}s",
-        "cost": 4
+        "skillDesc": "Strike enemies in front, dealing {0} Electro DMG, and summon Mech Waste to attack. Mech Waste deals {1} Electro DMG on hit and explodes after a while, dealing {2} Electro DMG.nnAfter casting this Echo Skill, increase the current character's ATK by {3} for {4}s. nDamage dealt by Mech Waste equals to the Resonator's Outro Skill DMG. nnCD: {5}s"
     },
     "MourningAix": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_997_UI.T_IconMonsterGoods160_997_UI",
+        "cost": 4,
+        "icon": "T_IconMonsterGoods160_997_UI",
         "descParams": [
             [
                 "98.40%",
@@ -1664,12 +1596,11 @@ export default {
             "CelestialLight"
         ],
         "monster": "Mourning Aix",
-        "skillDesc": "Transform into Mourning Aix and perform 2 consecutive claw attacks, each attack dealing {0} and {1} Spectro DMG respectively.nnAfter the transformation, increase current character's Spectro DMG by {2} and Resonance Liberation DMG by {3} for {4}snnCD: {5}s",
-        "cost": 4
+        "skillDesc": "Transform into Mourning Aix and perform 2 consecutive claw attacks, each attack dealing {0} and {1} Spectro DMG respectively.nnAfter the transformation, increase current character's Spectro DMG by {2} and Resonance Liberation DMG by {3} for {4}snnCD: {5}s"
     },
     "PhantomClangBang": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_327_UI.T_IconMonsterGoods160_327_UI",
         "cost": 1,
+        "icon": "",
         "descParams": [
             [
                 "20.00%+40",
@@ -1700,7 +1631,8 @@ export default {
         "skillDesc": "Summon a Clang Bang that follows the enemy and eventually self-combusts, dealing {0} Glacio DMG.nnCD: {1}s"
     },
     "PhantomFeilianBeringal": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_1004_UI.T_IconMonsterGoods160_1004_UI",
+        "cost": 4,
+        "icon": "T_IconMonsterGoods160_1004_UI",
         "descParams": [
             [
                 "144.90%",
@@ -1747,11 +1679,11 @@ export default {
             "SierraGale"
         ],
         "monster": "Phantom: Feilian Beringal",
-        "skillDesc": "Transform into Feilian Beringal to perform a powerful kick. If the kick lands on an enemy, immediately perform a follow-up strike. The kick deals {0} Aero DMG, and the follow-up strike deals {1} Aero DMG.rnrnAfter the follow-up strike hits, the current character's Aero DMG increases by {2}, and the Heavy Attack DMG increases by {3} for {4}srnrnCD: {5}s",
-        "cost": 4
+        "skillDesc": "Transform into Feilian Beringal to perform a powerful kick. If the kick lands on an enemy, immediately perform a follow-up strike. The kick deals {0} Aero DMG, and the follow-up strike deals {1} Aero DMG.rnrnAfter the follow-up strike hits, the current character's Aero DMG increases by {2}, and the Heavy Attack DMG increases by {3} for {4}srnrnCD: {5}s"
     },
     "PhantomHoartoise": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_1005_UI.T_IconMonsterGoods160_1005_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_1005_UI",
         "descParams": [
             [
                 "8"
@@ -1774,11 +1706,11 @@ export default {
             "FreezingFrost"
         ],
         "monster": "Phantom: Hoartoise",
-        "skillDesc": "Transform into Hoartoise and slowly restore HP. Use the Echo skill again to exit the transformation state.nnCD: {0}s",
-        "cost": 1
+        "skillDesc": "Transform into Hoartoise and slowly restore HP. Use the Echo skill again to exit the transformation state.nnCD: {0}s"
     },
     "PhantomImpermanenceHeron": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_1006_UI.T_IconMonsterGoods160_1006_UI",
+        "cost": 4,
+        "icon": "T_IconMonsterGoods160_1006_UI",
         "descParams": [
             [
                 "194.10%",
@@ -1810,12 +1742,11 @@ export default {
             "MoonlitClouds"
         ],
         "monster": "Phantom: Impermanence Heron",
-        "skillDesc": "Transform into Impermanence Heron to fly up and smack down, dealing {0} Havoc DMG.nnLong press to stay as Impermanence Heron and continuously spit flames, each attack dealing {1} Havoc DMG.nnOnce the initial attack lands on any enemy, the current character regains 10 Resonance Energy. If the current character uses their Outro Skill within the next 15s, the next character\u2019s damage dealt will be boosted by 12% for 15s.nnCD: {2}s",
-        "cost": 4
+        "skillDesc": "Transform into Impermanence Heron to fly up and smack down, dealing {0} Havoc DMG.nnLong press to stay as Impermanence Heron and continuously spit flames, each attack dealing {1} Havoc DMG.nnOnce the initial attack lands on any enemy, the current character regains 10 Resonance Energy. If the current character uses their Outro Skill within the next 15s, the next character\u2019s damage dealt will be boosted by 12% for 15s.nnCD: {2}s"
     },
     "PhantomLightcrusher": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_328_UI.T_IconMonsterGoods160_328_UI",
         "cost": 3,
+        "icon": "T_IconMonsterGoods160_328_UI",
         "descParams": [
             [
                 "84.60%",
@@ -1855,7 +1786,8 @@ export default {
         "skillDesc": "Lunge forward as a Lightcrusher, dealing {0} Spectro DMG. Generate {1} Ablucence on hit. Each Ablucence explosion deals {2} Spectro DMG.nHold the Echo Skill to stay in the Lightcrusher form, which allows you to leap up and pounce forward in the air for a short distance.nnCooldown: {3}s"
     },
     "PhantomMourningAix": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_1001_UI.T_IconMonsterGoods160_1001_UI",
+        "cost": 4,
+        "icon": "T_IconMonsterGoods160_1001_UI",
         "descParams": [
             [
                 "98.40%",
@@ -1902,11 +1834,11 @@ export default {
             "CelestialLight"
         ],
         "monster": "Phantom: Mourning Aix",
-        "skillDesc": "Transform into Mourning Aix and perform 2 consecutive claw attacks, each attack dealing {0} and {1} Spectro DMG respectively.nnAfter the transformation, increase current character's Spectro DMG by {2} and Resonance Liberation DMG by {3} for {4}snnCD: {5}s",
-        "cost": 4
+        "skillDesc": "Transform into Mourning Aix and perform 2 consecutive claw attacks, each attack dealing {0} and {1} Spectro DMG respectively.nnAfter the transformation, increase current character's Spectro DMG by {2} and Resonance Liberation DMG by {3} for {4}snnCD: {5}s"
     },
     "PhantomRocksteadyGuardian": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_1002_UI.T_IconMonsterGoods160_1002_UI",
+        "cost": 3,
+        "icon": "T_IconMonsterGoods160_1002_UI",
         "descParams": [
             [
                 "5.18%",
@@ -1944,11 +1876,11 @@ export default {
             "CelestialLight"
         ],
         "monster": "Phantom: Rocksteady Guardian",
-        "skillDesc": "Transform into Rocksteady Guardian and enter a Parry State. Upon being attacked, deal Spectro DMG equal to {0} of the Resonator's Max HP, and perform a follow-up attack that deals Spectro DMG equal to {0} of the Resonator's Max HP.n nUse the Echo Skill again to exit the transformation.n nIf the attack received is a <color=Highlight>Special Skill<\/color> attack, interrupt the enemy's <color=Highlight>Special Skill<\/color>, gain a Shield equal to 30% Max HP, and perform a two-stage follow-up attack, each dealing Spectro DMG equal to {1} of the Resonator's Max HP. These follow-up attacks simultaneously launch three ground-breaking waves, each dealing Spectro DMG equal to {2} of the Resonator's Max HP.n nCD: {3}s",
-        "cost": 3
+        "skillDesc": "Transform into Rocksteady Guardian and enter a Parry State. Upon being attacked, deal Spectro DMG equal to {0} of the Resonator's Max HP, and perform a follow-up attack that deals Spectro DMG equal to {0} of the Resonator's Max HP.n nUse the Echo Skill again to exit the transformation.n nIf the attack received is a <color=Highlight>Special Skill<\/color> attack, interrupt the enemy's <color=Highlight>Special Skill<\/color>, gain a Shield equal to 30% Max HP, and perform a two-stage follow-up attack, each dealing Spectro DMG equal to {1} of the Resonator's Max HP. These follow-up attacks simultaneously launch three ground-breaking waves, each dealing Spectro DMG equal to {2} of the Resonator's Max HP.n nCD: {3}s"
     },
     "PhantomThunderingMephis": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_1003_UI.T_IconMonsterGoods160_1003_UI",
+        "cost": 4,
+        "icon": "T_IconMonsterGoods160_1003_UI",
         "descParams": [
             [
                 "82.88%",
@@ -2000,11 +1932,11 @@ export default {
             "VoidThunder"
         ],
         "monster": "Phantom: Thundering Mephis",
-        "skillDesc": "Transform into Thundering Mephis, engaging in a rapid assault of up to 6 strikes. The first 5 strikes deal {0} Electro DMG each, while the final strike inflicts {1} Electro DMG, with an additional {2} Electro DMG from the thunder.nnAfter the final hit, increase the current character\u2019s Electro DMG by {3} and Resonance Liberation DMG by {4} for {5}s.nnCD: {6}s",
-        "cost": 4
+        "skillDesc": "Transform into Thundering Mephis, engaging in a rapid assault of up to 6 strikes. The first 5 strikes deal {0} Electro DMG each, while the final strike inflicts {1} Electro DMG, with an additional {2} Electro DMG from the thunder.nnAfter the final hit, increase the current character\u2019s Electro DMG by {3} and Resonance Liberation DMG by {4} for {5}s.nnCD: {6}s"
     },
     "RocksteadyGuardian": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_241_UI.T_IconMonsterGoods160_241_UI",
+        "cost": 3,
+        "icon": "T_IconMonsterGoods160_241_UI",
         "descParams": [
             [
                 "5.18%",
@@ -2042,11 +1974,11 @@ export default {
             "CelestialLight"
         ],
         "monster": "Rocksteady Guardian",
-        "skillDesc": "Transform into Rocksteady Guardian and enter a Parry State. Upon being attacked, deal Spectro DMG equal to {0} of the Resonator's Max HP, and perform a follow-up attack that deals Spectro DMG equal to {0} of the Resonator's Max HP.n nUse the Echo Skill again to exit the transformation.n nIf the attack received is a <color=Highlight>Special Skill<\/color> attack, interrupt the enemy's <color=Highlight>Special Skill<\/color>, gain a Shield equal to 30% Max HP, and perform a two-stage follow-up attack, each dealing Spectro DMG equal to {1} of the Resonator's Max HP. These follow-up attacks simultaneously launch three ground-breaking waves, each dealing Spectro DMG equal to {2} of the Resonator's Max HP.n nCD: {3}s",
-        "cost": 3
+        "skillDesc": "Transform into Rocksteady Guardian and enter a Parry State. Upon being attacked, deal Spectro DMG equal to {0} of the Resonator's Max HP, and perform a follow-up attack that deals Spectro DMG equal to {0} of the Resonator's Max HP.n nUse the Echo Skill again to exit the transformation.n nIf the attack received is a <color=Highlight>Special Skill<\/color> attack, interrupt the enemy's <color=Highlight>Special Skill<\/color>, gain a Shield equal to 30% Max HP, and perform a two-stage follow-up attack, each dealing Spectro DMG equal to {1} of the Resonator's Max HP. These follow-up attacks simultaneously launch three ground-breaking waves, each dealing Spectro DMG equal to {2} of the Resonator's Max HP.n nCD: {3}s"
     },
     "Roseshroom": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_311_UI.T_IconMonsterGoods160_311_UI",
+        "cost": 3,
+        "icon": "T_IconMonsterGoods160_311_UI",
         "descParams": [
             [
                 "3",
@@ -2079,11 +2011,11 @@ export default {
             "SunSinkingEclipse"
         ],
         "monster": "Roseshroom",
-        "skillDesc": "Summon a Roseshroom that fires a laser, dealing {1} Havoc DMG up to {0} times.n nCD: {2}s",
-        "cost": 3
+        "skillDesc": "Summon a Roseshroom that fires a laser, dealing {1} Havoc DMG up to {0} times.n nCD: {2}s"
     },
     "SabyrBoar": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_261_UI.T_IconMonsterGoods160_261_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_261_UI",
         "descParams": [
             [
                 "20.00%+40",
@@ -2112,11 +2044,11 @@ export default {
             "FreezingFrost"
         ],
         "monster": "Sabyr Boar",
-        "skillDesc": "Summon a Sabyr Boar to headbutt the enemy into the air, dealing {0} Physical DMG.rnrnCD: {1}s",
-        "cost": 1
+        "skillDesc": "Summon a Sabyr Boar to headbutt the enemy into the air, dealing {0} Physical DMG.rnrnCD: {1}s"
     },
     "SnipSnap": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_061_UI.T_IconMonsterGoods160_061_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_061_UI",
         "descParams": [
             [
                 "20.00%+40",
@@ -2145,11 +2077,11 @@ export default {
             "MoltenRift"
         ],
         "monster": "Snip Snap",
-        "skillDesc": "Summon a Snip Snap that throws fireballs at the enemy, dealing {0} Fusion DMG on-hit.rnrnCD: {1}s",
-        "cost": 1
+        "skillDesc": "Summon a Snip Snap that throws fireballs at the enemy, dealing {0} Fusion DMG on-hit.rnrnCD: {1}s"
     },
     "Spearback": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_986_UI.T_IconMonsterGoods160_986_UI",
+        "cost": 3,
+        "icon": "T_IconMonsterGoods160_986_UI",
         "descParams": [
             [
                 "18.73%",
@@ -2182,11 +2114,11 @@ export default {
             "MoonlitClouds"
         ],
         "monster": "Spearback",
-        "skillDesc": "Summon a Spearback to perform 5 consecutive attacks. The first 4 attacks deal {0} Physical DMG, and the last deals {1} Physical DMG.rnrnCD: {2}s",
-        "cost": 3
+        "skillDesc": "Summon a Spearback to perform 5 consecutive attacks. The first 4 attacks deal {0} Physical DMG, and the last deals {1} Physical DMG.rnrnCD: {2}s"
     },
     "SpectroPrism": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_161_UI.T_IconMonsterGoods160_161_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_161_UI",
         "descParams": [
             [
                 "8",
@@ -2220,11 +2152,11 @@ export default {
             "CelestialLight"
         ],
         "monster": "Spectro Prism",
-        "skillDesc": "Summon a Spectro Prism to emit a laser that hits the enemy up to {0} times, dealing {1} Spectro DMG each time.rnrnCD: {2}s",
-        "cost": 1
+        "skillDesc": "Summon a Spectro Prism to emit a laser that hits the enemy up to {0} times, dealing {1} Spectro DMG each time.rnrnCD: {2}s"
     },
     "StonewallBracer": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_181_UI.T_IconMonsterGoods160_181_UI",
+        "cost": 3,
+        "icon": "T_IconMonsterGoods160_181_UI",
         "descParams": [
             [
                 "70.40%",
@@ -2267,11 +2199,11 @@ export default {
             "MoonlitClouds"
         ],
         "monster": "Stonewall Bracer",
-        "skillDesc": "Transform into Stonewall Bracer and charge forward, dealing {0} Physical DMG on-hit, then smash to deal {1} Physical DMG, and gain a shield of {2} of current character's Max HP that lasts {3}s. Use the Echo skill again to exit the transformation state.nnCD: {4}s",
-        "cost": 3
+        "skillDesc": "Transform into Stonewall Bracer and charge forward, dealing {0} Physical DMG on-hit, then smash to deal {1} Physical DMG, and gain a shield of {2} of current character's Max HP that lasts {3}s. Use the Echo skill again to exit the transformation state.nnCD: {4}s"
     },
     "Tambourinist": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_201_UI.T_IconMonsterGoods160_201_UI",
+        "cost": 3,
+        "icon": "T_IconMonsterGoods160_201_UI",
         "descParams": [
             [
                 "9.00%",
@@ -2299,11 +2231,11 @@ export default {
             "SunSinkingEclipse"
         ],
         "monster": "Tambourinist",
-        "skillDesc": "Summon a Tambourinist that plays out Melodies of Annihilation. Any Resonator on the team gains the following effect for 10s upon obtaining a Melody of Annihilation: When the Resonator hits a target, the Tambourinist deals {0} Havoc DMG to the target, up to 10 times.nnCD: {1}s",
-        "cost": 3
+        "skillDesc": "Summon a Tambourinist that plays out Melodies of Annihilation. Any Resonator on the team gains the following effect for 10s upon obtaining a Melody of Annihilation: When the Resonator hits a target, the Tambourinist deals {0} Havoc DMG to the target, up to 10 times.nnCD: {1}s"
     },
     "TempestMephis": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_221_UI.T_IconMonsterGoods160_221_UI",
+        "cost": 4,
+        "icon": "T_IconMonsterGoods160_221_UI",
         "descParams": [
             [
                 "64.05%",
@@ -2350,11 +2282,11 @@ export default {
             "VoidThunder"
         ],
         "monster": "Tempest Mephis",
-        "skillDesc": "Transform into Tempest Mephis to perform tail swing attacks followed by a claw attack. The lightning strike summoned by the tail swing deals {0} Electro DMG each time, while the claw attack deals {1} Electro DMG.rnrnAfter the claw hit, increase the current character\u2019s Electro DMG by {2} and Heavy Attack DMG by {3} for {4}s.rnrnCD: {5}s",
-        "cost": 4
+        "skillDesc": "Transform into Tempest Mephis to perform tail swing attacks followed by a claw attack. The lightning strike summoned by the tail swing deals {0} Electro DMG each time, while the claw attack deals {1} Electro DMG.rnrnAfter the claw hit, increase the current character\u2019s Electro DMG by {2} and Heavy Attack DMG by {3} for {4}s.rnrnCD: {5}s"
     },
     "ThunderingMephis": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_222_UI.T_IconMonsterGoods160_222_UI",
+        "cost": 4,
+        "icon": "T_IconMonsterGoods160_222_UI",
         "descParams": [
             [
                 "82.88%",
@@ -2406,11 +2338,11 @@ export default {
             "VoidThunder"
         ],
         "monster": "Thundering Mephis",
-        "skillDesc": "Transform into Thundering Mephis, engaging in a rapid assault of up to 6 strikes. The first 5 strikes deal {0} Electro DMG each, while the final strike inflicts {1} Electro DMG, with an additional {2} Electro DMG from the thunder.nnAfter the final hit, increase the current character\u2019s Electro DMG by {3} and Resonance Liberation DMG by {4} for {5}s.nnCD: {6}s",
-        "cost": 4
+        "skillDesc": "Transform into Thundering Mephis, engaging in a rapid assault of up to 6 strikes. The first 5 strikes deal {0} Electro DMG each, while the final strike inflicts {1} Electro DMG, with an additional {2} Electro DMG from the thunder.nnAfter the final hit, increase the current character\u2019s Electro DMG by {3} and Resonance Liberation DMG by {4} for {5}s.nnCD: {6}s"
     },
     "TickTack": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_091_UI.T_IconMonsterGoods160_091_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_091_UI",
         "descParams": [
             [
                 "42.80%",
@@ -2454,11 +2386,11 @@ export default {
             "SunSinkingEclipse"
         ],
         "monster": "Tick Tack",
-        "skillDesc": "Summon a Tick Tack that charges and bites the enemy. The charge from Tick Tack will deal {0} Havoc DMG to the enemy, and the bite will deal {1} Havoc DMG to the enemy. Reduces enemy Vibration Strength by up to {3} during {2}s.rnrnCD: {4}s",
-        "cost": 1
+        "skillDesc": "Summon a Tick Tack that charges and bites the enemy. The charge from Tick Tack will deal {0} Havoc DMG to the enemy, and the bite will deal {1} Havoc DMG to the enemy. Reduces enemy Vibration Strength by up to {3} during {2}s.rnrnCD: {4}s"
     },
     "TrafficIlluminator": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_9992_UI.T_IconMonsterGoods160_9992_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_9992_UI",
         "descParams": [
             [
                 "1",
@@ -2487,11 +2419,11 @@ export default {
             "MoltenRift"
         ],
         "monster": "Traffic Illuminator",
-        "skillDesc": "Summon a Traffic Illuminator, immobilizing enemies for up to {0}s. The immobilization will be lifted once the enemy is hit.rnrnCD: {1}s",
-        "cost": 1
+        "skillDesc": "Summon a Traffic Illuminator, immobilizing enemies for up to {0}s. The immobilization will be lifted once the enemy is hit.rnrnCD: {1}s"
     },
     "VanguardJunrock": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_011_UI.T_IconMonsterGoods160_011_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_011_UI",
         "descParams": [
             [
                 "20.00%+40",
@@ -2520,11 +2452,11 @@ export default {
             "LingeringTunes"
         ],
         "monster": "Vanguard Junrock",
-        "skillDesc": "Summon a Vanguard Junrock that charges forward, dealing {0} Physical DMG to enemies in its path.rnrnCD: {1}s",
-        "cost": 1
+        "skillDesc": "Summon a Vanguard Junrock that charges forward, dealing {0} Physical DMG to enemies in its path.rnrnCD: {1}s"
     },
     "VioletFeatheredHeron": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_121_UI.T_IconMonsterGoods160_121_UI",
+        "cost": 3,
+        "icon": "T_IconMonsterGoods160_121_UI",
         "descParams": [
             [
                 "180.00%",
@@ -2557,12 +2489,11 @@ export default {
             "VoidThunder"
         ],
         "monster": "Violet-Feathered Heron",
-        "skillDesc": "Transform into Violet-Feathered Heron and enter a Parry Stance. Counterattack when the Parry stance is over, dealing {0} Electro DMG. If attacked during Parry Stance, you can counterattack in advance and additionally recover {1} Concerto Energy.nnCD: {2}s",
-        "cost": 3
+        "skillDesc": "Transform into Violet-Feathered Heron and enter a Parry Stance. Counterattack when the Parry stance is over, dealing {0} Electro DMG. If attacked during Parry Stance, you can counterattack in advance and additionally recover {1} Concerto Energy.nnCD: {2}s"
     },
     "ViridblazeSaurian": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_291_UI.T_IconMonsterGoods160_291_UI",
         "cost": 3,
+        "icon": "T_IconMonsterGoods160_291_UI",
         "descParams": [
             [
                 "10.70%",
@@ -2593,7 +2524,8 @@ export default {
         "skillDesc": "Summon a Viridblaze Saurian to continuously spit fire, dealing {0} Fusion DMG 10 times.rnrnCD: {1}s"
     },
     "WhiffWhaff": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_081_UI.T_IconMonsterGoods160_081_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_081_UI",
         "descParams": [
             [
                 "32.10%",
@@ -2632,39 +2564,11 @@ export default {
             "SierraGale"
         ],
         "monster": "Whiff Whaff",
-        "skillDesc": "Summon a Whiff Whaff that triggers an air explosion, dealing {0} Aero DMG and produce a Low-pressure Zone. The Low-pressure Zone continuously pulls enemies nearby towards the center for {1}s, dealing {2} Aero DMG up to 6 times.rnrnCD: {3}s",
-        "cost": 1
-    },
-    "YoungGeohideSaurian": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_281_UI.T_IconMonsterGoods160_281_UI",
-        "descParams": [
-            [
-                "8"
-            ],
-            [
-                "8"
-            ],
-            [
-                "8"
-            ],
-            [
-                "8"
-            ],
-            [
-                "8"
-            ]
-        ],
-        "validSets": [
-            "LingeringTunes",
-            "VoidThunder",
-            "MoltenRift"
-        ],
-        "monster": "Young Geohide Saurian",
-        "skillDesc": "Transform into Baby Viridblaze Saurian to rest in place, and slowly restore HP.nnCD: {0}s",
-        "cost": 1
+        "skillDesc": "Summon a Whiff Whaff that triggers an air explosion, dealing {0} Aero DMG and produce a Low-pressure Zone. The Low-pressure Zone continuously pulls enemies nearby towards the center for {1}s, dealing {2} Aero DMG up to 6 times.rnrnCD: {3}s"
     },
     "YoungRoseshroom": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_301_UI.T_IconMonsterGoods160_301_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_301_UI",
         "descParams": [
             [
                 "20.00%+40",
@@ -2692,11 +2596,11 @@ export default {
             "SunSinkingEclipse"
         ],
         "monster": "Young Roseshroom",
-        "skillDesc": "Summon a Baby Roseshroom that fires a laser, dealing {0} Havoc DMG.nnCD: {1}s",
-        "cost": 1
+        "skillDesc": "Summon a Baby Roseshroom that fires a laser, dealing {0} Havoc DMG.nnCD: {1}s"
     },
     "ZigZag": {
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterGoods160\/T_IconMonsterGoods160_071_UI.T_IconMonsterGoods160_071_UI",
+        "cost": 1,
+        "icon": "T_IconMonsterGoods160_071_UI",
         "descParams": [
             [
                 "30.00%+60",
@@ -2725,7 +2629,6 @@ export default {
             "CelestialLight"
         ],
         "monster": "Zig Zag",
-        "skillDesc": "Summon a Zig Zag that denotates Spectro energy, dealing {0} Spectro DMG and creating a Stagnation Zone that lasts 1.8s.rnrnCD: {1}s",
-        "cost": 1
+        "skillDesc": "Summon a Zig Zag that denotates Spectro energy, dealing {0} Spectro DMG and creating a Stagnation Zone that lasts 1.8s.rnrnCD: {1}s"
     }
 };

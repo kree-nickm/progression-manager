@@ -2,10 +2,11 @@ import handlebars from 'https://cdn.jsdelivr.net/npm/handlebars@4.7.7/+esm';
 
 handlebars.registerHelper("itemChildren", (item, field, options) => {
   let params = options.hash.params ? (Array.isArray(options.hash.params) ? options.hash.params : [options.hash.params]) : [];
-  let result = Renderer.contentToHTML(field.getAll(item, ...params));
+  let fieldData = field.getAll(item, ...params);
+  let result = fieldData.template ? Renderer._templates[fieldData.template]({item, field, params, fieldData}) : Renderer.contentToHTML(fieldData);
   result = item.processRenderText(result);
   
-  let button = field.get('button',item,...params);
+  let button = fieldData.button;
   if(!Array.isArray(button))
     button = [button];
   for(let btn of button)
@@ -298,8 +299,7 @@ class Renderer
       if(content.src)
       {
         attrs.push(`src="${content.src}"`);
-        if(tag == "img" && content.src.startsWith("http"))
-          attrs.push(`loading="lazy"`);
+        attrs.push(`loading="lazy"`);
       }
       
       if(content.alt)
@@ -554,32 +554,6 @@ class Renderer
     }
     
     // Determine the item for the field.
-    /*
-    let itemElement = element.parentElement;
-    if(element.classList.contains("list-item-field"))
-    {
-      while(itemElement && !itemElement.classList.contains("list-item"))
-        itemElement = itemElement.parentElement;
-    }
-    else if(element.classList.contains("list-field"))
-    {
-      while(itemElement && !itemElement.classList.contains("list"))
-        itemElement = itemElement.parentElement;
-    }
-    else
-    {
-      console.error(`Field '${fieldName}' element does not have an appropriate field class.`, element);
-      return;
-    }
-    
-    if(!itemElement)
-    {
-      console.error(`Field '${fieldName}' element has no ancestor with the appropriate class to determine which item/list to which it belongs.`, element);
-      return false;
-    }
-    
-    let item = Renderer.controllers.get(itemElement.dataset.uuid);
-    */
     let item = Renderer.controllers.get(element.dataset.uuid);
     if(!item)
     {
@@ -667,50 +641,59 @@ class Renderer
       }
     }
     
-    let handleSubEdit = (subContent,path=[0]) => {
-      if(Array.isArray(subContent.value))
-      {
-        for(let i in subContent.value)
-          if(subContent.value[i])
-            handleSubEdit(subContent.value[i], path.concat([i]));
-      }
-      else if(subContent.value && typeof(subContent.value) == "object")
-        handleSubEdit(subContent.value, path.concat([0]));
-      
-      let subElement = element.querySelector(".sub-"+ path.join("-"));
-      if(!subElement)
-      {
-        console.error(`Cannot find descendant of field element along the content value path.`, element, ".sub-"+ path.join("-"), subContent);
-        return;
-      }
-      
-      if(subContent.edit)
-      {
-        if(window.DEBUGLOG.renderItemField) console.debug(`Adding edit event listeners to subelement (field:${fieldName}, item:${item.name??item.uuid}).`, subElement, subContent);
-        if(subContent.edit.target)
-          fieldData.dependencies.push(subContent.edit.target);
-        Renderer.addFieldEventListeners(subElement, subContent);
-      }
-      else if(subContent.popup)
-      {
-        // Make sure this link is not trying to open a popup that is already open.
-        let popup = subContent.popup.viewer.elements.popup.classList.contains("show") ? subElement.parentElement : null;
-        while(popup && !popup.classList.contains("modal-content"))
-          popup = popup.parentElement;
-        let currentPopup = popup ? Renderer.controllers.get(popup.dataset.uuid) : null
-        if(!subElement.onclick && currentPopup != subContent.popup)
+    if(fieldData.template)
+    {
+      // If this field uses a template, recursively call this method on any other item fields that it might contain.
+      element.querySelectorAll(".list-item-field").forEach(Renderer.renderItemField);
+    }
+    else
+    {
+      // Add event handlers to interactable parts of the HTML. Define that process as a function so we can recursively call it if the field value is a nest of sub-values.
+      let handleSubEdit = (subContent,path=[0]) => {
+        if(Array.isArray(subContent.value))
         {
-          if(window.DEBUGLOG.renderItemField) console.debug(`Adding popup event listener to subelement (field:${fieldName}, item:${item.name??item.uuid}).`, subElement, subContent);
-          subElement.onclick = event => {
-            event.stopPropagation();
-            Renderer.rerender(subContent.popup.viewer.elements.popup.querySelector(".modal-content"), {item: subContent.popup}, {template: subContent.popup.constructor.templateName, partials: subContent.popup.constructor.templatePartials, showPopup: true, parentElement: subContent.popup.viewer.elements.popup});
-          };
-          subElement.classList.add("popup");
-          subElement.dataset.uuid = subContent.popup.uuid;
+          for(let i in subContent.value)
+            if(subContent.value[i])
+              handleSubEdit(subContent.value[i], path.concat([i]));
         }
-      }
-    };
-    handleSubEdit(fieldData);
+        else if(subContent.value && typeof(subContent.value) == "object")
+          handleSubEdit(subContent.value, path.concat([0]));
+        
+        let subElement = element.querySelector(".sub-"+ path.join("-"));
+        if(!subElement)
+        {
+          console.error(`Cannot find descendant of field element along the content value path.`, element, ".sub-"+ path.join("-"), subContent);
+          return;
+        }
+        
+        if(subContent.edit)
+        {
+          if(window.DEBUGLOG.renderItemField) console.debug(`Adding edit event listeners to subelement (field:${fieldName}, item:${item.name??item.uuid}).`, subElement, subContent);
+          if(subContent.edit.target)
+            fieldData.dependencies.push(subContent.edit.target);
+          Renderer.addFieldEventListeners(subElement, subContent);
+        }
+        else if(subContent.popup)
+        {
+          // Make sure this link is not trying to open a popup that is already open.
+          let popup = subContent.popup.viewer.elements.popup.classList.contains("show") ? subElement.parentElement : null;
+          while(popup && !popup.classList.contains("modal-content"))
+            popup = popup.parentElement;
+          let currentPopup = popup ? Renderer.controllers.get(popup.dataset.uuid) : null
+          if(!subElement.onclick && currentPopup != subContent.popup)
+          {
+            if(window.DEBUGLOG.renderItemField) console.debug(`Adding popup event listener to subelement (field:${fieldName}, item:${item.name??item.uuid}).`, subElement, subContent);
+            subElement.onclick = event => {
+              event.stopPropagation();
+              Renderer.rerender(subContent.popup.viewer.elements.popup.querySelector(".modal-content"), {item: subContent.popup}, {template: subContent.popup.constructor.templateName, partials: subContent.popup.constructor.templatePartials, showPopup: true, parentElement: subContent.popup.viewer.elements.popup});
+            };
+            subElement.classList.add("popup");
+            subElement.dataset.uuid = subContent.popup.uuid;
+          }
+        }
+      };
+      handleSubEdit(fieldData);
+    }
     
     // If this cell's data is dependent on other fields, set up a trigger to update this cell when those fields are changed.
     if(!element.dependencies)
