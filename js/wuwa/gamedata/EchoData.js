@@ -1143,7 +1143,7 @@ export default {
             "SierraGale"
         ],
         "monster": "Hoochief",
-        "skillDesc": "Transform into Hoochief Cyclone and smack the enemies, dealing {0} Aero DMG.nnCD: {1}s"
+        "skillDesc": "Transform into Hoochief and smack the enemies, dealing {0} Aero DMG.nnCD: {1}s"
     },
     "Hooscamp": {
         "cost": 1,

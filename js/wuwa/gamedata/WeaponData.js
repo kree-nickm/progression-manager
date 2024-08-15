@@ -131,7 +131,7 @@ export default {
             ]
         ],
         "name": "Blazing Brilliance",
-        "passive": "ATK increased by {0}. The equipper gains 1 stack of Searing Feather upon dealing damage, which can be triggered once every 0.5s, and gains 5 stacks of the same effect upon casting Resonance Skill. Each stack of Searing Feather gives {1} additional Resonance Skill DMG Bonus for up to 14 stacks. All stacks will be removed within 10s after reaching the max stack.",
+        "passive": "ATK increased by {0}. The wielder gains 1 stack of Searing Feather upon dealing damage, which can be triggered once every 0.5s, and gains 5 stacks of the same effect upon casting Resonance Skill. Each stack of Searing Feather gives {1} additional Resonance Skill DMG Bonus for up to 14 stacks. After reaching the max stacks, all stacks will be removed in {2}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip"
     },
@@ -365,7 +365,7 @@ export default {
                 "24%"
             ]
         ],
-        "passive": "Increases Attribute DMG Bonus by {0}. When dealing Resonance Skill DMG, increases ATK by {1}, stacking up to {2}. This effect lasts for {3}s. When the equipped Resonator is not on the field, increases their ATK by an additional {4}.",
+        "passive": "Grants {0} Attribute DMG Bonus. When dealing Resonance Skill DMG, increases ATK by {1}, stacking up to {2} times. This effect lasts for {3}s. When the wielder is not on the field, increases their ATK by an additional {4}.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
         "stat": "Crit",
@@ -466,7 +466,7 @@ export default {
                 "15"
             ]
         ],
-        "passive": "When Resonance Liberation is cast, increases the caster's ATK by {0}, lasting for {1}s.",
+        "passive": "Casting Resonance Liberation increases the wielder's ATK by {0}, lasting for {1}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
         "stat": "Crit",
@@ -967,7 +967,7 @@ export default {
                 "15"
             ]
         ],
-        "passive": "When Intro Skill is cast, increases the caster's ATK by {0} and HP by {1}, lasting for {2}s.",
+        "passive": "Casting Intro Skill increases the wielder's ATK by {0} and HP by {1}, lasting for {2}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Helix",
         "stat": "GreenAtk",
@@ -1349,7 +1349,7 @@ export default {
                 "15"
             ]
         ],
-        "passive": "When Resonance Skill is cast, increases the caster's Resonance Liberation DMG Bonus by {0}, lasting for {1}s.",
+        "passive": "Casting Resonance Skill increases the wielder's Resonance Liberation DMG Bonus by {0}, lasting for {1}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Cadence",
         "stat": "Crit",

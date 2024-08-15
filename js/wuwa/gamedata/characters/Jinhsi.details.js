@@ -220,7 +220,7 @@ export default {
                 }
             ],
             "name": "Slash of Breaking Dawn",
-            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>nPerform up to 4 consecutive strikes, dealing <color=Light>Spectro DMG<\/color>.n<size=10><\/size>n<size=40><color=Title>Heavy Attack<\/color><\/size>nPerform a charged attack at the cost of Stamina, dealing <color=Light>Spectro DMG<\/color>.n<size=10><\/size>n<size=40><color=Title>Mid-air Attack<\/color><\/size>nPerform a plunging attack while in mid-air at the cost of Stamina, dealing <color=Light>Spectro DMG<\/color>.n<size=10><\/size>n<size=40><color=Title>Dodge Counter<\/color><\/size>nUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to counterattack, dealing <color=Light>Spectro DMG<\/color>."
+            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>nPerform up to 4 consecutive strikes, dealing <color=Light>Spectro DMG<\/color>.n<size=10><\/size>n<size=40><color=Title>Heavy Attack<\/color><\/size>nPerform a charged attack at the cost of STA, dealing <color=Light>Spectro DMG<\/color>.n<size=10><\/size>n<size=40><color=Title>Mid-air Attack<\/color><\/size>nPerform a Plunging Attack while in mid-air at the cost of STA, dealing <color=Light>Spectro DMG<\/color>.n<size=10><\/size>n<size=40><color=Title>Dodge Counter<\/color><\/size>nUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to counterattack, dealing <color=Light>Spectro DMG<\/color>."
         },
         "Resonance Skill": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconJueyuanB1_UI.T_IconJueyuanB1_UI",
@@ -368,7 +368,7 @@ export default {
                 }
             ],
             "name": "Trailing Lights of Eons",
-            "desc": "Dash forward and perform consecutive strikes that inflict <color=Light>Spectro DMG<\/color>.n<size=10><\/size>n<color=Title>Overflowing Radiance<\/color>nAfter Jinhsi uses <color=Light>Basic Attack 4<\/color> or, while not in <color=Highlight>Incarnation<\/color>, Intro Skill <color=Highlight>Loong's Halo<\/color>, an alternative Resonance Skill <color=Highlight>Overflowing Radiance<\/color> is available within 5s.nResonance Skill <color=Highlight>Overflowing Radiance<\/color> inflicts <color=Light>Spectro DMG<\/color> and sends Jinhsi into <color=Highlight>Incarnation<\/color>.nCan be cast in mid-air."
+            "desc": "Dash forward and perform consecutive strikes that inflict <color=Light>Spectro DMG<\/color>.n<size=10><\/size>n<color=Title>Overflowing Radiance<\/color>nAfter Jinhsi uses <color=Highlight>Basic Attack 4<\/color> or, while not in <color=Highlight>Incarnation<\/color>, Intro Skill <color=Highlight>Loong's Halo<\/color>, an alternative Resonance Skill <color=Highlight>Overflowing Radiance<\/color> is available within 5s.nResonance Skill <color=Highlight>Overflowing Radiance<\/color> inflicts <color=Light>Spectro DMG<\/color> and sends Jinhsi into <color=Highlight>Incarnation<\/color>.nCan be cast in mid-air."
         },
         "Resonance Liberation": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconJueyuanA1_UI.T_IconJueyuanA1_UI",

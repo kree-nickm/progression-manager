@@ -27,7 +27,7 @@ export default {
                         "115.36%",
                         "120.82%"
                     ],
-                    "name": "Part 1 Damage"
+                    "name": "Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -52,7 +52,7 @@ export default {
                         "84.18%*2",
                         "88.17%*2"
                     ],
-                    "name": "Part 2 Damage"
+                    "name": "Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -77,7 +77,7 @@ export default {
                         "58.46%*4",
                         "61.23%*4"
                     ],
-                    "name": "Part 3 Damage"
+                    "name": "Stage 3 DMG"
                 },
                 {
                     "scaling": [
@@ -102,7 +102,7 @@ export default {
                         "405.30%",
                         "424.49%"
                     ],
-                    "name": "Part 4 Damage"
+                    "name": "Stage 4 DMG"
                 },
                 {
                     "scaling": [
@@ -127,7 +127,7 @@ export default {
                         "62.36%",
                         "65.31%"
                     ],
-                    "name": "Heavy Attack Damage"
+                    "name": "Heavy Attack DMG"
                 },
                 {
                     "scaling": [
@@ -152,7 +152,7 @@ export default {
                         "140.30%",
                         "146.94%"
                     ],
-                    "name": "Full Charge Heavy Attack Damage"
+                    "name": "Full Charge Heavy Attack DMG"
                 },
                 {
                     "scaling": [
@@ -177,7 +177,7 @@ export default {
                         "56.12%",
                         "58.78%"
                     ],
-                    "name": "Mid-air Attack Damage"
+                    "name": "Mid-air Attack DMG"
                 },
                 {
                     "scaling": [
@@ -202,7 +202,7 @@ export default {
                         "592.37%",
                         "620.41%"
                     ],
-                    "name": "Dodge Counter Damage"
+                    "name": "Dodge Counter DMG"
                 },
                 {
                     "scaling": [
@@ -258,7 +258,7 @@ export default {
                         "55.43%*8",
                         "58.05%*8"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -304,7 +304,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Whizzing Fight Spirit",
@@ -337,7 +337,7 @@ export default {
                         "1662.77%+100.78%*11",
                         "1741.49%+105.55%*11"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -383,7 +383,7 @@ export default {
                         "150",
                         "150"
                     ],
-                    "name": "Res. Energy Cost"
+                    "name": "Resonance Cost"
                 },
                 {
                     "scaling": [
@@ -406,7 +406,7 @@ export default {
                         "20",
                         "20"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Blazing Flames",
@@ -451,7 +451,7 @@ export default {
                         "85.74%*2+42.87%*4",
                         "89.80%*2+44.90%*4"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -474,7 +474,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Grand Entrance",
@@ -555,7 +555,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "DAKA DAKA! Con. Energy Regen"
+                    "name": "DAKA DAKA! Concerto Regen"
                 },
                 {
                     "scaling": [
@@ -578,11 +578,11 @@ export default {
                         "0.5",
                         "0.5"
                     ],
-                    "name": "Thermobaric Bullet Con. Energy Regen"
+                    "name": "Thermobaric Bullet Concerto Regen"
                 }
             ],
             "name": "Heroic Bullets",
-            "desc": "<size=40><color=Title>Resonance Skill: DAKA DAKA!<\/color><\/size>nHold Resonance Skill <color=Highlight>Whizzing Fight Spirit<\/color> to enter <color=Highlight>DAKA DAKA!<\/color>. In this state:n- Chixia continuously consumes \"Thermobaric Bullets\" to attack the target, dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill damage;nTap <color=Highlight>Basic Attack<\/color> to cast <color=Highlight>Basic Attack 4<\/color>, dealing <color=Fire>Fusion DMG<\/color>, considered as Basic Attack damage. Then she exits the \"DAKA DAKA!\" state;n- If 30 \"Thermobaric Bullets\" have been fired when <color=Highlight>Basic Attack<\/color> is activated, Chixia will cast Resonance Skill <color=Highlight>Boom Boom<\/color> and terminate \"DAKA DAKA!\"n- Chixia exits the \"DAKA DAKA!\" state when all \"Thermobaric Bullets\" are consumed.n<size=10> <\/size>n<size=40><color=Title>Resonance Skill: Boom Boom<\/color><\/size>nDeal <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill damage.n<size=10> <\/size>n<size=40><color=Title>Thermobaric Bullets<\/color><\/size>nChixia can hold up to 60 \"Thermobaric Bullets\".nInherent Skill <color=Highlight>Scorching Magazine<\/color> increases Max \"Thermobaric Bullets\" by 10.nChixia obtains \"Thermobaric Bullets\" for every Normal Attack <color=Highlight>POW POW<\/color> on hit.nChixia obtains \"Thermobaric Bullets\" upon casting Intro Skill <color=Highlight>Grand Entrance<\/color> and Resonance Skill <color=Highlight>Whizzing Fight Spirit<\/color>."
+            "desc": "<size=40><color=Title>Resonance Skill: DAKA DAKA!<\/color><\/size>nHold Resonance Skill <color=Highlight>Whizzing Fight Spirit<\/color> to enter <color=Highlight>DAKA DAKA!<\/color>. In this state:n- Chixia continuously consumes \"Thermobaric Bullets\" to attack the target, dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill DMG.nTap <color=Highlight>Basic Attack<\/color> to cast <color=Highlight>Basic Attack 4<\/color>, dealing <color=Fire>Fusion DMG<\/color>, considered as Basic Attack DMG. Then she exits the \"DAKA DAKA!\" state.n- If 30 \"Thermobaric Bullets\" have been fired when <color=Highlight>Basic Attack<\/color> is activated, Chixia will cast Resonance Skill <color=Highlight>Boom Boom<\/color> and terminate \"DAKA DAKA!\"n- Chixia exits the \"DAKA DAKA!\" state when all \"Thermobaric Bullets\" are consumed.n<size=10> <\/size>n<size=40><color=Title>Resonance Skill: Boom Boom<\/color><\/size>nDeal <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill DMG.n<size=10> <\/size>n<size=40><color=Title>Thermobaric Bullets<\/color><\/size>nChixia can hold up to 60 \"Thermobaric Bullets\".nInherent Skill <color=Highlight>Scorching Magazine<\/color> increases Max \"Thermobaric Bullets\" by 10.nChixia obtains \"Thermobaric Bullets\" for every Normal Attack <color=Highlight>POW POW<\/color> on hit.nChixia obtains \"Thermobaric Bullets\" upon casting Intro Skill <color=Highlight>Grand Entrance<\/color> and Resonance Skill <color=Highlight>Whizzing Fight Spirit<\/color>."
         },
         "Utility Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
@@ -668,7 +668,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_MaxiaofangM4_UI.T_IconDevice_MaxiaofangM4_UI",
             "name": "Hero\u2019s Ultimate Move",
-            "desc": "Resonance Liberation <color=Highlight>Blazing Flames<\/color> grants 60 \u201cThermobaric Bullets\u201d and immediately resets the Cooldown of Resonance Skill <color=Highlight>Whizzing Fight Spirit<\/color>."
+            "desc": "Resonance Liberation <color=Highlight>Blazing Flames<\/color> grants 60 \"Thermobaric Bullets\" and immediately resets the Cooldown of Resonance Skill <color=Highlight>Whizzing Fight Spirit<\/color>."
         },
         "5": {
             "buffs": [

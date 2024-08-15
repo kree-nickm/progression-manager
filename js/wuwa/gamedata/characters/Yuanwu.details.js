@@ -27,7 +27,7 @@ export default {
                         "85.57%",
                         "89.62%"
                     ],
-                    "name": "Part 1 Damage"
+                    "name": "Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -52,7 +52,7 @@ export default {
                         "90.27%*2",
                         "94.55%*2"
                     ],
-                    "name": "Part 2 Damage"
+                    "name": "Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -77,7 +77,7 @@ export default {
                         "38.05%*2+57.07%*2",
                         "39.85%*2+59.78%*2"
                     ],
-                    "name": "Part 3 Damage"
+                    "name": "Stage 3 DMG"
                 },
                 {
                     "scaling": [
@@ -102,7 +102,7 @@ export default {
                         "90.27%*2",
                         "94.55%*2"
                     ],
-                    "name": "Part 4 Damage"
+                    "name": "Stage 4 DMG"
                 },
                 {
                     "scaling": [
@@ -127,7 +127,7 @@ export default {
                         "85.57%*2+114.09%",
                         "89.62%*2+119.49%"
                     ],
-                    "name": "Part 5 Damage"
+                    "name": "Stage 5 DMG"
                 },
                 {
                     "scaling": [
@@ -152,7 +152,7 @@ export default {
                         "277.13%",
                         "290.25%"
                     ],
-                    "name": "Heavy Attack Damage"
+                    "name": "Heavy Attack DMG"
                 },
                 {
                     "scaling": [
@@ -177,7 +177,7 @@ export default {
                         "171.82%",
                         "179.96%"
                     ],
-                    "name": "Mid-air Attack Damage"
+                    "name": "Mid-air Attack DMG"
                 },
                 {
                     "scaling": [
@@ -202,7 +202,7 @@ export default {
                         "199.54%*2",
                         "208.98%*2"
                     ],
-                    "name": "Dodge Counter Damage"
+                    "name": "Dodge Counter DMG"
                 },
                 {
                     "scaling": [
@@ -283,7 +283,7 @@ export default {
                         "41.57%",
                         "43.54%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -308,7 +308,7 @@ export default {
                         "13.86%",
                         "14.52%"
                     ],
-                    "name": "Thunder Wedge Coordinated Attack Damage"
+                    "name": "Thunder Wedge Coordinated Attack DMG"
                 },
                 {
                     "scaling": [
@@ -429,7 +429,7 @@ export default {
                         "3",
                         "3"
                     ],
-                    "name": "Leihuang Master Con. Energy Regen"
+                    "name": "Leihuang Master Concerto Regen"
                 },
                 {
                     "scaling": [
@@ -452,11 +452,11 @@ export default {
                         "25",
                         "25"
                     ],
-                    "name": "Rumbling Spark Con. Energy Regen"
+                    "name": "Rumbling Spark Concerto Regen"
                 }
             ],
             "name": "Leihuang Master",
-            "desc": "<size=40><color=Title>Thunder Wedge<\/color><\/size>nYuanwu summons <color=Highlight>Thunder Wedge<\/color>, dealing <color=Thunder>Electro DMG<\/color>, and forms a <color=Highlight>Thunder Field<\/color> centered on the <color=Highlight>Thunder Wedge<\/color>. <color=Highlight>Thunder Wedge<\/color> lasts for 12s.nForte Circuit <color=Highlight>Rumbling Spark<\/color> and Resonance Liberation <color=Highlight>Blazing Might<\/color> will immediately detonate Resonance Skill <color=Highlight>Thunder Wedge<\/color> on the field, dealing <color=Thunder>Electro DMG<\/color>, considered as Resonance Skill Damage.n<size=10> <\/size>n<size=40><color=Title>Thunder Field<\/color><\/size>nThe active character gains the effects below when in the <color=Highlight>Thunder Field<\/color>: a Coordinated Attack from Resonance Skill <color=Highlight>Thunder Wedge<\/color> is triggered when attacks hit a target, dealing <color=Thunder>Electro DMG<\/color>. This can be triggered once every 1.2s. The effect lasts for 1.5s."
+            "desc": "<size=40><color=Title>Thunder Wedge<\/color><\/size>nYuanwu summons <color=Highlight>Thunder Wedge<\/color>, dealing <color=Thunder>Electro DMG<\/color>, and forms a <color=Highlight>Thunder Field<\/color> centered on the <color=Highlight>Thunder Wedge<\/color>. <color=Highlight>Thunder Wedge<\/color> lasts for 12s.nForte Circuit <color=Highlight>Rumbling Spark<\/color> and Resonance Liberation <color=Highlight>Blazing Might<\/color> will immediately detonate Resonance Skill <color=Highlight>Thunder Wedge<\/color> on the field, dealing <color=Thunder>Electro DMG<\/color>, considered as Resonance Skill DMG.n<size=10> <\/size>n<size=40><color=Title>Thunder Field<\/color><\/size>nThe active character gains the effects below when in the <color=Highlight>Thunder Field<\/color>: a Coordinated Attack from Resonance Skill <color=Highlight>Thunder Wedge<\/color> is triggered when attacks hit a target, dealing <color=Thunder>Electro DMG<\/color>. This can be triggered once every 1.2s. The effect lasts for 1.5s."
         },
         "Resonance Liberation": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiY_UI.T_IconMotefeiY_UI",
@@ -485,7 +485,7 @@ export default {
                         "304.85%*2",
                         "319.28%*2"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -533,7 +533,7 @@ export default {
                         "125",
                         "125"
                     ],
-                    "name": "Res. Energy Cost"
+                    "name": "Resonance Cost"
                 },
                 {
                     "scaling": [
@@ -556,7 +556,7 @@ export default {
                         "20",
                         "20"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Blazing Might",
@@ -601,7 +601,7 @@ export default {
                         "110.86%",
                         "116.10%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -624,7 +624,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Thunder Bombardment",
@@ -682,7 +682,7 @@ export default {
                         "42.79%",
                         "44.81%"
                     ],
-                    "name": "Lightning Infused Basic Attack Part 1 Damage"
+                    "name": "Lightning Infused Basic Attack Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -707,7 +707,7 @@ export default {
                         "45.14%*2",
                         "47.28%*2"
                     ],
-                    "name": "Lightning Infused Basic Attack Part 2 Damage"
+                    "name": "Lightning Infused Basic Attack Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -732,7 +732,7 @@ export default {
                         "19.03%*2+28.54%*2",
                         "19.93%*2+29.89%*2"
                     ],
-                    "name": "Lightning Infused Basic Attack Part 3 Damage"
+                    "name": "Lightning Infused Basic Attack Stage 3 DMG"
                 },
                 {
                     "scaling": [
@@ -757,7 +757,7 @@ export default {
                         "19.97%*5",
                         "20.91%*5"
                     ],
-                    "name": "Lightning Infused Basic Attack Part 4 Damage"
+                    "name": "Lightning Infused Basic Attack Stage 4 DMG"
                 },
                 {
                     "scaling": [
@@ -782,7 +782,7 @@ export default {
                         "28.53%*3+57.05%",
                         "29.88%*3+59.75%"
                     ],
-                    "name": "Lightning Infused Basic Attack Part V Damage"
+                    "name": "Lightning Infused Basic Attack Stage 5 DMG"
                 },
                 {
                     "scaling": [
@@ -807,7 +807,7 @@ export default {
                         "54.04%",
                         "56.60%"
                     ],
-                    "name": "Lightning Infused Heavy Attack Damage"
+                    "name": "Lightning Infused Heavy Attack DMG"
                 },
                 {
                     "scaling": [
@@ -857,7 +857,7 @@ export default {
                         "75.38%+56.54%*2",
                         "78.95%+59.22%*2"
                     ],
-                    "name": "Lightning Infused Dodge Counter Damage"
+                    "name": "Lightning Infused Dodge Counter DMG"
                 },
                 {
                     "scaling": [
@@ -908,7 +908,7 @@ export default {
                 }
             ],
             "name": "Unassuming Blade",
-            "desc": "<size=40><color=Title>Rumbling Spark<\/color><\/size>nWhen \"Readiness\" is full, long press <color=Highlight>Resonance Skill<\/color> to consume all \"Readiness\" and cast <color=Highlight>Rumbling Spark<\/color>, dealing <color=Thunder>Electro DMG<\/color> and entering the <color=Highlight>Lightning Infused<\/color> state.n<size=10> <\/size>n<size=40><color=Title>Thunder Uprising<\/color><\/size>nWhen \"Readiness\" is full, Resonance Skill <color=Highlight>Thunder Wedge<\/color> will be replaced with <color=Highlight>Thunder Uprising<\/color>, dealing <color=Thunder>Electro DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Lightning Infused<\/color><\/size>nThe character in <color=Highlight>Lightning Infused<\/color> state has a greatly increased resistance to interruption.nWhen Yuanwu is in this state:n-<color=Highlight>Basic Attacks<\/color>: Hit targets in a larger range, reduce enemy Vibration Strength with increased efficiency;n-<color=Highlight>Heavy Attacks<\/color>: Have increased attack speed, reduce enemy Vibration Strength with increased efficiency;n-<color=Highlight>Dodge Counters<\/color>: Have increased attack speed, reduce enemy Vibration Strength with increased efficiency.n-Use <color=Highlight>Basic Attack<\/color> within 3s after casting a <color=Highlight>Heavy Attack<\/color> or a successful <color=Highlight>Counterattack<\/color> to cast <color=Highlight>Thunderweaver<\/color>, dealing <color=Thunder>Electro DMG<\/color>, considered as Basic Attack damage;n-Does not recover \"Readiness\".n<size=10> <\/size>n<size=40><color=Title>Readiness<\/color><\/size>nYuanwu can hold up to 100 \"Readiness\".nWhen Resonance Skill <color=Highlight>Thunder Wedge<\/color> is on the field, Yuanwu gains 6 \"Readiness\" every second, even when he is not the active character;nWhen Resonance Skill <color=Highlight>Thunder Wedge<\/color> hits a target with a Coordinated Attack, Yuanwu gains 5 \"Readiness\"."
+            "desc": "<size=40><color=Title>Rumbling Spark<\/color><\/size>nWhen \"Readiness\" is full, long press <color=Highlight>Resonance Skill<\/color> to consume all \"Readiness\" and cast <color=Highlight>Rumbling Spark<\/color>, dealing <color=Thunder>Electro DMG<\/color> and entering the <color=Highlight>Lightning Infused<\/color> state.n<size=10> <\/size>n<size=40><color=Title>Thunder Uprising<\/color><\/size>nWhen \"Readiness\" is full, Resonance Skill <color=Highlight>Thunder Wedge<\/color> will be replaced with <color=Highlight>Thunder Uprising<\/color>, dealing <color=Thunder>Electro DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Lightning Infused<\/color><\/size>nThe character in <color=Highlight>Lightning Infused<\/color> state has a greatly increased resistance to interruption.nWhen Yuanwu is in this state:n-<color=Highlight>Basic Attacks<\/color>: Hit targets in a larger range, reduce enemy Vibration Strength with increased efficiency.n-<color=Highlight>Heavy Attacks<\/color>: Have increased attack speed, reduce enemy Vibration Strength with increased efficiency.n-<color=Highlight>Dodge Counters<\/color>: Have increased attack speed, reduce enemy Vibration Strength with increased efficiency.n-Use <color=Highlight>Basic Attack<\/color> within 3s after casting a <color=Highlight>Heavy Attack<\/color> or a successful <color=Highlight>Counterattack<\/color> to cast <color=Highlight>Thunderweaver<\/color>, dealing <color=Thunder>Electro DMG<\/color>, considered as Basic Attack DMG.n-Does not recover \"Readiness\".n<size=10> <\/size>n<size=40><color=Title>Readiness<\/color><\/size>nYuanwu can hold up to 100 \"Readiness\".nWhen Resonance Skill <color=Highlight>Thunder Wedge<\/color> is on the field, Yuanwu gains 6 \"Readiness\" every second, even when he is not the active character;nWhen Resonance Skill <color=Highlight>Thunder Wedge<\/color> hits a target with a Coordinated Attack, Yuanwu gains 5 \"Readiness\"."
         },
         "Utility Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",

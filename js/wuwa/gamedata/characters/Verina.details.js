@@ -27,7 +27,7 @@ export default {
                         "65.96%",
                         "69.08%"
                     ],
-                    "name": "Part 1 Damage"
+                    "name": "Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -52,7 +52,7 @@ export default {
                         "89.13%",
                         "93.35%"
                     ],
-                    "name": "Part 2 Damage"
+                    "name": "Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -77,7 +77,7 @@ export default {
                         "44.57%*2",
                         "46.68%*2"
                     ],
-                    "name": "Part 3 Damage"
+                    "name": "Stage 3 DMG"
                 },
                 {
                     "scaling": [
@@ -102,7 +102,7 @@ export default {
                         "117.30%",
                         "122.85%"
                     ],
-                    "name": "Part 4 Damage"
+                    "name": "Stage 4 DMG"
                 },
                 {
                     "scaling": [
@@ -127,7 +127,7 @@ export default {
                         "124.78%",
                         "130.69%"
                     ],
-                    "name": "Part 5 Damage"
+                    "name": "Stage 5 DMG"
                 },
                 {
                     "scaling": [
@@ -152,7 +152,7 @@ export default {
                         "173.21%",
                         "181.41%"
                     ],
-                    "name": "Heavy Attack Damage"
+                    "name": "Heavy Attack DMG"
                 },
                 {
                     "scaling": [
@@ -177,7 +177,7 @@ export default {
                         "98.21%",
                         "102.86%"
                     ],
-                    "name": "Mid-Air Attack Part 1 Damage"
+                    "name": "Mid-air Attack Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -202,7 +202,7 @@ export default {
                         "92.67%",
                         "97.06%"
                     ],
-                    "name": "Mid-Air Attack Part 2 Damage"
+                    "name": "Mid-air Attack Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -227,7 +227,7 @@ export default {
                         "44.29%*3",
                         "46.38%*3"
                     ],
-                    "name": "Mid-Air Attack Part 3 Damage"
+                    "name": "Mid-air Attack Stage 3 DMG"
                 },
                 {
                     "scaling": [
@@ -252,7 +252,7 @@ export default {
                         "107.39%",
                         "112.48%"
                     ],
-                    "name": "Mid-Air Heavy Attack Damage"
+                    "name": "Mid-air Heavy Attack DMG"
                 },
                 {
                     "scaling": [
@@ -277,7 +277,7 @@ export default {
                         "225.17%",
                         "235.83%"
                     ],
-                    "name": "Dodge Counter Damage"
+                    "name": "Dodge Counter DMG"
                 },
                 {
                     "scaling": [
@@ -352,7 +352,7 @@ export default {
                         "30",
                         "30"
                     ],
-                    "name": "Mid-Air Heavy Attack STA Cost"
+                    "name": "Mid-air Heavy Attack STA Cost"
                 }
             ],
             "name": "Cultivation",
@@ -385,7 +385,7 @@ export default {
                         "62.36%*3+124.71%",
                         "65.31%*3+130.62%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -433,7 +433,7 @@ export default {
                         "30",
                         "30"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Botany Experiment",
@@ -466,7 +466,7 @@ export default {
                         "346.41%",
                         "362.81%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -516,7 +516,7 @@ export default {
                         "17.33%",
                         "18.15%"
                     ],
-                    "name": "Coordinated Attack Damage"
+                    "name": "Coordinated Attack DMG"
                 },
                 {
                     "scaling": [
@@ -616,7 +616,7 @@ export default {
                         "175",
                         "175"
                     ],
-                    "name": "Res. Energy Cost"
+                    "name": "Resonance Cost"
                 },
                 {
                     "scaling": [
@@ -639,7 +639,7 @@ export default {
                         "20",
                         "20"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Arboreal Flourish",
@@ -684,7 +684,7 @@ export default {
                         "173.21%",
                         "181.41%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -707,7 +707,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Verdant Growth",
@@ -765,7 +765,7 @@ export default {
                         "117.85%",
                         "123.43%"
                     ],
-                    "name": "Mid-Air Attack: Starflower Blooms Part 1 Damage"
+                    "name": "Mid-air Attack: Starflower Blooms Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -790,7 +790,7 @@ export default {
                         "111.20%",
                         "116.47%"
                     ],
-                    "name": "Mid-Air Attack: Starflower Blooms Part 2 Damage"
+                    "name": "Mid-air Attack: Starflower Blooms Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -815,7 +815,7 @@ export default {
                         "53.14%*3",
                         "55.66%*3"
                     ],
-                    "name": "Mid-Air Attack: Starflower Blooms Part 3 Damage"
+                    "name": "Mid-air Attack: Starflower Blooms Stage 3 DMG"
                 },
                 {
                     "scaling": [
@@ -863,11 +863,11 @@ export default {
                         "12",
                         "12"
                     ],
-                    "name": "\"Photosynthesis Energy\" Con. Energy Regen"
+                    "name": "\"Photosynthesis Energy\" Concerto Regen"
                 }
             ],
             "name": "Starflower Blooms",
-            "desc": "<size=40><color=Title>Heavy Attack: Starflower Blooms<\/color><\/size>nWhen casting <color=Highlight>Heavy Attack<\/color>, if Verina carries \"Photosynthesis Energy\", Verina consumes 1 stack of \"Photosynthesis Energy\" to recover Concerto Energy and heal all characters on a nearby team;n<color=Highlight>Heavy Attack: Starflower Blooms<\/color> deals <color=Light>Spectro DMG<\/color>, considered as Heavy Attack damage.n<size=10> <\/size>n<size=40><color=Title>Mid-air Attack: Starflower Blooms<\/color><\/size>nWhen casting <color=Highlight>Mid-air Attack<\/color>, if Verina carries \"Photosynthesis Energy\", Verina consumes 1 stack of \"Photosynthesis Energy\" to recover Concerto Energy and heal all characters on a nearby team;n<color=Highlight>Mid-air Attack: Starflower Blooms<\/color> deals <color=Light>Spectro DMG<\/color>, considered as Basic Attack damage.nVerina can cast <color=Highlight>Mid-air Attack: Starflower Blooms<\/color> by using <color=Highlight>Basic Attack<\/color> after casting <color=Highlight>Heavy Attack: Starflower Blooms<\/color>.n<size=10> <\/size>n<size=40><color=Title>Photosynthesis Energy<\/color><\/size>nVerina can hold up to 4 \"Photosynthesis Energy\".nVerina obtains 1 stack of \"Photosynthesis Energy\" for every <color=Highlight>Basic Attack 5<\/color> on hit;nVerina obtains 1 stack of \"Photosynthesis Energy\" for every Resonance Skill <color=Highlight>Botany Experiment<\/color> on hit;nVerina obtains 1 stack of \"Photosynthesis Energy\" for every Intro Skill <color=Highlight>Verdant Growth<\/color> on hit."
+            "desc": "<size=40><color=Title>Heavy Attack: Starflower Blooms<\/color><\/size>nWhen casting <color=Highlight>Heavy Attack<\/color>, if Verina carries \"Photosynthesis Energy\", Verina consumes 1 stack of \"Photosynthesis Energy\" to recover Concerto Energy and heal all characters on a nearby team.n<color=Highlight>Heavy Attack: Starflower Blooms<\/color> deals <color=Light>Spectro DMG<\/color>, considered as Heavy Attack DMG.n<size=10> <\/size>n<size=40><color=Title>Mid-air Attack: Starflower Blooms<\/color><\/size>nWhen casting <color=Highlight>Mid-air Attack<\/color>, if Verina carries \"Photosynthesis Energy\", Verina consumes 1 stack of \"Photosynthesis Energy\" to recover Concerto Energy and heal all characters on a nearby team.n<color=Highlight>Mid-air Attack: Starflower Blooms<\/color> deals <color=Light>Spectro DMG<\/color>, considered as Basic Attack DMG.nVerina can cast <color=Highlight>Mid-air Attack: Starflower Blooms<\/color> by using <color=Highlight>Basic Attack<\/color> after casting <color=Highlight>Heavy Attack: Starflower Blooms<\/color>.n<size=10> <\/size>n<size=40><color=Title>Photosynthesis Energy<\/color><\/size>nVerina can hold up to 4 \"Photosynthesis Energy\".nVerina obtains 1 stack of \"Photosynthesis Energy\" for every <color=Highlight>Basic Attack 5<\/color> on hit.nVerina obtains 1 stack of \"Photosynthesis Energy\" for every Resonance Skill <color=Highlight>Botany Experiment<\/color> on hit.nVerina obtains 1 stack of \"Photosynthesis Energy\" for every Intro Skill <color=Highlight>Verdant Growth<\/color> on hit."
         },
         "Utility Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",

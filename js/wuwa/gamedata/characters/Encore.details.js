@@ -27,7 +27,7 @@ export default {
                         "96.99%",
                         "101.58%"
                     ],
-                    "name": "Part 1 Damage"
+                    "name": "Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -52,7 +52,7 @@ export default {
                         "115.35%",
                         "120.81%"
                     ],
-                    "name": "Part 2 Damage"
+                    "name": "Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -77,7 +77,7 @@ export default {
                         "115.52%*2",
                         "120.99%*2"
                     ],
-                    "name": "Part 3 Damage"
+                    "name": "Stage 3 DMG"
                 },
                 {
                     "scaling": [
@@ -102,7 +102,7 @@ export default {
                         "66.68%*4",
                         "69.84%*4"
                     ],
-                    "name": "Part 4 Damage"
+                    "name": "Stage 4 DMG"
                 },
                 {
                     "scaling": [
@@ -152,7 +152,7 @@ export default {
                         "325.97%",
                         "341.40%"
                     ],
-                    "name": "Heavy Attack Damage"
+                    "name": "Heavy Attack DMG"
                 },
                 {
                     "scaling": [
@@ -202,7 +202,7 @@ export default {
                         "219.45%*2",
                         "229.80%*2"
                     ],
-                    "name": "Dodge Counter Damage"
+                    "name": "Dodge Counter DMG"
                 },
                 {
                     "scaling": [
@@ -256,7 +256,7 @@ export default {
                 }
             ],
             "name": "Wooly Attack",
-            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>nEncore performs up to 4 consecutive attacks, dealing <color=Fire>Fusion DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Basic Attack: Wooly Strike<\/color><\/size>nAfter <color=Highlight>Basic Attack 4<\/color>, press the Basic Attack button to attack the target, dealing <color=Fire>Fusion DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack<\/color><\/size>nEncore consumes STA to attack the target, dealing <color=Fire>Fusion DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mid-air Attack<\/color><\/size>nEncore consumes STA to perform a Mid-Air Plunging Attack, dealing <color=Fire>Fusion DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Dodge Counter<\/color><\/size>nUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Fire>Fusion DMG<\/color>."
+            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>nEncore performs up to 4 consecutive attacks, dealing <color=Fire>Fusion DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Basic Attack: Wooly Strike<\/color><\/size>nAfter <color=Highlight>Basic Attack 4<\/color>, press the Normal Attack button to attack the target, dealing <color=Fire>Fusion DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack<\/color><\/size>nEncore consumes STA to attack the target, dealing <color=Fire>Fusion DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mid-air Attack<\/color><\/size>nEncore consumes STA to perform a Mid-Air Plunging Attack, dealing <color=Fire>Fusion DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Dodge Counter<\/color><\/size>nUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Fire>Fusion DMG<\/color>."
         },
         "Resonance Skill": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconAnkeB1_UI.T_IconAnkeB1_UI",
@@ -360,7 +360,7 @@ export default {
                         "15",
                         "15"
                     ],
-                    "name": "Flaming Woolies Con. Energy Regen"
+                    "name": "Flaming Woolies Concerto Regen"
                 },
                 {
                     "scaling": [
@@ -385,7 +385,7 @@ export default {
                         "5",
                         "5"
                     ],
-                    "name": "Energetic Welcome Con. Energy Regen"
+                    "name": "Energetic Welcome Concerto Regen"
                 }
             ],
             "name": "Flaming Woolies",
@@ -418,7 +418,7 @@ export default {
                         "157.13%*2",
                         "164.57%*2"
                     ],
-                    "name": "Cosmos: Frolicking Part 1 Damage"
+                    "name": "Cosmos: Frolicking Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -443,7 +443,7 @@ export default {
                         "98.27%*3",
                         "102.92%*3"
                     ],
-                    "name": "Cosmos: Frolicking Part 2 Damage"
+                    "name": "Cosmos: Frolicking Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -468,7 +468,7 @@ export default {
                         "114.98%*4",
                         "120.42%*4"
                     ],
-                    "name": "Cosmos: Frolicking Part 3 Damage"
+                    "name": "Cosmos: Frolicking Stage 3 DMG"
                 },
                 {
                     "scaling": [
@@ -493,7 +493,7 @@ export default {
                         "338.04%*3",
                         "354.04%*3"
                     ],
-                    "name": "Cosmos: Frolicking Part 4 Damage"
+                    "name": "Stage 4 DMG"
                 },
                 {
                     "scaling": [
@@ -518,7 +518,7 @@ export default {
                         "379.11%",
                         "397.06%"
                     ],
-                    "name": "Cosmos: Heavy Attack Damage"
+                    "name": "Cosmos: Heavy Attack DMG"
                 },
                 {
                     "scaling": [
@@ -568,7 +568,7 @@ export default {
                         "114.98%*4",
                         "120.42%*4"
                     ],
-                    "name": "Cosmos: Dodge Counter Damage"
+                    "name": "Cosmos: Dodge Counter DMG"
                 },
                 {
                     "scaling": [
@@ -668,7 +668,7 @@ export default {
                         "125",
                         "125"
                     ],
-                    "name": "Res. Energy Cost"
+                    "name": "Resonance Cost"
                 },
                 {
                     "scaling": [
@@ -693,11 +693,11 @@ export default {
                         "20",
                         "20"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Cosmos Rave",
-            "desc": "As Encore loses control, Cosmos breaks free and wreaks havoc on its surroundings.n<size=10> <\/size>n<size=40><color=Title>Basic Attack: Cosmos - Frolicking<\/color><\/size>nDuring Cosmos Rave, the <color=Highlight>Basic Attack<\/color> is replaced with <color=Highlight>Cosmos - Frolicking<\/color>, which performs up to 4 consecutive attacks, dealing <color=Fire>Fusion DMG<\/color>, considered as Basic Attack damage.n<size=10> <\/size>n<size=40><color=Title>Cosmos - Heavy Attack<\/color><\/size>nDuring Cosmos Rave, the <color=Highlight>Heavy Attack<\/color> is replaced with <color=Highlight>Cosmos - Heavy Attack<\/color>, consuming STA to attack the target, dealing <color=Fire>Fusion DMG<\/color>, considered as Heavy Attack damage.n<size=10> <\/size>n<size=40><color=Title>Resonance Skill: Cosmos - Rampage<\/color><\/size>nDuring Cosmos Rave, <color=Highlight>Flaming Woolies<\/color> is replaced with <color=Highlight>Cosmos - Rampage<\/color>, dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill damage.n<size=10> <\/size>n<size=40><color=Title>Cosmos - Dodge Counter<\/color><\/size>nDuring Cosmos Rave, use <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Fire>Fusion DMG<\/color>, considered as Basic Attack damage."
+            "desc": "As Encore loses control, Cosmos breaks free and wreaks havoc on its surroundings.n<size=10> <\/size>n<size=40><color=Title>Basic Attack: Cosmos - Frolicking<\/color><\/size>nDuring Cosmos Rave, the <color=Highlight>Basic Attack<\/color> is replaced with <color=Highlight>Cosmos - Frolicking<\/color>, which performs up to 4 consecutive attacks, dealing <color=Fire>Fusion DMG<\/color>, considered as Basic Attack DMG.n<size=10> <\/size>n<size=40><color=Title>Cosmos - Heavy Attack<\/color><\/size>nDuring Cosmos Rave, the <color=Highlight>Heavy Attack<\/color> is replaced with <color=Highlight>Cosmos - Heavy Attack<\/color>, consuming STA to attack the target, dealing <color=Fire>Fusion DMG<\/color>, considered as Heavy Attack DMG.n<size=10> <\/size>n<size=40><color=Title>Resonance Skill: Cosmos - Rampage<\/color><\/size>nDuring Cosmos Rave, <color=Highlight>Flaming Woolies<\/color> is replaced with <color=Highlight>Cosmos - Rampage<\/color>, dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill DMG.n<size=10> <\/size>n<size=40><color=Title>Cosmos - Dodge Counter<\/color><\/size>nDuring Cosmos Rave, use <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Fire>Fusion DMG<\/color>, considered as Basic Attack DMG."
         },
         "Forte Circuit Passive 1": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconAnkeD2_UI.T_IconAnkeD2_UI",
@@ -738,7 +738,7 @@ export default {
                         "346.41%",
                         "362.81%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -763,7 +763,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Woolies Helpers",
@@ -846,7 +846,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Cloudy Frenzy Con. Energy Regen"
+                    "name": "Cloudy Frenzy Concerto Regen"
                 },
                 {
                     "scaling": [
@@ -871,7 +871,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Cosmos Rupture Con. Energy Regen"
+                    "name": "Cosmos Rupture Concerto Regen"
                 }
             ],
             "name": "Black & White Woolies",

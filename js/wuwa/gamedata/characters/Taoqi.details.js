@@ -27,7 +27,7 @@ export default {
                         "157.07%",
                         "164.5%"
                     ],
-                    "name": "Part 1 Damage"
+                    "name": "Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -52,7 +52,7 @@ export default {
                         "147.82%",
                         "154.82%"
                     ],
-                    "name": "Part 2 Damage"
+                    "name": "Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -77,7 +77,7 @@ export default {
                         "193.99%",
                         "203.18%"
                     ],
-                    "name": "Part 3 Damage"
+                    "name": "Stage 3 DMG"
                 },
                 {
                     "scaling": [
@@ -102,7 +102,7 @@ export default {
                         "471.12%",
                         "493.43%"
                     ],
-                    "name": "Part 4 Damage"
+                    "name": "Stage 4 DMG"
                 },
                 {
                     "scaling": [
@@ -127,7 +127,7 @@ export default {
                         "383.97%",
                         "402.14%"
                     ],
-                    "name": "Heavy Attack Damage"
+                    "name": "Heavy Attack DMG"
                 },
                 {
                     "scaling": [
@@ -142,7 +142,7 @@ export default {
                         "35%",
                         "35%"
                     ],
-                    "name": "Heavy Attack Damage Reduction"
+                    "name": "Heavy Attack DMG Reduction"
                 },
                 {
                     "scaling": [
@@ -192,7 +192,7 @@ export default {
                         "214.78%",
                         "224.95%"
                     ],
-                    "name": "Mid-air Attack Damage"
+                    "name": "Mid-air Attack DMG"
                 },
                 {
                     "scaling": [
@@ -217,7 +217,7 @@ export default {
                         "433.02%",
                         "453.52%"
                     ],
-                    "name": "Dodge Counter Damage"
+                    "name": "Dodge Counter DMG"
                 },
                 {
                     "scaling": [
@@ -296,7 +296,7 @@ export default {
                         "235.08%",
                         "246.21%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -415,7 +415,7 @@ export default {
                         "783.58%",
                         "820.68%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -461,7 +461,7 @@ export default {
                         "125",
                         "125"
                     ],
-                    "name": "Res. Energy Cost"
+                    "name": "Resonance Cost"
                 },
                 {
                     "scaling": [
@@ -500,7 +500,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconTaoHuaD2_UI.T_IconTaoHuaD2_UI",
             "id": 1000905,
             "name": "Unyielding",
-            "desc": "After Heavy Attack <color=Highlight>Strategic Parry<\/color> is successfully triggered, 25 Stamina is recovered."
+            "desc": "After Heavy Attack <color=Highlight>Strategic Parry<\/color> is successfully triggered, 25 STA is recovered."
         },
         "Intro Skill": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconTaoHuaQTE_UI.T_IconTaoHuaQTE_UI",
@@ -529,7 +529,7 @@ export default {
                         "363.74%",
                         "380.96%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -585,7 +585,7 @@ export default {
                         "150.19%",
                         "157.3%"
                     ],
-                    "name": "Timed Counters Part 1 Damage"
+                    "name": "Timed Counters Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -610,7 +610,7 @@ export default {
                         "193.29%",
                         "202.44%"
                     ],
-                    "name": "Timed Counters Part 2 Damage"
+                    "name": "Timed Counters Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -635,7 +635,7 @@ export default {
                         "253.36%",
                         "265.36%"
                     ],
-                    "name": "Timed Counters Part 3 Damage"
+                    "name": "Timed Counters Stage 3 DMG"
                 },
                 {
                     "scaling": [
@@ -660,7 +660,7 @@ export default {
                         "993+41.16%",
                         "1040+43.11%"
                     ],
-                    "name": "Timed Counters Part 1 Shield"
+                    "name": "Timed Counters Stage 1 Shield"
                 },
                 {
                     "scaling": [
@@ -685,7 +685,7 @@ export default {
                         "1489+61.74%",
                         "1560+64.67%"
                     ],
-                    "name": "Timed Counters Part 2 Shield"
+                    "name": "Timed Counters Stage 2 Shield"
                 },
                 {
                     "scaling": [
@@ -710,7 +710,7 @@ export default {
                         "2482+102.91%",
                         "2600+107.78%"
                     ],
-                    "name": "Timed Counters Part 3 Shield"
+                    "name": "Timed Counters Stage 3 Shield"
                 },
                 {
                     "scaling": [
@@ -737,7 +737,7 @@ export default {
                 }
             ],
             "name": "Power Shift",
-            "desc": "<size=40><color=Title>Timed Counters<\/color><\/size>nWhen carrying \"Resolving Caliber\", use <color=Highlight>Basic Attack<\/color> after Heavy Attack <color=Highlight>Strategic Parry<\/color> or Intro Skill <color=Highlight>Defense Formation<\/color> to cast <color=Highlight>Timed Counters<\/color>, performing up to 3 consecutive attacks, dealing <color=Dark>Havoc DMG<\/color>, considered as Basic Attack damage.n<color=Highlight>Timed Counters<\/color> consume 1 \"Resolving Caliber\" upon hitting an enemy to grant a shield.nAfter casting the Intro Skill <color=Highlight>Defense Formation<\/color>, use <color=Highlight>Basic Attack<\/color> to directly cast <color=Highlight>Timed Counters<\/color>.n<size=10> <\/size>n<size=40><color=Title>Resolving Caliber<\/color><\/size>nTaoqi can hold up to 3 Resolving Caliber.n<color=Highlight>Basic Attack 4<\/color> will consume all of Taoqi's \"Rocksteady Shields\" to grant that many \"Resolving Caliber\".nWhile <color=Highlight>Rocksteady Shield<\/color> exists, when the active character is attacked, 1 \"Rocksteady Shield\" will be consumed to recover \"Resolving Caliber\".nAfter <color=Highlight>Rocksteady Shield<\/color> ends, all remaining \"Rocksteady Shield\" will be consumed to grant that many \"Resolving Caliber\"."
+            "desc": "<size=40><color=Title>Timed Counters<\/color><\/size>nWhen carrying \"Resolving Caliber\", use <color=Highlight>Basic Attack<\/color> after Heavy Attack <color=Highlight>Strategic Parry<\/color> or Intro Skill <color=Highlight>Defense Formation<\/color> to cast <color=Highlight>Timed Counters<\/color>, performing up to 3 consecutive attacks, dealing <color=Dark>Havoc DMG<\/color>, considered as Basic Attack DMG.n<color=Highlight>Timed Counters<\/color> consume 1 \"Resolving Caliber\" upon hitting an enemy to grant a shield.nAfter casting the Intro Skill <color=Highlight>Defense Formation<\/color>, use <color=Highlight>Basic Attack<\/color> to directly cast <color=Highlight>Timed Counters<\/color>.n<size=10> <\/size>n<size=40><color=Title>Resolving Caliber<\/color><\/size>nTaoqi can hold up to 3 Resolving Caliber.n<color=Highlight>Basic Attack 4<\/color> will consume all of Taoqi's \"Rocksteady Shields\" to grant that many \"Resolving Caliber\".nWhile <color=Highlight>Rocksteady Shield<\/color> exists, when the active character is attacked, 1 \"Rocksteady Shield\" will be consumed to recover \"Resolving Caliber\".nAfter <color=Highlight>Rocksteady Shield<\/color> ends, all remaining \"Rocksteady Shield\" will be consumed to grant that many \"Resolving Caliber\"."
         },
         "Utility Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",

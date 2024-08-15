@@ -26,7 +26,7 @@ export default {
                         "115.29%",
                         "121.02%"
                     ],
-                    "name": "Part 1 Damage"
+                    "name": "Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -51,7 +51,7 @@ export default {
                         "46.41%*2+139.22%",
                         "48.61%*2+145.81%"
                     ],
-                    "name": "Part 2 Damage"
+                    "name": "Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -76,7 +76,7 @@ export default {
                         "72.73%*4",
                         "76.18%*4"
                     ],
-                    "name": "Part 3 Damage"
+                    "name": "Stage 3 DMG"
                 },
                 {
                     "scaling": [
@@ -101,7 +101,7 @@ export default {
                         "197.58%",
                         "206.93%"
                     ],
-                    "name": "Part 4 Damage"
+                    "name": "Stage 4 DMG"
                 },
                 {
                     "scaling": [
@@ -126,7 +126,7 @@ export default {
                         "219.66%",
                         "230.06%"
                     ],
-                    "name": "Heavy Attack Damage"
+                    "name": "Heavy Attack DMG"
                 },
                 {
                     "scaling": [
@@ -150,7 +150,7 @@ export default {
                         "204.61%",
                         "214.78%"
                     ],
-                    "name": "Mid-Air Attack Damage"
+                    "name": "Mid-air Attack DMG"
                 },
                 {
                     "scaling": [
@@ -174,7 +174,7 @@ export default {
                         "67.77%*2+271.05%",
                         "71.13%*2+284.52%"
                     ],
-                    "name": null
+                    "name": "Dodge Counter DMG"
                 },
                 {
                     "scaling": [
@@ -323,7 +323,7 @@ export default {
                         "8",
                         "8"
                     ],
-                    "name": "Skill Con. Energy Regen"
+                    "name": "Skill Concerto Regen"
                 },
                 {
                     "scaling": [
@@ -346,7 +346,7 @@ export default {
                         "14",
                         "14"
                     ],
-                    "name": "Chi Counter Con. Energy Regen"
+                    "name": "Chi Counter Concerto Regen"
                 },
                 {
                     "scaling": [
@@ -369,7 +369,7 @@ export default {
                         "14",
                         "14"
                     ],
-                    "name": "Chi Parry Con. Energy Regen"
+                    "name": "Chi Parry Concerto Regen"
                 }
             ],
             "name": "Calming Air",
@@ -494,7 +494,7 @@ export default {
                         "150",
                         "150"
                     ],
-                    "name": "Res. Energy Cost"
+                    "name": "Resonance Cost"
                 },
                 {
                     "scaling": [
@@ -517,7 +517,7 @@ export default {
                         "20",
                         "20"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Purification Force Field",
@@ -561,7 +561,7 @@ export default {
                         "56.11%*3+112.21%",
                         "58.89%*3+117.78%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -584,7 +584,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Essence of Tao",
@@ -907,7 +907,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Pushing Punch Con. Energy Regen"
+                    "name": "Pushing Punch Concerto Regen"
                 },
                 {
                     "scaling": [
@@ -930,7 +930,7 @@ export default {
                         "5",
                         "5"
                     ],
-                    "name": "Minor Zhoutian Con. Energy Regen"
+                    "name": "Minor Zhoutian Concerto Regen"
                 },
                 {
                     "scaling": [
@@ -953,7 +953,7 @@ export default {
                         "18",
                         "18"
                     ],
-                    "name": "Major Zhoutian: Inner Con. Energy Regen"
+                    "name": "Major Zhoutian: Inner Concerto Regen"
                 },
                 {
                     "scaling": [
@@ -976,7 +976,7 @@ export default {
                         "23",
                         "23"
                     ],
-                    "name": "Major Zhoutian: Outer Con. Energy Regen"
+                    "name": "Major Zhoutian: Outer Concerto Regen"
                 },
                 {
                     "scaling": [
@@ -999,7 +999,7 @@ export default {
                         "7",
                         "7"
                     ],
-                    "name": "Yielding Pull Con. Energy Regen"
+                    "name": "Yielding Pull Concerto Regen"
                 }
             ],
             "name": "Primordial Chi Spiral",

@@ -27,7 +27,7 @@ export default {
                         "79.68%*2",
                         "83.45%*2"
                     ],
-                    "name": "Part 1 Damage"
+                    "name": "Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -52,7 +52,7 @@ export default {
                         "173.21%",
                         "181.41%"
                     ],
-                    "name": "Part 2 Damage"
+                    "name": "Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -77,7 +77,7 @@ export default {
                         "148.41%+74.21%*3",
                         "155.43%+77.72%*3"
                     ],
-                    "name": "Part 3 Damage"
+                    "name": "Stage 3 DMG"
                 },
                 {
                     "scaling": [
@@ -102,7 +102,7 @@ export default {
                         "138.53%*2+184.71%",
                         "145.09%*2+193.46%"
                     ],
-                    "name": "Part 4 Damage"
+                    "name": "Stage 4 DMG"
                 },
                 {
                     "scaling": [
@@ -127,7 +127,7 @@ export default {
                         "72.06%*5",
                         "75.47%*5"
                     ],
-                    "name": "Heavy Attack Damage"
+                    "name": "Heavy Attack DMG"
                 },
                 {
                     "scaling": [
@@ -152,7 +152,7 @@ export default {
                         "214.78%",
                         "224.95%"
                     ],
-                    "name": "Mid-air Attack Damage"
+                    "name": "Mid-air Attack DMG"
                 },
                 {
                     "scaling": [
@@ -177,7 +177,7 @@ export default {
                         "115.83%*3+148.93%",
                         "121.32%*3+155.98%"
                     ],
-                    "name": "Dodge Counter Damage"
+                    "name": "Dodge Counter DMG"
                 },
                 {
                     "scaling": [
@@ -256,7 +256,7 @@ export default {
                         "89.86%*2+119.81%",
                         "94.11%*2+125.48%"
                     ],
-                    "name": "Extermination Order Part 1 Damage"
+                    "name": "Extermination Order Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -281,7 +281,7 @@ export default {
                         "134.78%*2+179.71%",
                         "141.16%*2+188.22%"
                     ],
-                    "name": "Extermination Order Part 2 Damage"
+                    "name": "Extermination Order Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -306,7 +306,7 @@ export default {
                         "374.39%*2",
                         "392.11%*2"
                     ],
-                    "name": "Extermination Order Part 3 Damage"
+                    "name": "Extermination Order Stage 3 DMG"
                 },
                 {
                     "scaling": [
@@ -352,7 +352,7 @@ export default {
                         "4",
                         "4"
                     ],
-                    "name": "Extermination Order Con. Energy Regen"
+                    "name": "Extermination Order Concerto Regen"
                 }
             ],
             "name": "Extermination Order",
@@ -385,7 +385,7 @@ export default {
                         "1039.23%",
                         "1088.43%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -435,7 +435,7 @@ export default {
                         "153.44%",
                         "160.71%"
                     ],
-                    "name": "Hounds Roar Part 1"
+                    "name": "Hounds Roar Stage 1"
                 },
                 {
                     "scaling": [
@@ -460,7 +460,7 @@ export default {
                         "61.38%*2+92.07%*2",
                         "64.29%*2+96.43%*2"
                     ],
-                    "name": "Hounds Roar Part 2"
+                    "name": "Hounds Roar Stage 2"
                 },
                 {
                     "scaling": [
@@ -485,7 +485,7 @@ export default {
                         "285.47%",
                         "298.99%"
                     ],
-                    "name": "Hounds Roar Part 3"
+                    "name": "Hounds Roar Stage 3"
                 },
                 {
                     "scaling": [
@@ -510,7 +510,7 @@ export default {
                         "60.67%*6",
                         "63.54%*6"
                     ],
-                    "name": "Hounds Roar Part 4"
+                    "name": "Hounds Roar Stage 4"
                 },
                 {
                     "scaling": [
@@ -535,7 +535,7 @@ export default {
                         "261.68%*2",
                         "274.07%*2"
                     ],
-                    "name": "Hounds Roar Part 5"
+                    "name": "Hounds Roar Stage 5"
                 },
                 {
                     "scaling": [
@@ -560,7 +560,7 @@ export default {
                         "108.08%*5",
                         "113.20%*5"
                     ],
-                    "name": "Heavy Attack Damage"
+                    "name": "Heavy Attack DMG"
                 },
                 {
                     "scaling": [
@@ -585,7 +585,7 @@ export default {
                         "99.30%*6",
                         "104.00%*6"
                     ],
-                    "name": "Dodge Counter Damage"
+                    "name": "Dodge Counter DMG"
                 },
                 {
                     "scaling": [
@@ -677,7 +677,7 @@ export default {
                         "125",
                         "125"
                     ],
-                    "name": "Res. Energy Cost"
+                    "name": "Resonance Cost"
                 },
                 {
                     "scaling": [
@@ -700,11 +700,11 @@ export default {
                         "20",
                         "20"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Phantom Etching",
-            "desc": "Calcharo attacks the target, dealing <color=Thunder>Electro DMG<\/color> and enters <color=Highlight>Deathblade Gear<\/color> state. After <color=Highlight>Deathblade Gear<\/color> state ends, Calcharo's next Intro Skill is replaced with Intro Skill <color=Highlight>\"Necessary Means\"<\/color>, which deals <color=Thunder>Electro DMG<\/color>, considered as Intro Skill damage.n<size=10> <\/size>n<size=40><color=Title>Deathblade Gear<\/color><\/size>n-<color=Highlight>Basic Attack<\/color> is replaced with Basic Attack <color=Highlight>Hounds Roar<\/color>;n-<color=Highlight>Heavy Attack<\/color> deals increased DMG, considered as Resonance Liberation DMG;n-<color=Highlight>Dodge Counter<\/color> deals increased DMG, considered as Resonance Liberation DMG.n<size=10> <\/size>n<size=40><color=Title>Basic Attack: Hounds Roar<\/color><\/size>nCalcharo performs up to 5 consecutive attacks, dealing <color=Thunder>Electro DMG<\/color>, considered as Basic Attack Damage."
+            "desc": "Calcharo attacks the target, dealing <color=Thunder>Electro DMG<\/color> and enters <color=Highlight>Deathblade Gear<\/color> state. After <color=Highlight>Deathblade Gear<\/color> state ends, Calcharo's next Intro Skill is replaced with Intro Skill <color=Highlight>\"Necessary Means\"<\/color>, which deals <color=Thunder>Electro DMG<\/color>, considered as Intro Skill DMG.n<size=10> <\/size>n<size=40><color=Title>Deathblade Gear<\/color><\/size>n-<color=Highlight>Basic Attack<\/color> is replaced with Basic Attack <color=Highlight>Hounds Roar<\/color>.n-<color=Highlight>Heavy Attack<\/color> deals increased DMG, considered as Resonance Liberation DMG.n-<color=Highlight>Dodge Counter<\/color> deals increased DMG, considered as Resonance Liberation DMG.n<size=10> <\/size>n<size=40><color=Title>Basic Attack: Hounds Roar<\/color><\/size>nCalcharo performs up to 5 consecutive attacks, dealing <color=Thunder>Electro DMG<\/color>, considered as Basic Attack DMG."
         },
         "Forte Circuit Passive 1": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiD1_UI.T_IconMotefeiD1_UI",
@@ -745,7 +745,7 @@ export default {
                         "69.29%*2+103.93%*2",
                         "72.57%*2+108.85%*2"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -768,7 +768,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Wanted Outlaw",
@@ -849,7 +849,7 @@ export default {
                         "6",
                         "6"
                     ],
-                    "name": "\"Mercy\" Con. Energy Regen"
+                    "name": "\"Mercy\" Concerto Regen"
                 },
                 {
                     "scaling": [
@@ -872,7 +872,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "\"Death Messenger\" Con. Energy Regen"
+                    "name": "\"Death Messenger\" Concerto Regen"
                 },
                 {
                     "scaling": [
@@ -922,7 +922,7 @@ export default {
                 }
             ],
             "name": "Hunting Mission",
-            "desc": "<size=40><color=Title>Heavy Attack: \"Mercy\"<\/color><\/size>nWhen Calcharo has 3 \"Cruelty\", his <color=Highlight>Heavy Attack<\/color> is replaced with Heavy Attack <color=Highlight>\"Mercy\"<\/color>.nWhen casting Heavy Attack <color=Highlight>\"Mercy\"<\/color>, Calcharo consumes 3 \"Cruelty\" to deal <color=Thunder>Electro DMG<\/color>, considered as Heavy Attack damage, and recovers Resonance Energy and Concerto Energy.n<size=10> <\/size>n<size=40><color=Title>\"Cruelty\"<\/color><\/size>nCalcharo can hold up to 3 \"Cruelty\".nUnder Resonance Liberation <color=Highlight>Deathblade Gear<\/color> state, \"Cruelty\" cannot be acquired.nWhen Resonance Skill <color=Highlight>Extermination Order<\/color> hits the target, gain 1 \"Cruelty\".n<size=10> <\/size>n<color=Title>Heavy Attack: \"Death Messenger\"<\/color>nWhen Calcharo has 5 \"Killing Intent\", his <color=Highlight>Basic Attack<\/color> is replaced with Heavy Attack <color=Highlight>\"Death Messenger\"<\/color>.nWhen casting Heavy Attack <color=Highlight>\"Death Messenger\"<\/color>, Calcharo consumes 5 \"Killing Intent\" to deal <color=Thunder>Electro DMG<\/color>, considered as Resonance Liberation damage, and recovers Resonance Energy and Concerto Energy.n<size=10> <\/size>n<size=40><color=Title>\"Killing Intent\"<\/color><\/size>nUnder Resonance Liberation <color=Highlight>Deathblade Gear<\/color> state, Calcharo's Forte Gauge is replaced with \"Killing Intent\", stacking up to 5.nWhen Basic Attack <color=Highlight>Hounds Roar<\/color> hits the target, Calcharo gains 1 \"Killing Intent\"."
+            "desc": "<size=40><color=Title>Heavy Attack: \"Mercy\"<\/color><\/size>nWhen Calcharo has 3 \"Cruelty\", his <color=Highlight>Heavy Attack<\/color> is replaced with Heavy Attack <color=Highlight>\"Mercy\"<\/color>.nWhen casting Heavy Attack <color=Highlight>\"Mercy\"<\/color>, Calcharo consumes 3 \"Cruelty\" to deal <color=Thunder>Electro DMG<\/color>, considered as Heavy Attack DMG, and recovers Resonance Energy and Concerto Energy.n<size=10> <\/size>n<size=40><color=Title>\"Cruelty\"<\/color><\/size>nCalcharo can hold up to 3 \"Cruelty\".nUnder Resonance Liberation <color=Highlight>Deathblade Gear<\/color> state, \"Cruelty\" cannot be acquired.nWhen Resonance Skill <color=Highlight>Extermination Order<\/color> hits the target, gain 1 \"Cruelty\".n<size=10> <\/size>n<color=Title>Heavy Attack: \"Death Messenger\"<\/color>nWhen Calcharo has 5 \"Killing Intent\", his <color=Highlight>Basic Attack<\/color> is replaced with Heavy Attack <color=Highlight>\"Death Messenger\"<\/color>.nWhen casting Heavy Attack <color=Highlight>\"Death Messenger\"<\/color>, Calcharo consumes 5 \"Killing Intent\" to deal <color=Thunder>Electro DMG<\/color>, considered as Resonance Liberation damage, and recovers Resonance Energy and Concerto Energy.n<size=10> <\/size>n<size=40><color=Title>\"Killing Intent\"<\/color><\/size>nUnder Resonance Liberation <color=Highlight>Deathblade Gear<\/color> state, Calcharo's Forte Gauge is replaced with \"Killing Intent\", stacking up to 5.nWhen Basic Attack <color=Highlight>Hounds Roar<\/color> hits the target, Calcharo gains 1 \"Killing Intent\"."
         },
         "Utility Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",

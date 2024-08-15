@@ -27,7 +27,7 @@ export default {
                         "98.73%",
                         "103.41%"
                     ],
-                    "name": "Part 1 Damage"
+                    "name": "Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -52,7 +52,7 @@ export default {
                         "98.73%*2",
                         "103.41%*2"
                     ],
-                    "name": "Part 2 Damage"
+                    "name": "Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -77,7 +77,7 @@ export default {
                         "148.10%",
                         "155.11%"
                     ],
-                    "name": "Part 3 Damage"
+                    "name": "Stage 3 DMG"
                 },
                 {
                     "scaling": [
@@ -102,7 +102,7 @@ export default {
                         "70.21%*3",
                         "73.53%*3"
                     ],
-                    "name": "Part 4 Damage"
+                    "name": "Stage 4 DMG"
                 },
                 {
                     "scaling": [
@@ -127,7 +127,7 @@ export default {
                         "164.55%*2",
                         "172.34%*2"
                     ],
-                    "name": "Part 5 Damage"
+                    "name": "Stage 5 DMG"
                 },
                 {
                     "scaling": [
@@ -152,7 +152,7 @@ export default {
                         "166.28%",
                         "174.15%"
                     ],
-                    "name": "Heavy Attack Damage"
+                    "name": "Heavy Attack DMG"
                 },
                 {
                     "scaling": [
@@ -177,7 +177,7 @@ export default {
                         "204.04%",
                         "213.70%"
                     ],
-                    "name": "Mid-Air Attack Damage"
+                    "name": "Mid-air Attack DMG"
                 },
                 {
                     "scaling": [
@@ -202,7 +202,7 @@ export default {
                         "312.64%",
                         "327.44%"
                     ],
-                    "name": "Dodge Counter Damage"
+                    "name": "Dodge Counter DMG"
                 },
                 {
                     "scaling": [
@@ -281,7 +281,7 @@ export default {
                         "498.84%*2",
                         "522.45%*2"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -327,7 +327,7 @@ export default {
                         "15",
                         "15"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Wingblade",
@@ -360,7 +360,7 @@ export default {
                         "2650.04%",
                         "2775.50%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -406,7 +406,7 @@ export default {
                         "125",
                         "125"
                     ],
-                    "name": "Res. Energy Cost"
+                    "name": "Resonance Cost"
                 },
                 {
                     "scaling": [
@@ -429,7 +429,7 @@ export default {
                         "20",
                         "20"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Deadening Abyss",
@@ -474,7 +474,7 @@ export default {
                         "346.41%",
                         "362.81%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -497,7 +497,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Instant of Annihilation",
@@ -555,7 +555,7 @@ export default {
                         "98.21%",
                         "102.86%"
                     ],
-                    "name": "Umbra: Basic Attack Part 1 Damage"
+                    "name": "Umbra: Basic Attack Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -580,7 +580,7 @@ export default {
                         "163.68%",
                         "171.43%"
                     ],
-                    "name": "Umbra: Basic Attack Part 2 Damage"
+                    "name": "Umbra: Basic Attack Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -605,7 +605,7 @@ export default {
                         "271.24%",
                         "284.09%"
                     ],
-                    "name": "Umbra: Basic Attack Part 3 Damage"
+                    "name": "Umbra: Basic Attack Stage 3 DMG"
                 },
                 {
                     "scaling": [
@@ -630,7 +630,7 @@ export default {
                         "64.70%*3+194.08%",
                         "67.76%*3+203.27%"
                     ],
-                    "name": "Umbra: Basic Attack Part 4 Damage"
+                    "name": "Umbra: Basic Attack Stage 4 DMG"
                 },
                 {
                     "scaling": [
@@ -655,7 +655,7 @@ export default {
                         "49.69%*4+198.76%",
                         "52.05%*4+208.17%"
                     ],
-                    "name": "Umbra: Basic Attack Part 5 Damage"
+                    "name": "Umbra: Basic Attack Stage 5 DMG"
                 },
                 {
                     "scaling": [
@@ -680,7 +680,7 @@ export default {
                         "224.48%",
                         "235.11%"
                     ],
-                    "name": "Umbra: Heavy Attack Damage"
+                    "name": "Umbra: Heavy Attack DMG"
                 },
                 {
                     "scaling": [
@@ -730,7 +730,7 @@ export default {
                         "214.78%",
                         "224.95%"
                     ],
-                    "name": "Umbra: Plunging Attack Damage"
+                    "name": "Umbra: Plunging Attack DMG"
                 },
                 {
                     "scaling": [
@@ -755,7 +755,7 @@ export default {
                         "551.84%",
                         "577.96%"
                     ],
-                    "name": "Umbra: Dodge Counter Damage"
+                    "name": "Umbra: Dodge Counter DMG"
                 },
                 {
                     "scaling": [
@@ -801,7 +801,7 @@ export default {
                         "30",
                         "30"
                     ],
-                    "name": "Umbra: Plunging Stamina Cost"
+                    "name": "Umbra: Plunging STA Cost"
                 },
                 {
                     "scaling": [
@@ -872,11 +872,11 @@ export default {
                         "15",
                         "15"
                     ],
-                    "name": "Lifetaker Con. Energy Regen"
+                    "name": "Lifetaker Concerto Regen"
                 }
             ],
             "name": "Umbra Eclipse",
-            "desc": "<size=40><color=Title>Devastation<\/color><\/size>nWhen \"Umbra\" is full, hold <color=Highlight>Basic Attack<\/color> to cast <color=Highlight>Devastation<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>, considered as Heavy Attack damage.n<size=10> <\/size>n<size=40><color=Title>Dark Surge<\/color><\/size>nAfter casting <color=Highlight>Devastation<\/color>, Rover enters the <color=Highlight>Dark Surge<\/color> state. In this state:n<color=Highlight>Basic Attack<\/color> is replaced with <color=Highlight>Enhanced Basic Attack<\/color>, which performs up to 5 consecutive attacks, dealing <color=Dark>Havoc DMG<\/color>;n<color=Highlight>Heavy Attack<\/color> is replaced with <color=Highlight>Enhanced Heavy Attack<\/color>;nUse <color=Highlight>Basic Attack<\/color> after casting <color=Highlight>Enhanced Heavy Attack<\/color> to cast Heavy Attack <color=Highlight>Thwackblade<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>, considered as Heavy Attack damage;nUse <color=Highlight>Basic Attack<\/color> after casting Heavy Attack <color=Highlight>Thwackblade<\/color> to cast <color=Highlight> Enhanced Basic Attack 3<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>;nResonance Skill <color=Highlight>Wingblade<\/color> is replaced with Resonance Skill <color=Highlight>Lifetaker<\/color>, transforming sounds into blades to attack the target, dealing <color=Dark>Havoc DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Umbra<\/color><\/size>nRover can hold up to 100 points of Umbra.nNormal Attack <color=Highlight>Tuneslayer<\/color> recovers Umbra on hit.nResonance Skill <color=Highlight>Wingblade<\/color> recovers Umbra when cast.nResonance Skill <color=Highlight>Lifetaker<\/color> recovers Umbra when cast.nIntro Skill <color=Highlight>Instant of Annihilation<\/color> recovers Umbra when cast."
+            "desc": "<size=40><color=Title>Devastation<\/color><\/size>nWhen \"Umbra\" is full, hold <color=Highlight>Basic Attack<\/color> to cast <color=Highlight>Devastation<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>, considered as Heavy Attack DMG.n<size=10> <\/size>n<size=40><color=Title>Dark Surge<\/color><\/size>nAfter casting <color=Highlight>Devastation<\/color>, Rover enters the <color=Highlight>Dark Surge<\/color> state. In this state:n<color=Highlight>Basic Attack<\/color> is replaced with <color=Highlight>Enhanced Basic Attack<\/color>, which performs up to 5 consecutive attacks, dealing <color=Dark>Havoc DMG<\/color>.n<color=Highlight>Heavy Attack<\/color> is replaced with <color=Highlight>Enhanced Heavy Attack<\/color>;nUse <color=Highlight>Basic Attack<\/color> after casting <color=Highlight>Enhanced Heavy Attack<\/color> to cast Heavy Attack <color=Highlight>Thwackblade<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>, considered as Heavy Attack DMG.nUse <color=Highlight>Basic Attack<\/color> after casting Heavy Attack <color=Highlight>Thwackblade<\/color> to cast <color=Highlight> Enhanced Basic Attack 3<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>;nResonance Skill <color=Highlight>Wingblade<\/color> is replaced with Resonance Skill <color=Highlight>Lifetaker<\/color>, transforming sounds into blades to attack the target, dealing <color=Dark>Havoc DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Umbra<\/color><\/size>nRover can hold up to 100 points of Umbra.nNormal Attack <color=Highlight>Tuneslayer<\/color> recovers Umbra on hit.nResonance Skill <color=Highlight>Wingblade<\/color> recovers Umbra when cast.nResonance Skill <color=Highlight>Lifetaker<\/color> recovers Umbra when cast.nIntro Skill <color=Highlight>Instant of Annihilation<\/color> recovers Umbra when cast."
         },
         "Rover Passive": {
             "nameHash": "Skill_1001708_SkillName",

@@ -27,7 +27,7 @@ export default {
                         "103.93%",
                         "108.85%"
                     ],
-                    "name": "Part 1 Damage"
+                    "name": "Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -52,7 +52,7 @@ export default {
                         "138.57%",
                         "145.13%"
                     ],
-                    "name": "Part 2 Damage"
+                    "name": "Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -77,7 +77,7 @@ export default {
                         "126.96%*2",
                         "132.97%*2"
                     ],
-                    "name": "Part 3 Damage"
+                    "name": "Stage 3 DMG"
                 },
                 {
                     "scaling": [
@@ -102,7 +102,7 @@ export default {
                         "35.55%*5+76.18%",
                         "37.24%*5+79.79%"
                     ],
-                    "name": "Part 4 Damage"
+                    "name": "Stage 4 DMG"
                 },
                 {
                     "scaling": [
@@ -127,7 +127,7 @@ export default {
                         "265.70%",
                         "278.28%"
                     ],
-                    "name": "Part 5 Damage"
+                    "name": "Stage 5 DMG"
                 },
                 {
                     "scaling": [
@@ -177,7 +177,7 @@ export default {
                         "253.92%",
                         "265.94%"
                     ],
-                    "name": "Heavy Attack Damage"
+                    "name": "Heavy Attack DMG"
                 },
                 {
                     "scaling": [
@@ -202,7 +202,7 @@ export default {
                         "214.78%",
                         "224.95%"
                     ],
-                    "name": "Mid-air Attack Damage"
+                    "name": "Mid-air Attack DMG"
                 },
                 {
                     "scaling": [
@@ -227,7 +227,7 @@ export default {
                         "219.63%*2",
                         "230.03%*2"
                     ],
-                    "name": "Dodge Counter Damage"
+                    "name": "Dodge Counter DMG"
                 },
                 {
                     "scaling": [
@@ -393,7 +393,7 @@ export default {
                         "692.82%",
                         "725.62%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -468,7 +468,7 @@ export default {
                         "125",
                         "125"
                     ],
-                    "name": "Res. Energy Cost"
+                    "name": "Resonance Cost"
                 },
                 {
                     "scaling": [
@@ -491,7 +491,7 @@ export default {
                         "20",
                         "20"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Strive: Lion's Vigor",
@@ -507,7 +507,7 @@ export default {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiD2_UI.T_IconMotefeiD2_UI",
             "id": 1001805,
             "name": "Diligent Practice",
-            "desc": "Under the Forte Circuit <color=Highlight>Striding Lion<\/color> state, within 3s after each <color=Highlight>Basic Attack<\/color>, the next Forte Circuit <color=Highlight>Mountain Roamer<\/color> will deal an additional <color=Ice>Glacio DMG<\/color>, equal to 150% of <color=Highlight>Mountain Roamer<\/color> damage, considered as Resonance Skill damage."
+            "desc": "Under the Forte Circuit <color=Highlight>Striding Lion<\/color> state, within 3s after each <color=Highlight>Basic Attack<\/color>, the next Forte Circuit <color=Highlight>Mountain Roamer<\/color> will deal an additional <color=Ice>Glacio DMG<\/color>, equal to 150% of <color=Highlight>Mountain Roamer<\/color> DMG, considered as Resonance Skill DMG."
         },
         "Intro Skill": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiQTE_UI.T_IconMotefeiQTE_UI",
@@ -536,7 +536,7 @@ export default {
                         "173.21%*2",
                         "181.41%*2"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -559,7 +559,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Lion Awakens",
@@ -617,7 +617,7 @@ export default {
                         "151.73%*2+202.31%",
                         "158.92%*2+211.89%"
                     ],
-                    "name": "Feral Gyrate Part 1 Damage"
+                    "name": "Feral Gyrate Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -642,7 +642,7 @@ export default {
                         "55.36%*6",
                         "57.98%*6"
                     ],
-                    "name": "Feral Gyrate Part 2 Damage"
+                    "name": "Feral Gyrate Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -740,7 +740,7 @@ export default {
                         "35",
                         "35"
                     ],
-                    "name": "\"Lion's Spirit\" Con. Energy Regen"
+                    "name": "\"Lion's Spirit\" Concerto Regen"
                 }
             ],
             "name": "Unification of Spirits",

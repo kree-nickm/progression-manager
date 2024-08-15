@@ -791,14 +791,6 @@ export default {
         "type": "Resources",
         "subtype": "Ascension Material"
     },
-    "CraneFeathers": {
-        "rarity": 1,
-        "sort": 0,
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_SM_Gat_30A_UI.T_IconC_SM_Gat_30A_UI",
-        "name": "Crane Feathers",
-        "type": "Resources",
-        "subtype": "Herb"
-    },
     "Dewvetch": {
         "rarity": 1,
         "sort": 0,
@@ -836,6 +828,14 @@ export default {
         "sort": 0,
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_fuguyoulan_UI.T_IconC_fuguyoulan_UI",
         "name": "Erodorchid",
+        "type": "Resources",
+        "subtype": "Herb"
+    },
+    "Feather": {
+        "rarity": 1,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_SM_Gat_30A_UI.T_IconC_SM_Gat_30A_UI",
+        "name": "Feather",
         "type": "Resources",
         "subtype": "Herb"
     },

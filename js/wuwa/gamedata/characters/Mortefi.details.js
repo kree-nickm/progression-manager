@@ -27,7 +27,7 @@ export default {
                         "84.15%",
                         "88.13%"
                     ],
-                    "name": "Part 1 Damage"
+                    "name": "Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -52,7 +52,7 @@ export default {
                         "71.05%*2",
                         "74.42%*2"
                     ],
-                    "name": "Part 2 Damage"
+                    "name": "Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -77,7 +77,7 @@ export default {
                         "186.96%",
                         "195.81%"
                     ],
-                    "name": "Part 3 Damage"
+                    "name": "Stage 3 DMG"
                 },
                 {
                     "scaling": [
@@ -102,7 +102,7 @@ export default {
                         "36.62%*4+221.15%",
                         "38.35%*4+231.62%"
                     ],
-                    "name": "Part 4 Damage"
+                    "name": "Stage 4 DMG"
                 },
                 {
                     "scaling": [
@@ -177,7 +177,7 @@ export default {
                         "40.50%",
                         "42.42%"
                     ],
-                    "name": "Mid-air Attack Part 1 Damage"
+                    "name": "Mid-air Attack Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -202,7 +202,7 @@ export default {
                         "40.50%",
                         "42.42%"
                     ],
-                    "name": "Mid-air Attack Part 2 Damage"
+                    "name": "Mid-air Attack Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -227,7 +227,7 @@ export default {
                         "339.73%",
                         "355.81%"
                     ],
-                    "name": "Dodge Counter Damage"
+                    "name": "Dodge Counter DMG"
                 },
                 {
                     "scaling": [
@@ -285,7 +285,7 @@ export default {
                         "363.74%",
                         "380.96%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -333,7 +333,7 @@ export default {
                         "18",
                         "18"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Passionate Variation",
@@ -466,7 +466,7 @@ export default {
                         "125",
                         "125"
                     ],
-                    "name": "Res. Energy Cost"
+                    "name": "Resonance Cost"
                 },
                 {
                     "scaling": [
@@ -489,7 +489,7 @@ export default {
                         "20",
                         "20"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Violent Finale",
@@ -534,7 +534,7 @@ export default {
                         "294.45%",
                         "308.39%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -557,7 +557,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Dissonance",
@@ -613,11 +613,11 @@ export default {
                         "18",
                         "18"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Fury Fugue",
-            "desc": "<size=40><color=Title>Resonance Skill: Fury Fugue<\/color><\/size>nWhen Mortefi's \"Annoyance\" reaches 100, his <color=Highlight>Resonance Skill<\/color> is replaced with <color=Highlight>Fury Fudge<\/color>.nWhen casting Fury Fudge, Mortefi consumes all \"Annoyance\" to unleash high-speed flame lightning, dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill damage.n<size=10> <\/size>n<size=40><color=Title>Annoyance<\/color><\/size>nMortefi can hold up to 100 Annoyance.nWhen Normal Attack <color=Highlight>Impromptu Show<\/color> hits the target, \u201cAnnoyance\u201d is restored.nWhen Intro Skill <color=Highlight>Dissonance<\/color> hits the target, \u201cAnnoyance\u201d is restored.nWhen Resonance Skill <color=Highlight>Passionate Variation<\/color> hits the target, \u201cAnnoyance\u201d is restored.nWithin 5s after casting <color=Highlight>Passionate Variation<\/color>, Basic Attack <color=Highlight>Impromptu Show<\/color> that hits the target additionally restores \u201cAnnoyance\u201d."
+            "desc": "<size=40><color=Title>Resonance Skill: Fury Fugue<\/color><\/size>nWhen Mortefi's Annoyance reaches 100, his <color=Highlight>Resonance Skill<\/color> is replaced with <color=Highlight>Fury Fugue<\/color>.nWhen casting Fury Fudge, Mortefi consumes all Annoyance to unleash high-speed flame lightning, dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill damage.n<size=10> <\/size>n<size=40><color=Title>Annoyance<\/color><\/size>nMortefi can hold up to 100 Annoyance and can restore Annoyance in the following ways:n- When Normal Attack <color=Highlight>Impromptu Show<\/color> hits the targetn- When Intro Skill <color=Highlight>Dissonance<\/color> hits the targetn- When Resonance Skill <color=Highlight>Passionate Variation<\/color> hits the targetn- Within 5s after casting <color=Highlight>Passionate Variation<\/color>, Normal Attack <color=Highlight>Impromptu Show<\/color> that hits the target restores Annoyance additionally."
         },
         "Utility Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",

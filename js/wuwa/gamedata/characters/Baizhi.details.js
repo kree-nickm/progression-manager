@@ -27,7 +27,7 @@ export default {
                         "114.09%",
                         "119.49%"
                     ],
-                    "name": "Part 1 Damage"
+                    "name": "Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -52,7 +52,7 @@ export default {
                         "136.90%",
                         "143.39%"
                     ],
-                    "name": "Part 2 Damage"
+                    "name": "Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -77,7 +77,7 @@ export default {
                         "22.82%*7",
                         "23.90%*7"
                     ],
-                    "name": "Part 3 Damage"
+                    "name": "Stage 3 DMG"
                 },
                 {
                     "scaling": [
@@ -102,7 +102,7 @@ export default {
                         "136.90%",
                         "143.39%"
                     ],
-                    "name": "Part 4 Damage"
+                    "name": "Stage 4 DMG"
                 },
                 {
                     "scaling": [
@@ -127,7 +127,7 @@ export default {
                         "85.14%",
                         "89.17%"
                     ],
-                    "name": "Heavy Attack Damage"
+                    "name": "Heavy Attack DMG"
                 },
                 {
                     "scaling": [
@@ -152,7 +152,7 @@ export default {
                         "137.46%",
                         "143.97%"
                     ],
-                    "name": "Mid-Air Attack Damage"
+                    "name": "Mid-air Attack DMG"
                 },
                 {
                     "scaling": [
@@ -177,7 +177,7 @@ export default {
                         "311.28%",
                         "326.01%"
                     ],
-                    "name": "Dodge Counter Damage"
+                    "name": "Dodge Counter DMG"
                 },
                 {
                     "scaling": [
@@ -260,7 +260,7 @@ export default {
                         "27.77%",
                         "29.09%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -333,7 +333,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Emergency Plan",
@@ -466,7 +466,7 @@ export default {
                         "175",
                         "175"
                     ],
-                    "name": "Res. Energy Cost"
+                    "name": "Resonance Cost"
                 },
                 {
                     "scaling": [
@@ -489,7 +489,7 @@ export default {
                         "20",
                         "20"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Momentary Union",
@@ -534,7 +534,7 @@ export default {
                         "138.57%",
                         "145.13%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -582,7 +582,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Overflowing Frost",
@@ -638,7 +638,7 @@ export default {
                         "4",
                         "4"
                     ],
-                    "name": "Heavy Attack with \"Concentration\" Con. Energy Regen"
+                    "name": "Heavy Attack with \"Concentration\" Concerto Regen"
                 },
                 {
                     "scaling": [
@@ -661,7 +661,7 @@ export default {
                         "8",
                         "8"
                     ],
-                    "name": "Resonance Skill with \"Concentration\" Con. Energy Regen"
+                    "name": "Resonance Skill with \"Concentration\" Concerto Regen"
                 },
                 {
                     "scaling": [
@@ -690,7 +690,7 @@ export default {
                 }
             ],
             "name": "Cycle of Life",
-            "desc": "<size=40><color=Title>You'tan<\/color><\/size>nA Remnant Creature that answers to Baizhi\u2019s mind and desires while sharing all her stats. You\u2019tan goes back to Baizhi when Baizhi dodges.n<size=10> <\/size>n<size=40><color=Title>Concentration<\/color><\/size>nBaizhi consumes all \"Concentrations\" when casting <color=Highlight>Heavy Attack<\/color> or Resonance Skill <color=Highlight>Emergency Plan<\/color> to continuously heal all characters on nearby teams. Each 1 \"Concentration\" consumed provides 1 healing. The healings happen every 2s.nWhen Baizhi consumes \"Concentration\" to cast <color=Highlight>Heavy Attack<\/color>, Baizhi additionally restores Concerto Energy and Resonance Energy;nWhen Baizhi consumes \"Concentration\" to cast Resonance Skill <color=Highlight>Emergency Plan<\/color>, Baizhi additionally restores Concerto Energy.n<size=10> <\/size>n<size=40><color=Title>Forte Gauge: Concentration<\/color><\/size>nBaizhi can hold up to 4 \"Concentrations\".nBaizhi obtains 1 \"Concentration\" for every <color=Highlight>Basic Attack<\/color> on hit."
+            "desc": "<size=40><color=Title>You'tan<\/color><\/size>nA Remnant Creature that answers to Baizhi\u2019s mind and desires while sharing all her stats. You\u2019tan goes back to Baizhi when Baizhi dodges.n<size=10> <\/size>n<size=40><color=Title>Concentration<\/color><\/size>nBaizhi consumes all \"Concentration\" when casting <color=Highlight>Heavy Attack<\/color> or Resonance Skill <color=Highlight>Emergency Plan<\/color> to continuously heal all Resonators on nearby teams. Each 1 \"Concentration\" consumed provides 1 healing. The healing happen every 2s.nWhen Baizhi consumes \"Concentration\" to cast <color=Highlight>Heavy Attack<\/color>, Baizhi additionally restores Concerto Energy and Resonance Energy.nWhen Baizhi consumes \"Concentration\" to cast Resonance Skill <color=Highlight>Emergency Plan<\/color>, Baizhi additionally restores Concerto Energy.n<size=10> <\/size>n<size=40><color=Title>Forte Gauge: Concentration<\/color><\/size>nBaizhi can hold up to 4 \"Concentration\".nBaizhi obtains 1 \"Concentration\" for every <color=Highlight>Basic Attack<\/color> on hit."
         },
         "Utility Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
@@ -784,7 +784,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_BailianM5_UI.T_IconDevice_BailianM5_UI",
             "name": "A Wish Answered",
-            "desc": "If a team member is downed when Baizhi is alive on the team, immediately revive them and restore their HP to 100% of their Max HP. This effect can be triggered once every 10 minute(s)."
+            "desc": "If a team member is knocked out when Baizhi is alive on the team, immediately revive them and restore 100% of their Max HP. This effect can be triggered once every 10 minute(s)."
         },
         "6": {
             "buffs": [

@@ -27,7 +27,7 @@ export default {
                         "127.47%",
                         "133.51%"
                     ],
-                    "name": "Part 1 Damage"
+                    "name": "Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -52,7 +52,7 @@ export default {
                         "76.21%",
                         "79.81%"
                     ],
-                    "name": "Part 2 Damage"
+                    "name": "Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -77,7 +77,7 @@ export default {
                         "63.39%*5",
                         "66.39%*5"
                     ],
-                    "name": "Part 3 Damage"
+                    "name": "Stage 3 DMG"
                 },
                 {
                     "scaling": [
@@ -102,7 +102,7 @@ export default {
                         "115.35%*2",
                         "120.81%*2"
                     ],
-                    "name": "Part 4 Damage"
+                    "name": "Stage 4 DMG"
                 },
                 {
                     "scaling": [
@@ -127,7 +127,7 @@ export default {
                         "41.13%*7+267.38%*2",
                         "43.06%*7+280.01%*2"
                     ],
-                    "name": "Part 5 Damage"
+                    "name": "Stage 5 DMG"
                 },
                 {
                     "scaling": [
@@ -152,7 +152,7 @@ export default {
                         "38.68%*6",
                         "40.48%*6"
                     ],
-                    "name": "Heavy Attack Damage"
+                    "name": "Heavy Attack DMG"
                 },
                 {
                     "scaling": [
@@ -227,7 +227,7 @@ export default {
                         "214.77%",
                         "224.94%"
                     ],
-                    "name": "Mid-Air Attack Damage"
+                    "name": "Mid-air Attack DMG"
                 },
                 {
                     "scaling": [
@@ -277,7 +277,7 @@ export default {
                         "271.23%",
                         "284.08%"
                     ],
-                    "name": "Mid-Air Attack Follow-Up DMG"
+                    "name": "Mid-air Attack Follow-Up DMG"
                 },
                 {
                     "scaling": [
@@ -302,7 +302,7 @@ export default {
                         "219.27%*2",
                         "229.65%*2"
                     ],
-                    "name": "Dodge Counter Damage"
+                    "name": "Dodge Counter DMG"
                 },
                 {
                     "scaling": [
@@ -385,7 +385,7 @@ export default {
                         "185.32%*4",
                         "194.10%*4"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -435,7 +435,7 @@ export default {
                         "16",
                         "16"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Windqueller",
@@ -468,7 +468,7 @@ export default {
                         "114.17%*8",
                         "119.54%*8"
                     ],
-                    "name": "Lance Of Qingloong Part 1 Damage"
+                    "name": "Lance of Qingloong Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -493,7 +493,7 @@ export default {
                         "107.24%*8",
                         "112.32%*8"
                     ],
-                    "name": "Lance Of Qingloong Part 2 Damage"
+                    "name": "Lance Of Qingloong Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -518,7 +518,7 @@ export default {
                         "116.33%*8",
                         "121.83%*8"
                     ],
-                    "name": "Lance Of Qingloong Part 3 Damage"
+                    "name": "Lance Of Qingloong Stage 3 DMG"
                 },
                 {
                     "scaling": [
@@ -591,7 +591,7 @@ export default {
                         "125",
                         "125"
                     ],
-                    "name": "Res. Energy Cost"
+                    "name": "Resonance Cost"
                 },
                 {
                     "scaling": [
@@ -616,11 +616,11 @@ export default {
                         "20",
                         "20"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Emerald Storm - Prelude",
-            "desc": "After releasing Emerald Storm - Prelude, Jiyan enters <color=Highlight>Qingloong Mode<\/color>.n<size=10> <\/size>n<size=40><color=Title>Qingloong Mode<\/color><\/size>nJiyan has increased resistance to interruption;n<color=Highlight>Basic Attack<\/color>, <color=Highlight>Heavy Attack<\/color> and <color=Highlight>Dodge Counter<\/color> are replaced with Heavy Attack <color=Highlight>Lance of Qingloong<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack: Lance of Qingloong<\/color><\/size>nPerform up to 3 consecutive attacks, dealing <color=Wind>Aero DMG<\/color>, considered as Heavy Attack damage."
+            "desc": "After releasing Emerald Storm - Prelude, Jiyan enters <color=Highlight>Qingloong Mode<\/color>.n<size=10> <\/size>n<size=40><color=Title>Qingloong Mode<\/color><\/size>nJiyan has increased resistance to interruption.n<color=Highlight>Basic Attack<\/color>, <color=Highlight>Heavy Attack<\/color> and <color=Highlight>Dodge Counter<\/color> are replaced with Heavy Attack <color=Highlight>Lance of Qingloong<\/color>.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack: Lance of Qingloong<\/color><\/size>nPerform up to 3 consecutive attacks, dealing <color=Wind>Aero DMG<\/color>, considered as Heavy Attack DMG."
         },
         "Forte Circuit Passive 1": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangD2_UI.T_IconYangyangD2_UI",
@@ -661,7 +661,7 @@ export default {
                         "346.41%",
                         "362.81%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -686,7 +686,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Tactical Strike",
@@ -723,7 +723,7 @@ export default {
                 }
             ],
             "name": "Qingloong at War",
-            "desc": "When casting Resonance Skill <color=Highlight>Windqueller<\/color>, if Jiyan has 30 or more \"Resolve\", he consumes 30 \"Resolve\" to increase the DMG of this Resonance Skill <color=Highlight>Windqueller<\/color> by 20%.nWhen Jiyan is in <color=Highlight>Qingloong Mode<\/color>, DMG of Resonance Skill <color=Highlight>Windqueller<\/color> is increased by 20% and no longer consumes \"Resolve\".n<size=10> <\/size>n<size=40><color=Title>Resonance Liberation: Emerald Storm - Finale<\/color><\/size>nWhen casting Resonance Liberation <color=Highlight>Emerald Storm - Prelude<\/color>, if Jiyan has 30 \"Resolve\" or more, he will consume 30 \"Resolve\" to cast Emerald Storm - Finale, dealing <color=Wind>Aero DMG<\/color>, considered as Heavy Attack damage.nEmerald Storm: Finale can be cast in mid-air at low altitude.n<size=10> <\/size>n<size=40><color=Title>Resolve<\/color><\/size>nJiyan can hold up to 60 Resolve.nJiyan gains \"Resolve\" when his Normal Attack <color=Highlight>Lone Lance<\/color> hits the target.nJiyan gains \"Resolve\" when the Intro Skill <color=Highlight>Tactical Strike<\/color> hits the target.n\"Resolve\" will gradually decrease if Jiyan does not hit a target within 15s."
+            "desc": "When casting Resonance Skill <color=Highlight>Windqueller<\/color>, if Jiyan has 30 or more \"Resolve\", he consumes 30 \"Resolve\" to increase the DMG of this Resonance Skill <color=Highlight>Windqueller<\/color> by 20%.nWhen Jiyan is in <color=Highlight>Qingloong Mode<\/color>, DMG of Resonance Skill <color=Highlight>Windqueller<\/color> is increased by 20% and no longer consumes \"Resolve\".n<size=10> <\/size>n<size=40><color=Title>Resonance Liberation: Emerald Storm - Finale<\/color><\/size>nWhen casting Resonance Liberation <color=Highlight>Emerald Storm - Prelude<\/color>, if Jiyan has 30 \"Resolve\" or more, he will consume 30 \"Resolve\" to cast Emerald Storm - Finale, dealing <color=Wind>Aero DMG<\/color>, considered as Heavy Attack DMG.nEmerald Storm: Finale can be cast in mid-air at low altitude.n<size=10> <\/size>n<size=40><color=Title>Resolve<\/color><\/size>nJiyan can hold up to 60 Resolve.nJiyan gains \"Resolve\" when his Normal Attack <color=Highlight>Lone Lance<\/color> hits the target.nJiyan gains \"Resolve\" when the Intro Skill <color=Highlight>Tactical Strike<\/color> hits the target.n\"Resolve\" will gradually decrease if Jiyan does not hit a target within 15s."
         },
         "Utility Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
@@ -817,7 +817,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_JiyanM5_UI.T_IconDevice_JiyanM5_UI",
             "name": "Resolution",
-            "desc": "The DMG multiplier of Outro Skill <color=Highlight>Discipline<\/color> is increased by 120%.rnWhen Jiyan's attacks hit a target, his ATK is increased by 3% for 8s, stacking up to 15 times; this effect is immediately maxed after he casts Intro Skill <color=Highlight>Tactical Strike<\/color>."
+            "desc": "Outro Skill <color=Highlight>Discipline<\/color> gains an additional DMG Multiplier of 120%. nWhen Jiyan's attacks hit a target, his ATK is increased by 3% for 8s, stacking up to 15 times; this effect is immediately maxed after he casts Intro Skill <color=Highlight>Tactical Strike<\/color>."
         },
         "6": {
             "buffs": [

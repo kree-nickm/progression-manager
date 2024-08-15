@@ -27,7 +27,7 @@ export default {
                         "84.88%",
                         "88.89%"
                     ],
-                    "name": "Part 1 Damage"
+                    "name": "Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -52,7 +52,7 @@ export default {
                         "128.52%",
                         "134.61%"
                     ],
-                    "name": "Part 2 Damage"
+                    "name": "Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -77,7 +77,7 @@ export default {
                         "37.59%*4",
                         "39.37%*4"
                     ],
-                    "name": "Part 3 Damage"
+                    "name": "Stage 3 DMG"
                 },
                 {
                     "scaling": [
@@ -102,7 +102,7 @@ export default {
                         "69.11%*2",
                         "72.39%*2"
                     ],
-                    "name": "Part 4 Damage"
+                    "name": "Stage 4 DMG"
                 },
                 {
                     "scaling": [
@@ -127,7 +127,7 @@ export default {
                         "407.38%",
                         "426.67%"
                     ],
-                    "name": "Part 5 Damage"
+                    "name": "Stage 5 DMG"
                 },
                 {
                     "scaling": [
@@ -152,7 +152,7 @@ export default {
                         "38.80%*5",
                         "40.64%*5"
                     ],
-                    "name": "Heavy Attack Damage"
+                    "name": "Heavy Attack DMG"
                 },
                 {
                     "scaling": [
@@ -177,7 +177,7 @@ export default {
                         "150.35%",
                         "157.46%"
                     ],
-                    "name": "Mid-air Attack Damage"
+                    "name": "Mid-air Attack DMG"
                 },
                 {
                     "scaling": [
@@ -202,7 +202,7 @@ export default {
                         "290.99%",
                         "304.77%"
                     ],
-                    "name": "Dodge Counter Damage"
+                    "name": "Dodge Counter DMG"
                 },
                 {
                     "scaling": [
@@ -281,7 +281,7 @@ export default {
                         "627.01%",
                         "656.69%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -327,7 +327,7 @@ export default {
                         "15",
                         "15"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Eternal Frost",
@@ -360,7 +360,7 @@ export default {
                         "1410.45%",
                         "1477.22%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -406,7 +406,7 @@ export default {
                         "100",
                         "100"
                     ],
-                    "name": "Res. Energy Cost"
+                    "name": "Resonance Cost"
                 },
                 {
                     "scaling": [
@@ -429,7 +429,7 @@ export default {
                         "20",
                         "20"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Glacial Gaze",
@@ -474,7 +474,7 @@ export default {
                         "242.49%",
                         "253.97%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -497,7 +497,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Freezing Thorns",
@@ -720,7 +720,7 @@ export default {
                         "15",
                         "15"
                     ],
-                    "name": "Detonate Con. Energy Regen"
+                    "name": "Detonate Concerto Energy"
                 },
                 {
                     "scaling": [
@@ -743,7 +743,7 @@ export default {
                         "15",
                         "15"
                     ],
-                    "name": "Glacier Burst Con. Energy Regen"
+                    "name": "Glacier Burst Concerto Regen"
                 },
                 {
                     "scaling": [
@@ -766,11 +766,11 @@ export default {
                         "15",
                         "15"
                     ],
-                    "name": "Ice Prism Burst Con. Energy Regen"
+                    "name": "Ice Prism Burst Concerto Regen"
                 }
             ],
             "name": "Clarity of Mind",
-            "desc": "<size=40><color=Title>Heavy Attack: Detonate<\/color><\/size>nWhen holding <color=Highlight>Basic Attack<\/color>, a cursor moves back and forth on the Forte Gauge. Release <color=Highlight>Basic Attack<\/color> while cursor falls in the \"Frostbite\" area, to perform Heavy Attack <color=Highlight>Detonate<\/color>, dealing <color=Ice>Glacio DMG<\/color> considered as Heavy Attack damage.n<size=10> <\/size>n<size=40><color=Title>Ice Burst<\/color><\/size>nSanhua\u2019s Heavy Attack <color=Highlight>Detonate<\/color> detonates all \"Ice Thorns\", \"Ice Prisms\" and \"Glaciers\" within her attack range, dealing <color=Ice>Glacio DMG<\/color>. <color=Highlight>Ice Burst<\/color> deals Resonance Skill DMG.n<size=10> <\/size>n<size=40><color=Title>Frostbite Area<\/color><\/size>nThe \"Frostbite\" area expands with every 1 stack of \"Clarity\". \"Clarity\" stacks up to 2 times.nSanhua obtains 1 stack of \"Clarity\" upon performing <color=Highlight>Basic Attack 5<\/color>.nSanhua obtains 1 stack of \"Clarity\" upon casting Intro Skill <color=Highlight>Freezing Thorns<\/color>.nSanhua obtains 1 stack of \"Clarity\" upon casting Resonance Skill <color=Highlight>Eternal Frost<\/color>.nSanhua obtains 2 stack(s) of \"Clarity\" upon casting Resonance Liberation <color=Highlight>Glacial Gaze<\/color>.nUpon casting Heavy Attack <color=Highlight>Detonate<\/color>, all \"Clarity\" is removed."
+            "desc": "<size=40><color=Title>Heavy Attack: Detonate<\/color><\/size>nWhen holding <color=Highlight>Basic Attack<\/color>, a cursor moves back and forth on the Forte Gauge. Release <color=Highlight>Basic Attack<\/color> while cursor falls in the \"Frostbite\" area, to perform Heavy Attack <color=Highlight>Detonate<\/color>, dealing <color=Ice>Glacio DMG<\/color> considered as Heavy Attack DMG.n<size=10> <\/size>n<size=40><color=Title>Ice Burst<\/color><\/size>nSanhua\u2019s Heavy Attack <color=Highlight>Detonate<\/color> detonates all \"Ice Thorns\", \"Ice Prisms\" and \"Glaciers\" within her attack range, dealing <color=Ice>Glacio DMG<\/color>. <color=Highlight>Ice Burst<\/color> deals Resonance Skill DMG.n<size=10> <\/size>n<size=40><color=Title>Frostbite Area<\/color><\/size>nThe \"Frostbite\" area expands with every 1 stack of \"Clarity\". \"Clarity\" stacks up to 2 times.nSanhua obtains 1 stack of \"Clarity\" upon performing <color=Highlight>Basic Attack 5<\/color>.nSanhua obtains 1 stack of \"Clarity\" upon casting Intro Skill <color=Highlight>Freezing Thorns<\/color>.nSanhua obtains 1 stack of \"Clarity\" upon casting Resonance Skill <color=Highlight>Eternal Frost<\/color>.nSanhua obtains 2 stack(s) of \"Clarity\" upon casting Resonance Liberation <color=Highlight>Glacial Gaze<\/color>.nUpon casting Heavy Attack <color=Highlight>Detonate<\/color>, all \"Clarity\" is removed."
         },
         "Utility Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
@@ -840,7 +840,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_SanhuaM2_UI.T_IconDevice_SanhuaM2_UI",
             "name": "Snowy Clarity",
-            "desc": "Stamina cost of Heavy Attack <color=Highlight>Detonate<\/color> is reduced by 10. When Sanhua casts Resonance Skill <color=Highlight>Eternal Frost<\/color>, her Anti-interruption is enhanced for 10s."
+            "desc": "Heavy Attack <color=Highlight>Detonate<\/color> STA cost is reduced by 10. When Sanhua casts Resonance Skill <color=Highlight>Eternal Frost<\/color>, her resistance to interruption is enhanced for 10s."
         },
         "3": {
             "buffs": [

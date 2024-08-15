@@ -27,7 +27,7 @@ export default {
                         "99.77%",
                         "104.49%"
                     ],
-                    "name": "Part 1 Damage"
+                    "name": "Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -52,7 +52,7 @@ export default {
                         "102.54%",
                         "107.40%"
                     ],
-                    "name": "Part 2 Damage"
+                    "name": "Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -77,7 +77,7 @@ export default {
                         "138.57%",
                         "145.13%"
                     ],
-                    "name": "Part 3 Damage"
+                    "name": "Stage 3 DMG"
                 },
                 {
                     "scaling": [
@@ -102,7 +102,7 @@ export default {
                         "64.67%*3",
                         "67.73%*3"
                     ],
-                    "name": "Heavy Attack Damage"
+                    "name": "Heavy Attack DMG"
                 },
                 {
                     "scaling": [
@@ -127,7 +127,7 @@ export default {
                         "171.82%",
                         "179.96%"
                     ],
-                    "name": "Mid-air Attack Damage"
+                    "name": "Mid-air Attack DMG"
                 },
                 {
                     "scaling": [
@@ -152,7 +152,7 @@ export default {
                         "110.86%*3",
                         "116.10%*3"
                     ],
-                    "name": "Dodge Counter Damage"
+                    "name": "Dodge Counter DMG"
                 },
                 {
                     "scaling": [
@@ -256,7 +256,7 @@ export default {
                         "112.24%*2",
                         "117.56%*2"
                     ],
-                    "name": "Crimson Erosion Part 1 Damage"
+                    "name": "Crimson Erosion Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -281,7 +281,7 @@ export default {
                         "103.93%*2",
                         "108.85%*2"
                     ],
-                    "name": "Crimson Erosion Part 2 Damage"
+                    "name": "Crimson Erosion Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -306,7 +306,7 @@ export default {
                         "97.69%*2",
                         "102.32%*2"
                     ],
-                    "name": "Sanguine Pulse Part 1 Damage"
+                    "name": "Sanguine Pulse Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -331,7 +331,7 @@ export default {
                         "74.83%*3",
                         "78.37%*3"
                     ],
-                    "name": "Sanguine Pulse Part 2 Damage"
+                    "name": "Sanguine Pulse Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -356,7 +356,7 @@ export default {
                         "112.24%*3",
                         "117.56%*3"
                     ],
-                    "name": "Sanguine Pulse Part 3 Damage"
+                    "name": "Sanguine Pulse Stage 3 DMG"
                 },
                 {
                     "scaling": [
@@ -437,7 +437,7 @@ export default {
                         "85.52%*8",
                         "89.57%*8"
                     ],
-                    "name": "Consecutive Attack Damage"
+                    "name": "Consecutive Attack DMG"
                 },
                 {
                     "scaling": [
@@ -508,7 +508,7 @@ export default {
                         "100",
                         "100"
                     ],
-                    "name": "Res. Energy Cost"
+                    "name": "Resonance Cost"
                 },
                 {
                     "scaling": [
@@ -531,7 +531,7 @@ export default {
                         "20",
                         "20"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Crimson Bloom",
@@ -547,7 +547,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
             "id": 1000805,
             "name": "Overflow",
-            "desc": "After casting the Resonance Skill <color=Highlight>Sanguine Pulse<\/color>, Danjin's Heavy Attack damage is increased by 30% for 5s."
+            "desc": "After casting the Resonance Skill <color=Highlight>Sanguine Pulse<\/color>, Danjin's Heavy Attack DMG is increased by 30% for 5s."
         },
         "Intro Skill": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconmicaiQTE_UI.T_IconmicaiQTE_UI",
@@ -576,7 +576,7 @@ export default {
                         "86.61%*4",
                         "90.71%*4"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -599,7 +599,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Vindication",
@@ -753,11 +753,11 @@ export default {
                         "50",
                         "50"
                     ],
-                    "name": "Chaoscleave Con. Energy Regen"
+                    "name": "Chaoscleave Concerto Regen"
                 }
             ],
             "name": "Serene Vigil",
-            "desc": "<size=40><color=Title>Heavy Attack: Chaoscleave<\/color><\/size>nAfter accumulating 60 \"Ruby Blossom\", long press <color=Highlight>Basic Attack<\/color> to consume all \"Ruby Blossom\" to cast <color=Highlight>Chaoscleave<\/color>, dealing <color=Dark>Havoc DMG<\/color>, considered as Heavy Attack damage, and healing Danjin.nIf current \"Ruby Blossom\" reaches over 120, 120 \"Ruby Blossom\" is consumed instead to increase the DMG multiplier of <color=Highlight>Chaoscleave<\/color> and <color=Highlight>Scatterbloom<\/color> performed this time.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack: Scatterbloom<\/color><\/size>nUse <color=Highlight>Basic Attack<\/color> after Heavy Attack <color=Highlight>Chaoscleave<\/color> to cast <color=Highlight>Scatterbloom<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>, considered as Heavy Attack damage.n<size=10> <\/size>n<size=40><color=Title>Ruby Blossom<\/color><\/size>nDanjin can hold up to 120 Ruby Blossom.nDanjin obtains \"Ruby Blossom\" when using Resonance Skill <color=Highlight>Crimson Fragment<\/color>."
+            "desc": "<size=40><color=Title>Heavy Attack: Chaoscleave<\/color><\/size>nAfter accumulating 60 \"Ruby Blossom\", long press <color=Highlight>Basic Attack<\/color> to consume all \"Ruby Blossom\" to cast <color=Highlight>Chaoscleave<\/color>, dealing <color=Dark>Havoc DMG<\/color>, considered as Heavy Attack DMG, and healing Danjin.nIf current \"Ruby Blossom\" reaches over 120, 120 \"Ruby Blossom\" is consumed instead to increase the DMG multiplier of <color=Highlight>Chaoscleave<\/color> and <color=Highlight>Scatterbloom<\/color> performed this time.n<size=10> <\/size>n<size=40><color=Title>Heavy Attack: Scatterbloom<\/color><\/size>nUse <color=Highlight>Basic Attack<\/color> after Heavy Attack <color=Highlight>Chaoscleave<\/color> to cast <color=Highlight>Scatterbloom<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>, considered as Heavy Attack DMG.n<size=10> <\/size>n<size=40><color=Title>Ruby Blossom<\/color><\/size>nDanjin can hold up to 120 Ruby Blossom.nDanjin obtains \"Ruby Blossom\" when using Resonance Skill <color=Highlight>Crimson Fragment<\/color>."
         },
         "Utility Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",

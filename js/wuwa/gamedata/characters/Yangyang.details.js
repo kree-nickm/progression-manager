@@ -27,7 +27,7 @@ export default {
                         "77.94%",
                         "81.63%"
                     ],
-                    "name": "Part 1 Damage"
+                    "name": "Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -52,7 +52,7 @@ export default {
                         "103.92%",
                         "108.84%"
                     ],
-                    "name": "Part 2 Damage"
+                    "name": "Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -77,7 +77,7 @@ export default {
                         "81.57%*2",
                         "85.44%*2"
                     ],
-                    "name": "Part 3 Damage"
+                    "name": "Stage 3 DMG"
                 },
                 {
                     "scaling": [
@@ -102,7 +102,7 @@ export default {
                         "103.43%*2+137.90%",
                         "108.33%*2+144.43%"
                     ],
-                    "name": "Part 4 Damage"
+                    "name": "Stage 4 DMG"
                 },
                 {
                     "scaling": [
@@ -127,7 +127,7 @@ export default {
                         "34.64%*3",
                         "36.28%*3"
                     ],
-                    "name": "Heavy Attack Damage"
+                    "name": "Heavy Attack DMG"
                 },
                 {
                     "scaling": [
@@ -152,7 +152,7 @@ export default {
                         "161.08%",
                         "168.70%"
                     ],
-                    "name": "Mid-air Attack Damage"
+                    "name": "Mid-air Attack DMG"
                 },
                 {
                     "scaling": [
@@ -202,7 +202,7 @@ export default {
                         "151.72%*2",
                         "158.91%*2"
                     ],
-                    "name": "Dodge Counter Damage"
+                    "name": "Dodge Counter DMG"
                 },
                 {
                     "scaling": [
@@ -284,7 +284,7 @@ export default {
                         "57.32%*4+343.93%",
                         "60.17%*4+361.02%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -334,7 +334,7 @@ export default {
                         "15",
                         "15"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Zephyr Domain",
@@ -367,7 +367,7 @@ export default {
                         "81.17%*12+649.40%",
                         "85.00%*12+680.12%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -417,7 +417,7 @@ export default {
                         "100",
                         "100"
                     ],
-                    "name": "Res. Energy Cost"
+                    "name": "Resonance Cost"
                 },
                 {
                     "scaling": [
@@ -442,7 +442,7 @@ export default {
                         "20",
                         "20"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Wind Spirals",
@@ -487,7 +487,7 @@ export default {
                         "10",
                         "10"
                     ],
-                    "name": "Con. Energy Regen"
+                    "name": "Concerto Regen"
                 }
             ],
             "name": "Cerulean Song",
@@ -570,7 +570,7 @@ export default {
                         "30",
                         "30"
                     ],
-                    "name": "Feather Release Con. Energy Regen"
+                    "name": "Feather Release Concerto Regen"
                 }
             ],
             "name": "Echoing Feathers",

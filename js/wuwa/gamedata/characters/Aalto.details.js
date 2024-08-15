@@ -27,7 +27,7 @@ export default {
                         "55.43%",
                         "58.05%"
                     ],
-                    "name": "Part 1 Damage"
+                    "name": "Stage 1 DMG"
                 },
                 {
                     "scaling": [
@@ -52,7 +52,7 @@ export default {
                         "92.38%",
                         "96.75%"
                     ],
-                    "name": "Part 2 Damage"
+                    "name": "Stage 2 DMG"
                 },
                 {
                     "scaling": [
@@ -77,7 +77,7 @@ export default {
                         "83.14%*2",
                         "87.08%*2"
                     ],
-                    "name": "Part 3 Damage"
+                    "name": "Stage 3 DMG"
                 },
                 {
                     "scaling": [
@@ -102,7 +102,7 @@ export default {
                         "87.76%*2",
                         "91.92%*2"
                     ],
-                    "name": "Part 4 Damage"
+                    "name": "Stage 4 DMG"
                 },
                 {
                     "scaling": [
@@ -127,7 +127,7 @@ export default {
                         "313.16%",
                         "327.99%"
                     ],
-                    "name": "Part 5 Damage"
+                    "name": "Stage 5 DMG"
                 },
                 {
                     "scaling": [
@@ -227,7 +227,7 @@ export default {
                         "373.09%",
                         "390.75%"
                     ],
-                    "name": "Dodge Counter Damage"
+                    "name": "Dodge Counter DMG"
                 },
                 {
                     "scaling": [
@@ -389,7 +389,7 @@ export default {
                 }
             ],
             "name": "Shift Trick",
-            "desc": "<size=40><color=Title>Mist Avatar<\/color><\/size>nCasts \"Mist\" and 1 \"Mist Avatar(s)\" to taunt the surrounding targets. The avatars inherit a portion of Aalto's HP and generate 6 Mist Bullets around them, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mist Bullets<\/color><\/size>nDeals <color=Wind>Aero DMG<\/color>, considered as Resonance Skill damage."
+            "desc": "<size=40><color=Title>Mist Avatar<\/color><\/size>nCasts \"Mist\" and 1 \"Mist Avatar(s)\" to taunt the surrounding targets. The avatars inherit a portion of Aalto's HP and generate 6 Mist Bullets around them, dealing <color=Wind>Aero DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Mist Bullets<\/color><\/size>nDeals <color=Wind>Aero DMG<\/color>, considered as Resonance Skill DMG."
         },
         "Resonance Liberation": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconQiushuiA1_UI.T_IconQiushuiA1_UI",
@@ -418,7 +418,7 @@ export default {
                         "692.82%",
                         "725.62%"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [
@@ -493,7 +493,7 @@ export default {
                         "150",
                         "150"
                     ],
-                    "name": "Res. Energy Cost"
+                    "name": "Resonance Cost"
                 },
                 {
                     "scaling": [
@@ -534,7 +534,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconQiushuiQTE_UI.T_IconQiushuiQTE_UI",
             "id": 1001005,
             "name": "Mid-game Break",
-            "desc": "Aalto will continuously recover Stamina when he is in the Forte Circuit <color=Highlight>Miscloak Dash<\/color> state."
+            "desc": "Aalto will continuously recover STA when he is in the Forte Circuit <color=Highlight>Miscloak Dash<\/color> state."
         },
         "Intro Skill": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconQiushuiQTE_UI.T_IconQiushuiQTE_UI",
@@ -563,7 +563,7 @@ export default {
                         "115.47%*3",
                         "120.94%*3"
                     ],
-                    "name": "Skill Damage"
+                    "name": "Skill DMG"
                 },
                 {
                     "scaling": [

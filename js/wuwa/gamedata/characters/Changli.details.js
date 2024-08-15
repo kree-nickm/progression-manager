@@ -345,7 +345,7 @@ export default {
                 }
             ],
             "name": "Blazing Enlightment",
-            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>nPerform up to 4 consecutive attacks, dealing <color=Fire>Fusion DMG<\/color>.nAfter releasing <color=Highlight>Basic Attack 4<\/color>, enter <color=Highlight>True Sight<\/color>, lasting for 12s.nn<size=40><color=Title>Mid-air Attack<\/color><\/size>nConsume Stamina to perform up to 4 consecutive attacks in mid-air, dealing <color=Fire>Fusion DMG<\/color>.nAfter releasing <color=Highlight>Mid-air Attack 4<\/color>, enter <color=Highlight>True Sight<\/color>, lasting for 12s.nn<size=40><color=Title>Heavy Attack<\/color><\/size>nHold <color=Highlight>Basic Attack<\/color> on the ground to perform an upward strike at the cost of Stamina, dealing <color=Fire>Fusion DMG<\/color>. Use <color=Highlight>Basic Attack<\/color> within a certain time to release <color=Highlight>Mid-Air Attack 3<\/color>.nn<size=40><color=Title>Mid-air Heavy Attack<\/color><\/size>nShortly after holding <color=Highlight>Basic Attack<\/color> in mid-air or using Basic Attack <color=Highlight>True Sight: Charge<\/color>, use <color=Highlight>Basic Attack<\/color> to perform a plunging attack at the cost of Stamina, dealing <color=Fire>Fusion DMG<\/color>. Use <color=Highlight>Basic Attack<\/color> within a certain time to release <color=Highlight>Basic Attack 3<\/color>.nn<size=40><color=Title>Dodge Counter<\/color><\/size>nUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Fire>Fusion DMG<\/color>."
+            "desc": "<size=40><color=Title>Basic Attack<\/color><\/size>nPerform up to 4 consecutive attacks, dealing <color=Fire>Fusion DMG<\/color>.nAfter releasing <color=Highlight>Basic Attack 4<\/color>, enter <color=Highlight>True Sight<\/color>, lasting for 12s.n<size=10><\/size>n<size=40><color=Title>Mid-air Attack<\/color><\/size>nConsume Stamina to perform up to 4 consecutive attacks in mid-air, dealing <color=Fire>Fusion DMG<\/color>.nAfter releasing <color=Highlight>Mid-air Attack 4<\/color>, enter <color=Highlight>True Sight<\/color>, lasting for 12s.n<size=10><\/size>n<size=40><color=Title>Heavy Attack<\/color><\/size>nHold <color=Highlight>Basic Attack<\/color> on the ground to perform an upward strike at the cost of Stamina, dealing <color=Fire>Fusion DMG<\/color>. Use <color=Highlight>Basic Attack<\/color> within a certain time to release <color=Highlight>Mid-Air Attack 3<\/color>.n<size=10><\/size>n<size=40><color=Title>Mid-air Heavy Attack<\/color><\/size>nShortly after holding <color=Highlight>Basic Attack<\/color> in mid-air or using Basic Attack <color=Highlight>True Sight: Charge<\/color>, use <color=Highlight>Basic Attack<\/color> to perform a plunging attack at the cost of Stamina, dealing <color=Fire>Fusion DMG<\/color>. Use <color=Highlight>Basic Attack<\/color> within a certain time to release <color=Highlight>Basic Attack 3<\/color>.n<size=10><\/size>n<size=40><color=Title>Dodge Counter<\/color><\/size>nUse <color=Highlight>Basic Attack<\/color> after a successful <color=Highlight>Dodge<\/color> to attack the target, dealing <color=Fire>Fusion DMG<\/color>."
         },
         "Resonance Skill": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconJueyuanB1_UI.T_IconJueyuanB1_UI",
@@ -500,7 +500,7 @@ export default {
                 }
             ],
             "name": "Tripartite Flames",
-            "desc": "<size=40><color=Title>True Sight: Capture<\/color><\/size>nAfter releasing <color=Highlight>Resonance Skill<\/color>, Changli dashes towards the enemy and enters <color=Highlight>True Sight<\/color>, lasting for 12s. In the end, she releases a plunging attack, dealing <color=Fire>Fusion DMG<\/color>.n<color=Highlight>True Sight: Capture<\/color> has 2 initial attempts and can be used up to 2 times. The number of attempts is increased by 1 every 12s.nCan be cast in mid-air.nn<size=40><color=Title>Basic Attack: True Sight - Conquest<\/color><\/size>nWhen in <color=Highlight>True Sight<\/color>, if Changli uses <color=Highlight>Ground Basic Attack<\/color>, she releases <color=Highlight>True Sight: Conquest<\/color>, dashing towards the enemy and dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill DMG. After releasing <color=Highlight>True Sight: Conquest<\/color>, <color=Highlight>True Sight<\/color> ends.nn<size=40><color=Title>Basic Attack: True Sight - Charge<\/color><\/size>nWhen in <color=Highlight>True Sight<\/color>, if Changli <color=Highlight>jumps<\/color> or uses <color=Highlight>Basic Attack<\/color> in mid-air, she releases <color=Highlight>True Sight: Charge<\/color>, dashing towards the enemy and dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill DMG. After releasing <color=Highlight>True Sight: Charge<\/color>, <color=Highlight>True Sight<\/color> ends."
+            "desc": "<size=40><color=Title>True Sight: Capture<\/color><\/size>nAfter releasing <color=Highlight>Resonance Skill<\/color>, Changli dashes towards the enemy and enters <color=Highlight>True Sight<\/color>, lasting for 12s. In the end, she releases a plunging attack, dealing <color=Fire>Fusion DMG<\/color>.n<color=Highlight>True Sight: Capture<\/color> has 2 initial charges and holds up to 2 charges in maximum. The number of charges is replenished by 1 every 12s.nCan be cast in mid-air.n<size=10><\/size>n<size=40><color=Title>Basic Attack: True Sight - Conquest<\/color><\/size>nWhen in <color=Highlight>True Sight<\/color>, if Changli uses <color=Highlight>Ground Basic Attack<\/color>, she releases <color=Highlight>True Sight: Conquest<\/color>, dashing towards the enemy and dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill DMG. After releasing <color=Highlight>True Sight: Conquest<\/color>, <color=Highlight>True Sight<\/color> ends.n<size=10><\/size>n<size=40><color=Title>Basic Attack: True Sight - Charge<\/color><\/size>nWhen in <color=Highlight>True Sight<\/color>, if Changli <color=Highlight>jumps<\/color> or uses <color=Highlight>Basic Attack<\/color> in mid-air, she releases <color=Highlight>True Sight: Charge<\/color>, dashing towards the enemy and dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill DMG. After releasing <color=Highlight>True Sight: Charge<\/color>, <color=Highlight>True Sight<\/color> ends."
         },
         "Resonance Liberation": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconJueyuanA1_UI.T_IconJueyuanA1_UI",
@@ -557,26 +557,26 @@ export default {
                 },
                 {
                     "scaling": [
-                        "150",
-                        "150",
-                        "150",
-                        "150",
-                        "150",
-                        "150",
-                        "150",
-                        "150",
-                        "150",
-                        "150",
-                        "150",
-                        "150",
-                        "150",
-                        "150",
-                        "150",
-                        "150",
-                        "150",
-                        "150",
-                        "150",
-                        "150"
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125",
+                        "125"
                     ],
                     "name": "Resonance Cost"
                 },
@@ -607,7 +607,7 @@ export default {
                 }
             ],
             "name": "Radiance of Fealty",
-            "desc": "Deal <color=Fire>Fusion DMG<\/color> to nearby targets, obtaining 4 stacks of Enflamement, and entering <color=Highlight>Fiery Feather<\/color>.nCan be cast in mid-air.nn<size=40><color=Title>Fiery Feather<\/color><\/size>nWhen Changli releases Heavy Attack <color=Highlight>Flaming Sacrifice<\/color> within 10s, her ATK is increased by 25%, after which <color=Highlight>Fiery Feather<\/color> ends."
+            "desc": "Deal <color=Fire>Fusion DMG<\/color> to nearby targets, obtaining 4 stacks of Enflamement, and entering <color=Highlight>Fiery Feather<\/color>.nCan be cast in mid-air.n<size=10><\/size>n<size=40><color=Title>Fiery Feather<\/color><\/size>nWhen Changli releases Heavy Attack <color=Highlight>Flaming Sacrifice<\/color> within 10s, her ATK is increased by 25%, after which <color=Highlight>Fiery Feather<\/color> ends."
         },
         "Forte Circuit Passive 1": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconWeilinaiD1_UI.T_IconWeilinaiD1_UI",
@@ -733,7 +733,7 @@ export default {
                 }
             ],
             "name": "Flaming Sacrifice",
-            "desc": "<size=40><color=Title>Heavy Attack: Flaming Sacrifice<\/color><\/size>nWhen releasing <color=Highlight>Heavy Attack<\/color>, if Changli carries 4 stacks of Enflamement, she consumes all stacks of Enflamement to cast <color=Highlight>Flaming Sacrifice<\/color>, dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill DMG.nWhile casting <color=Highlight>Flaming Sacrifice<\/color>, Changli takes 40% less DMG.nn<size=40><color=Title>Enflamement<\/color><\/size>nChangli can hold up to 4 stacks of Enflamement.nChangli obtains 1 stack of Enflamement for every Basic Attack: <color=Highlight>True Sight - Conquest<\/color> on hit.nChangli obtains 1 stack of Enflamement for every Basic Attack: <color=Highlight>True Sight - Charge<\/color> on hit.nChangli obtains 4 stacks of Enflamement for every Resonance Liberation <color=Highlight>Radiance of Fealty<\/color>."
+            "desc": "<size=40><color=Title>Heavy Attack: Flaming Sacrifice<\/color><\/size>nWhen releasing <color=Highlight>Heavy Attack<\/color>, if Changli carries 4 stacks of Enflamement, she consumes all stacks of Enflamement to cast <color=Highlight>Flaming Sacrifice<\/color>, dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill DMG.nWhile casting <color=Highlight>Flaming Sacrifice<\/color>, Changli takes 40% less DMG.n<size=10><\/size>n<size=40><color=Title>Enflamement<\/color><\/size>nChangli can hold up to 4 stacks of Enflamement.nChangli obtains 1 stack of Enflamement for every Basic Attack: <color=Highlight>True Sight - Conquest<\/color> on hit.nChangli obtains 1 stack of Enflamement for every Basic Attack: <color=Highlight>True Sight - Charge<\/color> on hit.nChangli obtains 4 stacks of Enflamement for every Resonance Liberation <color=Highlight>Radiance of Fealty<\/color>."
         },
         "Utility Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
