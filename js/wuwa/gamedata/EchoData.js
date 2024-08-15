@@ -36,24 +36,34 @@ export default {
         "icon": "T_IconMonsterGoods160_9995_UI",
         "descParams": [
             [
-                "170.00%",
-                "15"
+                "3",
+                "24.00%",
+                "8",
+                "0.00%"
             ],
             [
-                "195.50%",
-                "15"
+                "3",
+                "27.60%",
+                "8",
+                "0.00%"
             ],
             [
-                "221.00%",
-                "15"
+                "3",
+                "31.20%",
+                "8",
+                "0.00%"
             ],
             [
-                "246.50%",
-                "15"
+                "3",
+                "34.80%",
+                "8",
+                "0.00%"
             ],
             [
-                "272.00%",
-                "15"
+                "3",
+                "38.40%",
+                "8",
+                "0.00%"
             ]
         ],
         "validSets": [
@@ -61,7 +71,7 @@ export default {
             "FreezingFrost"
         ],
         "monster": "Autopuppet Scout",
-        "skillDesc": "Transform into Autopuppet Scout, dealing {0} Glacio DMG to the surroundings, and generate up to 3 Ice Walls to block off the enemies.rnrnCD: {1}s"
+        "skillDesc": "Summon a Dwarf Cassowary that tracks and attacks the enemy, dealing {1} Physical DMG {0} time(s).nnCooldown: {2}s"
     },
     "BabyViridblazeSaurian": {
         "cost": 1,
@@ -692,32 +702,37 @@ export default {
     },
     "Flautist": {
         "cost": 3,
-        "icon": "T_IconMonsterGoods160_191_UI",
+        "icon": "T_IconMonsterGoods160_201_UI",
         "descParams": [
             [
-                "33.30%",
-                "1",
-                "15"
+                "3",
+                "24.00%",
+                "8",
+                "0.00%"
             ],
             [
-                "38.30%",
-                "1",
-                "15"
+                "3",
+                "27.60%",
+                "8",
+                "0.00%"
             ],
             [
-                "43.29%",
-                "1",
-                "15"
+                "3",
+                "31.20%",
+                "8",
+                "0.00%"
             ],
             [
-                "48.29%",
-                "1",
-                "15"
+                "3",
+                "34.80%",
+                "8",
+                "0.00%"
             ],
             [
-                "53.28%",
-                "1",
-                "15"
+                "3",
+                "38.40%",
+                "8",
+                "0.00%"
             ]
         ],
         "validSets": [
@@ -725,7 +740,7 @@ export default {
             "VoidThunder"
         ],
         "monster": "Flautist",
-        "skillDesc": "Transform into Flautist, continuously emitting Electro lasers, dealing {0} Electro DMG for a total of 10 times. Gain {1} Concerto Energy every time a hit lands.rnrnCD: {2}s"
+        "skillDesc": "Summon a Dwarf Cassowary that tracks and attacks the enemy, dealing {1} Physical DMG {0} time(s).nnCooldown: {2}s"
     },
     "FusionDreadmane": {
         "cost": 1,
@@ -919,24 +934,34 @@ export default {
         "icon": "T_IconMonsterGoods160_141_UI",
         "descParams": [
             [
+                "3",
                 "24.00%",
-                "8"
+                "8",
+                "0.00%"
             ],
             [
+                "3",
                 "27.60%",
-                "8"
+                "8",
+                "0.00%"
             ],
             [
+                "3",
                 "31.20%",
-                "8"
+                "8",
+                "0.00%"
             ],
             [
+                "3",
                 "34.80%",
-                "8"
+                "8",
+                "0.00%"
             ],
             [
+                "3",
                 "38.40%",
-                "8"
+                "8",
+                "0.00%"
             ]
         ],
         "validSets": [
@@ -945,7 +970,7 @@ export default {
             "FreezingFrost"
         ],
         "monster": "Glacio Prism",
-        "skillDesc": "Summon a Glacio Prism that continuously fires three crystal shards, each dealing {0} Glacio DMG.nnCD: {1}s"
+        "skillDesc": "Summon a Dwarf Cassowary that tracks and attacks the enemy, dealing {1} Physical DMG {0} time(s).nnCooldown: {2}s"
     },
     "Gulpuff": {
         "cost": 1,
@@ -1630,75 +1655,126 @@ export default {
         "monster": "Phantom: Clang Bang",
         "skillDesc": "Summon a Clang Bang that follows the enemy and eventually self-combusts, dealing {0} Glacio DMG.nnCD: {1}s"
     },
+    "PhantomDreamless": {
+        "cost": 4,
+        "icon": "T_IconMonsterHead_998_1_UI",
+        "descParams": [
+            [
+                "33.80%",
+                "169.00%",
+                "5",
+                "50.00%",
+                "20"
+            ],
+            [
+                "38.87%",
+                "194.35%",
+                "5",
+                "50.00%",
+                "20"
+            ],
+            [
+                "43.94%",
+                "219.70%",
+                "5",
+                "50.00%",
+                "20"
+            ],
+            [
+                "49.01%",
+                "245.05%",
+                "5",
+                "50.00%",
+                "20"
+            ],
+            [
+                "54.08%",
+                "270.40%",
+                "5",
+                "50.00%",
+                "20"
+            ]
+        ],
+        "validSets": [
+            "SunSinkingEclipse"
+        ],
+        "monster": "Phantom: Dreamless",
+        "skillDesc": "Transform into Dreamless and perform 6 consecutive strikes. The first 5 strikes deal {0} Havoc DMG each, and the last strike deal {1} Havoc DMG.nThe DMG of this Echo Skill is increased by {3} during the first {2}s after Rover: Havoc casts Resonance Liberation: Deadening Abyss.nnCD: {4}s"
+    },
     "PhantomFeilianBeringal": {
         "cost": 4,
         "icon": "T_IconMonsterGoods160_1004_UI",
         "descParams": [
             [
-                "144.90%",
-                "177.10%",
-                "12.00%",
-                "12.00%",
-                "15",
-                "20"
+                "3",
+                "24.00%",
+                "8",
+                "0.00%"
             ],
             [
-                "166.64%",
-                "203.67%",
-                "12.00%",
-                "12.00%",
-                "15",
-                "20"
+                "3",
+                "27.60%",
+                "8",
+                "0.00%"
             ],
             [
-                "188.37%",
-                "230.23%",
-                "12.00%",
-                "12.00%",
-                "15",
-                "20"
+                "3",
+                "31.20%",
+                "8",
+                "0.00%"
             ],
             [
-                "210.11%",
-                "256.80%",
-                "12.00%",
-                "12.00%",
-                "15",
-                "20"
+                "3",
+                "34.80%",
+                "8",
+                "0.00%"
             ],
             [
-                "231.84%",
-                "283.36%",
-                "12.00%",
-                "12.00%",
-                "15",
-                "20"
+                "3",
+                "38.40%",
+                "8",
+                "0.00%"
             ]
         ],
         "validSets": [
             "SierraGale"
         ],
         "monster": "Phantom: Feilian Beringal",
-        "skillDesc": "Transform into Feilian Beringal to perform a powerful kick. If the kick lands on an enemy, immediately perform a follow-up strike. The kick deals {0} Aero DMG, and the follow-up strike deals {1} Aero DMG.rnrnAfter the follow-up strike hits, the current character's Aero DMG increases by {2}, and the Heavy Attack DMG increases by {3} for {4}srnrnCD: {5}s"
+        "skillDesc": "Summon a Dwarf Cassowary that tracks and attacks the enemy, dealing {1} Physical DMG {0} time(s).nnCooldown: {2}s"
     },
     "PhantomHoartoise": {
         "cost": 1,
         "icon": "T_IconMonsterGoods160_1005_UI",
         "descParams": [
             [
-                "8"
+                "3",
+                "24.00%",
+                "8",
+                "0.00%"
             ],
             [
-                "8"
+                "3",
+                "27.60%",
+                "8",
+                "0.00%"
             ],
             [
-                "8"
+                "3",
+                "31.20%",
+                "8",
+                "0.00%"
             ],
             [
-                "8"
+                "3",
+                "34.80%",
+                "8",
+                "0.00%"
             ],
             [
-                "8"
+                "3",
+                "38.40%",
+                "8",
+                "0.00%"
             ]
         ],
         "validSets": [
@@ -1706,43 +1782,48 @@ export default {
             "FreezingFrost"
         ],
         "monster": "Phantom: Hoartoise",
-        "skillDesc": "Transform into Hoartoise and slowly restore HP. Use the Echo skill again to exit the transformation state.nnCD: {0}s"
+        "skillDesc": "Summon a Dwarf Cassowary that tracks and attacks the enemy, dealing {1} Physical DMG {0} time(s).nnCooldown: {2}s"
     },
     "PhantomImpermanenceHeron": {
         "cost": 4,
         "icon": "T_IconMonsterGoods160_1006_UI",
         "descParams": [
             [
-                "194.10%",
-                "34.83%",
-                "20"
+                "3",
+                "24.00%",
+                "8",
+                "0.00%"
             ],
             [
-                "223.22%",
-                "40.05%",
-                "20"
+                "3",
+                "27.60%",
+                "8",
+                "0.00%"
             ],
             [
-                "252.33%",
-                "45.28%",
-                "20"
+                "3",
+                "31.20%",
+                "8",
+                "0.00%"
             ],
             [
-                "281.45%",
-                "50.50%",
-                "20"
+                "3",
+                "34.80%",
+                "8",
+                "0.00%"
             ],
             [
-                "310.56%",
-                "55.73%",
-                "20"
+                "3",
+                "38.40%",
+                "8",
+                "0.00%"
             ]
         ],
         "validSets": [
             "MoonlitClouds"
         ],
         "monster": "Phantom: Impermanence Heron",
-        "skillDesc": "Transform into Impermanence Heron to fly up and smack down, dealing {0} Havoc DMG.nnLong press to stay as Impermanence Heron and continuously spit flames, each attack dealing {1} Havoc DMG.nnOnce the initial attack lands on any enemy, the current character regains 10 Resonance Energy. If the current character uses their Outro Skill within the next 15s, the next character\u2019s damage dealt will be boosted by 12% for 15s.nnCD: {2}s"
+        "skillDesc": "Summon a Dwarf Cassowary that tracks and attacks the enemy, dealing {1} Physical DMG {0} time(s).nnCooldown: {2}s"
     },
     "PhantomLightcrusher": {
         "cost": 3,
@@ -1841,34 +1922,34 @@ export default {
         "icon": "T_IconMonsterGoods160_1002_UI",
         "descParams": [
             [
-                "5.18%",
-                "3.45%",
-                "2.87%",
-                "15"
+                "3",
+                "24.00%",
+                "8",
+                "0.00%"
             ],
             [
-                "5.96%",
-                "3.97%",
-                "3.30%",
-                "15"
+                "3",
+                "27.60%",
+                "8",
+                "0.00%"
             ],
             [
-                "6.73%",
-                "4.49%",
-                "3.73%",
-                "15"
+                "3",
+                "31.20%",
+                "8",
+                "0.00%"
             ],
             [
-                "7.51%",
-                "5.00%",
-                "4.16%",
-                "15"
+                "3",
+                "34.80%",
+                "8",
+                "0.00%"
             ],
             [
-                "8.29%",
-                "5.52%",
-                "4.59%",
-                "15"
+                "3",
+                "38.40%",
+                "8",
+                "0.00%"
             ]
         ],
         "validSets": [
@@ -1876,7 +1957,7 @@ export default {
             "CelestialLight"
         ],
         "monster": "Phantom: Rocksteady Guardian",
-        "skillDesc": "Transform into Rocksteady Guardian and enter a Parry State. Upon being attacked, deal Spectro DMG equal to {0} of the Resonator's Max HP, and perform a follow-up attack that deals Spectro DMG equal to {0} of the Resonator's Max HP.n nUse the Echo Skill again to exit the transformation.n nIf the attack received is a <color=Highlight>Special Skill<\/color> attack, interrupt the enemy's <color=Highlight>Special Skill<\/color>, gain a Shield equal to 30% Max HP, and perform a two-stage follow-up attack, each dealing Spectro DMG equal to {1} of the Resonator's Max HP. These follow-up attacks simultaneously launch three ground-breaking waves, each dealing Spectro DMG equal to {2} of the Resonator's Max HP.n nCD: {3}s"
+        "skillDesc": "Summon a Dwarf Cassowary that tracks and attacks the enemy, dealing {1} Physical DMG {0} time(s).nnCooldown: {2}s"
     },
     "PhantomThunderingMephis": {
         "cost": 4,
@@ -2345,39 +2426,34 @@ export default {
         "icon": "T_IconMonsterGoods160_091_UI",
         "descParams": [
             [
-                "42.80%",
-                "64.20%",
-                "5",
-                "5.00%",
-                "15"
+                "3",
+                "24.00%",
+                "8",
+                "0.00%"
             ],
             [
-                "49.22%",
-                "73.83%",
-                "5",
-                "5.00%",
-                "15"
+                "3",
+                "27.60%",
+                "8",
+                "0.00%"
             ],
             [
-                "55.64%",
-                "83.46%",
-                "5",
-                "5.00%",
-                "15"
+                "3",
+                "31.20%",
+                "8",
+                "0.00%"
             ],
             [
-                "62.06%",
-                "93.09%",
-                "5",
-                "5.00%",
-                "15"
+                "3",
+                "34.80%",
+                "8",
+                "0.00%"
             ],
             [
-                "68.48%",
-                "102.72%",
-                "5",
-                "5.00%",
-                "15"
+                "3",
+                "38.40%",
+                "8",
+                "0.00%"
             ]
         ],
         "validSets": [
@@ -2386,7 +2462,7 @@ export default {
             "SunSinkingEclipse"
         ],
         "monster": "Tick Tack",
-        "skillDesc": "Summon a Tick Tack that charges and bites the enemy. The charge from Tick Tack will deal {0} Havoc DMG to the enemy, and the bite will deal {1} Havoc DMG to the enemy. Reduces enemy Vibration Strength by up to {3} during {2}s.rnrnCD: {4}s"
+        "skillDesc": "Summon a Dwarf Cassowary that tracks and attacks the enemy, dealing {1} Physical DMG {0} time(s).nnCooldown: {2}s"
     },
     "TrafficIlluminator": {
         "cost": 1,
@@ -2528,34 +2604,34 @@ export default {
         "icon": "T_IconMonsterGoods160_081_UI",
         "descParams": [
             [
-                "32.10%",
-                "2",
-                "12.48%",
-                "15"
+                "3",
+                "24.00%",
+                "8",
+                "0.00%"
             ],
             [
-                "36.92%",
-                "2",
-                "14.35%",
-                "15"
+                "3",
+                "27.60%",
+                "8",
+                "0.00%"
             ],
             [
-                "41.73%",
-                "2",
-                "16.22%",
-                "15"
+                "3",
+                "31.20%",
+                "8",
+                "0.00%"
             ],
             [
-                "46.55%",
-                "2",
-                "18.10%",
-                "15"
+                "3",
+                "34.80%",
+                "8",
+                "0.00%"
             ],
             [
-                "51.36%",
-                "2",
-                "19.97%",
-                "15"
+                "3",
+                "38.40%",
+                "8",
+                "0.00%"
             ]
         ],
         "validSets": [
@@ -2564,7 +2640,7 @@ export default {
             "SierraGale"
         ],
         "monster": "Whiff Whaff",
-        "skillDesc": "Summon a Whiff Whaff that triggers an air explosion, dealing {0} Aero DMG and produce a Low-pressure Zone. The Low-pressure Zone continuously pulls enemies nearby towards the center for {1}s, dealing {2} Aero DMG up to 6 times.rnrnCD: {3}s"
+        "skillDesc": "Summon a Dwarf Cassowary that tracks and attacks the enemy, dealing {1} Physical DMG {0} time(s).nnCooldown: {2}s"
     },
     "YoungRoseshroom": {
         "cost": 1,

@@ -254,6 +254,21 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_3_UI.T_IconRoleHead256_3_UI",
         "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_jueyuan_UI.T_IconRole_Pile_jueyuan_UI"
     },
+    "XiangliYao": {
+        "id": 1305,
+        "rarity": 5,
+        "weapon": "Gauntlets",
+        "element": "Electro",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_25_UI.T_IconRoleHead256_25_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_xiangliyao_UI.T_IconRole_Pile_xiangliyao_UI",
+        "name": "Xiangli Yao",
+        "alias": "Error detected. If you have any questions, please contact Customer Service.",
+        "weeklyMat": "Unending Destruction",
+        "bossMat": "Hidden Thunder Tacet Core",
+        "floraMat": "Violet Coral",
+        "enemyMat": "Whisperin Core",
+        "forgeryMat": "Cadence"
+    },
     "Yangyang": {
         "id": 1402,
         "rarity": 4,
@@ -298,5 +313,20 @@ export default {
         "forgeryMat": "Cadence",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_15_UI.T_IconRoleHead256_15_UI",
         "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_yuanwu_UI.T_IconRole_Pile_yuanwu_UI"
+    },
+    "Zhezhi": {
+        "id": 1105,
+        "rarity": 5,
+        "weapon": "Rectifier",
+        "element": "Glacio",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_27_UI.T_IconRoleHead256_27_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_zhezhi_UI.T_IconRole_Pile_zhezhi_UI",
+        "name": "Zhezhi",
+        "alias": "Zhezhi",
+        "weeklyMat": "Monument Bell",
+        "bossMat": "Sound-Keeping Tacet Core",
+        "floraMat": "Lanternberry",
+        "enemyMat": "Howler Core",
+        "forgeryMat": "Helix"
     }
 };

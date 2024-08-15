@@ -7,6 +7,14 @@ export default {
         "name": "Shell Credit",
         "subtype": "Universal Currency"
     },
+    "PhantomDreamless": {
+        "subtypeHash": "ItemShowType_47_Name",
+        "rarity": 5,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMonsterHead\/T_IconMonsterHead_998_1_UI.T_IconMonsterHead_998_1_UI",
+        "name": "Phantom: Dreamless",
+        "type": "Development Materials"
+    },
     "PhantomImpermanenceHeron": {
         "subtypeHash": "ItemShowType_47_Name",
         "rarity": 5,
