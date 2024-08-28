@@ -174,6 +174,41 @@ export default {
       "2": "Ruined Hilt",
       "3": "Splintered Hilt",
       "4": "Still-Smoldering Hilt"
+    },
+    "Saurians": {
+      "source": "Natlan Saurians",
+      "release": "August 27, 2024",
+      "1": "Juvenile Fang",
+      "2": "Seasoned Fang",
+      "3": "Tyrant's Fang"
+    },
+    "Tribals": {
+      "source": "Sauroform Tribal Warriors",
+      "release": "August 27, 2024",
+      "1": "Sentry's Wooden Whistle",
+      "2": "Warrior's Metal Whistle",
+      "3": "Saurian-Crowned Warrior's Golden Whistle"
+    },
+    "Wayob": {
+      "source": "Wayob Manifestations",
+      "release": "August 27, 2024",
+      "2": "Shard of a Shattered Will",
+      "3": "Locus of a Clear Will",
+      "4": "Sigil of a Striding Will"
+    },
+    "Avatars": {
+      "source": "Avatars of Lava",
+      "release": "August 27, 2024",
+      "2": "Ignited Stone",
+      "3": "Ignited Seed of Life",
+      "4": "Ignited Seeing Eye"
+    },
+    "Automaton": {
+      "source": "Secret Source Automaton: Hunter-Seeker",
+      "release": "August 27, 2024",
+      "2": "Axis of the Secret Source",
+      "3": "Sheath of the Secret Source",
+      "4": "Heart of the Secret Source"
     }
   },
   
@@ -385,6 +420,14 @@ export default {
     "Legatus": {
       "name": "Legatus Golem",
       "4": "Fragment of a Golden Melody"
+    },
+    "Pyro Dino": {
+      "name": "Goldflame Qucusaur Tyrant",
+      "4": "Mark of the Binding Blessing"
+    },
+    "Dendro Dino": {
+      "name": "Gluttonous Yumkasaur Mountain King",
+      "4": "Overripe Flamegranate"
     }
   },
   
@@ -471,6 +514,18 @@ export default {
     },
     "Order": {
       "source": "Pale Forgotten Glory",
+      "days": ["Wednesday","Saturday","Sunday"]
+    },
+    "Contention": {
+      "source": "Natlan",
+      "days": ["Monday","Thursday","Sunday"]
+    },
+    "Kindling": {
+      "source": "Natlan",
+      "days": ["Tuesday","Friday","Sunday"]
+    },
+    "Conflict": {
+      "source": "Natlan",
       "days": ["Wednesday","Saturday","Sunday"]
     }
   },
@@ -594,6 +649,30 @@ export default {
       "4": "Silver Goblet of the Pristine Sea",
       "5": "Golden Goblet of the Pristine Sea",
       "source": "Echoes of the Deep Tide",
+      "days": ["Wednesday","Saturday","Sunday"]
+    },
+    "Blade": {
+      "2": "Blazing Sacrificial Heart's Terror",
+      "3": "Blazing Sacrificial Heart's Hesitance",
+      "4": "Blazing Sacrificial Heart's Resolve",
+      "5": "Blazing Sacrificial Heart's Splendor",
+      "source": "Natlan",
+      "days": ["Monday","Thursday","Sunday"]
+    },
+    "Sacred": {
+      "2": "Delirious Decadence of the Sacred Lord",
+      "3": "Delirious Desolation of the Sacred Lord",
+      "4": "Delirious Demeanor of the Sacred Lord",
+      "5": "Delirious Divinity of the Sacred Lord",
+      "source": "Natlan",
+      "days": ["Tuesday","Friday","Sunday"]
+    },
+    "Mirror": {
+      "2": "Night-Wind's Mystic Consideration",
+      "3": "Night-Wind's Mystic Premonition",
+      "4": "Night-Wind's Mystic Augury",
+      "5": "Night-Wind's Mystic Revelation",
+      "source": "Natlan",
       "days": ["Wednesday","Saturday","Sunday"]
     }
   }

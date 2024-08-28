@@ -278,6 +278,70 @@ export default {
         "stat": "GreenAtk",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21010015_UI.T_IconWeapon21010015_UI"
     },
+    "RimeDrapedSprouts": {
+        "id": 21050026,
+        "name": "Rime-Draped Sprouts",
+        "rarity": 5,
+        "type": "Rectifier",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050026_UI.T_IconWeapon21050026_UI",
+        "baseATK": 40,
+        "stat": "CritDamage",
+        "baseStat": 1600,
+        "rankData": [
+            [
+                "12%",
+                "15%",
+                "18%",
+                "21%",
+                "24%"
+            ],
+            [
+                "12%",
+                "15%",
+                "18%",
+                "21%",
+                "24%"
+            ],
+            [
+                "3",
+                "3",
+                "3",
+                "3",
+                "3"
+            ],
+            [
+                "6",
+                "6",
+                "6",
+                "6",
+                "6"
+            ],
+            [
+                "3",
+                "3",
+                "3",
+                "3",
+                "3"
+            ],
+            [
+                "52%",
+                "65%",
+                "78%",
+                "91%",
+                "104%"
+            ],
+            [
+                "27",
+                "27",
+                "27",
+                "27",
+                "27"
+            ]
+        ],
+        "passive": "Increase ATK by {0}. While the wielder is on the field, using Resonance Skill grants {1} Basic Attack DMG Bonus, stacking up to {2} times for {3}s. At {4} stacks or above, casting Outro Skill consumes all stacks of this effect and grants the wielder {5} Basic Attack DMG Bonus for {6}s, effective when the wielder is off the field.",
+        "enemyMat": "Ring",
+        "forgeryMat": "Helix"
+    },
     "StaticMist": {
         "name": "Static Mist",
         "type": "Pistols",
@@ -413,6 +477,56 @@ export default {
         "forgeryMat": "Waveworn Residue",
         "stat": "CritDamage",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21010016_UI.T_IconWeapon21010016_UI"
+    },
+    "VeritysHandle": {
+        "id": 21040016,
+        "name": "Verity's Handle",
+        "rarity": 5,
+        "type": "Gauntlets",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21040016_UI.T_IconWeapon21040016_UI",
+        "baseATK": 47,
+        "stat": "Crit",
+        "baseStat": 540,
+        "rankData": [
+            [
+                "12%",
+                "15%",
+                "18%",
+                "21%",
+                "24%"
+            ],
+            [
+                "48%",
+                "60%",
+                "72%",
+                "84%",
+                "96%"
+            ],
+            [
+                "8",
+                "8",
+                "8",
+                "8",
+                "8"
+            ],
+            [
+                "5",
+                "5",
+                "5",
+                "5",
+                "5"
+            ],
+            [
+                "3",
+                "3",
+                "3",
+                "3",
+                "3"
+            ]
+        ],
+        "passive": "Gain {0} Attribute DMG Bonus. When using Resonance Liberation, the wielder gains {1} Resonance Liberation DMG Bonus for {2}s. This effect can be extended by {3} seconds each time Resonance Skills are cast, up to {4} times.",
+        "enemyMat": "Howler Core",
+        "forgeryMat": "Cadence"
     },
     "AmityAccord": {
         "name": "Amity Accord",
@@ -1166,6 +1280,11 @@ export default {
         "stat": "GreenAtk",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21030064_UI.T_IconWeapon21030064_UI"
     },
+    "ScaleSlasher": {
+        "renamed": "Overture",
+        "name": "Overture",
+        "rarity": 4
+    },
     "Overture": {
         "id": 21020024,
         "rarity": 4,
@@ -1322,9 +1441,6 @@ export default {
         "forgeryMat": "Helix",
         "stat": "EnergyEfficiency",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050034_UI.T_IconWeapon21050034_UI"
-    },
-    "ScaleSlasher": {
-        "renamed": "Overture"
     },
     "Stonard": {
         "name": "Stonard",
@@ -2383,119 +2499,5 @@ export default {
         "forgeryMat": "Metallic Drip",
         "stat": "GreenAtk",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21020011_UI.T_IconWeapon21020011_UI"
-    },
-    "RimeDrapedSprouts": {
-        "id": 21050026,
-        "name": "Rime-Draped Sprouts",
-        "rarity": 5,
-        "type": "Rectifier",
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050026_UI.T_IconWeapon21050026_UI",
-        "baseATK": 40,
-        "stat": "CritDamage",
-        "baseStat": 1600,
-        "rankData": [
-            [
-                "12%",
-                "15%",
-                "18%",
-                "21%",
-                "24%"
-            ],
-            [
-                "12%",
-                "15%",
-                "18%",
-                "21%",
-                "24%"
-            ],
-            [
-                "3",
-                "3",
-                "3",
-                "3",
-                "3"
-            ],
-            [
-                "6",
-                "6",
-                "6",
-                "6",
-                "6"
-            ],
-            [
-                "3",
-                "3",
-                "3",
-                "3",
-                "3"
-            ],
-            [
-                "52%",
-                "65%",
-                "78%",
-                "91%",
-                "104%"
-            ],
-            [
-                "27",
-                "27",
-                "27",
-                "27",
-                "27"
-            ]
-        ],
-        "passive": "Increase ATK by {0}. While the wielder is on the field, using Resonance Skill grants {1} Basic Attack DMG Bonus, stacking up to {2} times for {3}s. At {4} stacks or above, casting Outro Skill consumes all stacks of this effect and grants the wielder {5} Basic Attack DMG Bonus for {6}s, effective when the wielder is off the field.",
-        "enemyMat": "Ring",
-        "forgeryMat": "Helix"
-    },
-    "VeritysHandle": {
-        "id": 21040016,
-        "name": "Verity's Handle",
-        "rarity": 5,
-        "type": "Gauntlets",
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21040016_UI.T_IconWeapon21040016_UI",
-        "baseATK": 47,
-        "stat": "Crit",
-        "baseStat": 540,
-        "rankData": [
-            [
-                "12%",
-                "15%",
-                "18%",
-                "21%",
-                "24%"
-            ],
-            [
-                "48%",
-                "60%",
-                "72%",
-                "84%",
-                "96%"
-            ],
-            [
-                "8",
-                "8",
-                "8",
-                "8",
-                "8"
-            ],
-            [
-                "5",
-                "5",
-                "5",
-                "5",
-                "5"
-            ],
-            [
-                "3",
-                "3",
-                "3",
-                "3",
-                "3"
-            ]
-        ],
-        "passive": "Gain {0} Attribute DMG Bonus. When using Resonance Liberation, the wielder gains {1} Resonance Liberation DMG Bonus for {2}s. This effect can be extended by {3} seconds each time Resonance Skills are cast, up to {4} times.",
-        "enemyMat": "Howler Core",
-        "forgeryMat": "Cadence"
     }
 };

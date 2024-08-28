@@ -194,6 +194,21 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fd\/Item_Artificed_Dynamic_Gear.png",
         "rarity": 3
     },
+    "JuvenileFang": {
+        "name": "Juvenile Fang",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f4\/Item_Juvenile_Fang.png",
+        "rarity": 1
+    },
+    "SentrysWoodenWhistle": {
+        "name": "Sentry's Wooden Whistle",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ee\/Item_Sentry%27s_Wooden_Whistle.png",
+        "rarity": 1
+    },
+    "WarriorsMetalWhistle": {
+        "name": "Warrior's Metal Whistle",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b6\/Item_Warrior%27s_Metal_Whistle.png",
+        "rarity": 2
+    },
     "HeavyHorn": {
         "name": "Heavy Horn",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c0\/Item_Heavy_Horn.png",
@@ -494,6 +509,21 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/57\/Item_Still-Smoldering_Hilt.png",
         "rarity": 4
     },
+    "AxisOfTheSecretSource": {
+        "name": "Axis of the Secret Source",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/93\/Item_Axis_of_the_Secret_Source.png",
+        "rarity": 2
+    },
+    "IgnitedStone": {
+        "name": "Ignited Stone",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/71\/Item_Ignited_Stone.png",
+        "rarity": 2
+    },
+    "ShardOfAShatteredWill": {
+        "name": "Shard of a Shattered Will",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3a\/Item_Shard_of_a_Shattered_Will.png",
+        "rarity": 2
+    },
     "MaintenanceMekSalvagedParts": {
         "name": "\"Maintenance Mek\" Salvaged Parts",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/43\/Item_Maintenance_Mek_Salvaged_Parts.png",
@@ -652,6 +682,16 @@ export default {
     "FragmentOfAGoldenMelody": {
         "name": "Fragment of a Golden Melody",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e3\/Item_Fragment_of_a_Golden_Melody.png",
+        "rarity": 4
+    },
+    "MarkOfTheBindingBlessing": {
+        "name": "Mark of the Binding Blessing",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/65\/Item_Mark_of_the_Binding_Blessing.png",
+        "rarity": 4
+    },
+    "OverripeFlamegranate": {
+        "name": "Overripe Flamegranate",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b1\/Item_Overripe_Flamegranate.png",
         "rarity": 4
     },
     "DvalinsPlume": {
@@ -1189,6 +1229,21 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/32\/Item_Philosophies_of_Order.png",
         "rarity": 4
     },
+    "GuideToConflict": {
+        "name": "Guide to Conflict",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f7\/Item_Guide_to_Conflict.png",
+        "rarity": 3
+    },
+    "GuideToContention": {
+        "name": "Guide to Contention",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a9\/Item_Guide_to_Contention.png",
+        "rarity": 3
+    },
+    "GuideToKindling": {
+        "name": "Guide to Kindling",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/22\/Item_Guide_to_Kindling.png",
+        "rarity": 3
+    },
     "CrownOfInsight": {
         "name": "Crown of Insight",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/04\/Item_Crown_of_Insight.png",
@@ -1494,6 +1549,21 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/84\/Item_Golden_Goblet_of_the_Pristine_Sea.png",
         "rarity": 5
     },
+    "BlazingSacrificialHeartsTerror": {
+        "name": "Blazing Sacrificial Heart's Terror",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b9\/Item_Blazing_Sacrificial_Heart%27s_Terror.png",
+        "rarity": 2
+    },
+    "DeliriousDecadenceOfTheSacredLord": {
+        "name": "Delirious Decadence of the Sacred Lord",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9c\/Item_Delirious_Decadence_of_the_Sacred_Lord.png",
+        "rarity": 2
+    },
+    "NightWindsMysticConsideration": {
+        "name": "Night-Wind's Mystic Consideration",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/78\/Item_Night-Wind%27s_Mystic_Consideration.png",
+        "rarity": 2
+    },
     "FesteringDragonMarrow": {
         "name": "Festering Dragon Marrow",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/41\/Item_Festering_Dragon_Marrow.png",
@@ -1582,6 +1652,11 @@ export default {
     "ExaltedEarth": {
         "name": "\"Exalted Earth\"",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/02\/Item_Exalted_Earth.png",
+        "rarity": 4
+    },
+    "CamAndCablesOfLaw": {
+        "name": "Cam and Cables of Law",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/45\/Item_Cam_and_Cables_of_Law.png",
         "rarity": 4
     },
     "Wolfhook": {
@@ -1797,6 +1872,26 @@ export default {
     "SpringOfTheFirstDewdrop": {
         "name": "Spring of the First Dewdrop",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/08\/Item_Spring_of_the_First_Dewdrop.png",
+        "rarity": 1
+    },
+    "BrilliantChrysanthemum": {
+        "name": "Brilliant Chrysanthemum",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/14\/Item_Brilliant_Chrysanthemum.png",
+        "rarity": 1
+    },
+    "QuenepaBerry": {
+        "name": "Quenepa Berry",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/06\/Item_Quenepa_Berry.png",
+        "rarity": 1
+    },
+    "SaurianClawSucculent": {
+        "name": "Saurian Claw Succulent",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bf\/Item_Saurian_Claw_Succulent.png",
+        "rarity": 1
+    },
+    "SprayfeatherGill": {
+        "name": "Sprayfeather Gill",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e8\/Item_Sprayfeather_Gill.png",
         "rarity": 1
     },
     "SweetFlowerSeed": {
@@ -2754,6 +2849,16 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/78\/Item_Plaustrite_Shard.png",
         "rarity": 3
     },
+    "CandlecapMushroom": {
+        "name": "Candlecap Mushroom",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7e\/Item_Candlecap_Mushroom.png",
+        "rarity": 1
+    },
+    "Grainfruit": {
+        "name": "Grainfruit",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d6\/Item_Grainfruit.png",
+        "rarity": 1
+    },
     "WanderersAdvice": {
         "name": "Wanderer's Advice",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/60\/Item_Wanderer%27s_Advice.png",
@@ -2819,6 +2924,11 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9e\/Item_Hydroculus.png",
         "rarity": 1
     },
+    "Pyroculus": {
+        "name": "Pyroculus",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/99\/Item_Pyroculus.png",
+        "rarity": 1
+    },
     "MondstadtShrineOfDepthsKey": {
         "name": "Mondstadt Shrine of Depths Key",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2b\/Item_Mondstadt_Shrine_of_Depths_Key.png",
@@ -2842,6 +2952,11 @@ export default {
     "FontaineShrineOfDepthsKey": {
         "name": "Fontaine Shrine of Depths Key",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/86\/Item_Fontaine_Shrine_of_Depths_Key.png",
+        "rarity": 1
+    },
+    "NatlanShrineOfDepthsKey": {
+        "name": "Natlan Shrine of Depths Key",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/41\/Item_Natlan_Shrine_of_Depths_Key.png",
         "rarity": 1
     },
     "LumenstoneOre": {
@@ -2909,6 +3024,11 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/60\/Item_Dust_of_Azoth.png",
         "rarity": 2
     },
+    "SanctifyingElixir": {
+        "name": "Sanctifying Elixir",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/82\/Item_Sanctifying_Elixir.png",
+        "rarity": 5
+    },
     "FragileResin": {
         "name": "Fragile Resin",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/35\/Item_Fragile_Resin.png",
@@ -2968,6 +3088,11 @@ export default {
         "name": "\"Swirling Scene in a Bottle\"",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8c\/Item_Swirling_Scene_in_a_Bottle.png",
         "rarity": 4
+    },
+    "ReaffirmedAccordOfAppellation": {
+        "name": "Reaffirmed Accord of Appellation",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6b\/Item_Reaffirmed_Accord_of_Appellation.png",
+        "rarity": 1
     },
     "CakeForTraveler20202021": {
         "name": "Cake for Traveler (2020 - 2021)",
@@ -3244,6 +3369,11 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/ba\/Item_Realm_Currency.png",
         "rarity": 3
     },
+    "ToyMedal": {
+        "name": "Toy Medal",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/47\/Item_Toy_Medal.png",
+        "rarity": 4
+    },
     "GenesisCrystal": {
         "name": "Genesis Crystal",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/44\/Item_Genesis_Crystal.png",
@@ -3253,6 +3383,11 @@ export default {
         "name": "Primogem",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d4\/Item_Primogem.png",
         "rarity": 5
+    },
+    "PyroSigil": {
+        "name": "Pyro Sigil",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e9\/Item_Pyro_Sigil.png",
+        "rarity": 3
     },
     "HydroSigil": {
         "name": "Hydro Sigil",
@@ -3529,6 +3664,11 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/27\/Item_Enigmatic_Copper_Mainspring.png",
         "rarity": 3
     },
+    "ThelxiesBadge": {
+        "name": "Thelxie's Badge",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/98\/Item_Thelxie%27s_Badge.png",
+        "rarity": 3
+    },
     "FilmForFun": {
         "name": "Film for Fun",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6b\/Item_Film_for_Fun.png",
@@ -3537,6 +3677,16 @@ export default {
     "Funds": {
         "name": "Funds",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/35\/Item_Funds.png",
+        "rarity": 3
+    },
+    "ExcerptsOfBliss": {
+        "name": "Excerpts of Bliss",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cf\/Item_Excerpts_of_Bliss.png",
+        "rarity": 3
+    },
+    "StarsailCoin": {
+        "name": "Starsail Coin",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b1\/Item_Starsail_Coin.png",
         "rarity": 3
     },
     "LightRealmSigil": {

@@ -544,6 +544,33 @@ export default {
         "hakushinID": 14506,
         "id": 14506
     },
+    "FangOfTheMountainKing": {
+        "name": "Fang of the Mountain King",
+        "rarity": 5,
+        "type": "Claymore",
+        "hakushinID": 12513,
+        "id": 12513,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_EmeraldSword.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_EmeraldSword.webp"
+        ],
+        "baseATK": 49,
+        "stat": "critRate_",
+        "matForgery": "Sacred",
+        "matWeakEnemy": "Tribals",
+        "matStrongEnemy": "Avatars",
+        "passive": "Gain 1 stack of Canopy's Favor after hitting an opponent with an Elemental Skill. This can be triggered once every 0.5s. After a nearby party member triggers a Burning or Burgeon reaction, the equipping character will gain 3 stacks. This effect can be triggered once every 2s and can be triggered even when the triggering party member is off-field. Canopy's Favor: Elemental Skill and Burst DMG is increased by @0% for 6s. Max 6 stacks. Each stack is counted independently.",
+        "refinementData": [
+            {
+                "1": 50,
+                "2": 50,
+                "3": 50,
+                "4": 50,
+                "5": 50
+            }
+        ],
+        "version": "5.0"
+    },
     "FreedomSworn": {
         "name": "Freedom-Sworn",
         "rarity": 5,
@@ -817,7 +844,18 @@ export default {
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/02\/Weapon_Lost_Prayer_to_the_Sacred_Winds_2nd.png"
         ],
         "passive": "Increases Movement SPD by 10%. When in battle, gain an @0% Elemental DMG Bonus every 4s. Max 4 stacks. Lasts until the character falls or leaves combat.",
-        "code": ["proc", ["stat", ["elemental_dmg_", 8]], 4, "Every 4 seconds on field"],
+        "code": [
+            "proc",
+            [
+                "stat",
+                [
+                    "elemental_dmg_",
+                    8
+                ]
+            ],
+            4,
+            "Every 4 seconds on field"
+        ],
         "refinementData": [
             {
                 "1": 8,
@@ -1551,6 +1589,40 @@ export default {
         "hakushinID": 11504,
         "id": 11504
     },
+    "SurfsUp": {
+        "name": "Surf's Up",
+        "rarity": 5,
+        "type": "Catalyst",
+        "hakushinID": 14516,
+        "id": 14516,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_MechaPufferfish.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_MechaPufferfish.webp"
+        ],
+        "baseATK": 44,
+        "stat": "critDMG_",
+        "matForgery": "Blade",
+        "matWeakEnemy": "Saurians",
+        "matStrongEnemy": "Wayob",
+        "passive": "Max HP increased by @0%. Once every 15s, for the 14s after using an Elemental Skill: Gain 4 Scorching Summer stacks. Each stack increases Normal Attack DMG by @1%. For the duration of the effect, once every 1.5s, lose 1 stack after a Normal Attack hits an opponent; once every 1.5s, gain 1 stack after triggering a Vaporize reaction on an opponent. Max 4 Scorching Summer stacks.",
+        "refinementData": [
+            {
+                "1": 20.000000298019998,
+                "2": 25,
+                "3": 30.000001192089996,
+                "4": 34.99999940395,
+                "5": 40.00000059605
+            },
+            {
+                "1": 1500,
+                "2": 1500,
+                "3": 1500,
+                "4": 1500,
+                "5": 1500
+            }
+        ],
+        "version": "5.0"
+    },
     "TheFirstGreatMagic": {
         "name": "The First Great Magic",
         "imgs": [
@@ -2137,6 +2209,33 @@ export default {
         "hakushinID": 11414,
         "id": 11414
     },
+    "AshGravenDrinkingHorn": {
+        "name": "Ash-Graven Drinking Horn",
+        "rarity": 4,
+        "type": "Catalyst",
+        "hakushinID": 14427,
+        "id": 14427,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_ConchSprayer.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_ConchSprayer.webp"
+        ],
+        "baseATK": 42,
+        "stat": "hp_",
+        "matForgery": "Mirror",
+        "matWeakEnemy": "Saurians",
+        "matStrongEnemy": "Automaton",
+        "passive": "When an attack hits an opponent, deal AoE DMG equal to @0% of Max HP at the target location. This effect can be triggered once every 15s.",
+        "refinementData": [
+            {
+                "1": 40.00000059605,
+                "2": 50,
+                "3": 60.00000238419,
+                "4": 69.99999880791,
+                "5": 80.00000119209
+            }
+        ],
+        "version": "5.0"
+    },
     "BalladOfTheBoundlessBlue": {
         "name": "Ballad of the Boundless Blue",
         "type": "Catalyst",
@@ -2342,6 +2441,40 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Blackcliff_Warbow",
         "hakushinID": 15408,
         "id": 15408
+    },
+    "ChainBreaker": {
+        "name": "Chain Breaker",
+        "rarity": 4,
+        "type": "Bow",
+        "hakushinID": 15431,
+        "id": 15431,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_Isikhulu.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_Isikhulu.webp"
+        ],
+        "baseATK": 44,
+        "stat": "atk_",
+        "matForgery": "Mirror",
+        "matStrongEnemy": "Xuanwen Beasts",
+        "matWeakEnemy": "Saurians",
+        "passive": "For every party member from Natlan or who has a different Elemental Type from the equipping character, the equipping character gains @0% increased ATK. When there are no less than 3 of the aforementioned characters, the equipping character gains @1 Elemental Mastery.",
+        "refinementData": [
+            {
+                "1": 4.80000004172,
+                "2": 5.9999998658900005,
+                "3": 7.199999690059999,
+                "4": 8.399999886749999,
+                "5": 9.60000008345
+            },
+            {
+                "1": 24,
+                "2": 30,
+                "3": 36,
+                "4": 42,
+                "5": 48
+            }
+        ],
+        "version": "5.0"
     },
     "CinnabarSpindle": {
         "name": "Cinnabar Spindle",
@@ -2658,6 +2791,33 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Dragonspine_Spear",
         "hakushinID": 13409,
         "id": 13409
+    },
+    "EarthShaker": {
+        "name": "Earth Shaker",
+        "rarity": 4,
+        "type": "Claymore",
+        "hakushinID": 12431,
+        "id": 12431,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_Isikhulu.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_Isikhulu.webp"
+        ],
+        "baseATK": 44,
+        "stat": "atk_",
+        "matForgery": "Blade",
+        "matWeakEnemy": "Tribals",
+        "matStrongEnemy": "Avatars",
+        "passive": "After a party member triggers a Pyro-related reaction, the equipping character's Elemental Skill DMG is increased by @0% for 8s. This effect can be triggered even when the triggering party member is not on the field.",
+        "refinementData": [
+            {
+                "1": 15.99999964237,
+                "2": 20.000000298019998,
+                "3": 23.999999463560002,
+                "4": 28.00000011921,
+                "5": 31.99999928474
+            }
+        ],
+        "version": "5.0"
     },
     "EndOfTheLine": {
         "name": "End of the Line",
@@ -3080,6 +3240,60 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Flowing_Purity",
         "hakushinID": 14425,
         "id": 14425
+    },
+    "FluteOfEzpitzal": {
+        "name": "Flute of Ezpitzal",
+        "rarity": 4,
+        "type": "Sword",
+        "hakushinID": 11431,
+        "id": 11431,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_Isikhulu.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_Isikhulu.webp"
+        ],
+        "baseATK": 41,
+        "stat": "def_",
+        "matForgery": "Blade",
+        "matStrongEnemy": "Praetorians",
+        "matWeakEnemy": "Saurians",
+        "passive": "Using an Elemental Skill increases DEF by @0% for 15s.",
+        "refinementData": [
+            {
+                "1": 15.99999964237,
+                "2": 20.000000298019998,
+                "3": 23.999999463560002,
+                "4": 28.00000011921,
+                "5": 31.99999928474
+            }
+        ],
+        "version": "5.0"
+    },
+    "FootprintOfTheRainbow": {
+        "name": "Footprint of the Rainbow",
+        "rarity": 4,
+        "type": "Polearm",
+        "hakushinID": 13431,
+        "id": 13431,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_Isikhulu.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_Isikhulu.webp"
+        ],
+        "baseATK": 42,
+        "stat": "def_",
+        "matForgery": "Sacred",
+        "matWeakEnemy": "Tribals",
+        "matStrongEnemy": "Automaton",
+        "passive": "Using an Elemental Skill increases DEF by @0% for 15s.",
+        "refinementData": [
+            {
+                "1": 15.99999964237,
+                "2": 20.000000298019998,
+                "3": 23.999999463560002,
+                "4": 28.00000011921,
+                "5": 31.99999928474
+            }
+        ],
+        "version": "5.0"
     },
     "ForestRegalia": {
         "name": "Forest Regalia",
@@ -4193,6 +4407,40 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Rightful_Reward",
         "hakushinID": 13425,
         "id": 13425
+    },
+    "RingOfYaxche": {
+        "name": "Ring of Yaxche",
+        "rarity": 4,
+        "type": "Catalyst",
+        "hakushinID": 14431,
+        "id": 14431,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_Isikhulu.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_Isikhulu.webp"
+        ],
+        "baseATK": 42,
+        "stat": "hp_",
+        "matForgery": "Sacred",
+        "matWeakEnemy": "Hilichurls",
+        "matStrongEnemy": "Wayob",
+        "passive": "Using an Elemental Skill grants the Jade-Forged Crown effect: Every 1,000 Max HP will increase the Normal Attack DMG dealt by the equipping character by @0% for 10s. Normal Attack DMG can be increased this way by a maximum of @1%.",
+        "refinementData": [
+            {
+                "1": 0.60000000522,
+                "2": 0.70000002161,
+                "3": 0.8000000380000001,
+                "4": 0.89999996126,
+                "5": 0.99999997765
+            },
+            {
+                "1": 15.99999964237,
+                "2": 20.000000298019998,
+                "3": 23.999999463560002,
+                "4": 28.00000011921,
+                "5": 31.99999928474
+            }
+        ],
+        "version": "5.0"
     },
     "RoyalBow": {
         "name": "Royal Bow",

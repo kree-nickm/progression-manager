@@ -1906,5 +1906,23 @@ export default {
         "circletImg": "https:\/\/api.hakush.in\/gi\/UI\/UI_RelicIcon_15036_3.webp",
         "hakushinID": 15036,
         "id": 15036
+    },
+    "ScrollOfTheHeroOfCinderCity": {
+        "name": "Scroll of the Hero of Cinder City",
+        "maxRarity": 5,
+        "bonus2": "When a nearby party member triggers a Nightsoul Burst, the equipping character regenerates 6 Elemental Energy.",
+        "bonus4": "After the equipping character triggers a reaction related to their Elemental Type, all nearby party members gain a 12% Elemental DMG Bonus for the Elemental Types involved in the elemental reaction for 15s. If the equipping character is in the Nightsoul's Blessing state when triggering this effect, all nearby party members gain an additional 28% Elemental DMG Bonus for the Elemental Types involved in the elemental reaction for 20s. The equipping character can trigger this effect while off-field, and the DMG bonus from Artifact Sets with the same name do not stack.",
+        "hakushinID": 15037,
+        "id": 15037,
+        "version": "5.0"
+    },
+    "ObsidianCodex": {
+        "name": "Obsidian Codex",
+        "maxRarity": 5,
+        "bonus2": "While the equipping character is in Nightsoul's Blessing and is on the field, their DMG dealt is increased by 15%.",
+        "bonus4": "After the equipping character consumes 1 Nightsoul point while on the field, CRIT Rate increases by 40% for 6s. This effect can trigger once every second.",
+        "hakushinID": 15038,
+        "id": 15038,
+        "version": "5.0"
     }
 };

@@ -568,7 +568,7 @@ export default class Character extends Ascendable(GenshinItem)
   getPlanMaterials(result={})
   {
     // EXP
-    let exp = (GenshinCharacterStats.totalExpCost[this.wishlist.level] ?? 0) - GenshinCharacterStats.totalExpCost[this.level];
+    let exp = (GenshinCharacterStats.totalExpCost[this.wishlist?.level] ?? 0) - GenshinCharacterStats.totalExpCost[this.level];
     if(exp > 0)
     {
       result["Mora"] = Math.ceil(exp/5);

@@ -679,7 +679,12 @@ export default {
         "hpMaxAsc": 4337.65087890625,
         "atkMaxAsc": 107.0414810180664,
         "defMaxAsc": 233.4149932861328,
-        "version": "4.8"
+        "version": "4.8",
+        "skillIds": [
+            10991,
+            10992,
+            10995
+        ]
     },
     "Eula": {
         "name": "Eula",
@@ -981,6 +986,35 @@ export default {
             10034
         ]
     },
+    "Kachina": {
+        "name": "Kachina",
+        "release": "August 73, 2024",
+        "rarity": 4,
+        "weapon": "Polearm",
+        "element": "Geo",
+        "hakushinID": 10000100,
+        "id": 10000100,
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Kachina.webp",
+        "skillIds": [
+            11001,
+            11002,
+            11005
+        ],
+        "region": "Natlan",
+        "matEnemy": "Tribals",
+        "matBoss": "Dendro Dino",
+        "matFlower": "Quenepa Berry",
+        "matMastery": "Conflict",
+        "matTrounce": "Fading Candle",
+        "ascendStat": "geo_dmg_",
+        "hpBase": 989.293212890625,
+        "atkBase": 18.1641597747803,
+        "defBase": 66.4382247924805,
+        "hpMaxAsc": 3539.67333984375,
+        "atkMaxAsc": 64.992561340332,
+        "defMaxAsc": 237.7147521972656,
+        "version": "5.0"
+    },
     "KaedeharaKazuha": {
         "name": "Kaedehara Kazuha",
         "weapon": "Sword",
@@ -1160,6 +1194,35 @@ export default {
             10422,
             10425
         ]
+    },
+    "Kinich": {
+        "name": "Kinich",
+        "release": "August 73, 2024",
+        "rarity": 5,
+        "weapon": "Claymore",
+        "element": "Dendro",
+        "hakushinID": 10000101,
+        "id": 10000101,
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Kinich.webp",
+        "skillIds": [
+            11011,
+            11012,
+            11015
+        ],
+        "region": "Natlan",
+        "matEnemy": "Saurians",
+        "matBoss": "Dendro Dino",
+        "matFlower": "Saurian Claw Succulent",
+        "matMastery": "Kindling",
+        "matTrounce": "Denial and Judgment",
+        "ascendStat": "critDMG_",
+        "hpBase": 1000.9860229492188,
+        "atkBase": 25.881799697876,
+        "defBase": 62.4026908874512,
+        "hpMaxAsc": 4110.58984375,
+        "atkMaxAsc": 106.2769012451172,
+        "defMaxAsc": 256.2651062011719,
+        "version": "5.0"
     },
     "Kirara": {
         "name": "Kirara",
@@ -1460,6 +1523,35 @@ export default {
             10412,
             10415
         ]
+    },
+    "Mualani": {
+        "name": "Mualani",
+        "release": "August 73, 2024",
+        "rarity": 5,
+        "weapon": "Catalyst",
+        "element": "Hydro",
+        "hakushinID": 10000102,
+        "id": 10000102,
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Mualani.webp",
+        "skillIds": [
+            30000,
+            30002,
+            30007
+        ],
+        "region": "Natlan",
+        "matEnemy": "Tribals",
+        "matBoss": "Pyro Dino",
+        "matFlower": "Sprayfeather Gill",
+        "matMastery": "Contention",
+        "matTrounce": "Lightless Mass",
+        "ascendStat": "critRate_",
+        "hpBase": 1182.1168212890625,
+        "atkBase": 14.1512002944946,
+        "defBase": 44.3938598632813,
+        "hpMaxAsc": 4854.41064453125,
+        "atkMaxAsc": 58.1082305908203,
+        "defMaxAsc": 182.3094024658203,
+        "version": "5.0"
     },
     "Nahida": {
         "name": "Nahida",
