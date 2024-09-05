@@ -581,6 +581,12 @@ class Renderer
         let controller;
         if(controller = Renderer.controllers.get(p))
           params.push(controller);
+        else if(p === "true")
+          params.push(true);
+        else if(p === "false")
+          params.push(false);
+        else if(!isNaN(p))
+          params.push(parseFloat(p));
         else
           params.push(p);
       }

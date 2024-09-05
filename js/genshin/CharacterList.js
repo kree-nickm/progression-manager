@@ -41,6 +41,17 @@ export default class CharacterList extends GenshinList
   
   targetEnemyData = {};
   
+  initialize()
+  {
+    super.initialize();
+    if(!this.importing)
+    {
+      // TODO: When and how these get called is kind of a mess. Might need to add a "post-load" method. Importing from JSON calls them (static fromJSON above). Importing from GOOD calls them (fromGOOD below). Creating a new account does not, which is why this is here.
+      this.addTraveler();
+      this.addRemaining();
+    }
+  }
+  
   setupDisplay()
   {
     let name = this.display.addField("name", {
@@ -769,6 +780,9 @@ export default class CharacterList extends GenshinList
       this.update("list", cryo, "push");
     }*/
     
+    base.update("owned", true);
+    anemo.update("owned", true);
+    
     anemo.base = base;
     geo.base = base;
     electro.base = base;
@@ -791,6 +805,7 @@ export default class CharacterList extends GenshinList
   {
     let result = super.fromGOOD(goodData);
     this.addTraveler();
+    this.addRemaining();
     this.items().forEach(item => item.update("owned", true));
     return result;
   }

@@ -121,6 +121,7 @@ export default class MaterialList extends GenshinList
     for(let suffix in GenshinLootData.forgery)
       Material.setupTiers([5,4,3,2].map(q => this.addGOOD({goodKey:GenshinLootData.forgery[suffix][q], goodValue:0}).update("source", GenshinLootData.forgery[suffix].source).update("days", GenshinLootData.forgery[suffix].days, "replace").update("shorthand", suffix)));
     
+    // Generic prog mats
     this.addGOOD({goodKey:"Mora", goodValue:0}).update("type", "leyline");
     this.addGOOD({goodKey:"HerosWit", goodValue:0}).update("type", "leyline");
     this.addGOOD({goodKey:"AdventurersExperience", goodValue:0}).update("type", "leyline");
@@ -128,6 +129,26 @@ export default class MaterialList extends GenshinList
     this.addGOOD({goodKey:"MysticEnhancementOre", goodValue:0}).update("type", "leyline");
     this.addGOOD({goodKey:"FineEnhancementOre", goodValue:0}).update("type", "leyline");
     this.addGOOD({goodKey:"EnhancementOre", goodValue:0}).update("type", "leyline");
+    this.addGOOD({goodKey:"SanctifyingEssence", goodValue:0}).update("type", "leyline");
+    this.addGOOD({goodKey:"SanctifyingUnction", goodValue:0}).update("type", "leyline");
+    
+    // Billets
+    this.addGOOD({goodKey:"StrangeTooth", goodValue:0}).update("type", "billet");
+    this.addGOOD({goodKey:"NorthlanderSwordBillet", goodValue:0}).update("type", "billet");
+    this.addGOOD({goodKey:"NorthlanderBowBillet", goodValue:0}).update("type", "billet");
+    this.addGOOD({goodKey:"NorthlanderClaymoreBillet", goodValue:0}).update("type", "billet");
+    this.addGOOD({goodKey:"NorthlanderCatalystBillet", goodValue:0}).update("type", "billet");
+    this.addGOOD({goodKey:"NorthlanderPolearmBillet", goodValue:0}).update("type", "billet");
+    this.addGOOD({goodKey:"MidlanderSwordBillet", goodValue:0}).update("type", "billet");
+    this.addGOOD({goodKey:"MidlanderBowBillet", goodValue:0}).update("type", "billet");
+    this.addGOOD({goodKey:"MidlanderClaymoreBillet", goodValue:0}).update("type", "billet");
+    this.addGOOD({goodKey:"MidlanderCatalystBillet", goodValue:0}).update("type", "billet");
+    this.addGOOD({goodKey:"MidlanderPolearmBillet", goodValue:0}).update("type", "billet");
+    this.addGOOD({goodKey:"BorderlandSwordBillet", goodValue:0}).update("type", "billet");
+    this.addGOOD({goodKey:"BorderlandBowBillet", goodValue:0}).update("type", "billet");
+    this.addGOOD({goodKey:"BorderlandClaymoreBillet", goodValue:0}).update("type", "billet");
+    this.addGOOD({goodKey:"BorderlandCatalystBillet", goodValue:0}).update("type", "billet");
+    this.addGOOD({goodKey:"BorderlandPolearmBillet", goodValue:0}).update("type", "billet");
     
     // Flora mats
     for(let c in GenshinCharacterData)

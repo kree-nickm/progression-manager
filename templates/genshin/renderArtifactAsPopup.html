@@ -14,7 +14,7 @@
             <div class="col-1">{{getProperty item 'rarity'}}</div>
             <div class="col-1">{{> renderItemField item=item field="slot" wrapper="div"}}</div>
             <div class="col-4">{{getProperty item 'setName'}}</div>
-            <div class="col-1">{{> renderItemField item=item field="lock" wrapper="div"}}</div>
+            <div class="col-1">{{> renderItemField item=item field="lock" params=(array 1 1) wrapper="div"}}</div>
             <div class="col-1">{{> renderItemField item=item field="level" wrapper="div"}}</div>
             <div class="col-2">{{> renderItemField item=item field="mainStat" wrapper="div"}}</div>
             <div class="col-2">{{> renderItemField item=item field="location" wrapper="div"}}</div>

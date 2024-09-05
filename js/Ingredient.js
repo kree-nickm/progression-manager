@@ -23,7 +23,7 @@ const Ingredient = (SuperClass) => class extends SuperClass {
       }
     }
   }
-  
+  // TODO: depend on the wishlist of users
   static setupDisplay(display)
   {
     if(!display.getField("count"))

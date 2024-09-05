@@ -199,6 +199,16 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f4\/Item_Juvenile_Fang.png",
         "rarity": 1
     },
+    "SeasonedFang": {
+        "name": "Seasoned Fang",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4b\/Item_Seasoned_Fang.png",
+        "rarity": 2
+    },
+    "TyrantsFang": {
+        "name": "Tyrant's Fang",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/31\/Item_Tyrant%27s_Fang.png",
+        "rarity": 3
+    },
     "SentrysWoodenWhistle": {
         "name": "Sentry's Wooden Whistle",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ee\/Item_Sentry%27s_Wooden_Whistle.png",
@@ -208,6 +218,11 @@ export default {
         "name": "Warrior's Metal Whistle",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b6\/Item_Warrior%27s_Metal_Whistle.png",
         "rarity": 2
+    },
+    "SaurianCrownedWarriorsGoldenWhistle": {
+        "name": "Saurian-Crowned Warrior's Golden Whistle",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/20\/Item_Saurian-Crowned_Warrior%27s_Golden_Whistle.png",
+        "rarity": 3
     },
     "HeavyHorn": {
         "name": "Heavy Horn",
@@ -509,20 +524,50 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/57\/Item_Still-Smoldering_Hilt.png",
         "rarity": 4
     },
-    "AxisOfTheSecretSource": {
-        "name": "Axis of the Secret Source",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/93\/Item_Axis_of_the_Secret_Source.png",
+    "ShardOfAShatteredWill": {
+        "name": "Shard of a Shattered Will",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3a\/Item_Shard_of_a_Shattered_Will.png",
         "rarity": 2
+    },
+    "LocusOfAClearWill": {
+        "name": "Locus of a Clear Will",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c9\/Item_Locus_of_a_Clear_Will.png",
+        "rarity": 3
+    },
+    "SigilOfAStridingWill": {
+        "name": "Sigil of a Striding Will",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ee\/Item_Sigil_of_a_Striding_Will.png",
+        "rarity": 4
     },
     "IgnitedStone": {
         "name": "Ignited Stone",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/71\/Item_Ignited_Stone.png",
         "rarity": 2
     },
-    "ShardOfAShatteredWill": {
-        "name": "Shard of a Shattered Will",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3a\/Item_Shard_of_a_Shattered_Will.png",
+    "IgnitedSeedOfLife": {
+        "name": "Ignited Seed of Life",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e7\/Item_Ignited_Seed_of_Life.png",
+        "rarity": 3
+    },
+    "IgnitedSeeingEye": {
+        "name": "Ignited Seeing Eye",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/04\/Item_Ignited_Seeing_Eye.png",
+        "rarity": 4
+    },
+    "AxisOfTheSecretSource": {
+        "name": "Axis of the Secret Source",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/93\/Item_Axis_of_the_Secret_Source.png",
         "rarity": 2
+    },
+    "SheathOfTheSecretSource": {
+        "name": "Sheath of the Secret Source",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f3\/Item_Sheath_of_the_Secret_Source.png",
+        "rarity": 3
+    },
+    "HeartOfTheSecretSource": {
+        "name": "Heart of the Secret Source",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/65\/Item_Heart_of_the_Secret_Source.png",
+        "rarity": 4
     },
     "MaintenanceMekSalvagedParts": {
         "name": "\"Maintenance Mek\" Salvaged Parts",
@@ -1229,20 +1274,50 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/32\/Item_Philosophies_of_Order.png",
         "rarity": 4
     },
-    "GuideToConflict": {
-        "name": "Guide to Conflict",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f7\/Item_Guide_to_Conflict.png",
-        "rarity": 3
+    "TeachingsOfContention": {
+        "name": "Teachings of Contention",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/50\/Item_Teachings_of_Contention.png",
+        "rarity": 2
     },
     "GuideToContention": {
         "name": "Guide to Contention",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a9\/Item_Guide_to_Contention.png",
         "rarity": 3
     },
+    "PhilosophiesOfContention": {
+        "name": "Philosophies of Contention",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/77\/Item_Philosophies_of_Contention.png",
+        "rarity": 4
+    },
+    "TeachingsOfKindling": {
+        "name": "Teachings of Kindling",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b9\/Item_Teachings_of_Kindling.png",
+        "rarity": 2
+    },
     "GuideToKindling": {
         "name": "Guide to Kindling",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/22\/Item_Guide_to_Kindling.png",
         "rarity": 3
+    },
+    "PhilosophiesOfKindling": {
+        "name": "Philosophies of Kindling",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9b\/Item_Philosophies_of_Kindling.png",
+        "rarity": 4
+    },
+    "TeachingsOfConflict": {
+        "name": "Teachings of Conflict",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/95\/Item_Teachings_of_Conflict.png",
+        "rarity": 2
+    },
+    "GuideToConflict": {
+        "name": "Guide to Conflict",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f7\/Item_Guide_to_Conflict.png",
+        "rarity": 3
+    },
+    "PhilosophiesOfConflict": {
+        "name": "Philosophies of Conflict",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7a\/Item_Philosophies_of_Conflict.png",
+        "rarity": 4
     },
     "CrownOfInsight": {
         "name": "Crown of Insight",
@@ -1554,15 +1629,60 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b9\/Item_Blazing_Sacrificial_Heart%27s_Terror.png",
         "rarity": 2
     },
+    "BlazingSacrificialHeartsHesitance": {
+        "name": "Blazing Sacrificial Heart's Hesitance",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/01\/Item_Blazing_Sacrificial_Heart%27s_Hesitance.png",
+        "rarity": 3
+    },
+    "BlazingSacrificialHeartsResolve": {
+        "name": "Blazing Sacrificial Heart's Resolve",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3b\/Item_Blazing_Sacrificial_Heart%27s_Resolve.png",
+        "rarity": 4
+    },
+    "BlazingSacrificialHeartsSplendor": {
+        "name": "Blazing Sacrificial Heart's Splendor",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0e\/Item_Blazing_Sacrificial_Heart%27s_Splendor.png",
+        "rarity": 5
+    },
     "DeliriousDecadenceOfTheSacredLord": {
         "name": "Delirious Decadence of the Sacred Lord",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9c\/Item_Delirious_Decadence_of_the_Sacred_Lord.png",
         "rarity": 2
     },
+    "DeliriousDesolationOfTheSacredLord": {
+        "name": "Delirious Desolation of the Sacred Lord",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/ff\/Item_Delirious_Desolation_of_the_Sacred_Lord.png",
+        "rarity": 3
+    },
+    "DeliriousDemeanorOfTheSacredLord": {
+        "name": "Delirious Demeanor of the Sacred Lord",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/12\/Item_Delirious_Demeanor_of_the_Sacred_Lord.png",
+        "rarity": 4
+    },
+    "DeliriousDivinityOfTheSacredLord": {
+        "name": "Delirious Divinity of the Sacred Lord",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3d\/Item_Delirious_Divinity_of_the_Sacred_Lord.png",
+        "rarity": 5
+    },
     "NightWindsMysticConsideration": {
         "name": "Night-Wind's Mystic Consideration",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/78\/Item_Night-Wind%27s_Mystic_Consideration.png",
         "rarity": 2
+    },
+    "NightWindsMysticPremonition": {
+        "name": "Night-Wind's Mystic Premonition",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b8\/Item_Night-Wind%27s_Mystic_Premonition.png",
+        "rarity": 3
+    },
+    "NightWindsMysticAugury": {
+        "name": "Night-Wind's Mystic Augury",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/20\/Item_Night-Wind%27s_Mystic_Augury.png",
+        "rarity": 4
+    },
+    "NightWindsMysticRevelation": {
+        "name": "Night-Wind's Mystic Revelation",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f1\/Item_Night-Wind%27s_Mystic_Revelation.png",
+        "rarity": 5
     },
     "FesteringDragonMarrow": {
         "name": "Festering Dragon Marrow",
@@ -1657,6 +1777,11 @@ export default {
     "CamAndCablesOfLaw": {
         "name": "Cam and Cables of Law",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/45\/Item_Cam_and_Cables_of_Law.png",
+        "rarity": 4
+    },
+    "TheSeasSilentShade": {
+        "name": "\"The Sea's Silent Shade\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/ff\/Item_The_Sea%27s_Silent_Shade.png",
         "rarity": 4
     },
     "Wolfhook": {
@@ -1874,6 +1999,11 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/08\/Item_Spring_of_the_First_Dewdrop.png",
         "rarity": 1
     },
+    "SprayfeatherGill": {
+        "name": "Sprayfeather Gill",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e8\/Item_Sprayfeather_Gill.png",
+        "rarity": 1
+    },
     "BrilliantChrysanthemum": {
         "name": "Brilliant Chrysanthemum",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/14\/Item_Brilliant_Chrysanthemum.png",
@@ -1887,11 +2017,6 @@ export default {
     "SaurianClawSucculent": {
         "name": "Saurian Claw Succulent",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bf\/Item_Saurian_Claw_Succulent.png",
-        "rarity": 1
-    },
-    "SprayfeatherGill": {
-        "name": "Sprayfeather Gill",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e8\/Item_Sprayfeather_Gill.png",
         "rarity": 1
     },
     "SweetFlowerSeed": {
@@ -2494,6 +2619,21 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0c\/Item_Chenyu_Adeptea.png",
         "rarity": 1
     },
+    "Grainfruit": {
+        "name": "Grainfruit",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d6\/Item_Grainfruit.png",
+        "rarity": 1
+    },
+    "SpinelFruit": {
+        "name": "Spinel Fruit",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/25\/Item_Spinel_Fruit.png",
+        "rarity": 1
+    },
+    "Cacahuatl": {
+        "name": "Cacahuatl",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8e\/Item_Cacahuatl.png",
+        "rarity": 1
+    },
     "MysteriousMeatProduct": {
         "name": "Mysterious Meat Product",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/62\/Item_Mysterious_Meat_Product.png",
@@ -2669,6 +2809,11 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d9\/Item_Torch_Wood.png",
         "rarity": 1
     },
+    "AshenAratikuWood": {
+        "name": "Ashen Aratiku Wood",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/53\/Item_Ashen_Aratiku_Wood.png",
+        "rarity": 1
+    },
     "Fabric": {
         "name": "Fabric",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6f\/Item_Fabric.png",
@@ -2764,6 +2909,31 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7d\/Item_Midlander_Polearm_Billet.png",
         "rarity": 4
     },
+    "BorderlandSwordBillet": {
+        "name": "Borderland Sword Billet",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/62\/Item_Borderland_Sword_Billet.png",
+        "rarity": 4
+    },
+    "BorderlandBowBillet": {
+        "name": "Borderland Bow Billet",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c9\/Item_Borderland_Bow_Billet.png",
+        "rarity": 4
+    },
+    "BorderlandClaymoreBillet": {
+        "name": "Borderland Claymore Billet",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/06\/Item_Borderland_Claymore_Billet.png",
+        "rarity": 4
+    },
+    "BorderlandCatalystBillet": {
+        "name": "Borderland Catalyst Billet",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/88\/Item_Borderland_Catalyst_Billet.png",
+        "rarity": 4
+    },
+    "BorderlandPolearmBillet": {
+        "name": "Borderland Polearm Billet",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8c\/Item_Borderland_Polearm_Billet.png",
+        "rarity": 4
+    },
     "Horsetail": {
         "name": "Horsetail",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7b\/Item_Horsetail.png",
@@ -2834,6 +3004,11 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/eb\/Item_Pluie_Lotus.png",
         "rarity": 1
     },
+    "EmbercoreFlower": {
+        "name": "Embercore Flower",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/aa\/Item_Embercore_Flower.png",
+        "rarity": 1
+    },
     "LanternFiber": {
         "name": "Lantern Fiber",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7f\/Item_Lantern_Fiber.png",
@@ -2848,16 +3023,6 @@ export default {
         "name": "Plaustrite Shard",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/78\/Item_Plaustrite_Shard.png",
         "rarity": 3
-    },
-    "CandlecapMushroom": {
-        "name": "Candlecap Mushroom",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7e\/Item_Candlecap_Mushroom.png",
-        "rarity": 1
-    },
-    "Grainfruit": {
-        "name": "Grainfruit",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d6\/Item_Grainfruit.png",
-        "rarity": 1
     },
     "WanderersAdvice": {
         "name": "Wanderer's Advice",
@@ -3089,10 +3254,15 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8c\/Item_Swirling_Scene_in_a_Bottle.png",
         "rarity": 4
     },
+    "BlazingFlintOre": {
+        "name": "Blazing Flint Ore",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/11\/Item_Blazing_Flint_Ore.png",
+        "rarity": 5
+    },
     "ReaffirmedAccordOfAppellation": {
         "name": "Reaffirmed Accord of Appellation",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6b\/Item_Reaffirmed_Accord_of_Appellation.png",
-        "rarity": 1
+        "rarity": 4
     },
     "CakeForTraveler20202021": {
         "name": "Cake for Traveler (2020 - 2021)",

@@ -216,7 +216,7 @@ export default class GenshinManager extends DataManager
     if(server)
       account = account + "@" + server;
     this.activateAccount(account);
-    this.lists[CharacterList.name].addTraveler();
+    //this.lists[CharacterList.name].initialize();
     this.view({pane:this.currentView});
     console.log(`Switching to account '${this.settings.server}'.`);
     return true;

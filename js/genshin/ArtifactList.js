@@ -431,7 +431,7 @@ export default class ArtifactList extends GenshinList
     Artifact.setupDisplay(this.display);
     
     this.display.getField("lock").setData({
-      title: (item,showUnlocked,showRed) => (item.lock ? "Currently locked. Click to unlock." : "Currently unlocked. Click to lock.") + (showRed ? "Red background indicates the artifact is below your minimum desirability rating, which theoretically means you should unlock it and use it as fodder in-game." : ""),
+      title: (item,showUnlocked,showRed) => (item.lock ? "Currently locked. Click to unlock. " : "Currently unlocked. Click to lock. ") + (showRed ? "Red background indicates the artifact is below your minimum desirability rating, which theoretically means you should unlock it and use it as fodder in-game." : ""),
       classes: (item,showUnlocked,showRed) => ({
         'item-locked': item.lock,
         'item-unlocked': !item.lock,
@@ -535,7 +535,7 @@ export default class ArtifactList extends GenshinList
       {field:this.display.getField("set"), params:[]},
       {field:this.display.getField("slot"), params:[]},
       {field:this.display.getField("level"), params:[]},
-      {field:this.display.getField("lock"), params:[false, true]},
+      {field:this.display.getField("lock"), params:[0, 1]},
       {field:this.display.getField("mainStat"), params:[]},
       {field:this.display.getField("critRate_Sum"), params:[]},
       {field:this.display.getField("critDMG_Sum"), params:[]},

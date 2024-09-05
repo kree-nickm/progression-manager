@@ -14,10 +14,10 @@ export default class UIList extends UIController {
   static fromJSON(data, {viewer, addProperties={}}={})
   {
     let list = new this(viewer);
-    list.initialize();
     for(let prop in addProperties)
       list[prop] = addProperties[prop];
     list.startImport();
+    list.initialize();
     for(let prop in list)
     {
       if(this.dontSerialize.indexOf(prop) == -1 && data[prop] !== undefined)
