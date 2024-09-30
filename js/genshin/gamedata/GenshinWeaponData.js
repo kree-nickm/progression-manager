@@ -992,6 +992,55 @@ export default {
         "hakushinID": 11509,
         "id": 11509
     },
+    "PeakPatrolSong": {
+        "name": "Peak Patrol Song",
+        "rarity": 5,
+        "type": "Sword",
+        "hakushinID": 11516,
+        "id": 11516,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_XochitlsTube.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_XochitlsTube.webp"
+        ],
+        "baseATK": 44,
+        "stat": "def_",
+        "matForgery": "Mirror",
+        "matWeakEnemy": "Saurians",
+        "matStrongEnemy": "Automaton",
+        "passive": "Gain \"Ode to Flowers\" after Normal or Plunging Attacks hit an opponent: DEF increases by @0% and gain a @1% All Elemental DMG Bonus for 6s. Max 2 stacks. Can trigger once per 0.1s. When this effect reaches 2 stacks or the 2nd stack's duration is refreshed, increase all nearby party members' All Elemental DMG Bonus by @2% for every 1,000 DEF the equipping character has, up to a maximum of @3%, for 15s.",
+        "refinementData": [
+            {
+                "1": 7.99999982119,
+                "2": 10.000000149009999,
+                "3": 11.999999731780001,
+                "4": 14.000000059600001,
+                "5": 15.99999964237
+            },
+            {
+                "1": 600,
+                "2": 600,
+                "3": 600,
+                "4": 600,
+                "5": 600
+            },
+            {
+                "1": 10.000000149009999,
+                "2": 10.000000149009999,
+                "3": 10.000000149009999,
+                "4": 10.000000149009999,
+                "5": 10.000000149009999
+            },
+            {
+                "1": 10.000000149009999,
+                "2": 12.5,
+                "3": 15.00000059605,
+                "4": 17.499999701980002,
+                "5": 20.000000298019998
+            }
+        ],
+        "version": "5.0.54",
+        "release": "October 8, 2024"
+    },
     "PolarStar": {
         "name": "Polar Star",
         "rarity": 5,
@@ -3390,6 +3439,41 @@ export default {
         "hakushinID": 14417,
         "id": 14417
     },
+    "FruitfulHook": {
+        "name": "Fruitful Hook",
+        "rarity": 4,
+        "type": "Claymore",
+        "hakushinID": 12430,
+        "id": 12430,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_Umpakati.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_Umpakati.webp"
+        ],
+        "baseATK": 44,
+        "stat": "atk_",
+        "matForgery": "Mirror",
+        "matWeakEnemy": "Saurians",
+        "matStrongEnemy": "Automaton",
+        "passive": "Increase Plunging Attack CRIT Rate by @0%; After a Plunging Attack hits an opponent, Normal, Charged, and Plunging Attack DMG increased by @1% for 10s.",
+        "refinementData": [
+            {
+                "1": 15.99999964237,
+                "2": 20.000000298019998,
+                "3": 23.999999463560002,
+                "4": 28.00000011921,
+                "5": 31.99999928474
+            },
+            {
+                "1": 15.99999964237,
+                "2": 20.000000298019998,
+                "3": 23.999999463560002,
+                "4": 28.00000011921,
+                "5": 31.99999928474
+            }
+        ],
+        "version": "5.0.54",
+        "release": "October 8, 2024"
+    },
     "HakushinRing": {
         "name": "Hakushin Ring",
         "rarity": 4,
@@ -4019,6 +4103,41 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Moonpiercer",
         "hakushinID": 13417,
         "id": 13417
+    },
+    "MountainBracingBolt": {
+        "name": "Mountain-Bracing Bolt",
+        "rarity": 4,
+        "type": "Polearm",
+        "hakushinID": 13430,
+        "id": 13430,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_Umpakati.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_Umpakati.webp"
+        ],
+        "baseATK": 44,
+        "stat": "enerRech_",
+        "matForgery": "Sacred",
+        "matWeakEnemy": "Whopperflowers",
+        "matStrongEnemy": "Avatars",
+        "passive": "Decreases Climbing Stamina Consumption by 15% and increases Elemental Skill DMG by @0%. Also, after other nearby party members use Elemental Skills, the equipping character's Elemental Skill DMG will also increase by @1% for 8s.",
+        "refinementData": [
+            {
+                "1": 15.00000059605,
+                "2": 15.00000059605,
+                "3": 15.00000059605,
+                "4": 15.00000059605,
+                "5": 15.00000059605
+            },
+            {
+                "1": 11.999999731780001,
+                "2": 15.00000059605,
+                "3": 18.00000071526,
+                "4": 20.99999934435,
+                "5": 23.999999463560002
+            }
+        ],
+        "version": "5.0.54",
+        "release": "October 8, 2024"
     },
     "MouunsMoon": {
         "name": "Mouun's Moon",
@@ -5020,6 +5139,34 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Song_of_Stillness",
         "hakushinID": 15425,
         "id": 15425
+    },
+    "SturdyBone": {
+        "name": "Sturdy Bone",
+        "rarity": 4,
+        "type": "Sword",
+        "hakushinID": 11430,
+        "id": 11430,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_Umpakati.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_Umpakati.webp"
+        ],
+        "baseATK": 44,
+        "stat": "atk_",
+        "matForgery": "Blade",
+        "matWeakEnemy": "Tribals",
+        "matStrongEnemy": "Wayob",
+        "passive": "Sprint or Alternate Sprint Stamina Consumption decreased by 15%. Additionally, after using Sprint or Alternate Sprint, Normal Attack DMG is increased by @0% of ATK. This effect expires after triggering 18 times or 7s.",
+        "refinementData": [
+            {
+                "1": 15.00000059605,
+                "2": 15.00000059605,
+                "3": 15.00000059605,
+                "4": 15.00000059605,
+                "5": 15.00000059605
+            }
+        ],
+        "version": "5.0.54",
+        "release": "October 8, 2024"
     },
     "SwordOfDescension": {
         "name": "Sword of Descension",

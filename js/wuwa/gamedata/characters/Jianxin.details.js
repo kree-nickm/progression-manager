@@ -1089,7 +1089,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_JianxinM4_UI.T_IconDevice_JianxinM4_UI",
             "name": "Multitide Reflection",
-            "desc": "When performing Forte Circuit <color=Highlight>Heavy Attack: Primordial Chi Spiral<\/color>, Jianxin's Resonance Liberation <color=Highlight>Purification Force Field<\/color> damage is increased by 80% for 14s."
+            "desc": "When performing Forte Circuit <color=Highlight>Heavy Attack: Primordial Chi Spiral<\/color>, Jianxin's Resonance Liberation <color=Highlight>Purification Force Field<\/color> DMG is increased by 80% for 14s."
         },
         "5": {
             "buffs": [

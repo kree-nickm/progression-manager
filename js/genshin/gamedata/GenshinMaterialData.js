@@ -739,6 +739,12 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b1\/Item_Overripe_Flamegranate.png",
         "rarity": 4
     },
+    "GoldInscribedSecretSourceCore": {
+        "name": "Gold-Inscribed Secret Source Core",
+        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_113066.webp",
+        "rarity": 4,
+        "release": "October 8, 2024"
+    },
     "DvalinsPlume": {
         "name": "Dvalin's Plume",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bf\/Item_Dvalin%27s_Plume.png",

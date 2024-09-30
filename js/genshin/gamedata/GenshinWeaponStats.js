@@ -7,7 +7,7 @@ export default {
       def_: 4.500000178813934,
       physical_dmg_: 4.500000178813934,
       enerRech_: 3.999999910593033, // none
-      critRate_: 2.4, // none
+      critRate_: 2.4,
       critDMG_: 4.800000041723251, // none
       eleMas: 14.399999380111694, // none
       "levelAtkScale": "GROW_CURVE_ATTACK_303",

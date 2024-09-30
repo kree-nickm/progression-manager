@@ -1,26 +1,5 @@
 export default {
   "enemy": {
-    "Slimes": {
-      "1": "Slime Condensate",
-      "2": "Slime Secretions",
-      "3": "Slime Concentrate"
-    },
-    "Hilichurls": {
-      "1": "Damaged Mask",
-      "2": "Stained Mask",
-      "3": "Ominous Mask"
-    },
-    "Samachurls": {
-      "1": "Divining Scroll",
-      "2": "Sealed Scroll",
-      "3": "Forbidden Curse Scroll"
-    },
-    "Hili.Archers": {
-      "source": "Hilichurl Archers",
-      "1": "Firm Arrowhead",
-      "2": "Sharp Arrowhead",
-      "3": "Weathered Arrowhead"
-    },
     "Big Hilichurls": {
       "source": "Mitachurls, Lawachurls",
       "2": "Heavy Horn",
@@ -48,32 +27,10 @@ export default {
       "3": "Agent's Sacrificial Knife",
       "4": "Inspector's Sacrificial Knife"
     },
-    "Fatui": {
-      "1": "Recruit's Insignia",
-      "2": "Sergeant's Insignia",
-      "3": "Lieutenant's Insignia"
-    },
-    "T.Hoarders": {
-      "source": "Treasure Hoarders",
-      "1": "Treasure Hoarder Insignia",
-      "2": "Silver Raven Insignia",
-      "3": "Golden Raven Insignia"
-    },
-    "Whopperflowers": {
-      "source": "Whopperflowers",
-      "1": "Whopperflower Nectar",
-      "2": "Shimmering Nectar",
-      "3": "Energy Nectar"
-    },
     "Geovishaps": {
       "2": "Fragile Bone Shard",
       "3": "Sturdy Bone Shard",
       "4": "Fossilized Bone Shard"
-    },
-    "Nobushi": {
-      "1": "Old Handguard",
-      "2": "Kageuchi Handguard",
-      "3": "Famed Handguard"
     },
     "Ruin Sentinels": {
       "2": "Chaos Gear",
@@ -85,11 +42,6 @@ export default {
       "3": "Crystal Prism",
       "4": "Polarizing Prism"
     },
-    "Specters": {
-      "1": "Spectral Husk",
-      "2": "Spectral Heart",
-      "3": "Spectral Nucleus"
-    },
     "Riftwolves": {
       "2": "Concealed Claw",
       "3": "Concealed Unguis",
@@ -100,21 +52,11 @@ export default {
       "3": "Dark Statuette",
       "4": "Deathly Statuette"
     },
-    "Fungi": {
-      "1": "Fungal Spores",
-      "2": "Luminescent Pollen",
-      "3": "Crystalline Cyst Dust"
-    },
     "Activated Fungi": {
       "source": "Fungi (scorched or activated)",
       "2": "Inactivated Fungal Nucleus",
       "3": "Dormant Fungal Nucleus",
       "4": "Robust Fungal Nucleus"
-    },
-    "Eremites": {
-      "1": "Faded Red Satin",
-      "2": "Trimmed Red Silk",
-      "3": "Rich Red Brocade"
     },
     "Ruin Drakes": {
       "2": "Chaos Storage",
@@ -135,18 +77,6 @@ export default {
       "2": "A Flower Yet to Bloom",
       "3": "Treasured Flower",
       "4": "Wanderer's Blooming Flower"
-    },
-    "Fontemer": {
-      "source": "Fontemer Aberrants",
-      "1": "Transoceanic Pearl",
-      "2": "Transoceanic Chunk",
-      "3": "Xenochromatic Crystal"
-    },
-    "Meka": {
-      "source": "Clockwork Meka",
-      "1": "Meshing Gear",
-      "2": "Mechanical Spur Gear",
-      "3": "Artificed Dynamic Gear"
     },
     "Hydro Phantasms": {
       "2": "Drop of Tainted Water",
@@ -175,20 +105,6 @@ export default {
       "3": "Splintered Hilt",
       "4": "Still-Smoldering Hilt"
     },
-    "Saurians": {
-      "source": "Natlan Saurians",
-      "release": "August 27, 2024",
-      "1": "Juvenile Fang",
-      "2": "Seasoned Fang",
-      "3": "Tyrant's Fang"
-    },
-    "Tribals": {
-      "source": "Sauroform Tribal Warriors",
-      "release": "August 27, 2024",
-      "1": "Sentry's Wooden Whistle",
-      "2": "Warrior's Metal Whistle",
-      "3": "Saurian-Crowned Warrior's Golden Whistle"
-    },
     "Wayob": {
       "source": "Wayob Manifestations",
       "release": "August 27, 2024",
@@ -209,6 +125,90 @@ export default {
       "2": "Axis of the Secret Source",
       "3": "Sheath of the Secret Source",
       "4": "Heart of the Secret Source"
+    },
+    "Slimes": {
+      "1": "Slime Condensate",
+      "2": "Slime Secretions",
+      "3": "Slime Concentrate"
+    },
+    "Hilichurls": {
+      "1": "Damaged Mask",
+      "2": "Stained Mask",
+      "3": "Ominous Mask"
+    },
+    "Samachurls": {
+      "1": "Divining Scroll",
+      "2": "Sealed Scroll",
+      "3": "Forbidden Curse Scroll"
+    },
+    "Hili.Archers": {
+      "source": "Hilichurl Archers",
+      "1": "Firm Arrowhead",
+      "2": "Sharp Arrowhead",
+      "3": "Weathered Arrowhead"
+    },
+    "Fatui": {
+      "1": "Recruit's Insignia",
+      "2": "Sergeant's Insignia",
+      "3": "Lieutenant's Insignia"
+    },
+    "T.Hoarders": {
+      "source": "Treasure Hoarders",
+      "1": "Treasure Hoarder Insignia",
+      "2": "Silver Raven Insignia",
+      "3": "Golden Raven Insignia"
+    },
+    "Whopperflowers": {
+      "source": "Whopperflowers",
+      "1": "Whopperflower Nectar",
+      "2": "Shimmering Nectar",
+      "3": "Energy Nectar"
+    },
+    "Nobushi": {
+      "1": "Old Handguard",
+      "2": "Kageuchi Handguard",
+      "3": "Famed Handguard"
+    },
+    "Specters": {
+      "1": "Spectral Husk",
+      "2": "Spectral Heart",
+      "3": "Spectral Nucleus"
+    },
+    "Fungi": {
+      "1": "Fungal Spores",
+      "2": "Luminescent Pollen",
+      "3": "Crystalline Cyst Dust"
+    },
+    "Eremites": {
+      "1": "Faded Red Satin",
+      "2": "Trimmed Red Silk",
+      "3": "Rich Red Brocade"
+    },
+    "Fontemer": {
+      "source": "Fontemer Aberrants",
+      "1": "Transoceanic Pearl",
+      "2": "Transoceanic Chunk",
+      "3": "Xenochromatic Crystal"
+    },
+    "Meka": {
+      "source": "Clockwork Meka",
+      "1": "Meshing Gear",
+      "2": "Mechanical Spur Gear",
+      "3": "Artificed Dynamic Gear"
+    },
+    "Saurians": {
+      "source": "Natlan Saurians",
+      "release": "August 27, 2024",
+      "1": "Juvenile Fang",
+      "2": "Seasoned Fang",
+      "3": "Tyrant's Fang"
+    },
+    "Tribals": {
+      "source": "Sauroform Tribal Warriors",
+      "release": "August 27, 2024",
+      "1": "Sentry's Wooden Whistle",
+      "2": "Warrior's Metal Whistle",
+      "3": "Saurian-Crowned Warrior's Golden Whistle"
     }
   },
   
@@ -428,6 +428,11 @@ export default {
     "Dendro Dino": {
       "name": "Gluttonous Yumkasaur Mountain King",
       "4": "Overripe Flamegranate"
+    },
+    "Auto Bot": {
+      "name": "Secret Source Automaton: Configuration Device",
+      "4": "Gold-Inscribed Secret Source Core",
+      "release": "October 8, 2024"
     }
   },
   

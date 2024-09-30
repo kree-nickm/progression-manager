@@ -2436,6 +2436,30 @@ export default {
             10265
         ]
     },
+    "Xilonen": {
+        "name": "Xilonen",
+        "rarity": 5,
+        "weapon": "Sword",
+        "element": "Geo",
+        "hakushinID": 10000103,
+        "id": 10000103,
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Xilonen.webp",
+        "region": "Natlan",
+        "matEnemy": "Tribals",
+        "matFlower": "Brilliant Chrysanthemum",
+        "matMastery": "Kindling",
+        "matTrounce": "Mirror of Mushin",
+        "ascendStat": "def_",
+        "hpBase": 965.713134765625,
+        "atkBase": 21.4130001068115,
+        "defBase": 72.3943023681641,
+        "hpMaxAsc": 3965.740234375,
+        "atkMaxAsc": 87.9269332885742,
+        "defMaxAsc": 297.2969970703125,
+        "version": "5.0.54",
+        "matBoss": "Auto Bot",
+        "release": "October 9, 2024"
+    },
     "Xingqiu": {
         "name": "Xingqiu",
         "weapon": "Sword",

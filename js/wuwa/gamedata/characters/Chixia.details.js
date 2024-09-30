@@ -660,7 +660,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_MaxiaofangM3_UI.T_IconDevice_MaxiaofangM3_UI",
             "name": "Eternal Flames",
-            "desc": "Resonance Liberation <color=Highlight>Blazing Flames<\/color> deals 40% more damage to targets whose HP is below 50%."
+            "desc": "Resonance Liberation <color=Highlight>Blazing Flames<\/color> deals 40% more DMG to targets whose HP is below 50%."
         },
         "4": {
             "buffs": [

@@ -61,7 +61,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_E_002_4_UI.T_IconMout_E_002_4_UI",
         "name": "FF Howler Core",
         "type": "Development Materials",
-        "subtype": "Weapon & Skill Material"
+        "subtype": "Weapon and Skill Material"
     },
     "FFWhisperinCore": {
         "rarity": 5,
@@ -69,7 +69,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_O_002_4_UI.T_IconMout_O_002_4_UI",
         "name": "FF Whisperin Core",
         "type": "Development Materials",
-        "subtype": "Weapon & Skill Material"
+        "subtype": "Weapon and Skill Material"
     },
     "FlawlessPhlohiston": {
         "rarity": 5,
@@ -93,7 +93,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_004_UI.T_IconMout_004_UI",
         "name": "Mask of Insanity",
         "type": "Development Materials",
-        "subtype": "Weapon & Skill Material"
+        "subtype": "Weapon and Skill Material"
     },
     "MysteriousCode": {
         "rarity": 5,
@@ -125,7 +125,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_O_003_4_UI.T_IconMout_O_003_4_UI",
         "name": "Tailored Ring",
         "type": "Development Materials",
-        "subtype": "Weapon & Skill Material"
+        "subtype": "Weapon and Skill Material"
     },
     "WavewornResidue239": {
         "rarity": 5,
@@ -221,7 +221,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_E_002_3_UI.T_IconMout_E_002_3_UI",
         "name": "HF Howler Core",
         "type": "Development Materials",
-        "subtype": "Weapon & Skill Material"
+        "subtype": "Weapon and Skill Material"
     },
     "HFWhisperinCore": {
         "rarity": 4,
@@ -229,7 +229,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_O_002_3_UI.T_IconMout_O_002_3_UI",
         "name": "HF Whisperin Core",
         "type": "Development Materials",
-        "subtype": "Weapon & Skill Material"
+        "subtype": "Weapon and Skill Material"
     },
     "HiddenThunderTacetCore": {
         "rarity": 4,
@@ -245,7 +245,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_O_003_3_UI.T_IconMout_O_003_3_UI",
         "name": "Improved Ring",
         "type": "Development Materials",
-        "subtype": "Weapon & Skill Material"
+        "subtype": "Weapon and Skill Material"
     },
     "MaskOfDistortion": {
         "rarity": 4,
@@ -253,7 +253,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_003_UI.T_IconMout_003_UI",
         "name": "Mask of Distortion",
         "type": "Development Materials",
-        "subtype": "Weapon & Skill Material"
+        "subtype": "Weapon and Skill Material"
     },
     "MonumentBell": {
         "rarity": 4,
@@ -327,6 +327,14 @@ export default {
         "type": "Development Materials",
         "subtype": "Resonator Ascension Material"
     },
+    "TopologicalConfinement": {
+        "rarity": 4,
+        "sort": 5,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_L_015_UI.T_IconMout_L_015_UI",
+        "name": "Topological Confinement",
+        "type": "Development Materials",
+        "subtype": "Resonator Ascension Material"
+    },
     "UnendingDestruction": {
         "rarity": 4,
         "sort": 5,
@@ -381,7 +389,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_O_003_2_UI.T_IconMout_O_003_2_UI",
         "name": "Basic Ring",
         "type": "Development Materials",
-        "subtype": "Weapon & Skill Material"
+        "subtype": "Weapon and Skill Material"
     },
     "CadenceBud": {
         "rarity": 3,
@@ -405,7 +413,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_E_002_2_UI.T_IconMout_E_002_2_UI",
         "name": "MF Howler Core",
         "type": "Development Materials",
-        "subtype": "Weapon & Skill Material"
+        "subtype": "Weapon and Skill Material"
     },
     "MFWhisperinCore": {
         "rarity": 3,
@@ -413,7 +421,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_O_002_2_UI.T_IconMout_O_002_2_UI",
         "name": "MF Whisperin Core",
         "type": "Development Materials",
-        "subtype": "Weapon & Skill Material"
+        "subtype": "Weapon and Skill Material"
     },
     "MaskOfErosion": {
         "rarity": 3,
@@ -421,7 +429,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_002_UI.T_IconMout_002_UI",
         "name": "Mask of Erosion",
         "type": "Development Materials",
-        "subtype": "Weapon & Skill Material"
+        "subtype": "Weapon and Skill Material"
     },
     "MediumResonancePotion": {
         "rarity": 3,
@@ -485,7 +493,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_O_003_1_UI.T_IconMout_O_003_1_UI",
         "name": "Crude Ring",
         "type": "Development Materials",
-        "subtype": "Weapon & Skill Material"
+        "subtype": "Weapon and Skill Material"
     },
     "ImpurePhlogiston": {
         "rarity": 2,
@@ -509,7 +517,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_E_002_1_UI.T_IconMout_E_002_1_UI",
         "name": "LF Howler Core",
         "type": "Development Materials",
-        "subtype": "Weapon & Skill Material"
+        "subtype": "Weapon and Skill Material"
     },
     "LFWhisperinCore": {
         "rarity": 2,
@@ -517,7 +525,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_O_002_1_UI.T_IconMout_O_002_1_UI",
         "name": "LF Whisperin Core",
         "type": "Development Materials",
-        "subtype": "Weapon & Skill Material"
+        "subtype": "Weapon and Skill Material"
     },
     "LentoHelix": {
         "rarity": 2,
@@ -533,7 +541,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_001_UI.T_IconMout_001_UI",
         "name": "Mask of Constraint",
         "type": "Development Materials",
-        "subtype": "Weapon & Skill Material"
+        "subtype": "Weapon and Skill Material"
     },
     "WavewornResidue210": {
         "rarity": 2,
@@ -542,6 +550,14 @@ export default {
         "name": "Waveworn Residue 210",
         "type": "Development Materials",
         "subtype": "Weapon and Skill Material"
+    },
+    "KUCassCartridge": {
+        "rarity": 5,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconA\/T_IconA_Tape_UI.T_IconA_Tape_UI",
+        "name": "KU-Cass Cartridge",
+        "type": "Resources",
+        "subtype": "Material"
     },
     "PremiumGoldIncenseOil": {
         "rarity": 5,
@@ -1015,6 +1031,14 @@ export default {
         "type": "Resources",
         "subtype": "Cooking Ingredient"
     },
+    "Nova": {
+        "rarity": 1,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconTask\/T_IconTask_Task_084_UI.T_IconTask_Task_084_UI",
+        "name": "Nova",
+        "type": "Resources",
+        "subtype": "Ascension Material"
+    },
     "PavoPlum": {
         "rarity": 1,
         "sort": 0,
@@ -1094,6 +1118,14 @@ export default {
         "name": "Scarletthorn",
         "type": "Resources",
         "subtype": "Crafting Material"
+    },
+    "SeaFlytrap": {
+        "rarity": 1,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconTask\/T_IconTask_Task_085_UI.T_IconTask_Task_085_UI",
+        "name": "Sea Flytrap",
+        "type": "Resources",
+        "subtype": "Cooking Ingredient"
     },
     "SilverLotus": {
         "rarity": 1,

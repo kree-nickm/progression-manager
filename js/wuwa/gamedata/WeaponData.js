@@ -385,6 +385,63 @@ export default {
         "stat": "Crit",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21030015_UI.T_IconWeapon21030015_UI"
     },
+    "StellarSymphony": {
+        "id": 21050036,
+        "name": "Stellar Symphony",
+        "rarity": 5,
+        "type": "Rectifier",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050027_UI.T_IconWeapon21050027_UI",
+        "baseATK": 33,
+        "stat": "EnergyEfficiency",
+        "baseStat": 1712,
+        "rankData": [
+            [
+                "12%",
+                "15%",
+                "18%",
+                "21%",
+                "24%"
+            ],
+            [
+                "8",
+                "10",
+                "12",
+                "14",
+                "16"
+            ],
+            [
+                "20",
+                "20",
+                "20",
+                "20",
+                "20"
+            ],
+            [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1"
+            ],
+            [
+                "14%",
+                "17.5%",
+                "21%",
+                "24.5%",
+                "28%"
+            ],
+            [
+                "30",
+                "30",
+                "30",
+                "30",
+                "30"
+            ]
+        ],
+        "passive": "Increase HP by {0}. Restore {1} Concerto Energy when casting Resonance Liberation. This effect can be triggered {3} time(s) every {2}s. When casting Resonance Skill that heals, increase nearby party members' ATK by {4} for {5}s. Effects of the same name cannot be stacked.",
+        "enemyMat": "Ring",
+        "forgeryMat": "Helix"
+    },
     "Stringmaster": {
         "name": "Stringmaster",
         "type": "Rectifier",
@@ -524,7 +581,7 @@ export default {
                 "3"
             ]
         ],
-        "passive": "Gain {0} Attribute DMG Bonus. When using Resonance Liberation, the wielder gains {1} Resonance Liberation DMG Bonus for {2}s. This effect can be extended by {3} seconds each time Resonance Skills are cast, up to {4} times.",
+        "passive": "Gain {0} Attribute DMG Bonus. When using Resonance Liberation, the wielder gains {1} Resonance Liberation DMG Bonus for {2}s. This effect can be extended by {3}s each time Resonance Skills are cast, up to {4} times.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Cadence"
     },
@@ -729,6 +786,49 @@ export default {
         "stat": "EnergyEfficiency",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21030024_UI.T_IconWeapon21030024_UI"
     },
+    "CelestialSpiral": {
+        "id": 21040084,
+        "name": "Celestial Spiral",
+        "rarity": 4,
+        "type": "Gauntlets",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21040084_UI.T_IconWeapon21040084_UI",
+        "baseATK": 37,
+        "stat": "GreenAtk",
+        "baseStat": 0.04050000011920929,
+        "rankData": [
+            [
+                "6",
+                "7",
+                "8",
+                "9",
+                "10"
+            ],
+            [
+                "10%",
+                "12.5%",
+                "15%",
+                "17.5%",
+                "20%"
+            ],
+            [
+                "16",
+                "16",
+                "16",
+                "16",
+                "16"
+            ],
+            [
+                "20",
+                "20",
+                "20",
+                "20",
+                "20"
+            ]
+        ],
+        "passive": "Casting the Resonance Skill grants {0} Resonance Energy and increases ATK by {1}, lasting for {2}s. This effect can be triggered once every {3}s.",
+        "enemyMat": "Howler Core",
+        "forgeryMat": "Cadence"
+    },
     "CometFlare": {
         "name": "Comet Flare",
         "type": "Rectifier",
@@ -879,6 +979,92 @@ export default {
         "forgeryMat": "Waveworn Residue",
         "stat": "EnergyEfficiency",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21010024_UI.T_IconWeapon21010024_UI"
+    },
+    "EndlessCollapse": {
+        "id": 21020084,
+        "name": "Endless Collapse",
+        "rarity": 4,
+        "type": "Sword",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21020084_UI.T_IconWeapon21020084_UI",
+        "baseATK": 37,
+        "stat": "GreenAtk",
+        "baseStat": 0.04050000011920929,
+        "rankData": [
+            [
+                "6",
+                "7",
+                "8",
+                "9",
+                "10"
+            ],
+            [
+                "10%",
+                "12.5%",
+                "15%",
+                "17.5%",
+                "20%"
+            ],
+            [
+                "16",
+                "16",
+                "16",
+                "16",
+                "16"
+            ],
+            [
+                "20",
+                "20",
+                "20",
+                "20",
+                "20"
+            ]
+        ],
+        "passive": "Casting the Resonance Skill grants {0} Resonance Energy and increases ATK by {1}, lasting for {2}s. This effect can be triggered once every {3}s.",
+        "enemyMat": "Howler Core",
+        "forgeryMat": "Metallic Drip"
+    },
+    "FusionAccretion": {
+        "id": 21050084,
+        "name": "Fusion Accretion",
+        "rarity": 4,
+        "type": "Rectifier",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050084_UI.T_IconWeapon21050084_UI",
+        "baseATK": 37,
+        "stat": "GreenAtk",
+        "baseStat": 0.04050000011920929,
+        "rankData": [
+            [
+                "6",
+                "7",
+                "8",
+                "9",
+                "10"
+            ],
+            [
+                "10%",
+                "12.5%",
+                "15%",
+                "17.5%",
+                "20%"
+            ],
+            [
+                "16",
+                "16",
+                "16",
+                "16",
+                "16"
+            ],
+            [
+                "20",
+                "20",
+                "20",
+                "20",
+                "20"
+            ]
+        ],
+        "passive": "Casting the Resonance Skill grants {0} Resonance Energy and increases ATK by {1}, lasting for {2}s. This effect can be triggered once every {3}s.",
+        "enemyMat": "Ring",
+        "forgeryMat": "Helix"
     },
     "Gauntlets21D": {
         "name": "Gauntlets#21D",
@@ -1442,6 +1628,49 @@ export default {
         "stat": "EnergyEfficiency",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050034_UI.T_IconWeapon21050034_UI"
     },
+    "RelativisticJet": {
+        "id": 21030084,
+        "name": "Relativistic Jet",
+        "rarity": 4,
+        "type": "Pistols",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21030084_UI.T_IconWeapon21030084_UI",
+        "baseATK": 37,
+        "stat": "GreenAtk",
+        "baseStat": 0.04050000011920929,
+        "rankData": [
+            [
+                "6",
+                "7",
+                "8",
+                "9",
+                "10"
+            ],
+            [
+                "10%",
+                "12.5%",
+                "15%",
+                "17.5%",
+                "20%"
+            ],
+            [
+                "16",
+                "16",
+                "16",
+                "16",
+                "16"
+            ],
+            [
+                "20",
+                "20",
+                "20",
+                "20",
+                "20"
+            ]
+        ],
+        "passive": "Casting the Resonance Skill grants {0} Resonance Energy and increases ATK by {1}, lasting for {2}s. This effect can be triggered once every {3}s.",
+        "enemyMat": "Ring",
+        "forgeryMat": "Phlogiston"
+    },
     "Stonard": {
         "name": "Stonard",
         "type": "Gauntlets",
@@ -1635,6 +1864,49 @@ export default {
         "forgeryMat": "Helix",
         "stat": "EnergyEfficiency",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050024_UI.T_IconWeapon21050024_UI"
+    },
+    "WaningRedshift": {
+        "id": 21010084,
+        "name": "Waning Redshift",
+        "rarity": 4,
+        "type": "Broadblade",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21010084_UI.T_IconWeapon21010084_UI",
+        "baseATK": 37,
+        "stat": "GreenAtk",
+        "baseStat": 0.04050000011920929,
+        "rankData": [
+            [
+                "6",
+                "7",
+                "8",
+                "9",
+                "10"
+            ],
+            [
+                "10%",
+                "12.5%",
+                "15%",
+                "17.5%",
+                "20%"
+            ],
+            [
+                "16",
+                "16",
+                "16",
+                "16",
+                "16"
+            ],
+            [
+                "20",
+                "20",
+                "20",
+                "20",
+                "20"
+            ]
+        ],
+        "passive": "Casting the Resonance Skill grants {0} Resonance Energy and increases ATK by {1}, lasting for {2}s. This effect can be triggered once every {3}s.",
+        "enemyMat": "Whisperin Core",
+        "forgeryMat": "Waveworn Residue"
     },
     "BeguilingMelody": {
         "id": 21010063,

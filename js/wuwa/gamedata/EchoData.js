@@ -469,46 +469,51 @@ export default {
         "icon": "T_IconMonsterGoods160_998_UI",
         "descParams": [
             [
-                "33.80%",
-                "169.00%",
-                "5",
-                "50.00%",
-                "20"
+                "826.59%",
+                "30.00%",
+                "3",
+                "100.00%",
+                "20",
+                "30"
             ],
             [
-                "38.87%",
-                "194.35%",
-                "5",
-                "50.00%",
-                "20"
+                "826.59%",
+                "30.00%",
+                "3",
+                "100.00%",
+                "20",
+                "30"
             ],
             [
-                "43.94%",
-                "219.70%",
-                "5",
-                "50.00%",
-                "20"
+                "826.59%",
+                "30.00%",
+                "3",
+                "100.00%",
+                "20",
+                "30"
             ],
             [
-                "49.01%",
-                "245.05%",
-                "5",
-                "50.00%",
-                "20"
+                "826.59%",
+                "30.00%",
+                "3",
+                "100.00%",
+                "20",
+                "30"
             ],
             [
-                "54.08%",
-                "270.40%",
-                "5",
-                "50.00%",
-                "20"
+                "826.59%",
+                "30.00%",
+                "3",
+                "100.00%",
+                "20",
+                "30"
             ]
         ],
         "validSets": [
             "SunSinkingEclipse"
         ],
         "monster": "Dreamless",
-        "skillDesc": "Transform into Dreamless and perform 6 consecutive strikes. The first 5 strikes deal {0} Havoc DMG each, and the last strike deal {1} Havoc DMG.nThe DMG of this Echo Skill is increased by {3} during the first {2}s after Rover: Havoc casts Resonance Liberation: Deadening Abyss.nnCD: {4}s"
+        "skillDesc": "Transform into Dreamless to deal {0} Havoc DMG and <color=#ffd12f>boost ATK<\/color> for nearby party members by {1}. It also restores {2} Concerto Energy per second and increases Resonance Skill DMG against Immoblized targets by {3}. Lasts for {4}s. Cooldown: {5}s."
     },
     "DwarfCassowary": {
         "cost": 1,
@@ -616,6 +621,47 @@ export default {
         "monster": "Excarat",
         "skillDesc": "Transform into an Excarat and tunnel underground to advance. In this state, you have the ability to change your direction and are immune to damage.nnCD: {0}s"
     },
+    "FallacyOfNoReturn": {
+        "cost": 4,
+        "icon": "",
+        "descParams": [
+            [
+                "9.91%",
+                "0.99%",
+                "12.39%",
+                "20"
+            ],
+            [
+                "11.40%",
+                "1.14%",
+                "14.25%",
+                "20"
+            ],
+            [
+                "12.88%",
+                "1.29%",
+                "16.11%",
+                "20"
+            ],
+            [
+                "14.37%",
+                "1.44%",
+                "17.97%",
+                "20"
+            ],
+            [
+                "15.86%",
+                "1.58%",
+                "19.82%",
+                "20"
+            ]
+        ],
+        "validSets": [
+            "RejuvenatingGlow"
+        ],
+        "monster": "Fallacy of No Return",
+        "skillDesc": "Activate the Echo Skill to summon a fraction of the Fallacy of No Return's power and deal a blast to the surrounding area, inflicting Spectro DMG equal to {0} of max HP, after which the Resonator gains 10% bonus Energy Regen and all team members 10% bonus ATK for 20s.nHold Echo Skill to unleash a series of flurry assaults at the cost of STA, each dealing Spectro DMG equal to {1} of max HP; Release to end the assail in a powerful blow, dealing Spectro DMG equal to {2} of max HP.nCD: {3}s"
+    },
     "FeilianBeringal": {
         "cost": 4,
         "icon": "T_IconMonsterGoods160_996_UI",
@@ -705,34 +751,59 @@ export default {
         "icon": "T_IconMonsterGoods160_201_UI",
         "descParams": [
             [
-                "3",
-                "24.00%",
-                "8",
-                "0.00%"
+                "5",
+                "15.00%",
+                "10.00%",
+                "20.00%",
+                "100",
+                "150.00%",
+                "20",
+                "1.00%",
+                "30"
             ],
             [
-                "3",
-                "27.60%",
-                "8",
-                "0.00%"
+                "5",
+                "15.00%",
+                "10.00%",
+                "20.00%",
+                "100",
+                "150.00%",
+                "20",
+                "1.00%",
+                "30"
             ],
             [
-                "3",
-                "31.20%",
-                "8",
-                "0.00%"
+                "5",
+                "15.00%",
+                "10.00%",
+                "20.00%",
+                "100",
+                "150.00%",
+                "20",
+                "1.00%",
+                "30"
             ],
             [
-                "3",
-                "34.80%",
-                "8",
-                "0.00%"
+                "5",
+                "15.00%",
+                "10.00%",
+                "20.00%",
+                "100",
+                "150.00%",
+                "20",
+                "1.00%",
+                "30"
             ],
             [
-                "3",
-                "38.40%",
-                "8",
-                "0.00%"
+                "5",
+                "15.00%",
+                "10.00%",
+                "20.00%",
+                "100",
+                "150.00%",
+                "20",
+                "1.00%",
+                "30"
             ]
         ],
         "validSets": [
@@ -740,7 +811,7 @@ export default {
             "VoidThunder"
         ],
         "monster": "Flautist",
-        "skillDesc": "Summon a Dwarf Cassowary that tracks and attacks the enemy, dealing {1} Physical DMG {0} time(s).nnCooldown: {2}s"
+        "skillDesc": "Summon a Tambourinist that generates music notes for {0}s. Each note collected by a party member <color=#ffd12f>increases ATK by {1}<\/color>, recovers {2} HP, boosts Movement Speed by {3}, and rescovers {4} STA for them. It also increases their Basic Attack and Heavy Attack DMG to Immoblized targets by {5}. The effect lasts for {6}s. Throughout the battle, all Resonators' ATK is increased by {7} for each music note collected. Cooldown: {8}s."
     },
     "FusionDreadmane": {
         "cost": 1,
@@ -977,29 +1048,39 @@ export default {
         "icon": "T_IconMonsterGoods160_111_UI",
         "descParams": [
             [
-                "5",
-                "14.40%",
-                "8"
+                "25.00%",
+                "200.00%",
+                "50.00%",
+                "20",
+                "30"
             ],
             [
-                "5",
-                "16.56%",
-                "8"
+                "25.00%",
+                "200.00%",
+                "50.00%",
+                "20",
+                "30"
             ],
             [
-                "5",
-                "18.72%",
-                "8"
+                "25.00%",
+                "200.00%",
+                "50.00%",
+                "20",
+                "30"
             ],
             [
-                "5",
-                "20.88%",
-                "8"
+                "25.00%",
+                "200.00%",
+                "50.00%",
+                "20",
+                "30"
             ],
             [
-                "5",
-                "23.04%",
-                "8"
+                "25.00%",
+                "200.00%",
+                "50.00%",
+                "20",
+                "30"
             ]
         ],
         "validSets": [
@@ -1007,7 +1088,7 @@ export default {
             "FreezingFrost"
         ],
         "monster": "Gulpuff",
-        "skillDesc": "Summon a Gulpuff that blows bubbles {0} times, each time dealing {1} Glacio DMG.rnrnCD: {2}s"
+        "skillDesc": "Summon a Gulpuff that generates a <color=#ffd12f>healing field<\/color>. All nearby party members within this field recover {0} HP plus HP equal to {1} of the caster's ATK. Resonators affected also gain {2} DMG Reduction. Lasts for {3}s. Cooldown: {4}s."
     },
     "HavocDreadmane": {
         "cost": 3,
@@ -1292,68 +1373,68 @@ export default {
             "MoltenRift"
         ],
         "monster": "Inferno Rider",
-        "skillDesc": "Transform into Inferno Rider to launch up to 3 consecutive slashes in a row, each slash dealing {0}, {1}, and {2} Fusion DMG respectively.nnAfter the final hit, increase the current character\u2019s Fusion DMG by {3} and Basic Attack DMG by {4} for {5}s.nnLong press the Echo Skill to transform into Inferno Rider and enter the Riding Mode. When exiting the Riding Mode, deal {2} Fusion DMG to enemies in front.nnCD: {6}s"
+        "skillDesc": "Transform into the Inferno Rider to launch up to 3 consecutive slashes in a row, each slash dealing {0}, {1}, and {2} Fusion DMG respectively.nnAfter the final hit, increase the current Resonator's Fusion DMG by {3} and Basic Attack DMG by {4} for {5}s.nnLong press the Echo Skill to transform into the Inferno Rider and enter Riding Mode. When exiting Riding Mode, deal {2} Fusion DMG to enemies in front.nnCD: {6}s"
     },
     "Ju": {
         "cost": 4,
         "icon": "T_IconMonsterGoods160_323_UI",
         "descParams": [
             [
-                "30.40%",
-                "12.16%",
-                "30.40%",
-                "15",
-                "16.00%",
-                "10.00%",
-                "15",
-                "20"
+                "5",
+                "500.00%",
+                "30.00%",
+                "30.00%",
+                "246.81%",
+                "47.85%",
+                "119.61%",
+                "40"
             ],
             [
-                "34.96%",
-                "13.98%",
-                "34.96%",
-                "15",
-                "16.00%",
-                "11.50%",
-                "15",
-                "20"
+                "5",
+                "500.00%",
+                "30.00%",
+                "30.00%",
+                "246.81%",
+                "47.85%",
+                "119.61%",
+                "40"
             ],
             [
-                "39.52%",
-                "15.81%",
-                "39.52%",
-                "15",
-                "16.00%",
-                "13.00%",
-                "15",
-                "20"
+                "5",
+                "500.00%",
+                "30.00%",
+                "30.00%",
+                "246.81%",
+                "47.85%",
+                "119.61%",
+                "40"
             ],
             [
-                "44.08%",
-                "17.63%",
-                "44.08%",
-                "15",
-                "16.00%",
-                "14.50%",
-                "15",
-                "20"
+                "5",
+                "500.00%",
+                "30.00%",
+                "30.00%",
+                "246.81%",
+                "47.85%",
+                "119.61%",
+                "40"
             ],
             [
-                "48.64%",
-                "19.46%",
-                "48.64%",
-                "15",
-                "16.00%",
-                "16.00%",
-                "15",
-                "20"
+                "5",
+                "500.00%",
+                "30.00%",
+                "30.00%",
+                "246.81%",
+                "47.85%",
+                "119.61%",
+                "40"
             ]
         ],
         "validSets": [
             "CelestialLight"
         ],
         "monster": "Ju\u00e9",
-        "skillDesc": "Summon Ju\u00e9 to the aid. Ju\u00e9 soars through the air, dealing {0} Spectro DMG, and summons thunderbolts that strike nearby enemies up to 5 times, each hit dealing {1} Spectro DMG. Ju\u00e9 then spirals downward, attacking surrounding enemies twice, each hit dealing {2} Spectro DMG.nCasting this Echo Skill grants the Resonator a Blessing of Time effect that lasts {3}s, during when:n- The Resonator gains {4} Resonance Skill DMG Bonus.n- When the Resonator's Resonance Skill hits the target, inflict {5} Spectro DMG 1 time per second for {6}s, considered as the Resonator's Resonance Skill DMG.nCD: {7}s"
+        "skillDesc": "Summon Ju\u00e9 to generate a <color=#ffd12f>stagnation field<\/color> that lasts for {0}s. While active, it increases nearby party members' Vibration Strength Depletion Rate by {1}. Enemies in the filed have their DEF reduced by {2} and RES to All Attributes reduced by {3}. During this time, Ju\u00e9 soars through the air and deals {4} Spectro DMG while summoning thunderbolts that strike nearby enemies up to 5 times, each dealing {5} Spectro DMG. Ju\u00e9 then spirals downward, attacking surrounding enemies twice, each dealing {6} Spectro DMG. Cooldown: {7}s."
     },
     "LampylumenMyriad": {
         "cost": 4,
@@ -1706,75 +1787,152 @@ export default {
         "icon": "T_IconMonsterGoods160_1004_UI",
         "descParams": [
             [
-                "3",
-                "24.00%",
-                "8",
-                "0.00%"
+                "836.25%",
+                "50.00%",
+                "100.00%",
+                "15",
+                "220.80%",
+                "50",
+                "50.00%",
+                "40"
             ],
             [
-                "3",
-                "27.60%",
-                "8",
-                "0.00%"
+                "836.25%",
+                "50.00%",
+                "100.00%",
+                "15",
+                "220.80%",
+                "50",
+                "50.00%",
+                "40"
             ],
             [
-                "3",
-                "31.20%",
-                "8",
-                "0.00%"
+                "836.25%",
+                "50.00%",
+                "100.00%",
+                "15",
+                "220.80%",
+                "50",
+                "50.00%",
+                "40"
             ],
             [
-                "3",
-                "34.80%",
-                "8",
-                "0.00%"
+                "836.25%",
+                "50.00%",
+                "100.00%",
+                "15",
+                "220.80%",
+                "50",
+                "50.00%",
+                "40"
             ],
             [
-                "3",
-                "38.40%",
-                "8",
-                "0.00%"
+                "836.25%",
+                "50.00%",
+                "100.00%",
+                "15",
+                "220.80%",
+                "50",
+                "50.00%",
+                "40"
             ]
         ],
         "validSets": [
             "SierraGale"
         ],
         "monster": "Phantom: Feilian Beringal",
-        "skillDesc": "Summon a Dwarf Cassowary that tracks and attacks the enemy, dealing {1} Physical DMG {0} time(s).nnCooldown: {2}s"
+        "skillDesc": "Transform into Feilian Beringal to deal {0} Aero DMG and <color=#ffd12f>boost Resonance Liberation DMG<\/color> for nearby party members by {1}. It also increases Resonance Liberation DMG against Immobilized targets by {2}. Lasts for {3}s. During this time, Feilian Beringal summons a pillar that releases shock waves, each dealing {4} Aero DMG. Resonators hit by a shock wave gain {5} Resonance Energy and {6} Resonance Liberation cooldown reduction. Cooldown: {7}s."
+    },
+    "PhantomGulpuff": {
+        "cost": 1,
+        "icon": "",
+        "descParams": [
+            [
+                "5",
+                "14.40%",
+                "8"
+            ],
+            [
+                "5",
+                "16.56%",
+                "8"
+            ],
+            [
+                "5",
+                "18.72%",
+                "8"
+            ],
+            [
+                "5",
+                "20.88%",
+                "8"
+            ],
+            [
+                "5",
+                "23.04%",
+                "8"
+            ]
+        ],
+        "validSets": [
+            "CelestialLight",
+            "FreezingFrost"
+        ],
+        "monster": "Phantom: Gulpuff",
+        "skillDesc": "Summon a Gulpuff that blows bubbles {0} times, each time dealing {1} Glacio DMG.rnrnCD: {2}s"
     },
     "PhantomHoartoise": {
         "cost": 1,
         "icon": "T_IconMonsterGoods160_1005_UI",
         "descParams": [
             [
-                "3",
-                "24.00%",
+                "20",
+                "283.20%",
+                "20.00%",
+                "15.00%",
+                "12.50%",
                 "8",
-                "0.00%"
+                "20",
+                "40"
             ],
             [
-                "3",
-                "27.60%",
+                "20",
+                "283.20%",
+                "20.00%",
+                "15.00%",
+                "12.50%",
                 "8",
-                "0.00%"
+                "20",
+                "40"
             ],
             [
-                "3",
-                "31.20%",
+                "20",
+                "283.20%",
+                "20.00%",
+                "15.00%",
+                "12.50%",
                 "8",
-                "0.00%"
+                "20",
+                "40"
             ],
             [
-                "3",
-                "34.80%",
+                "20",
+                "283.20%",
+                "20.00%",
+                "15.00%",
+                "12.50%",
                 "8",
-                "0.00%"
+                "20",
+                "40"
             ],
             [
-                "3",
-                "38.40%",
+                "20",
+                "283.20%",
+                "20.00%",
+                "15.00%",
+                "12.50%",
                 "8",
-                "0.00%"
+                "20",
+                "40"
             ]
         ],
         "validSets": [
@@ -1782,7 +1940,7 @@ export default {
             "FreezingFrost"
         ],
         "monster": "Phantom: Hoartoise",
-        "skillDesc": "Summon a Dwarf Cassowary that tracks and attacks the enemy, dealing {1} Physical DMG {0} time(s).nnCooldown: {2}s"
+        "skillDesc": "Transform into Hoartoise for {0}s, dealing up to {1} Glacio DMG to surrounding enemies each second and gaining 5 stacks of \"Hardening.\" Each stack of \"Hardening\" <color=#ffd12f>reduces incoming DMG<\/color> by {2} and increases Movement Speed by {3}. Lose a stack of \"Hardening\" when hit (up to one stack per second). Attacks during transformation increase nearby party members' ATK by {4} on hit (up to one stack per second), stackable for up to {5} times, lasting for {6}s. Losing all stacks of \"Hardening\" will remove all the ATK boosts and end the transformation. Cooldown: {7}s."
     },
     "PhantomImpermanenceHeron": {
         "cost": 4,
@@ -1866,6 +2024,43 @@ export default {
         "monster": "Phantom: Lightcrusher",
         "skillDesc": "Lunge forward as a Lightcrusher, dealing {0} Spectro DMG. Generate {1} Ablucence on hit. Each Ablucence explosion deals {2} Spectro DMG.nHold the Echo Skill to stay in the Lightcrusher form, which allows you to leap up and pounce forward in the air for a short distance.nnCooldown: {3}s"
     },
+    "PhantomLumiscaleConstruct": {
+        "cost": 3,
+        "icon": "",
+        "descParams": [
+            [
+                "346.00%",
+                "346.00%+173.00%",
+                "15"
+            ],
+            [
+                "397.90%",
+                "397.90%+198.95%",
+                "15"
+            ],
+            [
+                "449.80%",
+                "449.80%+224.90%",
+                "15"
+            ],
+            [
+                "501.70%",
+                "501.70%+250.85%",
+                "15"
+            ],
+            [
+                "553.60%",
+                "553.60%+276.80%",
+                "15"
+            ]
+        ],
+        "validSets": [
+            "VoidThunder",
+            "FreezingFrost"
+        ],
+        "monster": "Phantom: Lumiscale Construct",
+        "skillDesc": "Transform into a Lumiscale Construct and enter a Parry Stance. If you are not attacked during the Parry Stance, slash to deal {0} Glacio DMG when the stance finishes. If attacked, counterattack instantly, dealing {1} Glacio DMG. When hit with a <color=Highlight>Special Skill<\/color> attack while in the Parry Stance, break the <color=Highlight>Special Skill<\/color> and counterattack, dealing {1} Glacio DMG.nnCD: {2}s"
+    },
     "PhantomMourningAix": {
         "cost": 4,
         "icon": "T_IconMonsterGoods160_1001_UI",
@@ -1922,34 +2117,34 @@ export default {
         "icon": "T_IconMonsterGoods160_1002_UI",
         "descParams": [
             [
-                "3",
-                "24.00%",
-                "8",
-                "0.00%"
+                "728.89%",
+                "80.00%",
+                "20",
+                "30"
             ],
             [
-                "3",
-                "27.60%",
-                "8",
-                "0.00%"
+                "728.89%",
+                "80.00%",
+                "20",
+                "30"
             ],
             [
-                "3",
-                "31.20%",
-                "8",
-                "0.00%"
+                "728.89%",
+                "80.00%",
+                "20",
+                "30"
             ],
             [
-                "3",
-                "34.80%",
-                "8",
-                "0.00%"
+                "728.89%",
+                "80.00%",
+                "20",
+                "30"
             ],
             [
-                "3",
-                "38.40%",
-                "8",
-                "0.00%"
+                "728.89%",
+                "80.00%",
+                "20",
+                "30"
             ]
         ],
         "validSets": [
@@ -1957,7 +2152,7 @@ export default {
             "CelestialLight"
         ],
         "monster": "Phantom: Rocksteady Guardian",
-        "skillDesc": "Summon a Dwarf Cassowary that tracks and attacks the enemy, dealing {1} Physical DMG {0} time(s).nnCooldown: {2}s"
+        "skillDesc": "Transform into Rocksteady Guardian to deal {0} Spectro DMG and grant nearby party members a <color=#ffd12f>Shield<\/color> based on {1} of the caster's Max HP. It also boosts the caster's resistance to interruption. Lasts for {2}s. Cooldown: {3}s."
     },
     "PhantomThunderingMephis": {
         "cost": 4,
@@ -2319,51 +2514,51 @@ export default {
         "icon": "T_IconMonsterGoods160_221_UI",
         "descParams": [
             [
-                "64.05%",
-                "109.80%",
-                "12.00%",
-                "12.00%",
-                "15",
-                "20"
+                "1299.78%",
+                "40.00%",
+                "15.00%",
+                "50.00%",
+                "20",
+                "35"
             ],
             [
-                "73.66%",
-                "126.27%",
-                "12.00%",
-                "12.00%",
-                "15",
-                "20"
+                "1299.78%",
+                "40.00%",
+                "15.00%",
+                "50.00%",
+                "20",
+                "35"
             ],
             [
-                "83.27%",
-                "142.74%",
-                "12.00%",
-                "12.00%",
-                "15",
-                "20"
+                "1299.78%",
+                "40.00%",
+                "15.00%",
+                "50.00%",
+                "20",
+                "35"
             ],
             [
-                "92.87%",
-                "159.21%",
-                "12.00%",
-                "12.00%",
-                "15",
-                "20"
+                "1299.78%",
+                "40.00%",
+                "15.00%",
+                "50.00%",
+                "20",
+                "35"
             ],
             [
-                "102.48%",
-                "175.68%",
-                "12.00%",
-                "12.00%",
-                "15",
-                "20"
+                "1299.78%",
+                "40.00%",
+                "15.00%",
+                "50.00%",
+                "20",
+                "35"
             ]
         ],
         "validSets": [
             "VoidThunder"
         ],
         "monster": "Tempest Mephis",
-        "skillDesc": "Transform into Tempest Mephis to perform tail swing attacks followed by a claw attack. The lightning strike summoned by the tail swing deals {0} Electro DMG each time, while the claw attack deals {1} Electro DMG.rnrnAfter the claw hit, increase the current character\u2019s Electro DMG by {2} and Heavy Attack DMG by {3} for {4}s.rnrnCD: {5}s"
+        "skillDesc": "Transform into Tempest Mephis to deal {0} Electro DMG and <color=#ffd12f>reduce the targets' Vibration Strength by {1}<\/color>. If the target is Immobilized from this attack, increase the DMG it takes by {2} and reduce all Resonators' Resonance Skill Cooldown by {3} for {4}s. Cooldown: {5}s."
     },
     "ThunderingMephis": {
         "cost": 4,
@@ -2679,24 +2874,34 @@ export default {
         "icon": "T_IconMonsterGoods160_071_UI",
         "descParams": [
             [
-                "30.00%+60",
-                "15"
+                "6",
+                "50.00%",
+                "100.00%",
+                "30"
             ],
             [
-                "34.50%+69",
-                "15"
+                "6",
+                "50.00%",
+                "100.00%",
+                "30"
             ],
             [
-                "39.00%+78",
-                "15"
+                "6",
+                "50.00%",
+                "100.00%",
+                "30"
             ],
             [
-                "43.50%+87",
-                "15"
+                "6",
+                "50.00%",
+                "100.00%",
+                "30"
             ],
             [
-                "48.00%+96",
-                "15"
+                "6",
+                "50.00%",
+                "100.00%",
+                "30"
             ]
         ],
         "validSets": [
@@ -2705,6 +2910,6 @@ export default {
             "CelestialLight"
         ],
         "monster": "Zig Zag",
-        "skillDesc": "Summon a Zig Zag that denotates Spectro energy, dealing {0} Spectro DMG and creating a Stagnation Zone that lasts 1.8s.rnrnCD: {1}s"
+        "skillDesc": "Summon a Zig Zag that generates an <color=#ffd12f>invincible field<\/color>. All party members within this field are immune to all incoming DMG for {0}s. Resonators affected also gain additional {1} Crit. Rate and {2} Crit. DMG. Cooldown: {3}s."
     }
 };

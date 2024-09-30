@@ -723,7 +723,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_YinlinM1_UI.T_IconDevice_YinlinM1_UI",
             "name": "Morality's Crossroads",
-            "desc": "Resonance Skill <color=Highlight>Magnetic Roar<\/color> and <color=Highlight>Lightning Execution<\/color> deal 70% more damage."
+            "desc": "Resonance Skill <color=Highlight>Magnetic Roar<\/color> and <color=Highlight>Lightning Execution<\/color> deal 70% more DMG."
         },
         "2": {
             "buffs": [
@@ -755,7 +755,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_YinlinM5_UI.T_IconDevice_YinlinM5_UI",
             "name": "Resounding Will",
-            "desc": "Resonance Liberation <color=Highlight>Thundering Wrath<\/color> deals 100% extra damage to targets with Forte Circuit's <color=Highlight>Sinner's Mark<\/color> or <color=Highlight>Punishment Mark<\/color>."
+            "desc": "Resonance Liberation <color=Highlight>Thundering Wrath<\/color> deals 100% extra DMG to targets with Forte Circuit's <color=Highlight>Sinner's Mark<\/color> or <color=Highlight>Punishment Mark<\/color>."
         },
         "6": {
             "buffs": [

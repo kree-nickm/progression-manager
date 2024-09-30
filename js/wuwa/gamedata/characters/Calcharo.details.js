@@ -922,7 +922,7 @@ export default {
                 }
             ],
             "name": "Hunting Mission",
-            "desc": "<size=40><color=Title>Heavy Attack: \"Mercy\"<\/color><\/size>nWhen Calcharo has 3 \"Cruelty\", his <color=Highlight>Heavy Attack<\/color> is replaced with Heavy Attack <color=Highlight>\"Mercy\"<\/color>.nWhen casting Heavy Attack <color=Highlight>\"Mercy\"<\/color>, Calcharo consumes 3 \"Cruelty\" to deal <color=Thunder>Electro DMG<\/color>, considered as Heavy Attack DMG, and recovers Resonance Energy and Concerto Energy.n<size=10> <\/size>n<size=40><color=Title>\"Cruelty\"<\/color><\/size>nCalcharo can hold up to 3 \"Cruelty\".nUnder Resonance Liberation <color=Highlight>Deathblade Gear<\/color> state, \"Cruelty\" cannot be acquired.nWhen Resonance Skill <color=Highlight>Extermination Order<\/color> hits the target, gain 1 \"Cruelty\".n<size=10> <\/size>n<color=Title>Heavy Attack: \"Death Messenger\"<\/color>nWhen Calcharo has 5 \"Killing Intent\", his <color=Highlight>Basic Attack<\/color> is replaced with Heavy Attack <color=Highlight>\"Death Messenger\"<\/color>.nWhen casting Heavy Attack <color=Highlight>\"Death Messenger\"<\/color>, Calcharo consumes 5 \"Killing Intent\" to deal <color=Thunder>Electro DMG<\/color>, considered as Resonance Liberation damage, and recovers Resonance Energy and Concerto Energy.n<size=10> <\/size>n<size=40><color=Title>\"Killing Intent\"<\/color><\/size>nUnder Resonance Liberation <color=Highlight>Deathblade Gear<\/color> state, Calcharo's Forte Gauge is replaced with \"Killing Intent\", stacking up to 5.nWhen Basic Attack <color=Highlight>Hounds Roar<\/color> hits the target, Calcharo gains 1 \"Killing Intent\"."
+            "desc": "<size=40><color=Title>Heavy Attack: \"Mercy\"<\/color><\/size>nWhen Calcharo has 3 \"Cruelty\", his <color=Highlight>Heavy Attack<\/color> is replaced with Heavy Attack <color=Highlight>\"Mercy\"<\/color>.nWhen casting Heavy Attack <color=Highlight>\"Mercy\"<\/color>, Calcharo consumes 3 \"Cruelty\" to deal <color=Thunder>Electro DMG<\/color>, considered as Heavy Attack DMG, and recovers Resonance Energy and Concerto Energy.n<size=10> <\/size>n<size=40><color=Title>\"Cruelty\"<\/color><\/size>nCalcharo can hold up to 3 \"Cruelty\".nUnder Resonance Liberation <color=Highlight>Deathblade Gear<\/color> state, \"Cruelty\" cannot be acquired.nWhen Resonance Skill <color=Highlight>Extermination Order<\/color> hits the target, gain 1 \"Cruelty\".n<size=10> <\/size>n<color=Title>Heavy Attack: \"Death Messenger\"<\/color>nWhen Calcharo has 5 \"Killing Intent\", his <color=Highlight>Basic Attack<\/color> is replaced with Heavy Attack <color=Highlight>\"Death Messenger\"<\/color>.nWhen casting Heavy Attack <color=Highlight>\"Death Messenger\"<\/color>, Calcharo consumes 5 \"Killing Intent\" to deal <color=Thunder>Electro DMG<\/color>, considered as Resonance Liberation DMG, and recovers Resonance Energy and Concerto Energy.n<size=10> <\/size>n<size=40><color=Title>\"Killing Intent\"<\/color><\/size>nUnder Resonance Liberation <color=Highlight>Deathblade Gear<\/color> state, Calcharo's Forte Gauge is replaced with \"Killing Intent\", stacking up to 5.nWhen Basic Attack <color=Highlight>Hounds Roar<\/color> hits the target, Calcharo gains 1 \"Killing Intent\"."
         },
         "Utility Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
@@ -1016,7 +1016,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_KakaluoM5_UI.T_IconDevice_KakaluoM5_UI",
             "name": "Unconventional Compact",
-            "desc": "Intro Skill <color=Highlight>Wanted Criminal<\/color> and Intro Skill <color=Highlight>\"Necessary Means\"<\/color> deal 50% more damage."
+            "desc": "Intro Skill <color=Highlight>Wanted Criminal<\/color> and Intro Skill <color=Highlight>\"Necessary Means\"<\/color> deal 50% more DMG."
         },
         "6": {
             "buffs": [
@@ -1024,7 +1024,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_KakaluoM6_UI.T_IconDevice_KakaluoM6_UI",
             "name": "The Ultimatum",
-            "desc": "When casting Resonance Liberation <color=Highlight>\"Death Messenger\"<\/color>, Calcharo will summon 2 <color=Highlight>Phantoms<\/color> to perform Coordinated Attacks. Each <color=Highlight>Phantom<\/color> deals <color=Thunder>Electro DMG<\/color> equal to 100.00% of Calcharo's ATK, which is considered Resonance Liberation damage."
+            "desc": "When casting Resonance Liberation <color=Highlight>\"Death Messenger\"<\/color>, Calcharo will summon 2 <color=Highlight>Phantoms<\/color> to perform Coordinated Attacks. Each <color=Highlight>Phantom<\/color> deals <color=Thunder>Electro DMG<\/color> equal to 100.00% of Calcharo's ATK, which is considered Resonance Liberation DMG."
         }
     }
 };

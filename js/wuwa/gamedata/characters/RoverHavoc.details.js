@@ -970,7 +970,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_ZhujueDarkM5_UI.T_IconDevice_ZhujueDarkM5_UI",
             "name": "Aeon Symphony",
-            "desc": "In the <color=Highlight>Dark Surge<\/color> state, <color=Highlight>Basic Attack 5<\/color> deals an additional <color=Dark>Havoc damage<\/color> equal to 50% of <color=Highlight>Basic Attack 5<\/color> damage."
+            "desc": "In the <color=Highlight>Dark Surge<\/color> state, <color=Highlight>Basic Attack 5<\/color> deals an additional <color=Dark>Havoc DMG<\/color> equal to 50% of <color=Highlight>Basic Attack 5<\/color> DMG."
         },
         "6": {
             "buffs": [

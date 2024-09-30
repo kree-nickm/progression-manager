@@ -380,7 +380,7 @@ export default {
                 }
             ],
             "name": "Manifestation",
-            "desc": "Deal <color=Ice>Glacio DMG<\/color>. If Afflatus is no less than 60, consume 60 Afflatus to summon <color=Highlight>Phantasmic Imprint - Left<\/color> and <color=Highlight>Phantasmic Imprint - Right<\/color>.n-Tap the button on the ground to summon the Phantasmic Imprints on the ground.n-Hold the button on the ground or tap the button in mi-dar to summon the Phantasmic Imprints in mid-air."
+            "desc": "Deal <color=Ice>Glacio DMG<\/color>. If Afflatus is no less than 60, consume 60 Afflatus to summon <color=Highlight>Phantasmic Imprint - Left<\/color> and <color=Highlight>Phantasmic Imprint - Right<\/color>.n-Press the button on the ground to summon the Phantasmic Imprints on the ground.n-Hold the button on the ground or press the button in mid-air to summon the Phantasmic Imprints in mid-air."
         },
         "Resonance Liberation": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconJueyuanA1_UI.T_IconJueyuanA1_UI",
@@ -487,7 +487,7 @@ export default {
                 }
             ],
             "name": "Living Canvas",
-            "desc": "Summon <color=Highlight>Inklit Spirits<\/color> for assistance.nCan be cast in mid-air.n<size=10><\/size>n<size=40><color=Title>Inklit Spirit<\/color><\/size>nWhen the active Resonator deals DMG, an <color=Highlight>Inklit Spirit<\/color> will be summoned to perform a Coordinated Attack, dealing <color=Ice>Glacio DMG<\/color>, considered as Basic Attack DMG.n-For 3 seconds after dealing DMG, 1 <color=Highlight>Inklit Spirit<\/color> is summoned per second. This effect can trigger once per second. Damage dealt by an Inklit Spirit does not trigger this effect.n-Up to 1 <color=Highlight>Inklit Spirit<\/color> can be summoned every second, and up to 21 in total.n-This effect lasts for 30s, or until max <color=Highlight>Inklit Spirits<\/color> are summoned."
+            "desc": "Summon <color=Highlight>Inklit Spirits<\/color> for assistance.nCan be cast in mid-air.n<size=10><\/size>n<size=40><color=Title>Inklit Spirit<\/color><\/size>nWhen the active Resonator deals DMG, an <color=Highlight>Inklit Spirit<\/color> will be summoned to perform a Coordinated Attack, dealing <color=Ice>Glacio DMG<\/color>, considered as Basic Attack DMG.n-For 3s after dealing DMG, 1 <color=Highlight>Inklit Spirit<\/color> is summoned per second. This effect can trigger once per second. Damage dealt by an Inklit Spirit does not trigger this effect.n-Up to 1 <color=Highlight>Inklit Spirit<\/color> can be summoned every second, and up to 21 in total.n-This effect lasts for 30s, or until max <color=Highlight>Inklit Spirits<\/color> are summoned."
         },
         "Forte Circuit Passive 1": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconWeilinaiD1_UI.T_IconWeilinaiD1_UI",

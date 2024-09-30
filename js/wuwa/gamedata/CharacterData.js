@@ -224,6 +224,21 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_7_UI.T_IconRoleHead256_7_UI",
         "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_shanhua_UI.T_IconRole_Pile_shanhua_UI"
     },
+    "Shorekeeper": {
+        "id": 1505,
+        "rarity": 5,
+        "weapon": "Rectifier",
+        "element": "Spectro",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_28_UI.T_IconRoleHead256_28_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_shouanren_UI.T_IconRole_Pile_shouanren_UI",
+        "name": "Shorekeeper",
+        "alias": "Shorekeeper",
+        "weeklyMat": "Sentinel's Dagger",
+        "bossMat": "Topological Confinement",
+        "floraMat": "Nova",
+        "enemyMat": "Whisperin Core",
+        "forgeryMat": "Helix"
+    },
     "Taoqi": {
         "id": 1601,
         "rarity": 4,
@@ -298,6 +313,21 @@ export default {
         "forgeryMat": "Helix",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_17_UI.T_IconRoleHead256_17_UI",
         "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_yinlin_UI.T_IconRole_Pile_yinlin_UI"
+    },
+    "Youhu": {
+        "id": 1106,
+        "rarity": 4,
+        "weapon": "Gauntlets",
+        "element": "Glacio",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_31_UI.T_IconRoleHead256_31_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_youhu_UI.T_IconRole_Pile_youhu_UI",
+        "name": "Youhu",
+        "alias": "Youhu",
+        "weeklyMat": "Monument Bell",
+        "bossMat": "Topological Confinement",
+        "floraMat": "Violet Coral",
+        "enemyMat": "Ring",
+        "forgeryMat": "Cadence"
     },
     "Yuanwu": {
         "id": 1303,

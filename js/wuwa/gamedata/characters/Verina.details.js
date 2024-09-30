@@ -969,7 +969,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_weilinaiM6_UI.T_IconDevice_weilinaiM6_UI",
             "name": "Joyous Harvest",
-            "desc": "Heavy Attack <color=Highlight>Starflower Blooms<\/color> and Mid-Air Attack <color=Highlight>Starflower Blooms<\/color> deal 20% more damage. They will trigger Coordinated Attack 1 time and heal all characters nearby. The DMG of this Coordinated Attack and the Healing are equal to those of the Resonance Liberation's <color=Highlight>Photosynthesis Mark<\/color>."
+            "desc": "Heavy Attack <color=Highlight>Starflower Blooms<\/color> and Mid-air Attack <color=Highlight>Starflower Blooms<\/color> deal 20% more DMG. They will trigger Coordinated Attack 1 time and heal all characters nearby. The damage of this Coordinated Attack and the Healing are equal to those of the Resonance Liberation's <color=Highlight>Photosynthesis Mark<\/color>."
         }
     }
 };

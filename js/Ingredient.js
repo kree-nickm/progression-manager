@@ -171,7 +171,7 @@ const Ingredient = (SuperClass) => class extends SuperClass {
     if(this.converts)
       return this.count + this.converts.reduce((total, mat) => total+Math.max(0,mat.count-(plan?.[mat.key]??0)), 0);
     else
-      return this.count + (this.prevTier ? Math.floor(Math.max(0,this.prevTier.getCraftCount()-(plan?.[this.prevTier.key]??0))/3) : 0);
+      return this.count + (this.prevTier ? Math.floor(Math.max(0,this.prevTier.getCraftCount({plan})-(plan?.[this.prevTier.key]??0))/3) : 0);
   }
   
   getCraftDependencies()

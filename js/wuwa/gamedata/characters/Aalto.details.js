@@ -736,7 +736,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_QiushuiM4_UI.T_IconDevice_QiushuiM4_UI",
             "name": "Blake Bloom for Finale",
-            "desc": "The damage of Resonance Skill <color=Highlight>Mist Bullets<\/color> is increased by 30%; Aalto receives 30% less damage in his Forte Circuit <color=Highlight>Mistcloak Dash<\/color> state."
+            "desc": "The damage of Resonance Skill <color=Highlight>Mist Bullets<\/color> is increased by 30%; Aalto receives 30% less DMG in his Forte Circuit <color=Highlight>Mistcloak Dash<\/color> state."
         },
         "5": {
             "buffs": [

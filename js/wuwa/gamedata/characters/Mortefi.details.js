@@ -617,7 +617,7 @@ export default {
                 }
             ],
             "name": "Fury Fugue",
-            "desc": "<size=40><color=Title>Resonance Skill: Fury Fugue<\/color><\/size>nWhen Mortefi's Annoyance reaches 100, his <color=Highlight>Resonance Skill<\/color> is replaced with <color=Highlight>Fury Fugue<\/color>.nWhen casting Fury Fudge, Mortefi consumes all Annoyance to unleash high-speed flame lightning, dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill damage.n<size=10> <\/size>n<size=40><color=Title>Annoyance<\/color><\/size>nMortefi can hold up to 100 Annoyance and can restore Annoyance in the following ways:n- When Normal Attack <color=Highlight>Impromptu Show<\/color> hits the targetn- When Intro Skill <color=Highlight>Dissonance<\/color> hits the targetn- When Resonance Skill <color=Highlight>Passionate Variation<\/color> hits the targetn- Within 5s after casting <color=Highlight>Passionate Variation<\/color>, Normal Attack <color=Highlight>Impromptu Show<\/color> that hits the target restores Annoyance additionally."
+            "desc": "<size=40><color=Title>Resonance Skill: Fury Fugue<\/color><\/size>nWhen Mortefi's Annoyance reaches 100, his <color=Highlight>Resonance Skill<\/color> is replaced with <color=Highlight>Fury Fugue<\/color>.nWhen casting Fury Fudge, Mortefi consumes all Annoyance to unleash high-speed flame lightning, dealing <color=Fire>Fusion DMG<\/color>, considered as Resonance Skill DMG.n<size=10> <\/size>n<size=40><color=Title>Annoyance<\/color><\/size>nMortefi can hold up to 100 Annoyance and can restore Annoyance in the following ways:n- When Normal Attack <color=Highlight>Impromptu Show<\/color> hits the targetn- When Intro Skill <color=Highlight>Dissonance<\/color> hits the targetn- When Resonance Skill <color=Highlight>Passionate Variation<\/color> hits the targetn- Within 5s after casting <color=Highlight>Passionate Variation<\/color>, Normal Attack <color=Highlight>Impromptu Show<\/color> that hits the target restores Annoyance additionally."
         },
         "Utility Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
@@ -679,7 +679,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_MotefeiM1_UI.T_IconDevice_MotefeiM1_UI",
             "name": "Solitary Etude",
-            "desc": "During Resonance Liberation <color=Highlight>Burning Rhapsody<\/color>, Mortefi launches Coordinated Attacks when the on-field character performs their Resonance Skills, firing 2 Resonance Liberation's <color=Highlight>Marcato<\/color> hits, dealing <color=Fire>Fusion Damage<\/color>."
+            "desc": "During Resonance Liberation <color=Highlight>Burning Rhapsody<\/color>, Mortefi launches Coordinated Attacks when the on-field character performs their Resonance Skills, firing 2 Resonance Liberation's <color=Highlight>Marcato<\/color> hits, dealing <color=Fire>Fusion DMG<\/color>."
         },
         "2": {
             "buffs": [
