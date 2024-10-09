@@ -569,6 +569,24 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/65\/Item_Heart_of_the_Secret_Source.png",
         "rarity": 4
     },
+    "RefractiveBud": {
+        "name": "Refractive Bud",
+        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_112116.webp",
+        "rarity": 2,
+        "release": "November 19, 2024"
+    },
+    "BewilderingBroadleaf": {
+        "name": "Bewildering Broadleaf",
+        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_112117.webp",
+        "rarity": 3,
+        "release": "November 19, 2024"
+    },
+    "IllusoryLeafcoil": {
+        "name": "Illusory Leafcoil",
+        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_112118.webp",
+        "rarity": 4,
+        "release": "November 19, 2024"
+    },
     "MaintenanceMekSalvagedParts": {
         "name": "\"Maintenance Mek\" Salvaged Parts",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/43\/Item_Maintenance_Mek_Salvaged_Parts.png",
@@ -744,6 +762,12 @@ export default {
         "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_113066.webp",
         "rarity": 4,
         "release": "October 8, 2024"
+    },
+    "EnsnaringGaze": {
+        "name": "Ensnaring Gaze",
+        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_113067.webp",
+        "rarity": 4,
+        "release": "November 19, 2024"
     },
     "DvalinsPlume": {
         "name": "Dvalin's Plume",
@@ -2023,6 +2047,16 @@ export default {
     "SaurianClawSucculent": {
         "name": "Saurian Claw Succulent",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bf\/Item_Saurian_Claw_Succulent.png",
+        "rarity": 1
+    },
+    "GlowingMushroom": {
+        "name": "Glowing Mushroom",
+        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_101252.webp",
+        "rarity": 1
+    },
+    "WitheringPurpurbloom": {
+        "name": "Withering Purpurbloom",
+        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_101253.webp",
         "rarity": 1
     },
     "SweetFlowerSeed": {

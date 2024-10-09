@@ -1,4 +1,5 @@
-import { handlebars, Renderer } from "./Renderer.js";
+//import { handlebars, Renderer } from "./Renderer.js";
+const { handlebars, Renderer } = await import(`./Renderer.js?v=${window.versionId}`);
 
 String.prototype.capitalize = function() { return this.at(0).toUpperCase()+this.substr(1).toLowerCase(); };
 
@@ -101,7 +102,7 @@ if(typeof(Storage) !== "undefined")
       else
       {
         document.getElementById("gameIcon").innerHTML = `<img src="img/gameIcons/${selectBtn.dataset.game}.webp"/>`;
-        const { addEventListeners, init } = await import(`./${selectBtn.dataset.game}/load.js`);
+        const { addEventListeners, init } = await import(`./${selectBtn.dataset.game}/load.js?v=${window.versionId}`);
         
         let modalsResp = await fetch(`templates/${selectBtn.dataset.game}/menuModals.html`, {cache:"no-cache"});
         let modalsHTML = await modalsResp.text();

@@ -126,6 +126,13 @@ export default {
       "3": "Sheath of the Secret Source",
       "4": "Heart of the Secret Source"
     },
+    "Mimiflora": {
+      "source": "Tenebrous Mimiflora",
+      "2": "Refractive Bud",
+      "3": "Bewildering Broadleaf",
+      "4": "Illusory Leafcoil",
+      "release": "November 19, 2024"
+    },
     "Slimes": {
       "1": "Slime Condensate",
       "2": "Slime Secretions",
@@ -433,6 +440,11 @@ export default {
       "name": "Secret Source Automaton: Configuration Device",
       "4": "Gold-Inscribed Secret Source Core",
       "release": "October 8, 2024"
+    },
+    "Papilla": {
+      "name": "Tenebrous Papilla: Type I",
+      "4": "Ensnaring Gaze",
+      "release": "November 19, 2024"
     }
   },
   

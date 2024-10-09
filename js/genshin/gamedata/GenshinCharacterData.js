@@ -358,6 +358,30 @@ export default {
             10885
         ]
     },
+    "Chasca": {
+        "name": "Chasca",
+        "rarity": 5,
+        "weapon": "Bow",
+        "element": "Anemo",
+        "hakushinID": 10000104,
+        "id": 10000104,
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Chasca.webp",
+        "region": "Natlan",
+        "matEnemy": "Saurians",
+        "matBoss": "Papilla",
+        "matFlower": "Withering Purpurbloom",
+        "matMastery": "Conflict",
+        "matTrounce": "Silken Feather",
+        "ascendStat": "critRate_",
+        "hpBase": 762.656005859375,
+        "atkBase": 26.9990005493164,
+        "defBase": 47.8639984130859,
+        "hpMaxAsc": 3131.8779296875,
+        "atkMaxAsc": 110.864387512207,
+        "defMaxAsc": 196.5599975585938,
+        "version": "5.1.50",
+        "release": "November 19, 2024"
+    },
     "Chevreuse": {
         "name": "Chevreuse",
         "weapon": "Polearm",
@@ -1733,6 +1757,30 @@ export default {
             10343
         ]
     },
+    "Ororon": {
+        "name": "Ororon",
+        "rarity": 4,
+        "weapon": "Bow",
+        "element": "Electro",
+        "hakushinID": 10000105,
+        "id": 10000105,
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Olorun.webp",
+        "region": "Natlan",
+        "matEnemy": "Saurians",
+        "matBoss": "Pyro Dino",
+        "matFlower": "Glowing Mushroom",
+        "matMastery": "Kindling",
+        "matTrounce": "Lightless Silk String",
+        "ascendStat": "atk_",
+        "hpBase": 775.0223388671875,
+        "atkBase": 20.4792003631592,
+        "defBase": 49.2135009765625,
+        "hpMaxAsc": 2773.01611328125,
+        "atkMaxAsc": 73.2759323120117,
+        "defMaxAsc": 176.0850067138672,
+        "version": "5.1.50",
+        "release": "November 19, 2024"
+    },
     "Qiqi": {
         "name": "Qiqi",
         "weapon": "Sword",
@@ -2458,7 +2506,12 @@ export default {
         "defMaxAsc": 297.2969970703125,
         "version": "5.0.54",
         "matBoss": "Auto Bot",
-        "release": "October 9, 2024"
+        "release": "October 9, 2024",
+        "skillIds": [
+            11031,
+            11032,
+            11035
+        ]
     },
     "Xingqiu": {
         "name": "Xingqiu",

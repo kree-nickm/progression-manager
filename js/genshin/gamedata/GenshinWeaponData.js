@@ -209,6 +209,24 @@ export default {
         "hakushinID": 11501,
         "id": 11501
     },
+    "AstralVulturesCrimsonPlumage": {
+        "name": "Astral Vulture's Crimson Plumage",
+        "rarity": 5,
+        "type": "Bow",
+        "hakushinID": 15514,
+        "id": 15514,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_Qoyllorsnova.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_Qoyllorsnova.webp"
+        ],
+        "baseATK": 46,
+        "stat": "critDMG_",
+        "matForgery": "Mirror",
+        "matWeakEnemy": "Tribals",
+        "passive": "When a character triggers Swirl, their ATK is increased by 24% for 12s. When the party contains 1\/2 or more characters of a different Elemental Type from the equipping character, said equipping character's Charged Attack DMG increases by 20%\/48% and Elemental Burst DMG increases by 10%\/24%.",
+        "refinementData": [],
+        "version": "5.1.50"
+    },
     "BeaconOfTheReedSea": {
         "name": "Beacon of the Reed Sea",
         "rarity": 5,
@@ -3249,6 +3267,25 @@ export default {
         "hakushinID": 11426,
         "id": 11426
     },
+    "FlowerWreathedFeathers": {
+        "name": "Flower-Wreathed Feathers",
+        "rarity": 4,
+        "type": "Bow",
+        "hakushinID": 15430,
+        "id": 15430,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_Umpakati.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_Umpakati.webp"
+        ],
+        "baseATK": 42,
+        "stat": "atk_",
+        "matForgery": "Mirror",
+        "matStrongEnemy": "Avatars",
+        "matWeakEnemy": "Tribals",
+        "passive": "Gliding Stamina consumption decreased by 15%. While aiming with a Bow, character's Charged Attack DMG will be increased by 6% every 0.5s. Max 6 stacks. This effect will be removed 10s after exiting Aiming Mode.",
+        "refinementData": [],
+        "version": "5.1.50"
+    },
     "FlowingPurity": {
         "name": "Flowing Purity",
         "imgs": [
@@ -5353,6 +5390,24 @@ export default {
         "hakushinID": 11409,
         "id": 11409
     },
+    "TheCalamityOfTheBlightedSprings": {
+        "name": "The Calamity of the Blighted Springs",
+        "rarity": 4,
+        "type": "Sword",
+        "hakushinID": 11432,
+        "id": 11432,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_SacrificialNgombe.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_SacrificialNgombe.webp"
+        ],
+        "baseATK": 44,
+        "stat": "atk_",
+        "matForgery": "Sacred",
+        "matWeakEnemy": "Tribals",
+        "passive": "While the equipping character is protected by a Shield, Normal and Charged Attack DMG is increased by 20%, and Normal and Charged Attack CRIT Rate is increased by 8%.",
+        "refinementData": [],
+        "version": "5.1.50"
+    },
     "TheDockhandsAssistant": {
         "name": "The Dockhand's Assistant",
         "type": "Sword",
@@ -5640,6 +5695,25 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Wavebreaker%27s_Fin",
         "hakushinID": 13416,
         "id": 13416
+    },
+    "WaveridingWhirl": {
+        "name": "Waveriding Whirl",
+        "rarity": 4,
+        "type": "Catalyst",
+        "hakushinID": 14430,
+        "id": 14430,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_Umpakati.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_Umpakati.webp"
+        ],
+        "baseATK": 41,
+        "stat": "enerRech_",
+        "matForgery": "Blade",
+        "matStrongEnemy": "Wayob",
+        "matWeakEnemy": "Saurians",
+        "passive": "Swimming Stamina consumption is decreased by 15%. Using a Skill increases the equipping character's Max HP by 20% for 10s. This effect can be triggered once every 15s. Each Hydro character in your party increases the Max HP bonus from the aforementioned effect by an additional 12%. The maximum additional bonus is 24%.",
+        "refinementData": [],
+        "version": "5.1.50"
     },
     "Whiteblind": {
         "name": "Whiteblind",
