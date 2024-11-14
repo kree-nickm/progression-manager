@@ -1,6 +1,6 @@
-import { Renderer } from "./Renderer.js";
-import Account from "./Account.js";
-import UIController from "./UIController.js";
+const { handlebars, Renderer } = await import(`./Renderer.js?v=${window.versionId}`);
+const {default:Account} = await import(`./Account.js?v=${window.versionId}`);
+const {default:UIController} = await import(`./UIController.js?v=${window.versionId}`);
 
 export default class DataManager extends UIController
 {

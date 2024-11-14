@@ -1,7 +1,6 @@
-import { handlebars, Renderer } from "../Renderer.js";
-import GenshinItem from "./GenshinItem.js";
-import Character from "./Character.js";
-import StatModifier from "./StatModifier.js";
+const { handlebars, Renderer } = await import(`../Renderer.js?v=${window.versionId}`);
+const {default:GenshinItem} = await import(`./GenshinItem.js?v=${window.versionId}`);
+const {default:StatModifier} = await import(`./StatModifier.js?v=${window.versionId}`);
 
 export default class Team extends GenshinItem {
   static dontSerialize = super.dontSerialize.concat(["_characters"]);

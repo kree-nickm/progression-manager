@@ -591,6 +591,14 @@ export default {
         "type": "Resources",
         "subtype": "Material"
     },
+    "HeartySupper": {
+        "rarity": 4,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconA\/T_IconA_Act_04_UI.T_IconA_Act_04_UI",
+        "name": "Hearty Supper",
+        "type": "Resources",
+        "subtype": "Material"
+    },
     "HotPotBase": {
         "rarity": 4,
         "sort": 0,

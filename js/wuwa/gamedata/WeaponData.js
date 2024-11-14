@@ -278,6 +278,63 @@ export default {
         "stat": "GreenAtk",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21010015_UI.T_IconWeapon21010015_UI"
     },
+    "RedSpring": {
+        "id": 21020026,
+        "name": "Red Spring",
+        "rarity": 5,
+        "type": "Sword",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21020017_UI.T_IconWeapon21020017_UI",
+        "baseATK": 47,
+        "stat": "Crit",
+        "baseStat": 540,
+        "rankData": [
+            [
+                "12%",
+                "15%",
+                "18%",
+                "21%",
+                "24%"
+            ],
+            [
+                "10%",
+                "12.5%",
+                "15%",
+                "17.5%",
+                "20%"
+            ],
+            [
+                "14",
+                "14",
+                "14",
+                "14",
+                "14"
+            ],
+            [
+                "3",
+                "3",
+                "3",
+                "3",
+                "3"
+            ],
+            [
+                "40%",
+                "50%",
+                "60%",
+                "70%",
+                "80%"
+            ],
+            [
+                "10",
+                "10",
+                "10",
+                "10",
+                "10"
+            ]
+        ],
+        "passive": "Increase ATK by {0}. When dealing Basic Attack DMG, the wielder gains {1} Basic Attack DMG Bonus for {2}s. This effect can be triggered once per second, stacking up to {3} times.nWhen the wielder's Concerto Energy is consumed, gain {4} Basic DMG Bonus for {5}. This effect can be triggered once per second and ends when the wielder is switched off the field.",
+        "enemyMat": "Howler Core",
+        "forgeryMat": "Metallic Drip"
+    },
     "RimeDrapedSprouts": {
         "id": 21050026,
         "name": "Rime-Draped Sprouts",
@@ -827,7 +884,9 @@ export default {
         ],
         "passive": "Casting the Resonance Skill grants {0} Resonance Energy and increases ATK by {1}, lasting for {2}s. This effect can be triggered once every {3}s.",
         "enemyMat": "Howler Core",
-        "forgeryMat": "Cadence"
+        "forgeryMat": "Cadence",
+        "nameHash": "WeaponConf_21020026_WeaponName",
+        "passiveHash": "WeaponConf_21020026_Desc"
     },
     "CometFlare": {
         "name": "Comet Flare",
@@ -1670,6 +1729,77 @@ export default {
         "passive": "Casting the Resonance Skill grants {0} Resonance Energy and increases ATK by {1}, lasting for {2}s. This effect can be triggered once every {3}s.",
         "enemyMat": "Ring",
         "forgeryMat": "Phlogiston"
+    },
+    "SomnoireAnchor": {
+        "id": 21020017,
+        "name": "Somnoire Anchor",
+        "rarity": 4,
+        "type": "Sword",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21020019_UI.T_IconWeapon21020019_UI",
+        "baseATK": 37,
+        "stat": "GreenAtk",
+        "baseStat": 0.04050000011920929,
+        "rankData": [
+            [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1"
+            ],
+            [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1"
+            ],
+            [
+                "1",
+                "1",
+                "1",
+                "1",
+                "1"
+            ],
+            [
+                "2%",
+                "2.5%",
+                "3%",
+                "3.5%",
+                "4%"
+            ],
+            [
+                "3",
+                "3",
+                "3",
+                "3",
+                "3"
+            ],
+            [
+                "10",
+                "10",
+                "10",
+                "10",
+                "10"
+            ],
+            [
+                "10",
+                "10",
+                "10",
+                "10",
+                "10"
+            ],
+            [
+                "6%",
+                "7.5%",
+                "9%",
+                "10.5%",
+                "12%"
+            ]
+        ],
+        "passive": "Gain {0} stack of Hiss when dealing damage to the target, with {2} stack generated every {1}s. nHiss: each stack increases the wielder's ATK by {3} for {4}s, stacking up to {5} times. Switching off the wielder clears all stacks. Gaining {6} stacks increases the wielder's Crit. Rate by {7}.",
+        "enemyMat": "Howler Core",
+        "forgeryMat": "Metallic Drip"
     },
     "Stonard": {
         "name": "Stonard",

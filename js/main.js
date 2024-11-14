@@ -104,12 +104,12 @@ if(typeof(Storage) !== "undefined")
         document.getElementById("gameIcon").innerHTML = `<img src="img/gameIcons/${selectBtn.dataset.game}.webp"/>`;
         const { addEventListeners, init } = await import(`./${selectBtn.dataset.game}/load.js?v=${window.versionId}`);
         
-        let modalsResp = await fetch(`templates/${selectBtn.dataset.game}/menuModals.html`, {cache:"no-cache"});
+        let modalsResp = await fetch(`templates/${selectBtn.dataset.game}/menuModals.html?v=${window.versionId}`, {cache:"no-cache"});
         let modalsHTML = await modalsResp.text();
         let modalsTemplate = handlebars.compile(modalsHTML);
         document.getElementById("menuModalContainer").innerHTML = modalsTemplate();
         
-        let buttonsResp = await fetch(`templates/${selectBtn.dataset.game}/menuButtons.html`, {cache:"no-cache"});
+        let buttonsResp = await fetch(`templates/${selectBtn.dataset.game}/menuButtons.html?v=${window.versionId}`, {cache:"no-cache"});
         let buttonsHTML = await buttonsResp.text();
         let buttonsTemplate = handlebars.compile(buttonsHTML);
         document.getElementById("menuButtonContainer").innerHTML = buttonsTemplate();

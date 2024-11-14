@@ -1,5 +1,5 @@
-import { handlebars } from "../Renderer.js";
-import UIItem from "../UIItem.js";
+const { handlebars, Renderer } = await import(`../Renderer.js?v=${window.versionId}`);
+const {default:UIItem} = await import(`../UIItem.js?v=${window.versionId}`);
 
 handlebars.registerHelper("statText", (id, options) => options.hash?.percent ? (GenshinItem.isStatPercent(id) ? "%" : "") : options.hash?.shorthand ? GenshinItem.getStatShorthand(id) : GenshinItem.getStatFull(id));
 

@@ -1,7 +1,7 @@
-import { handlebars, Renderer } from "./Renderer.js";
-import UIController from "./UIController.js";
-import UIItem from "./UIItem.js";
-import ListDisplayManager from "./ListDisplayManager.js";
+const { handlebars, Renderer } = await import(`./Renderer.js?v=${window.versionId}`);
+const {default:UIController} = await import(`./UIController.js?v=${window.versionId}`);
+const {default:UIItem} = await import(`./UIItem.js?v=${window.versionId}`);
+const {default:ListDisplayManager} = await import(`./ListDisplayManager.js?v=${window.versionId}`);
 
 export default class UIList extends UIController {
   static dontSerialize = super.dontSerialize.concat(["display","subsets","forceNextRender"]);
@@ -421,7 +421,7 @@ export default class UIList extends UIController {
           if(!showcaseBtn.onclick)
           {
             showcaseBtn.onclick = async event => {
-              let template = await fetch(footerParams.showcase.configTemplate??`templates/renderShowcaseConfigPopup.html`, {cache:"no-cache"})
+              let template = await fetch(footerParams.showcase.configTemplate??`templates/renderShowcaseConfigPopup.html?v=${window.versionId}`, {cache:"no-cache"})
               .then(response => response.text())
               .then(src => handlebars.compile(src));
               

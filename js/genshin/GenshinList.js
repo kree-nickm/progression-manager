@@ -1,5 +1,5 @@
-import UIList from "../UIList.js";
-import GenshinItem from "./GenshinItem.js";
+const {default:UIList} = await import(`../UIList.js?v=${window.versionId}`);
+const {default:GenshinItem} = await import(`./GenshinItem.js?v=${window.versionId}`);
 
 export default class GenshinList extends UIList {
   static fromJSON(data, {viewer, addProperties={}}={})

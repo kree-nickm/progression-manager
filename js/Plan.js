@@ -1,4 +1,4 @@
-import UIController from "./UIController.js";
+const {default:UIController} = await import(`./UIController.js?v=${window.versionId}`);
 
 export default class Plan extends UIController
 {

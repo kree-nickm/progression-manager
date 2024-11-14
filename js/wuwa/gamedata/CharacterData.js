@@ -44,6 +44,21 @@ export default {
         "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_kakaluo_UI.T_IconRole_Pile_kakaluo_UI",
         "alias": "Calcharo"
     },
+    "Camellya": {
+        "id": 1603,
+        "rarity": 5,
+        "weapon": "Sword",
+        "element": "Havoc",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_29_UI.T_IconRoleHead256_29_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_chun_UI.T_IconRole_Pile_chun_UI",
+        "name": "Camellya",
+        "alias": "Camellya",
+        "weeklyMat": "Dreamless Feather",
+        "bossMat": "Topological Confinement",
+        "floraMat": "Nova",
+        "enemyMat": "Whisperin Core",
+        "forgeryMat": "Metallic Drip"
+    },
     "Changli": {
         "id": 1205,
         "rarity": 5,
@@ -164,6 +179,21 @@ export default {
         "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_lingyang_UI.T_IconRole_Pile_lingyang_UI",
         "alias": "White Tiger"
     },
+    "Lumi": {
+        "id": 1504,
+        "rarity": 4,
+        "weapon": "Broadblade",
+        "element": "Electro",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_30_UI.T_IconRoleHead256_30_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_dengdeng_UI.T_IconRole_Pile_dengdeng_UI",
+        "name": "Lumi",
+        "alias": "Lumi",
+        "weeklyMat": "Sentinel's Dagger",
+        "bossMat": "Thundering Tacet Core",
+        "floraMat": "Terraspawn Fungus",
+        "enemyMat": "Howler Core",
+        "forgeryMat": "Waveworn Residue"
+    },
     "Mortefi": {
         "id": 1204,
         "rarity": 4,
@@ -179,21 +209,6 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_13_UI.T_IconRoleHead256_13_UI",
         "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_baer_UI.T_IconRole_Pile_baer_UI"
     },
-    "RoverHavoc": {
-        "id": 1605,
-        "rarity": 5,
-        "weapon": "Sword",
-        "element": "Havoc",
-        "name": "Rover-Havoc",
-        "weeklyMat": "Dreamless Feather",
-        "bossMat": "Mysterious Code",
-        "floraMat": "Pecok Flower",
-        "enemyMat": "Whisperin Core",
-        "forgeryMat": "Metallic Drip",
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_4_UI.T_IconRoleHead256_4_UI",
-        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_zhujuenan_UI.T_IconRole_Pile_zhujuenan_UI",
-        "alias": "Vessel of Sounds"
-    },
     "RoverSpectro": {
         "id": 1502,
         "rarity": 5,
@@ -208,6 +223,21 @@ export default {
         "forgeryMat": "Metallic Drip",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_5_UI.T_IconRoleHead256_5_UI",
         "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_zhujue_UI.T_IconRole_Pile_zhujue_UI"
+    },
+    "RoverHavoc": {
+        "id": 1605,
+        "rarity": 5,
+        "weapon": "Sword",
+        "element": "Havoc",
+        "name": "Rover-Havoc",
+        "weeklyMat": "Dreamless Feather",
+        "bossMat": "Mysterious Code",
+        "floraMat": "Pecok Flower",
+        "enemyMat": "Whisperin Core",
+        "forgeryMat": "Metallic Drip",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_4_UI.T_IconRoleHead256_4_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_zhujuenan_UI.T_IconRole_Pile_zhujuenan_UI",
+        "alias": "Vessel of Sounds"
     },
     "Sanhua": {
         "id": 1102,

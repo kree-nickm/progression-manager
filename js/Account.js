@@ -1,4 +1,4 @@
-import Plan from "./Plan.js";
+const {default:Plan} = await import(`./Plan.js?v=${window.versionId}`);
 
 export default class Account
 {

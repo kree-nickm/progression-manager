@@ -389,7 +389,7 @@ export default {
                 }
             ],
             "name": "Flaming Woolies",
-            "desc": "<size=40><color=Title>Flaming Woolies<\/color><\/size>rnEncore summons Cloudy and Cosmos to attack with burning rays, dealing <color=Fire>Fusion DMG<\/color>.rn<size=10> <\/size>rn<size=40><color=Title>Energetic Welcome<\/color><\/size>rnAfter casting <color=Highlight>Flaming Woolies<\/color>, use <color=Highlight>Resonance Skill<\/color> to perform <color=Highlight>Energetic Welcome<\/color>, dealing <color=Fire>Fusion DMG<\/color>."
+            "desc": "<size=40><color=Title>Flaming Woolies<\/color><\/size>nnEncore summons Cloudy and Cosmos to attack with burning rays, dealing <color=Fire>Fusion DMG<\/color>.nn<size=10> <\/size>nn<size=40><color=Title>Energetic Welcome<\/color><\/size>nnAfter casting <color=Highlight>Flaming Woolies<\/color>, use <color=Highlight>Resonance Skill<\/color> to perform <color=Highlight>Energetic Welcome<\/color>, dealing <color=Fire>Fusion DMG<\/color>."
         },
         "Resonance Liberation": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconAnkeA1_UI.T_IconAnkeA1_UI",

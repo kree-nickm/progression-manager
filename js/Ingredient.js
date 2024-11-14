@@ -1,4 +1,4 @@
-import { Renderer } from "./Renderer.js";
+const { handlebars, Renderer } = await import(`./Renderer.js?v=${window.versionId}`);
 
 const Ingredient = (SuperClass) => class extends SuperClass {
   static dontSerialize = super.dontSerialize.concat(["usedBy","prevTier","nextTier","converts"]);
@@ -23,67 +23,72 @@ const Ingredient = (SuperClass) => class extends SuperClass {
       }
     }
   }
-  // TODO: depend on the wishlist of users
+  
   static setupDisplay(display)
   {
     if(!display.getField("count"))
-    display.addField("count", {
-      label: "Count",
-      dynamic: true,
-      title: item => {
-        let planMaterials = item.viewer.account.plan.getFullPlan();
-        if(planMaterials.original[item.key])
-        {
-          let wanters = planMaterials.resolved[item.key].wanters.map(wanter => `${Renderer.controllers.get(wanter.src).name} wants ${wanter.amount}`).join(`\r\n`);
-          return (item.prevTier || item.converts
-            ? `Up to ${item.getCraftCount({plan:planMaterials.original})} if you craft.`
-            : ``) + (wanters ? `\r\n`+wanters : ``);
-        }
-        else
-        {
-          return (item.prevTier || item.converts
-            ? `Up to ${item.getCraftCount()} if you craft.`
-            : ``);
-        }
-      },
-      value: item => {
-        let planMaterials = item.viewer.account.plan.getFullPlan();
-        if(planMaterials.original[item.key])
-          return `${item.count} / ${planMaterials.original[item.key]}`;
-        else
-          return item.count + (item.prevTier || item.converts ? " (+"+ (item.getCraftCount()-item.count) +")" : "");
-      },
-      edit: item => ({
-        target: {item:item, field:"count"}, min:0, max:99999,
-      }),
-      dependencies: item => {
-        //let planMaterials = item.viewer.account.plan.getFullPlan();
-        return item.getCraftDependencies();
-      },
-      classes: item => {
-        let planMaterials = item.viewer.account.plan.getFullPlan();
-        if(planMaterials.original[item.key])
-          return {
-            "pending": item.count < planMaterials.original[item.key],
-            "insufficient": item.getCraftCount({plan:planMaterials.original}) < planMaterials.original[item.key],
-          };
-        else
-          return {};
-      },
-    });
+      display.addField("count", {
+        label: "Count",
+        dynamic: true,
+        title: item => {
+          let planMaterials = item.viewer.account.plan.getFullPlan();
+          if(planMaterials.original[item.key])
+          {
+            let wanters = planMaterials.resolved[item.key].wanters.map(wanter => `${Renderer.controllers.get(wanter.src).name} wants ${wanter.amount}`).join(`\r\n`);
+            return (item.prevTier || item.converts
+              ? `Up to ${item.getCraftCount({plan:planMaterials.original})} if you craft.`
+              : ``) + (wanters ? `\r\n`+wanters : ``);
+          }
+          else
+          {
+            return (item.prevTier || item.converts
+              ? `Up to ${item.getCraftCount()} if you craft.`
+              : ``);
+          }
+        },
+        value: item => {
+          let planMaterials = item.viewer.account.plan.getFullPlan();
+          if(planMaterials.original[item.key])
+            return `${item.count} / ${planMaterials.original[item.key]}`;
+          else
+            return item.count + (item.prevTier || item.converts ? " (+"+ (item.getCraftCount()-item.count) +")" : "");
+        },
+        edit: item => ({
+          target: {item:item, field:"count"}, min:0, max:99999,
+        }),
+        dependencies: item => {
+          let dependencies = item.getCraftDependencies();
+          for(let i of item.usedBy) {
+            dependencies.push({item:i, field:"wishlist"});
+            dependencies.push({item:i, field:i.constructor.ascensionProperty});
+            dependencies.push({item:i, field:i.constructor.talentProperty});
+          }
+          return dependencies;
+        },
+        classes: item => {
+          let planMaterials = item.viewer.account.plan.getFullPlan();
+          if(planMaterials.original[item.key])
+            return {
+              "pending": item.count < planMaterials.original[item.key],
+              "insufficient": item.getCraftCount({plan:planMaterials.original}) < planMaterials.original[item.key],
+            };
+          else
+            return {};
+        },
+      });
   
     if(!display.getField("users"))
-    display.addField("users", {
-      label: "Used By",
-      dynamic: true,
-      value: item => item.getUsage(),
-      dependencies: item => {
-        let dependencies = [{item:item, field:["usedBy"]}];
-        for(let i of item.usedBy)
-          dependencies.push({item:i, field:["favorite"]});
-        return dependencies;
-      },
-    });
+      display.addField("users", {
+        label: "Used By",
+        dynamic: true,
+        value: item => item.getUsage(),
+        dependencies: item => {
+          let dependencies = [{item:item, field:["usedBy"]}];
+          for(let i of item.usedBy)
+            dependencies.push({item:i, field:["favorite"]});
+          return dependencies;
+        },
+      });
     
     super.setupDisplay(display);
   }

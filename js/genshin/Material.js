@@ -1,10 +1,8 @@
-import GenshinLootData from "./gamedata/GenshinLootData.js";
-import GenshinMaterialData from "./gamedata/GenshinMaterialData.js";
+const {default:GenshinLootData} = await import(`./gamedata/GenshinLootData.js?v=${window.versionId}`);
+const {default:GenshinMaterialData} = await import(`./gamedata/GenshinMaterialData.js?v=${window.versionId}`);
 
-import GenshinItem from "./GenshinItem.js";
-import Character from "./Character.js";
-import Weapon from "./Weapon.js";
-import Ingredient from "../Ingredient.js";
+const {default:GenshinItem} = await import(`./GenshinItem.js?v=${window.versionId}`);
+const {default:Ingredient} = await import(`../Ingredient.js?v=${window.versionId}`);
 
 export default class Material extends Ingredient(GenshinItem)
 {
@@ -124,7 +122,7 @@ export default class Material extends Ingredient(GenshinItem)
   
   getFullSource()
   {
-    return `${this.name}` + (this.source?`, dropped by ${this.source}`:"") + (this.days.length?`, on ${this.days.join("/")}`:"");
+    return `${this.name}` + (this.source?`, dropped by ${this.source}`:"") + (this.days?.length?`, on ${this.days.join("/")}`:"");
   }
   
   getFieldValue(cost, useImage=false, {noName=false, plan}={})
@@ -144,7 +142,7 @@ export default class Material extends Ingredient(GenshinItem)
                 "display-badge": true,
                 "fa-solid": true,
                 "fa-sun": true,
-                "d-none": this.days.indexOf(this.viewer.today()) == -1,
+                "d-none": this.days?.indexOf(this.viewer.today()) == -1,
               },
               title: "This drop can be obtained today.",
             },
@@ -200,7 +198,7 @@ export default class Material extends Ingredient(GenshinItem)
     };
     
     let namePart = {
-      value: this.shorthand + (this.days.indexOf(this.viewer.today()) > -1 ? "*" : ""),
+      value: this.shorthand + (this.days?.indexOf(this.viewer.today()) > -1 ? "*" : ""),
       classes: {
         "material": true,
         "q1": this.rarity == 1,

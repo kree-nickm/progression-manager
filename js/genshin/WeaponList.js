@@ -1,9 +1,8 @@
-import GenshinWeaponData from "./gamedata/GenshinWeaponData.js";
+const {default:GenshinWeaponData} = await import(`./gamedata/GenshinWeaponData.js?v=${window.versionId}`);
 
-import { handlebars, Renderer } from "../Renderer.js";
-import GenshinList from "./GenshinList.js";
-import Artifact from "./Artifact.js";
-import Weapon from "./Weapon.js";
+const { handlebars, Renderer } = await import(`../Renderer.js?v=${window.versionId}`);
+const {default:GenshinList} = await import(`./GenshinList.js?v=${window.versionId}`);
+const {default:Weapon} = await import(`./Weapon.js?v=${window.versionId}`);
 
 handlebars.registerHelper("getWeaponData", (key, options) => GenshinWeaponData[key]);
 handlebars.registerHelper("weaponList", (item, options) => item.viewer.lists.WeaponList.items(options.hash.filter));
@@ -80,7 +79,7 @@ export default class WeaponList extends GenshinList
       label: "Stat",
       sort: {generic: {type:"string", property:"stat"}},
       dynamic: false,
-      value: item => Artifact.getStatShorthand(item.stat),
+      value: item => Weapon.getStatShorthand(item.stat),
     });
     
     let refinement = this.display.addField("refinement", {

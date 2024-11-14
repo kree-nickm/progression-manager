@@ -1,4 +1,4 @@
-import UIItem from "./UIItem.js";
+const {default:UIItem} = await import(`./UIItem.js?v=${window.versionId}`);
 
 export default class Setting extends UIItem {
   static dontSerialize = super.dontSerialize.concat([]);

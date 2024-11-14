@@ -1,19 +1,20 @@
-import GenshinLootData from "./gamedata/GenshinLootData.js";
-import GenshinPhaseData from "./gamedata/GenshinPhaseData.js";
-import GenshinTalentData from "./gamedata/GenshinTalentData.js";
-import GenshinCharacterData from "./gamedata/GenshinCharacterData.js";
-import GenshinCharacterStats from "./gamedata/GenshinCharacterStats.js";
-import GenshinArtifactData from "./gamedata/GenshinArtifactData.js";
-import GenshinBuilds from "./gamedata/GenshinBuilds.js";
+const {default:GenshinLootData} = await import(`./gamedata/GenshinLootData.js?v=${window.versionId}`);
+const {default:GenshinPhaseData} = await import(`./gamedata/GenshinPhaseData.js?v=${window.versionId}`);
+const {default:GenshinTalentData} = await import(`./gamedata/GenshinTalentData.js?v=${window.versionId}`);
+const {default:GenshinCharacterData} = await import(`./gamedata/GenshinCharacterData.js?v=${window.versionId}`);
+const {default:GenshinCharacterStats} = await import(`./gamedata/GenshinCharacterStats.js?v=${window.versionId}`);
+const {default:GenshinArtifactData} = await import(`./gamedata/GenshinArtifactData.js?v=${window.versionId}`);
+const {default:GenshinBuilds} = await import(`./gamedata/GenshinBuilds.js?v=${window.versionId}`);
 
-import { handlebars, Renderer } from "../Renderer.js";
-import GenshinItem from "./GenshinItem.js";
-import Ascendable from "../Ascendable.js";
-import Artifact from "./Artifact.js";
-import Weapon from "./Weapon.js";
-import Material from "./Material.js";
-import Team from "./Team.js";
-import StatModifier from "./StatModifier.js";
+const { handlebars, Renderer } = await import(`../Renderer.js?v=${window.versionId}`);
+const {default:GenshinItem} = await import(`./GenshinItem.js?v=${window.versionId}`);
+const {default:Ascendable} = await import(`../Ascendable.js?v=${window.versionId}`);
+
+const {default:Artifact} = await import(`./Artifact.js?v=${window.versionId}`);
+const {default:Weapon} = await import(`./Weapon.js?v=${window.versionId}`);
+const {default:Material} = await import(`./Material.js?v=${window.versionId}`);
+const {default:Team} = await import(`./Team.js?v=${window.versionId}`);
+const {default:StatModifier} = await import(`./StatModifier.js?v=${window.versionId}`);
 
 handlebars.registerHelper("ifHasStat", function(character, statId, options) {
   if(!character || !character.getStat)
@@ -512,7 +513,7 @@ export default class Character extends Ascendable(GenshinItem)
   {
     if(!this.detailedData)
     {
-      const {default:details} = await import(`./gamedata/characters/${this.key}.details.js`);
+      const {default:details} = await import(`./gamedata/characters/${this.key}.details.js?v=${window.versionId}`);
       this.detailedData = details;
     }
     return this.detailedData;

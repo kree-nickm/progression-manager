@@ -1,18 +1,28 @@
 import { DateTime } from 'https://cdn.jsdelivr.net/npm/luxon@3.3.0/+esm';
-import { Renderer } from "../Renderer.js";
-import { mergeObjects } from "../Util.js";
+const { handlebars, Renderer } = await import(`../Renderer.js?v=${window.versionId}`);
+const { mergeObjects } = await import(`../Util.js?v=${window.versionId}`);
 
 //import GenshinBuilds from "./gamedata/GenshinBuilds.js";
+console.log(`Importing other files.`);
 
-import DataManager from "../DataManager.js";
-import ListDisplayManager from "../ListDisplayManager.js";
-import MaterialList from "./MaterialList.js";
-import CharacterList from "./CharacterList.js";
-import WeaponList from "./WeaponList.js";
-import ArtifactList from "./ArtifactList.js";
-import TeamList from "./TeamList.js";
-import FurnitureList from "./FurnitureList.js";
-import FurnitureSetList from "./FurnitureSetList.js";
+const {default:DataManager} = await import(`../DataManager.js?v=${window.versionId}`);
+console.log(`Imported DataManager.`);
+const {default:ListDisplayManager} = await import(`../ListDisplayManager.js?v=${window.versionId}`);
+console.log(`Imported ListDisplayManager.`);
+const {default:MaterialList} = await import(`./MaterialList.js?v=${window.versionId}`);
+console.log(`Imported MaterialList.`);
+const {default:CharacterList} = await import(`./CharacterList.js?v=${window.versionId}`);
+console.log(`Imported CharacterList.`);
+const {default:WeaponList} = await import(`./WeaponList.js?v=${window.versionId}`);
+console.log(`Imported WeaponList.`);
+const {default:ArtifactList} = await import(`./ArtifactList.js?v=${window.versionId}`);
+console.log(`Imported ArtifactList.`);
+const {default:TeamList} = await import(`./TeamList.js?v=${window.versionId}`);
+console.log(`Imported TeamList.`);
+const {default:FurnitureList} = await import(`./FurnitureList.js?v=${window.versionId}`);
+console.log(`Imported FurnitureList.`);
+const {default:FurnitureSetList} = await import(`./FurnitureSetList.js?v=${window.versionId}`);
+console.log(`Imported FurnitureSetList.`);
 
 export default class GenshinManager extends DataManager
 {

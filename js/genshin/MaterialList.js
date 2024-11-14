@@ -1,9 +1,9 @@
-import GenshinLootData from "./gamedata/GenshinLootData.js";
-import GenshinCharacterData from "./gamedata/GenshinCharacterData.js";
+const {default:GenshinLootData} = await import(`./gamedata/GenshinLootData.js?v=${window.versionId}`);
+const {default:GenshinCharacterData} = await import(`./gamedata/GenshinCharacterData.js?v=${window.versionId}`);
 
-import { Renderer } from "../Renderer.js";
-import GenshinList from "./GenshinList.js";
-import Material from "./Material.js";
+const { handlebars, Renderer } = await import(`../Renderer.js?v=${window.versionId}`);
+const {default:GenshinList} = await import(`./GenshinList.js?v=${window.versionId}`);
+const {default:Material} = await import(`./Material.js?v=${window.versionId}`);
 
 export default class MaterialList extends GenshinList
 {
@@ -45,12 +45,12 @@ export default class MaterialList extends GenshinList
     let sourceField = this.display.addField("source", {
       label: "Source",
       dynamic: true,
-      value: item => item.source ? item.source + (item.days.length ? "; "+ item.days.join(", ") : "") : "",
+      value: item => item.source ? item.source + (item.days?.length ? "; "+ item.days?.join(", ") : "") : "",
       classes: item => ({
-        "today": item.days.indexOf(item.list.viewer.today()) > -1,
+        "today": item.days?.indexOf(item.list.viewer.today()) > -1,
       }),
       dependencies: item => [
-        item.days ? {item:this.viewer, field:"today"} : {},
+        item.days?.length ? {item:this.viewer, field:"today"} : null,
       ],
     });
     
@@ -69,7 +69,7 @@ export default class MaterialList extends GenshinList
               "display-badge": true,
               "fa-solid": true,
               "fa-sun": true,
-              "d-none": item.days.indexOf(item.viewer.today()) == -1,
+              "d-none": item.days?.indexOf(item.viewer.today()) == -1,
             },
           },
           {
@@ -81,6 +81,9 @@ export default class MaterialList extends GenshinList
         classes: {"display-img": true, ["rarity-"+item.rarity]: true},
       }),
       popup: item => item,
+      dependencies: item => [
+        item.days?.length ? {item:this.viewer, field:"today"} : null,
+      ],
     });
     
     Material.setupDisplay(this.display);

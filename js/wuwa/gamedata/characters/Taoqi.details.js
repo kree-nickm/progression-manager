@@ -488,7 +488,7 @@ export default {
                 }
             ],
             "name": "Unmovable",
-            "desc": "Launch an attack based on Taoqi's DEF to the target, dealing <color=Dark>Havoc DMG<\/color>."
+            "desc": "Attack the target based on Taoqi's DEF, dealing <color=Dark>Havoc DMG<\/color>."
         },
         "Forte Circuit Passive 1": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconTaoHuaD2_UI.T_IconTaoHuaD2_UI",
@@ -737,7 +737,7 @@ export default {
                 }
             ],
             "name": "Power Shift",
-            "desc": "<size=40><color=Title>Timed Counters<\/color><\/size>nWhen carrying \"Resolving Caliber\", use <color=Highlight>Basic Attack<\/color> after Heavy Attack <color=Highlight>Strategic Parry<\/color> or Intro Skill <color=Highlight>Defense Formation<\/color> to cast <color=Highlight>Timed Counters<\/color>, performing up to 3 consecutive attacks, dealing <color=Dark>Havoc DMG<\/color>, considered as Basic Attack DMG.n<color=Highlight>Timed Counters<\/color> consume 1 \"Resolving Caliber\" upon hitting an enemy to grant a shield.nAfter casting the Intro Skill <color=Highlight>Defense Formation<\/color>, use <color=Highlight>Basic Attack<\/color> to directly cast <color=Highlight>Timed Counters<\/color>.n<size=10> <\/size>n<size=40><color=Title>Resolving Caliber<\/color><\/size>nTaoqi can hold up to 3 Resolving Caliber.n<color=Highlight>Basic Attack 4<\/color> will consume all of Taoqi's \"Rocksteady Shields\" to grant that many \"Resolving Caliber\".nWhile <color=Highlight>Rocksteady Shield<\/color> exists, when the active character is attacked, 1 \"Rocksteady Shield\" will be consumed to recover \"Resolving Caliber\".nAfter <color=Highlight>Rocksteady Shield<\/color> ends, all remaining \"Rocksteady Shield\" will be consumed to grant that many \"Resolving Caliber\"."
+            "desc": "<size=40><color=Title>Timed Counters<\/color><\/size>nWhen carrying \"Resolving Caliber\", use <color=Highlight>Basic Attack<\/color> after Heavy Attack <color=Highlight>Strategic Parry<\/color> or Intro Skill <color=Highlight>Defense Formation<\/color> to cast <color=Highlight>Timed Counters<\/color>, performing up to 3 consecutive attacks, dealing <color=Dark>Havoc DMG<\/color>, considered as Basic Attack DMG.n<color=Highlight>Timed Counters<\/color> consume 1 \"Resolving Caliber\" upon hitting an enemy to grant a shield.nAfter casting the Intro Skill <color=Highlight>Defense Formation<\/color>, use <color=Highlight>Basic Attack<\/color> to directly cast <color=Highlight>Timed Counters<\/color>.n<size=10><\/size>n<size=40><color=Title>Resolving Caliber<\/color><\/size>nTaoqi can hold up to 3 Resolving Caliber.n<color=Highlight>Basic Attack 4<\/color> will consume all of Taoqi's \"Rocksteady Shields\" to grant that many \"Resolving Caliber\".nWhile <color=Highlight>Rocksteady Shield<\/color> exists, when the active character is attacked, 1 \"Rocksteady Shield\" will be consumed to recover \"Resolving Caliber\".nAfter <color=Highlight>Rocksteady Shield<\/color> ends, all remaining \"Rocksteady Shield\" will be consumed to grant that many \"Resolving Caliber\"."
         },
         "Utility Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",

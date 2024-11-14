@@ -1,13 +1,12 @@
-import GenshinCharacterData from "./gamedata/GenshinCharacterData.js";
-import GenshinArtifactData from "./gamedata/GenshinArtifactData.js";
-import GenshinWeaponData from "./gamedata/GenshinWeaponData.js";
+const {default:GenshinCharacterData} = await import(`./gamedata/GenshinCharacterData.js?v=${window.versionId}`);
+const {default:GenshinArtifactData} = await import(`./gamedata/GenshinArtifactData.js?v=${window.versionId}`);
+const {default:GenshinWeaponData} = await import(`./gamedata/GenshinWeaponData.js?v=${window.versionId}`);
 
-import { handlebars, Renderer } from "../Renderer.js";
-import { mergeObjects } from "../Util.js";
-import GenshinList from "./GenshinList.js";
-import Character from "./Character.js";
-import Traveler from "./Traveler.js";
-import Artifact from "./Artifact.js";
+const { handlebars, Renderer } = await import(`../Renderer.js?v=${window.versionId}`);
+const { mergeObjects } = await import(`../Util.js?v=${window.versionId}`);
+const {default:GenshinList} = await import(`./GenshinList.js?v=${window.versionId}`);
+const {default:Character} = await import(`./Character.js?v=${window.versionId}`);
+const {default:Traveler} = await import(`./Traveler.js?v=${window.versionId}`);
 
 export default class CharacterList extends GenshinList
 {
@@ -213,11 +212,11 @@ export default class CharacterList extends GenshinList
       sort: {generic: {type:"string",property:"ascendStat"}},
       tags: ["detailsOnly"],
       dynamic: false,
-      value: item => Artifact.getStatShorthand(item.ascendStat),
+      value: item => Character.getStatShorthand(item.ascendStat),
     });
     
     let statField = this.display.addField("stat", {
-      label: (item,stat,mode,situation) => Artifact.getStatShorthand(stat),
+      label: (item,stat,mode,situation) => Character.getStatShorthand(stat),
       tags: ["detailsOnly"],
       dynamic: true,
       title: (item,stat,mode,situation) => {

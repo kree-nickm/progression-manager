@@ -219,7 +219,7 @@ class Renderer
       {
         try
         {
-          Renderer._templates[templateFile] = await fetch(`templates/${templateFile}.html`, {cache:"no-cache"})
+          Renderer._templates[templateFile] = await fetch(`templates/${templateFile}.html?v=${window.versionId}`, {cache:"no-cache"})
           .catch(err => console.error(`Template file not found 'templates/${templateFile}.html'.`, err))
           .then(response => response.text())
           .then(src => {

@@ -155,7 +155,7 @@ const Ascendable = (SuperClass) => class extends SuperClass {
           //title: (item, type, talent) => item.getTalentMat(type?.toLowerCase(),talent)?.getFullSource()??"!ERROR!",
           dependencies: (item, type, talent) => [
             {item:item, field:`${this.talentProperty}.${talent}`},
-            item.getTalentMat(type,talent)?.days ? {item:item.viewer, field:"today"} : null,
+            item.getTalentMat(type,talent)?.days?.length ? {item:item.viewer, field:"today"} : null,
           ].concat(type == "label" ? item.materialDefs.materials.map(mat => ({item:item.getTalentMat(mat.property,talent), field:"count"})) : (item.getTalentMat(type,talent)?.getCraftDependencies() ?? [])),
           button: (item, type, talent) => Object.keys(this.talentTypes).map(t => 
           {

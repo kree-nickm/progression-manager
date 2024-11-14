@@ -1,9 +1,9 @@
-import GenshinArtifactData from "./gamedata/GenshinArtifactData.js";
-import GenshinArtifactStats from "./gamedata/GenshinArtifactStats.js";
+const {default:GenshinArtifactData} = await import(`./gamedata/GenshinArtifactData.js?v=${window.versionId}`);
+const {default:GenshinArtifactStats} = await import(`./gamedata/GenshinArtifactStats.js?v=${window.versionId}`);
 
-import { handlebars, Renderer } from "../Renderer.js";
-import GenshinList from "./GenshinList.js";
-import Artifact from "./Artifact.js";
+const { handlebars, Renderer } = await import(`../Renderer.js?v=${window.versionId}`);
+const {default:GenshinList} = await import(`./GenshinList.js?v=${window.versionId}`);
+const {default:Artifact} = await import(`./Artifact.js?v=${window.versionId}`);
 
 handlebars.registerHelper('iffave', function(character, setKey, build, options) {
   if(!options)

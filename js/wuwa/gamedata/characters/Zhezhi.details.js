@@ -499,7 +499,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconWeilinaiD2_UI.T_IconWeilinaiD2_UI",
             "id": 1002205,
             "name": "Flourish",
-            "desc": "After Outro Skill is cast, restore 15 Resonance Energy to the incoming Resonator."
+            "desc": "After Outro Skill is cast, restore 15 Resonance Energy for the incoming Resonator."
         },
         "Intro Skill": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconWeilinaiQTE_UI.T_IconWeilinaiQTE_UI",

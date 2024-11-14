@@ -499,7 +499,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconBailianD1_UI.T_IconBailianD1_UI",
             "id": 1000404,
             "name": "Harmonic Range",
-            "desc": "When Baizhi casts Resonance Skill <color=Highlight>Emergency Plan<\/color>, You'tan generates a field of <color=Highlight>Euphonia<\/color> that lasts for 15s.n<size=10> <\/size>n<size=40><color=Title>Euphonia<\/color><\/size>nATK of the Resonators who picks up Euphonia is increased by 15% for 20s."
+            "desc": "When Baizhi casts Resonance Skill <color=Highlight>Emergency Plan<\/color>, You'tan generates a field of <color=Highlight>Euphonia<\/color> that lasts for 15s.n<size=10> <\/size>n<size=40><color=Title>Euphonia<\/color><\/size>nATK of the Resonators who pick up Euphonia is increased by 15% for 20s."
         },
         "Forte Circuit Passive 2": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconBailianD2_UI.T_IconBailianD2_UI",
@@ -690,7 +690,7 @@ export default {
                 }
             ],
             "name": "Cycle of Life",
-            "desc": "<size=40><color=Title>You'tan<\/color><\/size>nA Remnant Creature that answers to Baizhi\u2019s mind and desires while sharing all her stats. You\u2019tan goes back to Baizhi when Baizhi dodges.n<size=10> <\/size>n<size=40><color=Title>Concentration<\/color><\/size>nBaizhi consumes all \"Concentration\" when casting <color=Highlight>Heavy Attack<\/color> or Resonance Skill <color=Highlight>Emergency Plan<\/color> to continuously heal all Resonators on nearby teams. Each 1 \"Concentration\" consumed provides 1 healing. The healing happen every 2s.nWhen Baizhi consumes \"Concentration\" to cast <color=Highlight>Heavy Attack<\/color>, Baizhi additionally restores Concerto Energy and Resonance Energy.nWhen Baizhi consumes \"Concentration\" to cast Resonance Skill <color=Highlight>Emergency Plan<\/color>, Baizhi additionally restores Concerto Energy.n<size=10> <\/size>n<size=40><color=Title>Forte Gauge: Concentration<\/color><\/size>nBaizhi can hold up to 4 \"Concentration\".nBaizhi obtains 1 \"Concentration\" for every <color=Highlight>Basic Attack<\/color> on hit."
+            "desc": "<size=40><color=Title>You'tan<\/color><\/size>nA Remnant Creature that answers to Baizhi\u2019s mind and desires while sharing all her stats. You'tan goes back to Baizhi when Baizhi dodges.n<size=10> <\/size>n<size=40><color=Title>Concentration<\/color><\/size>nBaizhi consumes all \"Concentration\" when casting <color=Highlight>Heavy Attack<\/color> or Resonance Skill <color=Highlight>Emergency Plan<\/color> to continuously heal all Resonators on nearby teams. Each 1 \"Concentration\" consumed provides 1 healing. The healing happens every 2s.nWhen Baizhi consumes \"Concentration\" to cast <color=Highlight>Heavy Attack<\/color>, Baizhi additionally restores Concerto Energy and Resonance Energy.nWhen Baizhi consumes \"Concentration\" to cast Resonance Skill <color=Highlight>Emergency Plan<\/color>, Baizhi additionally restores Concerto Energy.n<size=10> <\/size>n<size=40><color=Title>Forte Gauge: Concentration<\/color><\/size>nBaizhi can hold up to 4 \"Concentration\".nBaizhi obtains 1 \"Concentration\" for every <color=Highlight>Basic Attack<\/color> on hit."
         },
         "Utility Passive": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",

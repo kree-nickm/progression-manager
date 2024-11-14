@@ -445,7 +445,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
             "id": 1001705,
             "name": "Bleak Crescendo",
-            "desc": "While in the <color=Highlight>Dark Surge<\/color> state, <color=Highlight>Basic Attack<\/color> recovers 1 extra Resonance Energy when it hits a target, and this effect can be triggered 1 time per second."
+            "desc": "While in the <color=Highlight>Dark Surge<\/color> state, <color=Highlight>Basic Attack<\/color> recovers 1 extra Resonance Energy when it hits a target. This effect can be triggered 1 time per second."
         },
         "Intro Skill": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconNvzhuQTE_UI.T_IconnvzhuQTE_UI",
@@ -876,13 +876,13 @@ export default {
                 }
             ],
             "name": "Umbra Eclipse",
-            "desc": "<size=40><color=Title>Devastation<\/color><\/size>nWhen \"Umbra\" is full, hold <color=Highlight>Basic Attack<\/color> to cast <color=Highlight>Devastation<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>, considered as Heavy Attack DMG.n<size=10> <\/size>n<size=40><color=Title>Dark Surge<\/color><\/size>nAfter casting <color=Highlight>Devastation<\/color>, Rover enters the <color=Highlight>Dark Surge<\/color> state. In this state:n<color=Highlight>Basic Attack<\/color> is replaced with <color=Highlight>Enhanced Basic Attack<\/color>, which performs up to 5 consecutive attacks, dealing <color=Dark>Havoc DMG<\/color>.n<color=Highlight>Heavy Attack<\/color> is replaced with <color=Highlight>Enhanced Heavy Attack<\/color>;nUse <color=Highlight>Basic Attack<\/color> after casting <color=Highlight>Enhanced Heavy Attack<\/color> to cast Heavy Attack <color=Highlight>Thwackblade<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>, considered as Heavy Attack DMG.nUse <color=Highlight>Basic Attack<\/color> after casting Heavy Attack <color=Highlight>Thwackblade<\/color> to cast <color=Highlight> Enhanced Basic Attack 3<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>;nResonance Skill <color=Highlight>Wingblade<\/color> is replaced with Resonance Skill <color=Highlight>Lifetaker<\/color>, transforming sounds into blades to attack the target, dealing <color=Dark>Havoc DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Umbra<\/color><\/size>nRover can hold up to 100 points of Umbra.nNormal Attack <color=Highlight>Tuneslayer<\/color> recovers Umbra on hit.nResonance Skill <color=Highlight>Wingblade<\/color> recovers Umbra when cast.nResonance Skill <color=Highlight>Lifetaker<\/color> recovers Umbra when cast.nIntro Skill <color=Highlight>Instant of Annihilation<\/color> recovers Umbra when cast."
+            "desc": "<size=40><color=Title>Devastation<\/color><\/size>nWhen \"Umbra\" is full, hold <color=Highlight>Basic Attack<\/color> to cast <color=Highlight>Devastation<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>, considered as Heavy Attack DMG.n<size=10> <\/size>n<size=40><color=Title>Dark Surge<\/color><\/size>nAfter casting <color=Highlight>Devastation<\/color>, Rover enters the <color=Highlight>Dark Surge<\/color> state. In this state:n-<color=Highlight>Basic Attack<\/color> is replaced with <color=Highlight>Enhanced Basic Attack<\/color>, which performs up to 5 consecutive attacks, dealing <color=Dark>Havoc DMG<\/color>.n-<color=Highlight>Heavy Attack<\/color> is replaced with <color=Highlight>Enhanced Heavy Attack<\/color>;n-Use <color=Highlight>Basic Attack<\/color> after casting <color=Highlight>Enhanced Heavy Attack<\/color> to cast Heavy Attack <color=Highlight>Thwackblade<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>, considered as Heavy Attack DMG.n-Use <color=Highlight>Basic Attack<\/color> after casting Heavy Attack <color=Highlight>Thwackblade<\/color> to cast <color=Highlight>Enhanced Basic Attack 3<\/color> to attack the target, dealing <color=Dark>Havoc DMG<\/color>;n-Resonance Skill <color=Highlight>Wingblade<\/color> is replaced with Resonance Skill <color=Highlight>Lifetaker<\/color>, transforming sounds into blades to attack the target, dealing <color=Dark>Havoc DMG<\/color>.n<size=10> <\/size>n<size=40><color=Title>Umbra<\/color><\/size>nRover can hold up to 100 points of Umbra.nNormal Attack <color=Highlight>Tuneslayer<\/color> recovers Umbra on hit.nResonance Skill <color=Highlight>Wingblade<\/color> recovers Umbra when cast.nResonance Skill <color=Highlight>Lifetaker<\/color> recovers Umbra when cast.nIntro Skill <color=Highlight>Instant of Annihilation<\/color> recovers Umbra when cast."
         },
         "Rover Passive": {
-            "nameHash": "Skill_1001708_SkillName",
-            "descHash": "Skill_1001708_SkillDescribe",
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",
-            "id": 1001708
+            "id": 1001708,
+            "name": "",
+            "desc": "not yet available"
         },
         "Outro Skill": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconNvzhuQTE_UI.T_IconnvzhuQTE_UI",
@@ -962,7 +962,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_ZhujueDarkM4_UI.T_IconDevice_ZhujueDarkM4_UI",
             "name": "Annihilated Silence",
-            "desc": "Heavy Attack <color=Highlight>Devastation<\/color> and Resonance Liberation <color=Highlight>Deadening Abyss<\/color> reduces enemy Havoc RES by 10% for 20s on hit."
+            "desc": "Heavy Attack <color=Highlight>Devastation<\/color> and Resonance Liberation <color=Highlight>Deadening Abyss<\/color> reduces enemy's Havoc RES by 10% for 20s on hit."
         },
         "5": {
             "buffs": [

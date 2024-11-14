@@ -338,7 +338,7 @@ export default {
                 }
             ],
             "name": "Zephyr Domain",
-            "desc": "Yangyang wields her sword to create a whirling vortex of winds that gathers nearby enemies to the center, dealing <color=Wind>Aero DMG<\/color>."
+            "desc": "Yangyang wields her sword to create a whirling vortex of winds that pulls nearby enemies to the center, dealing <color=Wind>Aero DMG<\/color>."
         },
         "Resonance Liberation": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangA1_UI.T_IconYangyangA1_UI",
@@ -446,7 +446,7 @@ export default {
                 }
             ],
             "name": "Wind Spirals",
-            "desc": "Yangyang conjures a mighty Cyclone that gathers nearby enemies, dealing <color=Wind>Aero DMG<\/color>."
+            "desc": "Yangyang conjures a mighty Cyclone that pulls nearby enemies, dealing <color=Wind>Aero DMG<\/color>."
         },
         "Forte Circuit Passive 1": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangD2_UI.T_IconYangyangD2_UI",

@@ -1,5 +1,5 @@
-import { handlebars, Renderer } from "./Renderer.js";
-import UIController from "./UIController.js";
+const { handlebars, Renderer } = await import(`./Renderer.js?v=${window.versionId}`);
+const {default:UIController} = await import(`./UIController.js?v=${window.versionId}`);
 
 handlebars.registerHelper("unique", (item, options) => item instanceof UIItem ? item.getUnique() : console.error(`Helper 'unique' must be called on a UIItem.`, {item, options}));
 
