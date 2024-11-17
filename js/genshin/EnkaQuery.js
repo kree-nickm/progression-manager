@@ -1,6 +1,6 @@
-const {default:GenshinArtifactData} = await import(`./gamedata/GenshinArtifactData.js?v=${window.versionId}`);
-const {default:GenshinCharacterData} = await import(`./gamedata/GenshinCharacterData.js?v=${window.versionId}`);
-const {default:GenshinWeaponData} = await import(`./gamedata/GenshinWeaponData.js?v=${window.versionId}`);
+const {default:GenshinArtifactData} = await window.importer.get(`js/genshin/gamedata/GenshinArtifactData.js`);
+const {default:GenshinCharacterData} = await window.importer.get(`js/genshin/gamedata/GenshinCharacterData.js`);
+const {default:GenshinWeaponData} = await window.importer.get(`js/genshin/gamedata/GenshinWeaponData.js`);
 
 export default class EnkaQuery
 {

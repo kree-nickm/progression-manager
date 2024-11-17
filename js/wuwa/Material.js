@@ -1,8 +1,8 @@
-import LootData from "./gamedata/LootData.js";
-import MaterialData from "./gamedata/MaterialData.js";
+const {default:LootData} = await window.importer.get(`js/wuwa/gamedata/LootData.js`);
+const {default:MaterialData} = await window.importer.get(`js/wuwa/gamedata/MaterialData.js`);
 
-import WuWaItem from "./WuWaItem.js";
-import Ingredient from "../Ingredient.js";
+const {default:WuWaItem} = await window.importer.get(`js/wuwa/WuWaItem.js`);
+const {default:Ingredient} = await window.importer.get(`js/Ingredient.js`);
 
 export default class Material extends Ingredient(WuWaItem)
 {

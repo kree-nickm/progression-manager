@@ -1,12 +1,12 @@
-import AscensionData from "./gamedata/AscensionData.js";
-import ForteData from "./gamedata/ForteData.js";
-import LootData from "./gamedata/LootData.js";
-import CharacterData from "./gamedata/CharacterData.js";
-import CharacterMetadata from "./gamedata/CharacterMetadata.js";
+const {default:AscensionData} = await window.importer.get(`js/wuwa/gamedata/AscensionData.js`);
+const {default:ForteData} = await window.importer.get(`js/wuwa/gamedata/ForteData.js`);
+const {default:LootData} = await window.importer.get(`js/wuwa/gamedata/LootData.js`);
+const {default:CharacterData} = await window.importer.get(`js/wuwa/gamedata/CharacterData.js`);
+const {default:CharacterMetadata} = await window.importer.get(`js/wuwa/gamedata/CharacterMetadata.js`);
 
-import { handlebars, Renderer } from "../Renderer.js";
-import Ascendable from "../Ascendable.js";
-import WuWaItem from "./WuWaItem.js";
+const { Renderer } = await window.importer.get(`js/Renderer.js`);
+const {default:Ascendable} = await window.importer.get(`js/Ascendable.js`);
+const {default:WuWaItem} = await window.importer.get(`js/wuwa/WuWaItem.js`);
 
 export default class Character extends Ascendable(WuWaItem)
 {
@@ -112,7 +112,7 @@ export default class Character extends Ascendable(WuWaItem)
   {
     if(!this.detailedData)
     {
-      const {default:details} = await import(`./gamedata/characters/${this.key}.details.js`);
+      const {default:details} = await window.importer.get(`js/wuwa/gamedata/characters/${this.key}.details.js`);
       this.detailedData = details;
     }
     return this.detailedData;

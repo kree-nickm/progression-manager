@@ -219,9 +219,8 @@ class Renderer
       {
         try
         {
-          Renderer._templates[templateFile] = await fetch(`templates/${templateFile}.html?v=${window.versionId}`, {cache:"no-cache"})
+          Renderer._templates[templateFile] = await window.importer.get(`templates/${templateFile}.html`)
           .catch(err => console.error(`Template file not found 'templates/${templateFile}.html'.`, err))
-          .then(response => response.text())
           .then(src => {
             handlebars.registerPartial(templateFile, src);
             return handlebars.compile(src);
@@ -536,7 +535,7 @@ class Renderer
       if(itemElement)
         listTargetElement.appendChild(itemElement);
       else
-        if(!window.productionMode) console.warn(`Item does not appear to be on the list.`, {item, listTargetElement});
+        if(!window.importer.productionMode) console.warn(`Item does not appear to be on the list.`, {item, listTargetElement});
     }
   }
   

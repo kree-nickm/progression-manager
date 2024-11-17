@@ -1,6 +1,6 @@
-import LootData from "./gamedata/LootData.js";
+const {default:LootData} = await window.importer.get(`js/wuwa/gamedata/LootData.js`);
 
-import Character from "./Character.js";
+const {default:Character} = await window.importer.get(`js/wuwa/Character.js`);
 
 export default class Rover extends Character
 {

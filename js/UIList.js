@@ -1,7 +1,7 @@
-const { handlebars, Renderer } = await import(`./Renderer.js?v=${window.versionId}`);
-const {default:UIController} = await import(`./UIController.js?v=${window.versionId}`);
-const {default:UIItem} = await import(`./UIItem.js?v=${window.versionId}`);
-const {default:ListDisplayManager} = await import(`./ListDisplayManager.js?v=${window.versionId}`);
+const { handlebars, Renderer } = await window.importer.get(`js/Renderer.js`);
+const {default:UIController} = await window.importer.get(`js/UIController.js`);
+const {default:UIItem} = await window.importer.get(`js/UIItem.js`);
+const {default:ListDisplayManager} = await window.importer.get(`js/ListDisplayManager.js`);
 
 export default class UIList extends UIController {
   static dontSerialize = super.dontSerialize.concat(["display","subsets","forceNextRender"]);
@@ -76,7 +76,7 @@ export default class UIList extends UIController {
   constructor(viewer)
   {
     super();
-    //if(!window.productionMode) console.debug(`new ${this.constructor.name}`);
+    //if(!window.importer.productionMode) console.debug(`new ${this.constructor.name}`);
     this.list = [];
     this.viewer = viewer;
     this.display = new ListDisplayManager(this);
@@ -86,7 +86,7 @@ export default class UIList extends UIController {
   
   initialize()
   {
-    //if(!window.productionMode) console.debug(`${this.constructor.name}.initialize()`);
+    //if(!window.importer.productionMode) console.debug(`${this.constructor.name}.initialize()`);
     this.setupDisplay();
   }
   
@@ -421,8 +421,7 @@ export default class UIList extends UIController {
           if(!showcaseBtn.onclick)
           {
             showcaseBtn.onclick = async event => {
-              let template = await fetch(footerParams.showcase.configTemplate??`templates/renderShowcaseConfigPopup.html?v=${window.versionId}`, {cache:"no-cache"})
-              .then(response => response.text())
+              let template = await window.importer.get(footerParams.showcase.configTemplate??`templates/renderShowcaseConfigPopup.html`)
               .then(src => handlebars.compile(src));
               
               let modalElement = document.body.appendChild(document.createElement("template"));

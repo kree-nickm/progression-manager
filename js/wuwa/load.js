@@ -44,7 +44,7 @@ async function addEventListeners()
 
 async function init()
 {
-  const {default:WuWaManager} = await import("./WuWaManager.js");
+  const {default:WuWaManager} = await window.importer.get(`js/wuwa/WuWaManager.js`);
   window.viewer = new WuWaManager();
   window.viewer.retrieve();
 }

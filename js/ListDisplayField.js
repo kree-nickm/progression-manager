@@ -1,4 +1,4 @@
-const { handlebars, Renderer } = await import(`./Renderer.js?v=${window.versionId}`);
+const { handlebars, Renderer } = await window.importer.get(`js/Renderer.js`);
 
 handlebars.registerHelper("findField", (item, field, options) => {
   if(field instanceof ListDisplayField)

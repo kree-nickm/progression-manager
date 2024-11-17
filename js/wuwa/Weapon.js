@@ -1,12 +1,12 @@
-import AscensionData from "./gamedata/AscensionData.js";
-import LootData from "./gamedata/LootData.js";
-import WeaponData from "./gamedata/WeaponData.js";
-import WeaponMetadata from "./gamedata/WeaponMetadata.js";
+const {default:AscensionData} = await window.importer.get(`js/wuwa/gamedata/AscensionData.js`);
+const {default:LootData} = await window.importer.get(`js/wuwa/gamedata/LootData.js`);
+const {default:WeaponData} = await window.importer.get(`js/wuwa/gamedata/WeaponData.js`);
+const {default:WeaponMetadata} = await window.importer.get(`js/wuwa/gamedata/WeaponMetadata.js`);
 
-import { handlebars, Renderer } from "../Renderer.js";
-import Ascendable from "../Ascendable.js";
-import Equipment from "../Equipment.js";
-import WuWaItem from "./WuWaItem.js";
+const { Renderer } = await window.importer.get(`js/Renderer.js`);
+const {default:Ascendable} = await window.importer.get(`js/Ascendable.js`);
+const {default:Equipment} = await window.importer.get(`js/Equipment.js`);
+const {default:WuWaItem} = await window.importer.get(`js/wuwa/WuWaItem.js`);
 
 export default class Weapon extends Equipment(Ascendable(WuWaItem))
 {

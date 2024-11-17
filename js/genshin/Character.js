@@ -1,20 +1,20 @@
-const {default:GenshinLootData} = await import(`./gamedata/GenshinLootData.js?v=${window.versionId}`);
-const {default:GenshinPhaseData} = await import(`./gamedata/GenshinPhaseData.js?v=${window.versionId}`);
-const {default:GenshinTalentData} = await import(`./gamedata/GenshinTalentData.js?v=${window.versionId}`);
-const {default:GenshinCharacterData} = await import(`./gamedata/GenshinCharacterData.js?v=${window.versionId}`);
-const {default:GenshinCharacterStats} = await import(`./gamedata/GenshinCharacterStats.js?v=${window.versionId}`);
-const {default:GenshinArtifactData} = await import(`./gamedata/GenshinArtifactData.js?v=${window.versionId}`);
-const {default:GenshinBuilds} = await import(`./gamedata/GenshinBuilds.js?v=${window.versionId}`);
+const {default:GenshinLootData} = await window.importer.get(`js/genshin/gamedata/GenshinLootData.js`);
+const {default:GenshinPhaseData} = await window.importer.get(`js/genshin/gamedata/GenshinPhaseData.js`);
+const {default:GenshinTalentData} = await window.importer.get(`js/genshin/gamedata/GenshinTalentData.js`);
+const {default:GenshinCharacterData} = await window.importer.get(`js/genshin/gamedata/GenshinCharacterData.js`);
+const {default:GenshinCharacterStats} = await window.importer.get(`js/genshin/gamedata/GenshinCharacterStats.js`);
+const {default:GenshinArtifactData} = await window.importer.get(`js/genshin/gamedata/GenshinArtifactData.js`);
+const {default:GenshinBuilds} = await window.importer.get(`js/genshin/gamedata/GenshinBuilds.js`);
 
-const { handlebars, Renderer } = await import(`../Renderer.js?v=${window.versionId}`);
-const {default:GenshinItem} = await import(`./GenshinItem.js?v=${window.versionId}`);
-const {default:Ascendable} = await import(`../Ascendable.js?v=${window.versionId}`);
+const { handlebars, Renderer } = await window.importer.get(`js/Renderer.js`);
+const {default:GenshinItem} = await window.importer.get(`js/genshin/GenshinItem.js`);
+const {default:Ascendable} = await window.importer.get(`js/Ascendable.js`);
 
-const {default:Artifact} = await import(`./Artifact.js?v=${window.versionId}`);
-const {default:Weapon} = await import(`./Weapon.js?v=${window.versionId}`);
-const {default:Material} = await import(`./Material.js?v=${window.versionId}`);
-const {default:Team} = await import(`./Team.js?v=${window.versionId}`);
-const {default:StatModifier} = await import(`./StatModifier.js?v=${window.versionId}`);
+const {default:Artifact} = await window.importer.get(`js/genshin/Artifact.js`);
+const {default:Weapon} = await window.importer.get(`js/genshin/Weapon.js`);
+const {default:Material} = await window.importer.get(`js/genshin/Material.js`);
+const {default:Team} = await window.importer.get(`js/genshin/Team.js`);
+const {default:StatModifier} = await window.importer.get(`js/genshin/StatModifier.js`);
 
 handlebars.registerHelper("ifHasStat", function(character, statId, options) {
   if(!character || !character.getStat)
@@ -513,7 +513,7 @@ export default class Character extends Ascendable(GenshinItem)
   {
     if(!this.detailedData)
     {
-      const {default:details} = await import(`./gamedata/characters/${this.key}.details.js?v=${window.versionId}`);
+      const {default:details} = await window.importer.get(`js/genshin/gamedata/characters/${this.key}.details.js`);
       this.detailedData = details;
     }
     return this.detailedData;
@@ -1654,7 +1654,8 @@ export default class Character extends Ascendable(GenshinItem)
     else
     {
       console.warn(`${this.name} has no build '${buildId}'.`);
-      return builds[0] ?? {};
+      this.update("selectedBuild", 0);
+      return builds[this.selectedBuild] ?? {};
     }
   }
   

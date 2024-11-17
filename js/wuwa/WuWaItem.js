@@ -1,4 +1,4 @@
-import UIItem from "../UIItem.js";
+const {default:UIItem} = await window.importer.get(`js/UIItem.js`);
 
 export default class WuWaItem extends UIItem
 {

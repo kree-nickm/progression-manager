@@ -1,4 +1,4 @@
-const { handlebars, Renderer } = await import(`./Renderer.js?v=${window.versionId}`);
+const { Renderer } = await window.importer.get(`js/Renderer.js`);
 
 const Ingredient = (SuperClass) => class extends SuperClass {
   static dontSerialize = super.dontSerialize.concat(["usedBy","prevTier","nextTier","converts"]);

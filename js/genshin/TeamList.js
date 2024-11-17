@@ -1,6 +1,6 @@
-const { handlebars, Renderer } = await import(`../Renderer.js?v=${window.versionId}`);
-const {default:GenshinList} = await import(`./GenshinList.js?v=${window.versionId}`);
-const {default:Team} = await import(`./Team.js?v=${window.versionId}`);
+const { Renderer } = await window.importer.get(`js/Renderer.js`);
+const {default:GenshinList} = await window.importer.get(`js/genshin/GenshinList.js`);
+const {default:Team} = await window.importer.get(`js/genshin/Team.js`);
 
 export default class TeamList extends GenshinList {
   //static dontSerialize = super.dontSerialize.concat([]);

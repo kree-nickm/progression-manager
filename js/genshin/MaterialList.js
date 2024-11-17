@@ -1,9 +1,9 @@
-const {default:GenshinLootData} = await import(`./gamedata/GenshinLootData.js?v=${window.versionId}`);
-const {default:GenshinCharacterData} = await import(`./gamedata/GenshinCharacterData.js?v=${window.versionId}`);
+const {default:GenshinLootData} = await window.importer.get(`js/genshin/gamedata/GenshinLootData.js`);
+const {default:GenshinCharacterData} = await window.importer.get(`js/genshin/gamedata/GenshinCharacterData.js`);
 
-const { handlebars, Renderer } = await import(`../Renderer.js?v=${window.versionId}`);
-const {default:GenshinList} = await import(`./GenshinList.js?v=${window.versionId}`);
-const {default:Material} = await import(`./Material.js?v=${window.versionId}`);
+const { Renderer } = await window.importer.get(`js/Renderer.js`);
+const {default:GenshinList} = await window.importer.get(`js/genshin/GenshinList.js`);
+const {default:Material} = await window.importer.get(`js/genshin/Material.js`);
 
 export default class MaterialList extends GenshinList
 {

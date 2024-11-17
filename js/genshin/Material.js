@@ -1,8 +1,8 @@
-const {default:GenshinLootData} = await import(`./gamedata/GenshinLootData.js?v=${window.versionId}`);
-const {default:GenshinMaterialData} = await import(`./gamedata/GenshinMaterialData.js?v=${window.versionId}`);
+const {default:GenshinLootData} = await window.importer.get(`js/genshin/gamedata/GenshinLootData.js`);
+const {default:GenshinMaterialData} = await window.importer.get(`js/genshin/gamedata/GenshinMaterialData.js`);
 
-const {default:GenshinItem} = await import(`./GenshinItem.js?v=${window.versionId}`);
-const {default:Ingredient} = await import(`../Ingredient.js?v=${window.versionId}`);
+const {default:GenshinItem} = await window.importer.get(`js/genshin/GenshinItem.js`);
+const {default:Ingredient} = await window.importer.get(`js/Ingredient.js`);
 
 export default class Material extends Ingredient(GenshinItem)
 {

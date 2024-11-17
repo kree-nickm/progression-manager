@@ -1,10 +1,10 @@
-import { Renderer } from "../Renderer.js";
+const { Renderer } = await window.importer.get(`js/Renderer.js`);
 
-import DataManager from "../DataManager.js";
-import CharacterList from "./CharacterList.js";
-import WeaponList from "./WeaponList.js";
-import EchoList from "./EchoList.js";
-import MaterialList from "./MaterialList.js";
+const {default:DataManager} = await window.importer.get(`js/DataManager.js`);
+const {default:CharacterList} = await window.importer.get(`js/wuwa/CharacterList.js`);
+const {default:WeaponList} = await window.importer.get(`js/wuwa/WeaponList.js`);
+const {default:EchoList} = await window.importer.get(`js/wuwa/EchoList.js`);
+const {default:MaterialList} = await window.importer.get(`js/wuwa/MaterialList.js`);
 
 export default class WuWaManager extends DataManager
 {

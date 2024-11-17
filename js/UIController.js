@@ -1,4 +1,4 @@
-const { handlebars, Renderer } = await import(`./Renderer.js?v=${window.versionId}`);
+const { handlebars, Renderer } = await window.importer.get(`js/Renderer.js`);
 
 handlebars.registerHelper("getProperty", (item, property, options) => item instanceof UIController ? item.getProperty(property) : console.error(`Helper 'getProperty' must be called on a UIController.`, {item, property, options}));
 handlebars.registerHelper("uuid", (item, options) => item instanceof UIController ? item.uuid : console.error(`Helper 'uuid' must be called on a UIController.`, {item, options}));

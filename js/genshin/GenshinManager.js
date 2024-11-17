@@ -1,28 +1,30 @@
 import { DateTime } from 'https://cdn.jsdelivr.net/npm/luxon@3.3.0/+esm';
-const { handlebars, Renderer } = await import(`../Renderer.js?v=${window.versionId}`);
-const { mergeObjects } = await import(`../Util.js?v=${window.versionId}`);
+const { Renderer } = await window.importer.get(`js/Renderer.js`);
+const { mergeObjects } = await window.importer.get(`js/Util.js`);
 
 //import GenshinBuilds from "./gamedata/GenshinBuilds.js";
-console.log(`Importing other files.`);
+console.debug(`Importing other files.`);
 
-const {default:DataManager} = await import(`../DataManager.js?v=${window.versionId}`);
-console.log(`Imported DataManager.`);
-const {default:ListDisplayManager} = await import(`../ListDisplayManager.js?v=${window.versionId}`);
-console.log(`Imported ListDisplayManager.`);
-const {default:MaterialList} = await import(`./MaterialList.js?v=${window.versionId}`);
-console.log(`Imported MaterialList.`);
-const {default:CharacterList} = await import(`./CharacterList.js?v=${window.versionId}`);
-console.log(`Imported CharacterList.`);
-const {default:WeaponList} = await import(`./WeaponList.js?v=${window.versionId}`);
-console.log(`Imported WeaponList.`);
-const {default:ArtifactList} = await import(`./ArtifactList.js?v=${window.versionId}`);
-console.log(`Imported ArtifactList.`);
-const {default:TeamList} = await import(`./TeamList.js?v=${window.versionId}`);
-console.log(`Imported TeamList.`);
-const {default:FurnitureList} = await import(`./FurnitureList.js?v=${window.versionId}`);
-console.log(`Imported FurnitureList.`);
-const {default:FurnitureSetList} = await import(`./FurnitureSetList.js?v=${window.versionId}`);
-console.log(`Imported FurnitureSetList.`);
+const {default:DataManager} = await window.importer.get(`js/DataManager.js`);
+console.debug(`Imported DataManager.`);
+//const {default:Account} = await window.importer.get(`js/genshin/Account.js`);
+//console.debug(`Imported Account.`);
+const {default:ListDisplayManager} = await window.importer.get(`js/ListDisplayManager.js`);
+console.debug(`Imported ListDisplayManager.`);
+const {default:MaterialList} = await window.importer.get(`js/genshin/MaterialList.js`);
+console.debug(`Imported MaterialList.`);
+const {default:CharacterList} = await window.importer.get(`js/genshin/CharacterList.js`);
+console.debug(`Imported CharacterList.`);
+const {default:WeaponList} = await window.importer.get(`js/genshin/WeaponList.js`);
+console.debug(`Imported WeaponList.`);
+const {default:ArtifactList} = await window.importer.get(`js/genshin/ArtifactList.js`);
+console.debug(`Imported ArtifactList.`);
+const {default:TeamList} = await window.importer.get(`js/genshin/TeamList.js`);
+console.debug(`Imported TeamList.`);
+const {default:FurnitureList} = await window.importer.get(`js/genshin/FurnitureList.js`);
+console.debug(`Imported FurnitureList.`);
+const {default:FurnitureSetList} = await window.importer.get(`js/genshin/FurnitureSetList.js`);
+console.debug(`Imported FurnitureSetList.`);
 
 export default class GenshinManager extends DataManager
 {
@@ -344,7 +346,7 @@ export default class GenshinManager extends DataManager
           {
             let realAcc = acc+"@"+srv;
             if(!this.accounts[realAcc])
-              this.accounts[realAcc] = new Account(realAcc, {viewer:this});
+              this.accounts[realAcc] = this.createAccount(realAcc);
             this.accounts[realAcc].loadLists(retrievedData[acc][srv]);
             this.errors = this.errors || this.accounts[realAcc].errors;
           }

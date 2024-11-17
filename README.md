@@ -13,7 +13,7 @@ Features include:
 * Export your data in GOOD format so you can use it on [other websites](#alternatives).
 * Easily switch between multiple accounts and/or servers whose data you've added.
 * Upload your account data to Pastebin with the click of a button, giving you a code that you can use on other devices or share with other players. Using this code will allow you to easily import your data into a different device, or send it to other players so they can review your account.
-* View a consolidated list of all of your characters, which shows you all of the materials they need for their next ascension as well as talent level-ups. Additionally, you can see their equipped gear in a consolodated format, to quickly see which ones need your resin the most.
+* View a consolidated list of all of your characters, which shows you all of the materials they need for their next ascension as well as talent level-ups. Additionally, you can see their equipped gear in a consolidated format, to quickly see which ones need your resin the most.
 * As above, view a consolidated list of all of your weapons and their ascension materials, and which character is using each.
 * View a list of all of your artifacts with not only their stats, but an overall desirability rating based on preferences that you specify (explained below).
 * View your quantities of materials, with a list of which characters and weapons require that material for their next ascension or talent level-up.
@@ -42,6 +42,3 @@ There are many other Genshin Impact managers that I am aware of, which serve sim
 
 # Wuthering Waves
 Support for Wuthing Waves is still a major work-in-progress. My goal is to have all of the same features as the Genshin Impact version, but it will take a while to get there. At the moment it only tracks characters and weapons, along with the materials needed by them. I fear that unless someone can make a screen-reader for Wuthering Waves similar to Inventory Kamera for Genshin, this app will be too cumbersome to use for anything else.
-
-# Palworld
-Outdated, and will likely not be updated any time soon, unless my friends want to start our Palworld server back up. The Palworld Manager is mostly just a proof-of-concept for multi-game support, before WuWa came along. Its features are extremely minimal and will likely not be expanded upon. I will probably end up removing it entirely, just because it makes the rest of the app look bad.

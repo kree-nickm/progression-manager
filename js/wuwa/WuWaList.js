@@ -1,4 +1,4 @@
-import UIList from "../UIList.js";
+const {default:UIList} = await window.importer.get(`js/UIList.js`);
 
 export default class WuWaList extends UIList
 {

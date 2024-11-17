@@ -1,6 +1,6 @@
-const {default:GenshinFurnitureData} = await import(`./gamedata/GenshinFurnitureData.js?v=${window.versionId}`);
+const {default:GenshinFurnitureData} = await window.importer.get(`js/genshin/gamedata/GenshinFurnitureData.js`);
 
-const {default:GenshinItem} = await import(`./GenshinItem.js?v=${window.versionId}`);
+const {default:GenshinItem} = await window.importer.get(`js/genshin/GenshinItem.js`);
 
 export default class Furniture extends GenshinItem
 {

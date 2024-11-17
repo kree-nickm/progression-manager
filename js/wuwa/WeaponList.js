@@ -1,8 +1,8 @@
-import WeaponData from "./gamedata/WeaponData.js";
+const {default:WeaponData} = await window.importer.get(`js/wuwa/gamedata/WeaponData.js`);
 
-import { handlebars, Renderer } from "../Renderer.js";
-import WuWaList from "./WuWaList.js";
-import Weapon from "./Weapon.js";
+const { Renderer } = await window.importer.get(`js/Renderer.js`);
+const {default:WuWaList} = await window.importer.get(`js/wuwa/WuWaList.js`);
+const {default:Weapon} = await window.importer.get(`js/wuwa/Weapon.js`);
 
 export default class WeaponList extends WuWaList
 {

@@ -1,7 +1,7 @@
-const {default:GenshinLootData} = await import(`./gamedata/GenshinLootData.js?v=${window.versionId}`);
+const {default:GenshinLootData} = await window.importer.get(`js/genshin/gamedata/GenshinLootData.js`);
 
-const {default:Character} = await import(`./Character.js?v=${window.versionId}`);
-const {default:Material} = await import(`./Material.js?v=${window.versionId}`);
+const {default:Character} = await window.importer.get(`js/genshin/Character.js`);
+const {default:Material} = await window.importer.get(`js/genshin/Material.js`);
 
 export default class Traveler extends Character
 {

@@ -1,4 +1,4 @@
-const {default:ListDisplayField} = await import(`./ListDisplayField.js?v=${window.versionId}`);
+const {default:ListDisplayField} = await window.importer.get(`js/ListDisplayField.js`);
 
 export default class ListDisplayManager
 {

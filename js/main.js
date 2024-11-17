@@ -1,5 +1,4 @@
-//import { handlebars, Renderer } from "./Renderer.js";
-const { handlebars, Renderer } = await import(`./Renderer.js?v=${window.versionId}`);
+const { handlebars, Renderer } = await window.importer.get(`js/Renderer.js`);
 
 String.prototype.capitalize = function() { return this.at(0).toUpperCase()+this.substr(1).toLowerCase(); };
 
@@ -26,7 +25,7 @@ window.DEBUGLOG = {
   enableAll: () => { for(let method in window.DEBUGLOG) window.DEBUGLOG[method] = true; },
 };
 
-if(!window.productionMode)
+if(!window.importer.productionMode)
 {
   window.DEBUG = {
     called: function(func, object, args)
@@ -102,15 +101,13 @@ if(typeof(Storage) !== "undefined")
       else
       {
         document.getElementById("gameIcon").innerHTML = `<img src="img/gameIcons/${selectBtn.dataset.game}.webp"/>`;
-        const { addEventListeners, init } = await import(`./${selectBtn.dataset.game}/load.js?v=${window.versionId}`);
+        const { addEventListeners, init } = await window.importer.get(`js/${selectBtn.dataset.game}/load.js`);
         
-        let modalsResp = await fetch(`templates/${selectBtn.dataset.game}/menuModals.html?v=${window.versionId}`, {cache:"no-cache"});
-        let modalsHTML = await modalsResp.text();
+        let modalsHTML = await window.importer.get(`templates/${selectBtn.dataset.game}/menuModals.html`);
         let modalsTemplate = handlebars.compile(modalsHTML);
         document.getElementById("menuModalContainer").innerHTML = modalsTemplate();
         
-        let buttonsResp = await fetch(`templates/${selectBtn.dataset.game}/menuButtons.html?v=${window.versionId}`, {cache:"no-cache"});
-        let buttonsHTML = await buttonsResp.text();
+        let buttonsHTML = await window.importer.get(`templates/${selectBtn.dataset.game}/menuButtons.html`);
         let buttonsTemplate = handlebars.compile(buttonsHTML);
         document.getElementById("menuButtonContainer").innerHTML = buttonsTemplate();
         

@@ -139,7 +139,7 @@ async function addEventListeners()
     let msg = document.getElementById("loadMessage");
     msg.classList.remove("d-none");
     msg.innerHTML = `<i class="fa-solid fa-arrows-rotate fa-spin"></i> Importing...`;
-    const {default:EnkaQuery} = await import(`./genshin/EnkaQuery.js?v=${window.versionId}`);
+    const {default:EnkaQuery} = await window.importer.get(`js/genshin/EnkaQuery.js`);
     let query = new EnkaQuery(input.value);
     let type = await query.request();
     if(type == "builds" || type == "showcase")
@@ -282,9 +282,9 @@ async function addEventListeners()
 
 async function init()
 {
-  console.log(`Initting GenshinManager`);
-  const {default:GenshinManager} = await import(`./GenshinManager.js?v=${window.versionId}`);
-  console.log(`Loading GenshinManager`, GenshinManager);
+  console.debug(`Initting GenshinManager`);
+  const {default:GenshinManager} = await window.importer.get(`js/genshin/GenshinManager.js`);
+  console.debug(`Loading GenshinManager`, GenshinManager);
   window.viewer = new GenshinManager();
   window.viewer.retrieve();
   setInterval(window.viewer.today.bind(window.viewer), 60000);

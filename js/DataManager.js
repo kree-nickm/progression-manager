@@ -1,6 +1,6 @@
-const { handlebars, Renderer } = await import(`./Renderer.js?v=${window.versionId}`);
-const {default:Account} = await import(`./Account.js?v=${window.versionId}`);
-const {default:UIController} = await import(`./UIController.js?v=${window.versionId}`);
+const { Renderer } = await window.importer.get(`js/Renderer.js`);
+const {default:Account} = await window.importer.get(`js/Account.js`);
+const {default:UIController} = await window.importer.get(`js/UIController.js`);
 
 export default class DataManager extends UIController
 {
@@ -90,6 +90,10 @@ export default class DataManager extends UIController
     return this.accounts?.[this.settings.server];
   }
   
+  createAccount(id) {
+    return new Account(id, {viewer:this});
+  }
+  
   activateAccount(account)
   {
     let changed = false;
@@ -99,7 +103,7 @@ export default class DataManager extends UIController
     if(!this.accounts)
       this.accounts = {};
     if(!this.accounts[this.settings.server])
-      this.accounts[this.settings.server] = new Account(this.settings.server, {viewer:this});
+      this.accounts[this.settings.server] = this.createAccount(this.settings.server);
     this.accounts[this.settings.server].loadLists();
     if(changed)
       for(let listName in this.listClasses)
@@ -288,7 +292,7 @@ export default class DataManager extends UIController
     
     if(this.errors)
     {
-      console.warn(`Corruption detected in your progression data. Save aborted in order to prevent your saved data from being corrupted too. You must reload the page to clear this. If the problem persist, you may have to report a bug to the developer here: https://github.com/kree-nickm/progression-manager/issues`);
+      console.warn(`Corruption detected in your progression data. Save aborted in order to prevent your saved data from being corrupted too. You must reload the page to clear this. If the problem persist, you may have to report a bug to the developer here: https://github.com/kree-nickm/progression-manager/issues`, `If you are willing to risk your data and ignore this error, you can type "viewer.errors = false" into the console, then make any change to your data to attempt saving again.`);
       return false;
     }
     
@@ -360,7 +364,7 @@ export default class DataManager extends UIController
       for(let acc in data)
       {
         if(!this.accounts[acc])
-          this.accounts[acc] = new Account(acc, {viewer:this});
+          this.accounts[acc] = this.createAccount(acc);
         this.accounts[acc].loadLists(data[acc]);
         this.errors = this.errors || this.accounts[acc].errors;
       }

@@ -1,11 +1,11 @@
-const {default:GenshinWeaponData} = await import(`./gamedata/GenshinWeaponData.js?v=${window.versionId}`);
-const {default:GenshinWeaponStats} = await import(`./gamedata/GenshinWeaponStats.js?v=${window.versionId}`);
-const {default:GenshinLootData} = await import(`./gamedata/GenshinLootData.js?v=${window.versionId}`);
-const {default:GenshinPhaseData} = await import(`./gamedata/GenshinPhaseData.js?v=${window.versionId}`);
+const {default:GenshinWeaponData} = await window.importer.get(`js/genshin/gamedata/GenshinWeaponData.js`);
+const {default:GenshinWeaponStats} = await window.importer.get(`js/genshin/gamedata/GenshinWeaponStats.js`);
+const {default:GenshinLootData} = await window.importer.get(`js/genshin/gamedata/GenshinLootData.js`);
+const {default:GenshinPhaseData} = await window.importer.get(`js/genshin/gamedata/GenshinPhaseData.js`);
 
-const {default:GenshinItem} = await import(`./GenshinItem.js?v=${window.versionId}`);
-const {default:Ascendable} = await import(`../Ascendable.js?v=${window.versionId}`);
-const {default:Equipment} = await import(`../Equipment.js?v=${window.versionId}`);
+const {default:GenshinItem} = await window.importer.get(`js/genshin/GenshinItem.js`);
+const {default:Ascendable} = await window.importer.get(`js/Ascendable.js`);
+const {default:Equipment} = await window.importer.get(`js/Equipment.js`);
 
 export default class Weapon extends Equipment(Ascendable(GenshinItem))
 {

@@ -1,4 +1,4 @@
-const {default:Plan} = await import(`./Plan.js?v=${window.versionId}`);
+const {default:Plan} = await window.importer.get(`js/Plan.js`);
 
 export default class Account
 {

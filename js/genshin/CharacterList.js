@@ -1,12 +1,12 @@
-const {default:GenshinCharacterData} = await import(`./gamedata/GenshinCharacterData.js?v=${window.versionId}`);
-const {default:GenshinArtifactData} = await import(`./gamedata/GenshinArtifactData.js?v=${window.versionId}`);
-const {default:GenshinWeaponData} = await import(`./gamedata/GenshinWeaponData.js?v=${window.versionId}`);
+const {default:GenshinCharacterData} = await window.importer.get(`js/genshin/gamedata/GenshinCharacterData.js`);
+const {default:GenshinArtifactData} = await window.importer.get(`js/genshin/gamedata/GenshinArtifactData.js`);
+const {default:GenshinWeaponData} = await window.importer.get(`js/genshin/gamedata/GenshinWeaponData.js`);
 
-const { handlebars, Renderer } = await import(`../Renderer.js?v=${window.versionId}`);
-const { mergeObjects } = await import(`../Util.js?v=${window.versionId}`);
-const {default:GenshinList} = await import(`./GenshinList.js?v=${window.versionId}`);
-const {default:Character} = await import(`./Character.js?v=${window.versionId}`);
-const {default:Traveler} = await import(`./Traveler.js?v=${window.versionId}`);
+const { Renderer } = await window.importer.get(`js/Renderer.js`);
+const { mergeObjects } = await window.importer.get(`js/Util.js`);
+const {default:GenshinList} = await window.importer.get(`js/genshin/GenshinList.js`);
+const {default:Character} = await window.importer.get(`js/genshin/Character.js`);
+const {default:Traveler} = await window.importer.get(`js/genshin/Traveler.js`);
 
 export default class CharacterList extends GenshinList
 {

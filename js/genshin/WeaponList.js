@@ -1,8 +1,8 @@
-const {default:GenshinWeaponData} = await import(`./gamedata/GenshinWeaponData.js?v=${window.versionId}`);
+const {default:GenshinWeaponData} = await window.importer.get(`js/genshin/gamedata/GenshinWeaponData.js`);
 
-const { handlebars, Renderer } = await import(`../Renderer.js?v=${window.versionId}`);
-const {default:GenshinList} = await import(`./GenshinList.js?v=${window.versionId}`);
-const {default:Weapon} = await import(`./Weapon.js?v=${window.versionId}`);
+const { handlebars, Renderer } = await window.importer.get(`js/Renderer.js`);
+const {default:GenshinList} = await window.importer.get(`js/genshin/GenshinList.js`);
+const {default:Weapon} = await window.importer.get(`js/genshin/Weapon.js`);
 
 handlebars.registerHelper("getWeaponData", (key, options) => GenshinWeaponData[key]);
 handlebars.registerHelper("weaponList", (item, options) => item.viewer.lists.WeaponList.items(options.hash.filter));

@@ -1,8 +1,8 @@
-const {default:GenshinArtifactData} = await import(`./gamedata/GenshinArtifactData.js?v=${window.versionId}`);
-const {default:GenshinArtifactStats} = await import(`./gamedata/GenshinArtifactStats.js?v=${window.versionId}`);
+const {default:GenshinArtifactData} = await window.importer.get(`js/genshin/gamedata/GenshinArtifactData.js`);
+const {default:GenshinArtifactStats} = await window.importer.get(`js/genshin/gamedata/GenshinArtifactStats.js`);
 
-const {default:GenshinItem} = await import(`./GenshinItem.js?v=${window.versionId}`);
-const {default:Equipment} = await import(`../Equipment.js?v=${window.versionId}`);
+const {default:GenshinItem} = await window.importer.get(`js/genshin/GenshinItem.js`);
+const {default:Equipment} = await window.importer.get(`js/Equipment.js`);
 
 export default class Artifact extends Equipment(GenshinItem)
 {

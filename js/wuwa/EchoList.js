@@ -1,11 +1,11 @@
-import EchoData from "./gamedata/EchoData.js";
-import EchoSetData from "./gamedata/EchoSetData.js";
-import EchoMetadata from "./gamedata/EchoMetadata.js";
-import Stats from "./gamedata/Stats.js";
+const {default:EchoData} = await window.importer.get(`js/wuwa/gamedata/EchoData.js`);
+const {default:EchoSetData} = await window.importer.get(`js/wuwa/gamedata/EchoSetData.js`);
+const {default:EchoMetadata} = await window.importer.get(`js/wuwa/gamedata/EchoMetadata.js`);
+const {default:Stats} = await window.importer.get(`js/wuwa/gamedata/Stats.js`);
 
-import { handlebars, Renderer } from "../Renderer.js";
-import WuWaList from "./WuWaList.js";
-import Echo from "./Echo.js";
+const { Renderer } = await window.importer.get(`js/Renderer.js`);
+const {default:WuWaList} = await window.importer.get(`js/wuwa/WuWaList.js`);
+const {default:Echo} = await window.importer.get(`js/wuwa/Echo.js`);
 
 export default class EchoList extends WuWaList
 {

@@ -1,9 +1,9 @@
-import CharacterData from "./gamedata/CharacterData.js";
+const {default:CharacterData} = await window.importer.get(`js/wuwa/gamedata/CharacterData.js`);
 
-import { handlebars, Renderer } from "../Renderer.js";
-import WuWaList from "./WuWaList.js";
-import Character from "./Character.js";
-import Rover from "./Rover.js";
+const { Renderer } = await window.importer.get(`js/Renderer.js`);
+const {default:WuWaList} = await window.importer.get(`js/wuwa/WuWaList.js`);
+const {default:Character} = await window.importer.get(`js/wuwa/Character.js`);
+const {default:Rover} = await window.importer.get(`js/wuwa/Rover.js`);
 
 export default class CharacterList extends WuWaList
 {

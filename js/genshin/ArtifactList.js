@@ -1,9 +1,9 @@
-const {default:GenshinArtifactData} = await import(`./gamedata/GenshinArtifactData.js?v=${window.versionId}`);
-const {default:GenshinArtifactStats} = await import(`./gamedata/GenshinArtifactStats.js?v=${window.versionId}`);
+const {default:GenshinArtifactData} = await window.importer.get(`js/genshin/gamedata/GenshinArtifactData.js`);
+const {default:GenshinArtifactStats} = await window.importer.get(`js/genshin/gamedata/GenshinArtifactStats.js`);
 
-const { handlebars, Renderer } = await import(`../Renderer.js?v=${window.versionId}`);
-const {default:GenshinList} = await import(`./GenshinList.js?v=${window.versionId}`);
-const {default:Artifact} = await import(`./Artifact.js?v=${window.versionId}`);
+const { handlebars, Renderer } = await window.importer.get(`js/Renderer.js`);
+const {default:GenshinList} = await window.importer.get(`js/genshin/GenshinList.js`);
+const {default:Artifact} = await window.importer.get(`js/genshin/Artifact.js`);
 
 handlebars.registerHelper('iffave', function(character, setKey, build, options) {
   if(!options)
@@ -67,28 +67,35 @@ export default class ArtifactList extends GenshinList
         // Handle each slot separately.
         for(let slot of ["flower","plume","sands","goblet","circlet"])
         {
-          // Mark the best artifacts we have.
+          // Rank the best artifacts for this character build, for the purpose of the "off-piece".
           let startDevaluing = false;
           for(let i=0; i<related.bestArtifacts[slot].length; i++)
           {
             if(related.bestArtifacts[slot][i])
             {
+              // Get the score of this artifact for this character build.
               let score = related.bestArtifacts[slot][i].getCharacterScore(character, parseInt(this.viewer.settings.preferences.artifactMaxLevel ?? 20), buildId, {useTargets:false});
-              let scaledScore = score * Math.max(0,1-i*0.05) * related.buildData.importance/100;
+              // Scale the score based on how many better artifacts we already found, and how important the build is. The best one gets a boost, because you kinda need to keep it even if it's not that great.
+              let factor = i ? Math.max(0,1-i*0.05) : 1.05;
+              let scaledScore = score * factor * related.buildData.importance/100;
               related.bestArtifacts[slot][i].update("wanters", {rank:i+1, character, buildId, score, scaledScore}, "push");
             }
           }
+          // Rank the best artifacts we have for each desired set of this character build.
           for(let setKey in related.buildData.artifactSets)
           {
+            // 4-star-only sets get a boost, because they are more valuable than their stats imply.
             let rarityFactor = 1 + (5 - (GenshinArtifactData[setKey].maxRarity ?? 5)) * 0.15;
-            // Mark the best artifacts we have for each desired set.
             let bestOfSet = related.bestArtifacts[slot].filter(artifact => artifact.setKey == setKey);
             for(let i=0; i<bestOfSet.length; i++)
             {
               if(bestOfSet[i])
               {
+                // Get the score of this artifact for this character build.
                 let score = bestOfSet[i].getCharacterScore(character, parseInt(this.viewer.settings.preferences.artifactMaxLevel ?? 20), buildId, {useTargets:false});
-                let scaledScore = score * Math.max(0,1-i*0.04) * rarityFactor * related.buildData.importance/100;
+                // Scale the score based on how many better artifacts we already found, and how important the build is. The best one gets a boost, because you kinda need to keep it even if it's not that great.
+                let factor = i ? Math.max(0,1-i*0.04) : 1.1;
+                let scaledScore = score * factor * rarityFactor * related.buildData.importance/100;
                 bestOfSet[i].update("wanters", {rank:i+1, character, buildId, score, scaledScore, onSet:true}, "push");
               }
             }
