@@ -318,6 +318,22 @@ const Ascendable = (SuperClass) => class extends SuperClass {
     return true;
   }
   
+  afterUpdate(field, value, action, options)
+  {
+    if(!super.afterUpdate(field, value, action, options))
+      return false;
+    
+    let properties = Object.keys(this.constructor.talentTypes).map(talent => `${this.constructor.talentProperty}.${talent}`);
+    properties.push("level");
+    properties.push(this.constructor.ascensionProperty);
+    
+    for(let property of properties)
+      if(field.string === property || (field.string === `wishlist.${property}` && !isNaN(value)))
+        if(this.getProperty(property) >= this.getProperty(`wishlist.${property}`))
+          this.update(`wishlist.${property}`, undefined, "replace");
+    return true;
+  }
+  
   // Normal Ascension
   
   getAscensionData(ascension=this[this.constructor.ascensionProperty])

@@ -19,4 +19,5 @@
   --footer-bg: rgb(var(--bs-light-rgb));
   --button-border-rgb: 255,255,255;
   --item-shadow-color: black;
+  --image-icon-filter: invert(0);
 }

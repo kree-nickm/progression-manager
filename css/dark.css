@@ -19,6 +19,7 @@
   --footer-bg: rgb(var(--bs-dark-rgb));
   --button-border-rgb: 60,60,60;
   --item-shadow-color: #aaa;
+  --image-icon-filter: invert(0.75);
 }
 
 .modal-backdrop {

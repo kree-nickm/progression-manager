@@ -20,7 +20,7 @@ export default class UIItem extends UIController {
   {
     if(!display.getField("favorite"))
       display.addField("favorite", {
-        label: "F",
+        label: '<i class="fa-solid fa-star"></i>',
         labelTitle: "Mark certain items as favorites, then click to sort them higher than others.",
         sort: {generic: {type:"boolean",property:"favorite"}},
         dynamic: true,
@@ -29,7 +29,7 @@ export default class UIItem extends UIController {
           target: {item, field:"favorite"},
           type: "checkbox",
           value: item.favorite,
-          trueClasses: ["fa-solid","fa-circle-check"],
+          trueClasses: ["fa-solid","fa-star"],
           falseClasses: [],
         }),
       });
@@ -76,7 +76,7 @@ export default class UIItem extends UIController {
     
       if(!display.getField("deleteBtn"))
         display.addField("deleteBtn", {
-          label: "D",
+          label: '<i class="fa-solid fa-trash-can"></i>',
           dynamic: true,
           dependencies: item => [
             {item, field:"lock"},
@@ -91,6 +91,24 @@ export default class UIItem extends UIController {
               item.list.viewer.queueStore();
             },
           },
+        });
+    }
+    else
+    {
+      if(!display.getField("owned"))
+        display.addField("owned", {
+          label: "O",
+          labelTitle: "Toggle whether you own this item or not.",
+          sort: {generic: {type:"boolean",property:"owned"}},
+          dynamic: true,
+          title: item => `Set As ${item.owned?"Unowned":"Owned"}`,
+          edit: item => ({
+            target: {item, field:"owned"},
+            type: "checkbox",
+            value: item.owned,
+            trueClasses: [],
+            falseClasses: ["fa-solid","fa-xmark","text-muted"],
+          }),
         });
     }
     

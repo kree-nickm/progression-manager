@@ -6,7 +6,9 @@ export default {
         "bonus4": "Increases Superconduct DMG by 100%. Increases Melt DMG by 15%. Using an Elemental Burst increases Cryo DMG Bonus by 30% for 10s.",
         "hakushinID": 15004,
         "id": 15004,
-        "deletedContent": true
+        "deletedContent": true,
+        "rankData": "3,4,5",
+        "icon": "UI_RelicIcon_15004_4"
     },
     "PrayersToTheFirmament": {
         "name": "Prayers to the Firmament",
@@ -14,14 +16,16 @@ export default {
         "bonus1": "Affected by Anemo for 40% less time.",
         "hakushinID": 15012,
         "id": 15012,
-        "deletedContent": true
+        "deletedContent": true,
+        "rankData": "3,4,5",
+        "icon": "UI_RelicIcon_15012_3"
     },
     "Initiate": {
         "maxRarity": 1,
         "name": "Initiate",
         "flower": "Initiate's Flower",
         "plume": "Initiate's Feather",
-        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/27\/Item_Initiate%27s_Flower.png",
+        "flowerImg": "",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a0\/Item_Initiate%27s_Feather.png",
         "hakushinId": 0,
         "id": 10000
@@ -49,7 +53,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ae\/Item_Adventurer%27s_Golden_Goblet.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/43\/Item_Adventurer%27s_Bandana.png",
         "hakushinID": 10010,
-        "id": 10010
+        "id": 10010,
+        "rankData": "1,2,3,4",
+        "icon": "UI_RelicIcon_10010_4"
     },
     "LuckyDog": {
         "maxRarity": 3,
@@ -74,7 +80,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c1\/Item_Lucky_Dog%27s_Goblet.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6a\/Item_Lucky_Dog%27s_Silver_Circlet.png",
         "hakushinID": 10011,
-        "id": 10011
+        "id": 10011,
+        "rankData": "1,2,3,4",
+        "icon": "UI_RelicIcon_10011_4"
     },
     "TravelingDoctor": {
         "maxRarity": 3,
@@ -99,7 +107,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/25\/Item_Traveling_Doctor%27s_Medicine_Pot.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/18\/Item_Traveling_Doctor%27s_Handkerchief.png",
         "hakushinID": 10013,
-        "id": 10013
+        "id": 10013,
+        "rankData": "1,2,3,4",
+        "icon": "UI_RelicIcon_10013_4"
     },
     "ResolutionOfSojourner": {
         "maxRarity": 4,
@@ -132,7 +142,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/06\/Item_Goblet_of_the_Sojourner.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/25\/Item_Crown_of_Parting.png",
         "hakushinID": 10001,
-        "id": 10001
+        "id": 10001,
+        "rankData": "1,2,3,4,5",
+        "icon": "UI_RelicIcon_10001_4"
     },
     "BraveHeart": {
         "maxRarity": 4,
@@ -168,7 +180,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/49\/Item_Outset_of_the_Brave.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b3\/Item_Crown_of_the_Brave.png",
         "hakushinID": 10002,
-        "id": 10002
+        "id": 10002,
+        "rankData": "1,2,3,4,5",
+        "icon": "UI_RelicIcon_10002_4"
     },
     "DefendersWill": {
         "maxRarity": 4,
@@ -196,7 +210,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2b\/Item_Guardian%27s_Vessel.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c4\/Item_Guardian%27s_Band.png",
         "hakushinID": 10003,
-        "id": 10003
+        "id": 10003,
+        "rankData": "1,2,3,4,5",
+        "icon": "UI_RelicIcon_10003_4"
     },
     "TinyMiracle": {
         "maxRarity": 4,
@@ -248,7 +264,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/52\/Item_Tiny_Miracle%27s_Goblet.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/73\/Item_Tiny_Miracle%27s_Earrings.png",
         "hakushinID": 10004,
-        "id": 10004
+        "id": 10004,
+        "rankData": "1,2,3,4,5",
+        "icon": "UI_RelicIcon_10004_4"
     },
     "Berserker": {
         "maxRarity": 4,
@@ -284,7 +302,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/da\/Item_Berserker%27s_Bone_Goblet.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5e\/Item_Berserker%27s_Battle_Mask.png",
         "hakushinID": 10005,
-        "id": 10005
+        "id": 10005,
+        "rankData": "1,2,3,4,5",
+        "icon": "UI_RelicIcon_10005_4"
     },
     "MartialArtist": {
         "maxRarity": 4,
@@ -326,7 +346,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8d\/Item_Martial_Artist%27s_Wine_Cup.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4c\/Item_Martial_Artist%27s_Bandana.png",
         "hakushinID": 10006,
-        "id": 10006
+        "id": 10006,
+        "rankData": "1,2,3,4,5",
+        "icon": "UI_RelicIcon_10006_4"
     },
     "Instructor": {
         "maxRarity": 4,
@@ -362,7 +384,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ad\/Item_Instructor%27s_Tea_Cup.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/da\/Item_Instructor%27s_Cap.png",
         "hakushinID": 10007,
-        "id": 10007
+        "id": 10007,
+        "rankData": "1,2,3,4,5",
+        "icon": "UI_RelicIcon_10007_4"
     },
     "Gambler": {
         "maxRarity": 4,
@@ -387,7 +411,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fd\/Item_Gambler%27s_Dice_Cup.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/43\/Item_Gambler%27s_Earrings.png",
         "hakushinID": 10008,
-        "id": 10008
+        "id": 10008,
+        "rankData": "2,3,4,5",
+        "icon": "UI_RelicIcon_10008_4"
     },
     "TheExile": {
         "maxRarity": 4,
@@ -412,7 +438,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6a\/Item_Exile%27s_Goblet.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b3\/Item_Exile%27s_Circlet.png",
         "hakushinID": 10009,
-        "id": 10009
+        "id": 10009,
+        "rankData": "1,2,3,4,5",
+        "icon": "UI_RelicIcon_10009_4"
     },
     "Scholar": {
         "maxRarity": 4,
@@ -437,7 +465,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/66\/Item_Scholar%27s_Ink_Cup.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/93\/Item_Scholar%27s_Lens.png",
         "hakushinID": 10012,
-        "id": 10012
+        "id": 10012,
+        "rankData": "1,2,3,4,5",
+        "icon": "UI_RelicIcon_10012_4"
     },
     "PrayersForIllumination": {
         "maxRarity": 4,
@@ -446,7 +476,10 @@ export default {
         "bonus1": "Affected by Pyro for 40% less time.",
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/18\/Item_Tiara_of_Flame.png",
         "hakushinID": 15009,
-        "id": 15009
+        "id": 15009,
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/18\/Item_Tiara_of_Flame.png",
+        "rankData": "3,4,5",
+        "icon": "UI_RelicIcon_15009_3"
     },
     "PrayersForDestiny": {
         "maxRarity": 4,
@@ -455,7 +488,10 @@ export default {
         "bonus1": "Affected by Hydro for 40% less time.",
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0a\/Item_Tiara_of_Torrents.png",
         "hakushinID": 15010,
-        "id": 15010
+        "id": 15010,
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0a\/Item_Tiara_of_Torrents.png",
+        "rankData": "3,4,5",
+        "icon": "UI_RelicIcon_15010_3"
     },
     "PrayersForWisdom": {
         "maxRarity": 4,
@@ -464,7 +500,10 @@ export default {
         "bonus1": "Affected by Electro for 40% less time.",
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f6\/Item_Tiara_of_Thunder.png",
         "hakushinID": 15011,
-        "id": 15011
+        "id": 15011,
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f6\/Item_Tiara_of_Thunder.png",
+        "rankData": "3,4,5",
+        "icon": "UI_RelicIcon_15011_3"
     },
     "PrayersToSpringtime": {
         "maxRarity": 4,
@@ -473,7 +512,10 @@ export default {
         "bonus1": "Affected by Cryo for 40% less time.",
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/14\/Item_Tiara_of_Frost.png",
         "hakushinID": 15013,
-        "id": 15013
+        "id": 15013,
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/14\/Item_Tiara_of_Frost.png",
+        "rankData": "3,4,5",
+        "icon": "UI_RelicIcon_15013_3"
     },
     "BlizzardStrayer": {
         "maxRarity": 5,
@@ -510,7 +552,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6a\/Item_Frost-Weaved_Dignity.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/df\/Item_Broken_Rime%27s_Echo.png",
         "hakushinID": 14001,
-        "id": 14001
+        "id": 14001,
+        "rankData": "3,4,5",
+        "icon": "UI_RelicIcon_14001_4"
     },
     "Thundersoother": {
         "maxRarity": 5,
@@ -546,7 +590,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/87\/Item_Thundersoother%27s_Goblet.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/14\/Item_Thundersoother%27s_Diadem.png",
         "hakushinID": 14002,
-        "id": 14002
+        "id": 14002,
+        "rankData": "3,4,5",
+        "icon": "UI_RelicIcon_14002_4"
     },
     "Lavawalker": {
         "maxRarity": 5,
@@ -582,7 +628,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1b\/Item_Lavawalker%27s_Epiphany.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/63\/Item_Lavawalker%27s_Wisdom.png",
         "hakushinID": 14003,
-        "id": 14003
+        "id": 14003,
+        "rankData": "3,4,5",
+        "icon": "UI_RelicIcon_14003_4"
     },
     "MaidenBeloved": {
         "maxRarity": 5,
@@ -618,7 +666,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/23\/Item_Maiden%27s_Fleeting_Leisure.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/82\/Item_Maiden%27s_Fading_Beauty.png",
         "hakushinID": 14004,
-        "id": 14004
+        "id": 14004,
+        "rankData": "3,4,5",
+        "icon": "UI_RelicIcon_14004_4"
     },
     "GladiatorsFinale": {
         "maxRarity": 5,
@@ -654,7 +704,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6d\/Item_Gladiator%27s_Intoxication.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9b\/Item_Gladiator%27s_Triumphus.png",
         "hakushinID": 15001,
-        "id": 15001
+        "id": 15001,
+        "rankData": "3,4,5",
+        "icon": "UI_RelicIcon_15001_4"
     },
     "ViridescentVenerer": {
         "maxRarity": 5,
@@ -704,7 +756,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/ff\/Item_Viridescent_Venerer%27s_Vessel.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8b\/Item_Viridescent_Venerer%27s_Diadem.png",
         "hakushinID": 15002,
-        "id": 15002
+        "id": 15002,
+        "rankData": "3,4,5",
+        "icon": "UI_RelicIcon_15002_4"
     },
     "WanderersTroupe": {
         "maxRarity": 5,
@@ -740,7 +794,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/06\/Item_Wanderer%27s_String-Kettle.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/81\/Item_Conductor%27s_Top_Hat.png",
         "hakushinID": 15003,
-        "id": 15003
+        "id": 15003,
+        "rankData": "3,4,5",
+        "icon": "UI_RelicIcon_15003_4"
     },
     "ThunderingFury": {
         "maxRarity": 5,
@@ -786,7 +842,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cd\/Item_Omen_of_Thunderstorm.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a5\/Item_Thunder_Summoner%27s_Crown.png",
         "hakushinID": 15005,
-        "id": 15005
+        "id": 15005,
+        "rankData": "3,4,5",
+        "icon": "UI_RelicIcon_15005_4"
     },
     "CrimsonWitchOfFlames": {
         "maxRarity": 5,
@@ -845,7 +903,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/ba\/Item_Witch%27s_Heart_Flames.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ea\/Item_Witch%27s_Scorching_Hat.png",
         "hakushinID": 15006,
-        "id": 15006
+        "id": 15006,
+        "rankData": "3,4,5",
+        "icon": "UI_RelicIcon_15006_4"
     },
     "NoblesseOblige": {
         "maxRarity": 5,
@@ -881,7 +941,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9c\/Item_Royal_Silver_Urn.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/eb\/Item_Royal_Masque.png",
         "hakushinID": 15007,
-        "id": 15007
+        "id": 15007,
+        "rankData": "3,4,5",
+        "icon": "UI_RelicIcon_15007_4"
     },
     "BloodstainedChivalry": {
         "maxRarity": 5,
@@ -927,7 +989,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4f\/Item_Bloodstained_Chevalier%27s_Goblet.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0c\/Item_Bloodstained_Iron_Mask.png",
         "hakushinID": 15008,
-        "id": 15008
+        "id": 15008,
+        "rankData": "3,4,5",
+        "icon": "UI_RelicIcon_15008_4"
     },
     "ArchaicPetra": {
         "maxRarity": 5,
@@ -968,7 +1032,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/02\/Item_Goblet_of_Chiseled_Crag.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/09\/Item_Mask_of_Solitude_Basalt.png",
         "hakushinID": 15014,
-        "id": 15014
+        "id": 15014,
+        "rankData": "3,4,5",
+        "icon": "UI_RelicIcon_15014_4"
     },
     "RetracingBolide": {
         "maxRarity": 5,
@@ -1007,7 +1073,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/10\/Item_Summer_Night%27s_Waterballoon.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8a\/Item_Summer_Night%27s_Mask.png",
         "hakushinID": 15015,
-        "id": 15015
+        "id": 15015,
+        "rankData": "3,4,5",
+        "icon": "UI_RelicIcon_15015_4"
     },
     "HeartOfDepth": {
         "maxRarity": 5,
@@ -1046,7 +1114,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9c\/Item_Goblet_of_Thundering_Deep.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a6\/Item_Wine-Stained_Tricorne.png",
         "hakushinID": 15016,
-        "id": 15016
+        "id": 15016,
+        "rankData": "3,4,5",
+        "icon": "UI_RelicIcon_15016_4"
     },
     "TenacityOfTheMillelith": {
         "maxRarity": 5,
@@ -1091,7 +1161,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f4\/Item_Noble%27s_Pledging_Vessel.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b9\/Item_General%27s_Ancient_Helm.png",
         "hakushinID": 15017,
-        "id": 15017
+        "id": 15017,
+        "rankData": "3,4,5",
+        "icon": "UI_RelicIcon_15017_4"
     },
     "PaleFlame": {
         "maxRarity": 5,
@@ -1143,7 +1215,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4b\/Item_Surpassing_Cup.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/23\/Item_Mocking_Mask.png",
         "hakushinID": 15018,
-        "id": 15018
+        "id": 15018,
+        "rankData": "3,4,5",
+        "icon": "UI_RelicIcon_15018_4"
     },
     "ShimenawasReminiscence": {
         "maxRarity": 5,
@@ -1183,7 +1257,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/86\/Item_Hopeful_Heart.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8f\/Item_Capricious_Visage.png",
         "hakushinID": 15019,
-        "id": 15019
+        "id": 15019,
+        "rankData": "4,5",
+        "icon": "UI_RelicIcon_15019_4"
     },
     "EmblemOfSeveredFate": {
         "maxRarity": 5,
@@ -1220,7 +1296,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/00\/Item_Scarlet_Vessel.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/04\/Item_Ornate_Kabuto.png",
         "hakushinID": 15020,
-        "id": 15020
+        "id": 15020,
+        "rankData": "4,5",
+        "icon": "UI_RelicIcon_15020_4"
     },
     "HuskOfOpulentDreams": {
         "maxRarity": 5,
@@ -1260,7 +1338,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/63\/Item_Calabash_of_Awakening.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/84\/Item_Skeletal_Hat.png",
         "hakushinID": 15021,
-        "id": 15021
+        "id": 15021,
+        "rankData": "4,5",
+        "icon": "UI_RelicIcon_15021_4"
     },
     "OceanHuedClam": {
         "maxRarity": 5,
@@ -1285,7 +1365,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fc\/Item_Pearl_Cage.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/60\/Item_Crown_of_Watatsumi.png",
         "hakushinID": 15022,
-        "id": 15022
+        "id": 15022,
+        "rankData": "4,5",
+        "icon": "UI_RelicIcon_15022_4"
     },
     "VermillionHereafter": {
         "maxRarity": 5,
@@ -1335,7 +1417,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/77\/Item_Moment_of_the_Pact.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0e\/Item_Thundering_Poise.png",
         "hakushinID": 15023,
-        "id": 15023
+        "id": 15023,
+        "rankData": "4,5",
+        "icon": "UI_RelicIcon_15023_4"
     },
     "EchoesOfAnOffering": {
         "maxRarity": 5,
@@ -1383,7 +1467,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/89\/Item_Chalice_of_the_Font.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/53\/Item_Flowing_Rings.png",
         "hakushinID": 15024,
-        "id": 15024
+        "id": 15024,
+        "rankData": "4,5",
+        "icon": "UI_RelicIcon_15024_4"
     },
     "DeepwoodMemories": {
         "maxRarity": 5,
@@ -1419,7 +1505,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cd\/Item_Lamp_of_the_Lost.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b8\/Item_Laurel_Coronet.png",
         "hakushinID": 15025,
-        "id": 15025
+        "id": 15025,
+        "rankData": "4,5",
+        "icon": "UI_RelicIcon_15025_4"
     },
     "GildedDreams": {
         "maxRarity": 5,
@@ -1470,7 +1558,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fa\/Item_Honeyed_Final_Feast.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2b\/Item_Shadow_of_the_Sand_King.png",
         "hakushinID": 15026,
-        "id": 15026
+        "id": 15026,
+        "rankData": "4,5",
+        "icon": "UI_RelicIcon_15026_4"
     },
     "DesertPavilionChronicle": {
         "maxRarity": 5,
@@ -1510,7 +1600,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/57\/Item_Defender_of_the_Enchanting_Dream.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0c\/Item_Legacy_of_the_Desert_High-Born.png",
         "hakushinID": 15027,
-        "id": 15027
+        "id": 15027,
+        "rankData": "4,5",
+        "icon": "UI_RelicIcon_15027_4"
     },
     "FlowerOfParadiseLost": {
         "maxRarity": 5,
@@ -1564,7 +1656,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6f\/Item_Secret-Keeper%27s_Magic_Bottle.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/09\/Item_Amethyst_Crown.png",
         "hakushinID": 15028,
-        "id": 15028
+        "id": 15028,
+        "rankData": "4,5",
+        "icon": "UI_RelicIcon_15028_4"
     },
     "NymphsDream": {
         "maxRarity": 5,
@@ -1620,7 +1714,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e7\/Item_Heroes%27_Tea_Party.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/ff\/Item_Fell_Dragon%27s_Monocle.png",
         "hakushinID": 15029,
-        "id": 15029
+        "id": 15029,
+        "rankData": "4,5",
+        "icon": "UI_RelicIcon_15029_4"
     },
     "VourukashasGlow": {
         "maxRarity": 5,
@@ -1672,7 +1768,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/99\/Item_Feast_of_Boundless_Joy.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fa\/Item_Heart_of_Khvarena%27s_Brilliance.png",
         "hakushinID": 15030,
-        "id": 15030
+        "id": 15030,
+        "rankData": "4,5",
+        "icon": "UI_RelicIcon_15030_4"
     },
     "MarechausseeHunter": {
         "maxRarity": 5,
@@ -1706,13 +1804,15 @@ export default {
             "After HP increases or decreases (5s)",
             3
         ],
-        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8d\/Item_Hunter's_Brooch.png",
-        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1b\/Item_Masterpiece's_Overture.png",
+        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8d\/Item_Hunter%27s_Brooch.png",
+        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1b\/Item_Masterpiece%27s_Overture.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/25\/Item_Moment_of_Judgment.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3b\/Item_Forgotten_Vessel.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c3\/Item_Veteran's_Visage.png",
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c3\/Item_Veteran%27s_Visage.png",
         "hakushinID": 15031,
-        "id": 15031
+        "id": 15031,
+        "rankData": "4,5",
+        "icon": "UI_RelicIcon_15031_4"
     },
     "GoldenTroupe": {
         "maxRarity": 5,
@@ -1751,13 +1851,15 @@ export default {
                 "While off-field"
             ]
         ],
-        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4d\/Item_Golden_Song's_Variation.png",
-        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/83\/Item_Golden_Bird's_Shedding.png",
-        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b3\/Item_Golden_Era's_Prelude.png",
-        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0b\/Item_Golden_Night's_Bustle.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f6\/Item_Golden_Troupe's_Reward.png",
+        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4d\/Item_Golden_Song%27s_Variation.png",
+        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/83\/Item_Golden_Bird%27s_Shedding.png",
+        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b3\/Item_Golden_Era%27s_Prelude.png",
+        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0b\/Item_Golden_Night%27s_Bustle.png",
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f6\/Item_Golden_Troupe%27s_Reward.png",
         "hakushinID": 15032,
-        "id": 15032
+        "id": 15032,
+        "rankData": "4,5",
+        "icon": "UI_RelicIcon_15032_4"
     },
     "SongOfDaysPast": {
         "maxRarity": 5,
@@ -1783,7 +1885,9 @@ export default {
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/16\/Item_Promised_Dream_of_Days_Past.png",
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/db\/Item_Poetry_of_Days_Past.png",
         "hakushinID": 15033,
-        "id": 15033
+        "id": 15033,
+        "rankData": "4,5",
+        "icon": "UI_RelicIcon_15033_4"
     },
     "NighttimeWhispersInTheEchoingWoods": {
         "maxRarity": 5,
@@ -1830,18 +1934,20 @@ export default {
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4e\/Item_Honest_Quill.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a8\/Item_Faithful_Hourglass.png",
         "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/24\/Item_Magnanimous_Ink_Bottle.png",
-        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d3\/Item_Compassionate_Ladies'_Hat.png",
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d3\/Item_Compassionate_Ladies%27_Hat.png",
         "hakushinID": 15034,
-        "id": 15034
+        "id": 15034,
+        "rankData": "4,5",
+        "icon": "UI_RelicIcon_15034_4"
     },
     "FragmentOfHarmonicWhimsy": {
         "maxRarity": 5,
         "name": "Fragment of Harmonic Whimsy",
-        "flower": "Fragment of Harmonic Whimsy",
-        "plume": "Fragment of Harmonic Whimsy",
-        "sands": "Fragment of Harmonic Whimsy",
-        "goblet": "Fragment of Harmonic Whimsy",
-        "circlet": "Fragment of Harmonic Whimsy",
+        "flower": "Harmonious Symphony Prelude",
+        "plume": "Ancient Sea's Nocturnal Musing",
+        "sands": "The Grand Jape of the Turning of Fate",
+        "goblet": "Ichor Shower Rhapsody",
+        "circlet": "Whimsical Dance of the Withered",
         "bonus2": "ATK +18%.",
         "bonus2code": [
             "stat",
@@ -1863,22 +1969,24 @@ export default {
             "After Bond of Life changes (6s)",
             3
         ],
-        "flowerImg": "https:\/\/api.hakush.in\/gi\/UI\/UI_RelicIcon_15035_4.webp",
-        "plumeImg": "https:\/\/api.hakush.in\/gi\/UI\/UI_RelicIcon_15035_2.webp",
-        "sandsImg": "https:\/\/api.hakush.in\/gi\/UI\/UI_RelicIcon_15035_5.webp",
-        "gobletImg": "https:\/\/api.hakush.in\/gi\/UI\/UI_RelicIcon_15035_1.webp",
-        "circletImg": "https:\/\/api.hakush.in\/gi\/UI\/UI_RelicIcon_15035_3.webp",
+        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/ff\/Item_Harmonious_Symphony_Prelude.png",
+        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c9\/Item_Ancient_Sea%27s_Nocturnal_Musing.png",
+        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8e\/Item_The_Grand_Jape_of_the_Turning_of_Fate.png",
+        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/50\/Item_Ichor_Shower_Rhapsody.png",
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/ba\/Item_Whimsical_Dance_of_the_Withered.png",
         "hakushinID": 15035,
-        "id": 15035
+        "id": 15035,
+        "rankData": "4,5",
+        "icon": "UI_RelicIcon_15035_4"
     },
     "UnfinishedReverie": {
         "maxRarity": 5,
         "name": "Unfinished Reverie",
-        "flower": "Unfinished Reverie",
-        "plume": "Unfinished Reverie",
-        "sands": "Unfinished Reverie",
-        "goblet": "Unfinished Reverie",
-        "circlet": "Unfinished Reverie",
+        "flower": "Dark Fruit of Bright Flowers",
+        "plume": "Faded Emerald Tail",
+        "sands": "Moment of Attainment",
+        "goblet": "The Wine-Flask Over Which the Plan Was Hatched",
+        "circlet": "Crownless Crown",
         "bonus2": "ATK +18%.",
         "bonus2code": [
             "stat",
@@ -1899,30 +2007,102 @@ export default {
             ],
             5
         ],
-        "flowerImg": "https:\/\/api.hakush.in\/gi\/UI\/UI_RelicIcon_15036_4.webp",
-        "plumeImg": "https:\/\/api.hakush.in\/gi\/UI\/UI_RelicIcon_15036_2.webp",
-        "sandsImg": "https:\/\/api.hakush.in\/gi\/UI\/UI_RelicIcon_15036_5.webp",
-        "gobletImg": "https:\/\/api.hakush.in\/gi\/UI\/UI_RelicIcon_15036_1.webp",
-        "circletImg": "https:\/\/api.hakush.in\/gi\/UI\/UI_RelicIcon_15036_3.webp",
+        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f5\/Item_Dark_Fruit_of_Bright_Flowers.png",
+        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f3\/Item_Faded_Emerald_Tail.png",
+        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/76\/Item_Moment_of_Attainment.png",
+        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d8\/Item_The_Wine-Flask_Over_Which_the_Plan_Was_Hatched.png",
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5f\/Item_Crownless_Crown.png",
         "hakushinID": 15036,
-        "id": 15036
+        "id": 15036,
+        "rankData": "4,5",
+        "icon": "UI_RelicIcon_15036_4"
     },
     "ScrollOfTheHeroOfCinderCity": {
         "name": "Scroll of the Hero of Cinder City",
         "maxRarity": 5,
         "bonus2": "When a nearby party member triggers a Nightsoul Burst, the equipping character regenerates 6 Elemental Energy.",
         "bonus4": "After the equipping character triggers a reaction related to their Elemental Type, all nearby party members gain a 12% Elemental DMG Bonus for the Elemental Types involved in the elemental reaction for 15s. If the equipping character is in the Nightsoul's Blessing state when triggering this effect, all nearby party members gain an additional 28% Elemental DMG Bonus for the Elemental Types involved in the elemental reaction for 20s. The equipping character can trigger this effect while off-field, and the DMG bonus from Artifact Sets with the same name do not stack.",
+        "bonus4code": [
+            [
+                "proc",
+                [
+                    "stat",
+                    [
+                        "elemental_dmg_",
+                        12
+                    ]
+                ],
+                "After reaction (15s)"
+            ],
+            [
+                "proc",
+                [
+                    "stat",
+                    [
+                        "elemental_dmg_",
+                        28
+                    ]
+                ],
+                "After reaction in Nightsoul's Blessing (20s)"
+            ]
+        ],
         "hakushinID": 15037,
         "id": 15037,
-        "version": "5.0"
+        "version": "5.0",
+        "flower": "Beast Tamer's Talisman",
+        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/91\/Item_Beast_Tamer%27s_Talisman.png",
+        "plume": "Mountain Ranger's Marker",
+        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a6\/Item_Mountain_Ranger%27s_Marker.png",
+        "sands": "Mystic's Gold Dial",
+        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3e\/Item_Mystic%27s_Gold_Dial.png",
+        "goblet": "Wandering Scholar's Claw Cup",
+        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b8\/Item_Wandering_Scholar%27s_Claw_Cup.png",
+        "circlet": "Demon-Warrior's Feather Mask",
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/57\/Item_Demon-Warrior%27s_Feather_Mask.png",
+        "rankData": "4,5",
+        "icon": "UI_RelicIcon_15037_4"
     },
     "ObsidianCodex": {
         "name": "Obsidian Codex",
         "maxRarity": 5,
         "bonus2": "While the equipping character is in Nightsoul's Blessing and is on the field, their DMG dealt is increased by 15%.",
+        "bonus2code": [
+            "proc",
+            [
+                "stat",
+                [
+                    "dmg_",
+                    15
+                ]
+            ],
+            "While on-field in Nightsoul's Blessing"
+        ],
         "bonus4": "After the equipping character consumes 1 Nightsoul point while on the field, CRIT Rate increases by 40% for 6s. This effect can trigger once every second.",
+        "bonus4code": [
+            "proc",
+            [
+                "stat",
+                [
+                    "critRate_",
+                    40
+                ]
+            ],
+            "After consuming Nightsoul point (6s)"
+        ],
         "hakushinID": 15038,
         "id": 15038,
-        "version": "5.0"
+        "version": "5.0",
+        "flower": "Reckoning of the Xenogenic",
+        "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/86\/Item_Reckoning_of_the_Xenogenic.png",
+        "plume": "Root of the Spirit-Marrow",
+        "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c9\/Item_Root_of_the_Spirit-Marrow.png",
+        "sands": "Myths of the Night Realm",
+        "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a6\/Item_Myths_of_the_Night_Realm.png",
+        "goblet": "Pre-Banquet of the Contenders",
+        "gobletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/99\/Item_Pre-Banquet_of_the_Contenders.png",
+        "circlet": "Crown of the Saints",
+        "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4d\/Item_Crown_of_the_Saints.png",
+        "rankData": "4,5",
+        "icon": "UI_RelicIcon_15038_4"
     }
 };

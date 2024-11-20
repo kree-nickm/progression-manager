@@ -379,8 +379,13 @@ export default {
         "hpMaxAsc": 3131.8779296875,
         "atkMaxAsc": 110.864387512207,
         "defMaxAsc": 196.5599975585938,
-        "version": "5.1.50",
-        "release": "November 19, 2024"
+        "version": "5.2",
+        "release": "November 19, 2024",
+        "skillIds": [
+            11041,
+            11042,
+            11045
+        ]
     },
     "Chevreuse": {
         "name": "Chevreuse",
@@ -1768,7 +1773,7 @@ export default {
         "region": "Natlan",
         "matEnemy": "Saurians",
         "matBoss": "Pyro Dino",
-        "matFlower": "Glowing Mushroom",
+        "matFlower": "Glowing Hornshroom",
         "matMastery": "Kindling",
         "matTrounce": "Lightless Silk String",
         "ascendStat": "atk_",
@@ -1778,8 +1783,9 @@ export default {
         "hpMaxAsc": 2773.01611328125,
         "atkMaxAsc": 73.2759323120117,
         "defMaxAsc": 176.0850067138672,
-        "version": "5.1.50",
-        "release": "November 19, 2024"
+        "version": "5.2",
+        "release": "November 19, 2024",
+        "skillIds": [30501,30502,30505]
     },
     "Qiqi": {
         "name": "Qiqi",

@@ -67,6 +67,10 @@
   height: 1em;
 }
 
+.black-icon {
+  filter: var(--image-icon-filter);
+}
+
 i.edit-element {
   margin-left: 1ex;
   margin-right: 1ex;

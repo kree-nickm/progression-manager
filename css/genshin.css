@@ -65,7 +65,7 @@ tr:hover .list-item-field[data-group-name="Substat Values"] > span::before {
   position: absolute;
   height: 1em;
   width: 1em;
-  filter: opacity(0.2);
+  filter: opacity(0.2) var(--image-icon-filter);
 }
 
 tr:hover .list-item-field.stat-critRate_ > span::before {
@@ -116,14 +116,6 @@ td.list-item-field[name="users"] {
   white-space: normal;
 }
 
-.label[name="weaponName"] span::after {
-  content: "\1F52A";
-}
-
-.label[name="ascension"] span::after {
-  content: "\2726";
-}
-
 th.label[data-group-name="Gear"] {
   padding: 0px;
 }
@@ -154,6 +146,7 @@ img.artifact-icon-inline {
   vertical-align: baseline;
   margin-left: 0.75ex;
   margin-right: 0.75ex;
+  margin-top: 4px;
 }
 
 img.element-icon {

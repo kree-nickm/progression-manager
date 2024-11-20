@@ -56,16 +56,16 @@
         <div class="popup-subsection">
           <h4 class="popup-subsection-header" data-bs-toggle="collapse" href="#characterStats.TargetEnemyStats">Target Enemy Stats</h4>
           <div id="characterStats.TargetEnemyStats" class="collapse show popup-subsection-content">
-              <div class="row gx-1">
-                <div class="col-2"><label for="enemyLevel" class="form-text">Level</label><input id="enemyLevel" class="enemy-stat form-control form-control-sm" type="number" min="1" max="100" value="{{item.list.targetEnemyData.enemyLevel}}"/></div>
-                <div class="col-2"><label for="enemyAnemoRES" class="form-text">Anemo RES</label><input id="enemyAnemoRES" class="enemy-stat form-control form-control-sm" type="number" value="{{item.list.targetEnemyData.enemyAnemoRES}}"/></div>
-                <div class="col-2"><label for="enemyCryoRES" class="form-text">Cryo RES</label><input id="enemyCryoRES" class="enemy-stat form-control form-control-sm" type="number" value="{{item.list.targetEnemyData.enemyCryoRES}}"/></div>
-                <div class="col-2"><label for="enemyDendroRES" class="form-text">Dendro RES</label><input id="enemyDendroRES" class="enemy-stat form-control form-control-sm" type="number" value="{{item.list.targetEnemyData.enemyDendroRES}}"/></div>
-                <div class="col-2"><label for="enemyElectroRES" class="form-text">Electro RES</label><input id="enemyElectroRES" class="enemy-stat form-control form-control-sm" type="number" value="{{item.list.targetEnemyData.enemyElectroRES}}"/></div>
-                <div class="col-2"><label for="enemyGeoRES" class="form-text">Geo RES</label><input id="enemyGeoRES" class="enemy-stat form-control form-control-sm" type="number" value="{{item.list.targetEnemyData.enemyGeoRES}}"/></div>
-                <div class="col-2"><label for="enemyHydroRES" class="form-text">Hydro RES</label><input id="enemyHydroRES" class="enemy-stat form-control form-control-sm" type="number" value="{{item.list.targetEnemyData.enemyHydroRES}}"/></div>
-                <div class="col-2"><label for="enemyPyroRES" class="form-text">Pyro RES</label><input id="enemyPyroRES" class="enemy-stat form-control form-control-sm" type="number" value="{{item.list.targetEnemyData.enemyPyroRES}}"/></div>
-                <div class="col-2"><label for="enemyPhysicalRES" class="form-text">Physical RES</label><input id="enemyPhysicalRES" class="enemy-stat form-control form-control-sm" type="number" value="{{item.list.targetEnemyData.enemyPhysicalRES}}"/></div>
+              <div class="row g-2">
+                <div class="col-2"><label for="enemyLevel" class="text-body form-text fw-bold">Level</label><input id="enemyLevel" class="enemy-stat form-control form-control-sm" type="number" min="1" max="100" value="{{item.list.targetEnemyData.enemyLevel}}"/></div>
+                <div class="col-2"><label for="enemyAnemoRES" class="text-body form-text fw-bold">Anemo RES</label><input id="enemyAnemoRES" class="enemy-stat form-control form-control-sm" type="number" value="{{item.list.targetEnemyData.enemyAnemoRES}}"/></div>
+                <div class="col-2"><label for="enemyCryoRES" class="text-body form-text fw-bold">Cryo RES</label><input id="enemyCryoRES" class="enemy-stat form-control form-control-sm" type="number" value="{{item.list.targetEnemyData.enemyCryoRES}}"/></div>
+                <div class="col-2"><label for="enemyDendroRES" class="text-body form-text fw-bold">Dendro RES</label><input id="enemyDendroRES" class="enemy-stat form-control form-control-sm" type="number" value="{{item.list.targetEnemyData.enemyDendroRES}}"/></div>
+                <div class="col-2"><label for="enemyElectroRES" class="text-body form-text fw-bold">Electro RES</label><input id="enemyElectroRES" class="enemy-stat form-control form-control-sm" type="number" value="{{item.list.targetEnemyData.enemyElectroRES}}"/></div>
+                <div class="col-2"><label for="enemyGeoRES" class="text-body form-text fw-bold">Geo RES</label><input id="enemyGeoRES" class="enemy-stat form-control form-control-sm" type="number" value="{{item.list.targetEnemyData.enemyGeoRES}}"/></div>
+                <div class="col-2"><label for="enemyHydroRES" class="text-body form-text fw-bold">Hydro RES</label><input id="enemyHydroRES" class="enemy-stat form-control form-control-sm" type="number" value="{{item.list.targetEnemyData.enemyHydroRES}}"/></div>
+                <div class="col-2"><label for="enemyPyroRES" class="text-body form-text fw-bold">Pyro RES</label><input id="enemyPyroRES" class="enemy-stat form-control form-control-sm" type="number" value="{{item.list.targetEnemyData.enemyPyroRES}}"/></div>
+                <div class="col-2"><label for="enemyPhysicalRES" class="text-body form-text fw-bold">Physical RES</label><input id="enemyPhysicalRES" class="enemy-stat form-control form-control-sm" type="number" value="{{item.list.targetEnemyData.enemyPhysicalRES}}"/></div>
               </div>
           </div>
         </div>
@@ -74,28 +74,28 @@
         <div class="popup-subsection">
           <h4 class="popup-subsection-header" data-bs-toggle="collapse" href="#characterStats.PreviewChanges">Preview Changes</h4>
           <div id="characterStats.PreviewChanges" class="collapse show popup-subsection-content">
-              <div class="row gx-1">
-                <div class="col-2"><label class="form-text">Character Level</label>{{> renderItemField item=item field="previewLevel" wrapper="div"}}</div>
-                <div class="col-2"><label class="form-text">Char. Ascension</label>{{> renderItemField item=item field="previewAscension" wrapper="div"}}</div>
-                <div class="col-2"><label class="form-text">Constellations</label>{{> renderItemField item=item field="previewConstellation" wrapper="div"}}</div>
-                <div class="col-2"><label class="form-text">Auto Level</label>{{> renderItemField item=item field="previewTalent" params=(array "auto") wrapper="div"}}</div>
-                <div class="col-2"><label class="form-text">Auto Level</label>{{> renderItemField item=item field="previewTalent" params=(array "skill") wrapper="div"}}</div>
-                <div class="col-2"><label class="form-text">Auto Level</label>{{> renderItemField item=item field="previewTalent" params=(array "burst") wrapper="div"}}</div>
-                <div class="col-2"><label class="form-text">Weapon</label>{{> renderItemField item=item field="previewWeapon" wrapper="div"}}</div>
-                <div class="col-2"><label class="form-text">Weapon Level</label>{{> renderItemField item=item field="previewWeaponLevel" wrapper="div"}}</div>
-                <div class="col-2"><label class="form-text">Weap. Ascension</label>{{> renderItemField item=item field="previewWeaponAscension" wrapper="div"}}</div>
-                <div class="col-2"><label class="form-text">Weap. Refinement</label>{{> renderItemField item=item field="previewWeaponRefinement" wrapper="div"}}</div>
-                <div class="col-2"><label class="form-text">Set Bonus 1</label>{{> renderItemField item=item field="previewArtifactSet" params=(array 0) wrapper="div"}}</div>
-                <div class="col-2"><label class="form-text">Set Bonus 2</label>{{> renderItemField item=item field="previewArtifactSet" params=(array 1) wrapper="div"}}</div>
-                <div class="col-2"><label class="form-text">Sands Stat</label>{{> renderItemField item=item field="previewArtifactStat" params=(array "sands") wrapper="div"}}</div>
-                <div class="col-2"><label class="form-text">Goblet Stat</label>{{> renderItemField item=item field="previewArtifactStat" params=(array "goblet") wrapper="div"}}</div>
-                <div class="col-2"><label class="form-text">Circlet Stat</label>{{> renderItemField item=item field="previewArtifactStat" params=(array "circlet") wrapper="div"}}</div>
+              <div class="row g-2">
+                <div class="col-2"><label class="text-body form-text fw-bold">Character Level</label>{{> renderItemField item=item field="previewLevel" wrapper="div"}}</div>
+                <div class="col-2"><label class="text-body form-text fw-bold">Char. Ascension</label>{{> renderItemField item=item field="previewAscension" wrapper="div"}}</div>
+                <div class="col-2"><label class="text-body form-text fw-bold">Constellations</label>{{> renderItemField item=item field="previewConstellation" wrapper="div"}}</div>
+                <div class="col-2"><label class="text-body form-text fw-bold">Auto Level</label>{{> renderItemField item=item field="previewTalent" params=(array "auto") wrapper="div"}}</div>
+                <div class="col-2"><label class="text-body form-text fw-bold">Auto Level</label>{{> renderItemField item=item field="previewTalent" params=(array "skill") wrapper="div"}}</div>
+                <div class="col-2"><label class="text-body form-text fw-bold">Auto Level</label>{{> renderItemField item=item field="previewTalent" params=(array "burst") wrapper="div"}}</div>
+                <div class="col-2"><label class="text-body form-text fw-bold">Weapon</label>{{> renderItemField item=item field="previewWeapon" wrapper="div"}}</div>
+                <div class="col-2"><label class="text-body form-text fw-bold">Weapon Level</label>{{> renderItemField item=item field="previewWeaponLevel" wrapper="div"}}</div>
+                <div class="col-2"><label class="text-body form-text fw-bold">Weap. Ascension</label>{{> renderItemField item=item field="previewWeaponAscension" wrapper="div"}}</div>
+                <div class="col-2"><label class="text-body form-text fw-bold">Weap. Refinement</label>{{> renderItemField item=item field="previewWeaponRefinement" wrapper="div"}}</div>
+                <div class="col-2"><label class="text-body form-text fw-bold">Set Bonus 1</label>{{> renderItemField item=item field="previewArtifactSet" params=(array 0) wrapper="div"}}</div>
+                <div class="col-2"><label class="text-body form-text fw-bold">Set Bonus 2</label>{{> renderItemField item=item field="previewArtifactSet" params=(array 1) wrapper="div"}}</div>
+                <div class="col-2"><label class="text-body form-text fw-bold">Sands Stat</label>{{> renderItemField item=item field="previewArtifactStat" params=(array "sands") wrapper="div"}}</div>
+                <div class="col-2"><label class="text-body form-text fw-bold">Goblet Stat</label>{{> renderItemField item=item field="previewArtifactStat" params=(array "goblet") wrapper="div"}}</div>
+                <div class="col-2"><label class="text-body form-text fw-bold">Circlet Stat</label>{{> renderItemField item=item field="previewArtifactStat" params=(array "circlet") wrapper="div"}}</div>
               </div>
               <div class="mt-3 ms-3">
                 <b class="form-label">Reset Previews For:</b>
-                <button class="preview-reset btn btn-sm btn-outline-dark ms-2"><i class="fa-solid fa-rotate-left"></i> {{getProperty item 'name'}}</button>
-                <button class="preview-reset-team btn btn-sm btn-outline-dark ms-2"><i class="fa-solid fa-rotate-left"></i> Team</button>
-                <button class="preview-reset-all btn btn-sm btn-outline-dark ms-2"><i class="fa-solid fa-rotate-left"></i> All Characters</button>
+                <button class="preview-reset btn btn-sm btn-secondary ms-2"><i class="fa-solid fa-rotate-left"></i> {{getProperty item 'name'}}</button>
+                <button class="preview-reset-team btn btn-sm btn-secondary ms-2"><i class="fa-solid fa-rotate-left"></i> Team</button>
+                <button class="preview-reset-all btn btn-sm btn-secondary ms-2"><i class="fa-solid fa-rotate-left"></i> All Characters</button>
               </div>
           </div>
         </div>

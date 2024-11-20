@@ -4,45 +4,45 @@ const Equipment = (SuperClass) => class extends SuperClass {
   static setupDisplay(display)
   {
     if(!display.getField("location"))
-    display.addField("location", {
-      label: "User",
-      sort: {generic: {type:"string",property:"location"}},
-      dynamic: true,
-      value: item => item.character ? {
-        value: [
-          {
-            value: item.character.name,
-            edit: {
-              target: {item:item, field:"location"},
-              type: "select",
-              list: item.characterList.items("owned").filter(cha => item.canEquip(cha)),
-              valueProperty: "key",
-              displayProperty: "name",
+      display.addField("location", {
+        label: "User",
+        sort: {generic: {type:"string",property:"location"}},
+        dynamic: true,
+        value: item => item.character ? {
+          value: [
+            {
+              value: item.character.name,
+              edit: {
+                target: {item:item, field:"location"},
+                type: "select",
+                list: item.characterList.items("owned").filter(cha => item.canEquip(cha)),
+                valueProperty: "key",
+                displayProperty: "name",
+              },
             },
+            {
+              tag: "i",
+              classes: {'fa-solid':true, 'fa-eye':true},
+              popup: item.character.variants?.length ? item.character.variants[0] : item.character,
+            },
+          ],
+          classes: {
+            "user-field": true,
           },
-          {
-            tag: "i",
-            classes: {'fa-solid':true, 'fa-eye':true},
-            popup: item.character.variants?.length ? item.character.variants[0] : item.character,
+        } : {
+          value: "-",
+          edit: {
+            target: {item:item, field:"location"},
+            type: "select",
+            list: item.characterList.items("owned").filter(cha => item.canEquip(cha)),
+            valueProperty: "key",
+            displayProperty: "name",
           },
+        },
+        dependencies: item => [
+          {item:item.characterList, field:"list"},
         ],
-        classes: {
-          "user-field": true,
-        },
-      } : {
-        value: "-",
-        edit: {
-          target: {item:item, field:"location"},
-          type: "select",
-          list: item.characterList.items("owned").filter(cha => item.canEquip(cha)),
-          valueProperty: "key",
-          displayProperty: "name",
-        },
-      },
-      dependencies: item => [
-        {item:item.characterList, field:"list"},
-      ],
-    });
+      });
     
     super.setupDisplay(display);
   }

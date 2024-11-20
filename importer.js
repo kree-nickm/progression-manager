@@ -2,37 +2,42 @@ class Importer {
   productionMode;
   commits;
   fileTimes;
+  timestamp;
   log = {};
   
   constructor() {
     this.productionMode = location.hostname.includes("github.io");
+    this.timestamp = Date.now();
   }
   
   getVersion(normalFile) {
+    let result;
     if (this.productionMode) {
-      if (!this.commits) {
-        this.commits = fetch("https://api.github.com/repos/kree-nickm/progression-manager/commits")
-          .then(resp => resp.json());
-      }
+      if (!this.commits)
+        this.commits = fetch("https://api.github.com/repos/kree-nickm/progression-manager/commits").then(resp => resp.json())
       
-      return this.commits.then(json => {
-        return json[0].sha;
+      result = this.commits.then(json => {
+        if(json[0].sha)
+          return json[0].sha;
+        else
+          throw new Error('No SHA identifier in latest github commit.');
       });
     }
     else {
-      if (!this.fileTimes) {
-        this.fileTimes = fetch("fileVersion.php")
-          .then(resp => resp.json());
-      }
+      if (!this.fileTimes)
+        this.fileTimes = fetch("fileVersion.php").then(resp => resp.json());
       
-      return this.fileTimes.then(json => {
+      result = this.fileTimes.then(json => {
         if (json[normalFile])
           return json[normalFile];
-        else {
-          return 'ERROR_'+Date.now();
-        }
+        else
+          throw new Error('Did not find file in filectime record.');
       });
     }
+    return result.catch(err => {
+      console.warn(`Couldn't get version of file: ${normalFile}:`, err, {json});
+      return 'ERROR_' + this.timestamp;
+    });
   }
   
   normalize(uri) {
@@ -62,11 +67,9 @@ class Importer {
     }
     
     if (!this.log[normalFile]) {
-      console.debug(`Got "${normalFile}" (${method}) from "${file}"`);
       this.log[normalFile] = this.getVersion(normalFile)
         .then(version => {
           let finalFile = `${normalFile}?v=${version}`;
-          console.debug(`Importing "${finalFile}"`);
           if (method === 'import')
             return import('./'+finalFile);
           else

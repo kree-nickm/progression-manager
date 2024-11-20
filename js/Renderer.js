@@ -833,42 +833,28 @@ class Renderer
     else
     {
       // Event to begin editing when the plain field is clicked.
-      if(!fieldElement.onclick)
+      if(content.edit.alwaysShow)
       {
-        fieldElement.onclick = event => {
-          if(fieldElement.classList.contains("editing") || event.target.nodeName == "OPTION")
-            return;
-          fieldElement.editingStartedAt = event.timeStamp;
-          let placeholder = fieldElement.editingData.target?.item?.getProperty(fieldElement.editingData.target?.field) ?? fieldElement.editValue;
-          if(!placeholder && placeholder !== 0)
-            placeholder = fieldElement.innerText;
-          fieldElement.classList.add("editing");
-          if(content.edit.type == "select")
-          {
-            for(let opt of editElement.options)
-              if(opt.innerHTML == fieldElement.editValue)
-                editElement.selectedIndex = opt.index;
-          }
-          else
-          {
-            editElement.placeholder = placeholder;
-            editElement.value = "";
-          }
-          if(!content.edit.alwaysShow)
-            editElement.focus();
-        };
+        Renderer.beginEditing(editElement, {
+          currentTarget: fieldElement,
+          target: fieldElement,
+        });
+        fieldElement.classList.add("editable");
+        if(content.edit.type != "select")
+          editElement.value = editElement.placeholder;
+        if(content.edit.type == "select")
+          editElement.classList.add("form-select");
+        else
+          editElement.classList.add("form-control");
+        for(let node of fieldElement.children)
+          if(node !== editElement)
+            fieldElement.removeChild(node);
+      }
+      else if(!fieldElement.onclick)
+      {
+        fieldElement.onclick = Renderer.beginEditing.bind(Renderer, editElement);
         fieldElement.classList.add("editable");
         if(window.DEBUGLOG.addFieldEventListeners) console.debug(`Added onclick method to field element.`, fieldElement.onclick);
-        if(content.edit.alwaysShow)
-        {
-          fieldElement.dispatchEvent(new Event("click"));
-          if(content.edit.type != "select")
-            editElement.value = editElement.placeholder;
-          if(content.edit.type == "select")
-            editElement.classList.add("form-select");
-          else
-            editElement.classList.add("form-control");
-        }
       }
       else
       {
@@ -878,67 +864,10 @@ class Renderer
       // Event to save the edit.
       if(!editElement.onchange || !editElement.onblur || !editElement.onkeydown)
       {
-        let saveEdit = event => {
-          window.DEBUG?.begin();
-          // Do nothing if we're either not editing, or didn't press a 'finish' key (enter, esc)
-          if((event.type == "keydown" && event.which != 13 && event.which != 27) || !fieldElement.classList.contains("editing") || !fieldElement.editingStartedAt)
-            return true;
-          
-          event.stopPropagation();
-          if(!content.edit.alwaysShow)
-            fieldElement.classList.remove("editing");
-          delete fieldElement.editingStartedAt;
-          
-          // Prepare to save, unless Esc pressed.
-          if(event.type != "keydown" || event.which != 27)
-          {
-            let val = editElement.value;
-            if(val === "")
-            {
-              if(typeof(fieldElement.editingData.onBlank) == "function")
-              {
-                val = fieldElement.editingData.onBlank(fieldElement, editElement);
-                if(val === null || val === undefined)
-                  return true;
-              }
-              else if('onBlank' in fieldElement.editingData)
-                val = fieldElement.editingData.onBlank;
-              else if(editElement.type != "select" && editElement.type != "select-one")
-                return false;
-            }
-            
-            // Resolve the value if it is of a specific type.
-            if(editElement.type == "number")
-            {
-              val = parseFloat(val);
-              if(isNaN(val))
-              {
-                console.warn(`Can't set field to a non-numerical value.`, {value:editElement.value});
-                return false;
-              }
-            }
-            else if(fieldElement.editingData.valueFormat == "uuid")
-            {
-              val = Renderer.controllers.get(val);
-              if(!val)
-              {
-                console.warn(`Can't set field to an invalid uuid.`, {value:editElement.value});
-                return false;
-              }
-            }
-            
-            // Save the new value.
-            if(fieldElement.editingData.target)
-              fieldElement.editingData.target.item.update(fieldElement.editingData.target.field, val, "replace");
-            else if(fieldElement.editingData.func)
-              fieldElement.editingData.func(val);
-            else
-              throw new Error(`Neither fieldElement.editingData.target nor fieldElement.editingData.func were specifed.`, {fieldElement, editingData:fieldElement.editingData});
-          }
-        };
-        editElement.onkeydown = saveEdit;
-        editElement.onchange = saveEdit;
-        editElement.onblur = saveEdit;
+        let endEditing = Renderer.endEditing.bind(Renderer, fieldElement);
+        editElement.onkeydown = endEditing;
+        editElement.onchange = endEditing;
+        editElement.onblur = endEditing;
       }
     }
     
@@ -960,6 +889,103 @@ class Renderer
           editElement.classList.add(...content.edit.trueClasses);
       }
     }
+  }
+  
+  static beginEditing(editElement, event)
+  {
+    // Abort if we're already editing, or if this is a drop-down menu item (might be redundant).
+    if(event.currentTarget.classList.contains("editing") || event.target.nodeName == "OPTION")
+      return;
+    
+    event.currentTarget.classList.add("editing");
+    let placeholder = event.currentTarget.editingData.target?.item?.getProperty(event.currentTarget.editingData.target?.field) ?? event.currentTarget.editValue;
+    if(!placeholder && placeholder !== 0)
+      placeholder = event.currentTarget.innerText;
+    
+    if(event.currentTarget.editingData.type == "select")
+    {
+      for(let opt of editElement.options)
+        if(opt.innerHTML == event.currentTarget.editValue)
+          editElement.selectedIndex = opt.index;
+    }
+    else
+    {
+      editElement.placeholder = placeholder;
+      editElement.value = "";
+    }
+    
+    // Focus the newly shown edit element, unless it's always shown.
+    if(!event.currentTarget.editingData.alwaysShow)
+      editElement.focus();
+  }
+  
+  static endEditing(fieldElement, event)
+  {
+    // If we pressed a key other than Enter or Esc, do nothing.
+    if(event.type === "keydown" && event.key !== "Esc" && event.key !== "Escape" && event.key !== "Enter" && event.key !== "Tab")
+      return
+    
+    // If we're not even editing, do nothing.
+    if(!fieldElement.classList.contains("editing"))
+      return;
+    
+    // Stop other events from triggering, if for example we ended this edit by clicking on something else on the UI that might start doing undesirable stuff, when all you wanted was to save the edit.
+    // TODO: Actually allow this for other editable elements, so you can easily change a bunch one after the other.
+    event.stopPropagation();
+    
+    // Set appropriate properties on the field element to indicate that it is no longer being edited.
+    if(!fieldElement.editingData.alwaysShow)
+      fieldElement.classList.remove("editing");
+    
+    // Cancel the edit without saving if Esc was pressed.
+    if(event.type === "keydown" && (event.key === "Esc" || event.key === "Escape"))
+      return;
+    
+    // Save value to a new variable, because we will be modifying it.
+    let val = event.currentTarget.value;
+    
+    // Cancel the save on a blank value, unless either a special handler/value has been specified for blank values, or this is a select menu.
+    if(val === "")
+    {
+      if(typeof(fieldElement.editingData.onBlank) == "function")
+      {
+        val = fieldElement.editingData.onBlank(fieldElement, event.currentTarget);
+        if(val === null || val === undefined)
+          return;
+      }
+      else if('onBlank' in fieldElement.editingData)
+        val = fieldElement.editingData.onBlank;
+      else if(event.currentTarget.type != "select" && event.currentTarget.type != "select-one")
+        return;
+    }
+    
+    // Resolve the value if it is of a specific type.
+    if(event.currentTarget.type == "number")
+    {
+      val = parseFloat(val);
+      if(isNaN(val))
+      {
+        console.warn(`Can't set field to a non-numerical value.`, {value:event.currentTarget.value});
+        return false;
+      }
+    }
+    else if(fieldElement.editingData.valueFormat == "uuid")
+    {
+      val = Renderer.controllers.get(val);
+      if(!val)
+      {
+        console.warn(`Can't set field to an invalid uuid.`, {value:event.currentTarget.value});
+        return false;
+      }
+    }
+    
+    // Save the new value.
+    if(fieldElement.editingData.target)
+      fieldElement.editingData.target.item.update(fieldElement.editingData.target.field, val, "replace");
+    else if(fieldElement.editingData.func)
+      fieldElement.editingData.func(val);
+    else
+      throw new Error(`Neither fieldElement.editingData.target nor fieldElement.editingData.func were specifed.`, {fieldElement, editingData:fieldElement.editingData});
   }
 }
 

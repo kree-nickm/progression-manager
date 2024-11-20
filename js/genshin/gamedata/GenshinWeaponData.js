@@ -223,9 +223,46 @@ export default {
         "stat": "critDMG_",
         "matForgery": "Mirror",
         "matWeakEnemy": "Tribals",
-        "passive": "When a character triggers Swirl, their ATK is increased by 24% for 12s. When the party contains 1\/2 or more characters of a different Elemental Type from the equipping character, said equipping character's Charged Attack DMG increases by 20%\/48% and Elemental Burst DMG increases by 10%\/24%.",
-        "refinementData": [],
-        "version": "5.1.50"
+        "passive": "For 12s after triggering a Swirl reaction, ATK increases by @0%. In addition, when 1\/2 or more characters in the party are of a different Elemental Type from the equipping character, the DMG dealt by the equipping character's Charged Attacks is increased by @1%\/@2% and Elemental Burst DMG dealt is increased by @3%\/@4%.",
+        "refinementData": [
+            {
+                "1": 23.999999463560002,
+                "2": 30.000001192089996,
+                "3": 36.00000143051,
+                "4": 41.9999986887,
+                "5": 47.999998927120004
+            },
+            {
+                "1": 1200,
+                "2": 1200,
+                "3": 1200,
+                "4": 1200,
+                "5": 1200
+            },
+            {
+                "1": 20.000000298019998,
+                "2": 25,
+                "3": 30.000001192089996,
+                "4": 34.99999940395,
+                "5": 40.00000059605
+            },
+            {
+                "1": 47.999998927120004,
+                "2": 60.00000238419,
+                "3": 72.00000286102,
+                "4": 83.9999973774,
+                "5": 95.99999785423
+            },
+            {
+                "1": 10.000000149009999,
+                "2": 12.5,
+                "3": 15.00000059605,
+                "4": 17.499999701980002,
+                "5": 20.000000298019998
+            }
+        ],
+        "version": "5.2",
+        "matStrongEnemy": "Mimiflora"
     },
     "BeaconOfTheReedSea": {
         "name": "Beacon of the Reed Sea",
@@ -2509,6 +2546,40 @@ export default {
         "hakushinID": 15408,
         "id": 15408
     },
+    "CalamityOfEshu": {
+        "name": "Calamity of Eshu",
+        "rarity": 4,
+        "type": "Sword",
+        "hakushinID": 11432,
+        "id": 11432,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_SacrificialNgombe.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_SacrificialNgombe.webp"
+        ],
+        "baseATK": 44,
+        "stat": "atk_",
+        "matForgery": "Sacred",
+        "matWeakEnemy": "Tribals",
+        "passive": "While characters are protected by a Shield, DMG dealt by Normal and Charged Attacks is increased by @0%, and Normal and Charged Attack CRIT Rate is increased by @1%.",
+        "refinementData": [
+            {
+                "1": 20.000000298019998,
+                "2": 25,
+                "3": 30.000001192089996,
+                "4": 34.99999940395,
+                "5": 40.00000059605
+            },
+            {
+                "1": 7.99999982119,
+                "2": 10.000000149009999,
+                "3": 11.999999731780001,
+                "4": 14.000000059600001,
+                "5": 15.99999964237
+            }
+        ],
+        "version": "5.2",
+        "matStrongEnemy": "Mimiflora"
+    },
     "ChainBreaker": {
         "name": "Chain Breaker",
         "rarity": 4,
@@ -3282,9 +3353,17 @@ export default {
         "matForgery": "Mirror",
         "matStrongEnemy": "Avatars",
         "matWeakEnemy": "Tribals",
-        "passive": "Gliding Stamina consumption decreased by 15%. While aiming with a Bow, character's Charged Attack DMG will be increased by 6% every 0.5s. Max 6 stacks. This effect will be removed 10s after exiting Aiming Mode.",
-        "refinementData": [],
-        "version": "5.1.50"
+        "passive": "Decreases Gliding Stamina consumption by 15%. When using Aimed Shots, the DMG dealt by Charged Attacks increases by @0% every 0.5s. This effect can stack up to 6 times and will be removed 10s after leaving Aiming Mode.",
+        "refinementData": [
+            {
+                "1": 15.00000059605,
+                "2": 15.00000059605,
+                "3": 15.00000059605,
+                "4": 15.00000059605,
+                "5": 15.00000059605
+            }
+        ],
+        "version": "5.2"
     },
     "FlowingPurity": {
         "name": "Flowing Purity",
@@ -5390,24 +5469,6 @@ export default {
         "hakushinID": 11409,
         "id": 11409
     },
-    "TheCalamityOfTheBlightedSprings": {
-        "name": "The Calamity of the Blighted Springs",
-        "rarity": 4,
-        "type": "Sword",
-        "hakushinID": 11432,
-        "id": 11432,
-        "imgs": [
-            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_SacrificialNgombe.webp",
-            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_SacrificialNgombe.webp"
-        ],
-        "baseATK": 44,
-        "stat": "atk_",
-        "matForgery": "Sacred",
-        "matWeakEnemy": "Tribals",
-        "passive": "While the equipping character is protected by a Shield, Normal and Charged Attack DMG is increased by 20%, and Normal and Charged Attack CRIT Rate is increased by 8%.",
-        "refinementData": [],
-        "version": "5.1.50"
-    },
     "TheDockhandsAssistant": {
         "name": "The Dockhand's Assistant",
         "type": "Sword",
@@ -5711,9 +5772,31 @@ export default {
         "matForgery": "Blade",
         "matStrongEnemy": "Wayob",
         "matWeakEnemy": "Saurians",
-        "passive": "Swimming Stamina consumption is decreased by 15%. Using a Skill increases the equipping character's Max HP by 20% for 10s. This effect can be triggered once every 15s. Each Hydro character in your party increases the Max HP bonus from the aforementioned effect by an additional 12%. The maximum additional bonus is 24%.",
-        "refinementData": [],
-        "version": "5.1.50"
+        "passive": "Decreases Swimming Stamina consumption by 15%. In addition, for 10s after using an Elemental Skill, Max HP is increased by @0%. For every Hydro Elemental Type character in the party, Max HP is increased by another @1%, and the maximum increase that can be achieved in this way is @2%. Can be triggered once every 15s.",
+        "refinementData": [
+            {
+                "1": 15.00000059605,
+                "2": 15.00000059605,
+                "3": 15.00000059605,
+                "4": 15.00000059605,
+                "5": 15.00000059605
+            },
+            {
+                "1": 20.000000298019998,
+                "2": 25,
+                "3": 30.000001192089996,
+                "4": 34.99999940395,
+                "5": 40.00000059605
+            },
+            {
+                "1": 1000,
+                "2": 1000,
+                "3": 1000,
+                "4": 1000,
+                "5": 1000
+            }
+        ],
+        "version": "5.2"
     },
     "Whiteblind": {
         "name": "Whiteblind",

@@ -364,21 +364,6 @@ export default class CharacterList extends GenshinList
     });
     
     let gearGroup = {label:"Gear", startCollapsed:true};
-    /*
-    // Note: This is a potential future implementation, for future reference.
-    let weaponName = this.display.transferField(this.viewer.lists.WeaponList.display.getField("name"), "weaponName", {
-      item: item => item.weapon,
-      group: gearGroup,
-      label: "Weapon",
-      dynamic: true,
-      dependencies: item => [
-        item.weapon ? {item:item.weapon, field:"location"} : undefined,
-        item.weapon ? {item:item.weapon, field:"refinement"} : undefined,
-        item.weapon ? {item:item.weapon, field:"level"} : undefined,
-        {type:"weapon"},
-      ],
-    });
-    */
     this.display.addField("weaponName", {
       group: gearGroup,
       label: "",

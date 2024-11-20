@@ -229,7 +229,7 @@ export default class ArtifactList extends GenshinList
       let substatSumField = this.display.addField(statId+"Sum", {
         group: substatValueGroup,
         //label: Artifact.getStatShorthand(statId),
-        label: `<img class="icon-inline" src="img/stat.${statId}.svg"/>`,
+        label: `<img class="icon-inline black-icon" src="img/stat.${statId}.svg"/>`,
         sort: {func: (o,a,b) => o * (b.getSubstatSum(statId) - a.getSubstatSum(statId))},
         columnClasses: ['stat-'+statId],
         dynamic: true,

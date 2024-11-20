@@ -2049,8 +2049,8 @@ export default {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bf\/Item_Saurian_Claw_Succulent.png",
         "rarity": 1
     },
-    "GlowingMushroom": {
-        "name": "Glowing Mushroom",
+    "GlowingHornshroom": {
+        "name": "Glowing Hornshroom",
         "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_101252.webp",
         "rarity": 1
     },
