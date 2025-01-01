@@ -42,17 +42,18 @@ export default class ListDisplayField
 {
   static properties = ["group", "label", "labelTitle", "columnClasses", "sort", "tags", "dynamic", "html", "popup", "value", "button", "template", "edit", "title", "classes", "dependencies"];
   
-  manager;
   id = "";
   statics = {};
+  
+  // Defaults for the properties that need them.
   columnClasses = [];
   tags = [];
   dynamic = true;
   
-  constructor(manager, id)
+  constructor(id, properties={})
   {
-    this.manager = manager;
     this.id = id;
+    this.setData(properties);
   }
   
   setData(properties={})

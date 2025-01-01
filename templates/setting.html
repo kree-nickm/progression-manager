@@ -1,0 +1,25 @@
+{{!--
+  key;
+  initial;
+  tags;
+  label;
+  type;
+  description;
+  attributes = {
+    max: null,
+    min: null,
+    step: null,
+  };
+  onChange;
+  values;
+--}}
+<div class="manager-setting{{#each tags}} tag-{{.}}{{/each}}" title="{{description}}">
+  {{#ifeq type 'select'}}
+    <div class="form-label">{{{label}}}</div>
+    <select class="form-select" id="setting_{{key}}" name="{{key}}">
+      {{#each attributes.options}}
+        <option value="{{value}}"{{#ifeq value (lookup ../. 'value')}} selected="selected"{{/ifeq}}>{{{label}}}</option>
+      {{/each}}
+    </select>
+  {{/ifeq}}
+</div>

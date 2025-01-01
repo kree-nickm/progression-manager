@@ -769,6 +769,12 @@ export default {
         "rarity": 4,
         "release": "November 19, 2024"
     },
+    "TalismanOfTheEnigmaticLand": {
+        "name": "Talisman of the Enigmatic Land",
+        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_113071.webp",
+        "rarity": 4,
+        "release": "December 31, 2024"
+    },
     "DvalinsPlume": {
         "name": "Dvalin's Plume",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bf\/Item_Dvalin%27s_Plume.png",
@@ -918,6 +924,24 @@ export default {
         "name": "Denial and Judgment",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/43\/Item_Denial_and_Judgment.png",
         "rarity": 5
+    },
+    "ErodedHorn": {
+        "name": "Eroded Horn",
+        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_113068.webp",
+        "rarity": 5,
+        "release": "December 31, 2024"
+    },
+    "ErodedSunfire": {
+        "name": "Eroded Sunfire",
+        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_113069.webp",
+        "rarity": 5,
+        "release": "December 31, 2024"
+    },
+    "ErodedScaleFeather": {
+        "name": "Eroded Scale-Feather",
+        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_113070.webp",
+        "rarity": 5,
+        "release": "December 31, 2024"
     },
     "BrilliantDiamondSliver": {
         "name": "Brilliant Diamond Sliver",

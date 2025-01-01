@@ -1,5 +1,6 @@
 const { handlebars, Renderer } = await window.importer.get(`js/Renderer.js`);
 
+// Add some utility functions that will simplify other parts of the code.
 String.prototype.capitalize = function() { return this.at(0).toUpperCase()+this.substr(1).toLowerCase(); };
 
 window.stringInstanceOf = function(object, className) {
@@ -13,6 +14,7 @@ window.stringInstanceOf = function(object, className) {
   return false;
 };
 
+// Add some features that we can use for debugging purposes.
 window.DEBUGLOG = {
   queueUpdate: false,
   renderItemField: false,
@@ -55,6 +57,7 @@ if(!window.importer.productionMode)
   };
 }
 
+// Load site-wide settings.
 window.generalSettings = JSON.parse(window.localStorage.getItem("generalSettings") ?? "{}") ?? {};
 
 let darkModeToggle = document.getElementById("darkModeToggle");
@@ -63,12 +66,14 @@ darkModeToggle?.addEventListener("change", event => {
   if(event.target.checked)
   {
     link.href = "css/dark.css";
+    document.body.classList.add("dark-mode");
     window.generalSettings.darkMode = true;
     window.localStorage.setItem("generalSettings", JSON.stringify(window.generalSettings));
   }
   else
   {
     link.href = "css/light.css";
+    document.body.classList.remove("dark-mode");
     window.generalSettings.darkMode = false;
     window.localStorage.setItem("generalSettings", JSON.stringify(window.generalSettings));
   }
@@ -79,6 +84,7 @@ if(window.generalSettings.darkMode)
     darkModeToggle.checked = true;
   let link = document.getElementById("lightDark");
   link.href = "css/dark.css";
+  document.body.classList.add("dark-mode");
 }
   
 
@@ -137,7 +143,7 @@ if(typeof(Storage) !== "undefined")
 else
 {
   document.getElementById('content').innerHTML = "Your browser does not support Web Storage, and therefore we cannot save your data.";
-  throw new Exception("Your browser does not support Web Storage, and therefore we cannot save your data.");
+  throw new Error("Your browser does not support Web Storage, and therefore we cannot save your data.");
 }
 
 async function baseAddEventListeners()
@@ -201,7 +207,7 @@ async function baseAddEventListeners()
       {
         window.viewer.settings.preferences[prefElem.attributes.getNamedItem('name').value] = prefElem.checked;
       }
-      else if(prefElem.type == "number")
+      else
       {
         window.viewer.settings.preferences[prefElem.attributes.getNamedItem('name').value] = prefElem.value;
       }
@@ -216,7 +222,7 @@ async function baseAddEventListeners()
     window.viewer.queueStore();
   });
 
-  document.getElementById("prefsModal")?.addEventListener("show.bs.modal", showEvent => {
+  document.getElementById("prefsModal")?.addEventListener("show.bs.modal", async showEvent => {
     for(let pref in window.viewer.settings.preferences)
     {
       for(let prefElem of showEvent.target.querySelectorAll(`.preference-select[name="${pref}"]`))
@@ -234,6 +240,18 @@ async function baseAddEventListeners()
         }
       }
     }
+    /*let container = showEvent.target.querySelector(".row:last-of-type");
+    for(let setting of window.viewer.getSettings())
+    {
+      let template = (await Renderer.getTemplates("setting")).setting;
+      let existing = document.getElementById(`setting_${setting.key}`);
+      if(!existing)
+      {
+        let child = container.appendChild(document.createElement("div"));
+        child.classList.add("col-6");
+        child.innerHTML = template(setting);
+      }
+    }*/
   });
 
   // Setup "new user" popup.

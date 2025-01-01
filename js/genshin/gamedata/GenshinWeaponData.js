@@ -1,4 +1,38 @@
 export default {
+    "AThousandBlazingSuns": {
+        "name": "A Thousand Blazing Suns",
+        "rarity": 5,
+        "type": "Claymore",
+        "hakushinID": 12514,
+        "id": 12514,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_RadianceSword.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_RadianceSword.webp"
+        ],
+        "baseATK": 49,
+        "stat": "critRate_",
+        "matForgery": "Blade",
+        "matStrongEnemy": "Automaton",
+        "matWeakEnemy": "Saurians",
+        "passive": "Gain the \"Scorching Brilliance\" effect when using an Elemental Skill or Burst: CRIT DMG increased by @0% and ATK increased by @1% for 6s. This effect can trigger once every 10s.\\nWhile a \"Scorching Brilliance\" instance is active, its duration is increased by 2s after Normal or Charged attacks deal Elemental DMG. This effect can trigger once every second, and the max duration increase is 6s.\\nAdditionally, when the equipping character is in the Nightsoul's Blessing state, \"Scorching Brilliance\" effects are increased by 75%, and its duration will not count down when the equipping character is off-field.",
+        "refinementData": [
+            {
+                "1": 20.000000298019998,
+                "2": 25,
+                "3": 30.000001192089996,
+                "4": 34.99999940395,
+                "5": 40.00000059605
+            },
+            {
+                "1": 28.00000011921,
+                "2": 34.99999940395,
+                "3": 41.9999986887,
+                "4": 49.000000953669996,
+                "5": 56.00000023842
+            }
+        ],
+        "version": "5.3"
+    },
     "AThousandFloatingDreams": {
         "name": "A Thousand Floating Dreams",
         "rarity": 5,
@@ -1658,6 +1692,40 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Staff_of_the_Scarlet_Sands",
         "hakushinID": 13511,
         "id": 13511
+    },
+    "StarcallersWatch": {
+        "name": "Starcaller's Watch",
+        "rarity": 5,
+        "type": "Catalyst",
+        "hakushinID": 14517,
+        "id": 14517,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_Figurines.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_Figurines.webp"
+        ],
+        "baseATK": 44,
+        "stat": "eleMas",
+        "matForgery": "Sacred",
+        "matStrongEnemy": "Wayob",
+        "matWeakEnemy": "Tribals",
+        "passive": "Increases Elemental Mastery by @0. Gain the \"Mirror of Night\" effect within 15s after the equipping character creates a shield: The current active party member deals @1% increased DMG to nearby opponents. You can gain the \"Mirror of Night\" effect once every 14s.",
+        "refinementData": [
+            {
+                "1": 0.2800000011921,
+                "2": 0.3499999940395,
+                "3": 0.419999986887,
+                "4": 0.4900000095367,
+                "5": 0.5600000023842
+            },
+            {
+                "1": 1500,
+                "2": 1500,
+                "3": 1500,
+                "4": 1500,
+                "5": 1500
+            }
+        ],
+        "version": "5.3"
     },
     "SummitShaper": {
         "name": "Summit Shaper",

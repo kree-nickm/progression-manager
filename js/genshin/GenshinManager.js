@@ -1,16 +1,15 @@
 import { DateTime } from 'https://cdn.jsdelivr.net/npm/luxon@3.3.0/+esm';
 const { Renderer } = await window.importer.get(`js/Renderer.js`);
-const { mergeObjects } = await window.importer.get(`js/Util.js`);
 
 //import GenshinBuilds from "./gamedata/GenshinBuilds.js";
 console.debug(`Importing other files.`);
 
 const {default:DataManager} = await window.importer.get(`js/DataManager.js`);
 console.debug(`Imported DataManager.`);
-//const {default:Account} = await window.importer.get(`js/genshin/Account.js`);
-//console.debug(`Imported Account.`);
 const {default:ListDisplayManager} = await window.importer.get(`js/ListDisplayManager.js`);
 console.debug(`Imported ListDisplayManager.`);
+const {default:GenshinAccount} = await window.importer.get(`js/genshin/GenshinAccount.js`);
+console.debug(`Imported GenshinAccount.`);
 const {default:MaterialList} = await window.importer.get(`js/genshin/MaterialList.js`);
 console.debug(`Imported MaterialList.`);
 const {default:CharacterList} = await window.importer.get(`js/genshin/CharacterList.js`);
@@ -36,9 +35,7 @@ export default class GenshinManager extends DataManager
     'as': "UTC+4",
     'tw': "UTC+4",
   };
-  static display;
   
-  get display(){ return GenshinManager.display; }
   lastDay = DateTime.now().setZone("UTC-9").weekdayLong;
   buildData = {};//GenshinBuilds;
   
@@ -67,7 +64,7 @@ export default class GenshinManager extends DataManager
   
   today()
   {
-    let today = DateTime.now().setZone(GenshinManager.timezones[this.settings.server] ?? "UTC-9").weekdayLong;
+    let today = DateTime.now().setZone(GenshinManager.timezones[this.settings.preferences.server] ?? "UTC-9").weekdayLong;
     if(this.lastDay != today)
     {
       this.update("today", null, "notify");
@@ -215,6 +212,11 @@ export default class GenshinManager extends DataManager
     }
   }
   
+  createAccount(id)
+  {
+    return new GenshinAccount(id, {viewer:this});
+  }
+  
   activateAccount(account, server)
   {
     if(server)
@@ -347,7 +349,7 @@ export default class GenshinManager extends DataManager
             let realAcc = acc+"@"+srv;
             if(!this.accounts[realAcc])
               this.accounts[realAcc] = this.createAccount(realAcc);
-            this.accounts[realAcc].loadLists(retrievedData[acc][srv]);
+            this.accounts[realAcc].loadData(retrievedData[acc][srv]);
             this.errors = this.errors || this.accounts[realAcc].errors;
           }
         }

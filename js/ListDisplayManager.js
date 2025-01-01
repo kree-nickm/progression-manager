@@ -2,19 +2,11 @@ const {default:ListDisplayField} = await window.importer.get(`js/ListDisplayFiel
 
 export default class ListDisplayManager
 {
-  list;
   fields = {};
   
-  constructor(list)
+  addField(id, data={})
   {
-    this.list = list;
-  }
-  
-  addField(id, data)
-  {
-    let field = new ListDisplayField(this, String(id));
-    if(data)
-      field.setData(data);
+    let field = new ListDisplayField(String(id), data);
     this.fields[id] = field;
     return field;
   }

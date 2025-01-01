@@ -142,6 +142,7 @@ export default class GenshinItem extends UIItem {
     html = super.processRenderText(html);
     html = html.replaceAll(/\{\{element:(\w+)\}\}/g, (match,p1) => `<img class="element-icon element-${p1.slice(0,1).toUpperCase()+p1.slice(1).toLowerCase()} icon-inline" src="img/Element_${p1.slice(0,1).toUpperCase()+p1.slice(1).toLowerCase()}.svg"/>`);
     html = html.replaceAll(/\{\{reaction:([-a-z]+)\}\}/g, (match,p1) => `<img class="element-icon element-${p1.toLowerCase()} icon-inline" src="img/Reaction_${p1.toLowerCase()}.svg"/>`);
+    html = html.replaceAll(/\{\{numberType:([-a-z]+)\}\}/g, (match,p1) => `<img class="icon-inline" src="img/Type_${p1.toLowerCase()}.svg"/>`);
     return html;
   }
   

@@ -1,0 +1,8 @@
+<div class="list-item material-{{getProperty item 'type'}}" data-template="genshin/renderMaterialAsCompact" data-uuid="{{uuid item}}">
+    <div class="item-display item-material display-md">
+      {{> renderItemField item=item field="image" wrapper="div"}}
+        <div class="display-caption">
+          {{> renderItemField item=item field="count" wrapper="div"}}
+        </div>
+    </div>
+</div>

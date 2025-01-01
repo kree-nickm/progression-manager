@@ -3,7 +3,17 @@ import handlebars from 'https://cdn.jsdelivr.net/npm/handlebars@4.7.7/+esm';
 handlebars.registerHelper("itemChildren", (item, field, options) => {
   let params = options.hash.params ? (Array.isArray(options.hash.params) ? options.hash.params : [options.hash.params]) : [];
   let fieldData = field.getAll(item, ...params);
-  let result = fieldData.template ? Renderer._templates[fieldData.template]({item, field, params, fieldData}) : Renderer.contentToHTML(fieldData);
+  let result;
+  if(fieldData.template)
+  {
+    let template = Renderer.getTemplatesSync(fieldData.template);
+    if(template)
+      result = template({item, field, params, fieldData});
+    else
+      return new handlebars.SafeString(`<span style="color:red;" title="An error occurred in the handlebards template. Check JavaScript console for details.">!</span>`);
+  }
+  else
+    result = Renderer.contentToHTML(fieldData);
   result = item.processRenderText(result);
   
   let button = fieldData.button;
@@ -230,6 +240,27 @@ class Renderer
         {
           console.error(x);
         }
+      }
+      else if(!templateFile)
+      {
+        console.warn(`Tried to load invalid template file '${templateFile}'.`);
+        console.trace();
+      }
+    }
+    return Renderer._templates;
+  }
+  
+  static getTemplatesSync(...templates)
+  {
+    for(let i=0; i<templates.length; i++)
+      if(Renderer.partialsUsed[templates[i]])
+        templates = templates.concat(Renderer.partialsUsed[templates[i]]);
+    for(let templateFile of templates)
+    {
+      if(templateFile && !Renderer._templates[templateFile])
+      {
+        console.error(`getTemplatesSync() tried to fetch template '${templateFile}' but it is not already loaded.`, {templates});
+        return null;
       }
       else if(!templateFile)
       {

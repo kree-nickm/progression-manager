@@ -1,0 +1,28 @@
+<div class="modal-content list-item" data-template="genshin/renderMaterialAsPopup" data-uuid="{{uuid item}}">
+    <div class="modal-body">
+        <button type="button" class="btn-close float-end" data-bs-dismiss="modal"></button>
+        <div class="row">
+            <div class="col-auto">
+                <div class="item-display item-material display-md display-no-caption">
+                    <div class="display-img rarity-{{getProperty item 'rarity'}}">
+                      {{> renderItemField item=item field="image" wrapper="div"}}
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <h5 class="col-2">Count</h5>
+                </div>
+                <div class="row">
+                    <div class="col-2">{{> renderItemField item=item field="count" wrapper="div"}}</div>
+                </div>
+            </div>
+        </div>
+        
+        <hr/>
+        <h3>Users of this Material</h3>
+      {{#each (getProperty item 'getUsage') as |user idx|}}
+          {{> renderItemField item=user.item field="name" wrapper="div"}}
+      {{/each}}
+    </div>
+</div>

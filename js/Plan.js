@@ -1,18 +1,46 @@
+const { Renderer } = await window.importer.get(`js/Renderer.js`);
 const {default:UIController} = await window.importer.get(`js/UIController.js`);
 
 export default class Plan extends UIController
 {
-  static dontSerialize = super.dontSerialize.concat(["subPlans"]);
+  static dontSerialize = super.dontSerialize.concat(["subPlans","resolved"]);
   
   subPlans = {};
+  resolved = {};
   
   afterUpdate(field, value, action, options)
   {
     super.afterUpdate(field, value, action, options);
-    if(field.path[0] == "subPlans")
+    
+    // Rebuild resolved property.
+    this.resolved = {};
+    for(let source in this.subPlans)
     {
-      this.clearMemory("combinedPlan");
-      this.clearMemory("fullPlan");
+      let subPlan = this.subPlans[source];
+      for(let matKey in subPlan)
+      {
+        if(!this.resolved[matKey])
+        {
+          this.resolved[matKey] = {
+            item: this.viewer.lists.MaterialList.get(matKey),
+            amount: subPlan[matKey],
+            wanters: [{
+              source,
+              item: Renderer.controllers.get(source),
+              amount: subPlan[matKey],
+            }],
+          };
+        }
+        else
+        {
+          this.resolved[matKey].amount += subPlan[matKey];
+          this.resolved[matKey].wanters.push({
+            source,
+            item: Renderer.controllers.get(source),
+            amount: subPlan[matKey],
+          });
+        }
+      }
     }
   }
   
@@ -40,33 +68,11 @@ export default class Plan extends UIController
     return this.subPlans[source];
   }
   
-  getFullPlan()
+  getSimplified()
   {
-    return this.memoryFunction(() => {
-      let original = {};
-      let resolved = {};
-      for(let src in this.subPlans)
-      {
-        let plan = this.subPlans[src];
-        for(let matKey in plan)
-        {
-          original[matKey] = (original[matKey]??0) + plan[matKey];
-          if(!resolved[matKey])
-          {
-            resolved[matKey] = {
-              item: this.viewer.lists.MaterialList.get(matKey),
-              amount: original[matKey],
-              wanters: [{src, amount:plan[matKey]}],
-            };
-          }
-          else
-          {
-            resolved[matKey].amount = original[matKey];
-            resolved[matKey].wanters.push({src, amount:plan[matKey]});
-          }
-        }
-      }
-      return {resolved, original};
-    }, "fullPlan");
+    let simple = {};
+    for(let matKey in this.resolved)
+      simple[matKey] = this.resolved[matKey].amount;
+    return simple;
   }
 }

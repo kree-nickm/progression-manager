@@ -148,7 +148,7 @@ export default class EnkaQuery
     }
     else
     {
-      throw new Exception(`Invalid parameter sent to EnkaQuery.`);
+      throw new Error(`Invalid parameter sent to EnkaQuery.`);
     }
   }
   
@@ -164,7 +164,7 @@ export default class EnkaQuery
     }
     if(this.apiType != "builds")
     {
-      throw new Exception(`Invalid hoyo hash '${hash}' given in selectHoyo().`, {validHoyos:this.hoyos});
+      throw new Error(`Invalid hoyo hash '${hash}' given in selectHoyo().`, {validHoyos:this.hoyos});
     }
   }
   
@@ -175,11 +175,11 @@ export default class EnkaQuery
     this.headers = response.headers;
     if(this.status == 400 || this.status == 404)
     {
-      throw new Exception(`Invalid UID or account provided.`);
+      throw new Error(`Invalid UID or account provided.`);
     }
     else if(this.status == 424 || this.status == 429 || this.status == 500 || this.status == 503)
     {
-      throw new Exception(`Enka API is currently unavailable.`);
+      throw new Error(`Enka API is currently unavailable.`);
     }
     else
     {

@@ -224,7 +224,7 @@ async function addEventListeners()
     }
     msg.classList.add("d-none");
   });
-
+  
   /*document.getElementById("loadGOODBtn")?.addEventListener("click", event => {
     document.getElementById("loadError").classList.add("d-none");
     let selectedAccount = document.getElementById("loadAccount").value;
@@ -234,7 +234,7 @@ async function addEventListeners()
     window.viewer.load(textArea.value, {account: selectedAccount});
     textArea.value = "";
   });*/
-
+  
   // Set up JSON saver.
   const saveTemplateAsFile = (filename, dataObjToWrite) => {
     const blob = new Blob([JSON.stringify(dataObjToWrite)], { type: "text/json" });

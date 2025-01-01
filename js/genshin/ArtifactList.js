@@ -273,8 +273,8 @@ export default class ArtifactList extends GenshinList
       label: "$",
       labelTitle: "Desireability rating of this artifact based on your build preferences across all of your characters. The number itself is somewhat arbitrary, but the ranking should be significant. Choose a rating where you think all artifacts are worth keeping, set it in the preferences above, and then you can easily see which artifacts are recommended for use as strongbox/exp fodder.",
       sort: {func: (o,a,b) => {
-        let A = a.wanters.reduce((result, wanter, idx) => result+Math.pow(wanter.scaledScore, 1+idx), 0);
-        let B = b.wanters.reduce((result, wanter, idx) => result+Math.pow(wanter.scaledScore, 1+idx), 0);
+        let A = a.getFinalRating();
+        let B = b.getFinalRating();
         if(isNaN(A) && !isNaN(B))
           return 1;
         else if(!isNaN(A) && isNaN(B))
@@ -289,7 +289,7 @@ export default class ArtifactList extends GenshinList
       title: item => {
         return item.wanters.map((wanter,idx) => wanter.scaledScore>0.01?`#${wanter.rank} ${wanter.onSet?item.setKey:""} ${item.slotKey} for ${wanter.character.name} (${wanter.buildId}); score:${(wanter.score*100).toFixed(1)}%, scaled:${wanter.scaledScore.toFixed(2)}, contribution:${Math.pow(wanter.scaledScore, 1+idx).toFixed(2)}`:null).filter(w=>w).join("\r\n");
       },
-      value: item => item.wanters.reduce((result, wanter, idx) => result+Math.pow(wanter.scaledScore, 1+idx), 0).toFixed(2),
+      value: item => item.getFinalRating().toFixed(2),
       dependencies: item => [
         {item:item, field:"wanters"},
       ],
@@ -448,6 +448,27 @@ export default class ArtifactList extends GenshinList
         {item:item, field:"wanters"},
       ],
     });
+  }
+  
+  // TODO: Should run this on every set as part of evaluate(), then store the results.
+  getMinRating(slotKey, setKey)
+  {
+    let maxRarity = GenshinArtifactData[setKey]?.maxRarity ?? 5;
+    let minRating = maxRarity < 5
+      ? parseFloat(this.viewer.settings.preferences.artifactMinRating4 ?? 0.6)
+      : parseFloat(this.viewer.settings.preferences.artifactMinRating ?? 1);
+    let keepOfSet = Math.ceil(2 * Math.sqrt(this.setWanterFactor[setKey] ?? 0));
+    if(keepOfSet > 0)
+    {
+      let setRatings = this.items(slotKey)
+        .filter(art => art.setKey === setKey)
+        .map(art => art.getFinalRating())
+        .toSorted((a,b) => b-a)
+        .slice(0, keepOfSet);
+      if(setRatings.length)
+        return Math.min(minRating, setRatings[setRatings.length-1]);
+    }
+    return minRating;
   }
   
   getFooterParams()

@@ -1,8 +1,11 @@
 const { Renderer } = await window.importer.get(`js/Renderer.js`);
 
 const Ingredient = (SuperClass) => class extends SuperClass {
-  static dontSerialize = super.dontSerialize.concat(["usedBy","prevTier","nextTier","converts"]);
+  static dontSerialize = super.dontSerialize.concat(["usedBy","prevTier","nextTier","tierUpReq","tierDownReq","converts","convertReq","baseType","typeAmount"]);
   
+  /**
+   * Given an array of Ingredients, this will assume that they can be crafted into one another via adjacent indexes, and will set prevTier and nextTier on each of them accordingly.
+   */
   static setupTiers(matList)
   {
     for(let m=0; m<matList.length-1; m++)
@@ -31,33 +34,25 @@ const Ingredient = (SuperClass) => class extends SuperClass {
         label: "Count",
         dynamic: true,
         title: item => {
-          let planMaterials = item.viewer.account.plan.getFullPlan();
-          if(planMaterials.original[item.key])
-          {
-            let wanters = planMaterials.resolved[item.key].wanters.map(wanter => `${Renderer.controllers.get(wanter.src).name} wants ${wanter.amount}`).join(`\r\n`);
-            return (item.prevTier || item.converts
-              ? `Up to ${item.getCraftCount({plan:planMaterials.original})} if you craft.`
-              : ``) + (wanters ? `\r\n`+wanters : ``);
-          }
-          else
-          {
-            return (item.prevTier || item.converts
-              ? `Up to ${item.getCraftCount()} if you craft.`
-              : ``);
-          }
+          let craftCount = item.getCraftCount({plan:item.viewer.account.plan.getSimplified()});
+          let wanterString = item.viewer.account.plan.resolved[item.key]?.wanters.map(wanter => `${wanter.item?.name??wanter.source} wants ${wanter.amount}`).join(`\r\n`);
+          return (craftCount ? `Up to ${craftCount} if you craft.` : ``)
+            + (wanterString ? `\r\n${wanterString}` : ``);
         },
         value: item => {
-          let planMaterials = item.viewer.account.plan.getFullPlan();
-          if(planMaterials.original[item.key])
-            return `${item.count} / ${planMaterials.original[item.key]}`;
-          else
-            return item.count + (item.prevTier || item.converts ? " (+"+ (item.getCraftCount()-item.count) +")" : "");
+          if(item.viewer.account.plan.resolved[item.key])
+            return `${item.count} / ${item.viewer.account.plan.resolved[item.key].amount}`;
+          else {
+            let craftCount = item.getCraftCount({plan:item.viewer.account.plan.getSimplified()});
+            return item.count + (craftCount ? ` (+${craftCount-item.count})` : "");
+          }
         },
         edit: item => ({
           target: {item:item, field:"count"}, min:0, max:99999,
         }),
         dependencies: item => {
           let dependencies = item.getCraftDependencies();
+          dependencies.push({item:item, field:"usedBy"});
           for(let i of item.usedBy) {
             dependencies.push({item:i, field:"wishlist"});
             dependencies.push({item:i, field:i.constructor.ascensionProperty});
@@ -65,23 +60,17 @@ const Ingredient = (SuperClass) => class extends SuperClass {
           }
           return dependencies;
         },
-        classes: item => {
-          let planMaterials = item.viewer.account.plan.getFullPlan();
-          if(planMaterials.original[item.key])
-            return {
-              "pending": item.count < planMaterials.original[item.key],
-              "insufficient": item.getCraftCount({plan:planMaterials.original}) < planMaterials.original[item.key],
-            };
-          else
-            return {};
-        },
+        classes: item => ({
+          "pending": item.count < item.viewer.account.plan.resolved[item.key]?.amount,
+          "insufficient": item.getCraftCount({plan:item.viewer.account.plan.getSimplified()}) < item.viewer.account.plan.resolved[item.key]?.amount,
+        }),
       });
   
     if(!display.getField("users"))
       display.addField("users", {
         label: "Used By",
         dynamic: true,
-        value: item => item.getUsage(),
+        value: item => item.getUsage().map(user => `${user.item.name}` + (user.note.length ? ` (${user.note.join(', ')})` : ``)).join("; "),
         dependencies: item => {
           let dependencies = [{item:item, field:["usedBy"]}];
           for(let i of item.usedBy)
@@ -97,7 +86,12 @@ const Ingredient = (SuperClass) => class extends SuperClass {
   usedBy = [];
   prevTier;
   nextTier;
+  tierUpReq;
+  tierDownReq;
   converts;
+  convertReq;
+  baseType;
+  typeAmount; // for exp
   
   get count(){ return this._count; }
   set count(val){
@@ -123,18 +117,24 @@ const Ingredient = (SuperClass) => class extends SuperClass {
     let results = [];
     for(let item of this.usedBy)
     {
-      if(item.favorite === false)
-        continue;
       let amount = [];
       let note = [];
-      for(let matDef of item.materialDefs.material)
+      for(let matDef of item.materialDefs.materials)
       {
+        // If this is the user's ascension mat, add their desired amount.
         if(this == item.getMat(matDef.property) && item.getMatCost(matDef.property))
+        {
           amount.push(item.getMatCost(matDef.property));
+        }
+        
+        // Cycle through the user's talents.
         for(let talentType in item.constructor.talentTypes)
         {
+          // If this is the user's talent mat, add their desired amount.
           if(this == item.getTalentMat(matDef.property, talentType) && item.getTalentMatCost(matDef.property, talentType))
+          {
             amount.push(item.getTalentMatCost(matDef.property, talentType));
+          }
         }
       }
       /*if(item instanceof Character)
@@ -166,27 +166,84 @@ const Ingredient = (SuperClass) => class extends SuperClass {
         }
       }*/
       if(amount.length)
-        results.push({name:item.name, amount:amount.join(", "), note});
+        results.push({item, amount:amount.reduce((t,i) => t+i, 0), amounts:amount.join(", "), note});
     }
-    return results.map(user => `${user.name}` + (user.note.length ? ` (${user.note.join(', ')})` : ``)).join("; ");
+    return results;
   }
   
-  getCraftCount({plan}={})
+  getCraftCount({plan, checkConv=true, checkPrev=true, checkNext=true}={})
   {
-    if(this.converts)
-      return this.count + this.converts.reduce((total, mat) => total+Math.max(0,mat.count-(plan?.[mat.key]??0)), 0);
-    else
-      return this.count + (this.prevTier ? Math.floor(Math.max(0,this.prevTier.getCraftCount({plan})-(plan?.[this.prevTier.key]??0))/3) : 0);
+    let bonusCount = 0;
+    
+    if(checkConv && this.convertReq && this.converts)
+    {
+      for(let convert of this.converts)
+      {
+        let craftCount = convert.getCraftCount({
+          plan,
+          checkConv: false,
+          checkPrev,
+          checkNext,
+        });
+        let planCount = plan?.[convert.key] ?? 0;
+        bonusCount += Math.floor(Math.max(0, craftCount - planCount) / this.convertReq);
+      }
+    }
+    
+    if(checkPrev && this.tierUpReq && this.prevTier)
+    {
+      let craftCount = this.prevTier.getCraftCount({
+        plan,
+        checkConv,
+        checkPrev,
+        checkNext: false,
+      });
+      let planCount = plan?.[this.prevTier.key] ?? 0;
+      bonusCount += Math.floor(Math.max(0, craftCount - planCount) / this.tierUpReq);
+    }
+    
+    if(checkNext && this.tierDownReq && this.nextTier)
+    {
+      let craftCount = this.nextTier.getCraftCount({
+        plan,
+        checkConv,
+        checkPrev: false,
+        checkNext,
+      });
+      let planCount = plan?.[this.nextTier.key] ?? 0;
+      bonusCount += Math.max(0, craftCount - planCount) * this.tierDownReq;
+    }
+    
+    return this.count + bonusCount;
   }
   
-  getCraftDependencies()
+  getCraftDependencies({checkConv=true, checkPrev=true, checkNext=true}={})
   {
-    if(this.converts)
-      return this.converts.map(mat => ({item:mat, field:"count"}));
-    else if(this.prevTier)
-      return this.prevTier.getCraftDependencies().concat([{item:this.prevTier, field:"count"}]);
-    else
-      return [];
+    let dependencies = [];
+    
+    if(checkConv && this.convertReq && this.converts)
+      dependencies = dependencies
+        .concat(this.converts.map(mat => ({item:mat, field:"count"})));
+        
+    if(checkPrev && this.tierUpReq && this.prevTier)
+      dependencies = dependencies
+        .concat(this.prevTier.getCraftDependencies({
+          checkConv,
+          checkPrev,
+          checkNext: false,
+        }))
+        .concat([{item:this.prevTier, field:"count"}]);
+        
+    if(checkNext && this.tierDownReq && this.nextTier)
+      dependencies = dependencies
+        .concat(this.nextTier.getCraftDependencies({
+          checkConv,
+          checkPrev: false,
+          checkNext,
+        }))
+        .concat([{item:this.nextTier, field:"count"}]);
+        
+    return dependencies;
   }
   
   getFieldValue(cost, useImage=false, {noName=false, plan}={})

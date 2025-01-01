@@ -14,6 +14,7 @@ export default class Material extends Ingredient(WuWaItem)
   type;
   subtype;
   source = "";
+  tierUpReq = 3;
   
   get shorthand(){ return this._shorthand ?? this.name; }
   set shorthand(val){ this._shorthand = val; }

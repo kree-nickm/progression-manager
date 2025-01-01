@@ -1,6 +1,6 @@
 const { handlebars, Renderer } = await window.importer.get(`js/Renderer.js`);
 
-handlebars.registerHelper("getProperty", (item, property, options) => item instanceof UIController ? item.getProperty(property) : console.error(`Helper 'getProperty' must be called on a UIController.`, {item, property, options}));
+handlebars.registerHelper("getProperty", (item, property, options) => item instanceof UIController ? item.getProperty.call(item, property) : console.error(`Helper 'getProperty' must be called on a UIController.`, {item, property, options}));
 handlebars.registerHelper("uuid", (item, options) => item instanceof UIController ? item.uuid : console.error(`Helper 'uuid' must be called on a UIController.`, {item, options}));
 handlebars.registerHelper('toParam', (item, options) => item instanceof UIController ? item.uuid : typeof(item) == "object" ? item?.toString()??"" : item);
 
@@ -62,6 +62,10 @@ export default class UIController {
           return {string, path};
         }
       }
+      else if(typeof(obj[path[i]]) == "function")
+      {
+        obj = obj[path[i]].call(obj);
+      }
       else if(obj[path[i]] == undefined)
       {
         if(create)
@@ -112,7 +116,10 @@ export default class UIController {
   
   getProperty(prop, {create=true}={})
   {
-    return this.parseProperty(prop, false).value;
+    let parsed = this.parseProperty(prop, false);
+    return typeof(parsed.value) === "function"
+      ? parsed.value.call(parsed.object)
+      : parsed.value;
   }
   
   /**

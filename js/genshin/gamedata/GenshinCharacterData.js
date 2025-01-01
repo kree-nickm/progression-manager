@@ -477,6 +477,35 @@ export default {
             10403
         ]
     },
+    "Citlali": {
+        "name": "Citlali",
+        "rarity": 5,
+        "weapon": "Catalyst",
+        "element": "Cryo",
+        "hakushinID": 10000107,
+        "id": 10000107,
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Citlali.webp",
+        "release": "December 31, 2024",
+        "region": "Natlan",
+        "matEnemy": "Saurians",
+        "matFlower": "Quenepa Berry",
+        "matMastery": "Kindling",
+        "matTrounce": "Denial and Judgment",
+        "ascendStat": "eleMas",
+        "hpBase": 905.6539916992188,
+        "atkBase": 9.8685998916626,
+        "defBase": 59.411190032959,
+        "hpMaxAsc": 3719.10498046875,
+        "atkMaxAsc": 40.5228462219238,
+        "defMaxAsc": 243.9801025390625,
+        "version": "5.3",
+        "matBoss": "Spiritspeaker",
+        "skillIds": [
+            11071,
+            11072,
+            11075
+        ]
+    },
     "Clorinde": {
         "name": "Clorinde",
         "rarity": 5,
@@ -1373,6 +1402,35 @@ export default {
             10655
         ]
     },
+    "LanYan": {
+        "name": "Lan Yan",
+        "rarity": 4,
+        "weapon": "Catalyst",
+        "element": "Anemo",
+        "hakushinID": 10000108,
+        "id": 10000108,
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Lanyan.webp",
+        "release": "December 31, 2024",
+        "region": "Liyue",
+        "matEnemy": "Whopperflowers",
+        "matBoss": "Auto Bot",
+        "matFlower": "Clearwater Jade",
+        "matMastery": "Diligence",
+        "ascendStat": "atk_",
+        "hpBase": 775.0223388671875,
+        "atkBase": 21.0134391784668,
+        "defBase": 48.6412506103516,
+        "hpMaxAsc": 2773.01611328125,
+        "atkMaxAsc": 75.1874771118164,
+        "defMaxAsc": 174.0375061035156,
+        "version": "5.3",
+        "matTrounce": "Eroded Sunfire",
+        "skillIds": [
+            11081,
+            11082,
+            11085
+        ]
+    },
     "Layla": {
         "name": "Layla",
         "weapon": "Sword",
@@ -1491,6 +1549,35 @@ export default {
             10841,
             10842,
             10845
+        ]
+    },
+    "Mavuika": {
+        "name": "Mavuika",
+        "rarity": 5,
+        "weapon": "Claymore",
+        "element": "Pyro",
+        "hakushinID": 10000106,
+        "id": 10000106,
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Mavuika.webp",
+        "release": "December 31, 2024",
+        "region": "Natlan",
+        "matEnemy": "Tribals",
+        "matBoss": "Auto Bot",
+        "matFlower": "Withering Purpurbloom",
+        "matMastery": "Contention",
+        "ascendStat": "critDMG_",
+        "hpBase": 977.1530151367188,
+        "atkBase": 27.9300003051758,
+        "defBase": 61.6249008178711,
+        "hpMaxAsc": 4012.718505859375,
+        "atkMaxAsc": 114.6873016357422,
+        "defMaxAsc": 253.0709991455078,
+        "version": "5.3",
+        "matTrounce": "Eroded Horn",
+        "skillIds": [
+            11061,
+            11062,
+            11065
         ]
     },
     "Mika": {
@@ -1785,7 +1872,11 @@ export default {
         "defMaxAsc": 176.0850067138672,
         "version": "5.2",
         "release": "November 19, 2024",
-        "skillIds": [30501,30502,30505]
+        "skillIds": [
+            30501,
+            30502,
+            30505
+        ]
     },
     "Qiqi": {
         "name": "Qiqi",
@@ -2308,6 +2399,26 @@ export default {
             100542,
             10087,
             10088
+        ]
+    },
+    "TravelerPyro": {
+        "element": "Pyro",
+        "hakushinID": "10000005-2",
+        "id": "10000005-502",
+        "idAlt": "10000007-702",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_PlayerGirl.webp",
+        "release": "December 31, 2024",
+        "hpBase": 911.791015625,
+        "atkBase": 17.8080005645752,
+        "defBase": 57.2249984741211,
+        "hpMaxAsc": 3262.371826171875,
+        "atkMaxAsc": 63.7182006835938,
+        "defMaxAsc": 204.75,
+        "version": "5.3",
+        "skillIds": [
+            100541,
+            10097,
+            10098
         ]
     },
     "Venti": {

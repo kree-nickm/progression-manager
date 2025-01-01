@@ -1390,7 +1390,8 @@ export default class Character extends Ascendable(GenshinItem)
         // Calculate the text to output.
         motionValue.string = motionValue.values.reduce((out, elem) => {
           return (out!==null ? `${out} + ` : ``)
-            + (["anemo","cryo","dendro","electro","hydro","geo","pyro","physical","absorb"].indexOf(elem.dmgType)>-1 ? `{{element:${elem.dmgType.slice(0,1).toUpperCase()+elem.dmgType.slice(1).toLowerCase()}}}` : "")
+            + (["anemo","cryo","dendro","electro","hydro","geo","pyro","physical"].indexOf(elem.dmgType)>-1 ? `{{element:${elem.dmgType.slice(0,1).toUpperCase()+elem.dmgType.slice(1).toLowerCase()}}}` : "")
+            + (["healing","shielding","self","hp"].indexOf(elem.dmgType)>-1 ? `{{numberType:${elem.dmgType}}}` : "")
             + (isAllNumeric&&elem.dmgType!="percent"&&elem.dmgType!="self" ? elem.value.toFixed(0) + (canCrit ? ` (${elem.critical.toFixed(0)})` : ``) : elem.value)
             + (elem.statString ? elem.statString : elem.dmgType=="percent"||elem.dmgType=="self" ? "%" : "")
             + (elem.hits>1 ? ` × ${elem.hits}` : ``);

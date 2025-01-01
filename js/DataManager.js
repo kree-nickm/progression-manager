@@ -10,6 +10,7 @@ export default class DataManager extends UIController
   dataVersion = 2;
   currentView;
   settings = {};
+  settingDefs = {};
   accounts = {};
   
   listClasses = {};
@@ -90,7 +91,8 @@ export default class DataManager extends UIController
     return this.accounts?.[this.settings.server];
   }
   
-  createAccount(id) {
+  createAccount(id)
+  {
     return new Account(id, {viewer:this});
   }
   
@@ -104,7 +106,7 @@ export default class DataManager extends UIController
       this.accounts = {};
     if(!this.accounts[this.settings.server])
       this.accounts[this.settings.server] = this.createAccount(this.settings.server);
-    this.accounts[this.settings.server].loadLists();
+    this.accounts[this.settings.server].loadData();
     if(changed)
       for(let listName in this.listClasses)
         this.lists[listName].forceNextRender = true;
@@ -117,6 +119,14 @@ export default class DataManager extends UIController
     this.view({pane:this.currentView});
     console.log(`Switching to account '${this.settings.server}'.`);
     return true;
+  }
+  
+  getSettings(global=false)
+  {
+    if(global)
+      return Object.values(this.settingDefs);
+    else
+      return Object.values(this.account.settingDefs);
   }
   
   get controllerMap()
@@ -365,7 +375,7 @@ export default class DataManager extends UIController
       {
         if(!this.accounts[acc])
           this.accounts[acc] = this.createAccount(acc);
-        this.accounts[acc].loadLists(data[acc]);
+        this.accounts[acc].loadData(data[acc]);
         this.errors = this.errors || this.accounts[acc].errors;
       }
       console.log("Imported account data.", {importedAccounts:data, currentAccounts:this.accounts});

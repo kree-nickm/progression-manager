@@ -105,9 +105,12 @@ export default class Artifact extends Equipment(GenshinItem)
   get isCutContent(){ return GenshinArtifactData[this.key]?.deletedContent; }
   get isFodder()
   {
-    let minRating = this.maxRarity==4 ? parseFloat(this.viewer.settings.preferences.artifactMinRating4 ?? 0.6) : parseFloat(this.viewer.settings.preferences.artifactMinRating ?? 1);
-    minRating -= (this.list.setWanterFactor[this.setKey] ?? 0) * 0.01;
-    return this.wanters.reduce((result, wanter, idx) => result+Math.pow(wanter.scaledScore, 1+idx), 0) < minRating;
+    return this.getFinalRating() < this.list.getMinRating(this.slotKey, this.setKey);
+  }
+  
+  getFinalRating()
+  {
+    return this.wanters.reduce((result, wanter, idx) => result+Math.pow(wanter.scaledScore, 1+idx), 0)
   }
   
   setSubstat(statId, value)

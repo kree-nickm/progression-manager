@@ -4,12 +4,13 @@ const {default:UIItem} = await window.importer.get(`js/UIItem.js`);
 const {default:ListDisplayManager} = await window.importer.get(`js/ListDisplayManager.js`);
 
 export default class UIList extends UIController {
-  static dontSerialize = super.dontSerialize.concat(["display","subsets","forceNextRender"]);
+  static dontSerialize = super.dontSerialize.concat(["subsets","forceNextRender"]);
   static unique = false;
   static itemClass = UIItem;
   static subsetDefinitions = {};
   static templateName = "renderListAsTable";
   static templatePartials = ["renderItemAsRow"];
+  static display;
   
   static fromJSON(data, {viewer, addProperties={}}={})
   {
@@ -69,7 +70,6 @@ export default class UIList extends UIController {
   list;
   listName = this.constructor.name;
   
-  display;
   subsets;
   forceNextRender;
   
@@ -79,9 +79,16 @@ export default class UIList extends UIController {
     //if(!window.importer.productionMode) console.debug(`new ${this.constructor.name}`);
     this.list = [];
     this.viewer = viewer;
-    this.display = new ListDisplayManager(this);
     this.subsets = {};
     this.forceNextRender = true;
+    
+    if(!this.constructor.display)
+      this.constructor.display = new ListDisplayManager();
+  }
+  
+  get display()
+  {
+    return this.constructor.display;
   }
   
   initialize()

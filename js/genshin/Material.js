@@ -7,6 +7,7 @@ const {default:Ingredient} = await window.importer.get(`js/Ingredient.js`);
 export default class Material extends Ingredient(GenshinItem)
 {
   static dontSerialize = super.dontSerialize.concat(["_shorthand","_type","source","days"]);
+  static templateName = "genshin/renderMaterialAsPopup";
   
   static gemQualities = {
     '5': " Gemstone",
@@ -39,6 +40,8 @@ export default class Material extends Ingredient(GenshinItem)
   _type;
   source = "";
   days = [];
+  tierUpReq = 3;
+  convertReq = 1;
   
   fromGOOD(goodData)
   {
@@ -99,25 +102,7 @@ export default class Material extends Ingredient(GenshinItem)
   
   async getRelatedItems()
   {
-    return {
-      topFields: [
-        {
-          fieldDefs: [
-            [
-              { field:this.display.getField("image"), params:[] },
-            ],
-          ],
-        },
-        {
-          header: "Count",
-          fieldDefs: [
-            [
-              { field:this.display.getField("count"), params:[] },
-            ],
-          ],
-        },
-      ],
-    };
+    return {};
   }
   
   getFullSource()
@@ -127,9 +112,6 @@ export default class Material extends Ingredient(GenshinItem)
   
   getFieldValue(cost, useImage=false, {noName=false, plan}={})
   {
-    let bosskills3 = Math.ceil((cost-this.count)/3);
-    let bosskills2 = Math.ceil((cost-this.count)/2);
-    
     let iconPart = {
       tag: "div",
       value: [
@@ -156,13 +138,9 @@ export default class Material extends Ingredient(GenshinItem)
         },
         {
           value: `${this.count} / ${cost}`,
-          title: this.type == "boss"
-            ? `Requires `+ (bosskills2!=bosskills3?`${bosskills3}-${bosskills2}`:bosskills2) +` more boss kill`+ (bosskills2!=1||bosskills3!=1?"s":"") +`.`
-            : this.type == "flora"
-              ? `` // TODO: Compile data for number of each flora that exists on the map and display the relevant number here.
-              : this.prevTier
-                ? `Up to ${this.getCraftCount({plan})} if you craft.`
-                : ``,
+          title: this.prevTier
+            ? `Up to ${this.getCraftCount({plan})} if you craft.`
+            : undefined,
           classes: {"display-caption": true},
           edit: {target: {item:this, field:"count"}},
         }
@@ -181,13 +159,9 @@ export default class Material extends Ingredient(GenshinItem)
     
     let numbersPart = {
       value: `${this.count} / ${cost}`,
-      title: this.type == "boss"
-        ? `Requires `+ (bosskills2!=bosskills3?`${bosskills3}-${bosskills2}`:bosskills2) +` more boss kill`+ (bosskills2!=1||bosskills3!=1?"s":"") +`.`
-        : this.type == "flora"
-          ? `` // TODO: Compile data for number of each flora that exists on the map and display the relevant number here.
-          : this.prevTier || this.converts
-            ? `Up to ${this.getCraftCount({plan})} if you craft.`
-            : ``,
+      title: this.prevTier || this.converts
+        ? `Up to ${this.getCraftCount({plan})} if you craft.`
+        : undefined,
       classes: {
         "quantity": true,
         "pending": this.count < cost,

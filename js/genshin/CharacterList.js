@@ -3,7 +3,6 @@ const {default:GenshinArtifactData} = await window.importer.get(`js/genshin/game
 const {default:GenshinWeaponData} = await window.importer.get(`js/genshin/gamedata/GenshinWeaponData.js`);
 
 const { Renderer } = await window.importer.get(`js/Renderer.js`);
-const { mergeObjects } = await window.importer.get(`js/Util.js`);
 const {default:GenshinList} = await window.importer.get(`js/genshin/GenshinList.js`);
 const {default:Character} = await window.importer.get(`js/genshin/Character.js`);
 const {default:Traveler} = await window.importer.get(`js/genshin/Traveler.js`);

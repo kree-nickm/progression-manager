@@ -300,6 +300,15 @@ export default {
         "Silken Feather",
         "Denial and Judgment"
       ]
+    },
+    {
+      "boss": "Lord of Eroded Primal Fire",
+      "release": "December 31, 2024",
+      "loot": [
+        "Eroded Horn",
+        "Eroded Sunfire",
+        "Eroded Scale-Feather"
+      ]
     }
   ],
   
@@ -445,6 +454,11 @@ export default {
       "name": "Tenebrous Papilla: Type I",
       "4": "Ensnaring Gaze",
       "release": "November 19, 2024"
+    },
+    "Spiritspeaker": {
+      "name": "Wayward Hermetic Spiritspeaker",
+      "4": "Talisman of the Enigmatic Land",
+      "release": "December 31, 2024"
     }
   },
   
