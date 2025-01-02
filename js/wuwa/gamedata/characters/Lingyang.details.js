@@ -495,7 +495,7 @@ export default {
                 }
             ],
             "name": "Strive: Lion's Vigor",
-            "desc": "Attack the target, dealing <color=Ice>Glacio DMG<\/color>, and receive the blessing of <color=Highlight>Lion's Vigor<\/color>.n<size=10> <\/size>n<size=40><color=Title>Lion's Vigor<\/color><\/size>nLingyang's <color=Ice>Glacio DMG Bonus<\/color> is increased by 50%;"
+            "desc": "Attack the target, dealing <color=Ice>Glacio DMG<\/color>, and receive the blessing of <color=Highlight>Lion's Vigor<\/color>.n<size=10> <\/size>n<size=40><color=Title>Lion's Vigor<\/color><\/size>nLingyang gains 50% <color=Ice>Glacio DMG Bonus<\/color>."
         },
         "Forte Circuit Passive 1": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconSkill\/T_IconMotefeiD1_UI.T_IconMotefeiD1_UI",

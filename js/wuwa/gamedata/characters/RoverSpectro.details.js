@@ -360,7 +360,7 @@ export default {
         },
         "Resonance Liberation": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconNvzhuA1_UI.T_IconNvzhuA1_UI",
-            "id": 1000603,
+            "id": 1000613,
             "motionValues": [
                 {
                     "scaling": [
@@ -458,7 +458,7 @@ export default {
                 }
             ],
             "name": "Echoing Orchestra",
-            "desc": "Rover converges Spectro energy to assail the target area, detonating it after a short delay and dealing <color=Light>Spectro DMG<\/color>."
+            "desc": "Channel Spectro energy to attack the target area, causing a blast after a short delay, dealing <color=Light>Spectro DMG<\/color> and applying 6 stack(s) of <color=Highlight>Spectro Frazzle<\/color>."
         },
         "Forte Circuit Passive 1": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconNvzhuD2_UI.T_IconnvzhuD2_UI",
@@ -530,7 +530,7 @@ export default {
         },
         "Forte Circuit": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconNvzhuD1_UI.T_IconnvzhuD1_UI",
-            "id": 1000607,
+            "id": 1000617,
             "motionValues": [
                 {
                     "scaling": [
@@ -634,6 +634,29 @@ export default {
                 },
                 {
                     "scaling": [
+                        "9",
+                        "9",
+                        "9",
+                        "9",
+                        "9",
+                        "9",
+                        "9",
+                        "9",
+                        "9",
+                        "9",
+                        "9",
+                        "9",
+                        "9",
+                        "9",
+                        "9",
+                        "9",
+                        "9",
+                        "9"
+                    ],
+                    "name": "Shimmer Duration"
+                },
+                {
+                    "scaling": [
                         "20",
                         "20",
                         "20",
@@ -680,7 +703,7 @@ export default {
                 }
             ],
             "name": "World in a Grain of Sand",
-            "desc": "<size=40><color=Title>Resonance Skill: Resonating Spin<\/color><\/size>nIf \"Diminutive Sound\" exceeds 50 when <color=Highlight>Resonance Skill<\/color> is used, Rover consumes 50 \"Diminutive Sound\" to cast <color=Highlight>Resonating Spin<\/color>, dealing <color=Light>Spectro DMG<\/color>, considered as Resonance Skill DMG.n<size=10> <\/size>n<size=40><color=Title>Basic Attack: Resonating Echoes<\/color><\/size>nAfter Resonance Skill <color=Highlight>Resonating Spin<\/color> ends, Rover performs <color=Highlight>Resonating Echoes<\/color> upon using <color=Highlight>Basic Attack<\/color> button.nLaunch attacks forward, dealing <color=Light>Spectro DMG<\/color>, considered as Resonance Skill DMG.n<size=10> <\/size>n<size=40><color=Title>Diminutive Sound<\/color><\/size>nRover can hold up to 100 \"Diminutive Sounds\".nRover obtains \"Diminutive Sound\" for every Normal Attack <color=Highlight>Vibration Manifestation<\/color> on hit.nRover obtains \"Diminutive Sound\" for every Heavy Attack <color=Highlight> Aftertune<\/color> on hit.nRover obtains \"Diminutive Sound\" upon casting Intro Skill <color=Highlight>Waveshock<\/color>."
+            "desc": "<size=40><color=Title>Resonance Skill: Resonating Spin<\/color><\/size>nIf \"Diminutive Sound\" exceeds 50 when <color=Highlight>Resonance Skill<\/color> is used, consume 50 \"Diminutive Sound\" to cast <color=Highlight>Resonating Spin<\/color>, dealing <color=Light>Spectro DMG<\/color>. This DMG is considered as Resonance Skill DMG and applies 2 stack(s) of <color=Highlight>Spectro Frazzle<\/color> along with <color=Highlight>Shimmer<\/color>.n<size=10> <\/size>n<size=40><color=Title>Shimmer<\/color><\/size>n<color=Highlight>Shimmer<\/color> prevents <color=Highlight>Spectro Frazzle<\/color> stacks from reducing over time.n<size=10> <\/size>n<size=40><color=Title>Basic Attack: Resonating Echoes<\/color><\/size>nAfter Resonance Skill <color=Highlight>Resonating Spin<\/color> ends, follow up with <color=Highlight>Basic Attack<\/color> to cast <color=Highlight>Resonating Echoes<\/color>.nLaunch forward to attack the enemies, dealing <color=Light>Spectro DMG<\/color>, considered as Resonance Skill DMG.n<size=10> <\/size>n<size=40><color=Title>Diminutive Sound<\/color><\/size>nRover can hold up to 100 \"Diminutive Sounds\".nRover obtains \"Diminutive Sound\" for every Normal Attack <color=Highlight>Vibration Manifestation<\/color> on hit. nRover obtains \"Diminutive Sound\" for every Heavy Attack <color=Highlight> Aftertune<\/color> on hit.nRover obtains \"Diminutive Sound\" upon casting Intro Skill <color=Highlight>Waveshock<\/color>."
         },
         "Rover Passive": {
             "descHash": "Skill_1000608_SkillDescribe",
@@ -704,7 +727,7 @@ export default {
             "name": "ATK+",
             "desc": "ATK increased by 1.80%."
         },
-        "Resonance Liberation Bonus 1": {
+        "2aa": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
             "name": "ATK+",
             "desc": "ATK increased by 1.80%."
@@ -724,7 +747,7 @@ export default {
             "name": "ATK+",
             "desc": "ATK increased by 4.20%."
         },
-        "Resonance Liberation Bonus 2": {
+        "2bb": {
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconAttribute\/T_Iconpropertyredattack_UI.T_Iconpropertyredattack_UI",
             "name": "ATK+",
             "desc": "ATK increased by 4.20%."

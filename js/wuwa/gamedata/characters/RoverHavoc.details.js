@@ -433,13 +433,13 @@ export default {
                 }
             ],
             "name": "Deadening Abyss",
-            "desc": "Rover gathers resonating sounds to attack a target, dealing <color=Dark>Havoc DMG<\/color>."
+            "desc": "Rover gathers resonating sounds to attack targets, dealing <color=Dark>Havoc DMG<\/color>."
         },
         "Forte Circuit Passive 1": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconNvzhuD2_UI.T_IconnvzhuD2_UI",
             "id": 1001704,
             "name": "Metamorph",
-            "desc": "In the <color=Highlight>Dark Surge<\/color> state, Havoc DMG Bonus is increased by 20%."
+            "desc": "In the <color=Highlight>Dark Surge<\/color> state, gain 20% Havoc DMG Bonus."
         },
         "Forte Circuit Passive 2": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYangyangQTE_UI.T_IconYangyangQTE_UI",

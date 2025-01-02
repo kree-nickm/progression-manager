@@ -63,6 +63,22 @@ export default {
         "type": "Development Materials",
         "subtype": "Weapon and Skill Material"
     },
+    "FFPolygonCore": {
+        "rarity": 5,
+        "sort": 5,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_O_004_4_UI.T_IconMout_O_004_4_UI",
+        "name": "FF Polygon Core",
+        "type": "Development Materials",
+        "subtype": "Weapon and Skill Material"
+    },
+    "FFTidalResiduum": {
+        "rarity": 5,
+        "sort": 5,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_O_005_4_UI.T_IconMout_O_005_4_UI",
+        "name": "FF Tidal Residuum",
+        "type": "Development Materials",
+        "subtype": "Weapon and Skill Material"
+    },
     "FFWhisperinCore": {
         "rarity": 5,
         "sort": 5,
@@ -71,11 +87,11 @@ export default {
         "type": "Development Materials",
         "subtype": "Weapon and Skill Material"
     },
-    "FlawlessPhlohiston": {
+    "FlawlessPhlogiston": {
         "rarity": 5,
         "sort": 5,
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWup\/T_IconWup_04_UI.T_IconWup_04_UI",
-        "name": "Flawless Phlohiston",
+        "name": "Flawless Phlogiston",
         "type": "Development Materials",
         "subtype": "Weapon and Skill Material"
     },
@@ -175,6 +191,14 @@ export default {
         "type": "Development Materials",
         "subtype": "Weapon and Skill Material"
     },
+    "BlazingBone": {
+        "rarity": 4,
+        "sort": 5,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_008_UI.T_IconMout_008_UI",
+        "name": "Blazing Bone",
+        "type": "Development Materials",
+        "subtype": "Resonator Ascension Material"
+    },
     "CadenceLeaf": {
         "rarity": 4,
         "sort": 5,
@@ -182,6 +206,14 @@ export default {
         "name": "Cadence Leaf",
         "type": "Development Materials",
         "subtype": "Weapon and Skill Material"
+    },
+    "CleansingConch": {
+        "rarity": 4,
+        "sort": 5,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_009_UI.T_IconMout_009_UI",
+        "name": "Cleansing Conch",
+        "type": "Development Materials",
+        "subtype": "Resonator Ascension Material"
     },
     "DreamlessFeather": {
         "rarity": 4,
@@ -220,6 +252,22 @@ export default {
         "sort": 5,
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_E_002_3_UI.T_IconMout_E_002_3_UI",
         "name": "HF Howler Core",
+        "type": "Development Materials",
+        "subtype": "Weapon and Skill Material"
+    },
+    "HFPolygonCore": {
+        "rarity": 4,
+        "sort": 5,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_O_004_3_UI.T_IconMout_O_004_3_UI",
+        "name": "HF Polygon Core",
+        "type": "Development Materials",
+        "subtype": "Weapon and Skill Material"
+    },
+    "HFTidalResiduum": {
+        "rarity": 4,
+        "sort": 5,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_O_005_3_UI.T_IconMout_O_005_3_UI",
+        "name": "HF Tidal Residuum",
         "type": "Development Materials",
         "subtype": "Weapon and Skill Material"
     },
@@ -263,6 +311,14 @@ export default {
         "type": "Development Materials",
         "subtype": "Skill Upgrade Material"
     },
+    "PlatinumCore": {
+        "rarity": 4,
+        "sort": 5,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_006_UI.T_IconMout_006_UI",
+        "name": "Platinum Core",
+        "type": "Development Materials",
+        "subtype": "Resonator Ascension Material"
+    },
     "PolarizedMetallicDrip": {
         "rarity": 4,
         "sort": 5,
@@ -279,11 +335,11 @@ export default {
         "type": "Development Materials",
         "subtype": "Resonator Ascension Material"
     },
-    "RefinedPhlohiston": {
+    "RefinedPhlogiston": {
         "rarity": 4,
         "sort": 5,
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWup\/T_IconWup_03_UI.T_IconWup_03_UI",
-        "name": "Refined Phlohiston",
+        "name": "Refined Phlogiston",
         "type": "Development Materials",
         "subtype": "Weapon and Skill Material"
     },
@@ -318,6 +374,14 @@ export default {
         "name": "Strife Tacet Core",
         "type": "Development Materials",
         "subtype": "Resonator Ascension Material"
+    },
+    "TheNetherworldsStare": {
+        "rarity": 4,
+        "sort": 5,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_007_UI.T_IconMout_007_UI",
+        "name": "The Netherworld's Stare",
+        "type": "Development Materials",
+        "subtype": "Skill Upgrade Material"
     },
     "ThunderingTacetCore": {
         "rarity": 4,
@@ -412,6 +476,22 @@ export default {
         "sort": 5,
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_E_002_2_UI.T_IconMout_E_002_2_UI",
         "name": "MF Howler Core",
+        "type": "Development Materials",
+        "subtype": "Weapon and Skill Material"
+    },
+    "MFPolygonCore": {
+        "rarity": 3,
+        "sort": 5,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_O_004_2_UI.T_IconMout_O_004_2_UI",
+        "name": "MF Polygon Core",
+        "type": "Development Materials",
+        "subtype": "Weapon and Skill Material"
+    },
+    "MFTidalResiduum": {
+        "rarity": 3,
+        "sort": 5,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_O_005_2_UI.T_IconMout_O_005_2_UI",
+        "name": "MF Tidal Residuum",
         "type": "Development Materials",
         "subtype": "Weapon and Skill Material"
     },
@@ -519,6 +599,22 @@ export default {
         "type": "Development Materials",
         "subtype": "Weapon and Skill Material"
     },
+    "LFPolygonCore": {
+        "rarity": 2,
+        "sort": 5,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_O_004_1_UI.T_IconMout_O_004_1_UI",
+        "name": "LF Polygon Core",
+        "type": "Development Materials",
+        "subtype": "Weapon and Skill Material"
+    },
+    "LFTidalResiduum": {
+        "rarity": 2,
+        "sort": 5,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMout\/T_IconMout_O_005_1_UI.T_IconMout_O_005_1_UI",
+        "name": "LF Tidal Residuum",
+        "type": "Development Materials",
+        "subtype": "Weapon and Skill Material"
+    },
     "LFWhisperinCore": {
         "rarity": 2,
         "sort": 5,
@@ -572,6 +668,14 @@ export default {
         "sort": 0,
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMst\/T_IconMst_006_UI.T_IconMst_006_UI",
         "name": "Sonance Casket",
+        "type": "Resources",
+        "subtype": "Material"
+    },
+    "SonanceCasketRagunna": {
+        "rarity": 5,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconMst\/T_IconMst_008_UI.T_IconMst_008_UI",
+        "name": "Sonance Casket: Ragunna",
         "type": "Resources",
         "subtype": "Material"
     },
@@ -687,19 +791,43 @@ export default {
         "type": "Resources",
         "subtype": "Cooking Ingredient"
     },
+    "AnimalFat": {
+        "rarity": 1,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_050_UI.T_IconC_050_UI",
+        "name": "Animal Fat",
+        "type": "Resources",
+        "subtype": "Cooking Ingredient"
+    },
     "AzureLizard": {
         "rarity": 1,
         "sort": 0,
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_021_UI.T_IconC_021_UI",
         "name": "Azure Lizard",
         "type": "Resources",
-        "subtype": "Herb"
+        "subtype": "Medicinal Material"
+    },
+    "BayLeaf": {
+        "rarity": 1,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_048_UI.T_IconC_048_UI",
+        "name": "Bay Leaf",
+        "type": "Resources",
+        "subtype": "Cooking Ingredient"
     },
     "Beans": {
         "rarity": 1,
         "sort": 0,
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconCook\/T_IconCook_A14_UI.T_IconCook_A14_UI",
         "name": "Beans",
+        "type": "Resources",
+        "subtype": "Cooking Ingredient"
+    },
+    "BellCrab": {
+        "rarity": 1,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_040_UI.T_IconC_040_UI",
+        "name": "Bell Crab",
         "type": "Resources",
         "subtype": "Cooking Ingredient"
     },
@@ -733,7 +861,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_023_UI.T_IconC_023_UI",
         "name": "Black-Striped Frog",
         "type": "Resources",
-        "subtype": "Herb"
+        "subtype": "Medicinal Material"
     },
     "BlueFeatherButterfly": {
         "rarity": 1,
@@ -741,7 +869,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_026_UI.T_IconC_026_UI",
         "name": "Blue Feather Butterfly",
         "type": "Resources",
-        "subtype": "Herb"
+        "subtype": "Medicinal Material"
     },
     "BoostPart": {
         "rarity": 1,
@@ -757,13 +885,21 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_yuezao_UI.T_IconC_yuezao_UI",
         "name": "Bunnywort",
         "type": "Resources",
-        "subtype": "Herb"
+        "subtype": "Medicinal Material"
     },
     "Caltrop": {
         "rarity": 1,
         "sort": 0,
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_Com_004_1_UI.T_IconC_Com_004_1_UI",
         "name": "Caltrop",
+        "type": "Resources",
+        "subtype": "Cooking Ingredient"
+    },
+    "CassiaBud": {
+        "rarity": 1,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_035_UI.T_IconC_035_UI",
+        "name": "Cassia Bud",
         "type": "Resources",
         "subtype": "Cooking Ingredient"
     },
@@ -781,7 +917,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_SM_Gat_26A_UI.T_IconC_SM_Gat_26A_UI",
         "name": "Chromeshell",
         "type": "Resources",
-        "subtype": "Herb"
+        "subtype": "Medicinal Material"
     },
     "Chrysopa": {
         "rarity": 1,
@@ -789,7 +925,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_yechiling_UI.T_IconC_yechiling_UI",
         "name": "Chrysopa",
         "type": "Resources",
-        "subtype": "Herb"
+        "subtype": "Medicinal Material"
     },
     "Cliffrecluse": {
         "rarity": 1,
@@ -797,7 +933,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_SM_Gat_12A_UI.T_IconC_SM_Gat_12A_UI",
         "name": "Cliffrecluse",
         "type": "Resources",
-        "subtype": "Herb"
+        "subtype": "Medicinal Material"
     },
     "ClimbingFig": {
         "rarity": 1,
@@ -829,7 +965,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_SM_Gat_08A_UI.T_IconC_SM_Gat_08A_UI",
         "name": "Dewvetch",
         "type": "Resources",
-        "subtype": "Herb"
+        "subtype": "Medicinal Material"
     },
     "Dripsnail": {
         "rarity": 1,
@@ -837,7 +973,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_SM_Gat_27A_UI.T_IconC_SM_Gat_27A_UI",
         "name": "Dripsnail",
         "type": "Resources",
-        "subtype": "Herb"
+        "subtype": "Medicinal Material"
     },
     "EchoFrequencyChip": {
         "rarity": 1,
@@ -861,7 +997,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_fuguyoulan_UI.T_IconC_fuguyoulan_UI",
         "name": "Erodorchid",
         "type": "Resources",
-        "subtype": "Herb"
+        "subtype": "Medicinal Material"
     },
     "Feather": {
         "rarity": 1,
@@ -869,7 +1005,23 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_SM_Gat_30A_UI.T_IconC_SM_Gat_30A_UI",
         "name": "Feather",
         "type": "Resources",
-        "subtype": "Herb"
+        "subtype": "Medicinal Material"
+    },
+    "FelicitousOlives": {
+        "rarity": 1,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_042_UI.T_IconC_042_UI",
+        "name": "Felicitous Olives",
+        "type": "Resources",
+        "subtype": "Cooking Ingredient"
+    },
+    "FirecrackerJewelweed": {
+        "rarity": 1,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_043_UI.T_IconC_043_UI",
+        "name": "Firecracker Jewelweed",
+        "type": "Resources",
+        "subtype": "Ascension Material"
     },
     "Fish": {
         "rarity": 1,
@@ -903,6 +1055,14 @@ export default {
         "type": "Resources",
         "subtype": "Crafting Material"
     },
+    "FoolsGold": {
+        "rarity": 1,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_047_UI.T_IconC_047_UI",
+        "name": "Fool's Gold",
+        "type": "Resources",
+        "subtype": "Crafting Material"
+    },
     "FowlMeat": {
         "rarity": 1,
         "sort": 0,
@@ -911,13 +1071,21 @@ export default {
         "type": "Resources",
         "subtype": "Cooking Ingredient"
     },
+    "Fur": {
+        "rarity": 1,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_052_UI.T_IconC_052_UI",
+        "name": "Fur",
+        "type": "Resources",
+        "subtype": "Medicinal Material"
+    },
     "Gemberry": {
         "rarity": 1,
         "sort": 0,
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_SM_Gat_14A_UI.T_IconC_SM_Gat_14A_UI",
         "name": "Gemberry",
         "type": "Resources",
-        "subtype": "Herb"
+        "subtype": "Medicinal Material"
     },
     "GloomSlough": {
         "rarity": 1,
@@ -925,7 +1093,23 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_SM_Gat_28A_UI.T_IconC_SM_Gat_28A_UI",
         "name": "Gloom Slough",
         "type": "Resources",
-        "subtype": "Herb"
+        "subtype": "Medicinal Material"
+    },
+    "GoldcrestScarab": {
+        "rarity": 1,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_039_UI.T_IconC_039_UI",
+        "name": "Goldcrest Scarab",
+        "type": "Resources",
+        "subtype": "Medicinal Material"
+    },
+    "GoldenFleece": {
+        "rarity": 1,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_045_UI.T_IconC_045_UI",
+        "name": "Golden Fleece",
+        "type": "Resources",
+        "subtype": "Ascension Material"
     },
     "GoldenRingedDragonfly": {
         "rarity": 1,
@@ -933,7 +1117,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_jinhuanting_UI.T_IconC_jinhuanting_UI",
         "name": "Golden-ringed Dragonfly",
         "type": "Resources",
-        "subtype": "Herb"
+        "subtype": "Medicinal Material"
     },
     "GoldenbackFrog": {
         "rarity": 1,
@@ -941,7 +1125,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_024_UI.T_IconC_024_UI",
         "name": "Goldenback Frog",
         "type": "Resources",
-        "subtype": "Herb"
+        "subtype": "Medicinal Material"
     },
     "GreenPitLizard": {
         "rarity": 1,
@@ -949,7 +1133,15 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_022_UI.T_IconC_022_UI",
         "name": "Green Pit Lizard",
         "type": "Resources",
-        "subtype": "Herb"
+        "subtype": "Medicinal Material"
+    },
+    "HeliobaneFungia": {
+        "rarity": 1,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_041_UI.T_IconC_041_UI",
+        "name": "Heliobane Fungia",
+        "type": "Resources",
+        "subtype": "Cooking Ingredient"
     },
     "Honeysuckle": {
         "rarity": 1,
@@ -1021,7 +1213,15 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_Sep_021_UI.T_IconC_Sep_021_UI",
         "name": "Lotus Seeds",
         "type": "Resources",
-        "subtype": "Herb"
+        "subtype": "Medicinal Material"
+    },
+    "MasticNuvola": {
+        "rarity": 1,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_037_UI.T_IconC_037_UI",
+        "name": "Mastic Nuvola",
+        "type": "Resources",
+        "subtype": "Cooking Ingredient"
     },
     "Milk": {
         "rarity": 1,
@@ -1085,7 +1285,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_025_UI.T_IconC_025_UI",
         "name": "Phoenix Butterfly",
         "type": "Resources",
-        "subtype": "Herb"
+        "subtype": "Medicinal Material"
     },
     "RawMeat": {
         "rarity": 1,
@@ -1101,7 +1301,15 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_027_UI.T_IconC_027_UI",
         "name": "Red Feather Butterfly",
         "type": "Resources",
-        "subtype": "Herb"
+        "subtype": "Medicinal Material"
+    },
+    "ResonantCalcite": {
+        "rarity": 1,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_046_UI.T_IconC_046_UI",
+        "name": "Resonant Calcite",
+        "type": "Resources",
+        "subtype": "Crafting Material"
     },
     "Rice": {
         "rarity": 1,
@@ -1127,6 +1335,14 @@ export default {
         "type": "Resources",
         "subtype": "Crafting Material"
     },
+    "SeaBunnyMeat": {
+        "rarity": 1,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_051_UI.T_IconC_051_UI",
+        "name": "Sea Bunny Meat",
+        "type": "Resources",
+        "subtype": "Cooking Ingredient"
+    },
     "SeaFlytrap": {
         "rarity": 1,
         "sort": 0,
@@ -1135,13 +1351,21 @@ export default {
         "type": "Resources",
         "subtype": "Cooking Ingredient"
     },
+    "SeasideCendrelis": {
+        "rarity": 1,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_035_UI.T_IconC_035_UI",
+        "name": "Seaside Cendrelis",
+        "type": "Resources",
+        "subtype": "Ascension Material"
+    },
     "SilverLotus": {
         "rarity": 1,
         "sort": 0,
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_031_UI.T_IconC_031_UI",
         "name": "Silver Lotus",
         "type": "Resources",
-        "subtype": "Herb"
+        "subtype": "Medicinal Material"
     },
     "SilverBandedLizard": {
         "rarity": 1,
@@ -1149,13 +1373,21 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_020_UI.T_IconC_020_UI",
         "name": "Silver-Banded Lizard",
         "type": "Resources",
-        "subtype": "Herb"
+        "subtype": "Medicinal Material"
     },
     "Sugar": {
         "rarity": 1,
         "sort": 0,
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconCook\/T_IconCook_A08_UI.T_IconCook_A08_UI",
         "name": "Sugar",
+        "type": "Resources",
+        "subtype": "Cooking Ingredient"
+    },
+    "SunflareEverlasting": {
+        "rarity": 1,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_036_UI.T_IconC_036_UI",
+        "name": "Sunflare Everlasting",
         "type": "Resources",
         "subtype": "Cooking Ingredient"
     },
@@ -1166,6 +1398,14 @@ export default {
         "name": "Sweet and Sour Sauce",
         "type": "Resources",
         "subtype": "Processed Item"
+    },
+    "SwordAcorus": {
+        "rarity": 1,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_044_UI.T_IconC_044_UI",
+        "name": "Sword Acorus",
+        "type": "Resources",
+        "subtype": "Ascension Material"
     },
     "Tea": {
         "rarity": 1,
@@ -1182,6 +1422,14 @@ export default {
         "name": "Terraspawn Fungus",
         "type": "Resources",
         "subtype": "Ascension Material"
+    },
+    "ThiefsTalon": {
+        "rarity": 1,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_049_UI.T_IconC_049_UI",
+        "name": "Thief's Talon",
+        "type": "Resources",
+        "subtype": "Medicinal Material"
     },
     "Tofu": {
         "rarity": 1,
@@ -1213,7 +1461,7 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_SM_Gat_24A_UI.T_IconC_SM_Gat_24A_UI",
         "name": "Viola",
         "type": "Resources",
-        "subtype": "Herb"
+        "subtype": "Medicinal Material"
     },
     "VioletCoral": {
         "rarity": 1,
@@ -1223,13 +1471,21 @@ export default {
         "type": "Resources",
         "subtype": "Ascension Material"
     },
+    "ViscumBerry": {
+        "rarity": 1,
+        "sort": 0,
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_038_UI.T_IconC_038_UI",
+        "name": "Viscum Berry",
+        "type": "Resources",
+        "subtype": "Cooking Ingredient"
+    },
     "Waterlamp": {
         "rarity": 1,
         "sort": 0,
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconC\/T_IconC_SM_Gat_01A_UI.T_IconC_SM_Gat_01A_UI",
         "name": "Waterlamp",
         "type": "Resources",
-        "subtype": "Herb"
+        "subtype": "Medicinal Material"
     },
     "WintryBell": {
         "rarity": 1,

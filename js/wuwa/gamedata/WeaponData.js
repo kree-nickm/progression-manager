@@ -436,7 +436,7 @@ export default {
                 "14"
             ]
         ],
-        "passive": "Increases Energy Regen by {0}. When Outro Skill is cast, increases the incoming Resonator's ATK by {1}, stacking up to {2} time(s). This effect lasts for {3}s.",
+        "passive": "Increases Energy Regen by {0}. Incoming Resonator\u2019s ATK is increased by {1} for {3}s, stackable for up to {2} times after the wielder casts Outro Skill.",
         "enemyMat": "Ring",
         "forgeryMat": "Phlogiston",
         "stat": "Crit",
@@ -548,6 +548,78 @@ export default {
         "forgeryMat": "Helix",
         "stat": "Crit",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050016_UI.T_IconWeapon21050016_UI"
+    },
+    "TheLastDance": {
+        "id": 21030016,
+        "name": "The Last Dance",
+        "rarity": 5,
+        "type": "Pistols",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21030017_UI.T_IconWeapon21030017_UI",
+        "baseATK": 40,
+        "stat": "CritDamage",
+        "baseStat": 1600,
+        "rankData": [
+            [
+                "12%",
+                "15%",
+                "18%",
+                "21%",
+                "24%"
+            ],
+            [
+                "48%",
+                "60%",
+                "72%",
+                "84%",
+                "96%"
+            ],
+            [
+                "5",
+                "5",
+                "5",
+                "5",
+                "5"
+            ]
+        ],
+        "passive": "Increases ATK by {0}. Every time Intro Skill or Resonance Liberation is cast, Resonance Skill DMG Bonus increases by {1} for {2}s.",
+        "enemyMat": "Ring",
+        "forgeryMat": "Phlogiston"
+    },
+    "Tragicomedy": {
+        "id": 21040026,
+        "name": "Tragicomedy",
+        "rarity": 5,
+        "type": "Gauntlets",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21040018_UI.T_IconWeapon21040018_UI",
+        "baseATK": 47,
+        "stat": "Crit",
+        "baseStat": 540,
+        "rankData": [
+            [
+                "12%",
+                "15%",
+                "18%",
+                "21%",
+                "24%"
+            ],
+            [
+                "48%",
+                "60%",
+                "72%",
+                "84%",
+                "96%"
+            ],
+            [
+                "3",
+                "3",
+                "3",
+                "3",
+                "3"
+            ]
+        ],
+        "passive": "Increases ATK by {0}. Every time Basic Attack or Intro Skill is cast, Heavy Attack DMG Bonus increases by {1} for {2}s.",
+        "enemyMat": "Howler Core",
+        "forgeryMat": "Cadence"
     },
     "VerdantSummit": {
         "name": "Verdant Summit",
@@ -843,6 +915,35 @@ export default {
         "stat": "EnergyEfficiency",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21030024_UI.T_IconWeapon21030024_UI"
     },
+    "CallOfTheAbyss": {
+        "id": 21050017,
+        "name": "Call of the Abyss",
+        "rarity": 4,
+        "type": "Rectifier",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050017_UI.T_IconWeapon21050017_UI",
+        "baseATK": 27,
+        "stat": "EnergyEfficiency",
+        "baseStat": 1152,
+        "rankData": [
+            [
+                "16%",
+                "20%",
+                "24%",
+                "28%",
+                "32%"
+            ],
+            [
+                "15",
+                "15",
+                "15",
+                "15",
+                "15"
+            ]
+        ],
+        "passive": "Casting Resonance Liberation increases the Resonator's Healing Bonus by {0} for {1}s.",
+        "enemyMat": "Ring",
+        "forgeryMat": "Helix"
+    },
     "CelestialSpiral": {
         "id": 21040084,
         "name": "Celestial Spiral",
@@ -884,9 +985,7 @@ export default {
         ],
         "passive": "Casting the Resonance Skill grants {0} Resonance Energy and increases ATK by {1}, lasting for {2}s. This effect can be triggered once every {3}s.",
         "enemyMat": "Howler Core",
-        "forgeryMat": "Cadence",
-        "nameHash": "WeaponConf_21020026_WeaponName",
-        "passiveHash": "WeaponConf_21020026_Desc"
+        "forgeryMat": "Cadence"
     },
     "CometFlare": {
         "name": "Comet Flare",
@@ -898,10 +997,10 @@ export default {
         "rankData": [
             [
                 "3%",
-                "3.5%",
-                "4%",
+                "3.75%",
                 "4.5%",
-                "5%"
+                "5.25%",
+                "6%"
             ],
             [
                 "8",
@@ -1079,6 +1178,42 @@ export default {
             ]
         ],
         "passive": "Casting the Resonance Skill grants {0} Resonance Energy and increases ATK by {1}, lasting for {2}s. This effect can be triggered once every {3}s.",
+        "enemyMat": "Howler Core",
+        "forgeryMat": "Metallic Drip"
+    },
+    "FablesOfWisdom": {
+        "id": 21020094,
+        "name": "Fables of Wisdom",
+        "rarity": 4,
+        "type": "Sword",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21020094_UI.T_IconWeapon21020094_UI",
+        "baseATK": 37,
+        "stat": "GreenAtk",
+        "baseStat": 0.04050000011920929,
+        "rankData": [
+            [
+                "4%",
+                "5%",
+                "6%",
+                "7%",
+                "8%"
+            ],
+            [
+                "10",
+                "10",
+                "10",
+                "10",
+                "10"
+            ],
+            [
+                "4",
+                "4",
+                "4",
+                "4",
+                "4"
+            ]
+        ],
+        "passive": "Dealing DMG to enemies with Negative Statuses increases the wielder's ATK by {0} for {1}s. This effect can be triggered 1 time per second, stackable up to {2} times.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Metallic Drip"
     },
@@ -1332,6 +1467,42 @@ export default {
         "stat": "GreenAtk",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050044_UI.T_IconWeapon21050044_UI"
     },
+    "LegendOfDrunkenHero": {
+        "id": 21040094,
+        "name": "Legend of Drunken Hero",
+        "rarity": 4,
+        "type": "Gauntlets",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21040094_UI.T_IconWeapon21040094_UI",
+        "baseATK": 37,
+        "stat": "GreenAtk",
+        "baseStat": 0.04050000011920929,
+        "rankData": [
+            [
+                "4%",
+                "5%",
+                "6%",
+                "7%",
+                "8%"
+            ],
+            [
+                "10",
+                "10",
+                "10",
+                "10",
+                "10"
+            ],
+            [
+                "4",
+                "4",
+                "4",
+                "4",
+                "4"
+            ]
+        ],
+        "passive": "Dealing DMG to enemies with Negative Statuses increases the wielder's ATK by {0} for {1}s. This effect can be triggered 1 time per second, stackable up to {2} times.",
+        "enemyMat": "Howler Core",
+        "forgeryMat": "Cadence"
+    },
     "Lumingloss": {
         "name": "Lumingloss",
         "type": "Sword",
@@ -1488,6 +1659,42 @@ export default {
         "forgeryMat": "Cadence",
         "stat": "EnergyEfficiency",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21040024_UI.T_IconWeapon21040024_UI"
+    },
+    "MeditationsOnMercy": {
+        "id": 21010094,
+        "name": "Meditations on Mercy",
+        "rarity": 4,
+        "type": "Broadblade",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21010094_UI.T_IconWeapon21010094_UI",
+        "baseATK": 37,
+        "stat": "GreenAtk",
+        "baseStat": 0.04050000011920929,
+        "rankData": [
+            [
+                "4%",
+                "5%",
+                "6%",
+                "7%",
+                "8%"
+            ],
+            [
+                "10",
+                "10",
+                "10",
+                "10",
+                "10"
+            ],
+            [
+                "4",
+                "4",
+                "4",
+                "4",
+                "4"
+            ]
+        ],
+        "passive": "Dealing DMG to enemies with Negative Statuses increases the wielder's ATK by {0} for {1}s. This effect can be triggered 1 time per second, stackable up to {2} times.",
+        "enemyMat": "Whisperin Core",
+        "forgeryMat": "Waveworn Residue"
     },
     "Novaburst": {
         "name": "Novaburst",
@@ -1727,6 +1934,42 @@ export default {
             ]
         ],
         "passive": "Casting the Resonance Skill grants {0} Resonance Energy and increases ATK by {1}, lasting for {2}s. This effect can be triggered once every {3}s.",
+        "enemyMat": "Ring",
+        "forgeryMat": "Phlogiston"
+    },
+    "RomanceInFarewell": {
+        "id": 21030094,
+        "name": "Romance in Farewell",
+        "rarity": 4,
+        "type": "Pistols",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21030094_UI.T_IconWeapon21030094_UI",
+        "baseATK": 37,
+        "stat": "GreenAtk",
+        "baseStat": 0.04050000011920929,
+        "rankData": [
+            [
+                "4%",
+                "5%",
+                "6%",
+                "7%",
+                "8%"
+            ],
+            [
+                "10",
+                "10",
+                "10",
+                "10",
+                "10"
+            ],
+            [
+                "4",
+                "4",
+                "4",
+                "4",
+                "4"
+            ]
+        ],
+        "passive": "Dealing DMG to enemies with Negative Statuses increases the wielder's ATK by {0} for {1}s. This effect can be triggered 1 time per second, stackable up to {2} times.",
         "enemyMat": "Ring",
         "forgeryMat": "Phlogiston"
     },
@@ -1994,6 +2237,42 @@ export default {
         "forgeryMat": "Helix",
         "stat": "EnergyEfficiency",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050024_UI.T_IconWeapon21050024_UI"
+    },
+    "WaltzInMasquerade": {
+        "id": 21050094,
+        "name": "Waltz in Masquerade",
+        "rarity": 4,
+        "type": "Rectifier",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050094_UI.T_IconWeapon21050094_UI",
+        "baseATK": 37,
+        "stat": "GreenAtk",
+        "baseStat": 0.04050000011920929,
+        "rankData": [
+            [
+                "4%",
+                "5%",
+                "6%",
+                "7%",
+                "8%"
+            ],
+            [
+                "10",
+                "10",
+                "10",
+                "10",
+                "10"
+            ],
+            [
+                "4",
+                "4",
+                "4",
+                "4",
+                "4"
+            ]
+        ],
+        "passive": "Dealing DMG to enemies with Negative Statuses increases the wielder's ATK by {0} for {1}s. This effect can be triggered 1 time per second, stackable up to {2} times.",
+        "enemyMat": "Ring",
+        "forgeryMat": "Helix"
     },
     "WaningRedshift": {
         "id": 21010084,

@@ -619,7 +619,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconWeilinaiD2_UI.T_IconWeilinaiD2_UI",
             "id": 1002105,
             "name": "Sweeping Force",
-            "desc": "When Changli releases Heavy Attack <color=Highlight>Flaming Sacrifice<\/color> or Resonance Liberation <color=Highlight>Radiance of Fealty<\/color>, Changli's Fusion DMG Bonus is increased by 20%, and Changli ignores 15% of the target's DEF when dealing damage."
+            "desc": "Casting Heavy Attack <color=Highlight>Flaming Sacrifice<\/color> or Resonance Liberation <color=Highlight>Radiance of Fealty<\/color> gives 20% Fusion DMG Bonus and ignores 15% of the target's DEF when dealing damage."
         },
         "Intro Skill": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconWeilinaiQTE_UI.T_IconWeilinaiQTE_UI",

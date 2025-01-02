@@ -475,7 +475,7 @@ export default {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconWeilinaiD1_UI.T_IconWeilinaiD1_UI",
             "id": 1002004,
             "name": "Radiant Surge",
-            "desc": "Jinhsi's Spectro DMG Bonus is increased by 20%."
+            "desc": "Jinhsi gains 20% Spectro DMG Bonus."
         },
         "Forte Circuit Passive 2": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconWeilinaiD2_UI.T_IconWeilinaiD2_UI",

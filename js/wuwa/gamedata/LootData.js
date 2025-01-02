@@ -22,8 +22,8 @@ export default {
     "Phlogiston": {
       "2": "Impure Phlogiston",
       "3": "Extracted Phlogiston",
-      "4": "Refined Phlohiston",
-      "5": "Flawless Phlohiston"
+      "4": "Refined Phlogiston",
+      "5": "Flawless Phlogiston"
     },
     "Helix": {
       "2": "Lento Helix",

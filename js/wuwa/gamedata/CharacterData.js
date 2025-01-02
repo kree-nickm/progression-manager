@@ -59,6 +59,21 @@ export default {
         "enemyMat": "Whisperin Core",
         "forgeryMat": "Metallic Drip"
     },
+    "Carlotta": {
+        "id": 1107,
+        "rarity": 5,
+        "weapon": "Pistols",
+        "element": "Glacio",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_32_UI.T_IconRoleHead256_32_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_kelaita_UI.T_IconRole_Pile_kelaita_UI",
+        "enemyMat": "Polygon Core",
+        "forgeryMat": "Phlogiston",
+        "name": "Carlotta",
+        "alias": "Carlotta",
+        "weeklyMat": "The Netherworld's Stare",
+        "bossMat": "Platinum Core",
+        "floraMat": "Sword Acorus"
+    },
     "Changli": {
         "id": 1205,
         "rarity": 5,
@@ -209,20 +224,20 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_13_UI.T_IconRoleHead256_13_UI",
         "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_baer_UI.T_IconRole_Pile_baer_UI"
     },
-    "RoverSpectro": {
-        "id": 1502,
+    "Roccia": {
+        "id": 1606,
         "rarity": 5,
-        "weapon": "Sword",
-        "element": "Spectro",
-        "name": "Rover-Spectro",
-        "alias": "Vessel of Sounds",
-        "weeklyMat": "Unending Destruction",
-        "bossMat": "Mysterious Code",
-        "floraMat": "Pecok Flower",
-        "enemyMat": "Whisperin Core",
-        "forgeryMat": "Metallic Drip",
-        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_5_UI.T_IconRoleHead256_5_UI",
-        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_zhujue_UI.T_IconRole_Pile_zhujue_UI"
+        "weapon": "Gauntlets",
+        "element": "Havoc",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_33_UI.T_IconRoleHead256_33_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_luokeke_UI.T_IconRole_Pile_luokeke_UI",
+        "enemyMat": "Tidal Residuum",
+        "name": "Roccia",
+        "alias": "Roccia",
+        "weeklyMat": "The Netherworld's Stare",
+        "bossMat": "Cleansing Conch",
+        "floraMat": "Firecracker Jewelweed",
+        "forgeryMat": "Cadence"
     },
     "RoverHavoc": {
         "id": 1605,
@@ -238,6 +253,21 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_4_UI.T_IconRoleHead256_4_UI",
         "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_zhujuenan_UI.T_IconRole_Pile_zhujuenan_UI",
         "alias": "Vessel of Sounds"
+    },
+    "RoverSpectro": {
+        "id": 1502,
+        "rarity": 5,
+        "weapon": "Sword",
+        "element": "Spectro",
+        "name": "Rover-Spectro",
+        "alias": "Vessel of Sounds",
+        "weeklyMat": "Unending Destruction",
+        "bossMat": "Mysterious Code",
+        "floraMat": "Pecok Flower",
+        "enemyMat": "Whisperin Core",
+        "forgeryMat": "Metallic Drip",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_5_UI.T_IconRoleHead256_5_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_zhujue_UI.T_IconRole_Pile_zhujue_UI"
     },
     "Sanhua": {
         "id": 1102,
