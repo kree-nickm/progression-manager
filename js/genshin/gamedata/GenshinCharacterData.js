@@ -2840,6 +2840,29 @@ export default {
             10495
         ]
     },
+    "YumemizukiMizuki": {
+        "name": "Yumemizuki Mizuki",
+        "rarity": 5,
+        "weapon": "Catalyst",
+        "element": "Anemo",
+        "hakushinID": 10000109,
+        "id": 10000109,
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Mizuki.webp",
+        "region": "Inazuma",
+        "matEnemy": "Nobushi",
+        "matBoss": "Spiritspeaker",
+        "matFlower": "Sea Ganoderma",
+        "matMastery": "Transience",
+        "matTrounce": "Fading Candle",
+        "ascendStat": "eleMas",
+        "hpBase": 991.4528198242188,
+        "atkBase": 16.757999420166,
+        "defBase": 58.9325485229492,
+        "hpMaxAsc": 4071.441162109375,
+        "atkMaxAsc": 68.8123779296875,
+        "defMaxAsc": 242.0144958496094,
+        "version": "5.4"
+    },
     "YunJin": {
         "name": "Yun Jin",
         "weapon": "Polearm",

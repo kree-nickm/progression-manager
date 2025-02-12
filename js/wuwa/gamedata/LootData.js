@@ -18,6 +18,18 @@ export default {
       "4": "HF Whisperin Core",
       "5": "FF Whisperin Core"
     },
+    "Polygon Core": {
+      "2": "LF Polygon Core",
+      "3": "MF Polygon Core",
+      "4": "HF Polygon Core",
+      "5": "FF Polygon Core"
+    },
+    "Tidal Residuum": {
+      "2": "LF Tidal Residuum",
+      "3": "MF Tidal Residuum",
+      "4": "HF Tidal Residuum",
+      "5": "FF Tidal Residuum"
+    },
     
     "Phlogiston": {
       "2": "Impure Phlogiston",

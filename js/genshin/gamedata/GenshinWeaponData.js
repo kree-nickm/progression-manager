@@ -1761,6 +1761,47 @@ export default {
         "hakushinID": 11504,
         "id": 11504
     },
+    "SunnyMorningSleepIn": {
+        "name": "Sunny Morning Sleep-In",
+        "rarity": 5,
+        "type": "Catalyst",
+        "hakushinID": 14518,
+        "id": 14518,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_SakuraFan.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_SakuraFan.webp"
+        ],
+        "baseATK": 44,
+        "stat": "eleMas",
+        "matForgery": "Claw",
+        "matStrongEnemy": "Avatars",
+        "matWeakEnemy": "Specters",
+        "passive": "Elemental Mastery increases by @0 for 6s after triggering Swirl. Elemental Mastery increases by @1 for 9s after the wielder's Elemental Skill hits an opponent. Elemental Mastery increases by @2 for 30s after the wielder's Elemental Burst hits an opponent.",
+        "refinementData": [
+            {
+                "1": 120,
+                "2": 150,
+                "3": 180,
+                "4": 210,
+                "5": 240
+            },
+            {
+                "1": 96,
+                "2": 120,
+                "3": 144,
+                "4": 168,
+                "5": 192
+            },
+            {
+                "1": 32,
+                "2": 40,
+                "3": 48,
+                "4": 56,
+                "5": 64
+            }
+        ],
+        "version": "5.4"
+    },
     "SurfsUp": {
         "name": "Surf's Up",
         "rarity": 5,
@@ -4743,6 +4784,24 @@ export default {
                 "5": 31.99999928474
             }
         ],
+        "code": [
+            "proc",
+            [
+                "stat",
+                [
+                    "normal_dmg_",
+                    [
+                        "stat%",
+                        "@0",
+                        "hp",
+                        "@1",
+                        false,
+                        1000
+                    ]
+                ]
+            ],
+            "After Elemental Skill (10s)"
+        ],
         "version": "5.0"
     },
     "RoyalBow": {
@@ -4902,6 +4961,22 @@ export default {
                 "4": 70,
                 "5": 80
             }
+        ],
+        "code": [
+            [
+                "stat",
+                [
+                    "normal_dmg_",
+                    "@0"
+                ]
+            ],
+            [
+                "stat",
+                [
+                    "charged_dmg_",
+                    -10
+                ]
+            ]
         ],
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Rust",
         "hakushinID": 15405,
@@ -5158,6 +5233,27 @@ export default {
                 "4": 49,
                 "5": 56
             }
+        ],
+        "code": [
+            [
+                "addmv",
+                [
+                    "Normal Attack",
+                    "Sunfire Arrow",
+                    "@0%@physical"
+                ]
+            ],
+            [
+                "proc",
+                [
+                    "stat",
+                    [
+                        "charged_dmg_",
+                        "@1"
+                    ]
+                ],
+                "After Charged Attack hit: \"Heartsearer\" (10s)"
+            ]
         ],
         "matForgery": "Scarab",
         "matStrongEnemy": "Hilichurl Rogues",
@@ -5432,6 +5528,33 @@ export default {
         "hakushinID": 12424,
         "id": 12424
     },
+    "TamayurateiNoOhanashi": {
+        "name": "Tamayuratei no Ohanashi",
+        "rarity": 4,
+        "type": "Polearm",
+        "hakushinID": 13432,
+        "id": 13432,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_Aoandon.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_Aoandon.webp"
+        ],
+        "baseATK": 44,
+        "stat": "enerRech_",
+        "matForgery": "Mask",
+        "matStrongEnemy": "Mimiflora",
+        "matWeakEnemy": "Nobushi",
+        "passive": "Increase ATK by @0% and Movement SPD by 10% for 10s when using an Elemental Skill.",
+        "refinementData": [
+            {
+                "1": 20.000000298019998,
+                "2": 25,
+                "3": 30.000001192089996,
+                "4": 34.99999940395,
+                "5": 40.00000059605
+            }
+        ],
+        "version": "5.4"
+    },
     "TheAlleyFlash": {
         "name": "The Alley Flash",
         "rarity": 4,
@@ -5664,6 +5787,14 @@ export default {
                 "4": 11,
                 "5": 10
             }
+        ],
+        "code": [
+            "addmv",
+            [
+                "Normal Attack",
+                "Cyclone",
+                "@0%@physical"
+            ]
         ],
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Viridescent_Hunt",
         "hakushinID": 15409,
@@ -6465,6 +6596,17 @@ export default {
                 "5": 24
             }
         ],
+        "code": [
+            "proc",
+            [
+                "stat",
+                [
+                    "dmg_",
+                    "@0"
+                ]
+            ],
+            "Opponent affected by Hydro or Pyro"
+        ],
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Raven_Bow",
         "hakushinID": 15301,
         "id": 15301
@@ -6519,6 +6661,20 @@ export default {
                 "5": 48
             }
         ],
+        "code": [
+            "proc",
+            [
+                "stat",
+                [
+                    [
+                        "normal_dmg_",
+                        "charged_dmg_"
+                    ],
+                    "@0"
+                ]
+            ],
+            "Hitting a weak spot"
+        ],
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sharpshooter%27s_Oath",
         "hakushinID": 15302,
         "id": 15302
@@ -6545,6 +6701,18 @@ export default {
                 "4": 9,
                 "5": 10
             }
+        ],
+        "code": [
+            "proc",
+            [
+                "stat",
+                [
+                    "atk_",
+                    "@0"
+                ]
+            ],
+            "After Elemental Burst (15s)",
+            4
         ],
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyrider_Greatsword",
         "hakushinID": 12306,
@@ -6573,6 +6741,17 @@ export default {
                 "5": 24
             }
         ],
+        "code": [
+            "proc",
+            [
+                "stat",
+                [
+                    "atk_",
+                    "@0"
+                ]
+            ],
+            "After Elemental Burst (15s)"
+        ],
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyrider_Sword",
         "hakushinID": 11306,
         "id": 11306
@@ -6600,6 +6779,36 @@ export default {
                 "5": 60
             }
         ],
+        "code": [
+            [
+                "proc",
+                [
+                    "stat",
+                    [
+                        [
+                            "normal_dmg_",
+                            "charged_dmg_"
+                        ],
+                        "@0"
+                    ]
+                ],
+                "Normal or Charged Attack hits within 0.3s"
+            ],
+            [
+                "proc",
+                [
+                    "stat",
+                    [
+                        [
+                            "normal_dmg_",
+                            "charged_dmg_"
+                        ],
+                        -10
+                    ]
+                ],
+                "Normal or Charged Attack does not hit within 0.3s"
+            ]
+        ],
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Slingshot",
         "hakushinID": 15304,
         "id": 15304
@@ -6626,6 +6835,17 @@ export default {
                 "4": 42,
                 "5": 48
             }
+        ],
+        "code": [
+            "proc",
+            [
+                "pstat",
+                [
+                    "atk_",
+                    "@0"
+                ]
+            ],
+            "Previous character has TTDS (10s)"
         ],
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Thrilling_Tales_of_Dragon_Slayers",
         "hakushinID": 14302,
@@ -6681,6 +6901,17 @@ export default {
                 "5": 20
             }
         ],
+        "code": [
+            "proc",
+            [
+                "stat",
+                [
+                    "atk_",
+                    "@0"
+                ]
+            ],
+            "After opponent defeated (15s)"
+        ],
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Twin_Nephrite",
         "hakushinID": 14305,
         "id": 14305
@@ -6734,6 +6965,13 @@ export default {
                 "4": 42,
                 "5": 48
             }
+        ],
+        "code": [
+            "stat",
+            [
+                "normal_dmg_",
+                "@0"
+            ]
         ],
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/White_Tassel",
         "hakushinID": 13301,

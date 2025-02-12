@@ -300,6 +300,7 @@ export default class StatModifier {
           method: parameters[2],
           value: Array.isArray(parameters[3]) ? undefined : parameters[3],
           calc: Array.isArray(parameters[3]) ? {func:parameters[3][0], args:parameters[3].slice(1)} : undefined,
+          subs: parameters.slice(4),
         });
       }
     }
@@ -453,6 +454,12 @@ export default class StatModifier {
     {
       let mvStr = Array.isArray(parameters[1]) ? parameters[1].reduce((acc,mv,i) => (acc ? acc + (i==parameters[1].length-1?'" and "':'", "') : '') + mv, '') : parameters[1];
       let value = Array.isArray(parameters[3]) ? StatModifier.funcToStr(parameters[3]) : parameters[3];
+      let subs = [];
+      for(let i=4; i < parameters.length; i++)
+      {
+        value = value.replace("$"+(i-3), String.fromCharCode(941+i));
+        subs.push(String.fromCharCode(941+i) +" is "+ StatModifier.funcToStr(parameters[i]));
+      }
       let result = `Change "${mvStr}" (${parameters[0]})`;
       if(command == "peditmv")
         result += ` of the whole party`;
@@ -470,6 +477,8 @@ export default class StatModifier {
         result += `, adding ${value.charAt(0).toUpperCase()+value.slice(1)} infusion.`;
       else
         result += `, affecting it in some way (${parameters[2]}) by ${value}.`;
+      if(subs.length)
+        result += ` Where ${subs.join(", ")}.`;
       return result;
     }
     else if(command == "addmv" || command == "paddmv")
@@ -503,9 +512,9 @@ export default class StatModifier {
     if(func == "mv")
       return `the value of "${args[0]}"`;
     else if(func == "stat%")
-      return `${args[0]}${GenshinItem.isStatPercent(args[1])?"":"%"} of ${GenshinItem.getStatFull(args[1])}${args[3]?" above "+args[3]:""}${args[2]?", to a max of "+args[2]+(GenshinItem.isStatPercent(args[1])?"":"%"):""}`;
+      return `${Math.pround(args[0], 2)} times ${args[4]?" each "+args[4]+" of ":""}${GenshinItem.getStatFull(args[1])}${args[3]?" above "+Math.pround(args[3], 2):""}${args[2]?", to a max of "+Math.pround(args[2], 2)+(GenshinItem.isStatPercent(args[1])?"":"%"):""}`;
     else if(func == "pmstat%")
-      return `${args[0]}${GenshinItem.isStatPercent(args[1])?"":"%"} of the highest ${GenshinItem.getStatFull(args[1])} on the team${args[3]?" above "+args[3]:""}${args[2]?", to a max of "+args[2]+(GenshinItem.isStatPercent(args[1])?"":"%"):""}`;
+      return `${Math.pround(args[0], 2)} times ${args[4]?" each "+args[4]+" of ":""}the highest ${GenshinItem.getStatFull(args[1])} on the team${args[3]?" above "+Math.pround(args[3], 2):""}${args[2]?", to a max of "+Math.pround(args[2], 2)+(GenshinItem.isStatPercent(args[1])?"":"%"):""}`;
     else if(func == "stacks")
       return `${args.join('/')} (depending on stacks)`;
     else
@@ -569,6 +578,26 @@ export default class StatModifier {
             get() {
               if(!("_value" in this))
                 this._value = thisStatModifier.calcStat(this.calc, asker, alternates) * thisStatModifier.active;
+              return this._value;
+            },
+          });
+        }
+        else if(mv.subs?.length)
+        {
+          let thisStatModifier = this;
+          if(!("_originalValue" in mv))
+            mv._originalValue = mv.value;
+          Object.defineProperty(mv, "value", {
+            get() {
+              if(!("_value" in this))
+              {
+                this._value = this._originalValue;
+                for(let i = 0; i < this.subs.length; i++)
+                {
+                  let calc = {func:this.subs[i][0], args:this.subs[i].slice(1)}
+                  this._value = this._value.replace("$"+(i+1), thisStatModifier.calcStat(calc, asker, alternates) * thisStatModifier.active);
+                }
+              }
               return this._value;
             },
           });
@@ -645,7 +674,7 @@ export default class StatModifier {
           alternates.ignoreMods.push(this);
         }
         
-        const [ amount, otherStat, cap, ignore ] = calc.args;
+        const [ amount, otherStat, cap, ignore, increment ] = calc.args;
         
         let value;
         if(calc.func == "stat%" || !this.characterSource.activeTeam)
@@ -654,11 +683,16 @@ export default class StatModifier {
         {
           value = Math.max(...this.characterSource.activeTeam.characters.map(character => character.getStat(otherStat, alternates)));
         }
+        if(!isNaN(increment))
+          value /= increment;
         
         if(ignore)
           value = Math.max(0, value-ignore);
         
-        value *= amount;
+        value *= parseFloat(amount);
+        if(String(amount).endsWith("%"))
+          value /= 100;
+        
         if(cap)
           return Math.min(cap, value);
         else

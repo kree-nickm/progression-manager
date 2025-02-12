@@ -39,7 +39,7 @@ handlebars.registerHelper("getMotionValues", function(character, talent, options
 
 handlebars.registerHelper("isPreviewing", function(character, item, options) {
   if(item instanceof Artifact)
-    return character.preview[item.slotKey] == item;
+    return character.previewedArtifacts[item.slotKey] == item;
   else
     console.warn(`Invalid item being checked in isPreview for '${character.name}':`, item);
   return false;
@@ -49,7 +49,7 @@ handlebars.registerHelper("buildName", (character, buildId, options) => characte
 
 export default class Character extends Ascendable(GenshinItem)
 {
-  static dontSerialize = super.dontSerialize.concat(["_weapon","_flower","_plume","_sands","_goblet","_circlet","_previewGear","preview","statModifiers","activeTeam"]);
+  static dontSerialize = super.dontSerialize.concat(["_weapon","_flower","_plume","_sands","_goblet","_circlet","_previewGear","previewedArtifacts","previews","statModifiers","activeTeam"]);
   static goodProperties = ["key","level","constellation","ascension","talent"];
   static templateName = "genshin/renderCharacterAsPopup";
   
@@ -81,7 +81,6 @@ export default class Character extends Ascendable(GenshinItem)
   talent;
 
   selectedBuild = 0;
-  previews = {};
 
   _weapon = null;
   _flower = null;
@@ -89,10 +88,17 @@ export default class Character extends Ascendable(GenshinItem)
   _sands = null;
   _goblet = null;
   _circlet = null;
-  _previewGear = {};
-  preview = {};
   statModifiers = [];
   activeTeam = null;
+  
+  // Holds Artifact objects that were created specifically to be previews.
+  _previewGear = {};
+  
+  // Holds Artifact objects that you actually own by slot.
+  previewedArtifacts = {};
+  
+  // Holds the values entered into the Preview Changes input boxes.
+  previews = {};
   
   afterLoad()
   {
@@ -170,13 +176,13 @@ export default class Character extends Ascendable(GenshinItem)
   {
     if(!super.afterUpdate(field, value, action, options))
       return false;
-    if(["preview","ascension","constellation","weapon","flowerArtifact","plumeArtifact","sandsArtifact","gobletArtifact","circletArtifact"].includes(field.path[0]))
+    if(["previewedArtifacts","ascension","constellation","weapon","flowerArtifact","plumeArtifact","sandsArtifact","gobletArtifact","circletArtifact"].includes(field.path[0]))
     {
       this.clearMemory("stats");
       this.clearMemory("motionValues");
       this.update("statModifiers", null, "notify", {listChange:true, mvChange:"*", mainChange:true, rxnChange:false});
       
-      if(!["preview"].includes(field.path[0]))
+      if(!["previewedArtifacts"].includes(field.path[0]))
       {
         this.notifyType(field.string);
         // Iterate through artifacts and clear some amount of artifact.storedStats
@@ -539,16 +545,17 @@ export default class Character extends Ascendable(GenshinItem)
     this._previewGear.weapon.level = this.previews?.weaponLevel ?? this.weapon?.level ?? 1;
     this._previewGear.weapon.ascension = this.previews?.weaponAscension ?? this.weapon?.ascension ?? 0;
     this._previewGear.weapon.refinement = this.previews?.weaponRefinement ?? this.weapon?.refinement ?? 1;
+    this._previewGear.weapon.clearMemory("code");
     return this._previewGear.weapon;
   }
   // Lowercase because the slot key is always lowercase.
   getPreviewArtifact(slotKey)
   {
-    let current = this.preview[slotKey] ?? this[slotKey+'Artifact'];
+    let current = this.previewedArtifacts[slotKey] ?? this[slotKey+'Artifact'];
     if(!current)
       return null;
     if(!this.previews[slotKey+'Stat'] || this.previews[slotKey+'Stat'] == current.mainStatKey)
-      return this.preview[slotKey];
+      return this.previewedArtifacts[slotKey];
     if(!this._previewGear[slotKey])
       this._previewGear[slotKey] = new Artifact();
     this._previewGear[slotKey].isPreview = true;
@@ -563,6 +570,7 @@ export default class Character extends Ascendable(GenshinItem)
       this._previewGear[slotKey].substats = current.substats;
       this._previewGear[slotKey].determineRolls();
     }
+    this._previewGear[slotKey].clearMemory("storedStats");
     return this._previewGear[slotKey];
   }
   
@@ -1208,10 +1216,10 @@ export default class Character extends Ascendable(GenshinItem)
             }
             else if(motionValue.key.endsWith("DMG Bonus"))
             {
-              if(this.key == "Shenhe" || this.key == "Xianyun")
+              if(this.key == "Shenhe" || this.key == "Xianyun" || this.key == "SangonomiyaKokomi")
               {
                 motionValue.values[v].dmgType = "bonus";
-                motionValue.values[v].stat = "atk";
+                //motionValue.values[v].stat = "atk";
               }
               else
               {
@@ -1527,7 +1535,7 @@ export default class Character extends Ascendable(GenshinItem)
     }
     
     // Defense
-    let DEF = 5 * (this.list.targetEnemyData[`enemyLevel`]??90) + 500;
+    //let DEF = 5 * (this.list.targetEnemyData[`enemyLevel`]??90) + 500;
     let k = (1 + this.getStat("enemy_def_",alternates)/100) * (1 - this.getStat("ignore_def_",alternates)/100); // TODO: Ignore def is probably not a stat, because it's attack-specific and not an actual buff to the character.
     let reductionDEF = (level + 100) / (k * ((this.list.targetEnemyData[`enemyLevel`]??90) + 100) + (level + 100));
     
@@ -1541,7 +1549,7 @@ export default class Character extends Ascendable(GenshinItem)
       rxnMult = this.getReaction(motionValue.reaction, alternates);
     
     // Final
-    critRate = Math.max(critRate, 1);
+    critRate = Math.max(Math.min(critRate, 1), 0);
     partialValue.value = (partialValue.baseDMG * baseMult + baseAdd) * (1 + dmgMult/100) * (ignoreRES ? 1 : reductionRES) * (ignoreDEF ? 1 : reductionDEF) * rxnMult;
     partialValue.critical = partialValue.value * critDMG;
     partialValue.average = critRate * partialValue.critical + (1-critRate) * partialValue.value;
@@ -1887,6 +1895,7 @@ export default class Character extends Ascendable(GenshinItem)
         event.stopPropagation();
         event.preventDefault();
         this.update("previews", {}, "replace");
+        this.update("previewedArtifacts", {}, "replace");
       };
     }
     
@@ -1896,7 +1905,10 @@ export default class Character extends Ascendable(GenshinItem)
       previewResetBtn.onclick = event => {
         event.stopPropagation();
         event.preventDefault();
-        this.activeTeam?.characters.forEach(chara => chara.update("previews", {}, "replace"));
+        this.activeTeam?.characters.forEach(chara => {
+          chara.update("previews", {}, "replace");
+          chara.update("previewedArtifacts", {}, "replace");
+        });
       };
     }
     
@@ -1906,7 +1918,10 @@ export default class Character extends Ascendable(GenshinItem)
       previewResetBtn.onclick = event => {
         event.stopPropagation();
         event.preventDefault();
-        this.list.items().forEach(chara => chara.update("previews", {}, "replace"));
+        this.list.items().forEach(chara => {
+          chara.update("previews", {}, "replace");
+          chara.update("previewedArtifacts", {}, "replace");
+        });
       };
     }
   }
@@ -2209,18 +2224,18 @@ export default class Character extends Ascendable(GenshinItem)
         }
         
         equipBtn.onclick = async event => {
-          let prevArtifact = this.preview[artifact.slotKey];
+          let prevArtifact = this.previewedArtifacts[artifact.slotKey];
           let prevArtifactElement;
           if(prevArtifact == artifact)
           {
-            this.preview[artifact.slotKey] = null;
+            this.previewedArtifacts[artifact.slotKey] = null;
           }
           else
           {
             prevArtifactElement = prevArtifact ? characterArtifacts.querySelector(`.list-item[data-uuid="${prevArtifact.uuid}"]`) : null;
-            this.preview[artifact.slotKey] = artifact;
+            this.previewedArtifacts[artifact.slotKey] = artifact;
           }
-          this.update("preview", null, "notify");
+          this.update("previewedArtifacts", null, "notify");
           let relatedItems = await this.getRelatedItems({buildId});
           // This could be handled by implementing "needsUpdate" on all templated elements, and using an "update()" on an associated item.
           //Renderer.rerender(rootElement.querySelector(".character-stats"), {relatedItems});

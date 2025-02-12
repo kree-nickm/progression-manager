@@ -377,11 +377,53 @@ export default {
         },
         "1st Ascension Passive": {
             "name": "Mamaloaco's Frigid Rain",
-            "text": "While Itzpapa is on the field, after nearby party members trigger the Frozen or Melt reactions, the <color=#FF9999FF>Pyro<\/color> and <color=#80C0FFFF>Hydro<\/color> RES of opponents affected by that reaction decreases by 20% for 12s. Additionally, Citlali will regain 16 Nightsoul points. Nightsoul points can be restored this way once every 8s."
+            "text": "While Itzpapa is on the field, after nearby party members trigger the Frozen or Melt reactions, the <color=#FF9999FF>Pyro<\/color> and <color=#80C0FFFF>Hydro<\/color> RES of opponents affected by that reaction decreases by 20% for 12s. Additionally, Citlali will regain 16 Nightsoul points. Nightsoul points can be restored this way once every 8s.",
+            "code": [
+                "proc",
+                [
+                    "stat",
+                    [
+                        [
+                            "enemy_pyro_res_",
+                            "enemy_hydro_res_"
+                        ],
+                        20
+                    ]
+                ],
+                "After a Frozen or Melt reaction (12s)"
+            ]
         },
         "4th Ascension Passive": {
             "name": "Itzpapalotl's Star Garments",
-            "text": "During the Elemental Skill <color=#FFD780FF>Dawnfrost Darkstar<\/color>, Itzpapa's Frostfall Storm DMG is increased by 90% of Citlali's Elemental Mastery. During the Elemental Burst <color=#FFD780FF>Edict of Entwined Splendor<\/color>, Ice Storm DMG is increased by 1200% of Citlali's Elemental Mastery.\\nIn addition, when nearby party members trigger Nightsoul Bursts, Citlali regains 4 Nightsoul points."
+            "text": "During the Elemental Skill <color=#FFD780FF>Dawnfrost Darkstar<\/color>, Itzpapa's Frostfall Storm DMG is increased by 90% of Citlali's Elemental Mastery. During the Elemental Burst <color=#FFD780FF>Edict of Entwined Splendor<\/color>, Ice Storm DMG is increased by 1200% of Citlali's Elemental Mastery.\\nIn addition, when nearby party members trigger Nightsoul Bursts, Citlali regains 4 Nightsoul points.",
+            "code": [
+                [
+                    "editmv",
+                    [
+                        "Elemental Skill",
+                        "Frostfall Storm DMG",
+                        "+base",
+                        [
+                            "stat%",
+                            90,
+                            "eleMas"
+                        ]
+                    ]
+                ],
+                [
+                    "editmv",
+                    [
+                        "Elemental Burst",
+                        "Ice Storm DMG",
+                        "+base",
+                        [
+                            "stat%",
+                            1200,
+                            "eleMas"
+                        ]
+                    ]
+                ]
+            ]
         },
         "Utility Passive": {
             "name": "Night Realm's Gift: Smoke, Mirrors, and the Flowing Winds",

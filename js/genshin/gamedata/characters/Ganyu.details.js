@@ -364,12 +364,31 @@ export default {
         "1st Ascension Passive": {
             "name": "Undivided Heart",
             "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a3\/Talent_Undivided_Heart.png",
-            "text": "After firing a Frostflake Arrow, the CRIT Rate of subsequent Frostflake Arrows and their resulting bloom effects is increased by 20% for 5s."
+            "text": "After firing a Frostflake Arrow, the CRIT Rate of subsequent Frostflake Arrows and their resulting bloom effects is increased by 20% for 5s.",
+            "code": [
+                "sstat",
+                [
+                    "critRate_",
+                    20,
+                    "Charged Attack"
+                ]
+            ]
         },
         "4th Ascension Passive": {
             "name": "Harmony Between Heaven and Earth",
             "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d4\/Talent_Harmony_between_Heaven_and_Earth.png",
-            "text": "Celestial Shower grants a 20% <span class=\"text-cryo\"><b>Cryo DMG Bonus<\/b><\/span> to active members in the AoE."
+            "text": "Celestial Shower grants a 20% <span class=\"text-cryo\"><b>Cryo DMG Bonus<\/b><\/span> to active members in the AoE.",
+            "code": [
+                "proc",
+                [
+                    "pstat",
+                    [
+                        "cryo_dmg_",
+                        20
+                    ]
+                ],
+                "Within Elemental Burst"
+            ]
         },
         "Utility Passive": {
             "name": "Preserved for the Hunt",
@@ -381,7 +400,18 @@ export default {
         "1": {
             "name": "Dew-Drinker",
             "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/74\/Constellation_Dew-Drinker.png",
-            "text": "Charge Level 2 Frostflake Arrows or Frostflake Arrow Blooms decrease opponents' <color=#99FFFFFF>Cryo RES<\/color> by 15% for 6s upon hit.\\nA hit also regenerates 2 Energy for Ganyu. This effect can only occur once per Charge Level 2 Frostflake Arrow, regardless if Frostflake Arrow itself or its Bloom hits the target."
+            "text": "Charge Level 2 Frostflake Arrows or Frostflake Arrow Blooms decrease opponents' <color=#99FFFFFF>Cryo RES<\/color> by 15% for 6s upon hit.\\nA hit also regenerates 2 Energy for Ganyu. This effect can only occur once per Charge Level 2 Frostflake Arrow, regardless if Frostflake Arrow itself or its Bloom hits the target.",
+            "code": [
+                "proc",
+                [
+                    "pstat",
+                    [
+                        "enemy_cryo_res_",
+                        15
+                    ]
+                ],
+                "After Frostflake Arrow hit (6s)"
+            ]
         },
         "2": {
             "name": "The Auspicious",
@@ -403,7 +433,19 @@ export default {
         "4": {
             "name": "Westward Sojourn",
             "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e0\/Constellation_Westward_Sojourn.png",
-            "text": "Opponents standing within the AoE of <color=#FFD780FF>Celestial Shower<\/color> take increased DMG. This effect strengthens over time.\\nIncreased DMG taken begins at 5% and increases by 5% every 3s, up to a maximum of 25%.\\nThe effect lingers for 3s after the opponent leaves the AoE."
+            "text": "Opponents standing within the AoE of <color=#FFD780FF>Celestial Shower<\/color> take increased DMG. This effect strengthens over time.\\nIncreased DMG taken begins at 5% and increases by 5% every 3s, up to a maximum of 25%.\\nThe effect lingers for 3s after the opponent leaves the AoE.",
+            "code": [
+                "proc",
+                [
+                    "pstat",
+                    [
+                        "dmg_",
+                        5
+                    ]
+                ],
+                "Enemy within Elemental Burst (stack increases every 3s)",
+                5
+            ]
         },
         "5": {
             "name": "The Merciful",

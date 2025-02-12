@@ -342,7 +342,43 @@ export default {
                     "14": "70",
                     "15": "70"
                 }
-            }
+            },
+            "code": [
+                "proc",
+                [
+                    [
+                        "stat",
+                        [
+                            "normal_dmg",
+                            [
+                                "mv",
+                                "Normal Attack DMG Bonus"
+                            ]
+                        ]
+                    ],
+                    [
+                        "stat",
+                        [
+                            "charged_dmg",
+                            [
+                                "mv",
+                                "Charged Attack DMG Bonus"
+                            ]
+                        ]
+                    ],
+                    [
+                        "stat",
+                        [
+                            "skill_dmg",
+                            [
+                                "mv",
+                                "Bake-Kurage DMG Bonus"
+                            ]
+                        ]
+                    ]
+                ],
+                "During Elemental Burst"
+            ]
         },
         "1st Ascension Passive": {
             "name": "Tamakushi Casket",
@@ -352,7 +388,25 @@ export default {
         "4th Ascension Passive": {
             "name": "Song of Pearls",
             "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5f\/Talent_Song_of_Pearls.png",
-            "text": "While donning the Ceremonial Garment created by Nereid's Ascension, the Normal and Charged Attack DMG Bonus Sangonomiya Kokomi gains based on her Max HP will receive a further increase based on 15% of her Healing Bonus."
+            "text": "While donning the Ceremonial Garment created by Nereid's Ascension, the Normal and Charged Attack DMG Bonus Sangonomiya Kokomi gains based on her Max HP will receive a further increase based on 15% of her Healing Bonus.",
+            "code": [
+                "editmv",
+                [
+                    "Elemental Burst",
+                    [
+                        "Normal Attack DMG Bonus",
+                        "Charged Attack DMG Bonus",
+                        "Bake-Kurage DMG Bonus"
+                    ],
+                    "+hit",
+                    "$1% Max HP",
+                    [
+                        "stat%",
+                        0.15,
+                        "heal_"
+                    ]
+                ]
+            ]
         },
         "Utility Passive": {
             "name": "Princess of Watatsumi",

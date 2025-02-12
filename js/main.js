@@ -14,6 +14,10 @@ window.stringInstanceOf = function(object, className) {
   return false;
 };
 
+Math.pround = function(value, maxDecimals) {
+  return parseFloat(parseFloat(value).toFixed(parseInt(maxDecimals)));
+};
+
 // Add some features that we can use for debugging purposes.
 window.DEBUGLOG = {
   queueUpdate: false,

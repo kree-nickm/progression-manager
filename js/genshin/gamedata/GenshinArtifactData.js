@@ -1013,7 +1013,7 @@ export default {
         "bonus4code": [
             "proc",
             [
-                "stat",
+                "pstat",
                 [
                     [
                         "cryo_dmg_",
@@ -1878,7 +1878,7 @@ export default {
             ]
         ],
         "bonus4": "When the equipping character heals a party member, the Yearning effect will be created for 6s, which records the total amount of healing provided (including overflow healing). When the duration expires, the Yearning effect will be transformed into the \"Waves of Days Past\" effect: When your active party member hits an opponent with a Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, or Elemental Burst, the DMG dealt will be increased by 8% of the total healing amount recorded by the Yearning effect. The \"Waves of Days Past\" effect is removed after it has taken effect 5 times or after 10s. A single instance of the Yearning effect can record up to 15,000 healing, and only a single instance can exist at once, but it can record the healing from multiple equipping characters. Equipping characters on standby can still trigger this effect.",
-        "bonus4code": [],
+        "bonus4code": ["proc", ["pstat", [["normal_dmg","charged_dmg","plunging_dmg","skill_dmg","burst_dmg"], 0.08]], "Amount of healing recorded by \"Yearning\": \"Waves of Days Past\" (10s or 5 hits)", 15000],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4b\/Item_Forgotten_Oath_of_Days_Past.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fc\/Item_Recollection_of_Days_Past.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/62\/Item_Echoing_Sound_From_Days_Past.png",
@@ -2026,7 +2026,7 @@ export default {
             [
                 "proc",
                 [
-                    "stat",
+                    "pstat",
                     [
                         "elemental_dmg_",
                         12
@@ -2037,7 +2037,7 @@ export default {
             [
                 "proc",
                 [
-                    "stat",
+                    "pstat",
                     [
                         "elemental_dmg_",
                         28
