@@ -805,7 +805,7 @@ export default {
             ],
             "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconDevice\/T_IconDevice_nannvzhuM6_UI.T_IconDevice_nannvzhuM6_UI",
             "name": "Echoes of Wanderlust",
-            "desc": "Resonance Skill <color=Highlight>Resonating Slashes<\/color> and Resonance Skill <color=Highlight>Resonating Spin<\/color> reduces the target's Spectro DMG RES by 10% on hit for 20s."
+            "desc": "Resonance Skill <color=Highlight>Resonating Slashes<\/color> and Resonance Skill <color=Highlight>Resonating Spin<\/color> reduces the target's Spectro RES by 10% on hit for 20s."
         }
     }
 };

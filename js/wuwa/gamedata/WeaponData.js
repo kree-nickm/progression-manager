@@ -235,6 +235,63 @@ export default {
         "stat": "Crit",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21020015_UI.T_IconWeapon21020015_UI"
     },
+    "LuminousHymn": {
+        "id": 21050046,
+        "name": "Luminous Hymn",
+        "rarity": 5,
+        "type": "Rectifier",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050029_UI.T_IconWeapon21050029_UI",
+        "baseATK": 40,
+        "stat": "Crit",
+        "baseStat": 800,
+        "rankData": [
+            [
+                "12%",
+                "15%",
+                "18%",
+                "21%",
+                "24%"
+            ],
+            [
+                "14%",
+                "17.5%",
+                "21%",
+                "24.5%",
+                "28%"
+            ],
+            [
+                "3",
+                "3",
+                "3",
+                "3",
+                "3"
+            ],
+            [
+                "6",
+                "6",
+                "6",
+                "6",
+                "6"
+            ],
+            [
+                "30%",
+                "37.5%",
+                "45%",
+                "52.5%",
+                "60%"
+            ],
+            [
+                "30",
+                "30",
+                "30",
+                "30",
+                "30"
+            ]
+        ],
+        "passive": "Increase ATK by {0}. Dealing DMG to targets with Spectro Frazzle grants the wielder {1} Basic Attack DMG Bonus and {1} Heavy Attack DMG Bonus, stacking up to <SapTag=2>{2}<\/SapTag> {Cus:Sap,S=time P=times SapTag=2} for {3}s. Casting Outro Skill Amplifies the Spectro Frazzle DMG on targets around the active Resonator by {4} for {5}s. Effects of the same name cannot be stacked.",
+        "enemyMat": "Ring",
+        "forgeryMat": "Helix"
+    },
     "LustrousRazor": {
         "name": "Lustrous Razor",
         "type": "Broadblade",
@@ -620,6 +677,56 @@ export default {
         "passive": "Increases ATK by {0}. Every time Basic Attack or Intro Skill is cast, Heavy Attack DMG Bonus increases by {1} for {2}s.",
         "enemyMat": "Howler Core",
         "forgeryMat": "Cadence"
+    },
+    "UnflickeringValor": {
+        "id": 21020036,
+        "name": "Unflickering Valor",
+        "rarity": 5,
+        "type": "Sword",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21020025_UI.T_IconWeapon21020025_UI",
+        "baseATK": 33,
+        "stat": "EnergyEfficiency",
+        "baseStat": 1712,
+        "rankData": [
+            [
+                "8%",
+                "10%",
+                "12%",
+                "14%",
+                "16%"
+            ],
+            [
+                "24%",
+                "30%",
+                "36%",
+                "42%",
+                "48%"
+            ],
+            [
+                "10",
+                "10",
+                "10",
+                "10",
+                "10"
+            ],
+            [
+                "24%",
+                "30%",
+                "36%",
+                "42%",
+                "48%"
+            ],
+            [
+                "4",
+                "4",
+                "4",
+                "4",
+                "4"
+            ]
+        ],
+        "passive": "Increase Crit. Rate by {0}. Casting Resonance Liberation gives {1} Basic Attack DMG Bonus for {2}s. Dealing Basic Attack DMG gives {3} Basic Attack DMG Bonus for {4}s.",
+        "enemyMat": "Howler Core",
+        "forgeryMat": "Metallic Drip"
     },
     "VerdantSummit": {
         "name": "Verdant Summit",
@@ -1731,6 +1838,28 @@ export default {
         "forgeryMat": "Phlogiston",
         "stat": "GreenAtk",
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21030064_UI.T_IconWeapon21030064_UI"
+    },
+    "OceansGift": {
+        "id": 21050027,
+        "name": "Ocean's Gift",
+        "rarity": 4,
+        "type": "Rectifier",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconWeapon\/T_IconWeapon21050036_UI.T_IconWeapon21050036_UI",
+        "baseATK": 37,
+        "stat": "GreenAtk",
+        "baseStat": 0.04050000011920929,
+        "rankData": [
+            [
+                "6%",
+                "7%",
+                "8%",
+                "9%",
+                "10%"
+            ]
+        ],
+        "passive": "Dealing DMG to enemies with Spectro Frazzle increases the wielder's Spectro DMG by {0}, gaining 1 stack per second for 6s, stacking up to 4 times.",
+        "enemyMat": "Ring",
+        "forgeryMat": "Helix"
     },
     "ScaleSlasher": {
         "renamed": "Overture",

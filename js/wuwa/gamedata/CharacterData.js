@@ -29,6 +29,21 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_6_UI.T_IconRoleHead256_6_UI",
         "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_bailian_UI.T_IconRole_Pile_bailian_UI"
     },
+    "Brant": {
+        "id": 1206,
+        "rarity": 5,
+        "weapon": "Sword",
+        "element": "Fusion",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_44_UI.T_IconRoleHead256_44_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_Bulante_UI.T_IconRole_Pile_Bulante_UI",
+        "enemyMatHash": "ItemInfo_41100052_Name",
+        "name": "Brant",
+        "alias": "Brant",
+        "weeklyMat": "The Netherworld's Stare",
+        "bossMat": "Blazing Bone",
+        "floraMat": "Golden Fleece",
+        "forgeryMat": "Metallic Drip"
+    },
     "Calcharo": {
         "id": 1301,
         "rarity": 5,
@@ -224,6 +239,21 @@ export default {
         "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_13_UI.T_IconRoleHead256_13_UI",
         "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_baer_UI.T_IconRole_Pile_baer_UI"
     },
+    "Phoebe": {
+        "id": 1506,
+        "rarity": 5,
+        "weapon": "Rectifier",
+        "element": "Spectro",
+        "icon": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRoleHead256\/T_IconRoleHead256_45_UI.T_IconRoleHead256_45_UI",
+        "portrait": "\/Game\/Aki\/UI\/UIResources\/Common\/Image\/IconRolePile\/T_IconRole_Pile_Feibi_UI.T_IconRole_Pile_Feibi_UI",
+        "name": "Phoebe",
+        "alias": "Phoebe",
+        "weeklyMat": "Sentinel's Dagger",
+        "bossMat": "Cleansing Conch",
+        "floraMat": "Firecracker Jewelweed",
+        "enemyMat": "Whisperin Core",
+        "forgeryMat": "Helix"
+    },
     "Roccia": {
         "id": 1606,
         "rarity": 5,
@@ -237,7 +267,8 @@ export default {
         "weeklyMat": "The Netherworld's Stare",
         "bossMat": "Cleansing Conch",
         "floraMat": "Firecracker Jewelweed",
-        "forgeryMat": "Cadence"
+        "forgeryMat": "Cadence",
+        "enemyMatHash": "ItemInfo_41100052_Name"
     },
     "RoverHavoc": {
         "id": 1605,

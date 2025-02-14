@@ -447,7 +447,7 @@ export default {
                 }
             ],
             "name": "Commedia Improvviso!",
-            "desc": "Roccia's improvised comedy begins! Deal <color=Dark>Havoc DMG<\/color> to the target, considered Heavy Attack DMG. For every 0.1% of Roccia's Crit. Rate over 50%, this skill increases the ATK of all Resnonators in the team by <SapTag=2>1<\/SapTag> {Cus:Sap,S=point P=points SapTag=2} for 30s, up to 200 points."
+            "desc": "Roccia's improvised comedy begins! Deal <color=Dark>Havoc DMG<\/color> to the target, considered Heavy Attack DMG. For every 0.1% of Roccia's Crit. Rate over 50%, this skill increases the ATK of all Resonators in the team by <SapTag=2>1<\/SapTag> {Cus:Sap,S=point P=points SapTag=2} for 30s, up to 200 points."
         },
         "Forte Circuit Passive 1": {
             "icon": "\/Game\/Aki\/Effect\/Texture\/Icon\/IconSkill\/T_IconYinlinD2_UI.T_IconYinlinD2_UI",
