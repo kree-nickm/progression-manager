@@ -587,6 +587,24 @@ export default {
         "rarity": 4,
         "release": "November 19, 2024"
     },
+    "ColdCrackedShellshard": {
+        "name": "Cold-Cracked Shellshard",
+        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_112119.webp",
+        "rarity": 2,
+        "release": "March 25, 2025"
+    },
+    "WarmBackShell": {
+        "name": "Warm Back-Shell",
+        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_112120.webp",
+        "rarity": 3,
+        "release": "March 25, 2025"
+    },
+    "BlazingPrismshell": {
+        "name": "Blazing Prismshell",
+        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_112121.webp",
+        "rarity": 4,
+        "release": "March 25, 2025"
+    },
     "MaintenanceMekSalvagedParts": {
         "name": "\"Maintenance Mek\" Salvaged Parts",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/43\/Item_Maintenance_Mek_Salvaged_Parts.png",
@@ -775,6 +793,12 @@ export default {
         "rarity": 4,
         "release": "December 31, 2024"
     },
+    "SparklessStatueCore": {
+        "name": "Sparkless Statue Core",
+        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_113072.webp",
+        "rarity": 4,
+        "release": "March 25, 2025"
+    },
     "DvalinsPlume": {
         "name": "Dvalin's Plume",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bf\/Item_Dvalin%27s_Plume.png",
@@ -924,6 +948,11 @@ export default {
         "name": "Denial and Judgment",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/43\/Item_Denial_and_Judgment.png",
         "rarity": 5
+    },
+    "TheCornerstoneOfStarsAndFlames": {
+        "name": "The Cornerstone of Stars and Flames",
+        "img": "https://api.hakush.in/gi/UI/UI_ItemIcon_113063.webp",
+        "rarity": 5,
     },
     "ErodedHorn": {
         "name": "Eroded Horn",

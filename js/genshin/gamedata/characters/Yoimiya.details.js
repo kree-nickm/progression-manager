@@ -233,7 +233,35 @@ export default {
                     "14": "18s",
                     "15": "18s"
                 }
-            }
+            },
+            "code": [
+                "proc",
+                [
+                    [
+                        "editmv",
+                        [
+                            "Normal Attack",
+                            "autos",
+                            "*base",
+                            [
+                                "mv",
+                                "Blazing Arrow DMG",
+                                "%1"
+                            ]
+                        ]
+                    ],
+                    [
+                        "editmv",
+                        [
+                            "Normal Attack",
+                            "autos",
+                            "infuse",
+                            "pyro"
+                        ]
+                    ]
+                ],
+                "\"Niwabi Enshou\" (10s)"
+            ]
         },
         "Elemental Burst": {
             "name": "Ryuukin Saxifrage",
@@ -330,12 +358,49 @@ export default {
         "1st Ascension Passive": {
             "name": "Tricks of the Trouble-Maker",
             "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a2\/Talent_Tricks_of_the_Trouble-Maker.png",
-            "text": "During Niwabi Fire-Dance, shots from Yoimiya's Normal Attack will increase her <span class=\"text-pyro\"><b>Pyro DMG Bonus<\/b><\/span> by 2% on hit. This effect lasts for 3s and can have a maximum of 10 stacks."
+            "text": "During Niwabi Fire-Dance, shots from Yoimiya's Normal Attack will increase her <span class=\"text-pyro\"><b>Pyro DMG Bonus<\/b><\/span> by 2% on hit. This effect lasts for 3s and can have a maximum of 10 stacks.",
+            "code": [
+                "proc",
+                [
+                    "stat",
+                    [
+                        "pyro_dmg_",
+                        2
+                    ]
+                ],
+                10,
+                "After hit during Elemental Skill (3s)"
+            ]
         },
         "4th Ascension Passive": {
             "name": "Summer Night's Dawn",
             "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9b\/Talent_Summer_Night%27s_Dawn.png",
-            "text": "Using Ryuukin Saxifrage causes nearby party members (not including Yoimiya) to gain a 10% ATK increase for 15s. Additionally, a further ATK Bonus will be added on based on the number of \"Tricks of the Trouble-Maker\" stacks Yoimiya possesses when using Ryuukin Saxifrage. Each stack increases this ATK Bonus by 1%."
+            "text": "Using Ryuukin Saxifrage causes nearby party members (not including Yoimiya) to gain a 10% ATK increase for 15s. Additionally, a further ATK Bonus will be added on based on the number of \"Tricks of the Trouble-Maker\" stacks Yoimiya possesses when using Ryuukin Saxifrage. Each stack increases this ATK Bonus by 1%.",
+            "code": [
+                [
+                    "proc",
+                    [
+                        "opstat",
+                        [
+                            "atk_",
+                            10
+                        ]
+                    ],
+                    "After Elemental Burst (15s)"
+                ],
+                [
+                    "proc",
+                    [
+                        "opstat",
+                        [
+                            "atk_",
+                            1
+                        ]
+                    ],
+                    10,
+                    "Tricks of the Trouble-Maker stacks"
+                ]
+            ]
         },
         "Utility Passive": {
             "name": "Blazing Match",

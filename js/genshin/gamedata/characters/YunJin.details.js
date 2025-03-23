@@ -359,7 +359,23 @@ export default {
                     "14": "60",
                     "15": "60"
                 }
-            }
+            },
+            "code": [
+                "proc",
+                [
+                    "peditmv",
+                    [
+                        "Normal Attack",
+                        "autos",
+                        "+base",
+                        [
+                            "mv",
+                            "DMG Increase"
+                        ]
+                    ]
+                ],
+                "During Elemental Burst: \"Flying Cloud Flag Formation\""
+            ]
         },
         "1st Ascension Passive": {
             "name": "True to Oneself",
@@ -369,7 +385,43 @@ export default {
         "4th Ascension Passive": {
             "name": "Breaking Conventions",
             "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fa\/Talent_Breaking_Conventions.png",
-            "text": "The Normal Attack DMG Bonus granted by Flying Cloud Flag Formation is further increased by 2.5%\/5%\/7.5%\/11.5% of Yun Jin's DEF when the party contains characters of 1\/2\/3\/4 Elemental Types, respectively."
+            "text": "The Normal Attack DMG Bonus granted by Flying Cloud Flag Formation is further increased by 2.5%\/5%\/7.5%\/11.5% of Yun Jin's DEF when the party contains characters of 1\/2\/3\/4 Elemental Types, respectively.",
+            "code": [
+                [
+                    "proc",
+                    [
+                        "editmv",
+                        [
+                            "Elemental Burst",
+                            "DMG Increase",
+                            "+%",
+                            [
+                                "stacks",
+                                2.500000037252903,
+                                5.000000074505806,
+                                7.500000298023224,
+                                11.500000208616257
+                            ]
+                        ]
+                    ],
+                    4,
+                    "Different elements in party during Elemental Burst: \"Flying Cloud Flag Formation\""
+                ],
+                [
+                    "proc",
+                    [
+                        "editmv",
+                        [
+                            "Elemental Burst",
+                            "DMG Increase",
+                            "+%",
+                            7.500000298023224
+                        ]
+                    ],
+                    4,
+                    "Test"
+                ]
+            ]
         },
         "Utility Passive": {
             "name": "Light Nourishment",
@@ -386,7 +438,18 @@ export default {
         "2": {
             "name": "Myriad Mise-En-Sc\u00e8ne",
             "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e5\/Constellation_Myriad_Mise-En-Sc%C3%A8ne.png",
-            "text": "After <color=#FFD780FF>Cliffbreaker's Banner<\/color> is unleashed, all nearby party members' Normal Attack DMG is increased by 15% for 12s."
+            "text": "After <color=#FFD780FF>Cliffbreaker's Banner<\/color> is unleashed, all nearby party members' Normal Attack DMG is increased by 15% for 12s.",
+            "code": [
+                "proc",
+                [
+                    "pstat",
+                    [
+                        "normal_dmg_",
+                        "15"
+                    ]
+                ],
+                "After Elemental Burst (12s)"
+            ]
         },
         "3": {
             "name": "Seafaring General",
@@ -403,7 +466,18 @@ export default {
         "4": {
             "name": "Flower and a Fighter",
             "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a4\/Constellation_Flower_and_a_Fighter.png",
-            "text": "When Yun Jin triggers the Crystallize Reaction, her DEF is increased by 20% for 12s."
+            "text": "When Yun Jin triggers the Crystallize Reaction, her DEF is increased by 20% for 12s.",
+            "code": [
+                "proc",
+                [
+                    "stat",
+                    [
+                        "def_",
+                        20
+                    ]
+                ],
+                "After Crystallize (12s)"
+            ]
         },
         "5": {
             "name": "Famed Throughout the Land",

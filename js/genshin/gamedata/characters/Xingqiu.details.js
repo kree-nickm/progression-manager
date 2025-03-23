@@ -313,7 +313,15 @@ export default {
         "1st Ascension Passive": {
             "name": "Hydropathic",
             "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f6\/Talent_Hydropathic.png",
-            "text": "When a Rain Sword is shattered or when its duration expires, it regenerates the current character's HP based on 6% of Xingqiu's Max HP."
+            "text": "When a Rain Sword is shattered or when its duration expires, it regenerates the current character's HP based on 6% of Xingqiu's Max HP.",
+            "code": [
+                "addmv",
+                [
+                    "Elemental Skill",
+                    "Rain Sword Healing (A1)",
+                    "6% Max HP"
+                ]
+            ]
         },
         "4th Ascension Passive": {
             "name": "Blades Amidst Raindrops",
@@ -342,7 +350,27 @@ export default {
         "2": {
             "name": "Rainbow Upon the Azure Sky",
             "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a5\/Constellation_Rainbow_Upon_the_Azure_Sky.png",
-            "text": "Extends the duration of <color=#FFD780FF>Guhua Sword: Raincutter<\/color> by 3s.\\nDecreases the <color=#80C0FFFF>Hydro RES<\/color> of opponents hit by sword rain attacks by 15% for 4s."
+            "text": "Extends the duration of <color=#FFD780FF>Guhua Sword: Raincutter<\/color> by 3s.\\nDecreases the <color=#80C0FFFF>Hydro RES<\/color> of opponents hit by sword rain attacks by 15% for 4s.",
+            "code": [
+                [
+                    "proc",
+                    [
+                        "estat",
+                        [
+                            "hydro_res_",
+                            -15
+                        ]
+                    ],
+                    "After sword rain hit (4s)"
+                ],
+                [
+                    "stat",
+                    [
+                        "skill_duration",
+                        3
+                    ]
+                ]
+            ]
         },
         "3": {
             "name": "Weaver of Verses",
@@ -359,7 +387,20 @@ export default {
         "4": {
             "name": "Evilsoother",
             "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e6\/Constellation_Evilsoother.png",
-            "text": "Throughout the duration of <color=#FFD780FF>Guhua Sword: Raincutter<\/color>, the DMG dealt by <color=#FFD780FF>Guhua Sword: Fatal Rainscreen<\/color> is increased by 50%."
+            "text": "Throughout the duration of <color=#FFD780FF>Guhua Sword: Raincutter<\/color>, the DMG dealt by <color=#FFD780FF>Guhua Sword: Fatal Rainscreen<\/color> is increased by 50%.",
+            "code": [
+                "proc",
+                [
+                    "editmv",
+                    [
+                        "Elemental Skill",
+                        "Skill DMG",
+                        "*base",
+                        50
+                    ]
+                ],
+                "During Elemental Burst"
+            ]
         },
         "5": {
             "name": "Embrace of Rain",

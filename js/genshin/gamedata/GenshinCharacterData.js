@@ -1014,6 +1014,29 @@ export default {
             10463
         ]
     },
+    "Iansan": {
+        "name": "Iansan",
+        "rarity": 4,
+        "weapon": "Polearm",
+        "element": "Electro",
+        "hakushinID": 10000110,
+        "id": 10000110,
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Iansan.webp",
+        "region": "Natlan",
+        "matEnemy": "Tribals",
+        "matBoss": "Papilla",
+        "matFlower": "Dracolite",
+        "matMastery": "Contention",
+        "matTrounce": "Denial and Judgment",
+        "ascendStat": "atk_",
+        "hpBase": 893.55517578125,
+        "atkBase": 21.547679901123047,
+        "defBase": 53.505374908447266,
+        "hpMaxAsc": 3197.12451171875,
+        "atkMaxAsc": 77.0990219116211,
+        "defMaxAsc": 191.44125366210938,
+        "version": "5.4.54"
+    },
     "Jean": {
         "name": "Jean",
         "weapon": "Sword",
@@ -2408,6 +2431,7 @@ export default {
         "idAlt": "10000007-702",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_PlayerGirl.webp",
         "release": "December 31, 2024",
+        "patch": "5.3",
         "hpBase": 911.791015625,
         "atkBase": 17.8080005645752,
         "defBase": 57.2249984741211,
@@ -2420,6 +2444,29 @@ export default {
             10097,
             10098
         ]
+    },
+    "Varesa": {
+        "name": "Varesa",
+        "rarity": 5,
+        "weapon": "Catalyst",
+        "element": "Electro",
+        "hakushinID": 10000111,
+        "id": 10000111,
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Varesa.webp",
+        "region": "Natlan",
+        "matEnemy": "Saurians",
+        "matBoss": "Lava Statue",
+        "matFlower": "Skysplit Gembloom",
+        "matMastery": "Conflict",
+        "matTrounce": "Eroded Scale-Feather",
+        "ascendStat": "critRate_",
+        "hpBase": 988.5928344726562,
+        "atkBase": 27.743799209594727,
+        "defBase": 60.847110748291016,
+        "hpMaxAsc": 4059.696533203125,
+        "atkMaxAsc": 113.92271423339844,
+        "defMaxAsc": 249.8769073486328,
+        "version": "5.4.54"
     },
     "Venti": {
         "name": "Venti",
@@ -2861,7 +2908,12 @@ export default {
         "hpMaxAsc": 4071.441162109375,
         "atkMaxAsc": 68.8123779296875,
         "defMaxAsc": 242.0144958496094,
-        "version": "5.4"
+        "version": "5.4",
+        "skillIds": [
+            11091,
+            11092,
+            11095
+        ]
     },
     "YunJin": {
         "name": "Yun Jin",

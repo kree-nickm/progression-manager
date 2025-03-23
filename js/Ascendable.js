@@ -451,7 +451,7 @@ const Ascendable = (SuperClass) => class extends SuperClass {
   
   getTalentMat(type, talent, options)
   {
-    let result = this.MaterialList[type];
+    let result = this.MaterialList[type + (options?.propertySuffix??'')];
     if(Array.isArray(result))
       result = result[((isNaN(talent) ? this[this.constructor.talentProperty][talent] : talent) - 1) % result.length];
     

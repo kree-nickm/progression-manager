@@ -133,6 +133,13 @@ export default {
       "4": "Illusory Leafcoil",
       "release": "November 19, 2024"
     },
+    "Weasels": {
+      "source": "Furnace Shell Mountain Weasels",
+      "release": "March 25, 2025",
+      "2": "Cold-Cracked Shellshard",
+      "3": "Warm Back-Shell",
+      "4": "Blazing Prismshell"
+    },
     "Slimes": {
       "1": "Slime Condensate",
       "2": "Slime Secretions",
@@ -459,6 +466,11 @@ export default {
       "name": "Wayward Hermetic Spiritspeaker",
       "4": "Talisman of the Enigmatic Land",
       "release": "December 31, 2024"
+    },
+    "Lava Statue": {
+      "name": "Lava Dragon Statue",
+      "4": "Sparkless Statue Core",
+      "release": "March 25, 2025"
     }
   },
   

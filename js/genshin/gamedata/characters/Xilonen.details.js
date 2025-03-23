@@ -299,7 +299,28 @@ export default {
                     "14": "7s",
                     "15": "7s"
                 }
-            }
+            },
+            "code": [
+                "proc",
+                [
+                    "estat",
+                    [
+                        [
+                            "geo_res_",
+                            "pyro_res_",
+                            "hydro_res_",
+                            "electro_res_",
+                            "cryo_res_"
+                        ],
+                        [
+                            "mv",
+                            "Elemental RES Decrease",
+                            "-"
+                        ]
+                    ]
+                ],
+                "After Source Samples activated (15s)"
+            ]
         },
         "Elemental Burst": {
             "name": "Ocelotlicue Point!",
@@ -415,7 +436,18 @@ export default {
         },
         "4th Ascension Passive": {
             "name": "Portable Armored Sheath",
-            "text": "While in the Nightsoul's Blessing state, when Xilonen's Nightsoul points reach the maximum, she will trigger an effect equal to that of her Nightsoul Burst. This effect can be triggered once every 14s.\\nAdditionally, when nearby party members trigger a Nightsoul Burst, Xilonen's DEF is increased by 20% for 15s."
+            "text": "While in the Nightsoul's Blessing state, when Xilonen's Nightsoul points reach the maximum, she will trigger an effect equal to that of her Nightsoul Burst. This effect can be triggered once every 14s.\\nAdditionally, when nearby party members trigger a Nightsoul Burst, Xilonen's DEF is increased by 20% for 15s.",
+            "code": [
+                "proc",
+                [
+                    "stat",
+                    [
+                        "def_",
+                        20
+                    ]
+                ],
+                "After nearby Nightsoul Burst (15s)"
+            ]
         },
         "Utility Passive": {
             "name": "Night Realm's Gift: Blessing of Forge-Fire",

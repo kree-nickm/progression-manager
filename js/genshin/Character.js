@@ -1214,9 +1214,9 @@ export default class Character extends Ascendable(GenshinItem)
               motionValue.values[v].dmgType = "percent";
               motionValue.values[v].stat = "";
             }
-            else if(motionValue.key.endsWith("DMG Bonus"))
+            else if(motionValue.key.endsWith("DMG Bonus") || motionValue.key.endsWith("DMG Increase"))
             {
-              if(this.key == "Shenhe" || this.key == "Xianyun" || this.key == "SangonomiyaKokomi")
+              if(this.key == "Shenhe" || this.key == "Xianyun" || this.key == "SangonomiyaKokomi" || this.key == "YunJin")
               {
                 motionValue.values[v].dmgType = "bonus";
                 //motionValue.values[v].stat = "atk";
@@ -1247,6 +1247,7 @@ export default class Character extends Ascendable(GenshinItem)
             {
               let baseAdd = 0;
               let baseMult = 1;
+              let percentAdd = 0;
               let attackType;
               // Motion value modifications that need to be passed to this.applyFormulas()
               for(let modifier of mvModifiers)
@@ -1257,6 +1258,8 @@ export default class Character extends Ascendable(GenshinItem)
                     baseAdd += modifier.value;
                   else if(modifier.method == "*base")
                     baseMult += modifier.value;
+                  else if(modifier.method == "+%")
+                    percentAdd += modifier.value;
                   else if(modifier.method == "attackType")
                   {
                     if(attackType)
@@ -1265,7 +1268,7 @@ export default class Character extends Ascendable(GenshinItem)
                   }
                 }
               }
-              this.applyFormulas(motionValue, v, alternates, {baseAdd, baseMult, attackType});
+              this.applyFormulas(motionValue, v, alternates, {baseAdd, baseMult, percentAdd, attackType});
               if(motionValue.reaction && !motionValue.newKey.startsWith(`{{reaction:${motionValue.reaction}}} `))
                 motionValue.newKey = `{{reaction:${motionValue.reaction}}} ` + motionValue.newKey;
             }
@@ -1431,7 +1434,7 @@ export default class Character extends Ascendable(GenshinItem)
     return result;
   }
   
-  applyFormulas(motionValue, iValue, rawAlternates, {ignoreRES, ignoreDEF, baseAdd=0, baseMult=1, attackType}={})
+  applyFormulas(motionValue, iValue, rawAlternates, {ignoreRES, ignoreDEF, baseAdd=0, baseMult=1, percentAdd=0, attackType}={})
   {
     let partialValue = motionValue?.values?.[iValue];
     if(isNaN(partialValue.value))
@@ -1442,7 +1445,9 @@ export default class Character extends Ascendable(GenshinItem)
     
     let alternates = Object.assign({}, rawAlternates);
     partialValue.value = parseFloat(partialValue.value);
-    partialValue.baseDMG = partialValue.stat=="flat" ? partialValue.value : partialValue.value*this.getStat(partialValue.stat, alternates)/100;
+    partialValue.baseDMG = partialValue.stat=="flat"
+      ? partialValue.value
+      : (partialValue.value+percentAdd) * this.getStat(partialValue.stat, alternates)/100;
     
     if(partialValue.dmgType == "healing")
     {
@@ -1842,6 +1847,7 @@ export default class Character extends Ascendable(GenshinItem)
           {
             if(event.target.dataset?.owner == "Team")
             {
+              // Resonances, generally.
               let mod = Team.statModifiers.find(mod => mod.id == event.target.id);
               if(mod)
               {
@@ -1855,6 +1861,7 @@ export default class Character extends Ascendable(GenshinItem)
               let mod = character?.statModifiers.find(mod => mod.id == event.target.id);
               if(mod)
               {
+                console.debug(`Character stat modifier updated.`, {mod, procInput, value});
                 mod.active = value;
                 character.update("statModifiers", null, "notify", {mvChange:mod.mvChange});
                 this.update("statModifiers", null, "notify", {mvChange:mod.mvChange});
@@ -1864,6 +1871,7 @@ export default class Character extends Ascendable(GenshinItem)
           else
           {
             let mod = this.statModifiers.find(mod => mod.id == event.target.id);
+            console.debug(`Unowned stat modifier updated.`, {mod, procInput});
             if(mod)
             {
               mod.active = value;

@@ -473,6 +473,8 @@ export default class StatModifier {
         result += `, increasing the base DMG multiplier by ${value}.`;
       else if(parameters[2] == "+base")
         result += `, increasing the base DMG by ${value}.`;
+      else if(parameters[2] == "+%")
+        result += `, adding ${value} to the motion value.`;
       else if(parameters[2] == "infuse")
         result += `, adding ${value.charAt(0).toUpperCase()+value.slice(1)} infusion.`;
       else
@@ -655,10 +657,10 @@ export default class StatModifier {
     switch(calc.func)
     {
       case "mv":
-        const [ mvKey ] = calc.args;
+        const [ mvKey, flags ] = calc.args;
         let motionValue = this.characterSource?.getMotionValues(null, alternates, {onlyKey:mvKey})?.find(mv => mv.rawKey == mvKey);
         if(typeof(motionValue?.final) == "number")
-          return motionValue.final;
+          return motionValue.final * (flags&&flags.includes("-") ? -1 : 1) / (flags&&flags.includes("%") ? 100 : 1) - (flags&&flags.includes("1") ? 1 : 0);
         else
           console.warn(`Function 'mv': "${mvKey}" is not a usable motion value:`, {statModifer:this, motionValue, stat, asker, alternates});
         break;
@@ -700,6 +702,7 @@ export default class StatModifier {
         break;
         
       case "stacks":
+        console.debug(this, calc);
         if(this.active)
           // Dividing out this.active here is cringe, but it's the easiest way to deal with this.active being a multiplier in this.getStat()
           return (calc.args[this.active-1]??0) / this.active;

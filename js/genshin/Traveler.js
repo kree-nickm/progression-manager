@@ -150,6 +150,27 @@ export default class Traveler extends Character
         ],
       });
     }
+    else if(this.key.endsWith("Pyro"))
+    {
+      this._element = "Pyro";
+      this.materialDefs.materials.push({
+        property: "trounce",
+        key: "TheCornerstoneOfStarsAndFlames",
+      });
+      this.materialDefs.materials.push({
+        property: "enemyTalent",
+        group: GenshinLootData.enemy["Tribals"],
+        tiers: [1,2,3],
+      });
+      this.materialDefs.materials.push({
+        property: "mastery",
+        cycle: [
+          {group:Material.masteryQualities, suffix:"Contention", tiers:[2,3,4]},
+          {group:Material.masteryQualities, suffix:"Kindling", tiers:[3,4]},
+          {group:Material.masteryQualities, suffix:"Conflict", tiers:[3,4]},
+        ],
+      });
+    }
     
     super.afterLoad();
     return true;
@@ -278,12 +299,11 @@ export default class Traveler extends Character
   get enemyMatType(){ return "Hilichurls"; }
   get image(){ return this.variants?.[0]?.image??super.image; }
   
-  getTalentMat(type, talent)
+  getTalentMat(type, talent, options={})
   {
     if(type == "enemy")
-      return super.getTalentMat("enemyTalent", talent);
-    else
-      return super.getTalentMat(type, talent);
+      options.propertySuffix = "Talent";
+    return super.getTalentMat(type, talent, options);
   }
   
   postRender(element)

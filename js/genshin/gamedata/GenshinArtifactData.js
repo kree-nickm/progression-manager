@@ -38,7 +38,7 @@ export default {
         "sands": "Adventurer's Pocket Watch",
         "goblet": "Adventurer's Golden Goblet",
         "circlet": "Adventurer's Bandana",
-        "bonus2": "Max HP increased by 1000.",
+        "bonus2": "Max HP increased by 1,000.",
         "bonus2code": [
             "stat",
             [
@@ -1878,7 +1878,24 @@ export default {
             ]
         ],
         "bonus4": "When the equipping character heals a party member, the Yearning effect will be created for 6s, which records the total amount of healing provided (including overflow healing). When the duration expires, the Yearning effect will be transformed into the \"Waves of Days Past\" effect: When your active party member hits an opponent with a Normal Attack, Charged Attack, Plunging Attack, Elemental Skill, or Elemental Burst, the DMG dealt will be increased by 8% of the total healing amount recorded by the Yearning effect. The \"Waves of Days Past\" effect is removed after it has taken effect 5 times or after 10s. A single instance of the Yearning effect can record up to 15,000 healing, and only a single instance can exist at once, but it can record the healing from multiple equipping characters. Equipping characters on standby can still trigger this effect.",
-        "bonus4code": ["proc", ["pstat", [["normal_dmg","charged_dmg","plunging_dmg","skill_dmg","burst_dmg"], 0.08]], "Amount of healing recorded by \"Yearning\": \"Waves of Days Past\" (10s or 5 hits)", 15000],
+        "bonus4code": [
+            "proc",
+            [
+                "pstat",
+                [
+                    [
+                        "normal_dmg",
+                        "charged_dmg",
+                        "plunging_dmg",
+                        "skill_dmg",
+                        "burst_dmg"
+                    ],
+                    0.08
+                ]
+            ],
+            "Amount of healing recorded by \"Yearning\": \"Waves of Days Past\" (10s or 5 hits)",
+            15000
+        ],
         "flowerImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4b\/Item_Forgotten_Oath_of_Days_Past.png",
         "plumeImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fc\/Item_Recollection_of_Days_Past.png",
         "sandsImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/62\/Item_Echoing_Sound_From_Days_Past.png",
@@ -2104,5 +2121,32 @@ export default {
         "circletImg": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4d\/Item_Crown_of_the_Saints.png",
         "rankData": "4,5",
         "icon": "UI_RelicIcon_15038_4"
+    },
+    "LongNightsOath": {
+        "name": "Long Night's Oath",
+        "icon": "UI_RelicIcon_15039_4",
+        "hakushinID": 15039,
+        "id": 15039,
+        "maxRarity": 5,
+        "release": "March 25, 2025",
+        "bonus2": "Plunging Attack DMG increased by 25%.",
+        "bonus2code": ["stat", ["plunging_dmg_", 25]],
+        "bonus4": "After the equipping character's Plunging Attack\/Charged Attack\/Elemental Skill hits an opponent, they will gain 1\/2\/2 stack(s) of \"Radiance Everlasting.\" Plunging Attacks, Charged Attacks, or Elemental Skills can each trigger this effect once every 1s. Radiance Everlasting: Plunging Attacks deal 15% increased DMG for 6s. Max 5 stacks. Each stack's duration is counted independently.",
+        "bonus4code": ["proc", ["stat", ["plunging_dmg_", 15]], 5, "After Plunging/Charged Attack or Elemental Skill hits (6s): \"Radiance Everlasting\""],
+        "version": "5.4.54"
+    },
+    "FinaleOfTheDeepGalleries": {
+        "name": "Finale of the Deep Galleries",
+        "icon": "UI_RelicIcon_15040_4",
+        "hakushinID": 15040,
+        "id": 15040,
+        "maxRarity": 5,
+        "release": "March 25, 2025",
+        "bonus2": "Cryo DMG Bonus +15%",
+        "bonus2code": ["stat", ["cryo_dmg_", 25]],
+        "bonus4": "When the equipping character has 0 Elemental Energy, Normal Attack DMG is increased by 60% and Elemental Burst DMG is increased by 60%. After the equipping character deals Normal Attack DMG, the aforementioned Elemental Burst effect will stop applying for 6s. After the equipping character deals Elemental Burst DMG, the aforementioned Normal Attack effect will stop applying for 6s. This effect can trigger even if the equipping character is off the field.",
+        "bonus4code": [["proc", ["stat", ["burst_dmg_", 60]], "With 0 Energy and not having dealt Normal Attack DMG within 6s"],
+                       ["proc", ["stat", ["normal_dmg_", 60]], "With 0 Energy and not having dealt Elemental Burst DMG within 6s"]],
+        "version": "5.4.54"
     }
 };

@@ -2151,6 +2151,47 @@ export default {
         "hakushinID": 12512,
         "id": 12512
     },
+    "VividNotions": {
+        "name": "Vivid Notions",
+        "rarity": 5,
+        "type": "Catalyst",
+        "hakushinID": 14519,
+        "id": 14519,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_VaresaTransformer.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_VaresaTransformer.webp"
+        ],
+        "baseATK": 48,
+        "stat": "critDMG_",
+        "matForgery": "Sacred",
+        "matStrongEnemy": "Weasels",
+        "matWeakEnemy": "Saurians",
+        "passive": "ATK is increased by @0%. When you use a Plunging Attack, you will gain the \"Dawn's First Hue\" effect: Plunging Attack CRIT DMG is increased by @1%. When you use an Elemental Skill or Burst, you will gain the \"Twilight's Splendor\" effect: Plunging Attack CRIT DMG is increased by @2%. The two effects above each last for 15s, and will be canceled 0.1s after the ground impact hits a target.",
+        "refinementData": [
+            {
+                "1": 28.00000011920929,
+                "2": 34.99999940395355,
+                "3": 41.999998688697815,
+                "4": 49.000000953674316,
+                "5": 56.00000023841858
+            },
+            {
+                "1": 1500,
+                "2": 1500,
+                "3": 1500,
+                "4": 1500,
+                "5": 1500
+            },
+            {
+                "1": 28.00000011920929,
+                "2": 34.99999940395355,
+                "3": 41.999998688697815,
+                "4": 49.000000953674316,
+                "5": 56.00000023841858
+            }
+        ],
+        "version": "5.4.54"
+    },
     "VortexVanquisher": {
         "name": "Vortex Vanquisher",
         "rarity": 5,
@@ -3566,6 +3607,17 @@ export default {
                 "4": 28.00000011921,
                 "5": 31.99999928474
             }
+        ],
+        "code": [
+            "proc",
+            [
+                "stat",
+                [
+                    "def_",
+                    "@0"
+                ]
+            ],
+            "After Elemental Skill (15s)"
         ],
         "version": "5.0"
     },

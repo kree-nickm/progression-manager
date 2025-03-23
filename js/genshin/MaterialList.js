@@ -105,6 +105,7 @@ export default class MaterialList extends GenshinList
       for(let mat of weeklyMats)
         mat.update("converts", weeklyMats.filter(m => m != mat), "replace");
     }
+    this.addGOOD({goodKey:"TheCornerstoneOfStarsAndFlames", goodValue:0}).update("source", "Obtained from completed regional quests in Natlan");
       
     // Boss mats
     for(let b in GenshinLootData.boss)
