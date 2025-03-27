@@ -49,6 +49,20 @@ export default class FurnitureList extends GenshinList
       }),
     });
     
+    let sourceField = this.display.addField("source", {
+      label: "Source",
+      dynamic: false,
+      value: item => item.source,
+      sort: {generic: {type:"string",property:"source"}},
+    });
+    
+    this.display.addField("efficiency", {
+      label: "Efficiency",
+      dynamic: false,
+      value: item => item.efficiency,
+      sort: {generic: {type:"number",property:"efficiency"}},
+    });
+    
     Furniture.setupDisplay(this.display);
   }
   
@@ -67,6 +81,8 @@ export default class FurnitureList extends GenshinList
       {field:this.display.getField("name"), params:[]},
       {field:this.display.getField("learned"), params:[]},
       {field:this.display.getField("count"), params:[]},
+      {field:this.display.getField("source"), params:[]},
+      {field:this.display.getField("efficiency"), params:[]},
     ];
     return {element, data, options};
   }

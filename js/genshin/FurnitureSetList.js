@@ -64,7 +64,7 @@ export default class FurnitureSetList extends GenshinList
             },
             {
               value: furniture.name,
-              title: furniture.type=="purchasable" ? `${furniture.name} must be purchased from the Realm Depot.` : `Toggle whether you've learned the schematic for ${furniture.name} yet.`,
+              title: furniture.type=="purchasable" ? `${furniture.name} must be purchased from the Realm Depot.` : `Toggle whether you've learned the schematic for ${furniture.name} yet.\nSource: ${furniture.source}`,
               edit: furniture.type=="purchasable" ? undefined : {
                 target: {item:furniture, field:"learned"},
                 type: "checkbox",

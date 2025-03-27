@@ -1029,13 +1029,13 @@ export default {
         "matMastery": "Contention",
         "matTrounce": "Denial and Judgment",
         "ascendStat": "atk_",
-        "hpBase": 893.55517578125,
-        "atkBase": 21.547679901123047,
-        "defBase": 53.505374908447266,
-        "hpMaxAsc": 3197.12451171875,
-        "atkMaxAsc": 77.0990219116211,
-        "defMaxAsc": 191.44125366210938,
-        "version": "5.4.54"
+        "hpBase": 893.5552,
+        "atkBase": 21.54768,
+        "defBase": 53.505375,
+        "hpMaxAsc": 3197.1245,
+        "atkMaxAsc": 77.09902,
+        "defMaxAsc": 191.44125,
+        "version": "5.5"
     },
     "Jean": {
         "name": "Jean",
@@ -2460,13 +2460,13 @@ export default {
         "matMastery": "Conflict",
         "matTrounce": "Eroded Scale-Feather",
         "ascendStat": "critRate_",
-        "hpBase": 988.5928344726562,
-        "atkBase": 27.743799209594727,
-        "defBase": 60.847110748291016,
-        "hpMaxAsc": 4059.696533203125,
-        "atkMaxAsc": 113.92271423339844,
-        "defMaxAsc": 249.8769073486328,
-        "version": "5.4.54"
+        "hpBase": 988.59283,
+        "atkBase": 27.7438,
+        "defBase": 60.84711,
+        "hpMaxAsc": 4059.6965,
+        "atkMaxAsc": 113.922714,
+        "defMaxAsc": 249.8769,
+        "version": "5.5"
     },
     "Venti": {
         "name": "Venti",

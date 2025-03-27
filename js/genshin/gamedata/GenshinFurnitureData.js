@@ -1,1994 +1,5438 @@
 export default {
-    "ArchivistsTreasureTrove": {
-        "name": "\"Archivist's Treasure Trove\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9f\/Item_Archivist%27s_Treasure_Trove.png",
-        "type": "craftable"
-    },
-    "SoftLoungeSofa": {
-        "name": "Soft Lounge Sofa",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ef\/Item_Soft_Lounge_Sofa.png",
-        "type": "craftable"
-    },
-    "ExquisiteCuihuaBookshelf": {
-        "name": "Exquisite Cuihua Bookshelf",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ad\/Item_Exquisite_Cuihua_Bookshelf.png",
-        "type": "craftable"
-    },
-    "EconomyCuihuaBookshelf": {
-        "name": "Economy Cuihua Bookshelf",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2d\/Item_Economy_Cuihua_Bookshelf.png",
-        "type": "craftable"
-    },
-    "ClearBlueAfternoon": {
-        "name": "\"Clear Blue Afternoon\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0d\/Item_Clear_Blue_Afternoon.png",
-        "type": "craftable"
-    },
-    "FavoniusOfficeTable": {
-        "name": "Favonius Office Table",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6f\/Item_Favonius_Office_Table.png",
-        "type": "craftable"
-    },
-    "GoldenTripleArmCandelabrum": {
-        "name": "Golden Triple-Arm Candelabrum",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/47\/Item_Golden_Triple-Arm_Candelabrum.png",
-        "type": "craftable"
-    },
-    "EtiquetteOfCorrespondence": {
-        "name": "\"Etiquette Of Correspondence\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/03\/Item_Etiquette_of_Correspondence.png",
-        "type": "craftable"
-    },
-    "TwoTierLibraryBookshelf": {
-        "name": "Two-Tier Library Bookshelf",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/93\/Item_Two-Tier_Library_Bookshelf.png",
-        "type": "craftable"
-    },
-    "RedPineWoodRoundStool": {
-        "name": "Red Pine Wood Round Stool",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/70\/Item_Red_Pine_Wood_Round_Stool.png",
-        "type": "craftable"
-    },
-    "PottedPlantCrystallineBreeze": {
-        "name": "Potted Plant: Crystalline Breeze",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/70\/Item_Potted_Plant_Crystalline_Breeze.png",
-        "type": "craftable"
-    },
-    "MondstadtRugCrimsonArdor": {
-        "name": "Mondstadt Rug: Crimson Ardor",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/29\/Item_Mondstadt_Rug_Crimson_Ardor.png",
-        "type": "craftable"
-    },
-    "LargeBirchWardrobe": {
-        "name": "Large Birch Wardrobe",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/00\/Item_Large_Birch_Wardrobe.png",
-        "type": "craftable"
-    },
-    "BirchDoubleDrawerNightstand": {
-        "name": "Birch Double Drawer Nightstand",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c8\/Item_Birch_Double_Drawer_Nightstand.png",
-        "type": "craftable"
-    },
-    "SeashellTableLamp": {
-        "name": "Seashell Table Lamp",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/05\/Item_Seashell_Table_Lamp.png",
-        "type": "craftable"
-    },
-    "BreezeBlessedBed": {
-        "name": "Breeze-Blessed Bed",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4f\/Item_Breeze-Blessed_Bed.png",
-        "type": "craftable"
-    },
-    "SturdyBirchVanity": {
-        "name": "Sturdy Birch Vanity",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2a\/Item_Sturdy_Birch_Vanity.png",
-        "type": "craftable"
-    },
-    "FlowerArrangementSprawlingDaybreak": {
-        "name": "Flower Arrangement: Sprawling Daybreak",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cd\/Item_Flower_Arrangement_Sprawling_Daybreak.png",
-        "type": "craftable"
-    },
-    "SturdyLibraryTable": {
-        "name": "Sturdy Library Table",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/75\/Item_Sturdy_Library_Table.png",
-        "type": "craftable"
-    },
-    "ExquisiteHourglassOrnament": {
-        "name": "Exquisite Hourglass Ornament",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2c\/Item_Exquisite_Hourglass_Ornament.png",
-        "type": "craftable"
-    },
-    "PineBackedTeaChair": {
-        "name": "Pine-Backed Tea Chair",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/05\/Item_Pine-Backed_Tea_Chair.png",
-        "type": "craftable"
-    },
-    "CalligraphySetAssiduousCalligraphy": {
-        "name": "Calligraphy Set: Assiduous Calligraphy",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/13\/Item_Calligraphy_Set_Assiduous_Calligraphy.png",
-        "type": "craftable"
-    },
-    "EntranceRugAWarmWelcome": {
-        "name": "Entrance Rug: A Warm Welcome",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/68\/Item_Entrance_Rug_A_Warm_Welcome.png",
-        "type": "craftable"
-    },
-    "IntricatelyCarvedCalligraphyTable": {
-        "name": "Intricately Carved Calligraphy Table",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/66\/Item_Intricately_Carved_Calligraphy_Table.png",
-        "type": "craftable"
-    },
-    "RedCedarScrollShelf": {
-        "name": "Red Cedar Scroll Shelf",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7a\/Item_Red_Cedar_Scroll_Shelf.png",
-        "type": "craftable"
-    },
-    "ShopkeepersCedarShelf": {
-        "name": "Shopkeeper's Cedar Shelf",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5b\/Item_Shopkeeper%27s_Cedar_Shelf.png",
-        "type": "craftable"
-    },
-    "RedCedarCurioStand": {
-        "name": "Red Cedar Curio Stand",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2e\/Item_Red_Cedar_Curio_Stand.png",
-        "type": "craftable"
-    },
-    "PineFoldingScreenBillowingSails": {
-        "name": "Pine Folding Screen: Billowing Sails",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/02\/Item_Pine_Folding_Screen_Billowing_Sails.png",
-        "type": "craftable"
-    },
-    "LiuliPavilionSandbearerFloorLamp": {
-        "name": "Liuli Pavilion Sandbearer Floor Lamp",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a0\/Item_Liuli_Pavilion_Sandbearer_Floor_Lamp.png",
-        "type": "craftable"
-    },
-    "PottedPlantPetitePerrenial": {
-        "name": "Potted Plant: Petite Perrenial",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/76\/Item_Potted_Plant_Petite_Perrenial.png",
-        "type": "craftable"
-    },
-    "GoldLinedSandbearerWardrobe": {
-        "name": "Gold-Lined Sandbearer Wardrobe",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/49\/Item_Gold-Lined_Sandbearer_Wardrobe.png",
-        "type": "craftable"
-    },
-    "SquarePineTeaTable": {
-        "name": "Square Pine Tea Table",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dc\/Item_Square_Pine_Tea_Table.png",
-        "type": "craftable"
-    },
-    "GlazedPorcelainTeaSetEmbracingTruth": {
-        "name": "Glazed Porcelain Tea Set: \"Embracing Truth\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d4\/Item_Glazed_Porcelain_Tea_Set_Embracing_Truth.png",
-        "type": "craftable"
-    },
-    "GoldLinedSandbearerNightstand": {
-        "name": "Gold-Lined Sandbearer Nightstand",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/73\/Item_Gold-Lined_Sandbearer_Nightstand.png",
-        "type": "craftable"
-    },
-    "CloudyHazeBed": {
-        "name": "Cloudy Haze Bed",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b0\/Item_Cloudy_Haze_Bed.png",
-        "type": "craftable"
-    },
-    "AlchemicDeviceBetweenFireAndWater": {
-        "name": "Alchemic Device: Between Fire And Water",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/15\/Item_Alchemic_Device_Between_Fire_and_Water.png",
-        "type": "craftable"
-    },
-    "AlchemicComponentBurdenOfDust": {
-        "name": "Alchemic Component: Burden Of Dust",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d2\/Item_Alchemic_Component_Burden_of_Dust.png",
-        "type": "craftable"
-    },
-    "ScholarsWeariness": {
-        "name": "\"Scholar's Weariness\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8c\/Item_Scholar%27s_Weariness.png",
-        "type": "craftable"
-    },
-    "UnwaveringDetermination": {
-        "name": "\"Unwavering Determination\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/49\/Item_Unwavering_Determination.png",
-        "type": "craftable"
-    },
-    "NeatStackOfBooks": {
-        "name": "Neat Stack Of Books",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4e\/Item_Neat_Stack_of_Books.png",
-        "type": "craftable"
-    },
-    "PortableStove": {
-        "name": "Portable Stove",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/75\/Item_Portable_Stove.png",
-        "type": "craftable"
-    },
-    "OpenTopFirShelf": {
-        "name": "Open-Top Fir Shelf",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6b\/Item_Open-Top_Fir_Shelf.png",
-        "type": "craftable"
-    },
-    "FirCaseShelfCombination": {
-        "name": "Fir Case Shelf Combination",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a9\/Item_Fir_Case_Shelf_Combination.png",
-        "type": "craftable"
-    },
-    "PineDiningChair": {
-        "name": "Pine Dining Chair",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9b\/Item_Pine_Dining_Chair.png",
-        "type": "craftable"
-    },
-    "TrustyPortableLamp": {
-        "name": "Trusty Portable Lamp",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/56\/Item_Trusty_Portable_Lamp.png",
-        "type": "craftable"
-    },
-    "LongTableWithTablecloth": {
-        "name": "Long Table With Tablecloth",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2c\/Item_Long_Table_With_Tablecloth.png",
-        "type": "craftable"
-    },
-    "YumemiruSakurasRestBed": {
-        "name": "Yumemiru \"Sakura's Rest\" Bed",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/aa\/Item_Yumemiru_Sakura%27s_Rest_Bed.png",
-        "type": "craftable"
-    },
-    "YumemiruColdAndWarmthKotatsu": {
-        "name": "Yumemiru \"Cold And Warmth\" Kotatsu",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/62\/Item_Yumemiru_Cold_and_Warmth_Kotatsu.png",
-        "type": "craftable"
-    },
-    "SpiritchaserScreen": {
-        "name": "Spiritchaser Screen",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ef\/Item_Spiritchaser_Screen.png",
-        "type": "craftable"
-    },
-    "CastInClay": {
-        "name": "Cast In Clay",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/96\/Item_Cast_in_Clay.png",
-        "type": "craftable"
-    },
-    "RedIronCoral": {
-        "name": "Red-Iron Coral",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e4\/Item_Red-Iron_Coral.png",
-        "type": "craftable"
-    },
-    "YumemiruDewcoverWardrobe": {
-        "name": "Yumemiru \"Dewcover\" Wardrobe",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f8\/Item_Yumemiru_Dewcover_Wardrobe.png",
-        "type": "craftable"
-    },
-    "TeahouseCushionNightWoven": {
-        "name": "Teahouse Cushion: Night-Woven",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/50\/Item_Teahouse_Cushion_Night-Woven.png",
-        "type": "craftable"
-    },
-    "YumemiruJukakuFoldingScreen": {
-        "name": "Yumemiru \"Jukaku\" Folding Screen",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a9\/Item_Yumemiru_Jukaku_Folding_Screen.png",
-        "type": "craftable"
+    "TeahouseCandlestandScentlessFlame": {
+        "name": "Teahouse Candlestand: Scentless Flame",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/28\/Item_Teahouse_Candlestand_Scentless_Flame.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 360407,
+        "imgId": "UI_Homeworld_Interior_Dq_Lamp_LaZhu_01_Vo",
+        "source": "Inazuma Remarkable Chest Reward",
+        "load": 85,
+        "energy": 60
     },
     "MapleWoodFloorLampClarity": {
         "name": "Maple Wood Floor Lamp: Clarity",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/36\/Item_Maple_Wood_Floor_Lamp_Clarity.png",
-        "type": "craftable"
-    },
-    "TeahouseFoldingScreenHiddenHeartOfGold": {
-        "name": "Teahouse Folding Screen: Hidden Heart Of Gold",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0f\/Item_Teahouse_Folding_Screen_Hidden_Heart_of_Gold.png",
-        "type": "craftable"
-    },
-    "MapleWoodRitualDrumFestiveMusic": {
-        "name": "Maple Wood Ritual Drum: Festive Music",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/53\/Item_Maple_Wood_Ritual_Drum_Festive_Music.png",
-        "type": "craftable"
-    },
-    "HatamotoArmorEijinGenkou": {
-        "name": "Hatamoto Armor: Eijin Genkou",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/68\/Item_Hatamoto_Armor_Eijin_Genkou.png",
-        "type": "craftable"
-    },
-    "AncestralSwordRackFourCorePrinciples": {
-        "name": "Ancestral Sword Rack: Four Core Principles",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7f\/Item_Ancestral_Sword_Rack_Four_Core_Principles.png",
-        "type": "craftable"
-    },
-    "EvilSlayingBows": {
-        "name": "Evil-Slaying Bows",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/80\/Item_Evil-Slaying_Bows.png",
-        "type": "craftable"
-    },
-    "TeahouseLongTableSeamlessSeating": {
-        "name": "Teahouse Long Table: Seamless Seating",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/11\/Item_Teahouse_Long_Table_Seamless_Seating.png",
-        "type": "craftable"
-    },
-    "TeahouseCandlestandScentlessFlame": {
-        "name": "Teahouse Candlestand: Scentless Flame",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/28\/Item_Teahouse_Candlestand_Scentless_Flame.png",
-        "type": "craftable"
-    },
-    "CalligraphySetProperPenmanship": {
-        "name": "Calligraphy Set: Proper Penmanship",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5d\/Item_Calligraphy_Set_Proper_Penmanship.png",
-        "type": "craftable"
-    },
-    "MapleWoodBookcaseTroveOfAThousandTomes": {
-        "name": "Maple Wood Bookcase: Trove Of A Thousand Tomes",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f2\/Item_Maple_Wood_Bookcase_Trove_of_a_Thousand_Tomes.png",
-        "type": "craftable"
-    },
-    "MapleWoodBookcaseInkheart": {
-        "name": "Maple Wood Bookcase: Inkheart",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b5\/Item_Maple_Wood_Bookcase_Inkheart.png",
-        "type": "craftable"
-    },
-    "TeahouseCounterToshimaru": {
-        "name": "Teahouse Counter: \"Toshimaru\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ab\/Item_Teahouse_Counter_Toshimaru.png",
-        "type": "craftable"
-    },
-    "HyouteiStackedAraliaWoodBoxes": {
-        "name": "\"Hyoutei\" Stacked Aralia Wood Boxes",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/28\/Item_Hyoutei_Stacked_Aralia_Wood_Boxes.png",
-        "type": "craftable"
-    },
-    "TeahouseVesselScentSealer": {
-        "name": "Teahouse Vessel: Scent-Sealer",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fe\/Item_Teahouse_Vessel_Scent-Sealer.png",
-        "type": "craftable"
-    },
-    "TeahouseRoundStoolPainPointReduction": {
-        "name": "Teahouse Round Stool: Pain Point Reduction",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/da\/Item_Teahouse_Round_Stool_Pain_Point_Reduction.png",
-        "type": "craftable"
-    },
-    "SekijouAraliaTeaTable": {
-        "name": "\"Sekijou\" Aralia Tea Table",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5c\/Item_Sekijou_Aralia_Tea_Table.png",
-        "type": "craftable"
-    },
-    "TheEssentialVase": {
-        "name": "The Essential Vase",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fb\/Item_The_Essential_Vase.png",
-        "type": "craftable"
-    },
-    "TeaWispCloudedWhiteCouch": {
-        "name": "\"Tea Wisp-Clouded White Couch\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/62\/Item_Tea_Wisp-Clouded_White_Couch.png",
-        "type": "craftable"
-    },
-    "AraliaFusenCupboard": {
-        "name": "Aralia \"Fusen\" Cupboard",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a9\/Item_Aralia_Fusen_Cupboard.png",
-        "type": "craftable"
-    },
-    "AraliaBangakuShelf": {
-        "name": "Aralia \"Bangaku\" Shelf",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/68\/Item_Aralia_Bangaku_Shelf.png",
-        "type": "craftable"
-    },
-    "KarmaphalaWoodCounterAssaultDiningChair": {
-        "name": "Karmaphala Wood \"Counter-Assault\" Dining Chair",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c1\/Item_Karmaphala_Wood_Counter-Assault_Dining_Chair.png",
-        "type": "craftable"
-    },
-    "UpliftingGrowth": {
-        "name": "Uplifting Growth",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ec\/Item_Uplifting_Growth.png",
-        "type": "purchasable"
-    },
-    "SpiritOfTheBanquet": {
-        "name": "Spirit Of The Banquet",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/60\/Item_Spirit_of_the_Banquet.png",
-        "type": "craftable"
-    },
-    "ForestWatchersFastidiousness": {
-        "name": "Forest Watcher's Fastidiousness",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6c\/Item_Forest_Watcher%27s_Fastidiousness.png",
-        "type": "craftable"
-    },
-    "ForestRangersProvisions": {
-        "name": "Forest Ranger's Provisions",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dc\/Item_Forest_Ranger%27s_Provisions.png",
-        "type": "craftable"
-    },
-    "AdhigamaWoodVersatileShelves": {
-        "name": "Adhigama Wood \"Versatile\" Shelves",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/18\/Item_Adhigama_Wood_Versatile_Shelves.png",
-        "type": "craftable"
-    },
-    "HuedVaseCerulean": {
-        "name": "Hued Vase: Cerulean",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/05\/Item_Hued_Vase_Cerulean.png",
-        "type": "craftable"
-    },
-    "AChoiceOfDelicacies": {
-        "name": "A Choice Of Delicacies",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c0\/Item_A_Choice_of_Delicacies.png",
-        "type": "craftable"
-    },
-    "AppraisersTreasure": {
-        "name": "Appraiser's Treasure",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/be\/Item_Appraiser%27s_Treasure.png",
-        "type": "craftable"
-    },
-    "EphemeralSpirit": {
-        "name": "Ephemeral Spirit",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/36\/Item_Ephemeral_Spirit.png",
-        "type": "craftable"
-    },
-    "CeramicCenterpiece": {
-        "name": "Ceramic Centerpiece",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a9\/Item_Ceramic_Centerpiece.png",
-        "type": "craftable"
-    },
-    "HuedVaseMalachite": {
-        "name": "Hued Vase: Malachite",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d1\/Item_Hued_Vase_Malachite.png",
-        "type": "craftable"
-    },
-    "HuedVaseAmber": {
-        "name": "Hued Vase: Amber",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/36\/Item_Hued_Vase_Amber.png",
-        "type": "craftable"
-    },
-    "GloriousEmeraldTapestry": {
-        "name": "Glorious Emerald Tapestry",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e4\/Item_Glorious_Emerald_Tapestry.png",
-        "type": "craftable"
-    },
-    "SatisfactionOfSatedThirst": {
-        "name": "Satisfaction Of Sated Thirst",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0f\/Item_Satisfaction_of_Sated_Thirst.png",
-        "type": "craftable"
-    },
-    "TheCrispSweetness": {
-        "name": "The Crisp Sweetness",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4e\/Item_The_Crisp_Sweetness.png",
-        "type": "craftable"
-    },
-    "FragranceOfLowHeatRoast": {
-        "name": "Fragrance Of Low-Heat Roast",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/13\/Item_Fragrance_of_Low-Heat_Roast.png",
-        "type": "craftable"
-    },
-    "AromaOfHighHeatBarbecue": {
-        "name": "Aroma Of High-Heat Barbecue",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/58\/Item_Aroma_of_High-Heat_Barbecue.png",
-        "type": "craftable"
-    },
-    "WitnessOfTavernAffairs": {
-        "name": "Witness Of Tavern Affairs",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/11\/Item_Witness_of_Tavern_Affairs.png",
-        "type": "craftable"
-    },
-    "KarmaphalaWoodSubduedSpeechBench": {
-        "name": "Karmaphala Wood \"Subdued Speech\" Bench",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/25\/Item_Karmaphala_Wood_Subdued_Speech_Bench.png",
-        "type": "craftable"
-    },
-    "MusingTawnyTapestry": {
-        "name": "Musing Tawny Tapestry",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/36\/Item_Musing_Tawny_Tapestry.png",
-        "type": "craftable"
-    },
-    "TheMellowPot": {
-        "name": "The Mellow Pot",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/77\/Item_The_Mellow_Pot.png",
-        "type": "craftable"
-    },
-    "TreasurefromTheLandOfWisdom": {
-        "name": "Treasure from The Land Of Wisdom"
-    },
-    "ScrollsfromTheLandOfWisdom": {
-        "name": "Scrolls from The Land Of Wisdom"
-    },
-    "JoyfulIllumination": {
-        "name": "Joyful Illumination",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/50\/Item_Joyful_Illumination.png",
-        "type": "craftable"
-    },
-    "DesertDeskHospitality": {
-        "name": "Desert Desk: Hospitality",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1c\/Item_Desert_Desk_Hospitality.png",
-        "type": "craftable"
-    },
-    "ALushGlimpse": {
-        "name": "A Lush Glimpse",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7e\/Item_A_Lush_Glimpse.png",
-        "type": "craftable"
-    },
-    "AdhigamaWoodComfortBed": {
-        "name": "Adhigama Wood \"Comfort\" Bed",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8a\/Item_Adhigama_Wood_Comfort_Bed.png",
-        "type": "craftable"
-    },
-    "BrightwoodInvigoratingNightstand": {
-        "name": "Brightwood \"Invigorating\" Nightstand",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d3\/Item_Brightwood_Invigorating_Nightstand.png",
-        "type": "craftable"
-    },
-    "TheOliveGrove": {
-        "name": "The Olive Grove",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/aa\/Item_The_Olive_Grove.png",
-        "type": "craftable"
-    },
-    "TheTwistingMist": {
-        "name": "The Twisting Mist",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/df\/Item_The_Twisting_Mist.png",
-        "type": "craftable"
-    },
-    "DesertCabinetOddsAndEnds": {
-        "name": "Desert Cabinet: Odds And Ends",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ec\/Item_Desert_Cabinet_Odds_and_Ends.png",
-        "type": "craftable"
-    },
-    "DazzlingGoldenTapestry": {
-        "name": "Dazzling Golden Tapestry",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cd\/Item_Dazzling_Golden_Tapestry.png",
-        "type": "craftable"
-    },
-    "DesertStudyConscientiousness": {
-        "name": "Desert Study: Conscientiousness",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8b\/Item_Desert_Study_Conscientiousness.png",
-        "type": "craftable"
-    },
-    "HardwoodWeaponRack": {
-        "name": "Hardwood Weapon Rack",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a2\/Item_Hardwood_Weapon_Rack.png",
-        "type": "craftable"
-    },
-    "FirWeaponRack": {
-        "name": "Fir Weapon Rack",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cb\/Item_Fir_Weapon_Rack.png",
-        "type": "craftable"
-    },
-    "FirShelves": {
-        "name": "Fir Shelves",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/80\/Item_Fir_Shelves.png",
-        "type": "craftable"
-    },
-    "HeavyFirForgingTable": {
-        "name": "Heavy Fir Forging Table",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f8\/Item_Heavy_Fir_Forging_Table.png",
-        "type": "craftable"
-    },
-    "OpenAirWorkshop": {
-        "name": "Open-Air Workshop",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ea\/Item_Open-Air_Workshop.png",
-        "type": "craftable"
-    },
-    "LongPineTable": {
-        "name": "Long Pine Table",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fc\/Item_Long_Pine_Table.png",
-        "type": "craftable"
-    },
-    "MatureCuihuaTree": {
-        "name": "Mature Cuihua Tree",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2b\/Item_Mature_Cuihua_Tree.png",
-        "type": "purchasable"
-    },
-    "OldWell": {
-        "name": "Old Well",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ae\/Item_Old_Well.png",
-        "type": "craftable"
-    },
-    "OvergrownWildvest": {
-        "name": "Overgrown Wildvest",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5c\/Item_Overgrown_Wildvest.png",
-        "type": "purchasable"
-    },
-    "DaintyFists": {
-        "name": "\"Dainty Fists\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/93\/Item_Dainty_Fists.png",
-        "type": "purchasable"
-    },
-    "PocketSizedPineCabin": {
-        "name": "Pocket-Sized Pine Cabin",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d2\/Item_Pocket-Sized_Pine_Cabin.png",
-        "type": "craftable"
-    },
-    "ClassicCountryHome": {
-        "name": "Classic Country Home",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f3\/Item_Classic_Country_Home.png",
-        "type": "craftable"
-    },
-    "CountryHomeWithTallAttic": {
-        "name": "Country Home With Tall Attic",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6b\/Item_Country_Home_With_Tall_Attic.png",
-        "type": "craftable"
-    },
-    "SmoothWoodenBench": {
-        "name": "Smooth Wooden Bench",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/45\/Item_Smooth_Wooden_Bench.png",
-        "type": "craftable"
-    },
-    "HeavyHayBale": {
-        "name": "Heavy Hay Bale",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/84\/Item_Heavy_Hay_Bale.png",
-        "type": "craftable"
-    },
-    "MessyPileOfFirCrates": {
-        "name": "Messy Pile Of Fir Crates",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/75\/Item_Messy_Pile_of_Fir_Crates.png",
-        "type": "craftable"
-    },
-    "SimpleCargoCart": {
-        "name": "Simple Cargo Cart",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/76\/Item_Simple_Cargo_Cart.png",
-        "type": "craftable"
-    },
-    "NeatStackOfFirKegs": {
-        "name": "Neat Stack Of Fir Kegs",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/91\/Item_Neat_Stack_of_Fir_Kegs.png",
-        "type": "craftable"
-    },
-    "PineStreetLight": {
-        "name": "Pine Street Light",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8f\/Item_Pine_Street_Light.png",
-        "type": "craftable"
-    },
-    "TheColorOfTheWind": {
-        "name": "\"The Color Of The Wind\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/61\/Item_The_Color_of_the_Wind.png",
-        "type": "purchasable"
-    },
-    "RoofedWellForPurity": {
-        "name": "Roofed Well: For Purity",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/63\/Item_Roofed_Well_For_Purity.png",
-        "type": "craftable"
-    },
-    "SmoothStoneBench": {
-        "name": "Smooth Stone Bench",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f9\/Item_Smooth_Stone_Bench.png",
-        "type": "craftable"
-    },
-    "BirdAndBlossomDesignFountain": {
-        "name": "Bird And Blossom Design Fountain",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5d\/Item_Bird_and_Blossom_Design_Fountain.png",
-        "type": "craftable"
-    },
-    "WroughtIronCarvedStreetLight": {
-        "name": "Wrought Iron Carved Street Light",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2d\/Item_Wrought_Iron_Carved_Street_Light.png",
-        "type": "craftable"
-    },
-    "BloomingHedge": {
-        "name": "Blooming Hedge",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8d\/Item_Blooming_Hedge.png",
-        "type": "purchasable"
-    },
-    "StoneCupShapedPool": {
-        "name": "Stone Cup-Shaped Pool",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/97\/Item_Stone_Cup-Shaped_Pool.png",
-        "type": "craftable"
-    },
-    "BambooOutdoorTeaTable": {
-        "name": "Bamboo Outdoor Tea Table",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2e\/Item_Bamboo_Outdoor_Tea_Table.png",
-        "type": "craftable"
-    },
-    "WineShopDisplayCounterToYourHeartsContent": {
-        "name": "Wine Shop Display Counter: To Your Heart's Content",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bf\/Item_Wine_Shop_Display_Counter_To_Your_Heart%27s_Content.png",
-        "type": "craftable"
-    },
-    "WoodenOutdoorTeaTable": {
-        "name": "Wooden Outdoor Tea Table",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/47\/Item_Wooden_Outdoor_Tea_Table.png",
-        "type": "craftable"
-    },
-    "FragrantCedarVegetableRack": {
-        "name": "Fragrant Cedar Vegetable Rack",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/77\/Item_Fragrant_Cedar_Vegetable_Rack.png",
-        "type": "purchasable"
-    },
-    "FourQuadrantCookingCauldron": {
-        "name": "\"Four-Quadrant Cooking Cauldron\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8e\/Item_Four-Quadrant_Cooking_Cauldron.png",
-        "type": "craftable"
-    },
-    "FruitSellersCaution": {
-        "name": "Fruit Seller's Caution",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/70\/Item_Fruit_Seller%27s_Caution.png",
-        "type": "craftable"
-    },
-    "TwoTierVendorsBoothRisingFortunes": {
-        "name": "Two-Tier Vendor's Booth: Rising Fortunes",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/22\/Item_Two-Tier_Vendor%27s_Booth_Rising_Fortunes.png",
-        "type": "craftable"
-    },
-    "FruitAndVeggieStallHarvestBounties": {
-        "name": "Fruit And Veggie Stall: Harvest Bounties",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/46\/Item_Fruit_and_Veggie_Stall_Harvest_Bounties.png",
-        "type": "craftable"
-    },
-    "StorageSackBuzzOffBag": {
-        "name": "Storage Sack: Buzz-Off Bag",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2b\/Item_Storage_Sack_Buzz-Off_Bag.png",
-        "type": "craftable"
-    },
-    "WineJarWithBambooCasingSpiritsAwaitingMoonrise": {
-        "name": "Wine Jar With Bamboo Casing: Spirits Awaiting Moonrise",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/40\/Item_Wine_Jar_With_Bamboo_Casing_Spirits_Awaiting_Moonrise.png",
-        "type": "craftable"
-    },
-    "EvilRepellingLanternAllAroundLighting": {
-        "name": "Evil-Repelling Lantern: All-Around Lighting",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d4\/Item_Evil-Repelling_Lantern_All-Around_Lighting.png",
-        "type": "craftable"
-    },
-    "TravelingMerchantNorthOfTheStoneGate": {
-        "name": "\"Traveling Merchant North Of The Stone Gate\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6e\/Item_Traveling_Merchant_North_of_the_Stone_Gate.png",
-        "type": "craftable"
-    },
-    "HuntersVantage": {
-        "name": "\"Hunter's Vantage\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/48\/Item_Hunter%27s_Vantage.png",
-        "type": "purchasable"
-    },
-    "RollRoofedFruitAndVegetableCart": {
-        "name": "Roll-Roofed Fruit And Vegetable Cart",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/ce\/Item_Roll-Roofed_Fruit_and_Vegetable_Cart.png",
-        "type": "craftable"
-    },
-    "CloudsEastOfBishui": {
-        "name": "\"Clouds East Of Bishui\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e7\/Item_Clouds_East_of_Bishui.png",
-        "type": "craftable"
-    },
-    "UmbrellaShopKaleidoscopeOfParasolColors": {
-        "name": "Umbrella Shop: Kaleidoscope Of Parasol Colors",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d4\/Item_Umbrella_Shop_Kaleidoscope_of_Parasol_Colors.png",
-        "type": "craftable"
-    },
-    "ToyStandDazzlingDelights": {
-        "name": "Toy Stand: Dazzling Delights",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/29\/Item_Toy_Stand_Dazzling_Delights.png",
-        "type": "craftable"
-    },
-    "CrudeDoubleDeckerPallet": {
-        "name": "Crude Double-Decker Pallet",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6e\/Item_Crude_Double-Decker_Pallet.png",
-        "type": "craftable"
-    },
-    "ProfuseAwlking": {
-        "name": "Profuse Awlking",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d2\/Item_Profuse_Awlking.png",
-        "type": "purchasable"
-    },
-    "SturdyPineFence": {
-        "name": "Sturdy Pine Fence",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e3\/Item_Sturdy_Pine_Fence.png",
-        "type": "craftable"
-    },
-    "LargeStoneMill": {
-        "name": "Large Stone Mill",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/46\/Item_Large_Stone_Mill.png",
-        "type": "craftable"
-    },
-    "LiyueHouseTimeWaitsForNoOne": {
-        "name": "Liyue House: Time Waits For No One",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3b\/Item_Liyue_House_Time_Waits_for_No_One.png",
-        "type": "craftable"
-    },
-    "LiyueShopCitywideFavorite": {
-        "name": "Liyue Shop: Citywide Favorite",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a5\/Item_Liyue_Shop_Citywide_Favorite.png",
-        "type": "craftable"
-    },
-    "SturdyStoneWell": {
-        "name": "Sturdy Stone Well",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6b\/Item_Sturdy_Stone_Well.png",
-        "type": "craftable"
-    },
-    "AdeptusGate": {
-        "name": "Adeptus Gate",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/89\/Item_Adeptus_Gate.png",
-        "type": "craftable"
-    },
-    "ShadowLampPaintedShadow": {
-        "name": "Shadow Lamp: Painted Shadow",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/95\/Item_Shadow_Lamp_Painted_Shadow.png",
-        "type": "craftable"
-    },
-    "StrawShed": {
-        "name": "Straw Shed",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/42\/Item_Straw_Shed.png",
-        "type": "craftable"
-    },
-    "HilichurlTotemFence": {
-        "name": "Hilichurl Totem Fence",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f6\/Item_Hilichurl_Totem_Fence.png",
-        "type": "craftable"
-    },
-    "WoodenHilichurlFence": {
-        "name": "Wooden Hilichurl Fence",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e1\/Item_Wooden_Hilichurl_Fence.png",
-        "type": "craftable"
-    },
-    "HilichurlHornedPot": {
-        "name": "Hilichurl Horned Pot",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/76\/Item_Hilichurl_Horned_Pot.png",
-        "type": "craftable"
-    },
-    "HilichurlArcheryTarget": {
-        "name": "Hilichurl Archery Target",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/19\/Item_Hilichurl_Archery_Target.png",
-        "type": "craftable"
-    },
-    "HilichurlStrawHut": {
-        "name": "Hilichurl Straw Hut",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/eb\/Item_Hilichurl_Straw_Hut.png",
-        "type": "craftable"
-    },
-    "TwoStoryHilichurlSentryTower": {
-        "name": "Two-Story Hilichurl Sentry Tower",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/31\/Item_Two-Story_Hilichurl_Sentry_Tower.png",
-        "type": "craftable"
-    },
-    "HilichurlChieftainHall": {
-        "name": "Hilichurl Chieftain Hall",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c2\/Item_Hilichurl_Chieftain_Hall.png",
-        "type": "craftable"
-    },
-    "HilichurlSpiralWatchtower": {
-        "name": "Hilichurl Spiral Watchtower",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d6\/Item_Hilichurl_Spiral_Watchtower.png",
-        "type": "craftable"
-    },
-    "HilichurlOutpostHut": {
-        "name": "Hilichurl Outpost Hut",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c6\/Item_Hilichurl_Outpost_Hut.png",
-        "type": "craftable"
-    },
-    "HidingGrazestone": {
-        "name": "Hiding Grazestone",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cd\/Item_Hiding_Grazestone.png",
-        "type": "purchasable"
-    },
-    "HazelWildvest": {
-        "name": "Hazel Wildvest",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a5\/Item_Hazel_Wildvest.png",
-        "type": "purchasable"
-    },
-    "DeadwoodRoadSign": {
-        "name": "Deadwood Road Sign",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8c\/Item_Deadwood_Road_Sign.png",
-        "type": "craftable"
-    },
-    "SimpleSinglePersonTent": {
-        "name": "Simple Single-Person Tent",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/91\/Item_Simple_Single-Person_Tent.png",
-        "type": "craftable"
-    },
-    "LightningProtectiveTent": {
-        "name": "Lightning Protective Tent",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f2\/Item_Lightning_Protective_Tent.png",
-        "type": "craftable"
-    },
-    "TheAdventurersBurdens": {
-        "name": "\"The Adventurer's Burdens\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bc\/Item_%22The_Adventurer%27s_Burdens%22.png",
-        "type": "craftable"
-    },
-    "BrightcrownPlumebush": {
-        "name": "\"Brightcrown Plumebush\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1c\/Item_Brightcrown_Plumebush.png",
-        "type": "purchasable"
-    },
-    "TianhengRedMapleBranchesAflame": {
-        "name": "Tianheng Red Maple: Branches Aflame",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4d\/Item_Tianheng_Red_Maple_Branches_Aflame.png",
-        "type": "purchasable"
-    },
-    "TheAdventurersTreasures": {
-        "name": "\"The Adventurer's Treasures\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/45\/Item_The_Adventurer%27s_Treasures.png",
-        "type": "craftable"
-    },
-    "SoilCarryingWoodenBarrel": {
-        "name": "Soil-Carrying Wooden Barrel",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/ff\/Item_Soil-Carrying_Wooden_Barrel.png",
-        "type": "craftable"
-    },
-    "TallWoodenPole": {
-        "name": "Tall Wooden Pole",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0e\/Item_Tall_Wooden_Pole.png",
-        "type": "craftable"
-    },
-    "TemporaryWorkQuarters": {
-        "name": "Temporary Work Quarters",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7e\/Item_Temporary_Work_Quarters.png",
-        "type": "craftable"
-    },
-    "SturdyWoodenBarrel": {
-        "name": "Sturdy Wooden Barrel",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/04\/Item_Sturdy_Wooden_Barrel.png",
-        "type": "craftable"
-    },
-    "SimpleWoodenFence": {
-        "name": "Simple Wooden Fence",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dc\/Item_Simple_Wooden_Fence.png",
-        "type": "craftable"
-    },
-    "HalfConstructedFence": {
-        "name": "Half-Constructed Fence",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dc\/Item_Half-Constructed_Fence.png",
-        "type": "craftable"
-    },
-    "LushGrapevine": {
-        "name": "Lush Grapevine",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f4\/Item_Lush_Grapevine.png",
-        "type": "craftable"
-    },
-    "KeyFenceSelfRestraint": {
-        "name": "Key Fence: Self-Restraint",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cc\/Item_Key_Fence_Self-Restraint.png",
-        "type": "craftable"
-    },
-    "SappanAndVermilionEnjoined": {
-        "name": "Sappan And Vermilion Enjoined",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/32\/Item_Sappan_and_Vermilion_Enjoined.png",
-        "type": "purchasable"
-    },
-    "OfficialResidenceCorridorPowersReach": {
-        "name": "Official Residence Corridor: Power's Reach",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/85\/Item_Official_Residence_Corridor_Power%27s_Reach.png",
-        "type": "craftable"
-    },
-    "InazumanOfficialResidenceStrictAdherence": {
-        "name": "Inazuman Official Residence: Strict Adherence",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/27\/Item_Inazuman_Official_Residence_Strict_Adherence.png",
-        "type": "craftable"
-    },
-    "FenceCornerLongWatch": {
-        "name": "Fence Corner: Long Watch",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/86\/Item_Fence_Corner_Long_Watch.png",
-        "type": "craftable"
-    },
-    "KeyGatewayBeneathTheClouds": {
-        "name": "Key Gateway: Beneath The Clouds",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b4\/Item_Key_Gateway_Beneath_the_Clouds.png",
-        "type": "craftable"
-    },
-    "HeadquartersAlarmSoundOfThunder": {
-        "name": "Headquarters Alarm: Sound Of Thunder",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3d\/Item_Headquarters_Alarm_Sound_of_Thunder.png",
-        "type": "craftable"
-    },
-    "TheRedKitesWakingAndSleeping": {
-        "name": "The Red Kite's Waking And Sleeping",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/86\/Item_The_Red_Kite%27s_Waking_and_Sleeping.png",
-        "type": "purchasable"
-    },
-    "WarDrumLineBreakingReverb": {
-        "name": "War Drum: Line-Breaking Reverb",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/26\/Item_War_Drum_Line-Breaking_Reverb.png",
-        "type": "craftable"
-    },
-    "HotSpringWhitestoneSecretFire": {
-        "name": "Hot Spring Whitestone: Secret Fire",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ab\/Item_Hot_Spring_Whitestone_Secret_Fire.png",
-        "type": "purchasable"
-    },
-    "HotSpringFoldingScreenModeration": {
-        "name": "Hot Spring Folding Screen: Moderation",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f1\/Item_Hot_Spring_Folding_Screen_Moderation.png",
-        "type": "craftable"
-    },
-    "HotSpringWallWellGrounded": {
-        "name": "Hot Spring Wall: Well-Grounded",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/01\/Item_Hot_Spring_Wall_Well-Grounded.png",
-        "type": "craftable"
-    },
-    "WadingStones": {
-        "name": "Wading Stones",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b3\/Item_Wading_Stones.png",
-        "type": "purchasable"
-    },
-    "ThePreciousPinkOfSpring": {
-        "name": "The Precious Pink Of Spring",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/69\/Item_The_Precious_Pink_of_Spring.png",
-        "type": "purchasable"
-    },
-    "HotSpringOuterWallNoVaulting": {
-        "name": "Hot Spring Outer Wall: No Vaulting",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b1\/Item_Hot_Spring_Outer_Wall_No_Vaulting.png",
-        "type": "craftable"
-    },
-    "FlowersFirstBlushingBloom": {
-        "name": "Flower's First Blushing Bloom",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/90\/Item_Flower%27s_First_Blushing_Bloom.png",
-        "type": "purchasable"
-    },
-    "AThousandPetalsOfRedGlaze": {
-        "name": "A Thousand Petals Of Red Glaze",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3f\/Item_A_Thousand_Petals_of_Red_Glaze.png",
-        "type": "purchasable"
-    },
-    "MeditationStone": {
-        "name": "Meditation Stone",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/11\/Item_Meditation_Stone.png",
-        "type": "purchasable"
-    },
-    "WhitestoneHotSpringDiffusingWarmth": {
-        "name": "Whitestone Hot Spring: Diffusing Warmth",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/46\/Item_Whitestone_Hot_Spring_Diffusing_Warmth.png",
-        "type": "craftable"
-    },
-    "HotSpringFoyerShelterfromTheCold": {
-        "name": "Hot Spring Foyer: Shelter from The Cold"
-    },
-    "TheWanderingBirdWithin": {
-        "name": "The Wandering Bird Within",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/19\/Item_The_Wandering_Bird_Within.png",
-        "type": "purchasable"
-    },
-    "OtogiTaninWoodBarrel": {
-        "name": "Otogi \"Tanin\" Wood Barrel",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7f\/Item_Otogi_Tanin_Wood_Barrel.png",
-        "type": "craftable"
-    },
-    "KokutanThickWalledClayWaterTank": {
-        "name": "\"Kokutan\" Thick-Walled Clay Water Tank",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/08\/Item_Kokutan_Thick-Walled_Clay_Water_Tank.png",
-        "type": "craftable"
-    },
-    "OtogiKintakeFence": {
-        "name": "Otogi \"Kintake\" Fence",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f0\/Item_Otogi_Kintake_Fence.png",
-        "type": "craftable"
-    },
-    "HighFlyingFishFlag": {
-        "name": "High-Flying Fish Flag",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/01\/Item_High-Flying_Fish_Flag.png",
-        "type": "craftable"
-    },
-    "OtogiKintakeCourtyardGate": {
-        "name": "Otogi \"Kintake\" Courtyard Gate",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b5\/Item_Otogi_Kintake_Courtyard_Gate.png",
-        "type": "craftable"
-    },
-    "InazumanBambooRoofedHomeWildHeart": {
-        "name": "Inazuman Bamboo-Roofed Home: Wild Heart",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/75\/Item_Inazuman_Bamboo-Roofed_Home_Wild_Heart.png",
-        "type": "craftable"
-    },
-    "InazumanBambooRoofedHomeTheLongPeace": {
-        "name": "Inazuman Bamboo-Roofed Home: The Long Peace",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/89\/Item_Inazuman_Bamboo-Roofed_Home_The_Long_Peace.png",
-        "type": "craftable"
-    },
-    "TheFruitFarmersThrift": {
-        "name": "The Fruit Farmer's Thrift",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0a\/Item_The_Fruit_Farmer%27s_Thrift.png",
-        "type": "craftable"
-    },
-    "CleansingShrine": {
-        "name": "Cleansing Shrine",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d9\/Item_Cleansing_Shrine.png",
-        "type": "craftable"
-    },
-    "TheAstersSigh": {
-        "name": "The Aster's Sigh",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c9\/Item_The_Aster%27s_Sigh.png",
-        "type": "purchasable"
-    },
-    "YumemiruSeikenOfferingBox": {
-        "name": "Yumemiru \"Seiken\" Offering Box",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/54\/Item_Yumemiru_Seiken_Offering_Box.png",
-        "type": "craftable"
-    },
-    "WhiteFishTallowCandleEvenlight": {
-        "name": "White Fish Tallow Candle: Evenlight",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9d\/Item_White_Fish_Tallow_Candle_Evenlight.png",
-        "type": "craftable"
-    },
-    "FoundationsOfStoneDoubleTime": {
-        "name": "Foundations Of Stone: Double-Time",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a8\/Item_Foundations_of_Stone_Double-Time.png",
-        "type": "craftable"
-    },
-    "FoundationsOfStoneTimelyArrival": {
-        "name": "Foundations Of Stone: Timely Arrival",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a9\/Item_Foundations_of_Stone_Timely_Arrival.png",
-        "type": "craftable"
-    },
-    "FoundationsOfStonePathOfCultivation": {
-        "name": "Foundations Of Stone: Path Of Cultivation",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a4\/Item_Foundations_of_Stone_Path_of_Cultivation.png",
-        "type": "craftable"
-    },
-    "FortuneSlipStandOmenReader": {
-        "name": "Fortune Slip Stand: Omen-Reader",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dd\/Item_Fortune_Slip_Stand_Omen-Reader.png",
-        "type": "craftable"
-    },
-    "SealOfTheProvisionalHeadPriestess": {
-        "name": "\"Seal Of The Provisional Head Priestess\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a2\/Item_Seal_of_the_Provisional_Head_Priestess.png",
-        "type": "purchasable"
-    },
-    "YumemiruSaikyoFortuneSlipHanger": {
-        "name": "Yumemiru \"Saikyo\" Fortune Slip Hanger",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/16\/Item_Yumemiru_Saikyo_Fortune_Slip_Hanger.png",
-        "type": "craftable"
-    },
-    "SkyKitsuneStatueHakushinsLegacy": {
-        "name": "Sky Kitsune Statue: Hakushin's Legacy",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e5\/Item_Sky_Kitsune_Statue_Hakushin%27s_Legacy.png",
-        "type": "craftable"
-    },
-    "YumemiruKuukaiStreetLamp": {
-        "name": "Yumemiru \"Kuukai\" Street Lamp",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cb\/Item_Yumemiru_Kuukai_Street_Lamp.png",
-        "type": "craftable"
-    },
-    "ReplicaAncientOtogiKeg": {
-        "name": "Replica Ancient Otogi Keg",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b4\/Item_Replica_Ancient_Otogi_Keg.png",
-        "type": "craftable"
-    },
-    "VillageWellSubterraneanSecrets": {
-        "name": "Village Well: Subterranean Secrets",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/34\/Item_Village_Well_Subterranean_Secrets.png",
-        "type": "craftable"
-    },
-    "NarukamisBanner": {
-        "name": "Narukami's Banner",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2e\/Item_Narukami%27s_Banner.png",
-        "type": "craftable"
-    },
-    "EncampmentFenceDecisiveJudgment": {
-        "name": "Encampment Fence: Decisive Judgment",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4d\/Item_Encampment_Fence_Decisive_Judgment.png",
-        "type": "craftable"
-    },
-    "CampGateFealty": {
-        "name": "Camp Gate: Fealty",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9c\/Item_Camp_Gate_Fealty.png",
-        "type": "craftable"
-    },
-    "CampSpearRackPointBreak": {
-        "name": "Camp Spear-Rack: Point Break",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cf\/Item_Camp_Spear-Rack_Point_Break.png",
-        "type": "craftable"
-    },
-    "CampDwellingShoringUp": {
-        "name": "Camp Dwelling: Shoring Up",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a4\/Item_Camp_Dwelling_Shoring_Up.png",
-        "type": "craftable"
-    },
-    "CampTentTimelyTactics": {
-        "name": "Camp Tent: Timely Tactics",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/02\/Item_Camp_Tent_Timely_Tactics.png",
-        "type": "craftable"
-    },
-    "CampWatchtowerViewport": {
-        "name": "Camp Watchtower: Viewport",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/94\/Item_Camp_Watchtower_Viewport.png",
-        "type": "craftable"
-    },
-    "EncampmentFenceJaggedTeeth": {
-        "name": "Encampment Fence: Jagged Teeth",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/18\/Item_Encampment_Fence_Jagged_Teeth.png",
-        "type": "craftable"
-    },
-    "EncampmentFenceHoningGoad": {
-        "name": "Encampment Fence: Honing Goad",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/18\/Item_Encampment_Fence_Honing_Goad.png",
-        "type": "craftable"
-    },
-    "OfPromisesUnkeptTheNightFlowersSpeak": {
-        "name": "Of Promises Unkept The Night Flowers Speak",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8f\/Item_Of_Promises_Unkept_the_Night_Flowers_Speak.png",
-        "type": "purchasable"
-    },
-    "RitualShrine": {
-        "name": "Ritual Shrine",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0c\/Item_Ritual_Shrine.png",
-        "type": "craftable"
-    },
-    "OtogiCountrysideStreetLamp": {
-        "name": "Otogi Countryside Street Lamp",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e5\/Item_Otogi_Countryside_Street_Lamp.png",
-        "type": "craftable"
-    },
-    "MelancholyTheDewgrassShadowing": {
-        "name": "Melancholy, The Dewgrass Shadowing",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2d\/Item_Melancholy%2C_the_Dewgrass_Shadowing.png",
-        "type": "purchasable"
-    },
-    "FestivalKibanStore": {
-        "name": "Festival \"Kiban\" Store",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e5\/Item_Festival_Kiban_Store.png",
-        "type": "craftable"
-    },
-    "FestivalTeibanStore": {
-        "name": "Festival \"Teiban\" Store",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f5\/Item_Festival_Teiban_Store.png",
-        "type": "craftable"
-    },
-    "OtogiWoodRiceCakeSoupStand": {
-        "name": "Otogi Wood Rice Cake Soup Stand",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/27\/Item_Otogi_Wood_Rice_Cake_Soup_Stand.png",
-        "type": "craftable"
-    },
-    "ReplicaAncientOtogiCrate": {
-        "name": "Replica Ancient Otogi Crate",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1c\/Item_Replica_Ancient_Otogi_Crate.png",
-        "type": "craftable"
-    },
-    "OtogiRakushiSquareStool": {
-        "name": "Otogi \"Rakushi\" Square Stool",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/79\/Item_Otogi_Rakushi_Square_Stool.png",
-        "type": "craftable"
-    },
-    "OtogiRakushiSquareTable": {
-        "name": "Otogi \"Rakushi\" Square Table",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7e\/Item_Otogi_Rakushi_Square_Table.png",
-        "type": "craftable"
-    },
-    "InazumanHomeEasyAdaptation": {
-        "name": "Inazuman Home: Easy Adaptation",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/11\/Item_Inazuman_Home_Easy_Adaptation.png",
-        "type": "craftable"
-    },
-    "FiveLanternFestivalGate": {
-        "name": "Five-Lantern Festival Gate",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/51\/Item_Five-Lantern_Festival_Gate.png",
-        "type": "craftable"
-    },
-    "KoukiAraliaMaskRack": {
-        "name": "\"Kouki\" Aralia Mask Rack",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/da\/Item_Kouki_Aralia_Mask_Rack.png",
-        "type": "craftable"
-    },
-    "SimpleOtogiStreetLamp": {
-        "name": "Simple Otogi Street Lamp",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2a\/Item_Simple_Otogi_Street_Lamp.png",
-        "type": "craftable"
-    },
-    "InazumanStoreNumberlessGems": {
-        "name": "Inazuman Store: Numberless Gems",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a3\/Item_Inazuman_Store_Numberless_Gems.png",
-        "type": "craftable"
-    },
-    "UmbrellaShopDrapesOfDifferingDreams": {
-        "name": "Umbrella Shop: Drapes Of Differing Dreams",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/28\/Item_Umbrella_Shop_Drapes_of_Differing_Dreams.png",
-        "type": "craftable"
-    },
-    "FruitAndVeggieStallGoodHonestFlavor": {
-        "name": "Fruit And Veggie Stall: Good Honest Flavor",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ed\/Item_Fruit_and_Veggie_Stall_Good_Honest_Flavor.png",
-        "type": "craftable"
-    },
-    "InazumanHomeTheWorkOfGenerations": {
-        "name": "Inazuman Home: The Work Of Generations",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/aa\/Item_Inazuman_Home_The_Work_of_Generations.png",
-        "type": "craftable"
-    },
-    "OtogiWoodRamenStand": {
-        "name": "Otogi Wood Ramen Stand",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3e\/Otogi_Wood_Ramen_Stand.png",
-        "type": "craftable"
-    },
-    "BrightwoodGroceryStall": {
-        "name": "Brightwood Grocery Stall",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/ce\/Item_Brightwood_Grocery_Stall.png",
-        "type": "craftable"
-    },
-    "BuildingBlockOfTheCityOfWisdom": {
-        "name": "Building Block Of The City Of Wisdom",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6d\/Item_Building_Block_of_the_City_of_Wisdom.png",
-        "type": "craftable"
-    },
-    "TheEremitesOdyssey": {
-        "name": "The Eremites' Odyssey",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Item_The_Eremites%27_Odyssey.png",
-        "type": "craftable"
-    },
-    "SweetnessInExchange": {
-        "name": "Sweetness In Exchange",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/76\/Item_Sweetness_in_Exchange.png",
-        "type": "craftable"
-    },
-    "SweetnessInTheShade": {
-        "name": "Sweetness In The Shade",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/76\/Item_Sweetness_in_the_Shade.png",
-        "type": "craftable"
-    },
-    "SlantedMeanderingWood": {
-        "name": "Slanted Meandering Wood",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8a\/Item_Slanted_Meandering_Wood.png",
-        "type": "purchasable"
-    },
-    "PerennialIllumination": {
-        "name": "Perennial Illumination",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f8\/Item_Perennial_Illumination.png",
-        "type": "craftable"
-    },
-    "DelicaciesOfTheCityOfWisdom": {
-        "name": "Delicacies Of The City Of Wisdom",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/44\/Item_Delicacies_of_the_City_of_Wisdom.png",
-        "type": "craftable"
-    },
-    "WovenFruition": {
-        "name": "Woven Fruition",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d3\/Item_Woven_Fruition.png",
-        "type": "craftable"
-    },
-    "WovenDepth": {
-        "name": "Woven Depth",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6f\/Item_Woven_Depth.png",
-        "type": "craftable"
-    },
-    "BrightwoodKebabCart": {
-        "name": "Brightwood Kebab Cart",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a0\/Item_Brightwood_Kebab_Cart.png",
-        "type": "craftable"
+        "type": "craftable",
+        "rarity": 3,
+        "id": 360410,
+        "imgId": "UI_Homeworld_Interior_Dq_Lamp_Lamp_03_Vo",
+        "load": 220,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
     },
     "DrippingVerdantLight": {
         "name": "Dripping Verdant Light",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d4\/Item_Dripping_Verdant_Light.png",
-        "type": "craftable"
-    },
-    "VerdantMeanderingWood": {
-        "name": "Verdant Meandering Wood",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7b\/Item_Verdant_Meandering_Wood.png",
-        "type": "purchasable"
-    },
-    "DeepwoodDwellersEstimation": {
-        "name": "Deepwood Dweller's Estimation",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6e\/Item_Deepwood_Dweller%27s_Estimation.png",
-        "type": "craftable"
-    },
-    "DeepwoodDwellersDeliberation": {
-        "name": "Deepwood Dweller's Deliberation",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/ca\/Item_Deepwood_Dweller%27s_Deliberation.png",
-        "type": "craftable"
-    },
-    "NoFishingAhead": {
-        "name": "\"No Fishing Ahead\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/72\/Item_%22No_Fishing_Ahead%22.png",
-        "type": "craftable"
-    },
-    "SweetnessInStorage": {
-        "name": "Sweetness In Storage",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5f\/Item_Sweetness_in_Storage.png",
-        "type": "craftable"
-    },
-    "FishermansMaintenance": {
-        "name": "Fisherman's Maintenance",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0e\/Item_Fisherman%27s_Maintenance.png",
-        "type": "craftable"
-    },
-    "FlamingCatalyst": {
-        "name": "Flaming Catalyst",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7f\/Item_Flaming_Catalyst.png",
-        "type": "purchasable"
-    },
-    "BloomingIllumination": {
-        "name": "Blooming Illumination",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8b\/Item_Blooming_Illumination.png",
-        "type": "craftable"
+        "type": "craftable",
+        "rarity": 3,
+        "id": 360420,
+        "imgId": "UI_Homeworld_Exterior_Xm_Lamp_Light_StreetLamp_02_Lod0",
+        "load": 85,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
     },
     "ImmersiveLight": {
         "name": "Immersive Light",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1e\/Item_Immersive_Light.png",
-        "type": "craftable"
-    },
-    "ReplicaOfTheTheatersGlory": {
-        "name": "Replica Of The Theater's Glory",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/41\/Item_Replica_of_the_Theater%27s_Glory.png",
-        "type": "purchasable"
-    },
-    "ATheatersDreamOfFlowers": {
-        "name": "A Theater's Dream Of Flowers",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5a\/Item_A_Theater%27s_Dream_of_Flowers.png",
-        "type": "purchasable"
-    },
-    "ClarityfromTheLandOfWisdom": {
-        "name": "Clarity from The Land Of Wisdom"
-    },
-    "FishermansDealings": {
-        "name": "Fisherman's Dealings",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b1\/Item_Fisherman%27s_Dealings.png",
-        "type": "craftable"
-    },
-    "FishermansClemency": {
-        "name": "Fisherman's Clemency",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/68\/Item_Fisherman%27s_Clemency.png",
-        "type": "craftable"
-    },
-    "FabricOfTheCityOfWisdom": {
-        "name": "Fabric Of The City Of Wisdom",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/30\/Item_Fabric_of_the_City_of_Wisdom.png",
-        "type": "craftable"
-    },
-    "FishermansCatch": {
-        "name": "Fisherman's Catch",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e7\/Item_Fisherman%27s_Catch.png",
-        "type": "craftable"
-    },
-    "FishermansDelicacy": {
-        "name": "Fisherman's Delicacy",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3a\/Item_Fisherman%27s_Delicacy.png",
-        "type": "craftable"
-    },
-    "DeepwoodDwellersLonesome": {
-        "name": "Deepwood Dweller's Lonesome",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Item_Deepwood_Dweller%27s_Lonesome.png",
-        "type": "craftable"
-    },
-    "FishermansEfforts": {
-        "name": "Fisherman's Efforts",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9b\/Item_Fisherman%27s_Efforts.png",
-        "type": "craftable"
-    },
-    "DesertHouseHueAndCry": {
-        "name": "Desert House: Hue And Cry",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7b\/Item_Desert_House_Hue_and_Cry.png",
-        "type": "craftable"
-    },
-    "DesertHouseBriefSleep": {
-        "name": "Desert House: Brief Sleep",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d1\/Item_Desert_House_Brief_Sleep.png",
-        "type": "craftable"
-    },
-    "DesertHouseSpicesAbound": {
-        "name": "Desert House: Spices Abound",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c6\/Item_Desert_House_Spices_Abound.png",
-        "type": "craftable"
-    },
-    "DesertHouseOrdinaryLives": {
-        "name": "Desert House: Ordinary Lives",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0a\/Item_Desert_House_Ordinary_Lives.png",
-        "type": "craftable"
-    },
-    "TheConcealedSalt": {
-        "name": "The Concealed Salt",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/99\/Item_The_Concealed_Salt.png",
-        "type": "purchasable"
-    },
-    "LikeTheShimmeringDistantStars": {
-        "name": "Like The Shimmering Distant Stars",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/24\/Item_Like_the_Shimmering_Distant_Stars.png",
-        "type": "purchasable"
-    },
-    "DesertHutMinutiae": {
-        "name": "Desert Hut: Minutiae",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/37\/Item_Desert_Hut_Minutiae.png",
-        "type": "craftable"
-    },
-    "DesertHutQuestions": {
-        "name": "Desert Hut: Questions",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/75\/Item_Desert_Hut_Questions.png",
-        "type": "craftable"
-    },
-    "TheEssentials": {
-        "name": "The Essentials",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/15\/Item_The_Essentials.png",
-        "type": "craftable"
-    },
-    "TheEremitesFlameOfVigor": {
-        "name": "The Eremites' Flame Of Vigor",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1c\/Item_The_Eremites%27_Flame_of_Vigor.png",
-        "type": "craftable"
-    },
-    "EmbodimentOfWarfare": {
-        "name": "Embodiment Of Warfare",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5d\/Item_Embodiment_of_Warfare.png",
-        "type": "craftable"
-    },
-    "TheEremitesFame": {
-        "name": "The Eremites' Fame",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b3\/Item_The_Eremites%27_Fame.png",
-        "type": "craftable"
-    },
-    "SteelStopper": {
-        "name": "Steel Stopper",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a9\/Item_Steel_Stopper.png",
-        "type": "craftable"
-    },
-    "LightInTheTranquilCourt": {
-        "name": "Light In The Tranquil Court",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d4\/Item_Light_in_the_Tranquil_Court.png",
-        "type": "craftable"
-    },
-    "LongingInTheTranquilCourt": {
-        "name": "Longing In The Tranquil Court",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3b\/Item_Longing_in_the_Tranquil_Court.png",
-        "type": "purchasable"
-    },
-    "ProlongationMedium": {
-        "name": "Prolongation Medium",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ab\/Item_Prolongation_Medium.png",
-        "type": "purchasable"
-    },
-    "TheatersCoolMist": {
-        "name": "Theater's Cool Mist",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/00\/Item_Theater%27s_Cool_Mist.png",
-        "type": "craftable"
-    },
-    "PristineVessel": {
-        "name": "Pristine Vessel",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/74\/Item_Pristine_Vessel.png",
-        "type": "purchasable"
-    },
-    "TreasureFromTheLandOfWisdom": {
-        "name": "Treasure From The Land Of Wisdom",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a7\/Item_Treasure_from_the_Land_of_Wisdom.png",
-        "type": "craftable"
-    },
-    "ScrollsFromTheLandOfWisdom": {
-        "name": "Scrolls From The Land Of Wisdom",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/52\/Item_Scrolls_from_the_Land_of_Wisdom.png",
-        "type": "craftable"
-    },
-    "HotSpringFoyerShelterFromTheCold": {
-        "name": "Hot Spring Foyer: Shelter From The Cold",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ef\/Item_Hot_Spring_Foyer_Shelter_from_the_Cold.png",
-        "type": "craftable"
-    },
-    "ClarityFromTheLandOfWisdom": {
-        "name": "Clarity From The Land Of Wisdom",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5b\/Item_Clarity_from_the_Land_of_Wisdom.png",
-        "type": "craftable"
-    },
-    "MallowWoodMultiModelWardrobe": {
-        "name": "Mallow Wood \"Multi-Model\" Wardrobe",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/af\/Item_Mallow_Wood_%22Multi-Model%22_Wardrobe.png",
-        "type": "craftable"
-    },
-    "WitnessToGreatFocus": {
-        "name": "\"Witness To Great Focus\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6a\/Item_Witness_to_Great_Focus.png",
-        "type": "craftable"
-    },
-    "RestaurantRugBathingInTheBreeze": {
-        "name": "Restaurant Rug: \"Bathing In The Breeze\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/eb\/Item_Restaurant_Rug_Bathing_in_the_Breeze.png",
-        "type": "craftable"
-    },
-    "MaisonCardinalicesStores": {
-        "name": "\"Maison Cardinalice's Stores\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/31\/Item_Maison_Cardinalice%27s_Stores.png",
-        "type": "craftable"
-    },
-    "ElationOfSocialDrinking": {
-        "name": "\"Elation Of Social Drinking\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9f\/Item_Elation_of_Social_Drinking.png",
-        "type": "craftable"
-    },
-    "MaisonCardinalicesLockbox": {
-        "name": "\"Maison Cardinalice's Lockbox\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b7\/Item_Maison_Cardinalice%27s_Lockbox.png",
-        "type": "craftable"
-    },
-    "LindenWoodSweetSlumberBed": {
-        "name": "Linden Wood \"Sweet Slumber\" Bed",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/21\/Item_Linden_Wood_%22Sweet_Slumber%22_Bed.png",
-        "type": "craftable"
-    },
-    "MaisonCardinalicesPunctuality": {
-        "name": "\"Maison Cardinalice's Punctuality\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/50\/Item_Maison_Cardinalice%27s_Punctuality.png",
-        "type": "craftable"
-    },
-    "PassagesStableStorage": {
-        "name": "\"Passage's Stable Storage\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b8\/Item_%22Passage%27s_Stable_Storage%22.png",
-        "type": "craftable"
-    },
-    "MallowWoodSturdyCargoContainer": {
-        "name": "Mallow Wood \"Sturdy\" Cargo Container",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7c\/Item_Mallow_Wood_Sturdy_Cargo_Container.png",
-        "type": "craftable"
-    },
-    "MaisonCardinalicesMusicalTone": {
-        "name": "\"Maison Cardinalice's Musical Tone\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0f\/Item_Maison_Cardinalice%27s_Musical_Tone.png",
-        "type": "craftable"
-    },
-    "FloralArrangementNearlyAquamarine": {
-        "name": "Floral Arrangement: \"Nearly Aquamarine\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ae\/Item_Floral_Arrangement_Nearly_Aquamarine.png",
-        "type": "craftable"
-    },
-    "MaisonCardinalicesCabinet": {
-        "name": "\"Maison Cardinalice's Cabinet\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bb\/Item_Maison_Cardinalice%27s_Cabinet.png",
-        "type": "craftable"
-    },
-    "CompactAirSupplyDevice": {
-        "name": "Compact Air Supply Device",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f8\/Item_Compact_Air_Supply_Device.png",
-        "type": "craftable"
-    },
-    "TheLeisureOfDailyMeetings": {
-        "name": "\"The Leisure Of Daily Meetings\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/09\/Item_%22The_Leisure_of_Daily_Meetings%22.png",
-        "type": "craftable"
-    },
-    "FloralArrangementBloomingPurity": {
-        "name": "Floral Arrangement: \"Blooming Purity\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/44\/Item_Floral_Arrangement_Blooming_Purity.png",
-        "type": "craftable"
-    },
-    "ModelContraptionReasonableRoundabout": {
-        "name": "Model Contraption: Reasonable Roundabout",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0a\/Item_Model_Contraption_Reasonable_Roundabout.png",
-        "type": "craftable"
-    },
-    "MaisonCardinalicesFocus": {
-        "name": "\"Maison Cardinalice's Focus\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/ba\/Item_Maison_Cardinalice%27s_Focus.png",
-        "type": "craftable"
-    },
-    "RestaurantRugEqualDialogue": {
-        "name": "Restaurant Rug: \"Equal Dialogue\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/32\/Item_Restaurant_Rug_Equal_Dialogue.png",
-        "type": "craftable"
-    },
-    "FloralArrangementArtOfContrast": {
-        "name": "Floral Arrangement: \"Art Of Contrast\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/32\/Item_Floral_Arrangement_Art_of_Contrast.png",
-        "type": "craftable"
-    },
-    "ComfortOfAHomeAwayFromHome": {
-        "name": "\"Comfort Of A Home Away From Home\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2d\/Item_Comfort_of_a_Home_Away_From_Home.png",
-        "type": "craftable"
-    },
-    "ChillAfternoonTeaTime": {
-        "name": "\"Chill Afternoon Tea Time\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/92\/Item_Chill_Afternoon_Tea_Time.png",
-        "type": "craftable"
-    },
-    "SteadyStatelyStability": {
-        "name": "\"Steady Stately Stability\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3b\/Item_Steady_Stately_Stability.png",
-        "type": "craftable"
-    },
-    "MallowWoodViewingRitesChair": {
-        "name": "Mallow Wood \"Viewing Rites\" Chair",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4f\/Item_Mallow_Wood_%22Viewing_Rites%22_Chair.png",
-        "type": "craftable"
-    },
-    "CelebrationOfAnAdHocPerformance": {
-        "name": "\"Celebration Of An Ad-Hoc Performance\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ab\/Item_%22Celebration_of_an_Ad-Hoc_Performance%22.png",
-        "type": "craftable"
-    },
-    "StandardMusicStandAccurateTuning": {
-        "name": "Standard Music Stand: Accurate Tuning",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/53\/Item_Standard_Music_Stand_Accurate_Tuning.png",
-        "type": "craftable"
-    },
-    "MaisonCardinalicesWingedShelf": {
-        "name": "\"Maison Cardinalice's Winged Shelf\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e5\/Item_Maison_Cardinalice%27s_Winged_Shelf.png",
-        "type": "craftable"
-    },
-    "WisdomOfTheForbiddenFortress": {
-        "name": "\"Wisdom Of The Forbidden Fortress\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/82\/Item_Wisdom_of_the_Forbidden_Fortress.png",
-        "type": "craftable"
-    },
-    "StudyOfTheForbiddenFortress": {
-        "name": "\"Study Of The Forbidden Fortress\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/16\/Item_Study_of_the_Forbidden_Fortress.png",
-        "type": "craftable"
-    },
-    "ConversationOfTheForbiddenFortress": {
-        "name": "\"Conversation Of The Forbidden Fortress\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f3\/Item_Conversation_of_the_Forbidden_Fortress.png",
-        "type": "craftable"
-    },
-    "BurdenOfTheForbiddenFortress": {
-        "name": "\"Burden Of The Forbidden Fortress\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/30\/Item_Burden_of_the_Forbidden_Fortress.png",
-        "type": "craftable"
-    },
-    "StableWorkStationInTheCentralHub": {
-        "name": "\"Stable Work Station In The Central Hub\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/82\/Item_%22Stable_Work_Station_in_the_Central_Hub%22.png",
-        "type": "craftable"
-    },
-    "LindenWoodSubduingSeatBackedChair": {
-        "name": "Linden Wood \"Subduing Seat\" Backed Chair",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Item_Linden_Wood_%22Subduing_Seat%22_Backed_Chair.png",
-        "type": "craftable"
-    },
-    "MomentaryRestInTheCentralHub": {
-        "name": "\"Momentary Rest In The Central Hub\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a2\/Item_%22Momentary_Rest_in_the_Central_Hub%22.png",
-        "type": "craftable"
-    },
-    "AThousandTextsInTheCentralHub": {
-        "name": "\"A Thousand Texts In The Central Hub\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/79\/Item_%22A_Thousand_Texts_in_the_Central_Hub%22.png",
-        "type": "craftable"
-    },
-    "CourtOfJusticesCommerce": {
-        "name": "Court Of Justice's Commerce",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/42\/Item_Court_of_Justice%27s_Commerce.png",
-        "type": "craftable"
-    },
-    "MekaLuminaireRadiantGrounds": {
-        "name": "Meka Luminaire: Radiant Grounds",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9a\/Item_Meka_Luminaire_Radiant_Grounds.png",
-        "type": "craftable"
-    },
-    "PassagesPerfumedPottedPlants": {
-        "name": "Passage's Perfumed Potted Plants",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3a\/Item_Passage%27s_Perfumed_Potted_Plants.png",
-        "type": "craftable"
-    },
-    "CourtOfJusticesLeisure": {
-        "name": "Court Of Justice's Leisure",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6f\/Item_Court_of_Justice%27s_Leisure.png",
-        "type": "craftable"
-    },
-    "MekaLuminaireRadiantPath": {
-        "name": "Meka Luminaire: Radiant Path",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b0\/Item_Meka_Luminaire_Radiant_Path.png",
-        "type": "craftable"
-    },
-    "CourtOfJusticesNewsstand": {
-        "name": "Court Of Justice's Newsstand",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b4\/Item_Court_of_Justice%27s_Newsstand.png",
-        "type": "craftable"
-    },
-    "CourtOfJusticesMerchandise": {
-        "name": "Court Of Justice's Merchandise",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/04\/Item_Court_of_Justice%27s_Merchandise.png",
-        "type": "craftable"
-    },
-    "CourtOfJusticesProsperity": {
-        "name": "Court Of Justice's Prosperity",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c9\/Item_Court_of_Justice%27s_Prosperity.png",
-        "type": "craftable"
-    },
-    "PassagesLanguidLifestyle": {
-        "name": "Passage's Languid Lifestyle",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d0\/Item_Passage%27s_Languid_Lifestyle.png",
-        "type": "craftable"
-    },
-    "PassagesPristineRoundTable": {
-        "name": "Passage's Pristine Round Table",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/aa\/Item_Passage%27s_Pristine_Round_Table.png",
-        "type": "craftable"
-    },
-    "PassagesEveningEnsemble": {
-        "name": "Passage's Evening Ensemble",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4f\/Item_Passage%27s_Evening_Ensemble.png",
-        "type": "craftable"
-    },
-    "BookshelfSpeedyBrowsing": {
-        "name": "Bookshelf: Speedy Browsing",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/70\/Item_Bookshelf_Speedy_Browsing.png",
-        "type": "craftable"
-    },
-    "BookshelfFreeReading": {
-        "name": "Bookshelf: Free Reading",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/79\/Item_Bookshelf_Free_Reading.png",
-        "type": "craftable"
-    },
-    "CourtOfJusticesCouture": {
-        "name": "Court Of Justice's Couture",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e7\/Item_Court_of_Justice%27s_Couture.png",
-        "type": "craftable"
-    },
-    "CourtOfJusticesBarrier": {
-        "name": "Court Of Justice's Barrier",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cb\/Item_Court_of_Justice%27s_Barrier.png",
-        "type": "craftable"
-    },
-    "CourtOfJusticesFragrance": {
-        "name": "Court Of Justice's Fragrance",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/35\/Item_Court_of_Justice%27s_Fragrance.png",
-        "type": "craftable"
-    },
-    "CourtOfJusticesConscientiousness": {
-        "name": "Court Of Justice's Conscientiousness",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Item_Court_of_Justice%27s_Conscientiousness.png",
-        "type": "craftable"
-    },
-    "CourtOfJusticesMellowAroma": {
-        "name": "Court Of Justice's Mellow Aroma",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8d\/Item_Court_of_Justice%27s_Mellow_Aroma.png",
-        "type": "craftable"
+        "type": "craftable",
+        "rarity": 4,
+        "id": 360422,
+        "imgId": "UI_Homeworld_Exterior_Xm_Lamp_Light_Jlydeng_01_Lod0",
+        "load": 85,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "PerennialIllumination": {
+        "name": "Perennial Illumination",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f8\/Item_Perennial_Illumination.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 360423,
+        "imgId": "UI_Homeworld_Exterior_Xm_Lamp_Light_Cityludeng_01_Lod0",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "BloomingIllumination": {
+        "name": "Blooming Illumination",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8b\/Item_Blooming_Illumination.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 360424,
+        "imgId": "UI_Homeworld_Exterior_Xm_Lamp_Light_Juyuandeng_01_Lod0",
+        "load": 85,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
     },
     "PassagesAppetizingLamp": {
         "name": "Passage's Appetizing Lamp",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b4\/Item_Passage%27s_Appetizing_Lamp.png",
-        "type": "craftable"
+        "type": "craftable",
+        "rarity": 3,
+        "id": 360432,
+        "imgId": "UI_Homeworld_Exterior_Fd_Lamp_Light_CafeDesk_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
     },
-    "LaneTreeStandard": {
-        "name": "Lane Tree: Standard \u2160",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fa\/Item_Lane_Tree_Standard_I.png",
-        "type": "purchasable"
+    "MekaLuminaireRadiantPath": {
+        "name": "Meka Luminaire: Radiant Path",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b0\/Item_Meka_Luminaire_Radiant_Path.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 360433,
+        "imgId": "UI_Homeworld_Exterior_Fd_Lamp_Light_ZhucLud_01_Lod0",
+        "load": 85,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
     },
-    "LindenWoodHalfMetalAnnouncementBoard": {
-        "name": "Linden Wood Half-Metal Announcement Board",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ad\/Item_Linden_Wood_Half-Metal_Announcement_Board.png",
-        "type": "craftable"
-    },
-    "AThousandEphemeralVisionsOfDew": {
-        "name": "\"A Thousand Ephemeral Visions Of Dew\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/35\/Item_A_Thousand_Ephemeral_Visions_of_Dew.png",
-        "type": "craftable"
-    },
-    "RoyalPurple": {
-        "name": "\"Royal Purple\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f5\/Item_Royal_Purple.png",
-        "type": "craftable"
-    },
-    "StandardRailingScatteredStructure": {
-        "name": "Standard Railing: Scattered Structure",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a2\/Item_Standard_Railing_Scattered_Structure.png",
-        "type": "craftable"
-    },
-    "AutomnequisCask": {
-        "name": "Automnequi's Cask",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7d\/Item_Automnequi%27s_Cask.png",
-        "type": "craftable"
+    "MekaLuminaireRadiantGrounds": {
+        "name": "Meka Luminaire: Radiant Grounds",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9a\/Item_Meka_Luminaire_Radiant_Grounds.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 360434,
+        "imgId": "UI_Homeworld_Exterior_Fd_Lamp_Light_ZcGuadeng_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
     },
     "MekaLuminaireRadiantCountryside": {
         "name": "Meka Luminaire: Radiant Countryside",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f5\/Item_Meka_Luminaire_Radiant_Countryside.png",
-        "type": "craftable"
-    },
-    "TheWisdomOfPoisson": {
-        "name": "\"The Wisdom Of Poisson\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7f\/Item_%22The_Wisdom_of_Poisson%22.png",
-        "type": "craftable"
-    },
-    "ASimpleResidenceInPoisson": {
-        "name": "\"A Simple Residence In Poisson\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/68\/Item_%22A_Simple_Residence_in_Poisson%22.png",
-        "type": "craftable"
-    },
-    "QuickTemporaryWorkshed": {
-        "name": "\"Quick Temporary Workshed\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f3\/Item_%22Quick_Temporary_Workshed%22.png",
-        "type": "craftable"
-    },
-    "PoissonsSeasonalProduce": {
-        "name": "\"Poisson's Seasonal Produce\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d1\/Item_%22Poisson%27s_Seasonal_Produce%22.png",
-        "type": "craftable"
-    },
-    "StandardShippingPallet": {
-        "name": "Standard Shipping Pallet",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ed\/Item_Standard_Shipping_Pallet.png",
-        "type": "craftable"
-    },
-    "BellflowerHaze": {
-        "name": "Bellflower Haze",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7f\/Item_Bellflower_Haze.png",
-        "type": "purchasable"
-    },
-    "CeruleanGem": {
-        "name": "Cerulean Gem",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/82\/Item_Cerulean_Gem.png",
-        "type": "purchasable"
-    },
-    "SlipperyShack": {
-        "name": "\"Slippery Shack\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f8\/Item_%22Slippery_Shack%22.png",
-        "type": "craftable"
-    },
-    "BedroomBedlam": {
-        "name": "\"Bedroom Bedlam\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f8\/Item_%22Bedroom_Bedlam%22.png",
-        "type": "craftable"
-    },
-    "SmallStonecrab": {
-        "name": "\"Small Stonecrab\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3a\/Item_%22Small_Stonecrab%22.png",
-        "type": "craftable"
-    },
-    "LetsPlay": {
-        "name": "\"Let's Play!\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/90\/Item_%22Let%27s_Play%21%22.png",
-        "type": "craftable"
-    },
-    "ASistersDuty": {
-        "name": "\"A Sister's Duty\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/77\/Item_A_Sister%27s_Duty.png",
-        "type": "craftable"
+        "type": "craftable",
+        "rarity": 3,
+        "id": 360435,
+        "imgId": "UI_Homeworld_Exterior_Fd_Lamp_Light_YwLudeng_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Fontaine Reputation Level Reward"
     },
     "HelloWelcome": {
         "name": "\"Hello! Welcome!\"",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/46\/Item_%22Hello%21_Welcome%21%22.png",
-        "type": "craftable"
+        "type": "craftable",
+        "rarity": 3,
+        "id": 360438,
+        "imgId": "UI_Homeworld_Exterior_Fd_Lamp_Light_RycDeng_01_Vo",
+        "load": 115,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
     },
     "ShinyShell": {
         "name": "\"Shiny Shell\"",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/56\/Item_%22Shiny_Shell%22.png",
-        "type": "craftable"
-    },
-    "SoftWatersVoice": {
-        "name": "\"Soft Water's Voice\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5f\/Item_%22Soft_Water%27s_Voice%22.png",
-        "type": "craftable"
-    },
-    "GoodStuffIsForSharing": {
-        "name": "\"Good Stuff Is For Sharing!\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d0\/Item_%22Good_Stuff_Is_for_Sharing%21%22.png",
-        "type": "craftable"
-    },
-    "SatisfyingWeight": {
-        "name": "\"Satisfying Weight\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0e\/Item_%22Satisfying_Weight%22.png",
-        "type": "craftable"
-    },
-    "TheArenaWhereFistsReemerge": {
-        "name": "\"The Arena Where Fists Reemerge\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4f\/Item_%22The_Arena_Where_Fists_Reemerge%22.png",
-        "type": "craftable"
-    },
-    "ProductionRackTheBasics": {
-        "name": "Production Rack: The Basics",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2c\/Item_Production_Rack_The_Basics.png",
-        "type": "craftable"
-    },
-    "ProductionRackCustomBuild": {
-        "name": "Production Rack: Custom Build",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b6\/Item_Production_Rack_Custom_Build.png",
-        "type": "craftable"
-    },
-    "OverburdeningOfTheForbiddenFortress": {
-        "name": "\"Overburdening Of The Forbidden Fortress\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cf\/Item_%22Overburdening_of_the_Forbidden_Fortress%22.png",
-        "type": "craftable"
+        "type": "craftable",
+        "rarity": 3,
+        "id": 360439,
+        "imgId": "UI_Homeworld_Exterior_Fd_Lamp_Light_RycDeng_02_Vo",
+        "load": 115,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
     },
     "ForbiddenZoneFloorLampIronhammer": {
         "name": "Forbidden Zone Floor Lamp: Ironhammer",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5a\/Item_Forbidden_Zone_Floor_Lamp_Ironhammer.png",
-        "type": "craftable"
+        "type": "craftable",
+        "rarity": 3,
+        "id": 360440,
+        "imgId": "UI_Homeworld_Exterior_Fd_Lamp_Light_EverLit_01_Vo",
+        "load": 115,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
     },
     "ForbiddenZoneFloorLampNightlight": {
         "name": "Forbidden Zone Floor Lamp: Nightlight",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7d\/Item_Forbidden_Zone_Floor_Lamp_Nightlight.png",
-        "type": "craftable"
+        "type": "craftable",
+        "rarity": 3,
+        "id": 360441,
+        "imgId": "UI_Homeworld_Exterior_Fd_Lamp_Light_EverLit_02_Vo",
+        "load": 115,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
     },
-    "AreaMarkerDownward": {
-        "name": "Area Marker: Downward",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/97\/Item_Area_Marker_Downward.png",
-        "type": "craftable"
+    "FlammabombWoodDancerStreetLamp": {
+        "name": "Flammabomb Wood \"Dancer\" Street Lamp",
+        "rarity": 3,
+        "id": 360452,
+        "imgId": "UI_Homeworld_Exterior_Nt_Lamp_Light_ZDLLudeng_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Lamp_Light_ZDLLudeng_01_Vo.webp",
+        "load": 115,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
     },
-    "BoxingTargetOfTheForbiddenFortress": {
-        "name": "\"Boxing Target Of The Forbidden Fortress\"",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3b\/Item_%22Boxing_Target_of_the_Forbidden_Fortress%22.png",
-        "type": "craftable"
+    "AshenAratikuWoodNiftyStreetLamp": {
+        "name": "Ashen Aratiku Wood \"Nifty\" Street Lamp",
+        "rarity": 3,
+        "id": 360453,
+        "imgId": "UI_Homeworld_Exterior_Nt_Lamp_Light_GZLLudeng_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Lamp_Light_GZLLudeng_01_Vo.webp",
+        "load": 145,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
     },
-    "AreaMarkerUpward": {
-        "name": "Area Marker: Upward",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3b\/Item_Area_Marker_Upward.png",
-        "type": "craftable"
+    "WhiteChestnutOakWoodHarpoonStreetLamp": {
+        "name": "White Chestnut Oak Wood \"Harpoon\" Street Lamp",
+        "rarity": 3,
+        "id": 360454,
+        "imgId": "UI_Homeworld_Exterior_Nt_Lamp_Light_YLLLudeng_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Lamp_Light_YLLLudeng_01_Lod0.webp",
+        "load": 85,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
     },
-    "AutomnequisChimneySmoke": {
-        "name": "Automnequi's Chimney Smoke",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d7\/Item_Automnequi%27s_Chimney_Smoke.png",
-        "type": "craftable"
+    "WhiteChestnutOakWoodTwilightFloorLamp": {
+        "name": "White Chestnut Oak Wood \"Twilight\" Floor Lamp",
+        "rarity": 3,
+        "id": 360455,
+        "imgId": "UI_Homeworld_Exterior_Nt_Lamp_Light_YLLDideng_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Lamp_Light_YLLDideng_01_Vo.webp",
+        "load": 85,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "PhlogistonStreetLampTheRoadAhead": {
+        "name": "Phlogiston Street Lamp: The Road Ahead",
+        "rarity": 3,
+        "id": 360456,
+        "imgId": "UI_Homeworld_Exterior_Nt_Lamp_Light_LslDeng_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Lamp_Light_LslDeng_01_Lod0.webp",
+        "load": 115,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "PhlogistonStreetLampThreefold": {
+        "name": "Phlogiston Street Lamp: Threefold",
+        "rarity": 3,
+        "id": 360457,
+        "imgId": "UI_Homeworld_Exterior_Nt_Lamp_Light_LslDeng_02_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Lamp_Light_LslDeng_02_Vo.webp",
+        "load": 175,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "OpenTopFirShelf": {
+        "name": "Open-Top Fir Shelf",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6b\/Item_Open-Top_Fir_Shelf.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361102,
+        "imgId": "UI_Homeworld_Interior_Md_Cabinet_Cupboard_03_Vo",
+        "load": 254,
+        "energy": 60,
+        "source": "Adeptal Mirror Reward"
+    },
+    "FirCaseShelfCombination": {
+        "name": "Fir Case Shelf Combination",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a9\/Item_Fir_Case_Shelf_Combination.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361103,
+        "imgId": "UI_Homeworld_Interior_Md_Cabinet_Cupboard_04_Vo",
+        "load": 338,
+        "energy": 60,
+        "source": "Adeptal Mirror Reward"
+    },
+    "LargeBirchWardrobe": {
+        "name": "Large Birch Wardrobe",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/00\/Item_Large_Birch_Wardrobe.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361105,
+        "imgId": "UI_Homeworld_Interior_Md_Cabinet_Wardrobe_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "GoldLinedSandbearerWardrobe": {
+        "name": "Gold-Lined Sandbearer Wardrobe",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/49\/Item_Gold-Lined_Sandbearer_Wardrobe.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361106,
+        "imgId": "UI_Homeworld_Interior_Ly_Cabinet_Wardrobe_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "DesertDeskHospitality": {
+        "name": "Desert Desk: Hospitality",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1c\/Item_Desert_Desk_Hospitality.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361108,
+        "imgId": "UI_Homeworld_Interior_Xm_Cabinet_Prop_Scupboard_01_Lod0",
+        "load": 85,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "AdhigamaWoodVersatileShelves": {
+        "name": "Adhigama Wood \"Versatile\" Shelves",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/18\/Item_Adhigama_Wood_Versatile_Shelves.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361109,
+        "imgId": "UI_Homeworld_Interior_Xm_Cabinet_Prop_Shineijiazi_01_Lod0",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "BrightwoodInvigoratingNightstand": {
+        "name": "Brightwood \"Invigorating\" Nightstand",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d3\/Item_Brightwood_Invigorating_Nightstand.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361110,
+        "imgId": "UI_Homeworld_Interior_Xm_Cabinet_Prop_Hospital_01_Lod0",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "MallowWoodMultiModelWardrobe": {
+        "name": "Mallow Wood \"Multi-Model\" Wardrobe",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/af\/Item_Mallow_Wood_%22Multi-Model%22_Wardrobe.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361113,
+        "imgId": "UI_Homeworld_Interior_Fd_Cabinet_Prop_Wardrobe_01_Lod0",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "FairsDistribution": {
+        "name": "Fair's Distribution",
+        "rarity": 3,
+        "id": 361114,
+        "imgId": "UI_Homeworld_Interior_Nt_Cabinet_Prop_JJCHotel_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Cabinet_Prop_JJCHotel_01_Lod0.webp",
+        "load": 592,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "FairsThoughtsInOrder": {
+        "name": "Fair's Thoughts in Order",
+        "rarity": 3,
+        "id": 361117,
+        "imgId": "UI_Homeworld_Interior_Nt_Cabinet_Build_HSGuizi_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Cabinet_Build_HSGuizi_01_Vo.webp",
+        "load": 507,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "TwoTierLibraryBookshelf": {
+        "name": "Two-Tier Library Bookshelf",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/93\/Item_Two-Tier_Library_Bookshelf.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 361201,
+        "imgId": "UI_Homeworld_Interior_Md_Cabinet_Bookcase_01_Vo",
+        "load": 254,
+        "energy": 90,
+        "source": "Adeptal Mirror Reward"
+    },
+    "ExquisiteCuihuaBookshelf": {
+        "name": "Exquisite Cuihua Bookshelf",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ad\/Item_Exquisite_Cuihua_Bookshelf.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 361202,
+        "imgId": "UI_Homeworld_Interior_Md_Cabinet_Bookcase_02_Vo",
+        "load": 169,
+        "energy": 90,
+        "source": "Adeptal Mirror Reward"
+    },
+    "EconomyCuihuaBookshelf": {
+        "name": "Economy Cuihua Bookshelf",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2d\/Item_Economy_Cuihua_Bookshelf.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 361203,
+        "imgId": "UI_Homeworld_Interior_Md_Cabinet_Bookcase_03_Vo",
+        "load": 169,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "ArchivistsTreasureTrove": {
+        "name": "\"Archivist's Treasure Trove\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9f\/Item_Archivist%27s_Treasure_Trove.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 361205,
+        "imgId": "UI_Homeworld_Interior_Md_Cabinet_Bookcase_05_Vo",
+        "load": 169,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "RedCedarScrollShelf": {
+        "name": "Red Cedar Scroll Shelf",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7a\/Item_Red_Cedar_Scroll_Shelf.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361206,
+        "imgId": "UI_Homeworld_Interior_Ly_Cabinet_Bookcase_05_Vo",
+        "load": 196,
+        "energy": 60,
+        "source": "Adeptal Mirror Reward"
+    },
+    "RedCedarCurioStand": {
+        "name": "Red Cedar Curio Stand",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2e\/Item_Red_Cedar_Curio_Stand.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361207,
+        "imgId": "UI_Homeworld_Interior_Ly_Cabinet_Bookcase_06_Vo",
+        "load": 201,
+        "energy": 60,
+        "source": "Adeptal Mirror Reward"
+    },
+    "ShopkeepersCedarShelf": {
+        "name": "Shopkeeper's Cedar Shelf",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5b\/Item_Shopkeeper%27s_Cedar_Shelf.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361208,
+        "imgId": "UI_Homeworld_Interior_Ly_Cabinet_Bookcase_07_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Adeptal Mirror Reward"
+    },
+    "MapleWoodBookcaseInkheart": {
+        "name": "Maple Wood Bookcase: Inkheart",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b5\/Item_Maple_Wood_Bookcase_Inkheart.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 361209,
+        "imgId": "UI_Homeworld_Interior_Dq_Cabinet_Cabinet_01_Vo",
+        "load": 169,
+        "energy": 90,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "MapleWoodBookcaseTroveOfAThousandTomes": {
+        "name": "Maple Wood Bookcase: Trove of a Thousand Tomes",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f2\/Item_Maple_Wood_Bookcase_Trove_of_a_Thousand_Tomes.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 361210,
+        "imgId": "UI_Homeworld_Interior_Dq_Cabinet_Cabinet_02_Vo",
+        "load": 172,
+        "energy": 90,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "DesertCabinetOddsAndEnds": {
+        "name": "Desert Cabinet: Odds and Ends",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ec\/Item_Desert_Cabinet_Odds_and_Ends.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361212,
+        "imgId": "UI_Homeworld_Interior_Xm_Cabinet_Prop_Bookcase_01_Lod0",
+        "load": 254,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "TreasureFromTheLandOfWisdom": {
+        "name": "Treasure from the Land of Wisdom",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a7\/Item_Treasure_from_the_Land_of_Wisdom.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 361213,
+        "imgId": "UI_Homeworld_Interior_Xm_Cabinet_Prop_Shuguibig_01_Vo",
+        "load": 254,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "ScrollsFromTheLandOfWisdom": {
+        "name": "Scrolls from the Land of Wisdom",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/52\/Item_Scrolls_from_the_Land_of_Wisdom.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 361214,
+        "imgId": "UI_Homeworld_Interior_Xm_Cabinet_Prop_Shuguismall_01_Vo",
+        "load": 254,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "MaisonCardinalicesCabinet": {
+        "name": "\"Maison Cardinalice's Cabinet\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bb\/Item_Maison_Cardinalice%27s_Cabinet.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 361216,
+        "imgId": "UI_Homeworld_Interior_Fd_Cabinet_Prop_Shugui_01_Vo",
+        "load": 85,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "MaisonCardinalicesWingedShelf": {
+        "name": "\"Maison Cardinalice's Winged Shelf\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e5\/Item_Maison_Cardinalice%27s_Winged_Shelf.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 361218,
+        "imgId": "UI_Homeworld_Interior_Fd_Cabinet_Prop_Shujia_02_Vo",
+        "load": 254,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "AThousandTextsInTheCentralHub": {
+        "name": "\"A Thousand Texts in the Central Hub\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/79\/Item_%22A_Thousand_Texts_in_the_Central_Hub%22.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361220,
+        "imgId": "UI_Homeworld_Interior_Fd_Cabinet_Prop_DyzShugui_01_Vo",
+        "load": 254,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "SturdyLibraryTable": {
+        "name": "Sturdy Library Table",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/75\/Item_Sturdy_Library_Table.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361301,
+        "imgId": "UI_Homeworld_Interior_Md_Table_Table_03_Vo",
+        "load": 169,
+        "energy": 60,
+        "source": "Adeptal Mirror Reward"
+    },
+    "FavoniusOfficeTable": {
+        "name": "Favonius Office Table",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6f\/Item_Favonius_Office_Table.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361302,
+        "imgId": "UI_Homeworld_Interior_Md_Table_Table_04_Vo",
+        "load": 254,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "PortableStove": {
+        "name": "Portable Stove",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/75\/Item_Portable_Stove.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361305,
+        "imgId": "UI_Homeworld_Interior_Md_Table_Cooking_02_Vo",
+        "load": 558,
+        "energy": 60,
+        "source": "Adeptal Mirror Reward"
+    },
+    "LongTableWithTablecloth": {
+        "name": "Long Table With Tablecloth",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2c\/Item_Long_Table_With_Tablecloth.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361306,
+        "imgId": "UI_Homeworld_Interior_Md_Table_Table_22_Vo",
+        "load": 169,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "IntricatelyCarvedCalligraphyTable": {
+        "name": "Intricately Carved Calligraphy Table",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/66\/Item_Intricately_Carved_Calligraphy_Table.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361308,
+        "imgId": "UI_Homeworld_Interior_Ly_Table_Table_06_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Adeptal Mirror Reward"
+    },
+    "SquarePineTeaTable": {
+        "name": "Square Pine Tea Table",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dc\/Item_Square_Pine_Tea_Table.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361309,
+        "imgId": "UI_Homeworld_Interior_Ly_Table_Table_21_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Adeptal Mirror Reward"
+    },
+    "SturdyBirchVanity": {
+        "name": "Sturdy Birch Vanity",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2a\/Item_Sturdy_Birch_Vanity.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361311,
+        "imgId": "UI_Homeworld_Interior_Md_Cabinet_Cupboard_02_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "YumemiruColdAndWarmthKotatsu": {
+        "name": "Yumemiru \"Cold and Warmth\" Kotatsu",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/62\/Item_Yumemiru_Cold_and_Warmth_Kotatsu.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 361314,
+        "imgId": "UI_Homeworld_Interior_Dq_Decoration_Furnace_01_Vo",
+        "load": 101,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "SekijouAraliaTeaTable": {
+        "name": "\"Sekijou\" Aralia Tea Table",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5c\/Item_Sekijou_Aralia_Tea_Table.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361315,
+        "imgId": "UI_Homeworld_Interior_Dq_Table_Teahousetable_02_Vo",
+        "load": 169,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "TeahouseLongTableSeamlessSeating": {
+        "name": "Teahouse Long Table: Seamless Seating",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/11\/Item_Teahouse_Long_Table_Seamless_Seating.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361316,
+        "imgId": "UI_Homeworld_Interior_Dq_Table_Table_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "AChoiceOfDelicacies": {
+        "name": "A Choice of Delicacies",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c0\/Item_A_Choice_of_Delicacies.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361319,
+        "imgId": "UI_Homeworld_Interior_Xm_Table_Build_Barbecue_01_Lod0",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "SpiritOfTheBanquet": {
+        "name": "Spirit of the Banquet",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/60\/Item_Spirit_of_the_Banquet.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361320,
+        "imgId": "UI_Homeworld_Interior_Xm_Table_Prop_Barbecue_03_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "StudyOfTheForbiddenFortress": {
+        "name": "\"Study of the Forbidden Fortress\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/16\/Item_Study_of_the_Forbidden_Fortress.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361326,
+        "imgId": "UI_Homeworld_Interior_Fd_Table_Prop_Yiji_01_Lod0",
+        "load": 85,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "SteadyStatelyStability": {
+        "name": "\"Steady Stately Stability\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3b\/Item_Steady_Stately_Stability.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361329,
+        "imgId": "UI_Homeworld_Interior_Fd_Table_Prop_HotelChang_01_Vo",
+        "load": 169,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "MaisonCardinalicesFocus": {
+        "name": "\"Maison Cardinalice's Focus\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/ba\/Item_Maison_Cardinalice%27s_Focus.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 361330,
+        "imgId": "UI_Homeworld_Interior_Fd_Table_Prop_Shuzhuo_01_Vo",
+        "load": 85,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "StableWorkStationInTheCentralHub": {
+        "name": "\"Stable Work Station in the Central Hub\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/82\/Item_%22Stable_Work_Station_in_the_Central_Hub%22.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 361331,
+        "imgId": "UI_Homeworld_Interior_Fd_Table_Prop_DyzZhuo_01_Lod0",
+        "load": 507,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "TheLeisureOfDailyMeetings": {
+        "name": "\"The Leisure of Daily Meetings\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/09\/Item_%22The_Leisure_of_Daily_Meetings%22.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361333,
+        "imgId": "UI_Homeworld_Interior_Fd_Table_Prop_Tzzhuo_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "OneLeggedRoundShield": {
+        "name": "\"One-Legged Round Shield\"",
+        "rarity": 3,
+        "id": 361336,
+        "imgId": "UI_Homeworld_Interior_Nt_Table_Prop_JJCZhuozi_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Table_Prop_JJCZhuozi_01_Lod0.webp",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "FourLeggedTowerShield": {
+        "name": "Four-Legged Tower Shield",
+        "rarity": 3,
+        "id": 361337,
+        "imgId": "UI_Homeworld_Interior_Nt_Table_Prop_JJCZhuozi_02_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Table_Prop_JJCZhuozi_02_Vo.webp",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "NamelessAndSilent": {
+        "name": "Nameless and Silent",
+        "rarity": 3,
+        "id": 361338,
+        "imgId": "UI_Homeworld_Interior_Nt_Table_Prop_JJCZhuozi_03_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Table_Prop_JJCZhuozi_03_Vo.webp",
+        "load": 169,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "BreezeBlessedBed": {
+        "name": "Breeze-Blessed Bed",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4f\/Item_Breeze-Blessed_Bed.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361401,
+        "imgId": "UI_Homeworld_Interior_Md_Bed_Bed_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "CloudyHazeBed": {
+        "name": "Cloudy Haze Bed",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b0\/Item_Cloudy_Haze_Bed.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361402,
+        "imgId": "UI_Homeworld_Interior_Ly_Bed_Bed_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "YumemiruSakurasRestBed": {
+        "name": "Yumemiru \"Sakura's Rest\" Bed",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/aa\/Item_Yumemiru_Sakura%27s_Rest_Bed.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361403,
+        "imgId": "UI_Homeworld_Interior_Dq_Bed_Bed_01_Vo",
+        "load": 137,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "AdhigamaWoodComfortBed": {
+        "name": "Adhigama Wood \"Comfort\" Bed",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8a\/Item_Adhigama_Wood_Comfort_Bed.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361405,
+        "imgId": "UI_Homeworld_Interior_Xm_Bed_Prop_Citynormal_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "LindenWoodSweetSlumberBed": {
+        "name": "Linden Wood \"Sweet Slumber\" Bed",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/21\/Item_Linden_Wood_%22Sweet_Slumber%22_Bed.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361408,
+        "imgId": "UI_Homeworld_Interior_Fd_Bed_Prop_Chuang_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "StoneBedPeacefulSleep": {
+        "name": "Stone Bed: Peaceful Sleep",
+        "rarity": 3,
+        "id": 361409,
+        "imgId": "UI_Homeworld_Interior_Nt_Bed_Prop_JJCchuang_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Bed_Prop_JJCchuang_01_Vo.webp",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "TeahouseCounterToshimaru": {
+        "name": "Teahouse Counter: \"Toshimaru\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ab\/Item_Teahouse_Counter_Toshimaru.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361502,
+        "imgId": "UI_Homeworld_Interior_Dq_Table_Teahousetable_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "DesertStudyConscientiousness": {
+        "name": "Desert Study: Conscientiousness",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8b\/Item_Desert_Study_Conscientiousness.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361505,
+        "imgId": "UI_Homeworld_Interior_Xm_Decoration_Prop_Ladder_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "WitnessOfTavernAffairs": {
+        "name": "Witness of Tavern Affairs",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/11\/Item_Witness_of_Tavern_Affairs.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 361506,
+        "imgId": "UI_Homeworld_Interior_Xm_Table_Build_Barbecue_02_Lod0",
+        "load": 136,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "CelebrationOfAnAdHocPerformance": {
+        "name": "\"Celebration of an Ad-Hoc Performance\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ab\/Item_%22Celebration_of_an_Ad-Hoc_Performance%22.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 361507,
+        "imgId": "UI_Homeworld_Interior_Fd_Thing_Prop_Wutai_01_Lod0",
+        "load": 514,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "SoftLoungeSofa": {
+        "name": "Soft Lounge Sofa",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ef\/Item_Soft_Lounge_Sofa.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 362101,
+        "imgId": "UI_Homeworld_Interior_Md_Chair_Sofa_01_Vo",
+        "load": 169,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "ClearBlueAfternoon": {
+        "name": "\"Clear Blue Afternoon\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0d\/Item_Clear_Blue_Afternoon.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362102,
+        "imgId": "UI_Homeworld_Interior_Md_Chair_Chair_03_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "UnwaveringDetermination": {
+        "name": "\"Unwavering Determination\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/49\/Item_Unwavering_Determination.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362103,
+        "imgId": "UI_Homeworld_Interior_Md_Chair_Chair_04_Vo",
+        "load": 169,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "PineDiningChair": {
+        "name": "Pine Dining Chair",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9b\/Item_Pine_Dining_Chair.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 362104,
+        "imgId": "UI_Homeworld_Interior_Md_Chair_Chair_20_Vo",
+        "load": 85,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "PineBackedTeaChair": {
+        "name": "Pine-Backed Tea Chair",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/05\/Item_Pine-Backed_Tea_Chair.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362105,
+        "imgId": "UI_Homeworld_Interior_Ly_Chair_Chair_21_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Adeptal Mirror Reward"
+    },
+    "RedPineWoodRoundStool": {
+        "name": "Red Pine Wood Round Stool",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/70\/Item_Red_Pine_Wood_Round_Stool.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362106,
+        "imgId": "UI_Homeworld_Interior_Ly_Chair_Chair_05_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "TeahouseRoundStoolPainPointReduction": {
+        "name": "Teahouse Round Stool: Pain Point Reduction",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/da\/Item_Teahouse_Round_Stool_Pain_Point_Reduction.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 362108,
+        "imgId": "UI_Homeworld_Interior_Dq_Chair_Chair_01_Vo",
+        "load": 85,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "KarmaphalaWoodSubduedSpeechBench": {
+        "name": "Karmaphala Wood \"Subdued Speech\" Bench",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/25\/Item_Karmaphala_Wood_Subdued_Speech_Bench.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362109,
+        "imgId": "UI_Homeworld_Interior_Xm_Chair_Prop_Citybig_01_Lod0",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "KarmaphalaWoodCounterAssaultDiningChair": {
+        "name": "Karmaphala Wood \"Counter-Assault\" Dining Chair",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c1\/Item_Karmaphala_Wood_Counter-Assault_Dining_Chair.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362110,
+        "imgId": "UI_Homeworld_Interior_Xm_Chair_Prop_Citysmall_01_Lod0",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "SatisfactionOfSatedThirst": {
+        "name": "Satisfaction of Sated Thirst",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0f\/Item_Satisfaction_of_Sated_Thirst.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362111,
+        "imgId": "UI_Homeworld_Interior_Xm_Chair_Prop_Barbecue_01_Vo",
+        "load": 169,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "ConversationOfTheForbiddenFortress": {
+        "name": "\"Conversation of the Forbidden Fortress\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f3\/Item_Conversation_of_the_Forbidden_Fortress.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 362118,
+        "imgId": "UI_Homeworld_Interior_Fd_Chair_Prop_Dengzi_01_Vo",
+        "load": 85,
+        "energy": 30,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "ComfortOfAHomeAwayFromHome": {
+        "name": "\"Comfort of a Home Away From Home\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2d\/Item_Comfort_of_a_Home_Away_From_Home.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362119,
+        "imgId": "UI_Homeworld_Interior_Fd_Chair_Prop_BlueShafa_01_Vo",
+        "load": 113,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "WitnessToGreatFocus": {
+        "name": "\"Witness to Great Focus\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6a\/Item_Witness_to_Great_Focus.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362120,
+        "imgId": "UI_Homeworld_Interior_Fd_Chair_Prop_BlueYizi_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "ElationOfSocialDrinking": {
+        "name": "\"Elation of Social Drinking\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9f\/Item_Elation_of_Social_Drinking.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362121,
+        "imgId": "UI_Homeworld_Interior_Fd_Chair_Prop_BlueDeng_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "MallowWoodViewingRitesChair": {
+        "name": "Mallow Wood \"Viewing Rites\" Chair",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4f\/Item_Mallow_Wood_%22Viewing_Rites%22_Chair.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362122,
+        "imgId": "UI_Homeworld_Interior_Fd_Chair_Prop_Gjy_01_Vo",
+        "load": 169,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "LindenWoodSubduingSeatBackedChair": {
+        "name": "Linden Wood \"Subduing Seat\" Backed Chair",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Item_Linden_Wood_%22Subduing_Seat%22_Backed_Chair.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362123,
+        "imgId": "UI_Homeworld_Interior_Fd_Chair_Prop_DyzYi_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "MomentaryRestInTheCentralHub": {
+        "name": "\"Momentary Rest in the Central Hub\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a2\/Item_%22Momentary_Rest_in_the_Central_Hub%22.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362124,
+        "imgId": "UI_Homeworld_Interior_Fd_Chair_Prop_DyzShafa_01_Vo",
+        "load": 113,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "StadiumsSpicyFeastBackedChair": {
+        "name": "Stadium's \"Spicy Feast\" Backed Chair",
+        "rarity": 3,
+        "id": 362126,
+        "imgId": "UI_Homeworld_Interior_Nt_Chair_Prop_JJCZhuozi_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Chair_Prop_JJCZhuozi_01_Vo.webp",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "StadiumRoundSeatingBench": {
+        "name": "Stadium \"Round Seating\" Bench",
+        "rarity": 3,
+        "id": 362127,
+        "imgId": "UI_Homeworld_Interior_Nt_Chair_Prop_JJCZhuozi_02_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Chair_Prop_JJCZhuozi_02_Vo.webp",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "PineFoldingScreenBillowingSails": {
+        "name": "Pine Folding Screen: Billowing Sails",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/02\/Item_Pine_Folding_Screen_Billowing_Sails.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 362202,
+        "imgId": "UI_Homeworld_Interior_Ly_Decoration_Screen_01_Vo",
+        "load": 85,
+        "energy": 90,
+        "source": "Adeptal Mirror Reward"
+    },
+    "BirchDoubleDrawerNightstand": {
+        "name": "Birch Double Drawer Nightstand",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c8\/Item_Birch_Double_Drawer_Nightstand.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362204,
+        "imgId": "UI_Homeworld_Interior_Md_Cabinet_Bedstand_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "GoldLinedSandbearerNightstand": {
+        "name": "Gold-Lined Sandbearer Nightstand",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/73\/Item_Gold-Lined_Sandbearer_Nightstand.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362205,
+        "imgId": "UI_Homeworld_Interior_Ly_Cabinet_Bedstand_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "TeahouseCushionNightWoven": {
+        "name": "Teahouse Cushion: Night-Woven",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/50\/Item_Teahouse_Cushion_Night-Woven.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 362210,
+        "imgId": "UI_Homeworld_Interior_Dq_Thing_Cushion_01_Vo",
+        "load": 85,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "MapleWoodRitualDrumFestiveMusic": {
+        "name": "Maple Wood Ritual Drum: Festive Music",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/53\/Item_Maple_Wood_Ritual_Drum_Festive_Music.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362211,
+        "imgId": "UI_Homeworld_Interior_Dq_Decoration_Drum_01_Vo",
+        "load": 109,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "TeahouseFoldingScreenHiddenHeartOfGold": {
+        "name": "Teahouse Folding Screen: Hidden Heart of Gold",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0f\/Item_Teahouse_Folding_Screen_Hidden_Heart_of_Gold.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 362213,
+        "imgId": "UI_Homeworld_Interior_Dq_Decoration_Screen_01_Vo",
+        "load": 85,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "AncestralSwordRackFourCorePrinciples": {
+        "name": "Ancestral Sword Rack: Four Core Principles",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7f\/Item_Ancestral_Sword_Rack_Four_Core_Principles.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 362214,
+        "imgId": "UI_Homeworld_Interior_Dq_Decoration_ToolcarrierTS_01_Lod0",
+        "load": 85,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "HatamotoArmorEijinGenkou": {
+        "name": "Hatamoto Armor: Eijin Genkou",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/68\/Item_Hatamoto_Armor_Eijin_Genkou.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 362215,
+        "imgId": "UI_Homeworld_Interior_Dq_Decoration_ThunderArmor_01_Lod0",
+        "load": 185,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "YumemiruJukakuFoldingScreen": {
+        "name": "Yumemiru \"Jukaku\" Folding Screen",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a9\/Item_Yumemiru_Jukaku_Folding_Screen.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 362216,
+        "imgId": "UI_Homeworld_Interior_Dq_Decoration_Screen_02_Vo",
+        "load": 355,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "HuedVaseCerulean": {
+        "name": "Hued Vase: Cerulean",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/05\/Item_Hued_Vase_Cerulean.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362221,
+        "imgId": "UI_Homeworld_Interior_Xm_Decoration_Prop_Bottles_01_Lod0",
+        "load": 85,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "HuedVaseMalachite": {
+        "name": "Hued Vase: Malachite",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d1\/Item_Hued_Vase_Malachite.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362222,
+        "imgId": "UI_Homeworld_Interior_Xm_Decoration_Prop_Bottles_02_Lod0",
+        "load": 85,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "HuedVaseAmber": {
+        "name": "Hued Vase: Amber",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/36\/Item_Hued_Vase_Amber.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362223,
+        "imgId": "UI_Homeworld_Interior_Xm_Decoration_Prop_Bottles_03_Lod0",
+        "load": 85,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "UpliftingGrowth": {
+        "name": "Uplifting Growth",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ec\/Item_Uplifting_Growth.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 362232,
+        "imgId": "UI_Homeworld_Interior_Xm_Decoration_Prop_Tpotted_01_Lod0",
+        "load": 169,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "ForestWatchersFastidiousness": {
+        "name": "Forest Watcher's Fastidiousness",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6c\/Item_Forest_Watcher%27s_Fastidiousness.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 362233,
+        "imgId": "UI_Homeworld_Interior_Xm_Decoration_Prop_Tinstrument_01_Lod0",
+        "load": 338,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "ForestRangersProvisions": {
+        "name": "Forest Ranger's Provisions",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dc\/Item_Forest_Ranger%27s_Provisions.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362234,
+        "imgId": "UI_Homeworld_Interior_Xm_Decoration_Prop_Kbag_01_Lod0",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "AromaOfHighHeatBarbecue": {
+        "name": "Aroma of High-Heat Barbecue",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/58\/Item_Aroma_of_High-Heat_Barbecue.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 362236,
+        "imgId": "UI_Homeworld_Interior_Xm_Thing_Prop_BarbecueOven_01_Lod0",
+        "load": 643,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "FragranceOfLowHeatRoast": {
+        "name": "Fragrance of Low-Heat Roast",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/13\/Item_Fragrance_of_Low-Heat_Roast.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 362237,
+        "imgId": "UI_Homeworld_Interior_Xm_Thing_Prop_BarbecueOven_02_Lod0",
+        "load": 693,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "WisdomOfTheForbiddenFortress": {
+        "name": "\"Wisdom of the Forbidden Fortress\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/82\/Item_Wisdom_of_the_Forbidden_Fortress.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 362251,
+        "imgId": "UI_Homeworld_Interior_Fd_Decoration_Prop_YijiHeiban_01_Vo",
+        "load": 338,
+        "energy": 30,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "ChillAfternoonTeaTime": {
+        "name": "\"Chill Afternoon Tea Time\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/92\/Item_Chill_Afternoon_Tea_Time.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362252,
+        "imgId": "UI_Homeworld_Interior_Fd_Decoration_Prop_HotelCanche_01_Lod0",
+        "load": 256,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "MaisonCardinalicesPunctuality": {
+        "name": "\"Maison Cardinalice's Punctuality\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/50\/Item_Maison_Cardinalice%27s_Punctuality.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 362253,
+        "imgId": "UI_Homeworld_Interior_Fd_Decoration_Prop_Zhong_01_Vo",
+        "load": 85,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "MaisonCardinalicesLockbox": {
+        "name": "\"Maison Cardinalice's Lockbox\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b7\/Item_Maison_Cardinalice%27s_Lockbox.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362254,
+        "imgId": "UI_Homeworld_Interior_Fd_Decoration_Prop_Xiangzi_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "MaisonCardinalicesStores": {
+        "name": "\"Maison Cardinalice's Stores\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/31\/Item_Maison_Cardinalice%27s_Stores.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362255,
+        "imgId": "UI_Homeworld_Interior_Fd_Decoration_Prop_Baijianjia_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "MallowWoodSturdyCargoContainer": {
+        "name": "Mallow Wood \"Sturdy\" Cargo Container",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7c\/Item_Mallow_Wood_Sturdy_Cargo_Container.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362257,
+        "imgId": "UI_Homeworld_Interior_Fd_Decoration_Prop_Xiangzi_02_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "BurdenOfTheForbiddenFortress": {
+        "name": "\"Burden of the Forbidden Fortress\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/30\/Item_Burden_of_the_Forbidden_Fortress.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362258,
+        "imgId": "UI_Homeworld_Interior_Fd_Cabinet_Prop_YijiZhiwu_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "StandardMusicStandAccurateTuning": {
+        "name": "Standard Music Stand: Accurate Tuning",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/53\/Item_Standard_Music_Stand_Accurate_Tuning.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 362259,
+        "imgId": "UI_Homeworld_Interior_Fd_Decoration_Prop_MusicShelf_01_Vo",
+        "load": 85,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "MondstadtRugCrimsonArdor": {
+        "name": "Mondstadt Rug: Crimson Ardor",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/29\/Item_Mondstadt_Rug_Crimson_Ardor.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362301,
+        "imgId": "UI_Homeworld_Interior_Md_Carpet_Carpet_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "EntranceRugAWarmWelcome": {
+        "name": "Entrance Rug: A Warm Welcome",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/68\/Item_Entrance_Rug_A_Warm_Welcome.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362304,
+        "imgId": "UI_Homeworld_Interior_Ly_Carpet_Carpet_05_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Adeptal Mirror Reward"
+    },
+    "GloriousEmeraldTapestry": {
+        "name": "Glorious Emerald Tapestry",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e4\/Item_Glorious_Emerald_Tapestry.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362305,
+        "imgId": "UI_Homeworld_Interior_Xm_Carpet_Prop_Wharf_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "DazzlingGoldenTapestry": {
+        "name": "Dazzling Golden Tapestry",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cd\/Item_Dazzling_Golden_Tapestry.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362306,
+        "imgId": "UI_Homeworld_Interior_Xm_Carpet_Prop_Wharf_02_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "MusingTawnyTapestry": {
+        "name": "Musing Tawny Tapestry",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/36\/Item_Musing_Tawny_Tapestry.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362307,
+        "imgId": "UI_Homeworld_Interior_Xm_Carpet_Prop_Wharf_03_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "TheOliveGrove": {
+        "name": "The Olive Grove",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/aa\/Item_The_Olive_Grove.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362309,
+        "imgId": "UI_Homeworld_Interior_Xm_Carpet_Prop_Wharf_04_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "RestaurantRugEqualDialogue": {
+        "name": "Restaurant Rug: \"Equal Dialogue\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/32\/Item_Restaurant_Rug_Equal_Dialogue.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362313,
+        "imgId": "UI_Homeworld_Interior_Fd_Carpet_Prop_Yuan_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "RestaurantRugBathingInTheBreeze": {
+        "name": "Restaurant Rug: \"Bathing in the Breeze\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/eb\/Item_Restaurant_Rug_Bathing_in_the_Breeze.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 362314,
+        "imgId": "UI_Homeworld_Interior_Fd_Carpet_Prop_Fang_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "WearyRugLayDownYourBurden": {
+        "name": "Weary Rug: Lay Down Your Burden",
+        "rarity": 3,
+        "id": 362318,
+        "imgId": "UI_Homeworld_Interior_Nt_Carpet_Prop_JJCHotel_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Carpet_Prop_JJCHotel_01_Vo.webp",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "FairCarpetWarmthAndPassion": {
+        "name": "Fair Carpet: Warmth and Passion",
+        "rarity": 3,
+        "id": 362319,
+        "imgId": "UI_Homeworld_Interior_Nt_Carpet_Prop_JJCyuan_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Carpet_Prop_JJCyuan_01_Vo.webp",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "BipedalPuppetShakyQuaky": {
+        "name": "Bipedal Puppet: Shaky-Quaky",
+        "rarity": 3,
+        "id": 362402,
+        "imgId": "UI_Homeworld_Interior_Nt_Decoration_Prop_JJCMuou_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Decoration_Prop_JJCMuou_01_Vo.webp",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "TrustyPortableLamp": {
+        "name": "Trusty Portable Lamp",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/56\/Item_Trusty_Portable_Lamp.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363101,
+        "imgId": "UI_Homeworld_Interior_Md_Lamp_Lamp_04_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "LiuliPavilionSandbearerFloorLamp": {
+        "name": "Liuli Pavilion Sandbearer Floor Lamp",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a0\/Item_Liuli_Pavilion_Sandbearer_Floor_Lamp.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363102,
+        "imgId": "UI_Homeworld_Interior_Ly_Lamp_Lamp_05_Vo",
+        "load": 220,
+        "energy": 60,
+        "source": "Adeptal Mirror Reward"
+    },
+    "SeashellTableLamp": {
+        "name": "Seashell Table Lamp",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/05\/Item_Seashell_Table_Lamp.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363104,
+        "imgId": "UI_Homeworld_Interior_Md_Lamp_Desk_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "JoyfulIllumination": {
+        "name": "Joyful Illumination",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/50\/Item_Joyful_Illumination.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363108,
+        "imgId": "UI_Homeworld_Interior_Xm_Lamp_Light_Citystand_01_Lod0",
+        "load": 220,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "PhlogistonDeskLampSufficientlyWeighty": {
+        "name": "Phlogiston Desk Lamp: Sufficiently Weighty",
+        "rarity": 3,
+        "id": 363114,
+        "imgId": "UI_Homeworld_Interior_Nt_Lamp_Light_JJCTaideng_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Lamp_Light_JJCTaideng_01_Vo.webp",
+        "load": 305,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "PhlogistonFloorLampCostEffectiveConvenience": {
+        "name": "Phlogiston Floor Lamp: Cost-Effective Convenience",
+        "rarity": 3,
+        "id": 363115,
+        "imgId": "UI_Homeworld_Interior_Nt_Lamp_Light_JJCDideng_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Lamp_Light_JJCDideng_01_Vo.webp",
+        "load": 305,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "PhlogistonLampRainCover": {
+        "name": "Phlogiston Lamp: Rain Cover",
+        "rarity": 2,
+        "id": 363116,
+        "imgId": "UI_Homeworld_Interior_Nt_Lamp_Light_JJCtideng_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Lamp_Light_JJCtideng_01_Vo.webp",
+        "load": 305,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "PottedPlantCrystallineBreeze": {
+        "name": "Potted Plant: Crystalline Breeze",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/70\/Item_Potted_Plant_Crystalline_Breeze.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363202,
+        "imgId": "UI_Homeworld_Interior_Md_Thing_Vase_02_Vo",
+        "load": 169,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "FlowerArrangementSprawlingDaybreak": {
+        "name": "Flower Arrangement: Sprawling Daybreak",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cd\/Item_Flower_Arrangement_Sprawling_Daybreak.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363203,
+        "imgId": "UI_Homeworld_Interior_Md_Thing_Vase_03_Vo",
+        "load": 169,
+        "energy": 60,
+        "source": "Adeptal Mirror Reward"
+    },
+    "PottedPlantPetitePerrenial": {
+        "name": "Potted Plant: Petite Perrenial",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/76\/Item_Potted_Plant_Petite_Perrenial.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363205,
+        "imgId": "UI_Homeworld_Interior_Ly_Thing_Vase_05_Vo",
+        "load": 338,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "CastInClay": {
+        "name": "Cast in Clay",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/96\/Item_Cast_in_Clay.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363206,
+        "imgId": "UI_Homeworld_Interior_Dq_Thing_Pot_01_Vo",
+        "load": 169,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "TheEssentialVase": {
+        "name": "The Essential Vase",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fb\/Item_The_Essential_Vase.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363207,
+        "imgId": "UI_Homeworld_Interior_Dq_Thing_Pot_02_Vo",
+        "load": 169,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "NeatStackOfBooks": {
+        "name": "Neat Stack of Books",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4e\/Item_Neat_Stack_of_Books.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363302,
+        "imgId": "UI_Homeworld_Interior_Md_Thing_Book_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "ScholarsWeariness": {
+        "name": "\"Scholar's Weariness\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8c\/Item_Scholar%27s_Weariness.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363303,
+        "imgId": "UI_Homeworld_Interior_Md_Thing_Book_02_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "EtiquetteOfCorrespondence": {
+        "name": "\"Etiquette of Correspondence\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/03\/Item_Etiquette_of_Correspondence.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363304,
+        "imgId": "UI_Homeworld_Interior_Md_Thing_Stationery_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "ExquisiteHourglassOrnament": {
+        "name": "Exquisite Hourglass Ornament",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2c\/Item_Exquisite_Hourglass_Ornament.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363305,
+        "imgId": "UI_Homeworld_Interior_Md_Thing_Sandglass_01_Vo",
+        "load": 169,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "AlchemicDeviceBetweenFireAndWater": {
+        "name": "Alchemic Device: Between Fire and Water",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/15\/Item_Alchemic_Device_Between_Fire_and_Water.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363306,
+        "imgId": "UI_Homeworld_Interior_Md_Thing_Alchemy_01_Vo",
+        "load": 169,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "AlchemicComponentBurdenOfDust": {
+        "name": "Alchemic Component: Burden of Dust",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d2\/Item_Alchemic_Component_Burden_of_Dust.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363307,
+        "imgId": "UI_Homeworld_Interior_Md_Thing_Alchemy_02_Vo",
+        "load": 113,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "CalligraphySetAssiduousCalligraphy": {
+        "name": "Calligraphy Set: Assiduous Calligraphy",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/13\/Item_Calligraphy_Set_Assiduous_Calligraphy.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363308,
+        "imgId": "UI_Homeworld_Interior_Ly_Thing_Stationery_02_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Adeptal Mirror Reward"
+    },
+    "GoldenTripleArmCandelabrum": {
+        "name": "Golden Triple-Arm Candelabrum",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/47\/Item_Golden_Triple-Arm_Candelabrum.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363309,
+        "imgId": "UI_Homeworld_Interior_Common_Thing_Candlestick_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "GlazedPorcelainTeaSetEmbracingTruth": {
+        "name": "Glazed Porcelain Tea Set: \"Embracing Truth\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d4\/Item_Glazed_Porcelain_Tea_Set_Embracing_Truth.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363310,
+        "imgId": "UI_Homeworld_Exterior_Common_Thing_Teapot_01_Vo",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "TeaWispCloudedWhiteCouch": {
+        "name": "\"Tea Wisp-Clouded White Couch\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/62\/Item_Tea_Wisp-Clouded_White_Couch.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363312,
+        "imgId": "UI_Homeworld_Interior_Common_Decoration_Teaset_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Inazuma Reputation Level Reward"
+    },
+    "TeahouseVesselScentSealer": {
+        "name": "Teahouse Vessel: Scent-Sealer",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fe\/Item_Teahouse_Vessel_Scent-Sealer.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363313,
+        "imgId": "UI_Homeworld_Interior_Dq_Thing_LunchBok_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "CalligraphySetProperPenmanship": {
+        "name": "Calligraphy Set: Proper Penmanship",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5d\/Item_Calligraphy_Set_Proper_Penmanship.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363314,
+        "imgId": "UI_Homeworld_Interior_Dq_Thing_Inkstone_01_Vo",
+        "load": 169,
+        "energy": 60,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "EvilSlayingBows": {
+        "name": "Evil-Slaying Bows",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/80\/Item_Evil-Slaying_Bows.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363315,
+        "imgId": "UI_Homeworld_Interior_Common_Decoration_Shipin_01_Vo",
+        "load": 95,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "SpiritchaserScreen": {
+        "name": "Spiritchaser Screen",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ef\/Item_Spiritchaser_Screen.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363316,
+        "imgId": "UI_Homeworld_Interior_Common_Decoration_Shipin_02_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "ALushGlimpse": {
+        "name": "A Lush Glimpse",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7e\/Item_A_Lush_Glimpse.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363325,
+        "imgId": "UI_Homeworld_Interior_Xm_Decoration_Prop_FlowerPot_01_Lod0",
+        "load": 169,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "TheMellowPot": {
+        "name": "The Mellow Pot",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/77\/Item_The_Mellow_Pot.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363330,
+        "imgId": "UI_Homeworld_Interior_Xm_Decoration_Prop_Ware_01_Vo",
+        "load": 169,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "TheCrispSweetness": {
+        "name": "The Crisp Sweetness",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4e\/Item_The_Crisp_Sweetness.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363331,
+        "imgId": "UI_Homeworld_Interior_Xm_Decoration_Prop_Fruitplate_01_Vo",
+        "load": 169,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "TheTwistingMist": {
+        "name": "The Twisting Mist",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/df\/Item_The_Twisting_Mist.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363332,
+        "imgId": "UI_Homeworld_Interior_Xm_Decoration_Prop_Incenseburner_01_Lod0",
+        "load": 85,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "AppraisersTreasure": {
+        "name": "Appraiser's Treasure",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/be\/Item_Appraiser%27s_Treasure.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363335,
+        "imgId": "UI_Homeworld_Interior_Xm_Decoration_Prop_Shineiwujian_01_Lod0",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "CeramicCenterpiece": {
+        "name": "Ceramic Centerpiece",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a9\/Item_Ceramic_Centerpiece.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363336,
+        "imgId": "UI_Homeworld_Interior_Xm_Decoration_Prop_Shineiwujian_02_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "EphemeralSpirit": {
+        "name": "Ephemeral Spirit",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/36\/Item_Ephemeral_Spirit.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363337,
+        "imgId": "UI_Homeworld_Interior_Xm_Decoration_Prop_Shineiwujian_03_Lod0",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "MaisonCardinalicesMusicalTone": {
+        "name": "\"Maison Cardinalice's Musical Tone\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0f\/Item_Maison_Cardinalice%27s_Musical_Tone.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 363356,
+        "imgId": "UI_Homeworld_Interior_Fd_Decoration_Prop_Gramophone_01_Lod0",
+        "load": 85,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "CompactAirSupplyDevice": {
+        "name": "Compact Air Supply Device",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f8\/Item_Compact_Air_Supply_Device.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363358,
+        "imgId": "UI_Homeworld_Interior_Fd_Decoration_Prop_Fengshan_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "PassagesStableStorage": {
+        "name": "\"Passage's Stable Storage\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b8\/Item_%22Passage%27s_Stable_Storage%22.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363359,
+        "imgId": "UI_Homeworld_Interior_Fd_Decoration_Prop_SXiangzi_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "ModelContraptionReasonableRoundabout": {
+        "name": "Model Contraption: Reasonable Roundabout",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0a\/Item_Model_Contraption_Reasonable_Roundabout.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363360,
+        "imgId": "UI_Homeworld_Interior_Fd_Decoration_Prop_SYiqi_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "ModelDishTheUsualSelection": {
+        "name": "Model Dish: The Usual Selection",
+        "rarity": 4,
+        "id": 363404,
+        "imgId": "UI_Homeworld_Interior_Nt_Decoration_Prop_JJCShiwu_02_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Decoration_Prop_JJCShiwu_02_Vo.webp",
+        "load": 85,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "FairsFeastingAndDrinking": {
+        "name": "Fair's Feasting and Drinking",
+        "rarity": 3,
+        "id": 363405,
+        "imgId": "UI_Homeworld_Interior_Nt_Decoration_Prop_JJCJiaobei_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Decoration_Prop_JJCJiaobei_01_Vo.webp",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "JavelinImminent": {
+        "name": "Javelin Imminent",
+        "rarity": 3,
+        "id": 363407,
+        "imgId": "UI_Homeworld_Interior_Nt_Decoration_Prop_JJCMianju_02_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Decoration_Prop_JJCMianju_02_Vo.webp",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "FloralArrangementNearlyAquamarine": {
+        "name": "Floral Arrangement: \"Nearly Aquamarine\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ae\/Item_Floral_Arrangement_Nearly_Aquamarine.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363505,
+        "imgId": "UI_Homeworld_Interior_Fd_Decoration_Prop_Huaping_01_Vo",
+        "load": 169,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "FloralArrangementBloomingPurity": {
+        "name": "Floral Arrangement: \"Blooming Purity\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/44\/Item_Floral_Arrangement_Blooming_Purity.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363506,
+        "imgId": "UI_Homeworld_Interior_Fd_Decoration_Prop_Huaping_02_Vo",
+        "load": 169,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "FloralArrangementArtOfContrast": {
+        "name": "Floral Arrangement: \"Art of Contrast\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/32\/Item_Floral_Arrangement_Art_of_Contrast.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 363507,
+        "imgId": "UI_Homeworld_Interior_Fd_Decoration_Prop_Huaping_03_Lod0",
+        "load": 169,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "EchoesOfTheShore": {
+        "name": "Echoes of the Shore",
+        "rarity": 3,
+        "id": 363508,
+        "imgId": "UI_Homeworld_Interior_Nt_Decoration_Prop_JJCPenzai_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Decoration_Prop_JJCPenzai_01_Lod0.webp",
+        "load": 169,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "LiyueShopCitywideFavorite": {
+        "name": "Liyue Shop: Citywide Favorite",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a5\/Item_Liyue_Shop_Citywide_Favorite.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370108,
+        "imgId": "UI_Homeworld_Exterior_Ly_Build_House_15_Lod0",
+        "load": 85,
+        "energy": 60,
+        "source": "Adeptal Mirror Reward"
+    },
+    "HyouteiStackedAraliaWoodBoxes": {
+        "name": "\"Hyoutei\" Stacked Aralia Wood Boxes",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/28\/Item_Hyoutei_Stacked_Aralia_Wood_Boxes.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370111,
+        "imgId": "UI_Homeworld_Interior_Dq_Thing_LunchBok_02_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "AraliaBangakuShelf": {
+        "name": "Aralia \"Bangaku\" Shelf",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/68\/Item_Aralia_Bangaku_Shelf.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370112,
+        "imgId": "UI_Homeworld_Interior_Dq_Cabinet_Cabinet_03_Vo",
+        "load": 254,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "AraliaFusenCupboard": {
+        "name": "Aralia \"Fusen\" Cupboard",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a9\/Item_Aralia_Fusen_Cupboard.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370113,
+        "imgId": "UI_Homeworld_Interior_Dq_Cabinet_Cabinet_04_Vo",
+        "load": 169,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "YumemiruDewcoverWardrobe": {
+        "name": "Yumemiru \"Dewcover\" Wardrobe",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f8\/Item_Yumemiru_Dewcover_Wardrobe.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370114,
+        "imgId": "UI_Homeworld_Interior_Dq_Cabinet_Wardrobe_01_Vo",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "CountryHomeWithTallAttic": {
+        "name": "Country Home With Tall Attic",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6b\/Item_Country_Home_With_Tall_Attic.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370205,
+        "imgId": "UI_Homeworld_Exterior_Md_Build_House_05_Lod0",
+        "load": 300,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "ClassicCountryHome": {
+        "name": "Classic Country Home",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f3\/Item_Classic_Country_Home.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370206,
+        "imgId": "UI_Homeworld_Exterior_Md_Build_House_06_Lod0",
+        "load": 195,
+        "energy": 60,
+        "source": "Adeptal Mirror Reward"
+    },
+    "PocketSizedPineCabin": {
+        "name": "Pocket-Sized Pine Cabin",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d2\/Item_Pocket-Sized_Pine_Cabin.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370207,
+        "imgId": "UI_Homeworld_Exterior_Md_Build_House_07_Lod0",
+        "load": 160,
+        "energy": 60,
+        "source": "Adeptal Mirror Reward"
+    },
+    "LiyueHouseTimeWaitsForNoOne": {
+        "name": "Liyue House: Time Waits for No One",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3b\/Item_Liyue_House_Time_Waits_for_No_One.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370208,
+        "imgId": "UI_Homeworld_Exterior_Ly_Build_House_16_Lod0",
+        "load": 85,
+        "energy": 60,
+        "source": "Teapot Spirit Trust Rank Reward"
+    },
+    "OpenAirWorkshop": {
+        "name": "Open-Air Workshop",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ea\/Item_Open-Air_Workshop.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 370304,
+        "imgId": "UI_Homeworld_Exterior_Md_Build_Store_04_Lod0",
+        "load": 190,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "TravelingMerchantNorthOfTheStoneGate": {
+        "name": "\"Traveling Merchant North of the Stone Gate\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6e\/Item_Traveling_Merchant_North_of_the_Stone_Gate.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370306,
+        "imgId": "UI_Homeworld_Exterior_Ly_Build_Store_06_Lod0",
+        "load": 85,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "RollRoofedFruitAndVegetableCart": {
+        "name": "Roll-Roofed Fruit and Vegetable Cart",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/ce\/Item_Roll-Roofed_Fruit_and_Vegetable_Cart.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370307,
+        "imgId": "UI_Homeworld_Exterior_Ly_Build_Diningcar_02_Lod0",
+        "load": 110,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "FourQuadrantCookingCauldron": {
+        "name": "\"Four-Quadrant Cooking Cauldron\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8e\/Item_Four-Quadrant_Cooking_Cauldron.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370308,
+        "imgId": "UI_Homeworld_Exterior_Ly_Table_Diningcar_01_Lod0",
+        "load": 145,
+        "energy": 60,
+        "source": "Adeptal Mirror Reward"
+    },
+    "FruitAndVeggieStallHarvestBounties": {
+        "name": "Fruit and Veggie Stall: Harvest Bounties",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/46\/Item_Fruit_and_Veggie_Stall_Harvest_Bounties.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370309,
+        "imgId": "UI_Homeworld_Exterior_Ly_Decoration_Varia_03_Lod0",
+        "load": 60,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "OtogiWoodRamenStand": {
+        "name": "Otogi Wood Ramen Stand",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3e\/Otogi_Wood_Ramen_Stand.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370310,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_Streetvendors_01_Lod0",
+        "load": 155,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "WovenDepth": {
+        "name": "Woven Depth",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6f\/Item_Woven_Depth.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370311,
+        "imgId": "UI_Homeworld_Exterior_Xm_Build_Stall_01_Lod0",
+        "load": 65,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "WovenFruition": {
+        "name": "Woven Fruition",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d3\/Item_Woven_Fruition.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370313,
+        "imgId": "UI_Homeworld_Exterior_Xm_Build_Stall_03_Lod0",
+        "load": 65,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "SweetnessInExchange": {
+        "name": "Sweetness in Exchange",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/76\/Item_Sweetness_in_Exchange.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370314,
+        "imgId": "UI_Homeworld_Exterior_Xm_Build_FruitStand_01_Lod0",
+        "load": 210,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "SweetnessInTheShade": {
+        "name": "Sweetness in the Shade",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/76\/Item_Sweetness_in_the_Shade.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370315,
+        "imgId": "UI_Homeworld_Exterior_Xm_Build_Shed_01_Lod0",
+        "load": 95,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "SweetnessInStorage": {
+        "name": "Sweetness in Storage",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5f\/Item_Sweetness_in_Storage.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370316,
+        "imgId": "UI_Homeworld_Exterior_Xm_Build_Shed_02_Lod0",
+        "load": 65,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "FishermansDealings": {
+        "name": "Fisherman's Dealings",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b1\/Item_Fisherman%27s_Dealings.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370317,
+        "imgId": "UI_Homeworld_Exterior_Xm_Build_WaterStall_01_Lod0",
+        "load": 160,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "FishermansMaintenance": {
+        "name": "Fisherman's Maintenance",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0e\/Item_Fisherman%27s_Maintenance.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370319,
+        "imgId": "UI_Homeworld_Exterior_Xm_Build_WaterShed_01_Lod0",
+        "load": 65,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "BrightwoodGroceryStall": {
+        "name": "Brightwood Grocery Stall",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/ce\/Item_Brightwood_Grocery_Stall.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370320,
+        "imgId": "UI_Homeworld_Exterior_Xm_Build_XKCtanwei_01_Lod0",
+        "load": 95,
+        "energy": 60,
+        "source": "Sumeru Reputation Level Reward"
+    },
+    "BrightwoodKebabCart": {
+        "name": "Brightwood Kebab Cart",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a0\/Item_Brightwood_Kebab_Cart.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370321,
+        "imgId": "UI_Homeworld_Exterior_Xm_Build_XKCtanwei_02_Lod0",
+        "load": 130,
+        "energy": 60,
+        "source": "Sumeru Reputation Level Reward"
     },
     "PassagesPolychromaticPottedPlants": {
         "name": "Passage's Polychromatic Potted Plants",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1a\/Item_Passage%27s_Polychromatic_Potted_Plants.png",
-        "type": "craftable"
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370328,
+        "imgId": "UI_Homeworld_Exterior_Fd_Decoration_Prop_HuaTanwei_01_Lod0",
+        "load": 160,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "QuickTemporaryWorkshed": {
+        "name": "\"Quick Temporary Workshed\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f3\/Item_%22Quick_Temporary_Workshed%22.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370331,
+        "imgId": "UI_Homeworld_Exterior_Fd_Build_Prop_BszPengzi_01_Lod0",
+        "load": 270,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "PoissonsSeasonalProduce": {
+        "name": "\"Poisson's Seasonal Produce\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d1\/Item_%22Poisson%27s_Seasonal_Produce%22.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 370332,
+        "imgId": "UI_Homeworld_Exterior_Fd_Decoration_Prop_BszTanwei_01_Vo",
+        "load": 285,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "WovenHutSereneIndigo": {
+        "name": "Woven Hut: Serene Indigo",
+        "rarity": 3,
+        "id": 370336,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_Prop_JJCpengzi_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Prop_JJCpengzi_01_Lod0.webp",
+        "load": 65,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "WovenHutRhythmicStripes": {
+        "name": "Woven Hut: Rhythmic Stripes",
+        "rarity": 3,
+        "id": 370337,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_Prop_JJCpengzi_02_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Prop_JJCpengzi_02_Lod0.webp",
+        "load": 65,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "GloriousHuesOfTheSacredFlame": {
+        "name": "Glorious Hues of the Sacred Flame",
+        "rarity": 4,
+        "id": 370338,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_Prop_JJCranliao_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Prop_JJCranliao_01_Lod0.webp",
+        "load": 570,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "CuriousCountenancesOfTheSacredFlame": {
+        "name": "Curious Countenances of the Sacred Flame",
+        "rarity": 4,
+        "id": 370339,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_Prop_JJCmianju_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Prop_JJCmianju_01_Lod0.webp",
+        "load": 190,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "HilichurlOutpostHut": {
+        "name": "Hilichurl Outpost Hut",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c6\/Item_Hilichurl_Outpost_Hut.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370401,
+        "imgId": "UI_Homeworld_Exterior_Common_Build_House_17_Lod0",
+        "load": 155,
+        "energy": 60,
+        "source": "Teapot Spirit Trust Rank Reward"
+    },
+    "HilichurlChieftainHall": {
+        "name": "Hilichurl Chieftain Hall",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c2\/Item_Hilichurl_Chieftain_Hall.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 370402,
+        "imgId": "UI_Homeworld_Exterior_Common_Build_House_19_Lod0",
+        "load": 290,
+        "energy": 90,
+        "source": "Teapot Spirit Trust Rank Reward"
+    },
+    "CloudsEastOfBishui": {
+        "name": "\"Clouds East of Bishui\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e7\/Item_Clouds_East_of_Bishui.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370501,
+        "imgId": "UI_Homeworld_Exterior_Ly_Build_Store_07_Lod0",
+        "load": 125,
+        "energy": 60,
+        "source": "Adeptal Mirror Reward"
+    },
+    "StrawShed": {
+        "name": "Straw Shed",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/42\/Item_Straw_Shed.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 370502,
+        "imgId": "UI_Homeworld_Exterior_Ly_Build_Store_08_Lod0",
+        "load": 35,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "LightningProtectiveTent": {
+        "name": "Lightning Protective Tent",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f2\/Item_Lightning_Protective_Tent.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370503,
+        "imgId": "UI_Homeworld_Exterior_Common_Build_Store_10_Lod0",
+        "load": 110,
+        "energy": 60,
+        "source": "Goth's Furnishings Shop"
+    },
+    "SimpleSinglePersonTent": {
+        "name": "Simple Single-Person Tent",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/91\/Item_Simple_Single-Person_Tent.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370504,
+        "imgId": "UI_Homeworld_Exterior_Common_Build_Store_11_Lod0",
+        "load": 65,
+        "energy": 60,
+        "source": "Goth's Furnishings Shop"
+    },
+    "OtogiWoodRiceCakeSoupStand": {
+        "name": "Otogi Wood Rice Cake Soup Stand",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/27\/Item_Otogi_Wood_Rice_Cake_Soup_Stand.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370505,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_TanWei_03_Lod0",
+        "load": 145,
+        "energy": 60,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "UmbrellaShopDrapesOfDifferingDreams": {
+        "name": "Umbrella Shop: Drapes of Differing Dreams",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/28\/Item_Umbrella_Shop_Drapes_of_Differing_Dreams.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370508,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_TanWei_06_Lod0",
+        "load": 85,
+        "energy": 60,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "FruitAndVeggieStallGoodHonestFlavor": {
+        "name": "Fruit and Veggie Stall: Good Honest Flavor",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ed\/Item_Fruit_and_Veggie_Stall_Good_Honest_Flavor.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370509,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_TanWei_07_Lod0",
+        "load": 95,
+        "energy": 60,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "FestivalTeibanStore": {
+        "name": "Festival \"Teiban\" Store",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f5\/Item_Festival_Teiban_Store.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 370510,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_TanWei_01_Lod0",
+        "load": 195,
+        "energy": 90,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "FestivalKibanStore": {
+        "name": "Festival \"Kiban\" Store",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e5\/Item_Festival_Kiban_Store.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 370511,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_TanWei_02_Lod0",
+        "load": 260,
+        "energy": 90,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "KoukiAraliaMaskRack": {
+        "name": "\"Kouki\" Aralia Mask Rack",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/da\/Item_Kouki_Aralia_Mask_Rack.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370512,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_House_38_Lod0",
+        "load": 60,
+        "energy": 60,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "RitualShrine": {
+        "name": "Ritual Shrine",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0c\/Item_Ritual_Shrine.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370601,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_Baldachine_01_Lod0",
+        "load": 50,
+        "energy": 60,
+        "source": "Obtained from World Quest"
+    },
+    "CleansingShrine": {
+        "name": "Cleansing Shrine",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d9\/Item_Cleansing_Shrine.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 370602,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_Shrine_01_Lod0",
+        "load": 160,
+        "energy": 90,
+        "source": "Obtained from World Quest"
+    },
+    "InazumanStoreNumberlessGems": {
+        "name": "Inazuman Store: Numberless Gems",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a3\/Item_Inazuman_Store_Numberless_Gems.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370604,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_House_09_Lod0",
+        "load": 610,
+        "energy": 60,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "InazumanHomeTheWorkOfGenerations": {
+        "name": "Inazuman Home: The Work of Generations",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/aa\/Item_Inazuman_Home_The_Work_of_Generations.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370605,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_House_10_Lod0",
+        "load": 760,
+        "energy": 60,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "InazumanHomeEasyAdaptation": {
+        "name": "Inazuman Home: Easy Adaptation",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/11\/Item_Inazuman_Home_Easy_Adaptation.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370606,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_House_11_Lod0",
+        "load": 610,
+        "energy": 60,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "InazumanBambooRoofedHomeTheLongPeace": {
+        "name": "Inazuman Bamboo-Roofed Home: The Long Peace",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/89\/Item_Inazuman_Bamboo-Roofed_Home_The_Long_Peace.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370609,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_House_14_Lod0",
+        "load": 95,
+        "energy": 60,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "InazumanBambooRoofedHomeWildHeart": {
+        "name": "Inazuman Bamboo-Roofed Home: Wild Heart",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/75\/Item_Inazuman_Bamboo-Roofed_Home_Wild_Heart.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370610,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_House_15_Lod0",
+        "load": 220,
+        "energy": 60,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "InazumanOfficialResidenceStrictAdherence": {
+        "name": "Inazuman Official Residence: Strict Adherence",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/27\/Item_Inazuman_Official_Residence_Strict_Adherence.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 370616,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_House_21_Lod0",
+        "load": 405,
+        "energy": 90,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "OfficialResidenceCorridorPowersReach": {
+        "name": "Official Residence Corridor: Power's Reach",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/85\/Item_Official_Residence_Corridor_Power%27s_Reach.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 370617,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_House_22_Lod0",
+        "load": 220,
+        "energy": 90,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "CampWatchtowerViewport": {
+        "name": "Camp Watchtower: Viewport",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/94\/Item_Camp_Watchtower_Viewport.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370618,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_House_25_Lod0",
+        "load": 120,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "CampTentTimelyTactics": {
+        "name": "Camp Tent: Timely Tactics",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/02\/Item_Camp_Tent_Timely_Tactics.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 370619,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_House_26_Lod0",
+        "load": 255,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "CampDwellingShoringUp": {
+        "name": "Camp Dwelling: Shoring Up",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a4\/Item_Camp_Dwelling_Shoring_Up.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370620,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_House_27_Lod0",
+        "load": 110,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "CampGateFealty": {
+        "name": "Camp Gate: Fealty",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9c\/Item_Camp_Gate_Fealty.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370621,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_House_28_Lod0",
+        "load": 105,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "FortuneSlipStandOmenReader": {
+        "name": "Fortune Slip Stand: Omen-Reader",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dd\/Item_Fortune_Slip_Stand_Omen-Reader.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 370623,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_House_35_Lod0",
+        "load": 410,
+        "energy": 90,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "DeepwoodDwellersDeliberation": {
+        "name": "Deepwood Dweller's Deliberation",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/ca\/Item_Deepwood_Dweller%27s_Deliberation.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370701,
+        "imgId": "UI_Homeworld_Exterior_Xm_Build_Forest_01_Lod0",
+        "load": 160,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "DeepwoodDwellersEstimation": {
+        "name": "Deepwood Dweller's Estimation",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6e\/Item_Deepwood_Dweller%27s_Estimation.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370702,
+        "imgId": "UI_Homeworld_Exterior_Xm_Build_Forest_02_Lod0",
+        "load": 65,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "DeepwoodDwellersLonesome": {
+        "name": "Deepwood Dweller's Lonesome",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Item_Deepwood_Dweller%27s_Lonesome.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370703,
+        "imgId": "UI_Homeworld_Exterior_Xm_Build_Forest_03_Lod0",
+        "load": 135,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "DesertHouseOrdinaryLives": {
+        "name": "Desert House: Ordinary Lives",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0a\/Item_Desert_House_Ordinary_Lives.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370705,
+        "imgId": "UI_Homeworld_Exterior_Xm_Build_Arvillage_01_Lod0",
+        "load": 110,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "DesertHouseSpicesAbound": {
+        "name": "Desert House: Spices Abound",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c6\/Item_Desert_House_Spices_Abound.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370706,
+        "imgId": "UI_Homeworld_Exterior_Xm_Build_Arvillage_02_Lod0",
+        "load": 125,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "DesertHouseHueAndCry": {
+        "name": "Desert House: Hue and Cry",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7b\/Item_Desert_House_Hue_and_Cry.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370707,
+        "imgId": "UI_Homeworld_Exterior_Xm_Build_Arvillage_03_Lod0",
+        "load": 125,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "DesertHouseBriefSleep": {
+        "name": "Desert House: Brief Sleep",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d1\/Item_Desert_House_Brief_Sleep.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370708,
+        "imgId": "UI_Homeworld_Exterior_Xm_Build_Arvillage_04_Lod0",
+        "load": 125,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "DelicaciesOfTheCityOfWisdom": {
+        "name": "Delicacies of the City of Wisdom",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/44\/Item_Delicacies_of_the_City_of_Wisdom.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370719,
+        "imgId": "UI_Homeworld_Exterior_Xm_Build_Kaoroudian_01_Lod0",
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "load": 685,
+        "energy": 60
+    },
+    "LightInTheTranquilCourt": {
+        "name": "Light in the Tranquil Court",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d4\/Item_Light_in_the_Tranquil_Court.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 370724,
+        "imgId": "UI_Homeworld_Exterior_Xm_Build_Jjytingzi_01_Lod0",
+        "load": 590,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "ReplicaOfTheTheatersGlory": {
+        "name": "Replica of the Theater's Glory",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/41\/Item_Replica_of_the_Theater%27s_Glory.png",
+        "type": "purchasable",
+        "rarity": 4,
+        "id": 370725,
+        "imgId": "UI_Homeworld_Exterior_Xm_Build_Juyuan_01_Lod0",
+        "load": 360,
+        "energy": 90,
+        "source": "Purchased from Realm Depot: Riches of the Realm"
+    },
+    "FabricOfTheCityOfWisdom": {
+        "name": "Fabric of the City of Wisdom",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/30\/Item_Fabric_of_the_City_of_Wisdom.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370726,
+        "imgId": "UI_Homeworld_Exterior_Xm_Build_Lowhouse_01_Lod0",
+        "load": 160,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "BuildingBlockOfTheCityOfWisdom": {
+        "name": "Building Block of the City of Wisdom",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6d\/Item_Building_Block_of_the_City_of_Wisdom.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370729,
+        "imgId": "UI_Homeworld_Exterior_Xm_Build_Citybz_01_Lod0",
+        "load": 685,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "CourtOfJusticesLeisure": {
+        "name": "Court of Justice's Leisure",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6f\/Item_Court_of_Justice%27s_Leisure.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 370800,
+        "imgId": "UI_Homeworld_Exterior_Fd_Build_ZhuchengJz_01_Lod0",
+        "load": 250,
+        "energy": 90,
+        "source": "Fontaine Reputation Level Reward"
+    },
+    "CourtOfJusticesConscientiousness": {
+        "name": "Court of Justice's Conscientiousness",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Item_Court_of_Justice%27s_Conscientiousness.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 370804,
+        "imgId": "UI_Homeworld_Exterior_Fd_Build_ZhuchengJz_05_Lod0",
+        "load": 1200,
+        "energy": 90,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "CourtOfJusticesMellowAroma": {
+        "name": "Court of Justice's Mellow Aroma",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8d\/Item_Court_of_Justice%27s_Mellow_Aroma.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 370805,
+        "imgId": "UI_Homeworld_Exterior_Fd_Build_ZhuchengJz_06_Lod0",
+        "load": 655,
+        "energy": 90,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "CourtOfJusticesProsperity": {
+        "name": "Court of Justice's Prosperity",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c9\/Item_Court_of_Justice%27s_Prosperity.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 370806,
+        "imgId": "UI_Homeworld_Exterior_Fd_Build_ZhuchengJz_07_Lod0",
+        "load": 525,
+        "energy": 90,
+        "source": "Fontaine Reputation Level Reward"
+    },
+    "CourtOfJusticesMerchandise": {
+        "name": "Court of Justice's Merchandise",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/04\/Item_Court_of_Justice%27s_Merchandise.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 370807,
+        "imgId": "UI_Homeworld_Exterior_Fd_Build_ZhuchengJz_08_Lod0",
+        "load": 510,
+        "energy": 90,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "CourtOfJusticesCommerce": {
+        "name": "Court of Justice's Commerce",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/42\/Item_Court_of_Justice%27s_Commerce.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 370808,
+        "imgId": "UI_Homeworld_Exterior_Fd_Build_ZhuchengJz_09_Lod0",
+        "load": 505,
+        "energy": 90,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "CourtOfJusticesCouture": {
+        "name": "Court of Justice's Couture",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e7\/Item_Court_of_Justice%27s_Couture.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 370810,
+        "imgId": "UI_Homeworld_Exterior_Fd_Build_DressStore_01_Lod0",
+        "load": 170,
+        "energy": 90,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "CourtOfJusticesFragrance": {
+        "name": "Court of Justice's Fragrance",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/35\/Item_Court_of_Justice%27s_Fragrance.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 370812,
+        "imgId": "UI_Homeworld_Exterior_Fd_Build_PerfumeStore_01_Lod0",
+        "load": 135,
+        "energy": 90,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "CourtOfJusticesNewsstand": {
+        "name": "Court of Justice's Newsstand",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b4\/Item_Court_of_Justice%27s_Newsstand.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 370813,
+        "imgId": "UI_Homeworld_Exterior_Fd_Build_BookStore_01_Lod0",
+        "load": 195,
+        "energy": 90,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "AutomnequisChimneySmoke": {
+        "name": "Automnequi's Chimney Smoke",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d7\/Item_Automnequi%27s_Chimney_Smoke.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370815,
+        "imgId": "UI_Homeworld_Exterior_Fd_Build_YwMinju_02_Lod0",
+        "load": 195,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "SlipperyShack": {
+        "name": "\"Slippery Shack\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f8\/Item_%22Slippery_Shack%22.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370820,
+        "imgId": "UI_Homeworld_Exterior_Fd_Build_RycFang_01_Lod0",
+        "load": 310,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "BedroomBedlam": {
+        "name": "\"Bedroom Bedlam\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f8\/Item_%22Bedroom_Bedlam%22.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370821,
+        "imgId": "UI_Homeworld_Exterior_Fd_Build_RycFang_02_Lod0",
+        "load": 510,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "SmallStonecrab": {
+        "name": "\"Small Stonecrab\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3a\/Item_%22Small_Stonecrab%22.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370822,
+        "imgId": "UI_Homeworld_Exterior_Fd_Build_RycFang_03_Lod0",
+        "load": 285,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "TheArenaWhereFistsReemerge": {
+        "name": "\"The Arena Where Fists Reemerge\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4f\/Item_%22The_Arena_Where_Fists_Reemerge%22.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 370823,
+        "imgId": "UI_Homeworld_Exterior_Fd_Build_Quantai_01_Lod0",
+        "load": 835,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "TheWisdomOfPoisson": {
+        "name": "\"The Wisdom of Poisson\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7f\/Item_%22The_Wisdom_of_Poisson%22.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370824,
+        "imgId": "UI_Homeworld_Exterior_Fd_Build_BszPochuan_01_Lod0",
+        "load": 510,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "ASimpleResidenceInPoisson": {
+        "name": "\"A Simple Residence in Poisson\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/68\/Item_%22A_Simple_Residence_in_Poisson%22.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 370825,
+        "imgId": "UI_Homeworld_Exterior_Fd_Build_BszPochuan_02_Lod0",
+        "load": 325,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "StonehutOfEchoesStandardWorkshop": {
+        "name": "Stonehut of Echoes: Standard Workshop",
+        "rarity": 4,
+        "id": 370900,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_ZDLMinju_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_ZDLMinju_01_Lod0.webp",
+        "load": 260,
+        "energy": 90,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "StonehutOfEchoesAlphaDragon": {
+        "name": "Stonehut of Echoes: Alpha Dragon",
+        "rarity": 4,
+        "id": 370901,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_ZDLMinju_02_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_ZDLMinju_02_Lod0.webp",
+        "load": 460,
+        "energy": 90,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "StonehutOfEchoesHighTopBoots": {
+        "name": "Stonehut of Echoes: High-Top Boots",
+        "rarity": 4,
+        "id": 370902,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_ZDLMinju_03_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_ZDLMinju_03_Lod0.webp",
+        "load": 310,
+        "energy": 90,
+        "source": "\"Children of Echoes\" Tribe Reputation Level Reward"
+    },
+    "TequemecanDanceOff": {
+        "name": "\"Tequemecan Dance-Off\"",
+        "rarity": 4,
+        "id": 370903,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_ZDLWutai_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_ZDLWutai_01_Lod0.webp",
+        "load": 980,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "TequemecanTreasures": {
+        "name": "\"Tequemecan Treasures\"",
+        "rarity": 3,
+        "id": 370904,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_Prop_ZDLZubao_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Prop_ZDLZubao_01_Lod0.webp",
+        "load": 250,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "TequemecanIngenuity": {
+        "name": "\"Tequemecan Ingenuity\"",
+        "rarity": 3,
+        "id": 370905,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_Prop_ZDLGongju_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Prop_ZDLGongju_01_Lod0.webp",
+        "load": 95,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "HuitztlanCampgroundSortAndOrder": {
+        "name": "Huitztlan Campground: Sort and Order",
+        "rarity": 4,
+        "id": 370906,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_GZLMinju_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_GZLMinju_01_Lod0.webp",
+        "load": 495,
+        "energy": 90,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "HuitztlanCampgroundCompanionsConnection": {
+        "name": "Huitztlan Campground: Companions' Connection",
+        "rarity": 4,
+        "id": 370908,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_GZLMinju_03_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_GZLMinju_03_Lod0.webp",
+        "load": 205,
+        "energy": 90,
+        "source": "\"Scions of the Canopy\" Tribe Reputation Level Reward"
+    },
+    "HuitztlanCampgroundDistributionHub": {
+        "name": "Huitztlan Campground: Distribution Hub",
+        "rarity": 3,
+        "id": 370911,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_Prop_GZLZhangpeng_03_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Prop_GZLZhangpeng_03_Lod0.webp",
+        "load": 395,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "HotSpringRetreatMarketingStrategy": {
+        "name": "Hot Spring Retreat: Marketing Strategy",
+        "rarity": 4,
+        "id": 370913,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_YLLChangpian_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YLLChangpian_01_Lod0.webp",
+        "load": 385,
+        "energy": 90,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "HotSpringRetreatGoWithTheFlow": {
+        "name": "Hot Spring Retreat: Go With the Flow",
+        "rarity": 4,
+        "id": 370914,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_YLLYueqi_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YLLYueqi_01_Lod0.webp",
+        "load": 415,
+        "energy": 90,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "HotSpringRetreatTidalSurge": {
+        "name": "Hot Spring Retreat: Tidal Surge",
+        "rarity": 4,
+        "id": 370915,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_YLLZahuo_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YLLZahuo_01_Lod0.webp",
+        "load": 425,
+        "energy": 90,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "SkiffOfTheSprings": {
+        "name": "\"Skiff of the Springs\"",
+        "rarity": 3,
+        "id": 370917,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_YLLPengzi_02_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YLLPengzi_02_Lod0.webp",
+        "load": 160,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "NightWindArchitectureNeedsOfExchange": {
+        "name": "Night-Wind Architecture: Needs of Exchange",
+        "rarity": 4,
+        "id": 370919,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_LslHouse_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_LslHouse_01_Lod0.webp",
+        "load": 525,
+        "energy": 90,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "NightWindArchitectureArcaneFoundation": {
+        "name": "Night-Wind Architecture: Arcane Foundation",
+        "rarity": 4,
+        "id": 370920,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_LslHouse_02_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_LslHouse_02_Lod0.webp",
+        "load": 465,
+        "energy": 90,
+        "source": "\"Masters of the Night-Wind\" Tribe Reputation Level Reward"
+    },
+    "FlowerFeatherResidenceChasingTriviality": {
+        "name": "Flower-Feather Residence: Chasing Triviality",
+        "rarity": 4,
+        "id": 370922,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_YslHouse_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YslHouse_01_Lod0.webp",
+        "load": 160,
+        "energy": 90,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "FlowerFeatherResidenceLogicOfFlight": {
+        "name": "Flower-Feather Residence: Logic of Flight",
+        "rarity": 4,
+        "id": 370923,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_YslHouse_02_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YslHouse_02_Lod0.webp",
+        "load": 150,
+        "energy": 90,
+        "source": "\"Flower-Feather Clan\" Tribe Reputation Level Reward"
+    },
+    "SimpleFlowerFeatherHouseFallbackMeasures": {
+        "name": "Simple Flower-Feather House: Fallback Measures",
+        "rarity": 3,
+        "id": 370924,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_YslHouse_03_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YslHouse_03_Lod0.webp",
+        "load": 95,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "FlowerFeatherStableSauriansRepose": {
+        "name": "Flower-Feather Stable: Saurian's Repose",
+        "rarity": 3,
+        "id": 370925,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_YslMajiu_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YslMajiu_01_Lod0.webp",
+        "load": 210,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "AshenAratikuWoodGiantClawPlatform": {
+        "name": "Ashen Aratiku Wood \"Giant Claw\" Platform",
+        "rarity": 3,
+        "id": 370926,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_YslZhicheng_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YslZhicheng_01_Vo.webp",
+        "load": 95,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "PilgrimageOfFlame": {
+        "name": "Pilgrimage of Flame",
+        "rarity": 4,
+        "id": 370927,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_Tiejiangpu_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Tiejiangpu_01_Lod0.webp",
+        "load": 520,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "VillaOfPlentyStowProStoreroom": {
+        "name": "Villa of Plenty: Stow-Pro Storeroom",
+        "rarity": 4,
+        "id": 370928,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_Tjljianzhu_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Tjljianzhu_01_Lod0.webp",
+        "load": 370,
+        "energy": 90,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "HutOfPlentyPermanentPick": {
+        "name": "Hut of Plenty: Permanent Pick",
+        "rarity": 4,
+        "id": 370930,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_Prop_Tjlzhangpeng_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Prop_Tjlzhangpeng_01_Lod0.webp",
+        "load": 235,
+        "energy": 90,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "HutOfPlentyStopgapSelection": {
+        "name": "Hut of Plenty: Stopgap Selection",
+        "rarity": 2,
+        "id": 370931,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_Prop_Tjlzhangpeng_02_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Prop_Tjlzhangpeng_02_Lod0.webp",
+        "load": 65,
+        "energy": 30,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "LandOfPlentysSentinel": {
+        "name": "Land of Plenty's Sentinel",
+        "rarity": 3,
+        "id": 370933,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_Tjlmujia_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Tjlmujia_01_Lod0.webp",
+        "load": 125,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "BirdAndBlossomDesignFountain": {
+        "name": "Bird and Blossom Design Fountain",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5d\/Item_Bird_and_Blossom_Design_Fountain.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 371101,
+        "imgId": "UI_Homeworld_Exterior_Md_Build_Fountain_01_Lod0",
+        "load": 160,
+        "energy": 90,
+        "source": "Teapot Spirit Trust Rank Reward"
+    },
+    "HilichurlSpiralWatchtower": {
+        "name": "Hilichurl Spiral Watchtower",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d6\/Item_Hilichurl_Spiral_Watchtower.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 371102,
+        "imgId": "UI_Homeworld_Exterior_Common_Build_House_18_Lod0",
+        "load": 85,
+        "energy": 60,
+        "source": "Teapot Spirit Trust Rank Reward"
+    },
+    "HilichurlStrawHut": {
+        "name": "Hilichurl Straw Hut",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/eb\/Item_Hilichurl_Straw_Hut.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 371103,
+        "imgId": "UI_Homeworld_Exterior_Common_Build_Store_09_Lod0",
+        "load": 95,
+        "energy": 30,
+        "source": "Teapot Spirit Trust Rank Reward"
+    },
+    "TemporaryWorkQuarters": {
+        "name": "Temporary Work Quarters",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7e\/Item_Temporary_Work_Quarters.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 371107,
+        "imgId": "UI_Homeworld_Exterior_Common_Thing_Shed_01_Lod0",
+        "load": 145,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "WhitestoneHotSpringDiffusingWarmth": {
+        "name": "Whitestone Hot Spring: Diffusing Warmth",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/46\/Item_Whitestone_Hot_Spring_Diffusing_Warmth.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 371116,
+        "imgId": "UI_Homeworld_Exterior_Common_Thing_Wenquan_01_Lod0",
+        "load": 735,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "DesertHutMinutiae": {
+        "name": "Desert Hut: Minutiae",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/37\/Item_Desert_Hut_Minutiae.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 371122,
+        "imgId": "UI_Homeworld_Exterior_Xm_Build_Prop_Arhed_01_Lod0",
+        "load": 65,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "DesertHutQuestions": {
+        "name": "Desert Hut: Questions",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/75\/Item_Desert_Hut_Questions.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 371123,
+        "imgId": "UI_Homeworld_Exterior_Xm_Build_Prop_Arhed_02_Lod0",
+        "load": 65,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "TheatersCoolMist": {
+        "name": "Theater's Cool Mist",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/00\/Item_Theater%27s_Cool_Mist.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 371126,
+        "imgId": "UI_Homeworld_Exterior_Xm_Decoration_Prop_Penquansmall_01_Lod0",
+        "load": 285,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "ClarityFromTheLandOfWisdom": {
+        "name": "Clarity from the Land of Wisdom",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5b\/Item_Clarity_from_the_Land_of_Wisdom.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 371127,
+        "imgId": "UI_Homeworld_Exterior_Xm_Decoration_Prop_Jlypenquan_01_Lod0",
+        "load": 210,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "AutomnequisCask": {
+        "name": "Automnequi's Cask",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7d\/Item_Automnequi%27s_Cask.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 371134,
+        "imgId": "UI_Homeworld_Exterior_Fd_Build_YwShuita_01_Lod0",
+        "load": 50,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "AThousandEphemeralVisionsOfDew": {
+        "name": "\"A Thousand Ephemeral Visions of Dew\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/35\/Item_A_Thousand_Ephemeral_Visions_of_Dew.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 371136,
+        "imgId": "UI_Homeworld_Exterior_Fd_Decoration_Prop_Xuyuanchi_01_Lod0",
+        "load": 435,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "StandardShippingPallet": {
+        "name": "Standard Shipping Pallet",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ed\/Item_Standard_Shipping_Pallet.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 371139,
+        "imgId": "UI_Homeworld_Exterior_Fd_Decoration_Prop_Jizhuangxiang_02_Lod0",
+        "load": 35,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "DawnOfFlight": {
+        "name": "\"Dawn of Flight\"",
+        "rarity": 4,
+        "id": 371147,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_YslPingtai_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YslPingtai_01_Lod0.webp",
+        "load": 500,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "FlowerFeatherClanWarningBalloon": {
+        "name": "Flower-Feather Clan \"Warning\" Balloon",
+        "rarity": 2,
+        "id": 371148,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_YslQiqiu_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YslQiqiu_01_Lod0.webp",
+        "load": 65,
+        "energy": 30,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "AdeptusGate": {
+        "name": "Adeptus Gate",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/89\/Item_Adeptus_Gate.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 371201,
+        "imgId": "UI_Homeworld_Exterior_Ly_Build_Door_01_Lod0",
+        "load": 95,
+        "energy": 90,
+        "source": "Adeptal Mirror Reward"
+    },
+    "KeyGatewayBeneathTheClouds": {
+        "name": "Key Gateway: Beneath the Clouds",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b4\/Item_Key_Gateway_Beneath_the_Clouds.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 371213,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_House_05_Lod0",
+        "load": 35,
+        "energy": 60,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "KeyFenceSelfRestraint": {
+        "name": "Key Fence: Self-Restraint",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cc\/Item_Key_Fence_Self-Restraint.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 371214,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_House_06_Lod0",
+        "load": 65,
+        "energy": 60,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "FenceCornerLongWatch": {
+        "name": "Fence Corner: Long Watch",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/86\/Item_Fence_Corner_Long_Watch.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 371215,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_House_07_Lod0",
+        "load": 65,
+        "energy": 60,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "OtogiKintakeCourtyardGate": {
+        "name": "Otogi \"Kintake\" Courtyard Gate",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b5\/Item_Otogi_Kintake_Courtyard_Gate.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 371216,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_House_23_Lod0",
+        "load": 55,
+        "energy": 30,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "OtogiKintakeFence": {
+        "name": "Otogi \"Kintake\" Fence",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f0\/Item_Otogi_Kintake_Fence.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 371217,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_House_24_Vo",
+        "load": 35,
+        "energy": 30,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "EncampmentFenceJaggedTeeth": {
+        "name": "Encampment Fence: Jagged Teeth",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/18\/Item_Encampment_Fence_Jagged_Teeth.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 371218,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_House_29_Lod0",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "EncampmentFenceDecisiveJudgment": {
+        "name": "Encampment Fence: Decisive Judgment",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4d\/Item_Encampment_Fence_Decisive_Judgment.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 371219,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_House_30_Lod0",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "EncampmentFenceHoningGoad": {
+        "name": "Encampment Fence: Honing Goad",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/18\/Item_Encampment_Fence_Honing_Goad.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 371220,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_House_31_Vo",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "HotSpringFoldingScreenModeration": {
+        "name": "Hot Spring Folding Screen: Moderation",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f1\/Item_Hot_Spring_Folding_Screen_Moderation.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 371227,
+        "imgId": "UI_Homeworld_Exterior_Common_Thing_Wenquanpingfeng_01_Vo",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "HotSpringOuterWallNoVaulting": {
+        "name": "Hot Spring Outer Wall: No Vaulting",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b1\/Item_Hot_Spring_Outer_Wall_No_Vaulting.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 371228,
+        "imgId": "UI_Homeworld_Exterior_Common_Thing_Wenquanqiang_01_Vo",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "HotSpringWallWellGrounded": {
+        "name": "Hot Spring Wall: Well-Grounded",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/01\/Item_Hot_Spring_Wall_Well-Grounded.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 371229,
+        "imgId": "UI_Homeworld_Exterior_Common_Thing_Wenquanzhuanjiao_01_Vo",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "HotSpringFoyerShelterFromTheCold": {
+        "name": "Hot Spring Foyer: Shelter from the Cold",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ef\/Item_Hot_Spring_Foyer_Shelter_from_the_Cold.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 371230,
+        "imgId": "UI_Homeworld_Exterior_Common_Thing_Wenquandamen_01_Lod0",
+        "load": 195,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "NoFishingAhead": {
+        "name": "\"No Fishing Ahead\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/72\/Item_%22No_Fishing_Ahead%22.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 371236,
+        "imgId": "UI_Homeworld_Exterior_Xm_Build_Wall_02_Lod0",
+        "load": 35,
+        "energy": 30,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "AshenAratikuWoodMinimalistStaircase": {
+        "name": "Ashen Aratiku Wood \"Minimalist\" Staircase",
+        "rarity": 2,
+        "id": 371273,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_YslLouti_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YslLouti_01_Lod0.webp",
+        "load": 35,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "HidingGrazestone": {
+        "name": "Hiding Grazestone",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cd\/Item_Hiding_Grazestone.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372201,
+        "imgId": "UI_Homeworld_Exterior_Common_Stone_Stone_01_Lod0",
+        "load": 35,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "DaintyFists": {
+        "name": "\"Dainty Fists\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/93\/Item_Dainty_Fists.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372211,
+        "imgId": "UI_Homeworld_Exterior_Common_Stone_Stone_11_Lod0",
+        "load": 35,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "SealOfTheProvisionalHeadPriestess": {
+        "name": "\"Seal of the Provisional Head Priestess\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a2\/Item_Seal_of_the_Provisional_Head_Priestess.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372224,
+        "imgId": "UI_Homeworld_Exterior_Dq_Decoration_Cmaomao_01_Lod0",
+        "load": 35,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "MeditationStone": {
+        "name": "Meditation Stone",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/11\/Item_Meditation_Stone.png",
+        "type": "purchasable",
+        "rarity": 2,
+        "id": 372225,
+        "imgId": "UI_Homeworld_Exterior_Common_Floor_Full_S_01_Vo",
+        "load": 35,
+        "energy": 10,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "WadingStones": {
+        "name": "Wading Stones",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b3\/Item_Wading_Stones.png",
+        "type": "purchasable",
+        "rarity": 2,
+        "id": 372226,
+        "imgId": "UI_Homeworld_Exterior_Common_Floor_Full_S_02_Vo",
+        "load": 65,
+        "energy": 10,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "HotSpringWhitestoneSecretFire": {
+        "name": "Hot Spring Whitestone: Secret Fire",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ab\/Item_Hot_Spring_Whitestone_Secret_Fire.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372227,
+        "imgId": "UI_Homeworld_Exterior_Common_Thing_Wenquanshitou_01_Vo",
+        "load": 35,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "MayTheyFindRespite": {
+        "name": "May They Find Respite",
+        "rarity": 3,
+        "id": 372233,
+        "imgId": "UI_Homeworld_Exterior_Nt_Stone_Rock_Yewai_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Stone_Rock_Yewai_01_Vo.webp",
+        "load": 35,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "MayTheyNotFall": {
+        "name": "May They Not Fall",
+        "rarity": 3,
+        "id": 372234,
+        "imgId": "UI_Homeworld_Exterior_Nt_Stone_Rock_Yewai_02_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Stone_Rock_Yewai_02_Vo.webp",
+        "load": 35,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "TheColorOfTheWind": {
+        "name": "\"The Color of the Wind\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/61\/Item_The_Color_of_the_Wind.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372301,
+        "imgId": "UI_Homeworld_Exterior_Common_Plant_Tree_01_Lod0",
+        "load": 150,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "TianhengRedMapleBranchesAflame": {
+        "name": "Tianheng Red Maple: Branches Aflame",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4d\/Item_Tianheng_Red_Maple_Branches_Aflame.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372304,
+        "imgId": "UI_Homeworld_Exterior_Common_Plant_Tree_03_Lod0",
+        "load": 350,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "MatureCuihuaTree": {
+        "name": "Mature Cuihua Tree",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2b\/Item_Mature_Cuihua_Tree.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372307,
+        "imgId": "UI_Homeworld_Exterior_Common_Plant_Tree_02_Lod0",
+        "load": 200,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "FlowersFirstBlushingBloom": {
+        "name": "Flower's First Blushing Bloom",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/90\/Item_Flower%27s_First_Blushing_Bloom.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372325,
+        "imgId": "UI_Homeworld_Exterior_Dq_Plant_Pt_05_Lod0",
+        "load": 50,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "ThePreciousPinkOfSpring": {
+        "name": "The Precious Pink of Spring",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/69\/Item_The_Precious_Pink_of_Spring.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372327,
+        "imgId": "UI_Homeworld_Exterior_Dq_Plant_Pt_07_Lod0",
+        "load": 150,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "TheRedKitesWakingAndSleeping": {
+        "name": "The Red Kite's Waking and Sleeping",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/86\/Item_The_Red_Kite%27s_Waking_and_Sleeping.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372328,
+        "imgId": "UI_Homeworld_Exterior_Dq_Plant_Pt_08_Lod0",
+        "load": 50,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "TheWanderingBirdWithin": {
+        "name": "The Wandering Bird Within",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/19\/Item_The_Wandering_Bird_Within.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372329,
+        "imgId": "UI_Homeworld_Exterior_Dq_Plant_Pt_09_Lod0",
+        "load": 50,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "SappanAndVermilionEnjoined": {
+        "name": "Sappan and Vermilion Enjoined",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/32\/Item_Sappan_and_Vermilion_Enjoined.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372330,
+        "imgId": "UI_Homeworld_Exterior_Dq_Plant_Pt_10_Lod0",
+        "load": 200,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "PristineVessel": {
+        "name": "Pristine Vessel",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/74\/Item_Pristine_Vessel.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372337,
+        "imgId": "UI_Homeworld_Exterior_Xm_Plant_Tree_Common_03_Lod0",
+        "load": 50,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "SlantedMeanderingWood": {
+        "name": "Slanted Meandering Wood",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8a\/Item_Slanted_Meandering_Wood.png",
+        "type": "purchasable",
+        "rarity": 2,
+        "id": 372338,
+        "imgId": "UI_Homeworld_Exterior_Xm_Plant_Tree_Common_04_Lod0",
+        "load": 300,
+        "energy": 10,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "VerdantMeanderingWood": {
+        "name": "Verdant Meandering Wood",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7b\/Item_Verdant_Meandering_Wood.png",
+        "type": "purchasable",
+        "rarity": 2,
+        "id": 372339,
+        "imgId": "UI_Homeworld_Exterior_Xm_Plant_Tree_Common_05_Lod0",
+        "load": 750,
+        "energy": 10,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "LaneTreeStandard": {
+        "name": "Lane Tree: Standard \u2160",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fa\/Item_Lane_Tree_Standard_I.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372344,
+        "imgId": "UI_Homeworld_Exterior_Fd_Plant_Tree_ZhucBaishu_01_Lod0",
+        "load": 100,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "FragrantFirewood": {
+        "name": "Fragrant Firewood",
+        "rarity": 3,
+        "id": 372352,
+        "imgId": "UI_Homeworld_Exterior_Nt_Plant_Tree_Shu_02_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Plant_Tree_Shu_02_Lod0.webp",
+        "load": 150,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "JavelinsShaft": {
+        "name": "Javelin's Shaft",
+        "rarity": 3,
+        "id": 372353,
+        "imgId": "UI_Homeworld_Exterior_Nt_Plant_Tree_Shu_03_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Plant_Tree_Shu_03_Lod0.webp",
+        "load": 200,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "InitiatesWarClub": {
+        "name": "Initiate's War Club",
+        "rarity": 3,
+        "id": 372354,
+        "imgId": "UI_Homeworld_Exterior_Nt_Plant_Tree_YewaiLut_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Plant_Tree_YewaiLut_01_Lod0.webp",
+        "load": 150,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "CourtyardPillars": {
+        "name": "Courtyard Pillars",
+        "rarity": 3,
+        "id": 372356,
+        "imgId": "UI_Homeworld_Exterior_Nt_Plant_Tree_Tjlplain_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Plant_Tree_Tjlplain_01_Lod0.webp",
+        "load": 100,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "FragrantCedarVegetableRack": {
+        "name": "Fragrant Cedar Vegetable Rack",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/77\/Item_Fragrant_Cedar_Vegetable_Rack.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372401,
+        "imgId": "UI_Homeworld_Exterior_Ly_Cabinet_Cabinet_02_Lod0",
+        "load": 70,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "BloomingHedge": {
+        "name": "Blooming Hedge",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8d\/Item_Blooming_Hedge.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372402,
+        "imgId": "UI_Homeworld_Exterior_Common_Plant_Grass_01_Lod0",
+        "load": 50,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "BrightcrownPlumebush": {
+        "name": "\"Brightcrown Plumebush\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1c\/Item_Brightcrown_Plumebush.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372409,
+        "imgId": "UI_Homeworld_Exterior_Common_Plant_Grass_08_Lod0",
+        "load": 50,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "OvergrownWildvest": {
+        "name": "Overgrown Wildvest",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5c\/Item_Overgrown_Wildvest.png",
+        "type": "purchasable",
+        "rarity": 2,
+        "id": 372410,
+        "imgId": "UI_Homeworld_Exterior_Common_Plant_Grass_09_Lod0",
+        "load": 50,
+        "energy": 10,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "HazelWildvest": {
+        "name": "Hazel Wildvest",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a5\/Item_Hazel_Wildvest.png",
+        "type": "purchasable",
+        "rarity": 2,
+        "id": 372411,
+        "imgId": "UI_Homeworld_Exterior_Common_Plant_Grass_10_Lod0",
+        "load": 50,
+        "energy": 10,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "ProfuseAwlking": {
+        "name": "Profuse Awlking",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d2\/Item_Profuse_Awlking.png",
+        "type": "purchasable",
+        "rarity": 2,
+        "id": 372423,
+        "imgId": "UI_Homeworld_Exterior_Common_Plant_Grass_22_Lod0",
+        "load": 50,
+        "energy": 10,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "HuntersVantage": {
+        "name": "\"Hunter's Vantage\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/48\/Item_Hunter%27s_Vantage.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372431,
+        "imgId": "UI_Homeworld_Exterior_Common_Plant_Grass_30_Lod0",
+        "load": 50,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "TheAstersSigh": {
+        "name": "The Aster's Sigh",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c9\/Item_The_Aster%27s_Sigh.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372433,
+        "imgId": "UI_Homeworld_Exterior_Dq_Plant_Grass_01_Lod0",
+        "load": 50,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "MelancholyTheDewgrassShadowing": {
+        "name": "Melancholy, the Dewgrass Shadowing",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2d\/Item_Melancholy%2C_the_Dewgrass_Shadowing.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372434,
+        "imgId": "UI_Homeworld_Exterior_Dq_Plant_Grass_02_Lod0",
+        "load": 50,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "OfPromisesUnkeptTheNightFlowersSpeak": {
+        "name": "Of Promises Unkept the Night Flowers Speak",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8f\/Item_Of_Promises_Unkept_the_Night_Flowers_Speak.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372435,
+        "imgId": "UI_Homeworld_Exterior_Dq_Plant_Grass_03_Lod0",
+        "load": 50,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "AThousandPetalsOfRedGlaze": {
+        "name": "A Thousand Petals of Red Glaze",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3f\/Item_A_Thousand_Petals_of_Red_Glaze.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372439,
+        "imgId": "UI_Homeworld_Exterior_Dq_Plant_Grass_07_Lod0",
+        "load": 50,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "TheConcealedSalt": {
+        "name": "The Concealed Salt",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/99\/Item_The_Concealed_Salt.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372460,
+        "imgId": "UI_Homeworld_Exterior_Xm_Plant_Grass_Desert_07_Lod0",
+        "load": 50,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "LikeTheShimmeringDistantStars": {
+        "name": "Like the Shimmering Distant Stars",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/24\/Item_Like_the_Shimmering_Distant_Stars.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372464,
+        "imgId": "UI_Homeworld_Exterior_Xm_Plant_Grass_Desert_11_Lod0",
+        "load": 50,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "FlamingCatalyst": {
+        "name": "Flaming Catalyst",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7f\/Item_Flaming_Catalyst.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372472,
+        "imgId": "UI_Homeworld_Exterior_Xm_Plant_Grass_Common_03_Lod0",
+        "load": 50,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "ProlongationMedium": {
+        "name": "Prolongation Medium",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ab\/Item_Prolongation_Medium.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372473,
+        "imgId": "UI_Homeworld_Exterior_Xm_Plant_Grass_Common_04_Lod0",
+        "load": 50,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "CeruleanGem": {
+        "name": "Cerulean Gem",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/82\/Item_Cerulean_Gem.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372494,
+        "imgId": "UI_Homeworld_Exterior_Fd_Plant_Grass_Fenlaba_01_Lod0",
+        "load": 50,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "BellflowerHaze": {
+        "name": "Bellflower Haze",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7f\/Item_Bellflower_Haze.png",
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372495,
+        "imgId": "UI_Homeworld_Exterior_Fd_Plant_Grass_ZiHuacong_01_Lod0",
+        "load": 50,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
     },
     "SunflowerAquarelle": {
         "name": "Sunflower Aquarelle",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/02\/Item_Sunflower_Aquarelle.png",
-        "type": "purchasable"
+        "type": "purchasable",
+        "rarity": 3,
+        "id": 372496,
+        "imgId": "UI_Homeworld_Exterior_Fd_Plant_Grass_Xiangrikui_01_Lod0",
+        "load": 50,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "FoesTrace": {
+        "name": "Foe's Trace",
+        "rarity": 3,
+        "id": 372513,
+        "imgId": "UI_Homeworld_Exterior_Nt_Plant_Grass_YewaiLut_02_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Plant_Grass_YewaiLut_02_Lod0.webp",
+        "load": 50,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "WavesWisp": {
+        "name": "Wave's Wisp",
+        "rarity": 3,
+        "id": 372705,
+        "imgId": "UI_Homeworld_Exterior_Nt_Plant_Grass_Guanmu_02_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Plant_Grass_Guanmu_02_Lod0.webp",
+        "load": 50,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "LastResort": {
+        "name": "Last Resort",
+        "rarity": 3,
+        "id": 372706,
+        "imgId": "UI_Homeworld_Exterior_Nt_Plant_Grass_Guanmu_03_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Plant_Grass_Guanmu_03_Lod0.webp",
+        "load": 50,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "OresAbundance": {
+        "name": "Ore's Abundance",
+        "rarity": 3,
+        "id": 372708,
+        "imgId": "UI_Homeworld_Exterior_Nt_Plant_Grass_YewaiLut_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Plant_Grass_YewaiLut_01_Lod0.webp",
+        "load": 50,
+        "energy": 20,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "MessyPileOfFirCrates": {
+        "name": "Messy Pile of Fir Crates",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/75\/Item_Messy_Pile_of_Fir_Crates.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 373101,
+        "imgId": "UI_Homeworld_Exterior_Md_Decoration_Junk_01_Lod0",
+        "load": 40,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "NeatStackOfFirKegs": {
+        "name": "Neat Stack of Fir Kegs",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/91\/Item_Neat_Stack_of_Fir_Kegs.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 373102,
+        "imgId": "UI_Homeworld_Exterior_Md_Decoration_Junk_02_Lod0",
+        "load": 35,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "HeavyHayBale": {
+        "name": "Heavy Hay Bale",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/84\/Item_Heavy_Hay_Bale.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 373103,
+        "imgId": "UI_Homeworld_Exterior_Md_Decoration_Grassstacks_02_Vo",
+        "load": 35,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "WineJarWithBambooCasingSpiritsAwaitingMoonrise": {
+        "name": "Wine Jar With Bamboo Casing: Spirits Awaiting Moonrise",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/40\/Item_Wine_Jar_With_Bamboo_Casing_Spirits_Awaiting_Moonrise.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373104,
+        "imgId": "UI_Homeworld_Exterior_Ly_Decoration_Junk_03_Lod0",
+        "load": 65,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "ToyStandDazzlingDelights": {
+        "name": "Toy Stand: Dazzling Delights",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/29\/Item_Toy_Stand_Dazzling_Delights.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373105,
+        "imgId": "UI_Homeworld_Exterior_Ly_Decoration_Varia_01_Lod0",
+        "load": 85,
+        "energy": 60,
+        "source": "Adeptal Mirror Reward"
+    },
+    "UmbrellaShopKaleidoscopeOfParasolColors": {
+        "name": "Umbrella Shop: Kaleidoscope of Parasol Colors",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d4\/Item_Umbrella_Shop_Kaleidoscope_of_Parasol_Colors.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373106,
+        "imgId": "UI_Homeworld_Exterior_Ly_Decoration_Varia_02_Lod0",
+        "load": 110,
+        "energy": 60,
+        "source": "Adeptal Mirror Reward"
+    },
+    "StorageSackBuzzOffBag": {
+        "name": "Storage Sack: Buzz-Off Bag",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2b\/Item_Storage_Sack_Buzz-Off_Bag.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 373107,
+        "imgId": "UI_Homeworld_Exterior_Ly_Decoration_Farm_01_Vo",
+        "load": 35,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "FruitSellersCaution": {
+        "name": "Fruit Seller's Caution",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/70\/Item_Fruit_Seller%27s_Caution.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373108,
+        "imgId": "UI_Homeworld_Exterior_Common_Decoration_Vase_07_Lod0",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "HilichurlArcheryTarget": {
+        "name": "Hilichurl Archery Target",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/19\/Item_Hilichurl_Archery_Target.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373111,
+        "imgId": "UI_Homeworld_Exterior_Common_Decoration_Junk_06_Lod0",
+        "load": 65,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "HilichurlHornedPot": {
+        "name": "Hilichurl Horned Pot",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/76\/Item_Hilichurl_Horned_Pot.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373112,
+        "imgId": "UI_Homeworld_Exterior_Common_Decoration_Junk_07_Lod0",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "DeadwoodRoadSign": {
+        "name": "Deadwood Road Sign",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8c\/Item_Deadwood_Road_Sign.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 373113,
+        "imgId": "UI_Homeworld_Exterior_Common_Decoration_Junk_08_Lod0",
+        "load": 65,
+        "energy": 30,
+        "source": "Goth's Furnishings Shop"
+    },
+    "TheAdventurersBurdens": {
+        "name": "\"The Adventurer's Burdens\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bc\/Item_%22The_Adventurer%27s_Burdens%22.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373114,
+        "imgId": "UI_Homeworld_Exterior_Common_Thing_Camp_01_Lod0",
+        "load": 35,
+        "energy": 60,
+        "source": "Master Lu's Furnishings Shop"
+    },
+    "SturdyWoodenBarrel": {
+        "name": "Sturdy Wooden Barrel",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/04\/Item_Sturdy_Wooden_Barrel.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 373115,
+        "imgId": "UI_Homeworld_Exterior_Common_Decoration_Bucket_01_Vo",
+        "load": 35,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "TallWoodenPole": {
+        "name": "Tall Wooden Pole",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0e\/Item_Tall_Wooden_Pole.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 373116,
+        "imgId": "UI_Homeworld_Exterior_Common_Thing_Pole_01_Vo",
+        "load": 35,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "StoneCupShapedPool": {
+        "name": "Stone Cup-Shaped Pool",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/97\/Item_Stone_Cup-Shaped_Pool.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373119,
+        "imgId": "UI_Homeworld_Exterior_Common_Thing_Basin_01_Vo",
+        "load": 65,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "HeadquartersAlarmSoundOfThunder": {
+        "name": "Headquarters Alarm: Sound of Thunder",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3d\/Item_Headquarters_Alarm_Sound_of_Thunder.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373126,
+        "imgId": "UI_Homeworld_Exterior_Dq_Decoration_Clockstand_01_Lod0",
+        "load": 40,
+        "energy": 60,
+        "source": "Obtained from World Quest"
+    },
+    "WarDrumLineBreakingReverb": {
+        "name": "War Drum: Line-Breaking Reverb",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/26\/Item_War_Drum_Line-Breaking_Reverb.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 373127,
+        "imgId": "UI_Homeworld_Exterior_Dq_Decoration_Drum_10_Lod0",
+        "load": 35,
+        "energy": 90,
+        "source": "Obtained from World Quest"
+    },
+    "OtogiTaninWoodBarrel": {
+        "name": "Otogi \"Tanin\" Wood Barrel",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7f\/Item_Otogi_Tanin_Wood_Barrel.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 373130,
+        "imgId": "UI_Homeworld_Exterior_Dq_Decoration_Bucket_01_Vo",
+        "load": 65,
+        "energy": 30,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "KokutanThickWalledClayWaterTank": {
+        "name": "\"Kokutan\" Thick-Walled Clay Water Tank",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/08\/Item_Kokutan_Thick-Walled_Clay_Water_Tank.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 373131,
+        "imgId": "UI_Homeworld_Exterior_Dq_Decoration_Cylinder_01_Vo",
+        "load": 65,
+        "energy": 30,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "ReplicaAncientOtogiKeg": {
+        "name": "Replica Ancient Otogi Keg",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b4\/Item_Replica_Ancient_Otogi_Keg.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 373132,
+        "imgId": "UI_Homeworld_Exterior_Dq_Thing_Cask_01_Vo",
+        "load": 35,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "ReplicaAncientOtogiCrate": {
+        "name": "Replica Ancient Otogi Crate",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1c\/Item_Replica_Ancient_Otogi_Crate.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 373133,
+        "imgId": "UI_Homeworld_Exterior_Dq_Thing_Box_01_Vo",
+        "load": 35,
+        "energy": 30,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "FishermansCatch": {
+        "name": "Fisherman's Catch",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e7\/Item_Fisherman%27s_Catch.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373142,
+        "imgId": "UI_Homeworld_Exterior_Xm_Decoration_Prop_FishFrame_01_Lod0",
+        "load": 45,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "FishermansDelicacy": {
+        "name": "Fisherman's Delicacy",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3a\/Item_Fisherman%27s_Delicacy.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373143,
+        "imgId": "UI_Homeworld_Exterior_Xm_Decoration_Prop_FishFrame_02_Lod0",
+        "load": 35,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "FishermansEfforts": {
+        "name": "Fisherman's Efforts",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9b\/Item_Fisherman%27s_Efforts.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 373145,
+        "imgId": "UI_Homeworld_Exterior_Xm_Decoration_Prop_FishTool_01_Lod0",
+        "load": 35,
+        "energy": 30,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "FishermansClemency": {
+        "name": "Fisherman's Clemency",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/68\/Item_Fisherman%27s_Clemency.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373146,
+        "imgId": "UI_Homeworld_Exterior_Xm_Thing_Prop_FishingTool_01_Lod0",
+        "load": 65,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "BoxingTargetOfTheForbiddenFortress": {
+        "name": "\"Boxing Target of the Forbidden Fortress\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3b\/Item_%22Boxing_Target_of_the_Forbidden_Fortress%22.png",
+        "type": "craftable",
+        "rarity": 4,
+        "id": 373181,
+        "imgId": "UI_Homeworld_Ani_Exterior_Fd_Thing_Prop_BoxingMachine_01",
+        "load": 65,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "SoilCarryingWoodenBarrel": {
+        "name": "Soil-Carrying Wooden Barrel",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/ff\/Item_Soil-Carrying_Wooden_Barrel.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 373203,
+        "imgId": "UI_Homeworld_Exterior_Common_Decoration_Flowerpot_01_Vo",
+        "load": 35,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "ATheatersDreamOfFlowers": {
+        "name": "A Theater's Dream of Flowers",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5a\/Item_A_Theater%27s_Dream_of_Flowers.png",
+        "type": "purchasable",
+        "rarity": 4,
+        "id": 373209,
+        "imgId": "UI_Homeworld_Exterior_Xm_Decoration_Prop_JuchangHuatan_01_Lod0",
+        "load": 95,
+        "energy": 30,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "LongingInTheTranquilCourt": {
+        "name": "Longing in the Tranquil Court",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3b\/Item_Longing_in_the_Tranquil_Court.png",
+        "type": "purchasable",
+        "rarity": 4,
+        "id": 373210,
+        "imgId": "UI_Homeworld_Exterior_Xm_Decoration_Prop_Jhuatan_01_Lod0",
+        "load": 95,
+        "energy": 30,
+        "source": "Purchased from Realm Depot: Furnishings"
+    },
+    "PassagesPerfumedPottedPlants": {
+        "name": "Passage's Perfumed Potted Plants",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3a\/Item_Passage%27s_Perfumed_Potted_Plants.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373213,
+        "imgId": "UI_Homeworld_Exterior_Fd_Flower_Prop_ZhucPenzai_01_Vo",
+        "load": 95,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "RoyalPurple": {
+        "name": "\"Royal Purple\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f5\/Item_Royal_Purple.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373214,
+        "imgId": "UI_Homeworld_Exterior_Fd_Decoration_Prop_ChangHuatan_01_Vo",
+        "load": 65,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "FirShelves": {
+        "name": "Fir Shelves",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/80\/Item_Fir_Shelves.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 373301,
+        "imgId": "UI_Homeworld_Exterior_Md_Decoration_Woodenshelf_01_Vo",
+        "load": 65,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "FirWeaponRack": {
+        "name": "Fir Weapon Rack",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cb\/Item_Fir_Weapon_Rack.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 373302,
+        "imgId": "UI_Homeworld_Exterior_Md_Decoration_Woodenshelf_02_Vo",
+        "load": 35,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "HardwoodWeaponRack": {
+        "name": "Hardwood Weapon Rack",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a2\/Item_Hardwood_Weapon_Rack.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373303,
+        "imgId": "UI_Homeworld_Exterior_Md_Decoration_Woodenshelf_03_Vo",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "SimpleCargoCart": {
+        "name": "Simple Cargo Cart",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/76\/Item_Simple_Cargo_Cart.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 373304,
+        "imgId": "UI_Homeworld_Exterior_Md_Decoration_Gardencart_01_Lod0",
+        "load": 65,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "SturdyStoneWell": {
+        "name": "Sturdy Stone Well",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6b\/Item_Sturdy_Stone_Well.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373305,
+        "imgId": "UI_Homeworld_Exterior_Md_Decoration_Well_01_Vo",
+        "load": 190,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "OldWell": {
+        "name": "Old Well",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ae\/Item_Old_Well.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 373307,
+        "imgId": "UI_Homeworld_Exterior_Ly_Decoration_Well_02_Lod0",
+        "load": 95,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "RoofedWellForPurity": {
+        "name": "Roofed Well: For Purity",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/63\/Item_Roofed_Well_For_Purity.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373308,
+        "imgId": "UI_Homeworld_Exterior_Ly_Decoration_Well_03_Lod0",
+        "load": 190,
+        "energy": 60,
+        "source": "Adeptal Mirror Reward"
+    },
+    "TheAdventurersTreasures": {
+        "name": "\"The Adventurer's Treasures\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/45\/Item_The_Adventurer%27s_Treasures.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373312,
+        "imgId": "UI_Homeworld_Exterior_Common_Thing_Package_01_Lod0",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "YumemiruSaikyoFortuneSlipHanger": {
+        "name": "Yumemiru \"Saikyo\" Fortune Slip Hanger",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/16\/Item_Yumemiru_Saikyo_Fortune_Slip_Hanger.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373315,
+        "imgId": "UI_Homeworld_Exterior_Dq_Build_House_36_Lod0",
+        "load": 125,
+        "energy": 60,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "NarukamisBanner": {
+        "name": "Narukami's Banner",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2e\/Item_Narukami%27s_Banner.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373316,
+        "imgId": "UI_Homeworld_Exterior_Dq_Decoration_MufuBaihe_01_Vo",
+        "load": 65,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "CampSpearRackPointBreak": {
+        "name": "Camp Spear-Rack: Point Break",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cf\/Item_Camp_Spear-Rack_Point_Break.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373318,
+        "imgId": "UI_Homeworld_Exterior_Dq_Decoration_Weaponrack_01_Lod0",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "SkyKitsuneStatueHakushinsLegacy": {
+        "name": "Sky Kitsune Statue: Hakushin's Legacy",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e5\/Item_Sky_Kitsune_Statue_Hakushin%27s_Legacy.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373321,
+        "imgId": "UI_Homeworld_Exterior_Dq_Decoration_Foxstatue_01_Lod0",
+        "load": 35,
+        "energy": 60,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "HighFlyingFishFlag": {
+        "name": "High-Flying Fish Flag",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/01\/Item_High-Flying_Fish_Flag.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373322,
+        "imgId": "UI_Homeworld_Exterior_Dq_Decoration_Carp_01_Vo",
+        "load": 65,
+        "energy": 60,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "RedIronCoral": {
+        "name": "Red-Iron Coral",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e4\/Item_Red-Iron_Coral.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373325,
+        "imgId": "UI_Homeworld_Interior_Dq_Decoration_Zhuangshipin_01_Vo",
+        "load": 65,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "YumemiruSeikenOfferingBox": {
+        "name": "Yumemiru \"Seiken\" Offering Box",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/54\/Item_Yumemiru_Seiken_Offering_Box.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373329,
+        "imgId": "UI_Homeworld_Exterior_Dq_Decoration_HonoBox_01_Lod0",
+        "load": 35,
+        "energy": 60,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "VillageWellSubterraneanSecrets": {
+        "name": "Village Well: Subterranean Secrets",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/34\/Item_Village_Well_Subterranean_Secrets.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373333,
+        "imgId": "UI_Homeworld_Exterior_Dq_Decoration_Well_02_Lod0",
+        "load": 95,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "TheEssentials": {
+        "name": "The Essentials",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/15\/Item_The_Essentials.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373356,
+        "imgId": "UI_Homeworld_Exterior_Xm_Decoration_Prop_TentBox_01_Lod0",
+        "load": 35,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "TheEremitesFlameOfVigor": {
+        "name": "The Eremites' Flame of Vigor",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1c\/Item_The_Eremites%27_Flame_of_Vigor.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373357,
+        "imgId": "UI_Homeworld_Exterior_Xm_Decoration_Prop_Brazier_01_Lod0",
+        "load": 260,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "EmbodimentOfWarfare": {
+        "name": "Embodiment of Warfare",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5d\/Item_Embodiment_of_Warfare.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373358,
+        "imgId": "UI_Homeworld_Exterior_Xm_Decoration_Prop_WeaponRack_01_Lod0",
+        "load": 35,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "SteelStopper": {
+        "name": "Steel Stopper",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a9\/Item_Steel_Stopper.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373359,
+        "imgId": "UI_Homeworld_Exterior_Xm_Decoration_Prop_Barrier_01_Lod0",
+        "load": 35,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "TheEremitesOdyssey": {
+        "name": "The Eremites' Odyssey",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Item_The_Eremites%27_Odyssey.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373360,
+        "imgId": "UI_Homeworld_Exterior_Xm_Thing_Prop_Cart_01_Lod0",
+        "load": 45,
+        "energy": 60,
+        "source": "Sumeru Remarkable Chest Reward"
+    },
+    "TheEremitesFame": {
+        "name": "The Eremites' Fame",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b3\/Item_The_Eremites%27_Fame.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373361,
+        "imgId": "UI_Homeworld_Exterior_Xm_Decoration_Prop_Ybtqizhi_01_Lod0",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "WroughtIronCarvedStreetLight": {
+        "name": "Wrought Iron Carved Street Light",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2d\/Item_Wrought_Iron_Carved_Street_Light.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373401,
+        "imgId": "UI_Homeworld_Exterior_Md_Lamp_Lamp_01_Lod0",
+        "load": 115,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "PineStreetLight": {
+        "name": "Pine Street Light",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8f\/Item_Pine_Street_Light.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 373402,
+        "imgId": "UI_Homeworld_Exterior_Md_Lamp_Lamp_02_Vo",
+        "load": 85,
+        "energy": 30,
+        "source": "Adeptal Mirror Reward"
+    },
+    "EvilRepellingLanternAllAroundLighting": {
+        "name": "Evil-Repelling Lantern: All-Around Lighting",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d4\/Item_Evil-Repelling_Lantern_All-Around_Lighting.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373403,
+        "imgId": "UI_Homeworld_Exterior_Ly_Lamp_Lamp_09_Lod0",
+        "load": 135,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "ShadowLampPaintedShadow": {
+        "name": "Shadow Lamp: Painted Shadow",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/95\/Item_Shadow_Lamp_Painted_Shadow.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373405,
+        "imgId": "UI_Homeworld_Exterior_Ly_Lamp_Lamp_11_Vo",
+        "load": 115,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "FiveLanternFestivalGate": {
+        "name": "Five-Lantern Festival Gate",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/51\/Item_Five-Lantern_Festival_Gate.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 373410,
+        "imgId": "UI_Homeworld_Exterior_Dq_Lamp_Dengjia_01_Lod0",
+        "load": 165,
+        "energy": 30,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "YumemiruKuukaiStreetLamp": {
+        "name": "Yumemiru \"Kuukai\" Street Lamp",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cb\/Item_Yumemiru_Kuukai_Street_Lamp.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373411,
+        "imgId": "UI_Homeworld_Exterior_Dq_Lamp_DasheLamp_01_Lod0",
+        "load": 145,
+        "energy": 60,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "WhiteFishTallowCandleEvenlight": {
+        "name": "White Fish Tallow Candle: Evenlight",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9d\/Item_White_Fish_Tallow_Candle_Evenlight.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 373413,
+        "imgId": "UI_Homeworld_Exterior_Dq_Lamp_EverLit_01_Vo",
+        "load": 65,
+        "energy": 30,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "OtogiCountrysideStreetLamp": {
+        "name": "Otogi Countryside Street Lamp",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e5\/Item_Otogi_Countryside_Street_Lamp.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 373414,
+        "imgId": "UI_Homeworld_Exterior_Dq_Lamp_Lightrigged_01_Vo",
+        "load": 115,
+        "energy": 30,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "SimpleOtogiStreetLamp": {
+        "name": "Simple Otogi Street Lamp",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2a\/Item_Simple_Otogi_Street_Lamp.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 373415,
+        "imgId": "UI_Homeworld_Exterior_Dq_Lamp_Lightrigged_02_Vo",
+        "load": 115,
+        "energy": 30,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "LindenWoodHalfMetalAnnouncementBoard": {
+        "name": "Linden Wood Half-Metal Announcement Board",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ad\/Item_Linden_Wood_Half-Metal_Announcement_Board.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373423,
+        "imgId": "UI_Homeworld_Exterior_Fd_Decoration_Prop_Board_01_Vo",
+        "load": 35,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "SoftWatersVoice": {
+        "name": "\"Soft Water's Voice\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5f\/Item_%22Soft_Water%27s_Voice%22.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373428,
+        "imgId": "UI_Homeworld_Exterior_Fd_Decoration_Prop_RycPengzi_01_Lod0",
+        "load": 95,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "LetsPlay": {
+        "name": "\"Let's Play!\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/90\/Item_%22Let%27s_Play%21%22.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373429,
+        "imgId": "UI_Homeworld_Exterior_Fd_Decoration_Prop_RycPengzi_02_Vo",
+        "load": 65,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "GoodStuffIsForSharing": {
+        "name": "\"Good Stuff Is for Sharing!\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d0\/Item_%22Good_Stuff_Is_for_Sharing%21%22.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373430,
+        "imgId": "UI_Homeworld_Exterior_Fd_Decoration_Prop_RycWeilan_01_Lod0",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "SatisfyingWeight": {
+        "name": "\"Satisfying Weight\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0e\/Item_%22Satisfying_Weight%22.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373431,
+        "imgId": "UI_Homeworld_Exterior_Fd_Decoration_Prop_RycWujian_01_Vo",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "ASistersDuty": {
+        "name": "\"A Sister's Duty\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/77\/Item_A_Sister%27s_Duty.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373432,
+        "imgId": "UI_Homeworld_Exterior_Fd_Decoration_Prop_RycPengzi_03_Lod0",
+        "load": 65,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "OverburdeningOfTheForbiddenFortress": {
+        "name": "\"Overburdening of the Forbidden Fortress\"",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cf\/Item_%22Overburdening_of_the_Forbidden_Fortress%22.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373433,
+        "imgId": "UI_Homeworld_Exterior_Fd_Decoration_Prop_JyXiangzi_01_Lod0",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "AreaMarkerUpward": {
+        "name": "Area Marker: Upward",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3b\/Item_Area_Marker_Upward.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 373434,
+        "imgId": "UI_Homeworld_Exterior_Fd_Decoration_Prop_Zhishipai_01_Lod0",
+        "load": 95,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "AreaMarkerDownward": {
+        "name": "Area Marker: Downward",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/97\/Item_Area_Marker_Downward.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 373435,
+        "imgId": "UI_Homeworld_Exterior_Fd_Decoration_Prop_Zhishipai_02_Lod0",
+        "load": 95,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "CeaselessClash": {
+        "name": "\"Ceaseless Clash\"",
+        "rarity": 3,
+        "id": 373462,
+        "imgId": "UI_Homeworld_Exterior_Nt_Decoration_Prop_ZDLTuyaban_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_ZDLTuyaban_01_Vo.webp",
+        "load": 65,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "FlagOfHuitztlan": {
+        "name": "\"Flag of Huitztlan\"",
+        "rarity": 3,
+        "id": 373463,
+        "imgId": "UI_Homeworld_Exterior_Nt_Decoration_Prop_GZLQizhi_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_GZLQizhi_01_Vo.webp",
+        "load": 95,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "TailPouchOfTheMountainWind": {
+        "name": "\"Tail Pouch of the Mountain Wind\"",
+        "rarity": 3,
+        "id": 373472,
+        "imgId": "UI_Homeworld_Exterior_Nt_Decoration_Prop_YslFengbiao_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_YslFengbiao_01_Vo.webp",
+        "load": 65,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "EndlessAspiration": {
+        "name": "\"Endless Aspiration\"",
+        "rarity": 3,
+        "id": 373473,
+        "imgId": "UI_Homeworld_Exterior_Nt_Decoration_Prop_YslZhaopai_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_YslZhaopai_01_Vo.webp",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "PortraitOfHeroicMight": {
+        "name": "Portrait of Heroic Might",
+        "rarity": 3,
+        "id": 373483,
+        "imgId": "UI_Homeworld_Exterior_Nt_Decoration_Prop_Tjlpaizi_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_Tjlpaizi_01_Vo.webp",
+        "load": 65,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "BookshelfFreeReading": {
+        "name": "Bookshelf: Free Reading",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/79\/Item_Bookshelf_Free_Reading.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373511,
+        "imgId": "UI_Homeworld_Exterior_Fd_Decoration_Prop_Baokanting_01_Vo",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "BookshelfSpeedyBrowsing": {
+        "name": "Bookshelf: Speedy Browsing",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/70\/Item_Bookshelf_Speedy_Browsing.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 373512,
+        "imgId": "UI_Homeworld_Exterior_Fd_Decoration_Prop_Baokanting_02_Vo",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "CouriersSystemOfSortAndDispatch": {
+        "name": "\"Courier's System of Sort and Dispatch\"",
+        "rarity": 3,
+        "id": 373516,
+        "imgId": "UI_Homeworld_Exterior_Nt_Cabinet_Prop_GZLJiazi_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Cabinet_Prop_GZLJiazi_01_Lod0.webp",
+        "load": 125,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "VesselOfPurificationAndCalm": {
+        "name": "\"Vessel of Purification and Calm\"",
+        "rarity": 3,
+        "id": 373922,
+        "imgId": "UI_Homeworld_Exterior_Nt_Decoration_Prop_LslPingzi_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_LslPingzi_01_Lod0.webp",
+        "load": 35,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "SpiritualityAndSealing": {
+        "name": "\"Spirituality and Sealing\"",
+        "rarity": 4,
+        "id": 373923,
+        "imgId": "UI_Homeworld_Exterior_Nt_Decoration_Prop_LslPingzi_02_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_LslPingzi_02_Vo.webp",
+        "load": 85,
+        "energy": 90,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "OurPath": {
+        "name": "\"Our Path\"",
+        "rarity": 3,
+        "id": 373924,
+        "imgId": "UI_Homeworld_Exterior_Nt_Decoration_Prop_LslXianglu_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_LslXianglu_01_Vo.webp",
+        "load": 35,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "FamishedThoughts": {
+        "name": "\"Famished Thoughts\"",
+        "rarity": 3,
+        "id": 373925,
+        "imgId": "UI_Homeworld_Exterior_Nt_Decoration_Prop_LslXianglu_02_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_LslXianglu_02_Vo.webp",
+        "load": 35,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "FixedTorchPursuitOfVictory": {
+        "name": "Fixed Torch: Pursuit of Victory",
+        "rarity": 3,
+        "id": 373926,
+        "imgId": "UI_Homeworld_Exterior_Nt_Lamp_Light_YslDeng_02_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Lamp_Light_YslDeng_02_Vo.webp",
+        "load": 300,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "BlackGoldOfTheBlazingRealm": {
+        "name": "Black Gold of the Blazing Realm",
+        "rarity": 3,
+        "id": 373927,
+        "imgId": "UI_Homeworld_Exterior_Nt_Decoration_Prop_JJCwuqijia_02_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_JJCwuqijia_02_Vo.webp",
+        "load": 95,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "PilgrimageByTheHammersBlow": {
+        "name": "Pilgrimage by the Hammer's Blow",
+        "rarity": 3,
+        "id": 373928,
+        "imgId": "UI_Homeworld_Exterior_Nt_Decoration_Prop_JJCzhenban_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_JJCzhenban_01_Vo.webp",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "ClimaxOfColorsAndHues": {
+        "name": "Climax of Colors and Hues",
+        "rarity": 3,
+        "id": 373929,
+        "imgId": "UI_Homeworld_Exterior_Nt_Decoration_Prop_Yanliao_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_Yanliao_01_Vo.webp",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "SpatteredColorsAndHues": {
+        "name": "Spattered Colors and Hues",
+        "rarity": 3,
+        "id": 373930,
+        "imgId": "UI_Homeworld_Exterior_Nt_Decoration_Prop_Yanliao_02_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_Yanliao_02_Vo.webp",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "MusingsOnColorsAndHues": {
+        "name": "Musings on Colors and Hues",
+        "rarity": 3,
+        "id": 373931,
+        "imgId": "UI_Homeworld_Exterior_Nt_Decoration_Prop_Yanliao_03_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_Yanliao_03_Vo.webp",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "ArtOfTransport": {
+        "name": "Art of Transport",
+        "rarity": 3,
+        "id": 373932,
+        "imgId": "UI_Homeworld_Exterior_Nt_Decoration_Prop_Tjlguolan_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_Tjlguolan_01_Lod0.webp",
+        "load": 95,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "SturdyPineFence": {
+        "name": "Sturdy Pine Fence",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e3\/Item_Sturdy_Pine_Fence.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 374102,
+        "imgId": "UI_Homeworld_Exterior_Common_Decoration_Rail_02_Lod0",
+        "load": 35,
+        "energy": 30,
+        "source": "Adeptal Mirror Reward"
+    },
+    "WoodenHilichurlFence": {
+        "name": "Wooden Hilichurl Fence",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e1\/Item_Wooden_Hilichurl_Fence.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 374103,
+        "imgId": "UI_Homeworld_Exterior_Common_Decoration_Rail_03_Lod0",
+        "load": 65,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "HilichurlTotemFence": {
+        "name": "Hilichurl Totem Fence",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f6\/Item_Hilichurl_Totem_Fence.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 374104,
+        "imgId": "UI_Homeworld_Exterior_Common_Decoration_Rail_04_Lod0",
+        "load": 65,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "LushGrapevine": {
+        "name": "Lush Grapevine",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f4\/Item_Lush_Grapevine.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 374105,
+        "imgId": "UI_Homeworld_Exterior_Md_Flower_Flowerpot_02_Lod0",
+        "load": 65,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "SimpleWoodenFence": {
+        "name": "Simple Wooden Fence",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dc\/Item_Simple_Wooden_Fence.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 374107,
+        "imgId": "UI_Homeworld_Exterior_Common_Thing_Bawn_01_Vo",
+        "load": 35,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "HalfConstructedFence": {
+        "name": "Half-Constructed Fence",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dc\/Item_Half-Constructed_Fence.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 374108,
+        "imgId": "UI_Homeworld_Exterior_Common_Thing_Bawn_02_Vo",
+        "load": 35,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "TheFruitFarmersThrift": {
+        "name": "The Fruit Farmer's Thrift",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0a\/Item_The_Fruit_Farmer%27s_Thrift.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 374109,
+        "imgId": "UI_Homeworld_Exterior_Dq_Flower_Tomato_01_Lod0",
+        "load": 95,
+        "energy": 60,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "CourtOfJusticesBarrier": {
+        "name": "Court of Justice's Barrier",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cb\/Item_Court_of_Justice%27s_Barrier.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 374112,
+        "imgId": "UI_Homeworld_Exterior_Fd_Decoration_Prop_ZcWeilan_01_Vo",
+        "load": 35,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "StandardRailingScatteredStructure": {
+        "name": "Standard Railing: Scattered Structure",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a2\/Item_Standard_Railing_Scattered_Structure.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 374114,
+        "imgId": "UI_Homeworld_Exterior_Fd_Build_Prop_ZxShiLan_02_Vo",
+        "load": 65,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "TequemecanStronghold": {
+        "name": "\"Tequemecan Stronghold\"",
+        "rarity": 3,
+        "id": 374121,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_Prop_ZDLWeilan_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Prop_ZDLWeilan_01_Vo.webp",
+        "load": 35,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "HangingPostOfCoatepecMountain": {
+        "name": "\"Hanging Post of Coatepec Mountain\"",
+        "rarity": 3,
+        "id": 374122,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_GZLWeilan_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_GZLWeilan_01_Lod0.webp",
+        "load": 65,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "BalustradeOfTheSprings": {
+        "name": "\"Balustrade of the Springs\"",
+        "rarity": 3,
+        "id": 374123,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_YLLLangan_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YLLLangan_01_Vo.webp",
+        "load": 65,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "TetherAtTheSummitOfQuahuacanCliff": {
+        "name": "\"Tether at the Summit of Quahuacan Cliff\"",
+        "rarity": 3,
+        "id": 374124,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_YslWeilan_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YslWeilan_01_Vo.webp",
+        "load": 65,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "PaddockFenceSimpleBoundary": {
+        "name": "Paddock Fence: Simple Boundary",
+        "rarity": 2,
+        "id": 374125,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_Longweilan_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Longweilan_01_Lod0.webp",
+        "load": 35,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "PaddockGateFoundationalFramework": {
+        "name": "Paddock Gate: Foundational Framework",
+        "rarity": 2,
+        "id": 374126,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_Longmen_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Longmen_01_Vo.webp",
+        "load": 35,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "LandOfPlentysBounds": {
+        "name": "Land of Plenty's Bounds",
+        "rarity": 3,
+        "id": 374127,
+        "imgId": "UI_Homeworld_Exterior_Nt_Decoration_Prop_Tjlweilan_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_Tjlweilan_01_Vo.webp",
+        "load": 65,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "SmoothWoodenBench": {
+        "name": "Smooth Wooden Bench",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/45\/Item_Smooth_Wooden_Bench.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 374201,
+        "imgId": "UI_Homeworld_Exterior_Md_Chair_Chair_01_Vo",
+        "load": 35,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "SmoothStoneBench": {
+        "name": "Smooth Stone Bench",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f9\/Item_Smooth_Stone_Bench.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 374202,
+        "imgId": "UI_Homeworld_Exterior_Md_Chair_Chair_02_Vo",
+        "load": 35,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "OtogiRakushiSquareStool": {
+        "name": "Otogi \"Rakushi\" Square Stool",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/79\/Item_Otogi_Rakushi_Square_Stool.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 374205,
+        "imgId": "UI_Homeworld_Exterior_Dq_Chair_MuZhuo_01_Vo",
+        "load": 35,
+        "energy": 30,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "PassagesLanguidLifestyle": {
+        "name": "Passage's Languid Lifestyle",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d0\/Item_Passage%27s_Languid_Lifestyle.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 374209,
+        "imgId": "UI_Homeworld_Exterior_Fd_Chair_Prop_CafeYi_01_Vo",
+        "load": 35,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "PassagesEveningEnsemble": {
+        "name": "Passage's Evening Ensemble",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4f\/Item_Passage%27s_Evening_Ensemble.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 374210,
+        "imgId": "UI_Homeworld_Exterior_Fd_Chair_Prop_LongYi_01_Vo",
+        "load": 35,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "AzureGemOfTheSprings": {
+        "name": "\"Azure Gem of the Springs\"",
+        "rarity": 3,
+        "id": 374215,
+        "imgId": "UI_Homeworld_Exterior_Nt_Chair_Prop_YLLYizi_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Chair_Prop_YLLYizi_01_Vo.webp",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "SurgingHarmoniesOfTheSprings": {
+        "name": "\"Surging Harmonies of the Springs\"",
+        "rarity": 3,
+        "id": 374216,
+        "imgId": "UI_Homeworld_Exterior_Nt_Chair_Prop_YLLYizi_02_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Chair_Prop_YLLYizi_02_Vo.webp",
+        "load": 35,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "TwoStoryHilichurlSentryTower": {
+        "name": "Two-Story Hilichurl Sentry Tower",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/31\/Item_Two-Story_Hilichurl_Sentry_Tower.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 374301,
+        "imgId": "UI_Homeworld_Exterior_Common_Build_House_20_Lod0",
+        "load": 95,
+        "energy": 60,
+        "source": "Teapot Spirit Trust Rank Reward"
+    },
+    "HeavyFirForgingTable": {
+        "name": "Heavy Fir Forging Table",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f8\/Item_Heavy_Fir_Forging_Table.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 374303,
+        "imgId": "UI_Homeworld_Exterior_Md_Table_Table_02_Vo",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "LongPineTable": {
+        "name": "Long Pine Table",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fc\/Item_Long_Pine_Table.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 374304,
+        "imgId": "UI_Homeworld_Exterior_Ly_Table_Table_09_Vo",
+        "load": 35,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "LargeStoneMill": {
+        "name": "Large Stone Mill",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/46\/Item_Large_Stone_Mill.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 374305,
+        "imgId": "UI_Homeworld_Exterior_Ly_Table_Table_08_Lod0",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "TwoTierVendorsBoothRisingFortunes": {
+        "name": "Two-Tier Vendor's Booth: Rising Fortunes",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/22\/Item_Two-Tier_Vendor%27s_Booth_Rising_Fortunes.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 374307,
+        "imgId": "UI_Homeworld_Exterior_Ly_Decoration_Varia_04_Lod0",
+        "load": 60,
+        "energy": 60,
+        "source": "Adeptal Mirror Reward"
+    },
+    "BambooOutdoorTeaTable": {
+        "name": "Bamboo Outdoor Tea Table",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2e\/Item_Bamboo_Outdoor_Tea_Table.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 374308,
+        "imgId": "UI_Homeworld_Exterior_Ly_PairChair_Chair_02_Vo",
+        "load": 95,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "WoodenOutdoorTeaTable": {
+        "name": "Wooden Outdoor Tea Table",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/47\/Item_Wooden_Outdoor_Tea_Table.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 374309,
+        "imgId": "UI_Homeworld_Exterior_Ly_PairChair_Chair_03_Vo",
+        "load": 95,
+        "energy": 60,
+        "source": "Adeptal Mirror Reward"
+    },
+    "OtogiRakushiSquareTable": {
+        "name": "Otogi \"Rakushi\" Square Table",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7e\/Item_Otogi_Rakushi_Square_Table.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 374313,
+        "imgId": "UI_Homeworld_Exterior_Dq_Table_MuZhuo_01_Vo",
+        "load": 35,
+        "energy": 30,
+        "source": "Inazuma Remarkable Chest Reward"
+    },
+    "PassagesPristineRoundTable": {
+        "name": "Passage's Pristine Round Table",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/aa\/Item_Passage%27s_Pristine_Round_Table.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 374318,
+        "imgId": "UI_Homeworld_Exterior_Fd_Table_Prop_CafeZhuo_01_Vo",
+        "load": 35,
+        "energy": 60,
+        "source": "Fontaine Remarkable Chest Reward"
+    },
+    "ProductionRackTheBasics": {
+        "name": "Production Rack: The Basics",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2c\/Item_Production_Rack_The_Basics.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 374319,
+        "imgId": "UI_Homeworld_Exterior_Fd_Table_Prop_JyJiazi_01_Lod0",
+        "load": 95,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "ProductionRackCustomBuild": {
+        "name": "Production Rack: Custom Build",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b6\/Item_Production_Rack_Custom_Build.png",
+        "type": "craftable",
+        "rarity": 2,
+        "id": 374320,
+        "imgId": "UI_Homeworld_Exterior_Fd_Table_Prop_JyJiazi_02_Lod0",
+        "load": 95,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "CompactLongTableCouriersEdition": {
+        "name": "\"Compact Long Table: Courier's Edition\"",
+        "rarity": 3,
+        "id": 374326,
+        "imgId": "UI_Homeworld_Exterior_Nt_Table_Prop_GZLTaizi_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Table_Prop_GZLTaizi_01_Vo.webp",
+        "load": 65,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "WhiteChestnutOakWoodRawFinishLowTable": {
+        "name": "White Chestnut Oak Wood \"Raw Finish\" Low Table",
+        "rarity": 3,
+        "id": 374327,
+        "imgId": "UI_Homeworld_Exterior_Nt_Table_Prop_YLLZhuozi_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Table_Prop_YLLZhuozi_01_Vo.webp",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "FairTableUncutOriginal": {
+        "name": "Fair Table: Uncut Original",
+        "rarity": 3,
+        "id": 374328,
+        "imgId": "UI_Homeworld_Exterior_Nt_Table_Prop_JJCshizhuo_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Table_Prop_JJCshizhuo_01_Vo.webp",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "WineShopDisplayCounterToYourHeartsContent": {
+        "name": "Wine Shop Display Counter: To Your Heart's Content",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/bf\/Item_Wine_Shop_Display_Counter_To_Your_Heart%27s_Content.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 374401,
+        "imgId": "UI_Homeworld_Exterior_Ly_Decoration_Junk_04_Lod0",
+        "load": 65,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "CrudeDoubleDeckerPallet": {
+        "name": "Crude Double-Decker Pallet",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6e\/Item_Crude_Double-Decker_Pallet.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 374402,
+        "imgId": "UI_Homeworld_Exterior_Ly_Decoration_Junk_05_Lod0",
+        "load": 95,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "FoundationsOfStonePathOfCultivation": {
+        "name": "Foundations of Stone: Path of Cultivation",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a4\/Item_Foundations_of_Stone_Path_of_Cultivation.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 374501,
+        "imgId": "UI_Homeworld_Exterior_Common_Floor_Road_01_Vo",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "FoundationsOfStoneTimelyArrival": {
+        "name": "Foundations of Stone: Timely Arrival",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a9\/Item_Foundations_of_Stone_Timely_Arrival.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 374502,
+        "imgId": "UI_Homeworld_Exterior_Common_Floor_Road_02_Vo",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "FoundationsOfStoneDoubleTime": {
+        "name": "Foundations of Stone: Double-Time",
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a8\/Item_Foundations_of_Stone_Double-Time.png",
+        "type": "craftable",
+        "rarity": 3,
+        "id": 374503,
+        "imgId": "UI_Homeworld_Exterior_Common_Floor_Road_03_Vo",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "MegaMightyBoulderBreaker": {
+        "name": "\"Mega-Mighty Boulder Breaker\"",
+        "rarity": 3,
+        "id": 374605,
+        "imgId": "UI_Homeworld_Exterior_Nt_Decoration_Prop_ZDLZuantou_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_ZDLZuantou_01_Lod0.webp",
+        "load": 65,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "RidingTheInferno": {
+        "name": "\"Riding the Inferno\"",
+        "rarity": 3,
+        "id": 374606,
+        "imgId": "UI_Homeworld_Exterior_Nt_Decoration_Prop_ZDLGjtai_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_ZDLGjtai_01_Lod0.webp",
+        "load": 125,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "CouriersTimelyDispatch": {
+        "name": "\"Courier's Timely Dispatch\"",
+        "rarity": 3,
+        "id": 374607,
+        "imgId": "UI_Homeworld_Exterior_Nt_Decoration_Prop_GZLNiudanji_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_GZLNiudanji_01_Lod0.webp",
+        "load": 125,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "WayToTheExtreme": {
+        "name": "\"Way to the Extreme\"",
+        "rarity": 3,
+        "id": 374609,
+        "imgId": "UI_Homeworld_Exterior_Nt_Decoration_Prop_GZLFengche_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_GZLFengche_01_Lod0.webp",
+        "load": 160,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "TezcatepetoncoFenceSunsJourney": {
+        "name": "Tezcatepetonco Fence: Sun's Journey",
+        "rarity": 4,
+        "id": 374610,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_LslZhuangshi_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_LslZhuangshi_01_Lod0.webp",
+        "load": 65,
+        "energy": 90,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "TezcatepetoncoFencePathOfDiscovery": {
+        "name": "Tezcatepetonco Fence: Path of Discovery",
+        "rarity": 3,
+        "id": 374611,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_LslZhuangshi_02_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_LslZhuangshi_02_Lod0.webp",
+        "load": 65,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "WoodenTargetTrainingRegimen": {
+        "name": "Wooden Target: Training Regimen",
+        "rarity": 3,
+        "id": 374612,
+        "imgId": "UI_Homeworld_Exterior_Nt_Decoration_Prop_YslBazi_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_YslBazi_01_Vo.webp",
+        "load": 35,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "OurDestination": {
+        "name": "Our Destination",
+        "rarity": 4,
+        "id": 374614,
+        "imgId": "UI_Homeworld_Exterior_Nt_Build_JJCwuqijia_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_JJCwuqijia_01_Lod0.webp",
+        "load": 125,
+        "energy": 90,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "SecretsOfGoodHealth": {
+        "name": "Secrets of Good Health",
+        "rarity": 3,
+        "id": 374618,
+        "imgId": "UI_Homeworld_Exterior_Nt_Decoration_Prop_Longwo_01_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_Longwo_01_Vo.webp",
+        "load": 65,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "PromiseOfAbundance": {
+        "name": "Promise of Abundance",
+        "rarity": 3,
+        "id": 374619,
+        "imgId": "UI_Homeworld_Exterior_Nt_Decoration_Prop_Longshicao_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_Longshicao_01_Lod0.webp",
+        "load": 35,
+        "energy": 60,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "PaddockStrawMattressMakeshiftBed": {
+        "name": "Paddock Straw Mattress: Makeshift Bed",
+        "rarity": 2,
+        "id": 374622,
+        "imgId": "UI_Homeworld_Exterior_Nt_Decoration_Prop_Longwo_02_Vo",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_Longwo_02_Vo.webp",
+        "load": 35,
+        "energy": 30,
+        "source": "Learned from Realm Depot Furnishing Blueprint"
+    },
+    "BarbellRackHeftiestLoad": {
+        "name": "Barbell Rack: Heftiest Load",
+        "rarity": 3,
+        "id": 374624,
+        "imgId": "UI_Homeworld_Exterior_Nt_Decoration_Prop_Tjljianshenqi_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_Tjljianshenqi_01_Lod0.webp",
+        "load": 65,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
+    },
+    "Storage101": {
+        "name": "Storage 101",
+        "rarity": 3,
+        "id": 374625,
+        "imgId": "UI_Homeworld_Exterior_Nt_Decoration_Prop_Tjlcaodui_01_Lod0",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_Tjlcaodui_01_Lod0.webp",
+        "load": 110,
+        "energy": 60,
+        "source": "Natlan Remarkable Chest Reward"
     }
 };
