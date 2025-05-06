@@ -1189,6 +1189,11 @@ export default class Character extends Ascendable(GenshinItem)
               motionValue.values[v].dmgType = "bonus";
               motionValue.values[v].stat = "atk-base";
             }
+            else if(motionValue.key == "ATK Bonus") // Specifically for Itto
+            {
+              motionValue.values[v].dmgType = "bonus";
+              motionValue.values[v].stat = "def";
+            }
             else if(motionValue.key.endsWith("HP Consumption")) // Specifically for Furina
             {
               motionValue.values[v].dmgType = "percent";

@@ -273,6 +273,26 @@ export default {
             "name": "Royal Descent: Behold, Itto the Evil!",
             "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/50\/Talent_Royal_Descent_Behold%2C_Itto_the_Evil%21.png",
             "text": "Time to show 'em the might of the Arataki Gang! For a time, Itto lets out his inner Raging Oni King, wielding his Oni King's Kanabou in battle.\\nThis state has the following special properties:\\n\u00b7 Converts Itto's Normal, Charged, and Plunging Attacks to <color=#FFE699FF>Geo DMG<\/color>. This cannot be overridden.\\n\u00b7 Increases Itto's Normal Attack SPD. Also increases his ATK based on his DEF.\\n\u00b7 On hit, the 1st and 3rd strikes of his attack combo will each grant Arataki Itto 1 stack of Superlative Superstrength.\\n\u00b7 Decreases Itto's Elemental and Physical RES by 20%.\\n\\nThe Raging Oni King state will be cleared when Itto leaves the field.\\n\\n<i>This is the pinnacle technique of the ultimate fighting style (according to Itto). It would be pointless for Arataki Itto to reference any other fighting styles to improve his own, for he, and no other, is the strongest, most terrible oni in the land.<\/i>\\n<i>Shouta thinks it looks really cool.<\/i>",
+            "code": [
+                "proc",
+                [
+                    [
+                        "infuse",
+                        "geo"
+                    ],
+                    [
+                        "stat",
+                        [
+                            "atk",
+                            [
+                                "mv",
+                                "ATK Bonus"
+                            ]
+                        ]
+                    ]
+                ],
+                "During Elemental Burst"
+            ],
             "scaling": {
                 "ATK Bonus": {
                     "1": "57.59999752045% DEF",
@@ -369,6 +389,17 @@ export default {
         "4th Ascension Passive": {
             "name": "Bloodline of the Crimson Oni",
             "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/db\/Talent_Bloodline_of_the_Crimson_Oni.png",
+            "code": [
+                "stat",
+                [
+                    "normal_dmg",
+                    [
+                        "stat%",
+                        0.35,
+                        "def"
+                    ]
+                ]
+            ],
             "text": "Arataki Kesagiri DMG is increased by 35% of Arataki Itto's DEF."
         },
         "Utility Passive": {

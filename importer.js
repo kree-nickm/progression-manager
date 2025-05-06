@@ -35,7 +35,7 @@ class Importer {
       });
     }
     return result.catch(err => {
-      console.warn(`Couldn't get version of file: ${normalFile}:`, err, {json});
+      console.warn(`Couldn't get version of file: ${normalFile}:`, err);
       return 'ERROR_' + this.timestamp;
     });
   }
@@ -67,6 +67,7 @@ class Importer {
     }
     
     if (!this.log[normalFile]) {
+      //console.debug(`Importing ${normalFile}...`);
       this.log[normalFile] = this.getVersion(normalFile)
         .then(version => {
           let finalFile = `${normalFile}?v=${version}`;
@@ -75,6 +76,7 @@ class Importer {
           else
             return fetch(finalFile).then(resp => method === 'json' ? resp.json() : resp.text());
         });
+      //this.log[normalFile].then(imported => console.debug(`Imported ${normalFile}.`));
     }
     
     return this.log[normalFile];

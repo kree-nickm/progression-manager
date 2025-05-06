@@ -27,7 +27,8 @@ export default {
             10386,
             10387,
             10388
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Albedo"
     },
     "Alhaitham": {
         "name": "Alhaitham",
@@ -57,7 +58,8 @@ export default {
             10781,
             10782,
             10785
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Alhatham"
     },
     "Aloy": {
         "name": "Aloy",
@@ -87,7 +89,8 @@ export default {
             10621,
             10622,
             10625
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Aloy"
     },
     "Amber": {
         "name": "Amber",
@@ -117,7 +120,8 @@ export default {
             10041,
             10032,
             10017
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Ambor"
     },
     "AratakiItto": {
         "name": "Arataki Itto",
@@ -147,7 +151,8 @@ export default {
             10571,
             10572,
             10575
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Itto"
     },
     "Arlecchino": {
         "name": "Arlecchino",
@@ -176,7 +181,8 @@ export default {
             10961,
             10962,
             10965
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Arlecchino"
     },
     "Baizhu": {
         "name": "Baizhu",
@@ -206,7 +212,8 @@ export default {
             10821,
             10822,
             10825
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Baizhuer"
     },
     "Barbara": {
         "name": "Barbara",
@@ -236,7 +243,8 @@ export default {
             10070,
             10071,
             10072
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Barbara"
     },
     "Beidou": {
         "name": "Beidou",
@@ -266,7 +274,8 @@ export default {
             10241,
             10242,
             10245
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Beidou"
     },
     "Bennett": {
         "name": "Bennett",
@@ -296,7 +305,8 @@ export default {
             10321,
             10322,
             10323
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Bennett"
     },
     "Candace": {
         "name": "Candace",
@@ -326,7 +336,8 @@ export default {
             10721,
             10722,
             10725
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Candace"
     },
     "Charlotte": {
         "name": "Charlotte",
@@ -356,7 +367,8 @@ export default {
             10881,
             10882,
             10885
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Charlotte"
     },
     "Chasca": {
         "name": "Chasca",
@@ -385,7 +397,8 @@ export default {
             11041,
             11042,
             11045
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Chasca"
     },
     "Chevreuse": {
         "name": "Chevreuse",
@@ -415,7 +428,8 @@ export default {
             10901,
             10902,
             10905
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Chevreuse"
     },
     "Chiori": {
         "name": "Chiori",
@@ -445,7 +459,8 @@ export default {
             10941,
             10942,
             10945
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Chiori"
     },
     "Chongyun": {
         "name": "Chongyun",
@@ -475,7 +490,8 @@ export default {
             10401,
             10402,
             10403
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Chongyun"
     },
     "Citlali": {
         "name": "Citlali",
@@ -504,7 +520,8 @@ export default {
             11071,
             11072,
             11075
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Citlali"
     },
     "Clorinde": {
         "name": "Clorinde",
@@ -533,7 +550,8 @@ export default {
             10981,
             10982,
             10985
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Clorinde"
     },
     "Collei": {
         "name": "Collei",
@@ -563,7 +581,8 @@ export default {
             10671,
             10672,
             10675
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Collei"
     },
     "Cyno": {
         "name": "Cyno",
@@ -593,7 +612,8 @@ export default {
             10711,
             10712,
             10715
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Cyno"
     },
     "Dehya": {
         "name": "Dehya",
@@ -623,7 +643,8 @@ export default {
             10791,
             10792,
             10795
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Dehya"
     },
     "Diluc": {
         "name": "Diluc",
@@ -653,7 +674,8 @@ export default {
             10160,
             10161,
             10165
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Diluc"
     },
     "Diona": {
         "name": "Diona",
@@ -683,7 +705,8 @@ export default {
             10391,
             10392,
             10395
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Diona"
     },
     "Dori": {
         "name": "Dori",
@@ -713,7 +736,8 @@ export default {
             10681,
             10682,
             10685
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Dori"
     },
     "Emilie": {
         "name": "Emilie",
@@ -742,7 +766,33 @@ export default {
             10991,
             10992,
             10995
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Emilie"
+    },
+    "Escoffier": {
+        "name": "Escoffier",
+        "rarity": 5,
+        "weapon": "Polearm",
+        "element": "Cryo",
+        "hakushinID": 10000112,
+        "id": 10000112,
+        "imgId": "UI_AvatarIcon_Escoffier",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Escoffier.webp",
+        "release": "May 6, 2025",
+        "region": "Fontaine",
+        "matEnemy": "Meka",
+        "matBoss": "SecretSourceAutomatonOverseerDevice",
+        "matFlower": "Beryl Conch",
+        "matMastery": "Justice",
+        "matTrounce": "Eroded Horn",
+        "ascendStat": "critRate_",
+        "hpBase": 1039.1188,
+        "atkBase": 26.999,
+        "defBase": 56.95816,
+        "hpMaxAsc": 4267.1836,
+        "atkMaxAsc": 110.86439,
+        "defMaxAsc": 233.9064,
+        "version": "5.5.54"
     },
     "Eula": {
         "name": "Eula",
@@ -772,7 +822,8 @@ export default {
             10511,
             10512,
             10515
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Eula"
     },
     "Faruzan": {
         "name": "Faruzan",
@@ -802,7 +853,8 @@ export default {
             10761,
             10762,
             10765
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Faruzan"
     },
     "Fischl": {
         "name": "Fischl",
@@ -832,7 +884,8 @@ export default {
             10311,
             10312,
             10313
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Fischl"
     },
     "Freminet": {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Freminet",
@@ -862,7 +915,8 @@ export default {
             10851,
             10852,
             10855
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Freminet"
     },
     "Furina": {
         "name": "Furina",
@@ -892,7 +946,8 @@ export default {
             10891,
             10892,
             10895
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Furina"
     },
     "Gaming": {
         "name": "Gaming",
@@ -922,7 +977,8 @@ export default {
             10921,
             10922,
             10925
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Gaming"
     },
     "Ganyu": {
         "name": "Ganyu",
@@ -952,7 +1008,8 @@ export default {
             10371,
             10372,
             10373
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Ganyu"
     },
     "Gorou": {
         "name": "Gorou",
@@ -982,7 +1039,8 @@ export default {
             10551,
             10552,
             10555
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Gorou"
     },
     "HuTao": {
         "name": "Hu Tao",
@@ -1012,7 +1070,8 @@ export default {
             10461,
             10462,
             10463
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Hutao"
     },
     "Iansan": {
         "name": "Iansan",
@@ -1035,7 +1094,38 @@ export default {
         "hpMaxAsc": 3197.1245,
         "atkMaxAsc": 77.09902,
         "defMaxAsc": 191.44125,
-        "version": "5.5"
+        "version": "5.5",
+        "skillIds": [
+            11101,
+            11102,
+            11105
+        ],
+        "release": "March 25, 2025",
+        "imgId": "UI_AvatarIcon_Iansan"
+    },
+    "Ifa": {
+        "name": "Ifa",
+        "rarity": 4,
+        "weapon": "Catalyst",
+        "element": "Anemo",
+        "hakushinID": 10000113,
+        "id": 10000113,
+        "imgId": "UI_AvatarIcon_Ifa",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Ifa.webp",
+        "release": "May 6, 2025",
+        "region": "Natlan",
+        "matEnemy": "Saurians",
+        "matBoss": "Lava Statue",
+        "matFlower": "Saurian Claw Succulent",
+        "matMastery": "Conflict",
+        "ascendStat": "eleMas",
+        "hpBase": 845.2303,
+        "atkBase": 14.95872,
+        "defBase": 50.758575,
+        "hpMaxAsc": 3024.2188,
+        "atkMaxAsc": 53.52329,
+        "defMaxAsc": 181.61325,
+        "version": "5.5.54"
     },
     "Jean": {
         "name": "Jean",
@@ -1065,7 +1155,8 @@ export default {
             10031,
             10033,
             10034
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Qin"
     },
     "Kachina": {
         "name": "Kachina",
@@ -1094,7 +1185,8 @@ export default {
         "hpMaxAsc": 3539.67333984375,
         "atkMaxAsc": 64.992561340332,
         "defMaxAsc": 237.7147521972656,
-        "version": "5.0"
+        "version": "5.0",
+        "imgId": "UI_AvatarIcon_Kachina"
     },
     "KaedeharaKazuha": {
         "name": "Kaedehara Kazuha",
@@ -1124,7 +1216,8 @@ export default {
             10471,
             10472,
             10475
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Kazuha"
     },
     "Kaeya": {
         "name": "Kaeya",
@@ -1154,7 +1247,8 @@ export default {
             10073,
             10074,
             10075
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Kaeya"
     },
     "KamisatoAyaka": {
         "name": "Kamisato Ayaka",
@@ -1184,7 +1278,8 @@ export default {
             10024,
             10018,
             10019
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Ayaka"
     },
     "KamisatoAyato": {
         "name": "Kamisato Ayato",
@@ -1214,7 +1309,8 @@ export default {
             10661,
             10662,
             10665
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Ayato"
     },
     "Kaveh": {
         "name": "Kaveh",
@@ -1244,7 +1340,8 @@ export default {
             10811,
             10812,
             10815
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Kaveh"
     },
     "Keqing": {
         "name": "Keqing",
@@ -1274,7 +1371,8 @@ export default {
             10421,
             10422,
             10425
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Keqing"
     },
     "Kinich": {
         "name": "Kinich",
@@ -1303,7 +1401,8 @@ export default {
         "hpMaxAsc": 4110.58984375,
         "atkMaxAsc": 106.2769012451172,
         "defMaxAsc": 256.2651062011719,
-        "version": "5.0"
+        "version": "5.0",
+        "imgId": "UI_AvatarIcon_Kinich"
     },
     "Kirara": {
         "name": "Kirara",
@@ -1333,7 +1432,8 @@ export default {
             10611,
             10612,
             10615
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Momoka"
     },
     "Klee": {
         "name": "Klee",
@@ -1363,7 +1463,8 @@ export default {
             10291,
             10292,
             10295
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Klee"
     },
     "KujouSara": {
         "name": "Kujou Sara",
@@ -1393,7 +1494,8 @@ export default {
             10561,
             10562,
             10565
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Sara"
     },
     "KukiShinobu": {
         "name": "Kuki Shinobu",
@@ -1423,7 +1525,8 @@ export default {
             10651,
             10652,
             10655
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Shinobu"
     },
     "LanYan": {
         "name": "Lan Yan",
@@ -1452,7 +1555,8 @@ export default {
             11081,
             11082,
             11085
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Lanyan"
     },
     "Layla": {
         "name": "Layla",
@@ -1482,7 +1586,8 @@ export default {
             10741,
             10742,
             10745
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Layla"
     },
     "Lisa": {
         "name": "Lisa",
@@ -1512,7 +1617,8 @@ export default {
             10060,
             10061,
             10062
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Lisa"
     },
     "Lynette": {
         "name": "Lynette",
@@ -1542,7 +1648,8 @@ export default {
             10831,
             10832,
             10835
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Linette"
     },
     "Lyney": {
         "name": "Lyney",
@@ -1572,7 +1679,8 @@ export default {
             10841,
             10842,
             10845
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Liney"
     },
     "Mavuika": {
         "name": "Mavuika",
@@ -1601,7 +1709,8 @@ export default {
             11061,
             11062,
             11065
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Mavuika"
     },
     "Mika": {
         "name": "Mika",
@@ -1631,7 +1740,8 @@ export default {
             10801,
             10802,
             10805
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Mika"
     },
     "Mona": {
         "name": "Mona",
@@ -1661,7 +1771,8 @@ export default {
             10411,
             10412,
             10415
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Mona"
     },
     "Mualani": {
         "name": "Mualani",
@@ -1690,7 +1801,8 @@ export default {
         "hpMaxAsc": 4854.41064453125,
         "atkMaxAsc": 58.1082305908203,
         "defMaxAsc": 182.3094024658203,
-        "version": "5.0"
+        "version": "5.0",
+        "imgId": "UI_AvatarIcon_Mualani"
     },
     "Nahida": {
         "name": "Nahida",
@@ -1720,7 +1832,8 @@ export default {
             10731,
             10732,
             10735
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Nahida"
     },
     "Navia": {
         "name": "Navia",
@@ -1750,7 +1863,8 @@ export default {
             10911,
             10912,
             10915
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Navia"
     },
     "Neuvillette": {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Neuvillette",
@@ -1780,7 +1894,8 @@ export default {
             10871,
             10872,
             10875
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Neuvillette"
     },
     "Nilou": {
         "name": "Nilou",
@@ -1810,7 +1925,8 @@ export default {
             10701,
             10702,
             10705
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Nilou"
     },
     "Ningguang": {
         "name": "Ningguang",
@@ -1840,7 +1956,8 @@ export default {
             10271,
             10272,
             10274
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Ningguang"
     },
     "Noelle": {
         "name": "Noelle",
@@ -1870,7 +1987,8 @@ export default {
             10341,
             10342,
             10343
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Noel"
     },
     "Ororon": {
         "name": "Ororon",
@@ -1899,7 +2017,8 @@ export default {
             30501,
             30502,
             30505
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Olorun"
     },
     "Qiqi": {
         "name": "Qiqi",
@@ -1929,7 +2048,8 @@ export default {
             10351,
             10352,
             10353
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Qiqi"
     },
     "RaidenShogun": {
         "name": "Raiden Shogun",
@@ -1959,7 +2079,8 @@ export default {
             10521,
             10522,
             10525
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Shougun"
     },
     "Razor": {
         "name": "Razor",
@@ -1989,7 +2110,8 @@ export default {
             10201,
             10202,
             10203
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Razor"
     },
     "Rosaria": {
         "name": "Rosaria",
@@ -2019,7 +2141,8 @@ export default {
             10451,
             10452,
             10453
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Rosaria"
     },
     "SangonomiyaKokomi": {
         "name": "Sangonomiya Kokomi",
@@ -2049,7 +2172,8 @@ export default {
             10541,
             10542,
             10545
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Kokomi"
     },
     "Sayu": {
         "name": "Sayu",
@@ -2079,7 +2203,8 @@ export default {
             10531,
             10532,
             10535
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Sayu"
     },
     "Sethos": {
         "name": "Sethos",
@@ -2108,7 +2233,8 @@ export default {
             10971,
             10972,
             10975
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Sethos"
     },
     "Shenhe": {
         "name": "Shenhe",
@@ -2138,7 +2264,8 @@ export default {
             10631,
             10632,
             10635
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Shenhe"
     },
     "ShikanoinHeizou": {
         "name": "Shikanoin Heizou",
@@ -2168,7 +2295,8 @@ export default {
             10591,
             10592,
             10595
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Heizo"
     },
     "Sigewinne": {
         "name": "Sigewinne",
@@ -2197,7 +2325,8 @@ export default {
             10951,
             10952,
             10955
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Sigewinne"
     },
     "Sucrose": {
         "name": "Sucrose",
@@ -2227,7 +2356,8 @@ export default {
             10431,
             10432,
             10435
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Sucrose"
     },
     "Tartaglia": {
         "name": "Tartaglia",
@@ -2257,7 +2387,8 @@ export default {
             10331,
             10332,
             10333
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Tartaglia"
     },
     "Thoma": {
         "name": "Thoma",
@@ -2287,7 +2418,8 @@ export default {
             10501,
             10502,
             10505
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Tohma"
     },
     "Tighnari": {
         "name": "Tighnari",
@@ -2317,7 +2449,8 @@ export default {
             10691,
             10692,
             10695
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Tighnari"
     },
     "TravelerAnemo": {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Traveler_Icon.png",
@@ -2338,7 +2471,8 @@ export default {
             100543,
             10067,
             10068
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_PlayerBoy"
     },
     "TravelerDendro": {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Traveler_Icon.png",
@@ -2359,7 +2493,8 @@ export default {
             100547,
             10117,
             10118
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_PlayerBoy"
     },
     "TravelerElectro": {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Traveler_Icon.png",
@@ -2380,7 +2515,8 @@ export default {
             100546,
             10602,
             10605
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_PlayerBoy"
     },
     "TravelerGeo": {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Traveler_Icon.png",
@@ -2401,7 +2537,8 @@ export default {
             100545,
             10077,
             10078
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_PlayerBoy"
     },
     "TravelerHydro": {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Traveler_Icon.png",
@@ -2422,7 +2559,8 @@ export default {
             100542,
             10087,
             10088
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_PlayerBoy"
     },
     "TravelerPyro": {
         "element": "Pyro",
@@ -2443,7 +2581,8 @@ export default {
             100541,
             10097,
             10098
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_PlayerBoy"
     },
     "Varesa": {
         "name": "Varesa",
@@ -2466,7 +2605,14 @@ export default {
         "hpMaxAsc": 4059.6965,
         "atkMaxAsc": 113.922714,
         "defMaxAsc": 249.8769,
-        "version": "5.5"
+        "version": "5.5",
+        "skillIds": [
+            11111,
+            11112,
+            11115
+        ],
+        "release": "March 25, 2025",
+        "imgId": "UI_AvatarIcon_Varesa"
     },
     "Venti": {
         "name": "Venti",
@@ -2496,7 +2642,8 @@ export default {
             10221,
             10224,
             10225
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Venti"
     },
     "Wanderer": {
         "name": "Wanderer",
@@ -2526,7 +2673,8 @@ export default {
             10751,
             10752,
             10755
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Wanderer"
     },
     "Wriothesley": {
         "name": "Wriothesley",
@@ -2556,7 +2704,8 @@ export default {
             10861,
             10862,
             10865
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Wriothesley"
     },
     "Xiangling": {
         "name": "Xiangling",
@@ -2586,7 +2735,8 @@ export default {
             10231,
             10232,
             10235
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Xiangling"
     },
     "Xianyun": {
         "name": "Xianyun",
@@ -2616,7 +2766,8 @@ export default {
             10931,
             10932,
             10935
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Liuyun"
     },
     "Xiao": {
         "name": "Xiao",
@@ -2646,7 +2797,8 @@ export default {
             10261,
             10262,
             10265
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Xiao"
     },
     "Xilonen": {
         "name": "Xilonen",
@@ -2675,7 +2827,8 @@ export default {
             11031,
             11032,
             11035
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Xilonen"
     },
     "Xingqiu": {
         "name": "Xingqiu",
@@ -2705,7 +2858,8 @@ export default {
             10381,
             10382,
             10385
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Xingqiu"
     },
     "Xinyan": {
         "name": "Xinyan",
@@ -2735,7 +2889,8 @@ export default {
             10441,
             10442,
             10443
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Xinyan"
     },
     "YaeMiko": {
         "name": "Yae Miko",
@@ -2765,7 +2920,8 @@ export default {
             10581,
             10582,
             10585
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Yae"
     },
     "Yanfei": {
         "name": "Yanfei",
@@ -2795,7 +2951,8 @@ export default {
             10481,
             10482,
             10485
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Feiyan"
     },
     "Yaoyao": {
         "name": "Yaoyao",
@@ -2825,7 +2982,8 @@ export default {
             10771,
             10772,
             10775
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Yaoyao"
     },
     "Yelan": {
         "name": "Yelan",
@@ -2855,7 +3013,8 @@ export default {
             10606,
             10607,
             10610
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Yelan"
     },
     "Yoimiya": {
         "name": "Yoimiya",
@@ -2885,7 +3044,8 @@ export default {
             10491,
             10492,
             10495
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Yoimiya"
     },
     "YumemizukiMizuki": {
         "name": "Yumemizuki Mizuki",
@@ -2913,7 +3073,9 @@ export default {
             11091,
             11092,
             11095
-        ]
+        ],
+        "release": "February 11, 2025",
+        "imgId": "UI_AvatarIcon_Mizuki"
     },
     "YunJin": {
         "name": "Yun Jin",
@@ -2943,7 +3105,8 @@ export default {
             10641,
             10642,
             10643
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Yunjin"
     },
     "Zhongli": {
         "name": "Zhongli",
@@ -2973,6 +3136,7 @@ export default {
             10301,
             10302,
             10303
-        ]
+        ],
+        "imgId": "UI_AvatarIcon_Zhongli"
     }
 };

@@ -214,5 +214,5 @@ thead {
 
 .material-row .list-item {
   margin: 0.5em;
-  flex: 0 0 7.2%;
+  flex: 0 1 auto;
 }

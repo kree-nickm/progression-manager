@@ -137,7 +137,11 @@ th.label[data-group-name="Gear"] {
 }
 
 .material-row .list-item.material-mastery {
-  flex-basis: 9.1%;
+  flex-basis: 9.54%;
+}
+
+.material-row .list-item.material-forgery {
+  flex-basis: 7.08%;
 }
 
 img.artifact-icon-inline {

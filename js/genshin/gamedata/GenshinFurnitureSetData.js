@@ -1,6 +1,10 @@
 export default {
     "WeaponForgingStation": {
+        "id": 39,
         "name": "Weapon Forging Station",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Common_Blacksmith_Shop",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Common_Blacksmith_Shop.webp",
         "materials": [
             {
                 "key": "HardwoodWeaponRack",
@@ -48,14 +52,14 @@ export default {
             "Bennett",
             "Diluc",
             "Diona"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3e\/Furnishing_Set_Weapon_Forging_Station_Display.png",
-        "id": 39,
-        "imgId": "UI_Home_Suite_Exterior_Common_Blacksmith_Shop",
-        "type": "OG"
+        ]
     },
     "IdyllicTown": {
+        "id": 40,
         "name": "Idyllic Town",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Mond_Pastoral_Village",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Mond_Pastoral_Village.webp",
         "materials": [
             {
                 "key": "PocketSizedPineCabin",
@@ -114,14 +118,14 @@ export default {
             "Diona",
             "Amber",
             "Razor"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e8\/Furnishing_Set_Idyllic_Town_Display.png",
-        "id": 40,
-        "imgId": "UI_Home_Suite_Exterior_Mond_Pastoral_Village",
-        "type": "OG"
+        ]
     },
     "BirdAndBlossomPark": {
+        "id": 41,
         "name": "Bird and Blossom Park",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Mond_Floral_Garden",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Mond_Floral_Garden.webp",
         "materials": [
             {
                 "key": "TheColorOfTheWind",
@@ -166,14 +170,14 @@ export default {
             "Barbara",
             "Jean",
             "Kaeya"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/51\/Furnishing_Set_Bird_and_Blossom_Park_Display.png",
-        "id": 41,
-        "imgId": "UI_Home_Suite_Exterior_Mond_Floral_Garden",
-        "type": "OG"
+        ]
     },
     "GatheringOfGourmets": {
+        "id": 42,
         "name": "Gathering of Gourmets",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Liyue_All_Delicacy",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Liyue_All_Delicacy.webp",
         "materials": [
             {
                 "key": "BambooOutdoorTeaTable",
@@ -245,14 +249,14 @@ export default {
             "Yelan",
             "Gaming",
             "Xianyun"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5c\/Furnishing_Set_Gathering_of_Gourmets_Display.png",
-        "id": 42,
-        "imgId": "UI_Home_Suite_Exterior_Liyue_All_Delicacy",
-        "type": "OG"
+        ]
     },
     "GlitteringStreet": {
+        "id": 43,
         "name": "Glittering Street",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Liyue_Shopping_Street",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Liyue_Shopping_Street.webp",
         "materials": [
             {
                 "key": "RollRoofedFruitAndVegetableCart",
@@ -320,14 +324,14 @@ export default {
             "Shenhe",
             "YunJin",
             "LanYan"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/57\/Furnishing_Set_Glittering_Street_Display.png",
-        "id": 43,
-        "imgId": "UI_Home_Suite_Exterior_Liyue_Shopping_Street",
-        "type": "OG"
+        ]
     },
     "QingceCloudResidence": {
+        "id": 44,
         "name": "Qingce Cloud Residence",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Liyue_Qingce_Village",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Liyue_Qingce_Village.webp",
         "materials": [
             {
                 "key": "TheColorOfTheWind",
@@ -403,14 +407,14 @@ export default {
             "Yelan",
             "Yaoyao",
             "Xianyun"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a7\/Furnishing_Set_Qingce_Cloud_Residence_Display.png",
-        "id": 44,
-        "imgId": "UI_Home_Suite_Exterior_Liyue_Qingce_Village",
-        "type": "OG"
+        ]
     },
     "OfHuntingAndDancing": {
+        "id": 45,
         "name": "Of Hunting and Dancing",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Common_Domu_Camp",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Common_Domu_Camp.webp",
         "materials": [
             {
                 "key": "HardwoodWeaponRack",
@@ -491,14 +495,14 @@ export default {
             "Klee",
             "Beidou",
             "Aloy"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4b\/Furnishing_Set_Of_Hunting_and_Dancing_Display.png",
-        "id": 45,
-        "imgId": "UI_Home_Suite_Exterior_Common_Domu_Camp",
-        "type": "OG"
+        ]
     },
     "IterAdAstraAbyssosque": {
+        "id": 46,
         "name": "Iter Ad Astra Abyssosque",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Common_Journey_Of_Abyss",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Common_Journey_Of_Abyss.webp",
         "materials": [
             {
                 "key": "DeadwoodRoadSign",
@@ -549,14 +553,14 @@ export default {
             "Albedo",
             "Aloy",
             "Mika"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/90\/Furnishing_Set_Iter_Ad_Astra_Abyssosque_Display.png",
-        "id": 46,
-        "imgId": "UI_Home_Suite_Exterior_Common_Journey_Of_Abyss",
-        "type": "OG"
+        ]
     },
     "DawnOrchard": {
+        "id": 47,
         "name": "Dawn Orchard",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Common_Dawn_Orchard",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Common_Dawn_Orchard.webp",
         "materials": [
             {
                 "key": "SoilCarryingWoodenBarrel",
@@ -604,14 +608,14 @@ export default {
             "Kaeya",
             "Venti",
             "Rosaria"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ee\/Furnishing_Set_Dawn_Orchard_Display.png",
-        "id": 47,
-        "imgId": "UI_Home_Suite_Exterior_Common_Dawn_Orchard",
-        "type": "OG"
+        ]
     },
     "CourtOfTheUpright": {
+        "id": 48,
         "name": "Court of the Upright",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Dq_Build_Courtyard",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Dq_Build_Courtyard.webp",
         "materials": [
             {
                 "key": "KeyFenceSelfRestraint",
@@ -653,14 +657,14 @@ export default {
         "characters": [
             "KujouSara",
             "KamisatoAyato"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/77\/Furnishing_Set_Court_of_the_Upright_Display.png",
-        "id": 48,
-        "imgId": "UI_Home_Suite_Exterior_Dq_Build_Courtyard",
-        "type": "OG"
+        ]
     },
     "WakefulSpring": {
+        "id": 49,
         "name": "Wakeful Spring",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Dq_Build_Hotspring",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Dq_Build_Hotspring.webp",
         "materials": [
             {
                 "key": "HotSpringWhitestoneSecretFire",
@@ -714,14 +718,14 @@ export default {
             "ShikanoinHeizou",
             "Chiori",
             "YumemizukiMizuki"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dc\/Furnishing_Set_Wakeful_Spring_Display.png",
-        "id": 49,
-        "imgId": "UI_Home_Suite_Exterior_Dq_Build_Hotspring",
-        "type": "OG"
+        ]
     },
     "RuralConcealment": {
+        "id": 50,
         "name": "Rural Concealment",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Dq_Build_Village",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Dq_Build_Village.webp",
         "materials": [
             {
                 "key": "TheWanderingBirdWithin",
@@ -763,14 +767,14 @@ export default {
         "characters": [
             "Sayu",
             "Gorou"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/01\/Furnishing_Set_Rural_Concealment_Display.png",
-        "id": 50,
-        "imgId": "UI_Home_Suite_Exterior_Dq_Build_Village",
-        "type": "OG"
+        ]
     },
     "AncientBranchShrine": {
+        "id": 51,
         "name": "Ancient Branch Shrine",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Dq_Field_Shrine",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Dq_Field_Shrine.webp",
         "materials": [
             {
                 "key": "CleansingShrine",
@@ -832,14 +836,14 @@ export default {
         "characters": [
             "RaidenShogun",
             "YaeMiko"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/24\/Furnishing_Set_Ancient_Branch_Shrine_Display.png",
-        "id": 51,
-        "imgId": "UI_Home_Suite_Exterior_Dq_Field_Shrine",
-        "type": "OG"
+        ]
     },
     "MilitaryExerciseGrounds": {
+        "id": 52,
         "name": "Military Exercise Grounds",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Dq_Field_Weapon",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Dq_Field_Weapon.webp",
         "materials": [
             {
                 "key": "ReplicaAncientOtogiKeg",
@@ -896,14 +900,14 @@ export default {
         ],
         "characters": [
             "KujouSara"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/08\/Furnishing_Set_Military_Exercise_Grounds_Display.png",
-        "id": 52,
-        "imgId": "UI_Home_Suite_Exterior_Dq_Field_Weapon",
-        "type": "OG"
+        ]
     },
     "JadeWilds": {
+        "id": 53,
         "name": "Jade Wilds",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Dq_Mountain_Outdoor",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Dq_Mountain_Outdoor.webp",
         "materials": [
             {
                 "key": "OfPromisesUnkeptTheNightFlowersSpeak",
@@ -949,14 +953,14 @@ export default {
         "characters": [
             "KaedeharaKazuha",
             "AratakiItto"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b1\/Furnishing_Set_Jade_Wilds_Display.png",
-        "id": 53,
-        "imgId": "UI_Home_Suite_Exterior_Dq_Mountain_Outdoor",
-        "type": "OG"
+        ]
     },
     "SummerNightsRecollection": {
+        "id": 54,
         "name": "Summer Night's Recollection",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Dq_Street_Fete",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Dq_Street_Fete.webp",
         "materials": [
             {
                 "key": "FestivalKibanStore",
@@ -1011,14 +1015,14 @@ export default {
             "KamisatoAyaka",
             "AratakiItto",
             "KamisatoAyato"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/77\/Furnishing_Set_Summer_Night%27s_Recollection_Display.png",
-        "id": 54,
-        "imgId": "UI_Home_Suite_Exterior_Dq_Street_Fete",
-        "type": "OG"
+        ]
     },
     "SakuraHuedStreet": {
+        "id": 55,
         "name": "Sakura-Hued Street",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Dq_Street_Shopping",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Dq_Street_Shopping.webp",
         "materials": [
             {
                 "key": "KoukiAraliaMaskRack",
@@ -1078,14 +1082,14 @@ export default {
             "Thoma",
             "KukiShinobu",
             "Kirara"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ec\/Furnishing_Set_Sakura-Hued_Street_Display.png",
-        "id": 55,
-        "imgId": "UI_Home_Suite_Exterior_Dq_Street_Shopping",
-        "type": "OG"
+        ]
     },
     "AmidstProsperingMarkets": {
+        "id": 66,
         "name": "Amidst Prospering Markets",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Xm_Street_Bazaar",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Xm_Street_Bazaar.webp",
         "materials": [
             {
                 "key": "BrightwoodGroceryStall",
@@ -1136,14 +1140,14 @@ export default {
             "Dori",
             "Faruzan",
             "Sethos"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b9\/Furnishing_Set_Amidst_Prospering_Markets_Display.png",
-        "id": 66,
-        "imgId": "UI_Home_Suite_Exterior_Xm_Street_Bazaar",
-        "type": "OG"
+        ]
     },
     "DeepInTheQuietForest": {
+        "id": 67,
         "name": "Deep in the Quiet Forest",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Xm_Forest_Village",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Xm_Forest_Village.webp",
         "materials": [
             {
                 "key": "DrippingVerdantLight",
@@ -1181,14 +1185,14 @@ export default {
         "characters": [
             "Collei",
             "Cyno"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/44\/Furnishing_Set_Deep_in_the_Quiet_Forest_Display.png",
-        "id": 67,
-        "imgId": "UI_Home_Suite_Exterior_Xm_Forest_Village",
-        "type": "OG"
+        ]
     },
     "OfTwirlingDancesUnfettered": {
+        "id": 68,
         "name": "Of Twirling Dances Unfettered",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Xm_Build_Theater",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Xm_Build_Theater.webp",
         "materials": [
             {
                 "key": "BloomingIllumination",
@@ -1214,15 +1218,14 @@ export default {
         "characters": [
             "Nilou",
             "Kaveh"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/05\/Furnishing_Set_Of_Twirling_Dances_Unfettered_Display.png",
-        "id": 68,
-        "imgId": "UI_Home_Suite_Exterior_Xm_Build_Theater",
-        "type": "OG"
+        ]
     },
     "QuietTimesByTheRiverbank": {
+        "id": 69,
         "name": "Quiet Times by the Riverbank",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c1\/Furnishing_Set_Quiet_Times_by_the_Riverbank_Display.png",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Xm_Street_Fish",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Xm_Street_Fish.webp",
         "materials": [
             {
                 "key": "FlamingCatalyst",
@@ -1267,13 +1270,14 @@ export default {
         ],
         "characters": [
             "Wanderer"
-        ],
-        "id": 69,
-        "imgId": "UI_Home_Suite_Exterior_Xm_Street_Fish",
-        "type": "OG"
+        ]
     },
     "SetekhDemurs": {
+        "id": 70,
         "name": "Setekh Demurs",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Xm_Build_Village",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Xm_Build_Village.webp",
         "materials": [
             {
                 "key": "TheEremitesOdyssey",
@@ -1327,14 +1331,14 @@ export default {
         "characters": [
             "Candace",
             "Layla"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/62\/Furnishing_Set_Setekh_Demurs_Display.png",
-        "id": 70,
-        "imgId": "UI_Home_Suite_Exterior_Xm_Build_Village",
-        "type": "OG"
+        ]
     },
     "TheTravelingTroopsPomp": {
+        "id": 71,
         "name": "The Traveling Troop's Pomp",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Xm_Build_Camp",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Xm_Build_Camp.webp",
         "materials": [
             {
                 "key": "LikeTheShimmeringDistantStars",
@@ -1371,14 +1375,14 @@ export default {
         ],
         "characters": [
             "Dehya"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/18\/Furnishing_Set_The_Traveling_Troop%27s_Pomp_Display.png",
-        "id": 71,
-        "imgId": "UI_Home_Suite_Exterior_Xm_Build_Camp",
-        "type": "OG"
+        ]
     },
     "AmidstScentsAndSerenity": {
+        "id": 72,
         "name": "Amidst Scents and Serenity",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Xm_Build_Garden",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Xm_Build_Garden.webp",
         "materials": [
             {
                 "key": "ImmersiveLight",
@@ -1417,14 +1421,14 @@ export default {
             "Nahida",
             "Kaveh",
             "Kirara"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/70\/Furnishing_Set_Amidst_Scents_and_Serenity_Display.png",
-        "id": 72,
-        "imgId": "UI_Home_Suite_Exterior_Xm_Build_Garden",
-        "type": "OG"
+        ]
     },
     "ChorusOfDesertAndWood": {
+        "id": 73,
         "name": "Chorus of Desert and Wood",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Xm_Field_Vegetation",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Xm_Field_Vegetation.webp",
         "materials": [
             {
                 "key": "ProlongationMedium",
@@ -1446,15 +1450,14 @@ export default {
         "characters": [
             "Tighnari",
             "Wanderer"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/19\/Furnishing_Set_Chorus_of_Desert_and_Wood_Display.png",
-        "id": 73,
-        "imgId": "UI_Home_Suite_Exterior_Xm_Field_Vegetation",
-        "type": "OG"
+        ]
     },
     "CourtOfJusticesPlacidDays": {
+        "id": 80,
         "name": "Court of Justice's Placid Days",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/ca\/Furnishing_Set_Court_of_Justice%27s_Placid_Days_Display.png",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Fd_Build_Residential",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Fd_Build_Residential.webp",
         "materials": [
             {
                 "key": "CourtOfJusticesCommerce",
@@ -1512,14 +1515,14 @@ export default {
         "characters": [
             "Charlotte",
             "Arlecchino"
-        ],
-        "id": 80,
-        "imgId": "UI_Home_Suite_Exterior_Fd_Build_Residential",
-        "type": "OG"
+        ]
     },
     "CourtOfJusticesBoomingCommerce": {
+        "id": 81,
         "name": "Court of Justice's Booming Commerce",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/22\/Furnishing_Set_Court_of_Justice%27s_Booming_Commerce_Display.png",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Fd_Street_Commercial",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Fd_Street_Commercial.webp",
         "materials": [
             {
                 "key": "CourtOfJusticesCouture",
@@ -1570,14 +1573,14 @@ export default {
             "Lynette",
             "Lyney",
             "Chiori"
-        ],
-        "id": 81,
-        "imgId": "UI_Home_Suite_Exterior_Fd_Street_Commercial",
-        "type": "OG"
+        ]
     },
     "CourtOfJusticesFreshMist": {
+        "id": 82,
         "name": "Court of Justice's Fresh Mist",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f0\/Furnishing_Set_Court_of_Justice%27s_Fresh_Mist_Display.png",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Fd_Build_Square",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Fd_Build_Square.webp",
         "materials": [
             {
                 "key": "LindenWoodHalfMetalAnnouncementBoard",
@@ -1608,14 +1611,14 @@ export default {
             "Neuvillette",
             "Furina",
             "Emilie"
-        ],
-        "id": 82,
-        "imgId": "UI_Home_Suite_Exterior_Fd_Build_Square",
-        "type": "OG"
+        ]
     },
     "PoissonTheUnassuming": {
+        "id": 83,
         "name": "Poisson the Unassuming",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7c\/Furnishing_Set_Poisson_the_Unassuming_Display.png",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Fd_Build_Town",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Fd_Build_Town.webp",
         "materials": [
             {
                 "key": "AutomnequisCask",
@@ -1656,14 +1659,14 @@ export default {
         ],
         "characters": [
             "Navia"
-        ],
-        "id": 83,
-        "imgId": "UI_Home_Suite_Exterior_Fd_Build_Town",
-        "type": "OG"
+        ]
     },
     "UnderseaMeruseasLuster": {
+        "id": 84,
         "name": "Undersea Merusea's Luster",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c7\/Furnishing_Set_Undersea_Merusea%27s_Luster_Display.png",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Fd_Build_Village",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Fd_Build_Village.webp",
         "materials": [
             {
                 "key": "SlipperyShack",
@@ -1709,14 +1712,14 @@ export default {
         "characters": [
             "Freminet",
             "Sigewinne"
-        ],
-        "id": 84,
-        "imgId": "UI_Home_Suite_Exterior_Fd_Build_Village",
-        "type": "OG"
+        ]
     },
     "FullForceForwardInTheForbiddenFortress": {
+        "id": 85,
         "name": "Full Force Forward in the Forbidden Fortress",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3b\/Furnishing_Set_Full_Force_Forward_in_the_Forbidden_Fortress_Display.png",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Fd_Fortress_Meropide",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Fd_Fortress_Meropide.webp",
         "materials": [
             {
                 "key": "TheArenaWhereFistsReemerge",
@@ -1759,14 +1762,14 @@ export default {
             "Wriothesley",
             "Chevreuse",
             "Sigewinne"
-        ],
-        "id": 85,
-        "imgId": "UI_Home_Suite_Exterior_Fd_Fortress_Meropide",
-        "type": "OG"
+        ]
     },
     "TheNationOfHydrosMottledColors": {
+        "id": 86,
         "name": "The Nation of Hydro's Mottled Colors",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/16\/Furnishing_Set_The_Nation_of_Hydro%27s_Mottled_Colors_Display.png",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Fd_Field_Vegetation",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Fd_Field_Vegetation.webp",
         "materials": [
             {
                 "key": "LaneTreeStandard",
@@ -1804,13 +1807,14 @@ export default {
         "characters": [
             "Clorinde",
             "Emilie"
-        ],
-        "id": 86,
-        "imgId": "UI_Home_Suite_Exterior_Fd_Field_Vegetation",
-        "type": "OG"
+        ]
     },
     "FomentingFashionAtTheFair": {
+        "id": 90,
         "name": "Fomenting Fashion at the Fair",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Nt_Build_Market",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Nt_Build_Market.webp",
         "materials": [
             {
                 "key": "WovenHutRhythmicStripes",
@@ -1847,14 +1851,14 @@ export default {
         ],
         "characters": [
             "Mualani"
-        ],
-        "id": 90,
-        "imgId": "UI_Home_Suite_Exterior_Nt_Build_Market",
-        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Nt_Build_Market.webp",
-        "type": "OG"
+        ]
     },
     "BornAmongSearingFlames": {
+        "id": 91,
         "name": "Born Among Searing Flames",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Nt_Build_Mine",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Nt_Build_Mine.webp",
         "materials": [
             {
                 "key": "TequemecanIngenuity",
@@ -1888,14 +1892,14 @@ export default {
         "characters": [
             "Xilonen",
             "Iansan"
-        ],
-        "id": 91,
-        "imgId": "UI_Home_Suite_Exterior_Nt_Build_Mine",
-        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Nt_Build_Mine.webp",
-        "type": "OG"
+        ]
     },
     "TreadingTheUntroddenPath": {
+        "id": 92,
         "name": "Treading the Untrodden Path",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Nt_Field_Nature",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Nt_Field_Nature.webp",
         "materials": [
             {
                 "key": "JavelinsShaft",
@@ -1929,14 +1933,14 @@ export default {
         "characters": [
             "Kinich",
             "Ororon"
-        ],
-        "id": 92,
-        "imgId": "UI_Home_Suite_Exterior_Nt_Field_Nature",
-        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Nt_Field_Nature.webp",
-        "type": "OG"
+        ]
     },
     "ChildrenOfEchoesPassion": {
+        "id": 93,
         "name": "Children of Echoes' Passion",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Nt_Build_Tepetlisaurus",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Nt_Build_Tepetlisaurus.webp",
         "materials": [
             {
                 "key": "StonehutOfEchoesStandardWorkshop",
@@ -1982,14 +1986,14 @@ export default {
         "characters": [
             "Kachina",
             "Xilonen"
-        ],
-        "id": 93,
-        "imgId": "UI_Home_Suite_Exterior_Nt_Build_Tepetlisaurus",
-        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Nt_Build_Tepetlisaurus.webp",
-        "type": "OG"
+        ]
     },
     "PeopleOfTheSpringsRelaxation": {
+        "id": 94,
         "name": "People of the Springs' Relaxation",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Nt_Build_Koholasaurus",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Nt_Build_Koholasaurus.webp",
         "materials": [
             {
                 "key": "HotSpringRetreatTidalSurge",
@@ -2034,14 +2038,14 @@ export default {
         ],
         "characters": [
             "Mualani"
-        ],
-        "id": 94,
-        "imgId": "UI_Home_Suite_Exterior_Nt_Build_Koholasaurus",
-        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Nt_Build_Koholasaurus.webp",
-        "type": "OG"
+        ]
     },
     "ScionsOfTheCanopysDuty": {
+        "id": 95,
         "name": "Scions of the Canopy's Duty",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Nt_Build_Yumkasaurus",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Nt_Build_Yumkasaurus.webp",
         "materials": [
             {
                 "key": "HuitztlanCampgroundSortAndOrder",
@@ -2090,14 +2094,14 @@ export default {
         ],
         "characters": [
             "Kinich"
-        ],
-        "id": 95,
-        "imgId": "UI_Home_Suite_Exterior_Nt_Build_Yumkasaurus",
-        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Nt_Build_Yumkasaurus.webp",
-        "type": "OG"
+        ]
     },
     "FlowerFeatherClansConquest": {
+        "id": 96,
         "name": "Flower-Feather Clan's Conquest",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Nt_Build_Qucusaurus",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Nt_Build_Qucusaurus.webp",
         "materials": [
             {
                 "key": "FlowerFeatherResidenceChasingTriviality",
@@ -2170,14 +2174,14 @@ export default {
         ],
         "characters": [
             "Chasca"
-        ],
-        "id": 96,
-        "imgId": "UI_Home_Suite_Exterior_Nt_Build_Qucusaurus",
-        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Nt_Build_Qucusaurus.webp",
-        "type": "OG"
+        ]
     },
     "MastersOfTheNightWindsTranquility": {
+        "id": 97,
         "name": "Masters of the Night-Wind's Tranquility",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Nt_Build_Iktomisaurus",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Nt_Build_Iktomisaurus.webp",
         "materials": [
             {
                 "key": "NightWindArchitectureNeedsOfExchange",
@@ -2247,14 +2251,14 @@ export default {
         "characters": [
             "Ororon",
             "Citlali"
-        ],
-        "id": 97,
-        "imgId": "UI_Home_Suite_Exterior_Nt_Build_Iktomisaurus",
-        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Nt_Build_Iktomisaurus.webp",
-        "type": "OG"
+        ]
     },
     "GallantMarchOfTheCollectiveOfPlenty": {
+        "id": 98,
         "name": "Gallant March of the Collective of Plenty",
+        "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Nt_Build_Tatankasaurus",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Nt_Build_Tatankasaurus.webp",
         "materials": [
             {
                 "key": "VillaOfPlentyStowProStoreroom",
@@ -2304,15 +2308,14 @@ export default {
         "characters": [
             "Iansan",
             "Varesa"
-        ],
-        "id": 98,
-        "imgId": "UI_Home_Suite_Exterior_Nt_Build_Tatankasaurus",
-        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Nt_Build_Tatankasaurus.webp",
-        "type": "OG"
+        ]
     },
     "CompanionsHaven": {
+        "id": 99,
         "name": "Companions' Haven",
         "type": "OG",
+        "icon": "UI_Home_Suite_Exterior_Nt_Field_Saurus",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Nt_Field_Saurus.webp",
         "materials": [
             {
                 "key": "PromiseOfAbundance",
@@ -2355,13 +2358,14 @@ export default {
                 "count": 1
             }
         ],
-        "characters": [],
-        "id": 99,
-        "imgId": "UI_Home_Suite_Exterior_Nt_Field_Saurus",
-        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Exterior_Nt_Field_Saurus.webp"
+        "characters": []
     },
     "AmidstPoeticPondering": {
+        "id": 33,
         "name": "Amidst Poetic Pondering",
+        "type": "IG",
+        "icon": "UI_Home_Suite_Interior_Mond_Room_Of_Recollection",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Mond_Room_Of_Recollection.webp",
         "materials": [
             {
                 "key": "ArchivistsTreasureTrove",
@@ -2418,14 +2422,14 @@ export default {
             "Fischl",
             "Mona",
             "Eula"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/17\/Furnishing_Set_Amidst_Poetic_Pondering_Display.png",
-        "id": 33,
-        "imgId": "UI_Home_Suite_Interior_Mond_Room_Of_Recollection",
-        "type": "IG"
+        ]
     },
     "AmidstWhisperingWinds": {
+        "id": 34,
         "name": "Amidst Whispering Winds",
+        "type": "IG",
+        "icon": "UI_Home_Suite_Interior_Mond_Room_Of_Whispers",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Mond_Room_Of_Whispers.webp",
         "materials": [
             {
                 "key": "MondstadtRugCrimsonArdor",
@@ -2488,14 +2492,14 @@ export default {
             "Barbara",
             "Eula",
             "Noelle"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ad\/Furnishing_Set_Amidst_Whispering_Winds_Display.png",
-        "id": 34,
-        "imgId": "UI_Home_Suite_Interior_Mond_Room_Of_Whispers",
-        "type": "IG"
+        ]
     },
     "FeiyunStudyRoom": {
+        "id": 35,
         "name": "Feiyun Study Room",
+        "type": "IG",
+        "icon": "UI_Home_Suite_Interior_Liyue_Room_Of_Clouds",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Liyue_Room_Of_Clouds.webp",
         "materials": [
             {
                 "key": "PineBackedTeaChair",
@@ -2553,14 +2557,14 @@ export default {
             "YunJin",
             "Baizhu",
             "LanYan"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e6\/Furnishing_Set_Feiyun_Study_Room_Display.png",
-        "id": 35,
-        "imgId": "UI_Home_Suite_Interior_Liyue_Room_Of_Clouds",
-        "type": "IG"
+        ]
     },
     "CloudyHazeDreamCourt": {
+        "id": 36,
         "name": "Cloudy Haze Dream-Court",
+        "type": "IG",
+        "icon": "UI_Home_Suite_Interior_Liyue_Room_Of_Dreams",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Liyue_Room_Of_Dreams.webp",
         "materials": [
             {
                 "key": "EntranceRugAWarmWelcome",
@@ -2618,14 +2622,14 @@ export default {
             "Keqing",
             "Chongyun",
             "Gaming"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3c\/Furnishing_Set_Cloudy_Haze_Dream-Court_Display.png",
-        "id": 36,
-        "imgId": "UI_Home_Suite_Interior_Liyue_Room_Of_Dreams",
-        "type": "IG"
+        ]
     },
     "SecretResearchLab": {
+        "id": 37,
         "name": "Secret Research Lab",
+        "type": "IG",
+        "icon": "UI_Home_Suite_Interior_Common_Arcane_Laboratory",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Common_Arcane_Laboratory.webp",
         "materials": [
             {
                 "key": "LargeBirchWardrobe",
@@ -2685,14 +2689,14 @@ export default {
             "Sucrose",
             "Albedo",
             "Lisa"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a2\/Furnishing_Set_Secret_Research_Lab_Display.png",
-        "id": 37,
-        "imgId": "UI_Home_Suite_Interior_Common_Arcane_Laboratory",
-        "type": "IG"
+        ]
     },
     "CottageKitchen": {
+        "id": 38,
         "name": "Cottage Kitchen",
+        "type": "IG",
+        "icon": "UI_Home_Suite_Interior_Common_Scented_Kitchen",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Common_Scented_Kitchen.webp",
         "materials": [
             {
                 "key": "PortableStove",
@@ -2732,14 +2736,14 @@ export default {
             "Yaoyao",
             "Mika",
             "Baizhu"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5f\/Furnishing_Set_Cottage_Kitchen_Display.png",
-        "id": 38,
-        "imgId": "UI_Home_Suite_Interior_Common_Scented_Kitchen",
-        "type": "IG"
+        ]
     },
     "EternalDomainOfFleetingDreams": {
+        "id": 56,
         "name": "Eternal Domain of Fleeting Dreams",
+        "type": "IG",
+        "icon": "UI_Home_Suite_Interior_Dq_Room_of_Bedroom",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Dq_Room_of_Bedroom.webp",
         "materials": [
             {
                 "key": "YumemiruSakurasRestBed",
@@ -2778,14 +2782,14 @@ export default {
             "Sayu",
             "SangonomiyaKokomi",
             "ShikanoinHeizou"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b3\/Furnishing_Set_Eternal_Domain_of_Fleeting_Dreams_Display.png",
-        "id": 56,
-        "imgId": "UI_Home_Suite_Interior_Dq_Room_of_Bedroom",
-        "type": "IG"
+        ]
     },
     "AThousandSwings": {
+        "id": 57,
         "name": "A Thousand Swings",
+        "type": "IG",
+        "icon": "UI_Home_Suite_Interior_Dq_Room_of_Ground",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Dq_Room_of_Ground.webp",
         "materials": [
             {
                 "key": "MapleWoodFloorLampClarity",
@@ -2819,14 +2823,14 @@ export default {
         "characters": [
             "RaidenShogun",
             "KamisatoAyaka"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/66\/Furnishing_Set_A_Thousand_Swings_Display.png",
-        "id": 57,
-        "imgId": "UI_Home_Suite_Interior_Dq_Room_of_Ground",
-        "type": "IG"
+        ]
     },
     "ScholarlyTrove": {
+        "id": 58,
         "name": "Scholarly Trove",
+        "type": "IG",
+        "icon": "UI_Home_Suite_Interior_Dq_Room_of_Study",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Dq_Room_of_Study.webp",
         "materials": [
             {
                 "key": "TeahouseLongTableSeamlessSeating",
@@ -2872,14 +2876,14 @@ export default {
         "characters": [
             "SangonomiyaKokomi",
             "KukiShinobu"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a5\/Furnishing_Set_Scholarly_Trove_Display.png",
-        "id": 58,
-        "imgId": "UI_Home_Suite_Interior_Dq_Room_of_Study",
-        "type": "IG"
+        ]
     },
     "OfMapleAndTeaScentsEntwined": {
+        "id": 59,
         "name": "Of Maple and Tea Scents Entwined",
+        "type": "IG",
+        "icon": "UI_Home_Suite_Interior_Dq_Room_of_Teahouse",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Dq_Room_of_Teahouse.webp",
         "materials": [
             {
                 "key": "TeahouseCounterToshimaru",
@@ -2926,14 +2930,14 @@ export default {
             "Thoma",
             "KaedeharaKazuha",
             "YumemizukiMizuki"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/20\/Furnishing_Set_Of_Maple_and_Tea_Scents_Entwined_Display.png",
-        "id": 59,
-        "imgId": "UI_Home_Suite_Interior_Dq_Room_of_Teahouse",
-        "type": "IG"
+        ]
     },
     "ForestPatrolAnecdotes": {
+        "id": 60,
         "name": "Forest Patrol Anecdotes",
+        "type": "IG",
+        "icon": "UI_Home_Suite_Interior_Xm_Room_Of_Forest",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Xm_Room_Of_Forest.webp",
         "materials": [
             {
                 "key": "KarmaphalaWoodCounterAssaultDiningChair",
@@ -2959,14 +2963,14 @@ export default {
         "characters": [
             "Tighnari",
             "Collei"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fb\/Furnishing_Set_Forest_Patrol_Anecdotes_Display.png",
-        "id": 60,
-        "imgId": "UI_Home_Suite_Interior_Xm_Room_Of_Forest",
-        "type": "IG"
+        ]
     },
     "CoalescedBrilliance": {
+        "id": 61,
         "name": "Coalesced Brilliance",
+        "type": "IG",
+        "icon": "UI_Home_Suite_Interior_Xm_Room_Of_Jewelry",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Xm_Room_Of_Jewelry.webp",
         "materials": [
             {
                 "key": "AdhigamaWoodVersatileShelves",
@@ -3008,14 +3012,14 @@ export default {
         "characters": [
             "Dori",
             "Nilou"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8a\/Furnishing_Set_Coalesced_Brilliance_Display.png",
-        "id": 61,
-        "imgId": "UI_Home_Suite_Interior_Xm_Room_Of_Jewelry",
-        "type": "IG"
+        ]
     },
     "FervidAroma": {
+        "id": 62,
         "name": "Fervid Aroma",
+        "type": "IG",
+        "icon": "UI_Home_Suite_Interior_Xm_Room_Of_Barbecue",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Xm_Room_Of_Barbecue.webp",
         "materials": [
             {
                 "key": "SatisfactionOfSatedThirst",
@@ -3062,14 +3066,14 @@ export default {
             "Alhaitham",
             "Dehya",
             "Sethos"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/36\/Furnishing_Set_Fervid_Aroma_Display.png",
-        "id": 62,
-        "imgId": "UI_Home_Suite_Interior_Xm_Room_Of_Barbecue",
-        "type": "IG"
+        ]
     },
     "OfSettledThoughts": {
+        "id": 63,
         "name": "Of Settled Thoughts",
+        "type": "IG",
+        "icon": "UI_Home_Suite_Interior_Xm_Room_Of_Library",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Xm_Room_Of_Library.webp",
         "materials": [
             {
                 "key": "TreasureFromTheLandOfWisdom",
@@ -3096,14 +3100,14 @@ export default {
             "Cyno",
             "Faruzan",
             "Alhaitham"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/24\/Furnishing_Set_Of_Settled_Thoughts_Display.png",
-        "id": 63,
-        "imgId": "UI_Home_Suite_Interior_Xm_Room_Of_Library",
-        "type": "IG"
+        ]
     },
     "AFarewellBriefToBustleAndBother": {
+        "id": 64,
         "name": "A Farewell Brief to Bustle and Bother",
+        "type": "IG",
+        "icon": "UI_Home_Suite_Interior_Xm_Room_Of_Sleep",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Xm_Room_Of_Sleep.webp",
         "materials": [
             {
                 "key": "DesertDeskHospitality",
@@ -3145,14 +3149,14 @@ export default {
         "characters": [
             "Nahida",
             "Layla"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9e\/Furnishing_Set_A_Farewell_Brief_to_Bustle_and_Bother_Display.png",
-        "id": 64,
-        "imgId": "UI_Home_Suite_Interior_Xm_Room_Of_Sleep",
-        "type": "IG"
+        ]
     },
     "DwellingAmidstTheSands": {
+        "id": 65,
         "name": "Dwelling Amidst the Sands",
+        "type": "IG",
+        "icon": "UI_Home_Suite_Interior_Xm_Room_Of_Village",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Xm_Room_Of_Village.webp",
         "materials": [
             {
                 "key": "DesertDeskHospitality",
@@ -3185,15 +3189,14 @@ export default {
         ],
         "characters": [
             "Candace"
-        ],
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ef\/Furnishing_Set_Dwelling_Amidst_the_Sands_Display.png",
-        "id": 65,
-        "imgId": "UI_Home_Suite_Interior_Xm_Room_Of_Village",
-        "type": "IG"
+        ]
     },
     "KeyToAStableWorkRestCycle": {
+        "id": 74,
         "name": "Key to a Stable Work-Rest Cycle",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6a\/Furnishing_Set_Key_to_a_Stable_Work-Rest_Cycle_Display.png",
+        "type": "IG",
+        "icon": "UI_Home_Suite_Interior_Fd_Room_Houses",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Fd_Room_Houses.webp",
         "materials": [
             {
                 "key": "MallowWoodMultiModelWardrobe",
@@ -3263,14 +3266,14 @@ export default {
         "characters": [
             "Charlotte",
             "Chevreuse"
-        ],
-        "id": 74,
-        "imgId": "UI_Home_Suite_Interior_Fd_Room_Houses",
-        "type": "IG"
+        ]
     },
     "StrictAdherenceToOfficeCodes": {
+        "id": 75,
         "name": "Strict Adherence to Office Codes",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/05\/Furnishing_Set_Strict_Adherence_to_Office_Codes_Display.png",
+        "type": "IG",
+        "icon": "UI_Home_Suite_Interior_Fd_Room_Office",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Fd_Room_Office.webp",
         "materials": [
             {
                 "key": "ModelContraptionReasonableRoundabout",
@@ -3316,14 +3319,14 @@ export default {
         "characters": [
             "Neuvillette",
             "Clorinde"
-        ],
-        "id": 75,
-        "imgId": "UI_Home_Suite_Interior_Fd_Room_Office",
-        "type": "IG"
+        ]
     },
     "GarbForGloriousGourmet": {
+        "id": 76,
         "name": "Garb for Glorious Gourmet",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c0\/Furnishing_Set_Garb_for_Glorious_Gourmet_Display.png",
+        "type": "IG",
+        "icon": "UI_Home_Suite_Interior_Fd_Room_Hotel",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Fd_Room_Hotel.webp",
         "materials": [
             {
                 "key": "ChillAfternoonTeaTime",
@@ -3365,14 +3368,14 @@ export default {
         "characters": [
             "Furina",
             "Navia"
-        ],
-        "id": 76,
-        "imgId": "UI_Home_Suite_Interior_Fd_Room_Hotel",
-        "type": "IG"
+        ]
     },
     "PerfectlyDrawnFocus": {
+        "id": 77,
         "name": "Perfectly-Drawn Focus",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ea\/Furnishing_Set_Perfectly-Drawn_Focus_Display.png",
+        "type": "IG",
+        "icon": "UI_Home_Suite_Interior_Fd_Room_Stage",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Fd_Room_Stage.webp",
         "materials": [
             {
                 "key": "RestaurantRugBathingInTheBreeze",
@@ -3407,14 +3410,14 @@ export default {
             "Lynette",
             "Lyney",
             "Arlecchino"
-        ],
-        "id": 77,
-        "imgId": "UI_Home_Suite_Interior_Fd_Room_Stage",
-        "type": "IG"
+        ]
     },
     "ContinuousClockworkInspiration": {
+        "id": 78,
         "name": "Continuous Clockwork Inspiration",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/83\/Furnishing_Set_Continuous_Clockwork_Inspiration_Display.png",
+        "type": "IG",
+        "icon": "UI_Home_Suite_Interior_Fd_Room_Machinery",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Fd_Room_Machinery.webp",
         "materials": [
             {
                 "key": "PassagesStableStorage",
@@ -3463,14 +3466,14 @@ export default {
         ],
         "characters": [
             "Freminet"
-        ],
-        "id": 78,
-        "imgId": "UI_Home_Suite_Interior_Fd_Room_Machinery",
-        "type": "IG"
+        ]
     },
     "WellspringOfRuleViolationPrevention": {
+        "id": 79,
         "name": "Wellspring of Rule Violation Prevention",
-        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ac\/Furnishing_Set_Wellspring_of_Rule_Violation_Prevention_Display.png",
+        "type": "IG",
+        "icon": "UI_Home_Suite_Interior_Fd_Room_Meropide",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Fd_Room_Meropide.webp",
         "materials": [
             {
                 "key": "WisdomOfTheForbiddenFortress",
@@ -3515,13 +3518,14 @@ export default {
         ],
         "characters": [
             "Wriothesley"
-        ],
-        "id": 79,
-        "imgId": "UI_Home_Suite_Interior_Fd_Room_Meropide",
-        "type": "IG"
+        ]
     },
     "CarefullyConsideredWords": {
+        "id": 87,
         "name": "Carefully Considered Words",
+        "type": "IG",
+        "icon": "UI_Home_Suite_Interior_Nt_Room_Office",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Nt_Room_Office.webp",
         "materials": [
             {
                 "key": "StadiumsSpicyFeastBackedChair",
@@ -3551,14 +3555,14 @@ export default {
         "characters": [
             "Chasca",
             "Mavuika"
-        ],
-        "id": 87,
-        "imgId": "UI_Home_Suite_Interior_Nt_Room_Office",
-        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Nt_Room_Office.webp",
-        "type": "IG"
+        ]
     },
     "ArenasToastToTriumph": {
+        "id": 88,
         "name": "Arena's Toast to Triumph",
+        "type": "IG",
+        "icon": "UI_Home_Suite_Interior_Nt_Room_Hotel",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Nt_Room_Hotel.webp",
         "materials": [
             {
                 "key": "FairCarpetWarmthAndPassion",
@@ -3591,14 +3595,14 @@ export default {
         ],
         "characters": [
             "Mavuika"
-        ],
-        "id": 88,
-        "imgId": "UI_Home_Suite_Interior_Nt_Room_Hotel",
-        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Nt_Room_Hotel.webp",
-        "type": "IG"
+        ]
     },
     "SleepNowRestYourWearyHead": {
+        "id": 89,
         "name": "Sleep Now, Rest Your Weary Head",
+        "type": "IG",
+        "icon": "UI_Home_Suite_Interior_Nt_Room_Universal",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Nt_Room_Universal.webp",
         "materials": [
             {
                 "key": "StoneBedPeacefulSleep",
@@ -3641,10 +3645,6 @@ export default {
             "Kachina",
             "Citlali",
             "Varesa"
-        ],
-        "id": 89,
-        "imgId": "UI_Home_Suite_Interior_Nt_Room_Universal",
-        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Home_Suite_Interior_Nt_Room_Universal.webp",
-        "type": "IG"
+        ]
     }
 };

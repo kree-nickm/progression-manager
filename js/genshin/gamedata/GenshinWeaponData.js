@@ -1836,6 +1836,47 @@ export default {
         ],
         "version": "5.0"
     },
+    "SymphonistOfScents": {
+        "name": "Symphonist of Scents",
+        "rarity": 5,
+        "type": "Polearm",
+        "hakushinID": 13514,
+        "id": 13514,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_Trident.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_Trident.webp"
+        ],
+        "baseATK": 46,
+        "stat": "critDMG_",
+        "matForgery": "Dewdrop",
+        "matStrongEnemy": "Hydro Phantasms",
+        "matWeakEnemy": "Fontemer",
+        "passive": "ATK is increased by @0%. When the equipping character is off-field, ATK is increased by an additional @1%. After healing, the equipping character and healed character(s) will obtain the \"Sweet Echoes\" effect, increasing their ATK by @2% for 3s. This effect can be triggered even if the equipping character is off-field.",
+        "refinementData": [
+            {
+                "1": 12,
+                "2": 15,
+                "3": 18,
+                "4": 21,
+                "5": 24
+            },
+            {
+                "1": 12,
+                "2": 15,
+                "3": 18,
+                "4": 21,
+                "5": 24
+            },
+            {
+                "1": 32,
+                "2": 40,
+                "3": 48,
+                "4": 56.00000000000001,
+                "5": 64
+            }
+        ],
+        "version": "5.5.54"
+    },
     "TheFirstGreatMagic": {
         "name": "The First Great Magic",
         "imgs": [
@@ -5315,6 +5356,33 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Scion_of_the_Blazing_Sun",
         "hakushinID": 15424,
         "id": 15424
+    },
+    "SequenceOfSolitude": {
+        "name": "Sequence of Solitude",
+        "rarity": 4,
+        "type": "Bow",
+        "hakushinID": 15432,
+        "id": 15432,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_Stinger.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_Stinger.webp"
+        ],
+        "baseATK": 42,
+        "stat": "hp_",
+        "matForgery": "Chord",
+        "matStrongEnemy": "Weasels",
+        "matWeakEnemy": "Meka",
+        "passive": "When an attack hits an opponent, deal AoE DMG equal to @0% of Max HP at the target location. This effect can be triggered once every 15s.",
+        "refinementData": [
+            {
+                "1": 40,
+                "2": 50,
+                "3": 60,
+                "4": 70,
+                "5": 80
+            }
+        ],
+        "version": "5.5.54"
     },
     "SerpentSpine": {
         "name": "Serpent Spine",
