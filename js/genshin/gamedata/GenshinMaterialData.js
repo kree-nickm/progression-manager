@@ -10226,6 +10226,118 @@ export default {
         "icon": "UI_ItemIcon_108809",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108809.webp"
     },
+    "SuspiciousDrink455": {
+        "id": 108826,
+        "name": "Suspicious Drink 455",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108810",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108810.webp"
+    },
+    "Drink455": {
+        "id": 108827,
+        "name": "Drink 455",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108810",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108810.webp"
+    },
+    "DeliciousDrink455": {
+        "id": 108828,
+        "name": "Delicious Drink 455",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108810",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108810.webp"
+    },
+    "SuspiciousMeatLoversFeast": {
+        "id": 108829,
+        "name": "Suspicious Meat-Lover's Feast",
+        "rarity": 4,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108811",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108811.webp"
+    },
+    "MeatLoversFeast": {
+        "id": 108830,
+        "name": "Meat-Lover's Feast",
+        "rarity": 4,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108811",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108811.webp"
+    },
+    "DeliciousMeatLoversFeast": {
+        "id": 108831,
+        "name": "Delicious Meat-Lover's Feast",
+        "rarity": 4,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108811",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108811.webp"
+    },
+    "SuspiciousNineFruitNectar": {
+        "id": 108832,
+        "name": "Suspicious Nine-Fruit Nectar",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108812",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108812.webp"
+    },
+    "NineFruitNectar": {
+        "id": 108833,
+        "name": "Nine-Fruit Nectar",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108812",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108812.webp"
+    },
+    "DeliciousNineFruitNectar": {
+        "id": 108834,
+        "name": "Delicious Nine-Fruit Nectar",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108812",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108812.webp"
+    },
+    "SuspiciousBubblemilkPie": {
+        "id": 108835,
+        "name": "Suspicious Bubblemilk Pie",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108813",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108813.webp"
+    },
+    "BubblemilkPie": {
+        "id": 108836,
+        "name": "Bubblemilk Pie",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108813",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108813.webp"
+    },
+    "DeliciousBubblemilkPie": {
+        "id": 108837,
+        "name": "Delicious Bubblemilk Pie",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108813",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108813.webp"
+    },
+    "AbyssalBounty": {
+        "id": 108838,
+        "name": "\"Abyssal Bounty\"",
+        "rarity": 1,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108814",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108814.webp"
+    },
+    "ChatterOfJoyfulNights": {
+        "id": 108839,
+        "name": "\"Chatter of Joyful Nights\"",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108815",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108815.webp"
+    },
     "PureWater": {
         "id": 111029,
         "name": "\"Pure Water\"",
@@ -10702,6 +10814,12 @@ export default {
         "icon": "UI_ItemIcon_220068",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220068.webp"
     },
+    "2": {
+        "id": 220068,
+        "type": "Gadget",
+        "icon": "UI_ItemIcon_220068",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220068.webp"
+    },
     "ScarletSandSlate": {
         "id": 220069,
         "name": "Scarlet Sand Slate",
@@ -11013,6 +11131,22 @@ export default {
         "type": "Gadget",
         "icon": "UI_ItemIcon_220085",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220085.webp"
+    },
+    "NeoTerminalFloatingLeafModel": {
+        "id": 220115,
+        "name": "Neo Terminal: Floating Leaf Model",
+        "rarity": 4,
+        "type": "Gadget",
+        "icon": "UI_ItemIcon_220115",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220115.webp"
+    },
+    "LingeringEuphonia": {
+        "id": 220116,
+        "name": "\"Lingering Euphonia\"",
+        "rarity": 4,
+        "type": "Gadget",
+        "icon": "UI_ItemIcon_220116",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220116.webp"
     },
     "IntertwinedFate": {
         "id": 223,
@@ -12517,7 +12651,7 @@ export default {
         "icon": "UI_ItemIcon_200125",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_200125.webp"
     },
-    "2": {
+    "3": {
         "id": 200125,
         "rarity": 4,
         "type": "Refinement Material",

@@ -110,6 +110,7 @@ export default class DataManager extends UIController
     if(changed)
       for(let listName in this.listClasses)
         this.lists[listName].forceNextRender = true;
+    this.queueStore();
     return true;
   }
   

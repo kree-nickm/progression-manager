@@ -7,9 +7,10 @@ const {default:GenshinArtifactData} = await window.importer.get(`js/genshin/game
 const {default:GenshinBuilds} = await window.importer.get(`js/genshin/gamedata/GenshinBuilds.js`);
 
 const { handlebars, Renderer } = await window.importer.get(`js/Renderer.js`);
-const {default:GenshinItem} = await window.importer.get(`js/genshin/GenshinItem.js`);
 const {default:Ascendable} = await window.importer.get(`js/Ascendable.js`);
+const {default:MotionValue} = await window.importer.get(`js/MotionValue.js`);
 
+const {default:GenshinItem} = await window.importer.get(`js/genshin/GenshinItem.js`);
 const {default:Artifact} = await window.importer.get(`js/genshin/Artifact.js`);
 const {default:Weapon} = await window.importer.get(`js/genshin/Weapon.js`);
 const {default:Material} = await window.importer.get(`js/genshin/Material.js`);

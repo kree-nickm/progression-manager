@@ -315,6 +315,14 @@ export default {
                 "Eroded Sunfire",
                 "Eroded Scale-Feather"
             ]
+        },
+        {
+            "boss": "The Game Before the Gate",
+            "loot": [
+                "Ascended Sample: Knight",
+                "Ascended Sample: Rook",
+                "Ascended Sample: Queen"
+            ]
         }
     ],
     "boss": {

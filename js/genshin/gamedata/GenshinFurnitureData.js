@@ -7,7 +7,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Dq_Lamp_LaZhu_01_Vo.webp",
         "source": "Inazuma Remarkable Chest Reward",
         "load": 85,
-        "energy": 60
+        "energy": 60,
+        "u": true
     },
     "MapleWoodFloorLampClarity": {
         "id": 360410,
@@ -17,7 +18,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Dq_Lamp_Lamp_03_Vo.webp",
         "load": 220,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "DrippingVerdantLight": {
         "id": 360420,
@@ -27,7 +29,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Lamp_Light_StreetLamp_02_Lod0.webp",
         "load": 85,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "ImmersiveLight": {
         "id": 360422,
@@ -37,7 +40,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Lamp_Light_Jlydeng_01_Lod0.webp",
         "load": 85,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "PerennialIllumination": {
         "id": 360423,
@@ -47,7 +51,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Lamp_Light_Cityludeng_01_Lod0.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "BloomingIllumination": {
         "id": 360424,
@@ -57,7 +62,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Lamp_Light_Juyuandeng_01_Lod0.webp",
         "load": 85,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "PassagesAppetizingLamp": {
         "id": 360432,
@@ -67,7 +73,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Lamp_Light_CafeDesk_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "MekaLuminaireRadiantPath": {
         "id": 360433,
@@ -77,7 +84,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Lamp_Light_ZhucLud_01_Lod0.webp",
         "load": 85,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "MekaLuminaireRadiantGrounds": {
         "id": 360434,
@@ -87,7 +95,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Lamp_Light_ZcGuadeng_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "MekaLuminaireRadiantCountryside": {
         "id": 360435,
@@ -97,7 +106,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Lamp_Light_YwLudeng_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Fontaine Reputation Level Reward"
+        "source": "Fontaine Reputation Level Reward",
+        "u": true
     },
     "HelloWelcome": {
         "id": 360438,
@@ -107,7 +117,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Lamp_Light_RycDeng_01_Vo.webp",
         "load": 115,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "ShinyShell": {
         "id": 360439,
@@ -117,7 +128,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Lamp_Light_RycDeng_02_Vo.webp",
         "load": 115,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "ForbiddenZoneFloorLampIronhammer": {
         "id": 360440,
@@ -127,7 +139,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Lamp_Light_EverLit_01_Vo.webp",
         "load": 115,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "ForbiddenZoneFloorLampNightlight": {
         "id": 360441,
@@ -137,7 +150,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Lamp_Light_EverLit_02_Vo.webp",
         "load": 115,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "FlammabombWoodDancerStreetLamp": {
         "id": 360452,
@@ -147,7 +161,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Lamp_Light_ZDLLudeng_01_Vo.webp",
         "load": 115,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "AshenAratikuWoodNiftyStreetLamp": {
         "id": 360453,
@@ -157,7 +172,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Lamp_Light_GZLLudeng_01_Vo.webp",
         "load": 145,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "WhiteChestnutOakWoodHarpoonStreetLamp": {
         "id": 360454,
@@ -167,7 +183,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Lamp_Light_YLLLudeng_01_Lod0.webp",
         "load": 85,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "WhiteChestnutOakWoodTwilightFloorLamp": {
         "id": 360455,
@@ -177,7 +194,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Lamp_Light_YLLDideng_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "PhlogistonStreetLampTheRoadAhead": {
         "id": 360456,
@@ -187,7 +205,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Lamp_Light_LslDeng_01_Lod0.webp",
         "load": 115,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "PhlogistonStreetLampThreefold": {
         "id": 360457,
@@ -197,7 +216,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Lamp_Light_LslDeng_02_Vo.webp",
         "load": 175,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "OpenTopFirShelf": {
         "id": 361102,
@@ -207,7 +227,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Cabinet_Cupboard_03_Vo.webp",
         "load": 254,
         "energy": 60,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "FirCaseShelfCombination": {
         "id": 361103,
@@ -217,7 +238,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Cabinet_Cupboard_04_Vo.webp",
         "load": 338,
         "energy": 60,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "LargeBirchWardrobe": {
         "id": 361105,
@@ -227,7 +249,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Cabinet_Wardrobe_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "GoldLinedSandbearerWardrobe": {
         "id": 361106,
@@ -237,7 +260,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Ly_Cabinet_Wardrobe_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "DesertDeskHospitality": {
         "id": 361108,
@@ -247,7 +271,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Cabinet_Prop_Scupboard_01_Lod0.webp",
         "load": 85,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "AdhigamaWoodVersatileShelves": {
         "id": 361109,
@@ -257,7 +282,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Cabinet_Prop_Shineijiazi_01_Lod0.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "BrightwoodInvigoratingNightstand": {
         "id": 361110,
@@ -267,7 +293,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Cabinet_Prop_Hospital_01_Lod0.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "MallowWoodMultiModelWardrobe": {
         "id": 361113,
@@ -277,7 +304,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Cabinet_Prop_Wardrobe_01_Lod0.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "FairsDistribution": {
         "id": 361114,
@@ -287,7 +315,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Cabinet_Prop_JJCHotel_01_Lod0.webp",
         "load": 592,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "FairsThoughtsInOrder": {
         "id": 361117,
@@ -297,7 +326,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Cabinet_Build_HSGuizi_01_Vo.webp",
         "load": 507,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "TwoTierLibraryBookshelf": {
         "id": 361201,
@@ -307,7 +337,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Cabinet_Bookcase_01_Vo.webp",
         "load": 254,
         "energy": 90,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "ExquisiteCuihuaBookshelf": {
         "id": 361202,
@@ -317,7 +348,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Cabinet_Bookcase_02_Vo.webp",
         "load": 169,
         "energy": 90,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "EconomyCuihuaBookshelf": {
         "id": 361203,
@@ -327,7 +359,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Cabinet_Bookcase_03_Vo.webp",
         "load": 169,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "ArchivistsTreasureTrove": {
         "id": 361205,
@@ -337,7 +370,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Cabinet_Bookcase_05_Vo.webp",
         "load": 169,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "RedCedarScrollShelf": {
         "id": 361206,
@@ -347,7 +381,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Ly_Cabinet_Bookcase_05_Vo.webp",
         "load": 196,
         "energy": 60,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "RedCedarCurioStand": {
         "id": 361207,
@@ -357,7 +392,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Ly_Cabinet_Bookcase_06_Vo.webp",
         "load": 201,
         "energy": 60,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "ShopkeepersCedarShelf": {
         "id": 361208,
@@ -367,7 +403,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Ly_Cabinet_Bookcase_07_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "MapleWoodBookcaseInkheart": {
         "id": 361209,
@@ -377,7 +414,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Dq_Cabinet_Cabinet_01_Vo.webp",
         "load": 169,
         "energy": 90,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "MapleWoodBookcaseTroveOfAThousandTomes": {
         "id": 361210,
@@ -387,7 +425,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Dq_Cabinet_Cabinet_02_Vo.webp",
         "load": 172,
         "energy": 90,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "DesertCabinetOddsAndEnds": {
         "id": 361212,
@@ -397,7 +436,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Cabinet_Prop_Bookcase_01_Lod0.webp",
         "load": 254,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "TreasureFromTheLandOfWisdom": {
         "id": 361213,
@@ -407,7 +447,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Cabinet_Prop_Shuguibig_01_Vo.webp",
         "load": 254,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "ScrollsFromTheLandOfWisdom": {
         "id": 361214,
@@ -417,7 +458,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Cabinet_Prop_Shuguismall_01_Vo.webp",
         "load": 254,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "MaisonCardinalicesCabinet": {
         "id": 361216,
@@ -427,7 +469,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Cabinet_Prop_Shugui_01_Vo.webp",
         "load": 85,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "MaisonCardinalicesWingedShelf": {
         "id": 361218,
@@ -437,7 +480,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Cabinet_Prop_Shujia_02_Vo.webp",
         "load": 254,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "AThousandTextsInTheCentralHub": {
         "id": 361220,
@@ -447,7 +491,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Cabinet_Prop_DyzShugui_01_Vo.webp",
         "load": 254,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "SturdyLibraryTable": {
         "id": 361301,
@@ -457,7 +502,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Table_Table_03_Vo.webp",
         "load": 169,
         "energy": 60,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "FavoniusOfficeTable": {
         "id": 361302,
@@ -467,7 +513,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Table_Table_04_Vo.webp",
         "load": 254,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "PortableStove": {
         "id": 361305,
@@ -477,7 +524,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Table_Cooking_02_Vo.webp",
         "load": 558,
         "energy": 60,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "LongTableWithTablecloth": {
         "id": 361306,
@@ -487,7 +535,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Table_Table_22_Vo.webp",
         "load": 169,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "IntricatelyCarvedCalligraphyTable": {
         "id": 361308,
@@ -497,7 +546,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Ly_Table_Table_06_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "SquarePineTeaTable": {
         "id": 361309,
@@ -507,7 +557,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Ly_Table_Table_21_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "SturdyBirchVanity": {
         "id": 361311,
@@ -517,7 +568,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Cabinet_Cupboard_02_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "YumemiruColdAndWarmthKotatsu": {
         "id": 361314,
@@ -527,7 +579,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Dq_Decoration_Furnace_01_Vo.webp",
         "load": 101,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "SekijouAraliaTeaTable": {
         "id": 361315,
@@ -537,7 +590,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Dq_Table_Teahousetable_02_Vo.webp",
         "load": 169,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "TeahouseLongTableSeamlessSeating": {
         "id": 361316,
@@ -547,7 +601,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Dq_Table_Table_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "AChoiceOfDelicacies": {
         "id": 361319,
@@ -557,7 +612,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Table_Build_Barbecue_01_Lod0.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "SpiritOfTheBanquet": {
         "id": 361320,
@@ -567,7 +623,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Table_Prop_Barbecue_03_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "StudyOfTheForbiddenFortress": {
         "id": 361326,
@@ -577,7 +634,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Table_Prop_Yiji_01_Lod0.webp",
         "load": 85,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "SteadyStatelyStability": {
         "id": 361329,
@@ -587,7 +645,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Table_Prop_HotelChang_01_Vo.webp",
         "load": 169,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "MaisonCardinalicesFocus": {
         "id": 361330,
@@ -597,7 +656,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Table_Prop_Shuzhuo_01_Vo.webp",
         "load": 85,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "StableWorkStationInTheCentralHub": {
         "id": 361331,
@@ -607,7 +667,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Table_Prop_DyzZhuo_01_Lod0.webp",
         "load": 507,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "TheLeisureOfDailyMeetings": {
         "id": 361333,
@@ -617,7 +678,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Table_Prop_Tzzhuo_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "OneLeggedRoundShield": {
         "id": 361336,
@@ -627,7 +689,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Table_Prop_JJCZhuozi_01_Lod0.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "FourLeggedTowerShield": {
         "id": 361337,
@@ -637,7 +700,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Table_Prop_JJCZhuozi_02_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "NamelessAndSilent": {
         "id": 361338,
@@ -647,7 +711,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Table_Prop_JJCZhuozi_03_Vo.webp",
         "load": 169,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "BreezeBlessedBed": {
         "id": 361401,
@@ -657,7 +722,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Bed_Bed_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "CloudyHazeBed": {
         "id": 361402,
@@ -667,7 +733,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Ly_Bed_Bed_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "YumemiruSakurasRestBed": {
         "id": 361403,
@@ -677,7 +744,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Dq_Bed_Bed_01_Vo.webp",
         "load": 137,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "AdhigamaWoodComfortBed": {
         "id": 361405,
@@ -687,7 +755,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Bed_Prop_Citynormal_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "LindenWoodSweetSlumberBed": {
         "id": 361408,
@@ -697,7 +766,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Bed_Prop_Chuang_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "StoneBedPeacefulSleep": {
         "id": 361409,
@@ -707,7 +777,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Bed_Prop_JJCchuang_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "TeahouseCounterToshimaru": {
         "id": 361502,
@@ -717,7 +788,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Dq_Table_Teahousetable_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "DesertStudyConscientiousness": {
         "id": 361505,
@@ -727,7 +799,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Decoration_Prop_Ladder_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "WitnessOfTavernAffairs": {
         "id": 361506,
@@ -737,7 +810,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Table_Build_Barbecue_02_Lod0.webp",
         "load": 136,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "CelebrationOfAnAdHocPerformance": {
         "id": 361507,
@@ -747,7 +821,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Thing_Prop_Wutai_01_Lod0.webp",
         "load": 514,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "SoftLoungeSofa": {
         "id": 362101,
@@ -757,7 +832,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Chair_Sofa_01_Vo.webp",
         "load": 169,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "ClearBlueAfternoon": {
         "id": 362102,
@@ -767,7 +843,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Chair_Chair_03_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "UnwaveringDetermination": {
         "id": 362103,
@@ -777,7 +854,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Chair_Chair_04_Vo.webp",
         "load": 169,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "PineDiningChair": {
         "id": 362104,
@@ -787,7 +865,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Chair_Chair_20_Vo.webp",
         "load": 85,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "PineBackedTeaChair": {
         "id": 362105,
@@ -797,7 +876,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Ly_Chair_Chair_21_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "RedPineWoodRoundStool": {
         "id": 362106,
@@ -807,7 +887,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Ly_Chair_Chair_05_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "TeahouseRoundStoolPainPointReduction": {
         "id": 362108,
@@ -817,7 +898,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Dq_Chair_Chair_01_Vo.webp",
         "load": 85,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "KarmaphalaWoodSubduedSpeechBench": {
         "id": 362109,
@@ -827,7 +909,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Chair_Prop_Citybig_01_Lod0.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "KarmaphalaWoodCounterAssaultDiningChair": {
         "id": 362110,
@@ -837,7 +920,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Chair_Prop_Citysmall_01_Lod0.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "SatisfactionOfSatedThirst": {
         "id": 362111,
@@ -847,7 +931,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Chair_Prop_Barbecue_01_Vo.webp",
         "load": 169,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "ConversationOfTheForbiddenFortress": {
         "id": 362118,
@@ -857,7 +942,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Chair_Prop_Dengzi_01_Vo.webp",
         "load": 85,
         "energy": 30,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "ComfortOfAHomeAwayFromHome": {
         "id": 362119,
@@ -867,7 +953,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Chair_Prop_BlueShafa_01_Vo.webp",
         "load": 113,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "WitnessToGreatFocus": {
         "id": 362120,
@@ -877,7 +964,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Chair_Prop_BlueYizi_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "ElationOfSocialDrinking": {
         "id": 362121,
@@ -887,7 +975,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Chair_Prop_BlueDeng_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "MallowWoodViewingRitesChair": {
         "id": 362122,
@@ -897,7 +986,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Chair_Prop_Gjy_01_Vo.webp",
         "load": 169,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "LindenWoodSubduingSeatBackedChair": {
         "id": 362123,
@@ -907,7 +997,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Chair_Prop_DyzYi_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "MomentaryRestInTheCentralHub": {
         "id": 362124,
@@ -917,7 +1008,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Chair_Prop_DyzShafa_01_Vo.webp",
         "load": 113,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "StadiumsSpicyFeastBackedChair": {
         "id": 362126,
@@ -927,7 +1019,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Chair_Prop_JJCZhuozi_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "StadiumRoundSeatingBench": {
         "id": 362127,
@@ -937,7 +1030,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Chair_Prop_JJCZhuozi_02_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "PineFoldingScreenBillowingSails": {
         "id": 362202,
@@ -947,7 +1041,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Ly_Decoration_Screen_01_Vo.webp",
         "load": 85,
         "energy": 90,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "BirchDoubleDrawerNightstand": {
         "id": 362204,
@@ -957,7 +1052,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Cabinet_Bedstand_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "GoldLinedSandbearerNightstand": {
         "id": 362205,
@@ -967,7 +1063,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Ly_Cabinet_Bedstand_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "TeahouseCushionNightWoven": {
         "id": 362210,
@@ -977,7 +1074,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Dq_Thing_Cushion_01_Vo.webp",
         "load": 85,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "MapleWoodRitualDrumFestiveMusic": {
         "id": 362211,
@@ -987,7 +1085,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Dq_Decoration_Drum_01_Vo.webp",
         "load": 109,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "TeahouseFoldingScreenHiddenHeartOfGold": {
         "id": 362213,
@@ -997,7 +1096,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Dq_Decoration_Screen_01_Vo.webp",
         "load": 85,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "AncestralSwordRackFourCorePrinciples": {
         "id": 362214,
@@ -1007,7 +1107,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Dq_Decoration_ToolcarrierTS_01_Lod0.webp",
         "load": 85,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "HatamotoArmorEijinGenkou": {
         "id": 362215,
@@ -1017,7 +1118,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Dq_Decoration_ThunderArmor_01_Lod0.webp",
         "load": 185,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "YumemiruJukakuFoldingScreen": {
         "id": 362216,
@@ -1027,7 +1129,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Dq_Decoration_Screen_02_Vo.webp",
         "load": 355,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "HuedVaseCerulean": {
         "id": 362221,
@@ -1037,7 +1140,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Decoration_Prop_Bottles_01_Lod0.webp",
         "load": 85,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "HuedVaseMalachite": {
         "id": 362222,
@@ -1047,7 +1151,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Decoration_Prop_Bottles_02_Lod0.webp",
         "load": 85,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "HuedVaseAmber": {
         "id": 362223,
@@ -1057,7 +1162,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Decoration_Prop_Bottles_03_Lod0.webp",
         "load": 85,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "UpliftingGrowth": {
         "id": 362232,
@@ -1067,7 +1173,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Decoration_Prop_Tpotted_01_Lod0.webp",
         "load": 169,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "ForestWatchersFastidiousness": {
         "id": 362233,
@@ -1077,7 +1184,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Decoration_Prop_Tinstrument_01_Lod0.webp",
         "load": 338,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "ForestRangersProvisions": {
         "id": 362234,
@@ -1087,7 +1195,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Decoration_Prop_Kbag_01_Lod0.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "AromaOfHighHeatBarbecue": {
         "id": 362236,
@@ -1097,7 +1206,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Thing_Prop_BarbecueOven_01_Lod0.webp",
         "load": 643,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "FragranceOfLowHeatRoast": {
         "id": 362237,
@@ -1107,7 +1217,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Thing_Prop_BarbecueOven_02_Lod0.webp",
         "load": 693,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "WisdomOfTheForbiddenFortress": {
         "id": 362251,
@@ -1117,7 +1228,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Decoration_Prop_YijiHeiban_01_Vo.webp",
         "load": 338,
         "energy": 30,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "ChillAfternoonTeaTime": {
         "id": 362252,
@@ -1127,7 +1239,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Decoration_Prop_HotelCanche_01_Lod0.webp",
         "load": 256,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "MaisonCardinalicesPunctuality": {
         "id": 362253,
@@ -1137,7 +1250,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Decoration_Prop_Zhong_01_Vo.webp",
         "load": 85,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "MaisonCardinalicesLockbox": {
         "id": 362254,
@@ -1147,7 +1261,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Decoration_Prop_Xiangzi_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "MaisonCardinalicesStores": {
         "id": 362255,
@@ -1157,7 +1272,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Decoration_Prop_Baijianjia_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "MallowWoodSturdyCargoContainer": {
         "id": 362257,
@@ -1167,7 +1283,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Decoration_Prop_Xiangzi_02_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "BurdenOfTheForbiddenFortress": {
         "id": 362258,
@@ -1177,7 +1294,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Cabinet_Prop_YijiZhiwu_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "StandardMusicStandAccurateTuning": {
         "id": 362259,
@@ -1187,7 +1305,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Decoration_Prop_MusicShelf_01_Vo.webp",
         "load": 85,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "MondstadtRugCrimsonArdor": {
         "id": 362301,
@@ -1197,7 +1316,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Carpet_Carpet_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "EntranceRugAWarmWelcome": {
         "id": 362304,
@@ -1207,7 +1327,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Ly_Carpet_Carpet_05_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "GloriousEmeraldTapestry": {
         "id": 362305,
@@ -1217,7 +1338,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Carpet_Prop_Wharf_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "DazzlingGoldenTapestry": {
         "id": 362306,
@@ -1227,7 +1349,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Carpet_Prop_Wharf_02_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "MusingTawnyTapestry": {
         "id": 362307,
@@ -1237,7 +1360,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Carpet_Prop_Wharf_03_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "TheOliveGrove": {
         "id": 362309,
@@ -1247,7 +1371,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Carpet_Prop_Wharf_04_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "RestaurantRugEqualDialogue": {
         "id": 362313,
@@ -1257,7 +1382,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Carpet_Prop_Yuan_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "RestaurantRugBathingInTheBreeze": {
         "id": 362314,
@@ -1267,7 +1393,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Carpet_Prop_Fang_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "WearyRugLayDownYourBurden": {
         "id": 362318,
@@ -1277,7 +1404,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Carpet_Prop_JJCHotel_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "FairCarpetWarmthAndPassion": {
         "id": 362319,
@@ -1287,7 +1415,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Carpet_Prop_JJCyuan_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "BipedalPuppetShakyQuaky": {
         "id": 362402,
@@ -1297,7 +1426,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Decoration_Prop_JJCMuou_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "TrustyPortableLamp": {
         "id": 363101,
@@ -1307,7 +1437,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Lamp_Lamp_04_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "LiuliPavilionSandbearerFloorLamp": {
         "id": 363102,
@@ -1317,7 +1448,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Ly_Lamp_Lamp_05_Vo.webp",
         "load": 220,
         "energy": 60,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "SeashellTableLamp": {
         "id": 363104,
@@ -1327,7 +1459,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Lamp_Desk_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "JoyfulIllumination": {
         "id": 363108,
@@ -1337,7 +1470,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Lamp_Light_Citystand_01_Lod0.webp",
         "load": 220,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "PhlogistonDeskLampSufficientlyWeighty": {
         "id": 363114,
@@ -1347,7 +1481,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Lamp_Light_JJCTaideng_01_Vo.webp",
         "load": 305,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "PhlogistonFloorLampCostEffectiveConvenience": {
         "id": 363115,
@@ -1357,7 +1492,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Lamp_Light_JJCDideng_01_Vo.webp",
         "load": 305,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "PhlogistonLampRainCover": {
         "id": 363116,
@@ -1367,7 +1503,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Lamp_Light_JJCtideng_01_Vo.webp",
         "load": 305,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "PottedPlantCrystallineBreeze": {
         "id": 363202,
@@ -1377,7 +1514,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Thing_Vase_02_Vo.webp",
         "load": 169,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "FlowerArrangementSprawlingDaybreak": {
         "id": 363203,
@@ -1387,7 +1525,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Thing_Vase_03_Vo.webp",
         "load": 169,
         "energy": 60,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "PottedPlantPetitePerrenial": {
         "id": 363205,
@@ -1397,7 +1536,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Ly_Thing_Vase_05_Vo.webp",
         "load": 338,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "CastInClay": {
         "id": 363206,
@@ -1407,7 +1547,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Dq_Thing_Pot_01_Vo.webp",
         "load": 169,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "TheEssentialVase": {
         "id": 363207,
@@ -1417,7 +1558,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Dq_Thing_Pot_02_Vo.webp",
         "load": 169,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "NeatStackOfBooks": {
         "id": 363302,
@@ -1427,7 +1569,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Thing_Book_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "ScholarsWeariness": {
         "id": 363303,
@@ -1437,7 +1580,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Thing_Book_02_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "EtiquetteOfCorrespondence": {
         "id": 363304,
@@ -1447,7 +1591,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Thing_Stationery_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "ExquisiteHourglassOrnament": {
         "id": 363305,
@@ -1457,7 +1602,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Thing_Sandglass_01_Vo.webp",
         "load": 169,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "AlchemicDeviceBetweenFireAndWater": {
         "id": 363306,
@@ -1467,7 +1613,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Thing_Alchemy_01_Vo.webp",
         "load": 169,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "AlchemicComponentBurdenOfDust": {
         "id": 363307,
@@ -1477,7 +1624,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Md_Thing_Alchemy_02_Vo.webp",
         "load": 113,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "CalligraphySetAssiduousCalligraphy": {
         "id": 363308,
@@ -1487,7 +1635,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Ly_Thing_Stationery_02_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "GoldenTripleArmCandelabrum": {
         "id": 363309,
@@ -1497,7 +1646,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Common_Thing_Candlestick_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "GlazedPorcelainTeaSetEmbracingTruth": {
         "id": 363310,
@@ -1507,7 +1657,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Thing_Teapot_01_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "TeaWispCloudedWhiteCouch": {
         "id": 363312,
@@ -1517,7 +1668,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Common_Decoration_Teaset_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Inazuma Reputation Level Reward"
+        "source": "Inazuma Reputation Level Reward",
+        "u": true
     },
     "TeahouseVesselScentSealer": {
         "id": 363313,
@@ -1527,7 +1679,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Dq_Thing_LunchBok_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "CalligraphySetProperPenmanship": {
         "id": 363314,
@@ -1537,7 +1690,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Dq_Thing_Inkstone_01_Vo.webp",
         "load": 169,
         "energy": 60,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "EvilSlayingBows": {
         "id": 363315,
@@ -1547,7 +1701,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Common_Decoration_Shipin_01_Vo.webp",
         "load": 95,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "SpiritchaserScreen": {
         "id": 363316,
@@ -1557,7 +1712,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Common_Decoration_Shipin_02_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "ALushGlimpse": {
         "id": 363325,
@@ -1567,7 +1723,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Decoration_Prop_FlowerPot_01_Lod0.webp",
         "load": 169,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "TheMellowPot": {
         "id": 363330,
@@ -1577,7 +1734,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Decoration_Prop_Ware_01_Vo.webp",
         "load": 169,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "TheCrispSweetness": {
         "id": 363331,
@@ -1587,7 +1745,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Decoration_Prop_Fruitplate_01_Vo.webp",
         "load": 169,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "TheTwistingMist": {
         "id": 363332,
@@ -1597,7 +1756,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Decoration_Prop_Incenseburner_01_Lod0.webp",
         "load": 85,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "AppraisersTreasure": {
         "id": 363335,
@@ -1607,7 +1767,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Decoration_Prop_Shineiwujian_01_Lod0.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "CeramicCenterpiece": {
         "id": 363336,
@@ -1617,7 +1778,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Decoration_Prop_Shineiwujian_02_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "EphemeralSpirit": {
         "id": 363337,
@@ -1627,7 +1789,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Xm_Decoration_Prop_Shineiwujian_03_Lod0.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "MaisonCardinalicesMusicalTone": {
         "id": 363356,
@@ -1637,7 +1800,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Decoration_Prop_Gramophone_01_Lod0.webp",
         "load": 85,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "CompactAirSupplyDevice": {
         "id": 363358,
@@ -1647,7 +1811,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Decoration_Prop_Fengshan_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "PassagesStableStorage": {
         "id": 363359,
@@ -1657,7 +1822,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Decoration_Prop_SXiangzi_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "ModelContraptionReasonableRoundabout": {
         "id": 363360,
@@ -1667,7 +1833,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Decoration_Prop_SYiqi_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "ModelDishTheUsualSelection": {
         "id": 363404,
@@ -1677,7 +1844,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Decoration_Prop_JJCShiwu_02_Vo.webp",
         "load": 85,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "FairsFeastingAndDrinking": {
         "id": 363405,
@@ -1687,7 +1855,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Decoration_Prop_JJCJiaobei_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "JavelinImminent": {
         "id": 363407,
@@ -1697,7 +1866,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Decoration_Prop_JJCMianju_02_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "FloralArrangementNearlyAquamarine": {
         "id": 363505,
@@ -1707,7 +1877,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Decoration_Prop_Huaping_01_Vo.webp",
         "load": 169,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "FloralArrangementBloomingPurity": {
         "id": 363506,
@@ -1717,7 +1888,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Decoration_Prop_Huaping_02_Vo.webp",
         "load": 169,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "FloralArrangementArtOfContrast": {
         "id": 363507,
@@ -1727,7 +1899,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Fd_Decoration_Prop_Huaping_03_Lod0.webp",
         "load": 169,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "EchoesOfTheShore": {
         "id": 363508,
@@ -1737,7 +1910,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Nt_Decoration_Prop_JJCPenzai_01_Lod0.webp",
         "load": 169,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "LiyueShopCitywideFavorite": {
         "id": 370108,
@@ -1747,7 +1921,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Ly_Build_House_15_Lod0.webp",
         "load": 85,
         "energy": 60,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "HyouteiStackedAraliaWoodBoxes": {
         "id": 370111,
@@ -1757,7 +1932,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Dq_Thing_LunchBok_02_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "AraliaBangakuShelf": {
         "id": 370112,
@@ -1767,7 +1943,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Dq_Cabinet_Cabinet_03_Vo.webp",
         "load": 254,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "AraliaFusenCupboard": {
         "id": 370113,
@@ -1777,7 +1954,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Dq_Cabinet_Cabinet_04_Vo.webp",
         "load": 169,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "YumemiruDewcoverWardrobe": {
         "id": 370114,
@@ -1787,7 +1965,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Dq_Cabinet_Wardrobe_01_Vo.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "CountryHomeWithTallAttic": {
         "id": 370205,
@@ -1797,7 +1976,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Md_Build_House_05_Lod0.webp",
         "load": 300,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "ClassicCountryHome": {
         "id": 370206,
@@ -1807,7 +1987,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Md_Build_House_06_Lod0.webp",
         "load": 195,
         "energy": 60,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "PocketSizedPineCabin": {
         "id": 370207,
@@ -1817,7 +1998,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Md_Build_House_07_Lod0.webp",
         "load": 160,
         "energy": 60,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "LiyueHouseTimeWaitsForNoOne": {
         "id": 370208,
@@ -1827,7 +2009,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Ly_Build_House_16_Lod0.webp",
         "load": 85,
         "energy": 60,
-        "source": "Teapot Spirit Trust Rank Reward"
+        "source": "Teapot Spirit Trust Rank Reward",
+        "u": true
     },
     "OpenAirWorkshop": {
         "id": 370304,
@@ -1837,7 +2020,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Md_Build_Store_04_Lod0.webp",
         "load": 190,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "TravelingMerchantNorthOfTheStoneGate": {
         "id": 370306,
@@ -1847,7 +2031,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Ly_Build_Store_06_Lod0.webp",
         "load": 85,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "RollRoofedFruitAndVegetableCart": {
         "id": 370307,
@@ -1857,7 +2042,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Ly_Build_Diningcar_02_Lod0.webp",
         "load": 110,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "FourQuadrantCookingCauldron": {
         "id": 370308,
@@ -1867,7 +2053,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Ly_Table_Diningcar_01_Lod0.webp",
         "load": 145,
         "energy": 60,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "FruitAndVeggieStallHarvestBounties": {
         "id": 370309,
@@ -1877,7 +2064,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Ly_Decoration_Varia_03_Lod0.webp",
         "load": 60,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "OtogiWoodRamenStand": {
         "id": 370310,
@@ -1887,7 +2075,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_Streetvendors_01_Lod0.webp",
         "load": 155,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "WovenDepth": {
         "id": 370311,
@@ -1897,7 +2086,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Build_Stall_01_Lod0.webp",
         "load": 65,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "WovenFruition": {
         "id": 370313,
@@ -1907,7 +2097,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Build_Stall_03_Lod0.webp",
         "load": 65,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "SweetnessInExchange": {
         "id": 370314,
@@ -1917,7 +2108,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Build_FruitStand_01_Lod0.webp",
         "load": 210,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "SweetnessInTheShade": {
         "id": 370315,
@@ -1927,7 +2119,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Build_Shed_01_Lod0.webp",
         "load": 95,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "SweetnessInStorage": {
         "id": 370316,
@@ -1937,7 +2130,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Build_Shed_02_Lod0.webp",
         "load": 65,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "FishermansDealings": {
         "id": 370317,
@@ -1947,7 +2141,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Build_WaterStall_01_Lod0.webp",
         "load": 160,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "FishermansMaintenance": {
         "id": 370319,
@@ -1957,7 +2152,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Build_WaterShed_01_Lod0.webp",
         "load": 65,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "BrightwoodGroceryStall": {
         "id": 370320,
@@ -1967,7 +2163,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Build_XKCtanwei_01_Lod0.webp",
         "load": 95,
         "energy": 60,
-        "source": "Sumeru Reputation Level Reward"
+        "source": "Sumeru Reputation Level Reward",
+        "u": true
     },
     "BrightwoodKebabCart": {
         "id": 370321,
@@ -1977,7 +2174,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Build_XKCtanwei_02_Lod0.webp",
         "load": 130,
         "energy": 60,
-        "source": "Sumeru Reputation Level Reward"
+        "source": "Sumeru Reputation Level Reward",
+        "u": true
     },
     "PassagesPolychromaticPottedPlants": {
         "id": 370328,
@@ -1987,7 +2185,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Decoration_Prop_HuaTanwei_01_Lod0.webp",
         "load": 160,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "QuickTemporaryWorkshed": {
         "id": 370331,
@@ -1997,7 +2196,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Build_Prop_BszPengzi_01_Lod0.webp",
         "load": 270,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "PoissonsSeasonalProduce": {
         "id": 370332,
@@ -2007,7 +2207,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Decoration_Prop_BszTanwei_01_Vo.webp",
         "load": 285,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "WovenHutSereneIndigo": {
         "id": 370336,
@@ -2017,7 +2218,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Prop_JJCpengzi_01_Lod0.webp",
         "load": 65,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "WovenHutRhythmicStripes": {
         "id": 370337,
@@ -2027,7 +2229,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Prop_JJCpengzi_02_Lod0.webp",
         "load": 65,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "GloriousHuesOfTheSacredFlame": {
         "id": 370338,
@@ -2037,7 +2240,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Prop_JJCranliao_01_Lod0.webp",
         "load": 570,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "CuriousCountenancesOfTheSacredFlame": {
         "id": 370339,
@@ -2047,7 +2251,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Prop_JJCmianju_01_Lod0.webp",
         "load": 190,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "HilichurlOutpostHut": {
         "id": 370401,
@@ -2057,7 +2262,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Build_House_17_Lod0.webp",
         "load": 155,
         "energy": 60,
-        "source": "Teapot Spirit Trust Rank Reward"
+        "source": "Teapot Spirit Trust Rank Reward",
+        "u": true
     },
     "HilichurlChieftainHall": {
         "id": 370402,
@@ -2067,7 +2273,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Build_House_19_Lod0.webp",
         "load": 290,
         "energy": 90,
-        "source": "Teapot Spirit Trust Rank Reward"
+        "source": "Teapot Spirit Trust Rank Reward",
+        "u": true
     },
     "CloudsEastOfBishui": {
         "id": 370501,
@@ -2077,7 +2284,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Ly_Build_Store_07_Lod0.webp",
         "load": 125,
         "energy": 60,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "StrawShed": {
         "id": 370502,
@@ -2087,7 +2295,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Ly_Build_Store_08_Lod0.webp",
         "load": 35,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "LightningProtectiveTent": {
         "id": 370503,
@@ -2097,7 +2306,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Build_Store_10_Lod0.webp",
         "load": 110,
         "energy": 60,
-        "source": "Goth's Furnishings Shop"
+        "source": "Goth's Furnishings Shop",
+        "u": true
     },
     "SimpleSinglePersonTent": {
         "id": 370504,
@@ -2107,7 +2317,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Build_Store_11_Lod0.webp",
         "load": 65,
         "energy": 60,
-        "source": "Goth's Furnishings Shop"
+        "source": "Goth's Furnishings Shop",
+        "u": true
     },
     "OtogiWoodRiceCakeSoupStand": {
         "id": 370505,
@@ -2117,7 +2328,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_TanWei_03_Lod0.webp",
         "load": 145,
         "energy": 60,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "UmbrellaShopDrapesOfDifferingDreams": {
         "id": 370508,
@@ -2127,7 +2339,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_TanWei_06_Lod0.webp",
         "load": 85,
         "energy": 60,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "FruitAndVeggieStallGoodHonestFlavor": {
         "id": 370509,
@@ -2137,7 +2350,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_TanWei_07_Lod0.webp",
         "load": 95,
         "energy": 60,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "FestivalTeibanStore": {
         "id": 370510,
@@ -2147,7 +2361,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_TanWei_01_Lod0.webp",
         "load": 195,
         "energy": 90,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "FestivalKibanStore": {
         "id": 370511,
@@ -2157,7 +2372,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_TanWei_02_Lod0.webp",
         "load": 260,
         "energy": 90,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "KoukiAraliaMaskRack": {
         "id": 370512,
@@ -2167,7 +2383,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_House_38_Lod0.webp",
         "load": 60,
         "energy": 60,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "RitualShrine": {
         "id": 370601,
@@ -2177,7 +2394,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_Baldachine_01_Lod0.webp",
         "load": 50,
         "energy": 60,
-        "source": "Obtained from World Quest"
+        "source": "Obtained from World Quest",
+        "u": true
     },
     "CleansingShrine": {
         "id": 370602,
@@ -2187,7 +2405,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_Shrine_01_Lod0.webp",
         "load": 160,
         "energy": 90,
-        "source": "Obtained from World Quest"
+        "source": "Obtained from World Quest",
+        "u": true
     },
     "InazumanStoreNumberlessGems": {
         "id": 370604,
@@ -2197,7 +2416,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_House_09_Lod0.webp",
         "load": 610,
         "energy": 60,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "InazumanHomeTheWorkOfGenerations": {
         "id": 370605,
@@ -2207,7 +2427,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_House_10_Lod0.webp",
         "load": 760,
         "energy": 60,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "InazumanHomeEasyAdaptation": {
         "id": 370606,
@@ -2217,7 +2438,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_House_11_Lod0.webp",
         "load": 610,
         "energy": 60,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "InazumanBambooRoofedHomeTheLongPeace": {
         "id": 370609,
@@ -2227,7 +2449,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_House_14_Lod0.webp",
         "load": 95,
         "energy": 60,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "InazumanBambooRoofedHomeWildHeart": {
         "id": 370610,
@@ -2237,7 +2460,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_House_15_Lod0.webp",
         "load": 220,
         "energy": 60,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "InazumanOfficialResidenceStrictAdherence": {
         "id": 370616,
@@ -2247,7 +2471,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_House_21_Lod0.webp",
         "load": 405,
         "energy": 90,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "OfficialResidenceCorridorPowersReach": {
         "id": 370617,
@@ -2257,7 +2482,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_House_22_Lod0.webp",
         "load": 220,
         "energy": 90,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "CampWatchtowerViewport": {
         "id": 370618,
@@ -2267,7 +2493,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_House_25_Lod0.webp",
         "load": 120,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "CampTentTimelyTactics": {
         "id": 370619,
@@ -2277,7 +2504,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_House_26_Lod0.webp",
         "load": 255,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "CampDwellingShoringUp": {
         "id": 370620,
@@ -2287,7 +2515,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_House_27_Lod0.webp",
         "load": 110,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "CampGateFealty": {
         "id": 370621,
@@ -2297,7 +2526,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_House_28_Lod0.webp",
         "load": 105,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "FortuneSlipStandOmenReader": {
         "id": 370623,
@@ -2307,7 +2537,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_House_35_Lod0.webp",
         "load": 410,
         "energy": 90,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "DeepwoodDwellersDeliberation": {
         "id": 370701,
@@ -2317,7 +2548,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Build_Forest_01_Lod0.webp",
         "load": 160,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "DeepwoodDwellersEstimation": {
         "id": 370702,
@@ -2327,7 +2559,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Build_Forest_02_Lod0.webp",
         "load": 65,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "DeepwoodDwellersLonesome": {
         "id": 370703,
@@ -2337,7 +2570,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Build_Forest_03_Lod0.webp",
         "load": 135,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "DesertHouseOrdinaryLives": {
         "id": 370705,
@@ -2347,7 +2581,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Build_Arvillage_01_Lod0.webp",
         "load": 110,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "DesertHouseSpicesAbound": {
         "id": 370706,
@@ -2357,7 +2592,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Build_Arvillage_02_Lod0.webp",
         "load": 125,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "DesertHouseHueAndCry": {
         "id": 370707,
@@ -2367,7 +2603,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Build_Arvillage_03_Lod0.webp",
         "load": 125,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "DesertHouseBriefSleep": {
         "id": 370708,
@@ -2377,7 +2614,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Build_Arvillage_04_Lod0.webp",
         "load": 125,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "DelicaciesOfTheCityOfWisdom": {
         "id": 370719,
@@ -2387,7 +2625,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Build_Kaoroudian_01_Lod0.webp",
         "source": "Learned from Realm Depot Furnishing Blueprint",
         "load": 685,
-        "energy": 60
+        "energy": 60,
+        "u": true
     },
     "LightInTheTranquilCourt": {
         "id": 370724,
@@ -2397,7 +2636,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Build_Jjytingzi_01_Lod0.webp",
         "load": 590,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "ReplicaOfTheTheatersGlory": {
         "id": 370725,
@@ -2407,7 +2647,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Build_Juyuan_01_Lod0.webp",
         "load": 360,
         "energy": 90,
-        "source": "Purchased from Realm Depot: Riches of the Realm"
+        "source": "Purchased from Realm Depot: Riches of the Realm",
+        "u": true
     },
     "FabricOfTheCityOfWisdom": {
         "id": 370726,
@@ -2417,7 +2658,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Build_Lowhouse_01_Lod0.webp",
         "load": 160,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "BuildingBlockOfTheCityOfWisdom": {
         "id": 370729,
@@ -2427,7 +2669,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Build_Citybz_01_Lod0.webp",
         "load": 685,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "CourtOfJusticesLeisure": {
         "id": 370800,
@@ -2437,7 +2680,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Build_ZhuchengJz_01_Lod0.webp",
         "load": 250,
         "energy": 90,
-        "source": "Fontaine Reputation Level Reward"
+        "source": "Fontaine Reputation Level Reward",
+        "u": true
     },
     "CourtOfJusticesConscientiousness": {
         "id": 370804,
@@ -2447,7 +2691,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Build_ZhuchengJz_05_Lod0.webp",
         "load": 1200,
         "energy": 90,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "CourtOfJusticesMellowAroma": {
         "id": 370805,
@@ -2457,7 +2702,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Build_ZhuchengJz_06_Lod0.webp",
         "load": 655,
         "energy": 90,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "CourtOfJusticesProsperity": {
         "id": 370806,
@@ -2467,7 +2713,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Build_ZhuchengJz_07_Lod0.webp",
         "load": 525,
         "energy": 90,
-        "source": "Fontaine Reputation Level Reward"
+        "source": "Fontaine Reputation Level Reward",
+        "u": true
     },
     "CourtOfJusticesMerchandise": {
         "id": 370807,
@@ -2477,7 +2724,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Build_ZhuchengJz_08_Lod0.webp",
         "load": 510,
         "energy": 90,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "CourtOfJusticesCommerce": {
         "id": 370808,
@@ -2487,7 +2735,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Build_ZhuchengJz_09_Lod0.webp",
         "load": 505,
         "energy": 90,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "CourtOfJusticesCouture": {
         "id": 370810,
@@ -2497,7 +2746,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Build_DressStore_01_Lod0.webp",
         "load": 170,
         "energy": 90,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "CourtOfJusticesFragrance": {
         "id": 370812,
@@ -2507,7 +2757,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Build_PerfumeStore_01_Lod0.webp",
         "load": 135,
         "energy": 90,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "CourtOfJusticesNewsstand": {
         "id": 370813,
@@ -2517,7 +2768,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Build_BookStore_01_Lod0.webp",
         "load": 195,
         "energy": 90,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "AutomnequisChimneySmoke": {
         "id": 370815,
@@ -2527,7 +2779,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Build_YwMinju_02_Lod0.webp",
         "load": 195,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "SlipperyShack": {
         "id": 370820,
@@ -2537,7 +2790,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Build_RycFang_01_Lod0.webp",
         "load": 310,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "BedroomBedlam": {
         "id": 370821,
@@ -2547,7 +2801,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Build_RycFang_02_Lod0.webp",
         "load": 510,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "SmallStonecrab": {
         "id": 370822,
@@ -2557,7 +2812,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Build_RycFang_03_Lod0.webp",
         "load": 285,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "TheArenaWhereFistsReemerge": {
         "id": 370823,
@@ -2567,7 +2823,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Build_Quantai_01_Lod0.webp",
         "load": 835,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "TheWisdomOfPoisson": {
         "id": 370824,
@@ -2577,7 +2834,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Build_BszPochuan_01_Lod0.webp",
         "load": 510,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "ASimpleResidenceInPoisson": {
         "id": 370825,
@@ -2587,7 +2845,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Build_BszPochuan_02_Lod0.webp",
         "load": 325,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "StonehutOfEchoesStandardWorkshop": {
         "id": 370900,
@@ -2597,7 +2856,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_ZDLMinju_01_Lod0.webp",
         "load": 260,
         "energy": 90,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "StonehutOfEchoesAlphaDragon": {
         "id": 370901,
@@ -2607,7 +2867,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_ZDLMinju_02_Lod0.webp",
         "load": 460,
         "energy": 90,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "StonehutOfEchoesHighTopBoots": {
         "id": 370902,
@@ -2617,7 +2878,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_ZDLMinju_03_Lod0.webp",
         "load": 310,
         "energy": 90,
-        "source": "\"Children of Echoes\" Tribe Reputation Level Reward"
+        "source": "\"Children of Echoes\" Tribe Reputation Level Reward",
+        "u": true
     },
     "TequemecanDanceOff": {
         "id": 370903,
@@ -2627,7 +2889,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_ZDLWutai_01_Lod0.webp",
         "load": 980,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "TequemecanTreasures": {
         "id": 370904,
@@ -2637,7 +2900,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Prop_ZDLZubao_01_Lod0.webp",
         "load": 250,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "TequemecanIngenuity": {
         "id": 370905,
@@ -2647,7 +2911,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Prop_ZDLGongju_01_Lod0.webp",
         "load": 95,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "HuitztlanCampgroundSortAndOrder": {
         "id": 370906,
@@ -2657,7 +2922,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_GZLMinju_01_Lod0.webp",
         "load": 495,
         "energy": 90,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "HuitztlanCampgroundCompanionsConnection": {
         "id": 370908,
@@ -2667,7 +2933,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_GZLMinju_03_Lod0.webp",
         "load": 205,
         "energy": 90,
-        "source": "\"Scions of the Canopy\" Tribe Reputation Level Reward"
+        "source": "\"Scions of the Canopy\" Tribe Reputation Level Reward",
+        "u": true
     },
     "HuitztlanCampgroundDistributionHub": {
         "id": 370911,
@@ -2677,7 +2944,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Prop_GZLZhangpeng_03_Lod0.webp",
         "load": 395,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "HotSpringRetreatMarketingStrategy": {
         "id": 370913,
@@ -2687,7 +2955,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YLLChangpian_01_Lod0.webp",
         "load": 385,
         "energy": 90,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "HotSpringRetreatGoWithTheFlow": {
         "id": 370914,
@@ -2697,7 +2966,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YLLYueqi_01_Lod0.webp",
         "load": 415,
         "energy": 90,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "HotSpringRetreatTidalSurge": {
         "id": 370915,
@@ -2707,7 +2977,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YLLZahuo_01_Lod0.webp",
         "load": 425,
         "energy": 90,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "SkiffOfTheSprings": {
         "id": 370917,
@@ -2717,7 +2988,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YLLPengzi_02_Lod0.webp",
         "load": 160,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "NightWindArchitectureNeedsOfExchange": {
         "id": 370919,
@@ -2727,7 +2999,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_LslHouse_01_Lod0.webp",
         "load": 525,
         "energy": 90,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "NightWindArchitectureArcaneFoundation": {
         "id": 370920,
@@ -2737,7 +3010,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_LslHouse_02_Lod0.webp",
         "load": 465,
         "energy": 90,
-        "source": "\"Masters of the Night-Wind\" Tribe Reputation Level Reward"
+        "source": "\"Masters of the Night-Wind\" Tribe Reputation Level Reward",
+        "u": true
     },
     "FlowerFeatherResidenceChasingTriviality": {
         "id": 370922,
@@ -2747,7 +3021,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YslHouse_01_Lod0.webp",
         "load": 160,
         "energy": 90,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "FlowerFeatherResidenceLogicOfFlight": {
         "id": 370923,
@@ -2757,7 +3032,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YslHouse_02_Lod0.webp",
         "load": 150,
         "energy": 90,
-        "source": "\"Flower-Feather Clan\" Tribe Reputation Level Reward"
+        "source": "\"Flower-Feather Clan\" Tribe Reputation Level Reward",
+        "u": true
     },
     "SimpleFlowerFeatherHouseFallbackMeasures": {
         "id": 370924,
@@ -2767,7 +3043,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YslHouse_03_Lod0.webp",
         "load": 95,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "FlowerFeatherStableSauriansRepose": {
         "id": 370925,
@@ -2777,7 +3054,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YslMajiu_01_Lod0.webp",
         "load": 210,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "AshenAratikuWoodGiantClawPlatform": {
         "id": 370926,
@@ -2787,7 +3065,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YslZhicheng_01_Vo.webp",
         "load": 95,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "PilgrimageOfFlame": {
         "id": 370927,
@@ -2797,7 +3076,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Tiejiangpu_01_Lod0.webp",
         "load": 520,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "VillaOfPlentyStowProStoreroom": {
         "id": 370928,
@@ -2807,7 +3087,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Tjljianzhu_01_Lod0.webp",
         "load": 370,
         "energy": 90,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "HutOfPlentyPermanentPick": {
         "id": 370930,
@@ -2817,7 +3098,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Prop_Tjlzhangpeng_01_Lod0.webp",
         "load": 235,
         "energy": 90,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "HutOfPlentyStopgapSelection": {
         "id": 370931,
@@ -2827,7 +3109,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Prop_Tjlzhangpeng_02_Lod0.webp",
         "load": 65,
         "energy": 30,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "LandOfPlentysSentinel": {
         "id": 370933,
@@ -2837,7 +3120,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Tjlmujia_01_Lod0.webp",
         "load": 125,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "BirdAndBlossomDesignFountain": {
         "id": 371101,
@@ -2847,7 +3131,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Md_Build_Fountain_01_Lod0.webp",
         "load": 160,
         "energy": 90,
-        "source": "Teapot Spirit Trust Rank Reward"
+        "source": "Teapot Spirit Trust Rank Reward",
+        "u": true
     },
     "HilichurlSpiralWatchtower": {
         "id": 371102,
@@ -2857,7 +3142,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Build_House_18_Lod0.webp",
         "load": 85,
         "energy": 60,
-        "source": "Teapot Spirit Trust Rank Reward"
+        "source": "Teapot Spirit Trust Rank Reward",
+        "u": true
     },
     "HilichurlStrawHut": {
         "id": 371103,
@@ -2867,7 +3153,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Build_Store_09_Lod0.webp",
         "load": 95,
         "energy": 30,
-        "source": "Teapot Spirit Trust Rank Reward"
+        "source": "Teapot Spirit Trust Rank Reward",
+        "u": true
     },
     "TemporaryWorkQuarters": {
         "id": 371107,
@@ -2877,7 +3164,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Thing_Shed_01_Lod0.webp",
         "load": 145,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "WhitestoneHotSpringDiffusingWarmth": {
         "id": 371116,
@@ -2887,7 +3175,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Thing_Wenquan_01_Lod0.webp",
         "load": 735,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "DesertHutMinutiae": {
         "id": 371122,
@@ -2897,7 +3186,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Build_Prop_Arhed_01_Lod0.webp",
         "load": 65,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "DesertHutQuestions": {
         "id": 371123,
@@ -2907,7 +3197,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Build_Prop_Arhed_02_Lod0.webp",
         "load": 65,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "TheatersCoolMist": {
         "id": 371126,
@@ -2917,7 +3208,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Decoration_Prop_Penquansmall_01_Lod0.webp",
         "load": 285,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "ClarityFromTheLandOfWisdom": {
         "id": 371127,
@@ -2927,7 +3219,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Decoration_Prop_Jlypenquan_01_Lod0.webp",
         "load": 210,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "AutomnequisCask": {
         "id": 371134,
@@ -2937,7 +3230,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Build_YwShuita_01_Lod0.webp",
         "load": 50,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "AThousandEphemeralVisionsOfDew": {
         "id": 371136,
@@ -2947,7 +3241,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Decoration_Prop_Xuyuanchi_01_Lod0.webp",
         "load": 435,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "StandardShippingPallet": {
         "id": 371139,
@@ -2957,7 +3252,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Decoration_Prop_Jizhuangxiang_02_Lod0.webp",
         "load": 35,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "DawnOfFlight": {
         "id": 371147,
@@ -2967,7 +3263,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YslPingtai_01_Lod0.webp",
         "load": 500,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "FlowerFeatherClanWarningBalloon": {
         "id": 371148,
@@ -2977,7 +3274,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YslQiqiu_01_Lod0.webp",
         "load": 65,
         "energy": 30,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "AdeptusGate": {
         "id": 371201,
@@ -2987,7 +3285,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Ly_Build_Door_01_Lod0.webp",
         "load": 95,
         "energy": 90,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "KeyGatewayBeneathTheClouds": {
         "id": 371213,
@@ -2997,7 +3296,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_House_05_Lod0.webp",
         "load": 35,
         "energy": 60,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "KeyFenceSelfRestraint": {
         "id": 371214,
@@ -3007,7 +3307,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_House_06_Lod0.webp",
         "load": 65,
         "energy": 60,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "FenceCornerLongWatch": {
         "id": 371215,
@@ -3017,7 +3318,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_House_07_Lod0.webp",
         "load": 65,
         "energy": 60,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "OtogiKintakeCourtyardGate": {
         "id": 371216,
@@ -3027,7 +3329,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_House_23_Lod0.webp",
         "load": 55,
         "energy": 30,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "OtogiKintakeFence": {
         "id": 371217,
@@ -3037,7 +3340,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_House_24_Vo.webp",
         "load": 35,
         "energy": 30,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "EncampmentFenceJaggedTeeth": {
         "id": 371218,
@@ -3047,7 +3351,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_House_29_Lod0.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "EncampmentFenceDecisiveJudgment": {
         "id": 371219,
@@ -3057,7 +3362,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_House_30_Lod0.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "EncampmentFenceHoningGoad": {
         "id": 371220,
@@ -3067,7 +3373,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_House_31_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "HotSpringFoldingScreenModeration": {
         "id": 371227,
@@ -3077,7 +3384,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Thing_Wenquanpingfeng_01_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "HotSpringOuterWallNoVaulting": {
         "id": 371228,
@@ -3087,7 +3395,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Thing_Wenquanqiang_01_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "HotSpringWallWellGrounded": {
         "id": 371229,
@@ -3097,7 +3406,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Thing_Wenquanzhuanjiao_01_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "HotSpringFoyerShelterFromTheCold": {
         "id": 371230,
@@ -3107,7 +3417,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Thing_Wenquandamen_01_Lod0.webp",
         "load": 195,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "NoFishingAhead": {
         "id": 371236,
@@ -3117,7 +3428,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Build_Wall_02_Lod0.webp",
         "load": 35,
         "energy": 30,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "AshenAratikuWoodMinimalistStaircase": {
         "id": 371273,
@@ -3127,7 +3439,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YslLouti_01_Lod0.webp",
         "load": 35,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "HidingGrazestone": {
         "id": 372201,
@@ -3137,7 +3450,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Stone_Stone_01_Lod0.webp",
         "load": 35,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "DaintyFists": {
         "id": 372211,
@@ -3147,7 +3461,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Stone_Stone_11_Lod0.webp",
         "load": 35,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "SealOfTheProvisionalHeadPriestess": {
         "id": 372224,
@@ -3157,7 +3472,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Decoration_Cmaomao_01_Lod0.webp",
         "load": 35,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "MeditationStone": {
         "id": 372225,
@@ -3167,7 +3483,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Floor_Full_S_01_Vo.webp",
         "load": 35,
         "energy": 10,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "WadingStones": {
         "id": 372226,
@@ -3177,7 +3494,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Floor_Full_S_02_Vo.webp",
         "load": 65,
         "energy": 10,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "HotSpringWhitestoneSecretFire": {
         "id": 372227,
@@ -3187,7 +3505,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Thing_Wenquanshitou_01_Vo.webp",
         "load": 35,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "MayTheyFindRespite": {
         "id": 372233,
@@ -3197,7 +3516,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Stone_Rock_Yewai_01_Vo.webp",
         "load": 35,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "MayTheyNotFall": {
         "id": 372234,
@@ -3207,7 +3527,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Stone_Rock_Yewai_02_Vo.webp",
         "load": 35,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "TheColorOfTheWind": {
         "id": 372301,
@@ -3217,7 +3538,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Plant_Tree_01_Lod0.webp",
         "load": 150,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "TianhengRedMapleBranchesAflame": {
         "id": 372304,
@@ -3227,7 +3549,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Plant_Tree_03_Lod0.webp",
         "load": 350,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "MatureCuihuaTree": {
         "id": 372307,
@@ -3237,7 +3560,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Plant_Tree_02_Lod0.webp",
         "load": 200,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "FlowersFirstBlushingBloom": {
         "id": 372325,
@@ -3247,7 +3571,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Plant_Pt_05_Lod0.webp",
         "load": 50,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "ThePreciousPinkOfSpring": {
         "id": 372327,
@@ -3257,7 +3582,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Plant_Pt_07_Lod0.webp",
         "load": 150,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "TheRedKitesWakingAndSleeping": {
         "id": 372328,
@@ -3267,7 +3593,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Plant_Pt_08_Lod0.webp",
         "load": 50,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "TheWanderingBirdWithin": {
         "id": 372329,
@@ -3277,7 +3604,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Plant_Pt_09_Lod0.webp",
         "load": 50,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "SappanAndVermilionEnjoined": {
         "id": 372330,
@@ -3287,7 +3615,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Plant_Pt_10_Lod0.webp",
         "load": 200,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "PristineVessel": {
         "id": 372337,
@@ -3297,7 +3626,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Plant_Tree_Common_03_Lod0.webp",
         "load": 50,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "SlantedMeanderingWood": {
         "id": 372338,
@@ -3307,7 +3637,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Plant_Tree_Common_04_Lod0.webp",
         "load": 300,
         "energy": 10,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "VerdantMeanderingWood": {
         "id": 372339,
@@ -3317,7 +3648,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Plant_Tree_Common_05_Lod0.webp",
         "load": 750,
         "energy": 10,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "LaneTreeStandard": {
         "id": 372344,
@@ -3327,7 +3659,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Plant_Tree_ZhucBaishu_01_Lod0.webp",
         "load": 100,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "FragrantFirewood": {
         "id": 372352,
@@ -3337,7 +3670,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Plant_Tree_Shu_02_Lod0.webp",
         "load": 150,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "JavelinsShaft": {
         "id": 372353,
@@ -3347,7 +3681,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Plant_Tree_Shu_03_Lod0.webp",
         "load": 200,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "InitiatesWarClub": {
         "id": 372354,
@@ -3357,7 +3692,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Plant_Tree_YewaiLut_01_Lod0.webp",
         "load": 150,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "CourtyardPillars": {
         "id": 372356,
@@ -3367,7 +3703,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Plant_Tree_Tjlplain_01_Lod0.webp",
         "load": 100,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "FragrantCedarVegetableRack": {
         "id": 372401,
@@ -3377,7 +3714,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Ly_Cabinet_Cabinet_02_Lod0.webp",
         "load": 70,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "BloomingHedge": {
         "id": 372402,
@@ -3387,7 +3725,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Plant_Grass_01_Lod0.webp",
         "load": 50,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "BrightcrownPlumebush": {
         "id": 372409,
@@ -3397,7 +3736,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Plant_Grass_08_Lod0.webp",
         "load": 50,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "OvergrownWildvest": {
         "id": 372410,
@@ -3407,7 +3747,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Plant_Grass_09_Lod0.webp",
         "load": 50,
         "energy": 10,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "HazelWildvest": {
         "id": 372411,
@@ -3417,7 +3758,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Plant_Grass_10_Lod0.webp",
         "load": 50,
         "energy": 10,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "ProfuseAwlking": {
         "id": 372423,
@@ -3427,7 +3769,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Plant_Grass_22_Lod0.webp",
         "load": 50,
         "energy": 10,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "HuntersVantage": {
         "id": 372431,
@@ -3437,7 +3780,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Plant_Grass_30_Lod0.webp",
         "load": 50,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "TheAstersSigh": {
         "id": 372433,
@@ -3447,7 +3791,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Plant_Grass_01_Lod0.webp",
         "load": 50,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "MelancholyTheDewgrassShadowing": {
         "id": 372434,
@@ -3457,7 +3802,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Plant_Grass_02_Lod0.webp",
         "load": 50,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "OfPromisesUnkeptTheNightFlowersSpeak": {
         "id": 372435,
@@ -3467,7 +3813,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Plant_Grass_03_Lod0.webp",
         "load": 50,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "AThousandPetalsOfRedGlaze": {
         "id": 372439,
@@ -3477,7 +3824,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Plant_Grass_07_Lod0.webp",
         "load": 50,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "TheConcealedSalt": {
         "id": 372460,
@@ -3487,7 +3835,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Plant_Grass_Desert_07_Lod0.webp",
         "load": 50,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "LikeTheShimmeringDistantStars": {
         "id": 372464,
@@ -3497,7 +3846,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Plant_Grass_Desert_11_Lod0.webp",
         "load": 50,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "FlamingCatalyst": {
         "id": 372472,
@@ -3507,7 +3857,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Plant_Grass_Common_03_Lod0.webp",
         "load": 50,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "ProlongationMedium": {
         "id": 372473,
@@ -3517,7 +3868,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Plant_Grass_Common_04_Lod0.webp",
         "load": 50,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "CeruleanGem": {
         "id": 372494,
@@ -3527,7 +3879,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Plant_Grass_Fenlaba_01_Lod0.webp",
         "load": 50,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "BellflowerHaze": {
         "id": 372495,
@@ -3537,7 +3890,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Plant_Grass_ZiHuacong_01_Lod0.webp",
         "load": 50,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "SunflowerAquarelle": {
         "id": 372496,
@@ -3547,7 +3901,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Plant_Grass_Xiangrikui_01_Lod0.webp",
         "load": 50,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "FoesTrace": {
         "id": 372513,
@@ -3557,7 +3912,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Plant_Grass_YewaiLut_02_Lod0.webp",
         "load": 50,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "WavesWisp": {
         "id": 372705,
@@ -3567,7 +3923,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Plant_Grass_Guanmu_02_Lod0.webp",
         "load": 50,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "LastResort": {
         "id": 372706,
@@ -3577,7 +3934,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Plant_Grass_Guanmu_03_Lod0.webp",
         "load": 50,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "OresAbundance": {
         "id": 372708,
@@ -3587,7 +3945,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Plant_Grass_YewaiLut_01_Lod0.webp",
         "load": 50,
         "energy": 20,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "MessyPileOfFirCrates": {
         "id": 373101,
@@ -3597,7 +3956,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Md_Decoration_Junk_01_Lod0.webp",
         "load": 40,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "NeatStackOfFirKegs": {
         "id": 373102,
@@ -3607,7 +3967,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Md_Decoration_Junk_02_Lod0.webp",
         "load": 35,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "HeavyHayBale": {
         "id": 373103,
@@ -3617,7 +3978,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Md_Decoration_Grassstacks_02_Vo.webp",
         "load": 35,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "WineJarWithBambooCasingSpiritsAwaitingMoonrise": {
         "id": 373104,
@@ -3627,7 +3989,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Ly_Decoration_Junk_03_Lod0.webp",
         "load": 65,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "ToyStandDazzlingDelights": {
         "id": 373105,
@@ -3637,7 +4000,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Ly_Decoration_Varia_01_Lod0.webp",
         "load": 85,
         "energy": 60,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "UmbrellaShopKaleidoscopeOfParasolColors": {
         "id": 373106,
@@ -3647,7 +4011,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Ly_Decoration_Varia_02_Lod0.webp",
         "load": 110,
         "energy": 60,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "StorageSackBuzzOffBag": {
         "id": 373107,
@@ -3657,7 +4022,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Ly_Decoration_Farm_01_Vo.webp",
         "load": 35,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "FruitSellersCaution": {
         "id": 373108,
@@ -3667,7 +4033,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Decoration_Vase_07_Lod0.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "HilichurlArcheryTarget": {
         "id": 373111,
@@ -3677,7 +4044,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Decoration_Junk_06_Lod0.webp",
         "load": 65,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "HilichurlHornedPot": {
         "id": 373112,
@@ -3687,7 +4055,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Decoration_Junk_07_Lod0.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "DeadwoodRoadSign": {
         "id": 373113,
@@ -3697,7 +4066,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Decoration_Junk_08_Lod0.webp",
         "load": 65,
         "energy": 30,
-        "source": "Goth's Furnishings Shop"
+        "source": "Goth's Furnishings Shop",
+        "u": true
     },
     "TheAdventurersBurdens": {
         "id": 373114,
@@ -3707,7 +4077,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Thing_Camp_01_Lod0.webp",
         "load": 35,
         "energy": 60,
-        "source": "Master Lu's Furnishings Shop"
+        "source": "Master Lu's Furnishings Shop",
+        "u": true
     },
     "SturdyWoodenBarrel": {
         "id": 373115,
@@ -3717,7 +4088,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Decoration_Bucket_01_Vo.webp",
         "load": 35,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "TallWoodenPole": {
         "id": 373116,
@@ -3727,7 +4099,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Thing_Pole_01_Vo.webp",
         "load": 35,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "StoneCupShapedPool": {
         "id": 373119,
@@ -3737,7 +4110,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Thing_Basin_01_Vo.webp",
         "load": 65,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "HeadquartersAlarmSoundOfThunder": {
         "id": 373126,
@@ -3747,7 +4121,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Decoration_Clockstand_01_Lod0.webp",
         "load": 40,
         "energy": 60,
-        "source": "Obtained from World Quest"
+        "source": "Obtained from World Quest",
+        "u": true
     },
     "WarDrumLineBreakingReverb": {
         "id": 373127,
@@ -3757,7 +4132,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Decoration_Drum_10_Lod0.webp",
         "load": 35,
         "energy": 90,
-        "source": "Obtained from World Quest"
+        "source": "Obtained from World Quest",
+        "u": true
     },
     "OtogiTaninWoodBarrel": {
         "id": 373130,
@@ -3767,7 +4143,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Decoration_Bucket_01_Vo.webp",
         "load": 65,
         "energy": 30,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "KokutanThickWalledClayWaterTank": {
         "id": 373131,
@@ -3777,7 +4154,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Decoration_Cylinder_01_Vo.webp",
         "load": 65,
         "energy": 30,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "ReplicaAncientOtogiKeg": {
         "id": 373132,
@@ -3787,7 +4165,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Thing_Cask_01_Vo.webp",
         "load": 35,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "ReplicaAncientOtogiCrate": {
         "id": 373133,
@@ -3797,7 +4176,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Thing_Box_01_Vo.webp",
         "load": 35,
         "energy": 30,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "FishermansCatch": {
         "id": 373142,
@@ -3807,7 +4187,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Decoration_Prop_FishFrame_01_Lod0.webp",
         "load": 45,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "FishermansDelicacy": {
         "id": 373143,
@@ -3817,7 +4198,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Decoration_Prop_FishFrame_02_Lod0.webp",
         "load": 35,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "FishermansEfforts": {
         "id": 373145,
@@ -3827,7 +4209,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Decoration_Prop_FishTool_01_Lod0.webp",
         "load": 35,
         "energy": 30,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "FishermansClemency": {
         "id": 373146,
@@ -3837,7 +4220,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Thing_Prop_FishingTool_01_Lod0.webp",
         "load": 65,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "BoxingTargetOfTheForbiddenFortress": {
         "id": 373181,
@@ -3847,7 +4231,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Ani_Exterior_Fd_Thing_Prop_BoxingMachine_01.webp",
         "load": 65,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "SoilCarryingWoodenBarrel": {
         "id": 373203,
@@ -3857,7 +4242,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Decoration_Flowerpot_01_Vo.webp",
         "load": 35,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "ATheatersDreamOfFlowers": {
         "id": 373209,
@@ -3867,7 +4253,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Decoration_Prop_JuchangHuatan_01_Lod0.webp",
         "load": 95,
         "energy": 30,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "LongingInTheTranquilCourt": {
         "id": 373210,
@@ -3877,7 +4264,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Decoration_Prop_Jhuatan_01_Lod0.webp",
         "load": 95,
         "energy": 30,
-        "source": "Purchased from Realm Depot: Furnishings"
+        "source": "Purchased from Realm Depot: Furnishings",
+        "u": true
     },
     "PassagesPerfumedPottedPlants": {
         "id": 373213,
@@ -3887,7 +4275,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Flower_Prop_ZhucPenzai_01_Vo.webp",
         "load": 95,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "RoyalPurple": {
         "id": 373214,
@@ -3897,7 +4286,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Decoration_Prop_ChangHuatan_01_Vo.webp",
         "load": 65,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "FirShelves": {
         "id": 373301,
@@ -3907,7 +4297,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Md_Decoration_Woodenshelf_01_Vo.webp",
         "load": 65,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "FirWeaponRack": {
         "id": 373302,
@@ -3917,7 +4308,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Md_Decoration_Woodenshelf_02_Vo.webp",
         "load": 35,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "HardwoodWeaponRack": {
         "id": 373303,
@@ -3927,7 +4319,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Md_Decoration_Woodenshelf_03_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "SimpleCargoCart": {
         "id": 373304,
@@ -3937,7 +4330,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Md_Decoration_Gardencart_01_Lod0.webp",
         "load": 65,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "SturdyStoneWell": {
         "id": 373305,
@@ -3947,7 +4341,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Md_Decoration_Well_01_Vo.webp",
         "load": 190,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "OldWell": {
         "id": 373307,
@@ -3957,7 +4352,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Ly_Decoration_Well_02_Lod0.webp",
         "load": 95,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "RoofedWellForPurity": {
         "id": 373308,
@@ -3967,7 +4363,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Ly_Decoration_Well_03_Lod0.webp",
         "load": 190,
         "energy": 60,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "TheAdventurersTreasures": {
         "id": 373312,
@@ -3977,7 +4374,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Thing_Package_01_Lod0.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "YumemiruSaikyoFortuneSlipHanger": {
         "id": 373315,
@@ -3987,7 +4385,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Build_House_36_Lod0.webp",
         "load": 125,
         "energy": 60,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "NarukamisBanner": {
         "id": 373316,
@@ -3997,7 +4396,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Decoration_MufuBaihe_01_Vo.webp",
         "load": 65,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "CampSpearRackPointBreak": {
         "id": 373318,
@@ -4007,7 +4407,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Decoration_Weaponrack_01_Lod0.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "SkyKitsuneStatueHakushinsLegacy": {
         "id": 373321,
@@ -4017,7 +4418,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Decoration_Foxstatue_01_Lod0.webp",
         "load": 35,
         "energy": 60,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "HighFlyingFishFlag": {
         "id": 373322,
@@ -4027,7 +4429,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Decoration_Carp_01_Vo.webp",
         "load": 65,
         "energy": 60,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "RedIronCoral": {
         "id": 373325,
@@ -4037,7 +4440,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Interior_Dq_Decoration_Zhuangshipin_01_Vo.webp",
         "load": 65,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "YumemiruSeikenOfferingBox": {
         "id": 373329,
@@ -4047,7 +4451,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Decoration_HonoBox_01_Lod0.webp",
         "load": 35,
         "energy": 60,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "VillageWellSubterraneanSecrets": {
         "id": 373333,
@@ -4057,7 +4462,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Decoration_Well_02_Lod0.webp",
         "load": 95,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "TheEssentials": {
         "id": 373356,
@@ -4067,7 +4473,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Decoration_Prop_TentBox_01_Lod0.webp",
         "load": 35,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "TheEremitesFlameOfVigor": {
         "id": 373357,
@@ -4077,7 +4484,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Decoration_Prop_Brazier_01_Lod0.webp",
         "load": 260,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "EmbodimentOfWarfare": {
         "id": 373358,
@@ -4087,7 +4495,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Decoration_Prop_WeaponRack_01_Lod0.webp",
         "load": 35,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "SteelStopper": {
         "id": 373359,
@@ -4097,7 +4506,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Decoration_Prop_Barrier_01_Lod0.webp",
         "load": 35,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "TheEremitesOdyssey": {
         "id": 373360,
@@ -4107,7 +4517,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Thing_Prop_Cart_01_Lod0.webp",
         "load": 45,
         "energy": 60,
-        "source": "Sumeru Remarkable Chest Reward"
+        "source": "Sumeru Remarkable Chest Reward",
+        "u": true
     },
     "TheEremitesFame": {
         "id": 373361,
@@ -4117,7 +4528,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Xm_Decoration_Prop_Ybtqizhi_01_Lod0.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "WroughtIronCarvedStreetLight": {
         "id": 373401,
@@ -4127,7 +4539,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Md_Lamp_Lamp_01_Lod0.webp",
         "load": 115,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "PineStreetLight": {
         "id": 373402,
@@ -4137,7 +4550,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Md_Lamp_Lamp_02_Vo.webp",
         "load": 85,
         "energy": 30,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "EvilRepellingLanternAllAroundLighting": {
         "id": 373403,
@@ -4147,7 +4561,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Ly_Lamp_Lamp_09_Lod0.webp",
         "load": 135,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "ShadowLampPaintedShadow": {
         "id": 373405,
@@ -4157,7 +4572,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Ly_Lamp_Lamp_11_Vo.webp",
         "load": 115,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "FiveLanternFestivalGate": {
         "id": 373410,
@@ -4167,7 +4583,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Lamp_Dengjia_01_Lod0.webp",
         "load": 165,
         "energy": 30,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "YumemiruKuukaiStreetLamp": {
         "id": 373411,
@@ -4177,7 +4594,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Lamp_DasheLamp_01_Lod0.webp",
         "load": 145,
         "energy": 60,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "WhiteFishTallowCandleEvenlight": {
         "id": 373413,
@@ -4187,7 +4605,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Lamp_EverLit_01_Vo.webp",
         "load": 65,
         "energy": 30,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "OtogiCountrysideStreetLamp": {
         "id": 373414,
@@ -4197,7 +4616,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Lamp_Lightrigged_01_Vo.webp",
         "load": 115,
         "energy": 30,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "SimpleOtogiStreetLamp": {
         "id": 373415,
@@ -4207,7 +4627,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Lamp_Lightrigged_02_Vo.webp",
         "load": 115,
         "energy": 30,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "LindenWoodHalfMetalAnnouncementBoard": {
         "id": 373423,
@@ -4217,7 +4638,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Decoration_Prop_Board_01_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "SoftWatersVoice": {
         "id": 373428,
@@ -4227,7 +4649,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Decoration_Prop_RycPengzi_01_Lod0.webp",
         "load": 95,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "LetsPlay": {
         "id": 373429,
@@ -4237,7 +4660,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Decoration_Prop_RycPengzi_02_Vo.webp",
         "load": 65,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "GoodStuffIsForSharing": {
         "id": 373430,
@@ -4247,7 +4671,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Decoration_Prop_RycWeilan_01_Lod0.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "SatisfyingWeight": {
         "id": 373431,
@@ -4257,7 +4682,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Decoration_Prop_RycWujian_01_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "ASistersDuty": {
         "id": 373432,
@@ -4267,7 +4693,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Decoration_Prop_RycPengzi_03_Lod0.webp",
         "load": 65,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "OverburdeningOfTheForbiddenFortress": {
         "id": 373433,
@@ -4277,7 +4704,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Decoration_Prop_JyXiangzi_01_Lod0.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "AreaMarkerUpward": {
         "id": 373434,
@@ -4287,7 +4715,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Decoration_Prop_Zhishipai_01_Lod0.webp",
         "load": 95,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "AreaMarkerDownward": {
         "id": 373435,
@@ -4297,7 +4726,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Decoration_Prop_Zhishipai_02_Lod0.webp",
         "load": 95,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "CeaselessClash": {
         "id": 373462,
@@ -4307,7 +4737,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_ZDLTuyaban_01_Vo.webp",
         "load": 65,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "FlagOfHuitztlan": {
         "id": 373463,
@@ -4317,7 +4748,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_GZLQizhi_01_Vo.webp",
         "load": 95,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "TailPouchOfTheMountainWind": {
         "id": 373472,
@@ -4327,7 +4759,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_YslFengbiao_01_Vo.webp",
         "load": 65,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "EndlessAspiration": {
         "id": 373473,
@@ -4337,7 +4770,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_YslZhaopai_01_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "PortraitOfHeroicMight": {
         "id": 373483,
@@ -4347,7 +4781,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_Tjlpaizi_01_Vo.webp",
         "load": 65,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "BookshelfFreeReading": {
         "id": 373511,
@@ -4357,7 +4792,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Decoration_Prop_Baokanting_01_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "BookshelfSpeedyBrowsing": {
         "id": 373512,
@@ -4367,7 +4803,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Decoration_Prop_Baokanting_02_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "CouriersSystemOfSortAndDispatch": {
         "id": 373516,
@@ -4377,7 +4814,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Cabinet_Prop_GZLJiazi_01_Lod0.webp",
         "load": 125,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "VesselOfPurificationAndCalm": {
         "id": 373922,
@@ -4387,7 +4825,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_LslPingzi_01_Lod0.webp",
         "load": 35,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "SpiritualityAndSealing": {
         "id": 373923,
@@ -4397,7 +4836,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_LslPingzi_02_Vo.webp",
         "load": 85,
         "energy": 90,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "OurPath": {
         "id": 373924,
@@ -4407,7 +4847,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_LslXianglu_01_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "FamishedThoughts": {
         "id": 373925,
@@ -4417,7 +4858,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_LslXianglu_02_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "FixedTorchPursuitOfVictory": {
         "id": 373926,
@@ -4427,7 +4869,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Lamp_Light_YslDeng_02_Vo.webp",
         "load": 300,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "BlackGoldOfTheBlazingRealm": {
         "id": 373927,
@@ -4437,7 +4880,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_JJCwuqijia_02_Vo.webp",
         "load": 95,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "PilgrimageByTheHammersBlow": {
         "id": 373928,
@@ -4447,7 +4891,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_JJCzhenban_01_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "ClimaxOfColorsAndHues": {
         "id": 373929,
@@ -4457,7 +4902,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_Yanliao_01_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "SpatteredColorsAndHues": {
         "id": 373930,
@@ -4467,7 +4913,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_Yanliao_02_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "MusingsOnColorsAndHues": {
         "id": 373931,
@@ -4477,7 +4924,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_Yanliao_03_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "ArtOfTransport": {
         "id": 373932,
@@ -4487,7 +4935,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_Tjlguolan_01_Lod0.webp",
         "load": 95,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "SturdyPineFence": {
         "id": 374102,
@@ -4497,7 +4946,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Decoration_Rail_02_Lod0.webp",
         "load": 35,
         "energy": 30,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "WoodenHilichurlFence": {
         "id": 374103,
@@ -4507,7 +4957,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Decoration_Rail_03_Lod0.webp",
         "load": 65,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "HilichurlTotemFence": {
         "id": 374104,
@@ -4517,7 +4968,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Decoration_Rail_04_Lod0.webp",
         "load": 65,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "LushGrapevine": {
         "id": 374105,
@@ -4527,7 +4979,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Md_Flower_Flowerpot_02_Lod0.webp",
         "load": 65,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "SimpleWoodenFence": {
         "id": 374107,
@@ -4537,7 +4990,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Thing_Bawn_01_Vo.webp",
         "load": 35,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "HalfConstructedFence": {
         "id": 374108,
@@ -4547,7 +5001,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Thing_Bawn_02_Vo.webp",
         "load": 35,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "TheFruitFarmersThrift": {
         "id": 374109,
@@ -4557,7 +5012,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Flower_Tomato_01_Lod0.webp",
         "load": 95,
         "energy": 60,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "CourtOfJusticesBarrier": {
         "id": 374112,
@@ -4567,7 +5023,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Decoration_Prop_ZcWeilan_01_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "StandardRailingScatteredStructure": {
         "id": 374114,
@@ -4577,7 +5034,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Build_Prop_ZxShiLan_02_Vo.webp",
         "load": 65,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "TequemecanStronghold": {
         "id": 374121,
@@ -4587,7 +5045,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Prop_ZDLWeilan_01_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "HangingPostOfCoatepecMountain": {
         "id": 374122,
@@ -4597,7 +5056,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_GZLWeilan_01_Lod0.webp",
         "load": 65,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "BalustradeOfTheSprings": {
         "id": 374123,
@@ -4607,7 +5067,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YLLLangan_01_Vo.webp",
         "load": 65,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "TetherAtTheSummitOfQuahuacanCliff": {
         "id": 374124,
@@ -4617,7 +5078,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_YslWeilan_01_Vo.webp",
         "load": 65,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "PaddockFenceSimpleBoundary": {
         "id": 374125,
@@ -4627,7 +5089,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Longweilan_01_Lod0.webp",
         "load": 35,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "PaddockGateFoundationalFramework": {
         "id": 374126,
@@ -4637,7 +5100,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_Longmen_01_Vo.webp",
         "load": 35,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "LandOfPlentysBounds": {
         "id": 374127,
@@ -4647,7 +5111,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_Tjlweilan_01_Vo.webp",
         "load": 65,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "SmoothWoodenBench": {
         "id": 374201,
@@ -4657,7 +5122,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Md_Chair_Chair_01_Vo.webp",
         "load": 35,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "SmoothStoneBench": {
         "id": 374202,
@@ -4667,7 +5133,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Md_Chair_Chair_02_Vo.webp",
         "load": 35,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "OtogiRakushiSquareStool": {
         "id": 374205,
@@ -4677,7 +5144,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Chair_MuZhuo_01_Vo.webp",
         "load": 35,
         "energy": 30,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "PassagesLanguidLifestyle": {
         "id": 374209,
@@ -4687,7 +5155,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Chair_Prop_CafeYi_01_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "PassagesEveningEnsemble": {
         "id": 374210,
@@ -4697,7 +5166,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Chair_Prop_LongYi_01_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "AzureGemOfTheSprings": {
         "id": 374215,
@@ -4707,7 +5177,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Chair_Prop_YLLYizi_01_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "SurgingHarmoniesOfTheSprings": {
         "id": 374216,
@@ -4717,7 +5188,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Chair_Prop_YLLYizi_02_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "TwoStoryHilichurlSentryTower": {
         "id": 374301,
@@ -4727,7 +5199,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Build_House_20_Lod0.webp",
         "load": 95,
         "energy": 60,
-        "source": "Teapot Spirit Trust Rank Reward"
+        "source": "Teapot Spirit Trust Rank Reward",
+        "u": true
     },
     "HeavyFirForgingTable": {
         "id": 374303,
@@ -4737,7 +5210,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Md_Table_Table_02_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "LongPineTable": {
         "id": 374304,
@@ -4747,7 +5221,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Ly_Table_Table_09_Vo.webp",
         "load": 35,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "LargeStoneMill": {
         "id": 374305,
@@ -4757,7 +5232,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Ly_Table_Table_08_Lod0.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "TwoTierVendorsBoothRisingFortunes": {
         "id": 374307,
@@ -4767,7 +5243,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Ly_Decoration_Varia_04_Lod0.webp",
         "load": 60,
         "energy": 60,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "BambooOutdoorTeaTable": {
         "id": 374308,
@@ -4777,7 +5254,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Ly_PairChair_Chair_02_Vo.webp",
         "load": 95,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "WoodenOutdoorTeaTable": {
         "id": 374309,
@@ -4787,7 +5265,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Ly_PairChair_Chair_03_Vo.webp",
         "load": 95,
         "energy": 60,
-        "source": "Adeptal Mirror Reward"
+        "source": "Adeptal Mirror Reward",
+        "u": true
     },
     "OtogiRakushiSquareTable": {
         "id": 374313,
@@ -4797,7 +5276,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Dq_Table_MuZhuo_01_Vo.webp",
         "load": 35,
         "energy": 30,
-        "source": "Inazuma Remarkable Chest Reward"
+        "source": "Inazuma Remarkable Chest Reward",
+        "u": true
     },
     "PassagesPristineRoundTable": {
         "id": 374318,
@@ -4807,7 +5287,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Table_Prop_CafeZhuo_01_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Fontaine Remarkable Chest Reward"
+        "source": "Fontaine Remarkable Chest Reward",
+        "u": true
     },
     "ProductionRackTheBasics": {
         "id": 374319,
@@ -4817,7 +5298,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Table_Prop_JyJiazi_01_Lod0.webp",
         "load": 95,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "ProductionRackCustomBuild": {
         "id": 374320,
@@ -4827,7 +5309,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Fd_Table_Prop_JyJiazi_02_Lod0.webp",
         "load": 95,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "CompactLongTableCouriersEdition": {
         "id": 374326,
@@ -4837,7 +5320,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Table_Prop_GZLTaizi_01_Vo.webp",
         "load": 65,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "WhiteChestnutOakWoodRawFinishLowTable": {
         "id": 374327,
@@ -4847,7 +5331,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Table_Prop_YLLZhuozi_01_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "FairTableUncutOriginal": {
         "id": 374328,
@@ -4857,7 +5342,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Table_Prop_JJCshizhuo_01_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "WineShopDisplayCounterToYourHeartsContent": {
         "id": 374401,
@@ -4867,7 +5353,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Ly_Decoration_Junk_04_Lod0.webp",
         "load": 65,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "CrudeDoubleDeckerPallet": {
         "id": 374402,
@@ -4877,7 +5364,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Ly_Decoration_Junk_05_Lod0.webp",
         "load": 95,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "FoundationsOfStonePathOfCultivation": {
         "id": 374501,
@@ -4887,7 +5375,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Floor_Road_01_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "FoundationsOfStoneTimelyArrival": {
         "id": 374502,
@@ -4897,7 +5386,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Floor_Road_02_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "FoundationsOfStoneDoubleTime": {
         "id": 374503,
@@ -4907,7 +5397,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Common_Floor_Road_03_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "MegaMightyBoulderBreaker": {
         "id": 374605,
@@ -4917,7 +5408,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_ZDLZuantou_01_Lod0.webp",
         "load": 65,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "RidingTheInferno": {
         "id": 374606,
@@ -4927,7 +5419,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_ZDLGjtai_01_Lod0.webp",
         "load": 125,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "CouriersTimelyDispatch": {
         "id": 374607,
@@ -4937,7 +5430,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_GZLNiudanji_01_Lod0.webp",
         "load": 125,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "WayToTheExtreme": {
         "id": 374609,
@@ -4947,7 +5441,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_GZLFengche_01_Lod0.webp",
         "load": 160,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "TezcatepetoncoFenceSunsJourney": {
         "id": 374610,
@@ -4957,7 +5452,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_LslZhuangshi_01_Lod0.webp",
         "load": 65,
         "energy": 90,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "TezcatepetoncoFencePathOfDiscovery": {
         "id": 374611,
@@ -4967,7 +5463,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_LslZhuangshi_02_Lod0.webp",
         "load": 65,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "WoodenTargetTrainingRegimen": {
         "id": 374612,
@@ -4977,7 +5474,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_YslBazi_01_Vo.webp",
         "load": 35,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "OurDestination": {
         "id": 374614,
@@ -4987,7 +5485,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Build_JJCwuqijia_01_Lod0.webp",
         "load": 125,
         "energy": 90,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "SecretsOfGoodHealth": {
         "id": 374618,
@@ -4997,7 +5496,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_Longwo_01_Vo.webp",
         "load": 65,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "PromiseOfAbundance": {
         "id": 374619,
@@ -5007,7 +5507,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_Longshicao_01_Lod0.webp",
         "load": 35,
         "energy": 60,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "PaddockStrawMattressMakeshiftBed": {
         "id": 374622,
@@ -5017,7 +5518,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_Longwo_02_Vo.webp",
         "load": 35,
         "energy": 30,
-        "source": "Learned from Realm Depot Furnishing Blueprint"
+        "source": "Learned from Realm Depot Furnishing Blueprint",
+        "u": true
     },
     "BarbellRackHeftiestLoad": {
         "id": 374624,
@@ -5027,7 +5529,8 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_Tjljianshenqi_01_Lod0.webp",
         "load": 65,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     },
     "Storage101": {
         "id": 374625,
@@ -5037,6 +5540,7 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_Homeworld_Exterior_Nt_Decoration_Prop_Tjlcaodui_01_Lod0.webp",
         "load": 110,
         "energy": 60,
-        "source": "Natlan Remarkable Chest Reward"
+        "source": "Natlan Remarkable Chest Reward",
+        "u": true
     }
 };

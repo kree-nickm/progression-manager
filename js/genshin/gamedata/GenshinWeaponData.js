@@ -243,6 +243,17 @@ export default {
         "hakushinID": 11501,
         "id": 11501
     },
+    "ArdentStormSublimation": {
+        "name": "Ardent Storm - Sublimation",
+        "rarity": 5,
+        "type": "Claymore",
+        "hakushinID": 320002,
+        "id": 320002,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_MorphGravitas_Great_{0}.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_MorphGravitas_Great_{0}.webp"
+        ]
+    },
     "AstralVulturesCrimsonPlumage": {
         "name": "Astral Vulture's Crimson Plumage",
         "rarity": 5,
@@ -297,6 +308,47 @@ export default {
         ],
         "version": "5.2",
         "matStrongEnemy": "Mimiflora"
+    },
+    "Azurelight": {
+        "name": "Azurelight",
+        "rarity": 5,
+        "type": "Sword",
+        "hakushinID": 11517,
+        "id": 11517,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_OuterSword.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_OuterSword.webp"
+        ],
+        "baseATK": 48,
+        "stat": "critRate_",
+        "matForgery": "Mirror",
+        "matStrongEnemy": "Mimiflora",
+        "matWeakEnemy": "Tribals",
+        "passive": "Within 12s after an Elemental Skill is used, ATK is increased by @0%. During this time, when the equipping character has 0 Energy, ATK will be further increased by @1%, and CRIT DMG will be increased by @2%.",
+        "refinementData": [
+            {
+                "1": 24,
+                "2": 30,
+                "3": 36,
+                "4": 42,
+                "5": 48
+            },
+            {
+                "1": 1200,
+                "2": 1200,
+                "3": 1200,
+                "4": 1200,
+                "5": 1200
+            },
+            {
+                "1": 24,
+                "2": 30,
+                "3": 36,
+                "4": 42,
+                "5": 48
+            }
+        ],
+        "version": "5.6.54"
     },
     "BeaconOfTheReedSea": {
         "name": "Beacon of the Reed Sea",
@@ -700,6 +752,17 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Freedom-Sworn",
         "hakushinID": 11503,
         "id": 11503
+    },
+    "HallowedFettersSublimation": {
+        "name": "Hallowed Fetters - Sublimation",
+        "rarity": 5,
+        "type": "Catalyst",
+        "hakushinID": 340002,
+        "id": 340002,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_MorphIlia_Great_{0}.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_MorphIlia_Great_{0}.webp"
+        ]
     },
     "HaranGeppakuFutsu": {
         "name": "Haran Geppaku Futsu",
@@ -1287,6 +1350,28 @@ export default {
         "hakushinID": 12510,
         "id": 12510
     },
+    "SerpentDevourerSublimation": {
+        "name": "Serpent Devourer - Sublimation",
+        "rarity": 5,
+        "type": "Sword",
+        "hakushinID": 310002,
+        "id": 310002,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_MorphVinces_Great_{0}.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_MorphVinces_Great_{0}.webp"
+        ]
+    },
+    "ShatteredMoonSublimation": {
+        "name": "Shattered Moon - Sublimation",
+        "rarity": 5,
+        "type": "Polearm",
+        "hakushinID": 330002,
+        "id": 330002,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_MorphSpinifer_Great_{0}.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_MorphSpinifer_Great_{0}.webp"
+        ]
+    },
     "SilvershowerHeartstrings": {
         "name": "Silvershower Heartstrings",
         "rarity": 5,
@@ -1727,6 +1812,17 @@ export default {
         ],
         "version": "5.3"
     },
+    "StarpiercerSublimation": {
+        "name": "Starpiercer - Sublimation",
+        "rarity": 5,
+        "type": "Bow",
+        "hakushinID": 350002,
+        "id": 350002,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_MorphChrod_Great_{0}.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_MorphChrod_Great_{0}.webp"
+        ]
+    },
     "SummitShaper": {
         "name": "Summit Shaper",
         "rarity": 5,
@@ -2163,7 +2259,7 @@ export default {
         "rarity": 5,
         "type": "Claymore",
         "matForgery": "Chord",
-        "matStrongEnemy": "Breacher Primuses",
+        "matStrongEnemy": "Breacher Primus",
         "matWeakEnemy": "Meka",
         "baseATK": 48,
         "stat": "critRate_",
@@ -2503,6 +2599,17 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Amenoma_Kageuchi",
         "hakushinID": 11414,
         "id": 11414
+    },
+    "ArdentStorm": {
+        "name": "Ardent Storm",
+        "rarity": 4,
+        "type": "Claymore",
+        "hakushinID": 320001,
+        "id": 320001,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_MorphGravitas_{0}.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_MorphGravitas_{0}.webp"
+        ]
     },
     "AshGravenDrinkingHorn": {
         "name": "Ash-Graven Drinking Horn",
@@ -3589,7 +3696,7 @@ export default {
             }
         ],
         "matForgery": "Dewdrop",
-        "matStrongEnemy": "Breacher Primuses",
+        "matStrongEnemy": "Breacher Primus",
         "matWeakEnemy": "Fontemer",
         "baseATK": 44,
         "stat": "atk_",
@@ -3836,6 +3943,17 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Hakushin_Ring",
         "hakushinID": 14414,
         "id": 14414
+    },
+    "HallowedFetters": {
+        "name": "Hallowed Fetters",
+        "rarity": 4,
+        "type": "Catalyst",
+        "hakushinID": 340001,
+        "id": 340001,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_MorphIlia_{0}.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_MorphIlia_{0}.webp"
+        ]
     },
     "Hamayumi": {
         "name": "Hamayumi",
@@ -4837,7 +4955,7 @@ export default {
             }
         ],
         "matForgery": "Chalice",
-        "matStrongEnemy": "Breacher Primuses",
+        "matStrongEnemy": "Breacher Primus",
         "matWeakEnemy": "Meka",
         "baseATK": 44,
         "stat": "hp_",
@@ -5384,6 +5502,17 @@ export default {
         ],
         "version": "5.5.54"
     },
+    "SerpentDevourer": {
+        "name": "Serpent Devourer",
+        "rarity": 4,
+        "type": "Sword",
+        "hakushinID": 310001,
+        "id": 310001,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_MorphVinces_{0}.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_MorphVinces_{0}.webp"
+        ]
+    },
     "SerpentSpine": {
         "name": "Serpent Spine",
         "rarity": 4,
@@ -5437,6 +5566,17 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Serpent_Spine",
         "hakushinID": 12409,
         "id": 12409
+    },
+    "ShatteredMoon": {
+        "name": "Shattered Moon",
+        "rarity": 4,
+        "type": "Polearm",
+        "hakushinID": 330001,
+        "id": 330001,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_MorphSpinifer_{0}.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_MorphSpinifer_{0}.webp"
+        ]
     },
     "SnowTombedStarsilver": {
         "name": "Snow-Tombed Starsilver",
@@ -5539,6 +5679,17 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Song_of_Stillness",
         "hakushinID": 15425,
         "id": 15425
+    },
+    "Starpiercer": {
+        "name": "Starpiercer",
+        "rarity": 4,
+        "type": "Bow",
+        "hakushinID": 350001,
+        "id": 350001,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_MorphChrod_{0}.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_MorphChrod_{0}.webp"
+        ]
     },
     "SturdyBone": {
         "name": "Sturdy Bone",
@@ -5664,6 +5815,17 @@ export default {
         "matStrongEnemy": "Mimiflora",
         "matWeakEnemy": "Nobushi",
         "passive": "Increase ATK by @0% and Movement SPD by 10% for 10s when using an Elemental Skill.",
+        "code": [
+            "proc",
+            [
+                "stat",
+                [
+                    "atk_",
+                    "@0"
+                ]
+            ],
+            "After Elemental Skill (10s)"
+        ],
         "refinementData": [
             {
                 "1": 20.000000298019998,
@@ -5980,7 +6142,7 @@ export default {
             }
         ],
         "matForgery": "Chalice",
-        "matStrongEnemy": "Breacher Primuses",
+        "matStrongEnemy": "Breacher Primus",
         "matWeakEnemy": "Meka",
         "baseATK": 42,
         "stat": "atk_",

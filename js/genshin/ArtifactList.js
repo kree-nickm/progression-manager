@@ -125,8 +125,8 @@ export default class ArtifactList extends GenshinList
       labelTitle: "Sort in the same order as the in-game inventory when you select 'quality'.",
       sort: {func: (o,a,b) => {
         let slotSortR = ["circlet","goblet","sands","plume","flower"];
-        let A = a.rarity*52500 + a.level*2500 + Object.keys(GenshinArtifactData).indexOf(a.setKey)*25 + slotSortR.indexOf(a.slotKey)*5 + a.substats.length - a.id/2000;
-        let B = b.rarity*52500 + b.level*2500 + Object.keys(GenshinArtifactData).indexOf(b.setKey)*25 + slotSortR.indexOf(b.slotKey)*5 + b.substats.length - b.id/2000;
+        let A = a.level*25000 + a.rarity*5000 + Object.keys(GenshinArtifactData).indexOf(a.setKey)*50 + slotSortR.indexOf(a.slotKey)*10 + (a.locked?5:0) + a.substats.length - a.id/2000;
+        let B = b.level*25000 + b.rarity*5000 + Object.keys(GenshinArtifactData).indexOf(b.setKey)*50 + slotSortR.indexOf(b.slotKey)*10 + (b.locked?5:0) + b.substats.length - b.id/2000;
         if(isNaN(A) && !isNaN(B))
           return 1;
         else if(!isNaN(A) && isNaN(B))

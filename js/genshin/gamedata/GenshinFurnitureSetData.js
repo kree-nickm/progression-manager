@@ -169,7 +169,8 @@ export default {
             "Rosaria",
             "Barbara",
             "Jean",
-            "Kaeya"
+            "Kaeya",
+            "Dahlia"
         ]
     },
     "GatheringOfGourmets": {
@@ -1081,7 +1082,8 @@ export default {
             "Yoimiya",
             "Thoma",
             "KukiShinobu",
-            "Kirara"
+            "Kirara",
+            "Skirk"
         ]
     },
     "AmidstProsperingMarkets": {
@@ -1806,7 +1808,8 @@ export default {
         ],
         "characters": [
             "Clorinde",
-            "Emilie"
+            "Emilie",
+            "Escoffier"
         ]
     },
     "FomentingFashionAtTheFair": {
@@ -2173,7 +2176,8 @@ export default {
             }
         ],
         "characters": [
-            "Chasca"
+            "Chasca",
+            "Ifa"
         ]
     },
     "MastersOfTheNightWindsTranquility": {
@@ -2358,7 +2362,9 @@ export default {
                 "count": 1
             }
         ],
-        "characters": []
+        "characters": [
+            "Ifa"
+        ]
     },
     "AmidstPoeticPondering": {
         "id": 33,
@@ -2421,7 +2427,8 @@ export default {
             "Lisa",
             "Fischl",
             "Mona",
-            "Eula"
+            "Eula",
+            "Dahlia"
         ]
     },
     "AmidstWhisperingWinds": {
@@ -3099,7 +3106,8 @@ export default {
         "characters": [
             "Cyno",
             "Faruzan",
-            "Alhaitham"
+            "Alhaitham",
+            "Skirk"
         ]
     },
     "AFarewellBriefToBustleAndBother": {
@@ -3367,7 +3375,8 @@ export default {
         ],
         "characters": [
             "Furina",
-            "Navia"
+            "Navia",
+            "Escoffier"
         ]
     },
     "PerfectlyDrawnFocus": {

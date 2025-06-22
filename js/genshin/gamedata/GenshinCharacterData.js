@@ -615,6 +615,31 @@ export default {
         ],
         "imgId": "UI_AvatarIcon_Cyno"
     },
+    "Dahlia": {
+        "name": "Dahlia",
+        "rarity": 4,
+        "weapon": "Sword",
+        "element": "Hydro",
+        "hakushinID": 10000115,
+        "id": 10000115,
+        "imgId": "UI_AvatarIcon_Dahlia",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Dahlia.webp",
+        "region": "Mondstadt",
+        "matEnemy": "Hili.Archers",
+        "matBoss": "SecretSourceAutomatonOverseerDevice",
+        "matFlower": "Calla Lily",
+        "matMastery": "Ballad",
+        "matTrounce": "Eroded Scale-Feather",
+        "ascendStat": "hp_",
+        "hpBase": 1048.5597,
+        "atkBase": 15.84912,
+        "defBase": 46.9245,
+        "hpMaxAsc": 3751.7275,
+        "atkMaxAsc": 56.709198,
+        "defMaxAsc": 167.895,
+        "version": "5.7",
+        "release": "June 17, 2025"
+    },
     "Dehya": {
         "name": "Dehya",
         "weapon": "Claymore",
@@ -792,7 +817,12 @@ export default {
         "hpMaxAsc": 4267.1836,
         "atkMaxAsc": 110.86439,
         "defMaxAsc": 233.9064,
-        "version": "5.5.54"
+        "version": "5.5.54",
+        "skillIds": [
+            11121,
+            11122,
+            11125
+        ]
     },
     "Eula": {
         "name": "Eula",
@@ -1118,6 +1148,7 @@ export default {
         "matBoss": "Lava Statue",
         "matFlower": "Saurian Claw Succulent",
         "matMastery": "Conflict",
+        "matTrounce": "Ascended Sample: Rook",
         "ascendStat": "eleMas",
         "hpBase": 845.2303,
         "atkBase": 14.95872,
@@ -1125,7 +1156,12 @@ export default {
         "hpMaxAsc": 3024.2188,
         "atkMaxAsc": 53.52329,
         "defMaxAsc": 181.61325,
-        "version": "5.5.54"
+        "version": "5.5.54",
+        "skillIds": [
+            11131,
+            11132,
+            11135
+        ]
     },
     "Jean": {
         "name": "Jean",
@@ -2327,6 +2363,31 @@ export default {
             10955
         ],
         "imgId": "UI_AvatarIcon_Sigewinne"
+    },
+    "Skirk": {
+        "name": "Skirk",
+        "rarity": 5,
+        "weapon": "Sword",
+        "element": "Cryo",
+        "hakushinID": 10000114,
+        "id": 10000114,
+        "imgId": "UI_AvatarIcon_SkirkNew",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_SkirkNew.webp",
+        "region": "Omni_scourge",
+        "matEnemy": "Meka",
+        "matBoss": "Papilla",
+        "matFlower": "Skysplit Gembloom",
+        "matMastery": "Contention",
+        "matTrounce": "Ascended Sample: Knight",
+        "ascendStat": "critDMG_",
+        "hpBase": 966.6665,
+        "atkBase": 27.93,
+        "defBase": 62.76167,
+        "hpMaxAsc": 3969.6553,
+        "atkMaxAsc": 114.6873,
+        "defMaxAsc": 257.7393,
+        "version": "5.7",
+        "release": "June 17, 2025"
     },
     "Sucrose": {
         "name": "Sucrose",
