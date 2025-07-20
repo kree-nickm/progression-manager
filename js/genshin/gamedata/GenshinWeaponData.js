@@ -243,17 +243,6 @@ export default {
         "hakushinID": 11501,
         "id": 11501
     },
-    "ArdentStormSublimation": {
-        "name": "Ardent Storm - Sublimation",
-        "rarity": 5,
-        "type": "Claymore",
-        "hakushinID": 320002,
-        "id": 320002,
-        "imgs": [
-            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_MorphGravitas_Great_{0}.webp",
-            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_MorphGravitas_Great_{0}.webp"
-        ]
-    },
     "AstralVulturesCrimsonPlumage": {
         "name": "Astral Vulture's Crimson Plumage",
         "rarity": 5,
@@ -712,6 +701,40 @@ export default {
         ],
         "version": "5.0"
     },
+    "FracturedHalo": {
+        "name": "Fractured Halo",
+        "rarity": 5,
+        "type": "Polearm",
+        "hakushinID": 13515,
+        "id": 13515,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_Perdix.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_Perdix.webp"
+        ],
+        "baseATK": 46,
+        "stat": "critDMG_",
+        "matForgery": "Blade",
+        "matStrongEnemy": "Weasels",
+        "matWeakEnemy": "Saurians",
+        "passive": "After an Elemental Skill or Elemental Burst is used, ATK is increased by @0% for 20s. If the equipping character creates a Shield while this effect is active, they will gain the Electrifying Edict effect for 20s: All nearby party members deal @1% more Lunar-Charged DMG.",
+        "refinementData": [
+            {
+                "1": 24,
+                "2": 30,
+                "3": 36,
+                "4": 42,
+                "5": 48
+            },
+            {
+                "1": 2000,
+                "2": 2000,
+                "3": 2000,
+                "4": 2000,
+                "5": 2000
+            }
+        ],
+        "version": "5.7.54"
+    },
     "FreedomSworn": {
         "name": "Freedom-Sworn",
         "rarity": 5,
@@ -752,17 +775,6 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Freedom-Sworn",
         "hakushinID": 11503,
         "id": 11503
-    },
-    "HallowedFettersSublimation": {
-        "name": "Hallowed Fetters - Sublimation",
-        "rarity": 5,
-        "type": "Catalyst",
-        "hakushinID": 340002,
-        "id": 340002,
-        "imgs": [
-            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_MorphIlia_Great_{0}.webp",
-            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_MorphIlia_Great_{0}.webp"
-        ]
     },
     "HaranGeppakuFutsu": {
         "name": "Haran Geppaku Futsu",
@@ -1350,28 +1362,6 @@ export default {
         "hakushinID": 12510,
         "id": 12510
     },
-    "SerpentDevourerSublimation": {
-        "name": "Serpent Devourer - Sublimation",
-        "rarity": 5,
-        "type": "Sword",
-        "hakushinID": 310002,
-        "id": 310002,
-        "imgs": [
-            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_MorphVinces_Great_{0}.webp",
-            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_MorphVinces_Great_{0}.webp"
-        ]
-    },
-    "ShatteredMoonSublimation": {
-        "name": "Shattered Moon - Sublimation",
-        "rarity": 5,
-        "type": "Polearm",
-        "hakushinID": 330002,
-        "id": 330002,
-        "imgs": [
-            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_MorphSpinifer_Great_{0}.webp",
-            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_MorphSpinifer_Great_{0}.webp"
-        ]
-    },
     "SilvershowerHeartstrings": {
         "name": "Silvershower Heartstrings",
         "rarity": 5,
@@ -1811,17 +1801,6 @@ export default {
             }
         ],
         "version": "5.3"
-    },
-    "StarpiercerSublimation": {
-        "name": "Starpiercer - Sublimation",
-        "rarity": 5,
-        "type": "Bow",
-        "hakushinID": 350002,
-        "id": 350002,
-        "imgs": [
-            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_MorphChrod_Great_{0}.webp",
-            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_MorphChrod_Great_{0}.webp"
-        ]
     },
     "SummitShaper": {
         "name": "Summit Shaper",
@@ -2599,17 +2578,6 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Amenoma_Kageuchi",
         "hakushinID": 11414,
         "id": 11414
-    },
-    "ArdentStorm": {
-        "name": "Ardent Storm",
-        "rarity": 4,
-        "type": "Claymore",
-        "hakushinID": 320001,
-        "id": 320001,
-        "imgs": [
-            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_MorphGravitas_{0}.webp",
-            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_MorphGravitas_{0}.webp"
-        ]
     },
     "AshGravenDrinkingHorn": {
         "name": "Ash-Graven Drinking Horn",
@@ -3602,6 +3570,40 @@ export default {
         "hakushinID": 11425,
         "id": 11425
     },
+    "FlameForgedInsight": {
+        "name": "Flame-Forged Insight",
+        "rarity": 4,
+        "type": "Claymore",
+        "hakushinID": 12432,
+        "id": 12432,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_Polilith.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_Polilith.webp"
+        ],
+        "baseATK": 42,
+        "stat": "eleMas",
+        "matForgery": "Sacred",
+        "matStrongEnemy": "Weasels",
+        "matWeakEnemy": "Fontemer",
+        "passive": "When Electro-Charged, Lunar-Charged, or Bloom is triggered, restore @0 Elemental Energy and increase Elemental Mastery by @1 for 15 seconds. This effect can be triggered once every 15s and can be triggered even when the equipping character is off-field.",
+        "refinementData": [
+            {
+                "1": 12,
+                "2": 15,
+                "3": 18,
+                "4": 21,
+                "5": 24
+            },
+            {
+                "1": 60,
+                "2": 75,
+                "3": 90,
+                "4": 105,
+                "5": 120
+            }
+        ],
+        "version": "5.7.54"
+    },
     "FleuveCendreFerryman": {
         "name": "Fleuve Cendre Ferryman",
         "imgs": [
@@ -3943,17 +3945,6 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Hakushin_Ring",
         "hakushinID": 14414,
         "id": 14414
-    },
-    "HallowedFetters": {
-        "name": "Hallowed Fetters",
-        "rarity": 4,
-        "type": "Catalyst",
-        "hakushinID": 340001,
-        "id": 340001,
-        "imgs": [
-            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_MorphIlia_{0}.webp",
-            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_MorphIlia_{0}.webp"
-        ]
     },
     "Hamayumi": {
         "name": "Hamayumi",
@@ -5502,17 +5493,6 @@ export default {
         ],
         "version": "5.5.54"
     },
-    "SerpentDevourer": {
-        "name": "Serpent Devourer",
-        "rarity": 4,
-        "type": "Sword",
-        "hakushinID": 310001,
-        "id": 310001,
-        "imgs": [
-            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_MorphVinces_{0}.webp",
-            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_MorphVinces_{0}.webp"
-        ]
-    },
     "SerpentSpine": {
         "name": "Serpent Spine",
         "rarity": 4,
@@ -5566,17 +5546,6 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Serpent_Spine",
         "hakushinID": 12409,
         "id": 12409
-    },
-    "ShatteredMoon": {
-        "name": "Shattered Moon",
-        "rarity": 4,
-        "type": "Polearm",
-        "hakushinID": 330001,
-        "id": 330001,
-        "imgs": [
-            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_MorphSpinifer_{0}.webp",
-            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_MorphSpinifer_{0}.webp"
-        ]
     },
     "SnowTombedStarsilver": {
         "name": "Snow-Tombed Starsilver",
@@ -5679,17 +5648,6 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Song_of_Stillness",
         "hakushinID": 15425,
         "id": 15425
-    },
-    "Starpiercer": {
-        "name": "Starpiercer",
-        "rarity": 4,
-        "type": "Bow",
-        "hakushinID": 350001,
-        "id": 350001,
-        "imgs": [
-            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_MorphChrod_{0}.webp",
-            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_MorphChrod_{0}.webp"
-        ]
     },
     "SturdyBone": {
         "name": "Sturdy Bone",

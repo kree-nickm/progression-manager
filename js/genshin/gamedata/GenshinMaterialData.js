@@ -10338,6 +10338,102 @@ export default {
         "icon": "UI_ItemIcon_108815",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108815.webp"
     },
+    "SuspiciousMiniAshaPockets": {
+        "id": 108840,
+        "name": "Suspicious Mini Asha Pockets",
+        "rarity": 4,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108816",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108816.webp"
+    },
+    "MiniAshaPockets": {
+        "id": 108841,
+        "name": "Mini Asha Pockets",
+        "rarity": 4,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108816",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108816.webp"
+    },
+    "DeliciousMiniAshaPockets": {
+        "id": 108842,
+        "name": "Delicious Mini Asha Pockets",
+        "rarity": 4,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108816",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108816.webp"
+    },
+    "SuspiciousNanasCake": {
+        "id": 108843,
+        "name": "Suspicious Nanas Cake",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108817",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108817.webp"
+    },
+    "NanasCake": {
+        "id": 108844,
+        "name": "Nanas Cake",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108817",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108817.webp"
+    },
+    "DeliciousNanasCake": {
+        "id": 108845,
+        "name": "Delicious Nanas Cake",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108817",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108817.webp"
+    },
+    "SuspiciousGentleSeaBreeze": {
+        "id": 108846,
+        "name": "Suspicious Gentle Sea Breeze",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108818",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108818.webp"
+    },
+    "GentleSeaBreeze": {
+        "id": 108847,
+        "name": "Gentle Sea Breeze",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108818",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108818.webp"
+    },
+    "DeliciousGentleSeaBreeze": {
+        "id": 108848,
+        "name": "Delicious Gentle Sea Breeze",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108818",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108818.webp"
+    },
+    "SuspiciousShrimpBisque": {
+        "id": 108849,
+        "name": "Suspicious Shrimp Bisque",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108819",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108819.webp"
+    },
+    "ShrimpBisque": {
+        "id": 108850,
+        "name": "Shrimp Bisque",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108819",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108819.webp"
+    },
+    "DeliciousShrimpBisque": {
+        "id": 108851,
+        "name": "Delicious Shrimp Bisque",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108819",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108819.webp"
+    },
     "PureWater": {
         "id": 111029,
         "name": "\"Pure Water\"",
@@ -10449,6 +10545,14 @@ export default {
         "type": "Gadget",
         "icon": "UI_ItemIcon_120614",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_120614.webp"
+    },
+    "EasybreezeAlbum": {
+        "id": 121231,
+        "name": "Easybreeze Album",
+        "rarity": 4,
+        "type": "Gadget",
+        "icon": "UI_ItemIcon_121231",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_121231.webp"
     },
     "GeoTreasureCompass": {
         "id": 220003,
@@ -10820,6 +10924,12 @@ export default {
         "icon": "UI_ItemIcon_220068",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220068.webp"
     },
+    "3": {
+        "id": 220068,
+        "type": "Gadget",
+        "icon": "UI_ItemIcon_220068",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220068.webp"
+    },
     "ScarletSandSlate": {
         "id": 220069,
         "name": "Scarlet Sand Slate",
@@ -11084,14 +11194,6 @@ export default {
         "icon": "UI_ItemIcon_220107",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220107.webp"
     },
-    "PaimonsKamera": {
-        "id": 220108,
-        "name": "Paimon's Kamera",
-        "rarity": 4,
-        "type": "Gadget",
-        "icon": "UI_ItemIcon_220108",
-        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220108.webp"
-    },
     "ArtifactTransmuter": {
         "id": 220109,
         "name": "Artifact Transmuter",
@@ -11132,6 +11234,14 @@ export default {
         "icon": "UI_ItemIcon_220085",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220085.webp"
     },
+    "ForensicImagingDevice": {
+        "id": 220114,
+        "name": "Forensic Imaging Device",
+        "rarity": 4,
+        "type": "Gadget",
+        "icon": "UI_ItemIcon_220114",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220114.webp"
+    },
     "NeoTerminalFloatingLeafModel": {
         "id": 220115,
         "name": "Neo Terminal: Floating Leaf Model",
@@ -11147,6 +11257,22 @@ export default {
         "type": "Gadget",
         "icon": "UI_ItemIcon_220116",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220116.webp"
+    },
+    "LeapingSpiritPiano": {
+        "id": 220117,
+        "name": "Leaping Spirit Piano",
+        "rarity": 4,
+        "type": "Gadget",
+        "icon": "UI_ItemIcon_220117",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220117.webp"
+    },
+    "PaimonsKamera": {
+        "id": 220118,
+        "name": "Paimon's Kamera",
+        "rarity": 4,
+        "type": "Gadget",
+        "icon": "UI_ItemIcon_220108",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220108.webp"
     },
     "IntertwinedFate": {
         "id": 223,
@@ -12651,12 +12777,20 @@ export default {
         "icon": "UI_ItemIcon_200125",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_200125.webp"
     },
-    "3": {
+    "4": {
         "id": 200125,
         "rarity": 4,
         "type": "Refinement Material",
         "icon": "UI_ItemIcon_200125",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_200125.webp"
+    },
+    "DriftersCrystalMarrow": {
+        "id": 200126,
+        "name": "Drifter's Crystal Marrow",
+        "rarity": 4,
+        "type": "Refinement Material",
+        "icon": "UI_ItemIcon_200126",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_200126.webp"
     },
     "Primogem": {
         "id": 201,

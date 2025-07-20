@@ -638,7 +638,12 @@ export default {
         "atkMaxAsc": 56.709198,
         "defMaxAsc": 167.895,
         "version": "5.7",
-        "release": "June 17, 2025"
+        "release": "June 17, 2025",
+        "skillIds": [
+            11151,
+            11152,
+            11155
+        ]
     },
     "Dehya": {
         "name": "Dehya",
@@ -1162,6 +1167,30 @@ export default {
             11132,
             11135
         ]
+    },
+    "Ineffa": {
+        "name": "Ineffa",
+        "rarity": 5,
+        "weapon": "Polearm",
+        "element": "Electro",
+        "hakushinID": 10000116,
+        "id": 10000116,
+        "imgId": "UI_AvatarIcon_Ineffa",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Ineffa.webp",
+        "region": "Nodkrai",
+        "matEnemy": "Tribals",
+        "matBoss": "SecretSourceAutomatonOverseerDevice",
+        "matFlower": "Glowing Hornshroom",
+        "matMastery": "Conflict",
+        "matTrounce": "Eroded Sunfire",
+        "ascendStat": "critRate_",
+        "hpBase": 981.9196,
+        "atkBase": 25.6956,
+        "defBase": 64.43691,
+        "hpMaxAsc": 4032.2927,
+        "atkMaxAsc": 105.512314,
+        "defMaxAsc": 264.6189,
+        "version": "5.7.54"
     },
     "Jean": {
         "name": "Jean",
@@ -2387,7 +2416,12 @@ export default {
         "atkMaxAsc": 114.6873,
         "defMaxAsc": 257.7393,
         "version": "5.7",
-        "release": "June 17, 2025"
+        "release": "June 17, 2025",
+        "skillIds": [
+            11141,
+            11142,
+            11145
+        ]
     },
     "Sucrose": {
         "name": "Sucrose",
