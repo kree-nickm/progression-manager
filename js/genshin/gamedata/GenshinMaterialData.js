@@ -10930,6 +10930,12 @@ export default {
         "icon": "UI_ItemIcon_220068",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220068.webp"
     },
+    "4": {
+        "id": 220068,
+        "type": "Gadget",
+        "icon": "UI_ItemIcon_220068",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220068.webp"
+    },
     "ScarletSandSlate": {
         "id": 220069,
         "name": "Scarlet Sand Slate",
@@ -12777,7 +12783,7 @@ export default {
         "icon": "UI_ItemIcon_200125",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_200125.webp"
     },
-    "4": {
+    "5": {
         "id": 200125,
         "rarity": 4,
         "type": "Refinement Material",

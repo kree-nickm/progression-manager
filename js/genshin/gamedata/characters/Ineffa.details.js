@@ -252,7 +252,7 @@ export default {
         },
         "Elemental Burst": {
             "name": "Supreme Instruction: Cyclonic Exterminator",
-            "text": "The Multipurpose Smart Assistance Unit, {LINK#N11160001}<color=#FFD780FF>Birgitta<\/color>{\/LINK}, can use Rocket Punches to quickly clean up opponents! Ineffa shoots Birgitta into the fray, dealing <color=#FFACFFFF>AoE Electro DMG<\/color> and allowing Birgitta to remain on the field.\\n\\nIf Birgitta is already on the field, having been summoned by Ineffa, this Skill will re-summon Birgitta at the target's location and reset her duration.",
+            "text": "Through Multipurpose Smart Assistance Unit, {LINK#N11160001}<color=#FFD780FF>Birgitta<\/color>{\/LINK}, Ineffa can use Rocket Punches to quickly clean up opponents! Shoots Birgitta into the fray, dealing <color=#FFACFFFF>AoE Electro DMG<\/color> and allowing Birgitta to remain on the field.\\n\\nIf Birgitta is already on the field, having been summoned by Ineffa, this Skill will re-summon Birgitta at the target's location and reset her duration.",
             "scaling": {
                 "Skill DMG": {
                     "1": "676.8%",
@@ -331,7 +331,7 @@ export default {
         },
         "2": {
             "name": "Support Cleaning Module",
-            "text": "After the Elemental Burst <color=#FFD780FF>{LINK#S11165}Supreme Instruction: Cyclonic Exterminator{\/LINK}<\/color> hits opponents, it will inflict the Punishment Edict status on one of those hit opponents: After a brief delay, or when this opponent is attacked, nearby opponents will take <color=#FFACFFFF>AoE Electro DMG<\/color> equal to 300% of Ineffa's ATK. This DMG is considered Lunar-Charged DMG.\\nAdditionally, when the Elemental Burst <color=#FFD780FF>Supreme Instruction: Cyclonic Exterminator<\/color> is unleashed, nearby party members will gain Optical Flow Shield Barriers."
+            "text": "After the Elemental Burst <color=#FFD780FF>{LINK#S11165}Supreme Instruction: Cyclonic Exterminator{\/LINK}<\/color> hits opponents, it will inflict the Punishment Edict status on one of those hit opponents: After a brief delay, or when this opponent is defeated, nearby opponents will take <color=#FFACFFFF>AoE Electro DMG<\/color> equal to 300% of Ineffa's ATK. This DMG is considered Lunar-Charged DMG.\\nAdditionally, when the Elemental Burst <color=#FFD780FF>Supreme Instruction: Cyclonic Exterminator<\/color> is unleashed, nearby party members will gain Optical Flow Shield Barriers."
         },
         "3": {
             "name": "Enhanced Emotion Emulator",

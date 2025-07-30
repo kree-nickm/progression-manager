@@ -733,7 +733,7 @@ export default {
                 "5": 2000
             }
         ],
-        "version": "5.7.54"
+        "version": "5.8"
     },
     "FreedomSworn": {
         "name": "Freedom-Sworn",
@@ -3602,7 +3602,7 @@ export default {
                 "5": 120
             }
         ],
-        "version": "5.7.54"
+        "version": "5.8"
     },
     "FleuveCendreFerryman": {
         "name": "Fleuve Cendre Ferryman",

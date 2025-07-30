@@ -458,7 +458,7 @@ export default {
             "name": "Gluttonous Yumkasaur Mountain King",
             "4": "Overripe Flamegranate"
         },
-        "Auto Bot": {
+        "Config Device": {
             "name": "Secret Source Automaton: Configuration Device",
             "4": "Gold-Inscribed Secret Source Core",
             "release": "October 8, 2024"
@@ -478,7 +478,7 @@ export default {
             "4": "Sparkless Statue Core",
             "release": "March 25, 2025"
         },
-        "SecretSourceAutomatonOverseerDevice": {
+        "Overseer Device": {
             "name": "Secret Source Automaton: Overseer Device",
             "4": "Secret Source Airflow Accumulator"
         }
