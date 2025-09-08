@@ -1,4 +1,29 @@
 export default {
+    "Aino": {
+        "name": "Aino",
+        "rarity": 4,
+        "weapon": "Claymore",
+        "element": "Hydro",
+        "hakushinID": 10000121,
+        "id": 10000121,
+        "release": "September 09, 2025",
+        "imgId": "UI_AvatarIcon_Aino",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Aino.webp",
+        "region": "Nodkrai",
+        "matEnemy": "Landcruiser",
+        "matBoss": "Knuckle",
+        "matFlower": "Portable Bearing",
+        "matMastery": "Elysium",
+        "matTrounce": "Silken Feather",
+        "ascendStat": "eleMas",
+        "hpBase": 939.1447,
+        "atkBase": 20.30112,
+        "defBase": 50.93025,
+        "hpMaxAsc": 3360.243,
+        "atkMaxAsc": 72.63875,
+        "defMaxAsc": 182.2275,
+        "version": "6.0"
+    },
     "Albedo": {
         "name": "Albedo",
         "weapon": "Sword",
@@ -922,6 +947,31 @@ export default {
         ],
         "imgId": "UI_AvatarIcon_Fischl"
     },
+    "Flins": {
+        "name": "Flins",
+        "rarity": 5,
+        "weapon": "Polearm",
+        "element": "Electro",
+        "hakushinID": 10000120,
+        "id": 10000120,
+        "release": "September 30, 2025",
+        "imgId": "UI_AvatarIcon_Flins",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Flins.webp",
+        "region": "Nodkrai",
+        "matEnemy": "Landcruiser",
+        "matBoss": "Knuckle",
+        "matFlower": "Frostlamp Flower",
+        "matMastery": "Vagrancy",
+        "matTrounce": "Ascended Sample: Queen",
+        "ascendStat": "critDMG_",
+        "hpBase": 972.3864,
+        "atkBase": 27.3714,
+        "defBase": 62.94116,
+        "hpMaxAsc": 3993.1443,
+        "atkMaxAsc": 112.393555,
+        "defMaxAsc": 258.4764,
+        "version": "6.0"
+    },
     "Freminet": {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Freminet",
         "ascendStat": "atk_",
@@ -1191,7 +1241,12 @@ export default {
         "atkMaxAsc": 105.512314,
         "defMaxAsc": 264.6189,
         "version": "5.8",
-        "release": "July 29, 2025"
+        "release": "July 29, 2025",
+        "skillIds": [
+            11161,
+            11162,
+            11165
+        ]
     },
     "Jean": {
         "name": "Jean",
@@ -1623,6 +1678,31 @@ export default {
             11085
         ],
         "imgId": "UI_AvatarIcon_Lanyan"
+    },
+    "Lauma": {
+        "name": "Lauma",
+        "rarity": 5,
+        "weapon": "Catalyst",
+        "element": "Dendro",
+        "hakushinID": 10000119,
+        "id": 10000119,
+        "release": "September 09, 2025",
+        "imgId": "UI_AvatarIcon_Lauma",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Lauma.webp",
+        "region": "Nodkrai",
+        "matEnemy": "Oprichniki",
+        "matBoss": "Moonfly",
+        "matFlower": "Moonfall Silver",
+        "matMastery": "Moonlight",
+        "matTrounce": "Eroded Scale-Feather",
+        "ascendStat": "eleMas",
+        "hpBase": 829.3884,
+        "atkBase": 19.84892,
+        "defBase": 52.0521,
+        "hpMaxAsc": 3405.9172,
+        "atkMaxAsc": 81.50444,
+        "defMaxAsc": 213.759,
+        "version": "6.0"
     },
     "Layla": {
         "name": "Layla",

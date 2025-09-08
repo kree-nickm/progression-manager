@@ -380,6 +380,47 @@ export default {
         "hakushinID": 12511,
         "id": 12511
     },
+    "BloodsoakedRuins": {
+        "name": "Bloodsoaked Ruins",
+        "rarity": 5,
+        "type": "Polearm",
+        "hakushinID": 13516,
+        "id": 13516,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_TummaLyhty.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_TummaLyhty.webp"
+        ],
+        "baseATK": 48,
+        "stat": "critRate_",
+        "matForgery": "Lantern",
+        "matStrongEnemy": "Wild Hunt",
+        "matWeakEnemy": "Oprichniki",
+        "passive": "For 3.5s after using an Elemental Burst, the equipping character's Lunar-Charged DMG dealt to opponents is increased by @0%. Additionally, after triggering a Lunar-Charged reaction, the equipping character will gain Requiem of Ruin: CRIT DMG is increased by @1% for 6s. They will also regain @2 Elemental Energy. Elemental Energy can be restored this way once every 14s.",
+        "refinementData": [
+            {
+                "1": 350,
+                "2": 350,
+                "3": 350,
+                "4": 350,
+                "5": 350
+            },
+            {
+                "1": 36,
+                "2": 48,
+                "3": 60,
+                "4": 72,
+                "5": 84
+            },
+            {
+                "1": 6,
+                "2": 6,
+                "3": 6,
+                "4": 6,
+                "5": 6
+            }
+        ],
+        "version": "6.0"
+    },
     "CalamityQueller": {
         "name": "Calamity Queller",
         "rarity": 5,
@@ -1155,6 +1196,61 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Mistsplitter_Reforged",
         "hakushinID": 11509,
         "id": 11509
+    },
+    "NightweaversLookingGlass": {
+        "name": "Nightweaver's Looking Glass",
+        "rarity": 5,
+        "type": "Catalyst",
+        "hakushinID": 14520,
+        "id": 14520,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_MenulisRing.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_MenulisRing.webp"
+        ],
+        "baseATK": 44,
+        "stat": "eleMas",
+        "matForgery": "Device",
+        "matStrongEnemy": "Frostnight Scion",
+        "matWeakEnemy": "Landcruiser",
+        "passive": "When the equipping character's Elemental Skill deals Hydro or Dendro DMG, they will gain Prayer of the Far North: Elemental Mastery is increased by @0 for 4.5s. When nearby party members trigger Lunar-Bloom reactions, the equipping character gains New Moon Verse: Elemental Mastery is increased by @1 for 10s. When both Prayer of the Far North and New Moon Verse are in effect, all nearby party members' Bloom DMG is increased by @2%, their Hyperbloom and Burgeon DMG is increased by @3%, and their Lunar-Bloom DMG is increased by @4%. This effect cannot stack. The aforementioned effects can be triggered even if the equipping character is off-field.",
+        "refinementData": [
+            {
+                "1": 60,
+                "2": 75,
+                "3": 90,
+                "4": 105,
+                "5": 120
+            },
+            {
+                "1": 10,
+                "2": 10,
+                "3": 10,
+                "4": 10,
+                "5": 10
+            },
+            {
+                "1": 6000,
+                "2": 7500,
+                "3": 9000,
+                "4": 10500,
+                "5": 12000
+            },
+            {
+                "1": 450,
+                "2": 450,
+                "3": 450,
+                "4": 450,
+                "5": 450
+            },
+            {
+                "1": 120,
+                "2": 150,
+                "3": 180,
+                "4": 210,
+                "5": 240
+            }
+        ],
+        "version": "6.0"
     },
     "PeakPatrolSong": {
         "name": "Peak Patrol Song",
@@ -2812,6 +2908,47 @@ export default {
         "hakushinID": 15408,
         "id": 15408
     },
+    "BlackmarrowLantern": {
+        "name": "Blackmarrow Lantern",
+        "rarity": 4,
+        "type": "Catalyst",
+        "hakushinID": 14433,
+        "id": 14433,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_Ilmarinen.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_Ilmarinen.webp"
+        ],
+        "baseATK": 41,
+        "stat": "eleMas",
+        "matForgery": "Device",
+        "matStrongEnemy": "Frostnight Scion",
+        "matWeakEnemy": "Oprichniki",
+        "passive": "Bloom DMG is increased by @0%, and Lunar-Bloom DMG is increased by @1%. Moonsign: Ascendant Gleam: Lunar-Bloom DMG is increased by an additional @2%.",
+        "refinementData": [
+            {
+                "1": 48,
+                "2": 60,
+                "3": 72,
+                "4": 84,
+                "5": 96
+            },
+            {
+                "1": 12,
+                "2": 15,
+                "3": 18,
+                "4": 21,
+                "5": 24
+            },
+            {
+                "1": 12,
+                "2": 15,
+                "3": 18,
+                "4": 21,
+                "5": 24
+            }
+        ],
+        "version": "6.0"
+    },
     "CalamityOfEshu": {
         "name": "Calamity of Eshu",
         "rarity": 4,
@@ -3249,6 +3386,33 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/End_of_the_Line",
         "hakushinID": 15418,
         "id": 15418
+    },
+    "EtherlightSpindlelute": {
+        "name": "Etherlight Spindlelute",
+        "rarity": 4,
+        "type": "Catalyst",
+        "hakushinID": 14432,
+        "id": 14432,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_SeeliesLute.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_SeeliesLute.webp"
+        ],
+        "baseATK": 42,
+        "stat": "enerRech_",
+        "matForgery": "Sheath",
+        "matStrongEnemy": "Radiant Beast",
+        "matWeakEnemy": "Oprichniki",
+        "passive": "For 20s after using an Elemental Skill, the equipping character's Elemental Mastery is increased by @0.",
+        "refinementData": [
+            {
+                "1": 100,
+                "2": 125,
+                "3": 150,
+                "4": 175,
+                "5": 200
+            }
+        ],
+        "version": "6.0"
     },
     "EyeOfPerception": {
         "name": "Eye of Perception",
@@ -4436,6 +4600,40 @@ export default {
         "hakushinID": 14407,
         "id": 14407
     },
+    "MasterKey": {
+        "name": "Master Key",
+        "rarity": 4,
+        "type": "Claymore",
+        "hakushinID": 12433,
+        "id": 12433,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_Ilmarinen.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_Ilmarinen.webp"
+        ],
+        "baseATK": 41,
+        "stat": "enerRech_",
+        "matForgery": "Sheath",
+        "matStrongEnemy": "Radiant Beast",
+        "matWeakEnemy": "Landcruiser",
+        "passive": "Upon causing an Elemental Reaction, increases Elemental Mastery by @0 for 12s. Moonsign: Ascendant Gleam: Elemental Mastery from this effect is further increased by @1. This effect can be triggered even if the equipping character is off-field.",
+        "refinementData": [
+            {
+                "1": 60,
+                "2": 75,
+                "3": 90,
+                "4": 105,
+                "5": 120
+            },
+            {
+                "1": 12,
+                "2": 12,
+                "3": 12,
+                "4": 12,
+                "5": 12
+            }
+        ],
+        "version": "6.0"
+    },
     "MissiveWindspear": {
         "name": "Missive Windspear",
         "rarity": 4,
@@ -4530,6 +4728,47 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Moonpiercer",
         "hakushinID": 13417,
         "id": 13417
+    },
+    "MoonweaversDawn": {
+        "name": "Moonweaver's Dawn",
+        "rarity": 4,
+        "type": "Sword",
+        "hakushinID": 11434,
+        "id": 11434,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_Miekka.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_Miekka.webp"
+        ],
+        "baseATK": 44,
+        "stat": "atk_",
+        "matForgery": "Sheath",
+        "matStrongEnemy": "Radiant Beast",
+        "matWeakEnemy": "Landcruiser",
+        "passive": "Increases Elemental Burst DMG by @0%. When the equipping character's Energy Capacity does not exceed 60\/40, their Elemental Burst DMG is increased by an additional @1%\/@2%.",
+        "refinementData": [
+            {
+                "1": 20,
+                "2": 25,
+                "3": 30,
+                "4": 35,
+                "5": 40
+            },
+            {
+                "1": 16,
+                "2": 20,
+                "3": 24,
+                "4": 28.000000000000004,
+                "5": 32
+            },
+            {
+                "1": 28.000000000000004,
+                "2": 35,
+                "3": 42,
+                "4": 49,
+                "5": 56.00000000000001
+            }
+        ],
+        "version": "6.0"
     },
     "MountainBracingBolt": {
         "name": "Mountain-Bracing Bolt",
@@ -4713,6 +4952,47 @@ export default {
         "matWeakEnemy": "Meka",
         "hakushinID": 13427,
         "id": 13427
+    },
+    "ProspectorsShovel": {
+        "name": "Prospector's Shovel",
+        "rarity": 4,
+        "type": "Polearm",
+        "hakushinID": 13433,
+        "id": 13433,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_Ilmarinen.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_Ilmarinen.webp"
+        ],
+        "baseATK": 42,
+        "stat": "atk_",
+        "matForgery": "Lantern",
+        "matStrongEnemy": "Wild Hunt",
+        "matWeakEnemy": "Landcruiser",
+        "passive": "Electro-Charged DMG is increased by @0%, and Lunar-Charged DMG is increased by @1%. Moonsign: Ascendant Gleam: Lunar-Charged DMG is increased by an additional @2%.",
+        "refinementData": [
+            {
+                "1": 48,
+                "2": 60,
+                "3": 72,
+                "4": 84,
+                "5": 96
+            },
+            {
+                "1": 12,
+                "2": 15,
+                "3": 18,
+                "4": 21,
+                "5": 24
+            },
+            {
+                "1": 12,
+                "2": 15,
+                "3": 18,
+                "4": 21,
+                "5": 24
+            }
+        ],
+        "version": "6.0"
     },
     "PrototypeAmber": {
         "name": "Prototype Amber",
@@ -5493,6 +5773,40 @@ export default {
         ],
         "version": "5.5.54"
     },
+    "SerenitysCall": {
+        "name": "Serenity's Call",
+        "rarity": 4,
+        "type": "Sword",
+        "hakushinID": 11433,
+        "id": 11433,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_Ilmarinen.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_Ilmarinen.webp"
+        ],
+        "baseATK": 41,
+        "stat": "enerRech_",
+        "matForgery": "Device",
+        "matStrongEnemy": "Frostnight Scion",
+        "matWeakEnemy": "Oprichniki",
+        "passive": "Upon causing an Elemental Reaction, increases Max HP by @0% for 12s. Moonsign: Ascendant Gleam: Max HP from this effect is further increased by @1%. This effect can be triggered even if the equipping character is off-field.",
+        "refinementData": [
+            {
+                "1": 16,
+                "2": 20,
+                "3": 24,
+                "4": 28.000000000000004,
+                "5": 32
+            },
+            {
+                "1": 1200,
+                "2": 1200,
+                "3": 1200,
+                "4": 1200,
+                "5": 1200
+            }
+        ],
+        "version": "6.0"
+    },
     "SerpentSpine": {
         "name": "Serpent Spine",
         "rarity": 4,
@@ -5546,6 +5860,40 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Serpent_Spine",
         "hakushinID": 12409,
         "id": 12409
+    },
+    "SnareHook": {
+        "name": "Snare Hook",
+        "rarity": 4,
+        "type": "Bow",
+        "hakushinID": 15433,
+        "id": 15433,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_Ilmarinen.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_Ilmarinen.webp"
+        ],
+        "baseATK": 41,
+        "stat": "enerRech_",
+        "matForgery": "Lantern",
+        "matStrongEnemy": "Wild Hunt",
+        "matWeakEnemy": "Hili.Archers",
+        "passive": "Upon causing an Elemental Reaction, increases Elemental Mastery by @0 for 12s. Moonsign: Ascendant Gleam: Elemental Mastery from this effect is further increased by @1. This effect can be triggered even if the equipping character is off-field.",
+        "refinementData": [
+            {
+                "1": 60,
+                "2": 75,
+                "3": 90,
+                "4": 105,
+                "5": 120
+            },
+            {
+                "1": 12,
+                "2": 12,
+                "3": 12,
+                "4": 12,
+                "5": 12
+            }
+        ],
+        "version": "6.0"
     },
     "SnowTombedStarsilver": {
         "name": "Snow-Tombed Starsilver",

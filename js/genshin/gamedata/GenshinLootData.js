@@ -140,6 +140,22 @@ export default {
             "3": "Warm Back-Shell",
             "4": "Blazing Prismshell"
         },
+        "Frostnight Scion": {
+            "4": "Frostnight's Glory",
+            "3": "Frostnight's Glow",
+            "2": "Frostnight's Glimmer"
+        },
+        "Wild Hunt": {
+            "source": "Shadow of the Wild Hunt",
+            "4": "Mistshroud Helmet",
+            "3": "Mistshroud Plate",
+            "2": "Mistshroud Manifestation"
+        },
+        "Radiant Beast": {
+            "4": "Radiant Exoskeleton",
+            "3": "Glowing Remains",
+            "2": "Lightless Bone"
+        },
         "Slimes": {
             "1": "Slime Condensate",
             "2": "Slime Secretions",
@@ -223,6 +239,16 @@ export default {
             "1": "Sentry's Wooden Whistle",
             "2": "Warrior's Metal Whistle",
             "3": "Saurian-Crowned Warrior's Golden Whistle"
+        },
+        "Oprichniki": {
+            "3": "Frost-Etched Warrant",
+            "2": "Immaculate Warrant",
+            "1": "Tattered Warrant"
+        },
+        "Landcruiser": {
+            "3": "Precision Drive Shaft",
+            "2": "Reinforced Drive Shaft",
+            "1": "Broken Drive Shaft"
         }
     },
     "trounce": [
@@ -481,6 +507,14 @@ export default {
         "Overseer Device": {
             "name": "Secret Source Automaton: Overseer Device",
             "4": "Secret Source Airflow Accumulator"
+        },
+        "Knuckle": {
+            "name": "Knuckle Duckle",
+            "4": "Precision Kuuvahki Stamping Die"
+        },
+        "Moonfly": {
+            "name": "Radiant Moonfly",
+            "4": "Lightbearing Scale-Feather"
         }
     },
     "gemstone": {
@@ -645,6 +679,30 @@ export default {
         },
         "Conflict": {
             "source": "Natlan",
+            "days": [
+                "Wednesday",
+                "Saturday",
+                "Sunday"
+            ]
+        },
+        "Moonlight": {
+            "source": "Nod-Krai",
+            "days": [
+                "Monday",
+                "Thursday",
+                "Sunday"
+            ]
+        },
+        "Elysium": {
+            "source": "Nod-Krai",
+            "days": [
+                "Tuesday",
+                "Friday",
+                "Sunday"
+            ]
+        },
+        "Vagrancy": {
+            "source": "Nod-Krai",
             "days": [
                 "Wednesday",
                 "Saturday",
@@ -868,6 +926,42 @@ export default {
                 "Saturday",
                 "Sunday"
             ]
+        },
+        "Device": {
+            "source": "Nod-Krai",
+            "days": [
+                "Monday",
+                "Thursday",
+                "Sunday"
+            ],
+            "2": "Artful Device Fragment",
+            "3": "Artful Device Replica",
+            "4": "Artful Device Inheritance",
+            "5": "Artful Device Wish"
+        },
+        "Lantern": {
+            "source": "Nod-Krai",
+            "days": [
+                "Tuesday",
+                "Friday",
+                "Sunday"
+            ],
+            "2": "Ember of Long Night Flint",
+            "3": "Afterglow of Long Night Flint",
+            "4": "Flare of Long Night Flint",
+            "5": "Blaze of Long Night Flint"
+        },
+        "Sheath": {
+            "source": "Nod-Krai",
+            "days": [
+                "Wednesday",
+                "Saturday",
+                "Sunday"
+            ],
+            "2": "Sundered Glory of the Far-North Scions",
+            "3": "Unyielding Delusion of the Far-North Scions",
+            "4": "Oblation of the Far-North Scions",
+            "5": "Aureate Radiance of the Far-North Scions"
         }
     }
 };
