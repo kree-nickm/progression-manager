@@ -1,8 +1,10 @@
-A site where you can record all of your characters/items/etc. for a few different games ([Genshin Impact](#genshin-impact), [Wuthering Waves](#wuthering-waves)), and keep track of everything you need to progress, so you have access to all such information at a glance.
+A site where you can record all of your characters/items/etc. for a few different games (only [Genshin Impact](#genshin-impact) at the moment), and keep track of everything you need to progress, so you have access to all such information at a glance.
 
 https://kree-nickm.github.io/progression-manager
 
 I made this mostly for myself, and my main concern is that it works the way I want it to work. I hope other people find it useful as well, but if people can't figure out how to use it or want it to work differently, I am more likely to make a guide than to make a functionality change that I wouldn't personally use.
+
+Check the Wiki here on Github for any guides on how to use the app, and other information.
 
 **Special Thanks** to [Dimbreath](https://github.com/Dimbreath), [Hakush.in](https://hakush.in/), and the Fandom wikis. The data and images for my app are pulled from some combination of those places. I enter very little of it manually, and this app would not exist without them compiling game data in a way that's easy for me to fetch automatically.
 
@@ -23,12 +25,15 @@ Features include:
 * Using the above artifact preferences, run an algorithm that determines a desirability rating for each artifact on your account, based on the number of your characters who might want to use it.
 * For each artifact, view an ordered list of your character builds that desire it the most, based on the above preferences.
 * _(Work-In-Progress)_ See each of your characters' stats based on their equipped weapon, artifacts, unlocked talents and constellations, as well as how much damage they should be doing with various attacks, skills, bursts, reactions, etc. Additionally:
+  * _(Work-In-Progress)_ Allow you to create showcases of some of your characters to show off to other players, with various options for how they should be displayed.
   * Factor in triggered effects from those aforementioned sources, and how the damage values will change when such effects are triggered.
   * Allow you to see all of that information for a "preview": an alternate gear set or upgraded stats alongside your current gear and stats, and use that to decide which gear you prefer and whether certain upgrades are worth it. The alternate gear can be gear that you own, or theoretical pieces that are equal to what you have, but from a different artifact set or with different artifact primary stats.
   * _(Planned Feature)_ Allow you to import combat simulations that have been exported from [gcsim](#alternatives), and use that to predict changes to your team's DPS when you preview alternate gear and stats, rather than only seeing individual motion value changes.
 * Allow you to set up teams, and see how the buffs provided by each team members' abilities/artifacts/weapons will affect all of the aforementioned statistics.
 * Set targets for your character/gear progression, so you can quickly see all of the things you need to spend resin on.
 * _(Planned Feature)_ Sync your data to Google Drive so it's easier to back up and transfer between devices.
+* _(Planned Feature)_ Create example teams with example gear and perform stat calculations using those teams, instead of your own, in order to aid in theorycrafting.
+* _(Planned Feature)_ Using the above example teams, put together rotations to calculated the predicted DPS of any team, in order to aid even further in theorycrafting.
 
 ## Alternatives
 There are many other Genshin Impact managers that I am aware of, which serve similar purposes. They are all relatively specialized and probably do those things better than mine (for now, smile). However, I made this one because I did not want to have to use 3 different managers to get all the features I want. That said, with the ability to import/export data in GOOD format, you can use them alongside mine if you want to.
@@ -38,7 +43,4 @@ There are many other Genshin Impact managers that I am aware of, which serve sim
 * [Genshin Impact Calculator](https://genshin.aspirine.su/): Does a bunch of calculations with stats and damage, including party set-up, and helps you select artifacts for your builds, but doesn't import/store any of your stuff except for artifacts.
 * [gcsim](https://gcsim.app): Allows you to input characters, stats, and gear, then define an example combat and run a simulation to determine theoretical team DPS. You can import your characters and gear to streamline the process, and look up combats created by others so that you don't have to program your own.
 * [Enka](https://enka.network/): Pulls your character data directly from your Genshin Impact profile. Has a convenient display for each of your characters that makes it very easy for yourself and others to review character/weapon/artifact statistics. Does not track materials or any gear that is not equipped to one of the 8 characters displayed on your profile, but can remember previous characters.
-* [Akasha](https://akasha.cv): Uses Enka and has the same features, but also lets you compare your characters to other players' characters who use the site.
-
-# Wuthering Waves
-Support for Wuthing Waves is still a major work-in-progress. My goal is to have all of the same features as the Genshin Impact version, but it will take a while to get there. At the moment it only tracks characters and weapons, along with the materials needed by them. I fear that unless someone can make a screen-reader for Wuthering Waves similar to Inventory Kamera for Genshin, this app will be too cumbersome to use for anything else.
+* [Akasha](https://akasha.cv): Uses Enka and has the same features, but also gives you additional analytics about your builds, and also lets you compare your characters to other players' characters who use the site.
