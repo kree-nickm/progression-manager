@@ -22,7 +22,12 @@ export default {
         "hpMaxAsc": 3360.243,
         "atkMaxAsc": 72.63875,
         "defMaxAsc": 182.2275,
-        "version": "6.0"
+        "version": "6.0",
+        "skillIds": [
+            11211,
+            11212,
+            11215
+        ]
     },
     "Albedo": {
         "name": "Albedo",
@@ -970,7 +975,12 @@ export default {
         "hpMaxAsc": 3993.1443,
         "atkMaxAsc": 112.393555,
         "defMaxAsc": 258.4764,
-        "version": "6.0"
+        "version": "6.0",
+        "skillIds": [
+            11201,
+            11202,
+            11205
+        ]
     },
     "Freminet": {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Freminet",
@@ -1702,7 +1712,12 @@ export default {
         "hpMaxAsc": 3405.9172,
         "atkMaxAsc": 81.50444,
         "defMaxAsc": 213.759,
-        "version": "6.0"
+        "version": "6.0",
+        "skillIds": [
+            11191,
+            11192,
+            11195
+        ]
     },
     "Layla": {
         "name": "Layla",
@@ -2011,6 +2026,31 @@ export default {
             10915
         ],
         "imgId": "UI_AvatarIcon_Navia"
+    },
+    "Nefer": {
+        "name": "Nefer",
+        "rarity": 5,
+        "weapon": "Catalyst",
+        "element": "Dendro",
+        "hakushinID": 10000122,
+        "id": 10000122,
+        "imgId": "UI_AvatarIcon_Nefer",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Nefer.webp",
+        "region": "Nodkrai",
+        "matEnemy": "Oprichniki",
+        "matBoss": "Herra",
+        "matFlower": "Moonfall Silver",
+        "matMastery": "Elysium",
+        "matTrounce": "Ascended Sample: Rook",
+        "ascendStat": "critDMG_",
+        "hpBase": 988.9742,
+        "atkBase": 26.8128,
+        "defBase": 62.2232,
+        "hpMaxAsc": 4061.2627,
+        "atkMaxAsc": 110.09981,
+        "defMaxAsc": 255.528,
+        "version": "6.1",
+        "release": "October 21, 2025"
     },
     "Neuvillette": {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Neuvillette",

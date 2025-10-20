@@ -1240,6 +1240,14 @@ export default {
         "icon": "UI_ItemIcon_113078",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_113078.webp"
     },
+    "RadiantAntler": {
+        "id": 113079,
+        "name": "Radiant Antler",
+        "rarity": 4,
+        "type": "Character Level-Up Material",
+        "icon": "UI_ItemIcon_113079",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_113079.webp"
+    },
     "TeachingsOfFreedom": {
         "id": 104301,
         "name": "Teachings of Freedom",
@@ -11163,6 +11171,94 @@ export default {
         "icon": "UI_ItemIcon_108844",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108844.webp"
     },
+    "SuspiciousLakkaberryPie": {
+        "id": 108909,
+        "name": "Suspicious Lakkaberry Pie",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108845",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108845.webp"
+    },
+    "LakkaberryPie": {
+        "id": 108910,
+        "name": "Lakkaberry Pie",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108845",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108845.webp"
+    },
+    "DeliciousLakkaberryPie": {
+        "id": 108911,
+        "name": "Delicious Lakkaberry Pie",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108845",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108845.webp"
+    },
+    "SuspiciousLohikeitto": {
+        "id": 108912,
+        "name": "Suspicious Lohikeitto",
+        "rarity": 2,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108846",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108846.webp"
+    },
+    "Lohikeitto": {
+        "id": 108913,
+        "name": "Lohikeitto",
+        "rarity": 2,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108846",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108846.webp"
+    },
+    "DeliciousLohikeitto": {
+        "id": 108914,
+        "name": "Delicious Lohikeitto",
+        "rarity": 2,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108846",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108846.webp"
+    },
+    "PiramidaNightingale": {
+        "id": 108915,
+        "name": "Piramida Nightingale",
+        "rarity": 2,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108847",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108847.webp"
+    },
+    "FrontierLand": {
+        "id": 108916,
+        "name": "Frontier Land",
+        "rarity": 2,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108848",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108848.webp"
+    },
+    "WildberryTrail": {
+        "id": 108917,
+        "name": "Wildberry Trail",
+        "rarity": 2,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108849",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108849.webp"
+    },
+    "SecretsExchanged": {
+        "id": 108918,
+        "name": "Secrets Exchanged",
+        "rarity": 2,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108850",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108850.webp"
+    },
+    "SugarSculptureNefer": {
+        "id": 108919,
+        "name": "Sugar Sculpture: Nefer",
+        "rarity": 2,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108851",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108851.webp"
+    },
     "PureWater": {
         "id": 111029,
         "name": "\"Pure Water\"",
@@ -11681,6 +11777,24 @@ export default {
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220068.webp"
     },
     "5": {
+        "id": 220068,
+        "type": "Gadget",
+        "icon": "UI_ItemIcon_220068",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220068.webp"
+    },
+    "6": {
+        "id": 220068,
+        "type": "Gadget",
+        "icon": "UI_ItemIcon_220068",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220068.webp"
+    },
+    "7": {
+        "id": 220068,
+        "type": "Gadget",
+        "icon": "UI_ItemIcon_220068",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220068.webp"
+    },
+    "8": {
         "id": 220068,
         "type": "Gadget",
         "icon": "UI_ItemIcon_220068",
@@ -12421,6 +12535,27 @@ export default {
         "icon": "UI_ItemIcon_101255",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_101255.webp",
         "rarity": 1
+    },
+    "PortableBearing": {
+        "id": 101257,
+        "name": "Portable Bearing",
+        "type": "Local Specialty (Nod-Krai)",
+        "icon": "UI_ItemIcon_101257",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_101257.webp"
+    },
+    "FrostlampFlower": {
+        "id": 101261,
+        "name": "Frostlamp Flower",
+        "type": "Local Specialty (Nod-Krai)",
+        "icon": "UI_ItemIcon_101261",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_101261.webp"
+    },
+    "MoonfallSilver": {
+        "id": 101263,
+        "name": "Moonfall Silver",
+        "type": "Local Specialty (Nod-Krai)",
+        "icon": "UI_ItemIcon_101263",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_101263.webp"
     },
     "RukkhashavaMushrooms": {
         "id": 101213,
@@ -13648,7 +13783,7 @@ export default {
         "icon": "UI_ItemIcon_200125",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_200125.webp"
     },
-    "6": {
+    "9": {
         "id": 200125,
         "rarity": 4,
         "type": "Refinement Material",
@@ -13742,6 +13877,22 @@ export default {
         "type": "Very Special Item",
         "icon": "UI_ItemIcon_1302",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_1302.webp"
+    },
+    "OverwriteKeyLeft": {
+        "id": 1303,
+        "name": "Overwrite Key: Left",
+        "rarity": 4,
+        "type": "Very Special Item",
+        "icon": "UI_ItemIcon_1303",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_1303.webp"
+    },
+    "OverwriteKeyRight": {
+        "id": 1304,
+        "name": "Overwrite Key: Right",
+        "rarity": 4,
+        "type": "Very Special Item",
+        "icon": "UI_ItemIcon_1304",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_1304.webp"
     },
     "CakeForTraveler": {
         "id": 118012,

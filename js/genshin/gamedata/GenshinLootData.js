@@ -515,6 +515,10 @@ export default {
         "Moonfly": {
             "name": "Radiant Moonfly",
             "4": "Lightbearing Scale-Feather"
+        },
+        "Herra": {
+            "name": "Frostnight Herra",
+            "4": "Radiant Antler"
         }
     },
     "gemstone": {

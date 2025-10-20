@@ -1458,6 +1458,47 @@ export default {
         "hakushinID": 12510,
         "id": 12510
     },
+    "ReliquaryOfTruth": {
+        "name": "Reliquary of Truth",
+        "rarity": 5,
+        "type": "Catalyst",
+        "hakushinID": 14521,
+        "id": 14521,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_Sistrum.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_Sistrum.webp"
+        ],
+        "baseATK": 44,
+        "stat": "critDMG_",
+        "matForgery": "Plate",
+        "matStrongEnemy": "Radiant Beast",
+        "matWeakEnemy": "Fungi",
+        "passive": "CRIT Rate is increased by @0%. When the equipping character unleashes an Elemental Skill, they gain the Secret of Lies effect: Elemental Mastery is increased by @1 for 12s. When the equipping character deals Lunar-Bloom DMG to an opponent, they gain the Moon of Truth effect: CRIT DMG is increased by @2% for 4s. When both the Secret of Lies and Moon of Truth effects are active at the same time, the results of both effects will be increased by 50%.",
+        "refinementData": [
+            {
+                "1": 8000,
+                "2": 10000,
+                "3": 12000,
+                "4": 14000,
+                "5": 16000
+            },
+            {
+                "1": 0.24,
+                "2": 0.3,
+                "3": 0.36,
+                "4": 0.42,
+                "5": 0.48
+            },
+            {
+                "1": 1200,
+                "2": 1200,
+                "3": 1200,
+                "4": 1200,
+                "5": 1200
+            }
+        ],
+        "version": "6.1"
+    },
     "SilvershowerHeartstrings": {
         "name": "Silvershower Heartstrings",
         "rarity": 5,
@@ -3131,6 +3172,40 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Crescent_Pike",
         "hakushinID": 13403,
         "id": 13403
+    },
+    "DawningFrost": {
+        "name": "Dawning Frost",
+        "rarity": 4,
+        "type": "Catalyst",
+        "hakushinID": 14434,
+        "id": 14434,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_Ziedas.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_Ziedas.webp"
+        ],
+        "baseATK": 42,
+        "stat": "critDMG_",
+        "matForgery": "Device",
+        "matStrongEnemy": "Frostnight Scion",
+        "matWeakEnemy": "Oprichniki",
+        "passive": "For 10s after a Charged Attack hits an opponent, Elemental Mastery is increased by @0. For 10s after an Elemental Skill hits an opponent, Elemental Mastery is increased by @1.",
+        "refinementData": [
+            {
+                "1": 72,
+                "2": 90,
+                "3": 108,
+                "4": 126,
+                "5": 144
+            },
+            {
+                "1": 10,
+                "2": 10,
+                "3": 10,
+                "4": 10,
+                "5": 10
+            }
+        ],
+        "version": "6.1"
     },
     "Deathmatch": {
         "name": "Deathmatch",
@@ -5463,6 +5538,40 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Rust",
         "hakushinID": 15405,
         "id": 15405
+    },
+    "SacrificersStaff": {
+        "name": "Sacrificer's Staff",
+        "rarity": 4,
+        "type": "Polearm",
+        "hakushinID": 13434,
+        "id": 13434,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_Krivule.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_Krivule.webp"
+        ],
+        "baseATK": 45,
+        "stat": "critRate_",
+        "matForgery": "Lantern",
+        "matStrongEnemy": "Wild Hunt",
+        "matWeakEnemy": "Landcruiser",
+        "passive": "For 6s after an Elemental Skill hits an opponent, ATK is increased by @0% and Energy Recharge is increased by @1%. Max 3 stacks. This effect can be triggered even when the equipping character is off-field.",
+        "refinementData": [
+            {
+                "1": 600,
+                "2": 600,
+                "3": 600,
+                "4": 600,
+                "5": 600
+            },
+            {
+                "1": 8,
+                "2": 10,
+                "3": 12,
+                "4": 14.000000000000002,
+                "5": 16
+            }
+        ],
+        "version": "6.1"
     },
     "SacrificialBow": {
         "name": "Sacrificial Bow",
