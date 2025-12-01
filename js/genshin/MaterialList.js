@@ -193,9 +193,30 @@ export default class MaterialList extends GenshinList
   {
     if(this.viewer.settings.preferences.materialList == '1')
     {
+      // Categorize all the items so the template can easily display them.
+      data.itemGroups = this.items().reduce((itemGroups, item) => {
+        if(!itemGroups[item.type])
+          itemGroups[item.type] = {};
+        if(!itemGroups[item.type][item.source])
+          itemGroups[item.type][item.source] = {source:item.source, items:[]};
+        itemGroups[item.type][item.source].items.push(item);
+        return itemGroups;
+      }, {});
+      
+      // Extra info for some groups. TODO: These need to update when item values are changed.
+      for(let src in data.itemGroups.trounce)
+      {
+        data.itemGroups.trounce[src].total = 0;
+        data.itemGroups.trounce[src].wanted = 0;
+        for(let item of data.itemGroups.trounce[src].items)
+        {
+          data.itemGroups.trounce[src].total += item.count;
+          data.itemGroups.trounce[src].wanted += item.viewer.account.plan.resolved[item.key]?.amount ?? 0;
+        }
+      }
+      
+      // Groups that are not manually handled in the template.
       data.items = {
-        'enemy': this.items('enemy'),
-        'trounce': this.items('trounce'),
         'boss': this.items('boss'),
         'gemstone': this.items('gemstone'),
         'mastery': this.items('mastery'),
@@ -208,6 +229,7 @@ export default class MaterialList extends GenshinList
         'wood': this.items('wood'),
         'unknown': this.items('unknown'),
       };
+      
       data.fields = this.display.getFields().map(field => ({field, params:[]}));
       options.template = "genshin/renderMaterialList";
       return {element, data, options};

@@ -44,12 +44,12 @@ export default {
         "region": "Mondstadt",
         "release": "December 23, 2020",
         "patch": "1.2",
-        "hpBase": 1029.5855712890625,
-        "atkBase": 19.5510005950928,
-        "defBase": 68.2061996459961,
-        "hpMaxAsc": 4228.03515625,
-        "atkMaxAsc": 80.2811126708984,
-        "defMaxAsc": 280.0979919433594,
+        "hpBase": 1029.5856,
+        "atkBase": 19.551,
+        "defBase": 68.2062,
+        "hpMaxAsc": 4228.035,
+        "atkMaxAsc": 80.28111,
+        "defMaxAsc": 280.098,
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Albedo",
         "hakushinID": 10000038,
         "id": 10000038,
@@ -58,7 +58,8 @@ export default {
             10387,
             10388
         ],
-        "imgId": "UI_AvatarIcon_Albedo"
+        "imgId": "UI_AvatarIcon_Albedo",
+        "version": "6.2"
     },
     "Alhaitham": {
         "name": "Alhaitham",
@@ -799,6 +800,31 @@ export default {
         ],
         "imgId": "UI_AvatarIcon_Dori"
     },
+    "Durin": {
+        "name": "Durin",
+        "rarity": 5,
+        "weapon": "Sword",
+        "element": "Pyro",
+        "hakushinID": 10000123,
+        "id": 10000123,
+        "imgId": "UI_AvatarIcon_Durin",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Durin.webp",
+        "region": "Mondstadt",
+        "matEnemy": "Oprichniki",
+        "matBoss": "Landrover",
+        "matFlower": "Frostlamp Flower",
+        "matMastery": "Ballad",
+        "matTrounce": "Eroded Sunfire",
+        "ascendStat": "critDMG_",
+        "hpBase": 967.6198,
+        "atkBase": 26.999,
+        "defBase": 64.0181,
+        "hpMaxAsc": 3973.57,
+        "atkMaxAsc": 110.86439,
+        "defMaxAsc": 262.899,
+        "version": "6.2",
+        "release": "December 02, 2025"
+    },
     "Emilie": {
         "name": "Emilie",
         "rarity": 5,
@@ -936,12 +962,12 @@ export default {
         "region": "Mondstadt",
         "release": "September 28, 2020",
         "patch": "1.0",
-        "hpBase": 770.46337890625,
-        "atkBase": 20.4792003631592,
-        "defBase": 49.7857513427734,
-        "hpMaxAsc": 2756.7041015625,
-        "atkMaxAsc": 73.2759323120117,
-        "defMaxAsc": 178.1325073242188,
+        "hpBase": 770.4634,
+        "atkBase": 20.4792,
+        "defBase": 49.78575,
+        "hpMaxAsc": 2756.704,
+        "atkMaxAsc": 73.27593,
+        "defMaxAsc": 178.1325,
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Fischl",
         "hakushinID": 10000031,
         "id": 10000031,
@@ -950,7 +976,8 @@ export default {
             10312,
             10313
         ],
-        "imgId": "UI_AvatarIcon_Fischl"
+        "imgId": "UI_AvatarIcon_Fischl",
+        "version": "6.2"
     },
     "Flins": {
         "name": "Flins",
@@ -1257,6 +1284,31 @@ export default {
             11162,
             11165
         ]
+    },
+    "Jahoda": {
+        "name": "Jahoda",
+        "rarity": 4,
+        "weapon": "Bow",
+        "element": "Anemo",
+        "hakushinID": 10000124,
+        "id": 10000124,
+        "imgId": "UI_AvatarIcon_Jahoda",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Jahoda.webp",
+        "region": "Nodkrai",
+        "matEnemy": "Landcruiser",
+        "matBoss": "Moonfly",
+        "matFlower": "Portable Bearing",
+        "matMastery": "Vagrancy",
+        "matTrounce": "Ascended Sample: Knight",
+        "ascendStat": "heal_",
+        "hpBase": 808.7586,
+        "atkBase": 18.6984,
+        "defBase": 48.64125,
+        "hpMaxAsc": 2893.7239,
+        "atkMaxAsc": 66.90411,
+        "defMaxAsc": 174.0375,
+        "version": "6.2",
+        "release": "December 02, 2025"
     },
     "Jean": {
         "name": "Jean",
@@ -1581,12 +1633,12 @@ export default {
         "region": "Mondstadt",
         "release": "October 20, 2020",
         "patch": "1.0",
-        "hpBase": 800.788818359375,
-        "atkBase": 24.2059993743896,
-        "defBase": 47.8639984130859,
-        "hpMaxAsc": 3288.4716796875,
-        "atkMaxAsc": 99.3956604003906,
-        "defMaxAsc": 196.5599975585938,
+        "hpBase": 800.7888,
+        "atkBase": 24.206,
+        "defBase": 47.864,
+        "hpMaxAsc": 3288.4717,
+        "atkMaxAsc": 99.39566,
+        "defMaxAsc": 196.56,
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Klee",
         "hakushinID": 10000029,
         "id": 10000029,
@@ -1595,7 +1647,8 @@ export default {
             10292,
             10295
         ],
-        "imgId": "UI_AvatarIcon_Klee"
+        "imgId": "UI_AvatarIcon_Klee",
+        "version": "6.2"
     },
     "KujouSara": {
         "name": "Kujou Sara",
@@ -1919,12 +1972,12 @@ export default {
         "region": "Mondstadt",
         "release": "September 28, 2020",
         "patch": "1.0",
-        "hpBase": 810.322021484375,
-        "atkBase": 22.3439998626709,
-        "defBase": 50.8554992675781,
-        "hpMaxAsc": 3327.6201171875,
-        "atkMaxAsc": 91.7498397827148,
-        "defMaxAsc": 208.8450012207031,
+        "hpBase": 810.322,
+        "atkBase": 22.344,
+        "defBase": 50.8555,
+        "hpMaxAsc": 3327.62,
+        "atkMaxAsc": 91.74984,
+        "defMaxAsc": 208.845,
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Mona",
         "hakushinID": 10000041,
         "id": 10000041,
@@ -1933,7 +1986,8 @@ export default {
             10412,
             10415
         ],
-        "imgId": "UI_AvatarIcon_Mona"
+        "imgId": "UI_AvatarIcon_Mona",
+        "version": "6.2"
     },
     "Mualani": {
         "name": "Mualani",
@@ -2050,7 +2104,12 @@ export default {
         "atkMaxAsc": 110.09981,
         "defMaxAsc": 255.528,
         "version": "6.1",
-        "release": "October 21, 2025"
+        "release": "October 21, 2025",
+        "skillIds": [
+            11221,
+            11222,
+            11225
+        ]
     },
     "Neuvillette": {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Neuvillette",
@@ -2283,12 +2342,12 @@ export default {
         "region": "Mondstadt",
         "release": "September 28, 2020",
         "patch": "1.0",
-        "hpBase": 1002.9700927734375,
-        "atkBase": 19.5888004302979,
-        "defBase": 62.9474983215332,
-        "hpMaxAsc": 3588.609130859375,
-        "atkMaxAsc": 70.0900192260742,
-        "defMaxAsc": 225.2250061035156,
+        "hpBase": 1002.9701,
+        "atkBase": 19.5888,
+        "defBase": 62.9475,
+        "hpMaxAsc": 3588.6091,
+        "atkMaxAsc": 70.09002,
+        "defMaxAsc": 225.225,
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Razor",
         "hakushinID": 10000020,
         "id": 10000020,
@@ -2297,7 +2356,8 @@ export default {
             10202,
             10203
         ],
-        "imgId": "UI_AvatarIcon_Razor"
+        "imgId": "UI_AvatarIcon_Razor",
+        "version": "6.2"
     },
     "Rosaria": {
         "name": "Rosaria",
@@ -2559,12 +2619,12 @@ export default {
         "region": "Mondstadt",
         "release": "September 28, 2020",
         "patch": "1.0",
-        "hpBase": 775.0223388671875,
-        "atkBase": 14.2463998794556,
-        "defBase": 58.9417495727539,
-        "hpMaxAsc": 2773.01611328125,
-        "atkMaxAsc": 50.9745597839355,
-        "defMaxAsc": 210.8925018310547,
+        "hpBase": 775.02234,
+        "atkBase": 14.2464,
+        "defBase": 58.94175,
+        "hpMaxAsc": 2773.016,
+        "atkMaxAsc": 50.97456,
+        "defMaxAsc": 210.8925,
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sucrose",
         "hakushinID": 10000043,
         "id": 10000043,
@@ -2573,7 +2633,8 @@ export default {
             10432,
             10435
         ],
-        "imgId": "UI_AvatarIcon_Sucrose"
+        "imgId": "UI_AvatarIcon_Sucrose",
+        "version": "6.2"
     },
     "Tartaglia": {
         "name": "Tartaglia",
@@ -2845,12 +2906,12 @@ export default {
         "region": "Mondstadt",
         "release": "September 28, 2020",
         "patch": "1.0",
-        "hpBase": 819.855224609375,
-        "atkBase": 20.4820003509521,
-        "defBase": 52.0521011352539,
-        "hpMaxAsc": 3366.768798828125,
-        "atkMaxAsc": 84.1040191650391,
-        "defMaxAsc": 213.7590026855469,
+        "hpBase": 819.8552,
+        "atkBase": 20.482,
+        "defBase": 52.0521,
+        "hpMaxAsc": 3366.7688,
+        "atkMaxAsc": 84.10402,
+        "defMaxAsc": 213.759,
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Venti",
         "hakushinID": 10000022,
         "id": 10000022,
@@ -2859,7 +2920,8 @@ export default {
             10224,
             10225
         ],
-        "imgId": "UI_AvatarIcon_Venti"
+        "imgId": "UI_AvatarIcon_Venti",
+        "version": "6.2"
     },
     "Wanderer": {
         "name": "Wanderer",

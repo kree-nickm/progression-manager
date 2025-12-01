@@ -212,7 +212,31 @@ thead {
   justify-content: center;
 }
 
+.material-group {
+  display: flex;
+  margin-bottom: 1em;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.material-group-items {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.material-group .material-group-caption {
+  text-align: center;
+}
+
+.material-row .material-group {
+  margin-left: 0.1em;
+  margin-right: 0.1em;
+  flex: 0 1 auto;
+}
+
 .material-row .list-item {
-  margin: 0.5em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
   flex: 0 1 auto;
 }

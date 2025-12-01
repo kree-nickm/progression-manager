@@ -1,4 +1,42 @@
 <div class="scroller list" data-template="genshin/renderMaterialList" data-uuid="{{uuid item}}">
+    <div class="material-row">
+      {{#each itemGroups.enemy}}
+        <div class="material-group">
+            <!--<div class="material-group-caption">{{source}}</div>-->
+            <div class="material-group-items">
+              {{#each items}}
+                <div class="list-item material-enemy" data-uuid="{{uuid .}}">
+                    <div class="item-display item-material display-md">
+                      {{> renderItemField item=. field="image" wrapper="div"}}
+                        <div class="display-caption">
+                          {{> renderItemField item=. field="count" wrapper="div"}}
+                        </div>
+                    </div>
+                </div>
+              {{/each}}
+            </div>
+        </div>
+      {{/each}}
+    </div>
+    <div class="material-row">
+      {{#each itemGroups.trounce}}
+        <div class="material-group">
+            <div class="material-group-caption">{{source}}: {{total}} / {{wanted}} ({{math total "-" wanted}})</div>
+            <div class="material-group-items">
+              {{#each items}}
+                <div class="list-item material-trounce" data-uuid="{{uuid .}}">
+                    <div class="item-display item-material display-md">
+                      {{> renderItemField item=. field="image" wrapper="div"}}
+                        <div class="display-caption">
+                          {{> renderItemField item=. field="count" wrapper="div"}}
+                        </div>
+                    </div>
+                </div>
+              {{/each}}
+            </div>
+        </div>
+      {{/each}}
+    </div>
   {{#each items as |materials type|}}
     <div class="material-row">
       {{#each materials}}

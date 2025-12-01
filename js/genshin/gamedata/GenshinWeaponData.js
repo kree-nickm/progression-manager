@@ -298,6 +298,47 @@ export default {
         "version": "5.2",
         "matStrongEnemy": "Mimiflora"
     },
+    "AthameArtis": {
+        "name": "Athame Artis",
+        "rarity": 5,
+        "type": "Sword",
+        "hakushinID": 11518,
+        "id": 11518,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_Motsognir.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_Motsognir.webp"
+        ],
+        "baseATK": 46,
+        "stat": "critRate_",
+        "matForgery": "Tile",
+        "matStrongEnemy": "Frostnight Scion",
+        "matWeakEnemy": "Landcruiser",
+        "passive": "CRIT DMG from Elemental Bursts is increased by @0%. When an Elemental Burst hits an opponent, gain the Blade of the Daylight Hours effect: ATK is increased by @1%. Nearby active party members other than the equipping character have their ATK increased by @2% for 3s.\\nAdditionally, when the party possesses Hexerei: Secret Rite effects, the effects of Blade of the Daylight Hours are increased by an additional 75%. This effect can be triggered even if the equipping character is off-field.",
+        "refinementData": [
+            {
+                "1": 16,
+                "2": 20,
+                "3": 24,
+                "4": 28.000000000000004,
+                "5": 32
+            },
+            {
+                "1": 300,
+                "2": 300,
+                "3": 300,
+                "4": 300,
+                "5": 300
+            },
+            {
+                "1": 20,
+                "2": 25,
+                "3": 30,
+                "4": 35,
+                "5": 40
+            }
+        ],
+        "version": "6.2"
+    },
     "Azurelight": {
         "name": "Azurelight",
         "rarity": 5,
@@ -2088,6 +2129,61 @@ export default {
             }
         ],
         "version": "5.5.54"
+    },
+    "TheDaybreakChronicles": {
+        "name": "The Daybreak Chronicles",
+        "rarity": 5,
+        "type": "Bow",
+        "hakushinID": 15515,
+        "id": 15515,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_Arianna.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_Arianna.webp"
+        ],
+        "baseATK": 48,
+        "stat": "critDMG_",
+        "matForgery": "Cuffs",
+        "matStrongEnemy": "Big Hilichurls",
+        "matWeakEnemy": "T.Hoarders",
+        "passive": "The equipping character gains Stirring Dawn Breeze: 3s after leaving combat, Normal Attack, Elemental Skill, and Elemental Burst DMG is increased by @0%. While in combat, this DMG Bonus will decrease by @1% per second until it reaches 0%. When the equipping character's Normal Attacks, Elemental Skills, or Elemental Bursts hit an opponent, the DMG Bonus for the corresponding DMG type is increased by @2% until it reaches @3%. This effect can be triggered once every 0.1s for each of the attack types mentioned above. This effect can be triggered even if the equipping character is off-field.\\nAdditionally, when the party possesses Hexerei: Secret Rite effects, when the equipping character's Normal Attacks, Elemental Skills, or Elemental Bursts hit an opponent, the DMG Bonus for all these DMG types is increased by @4% instead.",
+        "refinementData": [
+            {
+                "1": 300,
+                "2": 300,
+                "3": 300,
+                "4": 300,
+                "5": 300
+            },
+            {
+                "1": 60,
+                "2": 75,
+                "3": 90,
+                "4": 105,
+                "5": 120
+            },
+            {
+                "1": 10,
+                "2": 12.5,
+                "3": 15,
+                "4": 17.5,
+                "5": 20
+            },
+            {
+                "1": 10,
+                "2": 12.5,
+                "3": 15,
+                "4": 17.5,
+                "5": 20
+            },
+            {
+                "1": 10,
+                "2": 10,
+                "3": 10,
+                "4": 10,
+                "5": 10
+            }
+        ],
+        "version": "6.2"
     },
     "TheFirstGreatMagic": {
         "name": "The First Great Magic",
@@ -5220,6 +5316,33 @@ export default {
         "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Prototype_Starglitter",
         "hakushinID": 13402,
         "id": 13402
+    },
+    "RainbowSerpentsRainBow": {
+        "name": "Rainbow Serpent's Rain Bow",
+        "rarity": 4,
+        "type": "Bow",
+        "hakushinID": 15434,
+        "id": 15434,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_ElegguaBow.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_ElegguaBow.webp"
+        ],
+        "baseATK": 42,
+        "stat": "enerRech_",
+        "matForgery": "Mirror",
+        "matStrongEnemy": "Mimiflora",
+        "matWeakEnemy": "Oprichniki",
+        "passive": "ATK is increased by @0% for 8s after the equipping character's attacks hit an opponent while the equipping character is off-field.",
+        "refinementData": [
+            {
+                "1": 800,
+                "2": 800,
+                "3": 800,
+                "4": 800,
+                "5": 800
+            }
+        ],
+        "version": "6.2"
     },
     "Rainslasher": {
         "name": "Rainslasher",

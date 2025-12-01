@@ -240,15 +240,15 @@ export default {
             "2": "Warrior's Metal Whistle",
             "3": "Saurian-Crowned Warrior's Golden Whistle"
         },
-        "Oprichniki": {
-            "3": "Frost-Etched Warrant",
-            "2": "Immaculate Warrant",
-            "1": "Tattered Warrant"
-        },
         "Landcruiser": {
             "3": "Precision Drive Shaft",
             "2": "Reinforced Drive Shaft",
             "1": "Broken Drive Shaft"
+        },
+        "Oprichniki": {
+            "3": "Frost-Etched Warrant",
+            "2": "Immaculate Warrant",
+            "1": "Tattered Warrant"
         }
     },
     "trounce": [
@@ -319,9 +319,9 @@ export default {
         {
             "boss": "All-Devouring Narwhal",
             "loot": [
+                "Lightless Silk String",
                 "Lightless Eye of the Maelstrom",
-                "Lightless Mass",
-                "Lightless Silk String"
+                "Lightless Mass"
             ]
         },
         {
@@ -519,6 +519,10 @@ export default {
         "Herra": {
             "name": "Frostnight Herra",
             "4": "Radiant Antler"
+        },
+        "Landrover": {
+            "name": "Super-Heavy Landrover: Mechanized Fortress",
+            "4": "Cyclic Military Kuuvahki Core"
         }
     },
     "gemstone": {

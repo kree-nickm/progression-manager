@@ -1248,6 +1248,14 @@ export default {
         "icon": "UI_ItemIcon_113079",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_113079.webp"
     },
+    "CyclicMilitaryKuuvahkiCore": {
+        "id": 113080,
+        "name": "Cyclic Military Kuuvahki Core",
+        "rarity": 4,
+        "type": "Character Level-Up Material",
+        "icon": "UI_ItemIcon_113080",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_113080.webp"
+    },
     "TeachingsOfFreedom": {
         "id": 104301,
         "name": "Teachings of Freedom",
@@ -11259,6 +11267,62 @@ export default {
         "icon": "UI_ItemIcon_108851",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108851.webp"
     },
+    "AfterClassPractice": {
+        "id": 108921,
+        "name": "\"After-Class Practice\"",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108852",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108852.webp"
+    },
+    "AppleStewTrialVersion": {
+        "id": 108924,
+        "name": "Apple Stew (Trial Version)",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108853",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108853.webp"
+    },
+    "SuspiciousSpicedFriedChicken": {
+        "id": 108926,
+        "name": "Suspicious Spiced Fried Chicken",
+        "rarity": 4,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108854",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108854.webp"
+    },
+    "SpicedFriedChicken": {
+        "id": 108927,
+        "name": "Spiced Fried Chicken",
+        "rarity": 4,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108854",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108854.webp"
+    },
+    "DeliciousSpicedFriedChicken": {
+        "id": 108928,
+        "name": "Delicious Spiced Fried Chicken",
+        "rarity": 4,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108854",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108854.webp"
+    },
+    "SugarSculptureJahoda": {
+        "id": 108929,
+        "name": "Sugar Sculpture: Jahoda",
+        "rarity": 2,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108855",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108855.webp"
+    },
+    "SugarSculptureKuuhenki": {
+        "id": 108930,
+        "name": "Sugar Sculpture: Kuuhenki",
+        "rarity": 2,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108856",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108856.webp"
+    },
     "PureWater": {
         "id": 111029,
         "name": "\"Pure Water\"",
@@ -11800,6 +11864,18 @@ export default {
         "icon": "UI_ItemIcon_220068",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220068.webp"
     },
+    "9": {
+        "id": 220068,
+        "type": "Gadget",
+        "icon": "UI_ItemIcon_220068",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220068.webp"
+    },
+    "10": {
+        "id": 220068,
+        "type": "Gadget",
+        "icon": "UI_ItemIcon_220068",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220068.webp"
+    },
     "ScarletSandSlate": {
         "id": 220069,
         "name": "Scarlet Sand Slate",
@@ -12191,6 +12267,14 @@ export default {
         "type": "Gadget",
         "icon": "UI_ItemIcon_220125",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220125.webp"
+    },
+    "TheLittleWitchsDictionary": {
+        "id": 220126,
+        "name": "The Little Witch's Dictionary",
+        "rarity": 5,
+        "type": "Gadget",
+        "icon": "UI_ItemIcon_220126",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220126.webp"
     },
     "IntertwinedFate": {
         "id": 223,
@@ -13783,7 +13867,7 @@ export default {
         "icon": "UI_ItemIcon_200125",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_200125.webp"
     },
-    "9": {
+    "11": {
         "id": 200125,
         "rarity": 4,
         "type": "Refinement Material",
@@ -13805,6 +13889,14 @@ export default {
         "type": "Refinement Material",
         "icon": "UI_ItemIcon_200127",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_200127.webp"
+    },
+    "RefinedHeart": {
+        "id": 200128,
+        "name": "Refined Heart",
+        "rarity": 4,
+        "type": "Refinement Material",
+        "icon": "UI_ItemIcon_200128",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_200128.webp"
     },
     "Primogem": {
         "id": 201,
