@@ -205,11 +205,22 @@ thead {
   opacity: 0.4;
 }
 
+.material-rowgroup {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1em;
+  flex-direction: column;
+}
+
 .material-row {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 1em;
   justify-content: center;
+}
+
+.material-rowgroup .material-row {
+  margin-bottom: 0em;
 }
 
 .material-group {
@@ -219,7 +230,7 @@ thead {
   flex-direction: column;
 }
 
-.material-group-items {
+.material-group .material-group-items {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
@@ -239,4 +250,8 @@ thead {
   margin-left: 0.5em;
   margin-right: 0.5em;
   flex: 0 1 auto;
+}
+
+.no-material-groups .list-item {
+  margin-bottom: 1em;
 }

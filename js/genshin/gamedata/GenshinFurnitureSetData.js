@@ -407,7 +407,8 @@ export default {
             "Shenhe",
             "Yelan",
             "Yaoyao",
-            "Xianyun"
+            "Xianyun",
+            "Zibai"
         ]
     },
     "OfHuntingAndDancing": {
@@ -2563,7 +2564,8 @@ export default {
             "Ningguang",
             "YunJin",
             "Baizhu",
-            "LanYan"
+            "LanYan",
+            "Zibai"
         ]
     },
     "CloudyHazeDreamCourt": {

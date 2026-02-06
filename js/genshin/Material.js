@@ -35,6 +35,36 @@ export default class Material extends Ingredient(GenshinItem)
       .replaceAll(/ (a|an|the|and|but|or|for|nor|of|for|at|in|by|from|to|as) /gi, (match, p1, offset, str) => match.toLowerCase());
   }
   
+  static setupDisplay(display)
+  {
+    if(!display.getField("convertCount"))
+      display.addField("convertCount", {
+        label: "Convertable",
+        dynamic: true,
+        value: item => {
+          let total = 0;
+          let wanted = 0;
+          for(let srcItem of [...item.converts, item]) {
+            total += srcItem.count;
+            wanted += srcItem.viewer.account.plan.resolved[srcItem.key]?.amount ?? 0;
+          }
+          return `${total} / ${wanted} (${total-wanted})`;
+        },
+        dependencies: item => {
+          let dependencies = item.getCraftDependencies();
+          dependencies.push({item:item, field:"usedBy"});
+          for(let i of item.usedBy) {
+            dependencies.push({item:i, field:"wishlist"});
+            dependencies.push({item:i, field:i.constructor.ascensionProperty});
+            dependencies.push({item:i, field:i.constructor.talentProperty});
+          }
+          return dependencies;
+        },
+      });
+    
+    super.setupDisplay(display);
+  }
+  
   key = "";
   _shorthand;
   _type;

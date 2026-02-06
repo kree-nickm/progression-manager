@@ -615,6 +615,31 @@ export default {
         ],
         "imgId": "UI_AvatarIcon_Collei"
     },
+    "Columbina": {
+        "name": "Columbina",
+        "rarity": 5,
+        "weapon": "Catalyst",
+        "element": "Hydro",
+        "hakushinID": 10000125,
+        "id": 10000125,
+        "imgId": "UI_AvatarIcon_Columbina",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Columbina.webp",
+        "region": "Nodkrai",
+        "matEnemy": "Slimes",
+        "matBoss": "Herra",
+        "matFlower": "Winter Icelea",
+        "matMastery": "Moonlight",
+        "ascendStat": "critRate_",
+        "hpBase": 1143.984,
+        "atkBase": 7.448,
+        "defBase": 40.0861,
+        "hpMaxAsc": 4697.817,
+        "atkMaxAsc": 30.58328,
+        "defMaxAsc": 164.619,
+        "version": "6.3",
+        "release": "January 13, 2026",
+        "matTrounce": "Mask of the Virtuous Doctor"
+    },
     "Cyno": {
         "name": "Cyno",
         "weapon": "Polearm",
@@ -823,7 +848,12 @@ export default {
         "atkMaxAsc": 110.86439,
         "defMaxAsc": 262.899,
         "version": "6.2",
-        "release": "December 02, 2025"
+        "release": "December 02, 2025",
+        "skillIds": [
+            11231,
+            11232,
+            11235
+        ]
     },
     "Emilie": {
         "name": "Emilie",
@@ -1255,6 +1285,31 @@ export default {
             11135
         ]
     },
+    "Illuga": {
+        "name": "Illuga",
+        "rarity": 4,
+        "weapon": "Polearm",
+        "element": "Geo",
+        "hakushinID": 10000127,
+        "id": 10000127,
+        "imgId": "UI_AvatarIcon_Illuga",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Illuga.webp",
+        "region": "Nodkrai",
+        "matEnemy": "Landcruiser",
+        "matBoss": "Landrover",
+        "matFlower": "Pine Amber",
+        "matMastery": "Elysium",
+        "matTrounce": "Eroded Horn",
+        "ascendStat": "eleMas",
+        "hpBase": 1002.9701,
+        "atkBase": 16.0272,
+        "defBase": 68.2122,
+        "hpMaxAsc": 3588.6091,
+        "atkMaxAsc": 57.34638,
+        "defMaxAsc": 244.062,
+        "version": "6.3",
+        "release": "February 03, 2026"
+    },
     "Ineffa": {
         "name": "Ineffa",
         "rarity": 5,
@@ -1308,7 +1363,12 @@ export default {
         "atkMaxAsc": 66.90411,
         "defMaxAsc": 174.0375,
         "version": "6.2",
-        "release": "December 02, 2025"
+        "release": "December 02, 2025",
+        "skillIds": [
+            11241,
+            11242,
+            11245
+        ]
     },
     "Jean": {
         "name": "Jean",
@@ -3416,5 +3476,30 @@ export default {
             10303
         ],
         "imgId": "UI_AvatarIcon_Zhongli"
+    },
+    "Zibai": {
+        "name": "Zibai",
+        "rarity": 5,
+        "weapon": "Sword",
+        "element": "Geo",
+        "hakushinID": 10000126,
+        "id": 10000126,
+        "imgId": "UI_AvatarIcon_Zibai",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Zibai.webp",
+        "region": "Nodkrai_zibai",
+        "matEnemy": "Oprichniki",
+        "matBoss": "Whisperer",
+        "matFlower": "Glaze Lily",
+        "matMastery": "Gold",
+        "matTrounce": "Ascended Sample: Queen",
+        "ascendStat": "critDMG_",
+        "hpBase": 1005.7526,
+        "atkBase": 17.5028,
+        "defBase": 74.48835,
+        "hpMaxAsc": 4130.164,
+        "atkMaxAsc": 71.8707,
+        "defMaxAsc": 305.8965,
+        "version": "6.3",
+        "release": "February 03, 2026"
     }
 };

@@ -388,8 +388,20 @@ export default class UIController {
     return html;
   }
   
-  preRender(element, options)
+  async preRender(element, options)
   {
+    // Make sure any templates used by the fields of this UIController are imported before rendering, because handlebarsjs can't use async functions (like import).
+    if(this.display)
+    {
+      let templates = [];
+      for(let fld in this.display.fields)
+      {
+        let temp = this.display.fields[fld].get('template', this); // TODO: See if we can support params.
+        if(temp)
+          templates.push(temp);
+      }
+      await Renderer.getTemplates(...templates);
+    }
   }
   
   async render(force=false)

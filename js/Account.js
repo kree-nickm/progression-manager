@@ -10,9 +10,11 @@ export default class Account
   plan;
   settings;
   settingDefs;
+  errors;
   
   constructor(id, {lists, viewer}={})
   {
+    this.errors = false;
     this.id = id;
     
     if(lists)
@@ -52,12 +54,14 @@ export default class Account
   
   loadData(data)
   {
+    console.debug(`Loading data into ${this.id}.`);
     if(!this.viewer)
     {
       throw new Error(`Viewer must be defined in account "${this.id}" order to load lists via loadData().`);
     }
     this.viewer.settings.server = this.id;
     
+    // Determine where the actual game data (lists) that the user has saved is located within the account data.
     let source;
     if(!data)
       source = {};
@@ -77,6 +81,7 @@ export default class Account
       return;
     }
     
+    // Load any settings.
     if(data?.settings)
     {
       for(let key in data.settings)
@@ -93,17 +98,32 @@ export default class Account
       }
     }
     
+    // Load the lists based on what the manager is expecting (listClasses).
     for(let list in this.viewer.listClasses)
     {
       try
       {
         if(list in source)
+        {
+          console.debug(`Loading new data for ${list}.`);
           this.lists[list] = this.viewer.listClasses[list].fromJSON(source[list], {viewer:this.viewer});
+          
+          // Band-aid solution to catch the random error that happens on game data updates, which can delete all user data.
+          if(source[list].list.length > this.lists[list].list.length)
+          {
+            console.error(`${list} failed to load for unknown reasons. Normally this only happens on the first page load after an update, so reloading the page should hopefully fix it.`);
+            console.debug(`Data for ${list}:`, {sourceData:source[list], currentData:this.lists[list]});
+            this.errors = true;
+          }
+        }
         else if(!this.lists[list])
         {
+          console.debug(`Creating empty list for ${list}.`);
           this.lists[list] = new this.viewer.listClasses[list](this.viewer);
           this.lists[list].initialize();
         }
+        else
+          console.debug(`Leaving ${list} unchanged.`);
       }
       catch(x)
       {
@@ -115,7 +135,7 @@ export default class Account
     }
     for(let list in source)
       if(!this.viewer.listClasses[list])
-        console.warn(`Stored data contained unregistered list class: ${list}`, {registeredLists: this.viewer.listClasses});
+        console.warn(`Stored data contained unregistered list class: ${list}`, {registeredLists: Object.keys(this.viewer.listClasses)});
   }
   
   toJSON()

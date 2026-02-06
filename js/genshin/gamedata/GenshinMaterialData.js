@@ -225,6 +225,14 @@ export default {
         "icon": "UI_ItemIcon_121285",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_121285.webp"
     },
+    "IrismoonSeal": {
+        "id": 121452,
+        "name": "Irismoon Seal",
+        "rarity": 4,
+        "type": "Adventure Item",
+        "icon": "UI_ItemIcon_121452",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_121452.webp"
+    },
     "SanctifyingUnction": {
         "id": 105002,
         "name": "Sanctifying Unction",
@@ -1255,6 +1263,38 @@ export default {
         "type": "Character Level-Up Material",
         "icon": "UI_ItemIcon_113080",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_113080.webp"
+    },
+    "MaskOfTheVirtuousDoctor": {
+        "id": 113081,
+        "name": "Mask of the Virtuous Doctor",
+        "rarity": 5,
+        "type": "Character Level-Up Material",
+        "icon": "UI_ItemIcon_113081",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_113081.webp"
+    },
+    "MadmansRestraint": {
+        "id": 113082,
+        "name": "Madman's Restraint",
+        "rarity": 5,
+        "type": "Character Level-Up Material",
+        "icon": "UI_ItemIcon_113082",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_113082.webp"
+    },
+    "ElixirOfTheHeretic": {
+        "id": 113083,
+        "name": "Elixir of the Heretic",
+        "rarity": 5,
+        "type": "Character Level-Up Material",
+        "icon": "UI_ItemIcon_113083",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_113083.webp"
+    },
+    "RemnantOfTheDreadwing": {
+        "id": 113084,
+        "name": "Remnant of the Dreadwing",
+        "rarity": 4,
+        "type": "Character Level-Up Material",
+        "icon": "UI_ItemIcon_113084",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_113084.webp"
     },
     "TeachingsOfFreedom": {
         "id": 104301,
@@ -2861,6 +2901,30 @@ export default {
         "type": "Character and Weapon Enhancement Material",
         "icon": "UI_ItemIcon_112136",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_112136.webp"
+    },
+    "FracturedEyeOfTheDeepShadow": {
+        "id": 112137,
+        "name": "Fractured Eye of the Deep Shadow",
+        "rarity": 2,
+        "type": "Character and Weapon Enhancement Material",
+        "icon": "UI_ItemIcon_112137",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_112137.webp"
+    },
+    "AberrantCoreOfTheDeepShadow": {
+        "id": 112138,
+        "name": "Aberrant Core of the Deep Shadow",
+        "rarity": 3,
+        "type": "Character and Weapon Enhancement Material",
+        "icon": "UI_ItemIcon_112138",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_112138.webp"
+    },
+    "HookedBeakOfTheDeepShadow": {
+        "id": 112139,
+        "name": "Hooked Beak of the Deep Shadow",
+        "rarity": 4,
+        "type": "Character and Weapon Enhancement Material",
+        "icon": "UI_ItemIcon_112139",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_112139.webp"
     },
     "PyroSigil": {
         "id": 301,
@@ -11323,6 +11387,198 @@ export default {
         "icon": "UI_ItemIcon_108856",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108856.webp"
     },
+    "SuspiciousLuckySnowDelight": {
+        "id": 108931,
+        "name": "Suspicious Lucky Snow Delight",
+        "rarity": 4,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108857",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108857.webp"
+    },
+    "LuckySnowDelight": {
+        "id": 108932,
+        "name": "Lucky Snow Delight",
+        "rarity": 4,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108857",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108857.webp"
+    },
+    "DeliciousLuckySnowDelight": {
+        "id": 108933,
+        "name": "Delicious Lucky Snow Delight",
+        "rarity": 4,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108857",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108857.webp"
+    },
+    "SuspiciousCrispySpringRolls": {
+        "id": 108934,
+        "name": "Suspicious Crispy Spring Rolls",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108868",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108868.webp"
+    },
+    "CrispySpringRolls": {
+        "id": 108935,
+        "name": "Crispy Spring Rolls",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108868",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108868.webp"
+    },
+    "DeliciousCrispySpringRolls": {
+        "id": 108936,
+        "name": "Delicious Crispy Spring Rolls",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108868",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108868.webp"
+    },
+    "SuspiciousBerryHerbalCandy": {
+        "id": 108937,
+        "name": "Suspicious Berry Herbal Candy",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108858",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108858.webp"
+    },
+    "BerryHerbalCandy": {
+        "id": 108938,
+        "name": "Berry Herbal Candy",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108858",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108858.webp"
+    },
+    "DeliciousBerryHerbalCandy": {
+        "id": 108939,
+        "name": "Delicious Berry Herbal Candy",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108858",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108858.webp"
+    },
+    "SuspiciousVeggiePotSoup": {
+        "id": 108940,
+        "name": "Suspicious Veggie Pot Soup",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108859",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108859.webp"
+    },
+    "VeggiePotSoup": {
+        "id": 108941,
+        "name": "Veggie Pot Soup",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108859",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108859.webp"
+    },
+    "DeliciousVeggiePotSoup": {
+        "id": 108942,
+        "name": "Delicious Veggie Pot Soup",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108859",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108859.webp"
+    },
+    "SuspiciousFiresideMerriment": {
+        "id": 108943,
+        "name": "Suspicious Fireside Merriment",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108860",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108860.webp"
+    },
+    "FiresideMerriment": {
+        "id": 108944,
+        "name": "Fireside Merriment",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108860",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108860.webp"
+    },
+    "DeliciousFiresideMerriment": {
+        "id": 108945,
+        "name": "Delicious Fireside Merriment",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108860",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108860.webp"
+    },
+    "SuspiciousMushroomPhantasm": {
+        "id": 108946,
+        "name": "Suspicious Mushroom Phantasm",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108861",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108861.webp"
+    },
+    "MushroomPhantasm": {
+        "id": 108947,
+        "name": "Mushroom Phantasm",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108861",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108861.webp"
+    },
+    "DeliciousMushroomPhantasm": {
+        "id": 108948,
+        "name": "Delicious Mushroom Phantasm",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108861",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108861.webp"
+    },
+    "FlavorOfSpring": {
+        "id": 108949,
+        "name": "Flavor of Spring",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108862",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108862.webp"
+    },
+    "MoonlitMirage": {
+        "id": 108950,
+        "name": "Moonlit Mirage",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108863",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108863.webp"
+    },
+    "NightwatchSoup": {
+        "id": 108951,
+        "name": "Nightwatch Soup",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108864",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108864.webp"
+    },
+    "SugarSculptureColumbina": {
+        "id": 108952,
+        "name": "Sugar Sculpture: Columbina",
+        "rarity": 2,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108865",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108865.webp"
+    },
+    "SugarSculptureIlluga": {
+        "id": 108953,
+        "name": "Sugar Sculpture: Illuga",
+        "rarity": 2,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108866",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108866.webp"
+    },
+    "CharredMushroomPhantasm": {
+        "id": 108954,
+        "name": "Charred Mushroom Phantasm",
+        "rarity": 3,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108867",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108867.webp"
+    },
     "PureWater": {
         "id": 111029,
         "name": "\"Pure Water\"",
@@ -11457,6 +11713,38 @@ export default {
         "type": "Gadget",
         "icon": "UI_ItemIcon_121231",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_121231.webp"
+    },
+    "ThatWhichHasLostItsPower": {
+        "id": 121462,
+        "name": "That Which Has Lost Its Power",
+        "rarity": 4,
+        "type": "Gadget",
+        "icon": "UI_ItemIcon_121462",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_121462.webp"
+    },
+    "CelebratoryXiaoLantern": {
+        "id": 200005,
+        "name": "Celebratory Xiao Lantern",
+        "rarity": 4,
+        "type": "Gadget",
+        "icon": "UI_ItemIcon_200005",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_200005.webp"
+    },
+    "GiftXiaoLantern": {
+        "id": 200006,
+        "name": "Gift Xiao Lantern",
+        "rarity": 4,
+        "type": "Gadget",
+        "icon": "UI_ItemIcon_200006",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_200006.webp"
+    },
+    "XiaoLanternFlightManual": {
+        "id": 200007,
+        "name": "Xiao Lantern Flight Manual",
+        "rarity": 4,
+        "type": "Gadget",
+        "icon": "UI_ItemIcon_200007",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_200007.webp"
     },
     "GeoTreasureCompass": {
         "id": 220003,
@@ -11876,6 +12164,18 @@ export default {
         "icon": "UI_ItemIcon_220068",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220068.webp"
     },
+    "11": {
+        "id": 220068,
+        "type": "Gadget",
+        "icon": "UI_ItemIcon_220068",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220068.webp"
+    },
+    "12": {
+        "id": 220068,
+        "type": "Gadget",
+        "icon": "UI_ItemIcon_220068",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220068.webp"
+    },
     "ScarletSandSlate": {
         "id": 220069,
         "name": "Scarlet Sand Slate",
@@ -12276,6 +12576,14 @@ export default {
         "icon": "UI_ItemIcon_220126",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220126.webp"
     },
+    "JadelightCanopy": {
+        "id": 220127,
+        "name": "Jadelight Canopy",
+        "rarity": 4,
+        "type": "Gadget",
+        "icon": "UI_ItemIcon_220127",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220127.webp"
+    },
     "IntertwinedFate": {
         "id": 223,
         "name": "Intertwined Fate",
@@ -12640,6 +12948,20 @@ export default {
         "type": "Local Specialty (Nod-Krai)",
         "icon": "UI_ItemIcon_101263",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_101263.webp"
+    },
+    "WinterIcelea": {
+        "id": 101268,
+        "name": "Winter Icelea",
+        "type": "Local Specialty (Nod-Krai)",
+        "icon": "UI_ItemIcon_101266",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_101266.webp"
+    },
+    "PineAmber": {
+        "id": 101269,
+        "name": "Pine Amber",
+        "type": "Local Specialty (Nod-Krai)",
+        "icon": "UI_ItemIcon_101269",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_101269.webp"
     },
     "RukkhashavaMushrooms": {
         "id": 101213,
@@ -13571,6 +13893,20 @@ export default {
         "icon": "UI_ItemIcon_130042",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_130042.webp"
     },
+    "WinterIceleaSeed": {
+        "id": 130043,
+        "name": "Winter Icelea Seed",
+        "type": "Material",
+        "icon": "UI_ItemIcon_130043",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_130043.webp"
+    },
+    "PineAmberSeed": {
+        "id": 130044,
+        "name": "Pine Amber Seed",
+        "type": "Material",
+        "icon": "UI_ItemIcon_130044",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_130044.webp"
+    },
     "HeatshieldPotion": {
         "id": 111006,
         "name": "Heatshield Potion",
@@ -13867,7 +14203,7 @@ export default {
         "icon": "UI_ItemIcon_200125",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_200125.webp"
     },
-    "11": {
+    "13": {
         "id": 200125,
         "rarity": 4,
         "type": "Refinement Material",

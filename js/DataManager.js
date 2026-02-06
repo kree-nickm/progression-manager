@@ -310,6 +310,8 @@ export default class DataManager extends UIController
     //window.localStorage.setItem(`${this.constructor.name}Data`, `{${serversArray.join(',')}}`);
     //window.localStorage.setItem(`${this.constructor.name}Data`, JSON.stringify(this.accounts));
     //window.localStorage.setItem(`${this.constructor.name}Settings`, JSON.stringify(this.settings));
+    
+    //this.savedTimestamp = Date.now();
     window.localStorage.setItem(`${this.constructor.name}`, JSON.stringify(this));
     console.log(`Local data saved.`);
     return true;
@@ -372,6 +374,7 @@ export default class DataManager extends UIController
     if(data)
     {
       hasData = true;
+      console.log(`Importing data for ${Object.keys(data).length} accounts...`);
       for(let acc in data)
       {
         if(!this.accounts[acc])
@@ -379,23 +382,25 @@ export default class DataManager extends UIController
         this.accounts[acc].loadData(data[acc]);
         this.errors = this.errors || this.accounts[acc].errors;
       }
-      console.log("Imported account data.", {importedAccounts:data, currentAccounts:this.accounts});
+      console.log(`${Object.keys(this.accounts).length} accounts now stored.`);
+      console.debug(`Imported account data:`, {importedAccounts:data, currentAccounts:this.accounts});
     }
     else
     {
-      console.log("No account data to import.");
+      console.log(`No account data to import.`);
     }
     
     if(settings)
     {
       hasData = true;
+      console.log(`Importing settings.`);
       for(let s in settings)
         this.settings[s] = settings[s];
-      console.log("Imported settings.", {importedSettings:settings, currentSettings:this.settings});
+      console.debug(`Imported settings:`, {importedSettings:settings, currentSettings:this.settings});
     }
     else
     {
-      console.log("No settings to import.");
+      console.log(`No settings to import.`);
     }
     
     return hasData;

@@ -6,11 +6,11 @@ handlebars.registerHelper("itemChildren", (item, field, options) => {
   let result;
   if(fieldData.template)
   {
-    let template = Renderer.getTemplatesSync(fieldData.template);
-    if(template)
-      result = template({item, field, params, fieldData});
-    else
+    let templates = Renderer.getTemplatesSync(fieldData.template);
+    if(templates instanceof Promise)
       return new handlebars.SafeString(`<span style="color:red;" title="An error occurred in the handlebards template. Check JavaScript console for details.">!</span>`);
+    else
+      result = templates[fieldData.template]({item, field, params, fieldData});
   }
   else
     result = Renderer.contentToHTML(fieldData);
@@ -75,6 +75,10 @@ handlebars.registerHelper('logparams', function(...params) {
 });
 
 handlebars.registerHelper('ifeq', function(first, second, options) {return (first === second || first == second && !options.hash.strict) ? options.fn(this) : options.inverse(this);});
+handlebars.registerHelper('gt', (first, second, options) => first > second);
+handlebars.registerHelper('gte', (first, second, options) => first >= second);
+handlebars.registerHelper('lt', (first, second, options) => first < second);
+handlebars.registerHelper('lte', (first, second, options) => first <= second);
 handlebars.registerHelper('array', (...params) => params.slice(0, -1));
 handlebars.registerHelper("lower", (str, options) => str.toLowerCase());
 handlebars.registerHelper('fco', (value, fallback, options) => value ? value : fallback);
@@ -177,6 +181,7 @@ class Renderer
     'genshin/renderCharacterAsPopup': ["genshin/renderCharacterBuild","genshin/renderCharacterStats"],
     'genshin/renderCharacterBuild': ["genshin/renderCharacterBuildSlider","genshin/renderCharacterArtifactLists"],
     'genshin/renderCharacterArtifactLists': ["genshin/renderListAsColumn"],
+    'genshin/renderMaterialList': ["genshin/renderMaterialAsCompact"],
     'genshin/renderListAsColumn': ["genshin/renderArtifactAsCard"],
     'genshin/renderCharacterStats': ["genshin/renderCharacterMainStats","genshin/renderCharacterReactions","genshin/renderCharacterMotionValues","genshin/renderCharacterStatModifiers"],
   };
@@ -253,14 +258,14 @@ class Renderer
   static getTemplatesSync(...templates)
   {
     for(let i=0; i<templates.length; i++)
-      if(Renderer.partialsUsed[templates[i]])
+      if(Renderer.partialsUsed[templates[i]]) // TODO: Check for recursion just in case.
         templates = templates.concat(Renderer.partialsUsed[templates[i]]);
     for(let templateFile of templates)
     {
       if(templateFile && !Renderer._templates[templateFile])
       {
         console.error(`getTemplatesSync() tried to fetch template '${templateFile}' but it is not already loaded.`, {templates});
-        return null;
+        return Renderer.getTemplates(...templates);
       }
       else if(!templateFile)
       {
@@ -382,8 +387,8 @@ class Renderer
     if(!data.item) return console.error(`Element has no associated item:`, element);
     
     // Anything the item needs to do to prepare for rendering. 
-    renderedItem?.preRender(element, {template,force});
-    data.item.preRender(element, {template,force});
+    await renderedItem?.preRender(element, {template,force});
+    await data.item.preRender(element, {template,force});
     
     if(force)
     {

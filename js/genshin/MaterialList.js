@@ -197,9 +197,31 @@ export default class MaterialList extends GenshinList
       data.itemGroups = this.items().reduce((itemGroups, item) => {
         if(!itemGroups[item.type])
           itemGroups[item.type] = {};
-        if(!itemGroups[item.type][item.source])
-          itemGroups[item.type][item.source] = {source:item.source, items:[]};
-        itemGroups[item.type][item.source].items.push(item);
+        
+        if(item.type === "mastery" || item.type === "forgery") {
+          if(!itemGroups[item.type][item.source])
+            itemGroups[item.type][item.source] = {source:item.source, days:{}};
+          if(!itemGroups[item.type][item.source].days[item.days])
+            itemGroups[item.type][item.source].days[item.days] = {days:item.source, items:[]};
+          itemGroups[item.type][item.source].days[item.days].items.push(item);
+        }
+        else if(item.type === "boss" || item.type === "leyline" || item.type === "billet" || item.type === "flora") {
+          if(!itemGroups[item.type].items)
+            itemGroups[item.type].items = [];
+          itemGroups[item.type].items.push(item);
+        }
+        else if(item.type === "crown") {
+          itemGroups[item.type] = item;
+        }
+        else {
+          let key = item.source;
+          if(item.type === "gemstone")
+            key = item.shorthand.substr(0, 3);
+          
+          if(!itemGroups[item.type][key])
+            itemGroups[item.type][key] = {source:item.source, items:[]};
+          itemGroups[item.type][key].items.push(item);
+        }
         return itemGroups;
       }, {});
       
@@ -217,14 +239,9 @@ export default class MaterialList extends GenshinList
       
       // Groups that are not manually handled in the template.
       data.items = {
-        'boss': this.items('boss'),
-        'gemstone': this.items('gemstone'),
-        'mastery': this.items('mastery'),
-        'crown': this.items('crown'),
-        'forgery': this.items('forgery'),
-        'leyline': this.items('leyline'),
-        'billet': this.items('billet'),
-        'flora': this.items('flora'),
+        //'leyline': this.items('leyline'),
+        //'billet': this.items('billet'),
+        //'flora': this.items('flora'),
         'bait': this.items('bait'),
         'wood': this.items('wood'),
         'unknown': this.items('unknown'),

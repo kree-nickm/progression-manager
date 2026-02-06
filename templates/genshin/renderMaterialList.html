@@ -5,14 +5,7 @@
             <!--<div class="material-group-caption">{{source}}</div>-->
             <div class="material-group-items">
               {{#each items}}
-                <div class="list-item material-enemy" data-uuid="{{uuid .}}">
-                    <div class="item-display item-material display-md">
-                      {{> renderItemField item=. field="image" wrapper="div"}}
-                        <div class="display-caption">
-                          {{> renderItemField item=. field="count" wrapper="div"}}
-                        </div>
-                    </div>
-                </div>
+                  {{> genshin/renderMaterialAsCompact item=.}}
               {{/each}}
             </div>
         </div>
@@ -21,33 +14,83 @@
     <div class="material-row">
       {{#each itemGroups.trounce}}
         <div class="material-group">
-            <div class="material-group-caption">{{source}}: {{total}} / {{wanted}} ({{math total "-" wanted}})</div>
+            <div class="material-group-caption">{{source}}{{> renderItemField item=items.[0] field="convertCount" wrapper="div"}}</div>
             <div class="material-group-items">
               {{#each items}}
-                <div class="list-item material-trounce" data-uuid="{{uuid .}}">
-                    <div class="item-display item-material display-md">
-                      {{> renderItemField item=. field="image" wrapper="div"}}
-                        <div class="display-caption">
-                          {{> renderItemField item=. field="count" wrapper="div"}}
-                        </div>
-                    </div>
-                </div>
+                  {{> genshin/renderMaterialAsCompact item=.}}
               {{/each}}
             </div>
         </div>
       {{/each}}
     </div>
-  {{#each items as |materials type|}}
+    <div class="material-row no-material-groups">
+      {{#each itemGroups.boss.items}}
+          {{> genshin/renderMaterialAsCompact item=.}}
+      {{/each}}
+    </div>
     <div class="material-row">
-      {{#each materials}}
-        <div class="list-item material-{{type}}" data-uuid="{{uuid .}}">
-            <div class="item-display item-material display-md">
-              {{> renderItemField item=. field="image" wrapper="div"}}
-                <div class="display-caption">
-                  {{> renderItemField item=. field="count" wrapper="div"}}
-                </div>
+      {{#each itemGroups.gemstone}}
+        <div class="material-group">
+            <div class="material-group-items">
+              {{#each items}}
+                  {{> genshin/renderMaterialAsCompact item=.}}
+              {{/each}}
             </div>
         </div>
+      {{/each}}
+    </div>
+    <div class="material-rowgroup">
+      {{#each itemGroups.mastery}}
+        <div class="material-row">
+          {{#each days}}
+            <div class="material-group">
+                <div class="material-group-items">
+                  {{#each items}}
+                      {{> genshin/renderMaterialAsCompact item=.}}
+                  {{/each}}
+                </div>
+            </div>
+          {{/each}}
+        </div>
+      {{/each}}
+    </div>
+    <div class="material-row no-material-groups">
+      {{> genshin/renderMaterialAsCompact item=itemGroups.crown}}
+    </div>
+    <div class="material-rowgroup">
+      {{#each itemGroups.forgery}}
+        <div class="material-row">
+          {{#each days}}
+            <div class="material-group">
+                <div class="material-group-items">
+                  {{#each items}}
+                      {{> genshin/renderMaterialAsCompact item=.}}
+                  {{/each}}
+                </div>
+            </div>
+          {{/each}}
+        </div>
+      {{/each}}
+    </div>
+    <div class="material-row no-material-groups">
+      {{#each itemGroups.leyline.items}}
+          {{> genshin/renderMaterialAsCompact item=.}}
+      {{/each}}
+    </div>
+    <div class="material-row no-material-groups">
+      {{#each itemGroups.billet.items}}
+          {{> genshin/renderMaterialAsCompact item=.}}
+      {{/each}}
+    </div>
+    <div class="material-row no-material-groups">
+      {{#each itemGroups.flora.items}}
+          {{> genshin/renderMaterialAsCompact item=.}}
+      {{/each}}
+    </div>
+  {{#each items as |materials type|}}
+    <div class="material-row no-material-groups">
+      {{#each materials}}
+          {{> genshin/renderMaterialAsCompact item=.}}
       {{/each}}
     </div>
   {{/each}}

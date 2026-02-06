@@ -156,6 +156,14 @@ export default {
             "3": "Glowing Remains",
             "2": "Lightless Bone"
         },
+        "Hidden Depths": {
+            "release": "January 13, 2026",
+            "source": "Eyrie Beast of Another World, Eyrie Beast of Another World",
+            "enemies": "Fisher of Hidden Depths, Fisher of Hidden Depths",
+            "4": "Hooked Beak of the Deep Shadow",
+            "3": "Aberrant Core of the Deep Shadow",
+            "2": "Fractured Eye of the Deep Shadow"
+        },
         "Slimes": {
             "1": "Slime Condensate",
             "2": "Slime Secretions",
@@ -349,6 +357,14 @@ export default {
                 "Ascended Sample: Rook",
                 "Ascended Sample: Queen"
             ]
+        },
+        {
+            "boss": "The Doctor",
+            "loot": [
+                "Mask of the Virtuous Doctor",
+                "Madman's Restraint",
+                "Elixir of the Heretic"
+            ]
         }
     ],
     "boss": {
@@ -523,6 +539,11 @@ export default {
         "Landrover": {
             "name": "Super-Heavy Landrover: Mechanized Fortress",
             "4": "Cyclic Military Kuuvahki Core"
+        },
+        "Whisperer": {
+            "release": "January 13, 2026",
+            "name": "Lord of the Hidden Depths: Whisperer of Nightmares",
+            "4": "Remnant of the Dreadwing"
         }
     },
     "gemstone": {

@@ -1076,6 +1076,41 @@ export default {
         "hakushinID": 11512,
         "id": 11512
     },
+    "LightbearingMoonshard": {
+        "name": "Lightbearing Moonshard",
+        "rarity": 5,
+        "type": "Sword",
+        "hakushinID": 11519,
+        "id": 11519,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_SilverwareSaw.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_SilverwareSaw.webp"
+        ],
+        "release": "January 13, 2026",
+        "baseATK": 44,
+        "stat": "critDMG_",
+        "matForgery": "Aeros",
+        "matStrongEnemy": "Wild Hunt",
+        "matWeakEnemy": "Landcruiser",
+        "passive": "Increases DEF by @0%. DMG inflicted by Lunar-Crystallize reactions increases by @1% for 5s after the equipping character uses an Elemental Skill.",
+        "refinementData": [
+            {
+                "1": 64,
+                "2": 80,
+                "3": 96,
+                "4": 112.00000000000001,
+                "5": 128
+            },
+            {
+                "1": 500,
+                "2": 500,
+                "3": 500,
+                "4": 500,
+                "5": 500
+            }
+        ],
+        "version": "6.3"
+    },
     "LostPrayerToTheSacredWinds": {
         "name": "Lost Prayer to the Sacred Winds",
         "rarity": 5,
@@ -1292,6 +1327,55 @@ export default {
             }
         ],
         "version": "6.0"
+    },
+    "NocturnesCurtainCall": {
+        "name": "Nocturne's Curtain Call",
+        "rarity": 5,
+        "type": "Catalyst",
+        "hakushinID": 14522,
+        "id": 14522,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_Brisingamen.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_Brisingamen.webp"
+        ],
+        "release": "January 13, 2026",
+        "baseATK": 44,
+        "stat": "critDMG_",
+        "matForgery": "Sheath",
+        "matStrongEnemy": "Hidden Depths",
+        "matWeakEnemy": "Oprichniki",
+        "passive": "Max HP increases by @0%. When triggering Lunar reactions or inflicting Lunar Reaction DMG on opponents, the equipping character will recover @1 Energy, and receive the Bountiful Sea's Sacred Wine effect for 12s: Max HP increases by an additional @2%, CRIT DMG from Lunar Reaction DMG increases by @3%. The Energy recovery effect can be triggered at most once every 18s, and can be triggered even when the equipping character is off-field.",
+        "refinementData": [
+            {
+                "1": 14.000000000000002,
+                "2": 16,
+                "3": 18,
+                "4": 20,
+                "5": 22
+            },
+            {
+                "1": 0.6,
+                "2": 0.8,
+                "3": 1,
+                "4": 1.2,
+                "5": 1.4
+            },
+            {
+                "1": 1200,
+                "2": 1200,
+                "3": 1200,
+                "4": 1200,
+                "5": 1200
+            },
+            {
+                "1": 1400,
+                "2": 1500,
+                "3": 1600,
+                "4": 1700,
+                "5": 1800
+            }
+        ],
+        "version": "6.3"
     },
     "PeakPatrolSong": {
         "name": "Peak Patrol Song",

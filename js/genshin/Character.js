@@ -1800,8 +1800,9 @@ export default class Character extends Ascendable(GenshinItem)
     return this.getBuild(buildId).artifactSets?.[setKey] ? 1 : 0;
   }
   
-  preRender(element, options)
+  async preRender(element, options)
   {
+    await super.preRender(element, options);
     this.statModifiers = this.statModifiers.filter(mod => mod.isAvailable);
   }
   

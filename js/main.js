@@ -1,6 +1,7 @@
 const { handlebars, Renderer } = await window.importer.get(`js/Renderer.js`);
 
 // Add some utility functions that will simplify other parts of the code.
+
 String.prototype.capitalize = function() { return this.at(0).toUpperCase()+this.substr(1).toLowerCase(); };
 
 window.stringInstanceOf = function(object, className) {
@@ -19,6 +20,7 @@ Math.pround = function(value, maxDecimals) {
 };
 
 // Add some features that we can use for debugging purposes.
+
 window.DEBUGLOG = {
   queueUpdate: false,
   renderItemField: false,
@@ -90,7 +92,6 @@ if(window.generalSettings.darkMode)
   link.href = "css/dark.css";
   document.body.classList.add("dark-mode");
 }
-  
 
 // Initialize.
 if(typeof(Storage) !== "undefined")
@@ -153,8 +154,8 @@ else
 async function baseAddEventListeners()
 {
   // Track viewport scroll for tab changes.
-  document.addEventListener("scroll", event => window.viewer.onScroll(event));
-  document.addEventListener("scrollend", event => window.viewer.saveScrollY(window.scrollY));
+  document.addEventListener("scroll", event => window.viewer?.onScroll(event));
+  document.addEventListener("scrollend", event => window.viewer?.saveScrollY(window.scrollY));
 
   // Set up account editor.
   document.getElementById("editModal")?.addEventListener("show.bs.modal", showEvent => {

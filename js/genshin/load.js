@@ -282,7 +282,7 @@ async function addEventListeners()
 
 async function init()
 {
-  console.debug(`Initting GenshinManager`);
+  console.log(`Initializing GenshinManager`);
   const {default:GenshinManager} = await window.importer.get(`js/genshin/GenshinManager.js`);
   console.debug(`Loading GenshinManager`, GenshinManager);
   window.viewer = new GenshinManager();

@@ -33,13 +33,13 @@ const Ingredient = (SuperClass) => class extends SuperClass {
       display.addField("count", {
         label: "Count",
         dynamic: true,
-        title: item => {
+        title: (item,wanter) => {
           let craftCount = item.getCraftCount({plan:item.viewer.account.plan.getSimplified()});
-          let wanterString = item.viewer.account.plan.resolved[item.key]?.wanters.map(wanter => `${wanter.item?.name??wanter.source} wants ${wanter.amount}`).join(`\r\n`);
+          let wanterString = item.viewer.account.plan.resolved[item.key]?.wanters.map(wnt => `${wnt.item?.name??wnt.source} wants ${wnt.amount}`).join(`\r\n`);
           return (craftCount ? `Up to ${craftCount} if you craft.` : ``)
             + (wanterString ? `\r\n${wanterString}` : ``);
         },
-        value: item => {
+        value: (item,wanter) => {
           if(item.viewer.account.plan.resolved[item.key])
             return `${item.count} / ${item.viewer.account.plan.resolved[item.key].amount}`;
           else {
@@ -60,7 +60,7 @@ const Ingredient = (SuperClass) => class extends SuperClass {
           }
           return dependencies;
         },
-        classes: item => ({
+        classes: (item,wanter) => ({
           "pending": item.count < item.viewer.account.plan.resolved[item.key]?.amount,
           "insufficient": item.getCraftCount({plan:item.viewer.account.plan.getSimplified()}) < item.viewer.account.plan.resolved[item.key]?.amount,
         }),
