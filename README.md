@@ -1,3 +1,5 @@
+> **Important Update:** Because Hoyo has chosen to go after websites that host game data, updates to my own app will be difficult. I will have to find another solution to get game data for Genshin Impact, and any hopes I had of expanding this to ZZZ or other games is pretty much out of the question for the forseeable future.
+
 > **Warning:** There is currently a bug where your saved data _might_ get reset upon loading the app after new patch data has been added. I haven't been able to figure it out yet because it's hard to repeat intentionally, but whenever it gets close to patch time, start saving your data manually to your PC to avoid it being lost. The data can be reloaded from a saved file just fine.
 
 A site where you can record all of your characters/items/etc. for a few different games (only [Genshin Impact](#genshin-impact) at the moment), and keep track of everything you need to progress, so you have access to all such information at a glance.
