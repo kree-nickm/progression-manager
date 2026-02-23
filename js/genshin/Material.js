@@ -126,7 +126,19 @@ export default class Material extends Ingredient(GenshinItem)
     return this._type ?? "unknown";
   }
   set type(val){ this._type = val; }
-  get image(){ return GenshinMaterialData[this.key]?.img ?? ""; }
+  get image(){
+    if(GenshinMaterialData[this.key]?.icon)
+    {
+      let rand = Math.floor(Math.random() * 2);
+      if(rand == 0)
+        return `https://gi.yatta.moe/assets/UI/${GenshinMaterialData[this.key].icon}.png`;
+      else if(rand == 1)
+        return `https://api.lunaris.moe/data/assets/items/${GenshinMaterialData[this.key].icon}.webp`;
+      else
+        return "";
+    }
+    return GenshinMaterialData[this.key]?.img ?? "";
+  }
   get rarity(){ return GenshinMaterialData[this.key]?.rarity ?? 1; }
   get releaseTimestamp(){ return GenshinMaterialData[this.key]?.release ? Date.parse(GenshinMaterialData[this.key]?.release) : 0; }
   

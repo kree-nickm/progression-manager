@@ -544,6 +544,10 @@ export default {
             "release": "January 13, 2026",
             "name": "Lord of the Hidden Depths: Whisperer of Nightmares",
             "4": "Remnant of the Dreadwing"
+        },
+        "Moongecko": {
+            "name": "Radiant Moongecko",
+            "4": "Prismatic Severed Tail"
         }
     },
     "gemstone": {

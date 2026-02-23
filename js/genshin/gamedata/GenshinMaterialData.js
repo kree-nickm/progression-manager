@@ -1296,6 +1296,22 @@ export default {
         "icon": "UI_ItemIcon_113084",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_113084.webp"
     },
+    "WitheredRemnantOfTheNightmareWing": {
+        "id": 113084,
+        "name": "Withered Remnant of the Nightmare Wing",
+        "rarity": 4,
+        "type": "Character Level-Up Material",
+        "icon": "UI_ItemIcon_113084",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_113084.webp"
+    },
+    "PrismaticSeveredTail": {
+        "id": 113085,
+        "name": "Prismatic Severed Tail",
+        "rarity": 4,
+        "type": "Character Level-Up Material",
+        "icon": "UI_ItemIcon_113085",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_113085.webp"
+    },
     "TeachingsOfFreedom": {
         "id": 104301,
         "name": "Teachings of Freedom",
@@ -11395,6 +11411,14 @@ export default {
         "icon": "UI_ItemIcon_108857",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108857.webp"
     },
+    "SuspiciousSnowDelight": {
+        "id": 108931,
+        "name": "Suspicious Snow Delight",
+        "rarity": 4,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108857",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108857.webp"
+    },
     "LuckySnowDelight": {
         "id": 108932,
         "name": "Lucky Snow Delight",
@@ -11403,9 +11427,25 @@ export default {
         "icon": "UI_ItemIcon_108857",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108857.webp"
     },
+    "SnowDelight": {
+        "id": 108932,
+        "name": "Snow Delight",
+        "rarity": 4,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108857",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108857.webp"
+    },
     "DeliciousLuckySnowDelight": {
         "id": 108933,
         "name": "Delicious Lucky Snow Delight",
+        "rarity": 4,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108857",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108857.webp"
+    },
+    "DeliciousSnowDelight": {
+        "id": 108933,
+        "name": "Delicious Snow Delight",
         "rarity": 4,
         "type": "Food",
         "icon": "UI_ItemIcon_108857",
@@ -11578,6 +11618,38 @@ export default {
         "type": "Food",
         "icon": "UI_ItemIcon_108867",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108867.webp"
+    },
+    "SuspiciousGoldenTemperedJade": {
+        "id": 108955,
+        "name": "Suspicious Golden-Tempered Jade",
+        "rarity": 2,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108869",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108869.webp"
+    },
+    "GoldenTemperedJade": {
+        "id": 108956,
+        "name": "Golden-Tempered Jade",
+        "rarity": 2,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108869",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108869.webp"
+    },
+    "DeliciousGoldenTemperedJade": {
+        "id": 108957,
+        "name": "Delicious Golden-Tempered Jade",
+        "rarity": 2,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108869",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108869.webp"
+    },
+    "HeartyIndulgence": {
+        "id": 108958,
+        "name": "Hearty Indulgence",
+        "rarity": 2,
+        "type": "Food",
+        "icon": "UI_ItemIcon_108870",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_108870.webp"
     },
     "PureWater": {
         "id": 111029,
@@ -12176,6 +12248,12 @@ export default {
         "icon": "UI_ItemIcon_220068",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220068.webp"
     },
+    "13": {
+        "id": 220068,
+        "type": "Gadget",
+        "icon": "UI_ItemIcon_220068",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220068.webp"
+    },
     "ScarletSandSlate": {
         "id": 220069,
         "name": "Scarlet Sand Slate",
@@ -12583,6 +12661,22 @@ export default {
         "type": "Gadget",
         "icon": "UI_ItemIcon_220127",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220127.webp"
+    },
+    "SpotterKamera": {
+        "id": 220128,
+        "name": "Spotter Kamera",
+        "rarity": 4,
+        "type": "Gadget",
+        "icon": "UI_ItemIcon_220108",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220108.webp"
+    },
+    "HarmonicKeys": {
+        "id": 220129,
+        "name": "Harmonic Keys",
+        "rarity": 4,
+        "type": "Gadget",
+        "icon": "UI_ItemIcon_220129",
+        "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_220129.webp"
     },
     "IntertwinedFate": {
         "id": 223,
@@ -14203,7 +14297,7 @@ export default {
         "icon": "UI_ItemIcon_200125",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_ItemIcon_200125.webp"
     },
-    "13": {
+    "14": {
         "id": 200125,
         "rarity": 4,
         "type": "Refinement Material",

@@ -858,6 +858,40 @@ export default {
         "hakushinID": 11503,
         "id": 11503
     },
+    "GestOfTheMightyWolf": {
+        "name": "Gest of the Mighty Wolf",
+        "rarity": 5,
+        "type": "Claymore",
+        "hakushinID": 12515,
+        "id": 12515,
+        "imgs": [
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_EnsisAquilonis.webp",
+            "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_EnsisAquilonis.webp"
+        ],
+        "baseATK": 46,
+        "stat": "critRate_",
+        "matForgery": "Tooth",
+        "matStrongEnemy": "Hidden Depths",
+        "matWeakEnemy": "Fatui",
+        "passive": "Increase ATK SPD by 10%. Every time the equipping character's Normal Attack(s) hit opponent(s)\/casts their Elemental Skill\/performs Charged Attack(s), gain 1\/2\/2 stacks of Four Winds' Hymn respectively: DMG dealt is increased by @0% for 4s. Max 4 stacks. This effect can be triggered once every 0.01s.\\nAdditionally, when the party has the \"Hexerei: Secret Rite\" effect, each stack of Four Winds' Hymn will increase the CRIT DMG of the equipping character by @1%.",
+        "refinementData": [
+            {
+                "1": 10,
+                "2": 10,
+                "3": 10,
+                "4": 10,
+                "5": 10
+            },
+            {
+                "1": 7.5,
+                "2": 9.5,
+                "3": 11.5,
+                "4": 13.5,
+                "5": 15.5
+            }
+        ],
+        "version": "6.3.54"
+    },
     "HaranGeppakuFutsu": {
         "name": "Haran Geppaku Futsu",
         "rarity": 5,

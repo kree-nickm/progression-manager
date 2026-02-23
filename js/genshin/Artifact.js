@@ -43,6 +43,13 @@ export default class Artifact extends Equipment(GenshinItem)
     'hp': 0.01,
     'def': 0.01,
   };
+  static slotNameToNum = {
+    'goblet': 1,
+    'plume': 2,
+    'circlet': 3,
+    'flower': 4,
+    'sands': 5,
+  };
   
   setKey = "";
   slotKey = "";
@@ -92,7 +99,22 @@ export default class Artifact extends Equipment(GenshinItem)
   get name(){ return GenshinArtifactData[this.setKey]?.[this.slotKey] ?? `${this.setName} ${this.slotKey}`; }
   get setName(){ return GenshinArtifactData[this.setKey]?.name ?? this.setKey; }
   get maxRarity(){ return GenshinArtifactData[this.setKey]?.maxRarity ?? 5; }
-  get image(){ return GenshinArtifactData[this.setKey]?.[this.slotKey+'Img'] ?? ""; }
+  get image(){
+    if(GenshinArtifactData[this.key]?.icon)
+    {
+      let rand = Math.floor(Math.random() * (this.slotKey=="flower"?3:2));
+      let icon = GenshinArtifactData[this.key].icon.slice(0, -1) + Artifact.slotNameToNum[this.slotKey];
+      if(rand == 0)
+        return `https://gi.yatta.moe/assets/UI/reliquary/${icon}.png`;
+      else if(rand == 1)
+        return `https://enka.network/ui/${icon}.png`;
+      else if(rand == 2)
+        return `https://api.lunaris.moe/data/assets/artifacts/${icon}.webp`;
+      else
+        return "";
+    }
+    return GenshinArtifactData[this.setKey]?.[this.slotKey+'Img'] ?? "";
+  }
   get levelCap(){ return GenshinArtifactStats[this.rarity]?.levelCap ?? 0; }
   get mainStatShorthand(){ return GenshinItem.getStatShorthand(this.mainStatKey); }
   get mainStatValue(){

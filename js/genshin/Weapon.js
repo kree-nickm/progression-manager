@@ -94,7 +94,25 @@ export default class Weapon extends Equipment(Ascendable(GenshinItem))
   get type(){ return GenshinWeaponData[this.key]?.type; }
   get stat(){ return GenshinWeaponData[this.key]?.stat; }
   get baseATK(){ return GenshinWeaponData[this.key]?.baseATK; }
-  get image(){ return GenshinWeaponData[this.key]?.imgs[this.ascension > 1 ? 1 : 0]; }
+  get image(){
+    let img = GenshinWeaponData[this.key]?.imgs?.[0] ?? "";
+    if(img.includes("hakush.in"))
+    {
+      let icon = img.slice(img.lastIndexOf("/")+1, img.lastIndexOf("."));
+      if(this.ascension > 1)
+        icon = icon + "_Awaken";
+      let rand = Math.floor(Math.random() * (this.ascension>1?2:3));
+      if(rand == 0)
+        return `https://api.lunaris.moe/data/assets/weaponicon/${icon}.webp`;
+      else if(rand == 1)
+        return `https://enka.network/ui/${icon}.png`;
+      else if(rand == 2)
+        return `https://gi.yatta.moe/assets/UI/${icon}.png`;
+      else
+        return "";
+    }
+    return GenshinWeaponData[this.key]?.imgs?.[this.ascension > 1 ? 1 : 0] ?? "";
+  }
   get releaseTimestamp(){ return GenshinWeaponData[this.key]?.release ? Date.parse(GenshinWeaponData[this.key]?.release) : 0; }
   get equipProperty() { return "weapon"; }
   
