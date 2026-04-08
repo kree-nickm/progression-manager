@@ -164,6 +164,11 @@ export default {
             "3": "Aberrant Core of the Deep Shadow",
             "2": "Fractured Eye of the Deep Shadow"
         },
+        "Keeper": {
+            "4": "Jeweled Flaming Hilt",
+            "3": "Fractured Flaming Hilt",
+            "2": "Faded Flaming Hilt"
+        },
         "Slimes": {
             "1": "Slime Condensate",
             "2": "Slime Secretions",
@@ -548,6 +553,10 @@ export default {
         "Moongecko": {
             "name": "Radiant Moongecko",
             "4": "Prismatic Severed Tail"
+        },
+        "Watcher": {
+            "name": "Watcher: Fallen Vigil",
+            "4": "Plume of the Fallen Watcher"
         }
     },
     "gemstone": {

@@ -4,12 +4,10 @@ export default {
         "rarity": 4,
         "weapon": "Claymore",
         "element": "Hydro",
-        "hakushinID": 10000121,
         "id": 10000121,
         "release": "September 09, 2025",
         "imgId": "UI_AvatarIcon_Aino",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Aino.webp",
-        "region": "Nodkrai",
         "matEnemy": "Landcruiser",
         "matBoss": "Knuckle",
         "matFlower": "Portable Bearing",
@@ -22,12 +20,14 @@ export default {
         "hpMaxAsc": 3360.243,
         "atkMaxAsc": 72.63875,
         "defMaxAsc": 182.2275,
-        "version": "6.0",
         "skillIds": [
             11211,
             11212,
             11215
-        ]
+        ],
+        "coopImgId": "UI_CoopImg_Aino",
+        "region": "Nod-Krai",
+        "version": "6.0"
     },
     "Albedo": {
         "name": "Albedo",
@@ -41,17 +41,13 @@ export default {
         "matMastery": "Ballad",
         "matTrounce": "Tusk of Monoceros Caeli",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/30\/Albedo_Icon.png",
-        "region": "Mondstadt",
         "release": "December 23, 2020",
-        "patch": "1.2",
         "hpBase": 1029.5856,
         "atkBase": 19.551,
         "defBase": 68.2062,
         "hpMaxAsc": 4228.035,
         "atkMaxAsc": 80.28111,
         "defMaxAsc": 280.098,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Albedo",
-        "hakushinID": 10000038,
         "id": 10000038,
         "skillIds": [
             10386,
@@ -59,7 +55,9 @@ export default {
             10388
         ],
         "imgId": "UI_AvatarIcon_Albedo",
-        "version": "6.2"
+        "coopImgId": "UI_CoopImg_Albedo",
+        "region": "Mondstadt",
+        "version": "1.2"
     },
     "Alhaitham": {
         "name": "Alhaitham",
@@ -73,24 +71,23 @@ export default {
         "matMastery": "Ingenuity",
         "matTrounce": "Mirror of Mushin",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2c\/Alhaitham_Icon.png",
-        "region": "Sumeru",
         "release": "January 18, 2023",
-        "patch": "3.4",
         "hpBase": 1039.1187744140625,
         "atkBase": 24.3922004699707,
         "defBase": 60.847110748291,
         "hpMaxAsc": 4267.18359375,
         "atkMaxAsc": 100.1602401733398,
         "defMaxAsc": 249.8769073486328,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Alhaitham",
-        "hakushinID": 10000078,
         "id": 10000078,
         "skillIds": [
             10781,
             10782,
             10785
         ],
-        "imgId": "UI_AvatarIcon_Alhatham"
+        "imgId": "UI_AvatarIcon_Alhatham",
+        "coopImgId": "UI_CoopImg_Alhatham",
+        "region": "Sumeru",
+        "version": "3.4"
     },
     "Aloy": {
         "name": "Aloy",
@@ -104,24 +101,23 @@ export default {
         "matMastery": "Freedom",
         "matTrounce": "Molten Moment",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e5\/Aloy_Icon.png",
-        "region": "Ranger",
         "release": "September 01, 2021",
-        "patch": "2.1",
         "hpBase": 848.4547729492188,
         "atkBase": 18.2103595733643,
         "defBase": 52.6503982543945,
         "hpMaxAsc": 3484.214111328125,
         "atkMaxAsc": 74.776123046875,
         "defMaxAsc": 216.2160034179688,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Aloy",
-        "hakushinID": 10000062,
         "id": 10000062,
         "skillIds": [
             10621,
             10622,
             10625
         ],
-        "imgId": "UI_AvatarIcon_Aloy"
+        "imgId": "UI_AvatarIcon_Aloy",
+        "coopImgId": "UI_CoopImg_Aloy",
+        "region": "None",
+        "version": "2.1"
     },
     "Amber": {
         "name": "Amber",
@@ -135,24 +131,23 @@ export default {
         "matMastery": "Freedom",
         "matTrounce": "Dvalin's Sigh",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/75\/Amber_Icon.png",
-        "region": "Mondstadt",
         "release": "September 28, 2020",
-        "patch": "1.0",
         "hpBase": 793.2581787109375,
         "atkBase": 18.6984004974365,
         "defBase": 50.3580017089844,
         "hpMaxAsc": 2838.263427734375,
         "atkMaxAsc": 66.9041137695313,
         "defMaxAsc": 180.1799926757813,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Amber",
-        "hakushinID": 10000021,
         "id": 10000021,
         "skillIds": [
             10041,
             10032,
             10017
         ],
-        "imgId": "UI_AvatarIcon_Ambor"
+        "imgId": "UI_AvatarIcon_Ambor",
+        "coopImgId": "UI_CoopImg_Ambor",
+        "region": "Mondstadt",
+        "version": "1.0"
     },
     "AratakiItto": {
         "name": "Arataki Itto",
@@ -166,33 +161,30 @@ export default {
         "matMastery": "Elegance",
         "matTrounce": "Ashen Heart",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7b\/Arataki_Itto_Icon.png",
-        "region": "Inazuma",
         "release": "December 14, 2021",
-        "patch": "2.3",
         "hpBase": 1000.9860229492188,
         "atkBase": 17.6889991760254,
         "defBase": 74.667839050293,
         "hpMaxAsc": 4110.58984375,
         "atkMaxAsc": 72.6352920532227,
         "defMaxAsc": 306.6336059570313,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Arataki_Itto",
-        "hakushinID": 10000057,
         "id": 10000057,
         "skillIds": [
             10571,
             10572,
             10575
         ],
-        "imgId": "UI_AvatarIcon_Itto"
+        "imgId": "UI_AvatarIcon_Itto",
+        "coopImgId": "UI_CoopImg_Itto",
+        "region": "Inazuma",
+        "version": "2.3"
     },
     "Arlecchino": {
         "name": "Arlecchino",
         "rarity": 5,
         "weapon": "Polearm",
         "element": "Pyro",
-        "hakushinID": 10000096,
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Arlecchino.webp",
-        "region": "Fatui",
         "hpBase": 1020.0524,
         "atkBase": 26.6266,
         "defBase": 59.53085,
@@ -207,13 +199,15 @@ export default {
         "matEnemy": "Fatui",
         "release": "April 24, 2024",
         "id": 10000096,
-        "version": "4.6",
         "skillIds": [
             10961,
             10962,
             10965
         ],
-        "imgId": "UI_AvatarIcon_Arlecchino"
+        "imgId": "UI_AvatarIcon_Arlecchino",
+        "coopImgId": "UI_CoopImg_Arlecchino",
+        "region": "Snezhnaya",
+        "version": "4.6"
     },
     "Baizhu": {
         "name": "Baizhu",
@@ -227,24 +221,23 @@ export default {
         "matMastery": "Gold",
         "matTrounce": "Worldspan Fern",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/cb\/Baizhu_Icon.png",
-        "region": "Liyue",
         "release": "May 02, 2023",
-        "patch": "3.6",
         "hpBase": 1039.1187744140625,
         "atkBase": 14.9891004562378,
         "defBase": 38.8894996643066,
         "hpMaxAsc": 4267.18359375,
         "atkMaxAsc": 61.5488510131836,
         "defMaxAsc": 159.7050018310547,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Baizhu",
-        "hakushinID": 10000082,
         "id": 10000082,
         "skillIds": [
             10821,
             10822,
             10825
         ],
-        "imgId": "UI_AvatarIcon_Baizhuer"
+        "imgId": "UI_AvatarIcon_Baizhuer",
+        "coopImgId": "UI_CoopImg_Baizhuer",
+        "region": "Liyue",
+        "version": "3.6"
     },
     "Barbara": {
         "name": "Barbara",
@@ -258,24 +251,23 @@ export default {
         "matMastery": "Freedom",
         "matTrounce": "Ring of Boreas",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/6a\/Barbara_Icon.png",
-        "region": "Mondstadt",
         "release": "September 28, 2020",
-        "patch": "1.0",
         "hpBase": 820.6118774414062,
         "atkBase": 13.3559999465942,
         "defBase": 56.0805015563965,
         "hpMaxAsc": 2936.134765625,
         "atkMaxAsc": 47.7886505126953,
         "defMaxAsc": 200.6549987792969,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Barbara",
-        "hakushinID": 10000014,
         "id": 10000014,
         "skillIds": [
             10070,
             10071,
             10072
         ],
-        "imgId": "UI_AvatarIcon_Barbara"
+        "imgId": "UI_AvatarIcon_Barbara",
+        "coopImgId": "UI_CoopImg_Barbara",
+        "region": "Mondstadt",
+        "version": "1.0"
     },
     "Beidou": {
         "name": "Beidou",
@@ -289,24 +281,23 @@ export default {
         "matMastery": "Gold",
         "matTrounce": "Dvalin's Sigh",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e1\/Beidou_Icon.png",
-        "region": "Liyue",
         "release": "September 28, 2020",
-        "patch": "1.0",
         "hpBase": 1094.149169921875,
         "atkBase": 18.8764801025391,
         "defBase": 54.3637504577637,
         "hpMaxAsc": 3914.84619140625,
         "atkMaxAsc": 67.5412902832031,
         "defMaxAsc": 194.5124969482422,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Beidou",
-        "hakushinID": 10000024,
         "id": 10000024,
         "skillIds": [
             10241,
             10242,
             10245
         ],
-        "imgId": "UI_AvatarIcon_Beidou"
+        "imgId": "UI_AvatarIcon_Beidou",
+        "coopImgId": "UI_CoopImg_Beidou",
+        "region": "Liyue",
+        "version": "1.0"
     },
     "Bennett": {
         "name": "Bennett",
@@ -320,24 +311,23 @@ export default {
         "matMastery": "Resistance",
         "matTrounce": "Dvalin's Plume",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/79\/Bennett_Icon.png",
-        "region": "Mondstadt",
         "release": "September 28, 2020",
-        "patch": "1.0",
         "hpBase": 1039.4417724609375,
         "atkBase": 16.0272006988525,
         "defBase": 64.6642532348633,
         "hpMaxAsc": 3719.10400390625,
         "atkMaxAsc": 57.346378326416,
         "defMaxAsc": 231.3674926757813,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Bennett",
-        "hakushinID": 10000032,
         "id": 10000032,
         "skillIds": [
             10321,
             10322,
             10323
         ],
-        "imgId": "UI_AvatarIcon_Bennett"
+        "imgId": "UI_AvatarIcon_Bennett",
+        "coopImgId": "UI_CoopImg_Bennett",
+        "region": "Mondstadt",
+        "version": "1.0"
     },
     "Candace": {
         "name": "Candace",
@@ -351,24 +341,23 @@ export default {
         "matMastery": "Admonition",
         "matTrounce": "Tears of the Calamitous God",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dd\/Candace_Icon.png",
-        "region": "Sumeru",
         "release": "September 28, 2022",
-        "patch": "3.1",
         "hpBase": 911.791015625,
         "atkBase": 17.8080005645752,
         "defBase": 57.2249984741211,
         "hpMaxAsc": 3262.371826171875,
         "atkMaxAsc": 63.7182006835938,
         "defMaxAsc": 204.75,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Candace",
-        "hakushinID": 10000072,
         "id": 10000072,
         "skillIds": [
             10721,
             10722,
             10725
         ],
-        "imgId": "UI_AvatarIcon_Candace"
+        "imgId": "UI_AvatarIcon_Candace",
+        "coopImgId": "UI_CoopImg_Candace",
+        "region": "Sumeru",
+        "version": "3.1"
     },
     "Charlotte": {
         "name": "Charlotte",
@@ -376,10 +365,7 @@ export default {
         "rarity": 4,
         "element": "Cryo",
         "weapon": "Catalyst",
-        "region": "Fontaine",
         "release": "November 08, 2023",
-        "patch": "4.2",
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Charlotte",
         "ascendStat": "atk_",
         "hpBase": 902.6731,
         "atkBase": 14.51352,
@@ -392,24 +378,24 @@ export default {
         "matBoss": "Generator",
         "matMastery": "Justice",
         "matTrounce": "Lightless Silk String",
-        "hakushinID": 10000088,
         "id": 10000088,
         "skillIds": [
             10881,
             10882,
             10885
         ],
-        "imgId": "UI_AvatarIcon_Charlotte"
+        "imgId": "UI_AvatarIcon_Charlotte",
+        "coopImgId": "UI_CoopImg_Charlotte",
+        "region": "Fontaine",
+        "version": "4.2"
     },
     "Chasca": {
         "name": "Chasca",
         "rarity": 5,
         "weapon": "Bow",
         "element": "Anemo",
-        "hakushinID": 10000104,
         "id": 10000104,
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Chasca.webp",
-        "region": "Natlan",
         "matEnemy": "Saurians",
         "matBoss": "Papilla",
         "matFlower": "Withering Purpurbloom",
@@ -422,14 +408,16 @@ export default {
         "hpMaxAsc": 3131.8779296875,
         "atkMaxAsc": 110.864387512207,
         "defMaxAsc": 196.5599975585938,
-        "version": "5.2",
         "release": "November 19, 2024",
         "skillIds": [
             11041,
             11042,
             11045
         ],
-        "imgId": "UI_AvatarIcon_Chasca"
+        "imgId": "UI_AvatarIcon_Chasca",
+        "coopImgId": "UI_CoopImg_Chasca",
+        "region": "Natlan",
+        "version": "5.2"
     },
     "Chevreuse": {
         "name": "Chevreuse",
@@ -443,24 +431,23 @@ export default {
         "matMastery": "Order",
         "matTrounce": "Lightless Eye of the Maelstrom",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8a\/Chevreuse_Icon.png",
-        "region": "Fontaine",
         "release": "January 09, 2024",
-        "patch": "4.3",
         "hpBase": 1002.9700927734375,
         "atkBase": 16.2052803039551,
         "defBase": 50.7013511657715,
         "hpMaxAsc": 3588.609130859375,
         "atkMaxAsc": 57.9835624694824,
         "defMaxAsc": 181.4084930419922,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Chevreuse",
-        "hakushinID": 10000090,
         "id": 10000090,
         "skillIds": [
             10901,
             10902,
             10905
         ],
-        "imgId": "UI_AvatarIcon_Chevreuse"
+        "imgId": "UI_AvatarIcon_Chevreuse",
+        "coopImgId": "UI_CoopImg_Chevreuse",
+        "region": "Fontaine",
+        "version": "4.3"
     },
     "Chiori": {
         "name": "Chiori",
@@ -474,24 +461,23 @@ export default {
         "matMastery": "Light",
         "matTrounce": "Lightless Silk String",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/88\/Chiori_Icon.png",
-        "region": "Inazuma",
         "release": "March 13, 2024",
-        "patch": "4.5",
         "hpBase": 890.40087890625,
         "atkBase": 25.136999130249,
         "defBase": 74.1892013549805,
         "hpMaxAsc": 3656.46728515625,
         "atkMaxAsc": 103.2185668945313,
         "defMaxAsc": 304.6679992675781,
-        "hakushinID": 10000094,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Chiori",
         "id": 10000094,
         "skillIds": [
             10941,
             10942,
             10945
         ],
-        "imgId": "UI_AvatarIcon_Chiori"
+        "imgId": "UI_AvatarIcon_Chiori",
+        "coopImgId": "UI_CoopImg_Chiori",
+        "region": "Inazuma",
+        "version": "4.5"
     },
     "Chongyun": {
         "name": "Chongyun",
@@ -505,35 +491,32 @@ export default {
         "matMastery": "Diligence",
         "matTrounce": "Dvalin's Sigh",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/35\/Chongyun_Icon.png",
-        "region": "Liyue",
         "release": "September 28, 2020",
-        "patch": "1.0",
         "hpBase": 920.908935546875,
         "atkBase": 18.6984004974365,
         "defBase": 54.3637504577637,
         "hpMaxAsc": 3294.99560546875,
         "atkMaxAsc": 66.9041137695313,
         "defMaxAsc": 194.5124969482422,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Chongyun",
-        "hakushinID": 10000036,
         "id": 10000036,
         "skillIds": [
             10401,
             10402,
             10403
         ],
-        "imgId": "UI_AvatarIcon_Chongyun"
+        "imgId": "UI_AvatarIcon_Chongyun",
+        "coopImgId": "UI_CoopImg_Chongyun",
+        "region": "Liyue",
+        "version": "1.0"
     },
     "Citlali": {
         "name": "Citlali",
         "rarity": 5,
         "weapon": "Catalyst",
         "element": "Cryo",
-        "hakushinID": 10000107,
         "id": 10000107,
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Citlali.webp",
         "release": "December 31, 2024",
-        "region": "Natlan",
         "matEnemy": "Saurians",
         "matFlower": "Quenepa Berry",
         "matMastery": "Kindling",
@@ -545,25 +528,25 @@ export default {
         "hpMaxAsc": 3719.10498046875,
         "atkMaxAsc": 40.5228462219238,
         "defMaxAsc": 243.9801025390625,
-        "version": "5.3",
         "matBoss": "Spiritspeaker",
         "skillIds": [
             11071,
             11072,
             11075
         ],
-        "imgId": "UI_AvatarIcon_Citlali"
+        "imgId": "UI_AvatarIcon_Citlali",
+        "coopImgId": "UI_CoopImg_Citlali",
+        "region": "Natlan",
+        "version": "5.3"
     },
     "Clorinde": {
         "name": "Clorinde",
         "rarity": 5,
         "weapon": "Sword",
         "element": "Electro",
-        "hakushinID": 10000098,
         "id": 10000098,
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Clorinde.webp",
         "release": "June 4, 2024",
-        "region": "Fontaine",
         "matEnemy": "Fontemer",
         "matBoss": "Seahorse",
         "matFlower": "Lumitoile",
@@ -576,13 +559,15 @@ export default {
         "hpMaxAsc": 4141.908203125,
         "atkMaxAsc": 107.8060607910156,
         "defMaxAsc": 250.6139984130859,
-        "version": "4.7",
         "skillIds": [
             10981,
             10982,
             10985
         ],
-        "imgId": "UI_AvatarIcon_Clorinde"
+        "imgId": "UI_AvatarIcon_Clorinde",
+        "coopImgId": "UI_CoopImg_Clorinde",
+        "region": "Fontaine",
+        "version": "4.7"
     },
     "Collei": {
         "name": "Collei",
@@ -596,35 +581,32 @@ export default {
         "matMastery": "Praxis",
         "matTrounce": "Tears of the Calamitous God",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a2\/Collei_Icon.png",
-        "region": "Sumeru",
         "release": "August 24, 2022",
-        "patch": "3.0",
         "hpBase": 820.6118774414062,
         "atkBase": 16.7395191192627,
         "defBase": 50.3580017089844,
         "hpMaxAsc": 2936.134765625,
         "atkMaxAsc": 59.8951072692871,
         "defMaxAsc": 180.1799926757813,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Collei",
-        "hakushinID": 10000067,
         "id": 10000067,
         "skillIds": [
             10671,
             10672,
             10675
         ],
-        "imgId": "UI_AvatarIcon_Collei"
+        "imgId": "UI_AvatarIcon_Collei",
+        "coopImgId": "UI_CoopImg_Collei",
+        "region": "Sumeru",
+        "version": "3.0"
     },
     "Columbina": {
         "name": "Columbina",
         "rarity": 5,
         "weapon": "Catalyst",
         "element": "Hydro",
-        "hakushinID": 10000125,
         "id": 10000125,
         "imgId": "UI_AvatarIcon_Columbina",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Columbina.webp",
-        "region": "Nodkrai",
         "matEnemy": "Slimes",
         "matBoss": "Herra",
         "matFlower": "Winter Icelea",
@@ -636,9 +618,11 @@ export default {
         "hpMaxAsc": 4697.817,
         "atkMaxAsc": 30.58328,
         "defMaxAsc": 164.619,
-        "version": "6.3",
         "release": "January 13, 2026",
-        "matTrounce": "Mask of the Virtuous Doctor"
+        "matTrounce": "Mask of the Virtuous Doctor",
+        "coopImgId": "UI_CoopImg_Columbina",
+        "region": "Nod-Krai",
+        "version": "6.3"
     },
     "Cyno": {
         "name": "Cyno",
@@ -652,35 +636,32 @@ export default {
         "matMastery": "Admonition",
         "matTrounce": "Mudra of the Malefic General",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/31\/Cyno_Icon.png",
-        "region": "Sumeru",
         "release": "September 28, 2022",
-        "patch": "3.1",
         "hpBase": 972.3864135742188,
         "atkBase": 24.7646007537842,
         "defBase": 66.8899383544922,
         "hpMaxAsc": 3993.144287109375,
         "atkMaxAsc": 101.6894073486328,
         "defMaxAsc": 274.6925964355469,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Cyno",
-        "hakushinID": 10000071,
         "id": 10000071,
         "skillIds": [
             10711,
             10712,
             10715
         ],
-        "imgId": "UI_AvatarIcon_Cyno"
+        "imgId": "UI_AvatarIcon_Cyno",
+        "coopImgId": "UI_CoopImg_Cyno",
+        "region": "Sumeru",
+        "version": "3.1"
     },
     "Dahlia": {
         "name": "Dahlia",
         "rarity": 4,
         "weapon": "Sword",
         "element": "Hydro",
-        "hakushinID": 10000115,
         "id": 10000115,
         "imgId": "UI_AvatarIcon_Dahlia",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Dahlia.webp",
-        "region": "Mondstadt",
         "matEnemy": "Hili.Archers",
         "matBoss": "Overseer Device",
         "matFlower": "Calla Lily",
@@ -693,13 +674,15 @@ export default {
         "hpMaxAsc": 3751.7275,
         "atkMaxAsc": 56.709198,
         "defMaxAsc": 167.895,
-        "version": "5.7",
         "release": "June 17, 2025",
         "skillIds": [
             11151,
             11152,
             11155
-        ]
+        ],
+        "coopImgId": "UI_CoopImg_Dahlia",
+        "region": "Mondstadt",
+        "version": "5.7"
     },
     "Dehya": {
         "name": "Dehya",
@@ -713,24 +696,23 @@ export default {
         "matMastery": "Praxis",
         "matTrounce": "Puppet Strings",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3f\/Dehya_Icon.png",
-        "region": "Sumeru",
         "release": "March 01, 2023",
-        "patch": "3.5",
         "hpBase": 1220.2496337890625,
         "atkBase": 20.6681995391846,
         "defBase": 48.8811111450195,
         "hpMaxAsc": 5011.00439453125,
         "atkMaxAsc": 84.8685989379883,
         "defMaxAsc": 200.7368927001953,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Dehya",
-        "hakushinID": 10000079,
         "id": 10000079,
         "skillIds": [
             10791,
             10792,
             10795
         ],
-        "imgId": "UI_AvatarIcon_Dehya"
+        "imgId": "UI_AvatarIcon_Dehya",
+        "coopImgId": "UI_CoopImg_Dehya",
+        "region": "Sumeru",
+        "version": "3.5"
     },
     "Diluc": {
         "name": "Diluc",
@@ -744,24 +726,23 @@ export default {
         "matMastery": "Resistance",
         "matTrounce": "Dvalin's Plume",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/3d\/Diluc_Icon.png",
-        "region": "Mondstadt",
         "release": "September 28, 2020",
-        "patch": "1.0",
         "hpBase": 1010.5192260742188,
         "atkBase": 26.068000793457,
         "defBase": 61.0265998840332,
         "hpMaxAsc": 4149.73828125,
         "atkMaxAsc": 107.0414810180664,
         "defMaxAsc": 250.6139984130859,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Diluc",
-        "hakushinID": 10000016,
         "id": 10000016,
         "skillIds": [
             10160,
             10161,
             10165
         ],
-        "imgId": "UI_AvatarIcon_Diluc"
+        "imgId": "UI_AvatarIcon_Diluc",
+        "coopImgId": "UI_CoopImg_Diluc",
+        "region": "Mondstadt",
+        "version": "1.0"
     },
     "Diona": {
         "name": "Diona",
@@ -775,24 +756,23 @@ export default {
         "matMastery": "Freedom",
         "matTrounce": "Shard of a Foul Legacy",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/40\/Diona_Icon.png",
-        "region": "Mondstadt",
         "release": "November 11, 2020",
-        "patch": "1.1",
         "hpBase": 802.3760986328125,
         "atkBase": 17.8080005645752,
         "defBase": 50.3580017089844,
         "hpMaxAsc": 2870.88720703125,
         "atkMaxAsc": 63.7182006835938,
         "defMaxAsc": 180.1799926757813,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Diona",
-        "hakushinID": 10000039,
         "id": 10000039,
         "skillIds": [
             10391,
             10392,
             10395
         ],
-        "imgId": "UI_AvatarIcon_Diona"
+        "imgId": "UI_AvatarIcon_Diona",
+        "coopImgId": "UI_CoopImg_Diona",
+        "region": "Mondstadt",
+        "version": "1.1"
     },
     "Dori": {
         "name": "Dori",
@@ -806,35 +786,32 @@ export default {
         "matMastery": "Ingenuity",
         "matTrounce": "Bloodjade Branch",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/54\/Dori_Icon.png",
-        "region": "Sumeru",
         "release": "September 09, 2022",
-        "patch": "3.0",
         "hpBase": 1039.4417724609375,
         "atkBase": 18.6984004974365,
         "defBase": 60.6585006713867,
         "hpMaxAsc": 3719.10400390625,
         "atkMaxAsc": 66.9041137695313,
         "defMaxAsc": 217.0350036621094,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Dori",
-        "hakushinID": 10000068,
         "id": 10000068,
         "skillIds": [
             10681,
             10682,
             10685
         ],
-        "imgId": "UI_AvatarIcon_Dori"
+        "imgId": "UI_AvatarIcon_Dori",
+        "coopImgId": "UI_CoopImg_Dori",
+        "region": "Sumeru",
+        "version": "3.0"
     },
     "Durin": {
         "name": "Durin",
         "rarity": 5,
         "weapon": "Sword",
         "element": "Pyro",
-        "hakushinID": 10000123,
         "id": 10000123,
         "imgId": "UI_AvatarIcon_Durin",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Durin.webp",
-        "region": "Mondstadt",
         "matEnemy": "Oprichniki",
         "matBoss": "Landrover",
         "matFlower": "Frostlamp Flower",
@@ -847,13 +824,15 @@ export default {
         "hpMaxAsc": 3973.57,
         "atkMaxAsc": 110.86439,
         "defMaxAsc": 262.899,
-        "version": "6.2",
         "release": "December 02, 2025",
         "skillIds": [
             11231,
             11232,
             11235
-        ]
+        ],
+        "coopImgId": "UI_CoopImg_Durin",
+        "region": "Mondstadt",
+        "version": "6.2"
     },
     "Emilie": {
         "name": "Emilie",
@@ -861,10 +840,8 @@ export default {
         "weapon": "Polearm",
         "element": "Dendro",
         "release": "July 16, 2024",
-        "hakushinID": 10000099,
         "id": 10000099,
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Emilie.webp",
-        "region": "Fontaine",
         "matEnemy": "Meka",
         "matBoss": "Legatus",
         "matFlower": "Lakelight Lily",
@@ -877,25 +854,25 @@ export default {
         "hpMaxAsc": 4337.65087890625,
         "atkMaxAsc": 107.0414810180664,
         "defMaxAsc": 233.4149932861328,
-        "version": "4.8",
         "skillIds": [
             10991,
             10992,
             10995
         ],
-        "imgId": "UI_AvatarIcon_Emilie"
+        "imgId": "UI_AvatarIcon_Emilie",
+        "coopImgId": "UI_CoopImg_Emilie",
+        "region": "Fontaine",
+        "version": "4.8"
     },
     "Escoffier": {
         "name": "Escoffier",
         "rarity": 5,
         "weapon": "Polearm",
         "element": "Cryo",
-        "hakushinID": 10000112,
         "id": 10000112,
         "imgId": "UI_AvatarIcon_Escoffier",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Escoffier.webp",
         "release": "May 6, 2025",
-        "region": "Fontaine",
         "matEnemy": "Meka",
         "matBoss": "Overseer Device",
         "matFlower": "Beryl Conch",
@@ -908,12 +885,14 @@ export default {
         "hpMaxAsc": 4267.1836,
         "atkMaxAsc": 110.86439,
         "defMaxAsc": 233.9064,
-        "version": "5.5.54",
         "skillIds": [
             11121,
             11122,
             11125
-        ]
+        ],
+        "coopImgId": "UI_CoopImg_Escoffier",
+        "region": "Fontaine",
+        "version": "5.6"
     },
     "Eula": {
         "name": "Eula",
@@ -927,24 +906,23 @@ export default {
         "matMastery": "Resistance",
         "matTrounce": "Dragon Lord's Crown",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/af\/Eula_Icon.png",
-        "region": "Mondstadt",
         "release": "May 18, 2021",
-        "patch": "1.5",
         "hpBase": 1029.5855712890625,
         "atkBase": 26.6266002655029,
         "defBase": 58.4539108276367,
         "hpMaxAsc": 4228.03515625,
         "atkMaxAsc": 109.3352279663086,
         "defMaxAsc": 240.0489044189453,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Eula",
-        "hakushinID": 10000051,
         "id": 10000051,
         "skillIds": [
             10511,
             10512,
             10515
         ],
-        "imgId": "UI_AvatarIcon_Eula"
+        "imgId": "UI_AvatarIcon_Eula",
+        "coopImgId": "UI_CoopImg_Eula",
+        "region": "Mondstadt",
+        "version": "1.5"
     },
     "Faruzan": {
         "name": "Faruzan",
@@ -958,24 +936,23 @@ export default {
         "matMastery": "Admonition",
         "matTrounce": "Puppet Strings",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b2\/Faruzan_Icon.png",
-        "region": "Sumeru",
         "release": "December 07, 2022",
-        "patch": "3.3",
         "hpBase": 802.3760986328125,
         "atkBase": 16.4724006652832,
         "defBase": 52.6469993591309,
         "hpMaxAsc": 2870.88720703125,
         "atkMaxAsc": 58.9393348693848,
         "defMaxAsc": 188.3699951171875,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Faruzan",
-        "hakushinID": 10000076,
         "id": 10000076,
         "skillIds": [
             10761,
             10762,
             10765
         ],
-        "imgId": "UI_AvatarIcon_Faruzan"
+        "imgId": "UI_AvatarIcon_Faruzan",
+        "coopImgId": "UI_CoopImg_Faruzan",
+        "region": "Sumeru",
+        "version": "3.3"
     },
     "Fischl": {
         "name": "Fischl",
@@ -989,17 +966,13 @@ export default {
         "matMastery": "Ballad",
         "matTrounce": "Spirit Locket of Boreas",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9a\/Fischl_Icon.png",
-        "region": "Mondstadt",
         "release": "September 28, 2020",
-        "patch": "1.0",
         "hpBase": 770.4634,
         "atkBase": 20.4792,
         "defBase": 49.78575,
         "hpMaxAsc": 2756.704,
         "atkMaxAsc": 73.27593,
         "defMaxAsc": 178.1325,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Fischl",
-        "hakushinID": 10000031,
         "id": 10000031,
         "skillIds": [
             10311,
@@ -1007,19 +980,19 @@ export default {
             10313
         ],
         "imgId": "UI_AvatarIcon_Fischl",
-        "version": "6.2"
+        "coopImgId": "UI_CoopImg_Fischl",
+        "region": "Mondstadt",
+        "version": "1.0"
     },
     "Flins": {
         "name": "Flins",
         "rarity": 5,
         "weapon": "Polearm",
         "element": "Electro",
-        "hakushinID": 10000120,
         "id": 10000120,
         "release": "September 30, 2025",
         "imgId": "UI_AvatarIcon_Flins",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Flins.webp",
-        "region": "Nodkrai",
         "matEnemy": "Landcruiser",
         "matBoss": "Knuckle",
         "matFlower": "Frostlamp Flower",
@@ -1032,24 +1005,23 @@ export default {
         "hpMaxAsc": 3993.1443,
         "atkMaxAsc": 112.393555,
         "defMaxAsc": 258.4764,
-        "version": "6.0",
         "skillIds": [
             11201,
             11202,
             11205
-        ]
+        ],
+        "coopImgId": "UI_CoopImg_Flins",
+        "region": "Nod-Krai",
+        "version": "6.0"
     },
     "Freminet": {
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Freminet",
         "ascendStat": "atk_",
         "name": "Freminet",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ee\/Freminet_Icon.png",
         "rarity": 4,
         "element": "Cryo",
         "weapon": "Claymore",
-        "region": "Fontaine",
         "release": "September 05, 2023",
-        "patch": "4.0",
         "hpBase": 1012.0880126953125,
         "atkBase": 21.3696002960205,
         "defBase": 59.3995513916016,
@@ -1061,14 +1033,16 @@ export default {
         "matBoss": "Coppelius",
         "matMastery": "Justice",
         "matTrounce": "Worldspan Fern",
-        "hakushinID": 10000085,
         "id": 10000085,
         "skillIds": [
             10851,
             10852,
             10855
         ],
-        "imgId": "UI_AvatarIcon_Freminet"
+        "imgId": "UI_AvatarIcon_Freminet",
+        "coopImgId": "UI_CoopImg_Freminet",
+        "region": "Fontaine",
+        "version": "4.0"
     },
     "Furina": {
         "name": "Furina",
@@ -1082,24 +1056,23 @@ export default {
         "matMastery": "Justice",
         "matTrounce": "Lightless Mass",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e6\/Furina_Icon.png",
-        "region": "Fontaine",
         "release": "November 08, 2023",
-        "patch": "4.2",
         "hpBase": 1191.6500244140625,
         "atkBase": 18.9923992156982,
         "defBase": 54.1461486816406,
         "hpMaxAsc": 4893.55908203125,
         "atkMaxAsc": 77.9873657226563,
         "defMaxAsc": 222.3585052490234,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Furina",
-        "hakushinID": 10000089,
         "id": 10000089,
         "skillIds": [
             10891,
             10892,
             10895
         ],
-        "imgId": "UI_AvatarIcon_Furina"
+        "imgId": "UI_AvatarIcon_Furina",
+        "coopImgId": "UI_CoopImg_Furina",
+        "region": "Fontaine",
+        "version": "4.2"
     },
     "Gaming": {
         "name": "Gaming",
@@ -1113,24 +1086,23 @@ export default {
         "matMastery": "Prosperity",
         "matTrounce": "Lightless Mass",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/77\/Gaming_Icon.png",
-        "region": "Liyue",
         "release": "January 31, 2024",
-        "patch": "4.4",
         "hpBase": 957.3805541992188,
         "atkBase": 25.2873592376709,
         "defBase": 58.9417495727539,
         "hpMaxAsc": 3425.490478515625,
         "atkMaxAsc": 90.4798431396484,
         "defMaxAsc": 210.8925018310547,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Gaming",
-        "hakushinID": 10000092,
         "id": 10000092,
         "skillIds": [
             10921,
             10922,
             10925
         ],
-        "imgId": "UI_AvatarIcon_Gaming"
+        "imgId": "UI_AvatarIcon_Gaming",
+        "coopImgId": "UI_CoopImg_Gaming",
+        "region": "Liyue",
+        "version": "4.4"
     },
     "Ganyu": {
         "name": "Ganyu",
@@ -1144,24 +1116,23 @@ export default {
         "matMastery": "Diligence",
         "matTrounce": "Shadow of the Warrior",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/79\/Ganyu_Icon.png",
-        "region": "Liyue",
         "release": "January 12, 2021",
-        "patch": "1.2",
         "hpBase": 762.656005859375,
         "atkBase": 26.068000793457,
         "defBase": 49.0606002807617,
         "hpMaxAsc": 3131.8779296875,
         "atkMaxAsc": 107.0414810180664,
         "defMaxAsc": 201.4739990234375,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Ganyu",
-        "hakushinID": 10000037,
         "id": 10000037,
         "skillIds": [
             10371,
             10372,
             10373
         ],
-        "imgId": "UI_AvatarIcon_Ganyu"
+        "imgId": "UI_AvatarIcon_Ganyu",
+        "coopImgId": "UI_CoopImg_Ganyu",
+        "region": "Liyue",
+        "version": "1.2"
     },
     "Gorou": {
         "name": "Gorou",
@@ -1175,24 +1146,23 @@ export default {
         "matMastery": "Light",
         "matTrounce": "Molten Moment",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fe\/Gorou_Icon.png",
-        "region": "Inazuma",
         "release": "December 14, 2021",
-        "patch": "2.3",
         "hpBase": 802.3760986328125,
         "atkBase": 15.3148803710938,
         "defBase": 54.3637504577637,
         "hpMaxAsc": 2870.88720703125,
         "atkMaxAsc": 54.7976531982422,
         "defMaxAsc": 194.5124969482422,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Gorou",
-        "hakushinID": 10000055,
         "id": 10000055,
         "skillIds": [
             10551,
             10552,
             10555
         ],
-        "imgId": "UI_AvatarIcon_Gorou"
+        "imgId": "UI_AvatarIcon_Gorou",
+        "coopImgId": "UI_CoopImg_Gorou",
+        "region": "Inazuma",
+        "version": "2.3"
     },
     "HuTao": {
         "name": "Hu Tao",
@@ -1206,34 +1176,31 @@ export default {
         "matMastery": "Diligence",
         "matTrounce": "Shard of a Foul Legacy",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e9\/Hu_Tao_Icon.png",
-        "region": "Liyue",
         "release": "March 02, 2021",
-        "patch": "1.3",
         "hpBase": 1210.7164306640625,
         "atkBase": 8.2859001159668,
         "defBase": 68.2061996459961,
         "hpMaxAsc": 4971.85595703125,
         "atkMaxAsc": 34.0238990783691,
         "defMaxAsc": 280.0979919433594,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Hu_Tao",
-        "hakushinID": 10000046,
         "id": 10000046,
         "skillIds": [
             10461,
             10462,
             10463
         ],
-        "imgId": "UI_AvatarIcon_Hutao"
+        "imgId": "UI_AvatarIcon_Hutao",
+        "coopImgId": "UI_CoopImg_Hutao",
+        "region": "Liyue",
+        "version": "1.3"
     },
     "Iansan": {
         "name": "Iansan",
         "rarity": 4,
         "weapon": "Polearm",
         "element": "Electro",
-        "hakushinID": 10000110,
         "id": 10000110,
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Iansan.webp",
-        "region": "Natlan",
         "matEnemy": "Tribals",
         "matBoss": "Papilla",
         "matFlower": "Dracolite",
@@ -1246,26 +1213,26 @@ export default {
         "hpMaxAsc": 3197.1245,
         "atkMaxAsc": 77.09902,
         "defMaxAsc": 191.44125,
-        "version": "5.5",
         "skillIds": [
             11101,
             11102,
             11105
         ],
         "release": "March 25, 2025",
-        "imgId": "UI_AvatarIcon_Iansan"
+        "imgId": "UI_AvatarIcon_Iansan",
+        "coopImgId": "UI_CoopImg_Iansan",
+        "region": "Natlan",
+        "version": "5.5"
     },
     "Ifa": {
         "name": "Ifa",
         "rarity": 4,
         "weapon": "Catalyst",
         "element": "Anemo",
-        "hakushinID": 10000113,
         "id": 10000113,
         "imgId": "UI_AvatarIcon_Ifa",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Ifa.webp",
         "release": "May 6, 2025",
-        "region": "Natlan",
         "matEnemy": "Saurians",
         "matBoss": "Lava Statue",
         "matFlower": "Saurian Claw Succulent",
@@ -1278,23 +1245,23 @@ export default {
         "hpMaxAsc": 3024.2188,
         "atkMaxAsc": 53.52329,
         "defMaxAsc": 181.61325,
-        "version": "5.5.54",
         "skillIds": [
             11131,
             11132,
             11135
-        ]
+        ],
+        "coopImgId": "UI_CoopImg_Ifa",
+        "region": "Natlan",
+        "version": "5.6"
     },
     "Illuga": {
         "name": "Illuga",
         "rarity": 4,
         "weapon": "Polearm",
         "element": "Geo",
-        "hakushinID": 10000127,
         "id": 10000127,
         "imgId": "UI_AvatarIcon_Illuga",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Illuga.webp",
-        "region": "Nodkrai",
         "matEnemy": "Landcruiser",
         "matBoss": "Landrover",
         "matFlower": "Pine Amber",
@@ -1307,19 +1274,19 @@ export default {
         "hpMaxAsc": 3588.6091,
         "atkMaxAsc": 57.34638,
         "defMaxAsc": 244.062,
-        "version": "6.3",
-        "release": "February 03, 2026"
+        "release": "February 03, 2026",
+        "coopImgId": "UI_CoopImg_Illuga",
+        "region": "Nod-Krai",
+        "version": "6.3"
     },
     "Ineffa": {
         "name": "Ineffa",
         "rarity": 5,
         "weapon": "Polearm",
         "element": "Electro",
-        "hakushinID": 10000116,
         "id": 10000116,
         "imgId": "UI_AvatarIcon_Ineffa",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Ineffa.webp",
-        "region": "Nodkrai",
         "matEnemy": "Tribals",
         "matBoss": "Overseer Device",
         "matFlower": "Glowing Hornshroom",
@@ -1332,24 +1299,24 @@ export default {
         "hpMaxAsc": 4032.2927,
         "atkMaxAsc": 105.512314,
         "defMaxAsc": 264.6189,
-        "version": "5.8",
         "release": "July 29, 2025",
         "skillIds": [
             11161,
             11162,
             11165
-        ]
+        ],
+        "coopImgId": "UI_CoopImg_Ineffa",
+        "region": "Nod-Krai",
+        "version": "5.8"
     },
     "Jahoda": {
         "name": "Jahoda",
         "rarity": 4,
         "weapon": "Bow",
         "element": "Anemo",
-        "hakushinID": 10000124,
         "id": 10000124,
         "imgId": "UI_AvatarIcon_Jahoda",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Jahoda.webp",
-        "region": "Nodkrai",
         "matEnemy": "Landcruiser",
         "matBoss": "Moonfly",
         "matFlower": "Portable Bearing",
@@ -1362,13 +1329,15 @@ export default {
         "hpMaxAsc": 2893.7239,
         "atkMaxAsc": 66.90411,
         "defMaxAsc": 174.0375,
-        "version": "6.2",
         "release": "December 02, 2025",
         "skillIds": [
             11241,
             11242,
             11245
-        ]
+        ],
+        "coopImgId": "UI_CoopImg_Jahoda",
+        "region": "Nod-Krai",
+        "version": "6.2"
     },
     "Jean": {
         "name": "Jean",
@@ -1382,24 +1351,23 @@ export default {
         "matMastery": "Resistance",
         "matTrounce": "Dvalin's Plume",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/64\/Jean_Icon.png",
-        "region": "Mondstadt",
         "release": "September 28, 2020",
-        "patch": "1.0",
         "hpBase": 1143.9840087890625,
         "atkBase": 18.6200008392334,
         "defBase": 59.8300018310547,
         "hpMaxAsc": 4697.81689453125,
         "atkMaxAsc": 76.4581985473633,
         "defMaxAsc": 245.6999969482422,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Jean",
-        "hakushinID": 10000003,
         "id": 10000003,
         "skillIds": [
             10031,
             10033,
             10034
         ],
-        "imgId": "UI_AvatarIcon_Qin"
+        "imgId": "UI_AvatarIcon_Qin",
+        "coopImgId": "UI_CoopImg_Qin",
+        "region": "Mondstadt",
+        "version": "1.0"
     },
     "Kachina": {
         "name": "Kachina",
@@ -1407,7 +1375,6 @@ export default {
         "rarity": 4,
         "weapon": "Polearm",
         "element": "Geo",
-        "hakushinID": 10000100,
         "id": 10000100,
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Kachina.webp",
         "skillIds": [
@@ -1415,7 +1382,6 @@ export default {
             11002,
             11005
         ],
-        "region": "Natlan",
         "matEnemy": "Tribals",
         "matBoss": "Dendro Dino",
         "matFlower": "Quenepa Berry",
@@ -1428,8 +1394,10 @@ export default {
         "hpMaxAsc": 3539.67333984375,
         "atkMaxAsc": 64.992561340332,
         "defMaxAsc": 237.7147521972656,
-        "version": "5.0",
-        "imgId": "UI_AvatarIcon_Kachina"
+        "imgId": "UI_AvatarIcon_Kachina",
+        "coopImgId": "UI_CoopImg_Kachina",
+        "region": "Natlan",
+        "version": "5.0"
     },
     "KaedeharaKazuha": {
         "name": "Kaedehara Kazuha",
@@ -1443,24 +1411,23 @@ export default {
         "matMastery": "Diligence",
         "matTrounce": "Gilded Scale",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e3\/Kaedehara_Kazuha_Icon.png",
-        "region": "Inazuma",
         "release": "June 29, 2021",
-        "patch": "1.6",
         "hpBase": 1039.1187744140625,
         "atkBase": 23.0888004302979,
         "defBase": 62.8214988708496,
         "hpMaxAsc": 4267.18359375,
         "atkMaxAsc": 94.8081665039063,
         "defMaxAsc": 257.9849853515625,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Kaedehara_Kazuha",
-        "hakushinID": 10000047,
         "id": 10000047,
         "skillIds": [
             10471,
             10472,
             10475
         ],
-        "imgId": "UI_AvatarIcon_Kazuha"
+        "imgId": "UI_AvatarIcon_Kazuha",
+        "coopImgId": "UI_CoopImg_Kazuha",
+        "region": "Inazuma",
+        "version": "1.6"
     },
     "Kaeya": {
         "name": "Kaeya",
@@ -1474,24 +1441,23 @@ export default {
         "matMastery": "Ballad",
         "matTrounce": "Spirit Locket of Boreas",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b6\/Kaeya_Icon.png",
-        "region": "Mondstadt",
         "release": "September 28, 2020",
-        "patch": "1.0",
         "hpBase": 975.6163940429688,
         "atkBase": 18.6984004974365,
         "defBase": 66.3809967041016,
         "hpMaxAsc": 3490.73779296875,
         "atkMaxAsc": 66.9041137695313,
         "defMaxAsc": 237.5099945068359,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Kaeya",
-        "hakushinID": 10000015,
         "id": 10000015,
         "skillIds": [
             10073,
             10074,
             10075
         ],
-        "imgId": "UI_AvatarIcon_Kaeya"
+        "imgId": "UI_AvatarIcon_Kaeya",
+        "coopImgId": "UI_CoopImg_Kaeya",
+        "region": "Mondstadt",
+        "version": "1.0"
     },
     "KamisatoAyaka": {
         "name": "Kamisato Ayaka",
@@ -1505,24 +1471,23 @@ export default {
         "matMastery": "Elegance",
         "matTrounce": "Bloodjade Branch",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/51\/Kamisato_Ayaka_Icon.png",
-        "region": "Inazuma",
         "release": "July 21, 2021",
-        "patch": "2.0",
         "hpBase": 1000.9860229492188,
         "atkBase": 26.6266002655029,
         "defBase": 61.0265998840332,
         "hpMaxAsc": 4110.58984375,
         "atkMaxAsc": 109.3352279663086,
         "defMaxAsc": 250.6139984130859,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Kamisato_Ayaka",
-        "hakushinID": 10000002,
         "id": 10000002,
         "skillIds": [
             10024,
             10018,
             10019
         ],
-        "imgId": "UI_AvatarIcon_Ayaka"
+        "imgId": "UI_AvatarIcon_Ayaka",
+        "coopImgId": "UI_CoopImg_Ayaka",
+        "region": "Inazuma",
+        "version": "2.0"
     },
     "KamisatoAyato": {
         "name": "Kamisato Ayato",
@@ -1536,24 +1501,23 @@ export default {
         "matMastery": "Elegance",
         "matTrounce": "Mudra of the Malefic General",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/27\/Kamisato_Ayato_Icon.png",
-        "region": "Inazuma",
         "release": "March 30, 2022",
-        "patch": "2.6",
         "hpBase": 1067.7183837890625,
         "atkBase": 23.2749996185303,
         "defBase": 59.8300018310547,
         "hpMaxAsc": 4384.62890625,
         "atkMaxAsc": 95.5727462768555,
         "defMaxAsc": 245.6999969482422,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Kamisato_Ayato",
-        "hakushinID": 10000066,
         "id": 10000066,
         "skillIds": [
             10661,
             10662,
             10665
         ],
-        "imgId": "UI_AvatarIcon_Ayato"
+        "imgId": "UI_AvatarIcon_Ayato",
+        "coopImgId": "UI_CoopImg_Ayato",
+        "region": "Inazuma",
+        "version": "2.6"
     },
     "Kaveh": {
         "name": "Kaveh",
@@ -1567,24 +1531,23 @@ export default {
         "matMastery": "Ingenuity",
         "matTrounce": "Primordial Greenbloom",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1f\/Kaveh_Icon.png",
-        "region": "Sumeru",
         "release": "May 02, 2023",
-        "patch": "3.6",
         "hpBase": 1002.9700927734375,
         "atkBase": 19.5888004302979,
         "defBase": 62.9474983215332,
         "hpMaxAsc": 3588.609130859375,
         "atkMaxAsc": 70.0900192260742,
         "defMaxAsc": 225.2250061035156,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Kaveh",
-        "hakushinID": 10000081,
         "id": 10000081,
         "skillIds": [
             10811,
             10812,
             10815
         ],
-        "imgId": "UI_AvatarIcon_Kaveh"
+        "imgId": "UI_AvatarIcon_Kaveh",
+        "coopImgId": "UI_CoopImg_Kaveh",
+        "region": "Sumeru",
+        "version": "3.6"
     },
     "Keqing": {
         "name": "Keqing",
@@ -1598,24 +1561,23 @@ export default {
         "matMastery": "Prosperity",
         "matTrounce": "Ring of Boreas",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/52\/Keqing_Icon.png",
-        "region": "Liyue",
         "release": "September 28, 2020",
-        "patch": "1.0",
         "hpBase": 1020.0524291992188,
         "atkBase": 25.136999130249,
         "defBase": 62.223201751709,
         "hpMaxAsc": 4188.88671875,
         "atkMaxAsc": 103.2185668945313,
         "defMaxAsc": 255.5279998779297,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Keqing",
-        "hakushinID": 10000042,
         "id": 10000042,
         "skillIds": [
             10421,
             10422,
             10425
         ],
-        "imgId": "UI_AvatarIcon_Keqing"
+        "imgId": "UI_AvatarIcon_Keqing",
+        "coopImgId": "UI_CoopImg_Keqing",
+        "region": "Liyue",
+        "version": "1.0"
     },
     "Kinich": {
         "name": "Kinich",
@@ -1623,7 +1585,6 @@ export default {
         "rarity": 5,
         "weapon": "Claymore",
         "element": "Dendro",
-        "hakushinID": 10000101,
         "id": 10000101,
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Kinich.webp",
         "skillIds": [
@@ -1631,7 +1592,6 @@ export default {
             11012,
             11015
         ],
-        "region": "Natlan",
         "matEnemy": "Saurians",
         "matBoss": "Dendro Dino",
         "matFlower": "Saurian Claw Succulent",
@@ -1644,8 +1604,10 @@ export default {
         "hpMaxAsc": 4110.58984375,
         "atkMaxAsc": 106.2769012451172,
         "defMaxAsc": 256.2651062011719,
-        "version": "5.0",
-        "imgId": "UI_AvatarIcon_Kinich"
+        "imgId": "UI_AvatarIcon_Kinich",
+        "coopImgId": "UI_CoopImg_Kinich",
+        "region": "Natlan",
+        "version": "5.0"
     },
     "Kirara": {
         "name": "Kirara",
@@ -1659,24 +1621,23 @@ export default {
         "matMastery": "Transience",
         "matTrounce": "Everamber",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b6\/Kirara_Icon.png",
-        "region": "Inazuma",
         "release": "May 24, 2023",
-        "patch": "3.7",
         "hpBase": 1021.2059326171875,
         "atkBase": 18.6984004974365,
         "defBase": 45.7799987792969,
         "hpMaxAsc": 3653.8564453125,
         "atkMaxAsc": 66.9041137695313,
         "defMaxAsc": 163.8000030517578,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Kirara",
-        "hakushinID": 10000061,
         "id": 10000061,
         "skillIds": [
             10611,
             10612,
             10615
         ],
-        "imgId": "UI_AvatarIcon_Momoka"
+        "imgId": "UI_AvatarIcon_Momoka",
+        "coopImgId": "UI_CoopImg_Momoka",
+        "region": "Inazuma",
+        "version": "3.7"
     },
     "Klee": {
         "name": "Klee",
@@ -1690,17 +1651,13 @@ export default {
         "matMastery": "Freedom",
         "matTrounce": "Ring of Boreas",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9c\/Klee_Icon.png",
-        "region": "Mondstadt",
         "release": "October 20, 2020",
-        "patch": "1.0",
         "hpBase": 800.7888,
         "atkBase": 24.206,
         "defBase": 47.864,
         "hpMaxAsc": 3288.4717,
         "atkMaxAsc": 99.39566,
         "defMaxAsc": 196.56,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Klee",
-        "hakushinID": 10000029,
         "id": 10000029,
         "skillIds": [
             10291,
@@ -1708,7 +1665,9 @@ export default {
             10295
         ],
         "imgId": "UI_AvatarIcon_Klee",
-        "version": "6.2"
+        "coopImgId": "UI_CoopImg_Klee",
+        "region": "Mondstadt",
+        "version": "1.0"
     },
     "KujouSara": {
         "name": "Kujou Sara",
@@ -1722,24 +1681,23 @@ export default {
         "matMastery": "Elegance",
         "matTrounce": "Ashen Heart",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/df\/Kujou_Sara_Icon.png",
-        "region": "Inazuma",
         "release": "September 01, 2021",
-        "patch": "2.1",
         "hpBase": 802.3760986328125,
         "atkBase": 16.3833599090576,
         "defBase": 52.6469993591309,
         "hpMaxAsc": 2870.88720703125,
         "atkMaxAsc": 58.6207427978516,
         "defMaxAsc": 188.3699951171875,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Kujou_Sara",
-        "hakushinID": 10000056,
         "id": 10000056,
         "skillIds": [
             10561,
             10562,
             10565
         ],
-        "imgId": "UI_AvatarIcon_Sara"
+        "imgId": "UI_AvatarIcon_Sara",
+        "coopImgId": "UI_CoopImg_Sara",
+        "region": "Inazuma",
+        "version": "2.1"
     },
     "KukiShinobu": {
         "name": "Kuki Shinobu",
@@ -1753,35 +1711,32 @@ export default {
         "matMastery": "Elegance",
         "matTrounce": "Tears of the Calamitous God",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b3\/Kuki_Shinobu_Icon.png",
-        "region": "Inazuma",
         "release": "June 21, 2022",
-        "patch": "2.7",
         "hpBase": 1030.3238525390625,
         "atkBase": 17.8080005645752,
         "defBase": 62.9474983215332,
         "hpMaxAsc": 3686.480224609375,
         "atkMaxAsc": 63.7182006835938,
         "defMaxAsc": 225.2250061035156,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Kuki_Shinobu",
-        "hakushinID": 10000065,
         "id": 10000065,
         "skillIds": [
             10651,
             10652,
             10655
         ],
-        "imgId": "UI_AvatarIcon_Shinobu"
+        "imgId": "UI_AvatarIcon_Shinobu",
+        "coopImgId": "UI_CoopImg_Shinobu",
+        "region": "Inazuma",
+        "version": "2.7"
     },
     "LanYan": {
         "name": "Lan Yan",
         "rarity": 4,
         "weapon": "Catalyst",
         "element": "Anemo",
-        "hakushinID": 10000108,
         "id": 10000108,
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Lanyan.webp",
         "release": "December 31, 2024",
-        "region": "Liyue",
         "matEnemy": "Whopperflowers",
         "matBoss": "Config Device",
         "matFlower": "Clearwater Jade",
@@ -1793,26 +1748,26 @@ export default {
         "hpMaxAsc": 2773.01611328125,
         "atkMaxAsc": 75.1874771118164,
         "defMaxAsc": 174.0375061035156,
-        "version": "5.3",
         "matTrounce": "Eroded Sunfire",
         "skillIds": [
             11081,
             11082,
             11085
         ],
-        "imgId": "UI_AvatarIcon_Lanyan"
+        "imgId": "UI_AvatarIcon_Lanyan",
+        "coopImgId": "UI_CoopImg_Lanyan",
+        "region": "Liyue",
+        "version": "5.3"
     },
     "Lauma": {
         "name": "Lauma",
         "rarity": 5,
         "weapon": "Catalyst",
         "element": "Dendro",
-        "hakushinID": 10000119,
         "id": 10000119,
         "release": "September 09, 2025",
         "imgId": "UI_AvatarIcon_Lauma",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Lauma.webp",
-        "region": "Nodkrai",
         "matEnemy": "Oprichniki",
         "matBoss": "Moonfly",
         "matFlower": "Moonfall Silver",
@@ -1825,12 +1780,14 @@ export default {
         "hpMaxAsc": 3405.9172,
         "atkMaxAsc": 81.50444,
         "defMaxAsc": 213.759,
-        "version": "6.0",
         "skillIds": [
             11191,
             11192,
             11195
-        ]
+        ],
+        "coopImgId": "UI_CoopImg_Lauma",
+        "region": "Nod-Krai",
+        "version": "6.0"
     },
     "Layla": {
         "name": "Layla",
@@ -1844,24 +1801,46 @@ export default {
         "matMastery": "Ingenuity",
         "matTrounce": "Mirror of Mushin",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1a\/Layla_Icon.png",
-        "region": "Sumeru",
         "release": "November 18, 2022",
-        "patch": "3.2",
         "hpBase": 930.0267944335938,
         "atkBase": 18.1641597747803,
         "defBase": 54.9360008239746,
         "hpMaxAsc": 3327.619384765625,
         "atkMaxAsc": 64.992561340332,
         "defMaxAsc": 196.5599975585938,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Layla",
-        "hakushinID": 10000074,
         "id": 10000074,
         "skillIds": [
             10741,
             10742,
             10745
         ],
-        "imgId": "UI_AvatarIcon_Layla"
+        "imgId": "UI_AvatarIcon_Layla",
+        "coopImgId": "UI_CoopImg_Layla",
+        "region": "Sumeru",
+        "version": "3.2"
+    },
+    "Linnea": {
+        "id": 10000130,
+        "name": "Linnea",
+        "element": "Geo",
+        "coopImgId": "UI_CoopImg_Linnea",
+        "weapon": "Bow",
+        "rarity": 5,
+        "ascendStat": "critRate_",
+        "imgId": "UI_AvatarIcon_Linnea",
+        "matFlower": "Etherwing Moth",
+        "matTrounce": "Elixir of the Heretic",
+        "matBoss": "Watcher",
+        "matEnemy": "Oprichniki",
+        "matMastery": "Vagrancy",
+        "atkBase": 11,
+        "atkMaxAsc": 47.870999999999995,
+        "hpBase": 770,
+        "hpMaxAsc": 3165.9699999999993,
+        "defBase": 71,
+        "defMaxAsc": 286.53099999999995,
+        "region": "Nod-Krai",
+        "version": "6.5"
     },
     "Lisa": {
         "name": "Lisa",
@@ -1875,24 +1854,23 @@ export default {
         "matMastery": "Ballad",
         "matTrounce": "Dvalin's Claw",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/6\/65\/Lisa_Icon.png",
-        "region": "Mondstadt",
         "release": "September 28, 2020",
-        "patch": "1.0",
         "hpBase": 802.3761,
         "atkBase": 19.41072,
         "defBase": 48.069,
         "hpMaxAsc": 2870.8872,
         "atkMaxAsc": 69.452835,
         "defMaxAsc": 171.99,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Lisa",
-        "hakushinID": 10000006,
         "id": 10000006,
         "skillIds": [
             10060,
             10061,
             10062
         ],
-        "imgId": "UI_AvatarIcon_Lisa"
+        "imgId": "UI_AvatarIcon_Lisa",
+        "coopImgId": "UI_CoopImg_Lisa",
+        "region": "Mondstadt",
+        "version": "1.0"
     },
     "Lynette": {
         "name": "Lynette",
@@ -1906,24 +1884,23 @@ export default {
         "matMastery": "Order",
         "matTrounce": "Everamber",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ad\/Lynette_Icon.png",
-        "region": "Fontaine",
         "release": "August 16, 2023",
-        "patch": "4.0",
         "hpBase": 1039.4417724609375,
         "atkBase": 19.4107208251953,
         "defBase": 59.685676574707,
         "hpMaxAsc": 3719.10400390625,
         "atkMaxAsc": 69.4528350830078,
         "defMaxAsc": 213.5542449951172,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Lynette",
-        "hakushinID": 10000083,
         "id": 10000083,
         "skillIds": [
             10831,
             10832,
             10835
         ],
-        "imgId": "UI_AvatarIcon_Linette"
+        "imgId": "UI_AvatarIcon_Linette",
+        "coopImgId": "UI_CoopImg_Linette",
+        "region": "Fontaine",
+        "version": "4.0"
     },
     "Lyney": {
         "name": "Lyney",
@@ -1937,35 +1914,32 @@ export default {
         "matMastery": "Equity",
         "matTrounce": "Primordial Greenbloom",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b2\/Lyney_Icon.png",
-        "region": "Fontaine",
         "release": "August 16, 2023",
-        "patch": "4.0",
         "hpBase": 857.9879760742188,
         "atkBase": 24.7646007537842,
         "defBase": 41.8810005187988,
         "hpMaxAsc": 3523.362548828125,
         "atkMaxAsc": 101.6894073486328,
         "defMaxAsc": 171.9900054931641,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Lyney",
-        "hakushinID": 10000084,
         "id": 10000084,
         "skillIds": [
             10841,
             10842,
             10845
         ],
-        "imgId": "UI_AvatarIcon_Liney"
+        "imgId": "UI_AvatarIcon_Liney",
+        "coopImgId": "UI_CoopImg_Liney",
+        "region": "Fontaine",
+        "version": "4.0"
     },
     "Mavuika": {
         "name": "Mavuika",
         "rarity": 5,
         "weapon": "Claymore",
         "element": "Pyro",
-        "hakushinID": 10000106,
         "id": 10000106,
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Mavuika.webp",
         "release": "December 31, 2024",
-        "region": "Natlan",
         "matEnemy": "Tribals",
         "matBoss": "Config Device",
         "matFlower": "Withering Purpurbloom",
@@ -1977,14 +1951,16 @@ export default {
         "hpMaxAsc": 4012.718505859375,
         "atkMaxAsc": 114.6873016357422,
         "defMaxAsc": 253.0709991455078,
-        "version": "5.3",
         "matTrounce": "Eroded Horn",
         "skillIds": [
             11061,
             11062,
             11065
         ],
-        "imgId": "UI_AvatarIcon_Mavuika"
+        "imgId": "UI_AvatarIcon_Mavuika",
+        "coopImgId": "UI_CoopImg_Mavuika",
+        "region": "Natlan",
+        "version": "5.3"
     },
     "Mika": {
         "name": "Mika",
@@ -1998,24 +1974,23 @@ export default {
         "matMastery": "Ballad",
         "matTrounce": "Mirror of Mushin",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/dd\/Mika_Icon.png",
-        "region": "Mondstadt",
         "release": "March 21, 2023",
-        "patch": "3.5",
         "hpBase": 1048.5596923828125,
         "atkBase": 18.6984004974365,
         "defBase": 59.8001251220703,
         "hpMaxAsc": 3751.7275390625,
         "atkMaxAsc": 66.9041137695313,
         "defMaxAsc": 213.9637451171875,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Mika",
-        "hakushinID": 10000080,
         "id": 10000080,
         "skillIds": [
             10801,
             10802,
             10805
         ],
-        "imgId": "UI_AvatarIcon_Mika"
+        "imgId": "UI_AvatarIcon_Mika",
+        "coopImgId": "UI_CoopImg_Mika",
+        "region": "Mondstadt",
+        "version": "3.5"
     },
     "Mona": {
         "name": "Mona",
@@ -2029,17 +2004,13 @@ export default {
         "matMastery": "Resistance",
         "matTrounce": "Ring of Boreas",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/41\/Mona_Icon.png",
-        "region": "Mondstadt",
         "release": "September 28, 2020",
-        "patch": "1.0",
         "hpBase": 810.322,
         "atkBase": 22.344,
         "defBase": 50.8555,
         "hpMaxAsc": 3327.62,
         "atkMaxAsc": 91.74984,
         "defMaxAsc": 208.845,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Mona",
-        "hakushinID": 10000041,
         "id": 10000041,
         "skillIds": [
             10411,
@@ -2047,7 +2018,9 @@ export default {
             10415
         ],
         "imgId": "UI_AvatarIcon_Mona",
-        "version": "6.2"
+        "coopImgId": "UI_CoopImg_Mona",
+        "region": "Mondstadt",
+        "version": "1.0"
     },
     "Mualani": {
         "name": "Mualani",
@@ -2055,7 +2028,6 @@ export default {
         "rarity": 5,
         "weapon": "Catalyst",
         "element": "Hydro",
-        "hakushinID": 10000102,
         "id": 10000102,
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Mualani.webp",
         "skillIds": [
@@ -2063,7 +2035,6 @@ export default {
             30002,
             30007
         ],
-        "region": "Natlan",
         "matEnemy": "Tribals",
         "matBoss": "Pyro Dino",
         "matFlower": "Sprayfeather Gill",
@@ -2076,8 +2047,10 @@ export default {
         "hpMaxAsc": 4854.41064453125,
         "atkMaxAsc": 58.1082305908203,
         "defMaxAsc": 182.3094024658203,
-        "version": "5.0",
-        "imgId": "UI_AvatarIcon_Mualani"
+        "imgId": "UI_AvatarIcon_Mualani",
+        "coopImgId": "UI_CoopImg_Mualani",
+        "region": "Natlan",
+        "version": "5.0"
     },
     "Nahida": {
         "name": "Nahida",
@@ -2091,24 +2064,23 @@ export default {
         "matMastery": "Ingenuity",
         "matTrounce": "Puppet Strings",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f9\/Nahida_Icon.png",
-        "region": "Sumeru",
         "release": "November 02, 2022",
-        "patch": "3.2",
         "hpBase": 806.5087280273438,
         "atkBase": 23.2749996185303,
         "defBase": 49.0606002807617,
         "hpMaxAsc": 3311.9609375,
         "atkMaxAsc": 95.5727462768555,
         "defMaxAsc": 201.4739990234375,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Nahida",
-        "hakushinID": 10000073,
         "id": 10000073,
         "skillIds": [
             10731,
             10732,
             10735
         ],
-        "imgId": "UI_AvatarIcon_Nahida"
+        "imgId": "UI_AvatarIcon_Nahida",
+        "coopImgId": "UI_CoopImg_Nahida",
+        "region": "Sumeru",
+        "version": "3.2"
     },
     "Navia": {
         "name": "Navia",
@@ -2122,35 +2094,32 @@ export default {
         "matMastery": "Equity",
         "matTrounce": "Lightless Silk String",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/c0\/Navia_Icon.png",
-        "region": "Fontaine",
         "release": "December 20, 2023",
-        "patch": "4.3",
         "hpBase": 984.779541015625,
         "atkBase": 27.3714008331299,
         "defBase": 61.7445602416992,
         "hpMaxAsc": 4044.037353515625,
         "atkMaxAsc": 112.3935546875,
         "defMaxAsc": 253.5623931884766,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Navia",
-        "hakushinID": 10000091,
         "id": 10000091,
         "skillIds": [
             10911,
             10912,
             10915
         ],
-        "imgId": "UI_AvatarIcon_Navia"
+        "imgId": "UI_AvatarIcon_Navia",
+        "coopImgId": "UI_CoopImg_Navia",
+        "region": "Fontaine",
+        "version": "4.3"
     },
     "Nefer": {
         "name": "Nefer",
         "rarity": 5,
         "weapon": "Catalyst",
         "element": "Dendro",
-        "hakushinID": 10000122,
         "id": 10000122,
         "imgId": "UI_AvatarIcon_Nefer",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Nefer.webp",
-        "region": "Nodkrai",
         "matEnemy": "Oprichniki",
         "matBoss": "Herra",
         "matFlower": "Moonfall Silver",
@@ -2163,25 +2132,24 @@ export default {
         "hpMaxAsc": 4061.2627,
         "atkMaxAsc": 110.09981,
         "defMaxAsc": 255.528,
-        "version": "6.1",
         "release": "October 21, 2025",
         "skillIds": [
             11221,
             11222,
             11225
-        ]
+        ],
+        "coopImgId": "UI_CoopImg_Nefer",
+        "region": "Nod-Krai",
+        "version": "6.1"
     },
     "Neuvillette": {
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Neuvillette",
         "ascendStat": "critDMG_",
         "name": "Neuvillette",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/21\/Neuvillette_Icon.png",
         "rarity": 5,
         "element": "Hydro",
         "weapon": "Catalyst",
-        "region": "Fontaine",
         "release": "September 27, 2023",
-        "patch": "4.1",
         "hpBase": 1143.9840087890625,
         "atkBase": 16.2180194854736,
         "defBase": 44.872501373291,
@@ -2193,14 +2161,16 @@ export default {
         "matBoss": "Seahorse",
         "matMastery": "Equity",
         "matTrounce": "Everamber",
-        "hakushinID": 10000087,
         "id": 10000087,
         "skillIds": [
             10871,
             10872,
             10875
         ],
-        "imgId": "UI_AvatarIcon_Neuvillette"
+        "imgId": "UI_AvatarIcon_Neuvillette",
+        "coopImgId": "UI_CoopImg_Neuvillette",
+        "region": "Fontaine",
+        "version": "4.1"
     },
     "Nilou": {
         "name": "Nilou",
@@ -2214,24 +2184,23 @@ export default {
         "matMastery": "Praxis",
         "matTrounce": "Tears of the Calamitous God",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/58\/Nilou_Icon.png",
-        "region": "Sumeru",
         "release": "October 14, 2022",
-        "patch": "3.1",
         "hpBase": 1182.1168212890625,
         "atkBase": 17.8752002716064,
         "defBase": 56.7188415527344,
         "hpMaxAsc": 4854.41064453125,
         "atkMaxAsc": 73.3998718261719,
         "defMaxAsc": 232.9235992431641,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Nilou",
-        "hakushinID": 10000070,
         "id": 10000070,
         "skillIds": [
             10701,
             10702,
             10705
         ],
-        "imgId": "UI_AvatarIcon_Nilou"
+        "imgId": "UI_AvatarIcon_Nilou",
+        "coopImgId": "UI_CoopImg_Nilou",
+        "region": "Sumeru",
+        "version": "3.1"
     },
     "Ningguang": {
         "name": "Ningguang",
@@ -2245,24 +2214,23 @@ export default {
         "matMastery": "Prosperity",
         "matTrounce": "Spirit Locket of Boreas",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/e0\/Ningguang_Icon.png",
-        "region": "Liyue",
         "release": "September 28, 2020",
-        "patch": "1.0",
         "hpBase": 820.6118774414062,
         "atkBase": 17.8080005645752,
         "defBase": 48.0690002441406,
         "hpMaxAsc": 2936.134765625,
         "atkMaxAsc": 63.7182006835938,
         "defMaxAsc": 171.9900054931641,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Ningguang",
-        "hakushinID": 10000027,
         "id": 10000027,
         "skillIds": [
             10271,
             10272,
             10274
         ],
-        "imgId": "UI_AvatarIcon_Ningguang"
+        "imgId": "UI_AvatarIcon_Ningguang",
+        "coopImgId": "UI_CoopImg_Ningguang",
+        "region": "Liyue",
+        "version": "1.0"
     },
     "Noelle": {
         "name": "Noelle",
@@ -2276,34 +2244,31 @@ export default {
         "matMastery": "Resistance",
         "matTrounce": "Dvalin's Claw",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/8e\/Noelle_Icon.png",
-        "region": "Mondstadt",
         "release": "September 28, 2020",
-        "patch": "1.0",
         "hpBase": 1012.0880126953125,
         "atkBase": 16.0272006988525,
         "defBase": 66.9532470703125,
         "hpMaxAsc": 3621.232666015625,
         "atkMaxAsc": 57.346378326416,
         "defMaxAsc": 239.5574951171875,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Noelle",
-        "hakushinID": 10000034,
         "id": 10000034,
         "skillIds": [
             10341,
             10342,
             10343
         ],
-        "imgId": "UI_AvatarIcon_Noel"
+        "imgId": "UI_AvatarIcon_Noel",
+        "coopImgId": "UI_CoopImg_Noel",
+        "region": "Mondstadt",
+        "version": "1.0"
     },
     "Ororon": {
         "name": "Ororon",
         "rarity": 4,
         "weapon": "Bow",
         "element": "Electro",
-        "hakushinID": 10000105,
         "id": 10000105,
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Olorun.webp",
-        "region": "Natlan",
         "matEnemy": "Saurians",
         "matBoss": "Pyro Dino",
         "matFlower": "Glowing Hornshroom",
@@ -2316,14 +2281,16 @@ export default {
         "hpMaxAsc": 2773.01611328125,
         "atkMaxAsc": 73.2759323120117,
         "defMaxAsc": 176.0850067138672,
-        "version": "5.2",
         "release": "November 19, 2024",
         "skillIds": [
             30501,
             30502,
             30505
         ],
-        "imgId": "UI_AvatarIcon_Olorun"
+        "imgId": "UI_AvatarIcon_Olorun",
+        "coopImgId": "UI_CoopImg_Olorun",
+        "region": "Natlan",
+        "version": "5.2"
     },
     "Qiqi": {
         "name": "Qiqi",
@@ -2337,24 +2304,23 @@ export default {
         "matMastery": "Prosperity",
         "matTrounce": "Tail of Boreas",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b3\/Qiqi_Icon.png",
-        "region": "Liyue",
         "release": "September 28, 2020",
-        "patch": "1.0",
         "hpBase": 962.8532104492188,
         "atkBase": 22.3439998626709,
         "defBase": 71.7959976196289,
         "hpMaxAsc": 3953.995849609375,
         "atkMaxAsc": 91.7498397827148,
         "defMaxAsc": 294.8399963378906,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Qiqi",
-        "hakushinID": 10000035,
         "id": 10000035,
         "skillIds": [
             10351,
             10352,
             10353
         ],
-        "imgId": "UI_AvatarIcon_Qiqi"
+        "imgId": "UI_AvatarIcon_Qiqi",
+        "coopImgId": "UI_CoopImg_Qiqi",
+        "region": "Liyue",
+        "version": "1.0"
     },
     "RaidenShogun": {
         "name": "Raiden Shogun",
@@ -2368,24 +2334,23 @@ export default {
         "matMastery": "Light",
         "matTrounce": "Molten Moment",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/24\/Raiden_Shogun_Icon.png",
-        "region": "Inazuma",
         "release": "September 01, 2021",
-        "patch": "2.1",
         "hpBase": 1004.7992553710938,
         "atkBase": 26.2541999816895,
         "defBase": 61.4454116821289,
         "hpMaxAsc": 4126.2490234375,
         "atkMaxAsc": 107.8060607910156,
         "defMaxAsc": 252.3338928222656,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Raiden_Shogun",
-        "hakushinID": 10000052,
         "id": 10000052,
         "skillIds": [
             10521,
             10522,
             10525
         ],
-        "imgId": "UI_AvatarIcon_Shougun"
+        "imgId": "UI_AvatarIcon_Shougun",
+        "coopImgId": "UI_CoopImg_Shougun",
+        "region": "Inazuma",
+        "version": "2.1"
     },
     "Razor": {
         "name": "Razor",
@@ -2399,17 +2364,13 @@ export default {
         "matMastery": "Resistance",
         "matTrounce": "Dvalin's Claw",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b8\/Razor_Icon.png",
-        "region": "Mondstadt",
         "release": "September 28, 2020",
-        "patch": "1.0",
         "hpBase": 1002.9701,
         "atkBase": 19.5888,
         "defBase": 62.9475,
         "hpMaxAsc": 3588.6091,
         "atkMaxAsc": 70.09002,
         "defMaxAsc": 225.225,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Razor",
-        "hakushinID": 10000020,
         "id": 10000020,
         "skillIds": [
             10201,
@@ -2417,7 +2378,9 @@ export default {
             10203
         ],
         "imgId": "UI_AvatarIcon_Razor",
-        "version": "6.2"
+        "coopImgId": "UI_CoopImg_Razor",
+        "region": "Mondstadt",
+        "version": "1.0"
     },
     "Rosaria": {
         "name": "Rosaria",
@@ -2431,24 +2394,23 @@ export default {
         "matMastery": "Ballad",
         "matTrounce": "Shadow of the Warrior",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/35\/Rosaria_Icon.png",
-        "region": "Mondstadt",
         "release": "April 06, 2021",
-        "patch": "1.4",
         "hpBase": 1030.3238525390625,
         "atkBase": 20.1230392456055,
         "defBase": 59.5139999389648,
         "hpMaxAsc": 3686.480224609375,
         "atkMaxAsc": 72.0015640258789,
         "defMaxAsc": 212.9400024414063,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Rosaria",
-        "hakushinID": 10000045,
         "id": 10000045,
         "skillIds": [
             10451,
             10452,
             10453
         ],
-        "imgId": "UI_AvatarIcon_Rosaria"
+        "imgId": "UI_AvatarIcon_Rosaria",
+        "coopImgId": "UI_CoopImg_Rosaria",
+        "region": "Mondstadt",
+        "version": "1.4"
     },
     "SangonomiyaKokomi": {
         "name": "Sangonomiya Kokomi",
@@ -2462,24 +2424,23 @@ export default {
         "matMastery": "Transience",
         "matTrounce": "Hellfire Butterfly",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/ff\/Sangonomiya_Kokomi_Icon.png",
-        "region": "Inazuma",
         "release": "September 21, 2021",
-        "patch": "2.1",
         "hpBase": 1048.6519775390625,
         "atkBase": 18.2476005554199,
         "defBase": 51.1546516418457,
         "hpMaxAsc": 4306.33203125,
         "atkMaxAsc": 74.9290390014648,
         "defMaxAsc": 210.0735015869141,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sangonomiya_Kokomi",
-        "hakushinID": 10000054,
         "id": 10000054,
         "skillIds": [
             10541,
             10542,
             10545
         ],
-        "imgId": "UI_AvatarIcon_Kokomi"
+        "imgId": "UI_AvatarIcon_Kokomi",
+        "coopImgId": "UI_CoopImg_Kokomi",
+        "region": "Inazuma",
+        "version": "2.1"
     },
     "Sayu": {
         "name": "Sayu",
@@ -2493,35 +2454,32 @@ export default {
         "matMastery": "Light",
         "matTrounce": "Gilded Scale",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/22\/Sayu_Icon.png",
-        "region": "Inazuma",
         "release": "August 10, 2021",
-        "patch": "2.0",
         "hpBase": 993.8522,
         "atkBase": 20.4792,
         "defBase": 62.432476,
         "hpMaxAsc": 3555.9854,
         "atkMaxAsc": 73.27593,
         "defMaxAsc": 223.38225,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sayu",
-        "hakushinID": 10000053,
         "id": 10000053,
         "skillIds": [
             10531,
             10532,
             10535
         ],
-        "imgId": "UI_AvatarIcon_Sayu"
+        "imgId": "UI_AvatarIcon_Sayu",
+        "coopImgId": "UI_CoopImg_Sayu",
+        "region": "Inazuma",
+        "version": "2.0"
     },
     "Sethos": {
         "name": "Sethos",
         "rarity": 4,
         "weapon": "Bow",
         "element": "Electro",
-        "hakushinID": 10000097,
         "id": 10000097,
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Sethos.webp",
         "release": "June 4, 2024",
-        "region": "Sumeru",
         "matEnemy": "Eremites",
         "matBoss": "Hidden Beast",
         "matFlower": "Trishiraite",
@@ -2534,13 +2492,15 @@ export default {
         "hpMaxAsc": 2936.134765625,
         "atkMaxAsc": 68.1784744262695,
         "defMaxAsc": 167.8950042724609,
-        "version": "4.7",
         "skillIds": [
             10971,
             10972,
             10975
         ],
-        "imgId": "UI_AvatarIcon_Sethos"
+        "imgId": "UI_AvatarIcon_Sethos",
+        "coopImgId": "UI_CoopImg_Sethos",
+        "region": "Sumeru",
+        "version": "4.7"
     },
     "Shenhe": {
         "name": "Shenhe",
@@ -2554,24 +2514,23 @@ export default {
         "matMastery": "Prosperity",
         "matTrounce": "Hellfire Butterfly",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/af\/Shenhe_Icon.png",
-        "region": "Liyue",
         "release": "January 05, 2022",
-        "patch": "2.4",
         "hpBase": 1011.4725341796875,
         "atkBase": 23.6473999023438,
         "defBase": 64.6164016723633,
         "hpMaxAsc": 4153.65283203125,
         "atkMaxAsc": 97.1019134521484,
         "defMaxAsc": 265.3559875488281,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Shenhe",
-        "hakushinID": 10000063,
         "id": 10000063,
         "skillIds": [
             10631,
             10632,
             10635
         ],
-        "imgId": "UI_AvatarIcon_Shenhe"
+        "imgId": "UI_AvatarIcon_Shenhe",
+        "coopImgId": "UI_CoopImg_Shenhe",
+        "region": "Liyue",
+        "version": "2.4"
     },
     "ShikanoinHeizou": {
         "name": "Shikanoin Heizou",
@@ -2585,35 +2544,32 @@ export default {
         "matMastery": "Transience",
         "matTrounce": "The Meaning of Aeons",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/20\/Shikanoin_Heizou_Icon.png",
-        "region": "Inazuma",
         "release": "July 13, 2022",
-        "patch": "2.8",
         "hpBase": 893.55517578125,
         "atkBase": 18.8764801025391,
         "defBase": 57.3394508361816,
         "hpMaxAsc": 3197.12451171875,
         "atkMaxAsc": 67.5412902832031,
         "defMaxAsc": 205.1595001220703,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Shikanoin_Heizou",
-        "hakushinID": 10000059,
         "id": 10000059,
         "skillIds": [
             10591,
             10592,
             10595
         ],
-        "imgId": "UI_AvatarIcon_Heizo"
+        "imgId": "UI_AvatarIcon_Heizo",
+        "coopImgId": "UI_CoopImg_Heizo",
+        "region": "Inazuma",
+        "version": "2.8"
     },
     "Sigewinne": {
         "name": "Sigewinne",
         "rarity": 5,
         "weapon": "Bow",
         "element": "Hydro",
-        "hakushinID": 10000095,
         "id": 10000095,
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Sigewinne.webp",
         "release": "June 4, 2024",
-        "region": "Fontaine",
         "matEnemy": "Fontemer",
         "matBoss": "Tulpa",
         "matFlower": "Romaritime Flower",
@@ -2626,24 +2582,24 @@ export default {
         "hpMaxAsc": 4267.1836,
         "atkMaxAsc": 61.54885,
         "defMaxAsc": 159.705,
-        "version": "4.7",
         "skillIds": [
             10951,
             10952,
             10955
         ],
-        "imgId": "UI_AvatarIcon_Sigewinne"
+        "imgId": "UI_AvatarIcon_Sigewinne",
+        "coopImgId": "UI_CoopImg_Sigewinne",
+        "region": "Fontaine",
+        "version": "4.7"
     },
     "Skirk": {
         "name": "Skirk",
         "rarity": 5,
         "weapon": "Sword",
         "element": "Cryo",
-        "hakushinID": 10000114,
         "id": 10000114,
         "imgId": "UI_AvatarIcon_SkirkNew",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_SkirkNew.webp",
-        "region": "Omni_scourge",
         "matEnemy": "Meka",
         "matBoss": "Papilla",
         "matFlower": "Skysplit Gembloom",
@@ -2656,13 +2612,15 @@ export default {
         "hpMaxAsc": 3969.6553,
         "atkMaxAsc": 114.6873,
         "defMaxAsc": 257.7393,
-        "version": "5.7",
         "release": "June 17, 2025",
         "skillIds": [
             11141,
             11142,
             11145
-        ]
+        ],
+        "coopImgId": "UI_CoopImg_SkirkNew",
+        "region": "None",
+        "version": "5.7"
     },
     "Sucrose": {
         "name": "Sucrose",
@@ -2676,17 +2634,13 @@ export default {
         "matMastery": "Freedom",
         "matTrounce": "Spirit Locket of Boreas",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/0\/0e\/Sucrose_Icon.png",
-        "region": "Mondstadt",
         "release": "September 28, 2020",
-        "patch": "1.0",
         "hpBase": 775.02234,
         "atkBase": 14.2464,
         "defBase": 58.94175,
         "hpMaxAsc": 2773.016,
         "atkMaxAsc": 50.97456,
         "defMaxAsc": 210.8925,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sucrose",
-        "hakushinID": 10000043,
         "id": 10000043,
         "skillIds": [
             10431,
@@ -2694,7 +2648,9 @@ export default {
             10435
         ],
         "imgId": "UI_AvatarIcon_Sucrose",
-        "version": "6.2"
+        "coopImgId": "UI_CoopImg_Sucrose",
+        "region": "Mondstadt",
+        "version": "1.0"
     },
     "Tartaglia": {
         "name": "Tartaglia",
@@ -2708,24 +2664,23 @@ export default {
         "matMastery": "Freedom",
         "matTrounce": "Shard of a Foul Legacy",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/85\/Tartaglia_Icon.png",
-        "region": "Fatui",
         "release": "November 11, 2020",
-        "patch": "1.1",
         "hpBase": 1020.0524291992188,
         "atkBase": 23.4612007141113,
         "defBase": 63.4197998046875,
         "hpMaxAsc": 4188.88671875,
         "atkMaxAsc": 96.3373336791992,
         "defMaxAsc": 260.4419860839844,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Tartaglia",
-        "hakushinID": 10000033,
         "id": 10000033,
         "skillIds": [
             10331,
             10332,
             10333
         ],
-        "imgId": "UI_AvatarIcon_Tartaglia"
+        "imgId": "UI_AvatarIcon_Tartaglia",
+        "coopImgId": "UI_CoopImg_Tartaglia",
+        "region": "Snezhnaya",
+        "version": "1.1"
     },
     "Thoma": {
         "name": "Thoma",
@@ -2739,24 +2694,23 @@ export default {
         "matMastery": "Transience",
         "matTrounce": "Hellfire Butterfly",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/5b\/Thoma_Icon.png",
-        "region": "Inazuma",
         "release": "November 02, 2021",
-        "patch": "2.2",
         "hpBase": 866.2014770507812,
         "atkBase": 16.9176006317139,
         "defBase": 62.9474983215332,
         "hpMaxAsc": 3099.253173828125,
         "atkMaxAsc": 60.5322914123535,
         "defMaxAsc": 225.2250061035156,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Thoma",
-        "hakushinID": 10000050,
         "id": 10000050,
         "skillIds": [
             10501,
             10502,
             10505
         ],
-        "imgId": "UI_AvatarIcon_Tohma"
+        "imgId": "UI_AvatarIcon_Tohma",
+        "coopImgId": "UI_CoopImg_Tohma",
+        "region": "Inazuma",
+        "version": "2.2"
     },
     "Tighnari": {
         "name": "Tighnari",
@@ -2770,30 +2724,27 @@ export default {
         "matMastery": "Admonition",
         "matTrounce": "The Meaning of Aeons",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/87\/Tighnari_Icon.png",
-        "region": "Sumeru",
         "release": "August 24, 2022",
-        "patch": "3.0",
         "hpBase": 844.6415405273438,
         "atkBase": 20.8544006347656,
         "defBase": 49.0606002807617,
         "hpMaxAsc": 3468.5546875,
         "atkMaxAsc": 85.633186340332,
         "defMaxAsc": 201.4739990234375,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Tighnari",
-        "hakushinID": 10000069,
         "id": 10000069,
         "skillIds": [
             10691,
             10692,
             10695
         ],
-        "imgId": "UI_AvatarIcon_Tighnari"
+        "imgId": "UI_AvatarIcon_Tighnari",
+        "coopImgId": "UI_CoopImg_Tighnari",
+        "region": "Sumeru",
+        "version": "3.0"
     },
     "TravelerAnemo": {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Traveler_Icon.png",
-        "region": "",
         "release": "September 28, 2020",
-        "patch": "1.0",
         "hpBase": 911.791015625,
         "atkBase": 17.8080005645752,
         "defBase": 57.2249984741211,
@@ -2801,7 +2752,6 @@ export default {
         "atkMaxAsc": 63.7182006835938,
         "defMaxAsc": 204.75,
         "element": "Anemo",
-        "hakushinID": "10000005-4",
         "id": "10000005-504",
         "idAlt": "10000007-704",
         "skillIds": [
@@ -2809,13 +2759,16 @@ export default {
             10067,
             10068
         ],
-        "imgId": "UI_AvatarIcon_PlayerBoy"
+        "imgId": "UI_AvatarIcon_PlayerBoy",
+        "coopImgId": "UI_CoopImg_PlayerBoy",
+        "weapon": "Sword",
+        "ascendStat": "atk_",
+        "region": "None",
+        "version": "1.0"
     },
     "TravelerDendro": {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Traveler_Icon.png",
-        "region": "",
         "release": "September 28, 2020",
-        "patch": "3.0",
         "hpBase": 911.791015625,
         "atkBase": 17.8080005645752,
         "defBase": 57.2249984741211,
@@ -2823,7 +2776,6 @@ export default {
         "atkMaxAsc": 63.7182006835938,
         "defMaxAsc": 204.75,
         "element": "Dendro",
-        "hakushinID": "10000005-8",
         "id": "10000005-508",
         "idAlt": "10000007-708",
         "skillIds": [
@@ -2831,13 +2783,16 @@ export default {
             10117,
             10118
         ],
-        "imgId": "UI_AvatarIcon_PlayerBoy"
+        "imgId": "UI_AvatarIcon_PlayerBoy",
+        "coopImgId": "UI_CoopImg_PlayerBoy",
+        "weapon": "Sword",
+        "ascendStat": "atk_",
+        "region": "None",
+        "version": "3.0"
     },
     "TravelerElectro": {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Traveler_Icon.png",
-        "region": "",
         "release": "September 28, 2020",
-        "patch": "2.0",
         "hpBase": 911.791015625,
         "atkBase": 17.8080005645752,
         "defBase": 57.2249984741211,
@@ -2845,7 +2800,6 @@ export default {
         "atkMaxAsc": 63.7182006835938,
         "defMaxAsc": 204.75,
         "element": "Electro",
-        "hakushinID": "10000005-7",
         "id": "10000005-507",
         "idAlt": "10000007-707",
         "skillIds": [
@@ -2853,13 +2807,16 @@ export default {
             10602,
             10605
         ],
-        "imgId": "UI_AvatarIcon_PlayerBoy"
+        "imgId": "UI_AvatarIcon_PlayerBoy",
+        "coopImgId": "UI_CoopImg_PlayerBoy",
+        "weapon": "Sword",
+        "ascendStat": "atk_",
+        "region": "None",
+        "version": "2.0"
     },
     "TravelerGeo": {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Traveler_Icon.png",
-        "region": "",
         "release": "September 28, 2020",
-        "patch": "1.0",
         "hpBase": 911.791015625,
         "atkBase": 17.8080005645752,
         "defBase": 57.2249984741211,
@@ -2867,7 +2824,6 @@ export default {
         "atkMaxAsc": 63.7182006835938,
         "defMaxAsc": 204.75,
         "element": "Geo",
-        "hakushinID": "10000005-6",
         "id": "10000005-506",
         "idAlt": "10000007-706",
         "skillIds": [
@@ -2875,13 +2831,16 @@ export default {
             10077,
             10078
         ],
-        "imgId": "UI_AvatarIcon_PlayerBoy"
+        "imgId": "UI_AvatarIcon_PlayerBoy",
+        "coopImgId": "UI_CoopImg_PlayerBoy",
+        "weapon": "Sword",
+        "ascendStat": "atk_",
+        "region": "None",
+        "version": "1.0"
     },
     "TravelerHydro": {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Traveler_Icon.png",
-        "region": "",
         "release": "September 28, 2020",
-        "patch": "4.0",
         "hpBase": 911.791015625,
         "atkBase": 17.8080005645752,
         "defBase": 57.2249984741211,
@@ -2889,7 +2848,6 @@ export default {
         "atkMaxAsc": 63.7182006835938,
         "defMaxAsc": 204.75,
         "element": "Hydro",
-        "hakushinID": "10000005-3",
         "id": "10000005-503",
         "idAlt": "10000007-703",
         "skillIds": [
@@ -2897,39 +2855,44 @@ export default {
             10087,
             10088
         ],
-        "imgId": "UI_AvatarIcon_PlayerBoy"
+        "imgId": "UI_AvatarIcon_PlayerBoy",
+        "coopImgId": "UI_CoopImg_PlayerBoy",
+        "weapon": "Sword",
+        "ascendStat": "atk_",
+        "region": "None",
+        "version": "4.0"
     },
     "TravelerPyro": {
         "element": "Pyro",
-        "hakushinID": "10000005-2",
         "id": "10000005-502",
         "idAlt": "10000007-702",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_PlayerGirl.webp",
         "release": "December 31, 2024",
-        "patch": "5.3",
         "hpBase": 911.791015625,
         "atkBase": 17.8080005645752,
         "defBase": 57.2249984741211,
         "hpMaxAsc": 3262.371826171875,
         "atkMaxAsc": 63.7182006835938,
         "defMaxAsc": 204.75,
-        "version": "5.3",
         "skillIds": [
             100541,
             10097,
             10098
         ],
-        "imgId": "UI_AvatarIcon_PlayerBoy"
+        "imgId": "UI_AvatarIcon_PlayerBoy",
+        "coopImgId": "UI_CoopImg_PlayerBoy",
+        "weapon": "Sword",
+        "ascendStat": "atk_",
+        "region": "None",
+        "version": "5.3"
     },
     "Varesa": {
         "name": "Varesa",
         "rarity": 5,
         "weapon": "Catalyst",
         "element": "Electro",
-        "hakushinID": 10000111,
         "id": 10000111,
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Varesa.webp",
-        "region": "Natlan",
         "matEnemy": "Saurians",
         "matBoss": "Lava Statue",
         "matFlower": "Skysplit Gembloom",
@@ -2942,25 +2905,25 @@ export default {
         "hpMaxAsc": 4059.6965,
         "atkMaxAsc": 113.922714,
         "defMaxAsc": 249.8769,
-        "version": "5.5",
         "skillIds": [
             11111,
             11112,
             11115
         ],
         "release": "March 25, 2025",
-        "imgId": "UI_AvatarIcon_Varesa"
+        "imgId": "UI_AvatarIcon_Varesa",
+        "coopImgId": "UI_CoopImg_Varesa",
+        "region": "Natlan",
+        "version": "5.5"
     },
     "Varka": {
         "name": "Varka",
         "rarity": 5,
         "weapon": "Claymore",
         "element": "Anemo",
-        "hakushinID": 10000128,
         "id": 10000128,
         "imgId": "UI_AvatarIcon_Varka",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Varka.webp",
-        "region": "Mondstadt",
         "matEnemy": "Landcruiser",
         "matBoss": "Moongecko",
         "matFlower": "Wolfhook",
@@ -2973,7 +2936,9 @@ export default {
         "hpMaxAsc": 4032.2927,
         "atkMaxAsc": 112.77585,
         "defMaxAsc": 254.2995,
-        "version": "6.3.54"
+        "coopImgId": "UI_CoopImg_Varka",
+        "region": "Mondstadt",
+        "version": "6.4"
     },
     "Venti": {
         "name": "Venti",
@@ -2987,17 +2952,13 @@ export default {
         "matMastery": "Ballad",
         "matTrounce": "Tail of Boreas",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f1\/Venti_Icon.png",
-        "region": "Mondstadt",
         "release": "September 28, 2020",
-        "patch": "1.0",
         "hpBase": 819.8552,
         "atkBase": 20.482,
         "defBase": 52.0521,
         "hpMaxAsc": 3366.7688,
         "atkMaxAsc": 84.10402,
         "defMaxAsc": 213.759,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Venti",
-        "hakushinID": 10000022,
         "id": 10000022,
         "skillIds": [
             10221,
@@ -3005,7 +2966,9 @@ export default {
             10225
         ],
         "imgId": "UI_AvatarIcon_Venti",
-        "version": "6.2"
+        "coopImgId": "UI_CoopImg_Venti",
+        "region": "Mondstadt",
+        "version": "1.0"
     },
     "Wanderer": {
         "name": "Wanderer",
@@ -3019,24 +2982,23 @@ export default {
         "matMastery": "Praxis",
         "matTrounce": "Daka's Bell",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f8\/Wanderer_Icon.png",
-        "region": "Sumeru",
         "release": "December 07, 2022",
-        "patch": "3.3",
         "hpBase": 791.255615234375,
         "atkBase": 25.5093994140625,
         "defBase": 47.2657012939453,
         "hpMaxAsc": 3249.3232421875,
         "atkMaxAsc": 104.7477340698242,
         "defMaxAsc": 194.1029968261719,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Wanderer",
-        "hakushinID": 10000075,
         "id": 10000075,
         "skillIds": [
             10751,
             10752,
             10755
         ],
-        "imgId": "UI_AvatarIcon_Wanderer"
+        "imgId": "UI_AvatarIcon_Wanderer",
+        "coopImgId": "UI_CoopImg_Wanderer",
+        "region": "Sumeru",
+        "version": "3.3"
     },
     "Wriothesley": {
         "name": "Wriothesley",
@@ -3045,10 +3007,7 @@ export default {
         "ascendStat": "critDMG_",
         "element": "Cryo",
         "weapon": "Catalyst",
-        "region": "Fontaine",
         "release": "October 17, 2023",
-        "patch": "4.1",
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Wriothesley",
         "hpBase": 1058.1851806640625,
         "atkBase": 24.2059993743896,
         "defBase": 59.411190032959,
@@ -3060,14 +3019,16 @@ export default {
         "matBoss": "Generator",
         "matMastery": "Order",
         "matTrounce": "Primordial Greenbloom",
-        "hakushinID": 10000086,
         "id": 10000086,
         "skillIds": [
             10861,
             10862,
             10865
         ],
-        "imgId": "UI_AvatarIcon_Wriothesley"
+        "imgId": "UI_AvatarIcon_Wriothesley",
+        "coopImgId": "UI_CoopImg_Wriothesley",
+        "region": "Fontaine",
+        "version": "4.1"
     },
     "Xiangling": {
         "name": "Xiangling",
@@ -3081,24 +3042,23 @@ export default {
         "matMastery": "Diligence",
         "matTrounce": "Dvalin's Claw",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/39\/Xiangling_Icon.png",
-        "region": "Liyue",
         "release": "September 28, 2020",
-        "patch": "1.0",
         "hpBase": 911.791015625,
         "atkBase": 18.8764801025391,
         "defBase": 56.0805015563965,
         "hpMaxAsc": 3262.371826171875,
         "atkMaxAsc": 67.5412902832031,
         "defMaxAsc": 200.6549987792969,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Xiangling",
-        "hakushinID": 10000023,
         "id": 10000023,
         "skillIds": [
             10231,
             10232,
             10235
         ],
-        "imgId": "UI_AvatarIcon_Xiangling"
+        "imgId": "UI_AvatarIcon_Xiangling",
+        "coopImgId": "UI_CoopImg_Xiangling",
+        "region": "Liyue",
+        "version": "1.0"
     },
     "Xianyun": {
         "name": "Xianyun",
@@ -3112,24 +3072,23 @@ export default {
         "matMastery": "Gold",
         "matTrounce": "Lightless Eye of the Maelstrom",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d3\/Xianyun_Icon.png",
-        "region": "Liyue",
         "release": "January 31, 2024",
-        "patch": "4.4",
         "hpBase": 810.322021484375,
         "atkBase": 26.068000793457,
         "defBase": 44.5733489990234,
         "hpMaxAsc": 3327.6201171875,
         "atkMaxAsc": 107.0414810180664,
         "defMaxAsc": 183.0464935302734,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Xianyun",
-        "hakushinID": 10000093,
         "id": 10000093,
         "skillIds": [
             10931,
             10932,
             10935
         ],
-        "imgId": "UI_AvatarIcon_Liuyun"
+        "imgId": "UI_AvatarIcon_Liuyun",
+        "coopImgId": "UI_CoopImg_Liuyun",
+        "region": "Liyue",
+        "version": "4.4"
     },
     "Xiao": {
         "name": "Xiao",
@@ -3143,34 +3102,31 @@ export default {
         "matMastery": "Prosperity",
         "matTrounce": "Shadow of the Warrior",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/fd\/Xiao_Icon.png",
-        "region": "Liyue",
         "release": "February 03, 2021",
-        "patch": "1.3",
         "hpBase": 991.4528198242188,
         "atkBase": 27.1851997375488,
         "defBase": 62.223201751709,
         "hpMaxAsc": 4071.441162109375,
         "atkMaxAsc": 111.6289749145508,
         "defMaxAsc": 255.5279998779297,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Xiao",
-        "hakushinID": 10000026,
         "id": 10000026,
         "skillIds": [
             10261,
             10262,
             10265
         ],
-        "imgId": "UI_AvatarIcon_Xiao"
+        "imgId": "UI_AvatarIcon_Xiao",
+        "coopImgId": "UI_CoopImg_Xiao",
+        "region": "Liyue",
+        "version": "1.3"
     },
     "Xilonen": {
         "name": "Xilonen",
         "rarity": 5,
         "weapon": "Sword",
         "element": "Geo",
-        "hakushinID": 10000103,
         "id": 10000103,
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Xilonen.webp",
-        "region": "Natlan",
         "matEnemy": "Tribals",
         "matFlower": "Brilliant Chrysanthemum",
         "matMastery": "Kindling",
@@ -3182,7 +3138,6 @@ export default {
         "hpMaxAsc": 3965.740234375,
         "atkMaxAsc": 87.9269332885742,
         "defMaxAsc": 297.2969970703125,
-        "version": "5.0.54",
         "matBoss": "Config Device",
         "release": "October 9, 2024",
         "skillIds": [
@@ -3190,7 +3145,10 @@ export default {
             11032,
             11035
         ],
-        "imgId": "UI_AvatarIcon_Xilonen"
+        "imgId": "UI_AvatarIcon_Xilonen",
+        "coopImgId": "UI_CoopImg_Xilonen",
+        "region": "Natlan",
+        "version": "5.1"
     },
     "Xingqiu": {
         "name": "Xingqiu",
@@ -3204,24 +3162,23 @@ export default {
         "matMastery": "Gold",
         "matTrounce": "Tail of Boreas",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d4\/Xingqiu_Icon.png",
-        "region": "Liyue",
         "release": "September 28, 2020",
-        "patch": "1.0",
         "hpBase": 857.0835571289062,
         "atkBase": 16.9176006317139,
         "defBase": 63.5197486877441,
         "hpMaxAsc": 3066.629638671875,
         "atkMaxAsc": 60.5322914123535,
         "defMaxAsc": 227.2725067138672,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Xingqiu",
-        "hakushinID": 10000025,
         "id": 10000025,
         "skillIds": [
             10381,
             10382,
             10385
         ],
-        "imgId": "UI_AvatarIcon_Xingqiu"
+        "imgId": "UI_AvatarIcon_Xingqiu",
+        "coopImgId": "UI_CoopImg_Xingqiu",
+        "region": "Liyue",
+        "version": "1.0"
     },
     "Xinyan": {
         "name": "Xinyan",
@@ -3235,24 +3192,23 @@ export default {
         "matMastery": "Gold",
         "matTrounce": "Tusk of Monoceros Caeli",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/24\/Xinyan_Icon.png",
-        "region": "Liyue",
         "release": "December 01, 2020",
-        "patch": "1.1",
         "hpBase": 939.1447143554688,
         "atkBase": 20.8353595733643,
         "defBase": 66.9532470703125,
         "hpMaxAsc": 3360.242919921875,
         "atkMaxAsc": 74.55029296875,
         "defMaxAsc": 239.5574951171875,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Xinyan",
-        "hakushinID": 10000044,
         "id": 10000044,
         "skillIds": [
             10441,
             10442,
             10443
         ],
-        "imgId": "UI_AvatarIcon_Xinyan"
+        "imgId": "UI_AvatarIcon_Xinyan",
+        "coopImgId": "UI_CoopImg_Xinyan",
+        "region": "Liyue",
+        "version": "1.1"
     },
     "YaeMiko": {
         "name": "Yae Miko",
@@ -3266,24 +3222,23 @@ export default {
         "matMastery": "Light",
         "matTrounce": "The Meaning of Aeons",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/ba\/Yae_Miko_Icon.png",
-        "region": "Inazuma",
         "release": "February 16, 2022",
-        "patch": "2.5",
         "hpBase": 807.4620361328125,
         "atkBase": 26.4403991699219,
         "defBase": 44.2742004394531,
         "hpMaxAsc": 3315.875732421875,
         "atkMaxAsc": 108.5706405639648,
         "defMaxAsc": 181.8179931640625,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Yae_Miko",
-        "hakushinID": 10000058,
         "id": 10000058,
         "skillIds": [
             10581,
             10582,
             10585
         ],
-        "imgId": "UI_AvatarIcon_Yae"
+        "imgId": "UI_AvatarIcon_Yae",
+        "coopImgId": "UI_CoopImg_Yae",
+        "region": "Inazuma",
+        "version": "2.5"
     },
     "Yanfei": {
         "name": "Yanfei",
@@ -3297,24 +3252,23 @@ export default {
         "matMastery": "Gold",
         "matTrounce": "Bloodjade Branch",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/54\/Yanfei_Icon.png",
-        "region": "Liyue",
         "release": "April 28, 2021",
-        "patch": "1.5",
         "hpBase": 784.1402587890625,
         "atkBase": 20.1230392456055,
         "defBase": 49.2135009765625,
         "hpMaxAsc": 2805.639892578125,
         "atkMaxAsc": 72.0015640258789,
         "defMaxAsc": 176.0850067138672,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Yanfei",
-        "hakushinID": 10000048,
         "id": 10000048,
         "skillIds": [
             10481,
             10482,
             10485
         ],
-        "imgId": "UI_AvatarIcon_Feiyan"
+        "imgId": "UI_AvatarIcon_Feiyan",
+        "coopImgId": "UI_CoopImg_Feiyan",
+        "region": "Liyue",
+        "version": "1.5"
     },
     "Yaoyao": {
         "name": "Yaoyao",
@@ -3328,24 +3282,23 @@ export default {
         "matMastery": "Diligence",
         "matTrounce": "Daka's Bell",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/83\/Yaoyao_Icon.png",
-        "region": "Liyue",
         "release": "January 18, 2023",
-        "patch": "3.4",
         "hpBase": 1030.3238525390625,
         "atkBase": 17.8080005645752,
         "defBase": 62.9474983215332,
         "hpMaxAsc": 3686.480224609375,
         "atkMaxAsc": 63.7182006835938,
         "defMaxAsc": 225.2250061035156,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Yaoyao",
-        "hakushinID": 10000077,
         "id": 10000077,
         "skillIds": [
             10771,
             10772,
             10775
         ],
-        "imgId": "UI_AvatarIcon_Yaoyao"
+        "imgId": "UI_AvatarIcon_Yaoyao",
+        "coopImgId": "UI_CoopImg_Yaoyao",
+        "region": "Liyue",
+        "version": "3.4"
     },
     "Yelan": {
         "name": "Yelan",
@@ -3359,24 +3312,23 @@ export default {
         "matMastery": "Prosperity",
         "matTrounce": "Gilded Scale",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/d\/d3\/Yelan_Icon.png",
-        "region": "Liyue",
         "release": "May 31, 2022",
-        "patch": "2.7",
         "hpBase": 1124.9176025390625,
         "atkBase": 18.9923992156982,
         "defBase": 42.6587905883789,
         "hpMaxAsc": 4619.52001953125,
         "atkMaxAsc": 77.9873657226563,
         "defMaxAsc": 175.1840972900391,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Yelan",
-        "hakushinID": 10000060,
         "id": 10000060,
         "skillIds": [
             10606,
             10607,
             10610
         ],
-        "imgId": "UI_AvatarIcon_Yelan"
+        "imgId": "UI_AvatarIcon_Yelan",
+        "coopImgId": "UI_CoopImg_Yelan",
+        "region": "Liyue",
+        "version": "2.7"
     },
     "Yoimiya": {
         "name": "Yoimiya",
@@ -3390,34 +3342,31 @@ export default {
         "matMastery": "Transience",
         "matTrounce": "Dragon Lord's Crown",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/88\/Yoimiya_Icon.png",
-        "region": "Inazuma",
         "release": "August 10, 2021",
-        "patch": "2.0",
         "hpBase": 791.255615234375,
         "atkBase": 25.136999130249,
         "defBase": 47.8639984130859,
         "hpMaxAsc": 3249.3232421875,
         "atkMaxAsc": 103.2185668945313,
         "defMaxAsc": 196.5599975585938,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Yoimiya",
-        "hakushinID": 10000049,
         "id": 10000049,
         "skillIds": [
             10491,
             10492,
             10495
         ],
-        "imgId": "UI_AvatarIcon_Yoimiya"
+        "imgId": "UI_AvatarIcon_Yoimiya",
+        "coopImgId": "UI_CoopImg_Yoimiya",
+        "region": "Inazuma",
+        "version": "2.0"
     },
     "YumemizukiMizuki": {
         "name": "Yumemizuki Mizuki",
         "rarity": 5,
         "weapon": "Catalyst",
         "element": "Anemo",
-        "hakushinID": 10000109,
         "id": 10000109,
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Mizuki.webp",
-        "region": "Inazuma",
         "matEnemy": "Nobushi",
         "matBoss": "Spiritspeaker",
         "matFlower": "Sea Ganoderma",
@@ -3430,14 +3379,16 @@ export default {
         "hpMaxAsc": 4071.441162109375,
         "atkMaxAsc": 68.8123779296875,
         "defMaxAsc": 242.0144958496094,
-        "version": "5.4",
         "skillIds": [
             11091,
             11092,
             11095
         ],
         "release": "February 11, 2025",
-        "imgId": "UI_AvatarIcon_Mizuki"
+        "imgId": "UI_AvatarIcon_Mizuki",
+        "coopImgId": "UI_CoopImg_Mizuki",
+        "region": "Inazuma",
+        "version": "5.4"
     },
     "YunJin": {
         "name": "Yun Jin",
@@ -3451,24 +3402,23 @@ export default {
         "matMastery": "Diligence",
         "matTrounce": "Ashen Heart",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/9c\/Yun_Jin_Icon.png",
-        "region": "Liyue",
         "release": "January 05, 2022",
-        "patch": "2.4",
         "hpBase": 893.55517578125,
         "atkBase": 16.0272006988525,
         "defBase": 61.5741004943848,
         "hpMaxAsc": 3197.12451171875,
         "atkMaxAsc": 57.346378326416,
         "defMaxAsc": 220.3110046386719,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Yun_Jin",
-        "hakushinID": 10000064,
         "id": 10000064,
         "skillIds": [
             10641,
             10642,
             10643
         ],
-        "imgId": "UI_AvatarIcon_Yunjin"
+        "imgId": "UI_AvatarIcon_Yunjin",
+        "coopImgId": "UI_CoopImg_Yunjin",
+        "region": "Liyue",
+        "version": "2.4"
     },
     "Zhongli": {
         "name": "Zhongli",
@@ -3482,35 +3432,32 @@ export default {
         "matMastery": "Gold",
         "matTrounce": "Tusk of Monoceros Caeli",
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a6\/Zhongli_Icon.png",
-        "region": "Liyue",
         "release": "December 01, 2020",
-        "patch": "1.1",
         "hpBase": 1143.9840087890625,
         "atkBase": 19.5510005950928,
         "defBase": 57.4367980957031,
         "hpMaxAsc": 4697.81689453125,
         "atkMaxAsc": 80.2810974121094,
         "defMaxAsc": 235.8719940185547,
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Zhongli",
-        "hakushinID": 10000030,
         "id": 10000030,
         "skillIds": [
             10301,
             10302,
             10303
         ],
-        "imgId": "UI_AvatarIcon_Zhongli"
+        "imgId": "UI_AvatarIcon_Zhongli",
+        "coopImgId": "UI_CoopImg_Zhongli",
+        "region": "Liyue",
+        "version": "1.1"
     },
     "Zibai": {
         "name": "Zibai",
         "rarity": 5,
         "weapon": "Sword",
         "element": "Geo",
-        "hakushinID": 10000126,
         "id": 10000126,
         "imgId": "UI_AvatarIcon_Zibai",
         "img": "https:\/\/api.hakush.in\/gi\/UI\/UI_AvatarIcon_Zibai.webp",
-        "region": "Nodkrai_zibai",
         "matEnemy": "Oprichniki",
         "matBoss": "Whisperer",
         "matFlower": "Glaze Lily",
@@ -3523,7 +3470,9 @@ export default {
         "hpMaxAsc": 4130.164,
         "atkMaxAsc": 71.8707,
         "defMaxAsc": 305.8965,
-        "version": "6.3",
-        "release": "February 03, 2026"
+        "release": "February 03, 2026",
+        "coopImgId": "UI_CoopImg_Zibai",
+        "region": "Liyue",
+        "version": "6.3"
     }
 };

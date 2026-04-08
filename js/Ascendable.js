@@ -57,7 +57,14 @@ const Ascendable = (SuperClass) => class extends SuperClass {
             'can-inc': item.wishlist?.[this.ascensionProperty] > item[this.ascensionProperty] && item.canAscend(true),
             "at-max": item[this.ascensionProperty] >= item.maxAscension,
           }),
-          dependencies: item => [].concat(...item.materialDefs.materials.map(mat => [{item:item.getMat(mat.property), field:"count"}].concat(item.getMat(mat.property)?.getCraftDependencies()??[]))),
+          dependencies: item => {
+            if(item.materialDefs?.materials)
+              return [].concat(...item.materialDefs.materials.map(mat => [{item:item.getMat(mat.property), field:"count"}].concat(item.getMat(mat.property)?.getCraftDependencies()??[])));
+            else {
+              console.warn(`Unable to access materials for ascension dependency.`, {item:item});
+              return [];
+            }
+          },
         });
       
       if(!display.getField("ascensionMaterial"))
@@ -68,9 +75,25 @@ const Ascendable = (SuperClass) => class extends SuperClass {
           columnClasses: ["ascension-materials"],
           dynamic: true,
           value: (item, type, ascension) => type == "label" ? `${ascension} ➤ ${parseInt(ascension)+1}` : (item.getMat(type,ascension) && item.getMatCost(type,ascension)>0 ? item.getMat(type,ascension).getFieldValue(item.getMatCost(type,ascension), (isNaN(ascension)?item.viewer.settings.preferences?.characterList=='1':item.viewer.settings.preferences?.materialList=='1')) : ""),
-          dependencies: (item, type, ascension) => [
-            {item:item.base??item, field:this.ascensionProperty},
-          ].concat(type == "label" ? item.materialDefs.materials.map(mat => ({item:item.getMat(mat.property,ascension), field:"count"})) : (item.getMat(type,ascension)?.getCraftDependencies() ?? [])),
+          dependencies: (item, type, ascension) => {
+            let result = [
+              {
+                item: item.base ?? item,
+                field: this.ascensionProperty,
+              },
+            ];
+            if(item.materialDefs?.materials)
+              return result.concat(type == "label"
+                ? item.materialDefs.materials.map(mat => ({
+                    item: item.getMat(mat.property,ascension),
+                    field: "count"
+                  }))
+                : (item.getMat(type,ascension)?.getCraftDependencies() ?? []));
+            else {
+              console.warn(`Cannot access materials for ascension dependency.`, {item, type, ascension});
+              return result;
+            }
+          },
           button: (item, type, ascension) => {
             if(type == "label" && ascension == item[this.ascensionProperty])
             {
@@ -114,13 +137,30 @@ const Ascendable = (SuperClass) => class extends SuperClass {
           labelTitle: (item, talent) => this.talentTypes[talent]?.full,
           dynamic: true,
           title: (item, talent) => `Click to change ${talent}.`,
-          value: (item, talent) => item[this.talentProperty][talent],
+          value: (item, talent) => item[this.talentProperty]?.[talent] ?? "",
           edit: (item, talent) => ({target: {item:item, field:`${this.talentProperty}.${talent}`}, min:this.talentTypes[talent]?.min, max:item.getTalentCap(talent)}),
-          classes: (item, talent) => ({
-            "can-inc": item.wishlist?.[this.talentProperty]?.[talent] > item[this.talentProperty][talent] && item.canUpTalent(talent, true),
-            "at-max": item[this.talentProperty][talent] >= item.getTalentCap(talent),
-          }),
-          dependencies: (item, talent) => [].concat(...item.materialDefs.materials.map(mat => [{item:item.getTalentMat(mat.property,talent), field:"count"}].concat(item.getTalentMat(mat.property,talent)?.getCraftDependencies()??[]))),
+          classes: (item, talent) => {
+            if(item[this.talentProperty])
+              return {
+                "can-inc": item.wishlist?.[this.talentProperty]?.[talent] > item[this.talentProperty][talent] && item.canUpTalent(talent, true),
+                "at-max": item[this.talentProperty][talent] >= item.getTalentCap(talent),
+              };
+            else {
+              console.warn(`Unable to access talent level for talent dependency.`, {item, talent, talentProperty:this.talentProperty});
+              return {
+                "can-inc": false,
+                "at-max": false,
+              };
+            }
+          },
+          dependencies: (item, talent) => {
+            if(item.materialDefs?.materials)
+              return [].concat(...item.materialDefs.materials.map(mat => [{item:item.getTalentMat(mat.property,talent), field:"count"}].concat(item.getTalentMat(mat.property,talent)?.getCraftDependencies()??[])));
+            else {
+              console.warn(`Unable to access materials for talent dependency.`, {item, talent});
+              return [];
+            }
+          },
         });
       
       if(!display.getField("talentMaterial"))
@@ -153,10 +193,26 @@ const Ascendable = (SuperClass) => class extends SuperClass {
             }
           },
           //title: (item, type, talent) => item.getTalentMat(type?.toLowerCase(),talent)?.getFullSource()??"!ERROR!",
-          dependencies: (item, type, talent) => [
-            {item:item, field:`${this.talentProperty}.${talent}`},
-            item.getTalentMat(type,talent)?.days?.length ? {item:item.viewer, field:"today"} : null,
-          ].concat(type == "label" ? item.materialDefs.materials.map(mat => ({item:item.getTalentMat(mat.property,talent), field:"count"})) : (item.getTalentMat(type,talent)?.getCraftDependencies() ?? [])),
+          dependencies: (item, type, talent) => {
+            let result = [
+              {
+                item: item,
+                field: `${this.talentProperty}.${talent}`,
+              },
+              item.getTalentMat(type,talent)?.days?.length ? {item:item.viewer, field:"today"} : null,
+            ];
+            if(item.materialDefs?.materials)
+              return result.concat(type == "label"
+                ? item.materialDefs.materials.map(mat => ({
+                  item: item.getTalentMat(mat.property,talent),
+                  field: "count",
+                }))
+                : (item.getTalentMat(type,talent)?.getCraftDependencies() ?? []));
+            else {
+              console.warn(`Unable to access materials for talent material dependency.`, {item, type, talent});
+              return result;
+            }
+          },
           button: (item, type, talent) => Object.keys(this.talentTypes).map(t => 
           {
             let dataType = this.talentTypes[t].dataType;
@@ -346,6 +402,10 @@ const Ascendable = (SuperClass) => class extends SuperClass {
   
   getMat(type, ascension=this[this.constructor.ascensionProperty])
   {
+    if(!this.MaterialList) {
+      console.warn(`Trying to access ascension material before MaterialList property is populated.`, {item:this});
+      return null;
+    }
     let result = this.MaterialList[type];
     let key = this.getAscensionData(ascension)?.[`${type}${this.materialDefs.raritySuffix}`];
     if(result && key)
@@ -401,7 +461,12 @@ const Ascendable = (SuperClass) => class extends SuperClass {
     if(this[this.constructor.ascensionProperty] >= this.maxAscension)
       return false;
     
-    return this.materialDefs.materials.reduce((can,mat) => {
+    if(!this.materialDefs?.materials) {
+      console.warn(`Unable to access materials for ascension.`, {item:this});
+      return false;
+    }
+      
+    return this.materialDefs?.materials?.reduce((can,mat) => {
       if(!can)
         return false;
       let material = this.getMat(mat.property);
@@ -451,6 +516,10 @@ const Ascendable = (SuperClass) => class extends SuperClass {
   
   getTalentMat(type, talent, options)
   {
+    if(!this.MaterialList) {
+      console.warn(`Trying to access talent material before MaterialList property is populated.`, {item:this});
+      return null;
+    }
     let result = this.MaterialList[type + (options?.propertySuffix??'')];
     if(Array.isArray(result))
       result = result[((isNaN(talent) ? this[this.constructor.talentProperty][talent] : talent) - 1) % result.length];

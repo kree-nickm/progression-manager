@@ -3,7 +3,6 @@ export default {
         "name": "A Thousand Blazing Suns",
         "rarity": 5,
         "type": "Claymore",
-        "hakushinID": 12514,
         "id": 12514,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_RadianceSword.webp",
@@ -31,7 +30,7 @@ export default {
                 "5": 56.00000023842
             }
         ],
-        "version": "5.3"
+        "imgId": "UI_EquipIcon_Claymore_RadianceSword"
     },
     "AThousandFloatingDreams": {
         "name": "A Thousand Floating Dreams",
@@ -70,15 +69,13 @@ export default {
                 "5": 48
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/A_Thousand_Floating_Dreams",
-        "hakushinID": 14511,
-        "id": 14511
+        "id": 14511,
+        "imgId": "UI_EquipIcon_Catalyst_Ayus"
     },
     "Absolution": {
         "name": "Absolution",
         "rarity": 5,
         "type": "Sword",
-        "hakushinID": 11515,
         "id": 11515,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_Estoc.webp",
@@ -106,7 +103,7 @@ export default {
                 "5": 31.99999928474
             }
         ],
-        "version": "4.6.53"
+        "imgId": "UI_EquipIcon_Sword_Estoc"
     },
     "AmosBow": {
         "name": "Amos' Bow",
@@ -164,9 +161,8 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Amos%27_Bow",
-        "hakushinID": 15502,
-        "id": 15502
+        "id": 15502,
+        "imgId": "UI_EquipIcon_Bow_Amos"
     },
     "AquaSimulacra": {
         "name": "Aqua Simulacra",
@@ -198,9 +194,8 @@ export default {
                 "5": 40
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Aqua_Simulacra",
-        "hakushinID": 15508,
-        "id": 15508
+        "id": 15508,
+        "imgId": "UI_EquipIcon_Bow_Kirin"
     },
     "AquilaFavonia": {
         "name": "Aquila Favonia",
@@ -239,15 +234,13 @@ export default {
                 "5": 320
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Aquila_Favonia",
-        "hakushinID": 11501,
-        "id": 11501
+        "id": 11501,
+        "imgId": "UI_EquipIcon_Sword_Falcon"
     },
     "AstralVulturesCrimsonPlumage": {
         "name": "Astral Vulture's Crimson Plumage",
         "rarity": 5,
         "type": "Bow",
-        "hakushinID": 15514,
         "id": 15514,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_Qoyllorsnova.webp",
@@ -295,14 +288,13 @@ export default {
                 "5": 20.000000298019998
             }
         ],
-        "version": "5.2",
-        "matStrongEnemy": "Mimiflora"
+        "matStrongEnemy": "Mimiflora",
+        "imgId": "UI_EquipIcon_Bow_Qoyllorsnova"
     },
     "AthameArtis": {
         "name": "Athame Artis",
         "rarity": 5,
         "type": "Sword",
-        "hakushinID": 11518,
         "id": 11518,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_Motsognir.webp",
@@ -337,13 +329,12 @@ export default {
                 "5": 40
             }
         ],
-        "version": "6.2"
+        "imgId": "UI_EquipIcon_Sword_Motsognir"
     },
     "Azurelight": {
         "name": "Azurelight",
         "rarity": 5,
         "type": "Sword",
-        "hakushinID": 11517,
         "id": 11517,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_OuterSword.webp",
@@ -378,7 +369,7 @@ export default {
                 "5": 48
             }
         ],
-        "version": "5.6.54"
+        "imgId": "UI_EquipIcon_Sword_OuterSword"
     },
     "BeaconOfTheReedSea": {
         "name": "Beacon of the Reed Sea",
@@ -417,15 +408,13 @@ export default {
                 "5": 64
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Beacon_of_the_Reed_Sea",
-        "hakushinID": 12511,
-        "id": 12511
+        "id": 12511,
+        "imgId": "UI_EquipIcon_Claymore_Deshret"
     },
     "BloodsoakedRuins": {
         "name": "Bloodsoaked Ruins",
         "rarity": 5,
         "type": "Polearm",
-        "hakushinID": 13516,
         "id": 13516,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_TummaLyhty.webp",
@@ -460,7 +449,7 @@ export default {
                 "5": 6
             }
         ],
-        "version": "6.0"
+        "imgId": "UI_EquipIcon_Pole_TummaLyhty"
     },
     "CalamityQueller": {
         "name": "Calamity Queller",
@@ -492,9 +481,8 @@ export default {
                 "5": 6.4
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Calamity_Queller",
-        "hakushinID": 13507,
-        "id": 13507
+        "id": 13507,
+        "imgId": "UI_EquipIcon_Pole_Santika"
     },
     "CashflowSupervision": {
         "name": "Cashflow Supervision",
@@ -533,7 +521,6 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Cashflow_Supervision",
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f2\/Weapon_Cashflow_Supervision.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/45\/Weapon_Cashflow_Supervision_2nd.png"
@@ -541,8 +528,8 @@ export default {
         "matForgery": "Chalice",
         "matStrongEnemy": "Fatui Operatives",
         "matWeakEnemy": "Fontemer",
-        "hakushinID": 14513,
-        "id": 14513
+        "id": 14513,
+        "imgId": "UI_EquipIcon_Catalyst_Wheatley"
     },
     "CranesEchoingCall": {
         "name": "Crane's Echoing Call",
@@ -584,10 +571,9 @@ export default {
         ],
         "matForgery": "Elixir",
         "matStrongEnemy": "Xuanwen Beasts",
-        "matWeakEnemy": "Samachurl",
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Crane%27s_Echoing_Call",
-        "hakushinID": 14515,
-        "id": 14515
+        "matWeakEnemy": "Samachurls",
+        "id": 14515,
+        "imgId": "UI_EquipIcon_Catalyst_MountainGale"
     },
     "CrimsonMoonsSemblance": {
         "release": "April 24, 2024",
@@ -636,9 +622,19 @@ export default {
         "matForgery": "Chalice",
         "matStrongEnemy": "Praetorians",
         "matWeakEnemy": "Meka",
-        "hakushinID": 13512,
         "id": 13512,
-        "version": "4.6"
+        "imgId": "UI_EquipIcon_Pole_BloodMoon"
+    },
+    "Deicide": {
+        "id": 13506,
+        "name": "Deicide",
+        "imgId": "UI_EquipIcon_Pole_Gewalt",
+        "type": "Polearm",
+        "rarity": 5,
+        "baseATK": 46,
+        "matWeakEnemy": "Hili.Archers",
+        "matStrongEnemy": "Big Hilichurls",
+        "matForgery": "Tile"
     },
     "ElegyForTheEnd": {
         "name": "Elegy for the End",
@@ -677,9 +673,8 @@ export default {
                 "5": 40
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Elegy_for_the_End",
-        "hakushinID": 15503,
-        "id": 15503
+        "id": 15503,
+        "imgId": "UI_EquipIcon_Bow_Widsith"
     },
     "EngulfingLightning": {
         "name": "Engulfing Lightning",
@@ -718,9 +713,8 @@ export default {
                 "5": 50
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Engulfing_Lightning",
-        "hakushinID": 13509,
-        "id": 13509
+        "id": 13509,
+        "imgId": "UI_EquipIcon_Pole_Narukami"
     },
     "EverlastingMoonglow": {
         "name": "Everlasting Moonglow",
@@ -752,15 +746,13 @@ export default {
                 "5": 3
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Everlasting_Moonglow",
-        "hakushinID": 14506,
-        "id": 14506
+        "id": 14506,
+        "imgId": "UI_EquipIcon_Catalyst_Kaleido"
     },
     "FangOfTheMountainKing": {
         "name": "Fang of the Mountain King",
         "rarity": 5,
         "type": "Claymore",
-        "hakushinID": 12513,
         "id": 12513,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_EmeraldSword.webp",
@@ -781,13 +773,12 @@ export default {
                 "5": 50
             }
         ],
-        "version": "5.0"
+        "imgId": "UI_EquipIcon_Claymore_EmeraldSword"
     },
     "FracturedHalo": {
         "name": "Fractured Halo",
         "rarity": 5,
         "type": "Polearm",
-        "hakushinID": 13515,
         "id": 13515,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_Perdix.webp",
@@ -815,7 +806,7 @@ export default {
                 "5": 2000
             }
         ],
-        "version": "5.8"
+        "imgId": "UI_EquipIcon_Pole_Perdix"
     },
     "FreedomSworn": {
         "name": "Freedom-Sworn",
@@ -854,15 +845,13 @@ export default {
                 "5": 40
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Freedom-Sworn",
-        "hakushinID": 11503,
-        "id": 11503
+        "id": 11503,
+        "imgId": "UI_EquipIcon_Sword_Widsith"
     },
     "GestOfTheMightyWolf": {
         "name": "Gest of the Mighty Wolf",
         "rarity": 5,
         "type": "Claymore",
-        "hakushinID": 12515,
         "id": 12515,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_EnsisAquilonis.webp",
@@ -890,7 +879,19 @@ export default {
                 "5": 15.5
             }
         ],
-        "version": "6.3.54"
+        "imgId": "UI_EquipIcon_Claymore_EnsisAquilonis"
+    },
+    "GoldenFrostboundOath": {
+        "id": 15516,
+        "name": "Golden Frostbound Oath",
+        "imgId": "UI_EquipIcon_Bow_Alkonost",
+        "type": "Bow",
+        "rarity": 5,
+        "baseATK": 44,
+        "stat": "critDMG_",
+        "matWeakEnemy": "Oprichniki",
+        "matStrongEnemy": "Keeper",
+        "matForgery": "Lantern"
     },
     "HaranGeppakuFutsu": {
         "name": "Haran Geppaku Futsu",
@@ -922,9 +923,8 @@ export default {
                 "5": 40
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Haran_Geppaku_Futsu",
-        "hakushinID": 11510,
-        "id": 11510
+        "id": 11510,
+        "imgId": "UI_EquipIcon_Sword_Amenoma"
     },
     "HuntersPath": {
         "name": "Hunter's Path",
@@ -956,9 +956,8 @@ export default {
                 "5": 320
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Hunter%27s_Path",
-        "hakushinID": 15511,
-        "id": 15511
+        "id": 15511,
+        "imgId": "UI_EquipIcon_Bow_Ayus"
     },
     "JadefallsSplendor": {
         "name": "Jadefall's Splendor",
@@ -997,9 +996,8 @@ export default {
                 "5": 44
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Jadefall%27s_Splendor",
-        "hakushinID": 14505,
-        "id": 14505
+        "id": 14505,
+        "imgId": "UI_EquipIcon_Catalyst_Morax"
     },
     "KagurasVerity": {
         "name": "Kagura's Verity",
@@ -1031,9 +1029,8 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Kagura%27s_Verity",
-        "hakushinID": 14509,
-        "id": 14509
+        "id": 14509,
+        "imgId": "UI_EquipIcon_Catalyst_Narukami"
     },
     "KeyOfKhajNisut": {
         "name": "Key of Khaj-Nisut",
@@ -1072,9 +1069,19 @@ export default {
                 "5": 0.4
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Key_of_Khaj-Nisut",
-        "hakushinID": 11511,
-        "id": 11511
+        "id": 11511,
+        "imgId": "UI_EquipIcon_Sword_Deshret"
+    },
+    "KunwusWyrmbane": {
+        "id": 15504,
+        "name": "Kunwu's Wyrmbane",
+        "imgId": "UI_EquipIcon_Bow_Hunters",
+        "type": "Bow",
+        "rarity": 5,
+        "baseATK": 46,
+        "matWeakEnemy": "Hili.Archers",
+        "matStrongEnemy": "Big Hilichurls",
+        "matForgery": "Tile"
     },
     "LightOfFoliarIncision": {
         "name": "Light of Foliar Incision",
@@ -1106,15 +1113,13 @@ export default {
                 "5": 240
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Light_of_Foliar_Incision",
-        "hakushinID": 11512,
-        "id": 11512
+        "id": 11512,
+        "imgId": "UI_EquipIcon_Sword_Ayus"
     },
     "LightbearingMoonshard": {
         "name": "Lightbearing Moonshard",
         "rarity": 5,
         "type": "Sword",
-        "hakushinID": 11519,
         "id": 11519,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_SilverwareSaw.webp",
@@ -1143,7 +1148,18 @@ export default {
                 "5": 500
             }
         ],
-        "version": "6.3"
+        "imgId": "UI_EquipIcon_Sword_SilverwareSaw"
+    },
+    "LostBallade": {
+        "id": 14503,
+        "name": "Lost Ballade",
+        "imgId": "UI_EquipIcon_Catalyst_Apprentice",
+        "type": "Catalyst",
+        "rarity": 5,
+        "baseATK": 46,
+        "matWeakEnemy": "Hili.Archers",
+        "matStrongEnemy": "Big Hilichurls",
+        "matForgery": "Tile"
     },
     "LostPrayerToTheSacredWinds": {
         "name": "Lost Prayer to the Sacred Winds",
@@ -1180,15 +1196,13 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Lost_Prayer_to_the_Sacred_Winds",
-        "hakushinID": 14502,
-        "id": 14502
+        "id": 14502,
+        "imgId": "UI_EquipIcon_Catalyst_Fourwinds"
     },
     "LumidouceElegy": {
         "name": "Lumidouce Elegy",
         "rarity": 5,
         "type": "Polearm",
-        "hakushinID": 13513,
         "id": 13513,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_Muguet.webp",
@@ -1223,7 +1237,7 @@ export default {
                 "5": 8
             }
         ],
-        "version": "4.8"
+        "imgId": "UI_EquipIcon_Pole_Muguet"
     },
     "MemoryOfDust": {
         "name": "Memory of Dust",
@@ -1255,9 +1269,19 @@ export default {
                 "5": 8
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Memory_of_Dust",
-        "hakushinID": 14504,
-        "id": 14504
+        "id": 14504,
+        "imgId": "UI_EquipIcon_Catalyst_Kunwu"
+    },
+    "MirrorBreaker": {
+        "id": 15506,
+        "name": "Mirror Breaker",
+        "imgId": "UI_EquipIcon_Bow_Hunters",
+        "type": "Bow",
+        "rarity": 5,
+        "baseATK": 43,
+        "matWeakEnemy": "Hili.Archers",
+        "matStrongEnemy": "Big Hilichurls",
+        "matForgery": "Tile"
     },
     "MistsplitterReforged": {
         "name": "Mistsplitter Reforged",
@@ -1303,15 +1327,13 @@ export default {
                 "5": 56
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Mistsplitter_Reforged",
-        "hakushinID": 11509,
-        "id": 11509
+        "id": 11509,
+        "imgId": "UI_EquipIcon_Sword_Narukami"
     },
     "NightweaversLookingGlass": {
         "name": "Nightweaver's Looking Glass",
         "rarity": 5,
         "type": "Catalyst",
-        "hakushinID": 14520,
         "id": 14520,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_MenulisRing.webp",
@@ -1360,13 +1382,12 @@ export default {
                 "5": 240
             }
         ],
-        "version": "6.0"
+        "imgId": "UI_EquipIcon_Catalyst_MenulisRing"
     },
     "NocturnesCurtainCall": {
         "name": "Nocturne's Curtain Call",
         "rarity": 5,
         "type": "Catalyst",
-        "hakushinID": 14522,
         "id": 14522,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_Brisingamen.webp",
@@ -1409,13 +1430,23 @@ export default {
                 "5": 1800
             }
         ],
-        "version": "6.3"
+        "imgId": "UI_EquipIcon_Catalyst_Brisingamen"
+    },
+    "OneSide": {
+        "id": 11507,
+        "name": "One Side",
+        "imgId": "UI_EquipIcon_Sword_Blunt",
+        "type": "Sword",
+        "rarity": 5,
+        "baseATK": 23,
+        "matWeakEnemy": "Hili.Archers",
+        "matStrongEnemy": "Big Hilichurls",
+        "matForgery": "Tile"
     },
     "PeakPatrolSong": {
         "name": "Peak Patrol Song",
         "rarity": 5,
         "type": "Sword",
-        "hakushinID": 11516,
         "id": 11516,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_XochitlsTube.webp",
@@ -1457,8 +1488,8 @@ export default {
                 "5": 20.000000298019998
             }
         ],
-        "version": "5.0.54",
-        "release": "October 8, 2024"
+        "release": "October 8, 2024",
+        "imgId": "UI_EquipIcon_Sword_XochitlsTube"
     },
     "PolarStar": {
         "name": "Polar Star",
@@ -1511,18 +1542,17 @@ export default {
                 "5": 96
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Polar_Star",
-        "hakushinID": 15507,
-        "id": 15507
+        "id": 15507,
+        "imgId": "UI_EquipIcon_Bow_Worldbane"
     },
     "PrimordialJadeCutter": {
         "name": "Primordial Jade Cutter",
         "rarity": 5,
         "type": "Sword",
-        "matForgery": "Elixir",
-        "matStrongEnemy": "Fatui Cicin Mages",
-        "matWeakEnemy": "T.Hoarders",
-        "baseATK": 44,
+        "matForgery": "Tile",
+        "matStrongEnemy": "Big Hilichurls",
+        "matWeakEnemy": "Hili.Archers",
+        "baseATK": 23,
         "stat": "critRate_",
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/2\/2a\/Weapon_Primordial_Jade_Cutter.png",
@@ -1545,9 +1575,30 @@ export default {
                 "5": 2.4
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Primordial_Jade_Cutter",
-        "hakushinID": 11505,
-        "id": 11505
+        "id": 11505,
+        "imgId": "UI_EquipIcon_Sword_Blunt"
+    },
+    "PrimordialJadeGreatsword": {
+        "id": 12505,
+        "name": "Primordial Jade Greatsword",
+        "imgId": "UI_EquipIcon_Claymore_Aniki",
+        "type": "Claymore",
+        "rarity": 5,
+        "baseATK": 48,
+        "matWeakEnemy": "Hili.Archers",
+        "matStrongEnemy": "Big Hilichurls",
+        "matForgery": "Tile"
+    },
+    "PrimordialJadeVista": {
+        "id": 15505,
+        "name": "Primordial Jade Vista",
+        "imgId": "UI_EquipIcon_Bow_Hunters",
+        "type": "Bow",
+        "rarity": 5,
+        "baseATK": 46,
+        "matWeakEnemy": "Hili.Archers",
+        "matStrongEnemy": "Big Hilichurls",
+        "matForgery": "Tile"
     },
     "PrimordialJadeWingedSpear": {
         "name": "Primordial Jade Winged-Spear",
@@ -1579,9 +1630,8 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Primordial_Jade_Winged-Spear",
-        "hakushinID": 13505,
-        "id": 13505
+        "id": 13505,
+        "imgId": "UI_EquipIcon_Pole_Morax"
     },
     "RedhornStonethresher": {
         "name": "Redhorn Stonethresher",
@@ -1613,15 +1663,13 @@ export default {
                 "5": 80
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Redhorn_Stonethresher",
-        "hakushinID": 12510,
-        "id": 12510
+        "id": 12510,
+        "imgId": "UI_EquipIcon_Claymore_Itadorimaru"
     },
     "ReliquaryOfTruth": {
         "name": "Reliquary of Truth",
         "rarity": 5,
         "type": "Catalyst",
-        "hakushinID": 14521,
         "id": 14521,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_Sistrum.webp",
@@ -1656,13 +1704,12 @@ export default {
                 "5": 1200
             }
         ],
-        "version": "6.1"
+        "imgId": "UI_EquipIcon_Catalyst_Sistrum"
     },
     "SilvershowerHeartstrings": {
         "name": "Silvershower Heartstrings",
         "rarity": 5,
         "type": "Bow",
-        "hakushinID": 15513,
         "id": 15513,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_Arcdange.webp",
@@ -1704,7 +1751,7 @@ export default {
                 "5": 2500
             }
         ],
-        "version": "4.6.53"
+        "imgId": "UI_EquipIcon_Bow_Arcdange"
     },
     "SkywardAtlas": {
         "name": "Skyward Atlas",
@@ -1736,9 +1783,8 @@ export default {
                 "5": 50
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyward_Atlas",
-        "hakushinID": 14501,
-        "id": 14501
+        "id": 14501,
+        "imgId": "UI_EquipIcon_Catalyst_Dvalin"
     },
     "SkywardBlade": {
         "name": "Skyward Blade",
@@ -1784,9 +1830,8 @@ export default {
                 "5": 40.00000059605
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyward_Blade",
-        "hakushinID": 11502,
-        "id": 11502
+        "id": 11502,
+        "imgId": "UI_EquipIcon_Sword_Dvalin"
     },
     "SkywardHarp": {
         "name": "Skyward Harp",
@@ -1825,9 +1870,8 @@ export default {
                 "5": 1.25
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyward_Harp",
-        "hakushinID": 15501,
-        "id": 15501
+        "id": 15501,
+        "imgId": "UI_EquipIcon_Bow_Dvalin"
     },
     "SkywardPride": {
         "name": "Skyward Pride",
@@ -1876,9 +1920,8 @@ export default {
                 "5": 160
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyward_Pride",
-        "hakushinID": 12501,
-        "id": 12501
+        "id": 12501,
+        "imgId": "UI_EquipIcon_Claymore_Dvalin"
     },
     "SkywardSpine": {
         "name": "Skyward Spine",
@@ -1910,9 +1953,8 @@ export default {
                 "5": 100
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyward_Spine",
-        "hakushinID": 13502,
-        "id": 13502
+        "id": 13502,
+        "imgId": "UI_EquipIcon_Pole_Dvalin"
     },
     "SongOfBrokenPines": {
         "name": "Song of Broken Pines",
@@ -1951,9 +1993,8 @@ export default {
                 "5": 40
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Song_of_Broken_Pines",
-        "hakushinID": 12503,
-        "id": 12503
+        "id": 12503,
+        "imgId": "UI_EquipIcon_Claymore_Widsith"
     },
     "SplendorOfTranquilWaters": {
         "name": "Splendor of Tranquil Waters",
@@ -1978,7 +2019,6 @@ export default {
                 "5": 28
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Splendor_of_Tranquil_Waters",
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/4f\/Weapon_Splendor_of_Tranquil_Waters.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a0\/Weapon_Splendor_of_Tranquil_Waters_2nd.png"
@@ -1986,8 +2026,8 @@ export default {
         "matForgery": "Dewdrop",
         "matStrongEnemy": "Hydro Phantasms",
         "matWeakEnemy": "Fontemer",
-        "hakushinID": 11513,
-        "id": 11513
+        "id": 11513,
+        "imgId": "UI_EquipIcon_Sword_Regalis"
     },
     "StaffOfHoma": {
         "name": "Staff of Homa",
@@ -2026,9 +2066,8 @@ export default {
                 "5": 1.8
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Staff_of_Homa",
-        "hakushinID": 13501,
-        "id": 13501
+        "id": 13501,
+        "imgId": "UI_EquipIcon_Pole_Homa"
     },
     "StaffOfTheScarletSands": {
         "name": "Staff of the Scarlet Sands",
@@ -2060,15 +2099,13 @@ export default {
                 "5": 56
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Staff_of_the_Scarlet_Sands",
-        "hakushinID": 13511,
-        "id": 13511
+        "id": 13511,
+        "imgId": "UI_EquipIcon_Pole_Deshret"
     },
     "StarcallersWatch": {
         "name": "Starcaller's Watch",
         "rarity": 5,
         "type": "Catalyst",
-        "hakushinID": 14517,
         "id": 14517,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_Figurines.webp",
@@ -2096,7 +2133,7 @@ export default {
                 "5": 1500
             }
         ],
-        "version": "5.3"
+        "imgId": "UI_EquipIcon_Catalyst_Figurines"
     },
     "SummitShaper": {
         "name": "Summit Shaper",
@@ -2128,15 +2165,13 @@ export default {
                 "5": 8
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Summit_Shaper",
-        "hakushinID": 11504,
-        "id": 11504
+        "id": 11504,
+        "imgId": "UI_EquipIcon_Sword_Kunwu"
     },
     "SunnyMorningSleepIn": {
         "name": "Sunny Morning Sleep-In",
         "rarity": 5,
         "type": "Catalyst",
-        "hakushinID": 14518,
         "id": 14518,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_SakuraFan.webp",
@@ -2171,13 +2206,12 @@ export default {
                 "5": 64
             }
         ],
-        "version": "5.4"
+        "imgId": "UI_EquipIcon_Catalyst_SakuraFan"
     },
     "SurfsUp": {
         "name": "Surf's Up",
         "rarity": 5,
         "type": "Catalyst",
-        "hakushinID": 14516,
         "id": 14516,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_MechaPufferfish.webp",
@@ -2205,13 +2239,12 @@ export default {
                 "5": 1500
             }
         ],
-        "version": "5.0"
+        "imgId": "UI_EquipIcon_Catalyst_MechaPufferfish"
     },
     "SymphonistOfScents": {
         "name": "Symphonist of Scents",
         "rarity": 5,
         "type": "Polearm",
-        "hakushinID": 13514,
         "id": 13514,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_Trident.webp",
@@ -2246,13 +2279,12 @@ export default {
                 "5": 64
             }
         ],
-        "version": "5.5.54"
+        "imgId": "UI_EquipIcon_Pole_Trident"
     },
     "TheDaybreakChronicles": {
         "name": "The Daybreak Chronicles",
         "rarity": 5,
         "type": "Bow",
-        "hakushinID": 15515,
         "id": 15515,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_Arianna.webp",
@@ -2301,7 +2333,7 @@ export default {
                 "5": 10
             }
         ],
-        "version": "6.2"
+        "imgId": "UI_EquipIcon_Bow_Arianna"
     },
     "TheFirstGreatMagic": {
         "name": "The First Great Magic",
@@ -2368,9 +2400,19 @@ export default {
         "matWeakEnemy": "Fontemer",
         "baseATK": 46,
         "stat": "critDMG_",
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_First_Great_Magic",
-        "hakushinID": 15512,
-        "id": 15512
+        "id": 15512,
+        "imgId": "UI_EquipIcon_Bow_Pledge"
+    },
+    "TheOtherSide": {
+        "id": 12506,
+        "name": "The Other Side",
+        "imgId": "UI_EquipIcon_Claymore_Aniki",
+        "type": "Claymore",
+        "rarity": 5,
+        "baseATK": 48,
+        "matWeakEnemy": "Hili.Archers",
+        "matStrongEnemy": "Big Hilichurls",
+        "matForgery": "Tile"
     },
     "TheUnforged": {
         "name": "The Unforged",
@@ -2402,9 +2444,8 @@ export default {
                 "5": 8
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Unforged",
-        "hakushinID": 12504,
-        "id": 12504
+        "id": 12504,
+        "imgId": "UI_EquipIcon_Claymore_Kunwu"
     },
     "ThunderingPulse": {
         "name": "Thundering Pulse",
@@ -2450,9 +2491,8 @@ export default {
                 "5": 80
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Thundering_Pulse",
-        "hakushinID": 15509,
-        "id": 15509
+        "id": 15509,
+        "imgId": "UI_EquipIcon_Bow_Narukami"
     },
     "TomeOfTheEternalFlow": {
         "name": "Tome of the Eternal Flow",
@@ -2484,7 +2524,6 @@ export default {
                 "5": 12
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Tome_of_the_Eternal_Flow",
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/9\/91\/Weapon_Tome_of_the_Eternal_Flow.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/8\/85\/Weapon_Tome_of_the_Eternal_Flow_2nd.png"
@@ -2492,8 +2531,8 @@ export default {
         "matForgery": "Dewdrop",
         "matStrongEnemy": "Breacher Primus",
         "matWeakEnemy": "Meka",
-        "hakushinID": 14514,
-        "id": 14514
+        "id": 14514,
+        "imgId": "UI_EquipIcon_Catalyst_Iudex"
     },
     "TulaytullahsRemembrance": {
         "name": "Tulaytullah's Remembrance",
@@ -2539,9 +2578,8 @@ export default {
                 "5": 96
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Tulaytullah%27s_Remembrance",
-        "hakushinID": 14512,
-        "id": 14512
+        "id": 14512,
+        "imgId": "UI_EquipIcon_Catalyst_Alaya"
     },
     "UrakuMisugiri": {
         "name": "Uraku Misugiri",
@@ -2573,7 +2611,6 @@ export default {
                 "5": 40
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Uraku_Misugiri",
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/44\/Weapon_Uraku_Misugiri.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/c\/ca\/Weapon_Uraku_Misugiri_2nd.png"
@@ -2581,8 +2618,8 @@ export default {
         "matForgery": "Branch",
         "matStrongEnemy": "Ruin Sentinels",
         "matWeakEnemy": "Nobushi",
-        "hakushinID": 11514,
-        "id": 11514
+        "id": 11514,
+        "imgId": "UI_EquipIcon_Sword_Needle"
     },
     "Verdict": {
         "name": "Verdict",
@@ -2614,15 +2651,13 @@ export default {
                 "5": 36
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Verdict",
-        "hakushinID": 12512,
-        "id": 12512
+        "id": 12512,
+        "imgId": "UI_EquipIcon_Claymore_GoldenVerdict"
     },
     "VividNotions": {
         "name": "Vivid Notions",
         "rarity": 5,
         "type": "Catalyst",
-        "hakushinID": 14519,
         "id": 14519,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_VaresaTransformer.webp",
@@ -2657,7 +2692,7 @@ export default {
                 "5": 56.00000000000001
             }
         ],
-        "version": "5.5"
+        "imgId": "UI_EquipIcon_Catalyst_VaresaTransformer"
     },
     "VortexVanquisher": {
         "name": "Vortex Vanquisher",
@@ -2689,9 +2724,8 @@ export default {
                 "5": 8
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Vortex_Vanquisher",
-        "hakushinID": 13504,
-        "id": 13504
+        "id": 13504,
+        "imgId": "UI_EquipIcon_Pole_Kunwu"
     },
     "WolfsGravestone": {
         "name": "Wolf's Gravestone",
@@ -2723,9 +2757,8 @@ export default {
                 "5": 80
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Wolf%27s_Gravestone",
-        "hakushinID": 12502,
-        "id": 12502
+        "id": 12502,
+        "imgId": "UI_EquipIcon_Claymore_Wolfmound"
     },
     "TheCatch": {
         "name": "\"The Catch\"",
@@ -2774,9 +2807,8 @@ export default {
                 "5": 12
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/%22The_Catch%22",
-        "hakushinID": 13415,
-        "id": 13415
+        "id": 13415,
+        "imgId": "UI_EquipIcon_Pole_Mori"
     },
     "UltimateOverlordsMegaMagicSword": {
         "name": "\"Ultimate Overlord's Mega Magic Sword\"",
@@ -2824,9 +2856,8 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/%22Ultimate_Overlord%27s_Mega_Magic_Sword%22",
-        "hakushinID": 12426,
-        "id": 12426
+        "id": 12426,
+        "imgId": "UI_EquipIcon_Claymore_Champion"
     },
     "Akuoumaru": {
         "name": "Akuoumaru",
@@ -2858,9 +2889,8 @@ export default {
                 "5": 80
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Akuoumaru",
-        "hakushinID": 12416,
-        "id": 12416
+        "id": 12416,
+        "imgId": "UI_EquipIcon_Claymore_Maria"
     },
     "AlleyHunter": {
         "name": "Alley Hunter",
@@ -2899,9 +2929,8 @@ export default {
                 "5": 8
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Alley_Hunter",
-        "hakushinID": 15410,
-        "id": 15410
+        "id": 15410,
+        "imgId": "UI_EquipIcon_Bow_Outlaw"
     },
     "AmenomaKageuchi": {
         "name": "Amenoma Kageuchi",
@@ -2926,15 +2955,13 @@ export default {
                 "5": 12
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Amenoma_Kageuchi",
-        "hakushinID": 11414,
-        "id": 11414
+        "id": 11414,
+        "imgId": "UI_EquipIcon_Sword_Bakufu"
     },
     "AshGravenDrinkingHorn": {
         "name": "Ash-Graven Drinking Horn",
         "rarity": 4,
         "type": "Catalyst",
-        "hakushinID": 14427,
         "id": 14427,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_ConchSprayer.webp",
@@ -2955,7 +2982,7 @@ export default {
                 "5": 80.00000119209
             }
         ],
-        "version": "5.0"
+        "imgId": "UI_EquipIcon_Catalyst_ConchSprayer"
     },
     "BalladOfTheBoundlessBlue": {
         "name": "Ballad of the Boundless Blue",
@@ -2980,7 +3007,6 @@ export default {
                 "5": 12
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Ballad_of_the_Boundless_Blue",
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b5\/Weapon_Ballad_of_the_Boundless_Blue.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1d\/Weapon_Ballad_of_the_Boundless_Blue_2nd.png"
@@ -2988,8 +3014,8 @@ export default {
         "matForgery": "Tooth",
         "matStrongEnemy": "Geovishaps",
         "matWeakEnemy": "T.Hoarders",
-        "hakushinID": 14426,
-        "id": 14426
+        "id": 14426,
+        "imgId": "UI_EquipIcon_Catalyst_DandelionPoem"
     },
     "BalladOfTheFjords": {
         "name": "Ballad of the Fjords",
@@ -3024,9 +3050,8 @@ export default {
         "matWeakEnemy": "Whopperflowers",
         "baseATK": 42,
         "stat": "critRate_",
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Ballad_of_the_Fjords",
-        "hakushinID": 13424,
-        "id": 13424
+        "id": 13424,
+        "imgId": "UI_EquipIcon_Pole_Shanty"
     },
     "BlackcliffAgate": {
         "name": "Blackcliff Agate",
@@ -3051,9 +3076,8 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Blackcliff_Agate",
-        "hakushinID": 14408,
-        "id": 14408
+        "id": 14408,
+        "imgId": "UI_EquipIcon_Catalyst_Blackrock"
     },
     "BlackcliffLongsword": {
         "name": "Blackcliff Longsword",
@@ -3078,9 +3102,8 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Blackcliff_Longsword",
-        "hakushinID": 11408,
-        "id": 11408
+        "id": 11408,
+        "imgId": "UI_EquipIcon_Sword_Blackrock"
     },
     "BlackcliffPole": {
         "name": "Blackcliff Pole",
@@ -3105,9 +3128,8 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Blackcliff_Pole",
-        "hakushinID": 13404,
-        "id": 13404
+        "id": 13404,
+        "imgId": "UI_EquipIcon_Pole_Blackrock"
     },
     "BlackcliffSlasher": {
         "name": "Blackcliff Slasher",
@@ -3132,9 +3154,8 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Blackcliff_Slasher",
-        "hakushinID": 12408,
-        "id": 12408
+        "id": 12408,
+        "imgId": "UI_EquipIcon_Claymore_Blackrock"
     },
     "BlackcliffWarbow": {
         "name": "Blackcliff Warbow",
@@ -3159,15 +3180,13 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Blackcliff_Warbow",
-        "hakushinID": 15408,
-        "id": 15408
+        "id": 15408,
+        "imgId": "UI_EquipIcon_Bow_Blackrock"
     },
     "BlackmarrowLantern": {
         "name": "Blackmarrow Lantern",
         "rarity": 4,
         "type": "Catalyst",
-        "hakushinID": 14433,
         "id": 14433,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_Ilmarinen.webp",
@@ -3202,13 +3221,12 @@ export default {
                 "5": 24
             }
         ],
-        "version": "6.0"
+        "imgId": "UI_EquipIcon_Catalyst_Ilmarinen"
     },
     "CalamityOfEshu": {
         "name": "Calamity of Eshu",
         "rarity": 4,
         "type": "Sword",
-        "hakushinID": 11432,
         "id": 11432,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_SacrificialNgombe.webp",
@@ -3235,14 +3253,13 @@ export default {
                 "5": 15.99999964237
             }
         ],
-        "version": "5.2",
-        "matStrongEnemy": "Mimiflora"
+        "matStrongEnemy": "Mimiflora",
+        "imgId": "UI_EquipIcon_Sword_SacrificialNgombe"
     },
     "ChainBreaker": {
         "name": "Chain Breaker",
         "rarity": 4,
         "type": "Bow",
-        "hakushinID": 15431,
         "id": 15431,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_Isikhulu.webp",
@@ -3270,7 +3287,7 @@ export default {
                 "5": 48
             }
         ],
-        "version": "5.0"
+        "imgId": "UI_EquipIcon_Bow_Isikhulu"
     },
     "CinnabarSpindle": {
         "name": "Cinnabar Spindle",
@@ -3295,15 +3312,13 @@ export default {
                 "5": 80
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Cinnabar_Spindle",
-        "hakushinID": 11415,
-        "id": 11415
+        "id": 11415,
+        "imgId": "UI_EquipIcon_Sword_Opus"
     },
     "Cloudforged": {
         "name": "Cloudforged",
         "rarity": 4,
         "type": "Bow",
-        "hakushinID": 15426,
         "id": 15426,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_Ultimatum.webp",
@@ -3324,7 +3339,7 @@ export default {
                 "5": 80
             }
         ],
-        "version": "4.6.53"
+        "imgId": "UI_EquipIcon_Bow_Ultimatum"
     },
     "CompoundBow": {
         "name": "Compound Bow",
@@ -3356,9 +3371,8 @@ export default {
                 "5": 2.4
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Compound_Bow",
-        "hakushinID": 15407,
-        "id": 15407
+        "id": 15407,
+        "imgId": "UI_EquipIcon_Bow_Exotic"
     },
     "CrescentPike": {
         "name": "Crescent Pike",
@@ -3383,15 +3397,13 @@ export default {
                 "5": 40
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Crescent_Pike",
-        "hakushinID": 13403,
-        "id": 13403
+        "id": 13403,
+        "imgId": "UI_EquipIcon_Pole_Exotic"
     },
     "DawningFrost": {
         "name": "Dawning Frost",
         "rarity": 4,
         "type": "Catalyst",
-        "hakushinID": 14434,
         "id": 14434,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_Ziedas.webp",
@@ -3419,7 +3431,7 @@ export default {
                 "5": 10
             }
         ],
-        "version": "6.1"
+        "imgId": "UI_EquipIcon_Catalyst_Ziedas"
     },
     "Deathmatch": {
         "name": "Deathmatch",
@@ -3489,9 +3501,8 @@ export default {
                 "5": 48
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Deathmatch",
-        "hakushinID": 13405,
-        "id": 13405
+        "id": 13405,
+        "imgId": "UI_EquipIcon_Pole_Gladiator"
     },
     "DialoguesOfTheDesertSages": {
         "name": "Dialogues of the Desert Sages",
@@ -3509,7 +3520,6 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Dialogues_of_the_Desert_Sages",
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/ea\/Weapon_Dialogues_of_the_Desert_Sages.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/ab\/Weapon_Dialogues_of_the_Desert_Sages_2nd.png"
@@ -3517,8 +3527,8 @@ export default {
         "matForgery": "Talisman",
         "matStrongEnemy": "Xuanwen Beasts",
         "matWeakEnemy": "Specters",
-        "hakushinID": 13426,
-        "id": 13426
+        "id": 13426,
+        "imgId": "UI_EquipIcon_Pole_Caduceus"
     },
     "DodocoTales": {
         "name": "Dodoco Tales",
@@ -3550,9 +3560,8 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Dodoco_Tales",
-        "hakushinID": 14413,
-        "id": 14413
+        "id": 14413,
+        "imgId": "UI_EquipIcon_Catalyst_Ludiharpastum"
     },
     "DragonsBane": {
         "name": "Dragon's Bane",
@@ -3577,9 +3586,8 @@ export default {
                 "5": 36
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Dragon%27s_Bane",
-        "hakushinID": 13401,
-        "id": 13401
+        "id": 13401,
+        "imgId": "UI_EquipIcon_Pole_Stardust"
     },
     "DragonspineSpear": {
         "name": "Dragonspine Spear",
@@ -3618,15 +3626,13 @@ export default {
                 "5": 360
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Dragonspine_Spear",
-        "hakushinID": 13409,
-        "id": 13409
+        "id": 13409,
+        "imgId": "UI_EquipIcon_Pole_Everfrost"
     },
     "EarthShaker": {
         "name": "Earth Shaker",
         "rarity": 4,
         "type": "Claymore",
-        "hakushinID": 12431,
         "id": 12431,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_Isikhulu.webp",
@@ -3647,7 +3653,7 @@ export default {
                 "5": 31.99999928474
             }
         ],
-        "version": "5.0"
+        "imgId": "UI_EquipIcon_Claymore_Isikhulu"
     },
     "EndOfTheLine": {
         "name": "End of the Line",
@@ -3672,15 +3678,13 @@ export default {
                 "5": 160
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/End_of_the_Line",
-        "hakushinID": 15418,
-        "id": 15418
+        "id": 15418,
+        "imgId": "UI_EquipIcon_Bow_Fin"
     },
     "EtherlightSpindlelute": {
         "name": "Etherlight Spindlelute",
         "rarity": 4,
         "type": "Catalyst",
-        "hakushinID": 14432,
         "id": 14432,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_SeeliesLute.webp",
@@ -3701,7 +3705,7 @@ export default {
                 "5": 200
             }
         ],
-        "version": "6.0"
+        "imgId": "UI_EquipIcon_Catalyst_SeeliesLute"
     },
     "EyeOfPerception": {
         "name": "Eye of Perception",
@@ -3733,9 +3737,8 @@ export default {
                 "5": 8
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Eye_of_Perception",
-        "hakushinID": 14409,
-        "id": 14409
+        "id": 14409,
+        "imgId": "UI_EquipIcon_Catalyst_Truelens"
     },
     "FadingTwilight": {
         "name": "Fading Twilight",
@@ -3774,9 +3777,8 @@ export default {
                 "5": 28
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Fading_Twilight",
-        "hakushinID": 15411,
-        "id": 15411
+        "id": 15411,
+        "imgId": "UI_EquipIcon_Bow_Fallensun"
     },
     "FavoniusCodex": {
         "name": "Favonius Codex",
@@ -3808,9 +3810,8 @@ export default {
                 "5": 6
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Favonius_Codex",
-        "hakushinID": 14401,
-        "id": 14401
+        "id": 14401,
+        "imgId": "UI_EquipIcon_Catalyst_Zephyrus"
     },
     "FavoniusGreatsword": {
         "name": "Favonius Greatsword",
@@ -3842,9 +3843,8 @@ export default {
                 "5": 6
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Favonius_Greatsword",
-        "hakushinID": 12401,
-        "id": 12401
+        "id": 12401,
+        "imgId": "UI_EquipIcon_Claymore_Zephyrus"
     },
     "FavoniusLance": {
         "name": "Favonius Lance",
@@ -3876,9 +3876,8 @@ export default {
                 "5": 6
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Favonius_Lance",
-        "hakushinID": 13407,
-        "id": 13407
+        "id": 13407,
+        "imgId": "UI_EquipIcon_Pole_Zephyrus"
     },
     "FavoniusSword": {
         "name": "Favonius Sword",
@@ -3910,9 +3909,8 @@ export default {
                 "5": 6
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Favonius_Sword",
-        "hakushinID": 11401,
-        "id": 11401
+        "id": 11401,
+        "imgId": "UI_EquipIcon_Sword_Zephyrus"
     },
     "FavoniusWarbow": {
         "name": "Favonius Warbow",
@@ -3944,9 +3942,8 @@ export default {
                 "5": 6
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Favonius_Warbow",
-        "hakushinID": 15401,
-        "id": 15401
+        "id": 15401,
+        "imgId": "UI_EquipIcon_Bow_Zephyrus"
     },
     "FesteringDesire": {
         "name": "Festering Desire",
@@ -3978,9 +3975,8 @@ export default {
                 "5": 12
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Festering_Desire",
-        "hakushinID": 11413,
-        "id": 11413
+        "id": 11413,
+        "imgId": "UI_EquipIcon_Sword_Magnum"
     },
     "FinaleOfTheDeep": {
         "name": "Finale of the Deep",
@@ -4019,15 +4015,13 @@ export default {
         "matWeakEnemy": "Nobushi",
         "baseATK": 44,
         "stat": "atk_",
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Finale_of_the_Deep",
-        "hakushinID": 11425,
-        "id": 11425
+        "id": 11425,
+        "imgId": "UI_EquipIcon_Sword_Vorpal"
     },
     "FlameForgedInsight": {
         "name": "Flame-Forged Insight",
         "rarity": 4,
         "type": "Claymore",
-        "hakushinID": 12432,
         "id": 12432,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_Polilith.webp",
@@ -4055,7 +4049,7 @@ export default {
                 "5": 120
             }
         ],
-        "version": "5.8"
+        "imgId": "UI_EquipIcon_Claymore_Polilith"
     },
     "FleuveCendreFerryman": {
         "name": "Fleuve Cendre Ferryman",
@@ -4087,15 +4081,13 @@ export default {
         "matWeakEnemy": "Fontemer",
         "baseATK": 42,
         "stat": "enerRech_",
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Fleuve_Cendre_Ferryman",
-        "hakushinID": 11426,
-        "id": 11426
+        "id": 11426,
+        "imgId": "UI_EquipIcon_Sword_Machination"
     },
     "FlowerWreathedFeathers": {
         "name": "Flower-Wreathed Feathers",
         "rarity": 4,
         "type": "Bow",
-        "hakushinID": 15430,
         "id": 15430,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_Umpakati.webp",
@@ -4116,7 +4108,7 @@ export default {
                 "5": 15.00000059605
             }
         ],
-        "version": "5.2"
+        "imgId": "UI_EquipIcon_Bow_Umpakati"
     },
     "FlowingPurity": {
         "name": "Flowing Purity",
@@ -4155,15 +4147,13 @@ export default {
         "matWeakEnemy": "Fontemer",
         "baseATK": 44,
         "stat": "atk_",
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Flowing_Purity",
-        "hakushinID": 14425,
-        "id": 14425
+        "id": 14425,
+        "imgId": "UI_EquipIcon_Catalyst_Vorpal"
     },
     "FluteOfEzpitzal": {
         "name": "Flute of Ezpitzal",
         "rarity": 4,
         "type": "Sword",
-        "hakushinID": 11431,
         "id": 11431,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_Isikhulu.webp",
@@ -4184,13 +4174,12 @@ export default {
                 "5": 31.99999928474
             }
         ],
-        "version": "5.0"
+        "imgId": "UI_EquipIcon_Sword_Isikhulu"
     },
     "FootprintOfTheRainbow": {
         "name": "Footprint of the Rainbow",
         "rarity": 4,
         "type": "Polearm",
-        "hakushinID": 13431,
         "id": 13431,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_Isikhulu.webp",
@@ -4222,7 +4211,7 @@ export default {
             ],
             "After Elemental Skill (15s)"
         ],
-        "version": "5.0"
+        "imgId": "UI_EquipIcon_Pole_Isikhulu"
     },
     "ForestRegalia": {
         "name": "Forest Regalia",
@@ -4247,9 +4236,8 @@ export default {
                 "5": 120
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Forest_Regalia",
-        "hakushinID": 12417,
-        "id": 12417
+        "id": 12417,
+        "imgId": "UI_EquipIcon_Claymore_Arakalari"
     },
     "Frostbearer": {
         "name": "Frostbearer",
@@ -4288,9 +4276,8 @@ export default {
                 "5": 360
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Frostbearer",
-        "hakushinID": 14412,
-        "id": 14412
+        "id": 14412,
+        "imgId": "UI_EquipIcon_Catalyst_Everfrost"
     },
     "FruitOfFulfillment": {
         "name": "Fruit of Fulfillment",
@@ -4315,15 +4302,13 @@ export default {
                 "5": 36
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Fruit_of_Fulfillment",
-        "hakushinID": 14417,
-        "id": 14417
+        "id": 14417,
+        "imgId": "UI_EquipIcon_Catalyst_Arakalari"
     },
     "FruitfulHook": {
         "name": "Fruitful Hook",
         "rarity": 4,
         "type": "Claymore",
-        "hakushinID": 12430,
         "id": 12430,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_Umpakati.webp",
@@ -4351,8 +4336,8 @@ export default {
                 "5": 31.99999928474
             }
         ],
-        "version": "5.0.54",
-        "release": "October 8, 2024"
+        "release": "October 8, 2024",
+        "imgId": "UI_EquipIcon_Claymore_Umpakati"
     },
     "HakushinRing": {
         "name": "Hakushin Ring",
@@ -4395,9 +4380,8 @@ export default {
                 "5": 20
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Hakushin_Ring",
-        "hakushinID": 14414,
-        "id": 14414
+        "id": 14414,
+        "imgId": "UI_EquipIcon_Catalyst_Bakufu"
     },
     "Hamayumi": {
         "name": "Hamayumi",
@@ -4464,9 +4448,8 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Hamayumi",
-        "hakushinID": 15414,
-        "id": 15414
+        "id": 15414,
+        "imgId": "UI_EquipIcon_Bow_Bakufu"
     },
     "IbisPiercer": {
         "name": "Ibis Piercer",
@@ -4502,9 +4485,8 @@ export default {
                 "5": 80
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Ibis_Piercer",
-        "hakushinID": 15419,
-        "id": 15419
+        "id": 15419,
+        "imgId": "UI_EquipIcon_Bow_Ibis"
     },
     "IronSting": {
         "name": "Iron Sting",
@@ -4540,9 +4522,8 @@ export default {
                 "5": 12
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Iron_Sting",
-        "hakushinID": 11407,
-        "id": 11407
+        "id": 11407,
+        "imgId": "UI_EquipIcon_Sword_Exotic"
     },
     "KagotsurubeIsshin": {
         "name": "Kagotsurube Isshin",
@@ -4559,9 +4540,8 @@ export default {
         ],
         "passive": "When a Normal, Charged, or Plunging Attack hits an opponent, it will whip up a Hewing Gale, dealing AoE DMG equal to 180% of ATK and increasing ATK by 15% for 8s. This effect can be triggered once every 8s.",
         "refinementData": [],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Kagotsurube_Isshin",
-        "hakushinID": 11416,
-        "id": 11416
+        "id": 11416,
+        "imgId": "UI_EquipIcon_Sword_Youtou"
     },
     "KatsuragikiriNagamasa": {
         "name": "Katsuragikiri Nagamasa",
@@ -4593,9 +4573,8 @@ export default {
                 "5": 5
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Katsuragikiri_Nagamasa",
-        "hakushinID": 12414,
-        "id": 12414
+        "id": 12414,
+        "imgId": "UI_EquipIcon_Claymore_Bakufu"
     },
     "KingsSquire": {
         "name": "King's Squire",
@@ -4627,9 +4606,8 @@ export default {
                 "5": 180
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/King%27s_Squire",
-        "hakushinID": 15417,
-        "id": 15417
+        "id": 15417,
+        "imgId": "UI_EquipIcon_Bow_Arakalari"
     },
     "KitainCrossSpear": {
         "name": "Kitain Cross Spear",
@@ -4668,9 +4646,8 @@ export default {
                 "5": 5
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Kitain_Cross_Spear",
-        "hakushinID": 13414,
-        "id": 13414
+        "id": 13414,
+        "imgId": "UI_EquipIcon_Pole_Bakufu"
     },
     "LionsRoar": {
         "name": "Lion's Roar",
@@ -4695,9 +4672,8 @@ export default {
                 "5": 36
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Lion%27s_Roar",
-        "hakushinID": 11405,
-        "id": 11405
+        "id": 11405,
+        "imgId": "UI_EquipIcon_Sword_Rockkiller"
     },
     "LithicBlade": {
         "name": "Lithic Blade",
@@ -4729,9 +4705,8 @@ export default {
                 "5": 7
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Lithic_Blade",
-        "hakushinID": 12410,
-        "id": 12410
+        "id": 12410,
+        "imgId": "UI_EquipIcon_Claymore_Lapis"
     },
     "LithicSpear": {
         "name": "Lithic Spear",
@@ -4763,9 +4738,8 @@ export default {
                 "5": 7
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Lithic_Spear",
-        "hakushinID": 13406,
-        "id": 13406
+        "id": 13406,
+        "imgId": "UI_EquipIcon_Pole_Lapis"
     },
     "LuxuriousSeaLord": {
         "name": "Luxurious Sea-Lord",
@@ -4797,9 +4771,8 @@ export default {
                 "5": 200
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Luxurious_Sea-Lord",
-        "hakushinID": 12412,
-        "id": 12412
+        "id": 12412,
+        "imgId": "UI_EquipIcon_Claymore_MillenniaTuna"
     },
     "MailedFlower": {
         "name": "Mailed Flower",
@@ -4831,9 +4804,8 @@ export default {
                 "5": 96
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Mailed_Flower",
-        "hakushinID": 12418,
-        "id": 12418
+        "id": 12418,
+        "imgId": "UI_EquipIcon_Claymore_Fleurfair"
     },
     "MakhairaAquamarine": {
         "name": "Makhaira Aquamarine",
@@ -4858,9 +4830,8 @@ export default {
                 "5": 48
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Makhaira_Aquamarine",
-        "hakushinID": 12415,
-        "id": 12415
+        "id": 12415,
+        "imgId": "UI_EquipIcon_Claymore_Pleroma"
     },
     "MappaMare": {
         "name": "Mappa Mare",
@@ -4885,15 +4856,13 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Mappa_Mare",
-        "hakushinID": 14407,
-        "id": 14407
+        "id": 14407,
+        "imgId": "UI_EquipIcon_Catalyst_Exotic"
     },
     "MasterKey": {
         "name": "Master Key",
         "rarity": 4,
         "type": "Claymore",
-        "hakushinID": 12433,
         "id": 12433,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Claymore_Ilmarinen.webp",
@@ -4921,7 +4890,7 @@ export default {
                 "5": 12
             }
         ],
-        "version": "6.0"
+        "imgId": "UI_EquipIcon_Claymore_Ilmarinen"
     },
     "MissiveWindspear": {
         "name": "Missive Windspear",
@@ -4953,9 +4922,8 @@ export default {
                 "5": 96
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Missive_Windspear",
-        "hakushinID": 13419,
-        "id": 13419
+        "id": 13419,
+        "imgId": "UI_EquipIcon_Pole_Windvane"
     },
     "MitternachtsWaltz": {
         "name": "Mitternachts Waltz",
@@ -4987,9 +4955,8 @@ export default {
                 "5": 40
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Mitternachts_Waltz",
-        "hakushinID": 15412,
-        "id": 15412
+        "id": 15412,
+        "imgId": "UI_EquipIcon_Bow_Nachtblind"
     },
     "Moonpiercer": {
         "name": "Moonpiercer",
@@ -5014,15 +4981,13 @@ export default {
                 "5": 32
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Moonpiercer",
-        "hakushinID": 13417,
-        "id": 13417
+        "id": 13417,
+        "imgId": "UI_EquipIcon_Pole_Arakalari"
     },
     "MoonweaversDawn": {
         "name": "Moonweaver's Dawn",
         "rarity": 4,
         "type": "Sword",
-        "hakushinID": 11434,
         "id": 11434,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_Miekka.webp",
@@ -5057,13 +5022,12 @@ export default {
                 "5": 56.00000000000001
             }
         ],
-        "version": "6.0"
+        "imgId": "UI_EquipIcon_Sword_Miekka"
     },
     "MountainBracingBolt": {
         "name": "Mountain-Bracing Bolt",
         "rarity": 4,
         "type": "Polearm",
-        "hakushinID": 13430,
         "id": 13430,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_Umpakati.webp",
@@ -5091,8 +5055,8 @@ export default {
                 "5": 23.999999463560002
             }
         ],
-        "version": "5.0.54",
-        "release": "October 8, 2024"
+        "release": "October 8, 2024",
+        "imgId": "UI_EquipIcon_Pole_Umpakati"
     },
     "MouunsMoon": {
         "name": "Mouun's Moon",
@@ -5124,9 +5088,8 @@ export default {
                 "5": 80
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Mouun%27s_Moon",
-        "hakushinID": 15416,
-        "id": 15416
+        "id": 15416,
+        "imgId": "UI_EquipIcon_Bow_Maria"
     },
     "OathswornEye": {
         "name": "Oathsworn Eye",
@@ -5151,9 +5114,8 @@ export default {
                 "5": 48
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Oathsworn_Eye",
-        "hakushinID": 14415,
-        "id": 14415
+        "id": 14415,
+        "imgId": "UI_EquipIcon_Catalyst_Jyanome"
     },
     "PortablePowerSaw": {
         "name": "Portable Power Saw",
@@ -5178,7 +5140,6 @@ export default {
                 "5": 4
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Portable_Power_Saw",
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/49\/Weapon_Portable_Power_Saw.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/4\/40\/Weapon_Portable_Power_Saw_2nd.png"
@@ -5186,8 +5147,8 @@ export default {
         "matForgery": "Chalice",
         "matStrongEnemy": "Breacher Primus",
         "matWeakEnemy": "Meka",
-        "hakushinID": 12427,
-        "id": 12427
+        "id": 12427,
+        "imgId": "UI_EquipIcon_Claymore_Mechanic"
     },
     "Predator": {
         "name": "Predator",
@@ -5204,9 +5165,17 @@ export default {
         ],
         "passive": "Dealing Cryo DMG to opponents increases this character's Normal and Charged Attack DMG by 10% for 6s. This effect can have a maximum of 2 stacks.\nAdditionally, when Aloy equips Predator, ATK is increased by 66.",
         "refinementData": [],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Predator",
-        "hakushinID": 15415,
-        "id": 15415
+        "id": 15415,
+        "imgId": "UI_EquipIcon_Bow_Predator"
+    },
+    "PrizedIsshinBlade": {
+        "id": 11419,
+        "name": "Prized Isshin Blade",
+        "imgId": "UI_EquipIcon_Sword_YoutouEnchanted",
+        "type": "Sword",
+        "rarity": 4,
+        "baseATK": 42,
+        "stat": "atk_"
     },
     "ProspectorsDrill": {
         "name": "Prospector's Drill",
@@ -5231,7 +5200,6 @@ export default {
                 "5": 13
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Prospector%27s_Drill",
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b1\/Weapon_Prospector%27s_Drill.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/a\/a9\/Weapon_Prospector%27s_Drill_2nd.png"
@@ -5239,14 +5207,13 @@ export default {
         "matForgery": "Chord",
         "matStrongEnemy": "Fatui Operatives",
         "matWeakEnemy": "Meka",
-        "hakushinID": 13427,
-        "id": 13427
+        "id": 13427,
+        "imgId": "UI_EquipIcon_Pole_Mechanic"
     },
     "ProspectorsShovel": {
         "name": "Prospector's Shovel",
         "rarity": 4,
         "type": "Polearm",
-        "hakushinID": 13433,
         "id": 13433,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_Ilmarinen.webp",
@@ -5281,7 +5248,7 @@ export default {
                 "5": 24
             }
         ],
-        "version": "6.0"
+        "imgId": "UI_EquipIcon_Pole_Ilmarinen"
     },
     "PrototypeAmber": {
         "name": "Prototype Amber",
@@ -5313,9 +5280,8 @@ export default {
                 "5": 6
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Prototype_Amber",
-        "hakushinID": 14406,
-        "id": 14406
+        "id": 14406,
+        "imgId": "UI_EquipIcon_Catalyst_Proto"
     },
     "PrototypeArchaic": {
         "name": "Prototype Archaic",
@@ -5340,9 +5306,8 @@ export default {
                 "5": 480
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Prototype_Archaic",
-        "hakushinID": 12406,
-        "id": 12406
+        "id": 12406,
+        "imgId": "UI_EquipIcon_Claymore_Proto"
     },
     "PrototypeCrescent": {
         "name": "Prototype Crescent",
@@ -5377,9 +5342,8 @@ export default {
                 "5": 72
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Prototype_Crescent",
-        "hakushinID": 15406,
-        "id": 15406
+        "id": 15406,
+        "imgId": "UI_EquipIcon_Bow_Proto"
     },
     "PrototypeRancour": {
         "name": "Prototype Rancour",
@@ -5404,9 +5368,8 @@ export default {
                 "5": 8
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Prototype_Rancour",
-        "hakushinID": 11406,
-        "id": 11406
+        "id": 11406,
+        "imgId": "UI_EquipIcon_Sword_Proto"
     },
     "PrototypeStarglitter": {
         "name": "Prototype Starglitter",
@@ -5431,15 +5394,13 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Prototype_Starglitter",
-        "hakushinID": 13402,
-        "id": 13402
+        "id": 13402,
+        "imgId": "UI_EquipIcon_Pole_Proto"
     },
     "RainbowSerpentsRainBow": {
         "name": "Rainbow Serpent's Rain Bow",
         "rarity": 4,
         "type": "Bow",
-        "hakushinID": 15434,
         "id": 15434,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_ElegguaBow.webp",
@@ -5460,7 +5421,7 @@ export default {
                 "5": 800
             }
         ],
-        "version": "6.2"
+        "imgId": "UI_EquipIcon_Bow_ElegguaBow"
     },
     "Rainslasher": {
         "name": "Rainslasher",
@@ -5485,9 +5446,8 @@ export default {
                 "5": 36
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Rainslasher",
-        "hakushinID": 12405,
-        "id": 12405
+        "id": 12405,
+        "imgId": "UI_EquipIcon_Claymore_Perdue"
     },
     "RangeGauge": {
         "name": "Range Gauge",
@@ -5512,7 +5472,6 @@ export default {
                 "5": 13
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Range_Gauge",
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/11\/Weapon_Range_Gauge.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/be\/Weapon_Range_Gauge_2nd.png"
@@ -5520,8 +5479,8 @@ export default {
         "matForgery": "Chord",
         "matStrongEnemy": "Hydro Phantasms",
         "matWeakEnemy": "Fontemer",
-        "hakushinID": 15427,
-        "id": 15427
+        "id": 15427,
+        "imgId": "UI_EquipIcon_Bow_Mechanic"
     },
     "RightfulReward": {
         "name": "Rightful Reward",
@@ -5546,15 +5505,13 @@ export default {
         "matWeakEnemy": "Meka",
         "baseATK": 44,
         "stat": "hp_",
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Rightful_Reward",
-        "hakushinID": 13425,
-        "id": 13425
+        "id": 13425,
+        "imgId": "UI_EquipIcon_Pole_Vorpal"
     },
     "RingOfYaxche": {
         "name": "Ring of Yaxche",
         "rarity": 4,
         "type": "Catalyst",
-        "hakushinID": 14431,
         "id": 14431,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_Isikhulu.webp",
@@ -5600,7 +5557,7 @@ export default {
             ],
             "After Elemental Skill (10s)"
         ],
-        "version": "5.0"
+        "imgId": "UI_EquipIcon_Catalyst_Isikhulu"
     },
     "RoyalBow": {
         "name": "Royal Bow",
@@ -5625,9 +5582,8 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Royal_Bow",
-        "hakushinID": 15404,
-        "id": 15404
+        "id": 15404,
+        "imgId": "UI_EquipIcon_Bow_Theocrat"
     },
     "RoyalGreatsword": {
         "name": "Royal Greatsword",
@@ -5652,9 +5608,8 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Royal_Greatsword",
-        "hakushinID": 12404,
-        "id": 12404
+        "id": 12404,
+        "imgId": "UI_EquipIcon_Claymore_Theocrat"
     },
     "RoyalGrimoire": {
         "name": "Royal Grimoire",
@@ -5679,9 +5634,8 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Royal_Grimoire",
-        "hakushinID": 14404,
-        "id": 14404
+        "id": 14404,
+        "imgId": "UI_EquipIcon_Catalyst_Theocrat"
     },
     "RoyalLongsword": {
         "name": "Royal Longsword",
@@ -5689,7 +5643,7 @@ export default {
         "type": "Sword",
         "matForgery": "Tile",
         "matStrongEnemy": "Big Hilichurls",
-        "matWeakEnemy": "Hili.Archers",
+        "matWeakEnemy": "Hilichurls",
         "baseATK": 42,
         "stat": "atk_",
         "imgs": [
@@ -5706,9 +5660,8 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Royal_Longsword",
-        "hakushinID": 11404,
-        "id": 11404
+        "id": 11404,
+        "imgId": "UI_EquipIcon_Sword_Theocrat"
     },
     "RoyalSpear": {
         "name": "Royal Spear",
@@ -5733,9 +5686,8 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Royal_Spear",
-        "hakushinID": 13408,
-        "id": 13408
+        "id": 13408,
+        "imgId": "UI_EquipIcon_Pole_Theocrat"
     },
     "Rust": {
         "name": "Rust",
@@ -5776,15 +5728,13 @@ export default {
                 ]
             ]
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Rust",
-        "hakushinID": 15405,
-        "id": 15405
+        "id": 15405,
+        "imgId": "UI_EquipIcon_Bow_Recluse"
     },
     "SacrificersStaff": {
         "name": "Sacrificer's Staff",
         "rarity": 4,
         "type": "Polearm",
-        "hakushinID": 13434,
         "id": 13434,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_Krivule.webp",
@@ -5812,7 +5762,7 @@ export default {
                 "5": 16
             }
         ],
-        "version": "6.1"
+        "imgId": "UI_EquipIcon_Pole_Krivule"
     },
     "SacrificialBow": {
         "name": "Sacrificial Bow",
@@ -5844,9 +5794,8 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sacrificial_Bow",
-        "hakushinID": 15403,
-        "id": 15403
+        "id": 15403,
+        "imgId": "UI_EquipIcon_Bow_Fossil"
     },
     "SacrificialFragments": {
         "name": "Sacrificial Fragments",
@@ -5878,9 +5827,8 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sacrificial_Fragments",
-        "hakushinID": 14403,
-        "id": 14403
+        "id": 14403,
+        "imgId": "UI_EquipIcon_Catalyst_Fossil"
     },
     "SacrificialGreatsword": {
         "name": "Sacrificial Greatsword",
@@ -5912,9 +5860,8 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sacrificial_Greatsword",
-        "hakushinID": 12403,
-        "id": 12403
+        "id": 12403,
+        "imgId": "UI_EquipIcon_Claymore_Fossil"
     },
     "SacrificialJade": {
         "name": "Sacrificial Jade",
@@ -5966,9 +5913,8 @@ export default {
         "matWeakEnemy": "Samachurls",
         "baseATK": 41,
         "stat": "critRate_",
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sacrificial_Jade",
-        "hakushinID": 14424,
-        "id": 14424
+        "id": 14424,
+        "imgId": "UI_EquipIcon_Catalyst_Yue"
     },
     "SacrificialSword": {
         "name": "Sacrificial Sword",
@@ -6000,9 +5946,8 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sacrificial_Sword",
-        "hakushinID": 11403,
-        "id": 11403
+        "id": 11403,
+        "imgId": "UI_EquipIcon_Sword_Fossil"
     },
     "SapwoodBlade": {
         "name": "Sapwood Blade",
@@ -6037,9 +5982,8 @@ export default {
                 "5": 120
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sapwood_Blade",
-        "hakushinID": 11417,
-        "id": 11417
+        "id": 11417,
+        "imgId": "UI_EquipIcon_Sword_Arakalari"
     },
     "ScionOfTheBlazingSun": {
         "name": "Scion of the Blazing Sun",
@@ -6092,15 +6036,13 @@ export default {
         "matWeakEnemy": "Fungi",
         "baseATK": 44,
         "stat": "critRate_",
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Scion_of_the_Blazing_Sun",
-        "hakushinID": 15424,
-        "id": 15424
+        "id": 15424,
+        "imgId": "UI_EquipIcon_Bow_Gurabad"
     },
     "SequenceOfSolitude": {
         "name": "Sequence of Solitude",
         "rarity": 4,
         "type": "Bow",
-        "hakushinID": 15432,
         "id": 15432,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_Stinger.webp",
@@ -6121,13 +6063,12 @@ export default {
                 "5": 80
             }
         ],
-        "version": "5.5.54"
+        "imgId": "UI_EquipIcon_Bow_Stinger"
     },
     "SerenitysCall": {
         "name": "Serenity's Call",
         "rarity": 4,
         "type": "Sword",
-        "hakushinID": 11433,
         "id": 11433,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_Ilmarinen.webp",
@@ -6155,7 +6096,7 @@ export default {
                 "5": 1200
             }
         ],
-        "version": "6.0"
+        "imgId": "UI_EquipIcon_Sword_Ilmarinen"
     },
     "SerpentSpine": {
         "name": "Serpent Spine",
@@ -6207,15 +6148,13 @@ export default {
                 "5": 2
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Serpent_Spine",
-        "hakushinID": 12409,
-        "id": 12409
+        "id": 12409,
+        "imgId": "UI_EquipIcon_Claymore_Kione"
     },
     "SnareHook": {
         "name": "Snare Hook",
         "rarity": 4,
         "type": "Bow",
-        "hakushinID": 15433,
         "id": 15433,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Bow_Ilmarinen.webp",
@@ -6243,7 +6182,7 @@ export default {
                 "5": 12
             }
         ],
-        "version": "6.0"
+        "imgId": "UI_EquipIcon_Bow_Ilmarinen"
     },
     "SnowTombedStarsilver": {
         "name": "Snow-Tombed Starsilver",
@@ -6282,9 +6221,8 @@ export default {
                 "5": 360
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Snow-Tombed_Starsilver",
-        "hakushinID": 12411,
-        "id": 12411
+        "id": 12411,
+        "imgId": "UI_EquipIcon_Claymore_Dragonfell"
     },
     "SolarPearl": {
         "name": "Solar Pearl",
@@ -6316,9 +6254,8 @@ export default {
                 "5": 40
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Solar_Pearl",
-        "hakushinID": 14405,
-        "id": 14405
+        "id": 14405,
+        "imgId": "UI_EquipIcon_Catalyst_Resurrection"
     },
     "SongOfStillness": {
         "name": "Song of Stillness",
@@ -6343,15 +6280,13 @@ export default {
         "matWeakEnemy": "Hili.Archers",
         "baseATK": 42,
         "stat": "atk_",
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Song_of_Stillness",
-        "hakushinID": 15425,
-        "id": 15425
+        "id": 15425,
+        "imgId": "UI_EquipIcon_Bow_Vorpal"
     },
     "SturdyBone": {
         "name": "Sturdy Bone",
         "rarity": 4,
         "type": "Sword",
-        "hakushinID": 11430,
         "id": 11430,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Sword_Umpakati.webp",
@@ -6372,8 +6307,8 @@ export default {
                 "5": 15.00000059605
             }
         ],
-        "version": "5.0.54",
-        "release": "October 8, 2024"
+        "release": "October 8, 2024",
+        "imgId": "UI_EquipIcon_Sword_Umpakati"
     },
     "SwordOfDescension": {
         "name": "Sword of Descension",
@@ -6390,9 +6325,8 @@ export default {
         ],
         "passive": "Hitting enemies with Normal or Charged Attacks grants a 50% chance to deal 200% ATK as DMG in a small AoE. This effect can only occur once every 10s.\nAdditionally, if the Traveler equips the Sword of Descension, their ATK is increased by 66.",
         "refinementData": [],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sword_of_Descension",
-        "hakushinID": 11412,
-        "id": 11412
+        "id": 11412,
+        "imgId": "UI_EquipIcon_Sword_Psalmus"
     },
     "SwordOfNarzissenkreuz": {
         "name": "Sword of Narzissenkreuz",
@@ -6410,7 +6344,6 @@ export default {
                 "5": 320
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sword_of_Narzissenkreuz",
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/1\/1f\/Weapon_Sword_of_Narzissenkreuz_Pneuma.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/3\/30\/Weapon_Sword_of_Narzissenkreuz_Ousia.png"
@@ -6418,8 +6351,8 @@ export default {
         "matForgery": "Chord",
         "matStrongEnemy": "Fatui Operatives",
         "matWeakEnemy": "Fontemer",
-        "hakushinID": 11428,
-        "id": 11428
+        "id": 11428,
+        "imgId": "UI_EquipIcon_Sword_Purewill"
     },
     "TalkingStick": {
         "name": "Talking Stick",
@@ -6451,15 +6384,13 @@ export default {
         "matWeakEnemy": "Slimes",
         "baseATK": 44,
         "stat": "critRate_",
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Talking_Stick",
-        "hakushinID": 12424,
-        "id": 12424
+        "id": 12424,
+        "imgId": "UI_EquipIcon_Claymore_BeastTamer"
     },
     "TamayurateiNoOhanashi": {
         "name": "Tamayuratei no Ohanashi",
         "rarity": 4,
         "type": "Polearm",
-        "hakushinID": 13432,
         "id": 13432,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Pole_Aoandon.webp",
@@ -6491,7 +6422,7 @@ export default {
                 "5": 40.00000059605
             }
         ],
-        "version": "5.4"
+        "imgId": "UI_EquipIcon_Pole_Aoandon"
     },
     "TheAlleyFlash": {
         "name": "The Alley Flash",
@@ -6516,9 +6447,8 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Alley_Flash",
-        "hakushinID": 11410,
-        "id": 11410
+        "id": 11410,
+        "imgId": "UI_EquipIcon_Sword_Outlaw"
     },
     "TheBell": {
         "name": "The Bell",
@@ -6550,9 +6480,8 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Bell",
-        "hakushinID": 12402,
-        "id": 12402
+        "id": 12402,
+        "imgId": "UI_EquipIcon_Claymore_Troupe"
     },
     "TheBlackSword": {
         "name": "The Black Sword",
@@ -6594,9 +6523,8 @@ export default {
                 "5": 100
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Black_Sword",
-        "hakushinID": 11409,
-        "id": 11409
+        "id": 11409,
+        "imgId": "UI_EquipIcon_Sword_Bloodstained"
     },
     "TheDockhandsAssistant": {
         "name": "The Dockhand's Assistant",
@@ -6621,7 +6549,6 @@ export default {
                 "5": 4
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Dockhand%27s_Assistant",
         "imgs": [
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/e\/eb\/Weapon_The_Dockhand%27s_Assistant.png",
             "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/b\/b1\/Weapon_The_Dockhand%27s_Assistant_2nd.png"
@@ -6629,8 +6556,8 @@ export default {
         "matForgery": "Dewdrop",
         "matStrongEnemy": "Fatui Operatives",
         "matWeakEnemy": "Fontemer",
-        "hakushinID": 11427,
-        "id": 11427
+        "id": 11427,
+        "imgId": "UI_EquipIcon_Sword_Mechanic"
     },
     "TheFlute": {
         "name": "The Flute",
@@ -6655,9 +6582,8 @@ export default {
                 "5": 200
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Flute",
-        "hakushinID": 11402,
-        "id": 11402
+        "id": 11402,
+        "imgId": "UI_EquipIcon_Sword_Troupe"
     },
     "TheStringless": {
         "name": "The Stringless",
@@ -6692,9 +6618,8 @@ export default {
                 "5": 48
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Stringless",
-        "hakushinID": 15402,
-        "id": 15402
+        "id": 15402,
+        "imgId": "UI_EquipIcon_Bow_Troupe"
     },
     "TheViridescentHunt": {
         "name": "The Viridescent Hunt",
@@ -6734,9 +6659,8 @@ export default {
                 "@0%@physical"
             ]
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Viridescent_Hunt",
-        "hakushinID": 15409,
-        "id": 15409
+        "id": 15409,
+        "imgId": "UI_EquipIcon_Bow_Viridescent"
     },
     "TheWidsith": {
         "name": "The Widsith",
@@ -6775,9 +6699,8 @@ export default {
                 "5": 480
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/The_Widsith",
-        "hakushinID": 14402,
-        "id": 14402
+        "id": 14402,
+        "imgId": "UI_EquipIcon_Catalyst_Troupe"
     },
     "TidalShadow": {
         "name": "Tidal Shadow",
@@ -6802,9 +6725,8 @@ export default {
         "matWeakEnemy": "Meka",
         "baseATK": 42,
         "stat": "atk_",
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Tidal_Shadow",
-        "hakushinID": 12425,
-        "id": 12425
+        "id": 12425,
+        "imgId": "UI_EquipIcon_Claymore_Vorpal"
     },
     "ToukabouShigure": {
         "name": "Toukabou Shigure",
@@ -6829,9 +6751,8 @@ export default {
                 "5": 32
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Toukabou_Shigure",
-        "hakushinID": 11422,
-        "id": 11422
+        "id": 11422,
+        "imgId": "UI_EquipIcon_Sword_Kasabouzu"
     },
     "WanderingEvenstar": {
         "name": "Wandering Evenstar",
@@ -6856,9 +6777,8 @@ export default {
                 "5": 48
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Wandering_Evenstar",
-        "hakushinID": 14416,
-        "id": 14416
+        "id": 14416,
+        "imgId": "UI_EquipIcon_Catalyst_Pleroma"
     },
     "WavebreakersFin": {
         "name": "Wavebreaker's Fin",
@@ -6890,15 +6810,13 @@ export default {
                 "5": 80
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Wavebreaker%27s_Fin",
-        "hakushinID": 13416,
-        "id": 13416
+        "id": 13416,
+        "imgId": "UI_EquipIcon_Pole_Maria"
     },
     "WaveridingWhirl": {
         "name": "Waveriding Whirl",
         "rarity": 4,
         "type": "Catalyst",
-        "hakushinID": 14430,
         "id": 14430,
         "imgs": [
             "https:\/\/api.hakush.in\/gi\/UI\/UI_EquipIcon_Catalyst_Umpakati.webp",
@@ -6933,7 +6851,7 @@ export default {
                 "5": 1000
             }
         ],
-        "version": "5.2"
+        "imgId": "UI_EquipIcon_Catalyst_Umpakati"
     },
     "Whiteblind": {
         "name": "Whiteblind",
@@ -6965,9 +6883,8 @@ export default {
                 "5": 48
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Whiteblind",
-        "hakushinID": 12407,
-        "id": 12407
+        "id": 12407,
+        "imgId": "UI_EquipIcon_Claymore_Exotic"
     },
     "WindblumeOde": {
         "name": "Windblume Ode",
@@ -6992,9 +6909,8 @@ export default {
                 "5": 32
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Windblume_Ode",
-        "hakushinID": 15413,
-        "id": 15413
+        "id": 15413,
+        "imgId": "UI_EquipIcon_Bow_Fleurfair"
     },
     "WineAndSong": {
         "name": "Wine and Song",
@@ -7026,9 +6942,8 @@ export default {
                 "5": 40
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Wine_and_Song",
-        "hakushinID": 14410,
-        "id": 14410
+        "id": 14410,
+        "imgId": "UI_EquipIcon_Catalyst_Outlaw"
     },
     "WolfFang": {
         "name": "Wolf-Fang",
@@ -7105,9 +7020,8 @@ export default {
         "matWeakEnemy": "Hilichurls",
         "baseATK": 42,
         "stat": "critRate_",
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Wolf-Fang",
-        "hakushinID": 11424,
-        "id": 11424
+        "id": 11424,
+        "imgId": "UI_EquipIcon_Sword_Boreas"
     },
     "XiphosMoonlight": {
         "name": "Xiphos' Moonlight",
@@ -7132,9 +7046,17 @@ export default {
                 "5": 0.072
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Xiphos%27_Moonlight",
-        "hakushinID": 11418,
-        "id": 11418
+        "id": 11418,
+        "imgId": "UI_EquipIcon_Sword_Pleroma"
+    },
+    "AmberBead": {
+        "id": 14306,
+        "name": "Amber Bead",
+        "imgId": "UI_EquipIcon_Catalyst_Amber",
+        "type": "Catalyst",
+        "rarity": 3,
+        "baseATK": 39,
+        "stat": "eleMas"
     },
     "BlackTassel": {
         "name": "Black Tassel",
@@ -7159,9 +7081,8 @@ export default {
                 "5": 80
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Black_Tassel",
-        "hakushinID": 13303,
-        "id": 13303
+        "id": 13303,
+        "imgId": "UI_EquipIcon_Pole_Noire"
     },
     "BloodtaintedGreatsword": {
         "name": "Bloodtainted Greatsword",
@@ -7186,9 +7107,8 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Bloodtainted_Greatsword",
-        "hakushinID": 12302,
-        "id": 12302
+        "id": 12302,
+        "imgId": "UI_EquipIcon_Claymore_Siegfry"
     },
     "CoolSteel": {
         "name": "Cool Steel",
@@ -7213,9 +7133,8 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Cool_Steel",
-        "hakushinID": 11301,
-        "id": 11301
+        "id": 11301,
+        "imgId": "UI_EquipIcon_Sword_Steel"
     },
     "DarkIronSword": {
         "name": "Dark Iron Sword",
@@ -7240,9 +7159,8 @@ export default {
                 "5": 40
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Dark_Iron_Sword",
-        "hakushinID": 11304,
-        "id": 11304
+        "id": 11304,
+        "imgId": "UI_EquipIcon_Sword_Darker"
     },
     "DebateClub": {
         "name": "Debate Club",
@@ -7267,9 +7185,17 @@ export default {
                 "5": 120
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Debate_Club",
-        "hakushinID": 12305,
-        "id": 12305
+        "id": 12305,
+        "imgId": "UI_EquipIcon_Claymore_Reasoning"
+    },
+    "EbonyBow": {
+        "id": 15306,
+        "name": "Ebony Bow",
+        "imgId": "UI_EquipIcon_Bow_Hardwood",
+        "type": "Bow",
+        "rarity": 3,
+        "baseATK": 39,
+        "stat": "atk_"
     },
     "EmeraldOrb": {
         "name": "Emerald Orb",
@@ -7294,9 +7220,8 @@ export default {
                 "5": 40
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Emerald_Orb",
-        "hakushinID": 14304,
-        "id": 14304
+        "id": 14304,
+        "imgId": "UI_EquipIcon_Catalyst_Jade"
     },
     "FerrousShadow": {
         "name": "Ferrous Shadow",
@@ -7328,9 +7253,8 @@ export default {
                 "5": 50
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Ferrous_Shadow",
-        "hakushinID": 12301,
-        "id": 12301
+        "id": 12301,
+        "imgId": "UI_EquipIcon_Claymore_Glaive"
     },
     "FilletBlade": {
         "name": "Fillet Blade",
@@ -7362,9 +7286,8 @@ export default {
                 "5": 11
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Fillet_Blade",
-        "hakushinID": 11305,
-        "id": 11305
+        "id": 11305,
+        "imgId": "UI_EquipIcon_Sword_Sashimi"
     },
     "Halberd": {
         "name": "Halberd",
@@ -7389,9 +7312,8 @@ export default {
                 "5": 320
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Halberd",
-        "hakushinID": 13302,
-        "id": 13302
+        "id": 13302,
+        "imgId": "UI_EquipIcon_Pole_Halberd"
     },
     "HarbingerOfDawn": {
         "name": "Harbinger of Dawn",
@@ -7426,9 +7348,8 @@ export default {
                 "5": 28
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Harbinger_of_Dawn",
-        "hakushinID": 11302,
-        "id": 11302
+        "id": 11302,
+        "imgId": "UI_EquipIcon_Sword_Dawn"
     },
     "MagicGuide": {
         "name": "Magic Guide",
@@ -7453,9 +7374,8 @@ export default {
                 "5": 24
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Magic_Guide",
-        "hakushinID": 14301,
-        "id": 14301
+        "id": 14301,
+        "imgId": "UI_EquipIcon_Catalyst_Intro"
     },
     "Messenger": {
         "name": "Messenger",
@@ -7480,9 +7400,8 @@ export default {
                 "5": 200
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Messenger",
-        "hakushinID": 15305,
-        "id": 15305
+        "id": 15305,
+        "imgId": "UI_EquipIcon_Bow_Msg"
     },
     "OtherworldlyStory": {
         "name": "Otherworldly Story",
@@ -7507,9 +7426,17 @@ export default {
                 "5": 2
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Otherworldly_Story",
-        "hakushinID": 14303,
-        "id": 14303
+        "id": 14303,
+        "imgId": "UI_EquipIcon_Catalyst_Lightnov"
+    },
+    "Quartz": {
+        "id": 12304,
+        "name": "Quartz",
+        "imgId": "UI_EquipIcon_Claymore_Quartz",
+        "type": "Claymore",
+        "rarity": 3,
+        "baseATK": 39,
+        "stat": "eleMas"
     },
     "RavenBow": {
         "name": "Raven Bow",
@@ -7545,9 +7472,8 @@ export default {
             ],
             "Opponent affected by Hydro or Pyro"
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Raven_Bow",
-        "hakushinID": 15301,
-        "id": 15301
+        "id": 15301,
+        "imgId": "UI_EquipIcon_Bow_Crowfeather"
     },
     "RecurveBow": {
         "name": "Recurve Bow",
@@ -7572,9 +7498,8 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Recurve_Bow",
-        "hakushinID": 15303,
-        "id": 15303
+        "id": 15303,
+        "imgId": "UI_EquipIcon_Bow_Curve"
     },
     "SharpshootersOath": {
         "name": "Sharpshooter's Oath",
@@ -7613,9 +7538,8 @@ export default {
             ],
             "Hitting a weak spot"
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Sharpshooter%27s_Oath",
-        "hakushinID": 15302,
-        "id": 15302
+        "id": 15302,
+        "imgId": "UI_EquipIcon_Bow_Arjuna"
     },
     "SkyriderGreatsword": {
         "name": "Skyrider Greatsword",
@@ -7652,9 +7576,8 @@ export default {
             "After Elemental Burst (15s)",
             4
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyrider_Greatsword",
-        "hakushinID": 12306,
-        "id": 12306
+        "id": 12306,
+        "imgId": "UI_EquipIcon_Claymore_Mitsurugi"
     },
     "SkyriderSword": {
         "name": "Skyrider Sword",
@@ -7690,9 +7613,8 @@ export default {
             ],
             "After Elemental Burst (15s)"
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Skyrider_Sword",
-        "hakushinID": 11306,
-        "id": 11306
+        "id": 11306,
+        "imgId": "UI_EquipIcon_Sword_Mitsurugi"
     },
     "Slingshot": {
         "name": "Slingshot",
@@ -7747,9 +7669,16 @@ export default {
                 "Normal or Charged Attack does not hit within 0.3s"
             ]
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Slingshot",
-        "hakushinID": 15304,
-        "id": 15304
+        "id": 15304,
+        "imgId": "UI_EquipIcon_Bow_Sling"
+    },
+    "TheFlagstaff": {
+        "id": 13304,
+        "name": "The Flagstaff",
+        "imgId": "UI_EquipIcon_Pole_Flagpole",
+        "type": "Polearm",
+        "rarity": 3,
+        "baseATK": 10
     },
     "ThrillingTalesOfDragonSlayers": {
         "name": "Thrilling Tales of Dragon Slayers",
@@ -7785,9 +7714,8 @@ export default {
             ],
             "Previous character has TTDS (10s)"
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Thrilling_Tales_of_Dragon_Slayers",
-        "hakushinID": 14302,
-        "id": 14302
+        "id": 14302,
+        "imgId": "UI_EquipIcon_Catalyst_Pulpfic"
     },
     "TravelersHandySword": {
         "name": "Traveler's Handy Sword",
@@ -7812,9 +7740,8 @@ export default {
                 "5": 2
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Traveler%27s_Handy_Sword",
-        "hakushinID": 11303,
-        "id": 11303
+        "id": 11303,
+        "imgId": "UI_EquipIcon_Sword_Traveler"
     },
     "TwinNephrite": {
         "name": "Twin Nephrite",
@@ -7850,9 +7777,8 @@ export default {
             ],
             "After opponent defeated (15s)"
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/Twin_Nephrite",
-        "hakushinID": 14305,
-        "id": 14305
+        "id": 14305,
+        "imgId": "UI_EquipIcon_Catalyst_Phoney"
     },
     "WhiteIronGreatsword": {
         "name": "White Iron Greatsword",
@@ -7877,9 +7803,8 @@ export default {
                 "5": 16
             }
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/White_Iron_Greatsword",
-        "hakushinID": 12303,
-        "id": 12303
+        "id": 12303,
+        "imgId": "UI_EquipIcon_Claymore_Tin"
     },
     "WhiteTassel": {
         "name": "White Tassel",
@@ -7911,9 +7836,8 @@ export default {
                 "@0"
             ]
         ],
-        "linkFandom": "https:\/\/genshin-impact.fandom.com\/wiki\/White_Tassel",
-        "hakushinID": 13301,
-        "id": 13301
+        "id": 13301,
+        "imgId": "UI_EquipIcon_Pole_Ruby"
     },
     "IronPoint": {
         "name": "Iron Point",
