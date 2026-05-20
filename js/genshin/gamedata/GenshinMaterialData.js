@@ -2274,6 +2274,27 @@ export default {
         "type": "MATERIAL_AVATAR_MATERIAL",
         "icon": "UI_ItemIcon_113086"
     },
+    "CounterfeitResin": {
+        "id": 113087,
+        "name": "Counterfeit Resin",
+        "rarity": 5,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_113087"
+    },
+    "TwistedWitheredBranch": {
+        "id": 113088,
+        "name": "Twisted Withered Branch",
+        "rarity": 5,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_113088"
+    },
+    "ProfanedSprout": {
+        "id": 113089,
+        "name": "Profaned Sprout",
+        "rarity": 5,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_113089"
+    },
     "TileOfDecarabiansTower": {
         "id": 114001,
         "name": "Tile of Decarabian's Tower",
@@ -3044,6 +3065,796 @@ export default {
         "type": "MATERIAL_AVATAR_MATERIAL",
         "icon": "UI_ItemIcon_200128"
     },
+    "CharacterEXP": {
+        "id": 101,
+        "name": "Character EXP",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_101"
+    },
+    "AdventureEXP": {
+        "id": 102,
+        "name": "Adventure EXP",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_102"
+    },
+    "Stardust": {
+        "id": 103,
+        "name": "Stardust",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_103"
+    },
+    "Starglitter": {
+        "id": 104,
+        "name": "Starglitter",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_104"
+    },
+    "CompanionshipEXP": {
+        "id": 105,
+        "name": "Companionship EXP",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_105"
+    },
+    "OriginalResin": {
+        "id": 106,
+        "name": "Original Resin",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_106"
+    },
+    "StoryKey": {
+        "id": 107,
+        "name": "Story Key",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_107"
+    },
+    "FadingStarsMight": {
+        "id": 109,
+        "name": "Fading Star's Might",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_109"
+    },
+    "FadingStarsEssence": {
+        "id": 110,
+        "name": "Fading Star's Essence",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_110"
+    },
+    "GlimmeringEssence": {
+        "id": 111,
+        "name": "Glimmering Essence",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_111"
+    },
+    "WarmEssence": {
+        "id": 112,
+        "name": "Warm Essence",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_112"
+    },
+    "MiraculousEssence": {
+        "id": 113,
+        "name": "Miraculous Essence",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_113"
+    },
+    "PeaceTalisman": {
+        "id": 115,
+        "name": "Peace Talisman",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_200005"
+    },
+    "VeneficusSigil": {
+        "id": 117,
+        "name": "Veneficus Sigil",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_117"
+    },
+    "FestiveTourTicket": {
+        "id": 118,
+        "name": "Festive Tour Ticket",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_118"
+    },
+    "PeculiarCollabCoupon": {
+        "id": 119,
+        "name": "Peculiar Collab Coupon",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_119"
+    },
+    "HeartOfTheSpring": {
+        "id": 120,
+        "name": "Heart of the Spring",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_120"
+    },
+    "Trust": {
+        "id": 121,
+        "name": "Trust",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_121"
+    },
+    "FracturedFruitData": {
+        "id": 122,
+        "name": "Fractured Fruit Data",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_122"
+    },
+    "WindtraceCoins": {
+        "id": 123,
+        "name": "Windtrace Coins",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_123"
+    },
+    "ShinyFlotsam": {
+        "id": 124,
+        "name": "Shiny Flotsam",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_124"
+    },
+    "MiniHarpastum": {
+        "id": 125,
+        "name": "Mini \"Harpastum\"",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_125"
+    },
+    "EnigmaGear": {
+        "id": 126,
+        "name": "Enigma Gear",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_126"
+    },
+    "ThunderPellet": {
+        "id": 127,
+        "name": "Thunder Pellet",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_127"
+    },
+    "ThunderCrystal": {
+        "id": 128,
+        "name": "Thunder Crystal",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_128"
+    },
+    "MechanicusMasteryEXP": {
+        "id": 129,
+        "name": "Mechanicus Mastery EXP",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_117"
+    },
+    "WondrousTalisman": {
+        "id": 130,
+        "name": "Wondrous Talisman",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_200005"
+    },
+    "MoonchaseFestivalFestiveFever": {
+        "id": 131,
+        "name": "Moonchase Festival Festive Fever",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_131"
+    },
+    "BatteredShikifuda": {
+        "id": 132,
+        "name": "Battered Shikifuda",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_132"
+    },
+    "DamagedReplica": {
+        "id": 133,
+        "name": "Damaged Replica",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_133"
+    },
+    "AgedToken": {
+        "id": 134,
+        "name": "Aged Token",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_134"
+    },
+    "SnowstriderSeal": {
+        "id": 135,
+        "name": "Snowstrider Seal",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_135"
+    },
+    "VanquishersEmblem": {
+        "id": 136,
+        "name": "Vanquisher's Emblem",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_136"
+    },
+    "AffluenceTalisman": {
+        "id": 137,
+        "name": "Affluence Talisman",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_137"
+    },
+    "ImmaculateTalisman": {
+        "id": 138,
+        "name": "Immaculate Talisman",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_138"
+    },
+    "ConquestTalisman": {
+        "id": 139,
+        "name": "Conquest Talisman",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_139"
+    },
+    "MoonlitCragstone": {
+        "id": 140,
+        "name": "Moonlit Cragstone",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_140"
+    },
+    "IridescentFlotsam": {
+        "id": 141,
+        "name": "Iridescent Flotsam",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_141"
+    },
+    "StratagemShard": {
+        "id": 142,
+        "name": "Stratagem Shard",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_RogueDiary_Icon_JuNeiDaiBi"
+    },
+    "CreativeNote": {
+        "id": 143,
+        "name": "Creative Note",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_143"
+    },
+    "WhimsicalDraft": {
+        "id": 144,
+        "name": "Whimsical Draft",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_144"
+    },
+    "PlayerEXP": {
+        "id": 146,
+        "name": "Player EXP",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_GcgIcon_CardExperience"
+    },
+    "BusinessEarnings": {
+        "id": 148,
+        "name": "Business Earnings",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_148"
+    },
+    "UsableFunds": {
+        "id": 149,
+        "name": "Usable Funds",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_149"
+    },
+    "StrategicInspiration": {
+        "id": 150,
+        "name": "Strategic Inspiration",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_150"
+    },
+    "MushroomCurrency": {
+        "id": 151,
+        "name": "Mushroom Currency",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_151"
+    },
+    "FungusMedal": {
+        "id": 152,
+        "name": "Fungus Medal",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_152"
+    },
+    "ShatteredPhenocryst": {
+        "id": 153,
+        "name": "Shattered Phenocryst",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_153"
+    },
+    "CourageTestTicket": {
+        "id": 155,
+        "name": "Courage Test Ticket",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_155"
+    },
+    "FloralCoupon": {
+        "id": 157,
+        "name": "Floral Coupon",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_119"
+    },
+    "GalaExcitement": {
+        "id": 158,
+        "name": "Gala Excitement",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_158"
+    },
+    "FestiveTicket": {
+        "id": 159,
+        "name": "Festive Ticket",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_118"
+    },
+    "InvokationCoupons": {
+        "id": 160,
+        "name": "Invokation Coupons",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_160"
+    },
+    "JoyeuxVoucher": {
+        "id": 161,
+        "name": "Joyeux Voucher",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_161"
+    },
+    "FascinatingPhenocryst": {
+        "id": 162,
+        "name": "Fascinating Phenocryst",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_162"
+    },
+    "EnigmaticCopperMainspring": {
+        "id": 163,
+        "name": "Enigmatic Copper Mainspring",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_163"
+    },
+    "PoetryGalaFervor": {
+        "id": 164,
+        "name": "Poetry Gala Fervor",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_164"
+    },
+    "ThelxiesBadge": {
+        "id": 166,
+        "name": "Thelxie's Badge",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_166"
+    },
+    "TheaterTickets": {
+        "id": 167,
+        "name": "Theater Tickets",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_167"
+    },
+    "FilmForFun": {
+        "id": 170,
+        "name": "Film for Fun",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_170"
+    },
+    "IridescenceTourTickets": {
+        "id": 172,
+        "name": "Iridescence Tour Tickets",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_172"
+    },
+    "AnalysisProgress": {
+        "id": 173,
+        "name": "Analysis Progress",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_173"
+    },
+    "ExcerptsOfBliss": {
+        "id": 174,
+        "name": "Excerpts of Bliss",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_174"
+    },
+    "KeyOfEchoes": {
+        "id": 175,
+        "name": "Key of Echoes",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_175"
+    },
+    "StarsailCoin": {
+        "id": 176,
+        "name": "Starsail Coin",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_176"
+    },
+    "ColorfulContemplation": {
+        "id": 177,
+        "name": "Colorful Contemplation",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_177"
+    },
+    "FestiveFervor": {
+        "id": 178,
+        "name": "Festive Fervor",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_178"
+    },
+    "IncenseAshcrystals": {
+        "id": 179,
+        "name": "Incense Ashcrystals",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_179"
+    },
+    "FestiveFever": {
+        "id": 180,
+        "name": "Festive Fever",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_180"
+    },
+    "FestivalStamp": {
+        "id": 181,
+        "name": "Festival Stamp",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_181"
+    },
+    "SmileySnacks": {
+        "id": 182,
+        "name": "Smiley Snacks",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_182"
+    },
+    "Funds": {
+        "id": 183,
+        "name": "Funds",
+        "rarity": 1,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_171"
+    },
+    "ActionPoints": {
+        "id": 184,
+        "name": "Action Points",
+        "rarity": 1,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_184"
+    },
+    "SpeculativeRecords": {
+        "id": 185,
+        "name": "Speculative Records",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_185"
+    },
+    "SunspraySpirit": {
+        "id": 186,
+        "name": "Sunspray Spirit",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_186"
+    },
+    "LegionMorale": {
+        "id": 187,
+        "name": "Legion Morale",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_187"
+    },
+    "PrepProgress": {
+        "id": 188,
+        "name": "Prep Progress",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_188"
+    },
+    "BlazingSpirit": {
+        "id": 189,
+        "name": "Blazing Spirit",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_189"
+    },
+    "FortuneCoin": {
+        "id": 190,
+        "name": "Fortune Coin",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_190"
+    },
+    "WindscapeSplendor": {
+        "id": 191,
+        "name": "Windscape Splendor",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_191"
+    },
+    "SightseeingExperience": {
+        "id": 192,
+        "name": "Sightseeing Experience",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON"
+    },
+    "TreasuredInsights": {
+        "id": 193,
+        "name": "Treasured Insights",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_193"
+    },
+    "JointExhibitionPopularity": {
+        "id": 194,
+        "name": "Joint Exhibition Popularity",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_194"
+    },
+    "PalsSynergy": {
+        "id": 195,
+        "name": "Pals Synergy",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_195"
+    },
+    "GenesisCrystal": {
+        "id": 203,
+        "name": "Genesis Crystal",
+        "rarity": 5,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_203"
+    },
+    "RealmCurrency": {
+        "id": 204,
+        "name": "Realm Currency",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_204"
+    },
+    "": {
+        "id": 205,
+        "name": "???",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_GcgIcon_CardCurrency"
+    },
+    "ToyMedal": {
+        "id": 206,
+        "name": "Toy Medal",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_206"
+    },
+    "RepertoireCoins": {
+        "id": 207,
+        "name": "Repertoire Coins",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_207"
+    },
+    "ChronalNexus": {
+        "id": 231,
+        "name": "Chronal Nexus",
+        "rarity": 5,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_231"
+    },
+    "ArcaneKeystone": {
+        "id": 232,
+        "name": "Arcane Keystone",
+        "rarity": 5,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_232"
+    },
+    "GeodeOfReplication": {
+        "id": 233,
+        "name": "Geode of Replication",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_233"
+    },
+    "EngravedShard": {
+        "id": 234,
+        "name": "Engraved Shard",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_234"
+    },
+    "FestiveKey": {
+        "id": 235,
+        "name": "Festive Key",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_235"
+    },
+    "LuminousKeystone": {
+        "id": 236,
+        "name": "Luminous Keystone",
+        "rarity": 5,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_236"
+    },
+    "WonderlandEXP": {
+        "id": 238,
+        "name": "Wonderland EXP",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_238"
+    },
+    "PrismaticCrystal": {
+        "id": 243,
+        "name": "Prismatic Crystal",
+        "rarity": 5,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_241"
+    },
+    "InazumaReputationEXP": {
+        "id": 314,
+        "name": "Inazuma Reputation EXP",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_314"
+    },
+    "MondstadtReputationEXP": {
+        "id": 315,
+        "name": "Mondstadt Reputation EXP",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_315"
+    },
+    "SumeruReputationEXP": {
+        "id": 316,
+        "name": "Sumeru Reputation EXP",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_316"
+    },
+    "LiyueReputationEXP": {
+        "id": 317,
+        "name": "Liyue Reputation EXP",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_317"
+    },
+    "FontaineReputationEXP": {
+        "id": 318,
+        "name": "Fontaine Reputation EXP",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_318"
+    },
+    "ScionsOfTheCanopyReputationEXP": {
+        "id": 319,
+        "name": "\"Scions of the Canopy\" Reputation EXP",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_319"
+    },
+    "PeopleOfTheSpringsReputationEXP": {
+        "id": 320,
+        "name": "\"People of the Springs\" Reputation EXP",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_320"
+    },
+    "ChildrenOfEchoesReputationEXP": {
+        "id": 321,
+        "name": "\"Children of Echoes\" Reputation EXP",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_321"
+    },
+    "FlowerFeatherClanReputationEXP": {
+        "id": 322,
+        "name": "\"Flower-Feather Clan\" Reputation EXP",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_322"
+    },
+    "MastersOfTheNightWindReputationEXP": {
+        "id": 323,
+        "name": "\"Masters of the Night-Wind\" Reputation EXP",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_323"
+    },
+    "CollectiveOfPlentyReputationEXP": {
+        "id": 324,
+        "name": "\"Collective of Plenty\" Reputation EXP",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_324"
+    },
+    "NorthlanderSword": {
+        "id": 101106,
+        "name": "Northlander Sword",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_101101"
+    },
+    "NorthlanderBow": {
+        "id": 101107,
+        "name": "Northlander Bow",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_101102"
+    },
+    "NorthlanderClaymore": {
+        "id": 101108,
+        "name": "Northlander Claymore",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_101103"
+    },
+    "NorthlanderCatalyst": {
+        "id": 101109,
+        "name": "Northlander Catalyst",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_101104"
+    },
+    "NorthlanderPolearm": {
+        "id": 101110,
+        "name": "Northlander Polearm",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_101105"
+    },
     "MasterlessStarglitter": {
         "id": 221,
         "name": "Masterless Starglitter",
@@ -3322,6 +4133,12 @@ export default {
         "type": "MATERIAL_CONSUME",
         "icon": "UI_ItemIcon_107031"
     },
+    "MnemonicCluster": {
+        "id": 107033,
+        "name": "Mnemonic Cluster",
+        "rarity": 1,
+        "type": "MATERIAL_CONSUME"
+    },
     "SkillCluster": {
         "id": 107033,
         "name": "Skill Cluster",
@@ -3499,7 +4316,7 @@ export default {
     "YellowObsidianFragment": {
         "id": 120858,
         "name": "Yellow Obsidian Fragment",
-        "rarity": 4,
+        "rarity": 1,
         "type": "MATERIAL_CONSUME",
         "icon": "UI_ItemIcon_120858"
     },
@@ -3520,7 +4337,7 @@ export default {
     "GreenObsidianFragment": {
         "id": 120912,
         "name": "Green Obsidian Fragment",
-        "rarity": 4,
+        "rarity": 1,
         "type": "MATERIAL_CONSUME",
         "icon": "UI_ItemIcon_120912"
     },
@@ -3534,7 +4351,7 @@ export default {
     "AzureObsidianFragment": {
         "id": 120914,
         "name": "Azure Obsidian Fragment",
-        "rarity": 4,
+        "rarity": 1,
         "type": "MATERIAL_CONSUME",
         "icon": "UI_ItemIcon_120914"
     },
@@ -3555,7 +4372,7 @@ export default {
     "PurpleObsidianFragment": {
         "id": 121103,
         "name": "Purple Obsidian Fragment",
-        "rarity": 4,
+        "rarity": 1,
         "type": "MATERIAL_CONSUME",
         "icon": "UI_ItemIcon_121103"
     },
@@ -3569,7 +4386,7 @@ export default {
     "CrimsonObsidianFragment": {
         "id": 121105,
         "name": "Crimson Obsidian Fragment",
-        "rarity": 4,
+        "rarity": 1,
         "type": "MATERIAL_CONSUME",
         "icon": "UI_ItemIcon_121105"
     },
@@ -3583,7 +4400,7 @@ export default {
     "SunsetBlueObsidianFragment": {
         "id": 121107,
         "name": "Sunset-Blue Obsidian Fragment",
-        "rarity": 4,
+        "rarity": 1,
         "type": "MATERIAL_CONSUME",
         "icon": "UI_ItemIcon_121107"
     },
@@ -3631,7 +4448,7 @@ export default {
     },
     "SegmentDomainControlModuleZeroParticle": {
         "id": 121602,
-        "name": "Segment Domain Control Module: Zero Particle",
+        "name": "Segment-Domain Control Module: Zero Particle",
         "rarity": 4,
         "type": "MATERIAL_CONSUME",
         "icon": "UI_ItemIcon_121602"
@@ -3805,14 +4622,14 @@ export default {
         "icon": "UI_ItemIcon_117005"
     },
     "DomainReliquaryTierII": {
-        "id": 117026,
+        "id": 117028,
         "name": "Domain Reliquary: Tier II",
         "rarity": 4,
         "type": "MATERIAL_CONSUME_BATCH_USE",
         "icon": "UI_ItemIcon_117002"
     },
     "DomainReliquaryTierI": {
-        "id": 117027,
+        "id": 117029,
         "name": "Domain Reliquary: Tier I",
         "rarity": 5,
         "type": "MATERIAL_CONSUME_BATCH_USE",
@@ -4945,6 +5762,13 @@ export default {
         "type": "MATERIAL_EXCHANGE",
         "icon": "UI_ItemIcon_101271"
     },
+    "WindrestFlower": {
+        "id": 101271,
+        "name": "Windrest Flower",
+        "rarity": 1,
+        "type": "MATERIAL_EXCHANGE",
+        "icon": "UI_ItemIcon_101271"
+    },
     "EtherwingMoth": {
         "id": 101272,
         "name": "Etherwing Moth",
@@ -5511,6 +6335,48 @@ export default {
         "rarity": 5,
         "type": "MATERIAL_FIRE_MASTER_AVATAR_TALENT_ITEM",
         "icon": "UI_ItemIcon_918"
+    },
+    "Unadorned": {
+        "id": 121528,
+        "name": "Unadorned",
+        "rarity": 4,
+        "type": "MATERIAL_NATURALIST_CODEX",
+        "icon": "UI_ItemIcon_121528"
+    },
+    "BadgeNocturnalBlossom": {
+        "id": 121529,
+        "name": "Badge: Nocturnal Blossom",
+        "rarity": 4,
+        "type": "MATERIAL_NATURALIST_CODEX",
+        "icon": "UI_ItemIcon_121529"
+    },
+    "BadgeRainbowdropCrystal": {
+        "id": 121530,
+        "name": "Badge: Rainbowdrop Crystal",
+        "rarity": 4,
+        "type": "MATERIAL_NATURALIST_CODEX",
+        "icon": "UI_ItemIcon_121530"
+    },
+    "BadgeCapybara": {
+        "id": 121531,
+        "name": "Badge: Capybara",
+        "rarity": 4,
+        "type": "MATERIAL_NATURALIST_CODEX",
+        "icon": "UI_ItemIcon_121531"
+    },
+    "CompanionExclusive": {
+        "id": 121532,
+        "name": "Companion: Exclusive",
+        "rarity": 4,
+        "type": "MATERIAL_NATURALIST_CODEX",
+        "icon": "UI_ItemIcon_121532"
+    },
+    "CompanionShared": {
+        "id": 121533,
+        "name": "Companion: Shared",
+        "rarity": 4,
+        "type": "MATERIAL_NATURALIST_CODEX",
+        "icon": "UI_ItemIcon_121533"
     },
     "MasterlessStellaFortuna": {
         "id": 104300,

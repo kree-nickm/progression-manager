@@ -370,6 +370,14 @@ export default {
                 "Madman's Restraint",
                 "Elixir of the Heretic"
             ]
+        },
+        {
+            "boss": "Il Dottore",
+            "loot": [
+                "Profaned Sprout",
+                "Twisted Withered Branch",
+                "Counterfeit Resin"
+            ]
         }
     ],
     "boss": {

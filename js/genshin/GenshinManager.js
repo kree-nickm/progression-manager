@@ -45,6 +45,7 @@ export default class GenshinManager extends DataManager
     this.elements['loadModal'] = document.getElementById("loadModal");
     this.elements['loadError'] = document.getElementById("loadError");
     
+    // Order matters. E.g. characters and weapons depend on materials, so MaterialList must be first.
     this.registerList(MaterialList);
     this.registerList(CharacterList);
     this.registerList(WeaponList);
@@ -89,7 +90,7 @@ export default class GenshinManager extends DataManager
     }
     
     let hasData = false;
-    if(goodData.materials)
+    if(Object.entries(goodData.materials??{}).length)
     {
       try
       {
@@ -101,7 +102,7 @@ export default class GenshinManager extends DataManager
         this.errors = true;
       }
     }
-    if(goodData.characters)
+    if(goodData.characters?.length)
     {
       try
       {
@@ -113,7 +114,7 @@ export default class GenshinManager extends DataManager
         this.errors = true;
       }
     }
-    if(goodData.weapons)
+    if(goodData.weapons?.length)
     {
       try
       {
@@ -125,7 +126,7 @@ export default class GenshinManager extends DataManager
         this.errors = true;
       }
     }
-    if(goodData.artifacts)
+    if(goodData.artifacts?.length)
     {
       try
       {
@@ -138,7 +139,7 @@ export default class GenshinManager extends DataManager
         this.errors = true;
       }
     }
-    if(goodData.teams)
+    if(goodData.teams?.length)
     {
       try
       {
@@ -150,7 +151,7 @@ export default class GenshinManager extends DataManager
         this.errors = true;
       }
     }
-    if(goodData.furniture)
+    if(goodData.furniture?.length)
     {
       try
       {
@@ -162,7 +163,7 @@ export default class GenshinManager extends DataManager
         this.errors = true;
       }
     }
-    if(goodData.furnitureSets)
+    if(goodData.furnitureSets?.length)
     {
       try
       {

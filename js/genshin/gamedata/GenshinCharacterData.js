@@ -1872,6 +1872,26 @@ export default {
         "region": "Mondstadt",
         "version": "1.0"
     },
+    "Lohen": {
+        "id": 10000129,
+        "name": "Lohen",
+        "element": "Cryo",
+        "weapon": "Polearm",
+        "rarity": 5,
+        "ascendStat": "critDMG_",
+        "imgId": "UI_AvatarIcon_Lohen",
+        "matFlower": "Etherwing Moth",
+        "matTrounce": "Ascended Sample: Knight",
+        "matBoss": "Moongecko",
+        "matEnemy": "Hili.Archers",
+        "matMastery": "Resistance",
+        "atkBase": 27,
+        "atkMaxAsc": 108.04699999999997,
+        "hpBase": 1001,
+        "hpMaxAsc": 4110.260999999999,
+        "defBase": 61,
+        "defMaxAsc": 250.92099999999994
+    },
     "Lynette": {
         "name": "Lynette",
         "weapon": "Sword",
@@ -2172,6 +2192,26 @@ export default {
         "region": "Fontaine",
         "version": "4.1"
     },
+    "Nicole": {
+        "id": 10000131,
+        "name": "Nicole",
+        "element": "Pyro",
+        "weapon": "Catalyst",
+        "rarity": 5,
+        "ascendStat": "atk_",
+        "imgId": "UI_AvatarIcon_Nicole",
+        "matFlower": "Pine Amber",
+        "matTrounce": "Counterfeit Resin",
+        "matBoss": "Whisperer",
+        "matEnemy": "Oprichniki",
+        "matMastery": "Elysium",
+        "atkBase": 27,
+        "atkMaxAsc": 106.04699999999997,
+        "hpBase": 810,
+        "hpMaxAsc": 3330.409999999999,
+        "defBase": 44,
+        "defMaxAsc": 178.48399999999998
+    },
     "Nilou": {
         "name": "Nilou",
         "weapon": "Sword",
@@ -2291,6 +2331,26 @@ export default {
         "coopImgId": "UI_CoopImg_Olorun",
         "region": "Natlan",
         "version": "5.2"
+    },
+    "Prune": {
+        "id": 10000132,
+        "name": "Prune",
+        "element": "Anemo",
+        "weapon": "Catalyst",
+        "rarity": 4,
+        "ascendStat": "atk_",
+        "imgId": "UI_AvatarIcon_Prune",
+        "matFlower": "Winter Icelea",
+        "matTrounce": "Mask of the Virtuous Doctor",
+        "matBoss": "Herra",
+        "matEnemy": "T.Hoarders",
+        "matMastery": "Resistance",
+        "atkBase": 19,
+        "atkMaxAsc": 62.369,
+        "hpBase": 811,
+        "hpMaxAsc": 2907.9610000000002,
+        "defBase": 49,
+        "defMaxAsc": 170.899
     },
     "Qiqi": {
         "name": "Qiqi",
@@ -2741,6 +2801,14 @@ export default {
         "coopImgId": "UI_CoopImg_Tighnari",
         "region": "Sumeru",
         "version": "3.0"
+    },
+    "Traveler": {
+        "id": "10000005_ANEMO",
+        "name": "Traveler",
+        "element": "Pyro",
+        "weapon": "Sword",
+        "rarity": 5,
+        "ascendStat": "atk_"
     },
     "TravelerAnemo": {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Traveler_Icon.png",

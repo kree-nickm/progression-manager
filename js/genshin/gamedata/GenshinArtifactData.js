@@ -2185,5 +2185,33 @@ export default {
         "plumeImg": "https:\/\/api.hakush.in\/gi\/UI\/UI_RelicIcon_15044_2.webp",
         "flower": "Windborne Flower's Spruchdichtung",
         "flowerImg": "https:\/\/api.hakush.in\/gi\/UI\/UI_RelicIcon_15044_4.webp"
+    },
+    "CelestialGift": {
+        "id": 15045,
+        "icon": "UI_RelicIcon_15045_4",
+        "name": "Celestial Gift",
+        "bonus2": "Energy Recharge +20%.",
+        "bonus4": "If the equipping character has completed Witch's Homework, after they use an Elemental Skill, they also gain \"Light's Guidance\" for 20s: All nearby party members gain a 20% Elemental DMG Bonus corresponding to the equipping character's Elemental Type. The equipping character can trigger this effect while off-field. DMG Bonuses provided by Artifact Sets with the same name do not stack.\n· When your party has the Hexerei: Secret Rite effect, Light's Guidance is upgraded to \"Mortal Hymn\": All nearby party members gain a 40% Elemental DMG Bonus corresponding to both the equipping character and the current active party member's Elemental Type instead. If both characters have the same Elemental Type, these bonuses will not stack.",
+        "maxRarity": 5,
+        "release": "May 19, 2026",
+        "circlet": "Heavensent Crown",
+        "goblet": "Heavensent Reward",
+        "sands": "Heavensent Decree",
+        "plume": "Heavensent Demise",
+        "flower": "Heavensent Fragrance",
+    },
+    "DisenchantmentInDeepShadow": {
+        "id": 15046,
+        "icon": "UI_RelicIcon_15046_4",
+        "name": "Disenchantment in Deep Shadow",
+        "bonus2": "ATK +18%.",
+        "bonus4": "Increases Superconduct Reaction DMG by 80%. When the wielder attacks opponents affected by Superconduct, this attack's CRIT Rate is increased by 16%. An all-new blessing may be obtained as you make your way toward Snezhnaya...",
+        "maxRarity": 5,
+        "release": "May 19, 2026",
+        "circlet": "Pendulum That Ceased Amidst a Great Fall",
+        "goblet": "Ovations That Ceased Upon Festivity",
+        "sands": "Moment That Ceased Upon Waking From Grand Dreams",
+        "plume": "Sharpness That Ceased Upon Wondrous Creation",
+        "flower": "Iridescence That Ceased Amidst Glory",
     }
 };
