@@ -2472,6 +2472,26 @@ export default {
         "region": "Mondstadt",
         "version": "1.4"
     },
+    "Sandrone": {
+        "id": 10000133,
+        "name": "Sandrone",
+        "element": "Cryo",
+        "weapon": "Claymore",
+        "rarity": 5,
+        "ascendStat": "critRate_",
+        "imgId": "UI_AvatarIcon_MarionetteNew",
+        "matFlower": "Subdetection Unit",
+        "matTrounce": "Madman's Restraint",
+        "matBoss": "Watcher",
+        "matEnemy": "Landcruiser",
+        "matMastery": "Vagrancy",
+        "atkBase": 27,
+        "atkMaxAsc": 106.04699999999997,
+        "hpBase": 1030,
+        "hpMaxAsc": 4224.83,
+        "defBase": 59,
+        "defMaxAsc": 236.399
+    },
     "SangonomiyaKokomi": {
         "name": "Sangonomiya Kokomi",
         "weapon": "Catalyst",

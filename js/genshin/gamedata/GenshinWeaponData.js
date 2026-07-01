@@ -1,4 +1,12 @@
 export default {
+    "ATeaspoonOfTranscendence": {
+        "id": 12516,
+        "name": "A Teaspoon of Transcendence",
+        "imgId": "UI_EquipIcon_Claymore_CrystallineSword",
+        "type": "Claymore",
+        "rarity": 5,
+        "stat": "critDMG_"
+    },
     "AThousandBlazingSuns": {
         "name": "A Thousand Blazing Suns",
         "rarity": 5,
@@ -163,6 +171,18 @@ export default {
         ],
         "id": 15502,
         "imgId": "UI_EquipIcon_Bow_Amos"
+    },
+    "AngelosHeptades": {
+        "id": 14523,
+        "name": "Angelos' Heptades",
+        "imgId": "UI_EquipIcon_Catalyst_FairyGarden",
+        "type": "Catalyst",
+        "rarity": 5,
+        "stat": "atk_",
+        "matForgery": "Device",
+        "matStrongEnemy": "Keeper",
+        "matWeakEnemy": "Landcruiser",
+        "baseATK": 49
     },
     "AquaSimulacra": {
         "name": "Aqua Simulacra",
@@ -635,6 +655,14 @@ export default {
         "matWeakEnemy": "Hili.Archers",
         "matStrongEnemy": "Big Hilichurls",
         "matForgery": "Tile"
+    },
+    "DisasterAndRemorse": {
+        "id": 13517,
+        "name": "Disaster and Remorse",
+        "imgId": "UI_EquipIcon_Pole_Carbine",
+        "type": "Polearm",
+        "rarity": 5,
+        "stat": "critRate_"
     },
     "ElegyForTheEnd": {
         "name": "Elegy for the End",
@@ -1576,7 +1604,7 @@ export default {
             }
         ],
         "id": 11505,
-        "imgId": "UI_EquipIcon_Sword_Blunt"
+        "imgId": "UI_EquipIcon_Sword_Morax"
     },
     "PrimordialJadeGreatsword": {
         "id": 12505,

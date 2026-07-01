@@ -38,6 +38,7 @@ export default class GenshinManager extends DataManager
   
   lastDay = DateTime.now().setZone("UTC-9").weekdayLong;
   buildData = {};//GenshinBuilds;
+  resourceURL = `https://genshin-cdn.chaingunned.org`;
   
   constructor()
   {

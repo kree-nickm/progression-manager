@@ -1,0 +1,366 @@
+export default {
+    "talents": {
+        "Normal Attack": {
+            "name": "Formule Phenomenale: Self-Evident Proposition",
+            "icon": "Skill_A_04",
+            "text": "<color=#FFD780FF>Normal Attack<\/color>\\nGenerates threads that control her weapon using formulae, performing up to 3 consecutive strikes.\\n\\n<color=#FFD780FF>Charged Attack<\/color>\\nSummons the Facilitatrice Automatisee Generaliste Interactive et Omnitache, or \"<color=#FFD780FF>Fagio<\/color>,\" and switches it to <color=#FFD780FF>{LINK#N11330001}Decoding{\/LINK}<\/color> mode: Unleashes a sweeping fire attack on enemies in front, as well as periodically fires condensed beams, dealing <color=#99FFFFFF>AoE Cryo DMG<\/color>.\\n<color=#FFD780FF>Radiance: Stellar-Conduct<\/color>: The condensed beams will instead deal <color=#99FFFFFF>AoE Cryo DMG<\/color> that is considered Stellar-Conduct DMG.\\nWhile in <color=#FFD780FF>Decoding<\/color> mode, Fagio's <color=#FFD780FF>{LINK#N11330002}Decoding Power{\/LINK}<\/color> will continuously increase. Firing condensed beams will also further increase its Decoding Power.\\nWhen Fagio's Decoding Power reaches the maximum of 100 points, it switches to <color=#FFD780FF>Power Overdrive<\/color> mode, in which it fires at opponents with longer intervals, dealing <color=#99FFFFFF>Cryo DMG<\/color>. It will be unable to switch to Decoding mode at this time.\\nWhen not in <color=#FFD780FF>Decoding<\/color> mode, Fagio's <color=#FFD780FF>Decoding Power<\/color> gradually decreases. When Sandrone is off-field, she will focus on maintaining Fagio, causing its Decoding Power to decrease at 300% the original rate.\\nFagio exits <color=#FFD780FF>Power Overdrive<\/color> mode when its <color=#FFD780FF>Decoding Power<\/color> has decreased to under 50.\\n\\n<color=#FFD780FF>Plunging Attack<\/color>\\nPlunges from midair to strike the ground below, dealing DMG to opponents along their path and causing AoE DMG on landing.",
+            "scaling": {
+                "1-Hit DMG": [
+                    "76.29%",
+                    "82.5%",
+                    "88.7%",
+                    "97.58%",
+                    "103.78%",
+                    "110.88%",
+                    "120.64%",
+                    "130.4%",
+                    "140.15%",
+                    "150.8%",
+                    "161.44%",
+                    "172.09%",
+                    "182.73%",
+                    "193.38%",
+                    "204.02%"
+                ],
+                "2-Hit DMG": [
+                    "67.2%",
+                    "72.67%",
+                    "78.14%",
+                    "85.95%",
+                    "91.42%",
+                    "97.67%",
+                    "106.26%",
+                    "114.86%",
+                    "123.45%",
+                    "132.83%",
+                    "142.21%",
+                    "151.58%",
+                    "160.96%",
+                    "170.34%",
+                    "179.71%"
+                ],
+                "3-Hit DMG": [
+                    "102.8%",
+                    "111.17%",
+                    "119.54%",
+                    "131.49%",
+                    "139.86%",
+                    "149.42%",
+                    "162.57%",
+                    "175.72%",
+                    "188.87%",
+                    "203.22%",
+                    "217.56%",
+                    "231.91%",
+                    "246.25%",
+                    "260.6%",
+                    "274.94%"
+                ],
+                "Charged Attack Sweeping Fire DMG": [
+                    "43%",
+                    "46.5%",
+                    "50%",
+                    "55%",
+                    "58.5%",
+                    "62.5%",
+                    "68%",
+                    "73.5%",
+                    "79%",
+                    "85%",
+                    "91%",
+                    "97%",
+                    "103%",
+                    "109%",
+                    "115%"
+                ],
+                "Charged Attack Condensed Beam DMG": [
+                    "122.55%",
+                    "132.53%",
+                    "142.5%",
+                    "156.75%",
+                    "166.73%",
+                    "178.12%",
+                    "193.8%",
+                    "209.47%",
+                    "225.15%",
+                    "242.25%",
+                    "259.35%",
+                    "276.45%",
+                    "293.55%",
+                    "310.65%",
+                    "327.75%"
+                ],
+                "Charged Attack Condensed Beam Stellar-Conduct DMG": [
+                    "81.7%",
+                    "88.35%",
+                    "95%",
+                    "104.5%",
+                    "111.15%",
+                    "118.75%",
+                    "129.2%",
+                    "139.65%",
+                    "150.1%",
+                    "161.5%",
+                    "172.9%",
+                    "184.3%",
+                    "195.7%",
+                    "207.1%",
+                    "218.5%"
+                ],
+                "DMG When in Power Overdrive": [
+                    "43%",
+                    "46.5%",
+                    "50%",
+                    "55%",
+                    "58.5%",
+                    "62.5%",
+                    "68%",
+                    "73.5%",
+                    "79%",
+                    "85%",
+                    "91%",
+                    "97%",
+                    "103%",
+                    "109%",
+                    "115%"
+                ],
+                "Plunge DMG": [
+                    "74.59%",
+                    "80.66%",
+                    "86.73%",
+                    "95.4%",
+                    "101.47%",
+                    "108.41%",
+                    "117.95%",
+                    "127.49%",
+                    "137.03%",
+                    "147.44%",
+                    "157.85%",
+                    "168.26%",
+                    "178.66%",
+                    "189.07%",
+                    "199.48%"
+                ],
+                "Low\/High Plunge DMG": [
+                    "149.14%\/186.29%",
+                    "161.28%\/201.45%",
+                    "173.42%\/216.62%",
+                    "190.77%\/238.28%",
+                    "202.91%\/253.44%",
+                    "216.78%\/270.77%",
+                    "235.86%\/294.6%",
+                    "254.93%\/318.42%",
+                    "274.01%\/342.25%",
+                    "294.82%\/368.25%",
+                    "315.63%\/394.24%",
+                    "336.44%\/420.23%",
+                    "357.25%\/446.23%",
+                    "378.06%\/472.22%",
+                    "398.87%\/498.21%"
+                ]
+            }
+        },
+        "Elemental Skill": {
+            "name": "Formule Phenomenale: Differential Analysis",
+            "icon": "Skill_S_MarionetteNew_01",
+            "text": "With her impeccable, ladylike poise, Sandrone boards the <color=#FFD780FF>Tea Party Tactical Assault Hovermech<\/color> and hovers forward for 6s. During this time, Sandrone can control the travel direction of the craft. Pressing Sprint consumes 10 Stamina and launches her into an elegant high-speed hover mode, in which she will move even faster at the cost of 15 Stamina per second.\\n\\nWhen Sandrone starts hovering, if there are opponents nearby, she will also summon a Prismatic Resonance Cannon and fire 2 Prism Shots at any opponents who have yet to cool down, dealing <color=#99FFFFFF>Cryo DMG<\/color>.\\n<color=#FFD780FF>Radiance: Stellar-Conduct<\/color>: The second Prism Shot will instead deal <color=#99FFFFFF>Cryo DMG<\/color> that is considered Stellar-Conduct DMG.\\n\\nWhen on the Tea Party Tactical Assault Hovermech, Sandrone will also elegantly and quietly repair Fagio, causing <color=#FFD780FF>{LINK#N11330002}Decoding Power{\/LINK}<\/color> to swiftly decrease.\n\\n\\n<i>The turning of the gears in various machines, the precise point where the Primordial Sea freezes, the frequency at which the night songs gently drift in the air, the ancient laws of the tides' ebb and flow, and the rising and setting of the moon... All these can be brought under theorems reducible to clean, neat formulas.\\n\"Then it does us no harm to admit, as indeed we must, that our gods, our hopes, and the things we love \u2014 they can all be defined by reason.\"<\/i>",
+            "scaling": {
+                "Prism Shot DMG": [
+                    "32.4%",
+                    "34.83%",
+                    "37.26%",
+                    "40.5%",
+                    "42.93%",
+                    "45.36%",
+                    "48.6%",
+                    "51.84%",
+                    "55.08%",
+                    "58.32%",
+                    "61.56%",
+                    "64.8%",
+                    "68.85%",
+                    "72.9%",
+                    "76.95%"
+                ],
+                "Prism Shot Stellar-Conduct DMG": [
+                    "21.6%",
+                    "23.22%",
+                    "24.84%",
+                    "27%",
+                    "28.62%",
+                    "30.24%",
+                    "32.4%",
+                    "34.56%",
+                    "36.72%",
+                    "38.88%",
+                    "41.04%",
+                    "43.2%",
+                    "45.9%",
+                    "48.6%",
+                    "51.3%"
+                ],
+                "CD": [
+                    "4s",
+                    "4s",
+                    "4s",
+                    "4s",
+                    "4s",
+                    "4s",
+                    "4s",
+                    "4s",
+                    "4s",
+                    "4s",
+                    "4s",
+                    "4s",
+                    "4s",
+                    "4s",
+                    "4s"
+                ]
+            }
+        },
+        "Elemental Burst": {
+            "name": "Formule Phenomenale: Q.E.D.",
+            "icon": "Skill_E_MarionetteNew_01",
+            "text": "In line with established ladylike behavior, Sandrone summons a large number of Prismatic Resonance Cannons for a frontal bombardment before firing on her foes with a Convective Inhibition Ray, dealing <color=#99FFFFFF>AoE Cryo DMG<\/color>.\\n<color=#FFD780FF>Radiance: Stellar-Conduct<\/color>: The Convective Inhibition Ray instead deals <color=#99FFFFFF>AoE Cryo DMG<\/color> that is considered Stellar-Conduct DMG.\n\\n\\n<i>\"I can believe in something so long as solid evidence can be produced for it. If not, then I will have to first prove it.\"\\n\"This is how a proper lady carries herself. She who submits to the unknown out of weakness of will cannot be called such.\"<\/i>",
+            "scaling": {
+                "Bombardment DMG": [
+                    "88.22% \u00d73",
+                    "94.83% \u00d73",
+                    "101.45% \u00d73",
+                    "110.27% \u00d73",
+                    "116.89% \u00d73",
+                    "123.5% \u00d73",
+                    "132.32% \u00d73",
+                    "141.15% \u00d73",
+                    "149.97% \u00d73",
+                    "158.79% \u00d73",
+                    "167.61% \u00d73",
+                    "176.43% \u00d73",
+                    "187.46% \u00d73",
+                    "198.49% \u00d73",
+                    "209.51% \u00d73"
+                ],
+                "Convective Inhibition Ray DMG": [
+                    "330.8%",
+                    "355.61%",
+                    "380.42%",
+                    "413.5%",
+                    "438.31%",
+                    "463.12%",
+                    "496.2%",
+                    "529.28%",
+                    "562.36%",
+                    "595.44%",
+                    "628.52%",
+                    "661.6%",
+                    "702.95%",
+                    "744.3%",
+                    "785.65%"
+                ],
+                "Convective Inhibition Ray Stellar-Conduct DMG": [
+                    "220.53%",
+                    "237.07%",
+                    "253.61%",
+                    "275.67%",
+                    "292.21%",
+                    "308.75%",
+                    "330.8%",
+                    "352.85%",
+                    "374.91%",
+                    "396.96%",
+                    "419.01%",
+                    "441.07%",
+                    "468.63%",
+                    "496.2%",
+                    "523.77%"
+                ],
+                "CD": [
+                    "15s",
+                    "15s",
+                    "15s",
+                    "15s",
+                    "15s",
+                    "15s",
+                    "15s",
+                    "15s",
+                    "15s",
+                    "15s",
+                    "15s",
+                    "15s",
+                    "15s",
+                    "15s",
+                    "15s"
+                ],
+                "Energy Cost": [
+                    "60",
+                    "60",
+                    "60",
+                    "60",
+                    "60",
+                    "60",
+                    "60",
+                    "60",
+                    "60",
+                    "60",
+                    "60",
+                    "60",
+                    "60",
+                    "60",
+                    "60"
+                ]
+            }
+        },
+        "1st Ascension Passive": {
+            "name": "Archaic Calculation Engine",
+            "icon": "UI_Talent_S_MarionetteNew_05",
+            "text": "<color=#FFD780FF>Radiance: Stellar-Conduct<\/color>: When using the Elemental Skill {LINK#S11332}<color=#FFD780FF>Formule Phenomenale: Differential Analysis<\/color>{\/LINK}, if Fagio's <color=#FFD780FF>{LINK#N11330002}Decoding Power{\/LINK}<\/color> is greater than 50, the second Prism Shot fired by Fagio at nearby opponents will deal 400% of its original DMG as Fagio's Decoding Power is decreased.\\nAdditionally, for every 10 points of <color=#FFD780FF>Decoding Power<\/color> Fagio loses, it gains 1 stack of <color=#FFD780FF>Refined Tactics<\/color> for 60s (max 10 stacks). When Sandrone uses the Elemental Burst {LINK#S11335}<color=#FFD780FF>Formule Phenomenale: Q.E.D.<\/color>{\/LINK} while in the <color=#FFD780FF>Radiance: Stellar-Conduct<\/color> state, all stacks of Refined Tactics are cleared, causing the Convective Inhibition Ray to deal 100% + (number of stacks cleared) \u00d7 10% of its original DMG."
+        },
+        "4th Ascension Passive": {
+            "name": "A Lady's Code of Conduct",
+            "icon": "UI_Talent_S_MarionetteNew_06",
+            "text": "Increases Sandrone's Elemental Mastery based on her ATK. Every 100 ATK will increase her Elemental Mastery by 8. The maximum increase she can gain this way is 160."
+        },
+        "Utility Passive": {
+            "name": "Light of Rationalisme",
+            "icon": "UI_Talent_S_MarionetteNew_07",
+            "text": "When your party members trigger Superconduct, it will be changed to Stellar-Conduct, and your party members' Base Stellar-Conduct DMG will be increased based on Sandrone's ATK: Every 100 ATK she has increases the Base Stellar-Conduct DMG by 0.7%. The maximum increase that can be gained this way is 14%.\\nAdditionally, when Sandrone is within a {LINK#N11330003}<color=#FFD780FF>Polestar Field<\/color>{\/LINK}, she will enter the <color=#FFD780FF>Radiance: Stellar-Conduct<\/color> state."
+        },
+        "Passive": {
+            "name": "A Caucus Prelude and a Long Tale",
+            "icon": "UI_Talent_S_MarionetteNew_08",
+            "text": "When Sandrone is in the party, you will gain additional snack rewards after turning in your Daily Commissions with Katheryne."
+        }
+    },
+    "constellations": {
+        "1": {
+            "name": "Morrow After the Golden Dusk",
+            "icon": "UI_Talent_S_MarionetteNew_01",
+            "text": "When in <color=#FFD780FF>{LINK#N11330001}Decoding{\/LINK}<\/color> mode, Fagio's <color=#FFD780FF>{LINK#N11330002}Decoding Power{\/LINK}<\/color> increases at a 50% lower rate, and all party members deal 30% increased Stellar-Conduct DMG."
+        },
+        "2": {
+            "name": "An Heiress Gazed Into the Looking-Glass",
+            "icon": "UI_Talent_S_MarionetteNew_02",
+            "text": "<color=#FFD780FF>Radiance: Stellar-Conduct<\/color>: Increases CRIT DMG from Charged Attack condensed beams by 40%. Also, each time a beam is fired, CRIT DMG dealt by all condensed beams fired during this <color=#FFD780FF>{LINK#N11330001}Decoding{\/LINK}<\/color> mode period will be further increased by 20%. Max 3 stacks."
+        },
+        "3": {
+            "name": "Refuse the Wake of Dusk, the Moonlit Yoke",
+            "icon": "UI_Talent_U_MarionetteNew_01",
+            "text": "Increases the Level of {LINK#S11331}<color=#FFD780FF>Formule Phenomenale: Self-Evident Proposition<\/color>{\/LINK} by 3.\\nMaximum upgrade level is 15."
+        },
+        "4": {
+            "name": "In Knowledge Lies the World's True Ground",
+            "icon": "UI_Talent_S_MarionetteNew_03",
+            "text": "When Sandrone deals Stellar-Conduct DMG to an opponent, she will also summon an extra Prismatic Resonance Cannon to fire off a coordinated attack which deals <color=#99FFFFFF>Cryo DMG<\/color> at 125% of her ATK. This DMG is considered Stellar-Conduct DMG, and the effect can occur once every 4s."
+        },
+        "5": {
+            "name": "Of All Beside, She Takes No Part",
+            "icon": "UI_Talent_U_MarionetteNew_02",
+            "text": "Increases the Level of {LINK#S11335}<color=#FFD780FF>Formule Phenomenale: Q.E.D.<\/color>{\/LINK} by 3.\\nMaximum upgrade level is 15."
+        },
+        "6": {
+            "name": "Narcissus Wakes, Her Eyes Upon the Dawn",
+            "icon": "UI_Talent_S_MarionetteNew_04",
+            "text": "When Fagio fires a condensed beam for the third time while in <color=#FFD780FF>{LINK#N11330001}Decoding{\/LINK}<\/color> mode, the beam becomes a more powerful <color=#FFD780FF>Condensed Cluster Beam<\/color> that fires continuously. This beam will deal up to 4 additional instances of <color=#99FFFFFF>AoE Cryo DMG<\/color> at 100% of Sandrone's ATK on top of any subsequent original beam fired.\\n<color=#FFD780FF>Radiance: Stellar-Conduct<\/color>: The <color=#FFD780FF>Condensed Cluster Beam<\/color> will instead deal 4 additional instances of <color=#99FFFFFF>AoE Cryo DMG<\/color> at 80% of Sandrone's ATK. This DMG is considered Stellar-Conduct DMG.\\nAdditionally, all Stellar-Conduct DMG dealt by Sandrone is {LINK#N11190007}<color=#FFD780FF>elevated<\/color>{\/LINK} by 20%."
+        }
+    }
+};

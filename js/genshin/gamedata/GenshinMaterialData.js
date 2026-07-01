@@ -1679,6 +1679,27 @@ export default {
         "type": "MATERIAL_AVATAR_MATERIAL",
         "icon": "UI_ItemIcon_112142"
     },
+    "FracturedLunarIron": {
+        "id": 112143,
+        "name": "Fractured Lunar Iron",
+        "rarity": 2,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_112143"
+    },
+    "DepletedLunarIron": {
+        "id": 112144,
+        "name": "Depleted Lunar Iron",
+        "rarity": 3,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_112144"
+    },
+    "UnblemishedLunarIron": {
+        "id": 112145,
+        "name": "Unblemished Lunar Iron",
+        "rarity": 4,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_112145"
+    },
     "HurricaneSeed": {
         "id": 113001,
         "name": "Hurricane Seed",
@@ -3065,6 +3086,13 @@ export default {
         "type": "MATERIAL_AVATAR_MATERIAL",
         "icon": "UI_ItemIcon_200128"
     },
+    "": {
+        "id": 340029,
+        "name": "???",
+        "rarity": 2,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_100001"
+    },
     "CharacterEXP": {
         "id": 101,
         "name": "Character EXP",
@@ -3652,6 +3680,13 @@ export default {
         "type": "MATERIAL_COMMON",
         "icon": "UI_ItemIcon_195"
     },
+    "VenuePopularity": {
+        "id": 196,
+        "name": "Venue Popularity",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_196"
+    },
     "GenesisCrystal": {
         "id": 203,
         "name": "Genesis Crystal",
@@ -3665,13 +3700,6 @@ export default {
         "rarity": 3,
         "type": "MATERIAL_COMMON",
         "icon": "UI_ItemIcon_204"
-    },
-    "": {
-        "id": 205,
-        "name": "???",
-        "rarity": 3,
-        "type": "MATERIAL_COMMON",
-        "icon": "UI_GcgIcon_CardCurrency"
     },
     "ToyMedal": {
         "id": 206,
@@ -4133,6 +4161,13 @@ export default {
         "type": "MATERIAL_CONSUME",
         "icon": "UI_ItemIcon_107031"
     },
+    "FrostMoonShrineOfDepthsKey": {
+        "id": 107032,
+        "name": "Frost Moon Shrine of Depths Key",
+        "rarity": 1,
+        "type": "MATERIAL_CONSUME",
+        "icon": "UI_ItemIcon_107032"
+    },
     "MnemonicCluster": {
         "id": 107033,
         "name": "Mnemonic Cluster",
@@ -4316,7 +4351,7 @@ export default {
     "YellowObsidianFragment": {
         "id": 120858,
         "name": "Yellow Obsidian Fragment",
-        "rarity": 1,
+        "rarity": 4,
         "type": "MATERIAL_CONSUME",
         "icon": "UI_ItemIcon_120858"
     },
@@ -4337,7 +4372,7 @@ export default {
     "GreenObsidianFragment": {
         "id": 120912,
         "name": "Green Obsidian Fragment",
-        "rarity": 1,
+        "rarity": 4,
         "type": "MATERIAL_CONSUME",
         "icon": "UI_ItemIcon_120912"
     },
@@ -4351,7 +4386,7 @@ export default {
     "AzureObsidianFragment": {
         "id": 120914,
         "name": "Azure Obsidian Fragment",
-        "rarity": 1,
+        "rarity": 4,
         "type": "MATERIAL_CONSUME",
         "icon": "UI_ItemIcon_120914"
     },
@@ -4372,7 +4407,7 @@ export default {
     "PurpleObsidianFragment": {
         "id": 121103,
         "name": "Purple Obsidian Fragment",
-        "rarity": 1,
+        "rarity": 4,
         "type": "MATERIAL_CONSUME",
         "icon": "UI_ItemIcon_121103"
     },
@@ -4386,7 +4421,7 @@ export default {
     "CrimsonObsidianFragment": {
         "id": 121105,
         "name": "Crimson Obsidian Fragment",
-        "rarity": 1,
+        "rarity": 4,
         "type": "MATERIAL_CONSUME",
         "icon": "UI_ItemIcon_121105"
     },
@@ -4400,7 +4435,7 @@ export default {
     "SunsetBlueObsidianFragment": {
         "id": 121107,
         "name": "Sunset-Blue Obsidian Fragment",
-        "rarity": 1,
+        "rarity": 4,
         "type": "MATERIAL_CONSUME",
         "icon": "UI_ItemIcon_121107"
     },
@@ -4452,6 +4487,13 @@ export default {
         "rarity": 4,
         "type": "MATERIAL_CONSUME",
         "icon": "UI_ItemIcon_121602"
+    },
+    "FrostMoonSeal": {
+        "id": 121604,
+        "name": "Frost Moon Seal",
+        "rarity": 4,
+        "type": "MATERIAL_CONSUME",
+        "icon": "UI_ItemIcon_121604"
     },
     "FragrantSeasoning": {
         "id": 141115,
@@ -5754,6 +5796,13 @@ export default {
         "rarity": 1,
         "type": "MATERIAL_EXCHANGE",
         "icon": "UI_ItemIcon_101269"
+    },
+    "TeardropOfTheMoon": {
+        "id": 101270,
+        "name": "Teardrop of the Moon",
+        "rarity": 1,
+        "type": "MATERIAL_EXCHANGE",
+        "icon": "UI_ItemIcon_101270"
     },
     "WindbreathFlower": {
         "id": 101271,

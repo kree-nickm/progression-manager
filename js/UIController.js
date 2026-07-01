@@ -34,7 +34,7 @@ export default class UIController {
   
   constructor()
   {
-    this.uuid = crypto.randomUUID();
+    this.uuid = window.crypto.randomUUID();
     this.delayedUpdates = {};
     this.dependents = {};
     this.memory = {};

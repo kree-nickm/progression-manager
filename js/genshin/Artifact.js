@@ -100,20 +100,11 @@ export default class Artifact extends Equipment(GenshinItem)
   get setName(){ return GenshinArtifactData[this.setKey]?.name ?? this.setKey; }
   get maxRarity(){ return GenshinArtifactData[this.setKey]?.maxRarity ?? 5; }
   get image(){
-    if(GenshinArtifactData[this.key]?.icon)
-    {
-      let rand = Math.floor(Math.random() * (this.slotKey=="flower"?3:2));
-      let icon = GenshinArtifactData[this.key].icon.slice(0, -1) + Artifact.slotNameToNum[this.slotKey];
-      if(rand == 0)
-        return `https://gi.yatta.moe/assets/UI/reliquary/${icon}.png`;
-      else if(rand == 1)
-        return `https://enka.network/ui/${icon}.png`;
-      else if(rand == 2)
-        return `https://api.lunaris.moe/data/assets/artifacts/${icon}.webp`;
-      else
-        return "";
+    if(GenshinArtifactData[this.setKey]?.icon) {
+      let icon = GenshinArtifactData[this.setKey].icon.slice(0, -1) + Artifact.slotNameToNum[this.slotKey];
+      return `${this.viewer.resourceURL}/RelicIcons/${icon}.webp`;
     }
-    return GenshinArtifactData[this.setKey]?.[this.slotKey+'Img'] ?? "";
+    return `${this.viewer.resourceURL}/AvatarIcons/UI_NPC_Unknown_Circle.webp`;
   }
   get levelCap(){ return GenshinArtifactStats[this.rarity]?.levelCap ?? 0; }
   get mainStatShorthand(){ return GenshinItem.getStatShorthand(this.mainStatKey); }

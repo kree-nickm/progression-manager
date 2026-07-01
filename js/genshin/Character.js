@@ -483,19 +483,10 @@ export default class Character extends Ascendable(GenshinItem)
   get atkAscValue(){ return GenshinCharacterData[this.key]?.atkMaxAsc ?? 0; }
   get defAscValue(){ return GenshinCharacterData[this.key]?.defMaxAsc ?? 0; }
   get image(){
-    if(GenshinCharacterData[this.key]?.imgId)
-    {
-      let rand = Math.floor(Math.random() * 3);
-      if(rand == 0)
-        return `https://gi.yatta.moe/assets/UI/${GenshinCharacterData[this.key].imgId}.png`;
-      else if(rand == 1)
-        return `https://api.lunaris.moe/data/assets/avataricon/${GenshinCharacterData[this.key].imgId}.webp`;
-      else if(rand == 2)
-        return `https://enka.network/ui/${GenshinCharacterData[this.key].imgId}.png`;
-      else
-        return "";
+    if(GenshinCharacterData[this.key]?.imgId) {
+      return `${this.viewer.resourceURL}/AvatarIcons/${GenshinCharacterData[this.key].imgId}.webp`;
     }
-    return GenshinCharacterData[this.key]?.img ?? "";
+    return `${this.viewer.resourceURL}/AvatarIcons/UI_NPC_Unknown_Circle.webp`;
   }
   get talents() {
     if(GenshinCharacterData[this.key]?.talents)
