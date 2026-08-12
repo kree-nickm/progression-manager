@@ -129,7 +129,7 @@ export default {
         "Elemental Skill": {
             "name": "Ring-A-Ding-Ding! Hexhunter Chime",
             "icon": "Skill_S_Prune_01",
-            "text": "Unleash the wind's might to defeat the evil witch and save Descartes! Prune strikes the Witchlure Bell with her Banehunter Oathhammer, dealing <color=#80FFD7FF>Anemo DMG<\/color>.\\nIf Prune triggers Swirl on an opponent using this attack, <color=#FFD780FF>Ring-A-Ding-Ding! Hexhunter Chime<\/color> will be changed to <color=#FFD780FF>Clang Clang! Witch-tribution Comes!<\/color> for the next 6s.\\n\\n<color=#FFD780FF>Clang Clang! Witch-tribution Comes!<\/color>\\nPrune's hammer is now enshrouded by the element involved in the previous Swirl reaction, causing {LINK#N11320001}<color=#FFD780FF>Banehunter Oathhammer<\/color>{\/LINK} to undergo Elemental Conversion. When activated with a Press, Prune will leap up and kick the Banehunter Oathhammer forward, dealing Elemental DMG of the corresponding type to opponents in front of her.\n\\n\\n<i>\"Do you know a wicked witch who wears a hollowed-out hat and bullies little kids for fun? She's my ultimate target. The Witch Hunter's mortal enemy!\"<\/i>",
+            "text": "Determined to take down the \"evil\" witch and save her beloved Descartes, Prune unleashes the power of the wind! She strikes at the Witchlure Bell using her Banehunter Oathhammer, dealing <color=#80FFD7FF>Anemo DMG<\/color>.\\nIf Prune triggers a Swirl or Stellar Swirl reaction in the opponent with this attack, her <color=#FFD780FF>Ring-A-Ding-Ding! Hexhunter Chime<\/color> is changed to <color=#FFD780FF>Clang Clang! Witch-tribution Comes!<\/color> for the next 6s.\\n\\n<color=#FFD780FF>Clang Clang! Witch-tribution Comes!<\/color>\\nEnsconces the {LINK#N11320001}<color=#FFD780FF>Banehunter Oathhammer<\/color>{\/LINK} in the element involved in the earlier Swirl or Stellar Swirl reaction. After tapping to unleash, Prune will launch a midair kick at the Banehunter Oathhammer, dealing DMG to opponents in front of her of the corresponding elemental type.\n\\n\\n<i>\"Do you know a wicked witch who wears a hollowed-out hat and bullies little kids for fun? She's my ultimate target. The Witch Hunter's mortal enemy!\"<\/i>",
             "scaling": {
                 "Ring-A-Ding-Ding! Hexhunter Chime DMG": [
                     "167.44%",
@@ -279,7 +279,7 @@ export default {
         "1st Ascension Passive": {
             "name": "Verdict and Punishment",
             "icon": "UI_Talent_S_Prune_05",
-            "text": "During the Elemental Burst <color=#FFD780FF>{LINK#S11325}The Bell Tolls! The Hunt Is On!{\/LINK}<\/color>, after the Witchlure Bell in Hunter-Seeker mode deals DMG to an opponent, if this DMG triggers Swirl on an opponent, it will also summon a {LINK#N11320001}<color=#FFD780FF>Banehunter Oathhammer<\/color>{\/LINK} that will deal 150% of Prune's ATK as DMG to them, with the DMG Type matching the Elemental Conversion from the Swirl. This DMG is considered Elemental Burst DMG."
+            "text": "During the Elemental Burst <color=#FFD780FF>{LINK#S11325}The Bell Tolls! The Hunt Is On!{\/LINK}<\/color>, after the Witchlure Bell in Hunter-Seeker mode deals DMG to an opponent, if this DMG triggers Swirl or Stellar Swirl in an opponent, it will also summon a {LINK#N11320001}<color=#FFD780FF>Banehunter Oathhammer<\/color>{\/LINK} that will deal 150% of Prune's ATK as DMG to them, with the DMG Type matching the Elemental Conversion from the Swirl or Stellar Swirl. This DMG is considered Elemental Burst DMG."
         },
         "4th Ascension Passive": {
             "name": "Tolling Synchronicity",
@@ -294,7 +294,7 @@ export default {
         "Passive": {
             "name": "Witch's Eve Rite: Witchseeker's Vow",
             "icon": "UI_Talent_S_Prune_07",
-            "text": "After completing <color=#FFD780FF>Witch's Homework: Of What Is Contested<\/color>, Prune becomes a <color=#FFD780FF>Hexerei<\/color> character. When the party includes at least 2 Hexerei characters, you gain the <color=#FFD780FF>Hexerei: Secret Rite<\/color> effect, which enhances Hexerei characters.\\n\\n<color=#FFD780FF>Hexerei: Secret Rite<\/color>\\nAfter a Hexerei character in the party affected by the Tolling Rally effect triggers an Elemental Reaction on an opponent, Prune's ATK is increased by 60% for 5s. If the Elemental Reaction triggered is a Swirl Reaction, the triggering character's ATK will additionally be increased by 30% for 5s."
+            "text": "After completing <color=#FFD780FF>Witch's Homework: Of What Is Contested<\/color>, Prune becomes a <color=#FFD780FF>Hexerei<\/color> character. When the party includes at least 2 Hexerei characters, you gain the <color=#FFD780FF>Hexerei: Secret Rite<\/color> effect, which enhances Hexerei characters.\\n\\n<color=#FFD780FF>Hexerei: Secret Rite<\/color>\\nAfter a Hexerei character in the party affected by the Tolling Rally effect triggers an Elemental Reaction on an opponent, Prune's ATK is increased by 60% for 5s. If the Elemental Reaction triggered is a Swirl or Stellar Swirl reaction, the triggering character's ATK will additionally be increased by 30% for 5s."
         }
     },
     "constellations": {

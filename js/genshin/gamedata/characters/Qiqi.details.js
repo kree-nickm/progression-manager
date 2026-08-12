@@ -164,7 +164,7 @@ export default {
         "Elemental Skill": {
             "name": "Adeptus Art: Herald of Frost",
             "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/7\/7f\/Talent_Adeptus_Art_Herald_of_Frost.png",
-            "text": "Using the Icevein Talisman, Qiqi brings forth the Herald of Frost, dealing <color=#99FFFFFF>Cryo DMG<\/color> to surrounding opponents.\\n\\n<color=#FFD780FF>Herald of Frost<\/color>\\n\u00b7 On hit, Qiqi's Normal and Charged Attacks regenerate HP for party members and nearby teammates, with healing scaled based on Qiqi's ATK.\\n\u00b7 Periodically regenerates your active character's HP.\\n\u00b7 Follows the character around, dealing <color=#99FFFFFF>Cryo DMG<\/color> to opponents in their path.\\nIf your current active character hits an opponent with an attack, the Herald of Frost will perform a coordinated attack on the opponent, dealing <color=#99FFFFFF>Cryo DMG<\/color>.\\n\\n<i>\"I use this to prevent warming and rot... of Dr. Bai's precious ingredients. Yes.\"<\/i>",
+            "text": "Using the Icevein Talisman, Qiqi brings forth the Herald of Frost, dealing <color=#99FFFFFF>Cryo DMG<\/color> to surrounding opponents.\\n\\n<color=#FFD780FF>Herald of Frost<\/color>\\n\u00b7 On hit, Qiqi's Normal and Charged Attacks regenerate HP for your own party members and nearby teammates, with healing scaled based on Qiqi's ATK.\\n\u00b7 Periodically regenerates your active character's HP.\\n\u00b7 Follows the character around, dealing <color=#99FFFFFF>Cryo DMG<\/color> to opponents in the character's path.\\nIf your current active character hits an opponent with an attack, the Herald of Frost will perform a coordinated attack on the opponent, dealing <color=#99FFFFFF>Cryo DMG<\/color>.\\n\\n<i>\"I use this to prevent warming and rot... of Dr. Bai's precious ingredients. Yes.\"<\/i>",
             "scaling": {
                 "Skill DMG": [
                     "96%",
@@ -424,7 +424,7 @@ export default {
         "4th Ascension Passive": {
             "name": "A Glimpse Into Arcanum",
             "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/f\/f8\/Talent_A_Glimpse_Into_Arcanum.png",
-            "text": "When Qiqi hits opponents with her Normal and Charged Attacks, she has a 50% chance to apply a Fortune-Preserving Talisman to them for 6s. This effect can only occur once every 30s.\\n<color=#FFD780FF>Radiance: Stellar-Conduct<\/color>: The effect now has a 100% chance to trigger, and cooldown time is reduced to 15s.",
+            "text": "When Qiqi hits opponents with her Normal and Charged Attacks, she has a 50% chance to apply a Fortune-Preserving Talisman to them for 6s. This effect can only occur once every 30s.\\n<color=#FFD780FF>{LINK#N11500004}Radiance: Stellar Glimmer<\/color>{\/LINK}: The effect now has a 100% chance to trigger, and cooldown time is reduced to 15s.",
             "icon": "UI_Talent_S_Qiqi_06"
         },
         "Utility Passive": {
@@ -436,19 +436,19 @@ export default {
         "Passive": {
             "name": "Seven Sacred Treasures",
             "icon": "UI_Talent_S_Qiqi_08",
-            "text": "The cooldown of the Elemental Skill <color=#FFD780FF>Adeptus Art: Herald of Frost<\/color> is reduced to 15s.\\n<color=#FFD780FF>Radiance: Stellar-Conduct<\/color>: While the Herald of Frost is on the field, characters in Qiqi's party have their Superconduct, Stellar-Conduct, and Cryo Swirl Reaction DMG increased by 50%.\\nAdditionally, when inside a {LINK#N11330003}<color=#FFD780FF>Polestar Field<\/color>{\/LINK}, Qiqi will enter the <color=#FFD780FF>Radiance: Stellar-Conduct<\/color> state."
+            "text": "The cooldown of the Elemental Skill <color=#FFD780FF>Adeptus Art: Herald of Frost<\/color> is reduced to 15s.\\n<color=#FFD780FF>Radiance: Stellar Glimmer<\/color>: While the Herald of Frost is on the field, Qiqi's own party members will have the DMG they deal via the corresponding reactions enhanced:\\n<color=#FFD780FF>Radiance: Stellar-Conduct<\/color>: Superconduct and Stellar-Conduct reaction DMG is increased by 50%.\\n<color=#FFD780FF>Radiance: Stellar Swirl<\/color>: Cryo Swirl and Stellar Swirl reaction DMG dealt is increased by 50%.\\nAdditionally, Qiqi will also enter the <color=#FFD780FF>Radiance: Stellar-Conduct<\/color> state when she is inside a {LINK#N11330003}<color=#FFD780FF>Polestar Field<\/color>{\/LINK}, or the <color=#FFD780FF>Radiance: Stellar Swirl<\/color> state for 8s after a nearby party character triggers a Stellar Swirl reaction."
         }
     },
     "constellations": {
         "1": {
             "name": "Ascetics of Frost",
             "icon": "UI_Talent_S_Qiqi_01",
-            "text": "Qiqi regenerates 2 Energy when the Herald of Frost hits an opponent marked by a Fortune-Preserving Talisman.\\n<color=#FFD780FF>Radiance: Stellar-Conduct<\/color>: Qiqi also regenerates 6 Elemental Energy when the Herald of Frost's attacks and coordinated attacks hit opponents. This effect can trigger once every 6s."
+            "text": "Qiqi regenerates 2 Energy when the Herald of Frost hits an opponent marked by a Fortune-Preserving Talisman.\\n{LINK#N11500004}<color=#FFD780FF>Radiance: Stellar Glimmer<\/color>{\/LINK}: Qiqi also regenerates 6 Elemental Energy when the Herald of Frost's attacks and coordinated attacks hit opponents. This effect can trigger once every 6s."
         },
         "2": {
             "name": "Frozen to the Bone",
             "icon": "UI_Talent_S_Qiqi_02",
-            "text": "Qiqi's Normal and Charged Attack DMG against opponents affected by <color=#99FFFFFF>Cryo<\/color> is increased by 15%.\\n<color=#FFD780FF>Radiance: Stellar-Conduct<\/color>: Qiqi's ATK is increased by 50%."
+            "text": "Qiqi's Normal and Charged Attack DMG against opponents affected by <color=#99FFFFFF>Cryo<\/color> is increased by 15%.\\n{LINK#N11500004}<color=#FFD780FF>Radiance: Stellar Glimmer<\/color>{\/LINK}: Qiqi's ATK is increased by 50%."
         },
         "3": {
             "name": "Ascendant Praise",
@@ -468,7 +468,7 @@ export default {
         "6": {
             "name": "Rite of Resurrection",
             "icon": "UI_Talent_S_Qiqi_04",
-            "text": "Using <color=#FFD780FF>Adeptus Art: Preserver of Fortune<\/color> revives all fallen party members nearby and regenerates 50% of their HP.\\nThis effect can only occur once every 15 mins.\\nAdditionally, after using <color=#FFD780FF>Adeptus Art: Preserver of Fortune<\/color>, Qiqi will also gain 4 stacks of <color=#FFD780FF>Glimpse of Mystery<\/color>, and when your current active character (other than Qiqi) deals Stellar-Conduct DMG, 1 stack of <color=#FFD780FF>Glimpse of Mystery<\/color> is consumed, and DMG dealt is increased by 600% of Qiqi's ATK. The <color=#FFD780FF>Glimpse of Mystery<\/color> effect lasts up to 12s, and unleashing <color=#FFD780FF>Adeptus Art: Preserver of Fortune<\/color> refreshes the stack count."
+            "text": "Using <color=#FFD780FF>Adeptus Art: Preserver of Fortune<\/color> revives all fallen party members nearby and regenerates 50% of their HP.\\nThis effect can only occur once every 15 mins.\\nAdditionally, after using <color=#FFD780FF>Adeptus Art: Preserver of Fortune<\/color>, Qiqi will also gain 4 stacks of <color=#FFD780FF>Glimpse of Mystery<\/color>, and when your current active character (other than Qiqi) deals Stellar-Conduct or Stellar Swirl reaction DMG with their Talent or skill, 1 stack of <color=#FFD780FF>Glimpse of Mystery<\/color> is consumed, and DMG dealt is increased by 600% of Qiqi's ATK. The <color=#FFD780FF>Glimpse of Mystery<\/color> effect lasts up to 12s, and unleashing <color=#FFD780FF>Adeptus Art: Preserver of Fortune<\/color> refreshes the stack count."
         }
     }
 };

@@ -119,6 +119,28 @@ export default {
         "region": "None",
         "version": "2.1"
     },
+    "Alyosha": {
+        "id": 10000148,
+        "name": "Alyosha",
+        "element": "Electro",
+        "weapon": "Polearm",
+        "rarity": 4,
+        "ascendStat": "enerRech_",
+        "imgId": "UI_AvatarIcon_Alyosha",
+        "matFlower": "Flockingweed",
+        "matTrounce": "Elixir of the Heretic",
+        "matBoss": "Chimera Lion",
+        "matEnemy": "Chimera",
+        "matMastery": "Fortitude",
+        "atkBase": 22,
+        "atkMaxAsc": 81.322,
+        "hpBase": 1003,
+        "hpMaxAsc": 3587.9529999999995,
+        "defBase": 59,
+        "defMaxAsc": 210.409,
+        "region": "Snezhnaya",
+        "version": "7.0"
+    },
     "Amber": {
         "name": "Amber",
         "weapon": "Bow",
@@ -2210,7 +2232,8 @@ export default {
         "hpBase": 810,
         "hpMaxAsc": 3330.409999999999,
         "defBase": 44,
-        "defMaxAsc": 178.48399999999998
+        "defMaxAsc": 178.48399999999998,
+        "version": "6.6"
     },
     "Nilou": {
         "name": "Nilou",
@@ -2301,6 +2324,28 @@ export default {
         "coopImgId": "UI_CoopImg_Noel",
         "region": "Mondstadt",
         "version": "1.0"
+    },
+    "Odette": {
+        "id": 10000150,
+        "name": "Odette",
+        "element": "Cryo",
+        "weapon": "Sword",
+        "rarity": 5,
+        "ascendStat": "critDMG_",
+        "imgId": "UI_AvatarIcon_Odette",
+        "matFlower": "Frostfairy Flower",
+        "matTrounce": "Twisted Withered Branch",
+        "matBoss": "Immortal",
+        "matEnemy": "Fae",
+        "matMastery": "Charity",
+        "atkBase": 26,
+        "atkMaxAsc": 107.78599999999997,
+        "hpBase": 1011,
+        "hpMaxAsc": 4145.870999999999,
+        "defBase": 61,
+        "defMaxAsc": 253.92099999999994,
+        "region": "Snezhnaya",
+        "version": "7.0"
     },
     "Ororon": {
         "name": "Ororon",
@@ -2490,7 +2535,9 @@ export default {
         "hpBase": 1030,
         "hpMaxAsc": 4224.83,
         "defBase": 59,
-        "defMaxAsc": 236.399
+        "defMaxAsc": 236.399,
+        "region": "Snezhnaya",
+        "version": "6.7"
     },
     "SangonomiyaKokomi": {
         "name": "Sangonomiya Kokomi",
@@ -2825,8 +2872,8 @@ export default {
     "Traveler": {
         "id": "10000005_ANEMO",
         "name": "Traveler",
-        "element": "Pyro",
-        "weapon": "Sword",
+        "element": "Unknown",
+        "weapon": null,
         "rarity": 5,
         "ascendStat": "atk_"
     },
@@ -2853,6 +2900,25 @@ export default {
         "ascendStat": "atk_",
         "region": "None",
         "version": "1.0"
+    },
+    "TravelerCryo": {
+        "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Traveler_Icon.png",
+        "release": "August 12, 2026",
+        "hpBase": 911.791015625,
+        "atkBase": 17.8080005645752,
+        "defBase": 57.2249984741211,
+        "hpMaxAsc": 3262.371826171875,
+        "atkMaxAsc": 63.7182006835938,
+        "defMaxAsc": 204.75,
+        "element": "Cryo",
+        "id": "10000005-505",
+        "idAlt": "10000007-705",
+        "imgId": "UI_AvatarIcon_PlayerBoy",
+        "coopImgId": "UI_CoopImg_PlayerBoy",
+        "weapon": "Sword",
+        "ascendStat": "atk_",
+        "region": "None",
+        "version": "7.0"
     },
     "TravelerDendro": {
         "img": "https:\/\/static.wikia.nocookie.net\/gensin-impact\/images\/5\/59\/Traveler_Icon.png",

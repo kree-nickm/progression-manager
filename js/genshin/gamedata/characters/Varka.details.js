@@ -470,7 +470,7 @@ export default {
         },
         "4th Ascension Passive": {
             "name": "Wind's Vanguard",
-            "text": "When nearby party members trigger Swirl reaction(s), Varka gains one stack of <color=#FFD780FF>Azure Fang's Oath<\/color>, increasing the DMG dealt by his Normal Attacks, Charged Attacks, special Charged Attack <color=#FFD780FF>Azure Devour<\/color> and special Elemental Skill {LINK#N11280002}<color=#FFD780FF>Four Winds' Ascension<\/color>{\/LINK} by 7.5% for 8s. Max 4 stacks. Each character can grant Varka with 1 stack of <color=#FFD780FF>Azure Fang's Oath<\/color> every second this way.",
+            "text": "When nearby party members trigger a Swirl or Stellar Swirl reaction, Varka gains 1 stack of <color=#FFD780FF>Azure Fang's Oath<\/color>, increasing the DMG dealt by his Normal Attacks, Charged Attacks, special Charged Attack <color=#FFD780FF>Azure Devour<\/color> and special Elemental Skill {LINK#N11280002}<color=#FFD780FF>Four Winds' Ascension<\/color>{\/LINK} by 7.5% for 8s. Max 4 stacks. Each character can grant Varka with 1 stack of <color=#FFD780FF>Azure Fang's Oath<\/color> every second this way.",
             "icon": "UI_Talent_S_Varka_05"
         },
         "Utility Passive": {
@@ -503,7 +503,7 @@ export default {
         "4": {
             "name": "\"For None May Take From Us Our Freedom of Song\"",
             "icon": "UI_Talent_S_Varka_03",
-            "text": "When Varka triggers a Swirl reaction, based on the Elemental Types involved in the reaction, all nearby party members gain a 20% <color=#80FFD7FF>Anemo DMG Bonus<\/color> and the corresponding Elemental DMG Bonus for 10s."
+            "text": "When Varka triggers a Swirl or Stellar Swirl reaction, based on the Elemental Types involved in the reaction, all nearby party members gain a 20% <color=#80FFD7FF>Anemo DMG Bonus<\/color> and the corresponding Elemental DMG Bonus for 10s."
         },
         "5": {
             "name": "\"Fill High the Cup With Fine Wine, for Tyrants Come and Go\"",

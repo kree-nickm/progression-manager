@@ -407,7 +407,7 @@ export default {
         "Passive": {
             "name": "Choice Treasures",
             "icon": "UI_Talent_S_Diona_08",
-            "text": "Within 20s after using the Elemental Skill <color=#FFD780FF>Icy Paws<\/color>, Diona will also fire off three <color=#FFD780FF>Icy Paws<\/color> when party members trigger Superconduct, Stellar-Conduct, or Cryo Swirl reactions. <color=#FFD780FF>Icy Paws<\/color> fired this way cannot generate Elemental Particles, nor will they generate a shield upon hitting opponents. This effect can occur once every 3.5s.\\nAdditionally, when inside a {LINK#N11330003}<color=#FFD780FF>Polestar Field<\/color>{\/LINK}, Diona will enter the <color=#FFD780FF>Radiance: Stellar-Conduct<\/color> state."
+            "text": "Within 20s after using the Elemental Skill <color=#FFD780FF>Icy Paws<\/color>, Diona will also fire off three <color=#FFD780FF>Icy Paws<\/color> when party members trigger Stellar-Conduct, Superconduct, Cryo Swirl, or Stellar Swirl reactions. <color=#FFD780FF>Icy Paws<\/color> fired this way cannot generate Elemental Particles, nor will they generate a shield upon hitting opponents. This effect can occur once every 3.5s.\\nAdditionally, Diona will also enter the <color=#FFD780FF>Radiance: Stellar-Conduct<\/color> state when she is inside a {LINK#N11330003}<color=#FFD780FF>Polestar Field<\/color>{\/LINK}, or the <color=#FFD780FF>Radiance: Stellar Swirl<\/color> state for 8s after a nearby party member triggers a Stellar Swirl reaction."
         }
     },
     "constellations": {
@@ -439,7 +439,7 @@ export default {
         "6": {
             "name": "Cat's Tail Closing Time",
             "icon": "UI_Talent_S_Diona_04",
-            "text": "Characters within <color=#FFD780FF>Signature Mix<\/color>'s radius gain the following effects based on their HP levels:\\n\u00b7 The Incoming Healing Bonus is increased by 30% when HP is at, or lower than, 50%.\\n\u00b7 Elemental Mastery is increased by 200 when HP is above 50%.\\n\\nAdditionally, Diona's Max HP is increased by 25%. \\n<color=#FFD780FF>Radiance: Stellar-Conduct<\/color>: Characters within <color=#FFD780FF>Signature Mix<\/color>'s radius deal 40% increased Superconduct, Stellar-Conduct, and Cryo Swirl Reaction DMG."
+            "text": "Characters within <color=#FFD780FF>Signature Mix<\/color>'s radius gain the following effects based on their HP levels:\\n\u00b7 The Incoming Healing Bonus is increased by 30% when HP is at, or lower than, 50%.\\n\u00b7 Elemental Mastery is increased by 200 when HP is above 50%.\\n\\nAdditionally, Diona's Max HP is increased by 25%. \\n<color=#FFD780FF>Radiance: Stellar Glimmer<\/color>: Characters within the Signature Mix field deal increased DMG for the following reactions: \\n<color=#FFD780FF>Radiance: Stellar-Conduct<\/color>: Superconduct, Stellar-Conduct reaction DMG increased by 40%.\\n<color=#FFD780FF>Radiance: Stellar Swirl<\/color>: Cryo Swirl, Stellar Swirl reaction DMG increased by 40%."
         }
     }
 };

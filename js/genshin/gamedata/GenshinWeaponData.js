@@ -777,6 +777,42 @@ export default {
         "id": 14506,
         "imgId": "UI_EquipIcon_Catalyst_Kaleido"
     },
+    "ExaiphanesBlade": {
+        "id": 11521,
+        "name": "Exaiphanes Blade",
+        "imgId": "UI_EquipIcon_Sword_WeaponQuestSnezhnaya",
+        "type": "Sword",
+        "rarity": 5,
+        "stat": "critRate_",
+        "matForgery": "Egg",
+        "matStrongEnemy": "Volkodlak",
+        "matWeakEnemy": "Fae",
+        "baseATK": 46,
+        "passive": "When the Traveler equips this, their CRIT DMG increases by @0% for every Element they have resonated with. Additionally, the Traveler's ATK will also increase by @1% for 8s, and regenerate @2 Elemental Energy, after they attack and hit an opponent. This effect can trigger once every 5s. This can be triggered even when the character is not on the field.",
+        "refinementData": [
+            {
+                "1": 0,
+                "2": 6,
+                "3": 6,
+                "4": 6,
+                "5": 6
+            },
+            {
+                "1": 16,
+                "2": 20,
+                "3": 24,
+                "4": 32,
+                "5": 40
+            },
+            {
+                "1": 3,
+                "2": 3,
+                "3": 5,
+                "4": 5,
+                "5": 5
+            }
+        ]
+    },
     "FangOfTheMountainKing": {
         "name": "Fang of the Mountain King",
         "rarity": 5,
@@ -2755,6 +2791,42 @@ export default {
         "id": 13504,
         "imgId": "UI_EquipIcon_Pole_Kunwu"
     },
+    "WhitelakeFrostfeather": {
+        "id": 11520,
+        "name": "Whitelake Frostfeather",
+        "imgId": "UI_EquipIcon_Sword_Swanlake",
+        "type": "Sword",
+        "rarity": 5,
+        "stat": "critRate_",
+        "matForgery": "Flask",
+        "matStrongEnemy": "Leshy",
+        "matWeakEnemy": "Chimera",
+        "baseATK": 48,
+        "passive": "When the equipping character hits an opponent with their Elemental Skill, they gain \"Lake-Hued Lament\": ATK increases by @0% for 8s. This effect can trigger once every 0.1s. Max 3 stacks, and each stack's duration is independent. At 3 stacks, the CRIT DMG of any Stellar Glimmer reaction DMG caused by the equipping character is increased by @1%, and triggering Stellar Glimmer reactions or Stellar Glimmer reaction DMG will also restore @2 Elemental Energy to the character. This Energy recovery effect can trigger once every 3.5s. Can be triggered even when the equipping character is off-field.",
+        "refinementData": [
+            {
+                "1": 8,
+                "2": 10,
+                "3": 12,
+                "4": 14,
+                "5": 16
+            },
+            {
+                "1": 50,
+                "2": 65,
+                "3": 80,
+                "4": 95,
+                "5": 110
+            },
+            {
+                "1": 4,
+                "2": 4.5,
+                "3": 5,
+                "4": 5.5,
+                "5": 6
+            }
+        ]
+    },
     "WolfsGravestone": {
         "name": "Wolf's Gravestone",
         "rarity": 5,
@@ -3251,6 +3323,35 @@ export default {
         ],
         "imgId": "UI_EquipIcon_Catalyst_Ilmarinen"
     },
+    "BladeOfAtonement": {
+        "id": 12436,
+        "name": "Blade of Atonement",
+        "imgId": "UI_EquipIcon_Claymore_GlintstoneClaymore",
+        "type": "Claymore",
+        "rarity": 4,
+        "stat": "atk_",
+        "matForgery": "Trumpet",
+        "matStrongEnemy": "Leshy",
+        "matWeakEnemy": "Chimera",
+        "baseATK": 44,
+        "passive": "Triggering an Elemental Reaction increases the equipping character's Elemental Mastery by @0 for 12s, while triggering a Stellar Glimmer reaction increases their ATK by @1% for 12s. The aforementioned effects can trigger even when the character is not on the field.",
+        "refinementData": [
+            {
+                "1": 64,
+                "2": 80,
+                "3": 96,
+                "4": 112,
+                "5": 128
+            },
+            {
+                "1": 16,
+                "2": 20,
+                "3": 24,
+                "4": 28,
+                "5": 32
+            }
+        ]
+    },
     "CalamityOfEshu": {
         "name": "Calamity of Eshu",
         "rarity": 4,
@@ -3343,6 +3444,35 @@ export default {
         "id": 11415,
         "imgId": "UI_EquipIcon_Sword_Opus"
     },
+    "ClashOfKings": {
+        "id": 14435,
+        "name": "Clash of Kings",
+        "imgId": "UI_EquipIcon_Catalyst_SandMemoria",
+        "type": "Catalyst",
+        "rarity": 4,
+        "stat": "critRate_",
+        "matForgery": "Talisman",
+        "matStrongEnemy": "Primal Constructs",
+        "matWeakEnemy": "Eremites",
+        "baseATK": 42,
+        "passive": "Using an Elemental Skill grants the equipping character \"Laws of the Board,\" which increases their ATK by @0% and their Elemental Mastery by @1. This effect lasts 6s and can trigger once every 12s. Does not stack. The duration of this effect will also be extended by 6s if the equipping character hits an opponent with a Charged Attack while it is active. The effect can be extended for max 6s in this way.",
+        "refinementData": [
+            {
+                "1": 20,
+                "2": 25,
+                "3": 30,
+                "4": 35,
+                "5": 40
+            },
+            {
+                "1": 100,
+                "2": 125,
+                "3": 150,
+                "4": 175,
+                "5": 200
+            }
+        ]
+    },
     "Cloudforged": {
         "name": "Cloudforged",
         "rarity": 4,
@@ -3401,6 +3531,28 @@ export default {
         ],
         "id": 15407,
         "imgId": "UI_EquipIcon_Bow_Exotic"
+    },
+    "CovenantOfFrostAndSnow": {
+        "id": 15436,
+        "name": "Covenant of Frost and Snow",
+        "imgId": "UI_EquipIcon_Bow_GlintstoneBow",
+        "type": "Bow",
+        "rarity": 4,
+        "stat": "def_",
+        "matForgery": "Trumpet",
+        "matStrongEnemy": "Leshy",
+        "matWeakEnemy": "Chimera",
+        "baseATK": 42,
+        "passive": "For 12s after the equipping character uses an Elemental Skill, their Elemental Mastery is increased by @0.",
+        "refinementData": [
+            {
+                "1": 120,
+                "2": 150,
+                "3": 180,
+                "4": 210,
+                "5": 240
+            }
+        ]
     },
     "CrescentPike": {
         "name": "Crescent Pike",
@@ -3682,6 +3834,64 @@ export default {
             }
         ],
         "imgId": "UI_EquipIcon_Claymore_Isikhulu"
+    },
+    "EchoesOfTheHeart": {
+        "id": 14436,
+        "name": "Echoes of the Heart",
+        "imgId": "UI_EquipIcon_Catalyst_GlintstoneCatalyst",
+        "type": "Catalyst",
+        "rarity": 4,
+        "stat": "atk_",
+        "matForgery": "Trumpet",
+        "matStrongEnemy": "Volkodlak",
+        "matWeakEnemy": "Fae",
+        "baseATK": 44,
+        "passive": "Triggering an Elemental Reaction increases the equipping character's Elemental Mastery by 60 for 12s, while triggering a Stellar Glimmer reaction increases their Stellar Glimmer reaction DMG dealt by 16% for 12s. The aforementioned effects can trigger even when the character is not on the field.",
+        "refinementData": [
+            {
+                "1": 60,
+                "2": 75,
+                "3": 90,
+                "4": 105,
+                "5": 120
+            },
+            {
+                "1": 16,
+                "2": 20,
+                "3": 24,
+                "4": 28,
+                "5": 32
+            }
+        ]
+    },
+    "Emberwell": {
+        "id": 11436,
+        "name": "Emberwell",
+        "imgId": "UI_EquipIcon_Sword_GlintstoneSword",
+        "type": "Sword",
+        "rarity": 4,
+        "stat": "eleMas",
+        "matForgery": "Trumpet",
+        "matStrongEnemy": "Volkodlak",
+        "matWeakEnemy": "Fae",
+        "baseATK": 42,
+        "passive": "Triggering an Elemental Reaction increases the equipping character's ATK by @0% for 12s. Triggering a Stellar Glimmer reaction increases their Stellar Glimmer reaction DMG dealt by @1% for 12s. The aforementioned effects can trigger even when the character is not on the field.",
+        "refinementData": [
+            {
+                "1": 16,
+                "2": 20,
+                "3": 24,
+                "4": 28,
+                "5": 32
+            },
+            {
+                "1": 16,
+                "2": 20,
+                "3": 24,
+                "4": 28,
+                "5": 32
+            }
+        ]
     },
     "EndOfTheLine": {
         "name": "End of the Line",
@@ -4267,6 +4477,42 @@ export default {
         "id": 12417,
         "imgId": "UI_EquipIcon_Claymore_Arakalari"
     },
+    "ForgedByTheGoldenMelody": {
+        "id": 12435,
+        "name": "Forged by the Golden Melody",
+        "imgId": "UI_EquipIcon_Claymore_EscapeWheel",
+        "type": "Claymore",
+        "rarity": 4,
+        "stat": "critRate_",
+        "matForgery": "Dewdrop",
+        "matStrongEnemy": "Praetorians",
+        "matWeakEnemy": "Fontemer",
+        "baseATK": 42,
+        "passive": "Every 10s, the equipping character plays a \"Harmonic Movement\" of the corresponding type for a boost in the following order: +@0% ATK > +@1 Elemental Mastery > +@2% Stellar Glimmer reaction DMG. Each instance of Harmonic Movement lasts 10s. This effect can trigger even when the equipping character is not on the field.\nTriggering a Stellar Glimmer reaction will also grant an additional 12-second instance of \"Harmonic Movement: Contrapuntal\" with the same effects as the Harmonic Movement active when Stellar Glimmer is triggered. This effect stacks with the original Harmonic Movement effect, and can trigger once every 12s.",
+        "refinementData": [
+            {
+                "1": 18,
+                "2": 22.5,
+                "3": 27,
+                "4": 31.5,
+                "5": 36
+            },
+            {
+                "1": 120,
+                "2": 150,
+                "3": 180,
+                "4": 210,
+                "5": 240
+            },
+            {
+                "1": 28,
+                "2": 35,
+                "3": 42,
+                "4": 49,
+                "5": 56
+            }
+        ]
+    },
     "Frostbearer": {
         "name": "Frostbearer",
         "rarity": 4,
@@ -4306,6 +4552,35 @@ export default {
         ],
         "id": 14412,
         "imgId": "UI_EquipIcon_Catalyst_Everfrost"
+    },
+    "Frostbreath": {
+        "id": 13435,
+        "name": "Frostbreath",
+        "imgId": "UI_EquipIcon_Pole_FaesCrystalle",
+        "type": "Polearm",
+        "rarity": 4,
+        "stat": "enerRech_",
+        "matForgery": "Flask",
+        "matStrongEnemy": "Volkodlak",
+        "matWeakEnemy": "Chimera",
+        "baseATK": 42,
+        "passive": "Triggering a Cryo or Hydro-related elemental reaction increases the equipping character's ATK by @0% for the next 15s, as well as regenerates @1 Elemental Energy for other members of their party. This effect can trigger once every 16s.",
+        "refinementData": [
+            {
+                "1": 20,
+                "2": 25,
+                "3": 30,
+                "4": 35,
+                "5": 40
+            },
+            {
+                "1": 6,
+                "2": 7.5,
+                "3": 9,
+                "4": 10.5,
+                "5": 12
+            }
+        ]
     },
     "FruitOfFulfillment": {
         "name": "Fruit of Fulfillment",
@@ -4479,6 +4754,35 @@ export default {
         "id": 15414,
         "imgId": "UI_EquipIcon_Bow_Bakufu"
     },
+    "HereticsMoltenBlade": {
+        "id": 11435,
+        "name": "Heretic's Molten Blade",
+        "imgId": "UI_EquipIcon_Sword_SerpentTooth",
+        "type": "Sword",
+        "rarity": 4,
+        "stat": "critRate_",
+        "matForgery": "Blade",
+        "matStrongEnemy": "Weasels",
+        "matWeakEnemy": "Tribals",
+        "baseATK": 42,
+        "passive": "When the equipping character unleashes their Elemental Skill, they gain \"Gleam of First Light\": Every second, increases said character's ATK by between @0% and @1% depending on how much they have traveled over the last 1s while the effect is active. This effect, which lasts 14s, can trigger once every 14s. It is removed when the equipping character leaves the field.",
+        "refinementData": [
+            {
+                "1": 18,
+                "2": 22.5,
+                "3": 27,
+                "4": 31.5,
+                "5": 36
+            },
+            {
+                "1": 36,
+                "2": 45,
+                "3": 54,
+                "4": 63,
+                "5": 72
+            }
+        ]
+    },
     "IbisPiercer": {
         "name": "Ibis Piercer",
         "rarity": 4,
@@ -4552,6 +4856,35 @@ export default {
         ],
         "id": 11407,
         "imgId": "UI_EquipIcon_Sword_Exotic"
+    },
+    "JadeVista": {
+        "id": 15435,
+        "name": "Jade Vista",
+        "imgId": "UI_EquipIcon_Bow_ShatteredMirror",
+        "type": "Bow",
+        "rarity": 4,
+        "stat": "critRate_",
+        "matForgery": "Aeros",
+        "matStrongEnemy": "Geovishaps",
+        "matWeakEnemy": "Fatui",
+        "baseATK": 42,
+        "passive": "For every party member other than the equipping character:\n\u00b7 Who is of the same Elemental Type as the equipper: The equipping character's Elemental Mastery is increased by @0;\n\u00b7 Who is not of the same Elemental Type as the equipper: The equipping character's ATK increases by @1%.\nThe two effects described above can stack up to 3 times in total, with Elemental Mastery buffs applied first.",
+        "refinementData": [
+            {
+                "1": 64,
+                "2": 80,
+                "3": 96,
+                "4": 112,
+                "5": 128
+            },
+            {
+                "1": 12,
+                "2": 15,
+                "3": 18,
+                "4": 21,
+                "5": 24
+            }
+        ]
     },
     "KagotsurubeIsshin": {
         "name": "Kagotsurube Isshin",
@@ -6310,6 +6643,35 @@ export default {
         "stat": "atk_",
         "id": 15425,
         "imgId": "UI_EquipIcon_Bow_Vorpal"
+    },
+    "SongOfTheVigil": {
+        "id": 13436,
+        "name": "Song of the Vigil",
+        "imgId": "UI_EquipIcon_Pole_GlintstonePolearm",
+        "type": "Polearm",
+        "rarity": 4,
+        "stat": "eleMas",
+        "matForgery": "Egg",
+        "matStrongEnemy": "Leshy",
+        "matWeakEnemy": "Fae",
+        "baseATK": 44,
+        "passive": "Triggering an Elemental Reaction regenerates @0 Elemental Energy for the equipping character. This effect can trigger once every 9s. On the other hand, triggering a Stellar Glimmer reaction increases their ATK by @1% for 12s. The aforementioned effects can trigger even when the character is not on the field.",
+        "refinementData": [
+            {
+                "1": 4,
+                "2": 5,
+                "3": 6,
+                "4": 7,
+                "5": 8
+            },
+            {
+                "1": 20,
+                "2": 25,
+                "3": 30,
+                "4": 35,
+                "5": 40
+            }
+        ]
     },
     "SturdyBone": {
         "name": "Sturdy Bone",

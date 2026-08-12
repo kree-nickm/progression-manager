@@ -685,6 +685,69 @@ export default {
         "type": "MATERIAL_AVATAR_MATERIAL",
         "icon": "UI_ItemIcon_104364"
     },
+    "TeachingsOfCharity": {
+        "id": 104365,
+        "name": "Teachings of Charity",
+        "rarity": 2,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_104365"
+    },
+    "GuideToCharity": {
+        "id": 104366,
+        "name": "Guide to Charity",
+        "rarity": 3,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_104366"
+    },
+    "PhilosophiesOfCharity": {
+        "id": 104367,
+        "name": "Philosophies of Charity",
+        "rarity": 4,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_104367"
+    },
+    "TeachingsOfFortitude": {
+        "id": 104368,
+        "name": "Teachings of Fortitude",
+        "rarity": 2,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_104368"
+    },
+    "GuideToFortitude": {
+        "id": 104369,
+        "name": "Guide to Fortitude",
+        "rarity": 3,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_104369"
+    },
+    "PhilosophiesOfFortitude": {
+        "id": 104370,
+        "name": "Philosophies of Fortitude",
+        "rarity": 4,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_104370"
+    },
+    "TeachingsOfGlory": {
+        "id": 104371,
+        "name": "Teachings of Glory",
+        "rarity": 2,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_104371"
+    },
+    "GuideToGlory": {
+        "id": 104372,
+        "name": "Guide to Glory",
+        "rarity": 3,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_104372"
+    },
+    "PhilosophiesOfGlory": {
+        "id": 104373,
+        "name": "Philosophies of Glory",
+        "rarity": 4,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_104373"
+    },
     "PrimordialEssence": {
         "id": 112001,
         "name": "Primordial Essence",
@@ -1700,6 +1763,90 @@ export default {
         "type": "MATERIAL_AVATAR_MATERIAL",
         "icon": "UI_ItemIcon_112145"
     },
+    "EtherealGlimmershard": {
+        "id": 112146,
+        "name": "Ethereal Glimmershard",
+        "rarity": 1,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_112146"
+    },
+    "EtherealCrystal": {
+        "id": 112147,
+        "name": "Ethereal Crystal",
+        "rarity": 2,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_112147"
+    },
+    "EtherealCrystalscaleStone": {
+        "id": 112148,
+        "name": "Ethereal Crystalscale Stone",
+        "rarity": 3,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_112148"
+    },
+    "ChimericCore": {
+        "id": 112149,
+        "name": "Chimeric Core",
+        "rarity": 1,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_112149"
+    },
+    "SymbioticChimericNucleus": {
+        "id": 112150,
+        "name": "Symbiotic Chimeric Nucleus",
+        "rarity": 2,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_112150"
+    },
+    "PrimeChimericNexus": {
+        "id": 112151,
+        "name": "Prime Chimeric Nexus",
+        "rarity": 3,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_112151"
+    },
+    "AccretedFragment": {
+        "id": 112152,
+        "name": "Accreted Fragment",
+        "rarity": 2,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_112152"
+    },
+    "AccretedMass": {
+        "id": 112153,
+        "name": "Accreted Mass",
+        "rarity": 3,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_112153"
+    },
+    "AccretedGrowth": {
+        "id": 112154,
+        "name": "Accreted Growth",
+        "rarity": 4,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_112154"
+    },
+    "HollowRootOfLife": {
+        "id": 112155,
+        "name": "Hollow Root of Life",
+        "rarity": 2,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_112155"
+    },
+    "SproutNodeOfLife": {
+        "id": 112156,
+        "name": "Sprout Node of Life",
+        "rarity": 3,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_112156"
+    },
+    "CoiledCoreOfLife": {
+        "id": 112157,
+        "name": "Coiled Core of Life",
+        "rarity": 4,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_112157"
+    },
     "HurricaneSeed": {
         "id": 113001,
         "name": "Hurricane Seed",
@@ -2316,6 +2463,20 @@ export default {
         "type": "MATERIAL_AVATAR_MATERIAL",
         "icon": "UI_ItemIcon_113089"
     },
+    "UnscorchedBlossomBranch": {
+        "id": 113090,
+        "name": "Unscorched Blossom Branch",
+        "rarity": 4,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_113090"
+    },
+    "SeveredTailOfTheSkyRoamer": {
+        "id": 113091,
+        "name": "Severed Tail of the Sky-Roamer",
+        "rarity": 4,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_113091"
+    },
     "TileOfDecarabiansTower": {
         "id": 114001,
         "name": "Tile of Decarabian's Tower",
@@ -2904,6 +3065,90 @@ export default {
         "type": "MATERIAL_AVATAR_MATERIAL",
         "icon": "UI_ItemIcon_114084"
     },
+    "RiseOfThePaleStarArmy": {
+        "id": 114085,
+        "name": "Rise of the Pale Star Army",
+        "rarity": 2,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_114085"
+    },
+    "MusterOfThePaleStarArmy": {
+        "id": 114086,
+        "name": "Muster of the Pale Star Army",
+        "rarity": 3,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_114086"
+    },
+    "ClarionOfThePaleStarArmy": {
+        "id": 114087,
+        "name": "Clarion of the Pale Star Army",
+        "rarity": 4,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_114087"
+    },
+    "TriumphOfThePaleStarArmy": {
+        "id": 114088,
+        "name": "Triumph of the Pale Star Army",
+        "rarity": 5,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_114088"
+    },
+    "MeasuredPourOfTheCellaredSpiritualNectar": {
+        "id": 114089,
+        "name": "Measured Pour of the Cellared Spiritual Nectar",
+        "rarity": 2,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_114089"
+    },
+    "IntoxicationOfTheCellaredSpiritualNectar": {
+        "id": 114090,
+        "name": "Intoxication of the Cellared Spiritual Nectar",
+        "rarity": 3,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_114090"
+    },
+    "ExhilarationOfTheCellaredSpiritualNectar": {
+        "id": 114091,
+        "name": "Exhilaration of the Cellared Spiritual Nectar",
+        "rarity": 4,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_114091"
+    },
+    "RevelryOfTheCellaredSpiritualNectar": {
+        "id": 114092,
+        "name": "Revelry of the Cellared Spiritual Nectar",
+        "rarity": 5,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_114092"
+    },
+    "TheFrostEmperorsRevival": {
+        "id": 114093,
+        "name": "The Frost Emperor's Revival",
+        "rarity": 2,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_114093"
+    },
+    "TheFrostEmperorsCeremony": {
+        "id": 114094,
+        "name": "The Frost Emperor's Ceremony",
+        "rarity": 3,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_114094"
+    },
+    "TheFrostEmperorsLament": {
+        "id": 114095,
+        "name": "The Frost Emperor's Lament",
+        "rarity": 4,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_114095"
+    },
+    "TheFrostEmperorsFarewell": {
+        "id": 114096,
+        "name": "The Frost Emperor's Farewell",
+        "rarity": 5,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_114096"
+    },
     "FesteringDragonMarrow": {
         "id": 200103,
         "name": "Festering Dragon Marrow",
@@ -3085,13 +3330,6 @@ export default {
         "rarity": 4,
         "type": "MATERIAL_AVATAR_MATERIAL",
         "icon": "UI_ItemIcon_200128"
-    },
-    "": {
-        "id": 340029,
-        "name": "???",
-        "rarity": 2,
-        "type": "MATERIAL_AVATAR_MATERIAL",
-        "icon": "UI_ItemIcon_100001"
     },
     "CharacterEXP": {
         "id": 101,
@@ -3687,6 +3925,27 @@ export default {
         "type": "MATERIAL_COMMON",
         "icon": "UI_ItemIcon_196"
     },
+    "TournamentPoints": {
+        "id": 197,
+        "name": "Tournament Points",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_197"
+    },
+    "FervorCoupon": {
+        "id": 198,
+        "name": "Fervor Coupon",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_ADVTicket"
+    },
+    "PrimeIceCount": {
+        "id": 199,
+        "name": "Prime Ice Count",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_199"
+    },
     "GenesisCrystal": {
         "id": 203,
         "name": "Genesis Crystal",
@@ -3700,6 +3959,13 @@ export default {
         "rarity": 3,
         "type": "MATERIAL_COMMON",
         "icon": "UI_ItemIcon_204"
+    },
+    "": {
+        "id": 205,
+        "name": "???",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_GcgIcon_CardCurrency"
     },
     "ToyMedal": {
         "id": 206,
@@ -3848,6 +4114,13 @@ export default {
         "type": "MATERIAL_COMMON",
         "icon": "UI_ItemIcon_324"
     },
+    "ExpeditionInsights": {
+        "id": 403,
+        "name": "Expedition Insights",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_403"
+    },
     "NorthlanderSword": {
         "id": 101106,
         "name": "Northlander Sword",
@@ -3882,6 +4155,41 @@ export default {
         "rarity": 4,
         "type": "MATERIAL_COMMON",
         "icon": "UI_ItemIcon_101105"
+    },
+    "ConstructAppearanceJackFrost": {
+        "id": 223301,
+        "name": "Construct Appearance: Jack Frost",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_223301"
+    },
+    "ConstructAppearancePolyarbear": {
+        "id": 223302,
+        "name": "Construct Appearance: Polyarbear",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_223302"
+    },
+    "ConstructAppearanceTheBallerina": {
+        "id": 223303,
+        "name": "Construct Appearance: The Ballerina",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_223303"
+    },
+    "ConstructAppearanceTheHound": {
+        "id": 223304,
+        "name": "Construct Appearance: The Hound",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_223304"
+    },
+    "ConstructAppearanceTheTides": {
+        "id": 223305,
+        "name": "Construct Appearance: The Tides",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_223305"
     },
     "MasterlessStarglitter": {
         "id": 221,
@@ -4168,6 +4476,13 @@ export default {
         "type": "MATERIAL_CONSUME",
         "icon": "UI_ItemIcon_107032"
     },
+    "KuuhenkiShrineKey": {
+        "id": 107032,
+        "name": "Kuuhenki Shrine Key",
+        "rarity": 1,
+        "type": "MATERIAL_CONSUME",
+        "icon": "UI_ItemIcon_107032"
+    },
     "MnemonicCluster": {
         "id": 107033,
         "name": "Mnemonic Cluster",
@@ -4186,6 +4501,20 @@ export default {
         "rarity": 3,
         "type": "MATERIAL_CONSUME",
         "icon": "UI_ItemIcon_107034"
+    },
+    "ShadowWingdrop": {
+        "id": 107036,
+        "name": "Shadow Wingdrop",
+        "rarity": 1,
+        "type": "MATERIAL_CONSUME",
+        "icon": "UI_ItemIcon_107036"
+    },
+    "SnezhnayaShrineOfDepthsKey": {
+        "id": 107037,
+        "name": "Snezhnaya Shrine of Depths Key",
+        "rarity": 1,
+        "type": "MATERIAL_CONSUME",
+        "icon": "UI_ItemIcon_107037"
     },
     "RecipeItem": {
         "id": 109000,
@@ -4230,11 +4559,11 @@ export default {
         "icon": "UI_ItemIcon_116001"
     },
     "CakeForTraveler": {
-        "id": 118012,
+        "id": 118014,
         "name": "Cake for Traveler",
         "rarity": 4,
         "type": "MATERIAL_CONSUME",
-        "icon": "UI_ItemIcon_118011"
+        "icon": "UI_ItemIcon_118013"
     },
     "AngledDropBottle": {
         "id": 120825,
@@ -4495,6 +4824,34 @@ export default {
         "type": "MATERIAL_CONSUME",
         "icon": "UI_ItemIcon_121604"
     },
+    "RemnantIncenseGuideSnowgrave": {
+        "id": 121659,
+        "name": "Remnant Incense Guide - Snowgrave",
+        "rarity": 4,
+        "type": "MATERIAL_CONSUME",
+        "icon": "UI_ItemIcon_121659"
+    },
+    "RemnantIncenseGuideFellfrostPeak": {
+        "id": 121660,
+        "name": "Remnant Incense Guide - Fellfrost Peak",
+        "rarity": 4,
+        "type": "MATERIAL_CONSUME",
+        "icon": "UI_ItemIcon_121660"
+    },
+    "RemnantIncenseGuideEverfrozenEarth": {
+        "id": 121661,
+        "name": "Remnant Incense Guide - Everfrozen Earth",
+        "rarity": 4,
+        "type": "MATERIAL_CONSUME",
+        "icon": "UI_ItemIcon_121661"
+    },
+    "StardustTrailRadiantGlowSigil": {
+        "id": 121674,
+        "name": "Stardust Trail: Radiant Glow Sigil",
+        "rarity": 4,
+        "type": "MATERIAL_CONSUME",
+        "icon": "UI_ItemIcon_121657"
+    },
     "FragrantSeasoning": {
         "id": 141115,
         "name": "Fragrant Seasoning",
@@ -4664,14 +5021,14 @@ export default {
         "icon": "UI_ItemIcon_117005"
     },
     "DomainReliquaryTierII": {
-        "id": 117028,
+        "id": 117030,
         "name": "Domain Reliquary: Tier II",
         "rarity": 4,
         "type": "MATERIAL_CONSUME_BATCH_USE",
         "icon": "UI_ItemIcon_117002"
     },
     "DomainReliquaryTierI": {
-        "id": 117029,
+        "id": 117031,
         "name": "Domain Reliquary: Tier I",
         "rarity": 5,
         "type": "MATERIAL_CONSUME_BATCH_USE",
@@ -4760,6 +5117,13 @@ export default {
         "rarity": 1,
         "type": "MATERIAL_ELEM_CRYSTAL",
         "icon": "UI_ItemIcon_107030"
+    },
+    "Cryoculus": {
+        "id": 107035,
+        "name": "Cryoculus",
+        "rarity": 1,
+        "type": "MATERIAL_ELEM_CRYSTAL",
+        "icon": "UI_ItemIcon_107035"
     },
     "Mushroom": {
         "id": 100011,
@@ -5825,6 +6189,62 @@ export default {
         "type": "MATERIAL_EXCHANGE",
         "icon": "UI_ItemIcon_101272"
     },
+    "FrostfairyFlower": {
+        "id": 101275,
+        "name": "Frostfairy Flower",
+        "rarity": 1,
+        "type": "MATERIAL_EXCHANGE",
+        "icon": "UI_ItemIcon_101275"
+    },
+    "Flockingweed": {
+        "id": 101276,
+        "name": "Flockingweed",
+        "rarity": 1,
+        "type": "MATERIAL_EXCHANGE",
+        "icon": "UI_ItemIcon_101276"
+    },
+    "GoldenFern": {
+        "id": 101277,
+        "name": "Golden Fern",
+        "rarity": 1,
+        "type": "MATERIAL_EXCHANGE",
+        "icon": "UI_ItemIcon_101277"
+    },
+    "RedBeet": {
+        "id": 101278,
+        "name": "Red Beet",
+        "rarity": 1,
+        "type": "MATERIAL_EXCHANGE",
+        "icon": "UI_ItemIcon_101278"
+    },
+    "Glaciafruit": {
+        "id": 101279,
+        "name": "Glaciafruit",
+        "rarity": 1,
+        "type": "MATERIAL_EXCHANGE",
+        "icon": "UI_ItemIcon_101279"
+    },
+    "SnowballFlower": {
+        "id": 101280,
+        "name": "Snowball Flower",
+        "rarity": 1,
+        "type": "MATERIAL_EXCHANGE",
+        "icon": "UI_ItemIcon_101280"
+    },
+    "Rimecurrant": {
+        "id": 101281,
+        "name": "Rimecurrant",
+        "rarity": 1,
+        "type": "MATERIAL_EXCHANGE",
+        "icon": "UI_ItemIcon_101281"
+    },
+    "Lumifluorite": {
+        "id": 101282,
+        "name": "Lumifluorite",
+        "rarity": 1,
+        "type": "MATERIAL_EXCHANGE",
+        "icon": "UI_ItemIcon_101282"
+    },
     "Fabric": {
         "id": 101401,
         "name": "Fabric",
@@ -5964,6 +6384,13 @@ export default {
         "rarity": 1,
         "type": "MATERIAL_EXCHANGE",
         "icon": "UI_ItemIcon_110016"
+    },
+    "Honey": {
+        "id": 110017,
+        "name": "Honey",
+        "rarity": 1,
+        "type": "MATERIAL_EXCHANGE",
+        "icon": "UI_ItemIcon_110017"
     },
     "Medaka": {
         "id": 131000,
@@ -6336,6 +6763,48 @@ export default {
         "type": "MATERIAL_EXCHANGE",
         "icon": "UI_ItemIcon_131053"
     },
+    "CharcoalSnowfin": {
+        "id": 131054,
+        "name": "Charcoal Snowfin",
+        "rarity": 3,
+        "type": "MATERIAL_EXCHANGE",
+        "icon": "UI_ItemIcon_131054"
+    },
+    "CreamSnowfin": {
+        "id": 131055,
+        "name": "Cream Snowfin",
+        "rarity": 3,
+        "type": "MATERIAL_EXCHANGE",
+        "icon": "UI_ItemIcon_131055"
+    },
+    "MoonlightSnowfin": {
+        "id": 131056,
+        "name": "Moonlight Snowfin",
+        "rarity": 3,
+        "type": "MATERIAL_EXCHANGE",
+        "icon": "UI_ItemIcon_131056"
+    },
+    "RubyStarbloomFish": {
+        "id": 131057,
+        "name": "Ruby Starbloom Fish",
+        "rarity": 3,
+        "type": "MATERIAL_EXCHANGE",
+        "icon": "UI_ItemIcon_131057"
+    },
+    "FrostpetalStarbloomFish": {
+        "id": 131058,
+        "name": "Frostpetal Starbloom Fish",
+        "rarity": 3,
+        "type": "MATERIAL_EXCHANGE",
+        "icon": "UI_ItemIcon_131058"
+    },
+    "IridescentStarbloomFish": {
+        "id": 131059,
+        "name": "Iridescent Starbloom Fish",
+        "rarity": 3,
+        "type": "MATERIAL_EXCHANGE",
+        "icon": "UI_ItemIcon_131059"
+    },
     "LanternFiber": {
         "id": 200001,
         "name": "Lantern Fiber",
@@ -6385,6 +6854,13 @@ export default {
         "type": "MATERIAL_FIRE_MASTER_AVATAR_TALENT_ITEM",
         "icon": "UI_ItemIcon_918"
     },
+    "SandronesTeaPartyInvitationLetter": {
+        "id": 121596,
+        "name": "Sandrone's Tea Party Invitation Letter",
+        "rarity": 1,
+        "type": "MATERIAL_MARIONETTE_TEA_TIME_INVITE",
+        "icon": "UI_ItemIcon_121596"
+    },
     "Unadorned": {
         "id": 121528,
         "name": "Unadorned",
@@ -6427,6 +6903,13 @@ export default {
         "type": "MATERIAL_NATURALIST_CODEX",
         "icon": "UI_ItemIcon_121533"
     },
+    "BlackSnowSwanArchive": {
+        "id": 121653,
+        "name": "Black Snow Swan Archive",
+        "rarity": 4,
+        "type": "MATERIAL_ODETTE_QUEST_PHOTO_BOOK",
+        "icon": "UI_ItemIcon_121653"
+    },
     "MasterlessStellaFortuna": {
         "id": 104300,
         "name": "Masterless Stella Fortuna",
@@ -6461,6 +6944,118 @@ export default {
         "rarity": 4,
         "type": "MATERIAL_SEA_LAMP",
         "icon": "UI_ItemIcon_200004"
+    },
+    "ShatanayasFrostsilverMuzzle": {
+        "id": 223111,
+        "name": "Shatanaya's Frostsilver: Muzzle",
+        "rarity": 4,
+        "type": "MATERIAL_TPS_ACCESSORY",
+        "icon": "UI_EquipIcon_AssaultRifle_Glacia_Part03"
+    },
+    "ShatanayasFrostsilverAmmo": {
+        "id": 223112,
+        "name": "Shatanaya's Frostsilver: Ammo",
+        "rarity": 4,
+        "type": "MATERIAL_TPS_ACCESSORY",
+        "icon": "UI_EquipIcon_AssaultRifle_Glacia_Part01"
+    },
+    "ShatanayasFrostsilverAmmoFeed": {
+        "id": 223112,
+        "name": "Shatanaya's Frostsilver: Ammo Feed",
+        "rarity": 4,
+        "type": "MATERIAL_TPS_ACCESSORY",
+        "icon": "UI_EquipIcon_AssaultRifle_Glacia_Part01"
+    },
+    "ShatanayasFrostsilverGunstock": {
+        "id": 223113,
+        "name": "Shatanaya's Frostsilver: Gunstock",
+        "rarity": 4,
+        "type": "MATERIAL_TPS_ACCESSORY",
+        "icon": "UI_EquipIcon_AssaultRifle_Glacia_Part04"
+    },
+    "ShatanayasFrostsilverSight": {
+        "id": 223114,
+        "name": "Shatanaya's Frostsilver: Sight",
+        "rarity": 4,
+        "type": "MATERIAL_TPS_ACCESSORY",
+        "icon": "UI_EquipIcon_AssaultRifle_Glacia_Part02"
+    },
+    "BalsagsSunwheelMuzzle": {
+        "id": 223121,
+        "name": "Balsag's Sunwheel: Muzzle",
+        "rarity": 4,
+        "type": "MATERIAL_TPS_ACCESSORY",
+        "icon": "UI_EquipIcon_GrenadeLauncher_Ignis_Part03"
+    },
+    "BalsagsSunwheelAmmo": {
+        "id": 223122,
+        "name": "Balsag's Sunwheel: Ammo",
+        "rarity": 4,
+        "type": "MATERIAL_TPS_ACCESSORY",
+        "icon": "UI_EquipIcon_GrenadeLauncher_Ignis_Part01"
+    },
+    "BalsagsSunwheelAmmoFeed": {
+        "id": 223122,
+        "name": "Balsag's Sunwheel: Ammo Feed",
+        "rarity": 4,
+        "type": "MATERIAL_TPS_ACCESSORY",
+        "icon": "UI_EquipIcon_GrenadeLauncher_Ignis_Part01"
+    },
+    "BalsagsSunwheelGunstock": {
+        "id": 223123,
+        "name": "Balsag's Sunwheel: Gunstock",
+        "rarity": 4,
+        "type": "MATERIAL_TPS_ACCESSORY",
+        "icon": "UI_EquipIcon_GrenadeLauncher_Ignis_Part04"
+    },
+    "BalsagsSunwheelSight": {
+        "id": 223124,
+        "name": "Balsag's Sunwheel: Sight",
+        "rarity": 4,
+        "type": "MATERIAL_TPS_ACCESSORY",
+        "icon": "UI_EquipIcon_GrenadeLauncher_Ignis_Part02"
+    },
+    "AshamezsThunderMuzzle": {
+        "id": 223131,
+        "name": "Ashamez's Thunder: Muzzle",
+        "rarity": 4,
+        "type": "MATERIAL_TPS_ACCESSORY",
+        "icon": "UI_EquipIcon_AssaultRifle_Fulmen_Part03"
+    },
+    "AshamezsThunderAmmo": {
+        "id": 223132,
+        "name": "Ashamez's Thunder: Ammo",
+        "rarity": 4,
+        "type": "MATERIAL_TPS_ACCESSORY",
+        "icon": "UI_EquipIcon_AssaultRifle_Fulmen_Part01"
+    },
+    "AshamezsThunderAmmoFeed": {
+        "id": 223132,
+        "name": "Ashamez's Thunder: Ammo Feed",
+        "rarity": 4,
+        "type": "MATERIAL_TPS_ACCESSORY",
+        "icon": "UI_EquipIcon_AssaultRifle_Fulmen_Part01"
+    },
+    "AshamezsThunderGunstock": {
+        "id": 223133,
+        "name": "Ashamez's Thunder: Gunstock",
+        "rarity": 4,
+        "type": "MATERIAL_TPS_ACCESSORY",
+        "icon": "UI_EquipIcon_AssaultRifle_Fulmen_Part04"
+    },
+    "AshamezsThunderSight": {
+        "id": 223134,
+        "name": "Ashamez's Thunder: Sight",
+        "rarity": 4,
+        "type": "MATERIAL_TPS_ACCESSORY",
+        "icon": "UI_EquipIcon_AssaultRifle_Fulmen_Part02"
+    },
+    "StardustTrailRadiantGlow": {
+        "id": 121657,
+        "name": "Stardust Trail: Radiant Glow",
+        "rarity": 4,
+        "type": "MATERIAL_TPS_CLOAK_UPGRADE",
+        "icon": "UI_ItemIcon_121657"
     },
     "EnhancementOre": {
         "id": 104011,
@@ -6685,5 +7280,40 @@ export default {
         "rarity": 1,
         "type": "MATERIAL_WOOD",
         "icon": "UI_ItemIcon_101330"
+    },
+    "SnowPoplarWood": {
+        "id": 101331,
+        "name": "Snow Poplar Wood",
+        "rarity": 1,
+        "type": "MATERIAL_WOOD",
+        "icon": "UI_ItemIcon_101332"
+    },
+    "WhiteBirchWood": {
+        "id": 101332,
+        "name": "White Birch Wood",
+        "rarity": 1,
+        "type": "MATERIAL_WOOD",
+        "icon": "UI_ItemIcon_101331"
+    },
+    "BluebeechWood": {
+        "id": 101333,
+        "name": "Bluebeech Wood",
+        "rarity": 1,
+        "type": "MATERIAL_WOOD",
+        "icon": "UI_ItemIcon_101333"
+    },
+    "LarchWood": {
+        "id": 101334,
+        "name": "Larch Wood",
+        "rarity": 1,
+        "type": "MATERIAL_WOOD",
+        "icon": "UI_ItemIcon_101334"
+    },
+    "SpiritSeekerPreviewCommemorativePhoto": {
+        "id": 121663,
+        "name": "\"Spirit Seeker\" Preview Commemorative Photo",
+        "rarity": 4,
+        "type": "MATERIAL_ZDAQ_BOOK_PHOTO",
+        "icon": "UI_ItemIcon_121663"
     }
 };

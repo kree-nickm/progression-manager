@@ -169,6 +169,21 @@ export default {
             "3": "Fractured Flaming Hilt",
             "2": "Faded Flaming Hilt"
         },
+        "Precursor": {
+            "4": "Unblemished Lunar Iron",
+            "3": "Depleted Lunar Iron",
+            "2": "Fractured Lunar Iron"
+        },
+        "Volkodlak": {
+            "4": "Accreted Growth",
+            "3": "Accreted Mass",
+            "2": "Accreted Fragment"
+        },
+        "Leshy": {
+            "4": "Coiled Core of Life",
+            "3": "Sprout Node of Life",
+            "2": "Hollow Root of Life"
+        },
         "Slimes": {
             "1": "Slime Condensate",
             "2": "Slime Secretions",
@@ -262,6 +277,16 @@ export default {
             "3": "Frost-Etched Warrant",
             "2": "Immaculate Warrant",
             "1": "Tattered Warrant"
+        },
+        "Fae": {
+            "3": "Ethereal Crystalscale Stone",
+            "2": "Ethereal Crystal",
+            "1": "Ethereal Glimmershard"
+        },
+        "Chimera": {
+            "3": "Prime Chimeric Nexus",
+            "2": "Symbiotic Chimeric Nucleus",
+            "1": "Chimeric Core"
         }
     },
     "trounce": [
@@ -565,6 +590,14 @@ export default {
         "Watcher": {
             "name": "Watcher: Fallen Vigil",
             "4": "Plume of the Fallen Watcher"
+        },
+        "Chimera Lion": {
+            "name": "Chimeric Winged Lion",
+            "4": "Severed Tail of the Sky-Roamer"
+        },
+        "Immortal": {
+            "name": "Immortal Construct",
+            "4": "Unscorched Blossom Branch"
         }
     },
     "gemstone": {
@@ -753,6 +786,30 @@ export default {
         },
         "Vagrancy": {
             "source": "Nod-Krai",
+            "days": [
+                "Wednesday",
+                "Saturday",
+                "Sunday"
+            ]
+        },
+        "Charity": {
+            "source": "Snezhnaya",
+            "days": [
+                "Monday",
+                "Thursday",
+                "Sunday"
+            ]
+        },
+        "Fortitude": {
+            "source": "Snezhnaya",
+            "days": [
+                "Tuesday",
+                "Friday",
+                "Sunday"
+            ]
+        },
+        "Glory": {
+            "source": "Snezhnaya",
             "days": [
                 "Wednesday",
                 "Saturday",
@@ -1012,6 +1069,42 @@ export default {
             "3": "Unyielding Delusion of the Far-North Scions",
             "4": "Oblation of the Far-North Scions",
             "5": "Aureate Radiance of the Far-North Scions"
+        },
+        "Trumpet": {
+            "source": "Snezhnaya",
+            "days": [
+                "Monday",
+                "Thursday",
+                "Sunday"
+            ],
+            "2": "Rise of the Pale Star Army",
+            "3": "Muster of the Pale Star Army",
+            "4": "Clarion of the Pale Star Army",
+            "5": "Triumph of the Pale Star Army"
+        },
+        "Flask": {
+            "source": "Snezhnaya",
+            "days": [
+                "Tuesday",
+                "Friday",
+                "Sunday"
+            ],
+            "2": "Measured Pour of the Cellared Spiritual Nectar",
+            "3": "Intoxication of the Cellared Spiritual Nectar",
+            "4": "Exhilaration of the Cellared Spiritual Nectar",
+            "5": "Revelry of the Cellared Spiritual Nectar"
+        },
+        "Egg": {
+            "source": "Snezhnaya",
+            "days": [
+                "Wednesday",
+                "Saturday",
+                "Sunday"
+            ],
+            "2": "The Frost Emperor's Revival",
+            "3": "The Frost Emperor's Ceremony",
+            "4": "The Frost Emperor's Lament",
+            "5": "The Frost Emperor's Farewell"
         }
     }
 };

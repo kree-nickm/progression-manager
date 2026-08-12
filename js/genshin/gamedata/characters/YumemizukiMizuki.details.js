@@ -128,7 +128,7 @@ export default {
         },
         "Elemental Skill": {
             "name": "Aisa Utamakura Pilgrimage",
-            "text": "Weaves memories of lovely dreams, entering a <color=#FFD780FF>Dreamdrifter<\/color> state where Yumemizuki Mizuki floats above the ground, and dealing 1 instance of <color=#80FFD7FF>AoE Anemo DMG<\/color> to nearby opponents.\\n\\n<color=#FFD780FF>Dreamdrifter<\/color>\\n\u00b7While in the Dreamdrifter state, Yumemizuki Mizuki will continuously drift forward, dealing <color=#80FFD7FF>AoE Anemo DMG<\/color> to nearby opponents at regular intervals.\\n\u00b7During this time, Yumemizuki Mizuki can control her direction of drift, and the pick-up distance of <color=#FFD780FF>Yumemi Style Special Snacks<\/color> from the Elemental Burst <color=#FFD780FF>Anraku Secret Spring Therapy<\/color> will be increased.\\n\u00b7Increases the Swirl DMG that nearby party members deal based on Yumemizuki Mizuki's Elemental Mastery.\\n\u00b7Dreamdrifter will end when Mizuki leaves the field or uses her Elemental Skill again.\\n\\n<i>\"Our dreams touch at midnight, their song ringing on in our hearts.\"<\/i>",
+            "text": "Weaves memories of lovely dreams, entering a <color=#FFD780FF>Dreamdrifter<\/color> state where Yumemizuki Mizuki floats above the ground, and dealing 1 instance of <color=#80FFD7FF>AoE Anemo DMG<\/color> to nearby opponents.\\n\\n<color=#FFD780FF>Dreamdrifter<\/color>\\n\u00b7While in the Dreamdrifter state, Yumemizuki Mizuki will continuously drift forward, dealing <color=#80FFD7FF>AoE Anemo DMG<\/color> to nearby opponents at regular intervals.\\n\u00b7During this time, Yumemizuki Mizuki can control her direction of drift, and the pick-up distance of <color=#FFD780FF>Yumemi Style Special Snacks<\/color> from the Elemental Burst <color=#FFD780FF>Anraku Secret Spring Therapy<\/color> will be increased.\\n\u00b7Increases the Swirl DMG and Stellar Swirl reaction DMG that nearby party members deal based on Yumemizuki Mizuki's Elemental Mastery.\\n\u00b7Dreamdrifter will end when Mizuki leaves the field or uses her Elemental Skill again.\\n\\n<i>\"Our dreams touch at midnight, their song ringing on in our hearts.\"<\/i>",
             "scaling": {
                 "Skill DMG": [
                     "57.74%",
@@ -182,21 +182,38 @@ export default {
                     "5s"
                 ],
                 "Elemental Mastery-Based Swirl DMG Increase": [
-                    "0.18% per Point",
-                    "0.21% per Point",
-                    "0.24% per Point",
-                    "0.27% per Point",
-                    "0.3% per Point",
-                    "0.33% per Point",
-                    "0.36% per Point",
-                    "0.39% per Point",
-                    "0.42% per Point",
-                    "0.45% per Point",
-                    "0.48% per Point",
-                    "0.51% per Point",
-                    "0.54% per Point",
-                    "0.57% per Point",
-                    "0.6% per Point"
+                    "18% per 100 Points",
+                    "21% per 100 Points",
+                    "24% per 100 Points",
+                    "27% per 100 Points",
+                    "30% per 100 Points",
+                    "33% per 100 Points",
+                    "36% per 100 Points",
+                    "39% per 100 Points",
+                    "42% per 100 Points",
+                    "45% per 100 Points",
+                    "48% per 100 Points",
+                    "51% per 100 Points",
+                    "54% per 100 Points",
+                    "57% per 100 Points",
+                    "60% per 100 Points"
+                ],
+                "Elemental Mastery-Based Stellar Swirl DMG Increase": [
+                    "1.8% per 100 Points",
+                    "2.1% per 100 Points",
+                    "2.4% per 100 Points",
+                    "2.7% per 100 Points",
+                    "3% per 100 Points",
+                    "3.3% per 100 Points",
+                    "3.6% per 100 Points",
+                    "3.9% per 100 Points",
+                    "4.2% per 100 Points",
+                    "4.5% per 100 Points",
+                    "4.8% per 100 Points",
+                    "5.1% per 100 Points",
+                    "5.4% per 100 Points",
+                    "5.7% per 100 Points",
+                    "6% per 100 Points"
                 ],
                 "CD": [
                     "15s",
@@ -329,7 +346,7 @@ export default {
         },
         "1st Ascension Passive": {
             "name": "Bright Moon's Restless Voice",
-            "text": "When Yumemizuki Mizuki triggers Swirl while in her Dreamdrifter state, Dreamdrifter's duration increases by 2.5s. This effect can trigger once every 0.3s for a maximum of 2 times per Dreamdrifter state.",
+            "text": "When Yumemizuki Mizuki triggers a Swirl or Stellar Swirl reaction while in her Dreamdrifter state, Dreamdrifter's duration increases by 2.5s. This effect can trigger once every 0.3s for a maximum of 2 times per Dreamdrifter state.",
             "icon": "UI_Talent_S_Mizuki_05"
         },
         "4th Ascension Passive": {
@@ -345,14 +362,14 @@ export default {
         "Passive": {
             "name": "Vast Be the Dream",
             "icon": "UI_Talent_S_Mizuki_08",
-            "text": "When Yumemizuki Mizuki triggers a Swirl reaction while in the Dreamdrifter state, the next instance of periodic <color=#80FFD7FF>AoE Anemo DMG<\/color> she deals to nearby enemies during that same state will be increased by 1,000% of her Elemental Mastery. The aforementioned effect can trigger once every 2.5s.\\nAdditionally, while Yumemizuki Mizuki is in the Dreamdrifter state, the Elemental Mastery of nearby party characters is increased by 10% of Yumemizuki Mizuki's Elemental Mastery."
+            "text": "When Yumemizuki Mizuki triggers a Swirl or Stellar Swirl reaction while in the Dreamdrifter state, the next instance of periodic <color=#80FFD7FF>AoE Anemo DMG<\/color> she deals to nearby enemies during that same state will be increased by 1,000% of her Elemental Mastery. The aforementioned effect can trigger once every 2.5s.\\n<color=#FFD780FF>Radiance: Stellar Swirl<\/color>: When Yumemizuki Mizuki deals to an opponent the above enhanced <color=#80FFD7FF>AoE Anemo DMG<\/color>, she will also deal an additional instance of <color=#80FFD7FF>Anemo DMG<\/color> at 1,000% of her Elemental Mastery. This DMG is considered Stellar Swirl reaction DMG.\\n\\nAdditionally, while Yumemizuki Mizuki is in the Dreamdrifter state, the Elemental Mastery of nearby party characters is also increased by 10% of her Elemental Mastery.\\nYumemizuki Mizuki will also enter the <<color=#FFD780FF>Radiance: Stellar Swirl<\/color> state for 8s when a nearby party member triggers a Stellar Swirl reaction."
         }
     },
     "constellations": {
         "1": {
             "name": "In Mist-Like Waters",
             "icon": "UI_Talent_S_Mizuki_01",
-            "text": "When Yumemizuki Mizuki is in the Dreamdrifter state, she will continuously apply the \"Twenty-Three Nights' Awaiting\" effect to nearby opponents for 3s every 3.5s. When an opponent is affected by Anemo DMG-triggered Swirl reactions while the aforementioned effect is active, the effect will be canceled, and this Swirl instance has its DMG against this opponent increased by 1,100% of Mizuki's Elemental Mastery. She also launches an additional attack on the same opponent, dealing <color=#80FFD7FF>Anemo DMG<\/color> equal to 1,000% of Yumemizuki Mizuki's Elemental Mastery."
+            "text": "When Yumemizuki Mizuki is in the Dreamdrifter state, she will continuously apply the \"Twenty-Three Nights' Awaiting\" effect to nearby opponents for 3s every 3.5s. When an opponent has a Swirl or Stellar Swirl reaction triggered against them by Anemo DMG while the aforementioned effect is active, the effect will be canceled, and this Swirl or Stellar Swirl instance has its DMG against this opponent increased by 1,100% and 550% of Mizuki's Elemental Mastery respectively. She also launches an additional attack on the same opponent, dealing <color=#80FFD7FF>Anemo DMG<\/color> at 1,000% of Yumemizuki Mizuki's Elemental Mastery.\\n<color=#FFD780FF>Radiance: Stellar Swirl<\/color>: The aforementioned additional DMG is changed to <color=#80FFD7FF>Anemo DMG<\/color> at 400% of Yumemizuki Mizuki's Elemental Mastery. This DMG is considered Stellar Swirl reaction DMG."
         },
         "2": {
             "name": "Your Echo I Meet in Dreams",
@@ -377,7 +394,7 @@ export default {
         "6": {
             "name": "The Heart Lingers Long",
             "icon": "UI_Talent_S_Mizuki_04",
-            "text": "While Yumemizuki Mizuki is in the Dreamdrifter state, Swirl DMG dealt by nearby party members can score CRIT Hits, with CRIT Rate fixed at 30%, and CRIT DMG fixed at 100%.\\nEvery point of Elemental Mastery Yumemizuki Mizuki has in excess of 500 increases her CRIT Rate by 0.04% and her CRIT DMG by 0.16%. Yumemizuki Mizuki's CRIT Rate and CRIT DMG can be increased by up to 20% and 80% in this way, respectively."
+            "text": "While Yumemizuki Mizuki is in the Dreamdrifter state, Swirl DMG dealt by nearby party members can score CRIT Hits, with CRIT Rate fixed at 30%, and CRIT DMG fixed at 100%. The CRIT Rate of any Stellar Swirl DMG dealt by these party members is also increased by 10%, while CRIT DMG is increased by 20%.\\nEvery point of Elemental Mastery Yumemizuki Mizuki has in excess of 500 increases her CRIT Rate by 0.04% and her CRIT DMG by 0.16%. Yumemizuki Mizuki's CRIT Rate and CRIT DMG can be increased by up to 20% and 80% in this way, respectively."
         }
     }
 };
