@@ -171,6 +171,27 @@ export default class Traveler extends Character
         ],
       });
     }
+    else if(this.key.endsWith("Cryo"))
+    {
+      this._element = "Cryo";
+      this.materialDefs.materials.push({
+        property: "trounce",
+        key: "Ascended Sample: Queen",
+      });
+      this.materialDefs.materials.push({
+        property: "enemyTalent",
+        group: GenshinLootData.enemy["Chimera"],
+        tiers: [1,2,3],
+      });
+      this.materialDefs.materials.push({
+        property: "mastery",
+        cycle: [
+          {group:Material.masteryQualities, suffix:"Charity", tiers:[2,3,4]},
+          {group:Material.masteryQualities, suffix:"Fortitude", tiers:[3,4]},
+          {group:Material.masteryQualities, suffix:"Glory", tiers:[3,4]},
+        ],
+      });
+    }
     
     super.afterLoad();
     return true;

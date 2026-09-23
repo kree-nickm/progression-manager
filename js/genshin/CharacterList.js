@@ -720,7 +720,7 @@ export default class CharacterList extends GenshinList
     let dendro = this.get("TravelerDendro");
     let hydro = this.get("TravelerHydro");
     let pyro = this.get("TravelerPyro");
-    //let cryo = this.get("TravelerCryo");
+    let cryo = this.get("TravelerCryo");
     
     if(!base)
     {
@@ -757,11 +757,11 @@ export default class CharacterList extends GenshinList
       pyro = Traveler.fromJSON({__class__:"Traveler",key:"TravelerPyro"}, {addProperties:{list:this}});
       this.update("list", pyro, "push");
     }
-    /*if(!cryo)
+    if(!cryo)
     {
       cryo = Traveler.fromJSON({__class__:"Traveler",key:"TravelerCryo"}, {addProperties:{list:this}});
       this.update("list", cryo, "push");
-    }*/
+    }
     
     base.update("owned", true);
     anemo.update("owned", true);
@@ -772,9 +772,9 @@ export default class CharacterList extends GenshinList
     dendro.base = base;
     hydro.base = base;
     pyro.base = base;
-    //cryo.base = base;
+    cryo.base = base;
     
-    base.variants = [anemo,geo,electro,dendro,hydro,pyro/*,cyro*/];
+    base.variants = [anemo,geo,electro,dendro,hydro,pyro,cryo];
   }
   
   addRemaining()

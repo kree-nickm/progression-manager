@@ -2477,6 +2477,13 @@ export default {
         "type": "MATERIAL_AVATAR_MATERIAL",
         "icon": "UI_ItemIcon_113091"
     },
+    "VagabondsCrackedArmor": {
+        "id": 113092,
+        "name": "Vagabond's Cracked Armor",
+        "rarity": 4,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_113092"
+    },
     "TileOfDecarabiansTower": {
         "id": 114001,
         "name": "Tile of Decarabian's Tower",
@@ -3331,6 +3338,13 @@ export default {
         "type": "MATERIAL_AVATAR_MATERIAL",
         "icon": "UI_ItemIcon_200128"
     },
+    "TeaScentedTassel": {
+        "id": 200129,
+        "name": "Tea-Scented Tassel",
+        "rarity": 4,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_200129"
+    },
     "CharacterEXP": {
         "id": 101,
         "name": "Character EXP",
@@ -3807,13 +3821,6 @@ export default {
         "type": "MATERIAL_COMMON",
         "icon": "UI_ItemIcon_179"
     },
-    "FestiveFever": {
-        "id": 180,
-        "name": "Festive Fever",
-        "rarity": 3,
-        "type": "MATERIAL_COMMON",
-        "icon": "UI_ItemIcon_180"
-    },
     "FestivalStamp": {
         "id": 181,
         "name": "Festival Stamp",
@@ -3946,6 +3953,20 @@ export default {
         "type": "MATERIAL_COMMON",
         "icon": "UI_ItemIcon_199"
     },
+    "PrimeIceResource": {
+        "id": 199,
+        "name": "Prime Ice Resource",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_199"
+    },
+    "VictoryEmblem": {
+        "id": 200,
+        "name": "Victory Emblem",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_200"
+    },
     "GenesisCrystal": {
         "id": 203,
         "name": "Genesis Crystal",
@@ -4037,6 +4058,13 @@ export default {
         "type": "MATERIAL_COMMON",
         "icon": "UI_ItemIcon_241"
     },
+    "CelebrationChronalNexus": {
+        "id": 245,
+        "name": "Celebration Chronal Nexus",
+        "rarity": 5,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_244"
+    },
     "InazumaReputationEXP": {
         "id": 314,
         "name": "Inazuma Reputation EXP",
@@ -4114,12 +4142,33 @@ export default {
         "type": "MATERIAL_COMMON",
         "icon": "UI_ItemIcon_324"
     },
+    "PredictionScore": {
+        "id": 401,
+        "name": "Prediction Score",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_401"
+    },
+    "FestiveCheer": {
+        "id": 402,
+        "name": "Festive Cheer",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_402"
+    },
     "ExpeditionInsights": {
         "id": 403,
         "name": "Expedition Insights",
         "rarity": 3,
         "type": "MATERIAL_COMMON",
         "icon": "UI_ItemIcon_403"
+    },
+    "FestiveFever": {
+        "id": 404,
+        "name": "Festive Fever",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_404"
     },
     "NorthlanderSword": {
         "id": 101106,
@@ -4156,38 +4205,45 @@ export default {
         "type": "MATERIAL_COMMON",
         "icon": "UI_ItemIcon_101105"
     },
+    "ConstructAppearanceFlutterwing": {
+        "id": 121713,
+        "name": "Construct Appearance: Flutterwing",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_121713"
+    },
     "ConstructAppearanceJackFrost": {
         "id": 223301,
         "name": "Construct Appearance: Jack Frost",
-        "rarity": 3,
+        "rarity": 4,
         "type": "MATERIAL_COMMON",
         "icon": "UI_ItemIcon_223301"
     },
     "ConstructAppearancePolyarbear": {
         "id": 223302,
         "name": "Construct Appearance: Polyarbear",
-        "rarity": 3,
+        "rarity": 4,
         "type": "MATERIAL_COMMON",
         "icon": "UI_ItemIcon_223302"
     },
     "ConstructAppearanceTheBallerina": {
         "id": 223303,
         "name": "Construct Appearance: The Ballerina",
-        "rarity": 3,
+        "rarity": 4,
         "type": "MATERIAL_COMMON",
         "icon": "UI_ItemIcon_223303"
     },
     "ConstructAppearanceTheHound": {
         "id": 223304,
         "name": "Construct Appearance: The Hound",
-        "rarity": 3,
+        "rarity": 4,
         "type": "MATERIAL_COMMON",
         "icon": "UI_ItemIcon_223304"
     },
     "ConstructAppearanceTheTides": {
         "id": 223305,
         "name": "Construct Appearance: The Tides",
-        "rarity": 3,
+        "rarity": 4,
         "type": "MATERIAL_COMMON",
         "icon": "UI_ItemIcon_223305"
     },
@@ -6854,6 +6910,13 @@ export default {
         "type": "MATERIAL_FIRE_MASTER_AVATAR_TALENT_ITEM",
         "icon": "UI_ItemIcon_918"
     },
+    "LetterFromXiangling": {
+        "id": 121629,
+        "name": "Letter From Xiangling",
+        "rarity": 3,
+        "type": "MATERIAL_LUNARITEV2_INVITE",
+        "icon": "UI_ItemIcon_121629"
+    },
     "SandronesTeaPartyInvitationLetter": {
         "id": 121596,
         "name": "Sandrone's Tea Party Invitation Letter",
@@ -7056,6 +7119,20 @@ export default {
         "rarity": 4,
         "type": "MATERIAL_TPS_CLOAK_UPGRADE",
         "icon": "UI_ItemIcon_121657"
+    },
+    "DruzhnaSpecialDispatchOrder": {
+        "id": 121670,
+        "name": "Druzhna Special Dispatch Order",
+        "rarity": 4,
+        "type": "MATERIAL_VESNA_FASHION",
+        "icon": "UI_ItemIcon_121670"
+    },
+    "HappyQuackyPhonographDucky": {
+        "id": 121662,
+        "name": "Happy-Quacky Phonograph Ducky",
+        "rarity": 4,
+        "type": "MATERIAL_VODYANITSA_OUTLOOK",
+        "icon": "UI_ItemIcon_121662"
     },
     "EnhancementOre": {
         "id": 104011,
@@ -7286,14 +7363,14 @@ export default {
         "name": "Snow Poplar Wood",
         "rarity": 1,
         "type": "MATERIAL_WOOD",
-        "icon": "UI_ItemIcon_101332"
+        "icon": "UI_ItemIcon_101331"
     },
     "WhiteBirchWood": {
         "id": 101332,
         "name": "White Birch Wood",
         "rarity": 1,
         "type": "MATERIAL_WOOD",
-        "icon": "UI_ItemIcon_101331"
+        "icon": "UI_ItemIcon_101332"
     },
     "BluebeechWood": {
         "id": 101333,

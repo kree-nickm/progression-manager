@@ -598,6 +598,10 @@ export default {
         "Immortal": {
             "name": "Immortal Construct",
             "4": "Unscorched Blossom Branch"
+        },
+        "Snegurochka": {
+            "name": "Guardian Blade of Drifting Snow",
+            "4": "Vagabond's Cracked Armor"
         }
     },
     "gemstone": {

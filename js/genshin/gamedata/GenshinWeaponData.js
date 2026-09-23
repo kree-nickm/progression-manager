@@ -431,6 +431,77 @@ export default {
         "id": 12511,
         "imgId": "UI_EquipIcon_Claymore_Deshret"
     },
+    "BeyondTheChrysalis": {
+        "id": 11522,
+        "name": "Beyond the Chrysalis",
+        "imgId": "UI_EquipIcon_Sword_Samosvist",
+        "type": "Sword",
+        "rarity": 5,
+        "stat": "critDMG_",
+        "baseATK": 48,
+        "passive": "Each time the equipping character uses their Elemental Skill or Elemental Burst, they gain one of the following three effects in sequence:\\nWinds of Devotion: Increases the equipping character's CRIT DMG by 56% for 10s;\\nWinds of Defiance: Increases Stellar Swirl reaction DMG dealt by the equipping character by 36% for 10s; and\\nWinds of Plenty: Regenerates 5 Elemental Energy for the equipping character. Up to 5 Elemental Energy can be regenerated in this way every 4s.\\nThe aforementioned effects are removed and the sequence is reset when the equipping character leaves the field.",
+        "refinementData": [
+            {
+                "1": 0.5600000023841858,
+                "2": 0.7200000286102295,
+                "3": 0.8799999952316284,
+                "4": 1.0399999618530273,
+                "5": 1.2000000476837158
+            },
+            {
+                "1": 0.36000001430511475,
+                "2": 0.44999998807907104,
+                "3": 0.5400000214576721,
+                "4": 0.6299999952316284,
+                "5": 0.7200000286102295
+            },
+            {
+                "1": 5,
+                "2": 5.5,
+                "3": 6,
+                "4": 6.5,
+                "5": 7
+            },
+            {
+                "1": 10,
+                "2": 10,
+                "3": 10,
+                "4": 10,
+                "5": 10
+            },
+            {
+                "1": 4,
+                "2": 4,
+                "3": 4,
+                "4": 4,
+                "5": 4
+            },
+            {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0
+            },
+            {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0
+            },
+            {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0
+            }
+        ],
+        "matWeakEnemy": "Chimera",
+        "matStrongEnemy": "Leshy",
+        "matForgery": "Trumpet"
+    },
     "BloodsoakedRuins": {
         "name": "Bloodsoaked Ruins",
         "rarity": 5,
@@ -1022,6 +1093,77 @@ export default {
         ],
         "id": 15511,
         "imgId": "UI_EquipIcon_Bow_Ayus"
+    },
+    "HymnOfTheMaelstrom": {
+        "id": 14524,
+        "name": "Hymn of the Maelstrom",
+        "imgId": "UI_EquipIcon_Catalyst_Bludnye",
+        "type": "Catalyst",
+        "rarity": 5,
+        "stat": "hp_",
+        "baseATK": 44,
+        "passive": "Increases Healing Bonus by 4%.\\nWhen performing healing, the equipping character gains the \"Vatsamonga's Vatic Vintage\" effect, which increases Max HP by 4% as well as increases the currently active party member's ATK by 0.4% for every 1,000 Max HP the equipping character has over 40,000. A maximum of 8% ATK can be gained in this way. This effect lasts 10s, max 3 stacks.\\nWhen a nearby party member triggers a Frozen or Stellar Swirl reaction, the aforementioned Max HP and ATK boosts will be further increased by 75% for the next 5s.\\nThe aforementioned effects can still trigger even when the equipping character is not on the field.",
+        "refinementData": [
+            {
+                "1": 0.03999999910593033,
+                "2": 0.05000000074505806,
+                "3": 0.05999999865889549,
+                "4": 0.07000000029802322,
+                "5": 0.07999999821186066
+            },
+            {
+                "1": 40000,
+                "2": 40000,
+                "3": 40000,
+                "4": 40000,
+                "5": 40000
+            },
+            {
+                "1": 0.004000000189989805,
+                "2": 0.004999999888241291,
+                "3": 0.006000000052154064,
+                "4": 0.007000000216066837,
+                "5": 0.00800000037997961
+            },
+            {
+                "1": 0.07999999821186066,
+                "2": 0.10000000149011612,
+                "3": 0.11999999731779099,
+                "4": 0.14000000059604645,
+                "5": 0.1599999964237213
+            },
+            {
+                "1": 10,
+                "2": 10,
+                "3": 10,
+                "4": 10,
+                "5": 10
+            },
+            {
+                "1": 3,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 3
+            },
+            {
+                "1": 5,
+                "2": 5,
+                "3": 5,
+                "4": 5,
+                "5": 5
+            },
+            {
+                "1": 0.75,
+                "2": 0.75,
+                "3": 0.75,
+                "4": 0.75,
+                "5": 0.75
+            }
+        ],
+        "matWeakEnemy": "Fae",
+        "matStrongEnemy": "Volkodlak",
+        "matForgery": "Flask"
     },
     "JadefallsSplendor": {
         "name": "Jadefall's Splendor",
@@ -3352,6 +3494,77 @@ export default {
             }
         ]
     },
+    "BreezeborneRefrain": {
+        "id": 15437,
+        "name": "Breezeborne Refrain",
+        "imgId": "UI_EquipIcon_Bow_Windtalker",
+        "type": "Bow",
+        "rarity": 4,
+        "stat": "critRate_",
+        "baseATK": 42,
+        "passive": "Increases Energy Recharge by 20%. When the equipping character hits the opponent with their Elemental Skill or Elemental Burst, they gain a stack of \"Hymn of the Pure.\" This effect can trigger once every 0.03s, max 3 stacks, and at 3 stacks, all instances of \"Hymn of the Pure\" are cleared to give the equipping character \"Thus Lied the Viper\" instead. This grants nearby party members a 24% Stellar Glimmer reaction DMG boost for 12s, during which no stacks of \"Hymn of the Pure\" can be obtained. The aforementioned effects can still trigger even when the equipping character is not on the field.",
+        "refinementData": [
+            {
+                "1": 0.23999999463558197,
+                "2": 0.30000001192092896,
+                "3": 0.36000001430511475,
+                "4": 0.41999998688697815,
+                "5": 0.47999998927116394
+            },
+            {
+                "1": 3,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 3
+            },
+            {
+                "1": 0.029999999329447746,
+                "2": 0.029999999329447746,
+                "3": 0.029999999329447746,
+                "4": 0.029999999329447746,
+                "5": 0.029999999329447746
+            },
+            {
+                "1": 12,
+                "2": 12,
+                "3": 12,
+                "4": 12,
+                "5": 12
+            },
+            {
+                "1": 12,
+                "2": 12,
+                "3": 12,
+                "4": 12,
+                "5": 12
+            },
+            {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0
+            },
+            {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0
+            },
+            {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0
+            }
+        ],
+        "matWeakEnemy": "Chimera",
+        "matStrongEnemy": "Volkodlak",
+        "matForgery": "Egg"
+    },
     "CalamityOfEshu": {
         "name": "Calamity of Eshu",
         "rarity": 4,
@@ -5452,6 +5665,77 @@ export default {
         "id": 15416,
         "imgId": "UI_EquipIcon_Bow_Maria"
     },
+    "NewBough": {
+        "id": 11437,
+        "name": "New Bough",
+        "imgId": "UI_EquipIcon_Sword_SpikedStake",
+        "type": "Sword",
+        "rarity": 4,
+        "stat": "critDMG_",
+        "baseATK": 42,
+        "passive": "When the equipping character hits the opponent with an attack within 12s after using the Elemental Skill, they gain the \"Verdant\" effect, which increases their ATK by 4% and their Elemental Mastery by 20. This effect lasts 6s and can trigger once every second. Max 3 stacks. The aforementioned effects can still trigger even when the equipping character is not on the field.\\nRadiance: Stellar Glimmer: The effect of \"Verdant\" is changed to: Increases ATK by 6% as well as Stellar Glimmer reaction DMG dealt by the equipping character by 8%.",
+        "refinementData": [
+            {
+                "1": 12,
+                "2": 12,
+                "3": 12,
+                "4": 12,
+                "5": 12
+            },
+            {
+                "1": 6,
+                "2": 6,
+                "3": 6,
+                "4": 6,
+                "5": 6
+            },
+            {
+                "1": 3,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 3
+            },
+            {
+                "1": 0.03999999910593033,
+                "2": 0.05000000074505806,
+                "3": 0.05999999865889549,
+                "4": 0.07000000029802322,
+                "5": 0.07999999821186066
+            },
+            {
+                "1": 0.05999999865889549,
+                "2": 0.07500000298023224,
+                "3": 0.09000000357627869,
+                "4": 0.10499999672174454,
+                "5": 0.11999999731779099
+            },
+            {
+                "1": 20,
+                "2": 25,
+                "3": 30,
+                "4": 35,
+                "5": 40
+            },
+            {
+                "1": 0.07999999821186066,
+                "2": 0.10000000149011612,
+                "3": 0.11999999731779099,
+                "4": 0.14000000059604645,
+                "5": 0.1599999964237213
+            },
+            {
+                "1": 1,
+                "2": 1,
+                "3": 1,
+                "4": 1,
+                "5": 1
+            }
+        ],
+        "matWeakEnemy": "Chimera",
+        "matStrongEnemy": "Leshy",
+        "matForgery": "Flask"
+    },
     "OathswornEye": {
         "name": "Oathsworn Eye",
         "rarity": 4,
@@ -6512,6 +6796,77 @@ export default {
         "id": 12409,
         "imgId": "UI_EquipIcon_Claymore_Kione"
     },
+    "SilverLight": {
+        "id": 11438,
+        "name": "Silver Light",
+        "imgId": "UI_EquipIcon_Sword_Fajian",
+        "type": "Sword",
+        "rarity": 4,
+        "stat": "atk_",
+        "baseATK": 42,
+        "passive": "Increases Elemental Mastery by 52 for 12s after Elemental Skill use. Max 2 stacks, and each stack's duration is independent of the others.",
+        "refinementData": [
+            {
+                "1": 52,
+                "2": 65,
+                "3": 78,
+                "4": 91,
+                "5": 104
+            },
+            {
+                "1": 12,
+                "2": 12,
+                "3": 12,
+                "4": 12,
+                "5": 12
+            },
+            {
+                "1": 2,
+                "2": 2,
+                "3": 2,
+                "4": 2,
+                "5": 2
+            },
+            {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0
+            },
+            {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0
+            },
+            {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0
+            },
+            {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0
+            },
+            {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0
+            }
+        ],
+        "matWeakEnemy": "Fatui",
+        "matStrongEnemy": "Geovishaps",
+        "matForgery": "Aeros"
+    },
     "SnareHook": {
         "name": "Snare Hook",
         "rarity": 4,
@@ -7334,6 +7689,77 @@ export default {
         ],
         "id": 14410,
         "imgId": "UI_EquipIcon_Catalyst_Outlaw"
+    },
+    "WintersHeavyHeart": {
+        "id": 14437,
+        "name": "Winter's Heavy Heart",
+        "imgId": "UI_EquipIcon_Catalyst_FrostScepter",
+        "type": "Catalyst",
+        "rarity": 4,
+        "stat": "critDMG_",
+        "baseATK": 42,
+        "passive": "The equipping character gains \"Silver-Tinged Blood Pact\": The equipping character's Elemental Mastery is increased by 24 for every Cryo character present in the party. For every Electro character present in the party, the equipping character's ATK is increased by 4.8%. Up to 4 Cryo or Electro characters can provide the above buffs.\\nRadiance: Stellar Glimmer: The effect of Silver-Tinged Blood Pact is changed to: For every Cryo or Electro character present in the party, the equipping character gains a 20-point Elemental Mastery boost and deals 6% increased Stellar Glimmer reaction DMG.",
+        "refinementData": [
+            {
+                "1": 24,
+                "2": 30,
+                "3": 36,
+                "4": 42,
+                "5": 48
+            },
+            {
+                "1": 0.04800000041723251,
+                "2": 0.05999999865889549,
+                "3": 0.07199999690055847,
+                "4": 0.08399999886751175,
+                "5": 0.09600000083446503
+            },
+            {
+                "1": 20,
+                "2": 25,
+                "3": 30,
+                "4": 35,
+                "5": 40
+            },
+            {
+                "1": 0.05999999865889549,
+                "2": 0.07500000298023224,
+                "3": 0.09000000357627869,
+                "4": 0.10499999672174454,
+                "5": 0.11999999731779099
+            },
+            {
+                "1": 4,
+                "2": 4,
+                "3": 4,
+                "4": 4,
+                "5": 4
+            },
+            {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0
+            },
+            {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0
+            },
+            {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0
+            }
+        ],
+        "matWeakEnemy": "Fae",
+        "matStrongEnemy": "Leshy",
+        "matForgery": "Egg"
     },
     "WolfFang": {
         "name": "Wolf-Fang",
