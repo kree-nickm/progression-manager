@@ -2034,6 +2034,26 @@ export default {
         "region": "Mondstadt",
         "version": "3.5"
     },
+    "Mitya": {
+        "id": 10000136,
+        "name": "Mitya",
+        "element": "Electro",
+        "weapon": "Catalyst",
+        "rarity": 5,
+        "ascendStat": "critDMG_",
+        "imgId": "UI_AvatarIcon_Mitya",
+        "matFlower": "Kristallfold",
+        "matTrounce": "Mask of the Virtuous Doctor",
+        "matBoss": "",
+        "matEnemy": "Chimera",
+        "matMastery": "Charity",
+        "atkBase": 20,
+        "atkMaxAsc": 88.21999999999997,
+        "hpBase": 906,
+        "hpMaxAsc": 3716.4659999999994,
+        "defBase": 62,
+        "defMaxAsc": 250.1819999999999
+    },
     "Mona": {
         "name": "Mona",
         "weapon": "Catalyst",
@@ -3039,6 +3059,26 @@ export default {
         "ascendStat": "atk_",
         "region": "None",
         "version": "5.3"
+    },
+    "Valeriy": {
+        "id": 10000137,
+        "name": "Valeriy",
+        "element": "Electro",
+        "weapon": "Sword",
+        "rarity": 4,
+        "ascendStat": "atk_",
+        "imgId": "UI_AvatarIcon_Valeriy",
+        "matFlower": "Fairy Wormwood",
+        "matTrounce": "Counterfeit Resin",
+        "matBoss": "Chimera Lion",
+        "matEnemy": "Fae",
+        "matMastery": "Glory",
+        "atkBase": 21,
+        "atkMaxAsc": 79.67099999999999,
+        "hpBase": 839,
+        "hpMaxAsc": 3000.1889999999994,
+        "defBase": 59,
+        "defMaxAsc": 210.409
     },
     "Varesa": {
         "name": "Varesa",

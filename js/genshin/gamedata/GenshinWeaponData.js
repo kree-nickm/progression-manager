@@ -2341,6 +2341,78 @@ export default {
         ],
         "imgId": "UI_EquipIcon_Catalyst_Figurines"
     },
+    "StarsealedEdict": {
+        "id": 14525,
+        "name": "Starsealed Edict",
+        "type": "Catalyst",
+        "rarity": 5,
+        "stat": "critDMG_",
+        "imgId": "UI_EquipIcon_Catalyst_Chernaya",
+        "baseATK": 44,
+        "passive": "Increases CRIT DMG by 24%. The equipping character gains the Crystal Compounding effect when they use their Elemental Skill, increasing Elemental Mastery by 48 for 20s. During this time, the equipping character gains a Law of Combustion stack when a nearby party member triggers an Elemental Reaction. Each stack increases Elemental Mastery by an additional 24. Max 3 stacks. These stacks last until Crystal Compounding ends or the equipping character uses their Elemental Skill again.\\nRadiance: Stellar-Conduct: Each Law of Combustion stack also increases the equipping character's Stellar-Conduct CRIT DMG by 12%.\\nThese effects can be triggered even when the equipping character is off-field.",
+        "passive5": "Increases CRIT DMG by 48%. The equipping character gains the Crystal Compounding effect when they use their Elemental Skill, increasing Elemental Mastery by 96 for 20s. During this time, the equipping character gains a Law of Combustion stack when a nearby party member triggers an Elemental Reaction. Each stack increases Elemental Mastery by an additional 48. Max 3 stacks. These stacks last until Crystal Compounding ends or the equipping character uses their Elemental Skill again.\\nRadiance: Stellar-Conduct: Each Law of Combustion stack also increases the equipping character's Stellar-Conduct CRIT DMG by 24%.\\nThese effects can be triggered even when the equipping character is off-field.",
+        "refinementData": [
+            {
+                "1": 48,
+                "2": 60,
+                "3": 72,
+                "4": 84,
+                "5": 96
+            },
+            {
+                "1": 24,
+                "2": 30,
+                "3": 36,
+                "4": 42,
+                "5": 48
+            },
+            {
+                "1": 0.119999997317791,
+                "2": 0.15000000596046448,
+                "3": 0.18000000715255737,
+                "4": 0.20999999344348907,
+                "5": 0.23999999463558197
+            },
+            {
+                "1": 20,
+                "2": 20,
+                "3": 20,
+                "4": 20,
+                "5": 20
+            },
+            {
+                "1": 0,
+                "2": 0,
+                "3": 0,
+                "4": 0,
+                "5": 0
+            },
+            {
+                "1": 3,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 3
+            },
+            {
+                "1": 5,
+                "2": 5,
+                "3": 5,
+                "4": 5,
+                "5": 5
+            },
+            {
+                "1": 0.75,
+                "2": 0.75,
+                "3": 0.75,
+                "4": 0.75,
+                "5": 0.75
+            }
+        ],
+        "matWeakEnemy": "Fae",
+        "matForgery": "Egg",
+        "matStrongEnemy": "Snowborns"
+    },
     "SummitShaper": {
         "name": "Summit Shaper",
         "rarity": 5,

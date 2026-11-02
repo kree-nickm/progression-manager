@@ -1847,6 +1847,27 @@ export default {
         "type": "MATERIAL_AVATAR_MATERIAL",
         "icon": "UI_ItemIcon_112157"
     },
+    "SnowbornHeartshard": {
+        "id": 112158,
+        "name": "Snowborn Heartshard",
+        "rarity": 2,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_112158"
+    },
+    "SnowbornMirrorheart": {
+        "id": 112159,
+        "name": "Snowborn Mirrorheart",
+        "rarity": 3,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_112159"
+    },
+    "SnowbornHeartOfIgnorance": {
+        "id": 112160,
+        "name": "Snowborn Heart of Ignorance",
+        "rarity": 4,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_112160"
+    },
     "HurricaneSeed": {
         "id": 113001,
         "name": "Hurricane Seed",
@@ -2483,6 +2504,13 @@ export default {
         "rarity": 4,
         "type": "MATERIAL_AVATAR_MATERIAL",
         "icon": "UI_ItemIcon_113092"
+    },
+    "ShatteredStabilityAnchor": {
+        "id": 113093,
+        "name": "Shattered Stability Anchor",
+        "rarity": 4,
+        "type": "MATERIAL_AVATAR_MATERIAL",
+        "icon": "UI_ItemIcon_113093"
     },
     "TileOfDecarabiansTower": {
         "id": 114001,
@@ -3345,6 +3373,13 @@ export default {
         "type": "MATERIAL_AVATAR_MATERIAL",
         "icon": "UI_ItemIcon_200129"
     },
+    "MityasAccessoryBox": {
+        "id": 220141,
+        "name": "Mitya's Accessory Box",
+        "rarity": 4,
+        "type": "MATERIAL_CHANGE_ORNAMENT",
+        "icon": "UI_ItemIcon_121736"
+    },
     "CharacterEXP": {
         "id": 101,
         "name": "Character EXP",
@@ -4170,6 +4205,27 @@ export default {
         "type": "MATERIAL_COMMON",
         "icon": "UI_ItemIcon_404"
     },
+    "EasternThreatSuppression": {
+        "id": 405,
+        "name": "Eastern Threat Suppression",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_405"
+    },
+    "CentralThreatSuppression": {
+        "id": 406,
+        "name": "Central Threat Suppression",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_405"
+    },
+    "NorthernThreatSuppression": {
+        "id": 407,
+        "name": "Northern Threat Suppression",
+        "rarity": 3,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_405"
+    },
     "NorthlanderSword": {
         "id": 101106,
         "name": "Northlander Sword",
@@ -4246,6 +4302,20 @@ export default {
         "rarity": 4,
         "type": "MATERIAL_COMMON",
         "icon": "UI_ItemIcon_223305"
+    },
+    "ConstructAppearanceSnowman": {
+        "id": 223306,
+        "name": "Construct Appearance: Snowman",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_223306"
+    },
+    "ConstructAppearanceSnowflake": {
+        "id": 223307,
+        "name": "Construct Appearance: Snowflake",
+        "rarity": 4,
+        "type": "MATERIAL_COMMON",
+        "icon": "UI_ItemIcon_223307"
     },
     "MasterlessStarglitter": {
         "id": 221,
@@ -4736,7 +4806,7 @@ export default {
     "YellowObsidianFragment": {
         "id": 120858,
         "name": "Yellow Obsidian Fragment",
-        "rarity": 4,
+        "rarity": 1,
         "type": "MATERIAL_CONSUME",
         "icon": "UI_ItemIcon_120858"
     },
@@ -4757,7 +4827,7 @@ export default {
     "GreenObsidianFragment": {
         "id": 120912,
         "name": "Green Obsidian Fragment",
-        "rarity": 4,
+        "rarity": 1,
         "type": "MATERIAL_CONSUME",
         "icon": "UI_ItemIcon_120912"
     },
@@ -4771,7 +4841,7 @@ export default {
     "AzureObsidianFragment": {
         "id": 120914,
         "name": "Azure Obsidian Fragment",
-        "rarity": 4,
+        "rarity": 1,
         "type": "MATERIAL_CONSUME",
         "icon": "UI_ItemIcon_120914"
     },
@@ -4792,7 +4862,7 @@ export default {
     "PurpleObsidianFragment": {
         "id": 121103,
         "name": "Purple Obsidian Fragment",
-        "rarity": 4,
+        "rarity": 1,
         "type": "MATERIAL_CONSUME",
         "icon": "UI_ItemIcon_121103"
     },
@@ -4806,7 +4876,7 @@ export default {
     "CrimsonObsidianFragment": {
         "id": 121105,
         "name": "Crimson Obsidian Fragment",
-        "rarity": 4,
+        "rarity": 1,
         "type": "MATERIAL_CONSUME",
         "icon": "UI_ItemIcon_121105"
     },
@@ -4820,7 +4890,7 @@ export default {
     "SunsetBlueObsidianFragment": {
         "id": 121107,
         "name": "Sunset-Blue Obsidian Fragment",
-        "rarity": 4,
+        "rarity": 1,
         "type": "MATERIAL_CONSUME",
         "icon": "UI_ItemIcon_121107"
     },
@@ -4907,6 +4977,27 @@ export default {
         "rarity": 4,
         "type": "MATERIAL_CONSUME",
         "icon": "UI_ItemIcon_121657"
+    },
+    "StardustTrailFieryGleamSigil": {
+        "id": 121738,
+        "name": "Stardust Trail: Fiery Gleam Sigil",
+        "rarity": 4,
+        "type": "MATERIAL_CONSUME",
+        "icon": "UI_ItemIcon_121737"
+    },
+    "RemnantIncenseGuideTeploOasis": {
+        "id": 121739,
+        "name": "Remnant Incense Guide - Teplo Oasis",
+        "rarity": 4,
+        "type": "MATERIAL_CONSUME",
+        "icon": "UI_ItemIcon_121739"
+    },
+    "RemnantIncenseGuideNovokitezhgrad": {
+        "id": 121740,
+        "name": "Remnant Incense Guide - Novokitezhgrad",
+        "rarity": 4,
+        "type": "MATERIAL_CONSUME",
+        "icon": "UI_ItemIcon_121740"
     },
     "FragrantSeasoning": {
         "id": 141115,
@@ -6245,6 +6336,20 @@ export default {
         "type": "MATERIAL_EXCHANGE",
         "icon": "UI_ItemIcon_101272"
     },
+    "FairyWormwood": {
+        "id": 101273,
+        "name": "Fairy Wormwood",
+        "rarity": 1,
+        "type": "MATERIAL_EXCHANGE",
+        "icon": "UI_ItemIcon_101273"
+    },
+    "Kristallfold": {
+        "id": 101274,
+        "name": "Kristallfold",
+        "rarity": 1,
+        "type": "MATERIAL_EXCHANGE",
+        "icon": "UI_ItemIcon_101274"
+    },
     "FrostfairyFlower": {
         "id": 101275,
         "name": "Frostfairy Flower",
@@ -6300,6 +6405,13 @@ export default {
         "rarity": 1,
         "type": "MATERIAL_EXCHANGE",
         "icon": "UI_ItemIcon_101282"
+    },
+    "Lanternberry": {
+        "id": 101285,
+        "name": "Lanternberry",
+        "rarity": 1,
+        "type": "MATERIAL_EXCHANGE",
+        "icon": "UI_ItemIcon_101285"
     },
     "Fabric": {
         "id": 101401,
@@ -7113,12 +7225,75 @@ export default {
         "type": "MATERIAL_TPS_ACCESSORY",
         "icon": "UI_EquipIcon_AssaultRifle_Fulmen_Part02"
     },
+    "SosrukosFlameMuzzle": {
+        "id": 223141,
+        "name": "Sosruko's Flame: Muzzle",
+        "rarity": 4,
+        "type": "MATERIAL_TPS_ACCESSORY",
+        "icon": "UI_EquipIcon_Shotgun_Vepr_Part01"
+    },
+    "SosrukosFlameAmmoFeed": {
+        "id": 223142,
+        "name": "Sosruko's Flame: Ammo Feed",
+        "rarity": 4,
+        "type": "MATERIAL_TPS_ACCESSORY",
+        "icon": "UI_EquipIcon_Shotgun_Vepr_Part02"
+    },
+    "SosrukosFlameGunstock": {
+        "id": 223143,
+        "name": "Sosruko's Flame: Gunstock",
+        "rarity": 4,
+        "type": "MATERIAL_TPS_ACCESSORY",
+        "icon": "UI_EquipIcon_Shotgun_Vepr_Part03"
+    },
+    "SosrukosFlameGunsight": {
+        "id": 223144,
+        "name": "Sosruko's Flame: Gunsight",
+        "rarity": 4,
+        "type": "MATERIAL_TPS_ACCESSORY",
+        "icon": "UI_EquipIcon_Shotgun_Vepr_Part04"
+    },
+    "ApsatsMountainHuntGunsight": {
+        "id": 223151,
+        "name": "Apsat's Mountain Hunt: Gunsight",
+        "rarity": 4,
+        "type": "MATERIAL_TPS_ACCESSORY",
+        "icon": "UI_EquipIcon_Shotgun_Rock_Part01"
+    },
+    "ApsatsMountainHuntAmplifier": {
+        "id": 223152,
+        "name": "Apsat's Mountain Hunt: Amplifier",
+        "rarity": 4,
+        "type": "MATERIAL_TPS_ACCESSORY",
+        "icon": "UI_EquipIcon_Shotgun_Rock_Part02"
+    },
+    "ApsatsMountainHuntCirculator": {
+        "id": 223153,
+        "name": "Apsat's Mountain Hunt: Circulator",
+        "rarity": 4,
+        "type": "MATERIAL_TPS_ACCESSORY",
+        "icon": "UI_EquipIcon_Shotgun_Rock_Part03"
+    },
+    "ApsatsMountainHuntAction": {
+        "id": 223154,
+        "name": "Apsat's Mountain Hunt: Action",
+        "rarity": 4,
+        "type": "MATERIAL_TPS_ACCESSORY",
+        "icon": "UI_EquipIcon_Shotgun_Rock_Part04"
+    },
     "StardustTrailRadiantGlow": {
         "id": 121657,
         "name": "Stardust Trail: Radiant Glow",
         "rarity": 4,
         "type": "MATERIAL_TPS_CLOAK_UPGRADE",
         "icon": "UI_ItemIcon_121657"
+    },
+    "StardustTrailFieryGleam": {
+        "id": 121737,
+        "name": "Stardust Trail: Fiery Gleam",
+        "rarity": 4,
+        "type": "MATERIAL_TPS_CLOAK_UPGRADE",
+        "icon": "UI_ItemIcon_121737"
     },
     "DruzhnaSpecialDispatchOrder": {
         "id": 121670,
@@ -7385,6 +7560,13 @@ export default {
         "rarity": 1,
         "type": "MATERIAL_WOOD",
         "icon": "UI_ItemIcon_101334"
+    },
+    "NotesOnNovokitezhgrad": {
+        "id": 121727,
+        "name": "Notes on Novokitezhgrad",
+        "rarity": 4,
+        "type": "MATERIAL_WORKER_NOTEBOOK",
+        "icon": "UI_ItemIcon_121727"
     },
     "SpiritSeekerPreviewCommemorativePhoto": {
         "id": 121663,

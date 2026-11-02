@@ -184,6 +184,11 @@ export default {
             "3": "Sprout Node of Life",
             "2": "Hollow Root of Life"
         },
+        "Snowborns": {
+            "4": "Snowborn Heart of Ignorance",
+            "3": "Snowborn Mirrorheart",
+            "2": "Snowborn Heartshard"
+        },
         "Slimes": {
             "1": "Slime Condensate",
             "2": "Slime Secretions",
@@ -602,6 +607,10 @@ export default {
         "Snegurochka": {
             "name": "Guardian Blade of Drifting Snow",
             "4": "Vagabond's Cracked Armor"
+        },
+        "Wavebinder": {
+            "name": "Wavebinder",
+            "4": "Shattered Stability Anchor"
         }
     },
     "gemstone": {
