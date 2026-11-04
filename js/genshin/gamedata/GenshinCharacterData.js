@@ -2044,7 +2044,7 @@ export default {
         "imgId": "UI_AvatarIcon_Mitya",
         "matFlower": "Kristallfold",
         "matTrounce": "Mask of the Virtuous Doctor",
-        "matBoss": "",
+        "matBoss": "Wavebinder",
         "matEnemy": "Chimera",
         "matMastery": "Charity",
         "atkBase": 20,
